@@ -7,7 +7,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSSecureUnarchiveFromDataTransformer allocWithZone(VoidPtr zone);
 
     /**
      * The list of allowable classes which the top-level object in the archive must conform to on encoding and decoding.
@@ -129,8 +127,7 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSSecureUnarchiveFromDataTransformer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

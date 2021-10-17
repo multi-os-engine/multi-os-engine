@@ -50,8 +50,7 @@ public class ASAuthorizationController extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationController allocWithZone(VoidPtr zone);
 
     /**
      * Authorization requests that are being serviced by this controller
@@ -142,8 +141,7 @@ public class ASAuthorizationController extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationController new_objc();
 
     /**
      * Initiate the authorization flows.  Upon completion, the delegate will be called with either success or failure.

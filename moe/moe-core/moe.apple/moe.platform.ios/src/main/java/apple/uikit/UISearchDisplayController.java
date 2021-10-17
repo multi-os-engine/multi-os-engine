@@ -67,8 +67,7 @@ public class UISearchDisplayController extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UISearchDisplayController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -129,8 +128,7 @@ public class UISearchDisplayController extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UISearchDisplayController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -59,8 +58,7 @@ public class HKSeriesType extends HKSampleType {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HKSeriesType allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -145,8 +143,7 @@ public class HKSeriesType extends HKSampleType {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HKSeriesType new_objc();
 
     @Generated
     @Selector("quantityTypeForIdentifier:")
@@ -189,8 +186,7 @@ public class HKSeriesType extends HKSampleType {
 
     @Generated
     @Selector("workoutRouteType")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object workoutRouteType();
+    public static native HKSeriesType workoutRouteType();
 
     @Generated
     @Selector("workoutType")
@@ -206,8 +202,7 @@ public class HKSeriesType extends HKSampleType {
 
     @Generated
     @Selector("heartbeatSeriesType")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object heartbeatSeriesType();
+    public static native HKSeriesType heartbeatSeriesType();
 
     @Generated
     @Selector("electrocardiogramType")

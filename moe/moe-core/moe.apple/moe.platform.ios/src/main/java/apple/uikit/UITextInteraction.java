@@ -50,8 +50,7 @@ public class UITextInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UITextInteraction allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -129,8 +128,7 @@ public class UITextInteraction extends NSObject implements UIInteraction {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UITextInteraction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

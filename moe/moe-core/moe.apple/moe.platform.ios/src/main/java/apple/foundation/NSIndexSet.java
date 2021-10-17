@@ -70,8 +70,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSIndexSet allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -144,8 +143,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSIndexSet new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

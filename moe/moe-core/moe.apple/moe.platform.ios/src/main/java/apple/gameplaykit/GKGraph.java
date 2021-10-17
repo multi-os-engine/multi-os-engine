@@ -71,8 +71,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKGraph allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -141,8 +140,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKGraph new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

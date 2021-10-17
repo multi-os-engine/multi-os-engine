@@ -72,8 +72,7 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVPlayerItemMetadataCollector allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVPlayerItemMetadataCollector new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

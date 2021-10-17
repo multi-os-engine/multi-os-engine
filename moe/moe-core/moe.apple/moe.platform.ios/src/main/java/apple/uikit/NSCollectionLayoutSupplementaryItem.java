@@ -49,8 +49,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSCollectionLayoutSupplementaryItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -143,8 +142,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSCollectionLayoutSupplementaryItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

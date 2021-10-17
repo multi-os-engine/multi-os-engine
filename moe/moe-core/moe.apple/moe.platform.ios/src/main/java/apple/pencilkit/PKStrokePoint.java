@@ -58,8 +58,7 @@ public class PKStrokePoint extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PKStrokePoint allocWithZone(VoidPtr zone);
 
     /**
      * Altitude used to create this point in radians, 0.0-π/2 radians
@@ -171,8 +170,7 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PKStrokePoint new_objc();
 
     /**
      * Opacity of the point 0-2.

@@ -52,8 +52,7 @@ public class MKPointOfInterestFilter extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MKPointOfInterestFilter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -156,8 +155,7 @@ public class MKPointOfInterestFilter extends NSObject implements NSSecureCoding,
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MKPointOfInterestFilter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

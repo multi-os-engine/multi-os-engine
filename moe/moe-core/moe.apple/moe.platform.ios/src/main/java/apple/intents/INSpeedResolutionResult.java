@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -50,8 +49,7 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INSpeedResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -77,8 +75,7 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INSpeedResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -86,8 +83,8 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithSpeedToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithSpeedToConfirm(NSMeasurement<NSUnitSpeed> speedToConfirm);
+    public static native INSpeedResolutionResult confirmationRequiredWithSpeedToConfirm(
+            NSMeasurement<NSUnitSpeed> speedToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -102,8 +99,7 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithSpeedToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithSpeedToDisambiguate(
+    public static native INSpeedResolutionResult disambiguationWithSpeedToDisambiguate(
             NSArray<? extends NSMeasurement<NSUnitSpeed>> speedToDisambiguate);
 
     @Generated
@@ -138,19 +134,16 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INSpeedResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INSpeedResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INSpeedResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -170,8 +163,7 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedSpeed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedSpeed(NSMeasurement<NSUnitSpeed> resolvedSpeed);
+    public static native INSpeedResolutionResult successWithResolvedSpeed(NSMeasurement<NSUnitSpeed> resolvedSpeed);
 
     @Generated
     @Selector("superclass")
@@ -179,13 +171,11 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INSpeedResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INSpeedResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

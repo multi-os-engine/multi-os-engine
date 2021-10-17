@@ -27,7 +27,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -65,8 +64,7 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INBooleanResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -95,8 +93,7 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(NSNumber valueToConfirm);
+    public static native INBooleanResolutionResult confirmationRequiredWithValueToConfirm(NSNumber valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -134,19 +131,16 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INBooleanResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INBooleanResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INBooleanResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -165,8 +159,7 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(boolean resolvedValue);
+    public static native INBooleanResolutionResult successWithResolvedValue(boolean resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -174,8 +167,7 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INBooleanResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -188,12 +180,10 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INBooleanResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INBooleanResolutionResult unsupportedWithReason(@NInt long reason);
 }

@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INStringResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INStringResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -94,8 +92,7 @@ public class INStringResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithStringToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithStringToConfirm(String stringToConfirm);
+    public static native INStringResolutionResult confirmationRequiredWithStringToConfirm(String stringToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -110,8 +107,8 @@ public class INStringResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithStringsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithStringsToDisambiguate(NSArray<String> stringsToDisambiguate);
+    public static native INStringResolutionResult disambiguationWithStringsToDisambiguate(
+            NSArray<String> stringsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -141,19 +138,16 @@ public class INStringResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INStringResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INStringResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INStringResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -173,8 +167,7 @@ public class INStringResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedString:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedString(String resolvedString);
+    public static native INStringResolutionResult successWithResolvedString(String resolvedString);
 
     @Generated
     @Selector("superclass")
@@ -182,8 +175,7 @@ public class INStringResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INStringResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -196,12 +188,10 @@ public class INStringResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INStringResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INStringResolutionResult unsupportedWithReason(@NInt long reason);
 }

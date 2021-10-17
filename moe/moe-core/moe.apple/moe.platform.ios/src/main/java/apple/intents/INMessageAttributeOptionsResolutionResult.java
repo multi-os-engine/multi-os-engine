@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INMessageAttributeOptionsResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,8 +89,8 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
 
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NUInt long valueToConfirm);
+    public static native INMessageAttributeOptionsResolutionResult confirmationRequiredWithValueToConfirm(
+            @NUInt long valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -130,19 +128,16 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INMessageAttributeOptionsResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INMessageAttributeOptionsResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INMessageAttributeOptionsResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,8 +153,7 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
 
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NUInt long resolvedValue);
+    public static native INMessageAttributeOptionsResolutionResult successWithResolvedValue(@NUInt long resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -167,8 +161,7 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INMessageAttributeOptionsResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -184,8 +177,7 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
      */
     @Generated
     @Selector("confirmationRequiredWithMessageAttributeOptionsToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithMessageAttributeOptionsToConfirm(
+    public static native INMessageAttributeOptionsResolutionResult confirmationRequiredWithMessageAttributeOptionsToConfirm(
             @NUInt long messageAttributeOptionsToConfirm);
 
     /**
@@ -194,17 +186,15 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
      */
     @Generated
     @Selector("successWithResolvedMessageAttributeOptions:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedMessageAttributeOptions(@NUInt long resolvedMessageAttributeOptions);
+    public static native INMessageAttributeOptionsResolutionResult successWithResolvedMessageAttributeOptions(
+            @NUInt long resolvedMessageAttributeOptions);
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INMessageAttributeOptionsResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INMessageAttributeOptionsResolutionResult unsupportedWithReason(@NInt long reason);
 }

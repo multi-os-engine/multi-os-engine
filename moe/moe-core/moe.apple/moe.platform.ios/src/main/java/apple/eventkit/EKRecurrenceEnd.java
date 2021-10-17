@@ -89,8 +89,7 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native EKRecurrenceEnd allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -151,8 +150,7 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native EKRecurrenceEnd new_objc();
 
     /**
      * recurrenceEndWithEndDate:

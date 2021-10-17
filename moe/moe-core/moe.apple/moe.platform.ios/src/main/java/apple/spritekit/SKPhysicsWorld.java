@@ -75,8 +75,7 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKPhysicsWorld allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKPhysicsWorld new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -23,7 +23,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -61,8 +60,7 @@ public class NSFileAccessIntent extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSFileAccessIntent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -123,13 +121,11 @@ public class NSFileAccessIntent extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSFileAccessIntent new_objc();
 
     @Generated
     @Selector("readingIntentWithURL:options:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object readingIntentWithURLOptions(NSURL url, @NUInt long options);
+    public static native NSFileAccessIntent readingIntentWithURLOptions(NSURL url, @NUInt long options);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -154,8 +150,7 @@ public class NSFileAccessIntent extends NSObject {
 
     @Generated
     @Selector("writingIntentWithURL:options:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object writingIntentWithURLOptions(NSURL url, @NUInt long options);
+    public static native NSFileAccessIntent writingIntentWithURLOptions(NSURL url, @NUInt long options);
 
     /**
      * Use this URL within the accessor block. This property may change from its original value in response to actions from other writers.

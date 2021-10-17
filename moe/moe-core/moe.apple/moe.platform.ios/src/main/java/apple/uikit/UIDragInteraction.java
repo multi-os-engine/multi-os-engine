@@ -50,8 +50,7 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIDragInteraction allocWithZone(VoidPtr zone);
 
     /**
      * Determines whether this interaction allows recognition of other gesture recognizers during the lift.
@@ -157,8 +156,7 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIDragInteraction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

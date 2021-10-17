@@ -443,8 +443,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSRayIntersector allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -493,8 +492,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSRayIntersector copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * Whether to ignore intersections between rays and back-facing or front-facing triangles
@@ -807,8 +805,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSRayIntersector new_objc();
 
     /**
      * Ray data type. Defaults to MPSRayDataTypeOriginDirection.

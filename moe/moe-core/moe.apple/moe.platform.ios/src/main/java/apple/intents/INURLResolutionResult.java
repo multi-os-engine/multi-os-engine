@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -49,8 +48,7 @@ public class INURLResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INURLResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -76,8 +74,7 @@ public class INURLResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INURLResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -85,8 +82,7 @@ public class INURLResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithURLToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithURLToConfirm(NSURL urlToConfirm);
+    public static native INURLResolutionResult confirmationRequiredWithURLToConfirm(NSURL urlToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -101,8 +97,8 @@ public class INURLResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithURLsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithURLsToDisambiguate(NSArray<? extends NSURL> urlsToDisambiguate);
+    public static native INURLResolutionResult disambiguationWithURLsToDisambiguate(
+            NSArray<? extends NSURL> urlsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -136,19 +132,16 @@ public class INURLResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INURLResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INURLResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INURLResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -168,8 +161,7 @@ public class INURLResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedURL:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedURL(NSURL resolvedURL);
+    public static native INURLResolutionResult successWithResolvedURL(NSURL resolvedURL);
 
     @Generated
     @Selector("superclass")
@@ -177,13 +169,11 @@ public class INURLResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INURLResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INURLResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

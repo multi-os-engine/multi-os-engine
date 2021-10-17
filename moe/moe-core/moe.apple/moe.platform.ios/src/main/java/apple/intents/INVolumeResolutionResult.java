@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -50,8 +49,7 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INVolumeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -77,8 +75,7 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INVolumeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -86,8 +83,8 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithVolumeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithVolumeToConfirm(NSMeasurement<NSUnitVolume> volumeToConfirm);
+    public static native INVolumeResolutionResult confirmationRequiredWithVolumeToConfirm(
+            NSMeasurement<NSUnitVolume> volumeToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -102,8 +99,7 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithVolumeToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithVolumeToDisambiguate(
+    public static native INVolumeResolutionResult disambiguationWithVolumeToDisambiguate(
             NSArray<? extends NSMeasurement<NSUnitVolume>> volumeToDisambiguate);
 
     @Generated
@@ -138,19 +134,16 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INVolumeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INVolumeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INVolumeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -170,8 +163,7 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedVolume:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedVolume(NSMeasurement<NSUnitVolume> resolvedVolume);
+    public static native INVolumeResolutionResult successWithResolvedVolume(NSMeasurement<NSUnitVolume> resolvedVolume);
 
     @Generated
     @Selector("superclass")
@@ -179,13 +171,11 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INVolumeResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INVolumeResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

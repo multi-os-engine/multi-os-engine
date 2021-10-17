@@ -73,8 +73,7 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CNPhoneNumber allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +134,7 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CNPhoneNumber new_objc();
 
     /**
      * These will return nil if the stringValue is nil.

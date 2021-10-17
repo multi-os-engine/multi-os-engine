@@ -128,8 +128,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSSVGF allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -196,8 +195,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSSVGF copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -684,8 +682,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSSVGF new_objc();
 
     /**
      * Controls how samples' normals are compared during reprojection, variance estimation, and

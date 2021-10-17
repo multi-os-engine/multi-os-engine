@@ -63,8 +63,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIListContentImageProperties allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -163,8 +162,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIListContentImageProperties new_objc();
 
     /**
      * The symbol configuration to use.

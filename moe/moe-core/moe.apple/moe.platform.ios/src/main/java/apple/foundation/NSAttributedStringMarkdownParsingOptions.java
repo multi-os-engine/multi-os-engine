@@ -46,8 +46,7 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSAttributedStringMarkdownParsingOptions allocWithZone(VoidPtr zone);
 
     /**
      * Whether to allow parsing extensions to Markdown that specify extended attributes. Defaults to NO (only parse CommonMark syntax).
@@ -151,8 +150,7 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSAttributedStringMarkdownParsingOptions new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

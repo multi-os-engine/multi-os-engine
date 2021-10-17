@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -51,8 +50,7 @@ public class DCAppAttestService extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native DCAppAttestService allocWithZone(VoidPtr zone);
 
     /**
      * Attest the key by keyId.  The same key may be attested more than once, provided that the key has
@@ -182,8 +180,7 @@ public class DCAppAttestService extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native DCAppAttestService new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

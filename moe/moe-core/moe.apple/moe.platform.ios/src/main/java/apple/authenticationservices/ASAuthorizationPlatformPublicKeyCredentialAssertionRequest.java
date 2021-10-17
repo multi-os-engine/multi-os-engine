@@ -53,8 +53,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertionRequest extends 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationPlatformPublicKeyCredentialAssertionRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("allowedCredentials")
@@ -141,8 +140,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertionRequest extends 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationPlatformPublicKeyCredentialAssertionRequest new_objc();
 
     @Generated
     @Selector("relyingPartyIdentifier")

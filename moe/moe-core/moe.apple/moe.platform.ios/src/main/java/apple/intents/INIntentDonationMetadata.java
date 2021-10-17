@@ -52,8 +52,7 @@ public class INIntentDonationMetadata extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INIntentDonationMetadata allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class INIntentDonationMetadata extends NSObject implements NSCopying, NSS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INIntentDonationMetadata new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

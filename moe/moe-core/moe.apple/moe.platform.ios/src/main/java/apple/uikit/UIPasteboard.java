@@ -72,8 +72,7 @@ public class UIPasteboard extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIPasteboard allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +137,7 @@ public class UIPasteboard extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIPasteboard new_objc();
 
     @Generated
     @Selector("pasteboardWithName:create:")

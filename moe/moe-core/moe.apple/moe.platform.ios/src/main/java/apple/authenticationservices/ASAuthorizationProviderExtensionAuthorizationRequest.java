@@ -15,7 +15,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -54,8 +53,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationProviderExtensionAuthorizationRequest allocWithZone(VoidPtr zone);
 
     /**
      * Authorization options.
@@ -197,8 +195,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationProviderExtensionAuthorizationRequest new_objc();
 
     /**
      * Asks authorization service to show extension view controller. If the controller cannot be shown an error is returned.

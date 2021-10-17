@@ -71,8 +71,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIViewPropertyAnimator allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,8 +132,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIViewPropertyAnimator new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -162,9 +160,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
      */
     @Generated
     @Selector("runningPropertyAnimatorWithDuration:delay:options:animations:completion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion(double duration,
-            double delay, @NUInt long options,
+    public static native UIViewPropertyAnimator runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion(
+            double duration, double delay, @NUInt long options,
             @ObjCBlock(name = "call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_3") Block_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_3 animations,
             @ObjCBlock(name = "call_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4") Block_runningPropertyAnimatorWithDurationDelayOptionsAnimationsCompletion_4 completion);
 

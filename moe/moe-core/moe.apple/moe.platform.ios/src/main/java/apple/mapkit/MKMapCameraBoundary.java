@@ -55,8 +55,7 @@ public class MKMapCameraBoundary extends NSObject implements NSSecureCoding, NSC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MKMapCameraBoundary allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -148,8 +147,7 @@ public class MKMapCameraBoundary extends NSObject implements NSSecureCoding, NSC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MKMapCameraBoundary new_objc();
 
     @Generated
     @Selector("region")

@@ -49,8 +49,7 @@ public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopy
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSGraphCreateSparseOpDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopy
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSGraphCreateSparseOpDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

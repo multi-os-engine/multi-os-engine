@@ -77,8 +77,7 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CLBeacon allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -139,8 +138,7 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CLBeacon new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

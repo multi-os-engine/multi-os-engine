@@ -56,8 +56,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCTensor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -228,8 +227,7 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCTensor new_objc();
 
     /**
      * [@property]   optimizer buffers to use if tensor is used as a parameter

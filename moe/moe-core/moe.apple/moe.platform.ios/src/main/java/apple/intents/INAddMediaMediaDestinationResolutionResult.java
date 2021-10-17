@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INAddMediaMediaDestinationResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,14 +73,12 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INAddMediaMediaDestinationResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("confirmationRequiredWithMediaDestinationToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithMediaDestinationToConfirm(
+    public static native INAddMediaMediaDestinationResolutionResult confirmationRequiredWithMediaDestinationToConfirm(
             INMediaDestination mediaDestinationToConfirm);
 
     @Generated
@@ -95,8 +91,7 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
 
     @Generated
     @Selector("disambiguationWithMediaDestinationsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithMediaDestinationsToDisambiguate(
+    public static native INAddMediaMediaDestinationResolutionResult disambiguationWithMediaDestinationsToDisambiguate(
             NSArray<? extends INMediaDestination> mediaDestinationsToDisambiguate);
 
     @Generated
@@ -136,19 +131,16 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INAddMediaMediaDestinationResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INAddMediaMediaDestinationResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INAddMediaMediaDestinationResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -164,8 +156,8 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
 
     @Generated
     @Selector("successWithResolvedMediaDestination:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedMediaDestination(INMediaDestination resolvedMediaDestination);
+    public static native INAddMediaMediaDestinationResolutionResult successWithResolvedMediaDestination(
+            INMediaDestination resolvedMediaDestination);
 
     @Generated
     @Selector("superclass")
@@ -173,18 +165,15 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INAddMediaMediaDestinationResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedForReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedForReason(@NInt long reason);
+    public static native INAddMediaMediaDestinationResolutionResult unsupportedForReason(@NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INAddMediaMediaDestinationResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

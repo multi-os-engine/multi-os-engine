@@ -54,8 +54,7 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCSGDOptimizer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCSGDOptimizer new_objc();
 
     /**
      * Create an MLCSGDOptimizer object with defaults

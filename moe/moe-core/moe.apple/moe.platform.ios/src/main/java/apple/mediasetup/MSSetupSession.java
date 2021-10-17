@@ -59,8 +59,7 @@ public class MSSetupSession extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MSSetupSession allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class MSSetupSession extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MSSetupSession new_objc();
 
     /**
      * A context to provide the session with anchor for presentation. See MSAuthenticationPresentationContext protocol

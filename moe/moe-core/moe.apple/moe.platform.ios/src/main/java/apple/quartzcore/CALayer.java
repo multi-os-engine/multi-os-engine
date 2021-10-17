@@ -84,8 +84,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CALayer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -188,8 +187,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CALayer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -852,8 +850,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("modelLayer")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object modelLayer();
+    public native CALayer modelLayer();
 
     /**
      * The name of the layer. Used by some layout managers. Defaults to nil.
@@ -932,8 +929,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
      */
     @Generated
     @Selector("presentationLayer")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object presentationLayer();
+    public native CALayer presentationLayer();
 
     /**
      * The scale at which the layer will be rasterized (when the

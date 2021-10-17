@@ -100,8 +100,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCommandBuffer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -329,8 +328,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCommandBuffer new_objc();
 
     @Generated
     @Selector("parallelRenderCommandEncoderWithDescriptor:")

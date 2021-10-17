@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -49,8 +48,7 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSPersistentHistoryChangeRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -80,18 +78,16 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("deleteHistoryBeforeDate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object deleteHistoryBeforeDate(NSDate date);
+    public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeDate(NSDate date);
 
     @Generated
     @Selector("deleteHistoryBeforeToken:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object deleteHistoryBeforeToken(NSPersistentHistoryToken token);
+    public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeToken(NSPersistentHistoryToken token);
 
     @Generated
     @Selector("deleteHistoryBeforeTransaction:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object deleteHistoryBeforeTransaction(NSPersistentHistoryTransaction transaction);
+    public static native NSPersistentHistoryChangeRequest deleteHistoryBeforeTransaction(
+            NSPersistentHistoryTransaction transaction);
 
     @Generated
     @Selector("description")
@@ -99,18 +95,16 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("fetchHistoryAfterDate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchHistoryAfterDate(NSDate date);
+    public static native NSPersistentHistoryChangeRequest fetchHistoryAfterDate(NSDate date);
 
     @Generated
     @Selector("fetchHistoryAfterToken:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchHistoryAfterToken(NSPersistentHistoryToken token);
+    public static native NSPersistentHistoryChangeRequest fetchHistoryAfterToken(NSPersistentHistoryToken token);
 
     @Generated
     @Selector("fetchHistoryAfterTransaction:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchHistoryAfterTransaction(NSPersistentHistoryTransaction transaction);
+    public static native NSPersistentHistoryChangeRequest fetchHistoryAfterTransaction(
+            NSPersistentHistoryTransaction transaction);
 
     @Generated
     @Selector("hash")
@@ -145,8 +139,7 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSPersistentHistoryChangeRequest new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -190,8 +183,7 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
 
     @Generated
     @Selector("fetchHistoryWithFetchRequest:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchHistoryWithFetchRequest(NSFetchRequest<?> fetchRequest);
+    public static native NSPersistentHistoryChangeRequest fetchHistoryWithFetchRequest(NSFetchRequest<?> fetchRequest);
 
     @Generated
     @Selector("fetchRequest")

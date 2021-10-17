@@ -54,8 +54,7 @@ public class MTLFunctionStitchingInputNode extends NSObject implements MTLFuncti
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MTLFunctionStitchingInputNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("argumentIndex")
@@ -135,8 +134,7 @@ public class MTLFunctionStitchingInputNode extends NSObject implements MTLFuncti
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MTLFunctionStitchingInputNode new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

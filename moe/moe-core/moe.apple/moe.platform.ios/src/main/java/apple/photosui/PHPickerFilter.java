@@ -52,8 +52,7 @@ public class PHPickerFilter extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PHPickerFilter allocWithZone(VoidPtr zone);
 
     /**
      * Returns a new filter formed by OR-ing the filters in a given array.
@@ -145,8 +144,7 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PHPickerFilter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

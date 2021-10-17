@@ -67,8 +67,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSExtensionItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -129,8 +128,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSExtensionItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

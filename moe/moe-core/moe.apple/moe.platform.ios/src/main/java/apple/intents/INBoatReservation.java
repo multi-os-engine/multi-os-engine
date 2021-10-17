@@ -54,8 +54,7 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INBoatReservation allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -145,8 +144,7 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INBoatReservation new_objc();
 
     @Generated
     @Selector("reservedSeat")

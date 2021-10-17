@@ -52,8 +52,7 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CKFetchRecordZoneChangesConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -142,8 +141,7 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CKFetchRecordZoneChangesConfiguration new_objc();
 
     @Generated
     @Selector("previousServerChangeToken")

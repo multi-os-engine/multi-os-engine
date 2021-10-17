@@ -69,8 +69,7 @@ public class EKEventViewController extends UIViewController {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native EKEventViewController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
@@ -139,8 +138,7 @@ public class EKEventViewController extends UIViewController {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native EKEventViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

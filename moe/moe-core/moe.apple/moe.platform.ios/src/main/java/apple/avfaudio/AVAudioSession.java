@@ -60,8 +60,7 @@ public class AVAudioSession extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAudioSession allocWithZone(VoidPtr zone);
 
     /**
      * Whether system sounds and haptics can play while the session is actively using audio input.
@@ -328,8 +327,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAudioSession new_objc();
 
     /**
      * Obtain the currently selected output data source.  Will be nil if no data sources are available.

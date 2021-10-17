@@ -52,8 +52,7 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UITabBarItemAppearance allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -87,8 +86,7 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Generated
     @Owned
     @Selector("copy")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copy();
+    public native UITabBarItemAppearance copy();
 
     @Generated
     @Owned
@@ -169,8 +167,7 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UITabBarItemAppearance new_objc();
 
     /**
      * The appearance when the tab bar item is in the normal state

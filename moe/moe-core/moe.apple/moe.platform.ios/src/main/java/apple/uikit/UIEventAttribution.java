@@ -50,8 +50,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIEventAttribution allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,8 +146,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIEventAttribution new_objc();
 
     /**
      * The name of the party that purchased the content to be attributed. For example, this could be the name of the party that purchased the placement of an advertisement.

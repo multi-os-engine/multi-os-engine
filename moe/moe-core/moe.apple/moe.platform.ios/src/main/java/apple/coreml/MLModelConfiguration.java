@@ -57,8 +57,7 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLModelConfiguration allocWithZone(VoidPtr zone);
 
     /**
      * Set to YES to allow low precision accumulation on GPU when available. Defaults to NO
@@ -149,8 +148,7 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLModelConfiguration new_objc();
 
     /**
      * Optional dictionary with any requested changes to model or update parameters

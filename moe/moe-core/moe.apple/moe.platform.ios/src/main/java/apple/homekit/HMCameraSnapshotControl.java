@@ -68,8 +68,7 @@ public class HMCameraSnapshotControl extends HMCameraControl {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HMCameraSnapshotControl allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class HMCameraSnapshotControl extends HMCameraControl {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HMCameraSnapshotControl new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

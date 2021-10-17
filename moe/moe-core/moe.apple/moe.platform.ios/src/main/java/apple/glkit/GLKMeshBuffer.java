@@ -75,8 +75,7 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GLKMeshBuffer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GLKMeshBuffer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

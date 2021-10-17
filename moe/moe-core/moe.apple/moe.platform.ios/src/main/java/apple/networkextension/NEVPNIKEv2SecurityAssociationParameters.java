@@ -75,8 +75,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NEVPNIKEv2SecurityAssociationParameters allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NEVPNIKEv2SecurityAssociationParameters new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

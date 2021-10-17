@@ -70,8 +70,7 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSManagedObjectID allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSManagedObjectID new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

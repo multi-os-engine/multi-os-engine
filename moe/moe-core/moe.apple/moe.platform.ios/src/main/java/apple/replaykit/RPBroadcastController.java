@@ -74,8 +74,7 @@ public class RPBroadcastController extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native RPBroadcastController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -136,8 +135,7 @@ public class RPBroadcastController extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native RPBroadcastController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

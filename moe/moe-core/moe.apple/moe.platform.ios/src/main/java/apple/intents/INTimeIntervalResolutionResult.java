@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INTimeIntervalResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,8 +73,7 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INTimeIntervalResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -84,8 +81,8 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithTimeIntervalToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTimeIntervalToConfirm(double timeIntervalToConfirm);
+    public static native INTimeIntervalResolutionResult confirmationRequiredWithTimeIntervalToConfirm(
+            double timeIntervalToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -127,19 +124,16 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INTimeIntervalResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INTimeIntervalResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INTimeIntervalResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,8 +152,7 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedTimeInterval:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedTimeInterval(double resolvedTimeInterval);
+    public static native INTimeIntervalResolutionResult successWithResolvedTimeInterval(double resolvedTimeInterval);
 
     @Generated
     @Selector("superclass")
@@ -167,13 +160,11 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INTimeIntervalResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INTimeIntervalResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

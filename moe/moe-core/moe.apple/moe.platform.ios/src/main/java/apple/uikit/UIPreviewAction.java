@@ -72,8 +72,7 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIPreviewAction allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIPreviewAction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

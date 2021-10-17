@@ -86,8 +86,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVPictureInPictureControllerContentSource allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -190,8 +189,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVPictureInPictureControllerContentSource new_objc();
 
     /**
      * [@property]   playerLayer

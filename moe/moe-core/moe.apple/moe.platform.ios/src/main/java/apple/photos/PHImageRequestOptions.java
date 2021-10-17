@@ -71,8 +71,7 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PHImageRequestOptions allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,8 +132,7 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PHImageRequestOptions new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

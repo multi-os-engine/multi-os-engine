@@ -16,7 +16,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
@@ -73,8 +72,7 @@ public class UISearchTextField extends UITextField {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UISearchTextField allocWithZone(VoidPtr zone);
 
     /**
      * Whether the user can copy tokens to the pasteboard or drag them out of the text field.
@@ -128,25 +126,21 @@ public class UISearchTextField extends UITextField {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native UISearchTextField appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public UISearchTextField _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native UISearchTextField appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public UISearchTextField _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -154,29 +148,25 @@ public class UISearchTextField extends UITextField {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native UISearchTextField appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public UISearchTextField _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    public static native UISearchTextField appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            UITraitCollection trait, NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public UISearchTextField _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -185,28 +175,24 @@ public class UISearchTextField extends UITextField {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native UISearchTextField appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UISearchTextField _appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UISearchTextField appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UISearchTextField _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -315,8 +301,7 @@ public class UISearchTextField extends UITextField {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UISearchTextField new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")

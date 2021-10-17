@@ -73,8 +73,7 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CNInstantMessageAddress allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -149,8 +148,7 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CNInstantMessageAddress new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

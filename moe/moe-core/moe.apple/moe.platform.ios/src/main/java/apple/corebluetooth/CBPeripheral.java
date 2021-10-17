@@ -72,8 +72,7 @@ public class CBPeripheral extends CBPeer {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CBPeripheral allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class CBPeripheral extends CBPeer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CBPeripheral new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

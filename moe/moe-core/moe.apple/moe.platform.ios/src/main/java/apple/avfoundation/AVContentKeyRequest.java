@@ -54,8 +54,7 @@ public class AVContentKeyRequest extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVContentKeyRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -188,8 +187,7 @@ public class AVContentKeyRequest extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVContentKeyRequest new_objc();
 
     /**
      * processContentKeyResponse:

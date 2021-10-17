@@ -18,7 +18,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
@@ -65,8 +64,7 @@ public class MKScaleView extends UIView {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MKScaleView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -102,25 +100,21 @@ public class MKScaleView extends UIView {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native MKScaleView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public MKScaleView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native MKScaleView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public MKScaleView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -128,29 +122,25 @@ public class MKScaleView extends UIView {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native MKScaleView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public MKScaleView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    public static native MKScaleView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            UITraitCollection trait, NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public MKScaleView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -159,28 +149,24 @@ public class MKScaleView extends UIView {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native MKScaleView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    public MKScaleView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native MKScaleView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public MKScaleView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -288,8 +274,7 @@ public class MKScaleView extends UIView {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MKScaleView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")

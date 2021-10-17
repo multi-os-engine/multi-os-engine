@@ -105,8 +105,7 @@ public class SCNNode extends NSObject
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -167,8 +166,7 @@ public class SCNNode extends NSObject
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNNode new_objc();
 
     /**
      * node
@@ -357,8 +355,7 @@ public class SCNNode extends NSObject
      */
     @Generated
     @Selector("clone")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object clone();
+    public native SCNNode clone();
 
     /**
      * [@property] constraints
@@ -498,8 +495,7 @@ public class SCNNode extends NSObject
      */
     @Generated
     @Selector("flattenedClone")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object flattenedClone();
+    public native SCNNode flattenedClone();
 
     /**
      * [@property] geometry

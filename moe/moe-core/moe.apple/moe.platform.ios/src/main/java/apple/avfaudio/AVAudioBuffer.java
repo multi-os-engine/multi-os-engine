@@ -58,8 +58,7 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAudioBuffer allocWithZone(VoidPtr zone);
 
     /**
      * [@property] audioBufferList
@@ -175,8 +174,7 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAudioBuffer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

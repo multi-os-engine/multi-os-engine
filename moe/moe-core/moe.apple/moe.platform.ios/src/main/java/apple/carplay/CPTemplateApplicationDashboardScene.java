@@ -52,8 +52,7 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CPTemplateApplicationDashboardScene allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -149,8 +148,7 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CPTemplateApplicationDashboardScene new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

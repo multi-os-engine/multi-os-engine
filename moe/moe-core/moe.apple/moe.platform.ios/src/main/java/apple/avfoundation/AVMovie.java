@@ -66,8 +66,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVMovie allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("assetWithURL:")
@@ -297,8 +296,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVMovie new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

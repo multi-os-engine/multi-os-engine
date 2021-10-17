@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INAddTasksTargetTaskListResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,20 +73,18 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INAddTasksTargetTaskListResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("confirmationRequiredWithTaskListToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTaskListToConfirm(INTaskList taskListToConfirm);
+    public static native INAddTasksTargetTaskListResolutionResult confirmationRequiredWithTaskListToConfirm(
+            INTaskList taskListToConfirm);
 
     @Generated
     @Selector("confirmationRequiredWithTaskListToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTaskListToConfirmForReason(INTaskList taskListToConfirm,
-            @NInt long reason);
+    public static native INAddTasksTargetTaskListResolutionResult confirmationRequiredWithTaskListToConfirmForReason(
+            INTaskList taskListToConfirm, @NInt long reason);
 
     @Generated
     @Selector("debugDescription")
@@ -100,8 +96,7 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
 
     @Generated
     @Selector("disambiguationWithTaskListsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithTaskListsToDisambiguate(
+    public static native INAddTasksTargetTaskListResolutionResult disambiguationWithTaskListsToDisambiguate(
             NSArray<? extends INTaskList> taskListsToDisambiguate);
 
     @Generated
@@ -141,19 +136,16 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INAddTasksTargetTaskListResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INAddTasksTargetTaskListResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INAddTasksTargetTaskListResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -169,8 +161,8 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
 
     @Generated
     @Selector("successWithResolvedTaskList:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedTaskList(INTaskList resolvedTaskList);
+    public static native INAddTasksTargetTaskListResolutionResult successWithResolvedTaskList(
+            INTaskList resolvedTaskList);
 
     @Generated
     @Selector("superclass")
@@ -178,13 +170,11 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INAddTasksTargetTaskListResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INAddTasksTargetTaskListResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

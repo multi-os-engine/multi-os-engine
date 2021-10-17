@@ -81,8 +81,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKTexture allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -143,8 +142,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKTexture new_objc();
 
     /**
      * Start a texture preload operation on an array of textures
@@ -340,16 +338,14 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureByApplyingCIFilter:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object textureByApplyingCIFilter(CIFilter filter);
+    public native SKTexture textureByApplyingCIFilter(CIFilter filter);
 
     /**
      * Create new texture by generating a normal map texture.
      */
     @Generated
     @Selector("textureByGeneratingNormalMap")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object textureByGeneratingNormalMap();
+    public native SKTexture textureByGeneratingNormalMap();
 
     /**
      * Create new texture by generating a normal map texture.
@@ -359,8 +355,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("textureByGeneratingNormalMapWithSmoothness:contrast:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object textureByGeneratingNormalMapWithSmoothnessContrast(@NFloat double smoothness,
+    public native SKTexture textureByGeneratingNormalMapWithSmoothnessContrast(@NFloat double smoothness,
             @NFloat double contrast);
 
     /**

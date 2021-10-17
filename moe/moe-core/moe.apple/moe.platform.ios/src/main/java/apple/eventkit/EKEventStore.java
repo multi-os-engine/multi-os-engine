@@ -83,8 +83,7 @@ public class EKEventStore extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native EKEventStore allocWithZone(VoidPtr zone);
 
     /**
      * authorizationStatusForEntityType:
@@ -155,8 +154,7 @@ public class EKEventStore extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native EKEventStore new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

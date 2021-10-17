@@ -50,8 +50,7 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UICollectionViewCompositionalLayoutConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UICollectionViewCompositionalLayoutConfiguration new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

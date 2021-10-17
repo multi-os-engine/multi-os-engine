@@ -54,8 +54,7 @@ public class MLCAdamWOptimizer extends MLCOptimizer implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCAdamWOptimizer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -159,8 +158,7 @@ public class MLCAdamWOptimizer extends MLCOptimizer implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCAdamWOptimizer new_objc();
 
     /**
      * Create an MLCAdamWOptimizer object with defaults

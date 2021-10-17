@@ -52,8 +52,7 @@ public class INTemporalEventTrigger extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INTemporalEventTrigger allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,8 +139,7 @@ public class INTemporalEventTrigger extends NSObject implements NSCopying, NSSec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INTemporalEventTrigger new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

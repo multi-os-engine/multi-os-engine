@@ -75,8 +75,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INImage allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -165,8 +164,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INImage new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -235,6 +233,5 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("systemImageNamed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object systemImageNamed(String systemImageName);
+    public static native INImage systemImageNamed(String systemImageName);
 }

@@ -73,8 +73,7 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UNNotificationAttachment allocWithZone(VoidPtr zone);
 
     /**
      * Creates an attachment for the data at URL with an optional options dictionary. URL must be a file URL. Returns nil if the data at URL is not supported.
@@ -143,8 +142,7 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UNNotificationAttachment new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

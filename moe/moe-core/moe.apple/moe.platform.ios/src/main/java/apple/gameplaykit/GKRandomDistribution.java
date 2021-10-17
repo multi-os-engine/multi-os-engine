@@ -27,7 +27,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -69,8 +68,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKRandomDistribution allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -100,8 +98,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      */
     @Generated
     @Selector("d20")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object d20();
+    public static native GKRandomDistribution d20();
 
     /**
      * Convenience creation for the very common d6 range [1, 6] with an isolated random source
@@ -109,8 +106,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      */
     @Generated
     @Selector("d6")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object d6();
+    public static native GKRandomDistribution d6();
 
     @Generated
     @Selector("debugDescription")
@@ -170,8 +166,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKRandomDistribution new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

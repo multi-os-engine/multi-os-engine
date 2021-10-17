@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCarSignalOptionsResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,14 +76,13 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
      */
     @Generated
     @Selector("confirmationRequiredWithCarSignalOptionsToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithCarSignalOptionsToConfirm(
+    public static native INCarSignalOptionsResolutionResult confirmationRequiredWithCarSignalOptionsToConfirm(
             @NUInt long carSignalOptionsToConfirm);
 
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NUInt long valueToConfirm);
+    public static native INCarSignalOptionsResolutionResult confirmationRequiredWithValueToConfirm(
+            @NUInt long valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -127,19 +124,16 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INCarSignalOptionsResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCarSignalOptionsResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INCarSignalOptionsResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -159,13 +153,12 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
      */
     @Generated
     @Selector("successWithResolvedCarSignalOptions:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedCarSignalOptions(@NUInt long resolvedCarSignalOptions);
+    public static native INCarSignalOptionsResolutionResult successWithResolvedCarSignalOptions(
+            @NUInt long resolvedCarSignalOptions);
 
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NUInt long resolvedValue);
+    public static native INCarSignalOptionsResolutionResult successWithResolvedValue(@NUInt long resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -173,8 +166,7 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INCarSignalOptionsResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -183,12 +175,10 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INCarSignalOptionsResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INCarSignalOptionsResolutionResult unsupportedWithReason(@NInt long reason);
 }

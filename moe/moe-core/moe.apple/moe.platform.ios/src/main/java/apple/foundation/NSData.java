@@ -76,8 +76,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSData allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -177,8 +176,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSData new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -409,8 +407,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     @Generated
     @Selector("compressedDataUsingAlgorithm:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object compressedDataUsingAlgorithmError(@NInt long algorithm,
+    public native NSData compressedDataUsingAlgorithmError(@NInt long algorithm,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
@@ -418,7 +415,6 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
      */
     @Generated
     @Selector("decompressedDataUsingAlgorithm:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object decompressedDataUsingAlgorithmError(@NInt long algorithm,
+    public native NSData decompressedDataUsingAlgorithmError(@NInt long algorithm,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

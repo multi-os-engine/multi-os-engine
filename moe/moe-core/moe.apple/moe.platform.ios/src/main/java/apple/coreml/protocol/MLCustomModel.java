@@ -35,8 +35,7 @@ public interface MLCustomModel {
      */
     @Generated
     @Selector("initWithModelDescription:parameterDictionary:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object initWithModelDescriptionParameterDictionaryError(MLModelDescription modelDescription,
+    MLCustomModel initWithModelDescriptionParameterDictionaryError(MLModelDescription modelDescription,
             NSDictionary<String, ?> parameters, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**

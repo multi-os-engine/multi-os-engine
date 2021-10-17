@@ -72,8 +72,7 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIAlertAction allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIAlertAction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

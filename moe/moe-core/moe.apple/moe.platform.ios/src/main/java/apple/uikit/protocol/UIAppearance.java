@@ -22,7 +22,6 @@ import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -45,29 +44,25 @@ public interface UIAppearance {
     @Generated
     @Selector("appearance")
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object _appearance();
+    UIAppearance _appearance();
 
     @Generated
     @Selector("appearanceForTraitCollection:")
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object _appearanceForTraitCollection(UITraitCollection trait);
+    UIAppearance _appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    UIAppearance _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    UIAppearance _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes);
 
     /**
@@ -85,13 +80,11 @@ public interface UIAppearance {
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+    UIAppearance _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    UIAppearance _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 }

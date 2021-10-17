@@ -55,8 +55,7 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ARGeometryElement allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -165,8 +164,7 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ARGeometryElement new_objc();
 
     /**
      * The type of the geometry element.

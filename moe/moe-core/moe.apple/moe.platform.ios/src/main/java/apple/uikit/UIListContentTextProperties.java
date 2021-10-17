@@ -76,8 +76,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIListContentTextProperties allocWithZone(VoidPtr zone);
 
     /**
      * Whether the text is tightened before truncating.
@@ -208,8 +207,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIListContentTextProperties new_objc();
 
     /**
      * The maximum number of lines for the text. 0 indicates the number of lines is unlimited.

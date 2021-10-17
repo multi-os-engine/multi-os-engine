@@ -76,8 +76,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CNContactFormatter allocWithZone(VoidPtr zone);
 
     /**
      * Formats the contact name returning an attributed string.
@@ -181,8 +180,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CNContactFormatter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

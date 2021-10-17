@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCarAirCirculationModeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,8 +89,8 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
 
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
+    public static native INCarAirCirculationModeResolutionResult confirmationRequiredWithValueToConfirm(
+            @NInt long valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -130,19 +128,16 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INCarAirCirculationModeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCarAirCirculationModeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INCarAirCirculationModeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,8 +153,7 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
 
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
+    public static native INCarAirCirculationModeResolutionResult successWithResolvedValue(@NInt long resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -167,8 +161,7 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INCarAirCirculationModeResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -184,8 +177,7 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
      */
     @Generated
     @Selector("confirmationRequiredWithCarAirCirculationModeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithCarAirCirculationModeToConfirm(
+    public static native INCarAirCirculationModeResolutionResult confirmationRequiredWithCarAirCirculationModeToConfirm(
             @NInt long carAirCirculationModeToConfirm);
 
     /**
@@ -194,17 +186,15 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
      */
     @Generated
     @Selector("successWithResolvedCarAirCirculationMode:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedCarAirCirculationMode(@NInt long resolvedCarAirCirculationMode);
+    public static native INCarAirCirculationModeResolutionResult successWithResolvedCarAirCirculationMode(
+            @NInt long resolvedCarAirCirculationMode);
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INCarAirCirculationModeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INCarAirCirculationModeResolutionResult unsupportedWithReason(@NInt long reason);
 }

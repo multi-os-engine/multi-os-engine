@@ -1,6 +1,8 @@
 package apple.soundanalysis;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioBuffer;
+import apple.avfaudio.AVAudioFormat;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -13,7 +15,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -74,8 +75,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SNAudioStreamAnalyzer allocWithZone(VoidPtr zone);
 
     /**
      * Provides the next buffer for analysis
@@ -87,8 +87,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
      */
     @Generated
     @Selector("analyzeAudioBuffer:atAudioFramePosition:")
-    public native void analyzeAudioBufferAtAudioFramePosition(apple.avfaudio.AVAudioBuffer audioBuffer,
-            long audioFramePosition);
+    public native void analyzeAudioBufferAtAudioFramePosition(AVAudioBuffer audioBuffer, long audioFramePosition);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -145,7 +144,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
      */
     @Generated
     @Selector("initWithFormat:")
-    public native SNAudioStreamAnalyzer initWithFormat(apple.avfaudio.AVAudioFormat format);
+    public native SNAudioStreamAnalyzer initWithFormat(AVAudioFormat format);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -171,8 +170,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SNAudioStreamAnalyzer new_objc();
 
     /**
      * Removes all requests from the analyzer

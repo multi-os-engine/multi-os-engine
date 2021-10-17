@@ -50,8 +50,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSCollectionLayoutGroup allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -89,8 +88,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      */
     @Generated
     @Selector("customGroupWithLayoutSize:itemProvider:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object customGroupWithLayoutSizeItemProvider(NSCollectionLayoutSize layoutSize,
+    public static native NSCollectionLayoutGroup customGroupWithLayoutSizeItemProvider(
+            NSCollectionLayoutSize layoutSize,
             @ObjCBlock(name = "call_customGroupWithLayoutSizeItemProvider") Block_customGroupWithLayoutSizeItemProvider itemProvider);
 
     @Runtime(ObjCRuntime.class)
@@ -130,9 +129,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      */
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitem:count:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object horizontalGroupWithLayoutSizeSubitemCount(NSCollectionLayoutSize layoutSize,
-            NSCollectionLayoutItem subitem, @NInt long count);
+    public static native NSCollectionLayoutGroup horizontalGroupWithLayoutSizeSubitemCount(
+            NSCollectionLayoutSize layoutSize, NSCollectionLayoutItem subitem, @NInt long count);
 
     /**
      * Specifies a group that will repeat items until available horizontal space is exhausted.
@@ -140,9 +138,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      */
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitems:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object horizontalGroupWithLayoutSizeSubitems(NSCollectionLayoutSize layoutSize,
-            NSArray<? extends NSCollectionLayoutItem> subitems);
+    public static native NSCollectionLayoutGroup horizontalGroupWithLayoutSizeSubitems(
+            NSCollectionLayoutSize layoutSize, NSArray<? extends NSCollectionLayoutItem> subitems);
 
     @Generated
     @Selector("init")
@@ -188,8 +185,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSCollectionLayoutGroup new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -259,9 +255,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      */
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitem:count:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object verticalGroupWithLayoutSizeSubitemCount(NSCollectionLayoutSize layoutSize,
-            NSCollectionLayoutItem subitem, @NInt long count);
+    public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeSubitemCount(
+            NSCollectionLayoutSize layoutSize, NSCollectionLayoutItem subitem, @NInt long count);
 
     /**
      * Specifies a group that will repeat items until available vertical space is exhausted.
@@ -269,8 +264,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
      */
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitems:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object verticalGroupWithLayoutSizeSubitems(NSCollectionLayoutSize layoutSize,
+    public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeSubitems(NSCollectionLayoutSize layoutSize,
             NSArray<? extends NSCollectionLayoutItem> subitems);
 
     /**

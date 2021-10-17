@@ -70,8 +70,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSPersistentStoreDescription allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSPersistentStoreDescription new_objc();
 
     @Generated
     @Selector("persistentStoreDescriptionWithURL:")

@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -57,8 +56,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCActivationLayer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,8 +89,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("celuLayerWithA:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object celuLayerWithA(float a);
+    public static native MLCActivationLayer celuLayerWithA(float a);
 
     /**
      * Create a clamp activation layer
@@ -103,8 +100,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("clampLayerWithMinValue:maxValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object clampLayerWithMinValueMaxValue(float minValue, float maxValue);
+    public static native MLCActivationLayer clampLayerWithMinValueMaxValue(float minValue, float maxValue);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -148,8 +144,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("eluLayerWithA:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object eluLayerWithA(float a);
+    public static native MLCActivationLayer eluLayerWithA(float a);
 
     /**
      * Create a GELU activation layer
@@ -177,8 +172,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("hardShrinkLayerWithA:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object hardShrinkLayerWithA(float a);
+    public static native MLCActivationLayer hardShrinkLayerWithA(float a);
 
     /**
      * Create a hard sigmoid activation layer
@@ -255,8 +249,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("leakyReLULayerWithNegativeSlope:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object leakyReLULayerWithNegativeSlope(float negativeSlope);
+    public static native MLCActivationLayer leakyReLULayerWithNegativeSlope(float negativeSlope);
 
     /**
      * Create a linear activation layer
@@ -267,8 +260,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("linearLayerWithScale:bias:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object linearLayerWithScaleBias(float scale, float bias);
+    public static native MLCActivationLayer linearLayerWithScaleBias(float scale, float bias);
 
     /**
      * Create a log sigmoid activation layer
@@ -282,8 +274,7 @@ public class MLCActivationLayer extends MLCLayer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCActivationLayer new_objc();
 
     /**
      * Create a ReLU6 activation layer
@@ -314,8 +305,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("relunLayerWithA:b:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object relunLayerWithAB(float a, float b);
+    public static native MLCActivationLayer relunLayerWithAB(float a, float b);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -364,8 +354,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("softPlusLayerWithBeta:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object softPlusLayerWithBeta(float beta);
+    public static native MLCActivationLayer softPlusLayerWithBeta(float beta);
 
     /**
      * Create a soft shrink activation layer
@@ -384,8 +373,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("softShrinkLayerWithA:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object softShrinkLayerWithA(float a);
+    public static native MLCActivationLayer softShrinkLayerWithA(float a);
 
     /**
      * Create a soft sign activation layer
@@ -431,8 +419,7 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("thresholdLayerWithThreshold:replacement:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object thresholdLayerWithThresholdReplacement(float threshold, float replacement);
+    public static native MLCActivationLayer thresholdLayerWithThresholdReplacement(float threshold, float replacement);
 
     @Generated
     @Selector("version")

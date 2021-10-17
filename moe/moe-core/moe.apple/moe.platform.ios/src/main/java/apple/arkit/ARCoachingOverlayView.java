@@ -83,8 +83,7 @@ public class ARCoachingOverlayView extends UIView {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ARCoachingOverlayView allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
@@ -120,25 +119,21 @@ public class ARCoachingOverlayView extends UIView {
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native ARCoachingOverlayView appearance();
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public ARCoachingOverlayView _appearance() {
         return appearance();
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native ARCoachingOverlayView appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public ARCoachingOverlayView _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
@@ -146,29 +141,25 @@ public class ARCoachingOverlayView extends UIView {
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public static native ARCoachingOverlayView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public ARCoachingOverlayView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    public static native ARCoachingOverlayView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            UITraitCollection trait, NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
+    public ARCoachingOverlayView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
             NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
@@ -177,28 +168,24 @@ public class ARCoachingOverlayView extends UIView {
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native ARCoachingOverlayView appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public ARCoachingOverlayView _appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native ARCoachingOverlayView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public ARCoachingOverlayView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -329,8 +316,7 @@ public class ARCoachingOverlayView extends UIView {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ARCoachingOverlayView new_objc();
 
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")

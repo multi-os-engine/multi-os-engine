@@ -83,8 +83,7 @@ public class UIColor extends NSObject
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIColor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -270,8 +269,7 @@ public class UIColor extends NSObject
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIColor new_objc();
 
     /**
      * 1.0, 0.5, 0.0 RGB
@@ -495,14 +493,12 @@ public class UIColor extends NSObject
 
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public static native UIColor objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public UIColor _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }

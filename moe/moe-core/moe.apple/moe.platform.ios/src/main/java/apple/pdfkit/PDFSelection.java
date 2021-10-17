@@ -72,8 +72,7 @@ public class PDFSelection extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PDFSelection allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attributedString")
@@ -212,8 +211,7 @@ public class PDFSelection extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PDFSelection new_objc();
 
     /**
      * Returns the number of contiguous ranges of text on the specified page. Returns zero if page is not in selection.

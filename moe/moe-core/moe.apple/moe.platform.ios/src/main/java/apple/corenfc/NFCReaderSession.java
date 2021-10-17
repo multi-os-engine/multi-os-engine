@@ -58,8 +58,7 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NFCReaderSession allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -145,8 +144,7 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NFCReaderSession new_objc();
 
     /**
      * [@property] readingAvailable

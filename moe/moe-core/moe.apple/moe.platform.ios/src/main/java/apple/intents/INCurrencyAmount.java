@@ -69,8 +69,7 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCurrencyAmount allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,8 +130,7 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCurrencyAmount new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

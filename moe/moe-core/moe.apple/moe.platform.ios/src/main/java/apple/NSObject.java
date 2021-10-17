@@ -87,8 +87,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSObject allocWithZone(VoidPtr zone);
 
     /**
      * Return YES if the key-value observing machinery should automatically invoke -willChangeValueForKey:/-didChangeValueForKey:, -willChange:valuesAtIndexes:forKey:/-didChange:valuesAtIndexes:forKey:, or -willChangeValueForKey:withSetMutation:usingObjects:/-didChangeValueForKey:withSetMutation:usingObjects: whenever instances of the class receive key-value coding messages for the key, or mutating key-value coding-compliant methods for the key are invoked. Return NO otherwise. Starting in Mac OS 10.5, the default implementation of this method searches the receiving class for a method whose name matches the pattern +automaticallyNotifiesObserversOf<Key>, and returns the result of invoking that method if it is found. So, any such method must return BOOL too. If no such method is found YES is returned.
@@ -172,8 +171,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSObject new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -813,8 +811,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     @Generated
     @Selector("self")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object self();
+    public native NSObject self();
 
     /**
      * Returns the activation point for an accessible element in screen coordinates.

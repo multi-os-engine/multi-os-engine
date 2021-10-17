@@ -51,8 +51,7 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MDLAnimationBindComponent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +134,7 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MDLAnimationBindComponent new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

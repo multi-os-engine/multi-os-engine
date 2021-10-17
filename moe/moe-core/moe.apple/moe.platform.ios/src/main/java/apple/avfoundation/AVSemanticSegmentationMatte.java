@@ -15,7 +15,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -62,8 +61,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVSemanticSegmentationMatte allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -165,8 +163,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVSemanticSegmentationMatte new_objc();
 
     /**
      * [@property] pixelFormatType
@@ -199,8 +196,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
      */
     @Generated
     @Selector("semanticSegmentationMatteByApplyingExifOrientation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object semanticSegmentationMatteByApplyingExifOrientation(int exifOrientation);
+    public native AVSemanticSegmentationMatte semanticSegmentationMatteByApplyingExifOrientation(int exifOrientation);
 
     /**
      * semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBuffer:error:
@@ -215,8 +211,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
      */
     @Generated
     @Selector("semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBuffer:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBufferError(
+    public native AVSemanticSegmentationMatte semanticSegmentationMatteByReplacingSemanticSegmentationMatteWithPixelBufferError(
             CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**

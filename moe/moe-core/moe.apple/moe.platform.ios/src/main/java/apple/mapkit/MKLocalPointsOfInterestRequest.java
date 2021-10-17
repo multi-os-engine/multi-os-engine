@@ -52,8 +52,7 @@ public class MKLocalPointsOfInterestRequest extends NSObject implements NSCopyin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MKLocalPointsOfInterestRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +137,7 @@ public class MKLocalPointsOfInterestRequest extends NSObject implements NSCopyin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MKLocalPointsOfInterestRequest new_objc();
 
     @Generated
     @Selector("pointOfInterestFilter")

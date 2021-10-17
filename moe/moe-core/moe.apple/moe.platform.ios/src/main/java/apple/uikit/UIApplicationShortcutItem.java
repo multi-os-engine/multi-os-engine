@@ -67,8 +67,7 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIApplicationShortcutItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -129,8 +128,7 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIApplicationShortcutItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INSnoozeTasksTaskResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,14 +73,12 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INSnoozeTasksTaskResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("confirmationRequiredWithTaskToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTaskToConfirm(INTask taskToConfirm);
+    public static native INSnoozeTasksTaskResolutionResult confirmationRequiredWithTaskToConfirm(INTask taskToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -94,8 +90,8 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
 
     @Generated
     @Selector("disambiguationWithTasksToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithTasksToDisambiguate(NSArray<? extends INTask> tasksToDisambiguate);
+    public static native INSnoozeTasksTaskResolutionResult disambiguationWithTasksToDisambiguate(
+            NSArray<? extends INTask> tasksToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -134,19 +130,16 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INSnoozeTasksTaskResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INSnoozeTasksTaskResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INSnoozeTasksTaskResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -162,8 +155,7 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
 
     @Generated
     @Selector("successWithResolvedTask:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedTask(INTask resolvedTask);
+    public static native INSnoozeTasksTaskResolutionResult successWithResolvedTask(INTask resolvedTask);
 
     @Generated
     @Selector("superclass")
@@ -171,18 +163,15 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INSnoozeTasksTaskResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedForReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedForReason(@NInt long reason);
+    public static native INSnoozeTasksTaskResolutionResult unsupportedForReason(@NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INSnoozeTasksTaskResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

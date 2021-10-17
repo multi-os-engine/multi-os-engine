@@ -19,12 +19,10 @@ package apple.foundation.protocol;
 import apple.foundation.NSCoder;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
-import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("Foundation")
@@ -40,6 +38,5 @@ public interface NSCoding {
      */
     @Generated
     @Selector("initWithCoder:")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object initWithCoder(NSCoder coder);
+    NSCoding initWithCoder(NSCoder coder);
 }

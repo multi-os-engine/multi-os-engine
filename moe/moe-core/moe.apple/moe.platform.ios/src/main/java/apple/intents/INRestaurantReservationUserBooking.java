@@ -68,8 +68,7 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INRestaurantReservationUserBooking allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INRestaurantReservationUserBooking new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -55,8 +54,7 @@ public class ENExposureDetectionSummary extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ENExposureDetectionSummary allocWithZone(VoidPtr zone);
 
     /**
      * Array of durations in seconds at certain radio signal attenuations.
@@ -176,8 +174,7 @@ public class ENExposureDetectionSummary extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ENExposureDetectionSummary new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

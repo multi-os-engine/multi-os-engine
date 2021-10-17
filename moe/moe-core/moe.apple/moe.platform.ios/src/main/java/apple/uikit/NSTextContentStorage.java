@@ -67,8 +67,7 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextContentStorage allocWithZone(VoidPtr zone);
 
     /**
      * The document contents. KVO-compliant
@@ -165,8 +164,7 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextContentStorage new_objc();
 
     /**
      * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound when the offset cannot be represented in an integer value (i.e. locations are not in the same document).

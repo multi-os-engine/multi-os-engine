@@ -55,8 +55,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SFVoiceAnalytics allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -142,8 +141,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SFVoiceAnalytics new_objc();
 
     /**
      * Pitch measures the highness and lowness of tone and is measured in logarithm of normalized pitch estimates

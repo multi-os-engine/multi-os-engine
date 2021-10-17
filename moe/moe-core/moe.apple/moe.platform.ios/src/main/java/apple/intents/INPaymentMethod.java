@@ -68,16 +68,14 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INPaymentMethod allocWithZone(VoidPtr zone);
 
     /**
      * This payment method represents Apple Pay. Its .type will be INPaymentMethodTypeApplePay. The .name, .identificationHint and .icon properties are not significant for this type of payment method.
      */
     @Generated
     @Selector("applePayPaymentMethod")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object applePayPaymentMethod();
+    public static native INPaymentMethod applePayPaymentMethod();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +136,7 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INPaymentMethod new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

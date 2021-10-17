@@ -73,8 +73,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAssetReaderVideoCompositionOutput allocWithZone(VoidPtr zone);
 
     /**
      * assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:
@@ -159,8 +158,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAssetReaderVideoCompositionOutput new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

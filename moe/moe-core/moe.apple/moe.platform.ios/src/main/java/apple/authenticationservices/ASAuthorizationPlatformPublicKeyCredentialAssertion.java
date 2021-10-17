@@ -53,8 +53,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertion extends NSObjec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationPlatformPublicKeyCredentialAssertion allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertion extends NSObjec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationPlatformPublicKeyCredentialAssertion new_objc();
 
     @Generated
     @Selector("rawAuthenticatorData")

@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -86,8 +85,7 @@ public class UIWindowSceneActivationAction extends UIAction {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIWindowSceneActivationAction allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -105,9 +103,8 @@ public class UIWindowSceneActivationAction extends UIAction {
 
     @Generated
     @Selector("captureTextFromCameraActionForResponder:identifier:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object captureTextFromCameraActionForResponderIdentifier(UIResponder responder,
-            String identifier);
+    public static native UIWindowSceneActivationAction captureTextFromCameraActionForResponderIdentifier(
+            UIResponder responder, String identifier);
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -162,8 +159,7 @@ public class UIWindowSceneActivationAction extends UIAction {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIWindowSceneActivationAction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -51,8 +51,7 @@ public class NSCollectionLayoutGroupCustomItem extends NSObject implements NSCop
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSCollectionLayoutGroupCustomItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class NSCollectionLayoutGroupCustomItem extends NSObject implements NSCop
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSCollectionLayoutGroupCustomItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

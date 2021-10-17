@@ -34,7 +34,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -90,8 +89,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVURLAsset allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("assetWithURL:")
@@ -190,8 +188,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVURLAsset new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -305,14 +302,12 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public static native AVURLAsset objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public AVURLAsset _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }

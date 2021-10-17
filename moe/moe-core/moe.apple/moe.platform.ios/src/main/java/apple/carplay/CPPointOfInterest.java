@@ -53,8 +53,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CPPointOfInterest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -186,8 +185,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CPPointOfInterest new_objc();
 
     /**
      * Image used for map view annotations

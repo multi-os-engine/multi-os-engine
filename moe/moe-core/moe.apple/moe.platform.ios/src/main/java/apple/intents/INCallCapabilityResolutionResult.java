@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INCallCapabilityResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCallCapabilityResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,13 +76,12 @@ public class INCallCapabilityResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithCallCapabilityToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithCallCapabilityToConfirm(@NInt long callCapabilityToConfirm);
+    public static native INCallCapabilityResolutionResult confirmationRequiredWithCallCapabilityToConfirm(
+            @NInt long callCapabilityToConfirm);
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INCallCapabilityResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
@@ -127,19 +124,16 @@ public class INCallCapabilityResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INCallCapabilityResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCallCapabilityResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INCallCapabilityResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -159,8 +153,8 @@ public class INCallCapabilityResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedCallCapability:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedCallCapability(@NInt long resolvedCallCapability);
+    public static native INCallCapabilityResolutionResult successWithResolvedCallCapability(
+            @NInt long resolvedCallCapability);
 
     @Generated
     @Selector("superclass")
@@ -168,13 +162,11 @@ public class INCallCapabilityResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INCallCapabilityResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INCallCapabilityResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

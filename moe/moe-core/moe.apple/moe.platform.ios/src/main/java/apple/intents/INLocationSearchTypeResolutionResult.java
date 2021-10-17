@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INLocationSearchTypeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,8 +76,7 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
      */
     @Generated
     @Selector("confirmationRequiredWithLocationSearchTypeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithLocationSearchTypeToConfirm(
+    public static native INLocationSearchTypeResolutionResult confirmationRequiredWithLocationSearchTypeToConfirm(
             @NInt long locationSearchTypeToConfirm);
 
     @Generated
@@ -122,19 +119,16 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INLocationSearchTypeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INLocationSearchTypeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INLocationSearchTypeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -154,8 +148,8 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
      */
     @Generated
     @Selector("successWithResolvedLocationSearchType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedLocationSearchType(@NInt long resolvedLocationSearchType);
+    public static native INLocationSearchTypeResolutionResult successWithResolvedLocationSearchType(
+            @NInt long resolvedLocationSearchType);
 
     @Generated
     @Selector("superclass")
@@ -163,8 +157,7 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INLocationSearchTypeResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -173,12 +166,10 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INLocationSearchTypeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INLocationSearchTypeResolutionResult unsupportedWithReason(@NInt long reason);
 }

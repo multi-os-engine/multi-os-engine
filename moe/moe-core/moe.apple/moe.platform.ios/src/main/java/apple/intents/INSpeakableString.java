@@ -70,8 +70,7 @@ public class INSpeakableString extends NSObject implements INSpeakable, NSCopyin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INSpeakableString allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class INSpeakableString extends NSObject implements INSpeakable, NSCopyin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INSpeakableString new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -78,8 +78,7 @@ public class AVPlayerViewController extends UIViewController {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVPlayerViewController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
@@ -148,8 +147,7 @@ public class AVPlayerViewController extends UIViewController {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVPlayerViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

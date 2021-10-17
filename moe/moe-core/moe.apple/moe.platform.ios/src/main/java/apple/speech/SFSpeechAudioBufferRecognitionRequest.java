@@ -17,6 +17,8 @@ limitations under the License.
 package apple.speech;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioFormat;
+import apple.avfaudio.AVAudioPCMBuffer;
 import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
@@ -27,7 +29,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -68,8 +69,7 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SFSpeechAudioBufferRecognitionRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +130,7 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SFSpeechAudioBufferRecognitionRequest new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -159,7 +158,7 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
      */
     @Generated
     @Selector("appendAudioPCMBuffer:")
-    public native void appendAudioPCMBuffer(apple.avfaudio.AVAudioPCMBuffer audioPCMBuffer);
+    public native void appendAudioPCMBuffer(AVAudioPCMBuffer audioPCMBuffer);
 
     @Generated
     @Selector("appendAudioSampleBuffer:")
@@ -181,5 +180,5 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
      */
     @Generated
     @Selector("nativeAudioFormat")
-    public native apple.avfaudio.AVAudioFormat nativeAudioFormat();
+    public native AVAudioFormat nativeAudioFormat();
 }

@@ -95,8 +95,7 @@ public class NSString extends NSObject
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSString allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -164,8 +163,7 @@ public class NSString extends NSObject
     @Generated
     @Variadic()
     @Selector("localizedStringWithFormat:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedStringWithFormat(String format, Object... varargs);
+    public static native NSString localizedStringWithFormat(String format, Object... varargs);
 
     /**
      * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
@@ -177,8 +175,7 @@ public class NSString extends NSObject
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSString new_objc();
 
     @Generated
     @Selector("pathWithComponents:")
@@ -1285,14 +1282,12 @@ public class NSString extends NSObject
 
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public static native NSString objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public NSString _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }

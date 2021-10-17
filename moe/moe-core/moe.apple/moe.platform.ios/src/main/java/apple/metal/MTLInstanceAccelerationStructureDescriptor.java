@@ -52,8 +52,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MTLInstanceAccelerationStructureDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -164,8 +163,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MTLInstanceAccelerationStructureDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

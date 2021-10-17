@@ -56,8 +56,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSPolygonBuffer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -84,8 +83,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Owned
     @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native MPSPolygonBuffer copyWithZone(VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -175,8 +173,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSPolygonBuffer new_objc();
 
     @Generated
     @Selector("polygonBuffer")

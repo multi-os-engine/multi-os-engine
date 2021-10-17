@@ -58,8 +58,7 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HKVerifiableClinicalRecordSubject allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -156,8 +155,7 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HKVerifiableClinicalRecordSubject new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

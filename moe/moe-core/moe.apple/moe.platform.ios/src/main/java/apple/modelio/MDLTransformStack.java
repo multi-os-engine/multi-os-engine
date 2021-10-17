@@ -80,8 +80,7 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MDLTransformStack allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animatedValueWithName:")
@@ -173,8 +172,7 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MDLTransformStack new_objc();
 
     @Generated
     @Selector("resetsTransform")

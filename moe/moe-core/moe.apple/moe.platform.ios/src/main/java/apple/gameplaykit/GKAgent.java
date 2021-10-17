@@ -78,8 +78,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKAgent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,8 +139,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKAgent new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

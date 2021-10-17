@@ -55,8 +55,7 @@ public class AVAudioPlayer extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAudioPlayer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -227,8 +226,7 @@ public class AVAudioPlayer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAudioPlayer new_objc();
 
     @Generated
     @Selector("numberOfChannels")

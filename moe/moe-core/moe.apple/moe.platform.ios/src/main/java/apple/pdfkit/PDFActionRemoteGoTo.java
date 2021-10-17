@@ -59,8 +59,7 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PDFActionRemoteGoTo allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,8 +139,7 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PDFActionRemoteGoTo new_objc();
 
     /**
      * Get and set the page index (zero-based) referenced by the action.

@@ -79,8 +79,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPMediaQuery allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("artistsQuery")
@@ -161,8 +160,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPMediaQuery new_objc();
 
     @Generated
     @Selector("playlistsQuery")

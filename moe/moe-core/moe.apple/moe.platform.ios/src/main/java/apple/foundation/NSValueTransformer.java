@@ -61,8 +61,7 @@ public class NSValueTransformer extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSValueTransformer allocWithZone(VoidPtr zone);
 
     /**
      * flag indicating whether transformation is read-only or not
@@ -130,8 +129,7 @@ public class NSValueTransformer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSValueTransformer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

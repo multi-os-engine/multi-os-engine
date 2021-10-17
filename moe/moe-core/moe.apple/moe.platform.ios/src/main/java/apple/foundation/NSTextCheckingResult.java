@@ -73,8 +73,7 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextCheckingResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -168,8 +167,7 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextCheckingResult new_objc();
 
     /**
      * Methods for creating instances of the various types of results.

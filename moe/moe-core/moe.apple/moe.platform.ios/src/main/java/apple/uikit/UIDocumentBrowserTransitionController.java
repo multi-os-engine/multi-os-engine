@@ -59,8 +59,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIDocumentBrowserTransitionController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animateTransition:")
@@ -149,8 +148,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIDocumentBrowserTransitionController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

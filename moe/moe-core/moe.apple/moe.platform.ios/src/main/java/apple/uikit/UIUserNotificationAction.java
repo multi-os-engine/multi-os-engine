@@ -70,8 +70,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIUserNotificationAction allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIUserNotificationAction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

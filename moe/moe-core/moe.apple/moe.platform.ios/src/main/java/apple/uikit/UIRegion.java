@@ -71,8 +71,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIRegion allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,8 +139,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIRegion new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -210,30 +208,26 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("inverseRegion")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object inverseRegion();
+    public native UIRegion inverseRegion();
 
     /**
      * Create a new region that is the original region minus the supplied region
      */
     @Generated
     @Selector("regionByDifferenceFromRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByDifferenceFromRegion(UIRegion region);
+    public native UIRegion regionByDifferenceFromRegion(UIRegion region);
 
     /**
      * Create a new region that is the region covered by the original region and the supplied region
      */
     @Generated
     @Selector("regionByIntersectionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByIntersectionWithRegion(UIRegion region);
+    public native UIRegion regionByIntersectionWithRegion(UIRegion region);
 
     /**
      * Create a new region that is the original region plus the supplied region
      */
     @Generated
     @Selector("regionByUnionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByUnionWithRegion(UIRegion region);
+    public native UIRegion regionByUnionWithRegion(UIRegion region);
 }

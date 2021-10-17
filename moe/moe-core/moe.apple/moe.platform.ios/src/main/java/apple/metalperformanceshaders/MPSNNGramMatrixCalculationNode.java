@@ -52,8 +52,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSNNGramMatrixCalculationNode allocWithZone(VoidPtr zone);
 
     /**
      * [@property]   alpha
@@ -148,8 +147,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSNNGramMatrixCalculationNode new_objc();
 
     /**
      * Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.

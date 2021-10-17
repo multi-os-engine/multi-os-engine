@@ -69,8 +69,7 @@ public class UIDynamicAnimator extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIDynamicAnimator allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,8 +130,7 @@ public class UIDynamicAnimator extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIDynamicAnimator new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -72,8 +72,7 @@ public class UIAction extends UIMenuElement {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIAction allocWithZone(VoidPtr zone);
 
     /**
      * This action's style.
@@ -171,8 +170,7 @@ public class UIAction extends UIMenuElement {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIAction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -290,7 +288,6 @@ public class UIAction extends UIMenuElement {
      */
     @Generated
     @Selector("captureTextFromCameraActionForResponder:identifier:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object captureTextFromCameraActionForResponderIdentifier(UIResponder responder,
+    public static native UIAction captureTextFromCameraActionForResponderIdentifier(UIResponder responder,
             String identifier);
 }

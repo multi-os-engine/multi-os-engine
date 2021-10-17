@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -49,8 +48,7 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSPersistentCloudKitContainerEventRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -84,21 +82,20 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
 
     @Generated
     @Selector("fetchEventsAfterDate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchEventsAfterDate(NSDate date);
+    public static native NSPersistentCloudKitContainerEventRequest fetchEventsAfterDate(NSDate date);
 
     @Generated
     @Selector("fetchEventsAfterEvent:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchEventsAfterEvent(NSPersistentCloudKitContainerEvent event);
+    public static native NSPersistentCloudKitContainerEventRequest fetchEventsAfterEvent(
+            NSPersistentCloudKitContainerEvent event);
 
     /**
      * Supports fetching instances of NSPersistentCloudKitContainerEvent matching a fetch request.
      */
     @Generated
     @Selector("fetchEventsMatchingFetchRequest:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fetchEventsMatchingFetchRequest(NSFetchRequest<?> fetchRequest);
+    public static native NSPersistentCloudKitContainerEventRequest fetchEventsMatchingFetchRequest(
+            NSFetchRequest<?> fetchRequest);
 
     /**
      * Returns an instance of NSFetchRequest configured with the correct entity for fetching instances
@@ -141,8 +138,7 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSPersistentCloudKitContainerEventRequest new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

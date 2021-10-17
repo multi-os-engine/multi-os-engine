@@ -69,8 +69,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UTType allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -384,8 +383,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UTType new_objc();
 
     /**
      * \brief If available, the preferred (first available) tag of class

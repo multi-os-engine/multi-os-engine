@@ -64,8 +64,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSMeasurement<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -126,8 +125,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSMeasurement<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -61,8 +61,7 @@ public class NSTextViewportLayoutController extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextViewportLayoutController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -146,8 +145,7 @@ public class NSTextViewportLayoutController extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextViewportLayoutController new_objc();
 
     /**
      * Relocates the viewport to start with the specified *location*.

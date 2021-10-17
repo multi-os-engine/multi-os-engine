@@ -167,8 +167,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNConvolutionGradient allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -315,8 +314,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNConvolutionGradient new_objc();
 
     /**
      * CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers. Weights and biases

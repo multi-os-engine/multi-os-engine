@@ -75,8 +75,7 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNPhysicsShape allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNPhysicsShape new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

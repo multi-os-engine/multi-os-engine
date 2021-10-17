@@ -52,8 +52,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AXNumericDataAxisDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attributedTitle")
@@ -169,8 +168,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AXNumericDataAxisDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

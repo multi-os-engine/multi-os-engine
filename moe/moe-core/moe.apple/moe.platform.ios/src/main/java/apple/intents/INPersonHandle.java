@@ -68,8 +68,7 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INPersonHandle allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INPersonHandle new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

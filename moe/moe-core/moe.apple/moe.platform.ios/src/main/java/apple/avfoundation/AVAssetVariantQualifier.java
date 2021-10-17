@@ -51,8 +51,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAssetVariantQualifier allocWithZone(VoidPtr zone);
 
     /**
      * assetVariantQualifierWithPredicate:
@@ -145,8 +144,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAssetVariantQualifier new_objc();
 
     /**
      * predicateForChannelCount:mediaSelectionOption:operatorType:

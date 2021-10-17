@@ -51,8 +51,7 @@ public class PKDisbursementAuthorizationController extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PKDisbursementAuthorizationController allocWithZone(VoidPtr zone);
 
     /**
      * This presents the Apple Pay sheet. If the sheet is presented successfully, success is YES. Otherwise, an error will be returned.
@@ -149,8 +148,7 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PKDisbursementAuthorizationController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

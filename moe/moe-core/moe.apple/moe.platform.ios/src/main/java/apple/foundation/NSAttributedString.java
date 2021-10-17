@@ -82,8 +82,7 @@ public class NSAttributedString extends NSObject
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSAttributedString allocWithZone(VoidPtr zone);
 
     /**
      * A convenience method for creating an attributed string containing attachment using NSAttachmentCharacter as the base character.
@@ -151,8 +150,7 @@ public class NSAttributedString extends NSObject
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSAttributedString new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -383,14 +381,12 @@ public class NSAttributedString extends NSObject
 
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native NSAttributedString objectWithItemProviderDataTypeIdentifierError(NSData data,
+            String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public NSAttributedString _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
@@ -580,8 +576,8 @@ public class NSAttributedString extends NSObject
     @Generated
     @Variadic()
     @Selector("localizedAttributedStringWithFormat:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedAttributedStringWithFormat(NSAttributedString format, Object... varargs);
+    public static native NSAttributedString localizedAttributedStringWithFormat(NSAttributedString format,
+            Object... varargs);
 
     /**
      * Formats the string using the current locale and the specified options.
@@ -589,7 +585,6 @@ public class NSAttributedString extends NSObject
     @Generated
     @Variadic()
     @Selector("localizedAttributedStringWithFormat:options:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedAttributedStringWithFormatOptions(NSAttributedString format,
+    public static native NSAttributedString localizedAttributedStringWithFormatOptions(NSAttributedString format,
             @NUInt long options, Object... varargs);
 }

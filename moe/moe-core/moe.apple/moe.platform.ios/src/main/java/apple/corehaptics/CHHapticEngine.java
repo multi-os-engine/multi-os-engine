@@ -1,6 +1,7 @@
 package apple.corehaptics;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioSession;
 import apple.corehaptics.protocol.CHHapticAdvancedPatternPlayer;
 import apple.corehaptics.protocol.CHHapticDeviceCapability;
 import apple.corehaptics.protocol.CHHapticPatternPlayer;
@@ -63,8 +64,7 @@ public class CHHapticEngine extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CHHapticEngine allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -182,7 +182,7 @@ public class CHHapticEngine extends NSObject {
      */
     @Generated
     @Selector("initWithAudioSession:error:")
-    public native CHHapticEngine initWithAudioSessionError(apple.avfaudio.AVAudioSession audioSession,
+    public native CHHapticEngine initWithAudioSessionError(AVAudioSession audioSession,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
@@ -247,8 +247,7 @@ public class CHHapticEngine extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CHHapticEngine new_objc();
 
     /**
      * notifyWhenPlayersFinished:

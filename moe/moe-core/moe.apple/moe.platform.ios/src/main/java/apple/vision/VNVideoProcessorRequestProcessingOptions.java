@@ -52,8 +52,7 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native VNVideoProcessorRequestProcessingOptions allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,8 +132,7 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native VNVideoProcessorRequestProcessingOptions new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

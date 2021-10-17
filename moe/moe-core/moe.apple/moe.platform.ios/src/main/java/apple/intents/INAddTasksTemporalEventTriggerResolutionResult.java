@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INAddTasksTemporalEventTriggerResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,14 +73,12 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INAddTasksTemporalEventTriggerResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("confirmationRequiredWithTemporalEventTriggerToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTemporalEventTriggerToConfirm(
+    public static native INAddTasksTemporalEventTriggerResolutionResult confirmationRequiredWithTemporalEventTriggerToConfirm(
             INTemporalEventTrigger temporalEventTriggerToConfirm);
 
     @Generated
@@ -95,8 +91,7 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
 
     @Generated
     @Selector("disambiguationWithTemporalEventTriggersToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithTemporalEventTriggersToDisambiguate(
+    public static native INAddTasksTemporalEventTriggerResolutionResult disambiguationWithTemporalEventTriggersToDisambiguate(
             NSArray<? extends INTemporalEventTrigger> temporalEventTriggersToDisambiguate);
 
     @Generated
@@ -136,19 +131,16 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INAddTasksTemporalEventTriggerResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INAddTasksTemporalEventTriggerResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INAddTasksTemporalEventTriggerResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -164,8 +156,7 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
 
     @Generated
     @Selector("successWithResolvedTemporalEventTrigger:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedTemporalEventTrigger(
+    public static native INAddTasksTemporalEventTriggerResolutionResult successWithResolvedTemporalEventTrigger(
             INTemporalEventTrigger resolvedTemporalEventTrigger);
 
     @Generated
@@ -174,18 +165,15 @@ public class INAddTasksTemporalEventTriggerResolutionResult extends INTemporalEv
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INAddTasksTemporalEventTriggerResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedForReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedForReason(@NInt long reason);
+    public static native INAddTasksTemporalEventTriggerResolutionResult unsupportedForReason(@NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INAddTasksTemporalEventTriggerResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

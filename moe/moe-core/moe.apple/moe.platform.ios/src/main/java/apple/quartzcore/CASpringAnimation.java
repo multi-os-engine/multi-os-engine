@@ -71,8 +71,7 @@ public class CASpringAnimation extends CABasicAnimation {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CASpringAnimation allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animation")
@@ -146,8 +145,7 @@ public class CASpringAnimation extends CABasicAnimation {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CASpringAnimation new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

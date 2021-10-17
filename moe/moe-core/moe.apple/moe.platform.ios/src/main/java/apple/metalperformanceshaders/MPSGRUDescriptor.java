@@ -99,8 +99,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSGRUDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,8 +132,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("createGRUDescriptorWithInputFeatureChannels:outputFeatureChannels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object createGRUDescriptorWithInputFeatureChannelsOutputFeatureChannels(
+    public static native MPSGRUDescriptor createGRUDescriptorWithInputFeatureChannelsOutputFeatureChannels(
             @NUInt long inputFeatureChannels, @NUInt long outputFeatureChannels);
 
     @Generated
@@ -220,8 +218,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSGRUDescriptor new_objc();
 
     /**
      * [@property]   outputGateInputGateWeights

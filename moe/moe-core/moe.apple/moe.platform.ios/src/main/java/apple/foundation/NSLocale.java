@@ -79,8 +79,7 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSLocale allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -197,8 +196,7 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSLocale new_objc();
 
     /**
      * note that this list does not indicate what language the app is actually running in; the NSBundle.mainBundle object determines that at launch and knows that information

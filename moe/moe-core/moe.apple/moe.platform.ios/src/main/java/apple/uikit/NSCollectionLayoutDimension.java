@@ -44,8 +44,7 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("absoluteDimension:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object absoluteDimension(@NFloat double absoluteDimension);
+    public static native NSCollectionLayoutDimension absoluteDimension(@NFloat double absoluteDimension);
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
@@ -58,8 +57,7 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSCollectionLayoutDimension allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -107,24 +105,21 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("estimatedDimension:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object estimatedDimension(@NFloat double estimatedDimension);
+    public static native NSCollectionLayoutDimension estimatedDimension(@NFloat double estimatedDimension);
 
     /**
      * dimension is computed as a fraction of the height of the containing group
      */
     @Generated
     @Selector("fractionalHeightDimension:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fractionalHeightDimension(@NFloat double fractionalHeight);
+    public static native NSCollectionLayoutDimension fractionalHeightDimension(@NFloat double fractionalHeight);
 
     /**
      * dimension is computed as a fraction of the width of the containing group
      */
     @Generated
     @Selector("fractionalWidthDimension:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fractionalWidthDimension(@NFloat double fractionalWidth);
+    public static native NSCollectionLayoutDimension fractionalWidthDimension(@NFloat double fractionalWidth);
 
     @Generated
     @Selector("hash")
@@ -175,8 +170,7 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSCollectionLayoutDimension new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

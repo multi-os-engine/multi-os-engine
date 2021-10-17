@@ -28,7 +28,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -69,8 +68,7 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PHCollectionListChangeRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -111,8 +109,7 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
 
     @Generated
     @Selector("creationRequestForCollectionListWithTitle:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object creationRequestForCollectionListWithTitle(String title);
+    public static native PHCollectionListChangeRequest creationRequestForCollectionListWithTitle(String title);
 
     @Generated
     @Selector("debugDescription")
@@ -158,8 +155,7 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PHCollectionListChangeRequest new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

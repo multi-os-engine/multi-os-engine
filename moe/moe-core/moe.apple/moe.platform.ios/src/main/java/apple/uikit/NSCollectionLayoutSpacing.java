@@ -50,8 +50,7 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSCollectionLayoutSpacing allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -94,16 +93,14 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("fixedSpacing:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fixedSpacing(@NFloat double fixedSpacing);
+    public static native NSCollectionLayoutSpacing fixedSpacing(@NFloat double fixedSpacing);
 
     /**
      * i.e. >=
      */
     @Generated
     @Selector("flexibleSpacing:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object flexibleSpacing(@NFloat double flexibleSpacing);
+    public static native NSCollectionLayoutSpacing flexibleSpacing(@NFloat double flexibleSpacing);
 
     @Generated
     @Selector("hash")
@@ -146,8 +143,7 @@ public class NSCollectionLayoutSpacing extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSCollectionLayoutSpacing new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

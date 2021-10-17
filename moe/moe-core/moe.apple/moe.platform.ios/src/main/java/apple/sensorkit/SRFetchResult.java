@@ -49,8 +49,7 @@ public class SRFetchResult<_SampleType> extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SRFetchResult<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -121,8 +120,7 @@ public class SRFetchResult<_SampleType> extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SRFetchResult<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

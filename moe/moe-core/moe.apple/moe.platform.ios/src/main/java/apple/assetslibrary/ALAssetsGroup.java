@@ -68,8 +68,7 @@ public class ALAssetsGroup extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ALAssetsGroup allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class ALAssetsGroup extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ALAssetsGroup new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

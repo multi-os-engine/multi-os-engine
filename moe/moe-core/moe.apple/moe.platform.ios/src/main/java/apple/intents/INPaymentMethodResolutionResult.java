@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INPaymentMethodResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,8 +73,7 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INPaymentMethodResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -84,8 +81,8 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithPaymentMethodToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithPaymentMethodToConfirm(INPaymentMethod paymentMethodToConfirm);
+    public static native INPaymentMethodResolutionResult confirmationRequiredWithPaymentMethodToConfirm(
+            INPaymentMethod paymentMethodToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -100,8 +97,7 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithPaymentMethodsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithPaymentMethodsToDisambiguate(
+    public static native INPaymentMethodResolutionResult disambiguationWithPaymentMethodsToDisambiguate(
             NSArray<? extends INPaymentMethod> paymentMethodsToDisambiguate);
 
     @Generated
@@ -136,19 +132,16 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INPaymentMethodResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INPaymentMethodResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INPaymentMethodResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -168,8 +161,8 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedPaymentMethod:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedPaymentMethod(INPaymentMethod resolvedPaymentMethod);
+    public static native INPaymentMethodResolutionResult successWithResolvedPaymentMethod(
+            INPaymentMethod resolvedPaymentMethod);
 
     @Generated
     @Selector("superclass")
@@ -177,13 +170,11 @@ public class INPaymentMethodResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INPaymentMethodResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INPaymentMethodResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

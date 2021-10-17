@@ -32,7 +32,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -74,13 +73,11 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKLocalPlayer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("anonymousGuestPlayerWithIdentifier:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object anonymousGuestPlayerWithIdentifier(String guestIdentifier);
+    public static native GKLocalPlayer anonymousGuestPlayerWithIdentifier(String guestIdentifier);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -150,8 +147,7 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKLocalPlayer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

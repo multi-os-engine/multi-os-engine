@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -55,8 +54,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native TKTokenKeychainKey allocWithZone(VoidPtr zone);
 
     /**
      * Represents private tag data.  The property is an equivalent to kSecAttrApplicationTag in SecItem.h
@@ -183,8 +181,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native TKTokenKeychainKey new_objc();
 
     /**
      * Contains raw public key data for this private key.

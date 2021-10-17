@@ -65,8 +65,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MDLSubmeshTopology allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -127,8 +126,7 @@ public class MDLSubmeshTopology extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MDLSubmeshTopology new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

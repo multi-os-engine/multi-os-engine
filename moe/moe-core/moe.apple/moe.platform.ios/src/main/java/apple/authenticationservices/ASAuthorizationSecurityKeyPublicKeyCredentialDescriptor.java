@@ -56,8 +56,7 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor extends NSO
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -145,8 +144,7 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor extends NSO
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

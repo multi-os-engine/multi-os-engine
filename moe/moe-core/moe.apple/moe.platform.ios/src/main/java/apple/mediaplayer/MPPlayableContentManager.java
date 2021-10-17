@@ -73,8 +73,7 @@ public class MPPlayableContentManager extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPPlayableContentManager allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +134,7 @@ public class MPPlayableContentManager extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPPlayableContentManager new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -155,8 +153,7 @@ public class MPPlayableContentManager extends NSObject {
      */
     @Generated
     @Selector("sharedContentManager")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sharedContentManager();
+    public static native MPPlayableContentManager sharedContentManager();
 
     @Generated
     @Selector("superclass")

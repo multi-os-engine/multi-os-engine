@@ -51,8 +51,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASPasswordCredential allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -151,8 +150,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASPasswordCredential new_objc();
 
     /**
      * The password of this credential.

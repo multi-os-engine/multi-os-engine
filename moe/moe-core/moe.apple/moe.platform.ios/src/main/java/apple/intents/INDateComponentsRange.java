@@ -70,8 +70,7 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INDateComponentsRange allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INDateComponentsRange new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -63,8 +63,7 @@ public class MPSCNNInstanceNormalizationGradientState extends MPSNNGradientState
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNInstanceNormalizationGradientState allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -192,8 +191,7 @@ public class MPSCNNInstanceNormalizationGradientState extends MPSNNGradientState
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNInstanceNormalizationGradientState new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -213,26 +211,22 @@ public class MPSCNNInstanceNormalizationGradientState extends MPSNNGradientState
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBuffer(
+    public static native MPSCNNInstanceNormalizationGradientState temporaryStateWithCommandBuffer(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferBufferSize(
+    public static native MPSCNNInstanceNormalizationGradientState temporaryStateWithCommandBufferBufferSize(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferResourceList(
+    public static native MPSCNNInstanceNormalizationGradientState temporaryStateWithCommandBufferResourceList(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferTextureDescriptor(
+    public static native MPSCNNInstanceNormalizationGradientState temporaryStateWithCommandBufferTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     @Generated

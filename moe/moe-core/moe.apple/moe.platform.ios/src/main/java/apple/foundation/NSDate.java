@@ -65,8 +65,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSDate allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -151,8 +150,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSDate new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -202,8 +200,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
 
     @Generated
     @Selector("dateByAddingTimeInterval:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object dateByAddingTimeInterval(double ti);
+    public native NSDate dateByAddingTimeInterval(double ti);
 
     @Generated
     @Selector("description")

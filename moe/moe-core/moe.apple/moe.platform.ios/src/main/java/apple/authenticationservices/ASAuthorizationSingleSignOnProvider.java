@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -50,16 +49,14 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationSingleSignOnProvider allocWithZone(VoidPtr zone);
 
     /**
      * To get the right extension the identity provider main URL has to be provided. The URL is even part of the extension using assosiated domains mechanism or can be configured by MDM profile.
      */
     @Generated
     @Selector("authorizationProviderWithIdentityProviderURL:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object authorizationProviderWithIdentityProviderURL(NSURL url);
+    public static native ASAuthorizationSingleSignOnProvider authorizationProviderWithIdentityProviderURL(NSURL url);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +132,7 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationSingleSignOnProvider new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

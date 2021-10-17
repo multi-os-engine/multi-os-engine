@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCurrencyAmountResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -94,8 +92,7 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithCurrencyAmountToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithCurrencyAmountToConfirm(
+    public static native INCurrencyAmountResolutionResult confirmationRequiredWithCurrencyAmountToConfirm(
             INCurrencyAmount currencyAmountToConfirm);
 
     @Generated
@@ -111,8 +108,7 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithCurrencyAmountsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithCurrencyAmountsToDisambiguate(
+    public static native INCurrencyAmountResolutionResult disambiguationWithCurrencyAmountsToDisambiguate(
             NSArray<? extends INCurrencyAmount> currencyAmountsToDisambiguate);
 
     @Generated
@@ -143,19 +139,16 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INCurrencyAmountResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCurrencyAmountResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INCurrencyAmountResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -175,8 +168,8 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedCurrencyAmount:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedCurrencyAmount(INCurrencyAmount resolvedCurrencyAmount);
+    public static native INCurrencyAmountResolutionResult successWithResolvedCurrencyAmount(
+            INCurrencyAmount resolvedCurrencyAmount);
 
     @Generated
     @Selector("superclass")
@@ -184,8 +177,7 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INCurrencyAmountResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -198,12 +190,10 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INCurrencyAmountResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INCurrencyAmountResolutionResult unsupportedWithReason(@NInt long reason);
 }

@@ -27,7 +27,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -71,8 +70,7 @@ public class NSMutableAttributedString extends NSAttributedString {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSMutableAttributedString allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attributedStringWithAttachment:")
@@ -137,8 +135,7 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSMutableAttributedString new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -311,14 +308,12 @@ public class NSMutableAttributedString extends NSAttributedString {
 
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native NSMutableAttributedString objectWithItemProviderDataTypeIdentifierError(NSData data,
+            String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public NSMutableAttributedString _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
@@ -407,13 +402,12 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Generated
     @Variadic()
     @Selector("localizedAttributedStringWithFormat:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedAttributedStringWithFormat(NSAttributedString format, Object... varargs);
+    public static native NSMutableAttributedString localizedAttributedStringWithFormat(NSAttributedString format,
+            Object... varargs);
 
     @Generated
     @Variadic()
     @Selector("localizedAttributedStringWithFormat:options:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedAttributedStringWithFormatOptions(NSAttributedString format,
+    public static native NSMutableAttributedString localizedAttributedStringWithFormatOptions(NSAttributedString format,
             @NUInt long options, Object... varargs);
 }

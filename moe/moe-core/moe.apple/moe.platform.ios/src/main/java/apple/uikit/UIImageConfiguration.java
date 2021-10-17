@@ -52,8 +52,7 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIImageConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -85,16 +84,14 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("configurationByApplyingConfiguration:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object configurationByApplyingConfiguration(UIImageConfiguration otherConfiguration);
+    public native UIImageConfiguration configurationByApplyingConfiguration(UIImageConfiguration otherConfiguration);
 
     /**
      * inserts/applies the traitCollection to this configuration
      */
     @Generated
     @Selector("configurationWithTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object configurationWithTraitCollection(UITraitCollection traitCollection);
+    public native UIImageConfiguration configurationWithTraitCollection(UITraitCollection traitCollection);
 
     @Generated
     @Owned
@@ -151,8 +148,7 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIImageConfiguration new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

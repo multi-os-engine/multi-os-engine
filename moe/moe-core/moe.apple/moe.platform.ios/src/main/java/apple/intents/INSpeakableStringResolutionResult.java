@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INSpeakableStringResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -94,8 +92,8 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
      */
     @Generated
     @Selector("confirmationRequiredWithStringToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithStringToConfirm(INSpeakableString stringToConfirm);
+    public static native INSpeakableStringResolutionResult confirmationRequiredWithStringToConfirm(
+            INSpeakableString stringToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -110,8 +108,7 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
      */
     @Generated
     @Selector("disambiguationWithStringsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithStringsToDisambiguate(
+    public static native INSpeakableStringResolutionResult disambiguationWithStringsToDisambiguate(
             NSArray<? extends INSpeakableString> stringsToDisambiguate);
 
     @Generated
@@ -142,19 +139,16 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INSpeakableStringResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INSpeakableStringResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INSpeakableStringResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -174,8 +168,7 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
      */
     @Generated
     @Selector("successWithResolvedString:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedString(INSpeakableString resolvedString);
+    public static native INSpeakableStringResolutionResult successWithResolvedString(INSpeakableString resolvedString);
 
     @Generated
     @Selector("superclass")
@@ -183,8 +176,7 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INSpeakableStringResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -197,12 +189,10 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INSpeakableStringResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INSpeakableStringResolutionResult unsupportedWithReason(@NInt long reason);
 }

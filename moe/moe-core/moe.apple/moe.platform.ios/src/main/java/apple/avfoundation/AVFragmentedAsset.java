@@ -15,7 +15,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -62,8 +61,7 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVFragmentedAsset allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("assetWithURL:")
@@ -165,8 +163,7 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVFragmentedAsset new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -258,14 +255,12 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
 
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native AVFragmentedAsset objectWithItemProviderDataTypeIdentifierError(NSData data,
+            String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public AVFragmentedAsset _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }

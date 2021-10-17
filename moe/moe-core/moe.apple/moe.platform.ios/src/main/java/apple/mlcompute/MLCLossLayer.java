@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -53,8 +52,7 @@ public class MLCLossLayer extends MLCLayer {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCLossLayer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -81,8 +79,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
+    public static native MLCLossLayer categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
             int reductionType, float labelSmoothing, @NUInt long classCount, float weight);
 
     /**
@@ -96,8 +93,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
+    public static native MLCLossLayer categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
             int reductionType, float labelSmoothing, @NUInt long classCount, MLCTensor weights);
 
     @Generated
@@ -117,8 +113,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cosineDistanceLossWithReductionTypeWeight(int reductionType, float weight);
+    public static native MLCLossLayer cosineDistanceLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
@@ -129,8 +124,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cosineDistanceLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
+    public static native MLCLossLayer cosineDistanceLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
 
     @Generated
     @Selector("debugDescription")
@@ -163,8 +157,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("hingeLossWithReductionType:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object hingeLossWithReductionTypeWeight(int reductionType, float weight);
+    public static native MLCLossLayer hingeLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
@@ -175,8 +168,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("hingeLossWithReductionType:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object hingeLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
+    public static native MLCLossLayer hingeLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
 
     /**
      * Create a loss layer
@@ -188,8 +180,8 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("huberLossWithReductionType:delta:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object huberLossWithReductionTypeDeltaWeight(int reductionType, float delta, float weight);
+    public static native MLCLossLayer huberLossWithReductionTypeDeltaWeight(int reductionType, float delta,
+            float weight);
 
     /**
      * Create a loss layer
@@ -201,8 +193,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("huberLossWithReductionType:delta:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object huberLossWithReductionTypeDeltaWeights(int reductionType, float delta,
+    public static native MLCLossLayer huberLossWithReductionTypeDeltaWeights(int reductionType, float delta,
             MLCTensor weights);
 
     @Generated
@@ -261,8 +252,8 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("logLossWithReductionType:epsilon:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object logLossWithReductionTypeEpsilonWeight(int reductionType, float epsilon, float weight);
+    public static native MLCLossLayer logLossWithReductionTypeEpsilonWeight(int reductionType, float epsilon,
+            float weight);
 
     /**
      * Create a loss layer
@@ -274,8 +265,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("logLossWithReductionType:epsilon:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object logLossWithReductionTypeEpsilonWeights(int reductionType, float epsilon,
+    public static native MLCLossLayer logLossWithReductionTypeEpsilonWeights(int reductionType, float epsilon,
             MLCTensor weights);
 
     /**
@@ -287,8 +277,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object meanAbsoluteErrorLossWithReductionTypeWeight(int reductionType, float weight);
+    public static native MLCLossLayer meanAbsoluteErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
@@ -299,8 +288,8 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object meanAbsoluteErrorLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
+    public static native MLCLossLayer meanAbsoluteErrorLossWithReductionTypeWeights(int reductionType,
+            MLCTensor weights);
 
     /**
      * Create a loss layer
@@ -311,8 +300,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object meanSquaredErrorLossWithReductionTypeWeight(int reductionType, float weight);
+    public static native MLCLossLayer meanSquaredErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
     /**
      * Create a loss layer
@@ -323,14 +311,13 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object meanSquaredErrorLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
+    public static native MLCLossLayer meanSquaredErrorLossWithReductionTypeWeights(int reductionType,
+            MLCTensor weights);
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCLossLayer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -354,8 +341,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeight(int reductionType,
+    public static native MLCLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeight(int reductionType,
             float labelSmoothing, float weight);
 
     /**
@@ -368,8 +354,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeights(int reductionType,
+    public static native MLCLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeights(int reductionType,
             float labelSmoothing, MLCTensor weights);
 
     /**
@@ -383,8 +368,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
+    public static native MLCLossLayer softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
             int reductionType, float labelSmoothing, @NUInt long classCount, float weight);
 
     /**
@@ -398,8 +382,7 @@ public class MLCLossLayer extends MLCLayer {
      */
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
+    public static native MLCLossLayer softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
             int reductionType, float labelSmoothing, @NUInt long classCount, MLCTensor weights);
 
     @Generated

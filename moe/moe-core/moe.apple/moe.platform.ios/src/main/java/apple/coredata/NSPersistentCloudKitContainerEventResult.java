@@ -51,8 +51,7 @@ public class NSPersistentCloudKitContainerEventResult extends NSPersistentStoreR
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSPersistentCloudKitContainerEventResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -117,8 +116,7 @@ public class NSPersistentCloudKitContainerEventResult extends NSPersistentStoreR
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSPersistentCloudKitContainerEventResult new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

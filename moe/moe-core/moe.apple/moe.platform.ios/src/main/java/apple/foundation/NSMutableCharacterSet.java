@@ -91,8 +91,7 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSMutableCharacterSet allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("alphanumericCharacterSet")
@@ -201,8 +200,7 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSMutableCharacterSet new_objc();
 
     @Generated
     @Selector("newlineCharacterSet")

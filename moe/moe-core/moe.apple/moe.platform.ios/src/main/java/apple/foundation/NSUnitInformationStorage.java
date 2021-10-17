@@ -8,7 +8,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -53,8 +52,7 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSUnitInformationStorage allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -62,8 +60,7 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
 
     @Generated
     @Selector("baseUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object baseUnit();
+    public static native NSUnitInformationStorage baseUnit();
 
     /**
      * One byte is 8 bits; one nibble is 4 bits.
@@ -218,8 +215,7 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSUnitInformationStorage new_objc();
 
     @Generated
     @Selector("nibbles")

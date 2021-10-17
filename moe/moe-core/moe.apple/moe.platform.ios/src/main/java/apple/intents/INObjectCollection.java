@@ -56,8 +56,7 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INObjectCollection<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -144,8 +143,7 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INObjectCollection<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

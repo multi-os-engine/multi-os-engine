@@ -68,16 +68,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HKUnit allocWithZone(VoidPtr zone);
 
     /**
      * atm
      */
     @Generated
     @Selector("atmosphereUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object atmosphereUnit();
+    public static native HKUnit atmosphereUnit();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -85,8 +83,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("calorieUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object calorieUnit();
+    public static native HKUnit calorieUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -103,8 +100,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("centimeterOfWaterUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object centimeterOfWaterUnit();
+    public static native HKUnit centimeterOfWaterUnit();
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -119,32 +115,28 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("countUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object countUnit();
+    public static native HKUnit countUnit();
 
     /**
      * cup_imp
      */
     @Generated
     @Selector("cupImperialUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cupImperialUnit();
+    public static native HKUnit cupImperialUnit();
 
     /**
      * cup_us
      */
     @Generated
     @Selector("cupUSUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cupUSUnit();
+    public static native HKUnit cupUSUnit();
 
     /**
      * d
      */
     @Generated
     @Selector("dayUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object dayUnit();
+    public static native HKUnit dayUnit();
 
     @Generated
     @Selector("debugDescription")
@@ -155,16 +147,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("degreeCelsiusUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object degreeCelsiusUnit();
+    public static native HKUnit degreeCelsiusUnit();
 
     /**
      * degF
      */
     @Generated
     @Selector("degreeFahrenheitUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object degreeFahrenheitUnit();
+    public static native HKUnit degreeFahrenheitUnit();
 
     @Generated
     @Selector("description")
@@ -180,40 +170,35 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("fluidOunceImperialUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fluidOunceImperialUnit();
+    public static native HKUnit fluidOunceImperialUnit();
 
     /**
      * fl_oz_us
      */
     @Generated
     @Selector("fluidOunceUSUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fluidOunceUSUnit();
+    public static native HKUnit fluidOunceUSUnit();
 
     /**
      * ft
      */
     @Generated
     @Selector("footUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object footUnit();
+    public static native HKUnit footUnit();
 
     /**
      * g
      */
     @Generated
     @Selector("gramUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object gramUnit();
+    public static native HKUnit gramUnit();
 
     /**
      * g
      */
     @Generated
     @Selector("gramUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object gramUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit gramUnitWithMetricPrefix(@NInt long prefix);
 
     @Generated
     @Selector("hash")
@@ -225,16 +210,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("hourUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object hourUnit();
+    public static native HKUnit hourUnit();
 
     /**
      * in
      */
     @Generated
     @Selector("inchUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object inchUnit();
+    public static native HKUnit inchUnit();
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -258,24 +241,21 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("jouleUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object jouleUnit();
+    public static native HKUnit jouleUnit();
 
     /**
      * J
      */
     @Generated
     @Selector("jouleUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object jouleUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit jouleUnitWithMetricPrefix(@NInt long prefix);
 
     /**
      * K
      */
     @Generated
     @Selector("kelvinUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object kelvinUnit();
+    public static native HKUnit kelvinUnit();
 
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -286,8 +266,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("kilocalorieUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object kilocalorieUnit();
+    public static native HKUnit kilocalorieUnit();
 
     @Generated
     @Selector("lengthFormatterUnitFromUnit:")
@@ -299,16 +278,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("literUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object literUnit();
+    public static native HKUnit literUnit();
 
     /**
      * L
      */
     @Generated
     @Selector("literUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object literUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit literUnitWithMetricPrefix(@NInt long prefix);
 
     @Generated
     @Selector("massFormatterUnitFromUnit:")
@@ -320,118 +297,103 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("meterUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object meterUnit();
+    public static native HKUnit meterUnit();
 
     /**
      * m
      */
     @Generated
     @Selector("meterUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object meterUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit meterUnitWithMetricPrefix(@NInt long prefix);
 
     /**
      * mi
      */
     @Generated
     @Selector("mileUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object mileUnit();
+    public static native HKUnit mileUnit();
 
     /**
      * mmHg
      */
     @Generated
     @Selector("millimeterOfMercuryUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object millimeterOfMercuryUnit();
+    public static native HKUnit millimeterOfMercuryUnit();
 
     /**
      * min
      */
     @Generated
     @Selector("minuteUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object minuteUnit();
+    public static native HKUnit minuteUnit();
 
     /**
      * mol<double>
      */
     @Generated
     @Selector("moleUnitWithMetricPrefix:molarMass:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object moleUnitWithMetricPrefixMolarMass(@NInt long prefix, double gramsPerMole);
+    public static native HKUnit moleUnitWithMetricPrefixMolarMass(@NInt long prefix, double gramsPerMole);
 
     /**
      * mol<double>
      */
     @Generated
     @Selector("moleUnitWithMolarMass:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object moleUnitWithMolarMass(double gramsPerMole);
+    public static native HKUnit moleUnitWithMolarMass(double gramsPerMole);
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HKUnit new_objc();
 
     /**
      * oz
      */
     @Generated
     @Selector("ounceUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object ounceUnit();
+    public static native HKUnit ounceUnit();
 
     /**
      * Pa
      */
     @Generated
     @Selector("pascalUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object pascalUnit();
+    public static native HKUnit pascalUnit();
 
     /**
      * Pa
      */
     @Generated
     @Selector("pascalUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object pascalUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit pascalUnitWithMetricPrefix(@NInt long prefix);
 
     /**
      * % (0.0 - 1.0)
      */
     @Generated
     @Selector("percentUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object percentUnit();
+    public static native HKUnit percentUnit();
 
     /**
      * pt_imp
      */
     @Generated
     @Selector("pintImperialUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object pintImperialUnit();
+    public static native HKUnit pintImperialUnit();
 
     /**
      * pt_us
      */
     @Generated
     @Selector("pintUSUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object pintUSUnit();
+    public static native HKUnit pintUSUnit();
 
     /**
      * lb
      */
     @Generated
     @Selector("poundUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object poundUnit();
+    public static native HKUnit poundUnit();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -446,16 +408,14 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("secondUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object secondUnit();
+    public static native HKUnit secondUnit();
 
     /**
      * s
      */
     @Generated
     @Selector("secondUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object secondUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit secondUnitWithMetricPrefix(@NInt long prefix);
 
     @Generated
     @Selector("setVersion:")
@@ -466,24 +426,21 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("siemenUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object siemenUnit();
+    public static native HKUnit siemenUnit();
 
     /**
      * S
      */
     @Generated
     @Selector("siemenUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object siemenUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit siemenUnitWithMetricPrefix(@NInt long prefix);
 
     /**
      * st
      */
     @Generated
     @Selector("stoneUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object stoneUnit();
+    public static native HKUnit stoneUnit();
 
     @Generated
     @Selector("superclass")
@@ -524,8 +481,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("yardUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object yardUnit();
+    public static native HKUnit yardUnit();
 
     @Generated
     @Owned
@@ -583,78 +539,68 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("internationalUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object internationalUnit();
+    public static native HKUnit internationalUnit();
 
     /**
      * 1 Cal = 4184.0 J
      */
     @Generated
     @Selector("largeCalorieUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object largeCalorieUnit();
+    public static native HKUnit largeCalorieUnit();
 
     /**
      * 1 cal = 4.1840 J
      */
     @Generated
     @Selector("smallCalorieUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object smallCalorieUnit();
+    public static native HKUnit smallCalorieUnit();
 
     /**
      * dBASPL
      */
     @Generated
     @Selector("decibelAWeightedSoundPressureLevelUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object decibelAWeightedSoundPressureLevelUnit();
+    public static native HKUnit decibelAWeightedSoundPressureLevelUnit();
 
     /**
      * dBHL
      */
     @Generated
     @Selector("decibelHearingLevelUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object decibelHearingLevelUnit();
+    public static native HKUnit decibelHearingLevelUnit();
 
     /**
      * Hz
      */
     @Generated
     @Selector("hertzUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object hertzUnit();
+    public static native HKUnit hertzUnit();
 
     /**
      * Hz
      */
     @Generated
     @Selector("hertzUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object hertzUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit hertzUnitWithMetricPrefix(@NInt long prefix);
 
     /**
      * inHg
      */
     @Generated
     @Selector("inchesOfMercuryUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object inchesOfMercuryUnit();
+    public static native HKUnit inchesOfMercuryUnit();
 
     /**
      * V
      */
     @Generated
     @Selector("voltUnit")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object voltUnit();
+    public static native HKUnit voltUnit();
 
     /**
      * V
      */
     @Generated
     @Selector("voltUnitWithMetricPrefix:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object voltUnitWithMetricPrefix(@NInt long prefix);
+    public static native HKUnit voltUnitWithMetricPrefix(@NInt long prefix);
 }

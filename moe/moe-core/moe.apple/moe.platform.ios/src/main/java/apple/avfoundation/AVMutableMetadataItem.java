@@ -70,8 +70,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVMutableMetadataItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -186,8 +185,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVMutableMetadataItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

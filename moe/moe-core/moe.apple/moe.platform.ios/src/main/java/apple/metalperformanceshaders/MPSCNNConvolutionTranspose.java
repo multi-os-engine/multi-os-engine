@@ -161,8 +161,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNConvolutionTranspose allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -298,8 +297,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNConvolutionTranspose new_objc();
 
     /**
      * [@property]   outputFeatureChannels

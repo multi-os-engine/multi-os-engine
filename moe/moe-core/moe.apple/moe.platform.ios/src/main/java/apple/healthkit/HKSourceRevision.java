@@ -75,8 +75,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HKSourceRevision allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HKSourceRevision new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

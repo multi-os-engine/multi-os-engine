@@ -71,8 +71,7 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKLeaderboardViewController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
@@ -141,8 +140,7 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKLeaderboardViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

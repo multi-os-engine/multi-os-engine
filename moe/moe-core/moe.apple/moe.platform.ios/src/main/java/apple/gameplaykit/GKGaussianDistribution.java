@@ -27,7 +27,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -74,8 +73,7 @@ public class GKGaussianDistribution extends GKRandomDistribution {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKGaussianDistribution allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -101,13 +99,11 @@ public class GKGaussianDistribution extends GKRandomDistribution {
 
     @Generated
     @Selector("d20")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object d20();
+    public static native GKGaussianDistribution d20();
 
     @Generated
     @Selector("d6")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object d6();
+    public static native GKGaussianDistribution d6();
 
     @Generated
     @Selector("debugDescription")
@@ -155,8 +151,7 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKGaussianDistribution new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

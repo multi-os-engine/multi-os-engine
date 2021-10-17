@@ -121,8 +121,7 @@ public class MPSState extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSState allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -215,8 +214,7 @@ public class MPSState extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSState new_objc();
 
     /**
      * The number of times temporary data may be read by a MPSCNNKernel
@@ -600,8 +598,7 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBuffer(
+    public static native MPSState temporaryStateWithCommandBuffer(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
     /**
@@ -612,8 +609,7 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferBufferSize(
+    public static native MPSState temporaryStateWithCommandBufferBufferSize(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
@@ -623,8 +619,7 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferResourceList(
+    public static native MPSState temporaryStateWithCommandBufferResourceList(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
 
     /**
@@ -635,8 +630,7 @@ public class MPSState extends NSObject {
      */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferTextureDescriptor(
+    public static native MPSState temporaryStateWithCommandBufferTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     /**

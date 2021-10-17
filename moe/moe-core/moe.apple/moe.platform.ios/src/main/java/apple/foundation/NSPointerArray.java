@@ -79,8 +79,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSPointerArray allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -141,8 +140,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSPointerArray new_objc();
 
     @Generated
     @Selector("pointerArrayWithOptions:")

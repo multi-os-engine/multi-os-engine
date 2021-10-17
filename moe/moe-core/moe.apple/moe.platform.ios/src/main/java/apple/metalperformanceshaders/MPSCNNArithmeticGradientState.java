@@ -14,7 +14,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNArithmeticGradientState allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -153,8 +151,7 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNArithmeticGradientState new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -174,26 +171,22 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBuffer(
+    public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBuffer(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferBufferSize(
+    public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBufferBufferSize(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferResourceList(
+    public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBufferResourceList(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferTextureDescriptor(
+    public static native MPSCNNArithmeticGradientState temporaryStateWithCommandBufferTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     @Generated

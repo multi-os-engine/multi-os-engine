@@ -28,7 +28,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -66,8 +65,7 @@ public class GKDecisionNode extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKDecisionNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -128,8 +126,7 @@ public class GKDecisionNode extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKDecisionNode new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,8 +158,7 @@ public class GKDecisionNode extends NSObject {
      */
     @Generated
     @Selector("createBranchWithPredicate:attribute:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object createBranchWithPredicateAttribute(NSPredicate predicate,
+    public native GKDecisionNode createBranchWithPredicateAttribute(NSPredicate predicate,
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject attribute);
 
     /**
@@ -174,8 +170,7 @@ public class GKDecisionNode extends NSObject {
      */
     @Generated
     @Selector("createBranchWithValue:attribute:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object createBranchWithValueAttribute(NSNumber value,
+    public native GKDecisionNode createBranchWithValueAttribute(NSNumber value,
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject attribute);
 
     /**
@@ -188,8 +183,7 @@ public class GKDecisionNode extends NSObject {
      */
     @Generated
     @Selector("createBranchWithWeight:attribute:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object createBranchWithWeightAttribute(@NInt long weight,
+    public native GKDecisionNode createBranchWithWeightAttribute(@NInt long weight,
             @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject attribute);
 
     @Generated

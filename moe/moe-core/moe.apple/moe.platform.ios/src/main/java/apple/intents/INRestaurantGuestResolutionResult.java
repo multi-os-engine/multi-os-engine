@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INRestaurantGuestResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -94,8 +92,7 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
      */
     @Generated
     @Selector("confirmationRequiredWithRestaurantGuestToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithRestaurantGuestToConfirm(
+    public static native INRestaurantGuestResolutionResult confirmationRequiredWithRestaurantGuestToConfirm(
             INRestaurantGuest restaurantGuestToConfirm);
 
     @Generated
@@ -111,8 +108,7 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
      */
     @Generated
     @Selector("disambiguationWithRestaurantGuestsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithRestaurantGuestsToDisambiguate(
+    public static native INRestaurantGuestResolutionResult disambiguationWithRestaurantGuestsToDisambiguate(
             NSArray<? extends INRestaurantGuest> restaurantGuestsToDisambiguate);
 
     @Generated
@@ -143,19 +139,16 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INRestaurantGuestResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INRestaurantGuestResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INRestaurantGuestResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -175,8 +168,8 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
      */
     @Generated
     @Selector("successWithResolvedRestaurantGuest:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedRestaurantGuest(INRestaurantGuest resolvedRestaurantGuest);
+    public static native INRestaurantGuestResolutionResult successWithResolvedRestaurantGuest(
+            INRestaurantGuest resolvedRestaurantGuest);
 
     @Generated
     @Selector("superclass")
@@ -184,8 +177,7 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INRestaurantGuestResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -198,12 +190,10 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INRestaurantGuestResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INRestaurantGuestResolutionResult unsupportedWithReason(@NInt long reason);
 }

@@ -68,8 +68,7 @@ public class CKNotificationID extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CKNotificationID allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class CKNotificationID extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CKNotificationID new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -66,8 +66,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLFeatureValue allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -217,8 +216,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLFeatureValue new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -256,8 +254,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("undefinedFeatureValueWithType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object undefinedFeatureValueWithType(@NInt long type);
+    public static native MLFeatureValue undefinedFeatureValueWithType(@NInt long type);
 
     @Generated
     @Selector("version")

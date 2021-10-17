@@ -77,8 +77,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNPhysicsBody allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -122,8 +121,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("dynamicBody")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object dynamicBody();
+    public static native SCNPhysicsBody dynamicBody();
 
     @Generated
     @Selector("hash")
@@ -156,14 +154,12 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("kinematicBody")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object kinematicBody();
+    public static native SCNPhysicsBody kinematicBody();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNPhysicsBody new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -182,8 +178,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      */
     @Generated
     @Selector("staticBody")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object staticBody();
+    public static native SCNPhysicsBody staticBody();
 
     @Generated
     @Selector("superclass")

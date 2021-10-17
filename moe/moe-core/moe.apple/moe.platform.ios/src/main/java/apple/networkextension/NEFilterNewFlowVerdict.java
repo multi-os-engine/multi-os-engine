@@ -88,8 +88,7 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NEFilterNewFlowVerdict allocWithZone(VoidPtr zone);
 
     /**
      * allowVerdict
@@ -204,8 +203,7 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NEFilterNewFlowVerdict new_objc();
 
     /**
      * remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:

@@ -54,8 +54,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HMSignificantTimeEvent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -150,8 +149,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HMSignificantTimeEvent new_objc();
 
     /**
      * offset An offset from the time of the signficant event. To specify an offset before the significant event, the

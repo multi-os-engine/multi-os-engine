@@ -70,8 +70,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIButtonConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attributedSubtitle")
@@ -115,23 +114,19 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("borderedButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object borderedButtonConfiguration();
+    public static native UIButtonConfiguration borderedButtonConfiguration();
 
     @Generated
     @Selector("borderedProminentButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object borderedProminentButtonConfiguration();
+    public static native UIButtonConfiguration borderedProminentButtonConfiguration();
 
     @Generated
     @Selector("borderedTintedButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object borderedTintedButtonConfiguration();
+    public static native UIButtonConfiguration borderedTintedButtonConfiguration();
 
     @Generated
     @Selector("borderlessButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object borderlessButtonConfiguration();
+    public static native UIButtonConfiguration borderlessButtonConfiguration();
 
     /**
      * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this value.
@@ -195,13 +190,11 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("filledButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object filledButtonConfiguration();
+    public static native UIButtonConfiguration filledButtonConfiguration();
 
     @Generated
     @Selector("grayButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object grayButtonConfiguration();
+    public static native UIButtonConfiguration grayButtonConfiguration();
 
     @Generated
     @Selector("hash")
@@ -280,13 +273,11 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIButtonConfiguration new_objc();
 
     @Generated
     @Selector("plainButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object plainButtonConfiguration();
+    public static native UIButtonConfiguration plainButtonConfiguration();
 
     @Generated
     @Selector("preferredSymbolConfigurationForImage")
@@ -513,8 +504,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("tintedButtonConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object tintedButtonConfiguration();
+    public static native UIButtonConfiguration tintedButtonConfiguration();
 
     @Generated
     @Selector("title")
@@ -553,8 +543,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("updatedConfigurationForButton:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object updatedConfigurationForButton(UIButton button);
+    public native UIButtonConfiguration updatedConfigurationForButton(UIButton button);
 
     @Generated
     @Selector("version")

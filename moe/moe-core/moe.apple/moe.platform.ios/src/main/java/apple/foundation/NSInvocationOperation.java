@@ -61,8 +61,7 @@ public class NSInvocationOperation extends NSOperation {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSInvocationOperation allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -123,8 +122,7 @@ public class NSInvocationOperation extends NSOperation {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSInvocationOperation new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

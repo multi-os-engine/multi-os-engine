@@ -82,8 +82,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNTechnique allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -144,8 +143,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNTechnique new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

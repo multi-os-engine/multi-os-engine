@@ -48,8 +48,7 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSPresentationIntent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -215,8 +214,7 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSPresentationIntent new_objc();
 
     @Generated
     @Selector("orderedListIntentWithIdentity:nestedInsideIntent:")

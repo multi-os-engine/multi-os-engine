@@ -72,8 +72,7 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCDevice allocWithZone(VoidPtr zone);
 
     /**
      * Creates a device which uses the Apple Neural Engine, if any.
@@ -82,8 +81,7 @@ public class MLCDevice extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("aneDevice")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object aneDevice();
+    public static native MLCDevice aneDevice();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -120,8 +118,7 @@ public class MLCDevice extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("cpuDevice")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cpuDevice();
+    public static native MLCDevice cpuDevice();
 
     @Generated
     @Selector("debugDescription")
@@ -172,8 +169,7 @@ public class MLCDevice extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("gpuDevice")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object gpuDevice();
+    public static native MLCDevice gpuDevice();
 
     @Generated
     @Selector("gpuDevices")
@@ -212,8 +208,7 @@ public class MLCDevice extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCDevice new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

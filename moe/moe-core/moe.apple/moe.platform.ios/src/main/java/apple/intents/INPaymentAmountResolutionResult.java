@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INPaymentAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INPaymentAmountResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,8 +76,8 @@ public class INPaymentAmountResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithPaymentAmountToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithPaymentAmountToConfirm(INPaymentAmount paymentAmountToConfirm);
+    public static native INPaymentAmountResolutionResult confirmationRequiredWithPaymentAmountToConfirm(
+            INPaymentAmount paymentAmountToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -94,8 +92,7 @@ public class INPaymentAmountResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithPaymentAmountsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithPaymentAmountsToDisambiguate(
+    public static native INPaymentAmountResolutionResult disambiguationWithPaymentAmountsToDisambiguate(
             NSArray<? extends INPaymentAmount> paymentAmountsToDisambiguate);
 
     @Generated
@@ -130,19 +127,16 @@ public class INPaymentAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INPaymentAmountResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INPaymentAmountResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INPaymentAmountResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -162,8 +156,8 @@ public class INPaymentAmountResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedPaymentAmount:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedPaymentAmount(INPaymentAmount resolvedPaymentAmount);
+    public static native INPaymentAmountResolutionResult successWithResolvedPaymentAmount(
+            INPaymentAmount resolvedPaymentAmount);
 
     @Generated
     @Selector("superclass")
@@ -171,8 +165,7 @@ public class INPaymentAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INPaymentAmountResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -181,12 +174,10 @@ public class INPaymentAmountResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INPaymentAmountResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INPaymentAmountResolutionResult unsupportedWithReason(@NInt long reason);
 }

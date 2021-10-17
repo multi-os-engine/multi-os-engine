@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.OS_os_workgroup;
 import apple.audiotoolbox.opaque.AudioComponent;
 import apple.audiotoolbox.struct.AudioComponentDescription;
+import apple.avfaudio.AVAudioFormat;
 import apple.coreaudiokit.AUAudioUnitViewConfiguration;
 import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.coreaudiotypes.struct.AudioTimeStamp;
@@ -41,7 +42,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -122,8 +122,7 @@ public class AUAudioUnit extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AUAudioUnit allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -207,8 +206,7 @@ public class AUAudioUnit extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AUAudioUnit new_objc();
 
     /**
      * Register an audio unit component implemented as an AUAudioUnit subclass.
@@ -1106,7 +1104,7 @@ public class AUAudioUnit extends NSObject {
      */
     @Generated
     @Selector("shouldChangeToFormat:forBus:")
-    public native boolean shouldChangeToFormatForBus(apple.avfaudio.AVAudioFormat format, AUAudioUnitBus bus);
+    public native boolean shouldChangeToFormatForBus(AVAudioFormat format, AUAudioUnitBus bus);
 
     /**
      * startHardwareAndReturnError:

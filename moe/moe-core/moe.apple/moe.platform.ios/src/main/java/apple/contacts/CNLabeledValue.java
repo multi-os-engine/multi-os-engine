@@ -71,8 +71,7 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CNLabeledValue<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -153,8 +152,7 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CNLabeledValue<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -222,24 +220,22 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
      */
     @Generated
     @Selector("labeledValueBySettingLabel:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object labeledValueBySettingLabel(String label);
+    public native CNLabeledValue<?> labeledValueBySettingLabel(String label);
 
     /**
      * Returns a new CNLabeledValue with the existing identifier.
      */
     @Generated
     @Selector("labeledValueBySettingLabel:value:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object labeledValueBySettingLabelValue(String label, @Mapped(ObjCObjectMapper.class) Object value);
+    public native CNLabeledValue<?> labeledValueBySettingLabelValue(String label,
+            @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * Returns a new CNLabeledValue with the existing label and identifier.
      */
     @Generated
     @Selector("labeledValueBySettingValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object labeledValueBySettingValue(@Mapped(ObjCObjectMapper.class) Object value);
+    public native CNLabeledValue<?> labeledValueBySettingValue(@Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

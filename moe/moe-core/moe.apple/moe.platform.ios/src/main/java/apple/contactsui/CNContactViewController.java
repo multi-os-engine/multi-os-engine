@@ -79,8 +79,7 @@ public class CNContactViewController extends UIViewController {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CNContactViewController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
@@ -161,8 +160,7 @@ public class CNContactViewController extends UIViewController {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CNContactViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

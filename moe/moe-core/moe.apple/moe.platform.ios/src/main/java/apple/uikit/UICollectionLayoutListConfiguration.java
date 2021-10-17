@@ -55,8 +55,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UICollectionLayoutListConfiguration allocWithZone(VoidPtr zone);
 
     /**
      * The overall appearance of the section.
@@ -179,8 +178,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UICollectionLayoutListConfiguration new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

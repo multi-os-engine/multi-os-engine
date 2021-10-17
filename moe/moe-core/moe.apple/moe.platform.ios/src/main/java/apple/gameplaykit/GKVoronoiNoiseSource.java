@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -68,8 +67,7 @@ public class GKVoronoiNoiseSource extends GKNoiseSource {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKVoronoiNoiseSource allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +128,7 @@ public class GKVoronoiNoiseSource extends GKNoiseSource {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKVoronoiNoiseSource new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -156,8 +153,7 @@ public class GKVoronoiNoiseSource extends GKNoiseSource {
 
     @Generated
     @Selector("voronoiNoiseWithFrequency:displacement:distanceEnabled:seed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object voronoiNoiseWithFrequencyDisplacementDistanceEnabledSeed(double frequency,
+    public static native GKVoronoiNoiseSource voronoiNoiseWithFrequencyDisplacementDistanceEnabledSeed(double frequency,
             double displacement, boolean distanceEnabled, int seed);
 
     @Generated

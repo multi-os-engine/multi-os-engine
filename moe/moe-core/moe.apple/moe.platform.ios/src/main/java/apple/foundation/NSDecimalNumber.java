@@ -87,8 +87,7 @@ public class NSDecimalNumber extends NSNumber {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSDecimalNumber allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -179,8 +178,7 @@ public class NSDecimalNumber extends NSNumber {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSDecimalNumber new_objc();
 
     @Generated
     @Selector("notANumber")

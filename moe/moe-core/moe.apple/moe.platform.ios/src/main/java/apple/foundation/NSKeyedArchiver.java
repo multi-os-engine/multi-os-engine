@@ -65,8 +65,7 @@ public class NSKeyedArchiver extends NSCoder {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSKeyedArchiver allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("archiveRootObject:toFile:")
@@ -144,8 +143,7 @@ public class NSKeyedArchiver extends NSCoder {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSKeyedArchiver new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

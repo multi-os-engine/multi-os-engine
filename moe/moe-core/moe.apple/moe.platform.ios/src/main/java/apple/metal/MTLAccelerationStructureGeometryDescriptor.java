@@ -53,8 +53,7 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MTLAccelerationStructureGeometryDescriptor allocWithZone(VoidPtr zone);
 
     /**
      * Whether intersection functions may be invoked more than once per ray/primitive
@@ -138,8 +137,7 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MTLAccelerationStructureGeometryDescriptor new_objc();
 
     /**
      * Whether the geometry is opaque

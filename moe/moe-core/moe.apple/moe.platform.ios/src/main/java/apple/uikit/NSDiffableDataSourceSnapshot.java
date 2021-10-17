@@ -66,8 +66,7 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSDiffableDataSourceSnapshot<?, ?> allocWithZone(VoidPtr zone);
 
     /**
      * convenience: appends into last section
@@ -241,8 +240,7 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSDiffableDataSourceSnapshot<?, ?> new_objc();
 
     /**
      * structure

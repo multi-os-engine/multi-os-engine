@@ -77,8 +77,7 @@ public class UIResponder extends NSObject
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIResponder allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -146,8 +145,7 @@ public class UIResponder extends NSObject
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIResponder new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

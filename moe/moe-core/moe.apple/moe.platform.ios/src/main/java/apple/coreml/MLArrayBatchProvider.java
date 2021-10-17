@@ -57,8 +57,7 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLArrayBatchProvider allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("array")
@@ -154,8 +153,7 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLArrayBatchProvider new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

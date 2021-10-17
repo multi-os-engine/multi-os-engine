@@ -77,8 +77,7 @@ public class GCPhysicalInputProfile extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GCPhysicalInputProfile allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -113,8 +112,7 @@ public class GCPhysicalInputProfile extends NSObject {
      */
     @Generated
     @Selector("capture")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object capture();
+    public native GCPhysicalInputProfile capture();
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -195,8 +193,7 @@ public class GCPhysicalInputProfile extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GCPhysicalInputProfile new_objc();
 
     /**
      * Profile elements can be accessed using keyed subscript notation, with a valid alias of its inputs.

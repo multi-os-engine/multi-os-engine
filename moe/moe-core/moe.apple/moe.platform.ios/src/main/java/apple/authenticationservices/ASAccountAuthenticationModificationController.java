@@ -50,8 +50,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAccountAuthenticationModificationController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -124,8 +123,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAccountAuthenticationModificationController new_objc();
 
     /**
      * Perform an upgrade request, one at a time. Any requests initiated with a request already in progress will fail immediately.

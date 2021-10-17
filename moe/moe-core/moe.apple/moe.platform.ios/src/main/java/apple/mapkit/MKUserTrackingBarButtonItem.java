@@ -35,7 +35,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
@@ -75,45 +74,40 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MKUserTrackingBarButtonItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearance();
+    public static native MKUserTrackingBarButtonItem appearance();
 
     @Generated
     @Selector("appearanceForTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollection(UITraitCollection trait);
+    public static native MKUserTrackingBarButtonItem appearanceForTraitCollection(UITraitCollection trait);
 
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native MKUserTrackingBarButtonItem appearanceForTraitCollectionWhenContainedIn(
+            UITraitCollection trait, @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
+            Object... varargs);
 
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    public static native MKUserTrackingBarButtonItem appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            UITraitCollection trait, NSArray<?> containerTypes);
 
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedIn(
+    public static native MKUserTrackingBarButtonItem appearanceWhenContainedIn(
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native MKUserTrackingBarButtonItem appearanceWhenContainedInInstancesOfClasses(
+            NSArray<?> containerTypes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -174,8 +168,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MKUserTrackingBarButtonItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -200,48 +193,42 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
 
     @Generated
     @ProtocolClassMethod("appearance")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearance() {
+    public MKUserTrackingBarButtonItem _appearance() {
         return appearance();
     }
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollection(UITraitCollection trait) {
+    public MKUserTrackingBarButtonItem _appearanceForTraitCollection(UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
+    public MKUserTrackingBarButtonItem _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public MKUserTrackingBarButtonItem _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            UITraitCollection trait, NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public MKUserTrackingBarButtonItem _appearanceWhenContainedIn(
+            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public MKUserTrackingBarButtonItem _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -291,13 +278,11 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
 
     @Generated
     @Selector("fixedSpaceItemOfWidth:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fixedSpaceItemOfWidth(@NFloat double width);
+    public static native MKUserTrackingBarButtonItem fixedSpaceItemOfWidth(@NFloat double width);
 
     @Generated
     @Selector("flexibleSpaceItem")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object flexibleSpaceItem();
+    public static native MKUserTrackingBarButtonItem flexibleSpaceItem();
 
     @Generated
     @Selector("initWithBarButtonSystemItem:menu:")

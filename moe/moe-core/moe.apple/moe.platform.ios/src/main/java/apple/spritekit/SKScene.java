@@ -17,6 +17,7 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioEngine;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
@@ -81,8 +82,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKScene allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,8 +147,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKScene new_objc();
 
     @Generated
     @Selector("node")
@@ -207,7 +206,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     @Generated
     @Selector("audioEngine")
-    public native apple.avfaudio.AVAudioEngine audioEngine();
+    public native AVAudioEngine audioEngine();
 
     /**
      * Background color, defaults to gray

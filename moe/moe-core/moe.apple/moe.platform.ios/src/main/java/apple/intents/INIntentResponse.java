@@ -69,8 +69,7 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INIntentResponse allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,8 +130,7 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INIntentResponse new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

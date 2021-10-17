@@ -73,8 +73,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CTTelephonyNetworkInfo allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +134,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CTTelephonyNetworkInfo new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

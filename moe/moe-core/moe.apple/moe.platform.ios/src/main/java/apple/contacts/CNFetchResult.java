@@ -49,8 +49,7 @@ public class CNFetchResult<_ValueType> extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CNFetchResult<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -119,8 +118,7 @@ public class CNFetchResult<_ValueType> extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CNFetchResult<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

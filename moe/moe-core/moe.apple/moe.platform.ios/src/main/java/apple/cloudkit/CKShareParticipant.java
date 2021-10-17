@@ -68,8 +68,7 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CKShareParticipant allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CKShareParticipant new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

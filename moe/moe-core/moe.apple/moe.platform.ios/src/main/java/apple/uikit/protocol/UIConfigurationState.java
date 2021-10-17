@@ -31,8 +31,7 @@ public interface UIConfigurationState extends NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithTraitCollection:")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object initWithTraitCollection(UITraitCollection traitCollection);
+    UIConfigurationState initWithTraitCollection(UITraitCollection traitCollection);
 
     @Generated
     @Selector("objectForKeyedSubscript:")

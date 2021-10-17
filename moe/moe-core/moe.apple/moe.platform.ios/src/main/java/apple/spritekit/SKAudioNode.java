@@ -17,6 +17,7 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioNode;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSError;
@@ -31,7 +32,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -82,8 +82,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKAudioNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -148,8 +147,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKAudioNode new_objc();
 
     @Generated
     @Selector("node")
@@ -214,7 +212,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      */
     @Generated
     @Selector("avAudioNode")
-    public native apple.avfaudio.AVAudioNode avAudioNode();
+    public native AVAudioNode avAudioNode();
 
     @Generated
     @Selector("encodeWithCoder:")
@@ -231,7 +229,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithAVAudioNode:")
-    public native SKAudioNode initWithAVAudioNode(apple.avfaudio.AVAudioNode node);
+    public native SKAudioNode initWithAVAudioNode(AVAudioNode node);
 
     @Generated
     @Selector("initWithCoder:")
@@ -297,7 +295,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      */
     @Generated
     @Selector("setAvAudioNode:")
-    public native void setAvAudioNode(apple.avfaudio.AVAudioNode value);
+    public native void setAvAudioNode(AVAudioNode value);
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")

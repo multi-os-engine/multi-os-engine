@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCarAudioSourceResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,8 +89,8 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
+    public static native INCarAudioSourceResolutionResult confirmationRequiredWithValueToConfirm(
+            @NInt long valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -130,19 +128,16 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INCarAudioSourceResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCarAudioSourceResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INCarAudioSourceResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,8 +153,7 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
+    public static native INCarAudioSourceResolutionResult successWithResolvedValue(@NInt long resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -167,8 +161,7 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INCarAudioSourceResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -184,8 +177,8 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithCarAudioSourceToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithCarAudioSourceToConfirm(@NInt long carAudioSourceToConfirm);
+    public static native INCarAudioSourceResolutionResult confirmationRequiredWithCarAudioSourceToConfirm(
+            @NInt long carAudioSourceToConfirm);
 
     /**
      * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCarAudioSource. The resolvedValue can be different than the original INCarAudioSource. This allows app extensions to apply business logic constraints.
@@ -193,17 +186,15 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedCarAudioSource:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedCarAudioSource(@NInt long resolvedCarAudioSource);
+    public static native INCarAudioSourceResolutionResult successWithResolvedCarAudioSource(
+            @NInt long resolvedCarAudioSource);
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INCarAudioSourceResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INCarAudioSourceResolutionResult unsupportedWithReason(@NInt long reason);
 }

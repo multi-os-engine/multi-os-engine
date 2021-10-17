@@ -28,7 +28,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -67,13 +66,11 @@ public class GKPlayer extends GKBasePlayer {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GKPlayer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("anonymousGuestPlayerWithIdentifier:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object anonymousGuestPlayerWithIdentifier(String guestIdentifier);
+    public static native GKPlayer anonymousGuestPlayerWithIdentifier(String guestIdentifier);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -146,8 +143,7 @@ public class GKPlayer extends GKBasePlayer {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GKPlayer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

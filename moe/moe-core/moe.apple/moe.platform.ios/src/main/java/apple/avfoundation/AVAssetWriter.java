@@ -85,8 +85,7 @@ public class AVAssetWriter extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAssetWriter allocWithZone(VoidPtr zone);
 
     /**
      * assetWriterWithURL:fileType:error:
@@ -166,8 +165,7 @@ public class AVAssetWriter extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAssetWriter new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

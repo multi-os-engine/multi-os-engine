@@ -55,8 +55,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSNDArrayMultiaryBase allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -90,8 +89,8 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSNDArrayMultiaryBase copyWithZoneDevice(VoidPtr zone,
+            @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -235,8 +234,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSNDArrayMultiaryBase new_objc();
 
     /**
      * Read offsets to use when addressing a source NDArray

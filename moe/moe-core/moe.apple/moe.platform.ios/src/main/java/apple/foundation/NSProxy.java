@@ -129,8 +129,7 @@ public class NSProxy extends ObjCObject implements NSObject {
 
     @Generated
     @Selector("self")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object self();
+    public native NSProxy self();
 
     @Generated
     @Selector("superclass")

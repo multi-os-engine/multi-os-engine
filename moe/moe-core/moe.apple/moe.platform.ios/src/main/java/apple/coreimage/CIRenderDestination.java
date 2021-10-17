@@ -60,8 +60,7 @@ public class CIRenderDestination extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CIRenderDestination allocWithZone(VoidPtr zone);
 
     /**
      * This property will defualt to an appropriate value given
@@ -302,8 +301,7 @@ public class CIRenderDestination extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CIRenderDestination new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

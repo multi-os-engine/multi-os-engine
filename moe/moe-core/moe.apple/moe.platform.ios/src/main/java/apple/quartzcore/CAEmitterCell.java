@@ -73,8 +73,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CAEmitterCell allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -148,8 +147,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CAEmitterCell new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
