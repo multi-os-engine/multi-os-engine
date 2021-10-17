@@ -62,8 +62,7 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native VNContour allocWithZone(VoidPtr zone);
 
     /**
      * The aspect ratio of the contour from the original image aspect ration expressed as width/height
@@ -179,8 +178,7 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native VNContour new_objc();
 
     /**
      * The contour represented as a CGPath in normalized coordinates.

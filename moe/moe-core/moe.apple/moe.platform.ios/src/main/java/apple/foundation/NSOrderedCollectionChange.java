@@ -45,8 +45,7 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSOrderedCollectionChange<?> allocWithZone(VoidPtr zone);
 
     /**
      * When non-NSNotFound, indicates that this change is one half of a move, with
@@ -161,8 +160,7 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSOrderedCollectionChange<?> new_objc();
 
     /**
      * The object that was inserted or removed, if recorded

@@ -51,8 +51,7 @@ public class CPPointOfInterestTemplate extends CPTemplate {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CPPointOfInterestTemplate allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +134,7 @@ public class CPPointOfInterestTemplate extends CPTemplate {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CPPointOfInterestTemplate new_objc();
 
     /**
      * The Point of Interest template's delegate is informed of user events.

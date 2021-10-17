@@ -51,8 +51,7 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSFetchIndexElementDescription allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -149,8 +148,7 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSFetchIndexElementDescription new_objc();
 
     /**
      * This may be an NSExpressionDescription that expresses a function

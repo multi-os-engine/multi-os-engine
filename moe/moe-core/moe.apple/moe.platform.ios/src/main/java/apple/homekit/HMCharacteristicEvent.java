@@ -72,8 +72,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HMCharacteristicEvent<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HMCharacteristicEvent<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -77,8 +77,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNPhysicsField allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -182,8 +181,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNPhysicsField new_objc();
 
     /**
      * A time varying differentiable Perlin simplex noise field. A smoothness of 0 means as noisy as possible.

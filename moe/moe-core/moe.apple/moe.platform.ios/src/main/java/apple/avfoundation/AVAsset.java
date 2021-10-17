@@ -76,8 +76,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAsset allocWithZone(VoidPtr zone);
 
     /**
      * assetWithURL:
@@ -152,8 +151,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAsset new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

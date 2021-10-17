@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INAccountTypeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,13 +76,13 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithAccountTypeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithAccountTypeToConfirm(@NInt long accountTypeToConfirm);
+    public static native INAccountTypeResolutionResult confirmationRequiredWithAccountTypeToConfirm(
+            @NInt long accountTypeToConfirm);
 
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
+    public static native INAccountTypeResolutionResult confirmationRequiredWithValueToConfirm(
+            @NInt long valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -126,19 +124,16 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INAccountTypeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INAccountTypeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INAccountTypeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,13 +153,11 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedAccountType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedAccountType(@NInt long resolvedAccountType);
+    public static native INAccountTypeResolutionResult successWithResolvedAccountType(@NInt long resolvedAccountType);
 
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
+    public static native INAccountTypeResolutionResult successWithResolvedValue(@NInt long resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -172,8 +165,7 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INAccountTypeResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -182,12 +174,10 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INAccountTypeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INAccountTypeResolutionResult unsupportedWithReason(@NInt long reason);
 }

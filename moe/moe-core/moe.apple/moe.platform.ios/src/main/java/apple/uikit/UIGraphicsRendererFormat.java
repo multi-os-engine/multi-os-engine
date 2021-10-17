@@ -71,8 +71,7 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIGraphicsRendererFormat allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -105,8 +104,7 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("defaultFormat")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultFormat();
+    public static native UIGraphicsRendererFormat defaultFormat();
 
     @Generated
     @Selector("description")
@@ -141,8 +139,7 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIGraphicsRendererFormat new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -188,6 +185,5 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("preferredFormat")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object preferredFormat();
+    public static native UIGraphicsRendererFormat preferredFormat();
 }

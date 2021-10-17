@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INTaskResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,8 +76,7 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithTaskToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTaskToConfirm(INTask taskToConfirm);
+    public static native INTaskResolutionResult confirmationRequiredWithTaskToConfirm(INTask taskToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -94,8 +91,8 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithTasksToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithTasksToDisambiguate(NSArray<? extends INTask> tasksToDisambiguate);
+    public static native INTaskResolutionResult disambiguationWithTasksToDisambiguate(
+            NSArray<? extends INTask> tasksToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -129,19 +126,16 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INTaskResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INTaskResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INTaskResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,8 +155,7 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedTask:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedTask(INTask resolvedTask);
+    public static native INTaskResolutionResult successWithResolvedTask(INTask resolvedTask);
 
     @Generated
     @Selector("superclass")
@@ -170,8 +163,7 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INTaskResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -180,12 +172,10 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INTaskResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INTaskResolutionResult unsupportedWithReason(@NInt long reason);
 }

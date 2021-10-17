@@ -63,8 +63,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNBatchNormalizationState allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -200,8 +199,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNBatchNormalizationState new_objc();
 
     /**
      * Reset any accumulated state data to its initial values.
@@ -228,26 +226,22 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBuffer(
+    public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBuffer(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferBufferSize(
+    public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBufferBufferSize(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferResourceList(
+    public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBufferResourceList(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferTextureDescriptor(
+    public static native MPSCNNBatchNormalizationState temporaryStateWithCommandBufferTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     /**

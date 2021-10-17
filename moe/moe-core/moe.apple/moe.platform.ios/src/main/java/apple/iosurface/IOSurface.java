@@ -60,8 +60,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native IOSurface allocWithZone(VoidPtr zone);
 
     /**
      * The total allocation size of the IOSurface
@@ -287,8 +286,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native IOSurface new_objc();
 
     @Generated
     @Selector("pixelFormat")

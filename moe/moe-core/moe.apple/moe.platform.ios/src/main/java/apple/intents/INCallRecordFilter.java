@@ -52,8 +52,7 @@ public class INCallRecordFilter extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCallRecordFilter allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,8 +146,7 @@ public class INCallRecordFilter extends NSObject implements NSCopying, NSSecureC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCallRecordFilter new_objc();
 
     @Generated
     @Selector("participants")

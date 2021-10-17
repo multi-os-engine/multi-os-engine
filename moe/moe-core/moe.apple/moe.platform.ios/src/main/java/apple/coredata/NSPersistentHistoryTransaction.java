@@ -51,8 +51,7 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSPersistentHistoryTransaction allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("author")
@@ -139,8 +138,7 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSPersistentHistoryTransaction new_objc();
 
     /**
      * Get a notification that can be consumed by a NSManagedObjectContext

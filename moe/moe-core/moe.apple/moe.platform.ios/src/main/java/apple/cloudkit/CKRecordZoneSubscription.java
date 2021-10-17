@@ -76,8 +76,7 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CKRecordZoneSubscription allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +137,7 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CKRecordZoneSubscription new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INBillPayeeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,8 +76,8 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithBillPayeeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithBillPayeeToConfirm(INBillPayee billPayeeToConfirm);
+    public static native INBillPayeeResolutionResult confirmationRequiredWithBillPayeeToConfirm(
+            INBillPayee billPayeeToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -94,8 +92,7 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithBillPayeesToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithBillPayeesToDisambiguate(
+    public static native INBillPayeeResolutionResult disambiguationWithBillPayeesToDisambiguate(
             NSArray<? extends INBillPayee> billPayeesToDisambiguate);
 
     @Generated
@@ -130,19 +127,16 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INBillPayeeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INBillPayeeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INBillPayeeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -162,8 +156,7 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedBillPayee:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedBillPayee(INBillPayee resolvedBillPayee);
+    public static native INBillPayeeResolutionResult successWithResolvedBillPayee(INBillPayee resolvedBillPayee);
 
     @Generated
     @Selector("superclass")
@@ -171,8 +164,7 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INBillPayeeResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -181,12 +173,10 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INBillPayeeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INBillPayeeResolutionResult unsupportedWithReason(@NInt long reason);
 }

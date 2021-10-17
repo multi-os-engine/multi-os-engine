@@ -53,8 +53,7 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HMPresenceEvent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,8 +146,7 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HMPresenceEvent new_objc();
 
     /**
      * presenceEventType The event type that will trigger the event.

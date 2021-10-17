@@ -171,8 +171,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSInstanceAccelerationStructure allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -302,8 +301,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSInstanceAccelerationStructure new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

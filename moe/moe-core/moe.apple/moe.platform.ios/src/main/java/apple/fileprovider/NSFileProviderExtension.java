@@ -74,8 +74,7 @@ public class NSFileProviderExtension extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSFileProviderExtension allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -164,8 +163,7 @@ public class NSFileProviderExtension extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSFileProviderExtension new_objc();
 
     @Generated
     @Selector("persistentIdentifierForItemAtURL:")

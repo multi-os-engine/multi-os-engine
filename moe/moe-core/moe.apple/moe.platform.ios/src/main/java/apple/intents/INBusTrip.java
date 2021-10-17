@@ -53,8 +53,7 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INBusTrip allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("arrivalBusStopLocation")
@@ -164,8 +163,7 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INBusTrip new_objc();
 
     @Generated
     @Selector("provider")

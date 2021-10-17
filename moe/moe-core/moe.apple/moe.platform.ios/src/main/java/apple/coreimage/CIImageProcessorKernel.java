@@ -31,7 +31,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -76,8 +75,7 @@ public class CIImageProcessorKernel extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CIImageProcessorKernel allocWithZone(VoidPtr zone);
 
     /**
      * Call this method on your CIImageProcessorKernel subclass to create a new CIImage of the specified extent.
@@ -173,8 +171,7 @@ public class CIImageProcessorKernel extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CIImageProcessorKernel new_objc();
 
     @Generated
     @Selector("outputFormat")

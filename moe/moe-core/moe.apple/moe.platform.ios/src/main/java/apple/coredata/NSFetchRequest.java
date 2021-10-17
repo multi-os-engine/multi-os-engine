@@ -72,8 +72,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSFetchRequest<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +137,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSFetchRequest<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -55,8 +55,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCPoolingDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,8 +74,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("averagePoolingDescriptorWithKernelSizes:strides:dilationRates:paddingPolicy:paddingSizes:countIncludesPadding:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object averagePoolingDescriptorWithKernelSizesStridesDilationRatesPaddingPolicyPaddingSizesCountIncludesPadding(
+    public static native MLCPoolingDescriptor averagePoolingDescriptorWithKernelSizesStridesDilationRatesPaddingPolicyPaddingSizesCountIncludesPadding(
             NSArray<? extends NSNumber> kernelSizes, NSArray<? extends NSNumber> strides,
             NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes,
             boolean countIncludesPadding);
@@ -93,8 +91,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("averagePoolingDescriptorWithKernelSizes:strides:paddingPolicy:paddingSizes:countIncludesPadding:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object averagePoolingDescriptorWithKernelSizesStridesPaddingPolicyPaddingSizesCountIncludesPadding(
+    public static native MLCPoolingDescriptor averagePoolingDescriptorWithKernelSizesStridesPaddingPolicyPaddingSizesCountIncludesPadding(
             NSArray<? extends NSNumber> kernelSizes, NSArray<? extends NSNumber> strides, int paddingPolicy,
             NSArray<? extends NSNumber> paddingSizes, boolean countIncludesPadding);
 
@@ -221,8 +218,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("l2NormPoolingDescriptorWithKernelSizes:strides:dilationRates:paddingPolicy:paddingSizes:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object l2NormPoolingDescriptorWithKernelSizesStridesDilationRatesPaddingPolicyPaddingSizes(
+    public static native MLCPoolingDescriptor l2NormPoolingDescriptorWithKernelSizesStridesDilationRatesPaddingPolicyPaddingSizes(
             NSArray<? extends NSNumber> kernelSizes, NSArray<? extends NSNumber> strides,
             NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
 
@@ -237,8 +233,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("l2NormPoolingDescriptorWithKernelSizes:strides:paddingPolicy:paddingSizes:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object l2NormPoolingDescriptorWithKernelSizesStridesPaddingPolicyPaddingSizes(
+    public static native MLCPoolingDescriptor l2NormPoolingDescriptorWithKernelSizesStridesPaddingPolicyPaddingSizes(
             NSArray<? extends NSNumber> kernelSizes, NSArray<? extends NSNumber> strides, int paddingPolicy,
             NSArray<? extends NSNumber> paddingSizes);
 
@@ -254,8 +249,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("maxPoolingDescriptorWithKernelSizes:strides:dilationRates:paddingPolicy:paddingSizes:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object maxPoolingDescriptorWithKernelSizesStridesDilationRatesPaddingPolicyPaddingSizes(
+    public static native MLCPoolingDescriptor maxPoolingDescriptorWithKernelSizesStridesDilationRatesPaddingPolicyPaddingSizes(
             NSArray<? extends NSNumber> kernelSizes, NSArray<? extends NSNumber> strides,
             NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
 
@@ -270,16 +264,14 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("maxPoolingDescriptorWithKernelSizes:strides:paddingPolicy:paddingSizes:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object maxPoolingDescriptorWithKernelSizesStridesPaddingPolicyPaddingSizes(
+    public static native MLCPoolingDescriptor maxPoolingDescriptorWithKernelSizesStridesPaddingPolicyPaddingSizes(
             NSArray<? extends NSNumber> kernelSizes, NSArray<? extends NSNumber> strides, int paddingPolicy,
             NSArray<? extends NSNumber> paddingSizes);
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCPoolingDescriptor new_objc();
 
     /**
      * [@property]   paddingPolicy

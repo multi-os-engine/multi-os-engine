@@ -62,8 +62,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSTemporaryNDArray allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -146,8 +145,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSTemporaryNDArray new_objc();
 
     /**
      * The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel

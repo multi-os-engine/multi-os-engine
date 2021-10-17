@@ -60,8 +60,7 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationSingleSignOnCredential allocWithZone(VoidPtr zone);
 
     /**
      * The complete AuthenticationServices extension response with the additional outputs used by the specific technology used by the Authorization Server instance and AuthenticationServices Extension.
@@ -162,8 +161,7 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationSingleSignOnCredential new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

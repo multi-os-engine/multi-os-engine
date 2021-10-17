@@ -75,8 +75,7 @@ public class ASWebAuthenticationSession extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASWebAuthenticationSession allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -169,8 +168,7 @@ public class ASWebAuthenticationSession extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASWebAuthenticationSession new_objc();
 
     /**
      * Indicates whether this session should ask the browser for an ephemeral session.

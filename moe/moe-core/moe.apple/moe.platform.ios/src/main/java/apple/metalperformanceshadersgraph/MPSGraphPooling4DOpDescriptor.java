@@ -55,8 +55,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSGraphPooling4DOpDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -199,8 +198,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSGraphPooling4DOpDescriptor new_objc();
 
     /**
      * [@property]   paddingStyle

@@ -72,8 +72,7 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIInterpolatingMotionEffect allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIInterpolatingMotionEffect new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

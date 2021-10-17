@@ -91,8 +91,7 @@ public interface NSObject {
 
     @Generated
     @Selector("self")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object self();
+    NSObject self();
 
     @Generated
     @Selector("superclass")

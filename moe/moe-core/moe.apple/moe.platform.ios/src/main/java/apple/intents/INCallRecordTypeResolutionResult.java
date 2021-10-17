@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INCallRecordTypeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -125,19 +123,16 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INCallRecordTypeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INCallRecordTypeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INCallRecordTypeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -157,8 +152,7 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INCallRecordTypeResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -174,8 +168,8 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithCallRecordTypeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithCallRecordTypeToConfirm(@NInt long callRecordTypeToConfirm);
+    public static native INCallRecordTypeResolutionResult confirmationRequiredWithCallRecordTypeToConfirm(
+            @NInt long callRecordTypeToConfirm);
 
     /**
      * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCallRecordType. The resolvedValue can be different than the original INCallRecordType. This allows app extensions to apply business logic constraints.
@@ -183,17 +177,15 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedCallRecordType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedCallRecordType(@NInt long resolvedCallRecordType);
+    public static native INCallRecordTypeResolutionResult successWithResolvedCallRecordType(
+            @NInt long resolvedCallRecordType);
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INCallRecordTypeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INCallRecordTypeResolutionResult unsupportedWithReason(@NInt long reason);
 }

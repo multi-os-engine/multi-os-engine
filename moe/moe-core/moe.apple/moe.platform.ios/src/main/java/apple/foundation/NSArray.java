@@ -83,8 +83,7 @@ public class NSArray<_ObjectType> extends NSObject
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSArray<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("array")
@@ -175,8 +174,7 @@ public class NSArray<_ObjectType> extends NSObject
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSArray<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

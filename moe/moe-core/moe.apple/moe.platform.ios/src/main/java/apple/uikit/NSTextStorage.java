@@ -97,8 +97,7 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextStorage allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attributedStringWithAttachment:")
@@ -163,8 +162,7 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextStorage new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -363,14 +361,12 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
 
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public static native NSTextStorage objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    @MappedReturn(ObjCObjectMapper.class)
-    public Object _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
+    public NSTextStorage _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
@@ -454,14 +450,13 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     @Generated
     @Variadic()
     @Selector("localizedAttributedStringWithFormat:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedAttributedStringWithFormat(NSAttributedString format, Object... varargs);
+    public static native NSTextStorage localizedAttributedStringWithFormat(NSAttributedString format,
+            Object... varargs);
 
     @Generated
     @Variadic()
     @Selector("localizedAttributedStringWithFormat:options:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object localizedAttributedStringWithFormatOptions(NSAttributedString format,
+    public static native NSTextStorage localizedAttributedStringWithFormatOptions(NSAttributedString format,
             @NUInt long options, Object... varargs);
 
     /**

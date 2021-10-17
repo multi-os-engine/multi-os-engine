@@ -13,7 +13,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -52,8 +51,7 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVCompositionTrackFormatDescriptionReplacement allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -126,8 +124,7 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVCompositionTrackFormatDescriptionReplacement new_objc();
 
     /**
      * [@property]       originalFormatDescription

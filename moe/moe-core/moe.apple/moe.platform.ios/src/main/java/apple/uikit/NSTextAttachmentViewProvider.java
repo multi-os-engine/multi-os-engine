@@ -53,8 +53,7 @@ public class NSTextAttachmentViewProvider extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextAttachmentViewProvider allocWithZone(VoidPtr zone);
 
     /**
      * Invoked from -[NSTextAttachment attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:]
@@ -147,8 +146,7 @@ public class NSTextAttachmentViewProvider extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextAttachmentViewProvider new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

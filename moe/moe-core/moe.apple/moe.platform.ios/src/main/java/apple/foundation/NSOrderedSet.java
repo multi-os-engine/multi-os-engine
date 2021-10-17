@@ -78,8 +78,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSOrderedSet<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -136,8 +135,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSOrderedSet<?> new_objc();
 
     @Generated
     @Selector("orderedSet")

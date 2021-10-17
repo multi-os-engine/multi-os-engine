@@ -59,8 +59,7 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CMTremorResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -146,8 +145,7 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CMTremorResult new_objc();
 
     /**
      * The percentage of time tremor was likely and displacement amplitude was mild for the result.

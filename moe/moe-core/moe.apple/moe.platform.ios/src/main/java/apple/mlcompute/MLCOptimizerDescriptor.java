@@ -54,8 +54,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCOptimizerDescriptor allocWithZone(VoidPtr zone);
 
     /**
      * [@property]   appliesGradientClipping
@@ -254,8 +253,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCOptimizerDescriptor new_objc();
 
     /**
      * [@property]   regularizationScale

@@ -130,8 +130,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVSampleBufferRenderSynchronizer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -196,8 +195,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVSampleBufferRenderSynchronizer new_objc();
 
     /**
      * [@property]		rate

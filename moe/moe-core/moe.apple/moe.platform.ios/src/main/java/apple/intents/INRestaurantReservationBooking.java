@@ -72,8 +72,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INRestaurantReservationBooking allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INRestaurantReservationBooking new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

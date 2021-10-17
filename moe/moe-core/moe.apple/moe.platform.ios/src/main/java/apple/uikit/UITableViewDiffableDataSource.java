@@ -53,8 +53,7 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UITableViewDiffableDataSource<?, ?> allocWithZone(VoidPtr zone);
 
     /**
      * Apply a snapshot to the table view committing to the new data source state.
@@ -186,8 +185,7 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UITableViewDiffableDataSource<?, ?> new_objc();
 
     @Generated
     @IsOptional

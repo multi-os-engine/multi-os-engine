@@ -85,8 +85,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNScene allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,8 +146,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNScene new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

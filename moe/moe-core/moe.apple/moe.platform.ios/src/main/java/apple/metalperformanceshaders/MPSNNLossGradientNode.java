@@ -52,8 +52,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSNNLossGradientNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -163,8 +162,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSNNLossGradientNode new_objc();
 
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:labels:gradientState:lossDescriptor:isLabelsGradientFilter:")

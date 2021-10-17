@@ -75,8 +75,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSManagedObjectContext allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -149,8 +148,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Owned
     @Deprecated
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSManagedObjectContext new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

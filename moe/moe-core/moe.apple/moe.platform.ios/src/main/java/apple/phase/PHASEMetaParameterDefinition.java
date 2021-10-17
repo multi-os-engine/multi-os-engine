@@ -53,8 +53,7 @@ public class PHASEMetaParameterDefinition extends PHASEDefinition {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PHASEMetaParameterDefinition allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -119,8 +118,7 @@ public class PHASEMetaParameterDefinition extends PHASEDefinition {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PHASEMetaParameterDefinition new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

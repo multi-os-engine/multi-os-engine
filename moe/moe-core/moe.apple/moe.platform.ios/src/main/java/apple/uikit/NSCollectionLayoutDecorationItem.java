@@ -49,8 +49,7 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSCollectionLayoutDecorationItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -85,8 +84,7 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
      */
     @Generated
     @Selector("backgroundDecorationItemWithElementKind:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object backgroundDecorationItemWithElementKind(String elementKind);
+    public static native NSCollectionLayoutDecorationItem backgroundDecorationItemWithElementKind(String elementKind);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -167,8 +165,7 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSCollectionLayoutDecorationItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

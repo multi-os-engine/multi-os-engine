@@ -74,8 +74,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNAudioSource allocWithZone(VoidPtr zone);
 
     /**
      * audioSourceNamed:
@@ -145,8 +144,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNAudioSource new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

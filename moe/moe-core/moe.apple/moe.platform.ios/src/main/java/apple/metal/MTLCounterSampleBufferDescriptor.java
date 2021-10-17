@@ -55,8 +55,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MTLCounterSampleBufferDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -142,8 +141,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MTLCounterSampleBufferDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

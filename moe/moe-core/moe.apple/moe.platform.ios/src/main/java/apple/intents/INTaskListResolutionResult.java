@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INTaskListResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,8 +76,8 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithTaskListToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTaskListToConfirm(INTaskList taskListToConfirm);
+    public static native INTaskListResolutionResult confirmationRequiredWithTaskListToConfirm(
+            INTaskList taskListToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -94,8 +92,7 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithTaskListsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithTaskListsToDisambiguate(
+    public static native INTaskListResolutionResult disambiguationWithTaskListsToDisambiguate(
             NSArray<? extends INTaskList> taskListsToDisambiguate);
 
     @Generated
@@ -130,19 +127,16 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INTaskListResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INTaskListResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INTaskListResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -162,8 +156,7 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedTaskList:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedTaskList(INTaskList resolvedTaskList);
+    public static native INTaskListResolutionResult successWithResolvedTaskList(INTaskList resolvedTaskList);
 
     @Generated
     @Selector("superclass")
@@ -171,8 +164,7 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INTaskListResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -181,12 +173,10 @@ public class INTaskListResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INTaskListResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INTaskListResolutionResult unsupportedWithReason(@NInt long reason);
 }

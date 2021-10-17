@@ -77,8 +77,7 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNText allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -152,8 +151,7 @@ public class SCNText extends SCNGeometry {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNText new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

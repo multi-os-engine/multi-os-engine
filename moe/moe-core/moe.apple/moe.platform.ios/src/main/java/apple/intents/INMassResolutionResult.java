@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -50,8 +49,7 @@ public class INMassResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INMassResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -77,8 +75,7 @@ public class INMassResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INMassResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -86,8 +83,8 @@ public class INMassResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithMassToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithMassToConfirm(NSMeasurement<NSUnitMass> massToConfirm);
+    public static native INMassResolutionResult confirmationRequiredWithMassToConfirm(
+            NSMeasurement<NSUnitMass> massToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -102,8 +99,7 @@ public class INMassResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithMassToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithMassToDisambiguate(
+    public static native INMassResolutionResult disambiguationWithMassToDisambiguate(
             NSArray<? extends NSMeasurement<NSUnitMass>> massToDisambiguate);
 
     @Generated
@@ -138,19 +134,16 @@ public class INMassResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INMassResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INMassResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INMassResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -170,8 +163,7 @@ public class INMassResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedMass:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedMass(NSMeasurement<NSUnitMass> resolvedMass);
+    public static native INMassResolutionResult successWithResolvedMass(NSMeasurement<NSUnitMass> resolvedMass);
 
     @Generated
     @Selector("superclass")
@@ -179,13 +171,11 @@ public class INMassResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INMassResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INMassResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

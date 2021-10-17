@@ -15,7 +15,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -62,8 +61,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NFCNDEFPayload allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -169,8 +167,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NFCNDEFPayload new_objc();
 
     @Generated
     @Selector("payload")
@@ -233,8 +230,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("wellKnowTypeTextPayloadWithString:locale:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object wellKnowTypeTextPayloadWithStringLocale(String text, NSLocale locale);
+    public static native NFCNDEFPayload wellKnowTypeTextPayloadWithStringLocale(String text, NSLocale locale);
 
     /**
      * wellKnownTypeTextPayloadWithLocale:
@@ -254,8 +250,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("wellKnownTypeTextPayloadWithString:locale:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object wellKnownTypeTextPayloadWithStringLocale(String text, NSLocale locale);
+    public static native NFCNDEFPayload wellKnownTypeTextPayloadWithStringLocale(String text, NSLocale locale);
 
     /**
      * wellKnownTypeURIPayload
@@ -276,8 +271,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("wellKnownTypeURIPayloadWithString:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object wellKnownTypeURIPayloadWithString(String uri);
+    public static native NFCNDEFPayload wellKnownTypeURIPayloadWithString(String uri);
 
     /**
      * wellKnownTypeURIPayloadWithURL:
@@ -288,6 +282,5 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("wellKnownTypeURIPayloadWithURL:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object wellKnownTypeURIPayloadWithURL(NSURL url);
+    public static native NFCNDEFPayload wellKnownTypeURIPayloadWithURL(NSURL url);
 }

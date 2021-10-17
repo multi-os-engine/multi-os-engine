@@ -53,8 +53,7 @@ public class NSTextSelectionNavigation extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextSelectionNavigation allocWithZone(VoidPtr zone);
 
     /**
      * If YES, the object could produce selections with multiple disjoint ranges.
@@ -155,8 +154,7 @@ public class NSTextSelectionNavigation extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextSelectionNavigation new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

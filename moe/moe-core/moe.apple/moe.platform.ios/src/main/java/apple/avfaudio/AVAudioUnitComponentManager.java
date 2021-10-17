@@ -13,7 +13,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -73,8 +72,7 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAudioUnitComponentManager allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -186,8 +184,7 @@ public class AVAudioUnitComponentManager extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAudioUnitComponentManager new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -206,8 +203,7 @@ public class AVAudioUnitComponentManager extends NSObject {
      */
     @Generated
     @Selector("sharedAudioUnitComponentManager")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sharedAudioUnitComponentManager();
+    public static native AVAudioUnitComponentManager sharedAudioUnitComponentManager();
 
     /**
      * returns the localized standard system tags defined by the audio unit(s).

@@ -15,7 +15,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -73,8 +72,7 @@ public class AVDepthData extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVDepthData allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -148,8 +146,7 @@ public class AVDepthData extends NSObject {
      */
     @Generated
     @Selector("depthDataByApplyingExifOrientation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object depthDataByApplyingExifOrientation(int exifOrientation);
+    public native AVDepthData depthDataByApplyingExifOrientation(int exifOrientation);
 
     /**
      * depthDataByConvertingToDepthDataType:
@@ -163,8 +160,7 @@ public class AVDepthData extends NSObject {
      */
     @Generated
     @Selector("depthDataByConvertingToDepthDataType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object depthDataByConvertingToDepthDataType(int depthDataType);
+    public native AVDepthData depthDataByConvertingToDepthDataType(int depthDataType);
 
     /**
      * depthDataByReplacingDepthDataMapWithPixelBuffer:error:
@@ -179,8 +175,7 @@ public class AVDepthData extends NSObject {
      */
     @Generated
     @Selector("depthDataByReplacingDepthDataMapWithPixelBuffer:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object depthDataByReplacingDepthDataMapWithPixelBufferError(CVBufferRef pixelBuffer,
+    public native AVDepthData depthDataByReplacingDepthDataMapWithPixelBufferError(CVBufferRef pixelBuffer,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
@@ -297,8 +292,7 @@ public class AVDepthData extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVDepthData new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

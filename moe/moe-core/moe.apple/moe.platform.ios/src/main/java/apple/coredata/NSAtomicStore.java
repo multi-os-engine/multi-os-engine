@@ -69,8 +69,7 @@ public class NSAtomicStore extends NSPersistentStore {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSAtomicStore allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,8 +139,7 @@ public class NSAtomicStore extends NSPersistentStore {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSAtomicStore new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

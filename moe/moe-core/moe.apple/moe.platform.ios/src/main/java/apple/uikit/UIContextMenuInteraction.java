@@ -53,8 +53,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIContextMenuInteraction allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -146,8 +145,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIContextMenuInteraction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

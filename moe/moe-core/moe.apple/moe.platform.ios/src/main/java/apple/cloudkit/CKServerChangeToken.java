@@ -68,8 +68,7 @@ public class CKServerChangeToken extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CKServerChangeToken allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class CKServerChangeToken extends NSObject implements NSCopying, NSSecure
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CKServerChangeToken new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

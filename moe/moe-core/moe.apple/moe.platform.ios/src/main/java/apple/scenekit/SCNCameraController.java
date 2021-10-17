@@ -54,8 +54,7 @@ public class SCNCameraController extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNCameraController allocWithZone(VoidPtr zone);
 
     /**
      * Automatically update the target in beginInteraction
@@ -241,8 +240,7 @@ public class SCNCameraController extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNCameraController new_objc();
 
     @Generated
     @Selector("pointOfView")

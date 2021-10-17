@@ -52,8 +52,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSNNForwardLossNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -176,8 +175,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSNNForwardLossNode new_objc();
 
     @Generated
     @Selector("nodeWithSource:labels:lossDescriptor:")

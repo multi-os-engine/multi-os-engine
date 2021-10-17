@@ -80,8 +80,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNMaterialProperty allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -152,8 +151,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNMaterialProperty new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

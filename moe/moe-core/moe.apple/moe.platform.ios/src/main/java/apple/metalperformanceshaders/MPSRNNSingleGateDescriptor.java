@@ -81,8 +81,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSRNNSingleGateDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -115,8 +114,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object createRNNSingleGateDescriptorWithInputFeatureChannelsOutputFeatureChannels(
+    public static native MPSRNNSingleGateDescriptor createRNNSingleGateDescriptorWithInputFeatureChannelsOutputFeatureChannels(
             @NUInt long inputFeatureChannels, @NUInt long outputFeatureChannels);
 
     @Generated
@@ -171,8 +169,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSRNNSingleGateDescriptor new_objc();
 
     /**
      * [@property]   recurrentWeights

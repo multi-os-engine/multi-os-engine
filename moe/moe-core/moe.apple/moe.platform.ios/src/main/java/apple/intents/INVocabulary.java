@@ -27,7 +27,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -65,8 +64,7 @@ public class INVocabulary extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INVocabulary allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -127,8 +125,7 @@ public class INVocabulary extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INVocabulary new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -144,8 +141,7 @@ public class INVocabulary extends NSObject {
 
     @Generated
     @Selector("sharedVocabulary")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sharedVocabulary();
+    public static native INVocabulary sharedVocabulary();
 
     @Generated
     @Selector("superclass")

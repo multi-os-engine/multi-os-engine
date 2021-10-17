@@ -70,8 +70,7 @@ public class UIImagePickerController extends UINavigationController implements N
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIImagePickerController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
@@ -175,8 +174,7 @@ public class UIImagePickerController extends UINavigationController implements N
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIImagePickerController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

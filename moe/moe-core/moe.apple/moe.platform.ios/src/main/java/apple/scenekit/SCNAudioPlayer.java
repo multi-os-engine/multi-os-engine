@@ -17,6 +17,7 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioNode;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -26,7 +27,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -65,8 +65,7 @@ public class SCNAudioPlayer extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNAudioPlayer allocWithZone(VoidPtr zone);
 
     /**
      * [@property] audioPlayerWithAVAudioNode:
@@ -75,7 +74,7 @@ public class SCNAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("audioPlayerWithAVAudioNode:")
-    public static native SCNAudioPlayer audioPlayerWithAVAudioNode(apple.avfaudio.AVAudioNode audioNode);
+    public static native SCNAudioPlayer audioPlayerWithAVAudioNode(AVAudioNode audioNode);
 
     /**
      * [@property] audioPlayerWithSource:
@@ -145,8 +144,7 @@ public class SCNAudioPlayer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNAudioPlayer new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -176,7 +174,7 @@ public class SCNAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("audioNode")
-    public native apple.avfaudio.AVAudioNode audioNode();
+    public native AVAudioNode audioNode();
 
     /**
      * [@property] audioSource
@@ -208,7 +206,7 @@ public class SCNAudioPlayer extends NSObject {
      */
     @Generated
     @Selector("initWithAVAudioNode:")
-    public native SCNAudioPlayer initWithAVAudioNode(apple.avfaudio.AVAudioNode audioNode);
+    public native SCNAudioPlayer initWithAVAudioNode(AVAudioNode audioNode);
 
     /**
      * [@property] initWithSource:

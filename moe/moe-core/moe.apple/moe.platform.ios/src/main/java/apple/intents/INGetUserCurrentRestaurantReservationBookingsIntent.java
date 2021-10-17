@@ -69,8 +69,7 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INGetUserCurrentRestaurantReservationBookingsIntent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,8 +130,7 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INGetUserCurrentRestaurantReservationBookingsIntent new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

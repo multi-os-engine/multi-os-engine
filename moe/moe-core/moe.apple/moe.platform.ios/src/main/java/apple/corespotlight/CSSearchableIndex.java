@@ -68,8 +68,7 @@ public class CSSearchableIndex extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CSSearchableIndex allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -99,8 +98,7 @@ public class CSSearchableIndex extends NSObject {
 
     @Generated
     @Selector("defaultSearchableIndex")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultSearchableIndex();
+    public static native CSSearchableIndex defaultSearchableIndex();
 
     @Generated
     @Selector("description")
@@ -142,8 +140,7 @@ public class CSSearchableIndex extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CSSearchableIndex new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

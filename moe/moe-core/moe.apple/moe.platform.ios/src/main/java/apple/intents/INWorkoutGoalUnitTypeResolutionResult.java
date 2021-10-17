@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INWorkoutGoalUnitTypeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,8 +89,8 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
+    public static native INWorkoutGoalUnitTypeResolutionResult confirmationRequiredWithValueToConfirm(
+            @NInt long valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -130,19 +128,16 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INWorkoutGoalUnitTypeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INWorkoutGoalUnitTypeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INWorkoutGoalUnitTypeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,8 +153,7 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
+    public static native INWorkoutGoalUnitTypeResolutionResult successWithResolvedValue(@NInt long resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -167,8 +161,7 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INWorkoutGoalUnitTypeResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -184,8 +177,7 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
      */
     @Generated
     @Selector("confirmationRequiredWithWorkoutGoalUnitTypeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithWorkoutGoalUnitTypeToConfirm(
+    public static native INWorkoutGoalUnitTypeResolutionResult confirmationRequiredWithWorkoutGoalUnitTypeToConfirm(
             @NInt long workoutGoalUnitTypeToConfirm);
 
     /**
@@ -194,17 +186,15 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
      */
     @Generated
     @Selector("successWithResolvedWorkoutGoalUnitType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedWorkoutGoalUnitType(@NInt long resolvedWorkoutGoalUnitType);
+    public static native INWorkoutGoalUnitTypeResolutionResult successWithResolvedWorkoutGoalUnitType(
+            @NInt long resolvedWorkoutGoalUnitType);
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INWorkoutGoalUnitTypeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INWorkoutGoalUnitTypeResolutionResult unsupportedWithReason(@NInt long reason);
 }

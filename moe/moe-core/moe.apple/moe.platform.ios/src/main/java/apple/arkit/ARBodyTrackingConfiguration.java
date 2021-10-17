@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -57,8 +56,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ARBodyTrackingConfiguration allocWithZone(VoidPtr zone);
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
@@ -203,8 +201,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ARBodyTrackingConfiguration new_objc();
 
     /**
      * Type of planes to detect in the scene.

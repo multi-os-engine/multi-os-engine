@@ -60,8 +60,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVSpeechUtterance allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attributedSpeechString")
@@ -152,8 +151,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVSpeechUtterance new_objc();
 
     /**
      * [0.5 - 2] Default = 1

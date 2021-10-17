@@ -52,8 +52,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIPointerShape allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -67,8 +66,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("beamWithPreferredLength:axis:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object beamWithPreferredLengthAxis(@NFloat double length, @NUInt long axis);
+    public static native UIPointerShape beamWithPreferredLengthAxis(@NFloat double length, @NUInt long axis);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -135,8 +133,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIPointerShape new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

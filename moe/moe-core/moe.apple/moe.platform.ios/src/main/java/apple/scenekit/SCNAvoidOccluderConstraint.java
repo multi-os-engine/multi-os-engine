@@ -59,8 +59,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNAvoidOccluderConstraint allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -160,8 +159,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNAvoidOccluderConstraint new_objc();
 
     /**
      * [@property] occluderCategoryBitMask

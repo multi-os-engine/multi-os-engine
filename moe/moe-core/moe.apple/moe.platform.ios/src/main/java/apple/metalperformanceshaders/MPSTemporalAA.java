@@ -71,8 +71,7 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSTemporalAA allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -115,8 +114,7 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSTemporalAA copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -208,8 +206,7 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSTemporalAA new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

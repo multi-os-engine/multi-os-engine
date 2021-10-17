@@ -49,8 +49,7 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AEAssessmentConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("allowsAccessibilitySpeech")
@@ -158,8 +157,7 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AEAssessmentConfiguration new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

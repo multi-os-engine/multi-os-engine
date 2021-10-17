@@ -64,8 +64,7 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UICommandAlternate allocWithZone(VoidPtr zone);
 
     /**
      * Initialize an alternate action to take for a command.
@@ -165,8 +164,7 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UICommandAlternate new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

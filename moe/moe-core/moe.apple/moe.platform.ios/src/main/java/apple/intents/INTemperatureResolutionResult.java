@@ -28,7 +28,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -66,8 +65,7 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INTemperatureResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -96,8 +94,7 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithTemperatureToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithTemperatureToConfirm(
+    public static native INTemperatureResolutionResult confirmationRequiredWithTemperatureToConfirm(
             NSMeasurement<NSUnitTemperature> temperatureToConfirm);
 
     @Generated
@@ -113,8 +110,7 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithTemperaturesToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithTemperaturesToDisambiguate(
+    public static native INTemperatureResolutionResult disambiguationWithTemperaturesToDisambiguate(
             NSArray<? extends NSMeasurement<NSUnitTemperature>> temperaturesToDisambiguate);
 
     @Generated
@@ -145,19 +141,16 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INTemperatureResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INTemperatureResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INTemperatureResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -177,8 +170,8 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedTemperature:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedTemperature(NSMeasurement<NSUnitTemperature> resolvedTemperature);
+    public static native INTemperatureResolutionResult successWithResolvedTemperature(
+            NSMeasurement<NSUnitTemperature> resolvedTemperature);
 
     @Generated
     @Selector("superclass")
@@ -186,8 +179,7 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INTemperatureResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -200,12 +192,10 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INTemperatureResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INTemperatureResolutionResult unsupportedWithReason(@NInt long reason);
 }

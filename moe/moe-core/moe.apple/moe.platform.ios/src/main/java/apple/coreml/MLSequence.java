@@ -13,7 +13,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -56,8 +55,7 @@ public class MLSequence extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLSequence allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -94,8 +92,7 @@ public class MLSequence extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("emptySequenceWithType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object emptySequenceWithType(@NInt long type);
+    public static native MLSequence emptySequenceWithType(@NInt long type);
 
     @Generated
     @Selector("hash")
@@ -134,8 +131,7 @@ public class MLSequence extends NSObject implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLSequence new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

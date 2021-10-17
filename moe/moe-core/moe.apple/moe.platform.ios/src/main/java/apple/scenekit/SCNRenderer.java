@@ -17,6 +17,8 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioEngine;
+import apple.avfaudio.AVAudioEnvironmentNode;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
@@ -87,8 +89,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNRenderer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -149,8 +150,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNRenderer new_objc();
 
     /**
      * rendererWithContext:options:
@@ -200,11 +200,11 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("audioEngine")
-    public native apple.avfaudio.AVAudioEngine audioEngine();
+    public native AVAudioEngine audioEngine();
 
     @Generated
     @Selector("audioEnvironmentNode")
-    public native apple.avfaudio.AVAudioEnvironmentNode audioEnvironmentNode();
+    public native AVAudioEnvironmentNode audioEnvironmentNode();
 
     @Generated
     @Selector("audioListener")

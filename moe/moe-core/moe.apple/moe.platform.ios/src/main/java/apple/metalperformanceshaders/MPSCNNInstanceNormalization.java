@@ -64,8 +64,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNInstanceNormalization allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -184,8 +183,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNInstanceNormalization new_objc();
 
     /**
      * Reload data using a data source.

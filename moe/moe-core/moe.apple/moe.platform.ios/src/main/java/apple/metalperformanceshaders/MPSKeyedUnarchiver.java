@@ -61,8 +61,7 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSKeyedUnarchiver allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -159,8 +158,7 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSKeyedUnarchiver new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

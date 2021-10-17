@@ -52,8 +52,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIBarAppearance allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("copy")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copy();
+    public native UIBarAppearance copy();
 
     @Generated
     @Owned
@@ -213,8 +211,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIBarAppearance new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

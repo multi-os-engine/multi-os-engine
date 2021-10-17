@@ -67,8 +67,7 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSURLQueryItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -129,8 +128,7 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSURLQueryItem new_objc();
 
     @Generated
     @Selector("queryItemWithName:value:")

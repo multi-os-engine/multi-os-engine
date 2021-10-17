@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INVisualCodeTypeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,8 +76,8 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithVisualCodeTypeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithVisualCodeTypeToConfirm(@NInt long visualCodeTypeToConfirm);
+    public static native INVisualCodeTypeResolutionResult confirmationRequiredWithVisualCodeTypeToConfirm(
+            @NInt long visualCodeTypeToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -121,19 +119,16 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INVisualCodeTypeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INVisualCodeTypeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INVisualCodeTypeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -153,8 +148,8 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedVisualCodeType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedVisualCodeType(@NInt long resolvedVisualCodeType);
+    public static native INVisualCodeTypeResolutionResult successWithResolvedVisualCodeType(
+            @NInt long resolvedVisualCodeType);
 
     @Generated
     @Selector("superclass")
@@ -162,8 +157,7 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INVisualCodeTypeResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -172,12 +166,10 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INVisualCodeTypeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INVisualCodeTypeResolutionResult unsupportedWithReason(@NInt long reason);
 }

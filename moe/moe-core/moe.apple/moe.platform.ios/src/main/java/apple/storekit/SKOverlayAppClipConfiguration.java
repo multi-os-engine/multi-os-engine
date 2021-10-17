@@ -56,8 +56,7 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKOverlayAppClipConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +137,7 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKOverlayAppClipConfiguration new_objc();
 
     /**
      * The position an overlay will show at on screen.

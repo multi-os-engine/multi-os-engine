@@ -58,8 +58,7 @@ public class AVMetadataCatBodyObject extends AVMetadataBodyObject implements NSC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVMetadataCatBodyObject allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class AVMetadataCatBodyObject extends AVMetadataBodyObject implements NSC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVMetadataCatBodyObject new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

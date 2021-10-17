@@ -67,8 +67,7 @@ public class PDFPage extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PDFPage allocWithZone(VoidPtr zone);
 
     /**
      * Hit-testing method returns the annotation at point (or NULL if none). The point is in page-space.
@@ -236,8 +235,7 @@ public class PDFPage extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PDFPage new_objc();
 
     /**
      * Number of characters on the page (including linefeeds and spaces inserted).

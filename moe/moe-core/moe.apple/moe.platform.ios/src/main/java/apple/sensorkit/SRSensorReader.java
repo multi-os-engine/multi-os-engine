@@ -51,8 +51,7 @@ public class SRSensorReader extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SRSensorReader allocWithZone(VoidPtr zone);
 
     /**
      * The current authorization status of the calling application.
@@ -172,8 +171,7 @@ public class SRSensorReader extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SRSensorReader new_objc();
 
     /**
      * Request authorization to a given set of sensors

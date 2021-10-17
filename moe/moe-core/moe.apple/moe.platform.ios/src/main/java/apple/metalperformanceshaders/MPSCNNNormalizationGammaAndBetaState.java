@@ -59,8 +59,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNNormalizationGammaAndBetaState allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -181,8 +180,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNNormalizationGammaAndBetaState new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -202,14 +200,12 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBuffer(
+    public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBuffer(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferBufferSize(
+    public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferBufferSize(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
@@ -224,20 +220,17 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      */
     @Generated
     @Selector("temporaryStateWithCommandBuffer:numberOfFeatureChannels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferNumberOfFeatureChannels(
+    public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferNumberOfFeatureChannels(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long numberOfFeatureChannels);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferResourceList(
+    public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferResourceList(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
 
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object temporaryStateWithCommandBufferTextureDescriptor(
+    public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferTextureDescriptor(
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     @Generated

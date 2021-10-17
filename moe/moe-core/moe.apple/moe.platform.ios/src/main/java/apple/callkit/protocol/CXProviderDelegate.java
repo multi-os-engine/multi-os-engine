@@ -16,6 +16,7 @@ limitations under the License.
 
 package apple.callkit.protocol;
 
+import apple.avfaudio.AVAudioSession;
 import apple.callkit.CXAction;
 import apple.callkit.CXAnswerCallAction;
 import apple.callkit.CXEndCallAction;
@@ -45,14 +46,14 @@ public interface CXProviderDelegate {
     @Generated
     @IsOptional
     @Selector("provider:didActivateAudioSession:")
-    default void providerDidActivateAudioSession(CXProvider provider, apple.avfaudio.AVAudioSession audioSession) {
+    default void providerDidActivateAudioSession(CXProvider provider, AVAudioSession audioSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:didDeactivateAudioSession:")
-    default void providerDidDeactivateAudioSession(CXProvider provider, apple.avfaudio.AVAudioSession audioSession) {
+    default void providerDidDeactivateAudioSession(CXProvider provider, AVAudioSession audioSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 

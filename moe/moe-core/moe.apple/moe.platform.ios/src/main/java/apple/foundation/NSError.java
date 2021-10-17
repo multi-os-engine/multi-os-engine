@@ -66,8 +66,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSError allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,8 +132,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSError new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -299,14 +297,12 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("fileProviderErrorForCollisionWithItem:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fileProviderErrorForCollisionWithItem(
+    public static native NSError fileProviderErrorForCollisionWithItem(
             @Mapped(ObjCObjectMapper.class) NSFileProviderItem existingItem);
 
     @Generated
     @Selector("fileProviderErrorForNonExistentItemWithIdentifier:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fileProviderErrorForNonExistentItemWithIdentifier(String itemIdentifier);
+    public static native NSError fileProviderErrorForNonExistentItemWithIdentifier(String itemIdentifier);
 
     /**
      * Return a list of underlying errors, if any. It includes the values of both NSUnderlyingErrorKey and NSMultipleUnderlyingErrorsKey. If there are no underlying errors, returns an empty array.

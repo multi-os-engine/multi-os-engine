@@ -13,7 +13,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -57,8 +56,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NFCNDEFMessage allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -155,14 +153,12 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("ndefMessageWithData:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object ndefMessageWithData(NSData data);
+    public static native NFCNDEFMessage ndefMessageWithData(NSData data);
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NFCNDEFMessage new_objc();
 
     /**
      * [@property] records

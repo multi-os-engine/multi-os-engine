@@ -83,8 +83,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSBinaryImageKernel allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -145,8 +144,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSBinaryImageKernel new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

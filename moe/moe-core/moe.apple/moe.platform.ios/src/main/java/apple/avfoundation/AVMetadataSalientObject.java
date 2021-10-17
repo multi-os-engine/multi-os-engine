@@ -58,8 +58,7 @@ public class AVMetadataSalientObject extends AVMetadataObject implements NSCopyi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVMetadataSalientObject allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class AVMetadataSalientObject extends AVMetadataObject implements NSCopyi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVMetadataSalientObject new_objc();
 
     /**
      * [@property] objectID

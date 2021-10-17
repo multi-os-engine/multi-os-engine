@@ -49,8 +49,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIPointerStyle allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -98,8 +97,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("hiddenPointerStyle")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object hiddenPointerStyle();
+    public static native UIPointerStyle hiddenPointerStyle();
 
     @Generated
     @Selector("init")
@@ -129,8 +127,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIPointerStyle new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -194,6 +191,5 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("systemPointerStyle")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object systemPointerStyle();
+    public static native UIPointerStyle systemPointerStyle();
 }

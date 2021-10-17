@@ -73,8 +73,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextTab allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -142,8 +141,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextTab new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

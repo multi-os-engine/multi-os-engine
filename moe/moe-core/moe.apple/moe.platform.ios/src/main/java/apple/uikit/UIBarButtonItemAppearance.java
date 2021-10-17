@@ -52,8 +52,7 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIBarButtonItemAppearance allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -87,8 +86,7 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @Generated
     @Owned
     @Selector("copy")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copy();
+    public native UIBarButtonItemAppearance copy();
 
     @Generated
     @Owned
@@ -176,8 +174,7 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIBarButtonItemAppearance new_objc();
 
     /**
      * The appearance when the bar button item is in the normal control state.

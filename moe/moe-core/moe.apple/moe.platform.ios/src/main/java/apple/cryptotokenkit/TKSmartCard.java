@@ -58,8 +58,7 @@ public class TKSmartCard extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native TKSmartCard allocWithZone(VoidPtr zone);
 
     /**
      * Bitmask containing allowed protocols to be used when communicating with the card.  This property is consulted only during connection to the card, changes are not propagated to already connected session.  By default, any protocol can be used.
@@ -201,8 +200,7 @@ public class TKSmartCard extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native TKSmartCard new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

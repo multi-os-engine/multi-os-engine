@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INMediaItemResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,8 +73,7 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INMediaItemResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -84,8 +81,8 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithMediaItemToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithMediaItemToConfirm(INMediaItem mediaItemToConfirm);
+    public static native INMediaItemResolutionResult confirmationRequiredWithMediaItemToConfirm(
+            INMediaItem mediaItemToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -100,8 +97,7 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithMediaItemsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithMediaItemsToDisambiguate(
+    public static native INMediaItemResolutionResult disambiguationWithMediaItemsToDisambiguate(
             NSArray<? extends INMediaItem> mediaItemsToDisambiguate);
 
     @Generated
@@ -136,19 +132,16 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INMediaItemResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INMediaItemResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INMediaItemResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -168,8 +161,7 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedMediaItem:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedMediaItem(INMediaItem resolvedMediaItem);
+    public static native INMediaItemResolutionResult successWithResolvedMediaItem(INMediaItem resolvedMediaItem);
 
     /**
      * Convenience method to return multiple success resolution results for an array of INMediaItems
@@ -185,13 +177,11 @@ public class INMediaItemResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INMediaItemResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INMediaItemResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

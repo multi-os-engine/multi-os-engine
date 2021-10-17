@@ -51,8 +51,7 @@ public class UISceneOpenURLOptions extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UISceneOpenURLOptions allocWithZone(VoidPtr zone);
 
     /**
      * A property-list typed object corresponding to what the originating application passed in UIDocumentInteractionController's annotation property
@@ -125,8 +124,7 @@ public class UISceneOpenURLOptions extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UISceneOpenURLOptions new_objc();
 
     /**
      * Copy the file before use if this value is NO

@@ -63,8 +63,7 @@ public class MPSNNImageNode extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSNNImageNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -125,8 +124,7 @@ public class MPSNNImageNode extends NSObject {
      */
     @Generated
     @Selector("exportedNodeWithHandle:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object exportedNodeWithHandle(NSObject handle);
+    public static native MPSNNImageNode exportedNodeWithHandle(NSObject handle);
 
     /**
      * The preferred precision for the image
@@ -197,8 +195,7 @@ public class MPSNNImageNode extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSNNImageNode new_objc();
 
     @Generated
     @Selector("nodeWithHandle:")

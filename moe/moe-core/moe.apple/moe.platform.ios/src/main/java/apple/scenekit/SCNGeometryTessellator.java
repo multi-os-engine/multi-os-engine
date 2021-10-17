@@ -58,8 +58,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNGeometryTessellator allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -192,8 +191,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNGeometryTessellator new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

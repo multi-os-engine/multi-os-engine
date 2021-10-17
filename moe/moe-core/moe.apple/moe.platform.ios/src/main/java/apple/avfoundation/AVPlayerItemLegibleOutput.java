@@ -73,8 +73,7 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVPlayerItemLegibleOutput allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +134,7 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVPlayerItemLegibleOutput new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

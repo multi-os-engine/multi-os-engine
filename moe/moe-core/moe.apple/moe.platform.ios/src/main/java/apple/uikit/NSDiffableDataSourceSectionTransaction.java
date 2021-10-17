@@ -49,8 +49,7 @@ public class NSDiffableDataSourceSectionTransaction<_SectionIdentifierType, _Ite
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSDiffableDataSourceSectionTransaction<?, ?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -127,8 +126,7 @@ public class NSDiffableDataSourceSectionTransaction<_SectionIdentifierType, _Ite
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSDiffableDataSourceSectionTransaction<?, ?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

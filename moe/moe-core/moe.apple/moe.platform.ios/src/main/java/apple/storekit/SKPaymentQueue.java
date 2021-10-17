@@ -69,8 +69,7 @@ public class SKPaymentQueue extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKPaymentQueue allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -107,8 +106,7 @@ public class SKPaymentQueue extends NSObject {
 
     @Generated
     @Selector("defaultQueue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultQueue();
+    public static native SKPaymentQueue defaultQueue();
 
     @Generated
     @Selector("description")
@@ -143,8 +141,7 @@ public class SKPaymentQueue extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKPaymentQueue new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

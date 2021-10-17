@@ -91,8 +91,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -157,8 +156,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKNode new_objc();
 
     @Generated
     @Selector("node")

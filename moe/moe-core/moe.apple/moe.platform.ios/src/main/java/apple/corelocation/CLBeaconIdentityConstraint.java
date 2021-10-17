@@ -78,8 +78,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CLBeaconIdentityConstraint allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -211,8 +210,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CLBeaconIdentityConstraint new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

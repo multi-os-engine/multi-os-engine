@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INStartCallCallRecordToCallBackResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,13 +73,12 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
 
     @Generated
     @Selector("confirmationRequiredWithCallRecordToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithCallRecordToConfirm(INCallRecord callRecordToConfirm);
+    public static native INStartCallCallRecordToCallBackResolutionResult confirmationRequiredWithCallRecordToConfirm(
+            INCallRecord callRecordToConfirm);
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INStartCallCallRecordToCallBackResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
@@ -94,8 +91,7 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
 
     @Generated
     @Selector("disambiguationWithCallRecordsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithCallRecordsToDisambiguate(
+    public static native INStartCallCallRecordToCallBackResolutionResult disambiguationWithCallRecordsToDisambiguate(
             NSArray<? extends INCallRecord> callRecordsToDisambiguate);
 
     @Generated
@@ -135,19 +131,16 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INStartCallCallRecordToCallBackResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INStartCallCallRecordToCallBackResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INStartCallCallRecordToCallBackResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -163,8 +156,8 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
 
     @Generated
     @Selector("successWithResolvedCallRecord:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedCallRecord(INCallRecord resolvedCallRecord);
+    public static native INStartCallCallRecordToCallBackResolutionResult successWithResolvedCallRecord(
+            INCallRecord resolvedCallRecord);
 
     @Generated
     @Selector("superclass")
@@ -172,18 +165,15 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INStartCallCallRecordToCallBackResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedForReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedForReason(@NInt long reason);
+    public static native INStartCallCallRecordToCallBackResolutionResult unsupportedForReason(@NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INStartCallCallRecordToCallBackResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

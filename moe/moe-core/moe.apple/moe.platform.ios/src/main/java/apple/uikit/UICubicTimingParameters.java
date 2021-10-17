@@ -68,8 +68,7 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UICubicTimingParameters allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UICubicTimingParameters new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

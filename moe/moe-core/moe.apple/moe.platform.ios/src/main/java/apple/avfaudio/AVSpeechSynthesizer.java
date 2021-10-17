@@ -57,8 +57,7 @@ public class AVSpeechSynthesizer extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVSpeechSynthesizer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -148,8 +147,7 @@ public class AVSpeechSynthesizer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVSpeechSynthesizer new_objc();
 
     /**
      * Specify the audio channels to be used for synthesized speech as described by the channel descriptions in AVAudioSession's current route.

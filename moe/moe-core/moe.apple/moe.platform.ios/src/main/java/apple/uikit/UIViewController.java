@@ -91,8 +91,7 @@ public class UIViewController extends UIResponder
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIViewController allocWithZone(VoidPtr zone);
 
     /**
      * call this method when your return value from shouldAutorotateToInterfaceOrientation: changes
@@ -165,8 +164,7 @@ public class UIViewController extends UIResponder
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

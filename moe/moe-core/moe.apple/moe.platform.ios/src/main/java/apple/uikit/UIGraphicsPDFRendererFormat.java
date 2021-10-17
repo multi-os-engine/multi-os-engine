@@ -27,7 +27,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -65,8 +64,7 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIGraphicsPDFRendererFormat allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -96,8 +94,7 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
 
     @Generated
     @Selector("defaultFormat")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultFormat();
+    public static native UIGraphicsPDFRendererFormat defaultFormat();
 
     @Generated
     @Selector("description")
@@ -132,8 +129,7 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIGraphicsPDFRendererFormat new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -170,6 +166,5 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
 
     @Generated
     @Selector("preferredFormat")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object preferredFormat();
+    public static native UIGraphicsPDFRendererFormat preferredFormat();
 }

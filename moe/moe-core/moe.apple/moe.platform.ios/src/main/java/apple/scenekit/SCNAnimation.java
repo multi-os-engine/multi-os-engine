@@ -59,8 +59,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNAnimation allocWithZone(VoidPtr zone);
 
     /**
      * Called when the animation starts.
@@ -302,8 +301,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNAnimation new_objc();
 
     /**
      * The repeat count of the object. May be fractional. Defaults to 0.

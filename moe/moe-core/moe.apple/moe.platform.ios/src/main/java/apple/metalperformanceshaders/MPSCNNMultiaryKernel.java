@@ -67,8 +67,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNMultiaryKernel allocWithZone(VoidPtr zone);
 
     /**
      * Returns YES if the filter must be run over the entire batch before its
@@ -508,8 +507,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNMultiaryKernel new_objc();
 
     /**
      * The positon of the destination clip rectangle origin relative to each source buffer

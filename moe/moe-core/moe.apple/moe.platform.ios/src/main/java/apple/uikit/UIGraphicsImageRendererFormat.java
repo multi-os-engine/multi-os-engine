@@ -26,7 +26,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
@@ -65,8 +64,7 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIGraphicsImageRendererFormat allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -96,8 +94,7 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
 
     @Generated
     @Selector("defaultFormat")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultFormat();
+    public static native UIGraphicsImageRendererFormat defaultFormat();
 
     @Generated
     @Selector("description")
@@ -132,8 +129,7 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIGraphicsImageRendererFormat new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -213,8 +209,7 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
 
     @Generated
     @Selector("preferredFormat")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object preferredFormat();
+    public static native UIGraphicsImageRendererFormat preferredFormat();
 
     @Generated
     @Selector("preferredRange")

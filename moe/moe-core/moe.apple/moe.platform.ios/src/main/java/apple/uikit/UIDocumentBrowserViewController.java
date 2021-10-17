@@ -74,8 +74,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIDocumentBrowserViewController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("allowedContentTypes")
@@ -222,8 +221,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIDocumentBrowserViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

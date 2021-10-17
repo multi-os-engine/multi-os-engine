@@ -57,8 +57,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASPasswordCredentialIdentity allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -161,8 +160,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASPasswordCredentialIdentity new_objc();
 
     /**
      * Get or set the rank of the credential identity object.

@@ -75,8 +75,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVAssetTrack allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVAssetTrack new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

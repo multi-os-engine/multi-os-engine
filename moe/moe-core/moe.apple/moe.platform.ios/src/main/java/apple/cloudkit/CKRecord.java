@@ -71,8 +71,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CKRecord allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,8 +132,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CKRecord new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

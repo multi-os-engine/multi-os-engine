@@ -54,8 +54,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCRMSPropOptimizer allocWithZone(VoidPtr zone);
 
     /**
      * [@property]   alpha
@@ -170,8 +169,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCRMSPropOptimizer new_objc();
 
     /**
      * Create a MLCRMSPropOptimizer object with defaults

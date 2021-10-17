@@ -54,8 +54,7 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native WKDownload allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,8 +146,7 @@ public class WKDownload extends NSObject implements NSProgressReporting {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native WKDownload new_objc();
 
     /**
      * The request used to initiate this download.

@@ -53,8 +53,7 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attestationPreference")
@@ -163,8 +162,7 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest new_objc();
 
     @Generated
     @Selector("relyingPartyIdentifier")

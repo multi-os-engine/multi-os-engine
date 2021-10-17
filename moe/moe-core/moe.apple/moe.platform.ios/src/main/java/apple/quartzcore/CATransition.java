@@ -70,8 +70,7 @@ public class CATransition extends CAAnimation {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CATransition allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animation")
@@ -141,8 +140,7 @@ public class CATransition extends CAAnimation {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CATransition new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

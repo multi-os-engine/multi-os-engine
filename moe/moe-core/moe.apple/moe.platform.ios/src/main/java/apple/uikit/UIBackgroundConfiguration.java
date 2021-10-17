@@ -57,8 +57,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIBackgroundConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -117,8 +116,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      */
     @Generated
     @Selector("clearConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object clearConfiguration();
+    public static native UIBackgroundConfiguration clearConfiguration();
 
     @Generated
     @Owned
@@ -203,62 +201,54 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      */
     @Generated
     @Selector("listAccompaniedSidebarCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object listAccompaniedSidebarCellConfiguration();
+    public static native UIBackgroundConfiguration listAccompaniedSidebarCellConfiguration();
 
     /**
      * Returns the default configuration for a grouped list cell.
      */
     @Generated
     @Selector("listGroupedCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object listGroupedCellConfiguration();
+    public static native UIBackgroundConfiguration listGroupedCellConfiguration();
 
     /**
      * Returns the default configuration for a grouped list header or footer.
      */
     @Generated
     @Selector("listGroupedHeaderFooterConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object listGroupedHeaderFooterConfiguration();
+    public static native UIBackgroundConfiguration listGroupedHeaderFooterConfiguration();
 
     /**
      * Returns the default configuration for a plain list cell.
      */
     @Generated
     @Selector("listPlainCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object listPlainCellConfiguration();
+    public static native UIBackgroundConfiguration listPlainCellConfiguration();
 
     /**
      * Returns the default configuration for a plain list header or footer.
      */
     @Generated
     @Selector("listPlainHeaderFooterConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object listPlainHeaderFooterConfiguration();
+    public static native UIBackgroundConfiguration listPlainHeaderFooterConfiguration();
 
     /**
      * Returns the default configuration for a sidebar list cell.
      */
     @Generated
     @Selector("listSidebarCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object listSidebarCellConfiguration();
+    public static native UIBackgroundConfiguration listSidebarCellConfiguration();
 
     /**
      * Returns the default configuration for a sidebar list header.
      */
     @Generated
     @Selector("listSidebarHeaderConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object listSidebarHeaderConfiguration();
+    public static native UIBackgroundConfiguration listSidebarHeaderConfiguration();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIBackgroundConfiguration new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -441,8 +431,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
      */
     @Generated
     @Selector("updatedConfigurationForState:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object updatedConfigurationForState(@Mapped(ObjCObjectMapper.class) UIConfigurationState state);
+    public native UIBackgroundConfiguration updatedConfigurationForState(
+            @Mapped(ObjCObjectMapper.class) UIConfigurationState state);
 
     @Generated
     @Selector("version")

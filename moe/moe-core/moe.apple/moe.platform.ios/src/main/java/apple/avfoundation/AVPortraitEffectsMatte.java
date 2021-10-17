@@ -14,7 +14,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -61,8 +60,7 @@ public class AVPortraitEffectsMatte extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVPortraitEffectsMatte allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -153,8 +151,7 @@ public class AVPortraitEffectsMatte extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVPortraitEffectsMatte new_objc();
 
     /**
      * [@property] pixelFormatType
@@ -179,8 +176,7 @@ public class AVPortraitEffectsMatte extends NSObject {
      */
     @Generated
     @Selector("portraitEffectsMatteByApplyingExifOrientation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object portraitEffectsMatteByApplyingExifOrientation(int exifOrientation);
+    public native AVPortraitEffectsMatte portraitEffectsMatteByApplyingExifOrientation(int exifOrientation);
 
     /**
      * portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBuffer:error:
@@ -195,8 +191,7 @@ public class AVPortraitEffectsMatte extends NSObject {
      */
     @Generated
     @Selector("portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBuffer:error:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBufferError(
+    public native AVPortraitEffectsMatte portraitEffectsMatteByReplacingPortraitEffectsMatteWithPixelBufferError(
             CVBufferRef pixelBuffer, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**

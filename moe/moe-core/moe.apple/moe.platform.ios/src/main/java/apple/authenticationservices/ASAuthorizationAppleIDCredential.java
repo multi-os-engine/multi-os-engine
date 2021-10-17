@@ -53,8 +53,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native ASAuthorizationAppleIDCredential allocWithZone(VoidPtr zone);
 
     /**
      * A short-lived, one-time valid token that provides proof of authorization to the server component of the app. The authorization code is bound to the specific transaction using the state attribute passed in the authorization request. The server component of the app can validate the code using Apple’s identity service endpoint provided for this purpose.
@@ -168,8 +167,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native ASAuthorizationAppleIDCredential new_objc();
 
     /**
      * Check this property for a hint as to whether the current user is a "real user".  @see ASUserDetectionStatus for guidelines on handling each status

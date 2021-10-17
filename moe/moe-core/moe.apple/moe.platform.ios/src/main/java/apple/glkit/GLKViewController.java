@@ -72,8 +72,7 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native GLKViewController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
@@ -142,8 +141,7 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native GLKViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

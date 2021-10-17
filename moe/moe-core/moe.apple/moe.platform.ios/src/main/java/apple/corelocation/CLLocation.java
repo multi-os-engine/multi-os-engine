@@ -78,8 +78,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CLLocation allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,8 +139,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CLLocation new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

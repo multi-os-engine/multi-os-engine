@@ -50,8 +50,7 @@ public class UISheetPresentationController extends UIPresentationController {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UISheetPresentationController allocWithZone(VoidPtr zone);
 
     /**
      * To animate changing any of the above properties, set them inside a block passed to this method.
@@ -162,8 +161,7 @@ public class UISheetPresentationController extends UIPresentationController {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UISheetPresentationController new_objc();
 
     /**
      * The preferred corner radius of the sheet when presented.

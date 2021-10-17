@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INStartCallContactResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,14 +73,13 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INStartCallContactResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("confirmationRequiredWithPersonToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithPersonToConfirm(INPerson personToConfirm);
+    public static native INStartCallContactResolutionResult confirmationRequiredWithPersonToConfirm(
+            INPerson personToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -94,8 +91,7 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
 
     @Generated
     @Selector("disambiguationWithPeopleToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithPeopleToDisambiguate(
+    public static native INStartCallContactResolutionResult disambiguationWithPeopleToDisambiguate(
             NSArray<? extends INPerson> peopleToDisambiguate);
 
     @Generated
@@ -135,19 +131,16 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INStartCallContactResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INStartCallContactResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INStartCallContactResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -163,8 +156,7 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
 
     @Generated
     @Selector("successWithResolvedPerson:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedPerson(INPerson resolvedPerson);
+    public static native INStartCallContactResolutionResult successWithResolvedPerson(INPerson resolvedPerson);
 
     @Generated
     @Selector("superclass")
@@ -172,18 +164,15 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INStartCallContactResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedForReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedForReason(@NInt long reason);
+    public static native INStartCallContactResolutionResult unsupportedForReason(@NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INStartCallContactResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

@@ -52,8 +52,7 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INTextNoteContent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -136,8 +135,7 @@ public class INTextNoteContent extends INNoteContent implements NSSecureCoding, 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INTextNoteContent new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

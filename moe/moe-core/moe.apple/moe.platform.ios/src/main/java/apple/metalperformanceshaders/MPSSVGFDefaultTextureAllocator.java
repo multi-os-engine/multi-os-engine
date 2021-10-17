@@ -56,8 +56,7 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSSVGFDefaultTextureAllocator allocWithZone(VoidPtr zone);
 
     /**
      * The number of textures which have been allocated from this allocator
@@ -145,8 +144,7 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSSVGFDefaultTextureAllocator new_objc();
 
     /**
      * Remove all textures from the cache

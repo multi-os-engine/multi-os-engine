@@ -49,8 +49,7 @@ public class NSXPCListener extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSXPCListener allocWithZone(VoidPtr zone);
 
     /**
      * Create an anonymous listener connection. Other processes may connect to this listener by passing this listener object's endpoint to NSXPCConnection's -initWithListenerEndpoint: method.
@@ -144,8 +143,7 @@ public class NSXPCListener extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSXPCListener new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

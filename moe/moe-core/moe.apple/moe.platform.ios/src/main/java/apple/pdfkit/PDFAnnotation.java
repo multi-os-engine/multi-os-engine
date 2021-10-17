@@ -98,8 +98,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PDFAnnotation allocWithZone(VoidPtr zone);
 
     /**
      * For radio buttons, indicates whether clicking on widget whose state is already On toggles it Off.
@@ -453,8 +452,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PDFAnnotation new_objc();
 
     /**
      * Returns the page the annotation is associated with (may return nil if annotation not associated with a page).

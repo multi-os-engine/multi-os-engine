@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
@@ -51,8 +50,7 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIImageSymbolConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,26 +129,22 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     @Generated
     @Selector("configurationWithoutPointSizeAndWeight")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object configurationWithoutPointSizeAndWeight();
+    public native UIImageSymbolConfiguration configurationWithoutPointSizeAndWeight();
 
     @Generated
     @Selector("configurationWithoutScale")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object configurationWithoutScale();
+    public native UIImageSymbolConfiguration configurationWithoutScale();
 
     /**
      * Removes attributes from the configuration if they are set
      */
     @Generated
     @Selector("configurationWithoutTextStyle")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object configurationWithoutTextStyle();
+    public native UIImageSymbolConfiguration configurationWithoutTextStyle();
 
     @Generated
     @Selector("configurationWithoutWeight")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object configurationWithoutWeight();
+    public native UIImageSymbolConfiguration configurationWithoutWeight();
 
     @Generated
     @Selector("debugDescription")
@@ -206,8 +200,7 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIImageSymbolConfiguration new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

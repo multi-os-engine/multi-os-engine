@@ -75,8 +75,7 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVMetadataFaceObject allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVMetadataFaceObject new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

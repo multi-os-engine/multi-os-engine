@@ -13,7 +13,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -98,8 +97,7 @@ public class MPSGraph extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSGraph allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("applyStochasticGradientDescentWithLearningRateTensor:variable:gradientTensor:name:")
@@ -991,8 +989,7 @@ public class MPSGraph extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSGraph new_objc();
 
     @Generated
     @Selector("normalizationBetaGradientWithIncomingGradientTensor:sourceTensor:reductionAxes:name:")

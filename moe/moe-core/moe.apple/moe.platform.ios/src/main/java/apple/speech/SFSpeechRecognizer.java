@@ -70,8 +70,7 @@ public class SFSpeechRecognizer extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SFSpeechRecognizer allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("authorizationStatus")
@@ -137,8 +136,7 @@ public class SFSpeechRecognizer extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SFSpeechRecognizer new_objc();
 
     @Generated
     @Selector("requestAuthorization:")

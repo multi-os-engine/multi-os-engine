@@ -103,8 +103,7 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MCBrowserViewController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
@@ -173,8 +172,7 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MCBrowserViewController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

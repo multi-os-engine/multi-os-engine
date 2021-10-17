@@ -50,8 +50,7 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIDropInteraction allocWithZone(VoidPtr zone);
 
     /**
      * Whether to allow this interaction to handle more than one drop session
@@ -141,8 +140,7 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIDropInteraction new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

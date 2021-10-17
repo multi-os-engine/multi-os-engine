@@ -66,8 +66,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNGroupNormalization allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -186,8 +185,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNGroupNormalization new_objc();
 
     /**
      * Reinitialize the filter using the data source provided at kernel initialization.

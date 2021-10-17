@@ -68,8 +68,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UNNotificationSound allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -137,8 +136,7 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UNNotificationSound new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -201,16 +199,14 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      */
     @Generated
     @Selector("criticalSoundNamed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object criticalSoundNamed(String name);
+    public static native UNNotificationSound criticalSoundNamed(String name);
 
     /**
      * The name of a sound file to be played for an critical alert with a custom audio volume level. Critical alerts will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s data container will be preferred. The audio volume is expected to be between 0.0f and 1.0f.
      */
     @Generated
     @Selector("criticalSoundNamed:withAudioVolume:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object criticalSoundNamedWithAudioVolume(String name, float volume);
+    public static native UNNotificationSound criticalSoundNamedWithAudioVolume(String name, float volume);
 
     /**
      * The default sound used for critical alerts. Critical alerts will bypass the mute switch and Do Not Disturb.
@@ -224,6 +220,5 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      */
     @Generated
     @Selector("defaultCriticalSoundWithAudioVolume:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultCriticalSoundWithAudioVolume(float volume);
+    public static native UNNotificationSound defaultCriticalSoundWithAudioVolume(float volume);
 }

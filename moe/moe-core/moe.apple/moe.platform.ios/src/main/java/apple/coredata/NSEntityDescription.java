@@ -77,8 +77,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSEntityDescription allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -149,8 +148,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSEntityDescription new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

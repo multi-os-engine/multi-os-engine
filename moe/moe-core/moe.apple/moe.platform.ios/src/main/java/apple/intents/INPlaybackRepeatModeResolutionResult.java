@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INPlaybackRepeatModeResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,8 +73,7 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INPlaybackRepeatModeResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -84,8 +81,7 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
      */
     @Generated
     @Selector("confirmationRequiredWithPlaybackRepeatModeToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithPlaybackRepeatModeToConfirm(
+    public static native INPlaybackRepeatModeResolutionResult confirmationRequiredWithPlaybackRepeatModeToConfirm(
             @NInt long playbackRepeatModeToConfirm);
 
     @Generated
@@ -128,19 +124,16 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INPlaybackRepeatModeResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INPlaybackRepeatModeResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INPlaybackRepeatModeResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -160,8 +153,8 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
      */
     @Generated
     @Selector("successWithResolvedPlaybackRepeatMode:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedPlaybackRepeatMode(@NInt long resolvedPlaybackRepeatMode);
+    public static native INPlaybackRepeatModeResolutionResult successWithResolvedPlaybackRepeatMode(
+            @NInt long resolvedPlaybackRepeatMode);
 
     @Generated
     @Selector("superclass")
@@ -169,13 +162,11 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INPlaybackRepeatModeResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INPlaybackRepeatModeResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

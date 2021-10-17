@@ -62,16 +62,14 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIPointerAccessory allocWithZone(VoidPtr zone);
 
     /**
      * Returns an arrow shaped accessory with the given position.
      */
     @Generated
     @Selector("arrowAccessoryWithPosition:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object arrowAccessoryWithPosition(@ByValue UIPointerAccessoryPosition position);
+    public static native UIPointerAccessory arrowAccessoryWithPosition(@ByValue UIPointerAccessoryPosition position);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -142,8 +140,7 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIPointerAccessory new_objc();
 
     /**
      * Indicates whether the accessory is rotated to match its angle.

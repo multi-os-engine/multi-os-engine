@@ -69,8 +69,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HKFHIRVersion allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -159,8 +158,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HKFHIRVersion new_objc();
 
     @Generated
     @Selector("patchVersion")
@@ -169,13 +167,11 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("primaryDSTU2Version")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object primaryDSTU2Version();
+    public static native HKFHIRVersion primaryDSTU2Version();
 
     @Generated
     @Selector("primaryR4Version")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object primaryR4Version();
+    public static native HKFHIRVersion primaryR4Version();
 
     @Generated
     @Selector("resolveClassMethod:")

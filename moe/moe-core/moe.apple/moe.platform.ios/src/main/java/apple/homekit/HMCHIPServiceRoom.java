@@ -56,8 +56,7 @@ public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native HMCHIPServiceRoom allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -150,8 +149,7 @@ public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native HMCHIPServiceRoom new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

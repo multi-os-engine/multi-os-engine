@@ -49,8 +49,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSDiffableDataSourceSectionSnapshot<?> allocWithZone(VoidPtr zone);
 
     /**
      * append items to Root
@@ -301,8 +300,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSDiffableDataSourceSectionSnapshot<?> new_objc();
 
     /**
      * nil == root node

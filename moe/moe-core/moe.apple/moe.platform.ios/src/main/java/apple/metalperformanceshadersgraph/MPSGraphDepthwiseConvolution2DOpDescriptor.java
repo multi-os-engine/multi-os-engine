@@ -49,8 +49,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSGraphDepthwiseConvolution2DOpDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -154,8 +153,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSGraphDepthwiseConvolution2DOpDescriptor new_objc();
 
     /**
      * !< Default = 0 - ignored if paddingStyle != explicit

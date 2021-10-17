@@ -54,8 +54,7 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INTrainReservation allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -141,8 +140,7 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INTrainReservation new_objc();
 
     @Generated
     @Selector("reservedSeat")

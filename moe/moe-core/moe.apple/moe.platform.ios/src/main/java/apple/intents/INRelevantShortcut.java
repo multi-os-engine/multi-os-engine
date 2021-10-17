@@ -57,8 +57,7 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INRelevantShortcut allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -144,8 +143,7 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INRelevantShortcut new_objc();
 
     /**
      * A collection of relevance information that is attached to the relevant shortcuts.

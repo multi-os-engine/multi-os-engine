@@ -69,8 +69,7 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INRideFareLineItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,8 +130,7 @@ public class INRideFareLineItem extends NSObject implements NSCopying, NSSecureC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INRideFareLineItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -53,8 +53,7 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UICollectionViewDiffableDataSource<?, ?> allocWithZone(VoidPtr zone);
 
     /**
      * Apply a snapshot to the collection view committing to the new data source state.
@@ -217,8 +216,7 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UICollectionViewDiffableDataSource<?, ?> new_objc();
 
     @Generated
     @IsOptional

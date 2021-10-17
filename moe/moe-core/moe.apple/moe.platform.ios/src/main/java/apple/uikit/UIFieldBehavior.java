@@ -30,7 +30,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
@@ -70,8 +69,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIFieldBehavior allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -109,8 +107,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("dragField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object dragField();
+    public static native UIFieldBehavior dragField();
 
     /**
      * A force proportional to the charge on the object. A charge property has been
@@ -120,8 +117,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("electricField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object electricField();
+    public static native UIFieldBehavior electricField();
 
     /**
      * A field force with a custom force evaluator.
@@ -135,8 +131,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("fieldWithEvaluationBlock:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fieldWithEvaluationBlock(
+    public static native UIFieldBehavior fieldWithEvaluationBlock(
             @ObjCBlock(name = "call_fieldWithEvaluationBlock") Block_fieldWithEvaluationBlock block);
 
     @Generated
@@ -175,8 +170,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("linearGravityFieldWithVector:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object linearGravityFieldWithVector(@ByValue CGVector direction);
+    public static native UIFieldBehavior linearGravityFieldWithVector(@ByValue CGVector direction);
 
     /**
      * The magnetic field is a uniform field in the positive-z direction (coming out of the screen). When the velocity
@@ -188,14 +182,12 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("magneticField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object magneticField();
+    public static native UIFieldBehavior magneticField();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIFieldBehavior new_objc();
 
     /**
      * A time varying differentiable Perlin simplex noise field. By default a smooth noise is calculated,
@@ -208,8 +200,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("noiseFieldWithSmoothness:animationSpeed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness, @NFloat double speed);
+    public static native UIFieldBehavior noiseFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
+            @NFloat double speed);
 
     /**
      * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative strength.
@@ -220,8 +212,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("radialGravityFieldWithPosition:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object radialGravityFieldWithPosition(@ByValue CGPoint position);
+    public static native UIFieldBehavior radialGravityFieldWithPosition(@ByValue CGPoint position);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -242,8 +233,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("springField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object springField();
+    public static native UIFieldBehavior springField();
 
     @Generated
     @Selector("superclass")
@@ -259,8 +249,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("turbulenceFieldWithSmoothness:animationSpeed:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
+    public static native UIFieldBehavior turbulenceFieldWithSmoothnessAnimationSpeed(@NFloat double smoothness,
             @NFloat double speed);
 
     /**
@@ -272,8 +261,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("velocityFieldWithVector:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object velocityFieldWithVector(@ByValue CGVector direction);
+    public static native UIFieldBehavior velocityFieldWithVector(@ByValue CGVector direction);
 
     @Generated
     @Selector("version")
@@ -287,8 +275,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("vortexField")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object vortexField();
+    public static native UIFieldBehavior vortexField();
 
     @Generated
     @Selector("addItem:")

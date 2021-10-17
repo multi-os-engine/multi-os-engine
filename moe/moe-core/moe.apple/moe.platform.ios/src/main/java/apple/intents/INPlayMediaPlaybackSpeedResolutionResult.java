@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -49,8 +48,7 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INPlayMediaPlaybackSpeedResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -76,14 +74,13 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INPlayMediaPlaybackSpeedResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(NSNumber valueToConfirm);
+    public static native INPlayMediaPlaybackSpeedResolutionResult confirmationRequiredWithValueToConfirm(
+            NSNumber valueToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -130,19 +127,16 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INPlayMediaPlaybackSpeedResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INPlayMediaPlaybackSpeedResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INPlayMediaPlaybackSpeedResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -158,8 +152,7 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
 
     @Generated
     @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(double resolvedValue);
+    public static native INPlayMediaPlaybackSpeedResolutionResult successWithResolvedValue(double resolvedValue);
 
     @Generated
     @Selector("superclass")
@@ -167,18 +160,15 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INPlayMediaPlaybackSpeedResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedForReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedForReason(@NInt long reason);
+    public static native INPlayMediaPlaybackSpeedResolutionResult unsupportedForReason(@NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INPlayMediaPlaybackSpeedResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

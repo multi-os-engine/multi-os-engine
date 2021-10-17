@@ -55,8 +55,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCTensorDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -103,8 +102,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("convolutionBiasesDescriptorWithFeatureChannelCount:dataType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object convolutionBiasesDescriptorWithFeatureChannelCountDataType(
+    public static native MLCTensorDescriptor convolutionBiasesDescriptorWithFeatureChannelCountDataType(
             @NUInt long featureChannelCount, int dataType);
 
     /**
@@ -119,8 +117,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("convolutionWeightsDescriptorWithInputFeatureChannelCount:outputFeatureChannelCount:dataType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object convolutionWeightsDescriptorWithInputFeatureChannelCountOutputFeatureChannelCountDataType(
+    public static native MLCTensorDescriptor convolutionWeightsDescriptorWithInputFeatureChannelCountOutputFeatureChannelCountDataType(
             @NUInt long inputFeatureChannelCount, @NUInt long outputFeatureChannelCount, int dataType);
 
     /**
@@ -137,8 +134,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("convolutionWeightsDescriptorWithWidth:height:inputFeatureChannelCount:outputFeatureChannelCount:dataType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object convolutionWeightsDescriptorWithWidthHeightInputFeatureChannelCountOutputFeatureChannelCountDataType(
+    public static native MLCTensorDescriptor convolutionWeightsDescriptorWithWidthHeightInputFeatureChannelCountOutputFeatureChannelCountDataType(
             @NUInt long width, @NUInt long height, @NUInt long inputFeatureChannelCount,
             @NUInt long outputFeatureChannelCount, int dataType);
 
@@ -281,8 +277,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCTensorDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

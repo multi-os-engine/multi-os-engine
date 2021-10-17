@@ -102,8 +102,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSLSTMDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -198,8 +197,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("createLSTMDescriptorWithInputFeatureChannels:outputFeatureChannels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object createLSTMDescriptorWithInputFeatureChannelsOutputFeatureChannels(
+    public static native MPSLSTMDescriptor createLSTMDescriptorWithInputFeatureChannelsOutputFeatureChannels(
             @NUInt long inputFeatureChannels, @NUInt long outputFeatureChannels);
 
     @Generated
@@ -325,8 +323,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSLSTMDescriptor new_objc();
 
     /**
      * [@property]   outputGateInputWeights

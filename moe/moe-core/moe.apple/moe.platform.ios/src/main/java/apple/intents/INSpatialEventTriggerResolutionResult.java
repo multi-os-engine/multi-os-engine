@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INSpatialEventTriggerResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -78,8 +76,7 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
      */
     @Generated
     @Selector("confirmationRequiredWithSpatialEventTriggerToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithSpatialEventTriggerToConfirm(
+    public static native INSpatialEventTriggerResolutionResult confirmationRequiredWithSpatialEventTriggerToConfirm(
             INSpatialEventTrigger spatialEventTriggerToConfirm);
 
     @Generated
@@ -95,8 +92,7 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
      */
     @Generated
     @Selector("disambiguationWithSpatialEventTriggersToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithSpatialEventTriggersToDisambiguate(
+    public static native INSpatialEventTriggerResolutionResult disambiguationWithSpatialEventTriggersToDisambiguate(
             NSArray<? extends INSpatialEventTrigger> spatialEventTriggersToDisambiguate);
 
     @Generated
@@ -131,19 +127,16 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INSpatialEventTriggerResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INSpatialEventTriggerResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INSpatialEventTriggerResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -163,8 +156,7 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
      */
     @Generated
     @Selector("successWithResolvedSpatialEventTrigger:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedSpatialEventTrigger(
+    public static native INSpatialEventTriggerResolutionResult successWithResolvedSpatialEventTrigger(
             INSpatialEventTrigger resolvedSpatialEventTrigger);
 
     @Generated
@@ -173,8 +165,7 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INSpatialEventTriggerResolutionResult unsupported();
 
     @Generated
     @Selector("version")
@@ -183,12 +174,10 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INSpatialEventTriggerResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INSpatialEventTriggerResolutionResult unsupportedWithReason(@NInt long reason);
 }

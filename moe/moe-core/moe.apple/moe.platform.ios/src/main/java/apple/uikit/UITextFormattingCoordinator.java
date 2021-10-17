@@ -52,8 +52,7 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UITextFormattingCoordinator allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -141,8 +140,7 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UITextFormattingCoordinator new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

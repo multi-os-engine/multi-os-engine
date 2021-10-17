@@ -10,7 +10,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -48,8 +47,7 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INSearchForMediaMediaItemResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -75,14 +73,13 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INSearchForMediaMediaItemResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     @Generated
     @Selector("confirmationRequiredWithMediaItemToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithMediaItemToConfirm(INMediaItem mediaItemToConfirm);
+    public static native INSearchForMediaMediaItemResolutionResult confirmationRequiredWithMediaItemToConfirm(
+            INMediaItem mediaItemToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -94,8 +91,7 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
 
     @Generated
     @Selector("disambiguationWithMediaItemsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithMediaItemsToDisambiguate(
+    public static native INSearchForMediaMediaItemResolutionResult disambiguationWithMediaItemsToDisambiguate(
             NSArray<? extends INMediaItem> mediaItemsToDisambiguate);
 
     @Generated
@@ -135,19 +131,16 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INSearchForMediaMediaItemResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INSearchForMediaMediaItemResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INSearchForMediaMediaItemResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -163,8 +156,8 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
 
     @Generated
     @Selector("successWithResolvedMediaItem:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedMediaItem(INMediaItem resolvedMediaItem);
+    public static native INSearchForMediaMediaItemResolutionResult successWithResolvedMediaItem(
+            INMediaItem resolvedMediaItem);
 
     /**
      * Convenience method to return multiple success resolution results for an array of INMediaItems
@@ -180,18 +173,15 @@ public class INSearchForMediaMediaItemResolutionResult extends INMediaItemResolu
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INSearchForMediaMediaItemResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedForReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedForReason(@NInt long reason);
+    public static native INSearchForMediaMediaItemResolutionResult unsupportedForReason(@NInt long reason);
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INSearchForMediaMediaItemResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

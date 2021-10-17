@@ -76,8 +76,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNConvolutionDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -114,8 +113,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      */
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:neuronFilter:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(
+    public static native MPSCNNConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
             @NUInt long outputFeatureChannels, MPSCNNNeuron neuronFilter);
 
@@ -156,8 +154,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNConvolutionDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -382,8 +379,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
      */
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannels(
+    public static native MPSCNNConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannels(
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
             @NUInt long outputFeatureChannels);
 

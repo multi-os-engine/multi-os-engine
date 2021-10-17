@@ -50,8 +50,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSXPCConnection allocWithZone(VoidPtr zone);
 
     /**
      * These attributes describe the security attributes of the connection. They may be used by the listener delegate to accept or reject connections.
@@ -197,8 +196,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSXPCConnection new_objc();
 
     @Generated
     @Selector("processIdentifier")

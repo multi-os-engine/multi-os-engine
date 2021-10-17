@@ -70,8 +70,7 @@ public class CABasicAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CABasicAnimation allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("animation")
@@ -145,8 +144,7 @@ public class CABasicAnimation extends CAPropertyAnimation {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CABasicAnimation new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

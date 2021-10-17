@@ -78,8 +78,7 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVMetadataItem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -253,8 +252,7 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVMetadataItem new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

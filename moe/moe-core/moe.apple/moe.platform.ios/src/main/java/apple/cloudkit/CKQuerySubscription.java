@@ -76,8 +76,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CKQuerySubscription allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +137,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CKQuerySubscription new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

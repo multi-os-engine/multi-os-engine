@@ -82,8 +82,7 @@ public class CBPeripheralManager extends CBManager {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CBPeripheralManager allocWithZone(VoidPtr zone);
 
     /**
      * authorizationStatus
@@ -158,8 +157,7 @@ public class CBPeripheralManager extends CBManager {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CBPeripheralManager new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

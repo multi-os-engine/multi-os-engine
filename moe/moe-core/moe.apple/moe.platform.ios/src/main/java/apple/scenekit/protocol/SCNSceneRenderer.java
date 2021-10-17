@@ -16,6 +16,8 @@ limitations under the License.
 
 package apple.scenekit.protocol;
 
+import apple.avfaudio.AVAudioEngine;
+import apple.avfaudio.AVAudioEnvironmentNode;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
@@ -63,7 +65,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("audioEngine")
-    apple.avfaudio.AVAudioEngine audioEngine();
+    AVAudioEngine audioEngine();
 
     /**
      * [@property] audioEnvironmentNode
@@ -72,7 +74,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("audioEnvironmentNode")
-    apple.avfaudio.AVAudioEnvironmentNode audioEnvironmentNode();
+    AVAudioEnvironmentNode audioEnvironmentNode();
 
     /**
      * [@property] audioListener

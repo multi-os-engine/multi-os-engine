@@ -52,8 +52,7 @@ public class INPaymentAmount extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INPaymentAmount allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("amount")
@@ -145,8 +144,7 @@ public class INPaymentAmount extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INPaymentAmount new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

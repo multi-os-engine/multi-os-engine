@@ -102,8 +102,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MDLAsset allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("assetWithSCNScene:")
@@ -199,8 +198,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MDLAsset new_objc();
 
     @Generated
     @Selector("placeLightProbesWithDensity:heuristic:usingIrradianceDataSource:")

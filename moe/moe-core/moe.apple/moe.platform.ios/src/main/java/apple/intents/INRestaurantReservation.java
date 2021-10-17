@@ -56,8 +56,7 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INRestaurantReservation allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -143,8 +142,7 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INRestaurantReservation new_objc();
 
     @Generated
     @Selector("partySize")

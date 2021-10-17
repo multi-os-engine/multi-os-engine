@@ -81,8 +81,7 @@ public class MDLMesh extends MDLObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MDLMesh allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -152,29 +151,25 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MDLMesh new_objc();
 
     @Generated
     @Owned
     @Selector("newIcosahedronWithRadius:inwardNormals:allocator:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object newIcosahedronWithRadiusInwardNormalsAllocator(float radius, boolean inwardNormals,
+    public static native MDLMesh newIcosahedronWithRadiusInwardNormalsAllocator(float radius, boolean inwardNormals,
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     @Generated
     @Owned
     @Selector("newIcosahedronWithRadius:inwardNormals:geometryType:allocator:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object newIcosahedronWithRadiusInwardNormalsGeometryTypeAllocator(float radius,
+    public static native MDLMesh newIcosahedronWithRadiusInwardNormalsGeometryTypeAllocator(float radius,
             boolean inwardNormals, @NInt long geometryType,
             @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     @Generated
     @Owned
     @Selector("newSubdividedMesh:submeshIndex:subdivisionLevels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object newSubdividedMeshSubmeshIndexSubdivisionLevels(MDLMesh mesh, @NUInt long submeshIndex,
+    public static native MDLMesh newSubdividedMeshSubmeshIndexSubdivisionLevels(MDLMesh mesh, @NUInt long submeshIndex,
             @NUInt long subdivisionLevels);
 
     @Generated

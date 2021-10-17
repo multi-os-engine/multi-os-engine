@@ -11,7 +11,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -76,8 +75,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNSubPixelConvolutionDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -103,15 +101,13 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannels(
+    public static native MPSCNNSubPixelConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannels(
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
             @NUInt long outputFeatureChannels);
 
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:neuronFilter:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(
+    public static native MPSCNNSubPixelConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
             @NUInt long outputFeatureChannels, MPSCNNNeuron neuronFilter);
 
@@ -160,8 +156,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNSubPixelConvolutionDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

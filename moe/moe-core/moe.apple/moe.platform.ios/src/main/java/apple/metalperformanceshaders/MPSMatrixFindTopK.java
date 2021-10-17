@@ -13,7 +13,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -64,8 +63,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSMatrixFindTopK allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -102,8 +100,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSMatrixFindTopK copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -238,8 +235,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSMatrixFindTopK new_objc();
 
     /**
      * [@property]   numberOfTopKValues

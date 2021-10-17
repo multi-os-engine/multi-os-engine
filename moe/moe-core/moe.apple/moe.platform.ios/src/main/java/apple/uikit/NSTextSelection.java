@@ -62,8 +62,7 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextSelection allocWithZone(VoidPtr zone);
 
     /**
      * Represents the anchor position offset from the beginning of a line fragment in the visual order for the initial tap or mouse down. That is from the left for a horizontal line fragment and from the top for a vertical. Navigating between lines uses this point when the current line fragment associated with the selection is shorter than the next line visited. 0.0 by default.
@@ -184,8 +183,7 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextSelection new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

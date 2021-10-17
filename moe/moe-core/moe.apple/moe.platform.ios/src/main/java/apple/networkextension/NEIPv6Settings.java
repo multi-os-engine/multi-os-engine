@@ -76,8 +76,7 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NEIPv6Settings allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +137,7 @@ public class NEIPv6Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NEIPv6Settings new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

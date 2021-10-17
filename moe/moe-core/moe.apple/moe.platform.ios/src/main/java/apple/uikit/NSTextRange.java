@@ -52,8 +52,7 @@ public class NSTextRange extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSTextRange allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -166,8 +165,7 @@ public class NSTextRange extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSTextRange new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -187,16 +185,14 @@ public class NSTextRange extends NSObject {
 
     @Generated
     @Selector("textRangeByFormingUnionWithTextRange:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object textRangeByFormingUnionWithTextRange(NSTextRange textRange);
+    public native NSTextRange textRangeByFormingUnionWithTextRange(NSTextRange textRange);
 
     /**
      * Returns the intersection with textRange. Returns nil when not intersecting.
      */
     @Generated
     @Selector("textRangeByIntersectingWithTextRange:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object textRangeByIntersectingWithTextRange(NSTextRange textRange);
+    public native NSTextRange textRangeByIntersectingWithTextRange(NSTextRange textRange);
 
     @Generated
     @Selector("version")

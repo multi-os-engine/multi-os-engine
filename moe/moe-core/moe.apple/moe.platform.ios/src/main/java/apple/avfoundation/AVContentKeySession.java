@@ -66,8 +66,7 @@ public class AVContentKeySession extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVContentKeySession allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -247,8 +246,7 @@ public class AVContentKeySession extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVContentKeySession new_objc();
 
     /**
      * pendingExpiredSessionReportsWithAppIdentifier:storageDirectoryAtURL:

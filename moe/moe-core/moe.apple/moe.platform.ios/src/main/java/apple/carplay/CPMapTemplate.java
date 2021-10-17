@@ -54,8 +54,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CPMapTemplate allocWithZone(VoidPtr zone);
 
     /**
      * Automatically shows and hides the navigation bar. Defaults to YES.
@@ -219,8 +218,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CPMapTemplate new_objc();
 
     /**
      * Display a navigation alert on this map template. Your @c CPMapTemplateDelegate will be notified

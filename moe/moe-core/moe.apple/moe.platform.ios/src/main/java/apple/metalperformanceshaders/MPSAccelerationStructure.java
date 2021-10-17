@@ -293,8 +293,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSAccelerationStructure allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -339,8 +338,8 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSAccelerationStructure copyWithZoneDevice(VoidPtr zone,
+            @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * Create a a copy of this acceleration structure
@@ -357,8 +356,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     @Generated
     @Owned
     @Selector("copyWithZone:group:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZoneGroup(VoidPtr zone, MPSAccelerationStructureGroup group);
+    public native MPSAccelerationStructure copyWithZoneGroup(VoidPtr zone, MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("debugDescription")
@@ -473,8 +471,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSAccelerationStructure new_objc();
 
     /**
      * Rebuild the acceleration structure

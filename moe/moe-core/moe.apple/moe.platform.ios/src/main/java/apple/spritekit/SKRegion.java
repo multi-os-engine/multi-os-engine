@@ -72,8 +72,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKRegion allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -115,8 +114,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("infiniteRegion")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object infiniteRegion();
+    public static native SKRegion infiniteRegion();
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -142,8 +140,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKRegion new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -220,8 +217,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("inverseRegion")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object inverseRegion();
+    public native SKRegion inverseRegion();
 
     @Generated
     @Selector("path")
@@ -232,24 +228,21 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("regionByDifferenceFromRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByDifferenceFromRegion(SKRegion region);
+    public native SKRegion regionByDifferenceFromRegion(SKRegion region);
 
     /**
      * Create a new region that is the region covered by the original region and the supplied region
      */
     @Generated
     @Selector("regionByIntersectionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByIntersectionWithRegion(SKRegion region);
+    public native SKRegion regionByIntersectionWithRegion(SKRegion region);
 
     /**
      * Create a new region that is the original region plus the supplied region
      */
     @Generated
     @Selector("regionByUnionWithRegion:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object regionByUnionWithRegion(SKRegion region);
+    public native SKRegion regionByUnionWithRegion(SKRegion region);
 
     @Generated
     @Selector("supportsSecureCoding")

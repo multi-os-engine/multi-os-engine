@@ -31,7 +31,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -76,8 +75,7 @@ public class SCNTransformConstraint extends SCNConstraint {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNTransformConstraint allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -138,8 +136,7 @@ public class SCNTransformConstraint extends SCNConstraint {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNTransformConstraint new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -215,8 +212,7 @@ public class SCNTransformConstraint extends SCNConstraint {
      */
     @Generated
     @Selector("orientationConstraintInWorldSpace:withBlock:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object orientationConstraintInWorldSpaceWithBlock(boolean world,
+    public static native SCNTransformConstraint orientationConstraintInWorldSpaceWithBlock(boolean world,
             @ObjCBlock(name = "call_orientationConstraintInWorldSpaceWithBlock") Block_orientationConstraintInWorldSpaceWithBlock block);
 
     @Runtime(ObjCRuntime.class)
@@ -239,8 +235,7 @@ public class SCNTransformConstraint extends SCNConstraint {
      */
     @Generated
     @Selector("positionConstraintInWorldSpace:withBlock:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object positionConstraintInWorldSpaceWithBlock(boolean world,
+    public static native SCNTransformConstraint positionConstraintInWorldSpaceWithBlock(boolean world,
             @ObjCBlock(name = "call_positionConstraintInWorldSpaceWithBlock") Block_positionConstraintInWorldSpaceWithBlock block);
 
     @Runtime(ObjCRuntime.class)

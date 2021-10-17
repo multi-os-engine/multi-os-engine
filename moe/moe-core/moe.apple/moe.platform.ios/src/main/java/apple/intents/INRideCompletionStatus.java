@@ -69,8 +69,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INRideCompletionStatus allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -91,24 +90,21 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("canceledByService")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object canceledByService();
+    public static native INRideCompletionStatus canceledByService();
 
     /**
      * The ride was canceled by the user (e.g. by doing so through your application)
      */
     @Generated
     @Selector("canceledByUser")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object canceledByUser();
+    public static native INRideCompletionStatus canceledByUser();
 
     /**
      * The ride was canceled by the service because the passenger was not present for pickup and the vehicle maximum wait time elapsed.
      */
     @Generated
     @Selector("canceledMissedPickup")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object canceledMissedPickup();
+    public static native INRideCompletionStatus canceledMissedPickup();
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -123,8 +119,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("completed")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object completed();
+    public static native INRideCompletionStatus completed();
 
     /**
      * The ride completed but there is a payment outstanding that the user needs to settle in the application.
@@ -132,16 +127,16 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("completedWithOutstandingPaymentAmount:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object completedWithOutstandingPaymentAmount(INCurrencyAmount outstandingPaymentAmount);
+    public static native INRideCompletionStatus completedWithOutstandingPaymentAmount(
+            INCurrencyAmount outstandingPaymentAmount);
 
     /**
      * The ride completed. The fare in the provided amount was successfully paid; this amount may be displayed to the user.
      */
     @Generated
     @Selector("completedWithSettledPaymentAmount:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object completedWithSettledPaymentAmount(INCurrencyAmount settledPaymentAmount);
+    public static native INRideCompletionStatus completedWithSettledPaymentAmount(
+            INCurrencyAmount settledPaymentAmount);
 
     @Generated
     @Selector("debugDescription")
@@ -180,8 +175,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INRideCompletionStatus new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -287,8 +281,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("completedWithOutstandingFeedbackType:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object completedWithOutstandingFeedbackType(@NUInt long feedbackType);
+    public static native INRideCompletionStatus completedWithOutstandingFeedbackType(@NUInt long feedbackType);
 
     /**
      * Default options the user can choose from when adding a tip.

@@ -56,8 +56,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SKOverlayAppConfiguration allocWithZone(VoidPtr zone);
 
     /**
      * The identifier of the app that will be shown.
@@ -146,8 +145,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SKOverlayAppConfiguration new_objc();
 
     /**
      * The position an overlay will show at on screen.

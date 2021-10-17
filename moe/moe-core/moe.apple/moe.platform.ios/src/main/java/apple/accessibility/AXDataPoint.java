@@ -62,8 +62,7 @@ public class AXDataPoint extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AXDataPoint allocWithZone(VoidPtr zone);
 
     /**
      * An attributed version of the name or label for this data point.
@@ -162,8 +161,7 @@ public class AXDataPoint extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AXDataPoint new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

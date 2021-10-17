@@ -52,8 +52,7 @@ public class INObjectSection<_ObjectType> extends NSObject implements NSCopying,
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INObjectSection<?> allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -140,8 +139,7 @@ public class INObjectSection<_ObjectType> extends NSObject implements NSCopying,
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INObjectSection<?> new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

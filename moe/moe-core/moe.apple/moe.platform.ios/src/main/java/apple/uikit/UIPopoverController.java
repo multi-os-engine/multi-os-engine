@@ -70,8 +70,7 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIPopoverController allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -132,8 +131,7 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIPopoverController new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

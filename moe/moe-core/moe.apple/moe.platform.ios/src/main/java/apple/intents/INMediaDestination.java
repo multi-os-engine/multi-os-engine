@@ -52,8 +52,7 @@ public class INMediaDestination extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INMediaDestination allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,8 +130,7 @@ public class INMediaDestination extends NSObject implements NSCopying, NSSecureC
 
     @Generated
     @Selector("libraryDestination")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object libraryDestination();
+    public static native INMediaDestination libraryDestination();
 
     @Generated
     @Selector("mediaDestinationType")
@@ -142,13 +140,11 @@ public class INMediaDestination extends NSObject implements NSCopying, NSSecureC
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INMediaDestination new_objc();
 
     @Generated
     @Selector("playlistDestinationWithName:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object playlistDestinationWithName(String playlistName);
+    public static native INMediaDestination playlistDestinationWithName(String playlistName);
 
     @Generated
     @Selector("playlistName")

@@ -32,7 +32,6 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
@@ -71,8 +70,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIAttachmentBehavior allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -114,8 +112,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("fixedAttachmentWithItem:attachedToItem:attachmentAnchor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object fixedAttachmentWithItemAttachedToItemAttachmentAnchor(
+    public static native UIAttachmentBehavior fixedAttachmentWithItemAttachedToItemAttachmentAnchor(
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
             @ByValue CGPoint point);
 
@@ -156,16 +153,14 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("limitAttachmentWithItem:offsetFromCenter:attachedToItem:offsetFromCenter:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object limitAttachmentWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
+    public static native UIAttachmentBehavior limitAttachmentWithItemOffsetFromCenterAttachedToItemOffsetFromCenter(
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @ByValue UIOffset offset1,
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item2, @ByValue UIOffset offset2);
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIAttachmentBehavior new_objc();
 
     /**
      * A pin attachment allows two dynamic items to independently rotate around the anchor point as if pinned together.
@@ -178,8 +173,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("pinAttachmentWithItem:attachedToItem:attachmentAnchor:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object pinAttachmentWithItemAttachedToItemAttachmentAnchor(
+    public static native UIAttachmentBehavior pinAttachmentWithItemAttachedToItemAttachmentAnchor(
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
             @ByValue CGPoint point);
 
@@ -207,8 +201,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("slidingAttachmentWithItem:attachedToItem:attachmentAnchor:axisOfTranslation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object slidingAttachmentWithItemAttachedToItemAttachmentAnchorAxisOfTranslation(
+    public static native UIAttachmentBehavior slidingAttachmentWithItemAttachedToItemAttachmentAnchorAxisOfTranslation(
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item1, @Mapped(ObjCObjectMapper.class) UIDynamicItem item2,
             @ByValue CGPoint point, @ByValue CGVector axis);
 
@@ -223,8 +216,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
      */
     @Generated
     @Selector("slidingAttachmentWithItem:attachmentAnchor:axisOfTranslation:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object slidingAttachmentWithItemAttachmentAnchorAxisOfTranslation(
+    public static native UIAttachmentBehavior slidingAttachmentWithItemAttachmentAnchorAxisOfTranslation(
             @Mapped(ObjCObjectMapper.class) UIDynamicItem item, @ByValue CGPoint point, @ByValue CGVector axis);
 
     @Generated

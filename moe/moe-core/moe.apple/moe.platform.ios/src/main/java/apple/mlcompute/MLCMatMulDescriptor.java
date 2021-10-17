@@ -54,8 +54,7 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MLCMatMulDescriptor allocWithZone(VoidPtr zone);
 
     /**
      * a scalar to scale the result in C=alpha x X x Y. Default = 1.0
@@ -155,8 +154,7 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MLCMatMulDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

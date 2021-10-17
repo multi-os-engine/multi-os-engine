@@ -56,8 +56,7 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PDFDocument allocWithZone(VoidPtr zone);
 
     /**
      * Create or modify annotations, including form field entries
@@ -338,8 +337,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PDFDocument new_objc();
 
     /**
      * Given a PDFSelection, this method returns the child outline item the selection most closely falls beneath. Since a

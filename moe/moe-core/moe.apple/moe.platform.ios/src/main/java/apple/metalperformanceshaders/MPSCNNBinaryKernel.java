@@ -66,8 +66,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSCNNBinaryKernel allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -271,8 +270,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSCNNBinaryKernel new_objc();
 
     /**
      * [@property]   padding

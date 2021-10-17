@@ -72,8 +72,7 @@ public class MDLMeshBufferDataAllocator extends NSObject implements MDLMeshBuffe
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MDLMeshBufferDataAllocator allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -134,8 +133,7 @@ public class MDLMeshBufferDataAllocator extends NSObject implements MDLMeshBuffe
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MDLMeshBufferDataAllocator new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -73,8 +73,7 @@ public class UIApplication extends UIResponder {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIApplication allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -139,8 +138,7 @@ public class UIApplication extends UIResponder {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIApplication new_objc();
 
     /**
      * Register non-View/ViewController objects for state restoration so other objects can reference them within state restoration archives.

@@ -56,8 +56,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPSPolygonAccelerationStructure allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -204,8 +203,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPSPolygonAccelerationStructure new_objc();
 
     /**
      * Array of polygon buffers. Each buffer contains a vertex buffer and optional index and

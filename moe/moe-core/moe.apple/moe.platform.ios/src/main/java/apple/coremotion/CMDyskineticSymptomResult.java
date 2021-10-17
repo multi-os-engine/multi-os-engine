@@ -60,8 +60,7 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native CMDyskineticSymptomResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -147,8 +146,7 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native CMDyskineticSymptomResult new_objc();
 
     /**
      * The percentage of time dyskinetic symptoms were likely for the result.

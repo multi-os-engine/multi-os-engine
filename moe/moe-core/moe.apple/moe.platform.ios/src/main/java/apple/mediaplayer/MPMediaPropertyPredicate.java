@@ -66,8 +66,7 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MPMediaPropertyPredicate allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -128,8 +127,7 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MPMediaPropertyPredicate new_objc();
 
     /**
      * comparisonType is MPMediaPredicateComparisonEqualTo

@@ -12,7 +12,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -50,8 +49,7 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native INLengthResolutionResult allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -77,8 +75,7 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithItemToConfirmForReason(
+    public static native INLengthResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
@@ -86,8 +83,8 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("confirmationRequiredWithLengthToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithLengthToConfirm(NSMeasurement<NSUnitLength> lengthToConfirm);
+    public static native INLengthResolutionResult confirmationRequiredWithLengthToConfirm(
+            NSMeasurement<NSUnitLength> lengthToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -102,8 +99,7 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("disambiguationWithLengthsToDisambiguate:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object disambiguationWithLengthsToDisambiguate(
+    public static native INLengthResolutionResult disambiguationWithLengthsToDisambiguate(
             NSArray<? extends NSMeasurement<NSUnitLength>> lengthsToDisambiguate);
 
     @Generated
@@ -138,19 +134,16 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("needsValue")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object needsValue();
+    public static native INLengthResolutionResult needsValue();
 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native INLengthResolutionResult new_objc();
 
     @Generated
     @Selector("notRequired")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object notRequired();
+    public static native INLengthResolutionResult notRequired();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -170,8 +163,7 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
      */
     @Generated
     @Selector("successWithResolvedLength:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedLength(NSMeasurement<NSUnitLength> resolvedLength);
+    public static native INLengthResolutionResult successWithResolvedLength(NSMeasurement<NSUnitLength> resolvedLength);
 
     @Generated
     @Selector("superclass")
@@ -179,13 +171,11 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("unsupported")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupported();
+    public static native INLengthResolutionResult unsupported();
 
     @Generated
     @Selector("unsupportedWithReason:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unsupportedWithReason(@NInt long reason);
+    public static native INLengthResolutionResult unsupportedWithReason(@NInt long reason);
 
     @Generated
     @Selector("version")

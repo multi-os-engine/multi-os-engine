@@ -49,8 +49,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MTLRenderPipelineFunctionsDescriptor allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -130,8 +129,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MTLRenderPipelineFunctionsDescriptor new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -58,8 +58,7 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AVDelegatingPlaybackCoordinator allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -185,8 +184,7 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AVDelegatingPlaybackCoordinator new_objc();
 
     /**
      * [@property]	playbackControlDelegate

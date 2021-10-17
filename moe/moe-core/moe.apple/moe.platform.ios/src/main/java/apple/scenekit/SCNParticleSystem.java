@@ -87,8 +87,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native SCNParticleSystem allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -149,8 +148,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native SCNParticleSystem new_objc();
 
     /**
      * Create an instance of a particle system

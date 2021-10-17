@@ -72,8 +72,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIScreen allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -141,8 +140,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIScreen new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

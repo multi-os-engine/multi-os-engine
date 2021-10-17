@@ -17,6 +17,7 @@ limitations under the License.
 package apple.audiotoolbox;
 
 import apple.NSObject;
+import apple.avfaudio.AVAudioFormat;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -28,7 +29,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -73,8 +73,7 @@ public class AUAudioUnitBus extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AUAudioUnitBus allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +134,7 @@ public class AUAudioUnitBus extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AUAudioUnitBus new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -222,7 +220,7 @@ public class AUAudioUnitBus extends NSObject {
      */
     @Generated
     @Selector("format")
-    public native apple.avfaudio.AVAudioFormat format();
+    public native AVAudioFormat format();
 
     /**
      * [@property]   index
@@ -248,7 +246,7 @@ public class AUAudioUnitBus extends NSObject {
      */
     @Generated
     @Selector("initWithFormat:error:")
-    public native AUAudioUnitBus initWithFormatError(apple.avfaudio.AVAudioFormat format,
+    public native AUAudioUnitBus initWithFormatError(AVAudioFormat format,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
@@ -369,7 +367,7 @@ public class AUAudioUnitBus extends NSObject {
      */
     @Generated
     @Selector("setFormat:error:")
-    public native boolean setFormatError(apple.avfaudio.AVAudioFormat format,
+    public native boolean setFormatError(AVAudioFormat format,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**

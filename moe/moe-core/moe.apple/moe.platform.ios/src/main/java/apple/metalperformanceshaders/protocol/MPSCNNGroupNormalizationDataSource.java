@@ -6,7 +6,6 @@ import apple.metal.protocol.MTLDevice;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
@@ -51,8 +50,8 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     @Owned
     @IsOptional
     @Selector("copyWithZone:device:")
-    @MappedReturn(ObjCObjectMapper.class)
-    default Object copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device) {
+    default MPSCNNGroupNormalizationDataSource copyWithZoneDevice(VoidPtr zone,
+            @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,8 +93,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     @Generated
     @IsOptional
     @Selector("initWithCoder:")
-    @MappedReturn(ObjCObjectMapper.class)
-    default Object initWithCoder(NSCoder aDecoder) {
+    default MPSCNNGroupNormalizationDataSource initWithCoder(NSCoder aDecoder) {
         throw new java.lang.UnsupportedOperationException();
     }
 

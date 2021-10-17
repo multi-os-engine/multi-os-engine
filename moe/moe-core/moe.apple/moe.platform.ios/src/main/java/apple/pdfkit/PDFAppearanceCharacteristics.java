@@ -51,8 +51,7 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PDFAppearanceCharacteristics allocWithZone(VoidPtr zone);
 
     /**
      * List all appearance characteristics properties as key-value pairs; returns a deep copy of all pairs.
@@ -170,8 +169,7 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PDFAppearanceCharacteristics new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

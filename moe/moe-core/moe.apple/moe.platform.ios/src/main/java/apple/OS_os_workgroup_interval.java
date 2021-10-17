@@ -8,7 +8,6 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -45,8 +44,7 @@ public class OS_os_workgroup_interval extends OS_os_workgroup implements apple.p
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native OS_os_workgroup_interval allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -111,8 +109,7 @@ public class OS_os_workgroup_interval extends OS_os_workgroup implements apple.p
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native OS_os_workgroup_interval new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

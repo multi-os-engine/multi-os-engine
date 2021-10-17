@@ -15,7 +15,6 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -55,8 +54,7 @@ public class NLModel extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NLModel allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -135,8 +133,7 @@ public class NLModel extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NLModel new_objc();
 
     /**
      * For inference purposes, a model will usually be attached to an NLTagger via -setModels:forTagScheme:, and the tagger will then take care of calling the model to produce tags as appropriate. However, it is also possible to use a model to make an individual prediction, either of the label for a given pieces of text (for a classifier model), or of the labels for a given sequence of tokens (for a sequence model).  In addition, it is possible to obtain multiple hypotheses for a given label with associated probability scores.

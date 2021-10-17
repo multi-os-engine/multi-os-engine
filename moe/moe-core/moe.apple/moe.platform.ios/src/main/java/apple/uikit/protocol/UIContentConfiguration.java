@@ -5,7 +5,6 @@ import apple.uikit.UIView;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
@@ -29,6 +28,5 @@ public interface UIContentConfiguration extends NSCopying {
      */
     @Generated
     @Selector("updatedConfigurationForState:")
-    @MappedReturn(ObjCObjectMapper.class)
-    Object updatedConfigurationForState(@Mapped(ObjCObjectMapper.class) UIConfigurationState state);
+    UIContentConfiguration updatedConfigurationForState(@Mapped(ObjCObjectMapper.class) UIConfigurationState state);
 }

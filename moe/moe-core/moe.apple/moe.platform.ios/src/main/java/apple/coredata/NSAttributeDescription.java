@@ -69,8 +69,7 @@ public class NSAttributeDescription extends NSPropertyDescription {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSAttributeDescription allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -131,8 +130,7 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSAttributeDescription new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

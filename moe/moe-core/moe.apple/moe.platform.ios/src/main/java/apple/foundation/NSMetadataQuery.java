@@ -64,8 +64,7 @@ public class NSMetadataQuery extends NSObject {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native NSMetadataQuery allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -126,8 +125,7 @@ public class NSMetadataQuery extends NSObject {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native NSMetadataQuery new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

@@ -53,8 +53,7 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native AXCustomContent allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("attributedLabel")
@@ -168,8 +167,7 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native AXCustomContent new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

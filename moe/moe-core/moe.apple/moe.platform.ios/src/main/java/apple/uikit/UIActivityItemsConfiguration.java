@@ -95,8 +95,7 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIActivityItemsConfiguration allocWithZone(VoidPtr zone);
 
     @Generated
     @IsOptional
@@ -217,8 +216,7 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIActivityItemsConfiguration new_objc();
 
     @Generated
     @Selector("perItemMetadataProvider")

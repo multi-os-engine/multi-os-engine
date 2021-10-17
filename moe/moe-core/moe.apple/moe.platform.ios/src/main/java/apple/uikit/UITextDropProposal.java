@@ -49,8 +49,7 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UITextDropProposal allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -155,8 +154,7 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UITextDropProposal new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

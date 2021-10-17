@@ -54,8 +54,7 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native MTLFunctionStitchingFunctionNode allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("arguments")
@@ -143,8 +142,7 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native MTLFunctionStitchingFunctionNode new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

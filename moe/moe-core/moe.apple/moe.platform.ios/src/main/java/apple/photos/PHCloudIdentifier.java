@@ -52,8 +52,7 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding, NSCop
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native PHCloudIdentifier allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -133,8 +132,7 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding, NSCop
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native PHCloudIdentifier new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

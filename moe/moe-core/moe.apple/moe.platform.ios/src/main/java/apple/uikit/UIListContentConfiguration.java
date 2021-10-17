@@ -55,16 +55,14 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("accompaniedSidebarCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object accompaniedSidebarCellConfiguration();
+    public static native UIListContentConfiguration accompaniedSidebarCellConfiguration();
 
     /**
      * Returns the default configuration for an accompanied sidebar list cell with subtitle text.
      */
     @Generated
     @Selector("accompaniedSidebarSubtitleCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object accompaniedSidebarSubtitleCellConfiguration();
+    public static native UIListContentConfiguration accompaniedSidebarSubtitleCellConfiguration();
 
     @Generated
     @Owned
@@ -73,8 +71,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     @Generated
     @Selector("allocWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object allocWithZone(VoidPtr zone);
+    public static native UIListContentConfiguration allocWithZone(VoidPtr zone);
 
     /**
      * An attributed variant of the primary text, which supersedes the `text` and some properties of the `textProperties` if set.
@@ -110,8 +107,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("cellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object cellConfiguration();
+    public static native UIListContentConfiguration cellConfiguration();
 
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
@@ -152,16 +148,14 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("groupedFooterConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object groupedFooterConfiguration();
+    public static native UIListContentConfiguration groupedFooterConfiguration();
 
     /**
      * Returns the default configuration for a grouped list header.
      */
     @Generated
     @Selector("groupedHeaderConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object groupedHeaderConfiguration();
+    public static native UIListContentConfiguration groupedHeaderConfiguration();
 
     @Generated
     @Selector("hash")
@@ -226,24 +220,21 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     @Generated
     @Owned
     @Selector("new")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object new_objc();
+    public static native UIListContentConfiguration new_objc();
 
     /**
      * Returns the default configuration for a plain list footer.
      */
     @Generated
     @Selector("plainFooterConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object plainFooterConfiguration();
+    public static native UIListContentConfiguration plainFooterConfiguration();
 
     /**
      * Returns the default configuration for a plain list header.
      */
     @Generated
     @Selector("plainHeaderConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object plainHeaderConfiguration();
+    public static native UIListContentConfiguration plainHeaderConfiguration();
 
     /**
      * When YES, the text and secondary text will be positioned side-by-side if there is sufficient space. Otherwise, the text will be stacked in a vertical layout.
@@ -367,32 +358,28 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("sidebarCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sidebarCellConfiguration();
+    public static native UIListContentConfiguration sidebarCellConfiguration();
 
     /**
      * Returns the default configuration for a sidebar list header.
      */
     @Generated
     @Selector("sidebarHeaderConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sidebarHeaderConfiguration();
+    public static native UIListContentConfiguration sidebarHeaderConfiguration();
 
     /**
      * Returns the default configuration for a sidebar list cell with subtitle text.
      */
     @Generated
     @Selector("sidebarSubtitleCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object sidebarSubtitleCellConfiguration();
+    public static native UIListContentConfiguration sidebarSubtitleCellConfiguration();
 
     /**
      * Returns the default configuration for a list cell with subtitle text.
      */
     @Generated
     @Selector("subtitleCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object subtitleCellConfiguration();
+    public static native UIListContentConfiguration subtitleCellConfiguration();
 
     @Generated
     @Selector("superclass")
@@ -440,16 +427,15 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     @Generated
     @Selector("updatedConfigurationForState:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object updatedConfigurationForState(@Mapped(ObjCObjectMapper.class) UIConfigurationState state);
+    public native UIListContentConfiguration updatedConfigurationForState(
+            @Mapped(ObjCObjectMapper.class) UIConfigurationState state);
 
     /**
      * Returns the default configuration for a list cell with side-by-side value text.
      */
     @Generated
     @Selector("valueCellConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object valueCellConfiguration();
+    public static native UIListContentConfiguration valueCellConfiguration();
 
     @Generated
     @Selector("version")
@@ -461,14 +447,12 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
      */
     @Generated
     @Selector("extraProminentInsetGroupedHeaderConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object extraProminentInsetGroupedHeaderConfiguration();
+    public static native UIListContentConfiguration extraProminentInsetGroupedHeaderConfiguration();
 
     /**
      * Returns the default configuration for a prominent inset grouped list header.
      */
     @Generated
     @Selector("prominentInsetGroupedHeaderConfiguration")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object prominentInsetGroupedHeaderConfiguration();
+    public static native UIListContentConfiguration prominentInsetGroupedHeaderConfiguration();
 }
