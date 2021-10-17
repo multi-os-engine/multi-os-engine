@@ -42,8 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class defines the metadata for a characteristic. Metadata provides
- * 	  further information about a characteristic’s value, which can be used
- * 		  for presentation purposes.
+ * further information about a characteristic’s value, which can be used
+ * for presentation purposes.
  */
 @Generated
 @Library("HomeKit")

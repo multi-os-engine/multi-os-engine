@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A configuration for running image tracking.
- * 
+ * <p>
  * Image tracking provides 6 degrees of freedom tracking of known images. Four images may be tracked simultaneously.
  */
 @Generated
@@ -110,7 +110,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * 
+     * <p>
      * Enabled by default.
      */
     @Generated
@@ -131,7 +131,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * 
+     * <p>
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
      * Default value is one.
@@ -157,7 +157,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * 
+     * <p>
      * Enabled by default.
      */
     @Generated
@@ -166,7 +166,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * 
+     * <p>
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
      * Default value is one.

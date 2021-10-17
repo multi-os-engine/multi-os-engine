@@ -639,18 +639,18 @@ public class UIColor extends NSObject
 
     /**
      * We provide two design systems (also known as "stacks") for structuring an iOS app's backgrounds.
-     * 
+     * <p>
      * Each stack has three "levels" of background colors. The first color is intended to be the
      * main background, farthest back. Secondary and tertiary colors are layered on top
      * of the main background, when appropriate.
-     * 
+     * <p>
      * Inside of a discrete piece of UI, choose a stack, then use colors from that stack.
      * We do not recommend mixing and matching background colors between stacks.
      * The foreground colors above are designed to work in both stacks.
-     * 
+     * <p>
      * 1. systemBackground
-     *    Use this stack for views with standard table views, and designs which have a white
-     *    primary background in light mode.
+     * Use this stack for views with standard table views, and designs which have a white
+     * primary background in light mode.
      */
     @Generated
     @Selector("systemBackgroundColor")
@@ -663,7 +663,7 @@ public class UIColor extends NSObject
     /**
      * Fill colors for UI elements.
      * These are meant to be used over the background colors, since their alpha component is less than 1.
-     * 
+     * <p>
      * systemFillColor is appropriate for filling thin and small shapes.
      * Example: The track of a slider.
      */
@@ -674,11 +674,11 @@ public class UIColor extends NSObject
     /**
      * The numbered variations, systemGray2 through systemGray6, are grays which increasingly
      * trend away from systemGray and in the direction of systemBackgroundColor.
-     * 
+     * <p>
      * In UIUserInterfaceStyleLight: systemGray1 is slightly lighter than systemGray.
-     *                               systemGray2 is lighter than that, and so on.
+     * systemGray2 is lighter than that, and so on.
      * In UIUserInterfaceStyleDark:  systemGray1 is slightly darker than systemGray.
-     *                               systemGray2 is darker than that, and so on.
+     * systemGray2 is darker than that, and so on.
      */
     @Generated
     @Selector("systemGray2Color")
@@ -780,4 +780,32 @@ public class UIColor extends NSObject
     @Generated
     @Selector("accessibilityName")
     public native String accessibilityName();
+
+    @Generated
+    @Selector("systemBrownColor")
+    public static native UIColor systemBrownColor();
+
+    @Generated
+    @Selector("systemCyanColor")
+    public static native UIColor systemCyanColor();
+
+    @Generated
+    @Selector("systemMintColor")
+    public static native UIColor systemMintColor();
+
+    /**
+     * This color represents the tint color of a view.
+     * <p>
+     * Like other dynamic colors, UIColor.tintColor relies on UITraitCollection.currentTraitCollection
+     * being set to a view's trait collection when it is used, so that it can resolve to that view's
+     * tint color. If you use UIColor.tintColor outside a view's context, and do not resolve it
+     * manually with a view's trait collection, it will return the system default tint color.
+     * <p>
+     * Setting UIColor.tintColor directly to a view's tintColor property behaves the same as setting nil.
+     * However, you cannot set a custom dynamic color (e.g. using +[UIColor colorWithDynamicProvider:])
+     * that can resolve to UIColor.tintColor to a view's tintColor property.
+     */
+    @Generated
+    @Selector("tintColor")
+    public static native UIColor tintColor();
 }

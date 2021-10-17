@@ -43,7 +43,7 @@ public class TKSmartCardPINFormat extends NSObject {
     /**
      * Offset in bits within the PIN block to mark a location for filling in the formatted PIN (justified with respect to PINJustification).
      * [@note] Default value: 0
-     * 
+     * <p>
      * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from bits to bytes.
      */
     @Generated
@@ -72,7 +72,7 @@ public class TKSmartCardPINFormat extends NSObject {
     /**
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
      * [@note] Default value: 0
-     * 
+     * <p>
      * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of PINLengthBitOffset gets converted from bits to bytes.
      */
     @Generated
@@ -248,7 +248,7 @@ public class TKSmartCardPINFormat extends NSObject {
     /**
      * Offset in bits within the PIN block to mark a location for filling in the formatted PIN (justified with respect to PINJustification).
      * [@note] Default value: 0
-     * 
+     * <p>
      * Note that the value of PINBitOffset indirectly controls the internal system units indicator. If PINBitOffset is byte aligned (PINBitOffset mod 8 is equal to 0), the internal representation of PINBitOffset gets converted from bits to bytes.
      */
     @Generated
@@ -274,7 +274,7 @@ public class TKSmartCardPINFormat extends NSObject {
     /**
      * Offset in bits within the PIN block to mark a location for filling in the PIN length (always left justified).
      * [@note] Default value: 0
-     * 
+     * <p>
      * Note that the value of PINLengthBitOffset indirectly controls the internal system units indicator. If PINLengthBitOffset is byte aligned (PINLengthBitOffset mod 8 is equal to 0), the internal representation of PINLengthBitOffset gets converted from bits to bytes.
      */
     @Generated

@@ -30,14 +30,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronPReLU
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the parametric ReLU neuron filter.
- *             For each pixel, applies the following function: f(x_i) = x_i, if x_i >= 0
- *                                                                    = a_i * x_i if x_i < 0
- *             i in [0...channels-1]
- *             i.e. parameters a_i are learned and applied to each channel separately. Compare
- *             this to ReLu where parameter a is shared across all channels.
- *             See https://arxiv.org/pdf/1502.01852.pdf for details.
+ * For each pixel, applies the following function: f(x_i) = x_i, if x_i >= 0
+ * = a_i * x_i if x_i < 0
+ * i in [0...channels-1]
+ * i.e. parameters a_i are learned and applied to each channel separately. Compare
+ * this to ReLu where parameter a is shared across all channels.
+ * See https://arxiv.org/pdf/1502.01852.pdf for details.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -121,12 +121,12 @@ public class MPSCNNNeuronPReLU extends MPSCNNNeuron {
 
     /**
      * Initialize the PReLU neuron filter
-     * 
-     * @param     device           The device the filter will run on
-     * @param     a                Array of floats containing per channel value of PReLu parameter
-     * @param     count            Number of float values in array a.
-     *                             This usually corresponds to number of output channels in convolution layer
-     * @return    A valid MPSCNNNeuronPReLU object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @param a      Array of floats containing per channel value of PReLu parameter
+     * @param count  Number of float values in array a.
+     *               This usually corresponds to number of output channels in convolution layer
+     * @return A valid MPSCNNNeuronPReLU object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:a:count:")

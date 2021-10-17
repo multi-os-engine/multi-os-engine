@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCategoryType
- * 
+ * <p>
  * Represent a type of HKCategorySample.
  */
 @Generated

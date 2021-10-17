@@ -96,7 +96,7 @@ public class TKTokenAuthOperation extends NSObject implements NSSecureCoding {
 
     /**
      * Handler triggered by the system in order to let the token finalize the authentication operation.
-     * 
+     *
      * @param error Error details (see TKError.h).
      * @return Finalization status.
      */

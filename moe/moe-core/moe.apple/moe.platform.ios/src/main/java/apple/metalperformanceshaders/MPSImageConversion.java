@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageConversion
- * 
+ * <p>
  * The MPSImageConversion filter performs a conversion from source to destination
  */
 @Generated
@@ -162,13 +162,13 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
 
     /**
      * [@property]   destinationAlpha
-     * 
+     * <p>
      * Premultiplication description for the destinationAlpha texture
-     * 
+     * <p>
      * Colorspace conversion operations produce non-premultiplied data.
-     *             Use this property to tag cases where premultiplied results are required.
-     *             If MPSPixelAlpha_AlphaIsOne is used, the alpha channel will be set to 1.
-     *             Default: MPSPixelAlpha_AlphaIsOne
+     * Use this property to tag cases where premultiplied results are required.
+     * If MPSPixelAlpha_AlphaIsOne is used, the alpha channel will be set to 1.
+     * Default: MPSPixelAlpha_AlphaIsOne
      */
     @Generated
     @Selector("destinationAlpha")
@@ -185,20 +185,19 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
 
     /**
      * Create a converter that can convert texture colorspace, alpha and texture format
-     * 
+     * <p>
      * Create a converter that can convert texture colorspace, alpha and MTLPixelFormat.
-     *             Optimized cases exist for NULL color space converter and no alpha conversion.
-     * 
-     * @param      device              The device the filter will run on
-     * @param      srcAlpha            The alpha encoding for the source texture
-     * @param      destAlpha           The alpha encoding for the destination texture
-     * @param      backgroundColor     An array of CGFloats giving the background color to use when flattening an image.
-     *                                 The color is in the source colorspace.  The length of the array is the number
-     *                                 of color channels in the src colorspace. If NULL, use {0}.
-     * @param      conversionInfo      The colorspace conversion to use. May be NULL, indicating no
-     *                                 color space conversions need to be done.
-     * 
-     * @return     An initialized MPSImageConversion object.
+     * Optimized cases exist for NULL color space converter and no alpha conversion.
+     *
+     * @param device          The device the filter will run on
+     * @param srcAlpha        The alpha encoding for the source texture
+     * @param destAlpha       The alpha encoding for the destination texture
+     * @param backgroundColor An array of CGFloats giving the background color to use when flattening an image.
+     *                        The color is in the source colorspace.  The length of the array is the number
+     *                        of color channels in the src colorspace. If NULL, use {0}.
+     * @param conversionInfo  The colorspace conversion to use. May be NULL, indicating no
+     *                        color space conversions need to be done.
+     * @return An initialized MPSImageConversion object.
      */
     @Generated
     @Selector("initWithDevice:srcAlpha:destAlpha:backgroundColor:conversionInfo:")
@@ -208,13 +207,13 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
 
     /**
      * [@property]   sourceAlpha
-     * 
+     * <p>
      * Premultiplication description for the source texture
-     * 
+     * <p>
      * Most colorspace conversion operations can not work directly on premultiplied data.
-     *             Use this property to tag premultiplied data so that the source texture can
-     *             be unpremultiplied prior to application of these transforms.
-     *             Default: MPSPixelAlpha_AlphaIsOne
+     * Use this property to tag premultiplied data so that the source texture can
+     * be unpremultiplied prior to application of these transforms.
+     * Default: MPSPixelAlpha_AlphaIsOne
      */
     @Generated
     @Selector("sourceAlpha")

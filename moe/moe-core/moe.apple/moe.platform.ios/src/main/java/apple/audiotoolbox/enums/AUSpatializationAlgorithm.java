@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] 		Spatialization Algorithms
- * 
+ * <p>
  * Use kSpatializationAlgorithm_UseOutputType with appropriate kAudioUnitProperty_SpatialMixerOutputType
- * 			for highest-quality spatial rendering across different hardware.
+ * for highest-quality spatial rendering across different hardware.
  */
 @Generated
 public final class AUSpatializationAlgorithm {

@@ -24,7 +24,7 @@ public final class NSPersonNameComponentsFormatterStyle {
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     /**
      * Relies on user preferences and language defaults to display shortened form appropriate
-     * for display in space-constrained settings, e.g. C Darwin 
+     * for display in space-constrained settings, e.g. C Darwin
      */
     @Generated @NInt public static final long Short = 0x0000000000000001L;
     /**

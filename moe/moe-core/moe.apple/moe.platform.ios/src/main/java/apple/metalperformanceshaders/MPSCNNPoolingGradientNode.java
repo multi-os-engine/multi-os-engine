@@ -93,16 +93,16 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * make a pooling gradient node
-     * 
+     * <p>
      * It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
-     * 
-     * @param      sourceGradient  The gradient from the downstream gradient filter.
-     * @param      sourceImage     The input image to the inference pooling filter
-     * @param      gradientState   The gradient state produced by the inference poolin filter
-     * @param      kernelWidth     The kernel width of the inference filter
-     * @param      kernelHeight    The kernel height of the inference filter
-     * @param      strideInPixelsX The X stride from the inference filter
-     * @param      strideInPixelsY The Y stride from the inference filter
+     *
+     * @param sourceGradient  The gradient from the downstream gradient filter.
+     * @param sourceImage     The input image to the inference pooling filter
+     * @param gradientState   The gradient state produced by the inference poolin filter
+     * @param kernelWidth     The kernel width of the inference filter
+     * @param kernelHeight    The kernel height of the inference filter
+     * @param strideInPixelsX The X stride from the inference filter
+     * @param strideInPixelsY The Y stride from the inference filter
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:paddingPolicy:")
@@ -150,16 +150,16 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * make a pooling gradient node
-     * 
+     * <p>
      * It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
-     * 
-     * @param      sourceGradient  The gradient from the downstream gradient filter.
-     * @param      sourceImage     The input image to the inference pooling filter
-     * @param      gradientState   The gradient state produced by the inference poolin filter
-     * @param      kernelWidth     The kernel width of the inference filter
-     * @param      kernelHeight    The kernel height of the inference filter
-     * @param      strideInPixelsX The X stride from the inference filter
-     * @param      strideInPixelsY The Y stride from the inference filter
+     *
+     * @param sourceGradient  The gradient from the downstream gradient filter.
+     * @param sourceImage     The input image to the inference pooling filter
+     * @param gradientState   The gradient state produced by the inference poolin filter
+     * @param kernelWidth     The kernel width of the inference filter
+     * @param kernelHeight    The kernel height of the inference filter
+     * @param strideInPixelsX The X stride from the inference filter
+     * @param strideInPixelsY The Y stride from the inference filter
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:kernelWidth:kernelHeight:strideInPixelsX:strideInPixelsY:paddingPolicy:")

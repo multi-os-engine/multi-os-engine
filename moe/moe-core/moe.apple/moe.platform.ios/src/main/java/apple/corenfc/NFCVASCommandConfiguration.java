@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCVASCommandConfiguration
- * 
+ * <p>
  * Configuration for one GET VAS DATA command.
  */
 @Generated
@@ -105,10 +105,10 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * initWithVASMode:passTypeIdentifier:url:
-     * 
-     * @param mode                  VAS operation mode
-     * @param passTypeIdentifier    Pass type identifier of the Wallet pass.
-     * @param url                   URL for VAR URL Only mode.  Set to <i>nil</i> for VAS normal mode.
+     *
+     * @param mode               VAS operation mode
+     * @param passTypeIdentifier Pass type identifier of the Wallet pass.
+     * @param url                URL for VAR URL Only mode.  Set to <i>nil</i> for VAS normal mode.
      */
     @Generated
     @Selector("initWithVASMode:passTypeIdentifier:url:")
@@ -138,7 +138,7 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] mode
-     * 
+     * <p>
      * VAS protocol mode.
      */
     @Generated
@@ -154,9 +154,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] passTypeIdentifier
-     * 
+     * <p>
      * Wallet Pass Type Identifier of the Wallet Pass.  The string value will be used to calculate the
-     *              Merchant ID value for the GET VAS DATA command.
+     * Merchant ID value for the GET VAS DATA command.
      */
     @Generated
     @Selector("passTypeIdentifier")
@@ -172,7 +172,7 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] mode
-     * 
+     * <p>
      * VAS protocol mode.
      */
     @Generated
@@ -181,9 +181,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] passTypeIdentifier
-     * 
+     * <p>
      * Wallet Pass Type Identifier of the Wallet Pass.  The string value will be used to calculate the
-     *              Merchant ID value for the GET VAS DATA command.
+     * Merchant ID value for the GET VAS DATA command.
      */
     @Generated
     @Selector("setPassTypeIdentifier:")
@@ -191,9 +191,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] url
-     * 
+     * <p>
      * Merchant URL object.  Maximum length of the URL is 64 characters, including the schema.
-     *              Set to nil to disable the merchant URL.
+     * Set to nil to disable the merchant URL.
      */
     @Generated
     @Selector("setUrl:")
@@ -209,9 +209,9 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] url
-     * 
+     * <p>
      * Merchant URL object.  Maximum length of the URL is 64 characters, including the schema.
-     *              Set to nil to disable the merchant URL.
+     * Set to nil to disable the merchant URL.
      */
     @Generated
     @Selector("url")

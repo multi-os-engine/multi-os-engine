@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLModel
- * 
+ * <p>
  * Construct a model and evaluate on a specific set of input features.
  * Inputs and outputs are accessed via the MLFeatureProvider protocol.
  * Returns a model or nil if there is an error.
@@ -89,18 +89,18 @@ public class MLModel extends NSObject {
 
     /**
      * Compile a .mlmodel for this device
-     * 
+     * <p>
      * [@returns] a URL to the compiled .mlmodelc directory if successful
      * The model is compiled to a temporary location on disk
      * You must move the compiled model to a permenant location if you wish to keep it
-     * 
+     * <p>
      * the returned model can be loaded using:
      * [@code]
      * [MLModel modelWithContentsOfURL:error:]
      * [@endcode]
-     * 
+     *
      * @param modelURL URL file path to .mlmodel file you wish to compile
-     * @param error Any errors are surfaced here
+     * @param error    Any errors are surfaced here
      */
     @Generated
     @Selector("compileModelAtURL:error:")
@@ -251,12 +251,12 @@ public class MLModel extends NSObject {
 
     /**
      * Construct a model asynchronously given the location of its on-disk representation and configuration.
-     * 
+     * <p>
      * Model loading may take time when the model content is not immediately available (e.g. encrypted model). Use this factory method especially when the caller is on the main thread.
-     * 
-     * @param url the location of its on-disk representation (.mlmodelc directory).
+     *
+     * @param url           the location of its on-disk representation (.mlmodelc directory).
      * @param configuration The model configuration
-     * @param handler When the model load completes successfully or unsuccessfully, the completion handler is invoked with a valid MLModel instance or NSError object.
+     * @param handler       When the model load completes successfully or unsuccessfully, the completion handler is invoked with a valid MLModel instance or NSError object.
      */
     @Generated
     @Selector("loadContentsOfURL:configuration:completionHandler:")

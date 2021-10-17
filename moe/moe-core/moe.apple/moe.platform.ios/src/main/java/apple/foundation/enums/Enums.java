@@ -117,8 +117,12 @@ public final class Enums {
     @Generated public static final int NS_UnknownByteOrder = 0x00000000;
     @Generated public static final int NS_LittleEndian = 0x00000001;
     @Generated public static final int NS_BigEndian = 0x00000002;
-    @Generated @NInt public static final long NSDateComponentUndefined = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
-    @Generated @NInt public static final long NSUndefinedDateComponent = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
+    @Generated @NInt public static final long NSDateComponentUndefined = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
+    @Generated @NInt public static final long NSUndefinedDateComponent = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
     @Generated @NInt public static final long NSURLErrorCancelledReasonUserForceQuitApplication = 0x0000000000000000L;
     @Generated @NInt public static final long NSURLErrorCancelledReasonBackgroundUpdatesDisabled = 0x0000000000000001L;
     @Generated @NInt public static final long NSURLErrorCancelledReasonInsufficientSystemResources = 0x0000000000000002L;

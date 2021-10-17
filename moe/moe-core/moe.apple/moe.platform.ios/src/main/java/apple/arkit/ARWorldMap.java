@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Object representing the mapping of a physical 3D space.
- * 
+ * <p>
  * ARWorldMap supports archiving and unarchiving across devices
  * and versions with NSDecodingFailurePolicySetErrorAndReturn, providing an error
  * if the map format is not supported.

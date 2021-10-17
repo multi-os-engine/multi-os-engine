@@ -178,10 +178,10 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * The default value is CGSizeZero. The reservedLayoutSize width & height only affect the
      * space reserved for the image and its positioning; they do not affect the image's size.
      * A zero width or height means the default behavior is used for that dimension:
-     *     * Symbol images will be centered inside a standard width/height that is scaled
-     *       with the content size category.
-     *     * Non-symbol images will use a reservedLayoutSize equal to the actual size of the
-     *       displayed image.
+     * * Symbol images will be centered inside a standard width/height that is scaled
+     * with the content size category.
+     * * Non-symbol images will use a reservedLayoutSize equal to the actual size of the
+     * displayed image.
      * Use the UIListContentImageStandardDimension constant for the width and/or height to force
      * the standard symbol image value to be used for that dimension, regardless of the image.
      * This property is used to horizontally align images across adjacent content views (even
@@ -249,10 +249,10 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
      * The default value is CGSizeZero. The reservedLayoutSize width & height only affect the
      * space reserved for the image and its positioning; they do not affect the image's size.
      * A zero width or height means the default behavior is used for that dimension:
-     *     * Symbol images will be centered inside a standard width/height that is scaled
-     *       with the content size category.
-     *     * Non-symbol images will use a reservedLayoutSize equal to the actual size of the
-     *       displayed image.
+     * * Symbol images will be centered inside a standard width/height that is scaled
+     * with the content size category.
+     * * Non-symbol images will use a reservedLayoutSize equal to the actual size of the
+     * displayed image.
      * Use the UIListContentImageStandardDimension constant for the width and/or height to force
      * the standard symbol image value to be used for that dimension, regardless of the image.
      * This property is used to horizontally align images across adjacent content views (even

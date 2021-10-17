@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_listener_state_t
- * 
- * 	Listener states sent by nw_listener_set_state_changed_handler.
- * 	States progress forward and do not move backwards.
+ * <p>
+ * Listener states sent by nw_listener_set_state_changed_handler.
+ * States progress forward and do not move backwards.
  */
 @Generated
 public final class nw_listener_state_t {
@@ -16,8 +16,8 @@ public final class nw_listener_state_t {
 
     /**
      * [@const] nw_listener_state_invalid The state of the listener is not valid. This state
-     * 	will never be delivered in the listener's state update handler, and can be treated as
-     * 	an unexpected value.
+     * will never be delivered in the listener's state update handler, and can be treated as
+     * an unexpected value.
      */
     @Generated public static final int nw_listener_state_invalid = 0x00000000;
     /**

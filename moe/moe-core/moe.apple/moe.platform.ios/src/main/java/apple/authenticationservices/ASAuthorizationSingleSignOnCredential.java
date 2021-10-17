@@ -202,4 +202,11 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Private SecKeys returned from the AuthenticationServices extension.
+     */
+    @Generated
+    @Selector("privateKeys")
+    public native NSArray<?> privateKeys();
 }

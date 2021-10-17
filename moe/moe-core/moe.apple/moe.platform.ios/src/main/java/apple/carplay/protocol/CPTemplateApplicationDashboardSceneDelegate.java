@@ -19,10 +19,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface CPTemplateApplicationDashboardSceneDelegate extends UISceneDelegate {
     /**
      * The Dashboard navigation widget has connected and is ready to present content.
-     * 
+     * <p>
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
-     * 
+     * <p>
      * [@note] The dashboardController object will be strongly retained by the CPTemplateApplicationDashboardScene, the delegate does not need to retain it.
      */
     @Generated

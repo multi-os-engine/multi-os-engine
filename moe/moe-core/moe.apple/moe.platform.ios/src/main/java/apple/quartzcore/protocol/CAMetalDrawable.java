@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * CAMetalDrawable represents a displayable buffer that vends an object
  * that conforms to the MTLTexture protocol that may be used to create
  * a render target for Metal.
- * 
+ * <p>
  * Note: CAMetalLayer maintains an internal pool of textures used for
  * display. In order for a texture to be re-used for a new CAMetalDrawable,
  * any prior CAMetalDrawable must have been deallocated and another

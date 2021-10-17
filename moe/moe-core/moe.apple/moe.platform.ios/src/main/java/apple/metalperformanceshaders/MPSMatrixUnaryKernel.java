@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSMatrixUnaryKernel
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * A MPSMatrixUnaryKernel consumes one MPSMatrix and produces one MPSMatrix.
  */
 @Generated
@@ -67,11 +67,11 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   batchSize
-     * 
+     * <p>
      * The number of matrices in the batch to process.  This property
-     *             is modifiable and by default allows all matrices available at
-     *             encoding time to be processed.  If a single matrix should be
-     *             processed set this value to 1.
+     * is modifiable and by default allows all matrices available at
+     * encoding time to be processed.  If a single matrix should be
+     * processed set this value to 1.
      */
     @Generated
     @Selector("batchSize")
@@ -80,11 +80,11 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   batchStart
-     * 
+     * <p>
      * The index of the first matrix in the batch.  This property is
-     *             modifiable and defaults to 0 at initialization time.  If
-     *             batch processing should begin at a different matrix this value
-     *             should be modified prior to encoding the kernel.
+     * modifiable and defaults to 0 at initialization time.  If
+     * batch processing should begin at a different matrix this value
+     * should be modified prior to encoding the kernel.
      */
     @Generated
     @Selector("batchStart")
@@ -176,12 +176,12 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   resultMatrixOrigin
-     * 
+     * <p>
      * The origin, relative to [0, 0] in the result matrix, at which to
-     *             start writing results.  This property is modifiable and defaults
-     *             to [0, 0] at initialization time.  If a different origin is desired
-     *             then this should be modified prior to encoding the kernel.  The z
-     *             value must be 0.
+     * start writing results.  This property is modifiable and defaults
+     * to [0, 0] at initialization time.  If a different origin is desired
+     * then this should be modified prior to encoding the kernel.  The z
+     * value must be 0.
      */
     @Generated
     @Selector("resultMatrixOrigin")
@@ -190,11 +190,11 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   batchSize
-     * 
+     * <p>
      * The number of matrices in the batch to process.  This property
-     *             is modifiable and by default allows all matrices available at
-     *             encoding time to be processed.  If a single matrix should be
-     *             processed set this value to 1.
+     * is modifiable and by default allows all matrices available at
+     * encoding time to be processed.  If a single matrix should be
+     * processed set this value to 1.
      */
     @Generated
     @Selector("setBatchSize:")
@@ -202,11 +202,11 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   batchStart
-     * 
+     * <p>
      * The index of the first matrix in the batch.  This property is
-     *             modifiable and defaults to 0 at initialization time.  If
-     *             batch processing should begin at a different matrix this value
-     *             should be modified prior to encoding the kernel.
+     * modifiable and defaults to 0 at initialization time.  If
+     * batch processing should begin at a different matrix this value
+     * should be modified prior to encoding the kernel.
      */
     @Generated
     @Selector("setBatchStart:")
@@ -214,12 +214,12 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   resultMatrixOrigin
-     * 
+     * <p>
      * The origin, relative to [0, 0] in the result matrix, at which to
-     *             start writing results.  This property is modifiable and defaults
-     *             to [0, 0] at initialization time.  If a different origin is desired
-     *             then this should be modified prior to encoding the kernel.  The z
-     *             value must be 0.
+     * start writing results.  This property is modifiable and defaults
+     * to [0, 0] at initialization time.  If a different origin is desired
+     * then this should be modified prior to encoding the kernel.  The z
+     * value must be 0.
      */
     @Generated
     @Selector("setResultMatrixOrigin:")
@@ -227,12 +227,12 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   sourceMatrixOrigin
-     * 
+     * <p>
      * The origin, relative to [0, 0] in the source matrix, at which to
-     *             start reading values.  This property is modifiable and defaults to
-     *             [0, 0] at initialization time.  If a different origin is desired then
-     *             this should be modified prior to encoding the kernel.  The z value
-     *             must be 0.
+     * start reading values.  This property is modifiable and defaults to
+     * [0, 0] at initialization time.  If a different origin is desired then
+     * this should be modified prior to encoding the kernel.  The z value
+     * must be 0.
      */
     @Generated
     @Selector("setSourceMatrixOrigin:")
@@ -244,12 +244,12 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property]   sourceMatrixOrigin
-     * 
+     * <p>
      * The origin, relative to [0, 0] in the source matrix, at which to
-     *             start reading values.  This property is modifiable and defaults to
-     *             [0, 0] at initialization time.  If a different origin is desired then
-     *             this should be modified prior to encoding the kernel.  The z value
-     *             must be 0.
+     * start reading values.  This property is modifiable and defaults to
+     * [0, 0] at initialization time.  If a different origin is desired then
+     * this should be modified prior to encoding the kernel.  The z value
+     * must be 0.
      */
     @Generated
     @Selector("sourceMatrixOrigin")

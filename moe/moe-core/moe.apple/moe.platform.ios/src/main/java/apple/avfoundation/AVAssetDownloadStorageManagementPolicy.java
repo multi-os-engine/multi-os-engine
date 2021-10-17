@@ -92,7 +92,7 @@ public class AVAssetDownloadStorageManagementPolicy extends NSObject implements 
 
     /**
      * [@property]	expirationDate
-     * 
+     * <p>
      * Returns the expiration date of asset.
      */
     @Generated
@@ -143,11 +143,11 @@ public class AVAssetDownloadStorageManagementPolicy extends NSObject implements 
 
     /**
      * [@property]	priority
-     * 
+     * <p>
      * Indicates the eviction priority of downloaded asset.
-     * 
+     * <p>
      * Assets with default priority will be purged first before assets with higher priorities.
-     * 		In case this is not set, default priority is used.
+     * In case this is not set, default priority is used.
      */
     @Generated
     @Selector("priority")

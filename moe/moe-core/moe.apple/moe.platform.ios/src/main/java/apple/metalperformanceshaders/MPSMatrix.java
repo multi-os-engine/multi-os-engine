@@ -44,23 +44,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrix
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * A MPSMatrix object describes a set of 2-dimensional arrays of data and provides storage
- *             for its values.  MPSMatrix objects serve as inputs and outputs of MPSMatrixKernel
- *             objects.
- * 
- *             Implementation note:
- *             A MPSMatrix object maintains its internal storage using a MTLBuffer object and thus
- *             the same rules for maintaining coherency of a MTLBuffer's data between CPU memory and GPU
- *             memory apply to a MPSMatrix.  An MPSMatrix object's data refers to an array of matrices.
- *             Data is assumed to be ordered by matrix first, followed by row, followed by column.
- * 
- *             For example, index [i,j] of the k'th matrix of an MPSMatrix is located at byte offset:
- *                      k * matrixBytes + i * rowBytes + j * sizeof(dataType)
- * 
- *              Where matrixBytes is a multiple of rowBytes at least equal to rows * rowBytes.
+ * for its values.  MPSMatrix objects serve as inputs and outputs of MPSMatrixKernel
+ * objects.
+ * <p>
+ * Implementation note:
+ * A MPSMatrix object maintains its internal storage using a MTLBuffer object and thus
+ * the same rules for maintaining coherency of a MTLBuffer's data between CPU memory and GPU
+ * memory apply to a MPSMatrix.  An MPSMatrix object's data refers to an array of matrices.
+ * Data is assumed to be ordered by matrix first, followed by row, followed by column.
+ * <p>
+ * For example, index [i,j] of the k'th matrix of an MPSMatrix is located at byte offset:
+ * k * matrixBytes + i * rowBytes + j * sizeof(dataType)
+ * <p>
+ * Where matrixBytes is a multiple of rowBytes at least equal to rows * rowBytes.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -175,7 +175,7 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   columns
-     * 
+     * <p>
      * The number of columns in a matrix in the MPSMatrix.
      */
     @Generated
@@ -185,7 +185,7 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   data
-     * 
+     * <p>
      * An MTLBuffer to store the data.
      */
     @Generated
@@ -195,7 +195,7 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   dataType
-     * 
+     * <p>
      * The type of the MPSMatrix data.
      */
     @Generated
@@ -204,7 +204,7 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   device
-     * 
+     * <p>
      * The device on which the MPSMatrix will be used.
      */
     @Generated
@@ -218,22 +218,20 @@ public class MPSMatrix extends NSObject {
 
     /**
      * Initialize a MPSMatrix object with a MTLBuffer.
-     * 
+     * <p>
      * This function returns a MPSMatrix object which uses the supplied MTLBuffer.  The
-     *             dimensions and stride of the matrix are specified by the MPSMatrixDescriptor object.
-     * 
-     *             The provided MTLBuffer must have enough storage to hold
-     * 
-     *                 (descriptor.matrices-1) * descriptor.matrixBytes +
-     *                 (descriptor.rows-1) * descriptor.rowBytes +
-     *                  descriptor.columns * (element size) bytes.
-     * 
-     * @param      buffer          The MTLBuffer object which contains the data to use for the
-     *                             MPSMatrix. May not be NULL.
-     * 
-     * @param      descriptor      The MPSMatrixDescriptor. May not be NULL.
-     * 
-     * @return     A valid MPSMatrix object or nil, if failure.
+     * dimensions and stride of the matrix are specified by the MPSMatrixDescriptor object.
+     * <p>
+     * The provided MTLBuffer must have enough storage to hold
+     * <p>
+     * (descriptor.matrices-1) * descriptor.matrixBytes +
+     * (descriptor.rows-1) * descriptor.rowBytes +
+     * descriptor.columns * (element size) bytes.
+     *
+     * @param buffer     The MTLBuffer object which contains the data to use for the
+     *                   MPSMatrix. May not be NULL.
+     * @param descriptor The MPSMatrixDescriptor. May not be NULL.
+     * @return A valid MPSMatrix object or nil, if failure.
      */
     @Generated
     @Selector("initWithBuffer:descriptor:")
@@ -242,9 +240,9 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   rowBytes
-     * 
+     * <p>
      * The stride, in bytes, between corresponding elements of
-     *             consecutive rows.
+     * consecutive rows.
      */
     @Generated
     @Selector("rowBytes")
@@ -253,7 +251,7 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   rows
-     * 
+     * <p>
      * The number of rows in a matrix in the MPSMatrix.
      */
     @Generated
@@ -263,7 +261,7 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   matrices
-     * 
+     * <p>
      * The number of matrices in the MPSMatrix.
      */
     @Generated
@@ -273,9 +271,9 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   matrixBytes
-     * 
+     * <p>
      * The stride, in bytes, between corresponding elements of
-     *             consecutive matrices.
+     * consecutive matrices.
      */
     @Generated
     @Selector("matrixBytes")
@@ -284,13 +282,11 @@ public class MPSMatrix extends NSObject {
 
     /**
      * Initialize a MPSMatrix object with a MTLBuffer at a given offset.
-     * 
-     * @param      buffer      The MTLBuffer object which contains the data to use for the
-     *                         MPSMatrix.  May not be NULL.
-     * 
-     * @param      offset      The offset, in bytes, into the buffer at which the data begins.
-     * 
-     * @param      descriptor  The MPSMatrixDescriptor describing the shape of the matrix.
+     *
+     * @param buffer     The MTLBuffer object which contains the data to use for the
+     *                   MPSMatrix.  May not be NULL.
+     * @param offset     The offset, in bytes, into the buffer at which the data begins.
+     * @param descriptor The MPSMatrixDescriptor describing the shape of the matrix.
      */
     @Generated
     @Selector("initWithBuffer:offset:descriptor:")
@@ -299,16 +295,16 @@ public class MPSMatrix extends NSObject {
 
     /**
      * Initialize a MPSMatrix object with a descriptor. Allocate the buffer.
-     * 
+     * <p>
      * The matrix object will be created, but the storage to hold the
-     *             matrix data will only be allocated when it is needed, typically
-     *             when the data property is invoked.  In conjunction
-     *             with -resourceSize, this will allow you to estimate storage needs
-     *             without actually creating the backing store for the matrix.
-     * 
-     * @param      device      The device with which it will be used
-     * @param      descriptor  The shape and style of the matrix
-     * @return     A valid MPSMatrix object or nil
+     * matrix data will only be allocated when it is needed, typically
+     * when the data property is invoked.  In conjunction
+     * with -resourceSize, this will allow you to estimate storage needs
+     * without actually creating the backing store for the matrix.
+     *
+     * @param device     The device with which it will be used
+     * @param descriptor The shape and style of the matrix
+     * @return A valid MPSMatrix object or nil
      */
     @Generated
     @Selector("initWithDevice:descriptor:")
@@ -317,7 +313,7 @@ public class MPSMatrix extends NSObject {
 
     /**
      * [@property]   offset
-     * 
+     * <p>
      * Byte-offset to the buffer where the matrix data begins - see @ref initWithBuffer: offset: descriptor: .
      */
     @Generated
@@ -327,24 +323,24 @@ public class MPSMatrix extends NSObject {
 
     /**
      * Get the number of bytes used to allocate underyling MTLResources
-     * 
+     * <p>
      * This is the size of the backing store of underlying MTLResources.
-     *                 It does not include all storage used by the object, for example
-     *                 the storage used to hold the MPSMatrix instantiation and MTLBuffer
-     *                 is not included. It only measures the size of the allocation used
-     *                 to hold the matrix data in the buffer. This value is subject to
-     *                 change between different devices and operating systems.
-     * 
-     *                 Except when -initWithBuffer:descriptor: is used, most MPSMatrixes are allocated
-     *                 without a backing store. The backing store is allocated lazily when
-     *                 it is needed, typically when the .texture property is called.
-     *                 Consequently, in most cases, it should be inexpensive to make
-     *                 a MPSImage to see how much memory it will need, and release it
-     *                 if it is too large.
-     * 
-     *                 This method may fail in certain circumstances, such as when the
-     *                 MPSImage is created with -initWithTexture:featureChannels:. In
-     *                 such cases, 0 will be returned.
+     * It does not include all storage used by the object, for example
+     * the storage used to hold the MPSMatrix instantiation and MTLBuffer
+     * is not included. It only measures the size of the allocation used
+     * to hold the matrix data in the buffer. This value is subject to
+     * change between different devices and operating systems.
+     * <p>
+     * Except when -initWithBuffer:descriptor: is used, most MPSMatrixes are allocated
+     * without a backing store. The backing store is allocated lazily when
+     * it is needed, typically when the .texture property is called.
+     * Consequently, in most cases, it should be inexpensive to make
+     * a MPSImage to see how much memory it will need, and release it
+     * if it is too large.
+     * <p>
+     * This method may fail in certain circumstances, such as when the
+     * MPSImage is created with -initWithTexture:featureChannels:. In
+     * such cases, 0 will be returned.
      */
     @Generated
     @Selector("resourceSize")
@@ -353,13 +349,13 @@ public class MPSMatrix extends NSObject {
 
     /**
      * Flush the underlying MTLBuffer from the device's caches, and invalidate any CPU caches if needed.
-     * 
+     * <p>
      * This will call [id <MTLBlitEncoder> synchronizeResource: ] on the matrix's MTLBuffer, if any.
-     *             This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
-     *             resources (these are all MTLStorageModePrivate), and buffers that have not yet been allocated, nothing is done.
-     *             It is more efficient to use this method than to attempt to do this yourself with the data property.
-     * 
-     * @param      commandBuffer       The commandbuffer on which to synchronize
+     * This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
+     * resources (these are all MTLStorageModePrivate), and buffers that have not yet been allocated, nothing is done.
+     * It is more efficient to use this method than to attempt to do this yourself with the data property.
+     *
+     * @param commandBuffer The commandbuffer on which to synchronize
      */
     @Generated
     @Selector("synchronizeOnCommandBuffer:")

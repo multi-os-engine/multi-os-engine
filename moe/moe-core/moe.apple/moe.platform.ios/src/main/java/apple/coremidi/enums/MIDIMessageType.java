@@ -35,4 +35,5 @@ public final class MIDIMessageType {
      * 4 words
      */
     @Generated public static final int Data128 = 0x00000005;
+    @Generated public static final int UnknownF = 0x0000000F;
 }

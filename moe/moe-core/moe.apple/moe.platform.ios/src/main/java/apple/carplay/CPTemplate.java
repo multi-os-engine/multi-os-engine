@@ -181,7 +181,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab may optionally
      * display a badge indicator.
-     * 
+     * <p>
      * [@note] This defaults to NO. Specify YES to display a badge indicator on this tab.
      */
     @Generated
@@ -191,7 +191,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the image specified in this template. If a tabSystemItem is also specified, tabImage will take precedence.
-     * 
+     * <p>
      * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
@@ -201,7 +201,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the system image AND system title specified in this template.
-     * 
+     * <p>
      * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
@@ -211,9 +211,9 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the @c tabTitle specified in this template.
-     * 
+     * <p>
      * [@note] If no @c tabTitle is specified, the tab will inherit the template's title, if any.
-     * 
+     * <p>
      * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
@@ -223,7 +223,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab may optionally
      * display a badge indicator.
-     * 
+     * <p>
      * [@note] This defaults to NO. Specify YES to display a badge indicator on this tab.
      */
     @Generated
@@ -233,7 +233,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the image specified in this template. If a tabSystemItem is also specified, tabImage will take precedence.
-     * 
+     * <p>
      * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
@@ -243,7 +243,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the system image AND system title specified in this template.
-     * 
+     * <p>
      * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated
@@ -254,9 +254,9 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     /**
      * When this template is the first template displayed in a @c CPTabBarTemplate's tab, the tab will inherit
      * the @c tabTitle specified in this template.
-     * 
+     * <p>
      * [@note] If no @c tabTitle is specified, the tab will inherit the template's title, if any.
-     * 
+     * <p>
      * [@note] Your template should specify either a @c tabSystemItem OR both a @c tabImage and @c tabTitle.
      */
     @Generated

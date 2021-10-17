@@ -25,9 +25,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object representing a skeleton.
- * 
+ * <p>
  * A skeleton's structure is defined by a skeleton definition.
- * 
+ *
  * @see ARSkeletonDefinition
  */
 @Generated
@@ -119,7 +119,7 @@ public class ARSkeleton extends NSObject {
 
     /**
      * Tracking state for a given joint.
-     * 
+     *
      * @param jointIndex The index of the joint.
      * @return True if the joint is tracked. False otherwise.
      */

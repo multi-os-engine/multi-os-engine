@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLMeshBufferMap
- * 
+ * <p>
  * Represents a reference to memory of a mapped MeshBuffer
  */
 @Generated
@@ -158,7 +158,7 @@ public class MDLMeshBufferMap extends NSObject {
 
     /**
      * [@property] bytes
-     * 
+     * <p>
      * Mutable pointer to data in a MDLMeshBuffer object.
      */
     @Generated
@@ -171,9 +171,9 @@ public class MDLMeshBufferMap extends NSObject {
 
     /**
      * initWithBytes:deallocator:
-     * 
+     * <p>
      * Called by implementor of MDLMeshBuffer protocol to create the map
-     *           and arrange for unmapping on deallocation.
+     * and arrange for unmapping on deallocation.
      */
     @Generated
     @Selector("initWithBytes:deallocator:")

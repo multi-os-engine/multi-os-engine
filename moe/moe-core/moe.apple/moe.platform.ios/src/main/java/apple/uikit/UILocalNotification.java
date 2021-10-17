@@ -198,7 +198,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     public native long applicationIconBadgeNumber();
 
     /**
-     * category identifer of the local notification, as set on a UIUserNotificationCategory and passed to +[UIUserNotificationSettings settingsForTypes:categories:]
+     * category identifier of the local notification, as set on a UIUserNotificationCategory and passed to +[UIUserNotificationSettings settingsForTypes:categories:]
      */
     @Generated
     @Selector("category")
@@ -298,7 +298,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     public native void setApplicationIconBadgeNumber(@NInt long value);
 
     /**
-     * category identifer of the local notification, as set on a UIUserNotificationCategory and passed to +[UIUserNotificationSettings settingsForTypes:categories:]
+     * category identifier of the local notification, as set on a UIUserNotificationCategory and passed to +[UIUserNotificationSettings settingsForTypes:categories:]
      */
     @Generated
     @Selector("setCategory:")

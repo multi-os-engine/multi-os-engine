@@ -19,9 +19,9 @@ package apple.cfnetwork.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *  CFHostInfoType
- * 
- *  Discussion:
+ * CFHostInfoType
+ * <p>
+ * Discussion:
  * Host information types to be resolved.
  */
 @Generated

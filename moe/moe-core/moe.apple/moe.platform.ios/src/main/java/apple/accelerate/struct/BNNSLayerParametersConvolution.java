@@ -73,20 +73,32 @@ public final class BNNSLayerParametersConvolution extends StructObject {
     @StructureField(order = 4, isGetter = false)
     public native void setActivation(@ByValue BNNSActivation value);
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     @NUInt
     public native long x_stride();
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setX_stride(@NUInt long value);
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 6, isGetter = true)
     @NUInt
     public native long y_stride();
 
+    /**
+     * stride 0 will be set 1 during computation
+     */
     @Generated
     @StructureField(order = 6, isGetter = false)
     public native void setY_stride(@NUInt long value);

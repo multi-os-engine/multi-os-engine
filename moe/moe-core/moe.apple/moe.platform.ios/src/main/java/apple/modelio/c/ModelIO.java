@@ -70,7 +70,7 @@ public final class ModelIO {
     public static native String kUTTypeStereolithography();
 
     /**
-     * Universal Scene Description file format, file extension USDA or USDB, UTI com.pixar.universal-scene-description
+     * Universal Scene Description file format, file extension USDA or USDC, UTI com.pixar.universal-scene-description
      */
     @Generated
     @CVariable()
@@ -79,7 +79,7 @@ public final class ModelIO {
 
     /**
      * The attribute data describes the degree to which a surface’s appearance
-     * changes in appearance when rotated about its normal vector. 
+     * changes in appearance when rotated about its normal vector.
      */
     @Generated
     @CVariable()
@@ -112,7 +112,7 @@ public final class ModelIO {
 
     /**
      * A crease value along an edge to be applied during subdivision.
-     * A zero value indicates an edge is smooth, one is sharply creased. 
+     * A zero value indicates an edge is smooth, one is sharply creased.
      */
     @Generated
     @CVariable()
@@ -198,4 +198,12 @@ public final class ModelIO {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MDLVertexAttributeTextureCoordinate();
+
+    /**
+     * Universal Scene Description Mobile file format, file extension USDZ, UTI com.pixar.universal-scene-description-mobile
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String kUTTypeUniversalSceneDescriptionMobile();
 }

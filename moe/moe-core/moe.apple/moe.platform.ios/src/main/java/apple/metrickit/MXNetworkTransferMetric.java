@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXNetworkTransferMetric
- * 
+ * <p>
  * An MXMetric subclass that encapsulates network transfer metrics
  */
 @Generated
@@ -84,11 +84,11 @@ public class MXNetworkTransferMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeCellularDownload
-     * 
+     * <p>
      * Cumulative amount of data downloaded over cellular networks.
-     * 
+     * <p>
      * This data is radio access technology agnostic.
-     * 
+     * <p>
      * Dimensioned as NSUnitInformationStorage.
      */
     @Generated
@@ -97,11 +97,11 @@ public class MXNetworkTransferMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeCellularUpload
-     * 
+     * <p>
      * Cumulative amount of data uploaded over cellular networks.
-     * 
+     * <p>
      * This data is radio access technology agnostic.
-     * 
+     * <p>
      * Dimensioned as NSUnitInformationStorage.
      */
     @Generated
@@ -110,9 +110,9 @@ public class MXNetworkTransferMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeWifiDownload
-     * 
+     * <p>
      * Cumulative amount of data downloaded over WiFi.
-     * 
+     * <p>
      * Dimensioned as NSUnitInformationStorage.
      */
     @Generated
@@ -121,9 +121,9 @@ public class MXNetworkTransferMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeWifiUpload
-     * 
+     * <p>
      * Cumulative amount of data uploaded over WiFi.
-     * 
+     * <p>
      * Dimensioned as NSUnitInformationStorage.
      */
     @Generated

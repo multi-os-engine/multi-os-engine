@@ -43,18 +43,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKEffectPropertyFog
- * 
+ * <p>
  * GLKEffectPropertyFog allows specification of fog parameters and operation per the OpenGL ES 1.1 specification.
  * Fog properties may be enabled or disabled through their enabled property.
- * 
+ * <p>
  * The default values of the properties of this class are as follows:
- * 
- *      enabled         GL_TRUE
- *      mode            GLKFogModeExp
- *      color           { 0.0, 0.0, 0.0, 0.0 }
- *      density         1.0
- *      start           0.0
- *      end             1.0
+ * <p>
+ * enabled         GL_TRUE
+ * mode            GLKFogModeExp
+ * color           { 0.0, 0.0, 0.0, 0.0 }
+ * density         1.0
+ * start           0.0
+ * end             1.0
  */
 @Generated
 @Library("GLKit")

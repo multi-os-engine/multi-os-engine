@@ -97,7 +97,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Specifies the animation events attached to the receiver.
-     * 
+     *
      * @see SCNAnimationEvent
      */
     @Generated
@@ -106,7 +106,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Loads and returns the animation with the specified name in the current application bundle.
-     * 
+     *
      * @param animationName The name of the animation to load.
      */
     @Generated
@@ -114,11 +114,11 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     public static native SCNAnimation animationNamed(String animationName);
 
     /**
-     *  bridge with Core Animation
+     * bridge with Core Animation
      * Returns a SCNAnimation initialized from a CAAnimation.
-     * 
+     * <p>
      * Only CABasicAnimation, CAKeyframeAnimation and CAAnimationGroup are currently supported.
-     * 
+     *
      * @param caAnimation The CAAnimation to initialize from.
      */
     @Generated
@@ -127,7 +127,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Loads and returns an animation loaded from the specified URL.
-     * 
+     *
      * @param animationUrl The url to load.
      */
     @Generated
@@ -147,7 +147,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-in duration.
-     * 
+     * <p>
      * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
      */
     @Generated
@@ -156,7 +156,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-out duration.
-     * 
+     * <p>
      * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
      */
     @Generated
@@ -251,7 +251,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * the current presentation value of the property to produce the new
      * presentation value. The addition function is type-dependent, e.g.
      * for affine transforms the two matrices are concatenated. Defaults to
-     * NO. 
+     * NO.
      */
     @Generated
     @Selector("isAdditive")
@@ -269,14 +269,14 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * their result. If true then the current value of the animation is the
      * value at the end of the previous repeat cycle, plus the value of the
      * current repeat cycle. If false, the value is simply the value
-     * calculated for the current repeat cycle. Defaults to NO. 
+     * calculated for the current repeat cycle. Defaults to NO.
      */
     @Generated
     @Selector("isCumulative")
     public native boolean isCumulative();
 
     /**
-     * When true, the animation is removed from the render tree once its active duration has passed. Defaults to YES. 
+     * When true, the animation is removed from the render tree once its active duration has passed. Defaults to YES.
      */
     @Generated
     @Selector("isRemovedOnCompletion")
@@ -289,7 +289,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * The key-path describing the property to be animated for single-property animations, nil for animations targetting multiple nodes. defaults to nil.
      * The key-path uses the KVC syntax. It's also possible to target a specific sub-node with the following syntax:
-     *    /<node-name>.property1.property2.field    (field is optional, <node-name> is the name of the targeted node).
+     * /<node-name>.property1.property2.field    (field is optional, <node-name> is the name of the targeted node).
      */
     @Generated
     @Selector("keyPath")
@@ -326,7 +326,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * the current presentation value of the property to produce the new
      * presentation value. The addition function is type-dependent, e.g.
      * for affine transforms the two matrices are concatenated. Defaults to
-     * NO. 
+     * NO.
      */
     @Generated
     @Selector("setAdditive:")
@@ -367,7 +367,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Specifies the animation events attached to the receiver.
-     * 
+     *
      * @see SCNAnimationEvent
      */
     @Generated
@@ -390,7 +390,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-in duration.
-     * 
+     * <p>
      * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
      */
     @Generated
@@ -399,7 +399,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines the receiver's blend-out duration.
-     * 
+     * <p>
      * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
      */
     @Generated
@@ -411,7 +411,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * their result. If true then the current value of the animation is the
      * value at the end of the previous repeat cycle, plus the value of the
      * current repeat cycle. If false, the value is simply the value
-     * calculated for the current repeat cycle. Defaults to NO. 
+     * calculated for the current repeat cycle. Defaults to NO.
      */
     @Generated
     @Selector("setCumulative:")
@@ -441,14 +441,14 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * The key-path describing the property to be animated for single-property animations, nil for animations targetting multiple nodes. defaults to nil.
      * The key-path uses the KVC syntax. It's also possible to target a specific sub-node with the following syntax:
-     *    /<node-name>.property1.property2.field    (field is optional, <node-name> is the name of the targeted node).
+     * /<node-name>.property1.property2.field    (field is optional, <node-name> is the name of the targeted node).
      */
     @Generated
     @Selector("setKeyPath:")
     public native void setKeyPath(String value);
 
     /**
-     * When true, the animation is removed from the render tree once its active duration has passed. Defaults to YES. 
+     * When true, the animation is removed from the render tree once its active duration has passed. Defaults to YES.
      */
     @Generated
     @Selector("setRemovedOnCompletion:")
@@ -463,7 +463,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The relative delay to start the animation, in relation to its parent animation if applicable. Defaults to 0.
-     * 
+     * <p>
      * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
      */
     @Generated
@@ -488,10 +488,10 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * 
+     * <p>
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change the evaluation time.
-     * 
+     *
      * @see SCNSceneSourceAnimationImportPolicyKey
      */
     @Generated
@@ -504,7 +504,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * The relative delay to start the animation, in relation to its parent animation if applicable. Defaults to 0.
-     * 
+     * <p>
      * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
      */
     @Generated
@@ -543,10 +543,10 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * 
+     * <p>
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change the evaluation time.
-     * 
+     *
      * @see SCNSceneSourceAnimationImportPolicyKey
      */
     @Generated

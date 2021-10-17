@@ -70,8 +70,8 @@ public final class Enums {
 
     @Generated public static final int kVTVideoDecoderRemovedErr = 0xFFFFBAE6;
     @Generated public static final int kVTSessionMalfunctionErr = 0xFFFFBAE5;
-    @Generated
-    public static final int kVTVideoDecoderNeedsRosettaErr = 0xFFFFBAE4;
-    @Generated
-    public static final int kVTVideoEncoderNeedsRosettaErr = 0xFFFFBAE3;
+    @Generated public static final int kVTVideoDecoderNeedsRosettaErr = 0xFFFFBAE4;
+    @Generated public static final int kVTVideoEncoderNeedsRosettaErr = 0xFFFFBAE3;
+    @Generated public static final int kVTVideoDecoderReferenceMissingErr = 0xFFFFBAE2;
+    @Generated public static final int kVTVideoDecoderCallbackMessagingErr = 0xFFFFBAE1;
 }

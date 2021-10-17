@@ -34,8 +34,8 @@ public final class SSLClientCertificateState {
     @Generated public static final int Requested = 0x00000001;
     /**
      * Server side: We asked for a cert, client sent one, we validated
-     * 			it OK. App can inspect the cert via
-     * 			SSLCopyPeerCertificates().
+     * it OK. App can inspect the cert via
+     * SSLCopyPeerCertificates().
      * Client side: server asked for one, we sent it.
      */
     @Generated public static final int Sent = 0x00000002;

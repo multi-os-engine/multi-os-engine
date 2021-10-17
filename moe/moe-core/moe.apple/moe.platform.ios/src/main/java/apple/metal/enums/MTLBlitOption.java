@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLBlitOption
- * 
+ * <p>
  * Controls the blit operation
  */
 @Generated

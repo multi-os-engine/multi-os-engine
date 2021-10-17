@@ -232,21 +232,21 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     /**
      * If the range smaller than the resolution specified by the dateTemplate, a single date format will be produced. If the range is larger than the format specified by the dateTemplate, a locale-specific fallback will be used to format the items missing from the pattern.
-     * 
+     * <p>
      * For example, if the range is 2010-03-04 07:56 - 2010-03-04 19:56 (12 hours)
      * - The pattern jm will produce
-     *    for en_US, "7:56 AM - 7:56 PM"
-     *    for en_GB, "7:56 - 19:56"
+     * for en_US, "7:56 AM - 7:56 PM"
+     * for en_GB, "7:56 - 19:56"
      * - The pattern MMMd will produce
-     *    for en_US, "Mar 4"
-     *    for en_GB, "4 Mar"
+     * for en_US, "Mar 4"
+     * for en_GB, "4 Mar"
      * If the range is 2010-03-04 07:56 - 2010-03-08 16:11 (4 days, 8 hours, 15 minutes)
      * - The pattern jm will produce
-     *    for en_US, "3/4/2010 7:56 AM - 3/8/2010 4:11 PM"
-     *    for en_GB, "4/3/2010 7:56 - 8/3/2010 16:11"
+     * for en_US, "3/4/2010 7:56 AM - 3/8/2010 4:11 PM"
+     * for en_GB, "4/3/2010 7:56 - 8/3/2010 16:11"
      * - The pattern MMMd will produce
-     *    for en_US, "Mar 4-8"
-     *    for en_GB, "4-8 Mar"
+     * for en_US, "Mar 4-8"
+     * for en_GB, "4-8 Mar"
      */
     @Generated
     @Selector("stringFromDate:toDate:")

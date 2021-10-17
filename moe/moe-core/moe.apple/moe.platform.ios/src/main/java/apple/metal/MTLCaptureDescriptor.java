@@ -69,13 +69,13 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
 
     /**
      * The object that is captured.
-     * 
+     * <p>
      * Must be one of the following:
-     * 
+     * <p>
      * MTLDevice captures all command queues of the device.
-     * 
+     * <p>
      * MTLCommandQueue captures a single command queue.
-     * 
+     * <p>
      * MTLCaptureScope captures between the next begin and end of the scope.
      */
     @Generated
@@ -167,13 +167,13 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
 
     /**
      * The object that is captured.
-     * 
+     * <p>
      * Must be one of the following:
-     * 
+     * <p>
      * MTLDevice captures all command queues of the device.
-     * 
+     * <p>
      * MTLCommandQueue captures a single command queue.
-     * 
+     * <p>
      * MTLCaptureScope captures between the next begin and end of the scope.
      */
     @Generated

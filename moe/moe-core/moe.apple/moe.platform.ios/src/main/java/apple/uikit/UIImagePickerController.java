@@ -179,10 +179,6 @@ public class UIImagePickerController extends UINavigationController implements N
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -399,7 +395,7 @@ public class UIImagePickerController extends UINavigationController implements N
     public native long sourceType();
 
     /**
-     * programatically initiates still image capture. ignored if image capture is in-flight.
+     * programmatically initiates still image capture. ignored if image capture is in-flight.
      * clients can initiate additional captures after receiving -imagePickerController:didFinishPickingMediaWithInfo: delegate callback
      */
     @Generated

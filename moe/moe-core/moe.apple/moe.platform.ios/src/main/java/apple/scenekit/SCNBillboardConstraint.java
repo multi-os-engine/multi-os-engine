@@ -75,9 +75,9 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     /**
      * billboardConstraint:
-     * 
+     * <p>
      * Creates and returns a SCNBillboardConstraint constraint.
-     * 
+     * <p>
      * A billboard constraint forces the receiver to look into the direction of the current point of view.
      */
     @Generated
@@ -169,7 +169,7 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     /**
      * [@property] freeAxes
-     * 
+     * <p>
      * Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
      */
     @Generated
@@ -187,7 +187,7 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     /**
      * [@property] freeAxes
-     * 
+     * <p>
      * Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
      */
     @Generated

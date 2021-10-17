@@ -14,22 +14,22 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NFCFeliCaTag
- * 
+ * <p>
  * A @link NFCTagReaderSession @link/ reader session returns an instance conforming to this protocol
- *              when a FeliCa tag is detected.  Unless it is specified all block completion handlers are dispatched on the
- *              session work queue that is associated with the tag.  Your process requires to include the
- *              "com.apple.developer.nfc.readersession.formats" entitlement and the "com.apple.developer.nfc.readersession.felica.systemcodes"
- *              key in the application's Info.plist to receive this tag object from the @link NFCTagReaderSessionDelegate @link/ delegate.
- *              [@link] NFCReaderErrorSecurityViolation @link/ will be returned from the @link NFCTagReaderSessionDelegate @link/ invalidation
- *              method if the required entitlement is missing or "com.apple.developer.nfc.readersession.felica.systemcodes" does not contain
- *              at least one valid entry.
- *              When the reader discovers a FeliCa tag it automatically performs a Polling command using the system code values provided in the
- *              "com.apple.developer.nfc.readersession.felica.systemcodes" in the specified array order. System code
- *              specified in the array must not contain a wildcard value (0xFF) in the upper or the lower byte, i.e. full
- *              matching value is required.  The tag is returned from the [NFCTagReaderSessionDelegate readerSession:didDetectTags:] call
- *              on the first successful Polling command matching one of the system codes.  Tag will not be returned
- *              to the NFCTagReaderSessionDelegate if no matching system is found based on entries listed in the Info.plist.
- *              Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly.
+ * when a FeliCa tag is detected.  Unless it is specified all block completion handlers are dispatched on the
+ * session work queue that is associated with the tag.  Your process requires to include the
+ * "com.apple.developer.nfc.readersession.formats" entitlement and the "com.apple.developer.nfc.readersession.felica.systemcodes"
+ * key in the application's Info.plist to receive this tag object from the @link NFCTagReaderSessionDelegate @link/ delegate.
+ * [@link] NFCReaderErrorSecurityViolation @link/ will be returned from the @link NFCTagReaderSessionDelegate @link/ invalidation
+ * method if the required entitlement is missing or "com.apple.developer.nfc.readersession.felica.systemcodes" does not contain
+ * at least one valid entry.
+ * When the reader discovers a FeliCa tag it automatically performs a Polling command using the system code values provided in the
+ * "com.apple.developer.nfc.readersession.felica.systemcodes" in the specified array order. System code
+ * specified in the array must not contain a wildcard value (0xFF) in the upper or the lower byte, i.e. full
+ * matching value is required.  The tag is returned from the [NFCTagReaderSessionDelegate readerSession:didDetectTags:] call
+ * on the first successful Polling command matching one of the system codes.  Tag will not be returned
+ * to the NFCTagReaderSessionDelegate if no matching system is found based on entries listed in the Info.plist.
+ * Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly.
  */
 @Generated
 @Library("CoreNFC")
@@ -38,7 +38,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
     /**
      * [@property] currentIDm         Manufacturer ID of the currently selected system.  Value is updated on each Polling command execution.
-     *                              It will be empty if system selection fails.
+     * It will be empty if system selection fails.
      */
     @Generated
     @Selector("currentIDm")
@@ -46,8 +46,8 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * [@property] currentSystemCode  The system code most recently selected by the reader using the Polling command.
-     *                              This will match one of the entries in the "com.apple.developer.nfc.readersession.felica.systemcodes"
-     *                              in the Info.plist.
+     * This will match one of the entries in the "com.apple.developer.nfc.readersession.felica.systemcodes"
+     * in the Info.plist.
      */
     @Generated
     @Selector("currentSystemCode")
@@ -55,12 +55,12 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * pollingWithSystemCode:requestCode:timeSlot:completionHandler:
-     * 
+     * <p>
      * Polling command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     *                          System code must be one of the provided values in the "com.apple.developer.nfc.readersession.felica.systemcodes"
-     *                          in the Info.plist; @link NFCReaderErrorSecurityViolation @link/ will be returned when an invalid system code is used.
-     *                          Polling with wildcard value in the upper or lower byte is not supported.
-     * 
+     * System code must be one of the provided values in the "com.apple.developer.nfc.readersession.felica.systemcodes"
+     * in the Info.plist; @link NFCReaderErrorSecurityViolation @link/ will be returned when an invalid system code is used.
+     * Polling with wildcard value in the upper or lower byte is not supported.
+     *
      * @param systemCode        Designation of System Code.  Wildcard value (0xFF) in the upper or the lower byte is not supported.
      * @param requestCode       Designation of Requset Data output.
      * @param timeSlot          Maximum number of slots possible to respond.
@@ -85,9 +85,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * readWithoutEncryptionWithServiceCodeList:blockList:completionHandler:
-     * 
+     * <p>
      * Read Without Encrypton command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     * 
+     *
      * @param serviceCodeList   Service Code list represented in a NSArray of NSData objects.  Number of nodes specified should be between 1 to 16 inclusive.
      *                          Each service code should be 2 bytes stored in Little Endian format.
      * @param blockList         Block List represent in a NSArray of NSData objects.  2-Byte or 3-Byte block list element is supported.
@@ -111,9 +111,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * requestResponseWithCompletionHandler:
-     * 
+     * <p>
      * Request Response command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     * 
+     *
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if the contactless transceive operation succeeds,
      *                          else all other return values shall be ignored.  Valid mode value ranges from 0 to 3 inclusively.
      */
@@ -131,9 +131,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * requestServiceV2WithNodeCodeList:completionHandler:
-     * 
+     * <p>
      * Request Service V2 command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     * 
+     *
      * @param nodeCodeList      Node Code list represent in a NSArray of NSData.  Number of nodes specified should be between 1 to 32 inclusive.
      *                          Each node code should be 2 bytes stored in Little Endian format.
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if the contactless transceive operation succeeds,
@@ -157,9 +157,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * requestServiceWithNodeCodeList:completionHandler:
-     * 
+     * <p>
      * Request Service command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     * 
+     *
      * @param nodeCodeList      Node Code list represented in a NSArray of NSData objects.  Number of nodes specified should be between 1 to 32 inclusive.
      *                          Each node code should be 2 bytes stored in Little Endian format.
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if the contactless transceive operation succeeds,
@@ -181,10 +181,10 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * requestSpecificationVersionWithCompletionHandler:
-     * 
+     * <p>
      * Request Specification Verison command defined by FeliCa card specification.  This command supports response format version `00`h.
-     *                          Refer to the FeliCa specification for details.
-     * 
+     * Refer to the FeliCa specification for details.
+     *
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if the contactless transceive operation succeeds,
      *                          else all other return values shall be ignored.  basicVersion and optionVersion may be empty depending on the Status Flag 1 value
      *                          and if the tag supports AES/DES.
@@ -204,9 +204,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * requestSystemCodeWithCompletionHandler:
-     * 
+     * <p>
      * Request System Code command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     * 
+     *
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if the contactless transceive operation succeeds,
      *                          else all other return values shall be ignored.  Each system code is 2 bytes stored in Little Endian format.
      */
@@ -224,9 +224,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * resetModeWithCompletionHandler:
-     * 
+     * <p>
      * Reset Mode command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     * 
+     *
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if the contactless transceive operation succeeds,
      *                          else all other return values shall be ignored.
      */
@@ -244,10 +244,10 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * sendFeliCaCommandPacket:completionHandler:
-     * 
+     * <p>
      * Transmission of FeliCa Command Packet Data at the applicaiton layer.  Refer to the FeliCa specification for details.
-     *                          Manufacturer ID (IDm) of the currently selected system can be read from the currentIDm property.
-     * 
+     * Manufacturer ID (IDm) of the currently selected system can be read from the currentIDm property.
+     *
      * @param commandPacket     Command packet send to the FeliCa card.  Maximum packet length is 254.  Data length (LEN) byte and CRC bytes are calculated and inserted
      *                          automatically to the provided packet data frame.
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
@@ -267,9 +267,9 @@ public interface NFCFeliCaTag extends NFCTag, NFCNDEFTag {
 
     /**
      * writeWithoutEncryptionWithServiceCodeList:blockList:blockData:completionHandler:
-     * 
+     * <p>
      * Write Without Encrypton command defined by FeliCa card specification.  Refer to the FeliCa specification for details.
-     * 
+     *
      * @param serviceCodeList   Service Code list represented in a NSArray of NSData objects.  Number of nodes specified should be between 1 to 16 inclusive.
      *                          Each service code should be 2 bytes stored in Little Endian format.
      * @param blockList         Block List represent in a NSArray of NSData objects.  Total blockList items and blockData items should match.

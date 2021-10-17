@@ -34,4 +34,5 @@ public final class UNAuthorizationOptions {
     @Generated @NUInt public static final long ProvidesAppNotificationSettings = 0x0000000000000020L;
     @Generated @NUInt public static final long Provisional = 0x0000000000000040L;
     @Generated @NUInt public static final long Announcement = 0x0000000000000080L;
+    @Generated @NUInt public static final long TimeSensitive = 0x0000000000000100L;
 }

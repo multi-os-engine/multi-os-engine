@@ -19,9 +19,9 @@ package apple.cfnetwork.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *  CFStreamErrorHTTP
- * 
- *  Discussion:
+ * CFStreamErrorHTTP
+ * <p>
+ * Discussion:
  * Errors from the kCFStreamErrorDomainHTTP domain.
  */
 @Generated

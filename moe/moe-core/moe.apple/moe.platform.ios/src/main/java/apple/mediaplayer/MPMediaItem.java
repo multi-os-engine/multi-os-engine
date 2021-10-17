@@ -357,4 +357,8 @@ public class MPMediaItem extends MPMediaEntity {
     @Generated
     @Selector("playbackStoreID")
     public native String playbackStoreID();
+
+    @Generated
+    @Selector("isPreorder")
+    public native boolean isPreorder();
 }

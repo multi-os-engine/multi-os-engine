@@ -30,9 +30,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A state created to record a MPSNDArrayGather kernel properties
  * at the time an -encode call was made.
- * 
+ * <p>
  * Must be created with the appropriate MPSNDArray kernel method, for example:
- * 
+ * <p>
  * MPSNDArrayGather* gather = [[MPSNDArrayGather alloc] initWithDevice: device];
  * MPSNDArrayGatherGradientState* state = [gather resultStateForSourceArrays:...];
  */

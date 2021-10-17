@@ -174,7 +174,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether JavaScript can open
      * windows without user interaction.
-     * 
+     * <p>
      * The default value is NO in iOS and YES in OS X.
      */
     @Generated
@@ -187,7 +187,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
 
     /**
      * The minimum font size in points.
-     * 
+     * <p>
      * The default value is 0.
      */
     @Generated
@@ -198,7 +198,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether JavaScript can open
      * windows without user interaction.
-     * 
+     * <p>
      * The default value is NO in iOS and YES in OS X.
      */
     @Generated
@@ -211,7 +211,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
 
     /**
      * The minimum font size in points.
-     * 
+     * <p>
      * The default value is 0.
      */
     @Generated
@@ -221,7 +221,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether warnings should be
      * shown for suspected fraudulent content such as phishing or malware.
-     * 
+     * <p>
      * The default value is YES.
      */
     @Generated
@@ -231,7 +231,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether warnings should be
      * shown for suspected fraudulent content such as phishing or malware.
-     * 
+     * <p>
      * The default value is YES.
      */
     @Generated
@@ -247,4 +247,18 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * A Boolean value indicating whether text interaction is disabled.
+     */
+    @Generated
+    @Selector("isTextInteractionEnabled")
+    public native boolean isTextInteractionEnabled();
+
+    /**
+     * A Boolean value indicating whether text interaction is disabled.
+     */
+    @Generated
+    @Selector("setTextInteractionEnabled:")
+    public native void setTextInteractionEnabled(boolean value);
 }

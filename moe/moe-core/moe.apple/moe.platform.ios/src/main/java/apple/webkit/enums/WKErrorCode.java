@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] WKErrorCode
- * 
+ * <p>
  * Constants used by NSError to indicate errors in the WebKit domain.
  * [@constant] WKErrorUnknown                              Indicates that an unknown error occurred.
  * [@constant] WKErrorWebContentProcessTerminated          Indicates that the Web Content process was terminated.

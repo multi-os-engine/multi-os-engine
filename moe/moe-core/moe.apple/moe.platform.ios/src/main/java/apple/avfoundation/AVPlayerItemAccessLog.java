@@ -43,12 +43,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPlayerItemAccessLog
- * 
+ * <p>
  * An AVPlayerItemAccessLog provides methods to retrieve the access log in a format suitable for serialization.
- * 
+ * <p>
  * An AVPlayerItemAccessLog acculumulates key metrics about network playback and presents them as a collection
- * 				of AVPlayerItemAccessLogEvent instances. Each AVPlayerItemAccessLogEvent instance collates the data 
- * 				that relates to each uninterrupted period of playback.
+ * of AVPlayerItemAccessLogEvent instances. Each AVPlayerItemAccessLogEvent instance collates the data
+ * that relates to each uninterrupted period of playback.
  */
 @Generated
 @Library("AVFoundation")
@@ -169,12 +169,12 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
 
     /**
      * [@property]		events
-     * 
+     * <p>
      * An ordered collection of AVPlayerItemAccessLogEvent instances.
-     * 
+     * <p>
      * An ordered collection of AVPlayerItemAccessLogEvent instances that represent the chronological
-     * 				sequence of events contained in the access log.
-     * 				This property is not observable.
+     * sequence of events contained in the access log.
+     * This property is not observable.
      */
     @Generated
     @Selector("events")
@@ -182,14 +182,14 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
 
     /**
      * extendedLogData
-     * 
+     * <p>
      * Serializes an AVPlayerItemAccessLog in the Extended Log File Format.
-     * 
+     * <p>
      * This method converts the webserver access log into a textual format that conforms to the
-     * 			W3C Extended Log File Format for web server log files.
-     * 			For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
-     * 
-     * @return		An autoreleased NSData instance.
+     * W3C Extended Log File Format for web server log files.
+     * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
+     *
+     * @return An autoreleased NSData instance.
      */
     @Generated
     @Selector("extendedLogData")
@@ -197,11 +197,11 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
 
     /**
      * [@property]		extendedLogDataStringEncoding
-     * 
+     * <p>
      * Returns the NSStringEncoding for extendedLogData, see above.
-     * 
+     * <p>
      * A string suitable for console output is obtainable by:
-     * 				[[NSString alloc] initWithData:[myLog extendedLogData] encoding:[myLog extendedLogDataStringEncoding]]
+     * [[NSString alloc] initWithData:[myLog extendedLogData] encoding:[myLog extendedLogDataStringEncoding]]
      */
     @Generated
     @Selector("extendedLogDataStringEncoding")

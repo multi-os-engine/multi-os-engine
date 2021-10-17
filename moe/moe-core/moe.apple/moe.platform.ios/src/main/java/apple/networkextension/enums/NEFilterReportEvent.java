@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEFilterReportEvent
- * 
+ * <p>
  * A NEFilterReportEvent represents the event that is being reported by the NEFilterReport.
  */
 @Generated

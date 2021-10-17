@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The base scattering function is Lambertian, with a Blinn-Phong specular response.
- * Specular power for Blinn-Phong can be derived from the roughness property using 
+ * Specular power for Blinn-Phong can be derived from the roughness property using
  * an approximation.
  */
 @Generated

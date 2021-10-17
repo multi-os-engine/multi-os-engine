@@ -25,9 +25,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKElectrocardiogramVoltageMeasurement
- * 
+ * <p>
  * An HKElectrocardiogramVoltageMeasurement contains voltage quantities for all leads at a single instance of measurement.
- * 
+ * <p>
  * Each HKElectrocardiogramVoltageMeasurement object corresponds to the voltage quantities across all leads for a given instance in time.
  */
 @Generated
@@ -126,10 +126,10 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject {
 
     /**
      * quantityForLead:
-     * 
+     * <p>
      * Returns an HKQuantity for the specified lead with a unit compatible with [HKUnit voltageUnit].
-     * 
-     * @param         lead      The HKElectrocardiogramLead for which voltage quantity will be returned.
+     *
+     * @param lead The HKElectrocardiogramLead for which voltage quantity will be returned.
      */
     @Generated
     @Selector("quantityForLead:")

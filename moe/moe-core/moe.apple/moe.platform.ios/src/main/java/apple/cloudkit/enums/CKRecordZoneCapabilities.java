@@ -37,4 +37,9 @@ public final class CKRecordZoneCapabilities {
     @Generated
     private CKRecordZoneCapabilities() {
     }
+
+    /**
+     * This zone supports a single CKShare record that shares all records in the zone
+     */
+    @Generated @NUInt public static final long ZoneWideSharing = 0x0000000000000008L;
 }

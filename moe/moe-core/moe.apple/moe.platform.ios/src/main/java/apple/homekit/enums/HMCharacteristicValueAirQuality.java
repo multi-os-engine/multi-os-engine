@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueAirQuality
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueAirQualityUnknown              Air quality is unknown.
  * [@constant]  HMCharacteristicValueAirQualityExcellent            Air quality is excellent.
  * [@constant]  HMCharacteristicValueAirQualityGood                 Air quality is good.

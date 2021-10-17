@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Type Name Format value defined by NFC Data Exchange Format (NDEF) Technical Specification
- *             from NFC Forum.
+ * from NFC Forum.
  */
 @Generated
 public final class NFCTypeNameFormat {

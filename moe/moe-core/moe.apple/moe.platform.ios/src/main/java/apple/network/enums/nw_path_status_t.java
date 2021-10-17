@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_path_status_t
- * 
- * 	A network path status indicates if there is a usable route available upon which to
- * 	send and receive data.
+ * <p>
+ * A network path status indicates if there is a usable route available upon which to
+ * send and receive data.
  */
 @Generated
 public final class nw_path_status_t {

@@ -19,9 +19,9 @@ package apple.cfnetwork.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *  CFStreamErrorHTTPAuthentication
- * 
- *  Discussion:
+ * CFStreamErrorHTTPAuthentication
+ * <p>
+ * Discussion:
  * Authentication errors which may be returned as a result of trying
  * to apply authentication to a request.  These errors are in the
  * kCFStreamErrorDomainHTTP domain.

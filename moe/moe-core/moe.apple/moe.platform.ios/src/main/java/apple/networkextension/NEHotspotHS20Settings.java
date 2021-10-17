@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEHotspotHS20Settings
- * 
- *   NEHotspotHS20Settings class provides a set of properties that are required
- *   to discover and negotiate Hotspot 2.0 Wi-Fi networks.
+ * <p>
+ * NEHotspotHS20Settings class provides a set of properties that are required
+ * to discover and negotiate Hotspot 2.0 Wi-Fi networks.
  */
 @Generated
 @Library("NetworkExtension")
@@ -49,10 +49,10 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] MCCAndMNCs
-     * 
+     * <p>
      * Array of Mobile Country Code (MCC)/Mobile Network Code (MNC)
-     *   pairs used for Wi-Fi Hotspot 2.0 negotiation. Each string must contain
-     *   exactly six digits.
+     * pairs used for Wi-Fi Hotspot 2.0 negotiation. Each string must contain
+     * exactly six digits.
      */
     @Generated
     @Selector("MCCAndMNCs")
@@ -110,9 +110,9 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] domainName
-     * 
+     * <p>
      * Domain Name of Legacy Hotspot or Hotspot 2.0 Wi-Fi Network.
-     *   This Domain Name is used for Wi-Fi Hotspot 2.0 negotiation.
+     * This Domain Name is used for Wi-Fi Hotspot 2.0 negotiation.
      */
     @Generated
     @Selector("domainName")
@@ -137,11 +137,11 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * initWithDomainName:roamingEnabled
-     * 
-     *   A designated initializer to instantiate a new NEHotspotHSSettings object.
-     *   This initializer is used to configure Legacy Hotspot or HS2.0 Wi-Fi Networks.
-     * 
-     * @param domainName The domain name of HS2.0 Wi-Fi Network
+     * <p>
+     * A designated initializer to instantiate a new NEHotspotHSSettings object.
+     * This initializer is used to configure Legacy Hotspot or HS2.0 Wi-Fi Networks.
+     *
+     * @param domainName     The domain name of HS2.0 Wi-Fi Network
      * @param roamingEnabled If YES, allows connections to networks of roaming service providers.
      */
     @Generated
@@ -163,9 +163,9 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] roamingEnabled
-     * 
+     * <p>
      * If set to YES, allows connection to networks of roaming service
-     *   providers. Defaults to NO.
+     * providers. Defaults to NO.
      */
     @Generated
     @Selector("isRoamingEnabled")
@@ -181,9 +181,9 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] naiRealmNames
-     * 
+     * <p>
      * Array of Network Access Identifier Realm names used for
-     *   Wi-Fi Hotspot 2.0 negotiation.
+     * Wi-Fi Hotspot 2.0 negotiation.
      */
     @Generated
     @Selector("naiRealmNames")
@@ -205,9 +205,9 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] roamingConsortiumOIs
-     * 
+     * <p>
      * Array of Roaming Consortium Organization Identifiers used
-     *   for Wi-Fi Hotspot 2.0 negotiation.
+     * for Wi-Fi Hotspot 2.0 negotiation.
      */
     @Generated
     @Selector("roamingConsortiumOIs")
@@ -215,10 +215,10 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] MCCAndMNCs
-     * 
+     * <p>
      * Array of Mobile Country Code (MCC)/Mobile Network Code (MNC)
-     *   pairs used for Wi-Fi Hotspot 2.0 negotiation. Each string must contain
-     *   exactly six digits.
+     * pairs used for Wi-Fi Hotspot 2.0 negotiation. Each string must contain
+     * exactly six digits.
      */
     @Generated
     @Selector("setMCCAndMNCs:")
@@ -226,9 +226,9 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] naiRealmNames
-     * 
+     * <p>
      * Array of Network Access Identifier Realm names used for
-     *   Wi-Fi Hotspot 2.0 negotiation.
+     * Wi-Fi Hotspot 2.0 negotiation.
      */
     @Generated
     @Selector("setNaiRealmNames:")
@@ -236,9 +236,9 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] roamingConsortiumOIs
-     * 
+     * <p>
      * Array of Roaming Consortium Organization Identifiers used
-     *   for Wi-Fi Hotspot 2.0 negotiation.
+     * for Wi-Fi Hotspot 2.0 negotiation.
      */
     @Generated
     @Selector("setRoamingConsortiumOIs:")
@@ -246,9 +246,9 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     /**
      * [@property] roamingEnabled
-     * 
+     * <p>
      * If set to YES, allows connection to networks of roaming service
-     *   providers. Defaults to NO.
+     * providers. Defaults to NO.
      */
     @Generated
     @Selector("setRoamingEnabled:")

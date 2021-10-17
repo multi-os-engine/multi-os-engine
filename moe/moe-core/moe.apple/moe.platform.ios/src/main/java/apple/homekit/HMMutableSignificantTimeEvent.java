@@ -132,8 +132,8 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
 
     /**
      * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
-     *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
-     *               'minute' property must be set to -30.
+     * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     * 'minute' property must be set to -30.
      */
     @Generated
     @Selector("offset")
@@ -149,8 +149,8 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
 
     /**
      * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
-     *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
-     *               'minute' property must be set to -30.
+     * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     * 'minute' property must be set to -30.
      */
     @Generated
     @Selector("setOffset:")

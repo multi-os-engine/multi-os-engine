@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]       HKBloodType
- * 
+ * <p>
  * This enumerated type is used to represent the blood type of an individual.
  */
 @Generated

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Adjusts how graph nodes are created when you triangulate a GKMeshGrapk
- * 
+ * <p>
  * [@enum] GKMeshGraphTriangulationModeVertices Graph nodes will be made at all triangle vertices
  * [@enum] GKMeshGraphTriangulationModeCenters Graph nodes will be made at all triangle centers
  * [@enum] GKMeshGraphTriangulationModeEdgeMidpoints Graph nodes will be made at midpoint of all triangle edges

@@ -154,12 +154,12 @@ public class GCGamepad extends GCPhysicalInputProfile {
     /**
      * All face buttons are required to be analog in the Standard profile. These must be arranged
      * in the diamond pattern given below:
-     * 
-     *   Y
-     *  / \
+     * <p>
+     * Y
+     * / \
      * X   B
-     *  \ /
-     *   A
+     * \ /
+     * A
      */
     @Generated
     @Selector("buttonA")
@@ -210,7 +210,7 @@ public class GCGamepad extends GCPhysicalInputProfile {
      * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
-     * 
+     * <p>
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
      */

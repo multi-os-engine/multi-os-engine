@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * steering functions that can be used to simulate vehicles or entities with agency.
  * The units of mass, velocity and radius are dimensionless but related. The visual representation of these values
  * are specific to each game's own situation.
- * 
+ * <p>
  * Values close to 1.0 should be canonical and are expected to yield pleasing results. When applied to visuals
  * these values should be scaled and biased into their target coordinate system and a simple filter on top ensures
  * any noise generated from the steering logic doesn't affect the visual represtentation.
@@ -194,7 +194,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Agent's mass. Used for agent impulse application purposes.
-     * 
+     * <p>
      * Defaults to 1.0
      */
     @Generated
@@ -203,7 +203,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Maximum amount of acceleration that can be applied to this agent.  All applied impulses are clipped to this amount.
-     * 
+     * <p>
      * Defaults to 1.0
      */
     @Generated
@@ -212,7 +212,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Maximum speed of this agent. Impulses cannot cause the agents speed to ever be greater than this value.
-     * 
+     * <p>
      * Defaults to 1.0
      */
     @Generated
@@ -221,7 +221,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Radius of the agent's bounding circle.  Used by the agent avoid steering functions.
-     * 
+     * <p>
      * Defaults to 0.5 for a canonical diameter of 1.0
      */
     @Generated
@@ -260,7 +260,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Agent's mass. Used for agent impulse application purposes.
-     * 
+     * <p>
      * Defaults to 1.0
      */
     @Generated
@@ -269,7 +269,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Maximum amount of acceleration that can be applied to this agent.  All applied impulses are clipped to this amount.
-     * 
+     * <p>
      * Defaults to 1.0
      */
     @Generated
@@ -278,7 +278,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Maximum speed of this agent. Impulses cannot cause the agents speed to ever be greater than this value.
-     * 
+     * <p>
      * Defaults to 1.0
      */
     @Generated
@@ -287,7 +287,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Radius of the agent's bounding circle.  Used by the agent avoid steering functions.
-     * 
+     * <p>
      * Defaults to 0.5 for a canonical diameter of 1.0
      */
     @Generated
@@ -296,7 +296,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Current speed of the agent along its foward direction.
-     * 
+     * <p>
      * Defaults to 0.0
      */
     @Generated
@@ -305,7 +305,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     /**
      * Current speed of the agent along its foward direction.
-     * 
+     * <p>
      * Defaults to 0.0
      */
     @Generated

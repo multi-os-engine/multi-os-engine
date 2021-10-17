@@ -194,7 +194,7 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
      * oscillate more and more before coming to a complete stop. You can use the
      * initial spring velocity to specify how fast the object at the end of the
      * simulated spring was moving before it was attached. It's a unit coordinate
-     * system, where 1 is defined as travelling the total animation distance in a
+     * system, where 1 is defined as traveling the total animation distance in a
      * second. So if you're changing an object's position by 200pt in this
      * animation, and you want the animation to behave as if the object was moving
      * at 100pt/s before the animation started, you'd pass 0.5. You'll typically
@@ -208,7 +208,7 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
             @ByValue CGVector velocity);
 
     /**
-     * Similiar to initWithDampingRatio:initialVelocity: except this allows you to specify the spring constants for the underlying
+     * Similar to initWithDampingRatio:initialVelocity: except this allows you to specify the spring constants for the underlying
      * CASpringAnimation directly. The duration is computed assuming a small settling oscillation.
      */
     @Generated

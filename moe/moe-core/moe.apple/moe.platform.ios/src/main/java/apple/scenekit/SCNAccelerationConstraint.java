@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNAccelerationConstraint
- * 
+ * <p>
  * A SCNAccelerationConstraint caps the acceleration and velocity of a node
  */
 @Generated
@@ -47,7 +47,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * accelerationConstraint
-     * 
+     * <p>
      * Creates and returns a SCNAccelerationConstraint object.
      */
     @Generated
@@ -92,7 +92,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] damping
-     * 
+     * <p>
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
      */
     @Generated
@@ -106,7 +106,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] decelerationDistance
-     * 
+     * <p>
      * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
      */
     @Generated
@@ -154,9 +154,9 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumLinearAcceleration
-     * 
+     * <p>
      * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
-     * 
+     * <p>
      * The maximum linear acceleration is in m.s^-2
      */
     @Generated
@@ -166,9 +166,9 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumLinearVelocity
-     * 
+     * <p>
      * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
-     * 
+     * <p>
      * The maximum linear velocity is in m.s
      */
     @Generated
@@ -192,7 +192,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] damping
-     * 
+     * <p>
      * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
      */
     @Generated
@@ -201,7 +201,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] decelerationDistance
-     * 
+     * <p>
      * Controls the distance at which the node should start decelerating. Defaults to 0. Animatable.
      */
     @Generated
@@ -210,9 +210,9 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumLinearAcceleration
-     * 
+     * <p>
      * Controls the maximum linear acceleration. Defaults to MAXFLOAT. Animatable.
-     * 
+     * <p>
      * The maximum linear acceleration is in m.s^-2
      */
     @Generated
@@ -221,9 +221,9 @@ public class SCNAccelerationConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumLinearVelocity
-     * 
+     * <p>
      * Controls the maximum linear velocity. Defaults to MAXFLOAT. Animatable.
-     * 
+     * <p>
      * The maximum linear velocity is in m.s
      */
     @Generated

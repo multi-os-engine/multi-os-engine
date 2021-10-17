@@ -21,10 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] WKNavigationResponsePolicy
- * 
+ * <p>
  * The policy to pass back to the decision handler from the webView:decidePolicyForNavigationResponse:decisionHandler: method.
  * [@constant] WKNavigationResponsePolicyCancel   Cancel the navigation.
  * [@constant] WKNavigationResponsePolicyAllow    Allow the navigation to continue.
+ * [@constant] WKNavigationResponsePolicyDownload    Turn the navigation into a download.
  */
 @Generated
 public final class WKNavigationResponsePolicy {
@@ -34,4 +35,6 @@ public final class WKNavigationResponsePolicy {
     @Generated
     private WKNavigationResponsePolicy() {
     }
+
+    @Generated @NInt public static final long Download = 0x0000000000000002L;
 }

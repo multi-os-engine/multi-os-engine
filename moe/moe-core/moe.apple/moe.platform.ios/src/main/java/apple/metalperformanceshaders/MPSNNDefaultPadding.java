@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class provides some pre-rolled padding policies for common tasks
- * 
+ * <p>
  * You are, of course, welcome to write your own class that conforms to
- *             The MPSNNPadding protocol and use that instead.
+ * The MPSNNPadding protocol and use that instead.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -160,12 +160,12 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
 
     /**
      * Fetch a well known object that implements a non-custom padding method
-     * 
+     * <p>
      * For custom padding methods, you will need to implement an object that conforms
-     *             to the full MPSNNPadding protocol, including NSSecureCoding.
-     * 
-     * @param      method  A MPSNNPaddingMethod
-     * @return     An object that implements <MPSNNPadding> for use with MPSNNGraphNodes.
+     * to the full MPSNNPadding protocol, including NSSecureCoding.
+     *
+     * @param method A MPSNNPaddingMethod
+     * @return An object that implements <MPSNNPadding> for use with MPSNNGraphNodes.
      */
     @Generated
     @Selector("paddingWithMethod:")

@@ -2,6 +2,7 @@ package apple.storekit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -19,6 +20,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -148,4 +150,31 @@ public class SKAdNetwork extends NSObject {
     @Generated
     @Selector("updateConversionValue:")
     public static native void updateConversionValue(@NInt long conversionValue);
+
+    @Generated
+    @Selector("endImpression:completionHandler:")
+    public static native void endImpressionCompletionHandler(SKAdImpression impression,
+            @ObjCBlock(name = "call_endImpressionCompletionHandler") Block_endImpressionCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_endImpressionCompletionHandler {
+        @Generated
+        void call_endImpressionCompletionHandler(NSError error);
+    }
+
+    /**
+     * Source apps should call these methods for performing a non-mediated attribution
+     */
+    @Generated
+    @Selector("startImpression:completionHandler:")
+    public static native void startImpressionCompletionHandler(SKAdImpression impression,
+            @ObjCBlock(name = "call_startImpressionCompletionHandler") Block_startImpressionCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startImpressionCompletionHandler {
+        @Generated
+        void call_startImpressionCompletionHandler(NSError error);
+    }
 }

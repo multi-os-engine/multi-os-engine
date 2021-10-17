@@ -52,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A SpriteKit physics body. These are the physical representations of your nodes. These specify the area and mass and any collision masking needed.
- * 
+ * <p>
  * All bodies have zero, one or more shapes that define its area. A body with no shapes is ethereal and does not collide with other bodies.
  */
 @Generated
@@ -96,7 +96,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates a circle of radius r centered at the node's origin.
-     * 
+     *
      * @param r the radius in points
      */
     @Generated
@@ -105,7 +105,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates a circle of radius r centered at a point in the node's coordinate space.
-     * 
+     *
      * @param r the radius in points
      */
     @Generated
@@ -114,7 +114,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates an edge chain from a path. The path must have no self intersection. Edges have no volume and are intended to be used to create static environments. Edges can collide with bodies of volume, but not with each other.
-     * 
+     *
      * @param path the path to use
      */
     @Generated
@@ -123,7 +123,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates an edge from p1 to p2. Edges have no volume and are intended to be used to create static environments. Edges can collide with bodies of volume, but not with each other.
-     * 
+     *
      * @param p1 start point
      * @param p2 end point
      */
@@ -133,7 +133,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates an edge loop from a path. A loop is automatically created by joining the last point to the first. The path must have no self intersection. Edges have no volume and are intended to be used to create static environments. Edges can collide with body's of volume, but not with each other.
-     * 
+     *
      * @param path the path to use
      */
     @Generated
@@ -142,7 +142,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates an edge loop from a CGRect. Edges have no volume and are intended to be used to create static environments. Edges can collide with body's of volume, but not with each other.
-     * 
+     *
      * @param rect the CGRect to use
      */
     @Generated
@@ -151,7 +151,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The path must represent a convex or concave polygon with counter clockwise winding and no self intersection. Positions are relative to the node's origin.
-     * 
+     *
      * @param path the path to use
      */
     @Generated
@@ -160,7 +160,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates a rectangle of the specified size centered at the node's origin.
-     * 
+     *
      * @param s the size in points
      */
     @Generated
@@ -169,7 +169,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates a rectangle of the specified size centered at a point in the node's coordinate space.
-     * 
+     *
      * @param s the size in points
      */
     @Generated
@@ -178,10 +178,10 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates a body from the alpha values in the supplied texture.
-     * 
-     * @param texture the texture to be interpreted
+     *
+     * @param texture        the texture to be interpreted
      * @param alphaThreshold the alpha value above which a pixel is interpreted as opaque
-     * @param size of the generated physics body
+     * @param size           of the generated physics body
      */
     @Generated
     @Selector("bodyWithTexture:alphaThreshold:size:")
@@ -190,9 +190,9 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Creates a body from the alpha values in the supplied texture.
-     * 
+     *
      * @param texture the texture to be interpreted
-     * @param size of the generated physics body
+     * @param size    of the generated physics body
      */
     @Generated
     @Selector("bodyWithTexture:size:")
@@ -279,7 +279,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set appropriately. The default value is YES.
-     * 
+     * <p>
      * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to modify the strength of the force.
      */
     @Generated
@@ -336,7 +336,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The area of the body.
-     * 
+     * <p>
      * The unit is arbitrary, as long as the relative areas are consistent throughout the application.
      */
     @Generated
@@ -383,7 +383,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The density of the body.
-     * 
+     * <p>
      * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated
@@ -461,7 +461,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The mass of the body.
-     * 
+     * <p>
      * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated
@@ -490,7 +490,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set appropriately. The default value is YES.
-     * 
+     * <p>
      * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to modify the strength of the force.
      */
     @Generated
@@ -544,7 +544,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The density of the body.
-     * 
+     * <p>
      * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated
@@ -577,7 +577,7 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The mass of the body.
-     * 
+     * <p>
      * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated

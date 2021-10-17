@@ -44,9 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NETunnelProviderProtocol
- * 
+ * <p>
  * The NETunnelProviderProtocol class declares the programmatic interface for an object that contains NETunnelProvider-specific configuration settings.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -174,7 +174,7 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
 
     /**
      * [@property] providerBundleIdentifier
-     * 
+     * <p>
      * A string containing the bundle identifier of the NETunnelProvider to be used by this configuration.
      */
     @Generated
@@ -183,7 +183,7 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
 
     /**
      * [@property] providerConfiguration
-     * 
+     * <p>
      * A dictionary containing NETunnelProvider vendor-specific configuration parameters. This dictionary is passed as-is to NETunnelProviders when a tunnel is started.
      */
     @Generated
@@ -192,7 +192,7 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
 
     /**
      * [@property] providerBundleIdentifier
-     * 
+     * <p>
      * A string containing the bundle identifier of the NETunnelProvider to be used by this configuration.
      */
     @Generated
@@ -201,7 +201,7 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
 
     /**
      * [@property] providerConfiguration
-     * 
+     * <p>
      * A dictionary containing NETunnelProvider vendor-specific configuration parameters. This dictionary is passed as-is to NETunnelProviders when a tunnel is started.
      */
     @Generated

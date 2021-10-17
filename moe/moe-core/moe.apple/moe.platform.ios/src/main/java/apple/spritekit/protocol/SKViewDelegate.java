@@ -32,7 +32,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKViewDelegate {
     /**
      * Allows the client to dynamically control the render rate.
-     * 
+     * <p>
      * return YES to initiate an update and render for the target time.
      * return NO to skip update and render for this target time.
      */

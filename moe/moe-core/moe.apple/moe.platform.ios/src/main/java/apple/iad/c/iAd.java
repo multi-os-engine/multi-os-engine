@@ -16,12 +16,9 @@ limitations under the License.
 
 package apple.iad.c;
 
-import apple.coregraphics.struct.CGSize;
 import org.moe.natj.c.CRuntime;
-import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
-import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
@@ -41,53 +38,15 @@ public final class iAd {
     }
 
     /**
-     * [@const] ADErrorDomain
-     * 
-     * Error domain for NSErrors passed to the following delegate methods:
-     * 
-     *   • -[ADBannerViewDelegate bannerView:didFailToReceiveAdWithError:]
-     *   • -[ADInterstitialAdDelegate interstitialAd:didFailWithError:]
-     */
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String ADErrorDomain();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String ADBannerContentSizeIdentifier320x50();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String ADBannerContentSizeIdentifier480x32();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String ADBannerContentSizeIdentifierPortrait();
-
-    @Generated
-    @CVariable()
-    @MappedReturn(ObjCStringMapper.class)
-    public static native String ADBannerContentSizeIdentifierLandscape();
-
-    /**
      * [@const] ADClientErrorDomain
-     * 
+     * <p>
      * Error domain for NSErrors passed to the completionHandler as a
      * result of calling:
-     * 
-     *   • -[[ADClient SharedClient] requestAttributionDetailsWithBlock]
+     * <p>
+     * • -[[ADClient SharedClient] requestAttributionDetailsWithBlock]
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ADClientErrorDomain();
-
-    @Generated
-    @CFunction
-    @ByValue
-    public static native CGSize ADClampedBannerSize(@ByValue CGSize size);
 }

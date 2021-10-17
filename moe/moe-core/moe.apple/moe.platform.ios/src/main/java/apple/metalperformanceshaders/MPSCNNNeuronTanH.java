@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronTanH
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the hyperbolic tangent neuron filter.
- *             For each pixel, applies the following function: f(x) = a * tanh(b * x)
+ * For each pixel, applies the following function: f(x) = a * tanh(b * x)
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -170,11 +170,11 @@ public class MPSCNNNeuronTanH extends MPSCNNNeuron {
 
     /**
      * Initialize the hyperbolic tangent neuron filter
-     * 
-     * @param     device           The device the filter will run on
-     * @param     a                Filter property "a". See class discussion.
-     * @param     b                Filter property "b". See class discussion.
-     * @return    A valid MPSCNNNeuronTanH object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @param a      Filter property "a". See class discussion.
+     * @param b      Filter property "b". See class discussion.
+     * @return A valid MPSCNNNeuronTanH object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:a:b:")

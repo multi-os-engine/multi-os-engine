@@ -84,7 +84,7 @@ public final class encryption_info_command_64 extends StructObject {
 
     /**
      * which enryption system,
-     * 0 means not-encrypted yet 
+     * 0 means not-encrypted yet
      */
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -92,7 +92,7 @@ public final class encryption_info_command_64 extends StructObject {
 
     /**
      * which enryption system,
-     * 0 means not-encrypted yet 
+     * 0 means not-encrypted yet
      */
     @Generated
     @StructureField(order = 4, isGetter = false)
@@ -100,7 +100,7 @@ public final class encryption_info_command_64 extends StructObject {
 
     /**
      * padding to make this struct's size a multiple
-     * of 8 bytes 
+     * of 8 bytes
      */
     @Generated
     @StructureField(order = 5, isGetter = true)
@@ -108,7 +108,7 @@ public final class encryption_info_command_64 extends StructObject {
 
     /**
      * padding to make this struct's size a multiple
-     * of 8 bytes 
+     * of 8 bytes
      */
     @Generated
     @StructureField(order = 5, isGetter = false)

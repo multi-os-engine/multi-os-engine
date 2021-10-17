@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * MTKViewDelegate
- * 
+ * <p>
  * Allows an object to render into the view and respond to resize events
  */
 @Generated
@@ -38,9 +38,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface MTKViewDelegate {
     /**
      * drawInMTKView:
-     * 
+     * <p>
      * Called on the delegate when it is asked to render into the view
-     * 
+     * <p>
      * Called on the delegate when it is asked to render into the view
      */
     @Generated
@@ -49,11 +49,11 @@ public interface MTKViewDelegate {
 
     /**
      * mtkView:drawableSizeWillChange:
-     * 
+     * <p>
      * Called whenever the drawableSize of the view will change
-     * 
+     * <p>
      * Delegate can recompute view and projection matricies or regenerate any buffers to be compatible with the new view size or resolution
-     * 
+     *
      * @param view MTKView which called this method
      * @param size New drawable size in pixels
      */

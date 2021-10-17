@@ -36,7 +36,7 @@ public final class UIBlurEffectStyle {
     /**
      * Styles which automatically show one of the traditional blur styles,
      * depending on the user interface style.
-     * 
+     * <p>
      * Regular displays either Light or Dark.
      */
     @Generated @NInt public static final long Regular = 0x0000000000000004L;
@@ -51,31 +51,31 @@ public final class UIBlurEffectStyle {
 
     /**
      * Blur styles available in iOS 13.
-     * 
+     * <p>
      * Styles which automatically adapt to the user interface style:
      */
     @Generated @NInt public static final long SystemUltraThinMaterial = 0x0000000000000006L;
     /**
      * Blur styles available in iOS 13.
-     * 
+     * <p>
      * Styles which automatically adapt to the user interface style:
      */
     @Generated @NInt public static final long SystemThinMaterial = 0x0000000000000007L;
     /**
      * Blur styles available in iOS 13.
-     * 
+     * <p>
      * Styles which automatically adapt to the user interface style:
      */
     @Generated @NInt public static final long SystemMaterial = 0x0000000000000008L;
     /**
      * Blur styles available in iOS 13.
-     * 
+     * <p>
      * Styles which automatically adapt to the user interface style:
      */
     @Generated @NInt public static final long SystemThickMaterial = 0x0000000000000009L;
     /**
      * Blur styles available in iOS 13.
-     * 
+     * <p>
      * Styles which automatically adapt to the user interface style:
      */
     @Generated @NInt public static final long SystemChromeMaterial = 0x000000000000000AL;

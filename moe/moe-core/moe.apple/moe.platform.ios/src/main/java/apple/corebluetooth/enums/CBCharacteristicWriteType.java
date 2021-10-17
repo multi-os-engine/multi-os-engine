@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBCharacteristicWriteType
- * 
+ * <p>
  * Specifies which type of write is to be performed on a CBCharacteristic.
  */
 @Generated

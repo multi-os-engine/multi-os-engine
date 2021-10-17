@@ -177,7 +177,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
 
     /**
      * State to be passed to the identity provider.  This value will be returned as a part of successful ASAuthorization response.
-     * [@note] The state size may depend on the actual technology used and an error might be returned by the request execution. 
+     * [@note] The state size may depend on the actual technology used and an error might be returned by the request execution.
      */
     @Generated
     @Selector("setState:")
@@ -189,7 +189,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
 
     /**
      * State to be passed to the identity provider.  This value will be returned as a part of successful ASAuthorization response.
-     * [@note] The state size may depend on the actual technology used and an error might be returned by the request execution. 
+     * [@note] The state size may depend on the actual technology used and an error might be returned by the request execution.
      */
     @Generated
     @Selector("state")

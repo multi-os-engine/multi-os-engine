@@ -104,8 +104,9 @@ public interface UIAdaptivePresentationControllerDelegate {
     }
 
     /**
-     * Called on the delegate when the presentation controller will dismiss in response to user action.
-     * This method is not called if the presentedViewController isModalInPresentation or if the presentation is dismissed programatically.
+     * Called on the delegate to determine if the presentation controller may dismiss in response to user action.
+     * This method may be called at any time, and may not necessarily be followed by presentationControllerWillDismiss: or presentationControllerDidDismiss:.
+     * Any implementation of this method should be fast.
      * Return NO to prevent dismissal of the view controller.
      */
     @Generated
@@ -124,6 +125,17 @@ public interface UIAdaptivePresentationControllerDelegate {
     @IsOptional
     @Selector("presentationControllerWillDismiss:")
     default void presentationControllerWillDismiss(UIPresentationController presentationController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called during adaptation so the delegate may configure properties of the adaptive presentation controller before it is presented.
+     */
+    @Generated
+    @IsOptional
+    @Selector("presentationController:prepareAdaptivePresentationController:")
+    default void presentationControllerPrepareAdaptivePresentationController(
+            UIPresentationController presentationController, UIPresentationController adaptivePresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

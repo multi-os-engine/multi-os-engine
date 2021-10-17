@@ -39,9 +39,9 @@ public final class CoreMotion {
 
     /**
      * kCMErrorDomain
-     * 
+     * <p>
      * Discussion:
-     *   Error returned as the domain to NSError from CoreMotion.
+     * Error returned as the domain to NSError from CoreMotion.
      */
     @Generated
     @CVariable()

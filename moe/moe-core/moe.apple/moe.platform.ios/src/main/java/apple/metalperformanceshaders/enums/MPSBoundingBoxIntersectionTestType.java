@@ -15,7 +15,7 @@ public final class MPSBoundingBoxIntersectionTestType {
     /**
      * Use the default MPSBoundingBoxIntersectionTestTypeAxisAligned ray/bounding box
      * intersection test.
-     * 
+     * <p>
      * Note: this option was equivalent to MPSBoundingBoxIntersectionTestTypeFast in
      * macOS 10.14/iOS 12.0. This option was changed in macOS 10.15/iOS 13.0 to handle axis-aligned
      * rays correctly by default. The old behavior can be restored by explicitly setting the

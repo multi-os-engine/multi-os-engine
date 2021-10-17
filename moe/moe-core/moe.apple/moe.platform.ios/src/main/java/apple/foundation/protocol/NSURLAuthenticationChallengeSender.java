@@ -27,8 +27,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol] NSURLAuthenticationChallengeSender 
- * 
+ * [@protocol] NSURLAuthenticationChallengeSender
+ * <p>
  * This protocol represents the sender of an
  * authentication challenge. It has methods to provide a credential,
  * to continue without any credential, getting whatever failure

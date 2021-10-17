@@ -21,16 +21,16 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVPlayerLooperStatus
- * 
- *    These constants are returned by the AVPlayerLooper status property to indicate whether it can successfully accomplish looping playback.
+ * <p>
+ * These constants are returned by the AVPlayerLooper status property to indicate whether it can successfully accomplish looping playback.
  * [@constant] AVPlayerLooperStatusUnknown
- *    Indicates that the status of the looper is not yet known.
+ * Indicates that the status of the looper is not yet known.
  * [@constant] AVPlayerLooperStatusReady
- *    Indicates that the looper is ready for looping playback.
+ * Indicates that the looper is ready for looping playback.
  * [@constant] AVPlayerLooperStatusFailed
- *    Indicates that the looper is not able to perform looping playback because of an error. The error is described by the value of the error property.
+ * Indicates that the looper is not able to perform looping playback because of an error. The error is described by the value of the error property.
  * [@constant] AVPlayerLooperStatusCancelled
- *    Indicates that the looper is no longer looping because -disableLooping was invoked.
+ * Indicates that the looper is no longer looping because -disableLooping was invoked.
  */
 @Generated
 public final class AVPlayerLooperStatus {

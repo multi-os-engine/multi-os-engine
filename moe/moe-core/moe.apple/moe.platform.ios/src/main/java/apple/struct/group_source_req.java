@@ -44,7 +44,8 @@ public final class group_source_req extends StructObject {
     }
 
     @Generated
-    public group_source_req(int gsr_interface, @ByValue sockaddr_storage gsr_group, @ByValue sockaddr_storage gsr_source) {
+    public group_source_req(int gsr_interface, @ByValue sockaddr_storage gsr_group,
+            @ByValue sockaddr_storage gsr_source) {
         super(group_source_req.class);
         setGsr_interface(gsr_interface);
         setGsr_group(gsr_group);

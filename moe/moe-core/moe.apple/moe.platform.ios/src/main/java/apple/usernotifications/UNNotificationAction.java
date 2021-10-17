@@ -211,4 +211,16 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Selector("actionWithIdentifier:title:options:icon:")
+    public static native UNNotificationAction actionWithIdentifierTitleOptionsIcon(String identifier, String title,
+            @NUInt long options, UNNotificationActionIcon icon);
+
+    /**
+     * The icon configured for this action.
+     */
+    @Generated
+    @Selector("icon")
+    public native UNNotificationActionIcon icon();
 }

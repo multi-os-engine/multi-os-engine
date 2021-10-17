@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLCounterSampleBufferDescriptor
- * 
+ * <p>
  * Object to represent the counter state.
  */
 @Generated

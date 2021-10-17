@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueValveType
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueValveTypeGenericValve    Generic Valve.
  * [@constant]  HMCharacteristicValueValveTypeIrrigation      Irrigation.
  * [@constant]  HMCharacteristicValueValveTypeShowerHead      Shower Head.

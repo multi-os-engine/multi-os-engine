@@ -37,9 +37,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLComputePipelineState
- * 
+ * <p>
  * A handle to compiled code for a compute function.
- * 
+ * <p>
  * MTLComputePipelineState is a single compute function.  It can only be used with the device that it was created against.
  */
 @Generated
@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLComputePipelineState {
     /**
      * [@property] device
-     * 
+     * <p>
      * The device this resource was created against.  This resource can only be used with this device.
      */
     @Generated
@@ -59,7 +59,7 @@ public interface MTLComputePipelineState {
 
     /**
      * [@property] maxTotalThreadsPerThreadgroup
-     * 
+     * <p>
      * The maximum total number of threads that can be in a single compute threadgroup.
      */
     @Generated
@@ -69,7 +69,7 @@ public interface MTLComputePipelineState {
 
     /**
      * [@property] threadExecutionWidth
-     * 
+     * <p>
      * For most efficient execution, the threadgroup size should be a multiple of this when executing the kernel.
      */
     @Generated
@@ -79,7 +79,7 @@ public interface MTLComputePipelineState {
 
     /**
      * imageblockMemoryLengthForDimensions:
-     * 
+     * <p>
      * Returns imageblock memory length for given image block dimensions.
      */
     @Generated
@@ -93,7 +93,7 @@ public interface MTLComputePipelineState {
 
     /**
      * [@property] staticThreadgroupMemoryLength
-     * 
+     * <p>
      * The length in bytes of threadgroup memory that is statically allocated.
      */
     @Generated
@@ -103,30 +103,50 @@ public interface MTLComputePipelineState {
 
     /**
      * [@property] supportIndirectCommandBuffers
-     * 
+     * <p>
      * Tells whether this pipeline state is usable through an Indirect Command Buffer.
      */
     @Generated
     @Selector("supportIndirectCommandBuffers")
     boolean supportIndirectCommandBuffers();
 
+    /**
+     * functionHandleWithFunction:
+     * <p>
+     * Get the function handle for the specified function from the pipeline state.
+     */
     @Generated
     @Selector("functionHandleWithFunction:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLFunctionHandle functionHandleWithFunction(@Mapped(ObjCObjectMapper.class) MTLFunction function);
 
+    /**
+     * newRenderPipelineStateWithAdditionalBinaryFunctions:stage:
+     * <p>
+     * Allocate a new compute pipeline state by adding binary functions to this pipeline state.
+     */
     @Generated
     @Selector("newComputePipelineStateWithAdditionalBinaryFunctions:error:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLComputePipelineState newComputePipelineStateWithAdditionalBinaryFunctionsError(NSArray<?> functions,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * newIntersectionFunctionTableWithDescriptor:
+     * <p>
+     * Allocate an intersection function table for the pipeline with the provided descriptor.
+     */
     @Generated
     @Selector("newIntersectionFunctionTableWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLIntersectionFunctionTable newIntersectionFunctionTableWithDescriptor(
             MTLIntersectionFunctionTableDescriptor descriptor);
 
+    /**
+     * newVisibleFunctionTableWithDescriptor:
+     * <p>
+     * Allocate a visible function table for the pipeline with the provided descriptor.
+     */
     @Generated
     @Selector("newVisibleFunctionTableWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)

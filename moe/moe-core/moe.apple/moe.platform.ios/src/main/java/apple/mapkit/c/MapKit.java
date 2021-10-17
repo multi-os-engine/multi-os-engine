@@ -376,9 +376,9 @@ public final class MapKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String MKMapItemTypeIdentifier();
 
-    @Generated public static final float MKFeatureDisplayPriorityRequired = (float) 1000.0;
-    @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float) 750.0;
-    @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float) 250.0;
+    @Generated public static final float MKFeatureDisplayPriorityRequired = (float)1000.0;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultHigh = (float)750.0;
+    @Generated public static final float MKFeatureDisplayPriorityDefaultLow = (float)250.0;
 
     @Generated
     @CVariable()
@@ -594,10 +594,10 @@ public final class MapKit {
     @CVariable()
     public static native double MKMapCameraZoomDefault();
 
-    @Generated public static final float MKAnnotationViewZPriorityMax = (float) 1000.0;
-    @Generated public static final float MKAnnotationViewZPriorityDefaultSelected = (float) 1000.0;
-    @Generated public static final float MKAnnotationViewZPriorityDefaultUnselected = (float) 500.0;
-    @Generated public static final float MKAnnotationViewZPriorityMin = (float) 0.0;
+    @Generated public static final float MKAnnotationViewZPriorityMax = (float)1000.0;
+    @Generated public static final float MKAnnotationViewZPriorityDefaultSelected = (float)1000.0;
+    @Generated public static final float MKAnnotationViewZPriorityDefaultUnselected = (float)500.0;
+    @Generated public static final float MKAnnotationViewZPriorityMin = (float)0.0;
 
     @Generated
     @CVariable()

@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect regions of text and recognize the containing text in an image.
- * 
+ * <p>
  * This request will generate VNRecognizedTextObservation objects describing the locations of text and the actual text recognized.
  */
 @Generated
@@ -263,4 +263,24 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * VNRecognizedTextObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNRecognizedTextObservation> results();
+
+    /**
+     * Obtain the collection of supported recognition languages.
+     * <p>
+     * This method will return the collection of all possible language identifiers that are recognized by the target request based on its current state of configuration at the time of the call.
+     *
+     * @param error The address of the variable that will be populated with the error if the call fails.
+     * @return The collection of language identifiers, or nil if a failure occurs.
+     */
+    @Generated
+    @Selector("supportedRecognitionLanguagesAndReturnError:")
+    public native NSArray<String> supportedRecognitionLanguagesAndReturnError(
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

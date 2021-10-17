@@ -55,29 +55,24 @@ public final class MediaToolbox {
 
     /**
      * [@function]	MTAudioProcessingTapCreate
-     * 
+     * <p>
      * Create a new processing tap.
-     * 
+     * <p>
      * This function creates a processing tap.
-     * 			The processing tap will then be used to process decoded data.
-     * 			The processing is performed on audio either before or after any effects or other
-     * 			processing (varispeed, etc) is applied by the audio queue.
-     * 
-     * @param		allocator
-     * 			The allocator to use to allocate memory for the new tap. Pass NULL or kCFAllocatorDefault to use the current default allocator.
-     * @param		callbacks
-     * 			Callbacks struct.  MTAudioProcessingTap will make a copy of this struct.
-     * @param		flags
-     * 			Flags that are used to control aspects of the processing tap.
-     * 			Valid flags are:
-     * 			- kMTAudioProcessingTapCreationFlag_PreEffects:
-     * 				processing is done before any further effects are applied by the audio queue to the audio.
-     * 			- kMTAudioProcessingTapCreationFlag_PostEffects:
-     * 				processing is done after all processing is done, including that of other taps.
-     * @param		tapOut
-     * 			The processing tap object.
-     * 
-     *    @return     An OSStatus result code.
+     * The processing tap will then be used to process decoded data.
+     * The processing is performed on audio either before or after any effects or other
+     * processing (varispeed, etc) is applied by the audio queue.
+     *
+     * @return An OSStatus result code.
+     * @param        allocator The allocator to use to allocate memory for the new tap. Pass NULL or kCFAllocatorDefault to use the current default allocator.
+     * @param        callbacks Callbacks struct.  MTAudioProcessingTap will make a copy of this struct.
+     * @param        flags Flags that are used to control aspects of the processing tap.
+     * Valid flags are:
+     * - kMTAudioProcessingTapCreationFlag_PreEffects:
+     * processing is done before any further effects are applied by the audio queue to the audio.
+     * - kMTAudioProcessingTapCreationFlag_PostEffects:
+     * processing is done after all processing is done, including that of other taps.
+     * @param        tapOut The processing tap object.
      */
     @Generated
     @CFunction
@@ -87,13 +82,11 @@ public final class MediaToolbox {
 
     /**
      * [@function]	MTAudioProcessingTapGetStorage
-     * 
+     * <p>
      * Used by a processing tap to retrieve a custom storage pointer.
-     * 
-     * @param		tap
-     * 			The processing tap.
-     * 
-     * @return		The tapStorage returned by the init callback.
+     *
+     * @param        tap The processing tap.
+     * @return The tapStorage returned by the init callback.
      */
     @Generated
     @CFunction
@@ -101,32 +94,25 @@ public final class MediaToolbox {
 
     /**
      * [@function]	MTAudioProcessingTapGetSourceAudio
-     * 
+     * <p>
      * Used by a processing tap to retrieve source audio.
-     * 
+     * <p>
      * This function may only be called from the processing tap's callback.
-     * 
-     * @param		tap
-     * 			The processing tap.
-     * @param		numberFrames
-     * 			The number of frames the processing tap requires for its processing.
-     * @param		bufferListInOut
-     * 			The audio buffer list which will contain the source data.
-     * 			On input, all fields except for the buffer pointers must be filled in.
-     * 			If the buffer pointers are NULL (recommended), non-NULL pointers will be
-     * 			returned and system owns the source buffers; these buffers are only applicable
-     * 			for the duration of the processing tap callback.
-     * 			If the buffer pointers are non-NULL, then they must be big enough to hold
-     * 			numberFrames, and the source data will be copied into these buffers.
-     * @param		flagsOut
-     * 			Flags to describe state about the input requested, e.g., discontinuity/complete. Can be NULL.
-     * @param		timeRangeOut
-     * 			The asset time range corresponding to the provided source audio frames. Can be NULL.
-     * @param		numberFramesOut
-     * 			The number of source frames that have been provided. Can be NULL.
-     * 			This can be less than the number of requested frames specified in numberFrames.
-     * 
-     * @return		An OSStatus result code.
+     *
+     * @param        tap The processing tap.
+     * @param        numberFrames The number of frames the processing tap requires for its processing.
+     * @param        bufferListInOut The audio buffer list which will contain the source data.
+     * On input, all fields except for the buffer pointers must be filled in.
+     * If the buffer pointers are NULL (recommended), non-NULL pointers will be
+     * returned and system owns the source buffers; these buffers are only applicable
+     * for the duration of the processing tap callback.
+     * If the buffer pointers are non-NULL, then they must be big enough to hold
+     * numberFrames, and the source data will be copied into these buffers.
+     * @param        flagsOut Flags to describe state about the input requested, e.g., discontinuity/complete. Can be NULL.
+     * @param        timeRangeOut The asset time range corresponding to the provided source audio frames. Can be NULL.
+     * @param        numberFramesOut The number of source frames that have been provided. Can be NULL.
+     * This can be less than the number of requested frames specified in numberFrames.
+     * @return An OSStatus result code.
      */
     @Generated
     @CFunction

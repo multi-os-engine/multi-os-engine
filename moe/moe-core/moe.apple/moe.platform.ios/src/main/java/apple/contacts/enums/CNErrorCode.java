@@ -52,4 +52,5 @@ public final class CNErrorCode {
     @Generated @NInt public static final long ChangeHistoryExpired = 0x000000000000025BL;
     @Generated @NInt public static final long ChangeHistoryInvalidAnchor = 0x000000000000025CL;
     @Generated @NInt public static final long VCardSummarizationError = 0x00000000000002BDL;
+    @Generated @NInt public static final long ChangeHistoryInvalidFetchRequest = 0x000000000000025DL;
 }

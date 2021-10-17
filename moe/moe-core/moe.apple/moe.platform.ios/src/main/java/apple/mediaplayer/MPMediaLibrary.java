@@ -148,7 +148,7 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
+            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -199,7 +199,7 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
      * Finds the playlist associated with the UUID.
      * If the playlist exists, the creation metadata is ignored.
      * If no such playlist exists and creation metadata is valid, a playlist associated the UUID will be created.
-     * 
+     * <p>
      * The UUID should typically be pre-generated to avoid creating a new playlist with every call.
      */
     @Generated

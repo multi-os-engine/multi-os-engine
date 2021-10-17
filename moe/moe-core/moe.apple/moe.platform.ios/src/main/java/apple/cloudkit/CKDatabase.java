@@ -219,6 +219,7 @@ public class CKDatabase extends NSObject {
      * Queries can potentially return a large number of records, and the server will return those records in batches. This convenience API will only fetch the first batch of results (equivalent to using @c CKQueryOperationMaximumResults).
      * If you would like to fetch all results, use @c CKQueryOperation and its @c CKQueryCursor instead.
      * Queries invoked within a @c sharedCloudDatabase must specify a @c zoneID.  Cross-zone queries are not supported in a @c sharedCloudDatabase
+     * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
      */
     @Generated
     @Selector("performQuery:inZoneWithID:completionHandler:")

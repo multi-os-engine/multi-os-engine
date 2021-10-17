@@ -104,7 +104,9 @@ public final class PHAssetCollectionSubtype {
     /**
      * Used for fetching, if you don't care about the exact subtype
      */
-    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
+    @Generated @NInt public static final long Any = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
 
     @Generated
     private PHAssetCollectionSubtype() {
@@ -126,4 +128,8 @@ public final class PHAssetCollectionSubtype {
      * PHAssetCollectionTypeSmartAlbum subtypes
      */
     @Generated @NInt public static final long SmartAlbumUnableToUpload = 0x00000000000000D8L;
+    /**
+     * PHAssetCollectionTypeSmartAlbum subtypes
+     */
+    @Generated @NInt public static final long SmartAlbumRAW = 0x00000000000000D9L;
 }

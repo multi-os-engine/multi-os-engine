@@ -14,7 +14,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] NFCTag
- * 
+ * <p>
  * A NFC / RFID tag object conforms to this protocol.  The NFCReaderSession returns an instance of this type when a tag is detected.
  */
 @Generated
@@ -24,7 +24,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface NFCTag extends NSSecureCoding, NSCopying {
     /**
      * [@property] asNFCFeliCaTag
-     * 
+     * <p>
      * Returns nil if tag does not conform to NFCFeliCaTag.
      */
     @Generated
@@ -34,8 +34,8 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * asNFCISO15693Tag
-     * 
-     * @return      Returns self if it conforms to the NFCISO15693Tag protocol; else returns nil.
+     *
+     * @return Returns self if it conforms to the NFCISO15693Tag protocol; else returns nil.
      */
     @Generated
     @Selector("asNFCISO15693Tag")
@@ -44,8 +44,8 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * asNFCISO7816Tag
-     * 
-     * @return      Returns self if it conforms to the NFCISO7816Tag protocol; else returns nil.
+     *
+     * @return Returns self if it conforms to the NFCISO7816Tag protocol; else returns nil.
      */
     @Generated
     @Selector("asNFCISO7816Tag")
@@ -54,7 +54,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property] asNFCMiFareTag
-     * 
+     * <p>
      * Returns nil if tag does not conform to NFCMiFareTag.
      */
     @Generated
@@ -64,11 +64,11 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property] available:
-     * 
+     * <p>
      * Check whether a detected tag is available.
-     * 
-     * @return      <i>YES</i> if tag is available in the current reader session.  A tag remove from the RF field will become
-     *              unavailable.  Tag in disconnected state will return NO.
+     *
+     * @return <i>YES</i> if tag is available in the current reader session.  A tag remove from the RF field will become
+     * unavailable.  Tag in disconnected state will return NO.
      */
     @Generated
     @Selector("isAvailable")
@@ -76,7 +76,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property]    session
-     * 
+     * <p>
      * Session that provides this tag.
      */
     @Generated
@@ -86,7 +86,7 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
 
     /**
      * [@property] type
-     * 
+     * <p>
      * See @link CNFCTagType @link/
      */
     @Generated

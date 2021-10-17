@@ -254,8 +254,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * Use to print without showing the standard print panel. Use with a
-     * 	UIPrinter found using the UIPrinterPickerController.
-     *              The value for the duplex property on printInfo will be ignored.
+     * UIPrinter found using the UIPrinterPickerController.
+     * The value for the duplex property on printInfo will be ignored.
      */
     @Generated
     @Selector("printToPrinter:completionHandler:")
@@ -401,4 +401,18 @@ public class UIPrintInteractionController extends NSObject {
         void call_printToPrinterCompletionHandler(UIPrintInteractionController printInteractionController,
                 boolean completed, NSError error);
     }
+
+    /**
+     * default is YES. Indicates whether the the printing options include the paper orientation control when available.
+     */
+    @Generated
+    @Selector("setShowsPaperOrientation:")
+    public native void setShowsPaperOrientation(boolean value);
+
+    /**
+     * default is YES. Indicates whether the the printing options include the paper orientation control when available.
+     */
+    @Generated
+    @Selector("showsPaperOrientation")
+    public native boolean showsPaperOrientation();
 }

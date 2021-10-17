@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] SCNAntialiasingMode
- * 
+ * <p>
  * antialiasing modes for scene renderers
  */
 @Generated

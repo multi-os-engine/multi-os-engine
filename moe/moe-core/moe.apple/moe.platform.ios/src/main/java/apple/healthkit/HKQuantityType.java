@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKQuantityType
- * 
+ * <p>
  * Represents types of HKQuantitySamples.
  */
 @Generated
@@ -204,9 +204,9 @@ public class HKQuantityType extends HKSampleType {
 
     /**
      * isCompatibleWithUnit:
-     * 
+     * <p>
      * Returns YES if the type of HKQuantitySample represented by the receiver can be created with quantities
-     *                of the given unit.
+     * of the given unit.
      */
     @Generated
     @Selector("isCompatibleWithUnit:")

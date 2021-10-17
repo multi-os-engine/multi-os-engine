@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Contains related information for a specific contact property.
- * 
+ * <p>
  * CNContactProperty is used by the CNContactPicker to return the user's selected property.
  */
 @Generated

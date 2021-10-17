@@ -79,24 +79,23 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * assetImageGeneratorWithAsset:
-     * 
+     * <p>
      * Returns an instance of AVAssetImageGenerator for use with the specified asset.
-     * 
+     * <p>
      * This method may succeed even if the asset possesses no visual tracks at the time of initialization.
-     * 				Clients may wish to test whether an asset has any tracks with the visual characteristic via
-     * 				-[AVAsset tracksWithMediaCharacteristic:].
-     * 
-     * 				Note also that assets that belong to a mutable subclass of AVAsset, AVMutableComposition or AVMutableMovie,
-     * 				may gain visual tracks after initialization of an associated AVAssetImageGenerator.
-     * 
-     * 				However, the results of image generation are undefined if mutations of the asset occur while images
-     * 				are being generated. 
-     * 
-     * 				AVAssetImageGenerator will use the default enabled video track(s) to generate images.
-     * 
-     * @param			asset
-     * 				The asset from which images will be extracted.
-     * @return			An instance of AVAssetImageGenerator
+     * Clients may wish to test whether an asset has any tracks with the visual characteristic via
+     * -[AVAsset tracksWithMediaCharacteristic:].
+     * <p>
+     * Note also that assets that belong to a mutable subclass of AVAsset, AVMutableComposition or AVMutableMovie,
+     * may gain visual tracks after initialization of an associated AVAssetImageGenerator.
+     * <p>
+     * However, the results of image generation are undefined if mutations of the asset occur while images
+     * are being generated.
+     * <p>
+     * AVAssetImageGenerator will use the default enabled video track(s) to generate images.
+     *
+     * @param            asset The asset from which images will be extracted.
+     * @return An instance of AVAssetImageGenerator
      */
     @Generated
     @Selector("assetImageGeneratorWithAsset:")
@@ -194,7 +193,7 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * Specifies whether or not to apply the track's preferredTransform (see -[AVAssetTrack preferredTransform]) when extracting an image from the asset.
-     * Default is NO.  Only rotation by 90, 180, or 270 degrees is supported. 
+     * Default is NO.  Only rotation by 90, 180, or 270 degrees is supported.
      */
     @Generated
     @Selector("appliesPreferredTrackTransform")
@@ -209,11 +208,11 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * cancelAllCGImageGeneration
-     * 
+     * <p>
      * Cancels all outstanding image generation requests.
-     * 
+     * <p>
      * Calls the handler block with AVAssetImageGeneratorCancelled for each image time in every previous invocation of -generateCGImagesAsynchronouslyForTimes:completionHandler:
-     * 				for which images have not yet been supplied.
+     * for which images have not yet been supplied.
      */
     @Generated
     @Selector("cancelAllCGImageGeneration")
@@ -221,23 +220,20 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * copyCGImageAtTime:actualTime:error:
-     * 
+     * <p>
      * Returns a CFRetained CGImageRef for an asset at or near the specified time.
-     * 
-     * 	Returns the CGImage synchronously. Ownership follows the Create Rule.
-     * 
-     * 	Because of the nature of timed audiovisual media, generating an image may take significant time. AVAssetImageGenerator may have to block the calling thread in order to do so.  In order to avoid blocking, clients can use -generateCGImagesAsynchronouslyForTimes:completionHandler: to request that one or more images be generated asynchronously and to be notified when they become available.
-     * 
-     * 	On iOS and tvOS, it is particularly important to avoid blocking.  To preserve responsiveness, a synchronous request that blocks for too long (eg, a request to generate an image from an asset on a slow HTTP server) may lead to media services being reset.
-     * 
-     * @param			requestedTime
-     * 				The time at which the image of the asset is to be created.
-     * @param			actualTime
-     * 				A pointer to a CMTime to receive the time at which the image was actually generated. If you are not interested
-     * 				in this information, pass NULL.
-     * @param			outError
-     * 				An error object describing the reason for failure, in the event that this method returns NULL.
-     * @return			A CGImageRef.
+     * <p>
+     * Returns the CGImage synchronously. Ownership follows the Create Rule.
+     * <p>
+     * Because of the nature of timed audiovisual media, generating an image may take significant time. AVAssetImageGenerator may have to block the calling thread in order to do so.  In order to avoid blocking, clients can use -generateCGImagesAsynchronouslyForTimes:completionHandler: to request that one or more images be generated asynchronously and to be notified when they become available.
+     * <p>
+     * On iOS and tvOS, it is particularly important to avoid blocking.  To preserve responsiveness, a synchronous request that blocks for too long (eg, a request to generate an image from an asset on a slow HTTP server) may lead to media services being reset.
+     *
+     * @param            requestedTime The time at which the image of the asset is to be created.
+     * @param            actualTime A pointer to a CMTime to receive the time at which the image was actually generated. If you are not interested
+     * in this information, pass NULL.
+     * @param            outError An error object describing the reason for failure, in the event that this method returns NULL.
+     * @return A CGImageRef.
      */
     @Generated
     @Selector("copyCGImageAtTime:actualTime:error:")
@@ -254,18 +250,16 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * generateCGImagesAsynchronouslyForTimes:completionHandler:
-     * 
+     * <p>
      * Returns a series of CGImageRefs for an asset at or near the specified times.
-     * 
+     * <p>
      * Employs an efficient "batch mode" for getting images in time order.
-     * 				The client will receive exactly one handler callback for each requested time in requestedTimes.
-     * 				Changes to generator properties (snap behavior, maximum size, etc...) will not affect outstanding asynchronous image generation requests.
-     * 				The generated image is not retained.  Clients should retain the image if they wish it to persist after the completion handler returns.
-     * 
-     * @param			requestedTimes
-     * 				An NSArray of NSValues, each containing a CMTime, specifying the asset times at which an image is requested.
-     * @param			handler
-     * 				A block that will be called when an image request is complete.
+     * The client will receive exactly one handler callback for each requested time in requestedTimes.
+     * Changes to generator properties (snap behavior, maximum size, etc...) will not affect outstanding asynchronous image generation requests.
+     * The generated image is not retained.  Clients should retain the image if they wish it to persist after the completion handler returns.
+     *
+     * @param            requestedTimes An NSArray of NSValues, each containing a CMTime, specifying the asset times at which an image is requested.
+     * @param            handler A block that will be called when an image request is complete.
      */
     @Generated
     @Selector("generateCGImagesAsynchronouslyForTimes:completionHandler:")
@@ -279,24 +273,23 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * initWithAsset:
-     * 
+     * <p>
      * Initializes an instance of AVAssetImageGenerator for use with the specified asset.
-     * 
+     * <p>
      * This method may succeed even if the asset possesses no visual tracks at the time of initialization.
-     * 				Clients may wish to test whether an asset has any tracks with the visual characteristic via
-     * 				-[AVAsset tracksWithMediaCharacteristic:].
-     * 
-     * 				Note also that assets that belong to a mutable subclass of AVAsset, AVMutableComposition or AVMutableMovie,
-     * 				may gain visual tracks after initialization of an associated AVAssetImageGenerator.
-     * 
-     * 				However, the results of image generation are undefined if mutations of the asset occur while images
-     * 				are being generated. 
-     * 
-     * 				AVAssetImageGenerator will use the default enabled video track(s) to generate images.
-     * 
-     * @param			asset
-     * 				The asset from which images will be extracted.
-     * @return			An instance of AVAssetImageGenerator
+     * Clients may wish to test whether an asset has any tracks with the visual characteristic via
+     * -[AVAsset tracksWithMediaCharacteristic:].
+     * <p>
+     * Note also that assets that belong to a mutable subclass of AVAsset, AVMutableComposition or AVMutableMovie,
+     * may gain visual tracks after initialization of an associated AVAssetImageGenerator.
+     * <p>
+     * However, the results of image generation are undefined if mutations of the asset occur while images
+     * are being generated.
+     * <p>
+     * AVAssetImageGenerator will use the default enabled video track(s) to generate images.
+     *
+     * @param            asset The asset from which images will be extracted.
+     * @return An instance of AVAssetImageGenerator
      */
     @Generated
     @Selector("initWithAsset:")
@@ -305,7 +298,7 @@ public class AVAssetImageGenerator extends NSObject {
     /**
      * Specifies the maximum dimensions for generated image.  Default (CGSizeZero) is the asset's unscaled dimensions.
      * AVAssetImageGenerator will scale images such that they fit within the defined bounding box.
-     * Images will never be scaled up.  The aspect ratio of the scaled image will be defined by the apertureMode property. 
+     * Images will never be scaled up.  The aspect ratio of the scaled image will be defined by the apertureMode property.
      */
     @Generated
     @Selector("maximumSize")
@@ -320,7 +313,7 @@ public class AVAssetImageGenerator extends NSObject {
     /**
      * The actual time of the generated images will be within the range [requestedTime-toleranceBefore, requestedTime+toleranceAfter] and may differ from the requested time for efficiency.
      * Pass kCMTimeZero for both toleranceBefore and toleranceAfter to request frame-accurate image generation; this may incur additional decoding delay.
-     * Default is kCMTimePositiveInfinity. 
+     * Default is kCMTimePositiveInfinity.
      */
     @Generated
     @Selector("requestedTimeToleranceBefore")
@@ -336,7 +329,7 @@ public class AVAssetImageGenerator extends NSObject {
 
     /**
      * Specifies whether or not to apply the track's preferredTransform (see -[AVAssetTrack preferredTransform]) when extracting an image from the asset.
-     * Default is NO.  Only rotation by 90, 180, or 270 degrees is supported. 
+     * Default is NO.  Only rotation by 90, 180, or 270 degrees is supported.
      */
     @Generated
     @Selector("setAppliesPreferredTrackTransform:")
@@ -345,7 +338,7 @@ public class AVAssetImageGenerator extends NSObject {
     /**
      * Specifies the maximum dimensions for generated image.  Default (CGSizeZero) is the asset's unscaled dimensions.
      * AVAssetImageGenerator will scale images such that they fit within the defined bounding box.
-     * Images will never be scaled up.  The aspect ratio of the scaled image will be defined by the apertureMode property. 
+     * Images will never be scaled up.  The aspect ratio of the scaled image will be defined by the apertureMode property.
      */
     @Generated
     @Selector("setMaximumSize:")
@@ -358,7 +351,7 @@ public class AVAssetImageGenerator extends NSObject {
     /**
      * The actual time of the generated images will be within the range [requestedTime-toleranceBefore, requestedTime+toleranceAfter] and may differ from the requested time for efficiency.
      * Pass kCMTimeZero for both toleranceBefore and toleranceAfter to request frame-accurate image generation; this may incur additional decoding delay.
-     * Default is kCMTimePositiveInfinity. 
+     * Default is kCMTimePositiveInfinity.
      */
     @Generated
     @Selector("setRequestedTimeToleranceBefore:")
@@ -367,7 +360,7 @@ public class AVAssetImageGenerator extends NSObject {
     /**
      * Specifies the video composition to use when extracting images from assets with multiple video tracks.
      * If no videoComposition is specified, only the first enabled video track will be used.
-     * If a videoComposition is specified, the value of appliesPreferredTrackTransform is ignored. 
+     * If a videoComposition is specified, the value of appliesPreferredTrackTransform is ignored.
      */
     @Generated
     @Selector("setVideoComposition:")
@@ -376,7 +369,7 @@ public class AVAssetImageGenerator extends NSObject {
     /**
      * Specifies the video composition to use when extracting images from assets with multiple video tracks.
      * If no videoComposition is specified, only the first enabled video track will be used.
-     * If a videoComposition is specified, the value of appliesPreferredTrackTransform is ignored. 
+     * If a videoComposition is specified, the value of appliesPreferredTrackTransform is ignored.
      */
     @Generated
     @Selector("videoComposition")

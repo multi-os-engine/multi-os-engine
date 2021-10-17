@@ -33,4 +33,19 @@ public final class MTLIntersectionFunctionSignature {
      * world_space_direction as described in the Metal Shading Language Guide.
      */
     @Generated @NUInt public static final long WorldSpaceData = 0x0000000000000004L;
+    /**
+     * The intersection functions may be called from intersectors using the
+     * instance_motion intersection tag as described in the Metal Shading Language Guide.
+     */
+    @Generated @NUInt public static final long InstanceMotion = 0x0000000000000008L;
+    /**
+     * The intersection functions are entitled to query time, motion_start_time,
+     * motion_end_time and key_frame_count as described in the Metal Shading Language Guide.
+     */
+    @Generated @NUInt public static final long PrimitiveMotion = 0x0000000000000010L;
+    /**
+     * The intersection functions may be called from intersectors using the
+     * extended_limits intersection tag as described in the Metal Shading Language Guide.
+     */
+    @Generated @NUInt public static final long ExtendedLimits = 0x0000000000000020L;
 }

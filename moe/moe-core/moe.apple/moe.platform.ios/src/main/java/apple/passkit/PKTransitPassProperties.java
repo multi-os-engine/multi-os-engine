@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PKTransitPassProperties extends NSObject {
+public class PKTransitPassProperties extends PKStoredValuePassProperties {
     static {
         NatJ.register();
     }
@@ -166,4 +166,8 @@ public class PKTransitPassProperties extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("isBlocked")
+    public native boolean isBlocked();
 }

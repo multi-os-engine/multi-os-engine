@@ -59,9 +59,9 @@ public final class ImageIO {
     /**
      * *! @functiongroup Creating and identifying CGImageMetadata containers
      * [@function] CGImageMetadataGetTypeID
-     * 
+     * <p>
      * Gets the type identifier for the CGImageMetadata opaque type
-     * 
+     *
      * @return the type identifier for the CGImageMetadata opaque type
      */
     @Generated
@@ -71,7 +71,7 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataCreateMutable
-     * 
+     * <p>
      * Creates an empty CGMutableImageMetadataRef
      */
     @Generated
@@ -80,9 +80,9 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataCreateMutableCopy
-     * 
+     * <p>
      * Creates a deep mutable copy of another CGImageMetadataRef
-     * 
+     * <p>
      * Before modifying an immutable CGImageMetadataRef (such as metadata
      * from CGImageSourceCopyMetadataAtIndex) you must first make a copy.
      * This function makes a deep copy of all CGImageMetadataTags and their values.
@@ -94,9 +94,9 @@ public final class ImageIO {
     /**
      * *! @functiongroup Creating and identifying CGImageMetadataTags
      * [@function] CGImageMetadataTagGetTypeID
-     * 
+     * <p>
      * Gets the type identifier for the CGImageMetadataTag opaque type
-     * 
+     *
      * @return the type identifier for the CGImageMetadataTagGetTypeID opaque type
      */
     @Generated
@@ -105,36 +105,36 @@ public final class ImageIO {
     public static native long CGImageMetadataTagGetTypeID();
 
     /**
-     *  ****************************************************************************
-     *  Creating a CGImageMetadataTag
-     *  ****************************************************************************
+     * ****************************************************************************
+     * Creating a CGImageMetadataTag
+     * ****************************************************************************
      * [@function] CGImageMetadataTagCreate
-     * 
+     * <p>
      * Creates a new CGImageMetadataTag
      * [@link] CGImageMetadataCopyStringValueWithPath @/link or
      * [@link] CGImageMetadataSetValueWithPath @/link.
-     * 
-     * @param xmlns The namespace for the tag. The value can be a common XMP namespace
-     * defined above, such as kCGImageMetadataNamespaceExif, or a CFString with a
-     * custom namespace URI. Custom namespaces must be a valid XML namespace. By
-     * convention, namespaces should end with either '/' or '#'. For example, exif
-     * uses the namespace "http://ns.adobe.com/exif/1.0/".
+     *
+     * @param xmlns  The namespace for the tag. The value can be a common XMP namespace
+     *               defined above, such as kCGImageMetadataNamespaceExif, or a CFString with a
+     *               custom namespace URI. Custom namespaces must be a valid XML namespace. By
+     *               convention, namespaces should end with either '/' or '#'. For example, exif
+     *               uses the namespace "http://ns.adobe.com/exif/1.0/".
      * @param prefix An abbreviation for the XML namespace. The value can be NULL if
-     * the namespace is defined as a constant. Custom prefixes must be a valid XML
-     * name. For example, the prefix used for "http://ns.adobe.com/exif/1.0/" is "exif".
-     * The XMP serialization of the tag will use the prefix. Prefixes are also
-     * important for path-based CGImageMetadata functions, such as
-     * @param name The name of the tag. It must be a valid XMP name.
-     * @param type The type of the tag's value. Must be a constant from @link
-     * CGImageMetadataType @/link.
-     * @param value The value of the tag. Allowable CFTypes include CFStringRef,
-     * CFNumberRef, CFBooleanRef, CFArrayRef, and CFDictionaryRef. The CFType of 'value'
-     * must correspond to the 'type'. The elements of a CFArray must be either a
-     * CFStringRef or CGImageMetadataTagRef. The keys of a CFDictionary must be
-     * CFStringRefs with valid XMP names. The values of a CFDictionary must be either
-     * CFStringRefs or CGImageMetadataTagRefs. A shallow copy of the value is stored
-     * in the tag. Therefore, modifying a mutable value after the tag is created
-     * will not affect the tag's value.
+     *               the namespace is defined as a constant. Custom prefixes must be a valid XML
+     *               name. For example, the prefix used for "http://ns.adobe.com/exif/1.0/" is "exif".
+     *               The XMP serialization of the tag will use the prefix. Prefixes are also
+     *               important for path-based CGImageMetadata functions, such as
+     * @param name   The name of the tag. It must be a valid XMP name.
+     * @param type   The type of the tag's value. Must be a constant from @link
+     *               CGImageMetadataType @/link.
+     * @param value  The value of the tag. Allowable CFTypes include CFStringRef,
+     *               CFNumberRef, CFBooleanRef, CFArrayRef, and CFDictionaryRef. The CFType of 'value'
+     *               must correspond to the 'type'. The elements of a CFArray must be either a
+     *               CFStringRef or CGImageMetadataTagRef. The keys of a CFDictionary must be
+     *               CFStringRefs with valid XMP names. The values of a CFDictionary must be either
+     *               CFStringRefs or CGImageMetadataTagRefs. A shallow copy of the value is stored
+     *               in the tag. Therefore, modifying a mutable value after the tag is created
+     *               will not affect the tag's value.
      * @return Returns a pointer to a new CGImageMetadataTag. Returns NULL if a tag
      * could not be created with the specified parameters.
      */
@@ -144,12 +144,12 @@ public final class ImageIO {
             CFStringRef name, int type, ConstVoidPtr value);
 
     /**
-     *  ****************************************************************************
-     *  Getting attributes of a CGImageMetadataTag
-     *  ****************************************************************************
+     * ****************************************************************************
+     * Getting attributes of a CGImageMetadataTag
+     * ****************************************************************************
      * *! @functiongroup Getting attributes of a CGImageMetadataTag
      * [@function] CGImageMetadataTagCopyNamespace
-     * 
+     * <p>
      * Returns a copy of the tag's namespace
      */
     @Generated
@@ -158,7 +158,7 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataTagCopyPrefix
-     * 
+     * <p>
      * Returns a copy of the tag's prefix
      */
     @Generated
@@ -167,7 +167,7 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataTagCopyName
-     * 
+     * <p>
      * Returns a copy of the tag's name
      */
     @Generated
@@ -176,9 +176,9 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataTagCopyValue
-     * 
+     * <p>
      * Returns a shallow copy of the tag's value
-     * 
+     * <p>
      * This function should only be used to read the tag's value.
      * CGImageMetadataCopyTagWithPath returns a copy of the tag (including a copy of
      * the tag's value). Therefore mutating a tag's value returned from this function
@@ -192,9 +192,9 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataTagGetType
-     * 
+     * <p>
      * Get the type of the CGImageMetadataTag
-     * 
+     *
      * @return Returns a CGImageMetadataType constant for the CGImageMetadataTag.
      * This is primarily used to determine how to interpret the tag's value.
      */
@@ -204,14 +204,14 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataTagCopyQualifiers
-     * 
+     * <p>
      * Return a copy of the tag's qualifiers
-     * 
+     * <p>
      * XMP allows properties to contain supplemental properties called
      * qualifiers. Qualifiers are themselves CGImageMetadataTags with their own
      * namespace, prefix, name, and value. A common use is the xml:lang qualifier
      * for elements of an alternate-text array.
-     * 
+     *
      * @return Returns a copy of the array of qualifiers. Elements of the array are
      * CGImageMetadataTags. Returns NULL if the tag does not have any qualifiers.
      * The copy is shallow, the qualifiers are not deep copied.
@@ -221,16 +221,16 @@ public final class ImageIO {
     public static native CFArrayRef CGImageMetadataTagCopyQualifiers(CGImageMetadataTagRef tag);
 
     /**
-     *  ****************************************************************************
-     *  Functions for copying CGImageMetadataTagRefs from a CGImageMetadataRef.
-     *  These functions make it easier for the caller to traverse complex nested
-     *  structures of metadata, similar to KVC-compliant Objective-C classes.
-     *  ****************************************************************************
+     * ****************************************************************************
+     * Functions for copying CGImageMetadataTagRefs from a CGImageMetadataRef.
+     * These functions make it easier for the caller to traverse complex nested
+     * structures of metadata, similar to KVC-compliant Objective-C classes.
+     * ****************************************************************************
      * *! @functiongroup Retrieving CGImageMetadataTagRefs from a CGImageMetadataRef
      * [@function] CGImageMetadataCopyTags
-     * 
+     * <p>
      * Obtain an array of tags from a CGImageMetadataRef
-     * 
+     *
      * @return Returns an array with a shallow copy of all top-level
      * CGImageMetadataTagRefs in a CGImageMetadataRef.
      */
@@ -240,51 +240,51 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataCopyTagWithPath
-     * 
+     * <p>
      * Searches for a specific CGImageMetadataTag in a CGImageMetadataRef
-     * 
+     * <p>
      * This is the primary function for clients to obtain specific
      * metadata properties from an image. The 'path' mechanism provides a way to
      * access both simple top-level properties, such as Date & Time, or complex
      * deeply-nested properties with ease.
-     * 
+     *
      * @param metadata A collection of metadata tags.
-     * @param parent A parent tag. If NULL, the path is relative to the root of the
-     * CGImageMetadataRef (i.e. it is not a child of another property). If the parent
-     * is provided, the effective path will be the concatenation of the parent's path
-     * and the 'path' parameter. This is useful for accessing array elements or
-     * structure fields inside nested tags.
-     * @param path A string representing a path to the desired tag. Paths consist of
-     * a tag prefix (i.e. "exif") joined with a tag name (i.e. "Flash") by a colon
-     * (":"), such as CFSTR("exif:Flash").
-     * Elements of ordered and unordered arrays are accessed via 0-based indices inside square [] brackets.
-     * Elements of alternate-text arrays are accessed by an RFC 3066 language code inside square [] brackets.
-     * Fields of a structure are delimited by a period, '.'.
-     * Qualifiers are delimited by the '?' character. Only tags with string values (kCGImageMetadataTypeString)
-     * are allowed to have qualifiers - arrays and structures may not contain qualifiers.
-     * 
-     * If parent is NULL, a prefix must be specified for the first tag. Prefixes for
-     * all subsequent tags are optional. If unspecified, the prefix is
-     * inherented from the nearest parent tag with a prefix. Custom prefixes must be
-     * registered using @link CGImageMetadataRegisterNamespaceForPrefix @/link prior to use
-     * in any path-based functions.
-     * 
-     * Examples:
-     *  <ul>
-     *    <li>'path' = CFSTR("xmp:CreateDate")</li>
-     *    <li>'path' = CFSTR("exif:Flash.Fired")</li>
-     *    <li>'parent' = tag at path CFSTR("exif:Flash"), path = CFSTR("exif:Fired") (equivilent to previous)</li>
-     *    <li>'path' = CFSTR("exif:Flash.RedEyeMode")</li>
-     *    <li>'path' = CFSTR("dc:title")</li>
-     *    <li>'path' = CFSTR("dc:subject")</li>
-     *    <li>'path' = CFSTR("dc:subject[2]") </li>
-     *    <li>'parent' = tag at path CFSTR("dc:subject"), path = CFSTR("[2]") (equivilent to previous)</li>
-     *    <li>'path' = CFSTR("dc:description[x-default])"</li>
-     *    <li>'path' = CFSTR("dc.description[de])"</li>
-     *    <li>'path' = CFSTR("dc.description[fr])"</li>
-     *    <li>'path' = CFSTR("foo:product)"</li>
-     *    <li>'path' = CFSTR("foo:product?bar:manufacturer)"</li>
-     *  </ul>
+     * @param parent   A parent tag. If NULL, the path is relative to the root of the
+     *                 CGImageMetadataRef (i.e. it is not a child of another property). If the parent
+     *                 is provided, the effective path will be the concatenation of the parent's path
+     *                 and the 'path' parameter. This is useful for accessing array elements or
+     *                 structure fields inside nested tags.
+     * @param path     A string representing a path to the desired tag. Paths consist of
+     *                 a tag prefix (i.e. "exif") joined with a tag name (i.e. "Flash") by a colon
+     *                 (":"), such as CFSTR("exif:Flash").
+     *                 Elements of ordered and unordered arrays are accessed via 0-based indices inside square [] brackets.
+     *                 Elements of alternate-text arrays are accessed by an RFC 3066 language code inside square [] brackets.
+     *                 Fields of a structure are delimited by a period, '.'.
+     *                 Qualifiers are delimited by the '?' character. Only tags with string values (kCGImageMetadataTypeString)
+     *                 are allowed to have qualifiers - arrays and structures may not contain qualifiers.
+     *                 <p>
+     *                 If parent is NULL, a prefix must be specified for the first tag. Prefixes for
+     *                 all subsequent tags are optional. If unspecified, the prefix is
+     *                 inherented from the nearest parent tag with a prefix. Custom prefixes must be
+     *                 registered using @link CGImageMetadataRegisterNamespaceForPrefix @/link prior to use
+     *                 in any path-based functions.
+     *                 <p>
+     *                 Examples:
+     *                 <ul>
+     *                   <li>'path' = CFSTR("xmp:CreateDate")</li>
+     *                   <li>'path' = CFSTR("exif:Flash.Fired")</li>
+     *                   <li>'parent' = tag at path CFSTR("exif:Flash"), path = CFSTR("exif:Fired") (equivilent to previous)</li>
+     *                   <li>'path' = CFSTR("exif:Flash.RedEyeMode")</li>
+     *                   <li>'path' = CFSTR("dc:title")</li>
+     *                   <li>'path' = CFSTR("dc:subject")</li>
+     *                   <li>'path' = CFSTR("dc:subject[2]") </li>
+     *                   <li>'parent' = tag at path CFSTR("dc:subject"), path = CFSTR("[2]") (equivilent to previous)</li>
+     *                   <li>'path' = CFSTR("dc:description[x-default])"</li>
+     *                   <li>'path' = CFSTR("dc.description[de])"</li>
+     *                   <li>'path' = CFSTR("dc.description[fr])"</li>
+     *                   <li>'path' = CFSTR("foo:product)"</li>
+     *                   <li>'path' = CFSTR("foo:product?bar:manufacturer)"</li>
+     *                 </ul>
      * @return Returns a copy of CGImageMetadataTag matching 'path', or NULL if no
      * match is found. The copy of the tag's value is shallow. Tags
      * copied from an immutable CGImageMetadataRef are also immutable. Because this
@@ -299,19 +299,19 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataCopyStringValueWithPath
-     * 
+     * <p>
      * Searches for a specific tag in a CGImageMetadataRef and returns its
      * string value.
-     * 
+     * <p>
      * This is a convenience method for searching for a tag at path and
      * extracting the string value.
-     * 
+     *
      * @param metadata A collection of metadata tags.
-     * @param parent A parent tag. If NULL, the path is relative to the root of the
-     * CGImageMetadataRef (i.e. it is not a child of another property).
-     * @param path A string with the path to the desired tag. Please consult
-     * the documentation of @link CGImageMetadataCopyTagWithPath @/link for
-     * information about path syntax.
+     * @param parent   A parent tag. If NULL, the path is relative to the root of the
+     *                 CGImageMetadataRef (i.e. it is not a child of another property).
+     * @param path     A string with the path to the desired tag. Please consult
+     *                 the documentation of @link CGImageMetadataCopyTagWithPath @/link for
+     *                 information about path syntax.
      * @return Returns a string from a CGImageMetadataTag located at 'path'. The
      * tag must be of type kCGImageMetadataTypeString or kCGImageMetadataTypeAlternateText.
      * For AlternateText tags, the element with the "x-default" language qualifier
@@ -323,21 +323,21 @@ public final class ImageIO {
             CGImageMetadataTagRef parent, CFStringRef path);
 
     /**
-     *  ****************************************************************************
-     *  Functions for modifying a CGMutableImageMetadataRef
-     *  ****************************************************************************
+     * ****************************************************************************
+     * Functions for modifying a CGMutableImageMetadataRef
+     * ****************************************************************************
      * *! @functiongroup Modifying a CGMutableImageMetadataRef
      * [@function] CGImageMetadataRegisterNamespaceForPrefix
-     * 
+     * <p>
      * Associates an XMP namespace URI with a prefix string.
-     * 
+     * <p>
      * This allows ImageIO to create custom metadata when it encounters
      * an unrecognized prefix in a path (see CGImageMetadataCopyTagWithPath for more
      * information about path syntax). A namespace must be registered before it can
      * be used to add custom metadata. All namespaces found in the image's metadata,
      * or defined as a constant above, will be pre-registered. Namespaces and
      * prefixes must be unique.
-     * 
+     *
      * @return Returns true if successful. Returns false and sets 'err' if an error
      * or conflict occurs.
      */
@@ -348,9 +348,9 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataSetTagWithPath
-     * 
+     * <p>
      * Sets the tag at a specific path in a CGMutableImageMetadata container or a parent tag
-     * 
+     * <p>
      * This is the primary function for adding new metadata tags to a
      * metadata container, or updating existing tags. All tags required to reach
      * the final tag (at the end of the path) will be created, if needed. Tags will
@@ -365,22 +365,22 @@ public final class ImageIO {
      * to commit the changed parent object back to the metadata container (using
      * the parent's path and NULL for the parent).
      * [@link] CGImageMetadataCreateMutable @/link to obtain a mutable metadata container.
-     * 
+     *
      * @param metadata A mutable collection of metadata tags.
-     * Use @link CGImageMetadataCreateMutableCopy @/link or
-     * @param parent A parent tag. If NULL, the path is relative to the root of the
-     * CGImageMetadataRef (i.e. it is not a child of another property).
-     * Note that if a parent tag is provided,
-     * the children of that tag reference will be modified, which may be a different
-     * reference from the tag stored in the metadata container. Since tags are normally
-     * obtained as a copy, it is typically neccesary to use CGImageMetadataSetTagWithPath
-     * to commit the changed parent object back to the metadata container (using
-     * the parent's path and NULL for the parent).
-     * @param path A string with the path to the desired tag. Please consult
-     * the documentation of @link CGImageMetadataCopyTagWithPath @/link for
-     * information about path syntax.
-     * @param tag The CGImageMetadataTag to be added to the metadata. The tag
-     * will be retained.
+     *                 Use @link CGImageMetadataCreateMutableCopy @/link or
+     * @param parent   A parent tag. If NULL, the path is relative to the root of the
+     *                 CGImageMetadataRef (i.e. it is not a child of another property).
+     *                 Note that if a parent tag is provided,
+     *                 the children of that tag reference will be modified, which may be a different
+     *                 reference from the tag stored in the metadata container. Since tags are normally
+     *                 obtained as a copy, it is typically neccesary to use CGImageMetadataSetTagWithPath
+     *                 to commit the changed parent object back to the metadata container (using
+     *                 the parent's path and NULL for the parent).
+     * @param path     A string with the path to the desired tag. Please consult
+     *                 the documentation of @link CGImageMetadataCopyTagWithPath @/link for
+     *                 information about path syntax.
+     * @param tag      The CGImageMetadataTag to be added to the metadata. The tag
+     *                 will be retained.
      * @return Returns true if successful, false otherwise.
      */
     @Generated
@@ -390,9 +390,9 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataSetValueWithPath
-     * 
+     * <p>
      * Sets the value of the tag at a specific path in a CGMutableImageMetadataRef container or a parent tag
-     * 
+     * <p>
      * This function is used to add new metadata values to a
      * metadata container, or update existing tag values. All tags required to reach
      * the final tag (at the end of the path) are created, if needed. Tags are
@@ -400,7 +400,7 @@ public final class ImageIO {
      * fail if a prefix is encountered that has not been registered. Use
      * [@link] CGImageMetadataRegisterNamespaceForPrefix @/link to associate a prefix
      * with a namespace prior to using a path-based CGImageMetadata function.
-     * 
+     * <p>
      * Examples
      * <ul>
      *     <li>'path' = CFSTR("xmp:CreateDate"), 'value' = CFSTR("2011-09-20T14:54:47-08:00")</li>
@@ -416,17 +416,17 @@ public final class ImageIO {
      * to commit the changed parent object back to the metadata container (using
      * the parent's path and NULL for the parent).
      * [@link] CGImageMetadataCreateMutable @/link to obtain a mutable metadata container.
-     * 
+     *
      * @param metadata A mutable collection of metadata tags.
-     * Use @link CGImageMetadataCreateMutableCopy @/link or
-     * @param parent A parent tag. If NULL, the path is relative to the root of the
-     * CGImageMetadataRef (i.e. it is not a child of another property).
-     * @param path A string with the path to the desired tag. Please consult
-     * the documentation of @link CGImageMetadataCopyTagWithPath @/link for
-     * information about path syntax.
-     * @param value The value to be added to the CGImageMetadataTag matching the path.
-     * The tag will be retained. The restrictions for the value are the same as in @link
-     * CGImageMetadataTagCreate @/link.
+     *                 Use @link CGImageMetadataCreateMutableCopy @/link or
+     * @param parent   A parent tag. If NULL, the path is relative to the root of the
+     *                 CGImageMetadataRef (i.e. it is not a child of another property).
+     * @param path     A string with the path to the desired tag. Please consult
+     *                 the documentation of @link CGImageMetadataCopyTagWithPath @/link for
+     *                 information about path syntax.
+     * @param value    The value to be added to the CGImageMetadataTag matching the path.
+     *                 The tag will be retained. The restrictions for the value are the same as in @link
+     *                 CGImageMetadataTagCreate @/link.
      * @return Returns true if successful, false otherwise.
      */
     @Generated
@@ -436,9 +436,9 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataRemoveTagWithPath
-     * 
+     * <p>
      * Removes the tag at a specific path from a CGMutableImageMetadata container or from the parent tag
-     * 
+     * <p>
      * Use this function to delete a metadata tag matching a specific
      * path from a mutable metadata container. Note that if a parent tag is provided,
      * the children of that tag reference will be modified, which may be a different
@@ -446,12 +446,12 @@ public final class ImageIO {
      * obtained as a copy, it is typically neccesary to use CGImageMetadataSetTagWithPath
      * to commit the changed parent object back to the metadata container (using
      * the parent's path and NULL for the parent).
-     * 
+     *
      * @param parent A parent tag. If NULL, the path is relative to the root of the
-     * CGImageMetadataRef (i.e. it is not a child of another property).
-     * @param path A string with the path to the desired tag. Please consult
-     * the documentation of @link CGImageMetadataCopyTagWithPath @/link for
-     * information about path syntax.
+     *               CGImageMetadataRef (i.e. it is not a child of another property).
+     * @param path   A string with the path to the desired tag. Please consult
+     *               the documentation of @link CGImageMetadataCopyTagWithPath @/link for
+     *               information about path syntax.
      */
     @Generated
     @CFunction
@@ -460,24 +460,24 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataEnumerateTagsUsingBlock
-     * 
+     * <p>
      * Executes a given block using each tag in the metadata
-     * 
+     * <p>
      * This function iterates over all of the tags in a
      * CGImageMetadataRef, executing the block for each tag. The default behavior
      * iterates over all top-level tags in the metadata. The path of the tag and
      * the tag itself is passed to the block. The metadata cannot be modified inside
      * the block - consider adding the tags of interest into another collection.
-     * 
+     *
      * @param metadata A collection of metadata tags.
      * @param rootPath Iteration will occur for all children of the tag matching
-     * the root path. Please refer to CGImageMetadataCopyTagWithPath for information
-     * about path syntax. If NULL or an empty string, the block will be executed
-     * for all top-level tags in the metadata container.
-     * @param options A dictionary of options for iterating through the tags.
-     * Currently the only supported option is kCGImageMetadataEnumerateRecursively,
-     * which should be set to a CFBoolean.
-     * @param block The block that is executed for each tag in metadata.
+     *                 the root path. Please refer to CGImageMetadataCopyTagWithPath for information
+     *                 about path syntax. If NULL or an empty string, the block will be executed
+     *                 for all top-level tags in the metadata container.
+     * @param options  A dictionary of options for iterating through the tags.
+     *                 Currently the only supported option is kCGImageMetadataEnumerateRecursively,
+     *                 which should be set to a CFBoolean.
+     * @param block    The block that is executed for each tag in metadata.
      */
     @Generated
     @CFunction
@@ -488,9 +488,9 @@ public final class ImageIO {
     /**
      * *! @functiongroup Working with CGImageProperties
      * [@function] CGImageMetadataCopyTagMatchingImageProperty
-     * 
+     * <p>
      * Searches for a specific CGImageMetadataTag matching a kCGImageProperty constant
-     * 
+     * <p>
      * Provides a bridge for values from CGImageCopyPropertiesAtIndex, simplifying
      * access for properties defined in EXIF and IPTC standards, which have no notion of
      * namespaces, prefixes, or XMP property types.
@@ -500,15 +500,15 @@ public final class ImageIO {
      * corresponding XMP tag, which is photoshop:DateCreated. Note that property values will
      * still be in their XMP forms, such as "YYYY-MM-DDThh:mm:ss" for DateTime, rather than
      * the EXIF or IPTC DateTime formats.
-     * 
-     * @param metadata A collection of metadata tags
+     *
+     * @param metadata       A collection of metadata tags
      * @param dictionaryName the metadata subdictionary to which the image property belongs,
-     * such as kCGImagePropertyExifDictionary or kCGImagePropertyIPTCDictionary. Not all
-     * dictionaries and properties are supported at this time.
-     * @param propertyName the name of the property. This must be a defined property constant
-     * corresponding to the 'dictionaryName'. For example, kCGImagePropertyTIFFOrientation,
-     * kCGImagePropertyExifDateTimeOriginal, or kCGImagePropertyIPTCKeywords. A warning
-     * will be logged if the CGImageProperty is unsupported by CGImageMetadata.
+     *                       such as kCGImagePropertyExifDictionary or kCGImagePropertyIPTCDictionary. Not all
+     *                       dictionaries and properties are supported at this time.
+     * @param propertyName   the name of the property. This must be a defined property constant
+     *                       corresponding to the 'dictionaryName'. For example, kCGImagePropertyTIFFOrientation,
+     *                       kCGImagePropertyExifDateTimeOriginal, or kCGImagePropertyIPTCKeywords. A warning
+     *                       will be logged if the CGImageProperty is unsupported by CGImageMetadata.
      * @return Returns a CGImageMetadataTagRef with the appropriate namespace, prefix,
      * tag name, and XMP value for the corresponding CGImageProperty. Returns NULL if the
      * property could not be found.
@@ -520,9 +520,9 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataSetValueMatchingImageProperty
-     * 
+     * <p>
      * Sets the value of the CGImageMetadataTag matching a kCGImageProperty constant
-     * 
+     * <p>
      * Provides a bridge for values from CGImageCopyPropertiesAtIndex, simplifying
      * changing property values defined in EXIF and IPTC standards, which have no notion of
      * namespaces, prefixes, or XMP property types.
@@ -534,17 +534,17 @@ public final class ImageIO {
      * the EXIF or IPTC DateTime formats. Although this function will allow the caller to set
      * custom values for these properties, you should consult the appropriate specifications
      * for details about property value formats for EXIF and IPTC tags in XMP.
-     * 
-     * @param metadata A mutable collection of metadata tags
+     *
+     * @param metadata       A mutable collection of metadata tags
      * @param dictionaryName the metadata subdictionary to which the image property belongs,
-     * such as kCGImagePropertyExifDictionary or kCGImagePropertyIPTCDictionary. Not all
-     * dictionaries and properties are supported at this time.
-     * @param propertyName the name of the property. This must be a defined property constant
-     * corresponding to the 'dictionaryName'. For example, kCGImagePropertyTIFFOrientation,
-     * kCGImagePropertyExifDateTimeOriginal, or kCGImagePropertyIPTCKeywords. A warning
-     * will be logged if the CGImageProperty is unsupported by CGImageMetadata.
-     * @param value A CFTypeRef with the value for the tag. The same value restrictions apply
-     * as in @link CGImageMetadataTagCreate @/link.
+     *                       such as kCGImagePropertyExifDictionary or kCGImagePropertyIPTCDictionary. Not all
+     *                       dictionaries and properties are supported at this time.
+     * @param propertyName   the name of the property. This must be a defined property constant
+     *                       corresponding to the 'dictionaryName'. For example, kCGImagePropertyTIFFOrientation,
+     *                       kCGImagePropertyExifDateTimeOriginal, or kCGImagePropertyIPTCKeywords. A warning
+     *                       will be logged if the CGImageProperty is unsupported by CGImageMetadata.
+     * @param value          A CFTypeRef with the value for the tag. The same value restrictions apply
+     *                       as in @link CGImageMetadataTagCreate @/link.
      * @return Returns true if successful, false otherwise.
      */
     @Generated
@@ -554,17 +554,17 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataCreateXMPData
-     * 
+     * <p>
      * Serializes the CGImageMetadataRef to XMP data
-     * 
+     * <p>
      * This converts all of the metadata tags to a block of XMP data. Common uses
      * include creating sidecar files that contain metadata for image formats that do not
      * support embedded XMP, or cannot be edited due to other format restrictions (such as
      * proprietary RAW camera formats).
-     * 
+     *
      * @param metadata A collection of metadata tags.
-     * @param options should be NULL. Options are currently not used, but may be used in
-     * future release.
+     * @param options  should be NULL. Options are currently not used, but may be used in
+     *                 future release.
      * @return Returns a CFData containing an XMP representation of the metadata. Returns
      * NULL if an error occurred.
      */
@@ -574,13 +574,13 @@ public final class ImageIO {
 
     /**
      * [@function] CGImageMetadataCreateFromXMPData
-     * 
+     * <p>
      * Creates a collection of CGImageMetadataTags from a block of XMP data
-     * 
+     * <p>
      * Converts XMP data into a collection of metadata tags.
      * The data must be a complete XMP tree. XMP packet  headers (<?xpacket .. ?>) are
      * supported.
-     * 
+     *
      * @param data The XMP data.
      * @return Returns a collection of CGImageMetadata tags. Returns NULL if an error occurred.
      */
@@ -978,9 +978,9 @@ public final class ImageIO {
 
     /**
      * [@constant] kCFErrorDomainCGImageMetadata
-     * 
+     * <p>
      * Error domain for all errors originating in ImageIO for CGImageMetadata APIs.
-     *     Error codes may be interpreted using the list below.
+     * Error codes may be interpreted using the list below.
      */
     @Generated
     @CVariable()
@@ -1156,9 +1156,9 @@ public final class ImageIO {
 
     /**
      * XMP data will not be written to the destination. If used in conjunction with
-     * kCGImageDestinationMetadata, EXIF and/or IPTC tags will be preserved, but
-     * an XMP packet will not be written to the file. If present, the value for
-     * this key is a CFBooleanRef. The default is kCFBooleanFalse.
+     * kCGImageDestinationMetadata, EXIF tags will be preserved, but
+     * an XMP packet will not be written to the file. IPTC tags, that are stored in XMP, will not be preserved.
+     * If present, the value for this key is a CFBooleanRef. The default is kCFBooleanFalse.
      */
     @Generated
     @CVariable()
@@ -1320,14 +1320,14 @@ public final class ImageIO {
      * The intended display orientation of the image. If present, the value
      * of this key is a CFNumberRef with the same value as defined by the
      * TIFF and Exif specifications.  That is:
-     *   1  =  0th row is at the top, and 0th column is on the left.
-     *   2  =  0th row is at the top, and 0th column is on the right.
-     *   3  =  0th row is at the bottom, and 0th column is on the right.
-     *   4  =  0th row is at the bottom, and 0th column is on the left.
-     *   5  =  0th row is on the left, and 0th column is the top.
-     *   6  =  0th row is on the right, and 0th column is the top.
-     *   7  =  0th row is on the right, and 0th column is the bottom.
-     *   8  =  0th row is on the left, and 0th column is the bottom.
+     * 1  =  0th row is at the top, and 0th column is on the left.
+     * 2  =  0th row is at the top, and 0th column is on the right.
+     * 3  =  0th row is at the bottom, and 0th column is on the right.
+     * 4  =  0th row is at the bottom, and 0th column is on the left.
+     * 5  =  0th row is on the left, and 0th column is the top.
+     * 6  =  0th row is on the right, and 0th column is the top.
+     * 7  =  0th row is on the right, and 0th column is the bottom.
+     * 8  =  0th row is on the left, and 0th column is the bottom.
      * If not present, a value of 1 is assumed.
      */
     @Generated
@@ -2632,9 +2632,9 @@ public final class ImageIO {
     /**
      * Depth data support for JPEG, HEIF, and DNG images.
      * The returned CFDictionary contains:
-     *   - the depth data (CFDataRef) - (kCGImageAuxiliaryDataInfoData),
-     *   - the depth data description (CFDictionary) - (kCGImageAuxiliaryDataInfoDataDescription)
-     *   - metadata (CGImageMetadataRef) - (kCGImageAuxiliaryDataInfoMetadata)
+     * - the depth data (CFDataRef) - (kCGImageAuxiliaryDataInfoData),
+     * - the depth data description (CFDictionary) - (kCGImageAuxiliaryDataInfoDataDescription)
+     * - metadata (CGImageMetadataRef) - (kCGImageAuxiliaryDataInfoMetadata)
      * CGImageSourceCopyAuxiliaryDataInfoAtIndex returns nil if the image did not contain ‘auxiliaryImageDataType’ data.
      */
     @Generated
@@ -2643,12 +2643,12 @@ public final class ImageIO {
             @NUInt long index, CFStringRef auxiliaryImageDataType);
 
     /**
-     * Depth data support for JPEG, HEIF, and DNG images.
+     * Auxiliary data support for JPEG, HEIF, and DNG images.
      * The auxiliaryDataInfoDictionary should contain:
-     *   - the depth data (CFDataRef) - (kCGImageAuxiliaryDataInfoData),
-     *   - the depth data description (CFDictionary) - (kCGImageAuxiliaryDataInfoDataDescription)
-     *   - metadata (CGImageMetadataRef) - (kCGImageAuxiliaryDataInfoMetadata)
-     * To add depth data to an image, call CGImageDestinationAddAuxiliaryDataInfo() after adding the CGImage to the CGImageDestinationRef.
+     * - the auxiliary data (CFDataRef) - (kCGImageAuxiliaryDataInfoData),
+     * - the auxiliary data description (CFDictionary) - (kCGImageAuxiliaryDataInfoDataDescription)
+     * - metadata (CGImageMetadataRef) - (kCGImageAuxiliaryDataInfoMetadata)
+     * To add auxiliary data to an image, call CGImageDestinationAddAuxiliaryDataInfo() after adding the CGImage to the CGImageDestinationRef.
      */
     @Generated
     @CFunction
@@ -2744,7 +2744,7 @@ public final class ImageIO {
      * formats are GIF and APNG. The `options' dictionary may be used to request additional playback
      * options; see the list of keys above for more information. The block is called on the main queue
      * at time intervals specified by the `delay time' of the image. The animation can be stopped by
-     * setting the boolean parameter of the block to false.
+     * setting the boolean parameter of the block to true.
      */
     @Generated
     @CFunction
@@ -2763,7 +2763,7 @@ public final class ImageIO {
      * formats are GIF and APNG. The `options' dictionary may be used to request additional playback
      * options; see the list of keys above for more information. The block is called on the main queue
      * at time intervals specified by the `delay time' of the image. The animation can be stopped by
-     * setting the boolean parameter of the block to false.
+     * setting the boolean parameter of the block to true.
      */
     @Generated
     @CFunction
@@ -3981,4 +3981,69 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeHDRGainMap();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPNGPixelsAspectRatio();
+
+    /**
+     * For PNG files:
+     * When writing indexed color PNGs, the data for the transparity chunk 'tRNS' can be passed in with this key.
+     * The value (CFDataRef) should contain one byte transparency info for each entry in the indexed color map.
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyPNGTransparency();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationSkyMatte();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyImageIndex();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroups();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupIndex();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupType();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupTypeStereoPair();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupTypeAlternate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupImagesAlternate();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupImageIndexLeft();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupImageIndexRight();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupImageIsLeftImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupImageIsRightImage();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGImagePropertyGroupImageIsAlternateImage();
 }

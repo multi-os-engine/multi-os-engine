@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNActionTimingMode
- * 
+ * <p>
  * The modes that an action can use to adjust the apparent timing of the action.
  */
 @Generated

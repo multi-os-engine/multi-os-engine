@@ -44,4 +44,11 @@ public interface PHLivePhotoViewDelegate {
     default void livePhotoViewWillBeginPlaybackWithStyle(PHLivePhotoView livePhotoView, @NInt long playbackStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Generated
+    @IsOptional
+    @Selector("livePhotoView:canBeginPlaybackWithStyle:")
+    default boolean livePhotoViewCanBeginPlaybackWithStyle(PHLivePhotoView livePhotoView, @NInt long playbackStyle) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

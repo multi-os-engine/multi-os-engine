@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UITextSpellCheckingType
- * 
+ * <p>
  * Controls the annotation of misspelled words for a text widget.
  * Note: Some input methods do not support spell checking.
  */

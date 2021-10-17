@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBError
- * 
+ * <p>
  * The possible errors returned during LE transactions.
  */
 @Generated
@@ -48,7 +48,5 @@ public final class CBError {
     @Generated @NInt public static final long OperationNotSupported = 0x000000000000000DL;
     @Generated @NInt public static final long PeerRemovedPairingInformation = 0x000000000000000EL;
     @Generated @NInt public static final long EncryptionTimedOut = 0x000000000000000FL;
-    @Generated
-    @NInt
-    public static final long TooManyLEPairedDevices = 0x0000000000000010L;
+    @Generated @NInt public static final long TooManyLEPairedDevices = 0x0000000000000010L;
 }

@@ -21,9 +21,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
     /**
      * updateFence:
-     * 
+     * <p>
      * Update the fence to capture all GPU work so far enqueued by this encoder.
-     * 
+     * <p>
      * The fence is updated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
@@ -33,13 +33,13 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateTextureMapping:indirectBuffer:indirectBufferOffset:
-     * 
+     * <p>
      * Updates mapping for given sparse texture. Updates are driven via a MTLBuffer with the structure format defined by MTLMapIndirectBufferFormat.
-     * 
-     *  struct MTLMapIndirectBufferFormat{
-     *      uint32_t numMappings;
-     *      MTLMapIndirectArguments mappings[numMappings]; 
-     *  }
+     * <p>
+     * struct MTLMapIndirectBufferFormat{
+     * uint32_t numMappings;
+     * MTLMapIndirectArguments mappings[numMappings];
+     * }
      */
     @Generated
     @Selector("updateTextureMapping:mode:indirectBuffer:indirectBufferOffset:")
@@ -49,7 +49,7 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateTextureMapping:region:mipLevel:slice:mode:
-     * 
+     * <p>
      * Updates mapping for given sparse texture
      */
     @Generated
@@ -59,7 +59,7 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateTextureMappings:regions:mipLevels:slices:numRegions:mode:
-     * 
+     * <p>
      * Updates multiple regions within a sparse texture.
      */
     @Generated
@@ -70,9 +70,9 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * waitForFence:
-     * 
+     * <p>
      * Prevent further GPU work until the fence is reached.
-     * 
+     * <p>
      * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */

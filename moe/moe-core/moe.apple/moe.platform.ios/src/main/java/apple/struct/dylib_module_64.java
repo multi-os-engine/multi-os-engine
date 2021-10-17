@@ -155,7 +155,7 @@ public final class dylib_module_64 extends StructObject {
     /**
      * low 16 bits are the index into the init
      * section, high 16 bits are the index into
-     * the term section 
+     * the term section
      */
     @Generated
     @StructureField(order = 9, isGetter = true)
@@ -164,7 +164,7 @@ public final class dylib_module_64 extends StructObject {
     /**
      * low 16 bits are the index into the init
      * section, high 16 bits are the index into
-     * the term section 
+     * the term section
      */
     @Generated
     @StructureField(order = 9, isGetter = false)
@@ -173,7 +173,7 @@ public final class dylib_module_64 extends StructObject {
     /**
      * low 16 bits are the number of init section
      * entries, high 16 bits are the number of
-     * term section entries 
+     * term section entries
      */
     @Generated
     @StructureField(order = 10, isGetter = true)
@@ -182,7 +182,7 @@ public final class dylib_module_64 extends StructObject {
     /**
      * low 16 bits are the number of init section
      * entries, high 16 bits are the number of
-     * term section entries 
+     * term section entries
      */
     @Generated
     @StructureField(order = 10, isGetter = false)

@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKQueryAnchor
- * 
+ * <p>
  * This object encapsulates the state of an HKAnchoredObjectQuery
  */
 @Generated
@@ -78,9 +78,9 @@ public class HKQueryAnchor extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * anchorFromValue:
-     * 
+     * <p>
      * Creates an HKQueryAnchor with an integer anchor which was previously obtained from an
-     *                HKAnchoredObjectQuery prior to iOS 9.0.
+     * HKAnchoredObjectQuery prior to iOS 9.0.
      */
     @Generated
     @Selector("anchorFromValue:")

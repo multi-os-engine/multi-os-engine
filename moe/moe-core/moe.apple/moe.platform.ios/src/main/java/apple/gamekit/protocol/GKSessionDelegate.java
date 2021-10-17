@@ -56,7 +56,7 @@ public interface GKSessionDelegate {
 
     /**
      * Indicates a connection request was received from another peer.
-     * 
+     * <p>
      * Accept by calling -acceptConnectionFromPeer:
      * Deny by calling -denyConnectionFromPeer:
      */

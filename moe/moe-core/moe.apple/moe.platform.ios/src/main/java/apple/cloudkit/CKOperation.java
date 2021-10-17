@@ -174,7 +174,7 @@ public class CKOperation extends NSOperation {
 
     /**
      * This callback is called after a long lived operation has begun running and is persisted.
-     * 
+     * <p>
      * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -185,7 +185,7 @@ public class CKOperation extends NSOperation {
 
     /**
      * This is an identifier unique to this CKOperation.
-     * 
+     * <p>
      * This value is chosen by the system, and will be unique to this instance of a CKOperation.  This identifier will be sent to Apple's servers, and can be used to identify any server-side logging associated with this operation.
      */
     @Generated
@@ -202,7 +202,7 @@ public class CKOperation extends NSOperation {
 
     /**
      * This callback is called after a long lived operation has begun running and is persisted.
-     * 
+     * <p>
      * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -243,7 +243,7 @@ public class CKOperation extends NSOperation {
 
     /**
      * This defines per-operation configuration settings.
-     * 
+     * <p>
      * See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
      */
     @Generated
@@ -259,7 +259,7 @@ public class CKOperation extends NSOperation {
 
     /**
      * This defines per-operation configuration settings.
-     * 
+     * <p>
      * See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
      */
     @Generated

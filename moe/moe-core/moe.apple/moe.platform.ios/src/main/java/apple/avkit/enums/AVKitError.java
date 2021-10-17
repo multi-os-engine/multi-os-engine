@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@constant]	AVKitErrorUnknown
- * 			Unknown error.
+ * Unknown error.
  * [@constant]	AVKitErrorPictureInPictureStartFailed
- * 			Failed to start Picture in Picture.
+ * Failed to start Picture in Picture.
  */
 @Generated
 public final class AVKitError {

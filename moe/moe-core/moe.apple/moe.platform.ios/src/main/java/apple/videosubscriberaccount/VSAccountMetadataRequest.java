@@ -170,7 +170,7 @@ public class VSAccountMetadataRequest extends NSObject {
     public native String channelIdentifier();
 
     /**
-     * Controls whether the request will ignore any cached credentials.
+     * Requests that the TV Provider reauthenticate the user if they are already authenticated.
      */
     @Generated
     @Selector("forceAuthentication")
@@ -233,7 +233,7 @@ public class VSAccountMetadataRequest extends NSObject {
     public native void setChannelIdentifier(String value);
 
     /**
-     * Controls whether the request will ignore any cached credentials.
+     * Requests that the TV Provider reauthenticate the user if they are already authenticated.
      */
     @Generated
     @Selector("setForceAuthentication:")
@@ -345,12 +345,12 @@ public class VSAccountMetadataRequest extends NSObject {
      */
     @Generated
     @Selector("applicationAccountProviders")
-    public native NSArray<?> applicationAccountProviders();
+    public native NSArray<? extends VSAccountApplicationProvider> applicationAccountProviders();
 
     /**
      * Application-specific providers to be added to the list of account providers.
      */
     @Generated
     @Selector("setApplicationAccountProviders:")
-    public native void setApplicationAccountProviders(NSArray<?> value);
+    public native void setApplicationAccountProviders(NSArray<? extends VSAccountApplicationProvider> value);
 }

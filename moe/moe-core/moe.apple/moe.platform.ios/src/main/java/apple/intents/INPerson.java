@@ -337,4 +337,23 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String contactIdentifier, String customIdentifier, String relationship);
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isContactSuggestion:suggestionType:")
+    public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsContactSuggestionSuggestionType(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
+
+    @Generated
+    @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:suggestionType:")
+    public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMeSuggestionType(
+            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
+            String contactIdentifier, String customIdentifier, boolean isMe, @NInt long suggestionType);
+
+    /**
+     * Indicates that the person is confirmed
+     */
+    @Generated
+    @Selector("isContactSuggestion")
+    public native boolean isContactSuggestion();
 }

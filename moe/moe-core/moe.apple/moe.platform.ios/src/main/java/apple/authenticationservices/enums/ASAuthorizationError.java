@@ -14,4 +14,5 @@ public final class ASAuthorizationError {
     @Generated @NInt public static final long InvalidResponse = 0x00000000000003EAL;
     @Generated @NInt public static final long NotHandled = 0x00000000000003EBL;
     @Generated @NInt public static final long Failed = 0x00000000000003ECL;
+    @Generated @NInt public static final long NotInteractive = 0x00000000000003EDL;
 }

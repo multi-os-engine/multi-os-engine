@@ -143,10 +143,6 @@ public class GKMatchmakerViewController extends UINavigationController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -287,7 +283,7 @@ public class GKMatchmakerViewController extends UINavigationController {
     }
 
     /**
-     * this controls which mode of matchmaking to support in the UI (all, nearby only or automatch only).  Throws an exeption if you can not set to the desired mode (due to restrictions)
+     * this controls which mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).  Throws an exeption if you can not set to the desired mode (due to restrictions)
      */
     @Generated
     @Selector("matchmakingMode")
@@ -295,9 +291,27 @@ public class GKMatchmakerViewController extends UINavigationController {
     public native long matchmakingMode();
 
     /**
-     * this controls which mode of matchmaking to support in the UI (all, nearby only or automatch only).  Throws an exeption if you can not set to the desired mode (due to restrictions)
+     * this controls which mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).  Throws an exeption if you can not set to the desired mode (due to restrictions)
      */
     @Generated
     @Selector("setMatchmakingMode:")
     public native void setMatchmakingMode(@NInt long value);
+
+    /**
+     * A BOOL value to allow the GKMatchMakerViewController to return control to the game once the minimum number of players are connected.
+     * By default the value is NO, and the multiplayer match can only proceed after all players are connected.
+     * If the value is set to YES, then once the number of connected players is greater than or equal to minPlayers of the match request, matchmakerViewController:didFindMatch: will be called and the game can get the match instance, and update the game scene accordingly. The remaining players wil continue to connect.
+     */
+    @Generated
+    @Selector("canStartWithMinimumPlayers")
+    public native boolean canStartWithMinimumPlayers();
+
+    /**
+     * A BOOL value to allow the GKMatchMakerViewController to return control to the game once the minimum number of players are connected.
+     * By default the value is NO, and the multiplayer match can only proceed after all players are connected.
+     * If the value is set to YES, then once the number of connected players is greater than or equal to minPlayers of the match request, matchmakerViewController:didFindMatch: will be called and the game can get the match instance, and update the game scene accordingly. The remaining players wil continue to connect.
+     */
+    @Generated
+    @Selector("setCanStartWithMinimumPlayers:")
+    public native void setCanStartWithMinimumPlayers(boolean value);
 }

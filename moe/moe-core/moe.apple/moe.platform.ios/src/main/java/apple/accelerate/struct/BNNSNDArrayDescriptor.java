@@ -91,10 +91,16 @@ public final class BNNSNDArrayDescriptor extends StructObject {
     @StructureField(order = 7, isGetter = false)
     public native void setTable_data_type(int value);
 
+    /**
+     * 0.0f value will be set to 1.0f during computation
+     */
     @Generated
     @StructureField(order = 8, isGetter = true)
     public native float data_scale();
 
+    /**
+     * 0.0f value will be set to 1.0f during computation
+     */
     @Generated
     @StructureField(order = 8, isGetter = false)
     public native void setData_scale(float value);

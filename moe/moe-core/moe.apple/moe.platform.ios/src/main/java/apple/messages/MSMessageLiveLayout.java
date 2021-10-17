@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MSMessageLiveLayout
- * 
+ * <p>
  * The MSMessageLiveLayout is used to indicate a message should be rendered in Messages using an instance of `MSMessagesAppViewController` with a `presentationStyle` of `MSMessagesAppPresentationStyleTranscript`.
  */
 @Generated
@@ -58,7 +58,7 @@ public class MSMessageLiveLayout extends MSMessageLayout {
 
     /**
      * [@property]   alternateLayout
-     * 
+     * <p>
      * The alternate layout of the message. This layout will be used on devices that don't support live layout or don't have the iMessage app installed.
      */
     @Generated

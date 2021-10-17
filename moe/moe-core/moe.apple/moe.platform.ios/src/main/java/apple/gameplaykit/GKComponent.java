@@ -46,10 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A component is the data and logic for one part of an object in an entity-component system.
  * Entities have many components but components are associated with only a single entity.
- * 
+ * <p>
  * Components across entities are best arranged in ComponentSystems, which are homogeneous
  * collections of components that the game logic updates in a deterministic order.
- * 
+ *
  * @see GKComponentSystem
  */
 @Generated

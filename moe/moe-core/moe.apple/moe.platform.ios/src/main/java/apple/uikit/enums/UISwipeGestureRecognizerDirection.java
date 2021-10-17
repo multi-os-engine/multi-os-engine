@@ -21,8 +21,8 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Touch Location Behaviors:
- *     locationInView:         location where the swipe began. this is the centroid if more than one touch was involved
- *     locationOfTouch:inView: location of a particular touch when the swipe began
+ * locationInView:         location where the swipe began. this is the centroid if more than one touch was involved
+ * locationOfTouch:inView: location of a particular touch when the swipe began
  */
 @Generated
 public final class UISwipeGestureRecognizerDirection {

@@ -21,6 +21,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.usernotifications.protocol.UNNotificationContentProviding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -45,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class INSendMessageIntent extends INIntent {
+public class INSendMessageIntent extends INIntent implements UNNotificationContentProviding {
     static {
         NatJ.register();
     }

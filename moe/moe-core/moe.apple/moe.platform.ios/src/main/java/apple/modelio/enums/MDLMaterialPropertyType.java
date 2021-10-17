@@ -38,4 +38,6 @@ public final class MDLMaterialPropertyType {
     @Generated
     private MDLMaterialPropertyType() {
     }
+
+    @Generated @NUInt public static final long Buffer = 0x000000000000000AL;
 }

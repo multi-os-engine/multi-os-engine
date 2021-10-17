@@ -45,13 +45,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageThresholdBinaryInverse
- * 
+ * <p>
  * The MPSImageThresholdBinaryInverse filter applies a fixed-level threshold to each pixel in the image.
- *             The threshold functions convert a single channel image to a binary image.
- *             If the input image is not a single channel image, convert the inputimage to a single channel
- *             luminance image using the linearGrayColorTransform and then apply the threshold.
- *             The ThresholdBinaryInverse function is:
- *                 destinationPixelValue = sourcePixelValue > thresholdValue ? 0 : maximumValue
+ * The threshold functions convert a single channel image to a binary image.
+ * If the input image is not a single channel image, convert the inputimage to a single channel
+ * luminance image using the linearGrayColorTransform and then apply the threshold.
+ * The ThresholdBinaryInverse function is:
+ * destinationPixelValue = sourcePixelValue > thresholdValue ? 0 : maximumValue
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -174,12 +174,12 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     /**
      * initialize a MPSImageThresholdBinaryInverse filter
-     * 
-     * @param      device          The device the filter will run on
-     * @param      thresholdValue  The threshold value to use
-     * @param      maximumValue    The maximum value to use
-     * @param      transform       This matrix is an array of 3 floats.
-     *                             The default if no transform is specifed is BT.601/JPEG: {0.299f, 0.587f, 0.114f};
+     *
+     * @param device         The device the filter will run on
+     * @param thresholdValue The threshold value to use
+     * @param maximumValue   The maximum value to use
+     * @param transform      This matrix is an array of 3 floats.
+     *                       The default if no transform is specifed is BT.601/JPEG: {0.299f, 0.587f, 0.114f};
      */
     @Generated
     @Selector("initWithDevice:thresholdValue:maximumValue:linearGrayColorTransform:")
@@ -189,7 +189,7 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     /**
      * [@property] maximumValue
-     * 
+     * <p>
      * The maximum value used to init the threshold filter
      */
     @Generated
@@ -198,7 +198,7 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     /**
      * [@property] thresholdValue
-     * 
+     * <p>
      * The threshold value used to init the threshold filter
      */
     @Generated
@@ -207,7 +207,7 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     /**
      * [@property] transform
-     * 
+     * <p>
      * The color transform used to init the threshold filter
      */
     @Generated
@@ -220,16 +220,16 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The role of the relevant shortcut.
- * 
+ * <p>
  * Provides a hint to Siri about the expected user experience.
  */
 @Generated

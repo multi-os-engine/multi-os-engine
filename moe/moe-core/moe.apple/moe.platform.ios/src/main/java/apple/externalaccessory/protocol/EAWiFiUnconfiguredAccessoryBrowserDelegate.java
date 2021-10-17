@@ -29,10 +29,10 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] EAWiFiUnconfiguredAccessoryBrowserDelegate
- * 
+ * <p>
  * The delegate of a EAWiFiUnconfiguredAccessoryBrowser object must adopt the
- *             EAWiFiUnconfiguredAccessoryBrowserDelegate protocol. The required
- *             callbacks keep the delegate informed of the state of the search and configuration processes.
+ * EAWiFiUnconfiguredAccessoryBrowserDelegate protocol. The required
+ * callbacks keep the delegate informed of the state of the search and configuration processes.
  */
 @Generated
 @Library("ExternalAccessory")
@@ -41,10 +41,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
     /**
      * accessoryBrowser:didFindUnconfiguredAccessories:
-     * 
+     * <p>
      * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has found new unconfigured accessories that match
-     *             the filter predicate defined when starting the search.
-     * 
+     * the filter predicate defined when starting the search.
+     *
      * @param browser     The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
      * @param accessories The set of EAWiFiUnconfiguredAccessory objects that have been found since the last update.
      */
@@ -55,9 +55,9 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
 
     /**
      * accessoryBrowser:didFinishConfiguringAccessory:withStatus:
-     * 
+     * <p>
      * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has completed configuring the selected EAWiFiUnconfiguredAccessory.
-     * 
+     *
      * @param browser   The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
      * @param accessory The EAWiFiUnconfiguredAccessory whose configuration process has completed.
      * @param status    The status of the configuration process that has completed.
@@ -69,10 +69,10 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
 
     /**
      * accessoryBrowser:didRemoveUnconfiguredAccessories:
-     * 
+     * <p>
      * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has removed unconfigured accessories from the scan results
-     *             that match the filter predicate defined when starting the search.
-     * 
+     * that match the filter predicate defined when starting the search.
+     *
      * @param browser     The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
      * @param accessories The set of EAWiFiUnconfiguredAccessory objects that have been removed from the scan results since the last update.
      */
@@ -83,9 +83,9 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
 
     /**
      * accessoryBrowser:didUpdateState:
-     * 
+     * <p>
      * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser's state has changed.
-     * 
+     *
      * @param browser The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
      * @param state   The current state of the EAWiFiUnconfiguredAccessoryBrowser.
      */

@@ -27,6 +27,7 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
@@ -108,14 +109,12 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
 
     /**
      * fragmentedAssetWithURL:options:
-     * 
+     * <p>
      * Returns an instance of AVFragmentedAsset for inspection of a fragmented media resource.
-     * 
-     * @param		URL
-     * 		An instance of NSURL that references a media resource.
-     * @param		options
-     * 		An instance of NSDictionary that contains keys for specifying options for the initialization of the AVFragmentedAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and AVURLAssetReferenceRestrictionsKey above.
-     * @return		An instance of AVFragmentedAsset.
+     *
+     * @param        URL An instance of NSURL that references a media resource.
+     * @param        options An instance of NSDictionary that contains keys for specifying options for the initialization of the AVFragmentedAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and AVURLAssetReferenceRestrictionsKey above.
+     * @return An instance of AVFragmentedAsset.
      */
     @Generated
     @Selector("fragmentedAssetWithURL:options:")
@@ -187,14 +186,13 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
 
     /**
      * trackWithTrackID:
-     * 
+     * <p>
      * Provides an instance of AVFragmentedAssetTrack that represents the track of the specified trackID.
-     * 
+     * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     * 
-     * @param		trackID
-     * 		The trackID of the requested AVFragmentedAssetTrack.
-     * @return		An instance of AVFragmentedAssetTrack; may be nil if no track of the specified trackID is available.
+     *
+     * @param        trackID The trackID of the requested AVFragmentedAssetTrack.
+     * @return An instance of AVFragmentedAssetTrack; may be nil if no track of the specified trackID is available.
      */
     @Generated
     @Selector("trackWithTrackID:")
@@ -202,9 +200,9 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
 
     /**
      * [@property]       tracks
-     * 
+     * <p>
      * The tracks in an asset.
-     * 
+     * <p>
      * The value of this property is an array of tracks the asset contains; the tracks are of type AVFragmentedAssetTrack.
      */
     @Generated
@@ -213,14 +211,13 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
 
     /**
      * tracksWithMediaCharacteristic:
-     * 
+     * <p>
      * Provides an array of AVFragmentedAssetTracks of the asset that present media with the specified characteristic.
-     * 
+     * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     * 
-     * @param		mediaCharacteristic
-     * 		The media characteristic according to which the receiver filters its AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h)
-     * @return		An NSArray of AVFragmentedAssetTracks; may be empty if no tracks with the specified characteristic are available.
+     *
+     * @param        mediaCharacteristic The media characteristic according to which the receiver filters its AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h)
+     * @return An NSArray of AVFragmentedAssetTracks; may be empty if no tracks with the specified characteristic are available.
      */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
@@ -228,14 +225,13 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
 
     /**
      * tracksWithMediaType:
-     * 
+     * <p>
      * Provides an array of AVFragmentedAssetTracks of the asset that present media of the specified media type.
-     * 
+     * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     * 
-     * @param		mediaType
-     * 		The media type according to which the receiver filters its AVFragmentedAssetTracks. (Media types are defined in AVMediaFormat.h)
-     * @return		An NSArray of AVFragmentedAssetTracks; may be empty if no tracks of the specified media type are available.
+     *
+     * @param        mediaType The media type according to which the receiver filters its AVFragmentedAssetTracks. (Media types are defined in AVMediaFormat.h)
+     * @return An NSArray of AVFragmentedAssetTracks; may be empty if no tracks of the specified media type are available.
      */
     @Generated
     @Selector("tracksWithMediaType:")
@@ -292,5 +288,67 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
+    }
+
+    /**
+     * loadTrackWithTrackID:completionHandler:
+     * <p>
+     * Loads an instance of AVFragmentedAssetTrack that represents the track of the specified trackID.
+     *
+     * @param        trackID The trackID of the requested AVFragmentedAssetTrack.
+     * @param        completionHandler A block that is called when the loading is finished, with either the loaded track (which may be nil if no track of the specified trackID is available) or an error.
+     */
+    @Generated
+    @Selector("loadTrackWithTrackID:completionHandler:")
+    public native void loadTrackWithTrackIDCompletionHandler(int trackID,
+            @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadTrackWithTrackIDCompletionHandler {
+        @Generated
+        void call_loadTrackWithTrackIDCompletionHandler(AVFragmentedAssetTrack _Nullable_result, NSError arg1);
+    }
+
+    /**
+     * loadTracksWithMediaCharacteristic:completionHandler:
+     * <p>
+     * Loads an array of AVFragmentedAssetTracks of the asset that present media with the specified characteristic.
+     *
+     * @param        mediaCharacteristic The media characteristic according to which AVAsset filters its AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h.)
+     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks with the specified characteristic are available) or an error.
+     */
+    @Generated
+    @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
+    public native void loadTracksWithMediaCharacteristicCompletionHandler(String mediaCharacteristic,
+            @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadTracksWithMediaCharacteristicCompletionHandler {
+        @Generated
+        void call_loadTracksWithMediaCharacteristicCompletionHandler(NSArray<? extends AVFragmentedAssetTrack> arg0,
+                NSError arg1);
+    }
+
+    /**
+     * loadTracksWithMediaType:completionHandler:
+     * <p>
+     * Loads an array of AVFragmentedAssetTracks of the asset that present media of the specified media type.
+     *
+     * @param        mediaType The media type according to which AVAsset filters its AVFragmentedAssetTracks. (Media types are defined in AVMediaFormat.h.)
+     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks of the specified media type are available) or an error.
+     */
+    @Generated
+    @Selector("loadTracksWithMediaType:completionHandler:")
+    public native void loadTracksWithMediaTypeCompletionHandler(String mediaType,
+            @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadTracksWithMediaTypeCompletionHandler {
+        @Generated
+        void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVFragmentedAssetTrack> arg0,
+                NSError arg1);
     }
 }

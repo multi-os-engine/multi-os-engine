@@ -42,9 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The GKPeerPickerController class manages the system-supplied user interface for choosing peers to connect with for multiplayer games. The class manages the actual user interactions with the views and reports the results of those interactions to your delegate object.
- * 
+ * <p>
  * Because the GKPeerPickerController class handles all of the user interactions, all you have to do is tell it which GKSession selected peers should be connected to, tell it to start, and then wait to receive a delegate callback when the picker finished connecting peers or cancels.
- * 
+ * <p>
  * You must provide a delegate that conforms to the GKPeerPickerControllerDelegate protocol in order to use this class. After the user interface starts, this class notifies your delegate of the user’s actions.
  */
 @Generated
@@ -160,7 +160,7 @@ public class GKPeerPickerController extends NSObject {
 
     /**
      * An integer bit mask that determines what connection types are supported by the application, and displays system-supplied UI as appropriate.
-     * 
+     * <p>
      * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby.  If multiple connection types are supported, system-supplied UI will be presented to allow the user to select a connection type. The delegate receives a -peerPickerController:didSelectConnectionType: callback when the user selects a connection type.  If desired, this property should be set prior to calling -show, and should not be set while the picker is visible.
      */
     @Generated
@@ -194,7 +194,7 @@ public class GKPeerPickerController extends NSObject {
 
     /**
      * An integer bit mask that determines what connection types are supported by the application, and displays system-supplied UI as appropriate.
-     * 
+     * <p>
      * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby.  If multiple connection types are supported, system-supplied UI will be presented to allow the user to select a connection type. The delegate receives a -peerPickerController:didSelectConnectionType: callback when the user selects a connection type.  If desired, this property should be set prior to calling -show, and should not be set while the picker is visible.
      */
     @Generated

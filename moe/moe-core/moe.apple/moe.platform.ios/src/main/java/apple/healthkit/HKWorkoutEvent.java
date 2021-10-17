@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKWorkoutEvent
- * 
+ * <p>
  * Represents a particular event that occurred during a workout.
  */
 @Generated
@@ -199,11 +199,11 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property]      metadata
-     * 
+     * <p>
      * Extra information describing properties of the receiver.
-     * 
+     * <p>
      * Keys must be NSString and values must be either NSString, NSNumber, NSDate, or
-     *                HKQuantity. See HKMetadata.h for potential metadata keys and values.
+     * HKQuantity. See HKMetadata.h for potential metadata keys and values.
      */
     @Generated
     @Selector("metadata")
@@ -217,7 +217,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property]      workoutEventType
-     * 
+     * <p>
      * Represents the type of event that occurred during a workout.
      */
     @Generated
@@ -227,11 +227,11 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property]      dateInterval
-     * 
+     * <p>
      * Date interval representing the time period for which the event is valid.
-     * 
+     * <p>
      * Most event types only support date intervals with zero duration. Events of type HKWorkoutEventTypeLap
-     *                and HKWorkoutEventTypeSegment are currently the only events that support a nonzero duration.
+     * and HKWorkoutEventTypeSegment are currently the only events that support a nonzero duration.
      */
     @Generated
     @Selector("dateInterval")
@@ -239,12 +239,12 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * workoutEventWithType:dateInterval:metadata:
-     * 
+     * <p>
      * Creates an event with a date interval with or without a duration.
-     * 
-     * @param         type                    The type of event to create
-     * @param         dateInterval            The dateInterval over which the event occurs
-     * @param         metadata                Dictionary of metadata associated with the event, nullable
+     *
+     * @param type         The type of event to create
+     * @param dateInterval The dateInterval over which the event occurs
+     * @param metadata     Dictionary of metadata associated with the event, nullable
      */
     @Generated
     @Selector("workoutEventWithType:dateInterval:metadata:")

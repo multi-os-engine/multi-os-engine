@@ -128,11 +128,10 @@ public class AVAssetDownloadStorageManager extends NSObject {
 
     /**
      * setStorageManagementPolicy: forURL
-     * 
+     * <p>
      * Sets the policy for asset with disk backing at downloadStorageURL.
-     * 
-     * @param		downloadStorageURL
-     * 				The location of downloaded asset.
+     *
+     * @param        downloadStorageURL The location of downloaded asset.
      */
     @Generated
     @Selector("setStorageManagementPolicy:forURL:")
@@ -145,7 +144,7 @@ public class AVAssetDownloadStorageManager extends NSObject {
 
     /**
      * sharedDownloadStorageManager
-     * 
+     * <p>
      * returns singleton instance.
      */
     @Generated
@@ -154,12 +153,11 @@ public class AVAssetDownloadStorageManager extends NSObject {
 
     /**
      * storageManagementPolicyForURL:downloadStorageURL
-     * 
+     * <p>
      * Returns the storage management policy for asset downloaded at downloadStorageURL.
-     *                This may be nil if a storageManagementPolicy was never set on the downloaded asset.
-     * 
-     * @param		downloadStorageURL
-     * 			The location of downloaded asset.
+     * This may be nil if a storageManagementPolicy was never set on the downloaded asset.
+     *
+     * @param        downloadStorageURL The location of downloaded asset.
      */
     @Generated
     @Selector("storageManagementPolicyForURL:")

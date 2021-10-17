@@ -322,4 +322,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Generated
     @Selector("sourceView")
     public native UIView sourceView();
+
+    /**
+     * The UISheetPresentationController instance this popover will adapt to in compact size classes. Access this instance to customize or adjust the adaptive sheet.
+     */
+    @Generated
+    @Selector("adaptiveSheetPresentationController")
+    public native UISheetPresentationController adaptiveSheetPresentationController();
 }

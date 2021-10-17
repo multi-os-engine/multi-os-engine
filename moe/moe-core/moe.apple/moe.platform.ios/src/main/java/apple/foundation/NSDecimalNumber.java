@@ -535,10 +535,10 @@ public class NSDecimalNumber extends NSNumber {
 
     /**
      * One behavior per thread - The default behavior is
-     *   rounding mode: NSRoundPlain
-     *   scale: No defined scale (full precision)
-     *   ignore exactnessException
-     *   raise on overflow, underflow and divide by zero.
+     * rounding mode: NSRoundPlain
+     * scale: No defined scale (full precision)
+     * ignore exactnessException
+     * raise on overflow, underflow and divide by zero.
      */
     @Generated
     @Selector("objCType")

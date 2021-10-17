@@ -20,7 +20,7 @@ public interface ASWebAuthenticationPresentationContextProviding {
     /**
      * Return the ASPresentationAnchor in the closest proximity to where a user interacted with your app to trigger
      * authentication. If starting an ASWebAuthenticationSession on first launch, use the application's main window.
-     * 
+     *
      * @param session The session requesting a presentation anchor.
      * @return The ASPresentationAnchor most closely associated with the UI used to trigger authentication.
      */

@@ -202,4 +202,8 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     @Generated
     @Selector("transcriptions")
     public native NSArray<? extends SFTranscription> transcriptions();
+
+    @Generated
+    @Selector("speechRecognitionMetadata")
+    public native SFSpeechRecognitionMetadata speechRecognitionMetadata();
 }

@@ -159,7 +159,7 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property]   UUID
-     * 
+     * <p>
      * This is now deprecated; use calendarItemIdentifier instead.
      */
     @Generated
@@ -169,12 +169,12 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * addAlarm:
-     * 
+     * <p>
      * Adds an alarm to this item.
-     * 
+     * <p>
      * This method add an alarm to an item. Be warned that some calendars can only
-     *             allow a certain maximum number of alarms. When this item is saved, it will
-     *             truncate any extra alarms from the array.
+     * allow a certain maximum number of alarms. When this item is saved, it will
+     * truncate any extra alarms from the array.
      */
     @Generated
     @Selector("addAlarm:")
@@ -200,9 +200,9 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendar
-     * 
+     * <p>
      * The calendar that this calendar item belongs to.
-     * 
+     * <p>
      * This will be nil for new calendar items until you set it.
      */
     @Generated
@@ -211,30 +211,30 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property]   calendarItemExternalIdentifier
-     * 
+     * <p>
      * A server-provided identifier for this calendar item
-     * 
+     * <p>
      * This identifier, provided by the server, allows you to reference the same event or reminder across
-     *             multiple devices. For calendars stored locally on the device, including the birthday calendar,
-     *             it simply passes through to calendarItemIdentifier.
-     * 
-     *             This identifier is unique as of creation for every calendar item.  However, there are some
-     *             cases where duplicate copies of a calendar item can exist in the same database, including:
-     *             - A calendar item was imported from an ICS file into multiple calendars
-     *             - An event was created in a calendar shared with the user and the user was also invited to the event
-     *             - The user is a delegate of a calendar that also has this event
-     *             - A subscribed calendar was added to multiple accounts
-     *             In such cases, you should choose between calendar items based on other factors, such as
-     *             the calendar or source.
-     * 
-     *             This identifier is the same for all occurrences of a recurring event. If you wish to differentiate
-     *             between occurrences, you may want to use the start date.
-     * 
-     *             This may be nil for new calendar items that do not yet belong to a calendar.
-     * 
-     *             In addition, there are two caveats for Exchange-based calendars:
-     *             - This identifier will be different between EventKit on iOS versus OS X
-     *             - This identifier will be different between devices for EKReminders
+     * multiple devices. For calendars stored locally on the device, including the birthday calendar,
+     * it simply passes through to calendarItemIdentifier.
+     * <p>
+     * This identifier is unique as of creation for every calendar item.  However, there are some
+     * cases where duplicate copies of a calendar item can exist in the same database, including:
+     * - A calendar item was imported from an ICS file into multiple calendars
+     * - An event was created in a calendar shared with the user and the user was also invited to the event
+     * - The user is a delegate of a calendar that also has this event
+     * - A subscribed calendar was added to multiple accounts
+     * In such cases, you should choose between calendar items based on other factors, such as
+     * the calendar or source.
+     * <p>
+     * This identifier is the same for all occurrences of a recurring event. If you wish to differentiate
+     * between occurrences, you may want to use the start date.
+     * <p>
+     * This may be nil for new calendar items that do not yet belong to a calendar.
+     * <p>
+     * In addition, there are two caveats for Exchange-based calendars:
+     * - This identifier will be different between EventKit on iOS versus OS X
+     * - This identifier will be different between devices for EKReminders
      */
     @Generated
     @Selector("calendarItemExternalIdentifier")
@@ -242,13 +242,13 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property]   calendarItemIdentifier
-     * 
+     * <p>
      * A unique identifier for a calendar item.
-     * 
+     * <p>
      * Item identifiers are not sync-proof in that a full sync will lose
-     *             this identifier, so you should always have a back up plan for dealing
-     *             with a reminder that is no longer fetchable by this property, e.g. by title, etc.
-     *             Use [EKEventStore calendarItemWithIdentifier:] to look up the item by this value.
+     * this identifier, so you should always have a back up plan for dealing
+     * with a reminder that is no longer fetchable by this property, e.g. by title, etc.
+     * Use [EKEventStore calendarItemWithIdentifier:] to look up the item by this value.
      */
     @Generated
     @Selector("calendarItemIdentifier")
@@ -299,7 +299,7 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property]   recurrenceRules
-     * 
+     * <p>
      * An array of EKRecurrenceRules, or nil if none.
      */
     @Generated
@@ -308,7 +308,7 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * removeAlarm:
-     * 
+     * <p>
      * Removes an alarm from this item.
      */
     @Generated
@@ -328,9 +328,9 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendar
-     * 
+     * <p>
      * The calendar that this calendar item belongs to.
-     * 
+     * <p>
      * This will be nil for new calendar items until you set it.
      */
     @Generated
@@ -347,7 +347,7 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property]   recurrenceRules
-     * 
+     * <p>
      * An array of EKRecurrenceRules, or nil if none.
      */
     @Generated
@@ -360,9 +360,9 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] title
-     * 
+     * <p>
      * The title of this calendar item.
-     * 
+     * <p>
      * This will be nill for new calendar items until you set it.
      */
     @Generated
@@ -379,9 +379,9 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] title
-     * 
+     * <p>
      * The title of this calendar item.
-     * 
+     * <p>
      * This will be nill for new calendar items until you set it.
      */
     @Generated

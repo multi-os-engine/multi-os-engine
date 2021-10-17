@@ -158,7 +158,7 @@ public class HMRoom extends NSObject {
 
     /**
      * Array of HMAccessory objects that correspond to the accessories
-     *        associated with this room.
+     * associated with this room.
      */
     @Generated
     @Selector("accessories")
@@ -184,9 +184,8 @@ public class HMRoom extends NSObject {
 
     /**
      * This method is used to change the name of the room.
-     * 
-     * @param name New name for the room.
-     * 
+     *
+     * @param name       New name for the room.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

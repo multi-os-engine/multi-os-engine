@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLDrawable
- * 
+ * <p>
  * All "drawable" objects (such as those coming from CAMetalLayer) are expected to conform to this protocol
  */
 @Generated
@@ -53,7 +53,7 @@ public interface MTLDrawable {
 
     /**
      * addPresentedHandler
-     * 
+     * <p>
      * Add a block to be called when this drawable is presented on screen.
      */
     @Generated
@@ -69,9 +69,9 @@ public interface MTLDrawable {
 
     /**
      * [@property] drawableID
-     * 
+     * <p>
      * The monotonically incremented ID for all MTLDrawable objects created from the same CAMetalLayer object.
-     * 
+     * <p>
      * The value starts from 0.
      */
     @Generated
@@ -81,9 +81,9 @@ public interface MTLDrawable {
 
     /**
      * presentAfterMinimumDuration
-     * 
+     * <p>
      * Present this drawable while setting a minimum duration in seconds before allowing this drawable to appear on the display.
-     * 
+     *
      * @param duration Duration in seconds before this drawable is allowed to appear on the display
      */
     @Generated
@@ -92,9 +92,9 @@ public interface MTLDrawable {
 
     /**
      * [@property] presentedTime
-     * 
+     * <p>
      * The host time that this drawable was presented on screen.
-     * 
+     * <p>
      * Returns 0 if a frame has not been presented or has been skipped.
      */
     @Generated

@@ -42,10 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPlayerItemMetadataOutput
- * 
+ * <p>
  * A subclass of AVPlayerItemOutput that vends collections of metadata items carried in metadata tracks.
- * 
- * 	Setting the value of suppressesPlayerRendering on an instance of AVPlayerItemMetadataOutput has no effect.
+ * <p>
+ * Setting the value of suppressesPlayerRendering on an instance of AVPlayerItemMetadataOutput has no effect.
  */
 @Generated
 @Library("AVFoundation")
@@ -160,10 +160,10 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
 
     /**
      * [@property]		advanceIntervalForDelegateInvocation
-     * 
+     * <p>
      * Permits advance invocation of the associated delegate, if any.
-     * 
-     * 	If it is possible, an AVPlayerItemMetadataOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as possible.
+     * <p>
+     * If it is possible, an AVPlayerItemMetadataOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as possible.
      */
     @Generated
     @Selector("advanceIntervalForDelegateInvocation")
@@ -171,10 +171,10 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
 
     /**
      * [@property]		delegate
-     * 
+     * <p>
      * The receiver's delegate.
-     * 
-     * 	The delegate is held using a zeroing-weak reference, so this property will have a value of nil after a delegate that was previously set has been deallocated.  This property is not key-value observable.
+     * <p>
+     * The delegate is held using a zeroing-weak reference, so this property will have a value of nil after a delegate that was previously set has been deallocated.  This property is not key-value observable.
      */
     @Generated
     @Selector("delegate")
@@ -183,10 +183,10 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
 
     /**
      * [@property]		delegateQueue
-     * 
+     * <p>
      * The dispatch queue on which messages are sent to the delegate.
-     * 
-     * 	This property is not key-value observable.
+     * <p>
+     * This property is not key-value observable.
      */
     @Generated
     @Selector("delegateQueue")
@@ -198,13 +198,12 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
 
     /**
      * initWithIdentifiers:
-     * 
+     * <p>
      * Creates an instance of AVPlayerItemMetadataOutput.
-     * 
-     * 	See AVMetadataIdentifiers.h for publicly defined metadata identifiers. Pass nil to receive all of the timed metadata from all enabled AVPlayerItemTracks that carry timed metadata.
-     * 
-     * @param			identifiers
-     * 				A array of metadata identifiers indicating the metadata items that the output should provide.
+     * <p>
+     * See AVMetadataIdentifiers.h for publicly defined metadata identifiers. Pass nil to receive all of the timed metadata from all enabled AVPlayerItemTracks that carry timed metadata.
+     *
+     * @param            identifiers A array of metadata identifiers indicating the metadata items that the output should provide.
      */
     @Generated
     @Selector("initWithIdentifiers:")
@@ -212,10 +211,10 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
 
     /**
      * [@property]		advanceIntervalForDelegateInvocation
-     * 
+     * <p>
      * Permits advance invocation of the associated delegate, if any.
-     * 
-     * 	If it is possible, an AVPlayerItemMetadataOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as possible.
+     * <p>
+     * If it is possible, an AVPlayerItemMetadataOutput will message its delegate advanceIntervalForDelegateInvocation seconds earlier than otherwise. If the value you provide is large, effectively requesting provision of samples earlier than the AVPlayerItemMetadataOutput is prepared to act on them, the delegate will be invoked as soon as possible.
      */
     @Generated
     @Selector("setAdvanceIntervalForDelegateInvocation:")
@@ -223,13 +222,11 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
 
     /**
      * setDelegate:queue:
-     * 
+     * <p>
      * Sets the receiver's delegate and a dispatch queue on which the delegate will be called.
-     * 
-     * @param			delegate
-     * 				An object conforming to AVPlayerItemMetadataOutputPushDelegate protocol.
-     * @param			delegateQueue
-     * 				A dispatch queue on which all delegate methods will be called.
+     *
+     * @param            delegate An object conforming to AVPlayerItemMetadataOutputPushDelegate protocol.
+     * @param            delegateQueue A dispatch queue on which all delegate methods will be called.
      */
     @Generated
     @Selector("setDelegate:queue:")

@@ -34,7 +34,7 @@ public final class UIPressPhase {
      */
     @Generated @NInt public static final long Stationary = 0x0000000000000002L;
     /**
-     * whenever a button is releasd.
+     * whenever a button is released.
      */
     @Generated @NInt public static final long Ended = 0x0000000000000003L;
     /**

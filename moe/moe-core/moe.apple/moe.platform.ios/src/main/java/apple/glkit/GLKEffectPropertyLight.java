@@ -44,35 +44,35 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKEffectPropertyLight
- * 
+ * <p>
  * GLKEffectPropertyLight provides a single directional or spot light for an GLKEffect
  * in accordance with the OpenGL ES 1.1 specification.
- * 
+ * <p>
  * Per the OpenGL ES 1.1 specification, light position and directions are transformed
  * by the modelview matrix.  Accordingly, GLKEffectPropertyLight has a transform property.
  * If light transformation is required the transform property must be explicitly set
  * for light properties.
- * 
+ * <p>
  * In order for lighting calculations to function properly, clients of GLKEffectPropertyLight
  * must enable the vertex attribute array GLKVertexAttribNormal to provide normals for
  * lighting calculations. The normals are always normalized.
- * 
+ * <p>
  * The default values for GLKEffectPropertyLight properties are as follows:
- * 
- *    { 0, 0, 1, 0},  // position
- *    { 0, 0, 0, 1},  // ambient color
- *    { 1, 1, 1, 1},  // diffuse color
- *    { 1, 1, 1, 1},  // specular color
- *    { 0, 0, -1},    // spot direction
- *    0,              // spot exponent
- *    180,            // spot cutoff
- *    1,              // constant attenuation
- *    0,              // linear attenuation
- *    0,              // quadratic attenuation
- * 
+ * <p>
+ * { 0, 0, 1, 0},  // position
+ * { 0, 0, 0, 1},  // ambient color
+ * { 1, 1, 1, 1},  // diffuse color
+ * { 1, 1, 1, 1},  // specular color
+ * { 0, 0, -1},    // spot direction
+ * 0,              // spot exponent
+ * 180,            // spot cutoff
+ * 1,              // constant attenuation
+ * 0,              // linear attenuation
+ * 0,              // quadratic attenuation
+ * <p>
  * Note that, as with OpenGL ES 1.1 differentiation between a directional and spot light
  * pivots on the value specified for _spotCutoff.  A _spotCutoff of 180.0, the default
- * value, indicates a directional light while values less than 180.0 indicates a 
+ * value, indicates a directional light while values less than 180.0 indicates a
  * spot light.
  */
 @Generated

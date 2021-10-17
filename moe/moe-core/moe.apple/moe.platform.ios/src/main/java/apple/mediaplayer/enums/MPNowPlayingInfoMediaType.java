@@ -28,7 +28,7 @@ import org.moe.natj.general.ann.NUInt;
  * metadata properties for a now playing item. The list of property constants
  * is available in <MediaPlayer/MPMediaItem.h>. The properties which are
  * currently supported include:
- * 
+ * <p>
  * MPMediaItemPropertyAlbumTitle
  * MPMediaItemPropertyAlbumTrackCount
  * MPMediaItemPropertyAlbumTrackNumber
@@ -41,7 +41,7 @@ import org.moe.natj.general.ann.NUInt;
  * MPMediaItemPropertyPersistentID
  * MPMediaItemPropertyPlaybackDuration
  * MPMediaItemPropertyTitle
- * 
+ * <p>
  * In addition, metadata properties specific to the current playback session
  * may also be specified -- see "Additional metadata properties" below.
  */

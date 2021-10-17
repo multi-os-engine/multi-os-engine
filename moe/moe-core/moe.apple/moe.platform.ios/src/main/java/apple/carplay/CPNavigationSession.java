@@ -137,8 +137,8 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * Pause the current trip.
-     * 
-     * @param reason The reason navigation was paused.
+     *
+     * @param reason      The reason navigation was paused.
      * @param description An optional description of the pause reason. If @c nil, a system-provided string will be used.
      */
     @Generated
@@ -186,9 +186,9 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * Update the travel estimates for the active navigation session and maneuver.
-     * 
+     *
      * @param estimates The updated travel estimates.
-     * @param maneuver The maneuver pertaining to this update.
+     * @param maneuver  The maneuver pertaining to this update.
      */
     @Generated
     @Selector("updateTravelEstimates:forManeuver:")

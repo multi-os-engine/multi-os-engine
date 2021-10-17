@@ -17,7 +17,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface ARTrackable {
     /**
      * Tracking state of the anchor
-     * 
+     * <p>
      * The isTracked value is used to determine the anchor transform’s validity. When the object being tracked is no longer detected in the
      * camera image, its anchor will return NO for isTracked.
      */

@@ -4,12 +4,12 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]           SMPTETimeFlags
- * 
+ * <p>
  * Flags that describe the SMPTE time state.
  * [@constant]       kSMPTETimeValid
- *                     The full time is valid.
+ * The full time is valid.
  * [@constant]       kSMPTETimeRunning
- *                     Time is running.
+ * Time is running.
  */
 @Generated
 public final class SMPTETimeFlags {

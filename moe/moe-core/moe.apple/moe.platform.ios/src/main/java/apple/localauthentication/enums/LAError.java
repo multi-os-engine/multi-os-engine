@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class LAError {
     /**
-     * Authentication was not successful, because user failed to provide valid credentials.
+     * Authentication was not successful because user failed to provide valid credentials.
      */
     @Generated @NInt public static final long AuthenticationFailed = 0xFFFFFFFFFFFFFFFFL;
     /**
@@ -30,7 +30,7 @@ public final class LAError {
      */
     @Generated @NInt public static final long UserCancel = 0xFFFFFFFFFFFFFFFEL;
     /**
-     * Authentication was canceled, because the user tapped the fallback button (Enter Password).
+     * Authentication was canceled because the user tapped the fallback button (Enter Password).
      */
     @Generated @NInt public static final long UserFallback = 0xFFFFFFFFFFFFFFFDL;
     /**
@@ -38,19 +38,19 @@ public final class LAError {
      */
     @Generated @NInt public static final long SystemCancel = 0xFFFFFFFFFFFFFFFCL;
     /**
-     * Authentication could not start, because passcode is not set on the device.
+     * Authentication could not start because passcode is not set on the device.
      */
     @Generated @NInt public static final long PasscodeNotSet = 0xFFFFFFFFFFFFFFFBL;
     /**
-     * Authentication could not start, because Touch ID is not available on the device.
+     * Authentication could not start because Touch ID is not available on the device.
      */
     @Generated @NInt public static final long TouchIDNotAvailable = 0xFFFFFFFFFFFFFFFAL;
     /**
-     * Authentication could not start, because Touch ID has no enrolled fingers.
+     * Authentication could not start because Touch ID has no enrolled fingers.
      */
     @Generated @NInt public static final long TouchIDNotEnrolled = 0xFFFFFFFFFFFFFFF9L;
     /**
-     * Authentication was not successful, because there were too many failed Touch ID attempts and
+     * Authentication was not successful because there were too many failed Touch ID attempts and
      * Touch ID is now locked. Passcode is required to unlock Touch ID, e.g. evaluating
      * LAPolicyDeviceOwnerAuthenticationWithBiometrics will ask for passcode as a prerequisite.
      */
@@ -70,21 +70,21 @@ public final class LAError {
     }
 
     /**
-     * Authentication could not start, because biometry is not available on the device.
+     * Authentication could not start because biometry is not available on the device.
      */
     @Generated @NInt public static final long BiometryNotAvailable = 0xFFFFFFFFFFFFFFFAL;
     /**
-     * Authentication could not start, because biometry has no enrolled identities.
+     * Authentication could not start because biometry has no enrolled identities.
      */
     @Generated @NInt public static final long BiometryNotEnrolled = 0xFFFFFFFFFFFFFFF9L;
     /**
-     * Authentication was not successful, because there were too many failed biometry attempts and
+     * Authentication was not successful because there were too many failed biometry attempts and
      * biometry is now locked. Passcode is required to unlock biometry, e.g. evaluating
      * LAPolicyDeviceOwnerAuthenticationWithBiometrics will ask for passcode as a prerequisite.
      */
     @Generated @NInt public static final long BiometryLockout = 0xFFFFFFFFFFFFFFF8L;
     /**
-     * Authentication failed, because it would require showing UI which has been forbidden
+     * Authentication failed because it would require showing UI which has been forbidden
      * by using interactionNotAllowed property.
      */
     @Generated @NInt public static final long NotInteractive = 0xFFFFFFFFFFFFFC14L;

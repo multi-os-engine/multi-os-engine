@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]       CTFontOrientation
- * 
+ * <p>
  * Specifies the intended rendering orientation of the font for obtaining glyph metrics.
  */
 @Generated

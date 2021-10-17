@@ -42,13 +42,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NKLibrary
- * 
+ * <p>
  * Represents the library of Newsstand issues
- * 
+ * <p>
  * This is the library of Newsstand issues. Upon launch, one can
  * get the issues in the Newsstand library and determine any outstanding
  * downloading assets. To reconnect with any outstanding background
- * download of content, you will be required to call 
+ * download of content, you will be required to call
  * -[NKAssetDownload downloadWithDelegate:].
  */
 @Generated
@@ -155,7 +155,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * sharedLibrary
-     * 
+     * <p>
      * The application's shared Newsstand Content Library
      */
     @Generated
@@ -173,7 +173,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * addIssueWithName:date:
-     * 
+     * <p>
      * Add a new issue to the Newsstand Content Library.
      */
     @Generated
@@ -182,7 +182,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * [@property]   currentlyReadingIssue
-     * 
+     * <p>
      * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data
      * from being purged when under disk pressure.
@@ -193,7 +193,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * [@property]   downloadingAssets
-     * 
+     * <p>
      * The assets that are currently being downloaded in this
      * Newsstand library. The issue that this asset is associated with
      * can be determined from the asset itself.
@@ -208,7 +208,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * issueWithName:
-     * 
+     * <p>
      * Return the issue identified by the given name if it exists.
      */
     @Generated
@@ -217,7 +217,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * [@property]   issues
-     * 
+     * <p>
      * The Newsstand issues in the library
      */
     @Generated
@@ -226,7 +226,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * removeIssue:
-     * 
+     * <p>
      * Remove the issue from the library
      */
     @Generated
@@ -235,7 +235,7 @@ public class NKLibrary extends NSObject {
 
     /**
      * [@property]   currentlyReadingIssue
-     * 
+     * <p>
      * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data
      * from being purged when under disk pressure.

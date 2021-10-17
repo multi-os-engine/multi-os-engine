@@ -109,4 +109,12 @@ public final class MTLDataType {
     @Generated @NUInt public static final long IntersectionFunctionTable = 0x0000000000000074L;
     @Generated @NUInt public static final long PrimitiveAccelerationStructure = 0x0000000000000075L;
     @Generated @NUInt public static final long InstanceAccelerationStructure = 0x0000000000000076L;
+    @Generated @NUInt public static final long Long = 0x0000000000000051L;
+    @Generated @NUInt public static final long Long2 = 0x0000000000000052L;
+    @Generated @NUInt public static final long Long3 = 0x0000000000000053L;
+    @Generated @NUInt public static final long Long4 = 0x0000000000000054L;
+    @Generated @NUInt public static final long ULong = 0x0000000000000055L;
+    @Generated @NUInt public static final long ULong2 = 0x0000000000000056L;
+    @Generated @NUInt public static final long ULong3 = 0x0000000000000057L;
+    @Generated @NUInt public static final long ULong4 = 0x0000000000000058L;
 }

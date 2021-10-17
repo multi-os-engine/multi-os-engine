@@ -134,10 +134,10 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * Init a forward loss node from multiple images
-     * 
-     * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
-     *                                     Node0: logits, Node1: labels, Node2: weights
-     * @return     A new MPSNNFilter node.
+     *
+     * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
+     *                    Node0: logits, Node1: labels, Node2: weights
+     * @return A new MPSNNFilter node.
      */
     @Generated
     @Selector("initWithSources:lossDescriptor:")
@@ -191,10 +191,10 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * Init a forward loss node from multiple images
-     * 
-     * @param      sourceNodes             The MPSNNImageNode representing the source MPSImages for the filter
-     *                                     Node0: logits, Node1: labels, Node2: weights
-     * @return     A new MPSNNFilter node.
+     *
+     * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
+     *                    Node0: logits, Node1: labels, Node2: weights
+     * @return A new MPSNNFilter node.
      */
     @Generated
     @Selector("nodeWithSources:lossDescriptor:")
@@ -208,9 +208,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * [@property]   propertyCallBack
-     * 
+     * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
-     *             Default value: nil.
+     * Default value: nil.
      */
     @Generated
     @Selector("propertyCallBack")
@@ -231,9 +231,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * [@property]   propertyCallBack
-     * 
+     * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
-     *             Default value: nil.
+     * Default value: nil.
      */
     @Generated
     @Selector("setPropertyCallBack:")

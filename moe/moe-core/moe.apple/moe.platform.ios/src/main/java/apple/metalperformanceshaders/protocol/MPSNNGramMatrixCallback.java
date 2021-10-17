@@ -12,9 +12,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol]   MPSNNGramMatrixCallback
- * 
+ * <p>
  * MPSNNGramMatrixCallback Defines a callback protocol for @ref MPSNNGramMatrixCalculationNode to set the 'alpha'
- *             scaling value dynamically just before encoding the underlying MPSNNGramMatrixCalculation kernel.
+ * scaling value dynamically just before encoding the underlying MPSNNGramMatrixCalculation kernel.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -23,10 +23,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface MPSNNGramMatrixCallback extends NSSecureCoding, NSCopying {
     /**
      * Returns the desired alpha scaling value.
-     * 
-     * @param      sourceImage             One of the source images in the batch given as a reference for the alpha computation.
-     * @param      destinationImage        One of the destination images in the batch given as a reference for the alpha computation.
-     * @return     The desired alpha value.
+     *
+     * @param sourceImage      One of the source images in the batch given as a reference for the alpha computation.
+     * @param destinationImage One of the destination images in the batch given as a reference for the alpha computation.
+     * @return The desired alpha value.
      */
     @Generated
     @Selector("alphaForSourceImage:destinationImage:")

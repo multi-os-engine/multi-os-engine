@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNHorizonObservation
  * [@superclass] VNObservation
- * 
+ * <p>
  * VNHorizonObservation is the result of a VNDetectHorizonRequest
- * 
+ * <p>
  * Use the transform or angle to upright the image and make the detected horizon level.
  */
 @Generated

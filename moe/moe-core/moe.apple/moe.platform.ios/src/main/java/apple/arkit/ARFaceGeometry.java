@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object representing the geometry of a face.
- * 
+ * <p>
  * The face geometry will have a constant number of triangles
  * and vertices, updating only the vertex positions from frame to frame.
  */
@@ -111,9 +111,9 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * Creates and returns a face geometry by applying a set of given blend shape coefficients.
-     * 
+     * <p>
      * An empty dictionary can be provided to create a neutral face geometry.
-     * 
+     *
      * @param blendShapes A dictionary of blend shape coefficients.
      * @return Face geometry after applying the blend shapes.
      */

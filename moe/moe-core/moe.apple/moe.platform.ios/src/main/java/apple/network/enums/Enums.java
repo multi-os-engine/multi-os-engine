@@ -14,7 +14,7 @@ public final class Enums {
     @Generated public static final int nw_browse_result_change_invalid = 0x00000000;
     /**
      * [@const] nw_browse_result_change_identical The browse results being compared
-     * 	are identical.
+     * are identical.
      */
     @Generated public static final int nw_browse_result_change_identical = 0x00000001;
     /**

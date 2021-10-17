@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CMMotionActivityConfidence
- * 
+ * <p>
  * Discussion:
- *   Enumerates the level of accuracy of the activity estimate.
+ * Enumerates the level of accuracy of the activity estimate.
  */
 @Generated
 public final class CMMotionActivityConfidence {

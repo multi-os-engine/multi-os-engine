@@ -28,11 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXBackgroundExitData
- * 
+ * <p>
  * A class that encapsulates cumulative application exit metrics when the application is off screen.
- * 
+ * <p>
  * Background exits are terminations that, when unexpected, can impact performance metrics, such as launch time.
- * 
+ * <p>
  * Not all background exits are unexpected. See the documentation for each exit reason for more information.
  */
 @Generated
@@ -87,9 +87,9 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeAbnormalExitCount
-     * 
+     * <p>
      * Cumulative number of times the application exited abnormally.
-     * 
+     * <p>
      * The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to abort().
      */
     @Generated
@@ -99,9 +99,9 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeAppWatchdogExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated because a watchdog timeout occured.
-     * 
+     * <p>
      * These can occur when the application took too long to launch, terminate, or respond to system events.
      */
     @Generated
@@ -111,9 +111,9 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeBackgroundTaskAssertionTimeoutExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated for exceeding the alotted time limit associated with a background tasks.
-     * 
+     * <p>
      * If your application begins a background task, you must call endBackgroundTask() to signal completion of the task to prevent your application from being terminated. You can do this in the expiration handler of the task, but it must be done immediately.
      */
     @Generated
@@ -123,7 +123,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeBadAccessExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
      */
     @Generated
@@ -133,7 +133,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeCPUResourceLimitExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated for exceeding a CPU consumption limit.
      */
     @Generated
@@ -143,9 +143,9 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeIllegalInstructionExitCount
-     * 
+     * <p>
      * Cumulative number of times the application terminated for attempting to execute an illegal or undefined instruction.
-     * 
+     * <p>
      * The process may have attempted to jump to an invalid address via a misconfigured function pointer.
      */
     @Generated
@@ -155,7 +155,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeMemoryPressureExitCount
-     * 
+     * <p>
      * Cumulative number of times the application exited due to memory pressure on the system.
      */
     @Generated
@@ -165,7 +165,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeMemoryResourceLimitExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated for exceeding a memory consumption limit.
      */
     @Generated
@@ -175,7 +175,7 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeNormalAppExitCount
-     * 
+     * <p>
      * Cumulative number of times the application exited normally, or was gracefully terminated by the system.
      */
     @Generated
@@ -185,9 +185,9 @@ public class MXBackgroundExitData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property]      cumulativeSuspendedWithLockedFileExitCount
-     * 
+     * <p>
      * Cumulative number of times the application was terminated because it became suspended while holding onto file locks or sqlite database locks.
-     * 
+     * <p>
      * If your application is performing operations on a locked file or sqlite database at suspension time, it must request additional background execution time to complete those operations and relinquish the lock before suspending.
      */
     @Generated

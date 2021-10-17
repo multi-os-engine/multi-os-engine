@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNTube
- * 
+ * <p>
  * SCNTube represents a tube with controllable height, inner radius and outer radius.
  */
 @Generated
@@ -173,12 +173,12 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * tubeWithInnerRadius:outerRadius:height:
-     * 
+     * <p>
      * Creates and returns a tube with given inner radius, outer radius and height.
-     * 
+     *
      * @param innerRadius The inner radius of the tube.
      * @param outerRadius The outer radius of the tube.
-     * @param height The height of the tube.
+     * @param height      The height of the tube.
      */
     @Generated
     @Selector("tubeWithInnerRadius:outerRadius:height:")
@@ -192,9 +192,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the tube. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -204,9 +204,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -224,9 +224,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] innerRadius
-     * 
+     * <p>
      * The inner radius of the tube. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
      */
     @Generated
@@ -236,9 +236,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] outerRadius
-     * 
+     * <p>
      * The outer radius of the tube. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -248,9 +248,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the radial coordinate. Animatable.
-     * 
+     * <p>
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -260,9 +260,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the tube. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -271,9 +271,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -282,9 +282,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] innerRadius
-     * 
+     * <p>
      * The inner radius of the tube. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
      */
     @Generated
@@ -293,9 +293,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] outerRadius
-     * 
+     * <p>
      * The outer radius of the tube. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -304,9 +304,9 @@ public class SCNTube extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the radial coordinate. Animatable.
-     * 
+     * <p>
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated

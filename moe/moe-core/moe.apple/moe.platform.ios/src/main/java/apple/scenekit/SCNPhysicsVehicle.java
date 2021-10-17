@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsVehicle
- * 
+ * <p>
  * SCNPhysicsVehicle provides a vehicle behavior.
  */
 @Generated
@@ -158,7 +158,7 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     public static native boolean supportsSecureCoding();
 
     /**
-     *  Initializes and returns a physics vehicle that applies on the physics body "chassisBody" with the given wheels.
+     * Initializes and returns a physics vehicle that applies on the physics body "chassisBody" with the given wheels.
      * The wheel properties can be modified at anytime by calling setValue:forKeyPath: on each wheel with the format 'wheel[n].property', where n if the zero based wheel index.
      * A wheel can't be shared to multiple vehicle
      */

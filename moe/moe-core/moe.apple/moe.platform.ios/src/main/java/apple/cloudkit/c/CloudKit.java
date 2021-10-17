@@ -53,7 +53,7 @@ public final class CloudKit {
 
     /**
      * This local notification is posted when there has been any change to the logged in iCloud account.
-     * 
+     * <p>
      * On receipt, an updated account status should be obtained by calling @c accountStatusWithCompletionHandler:
      */
     @Generated
@@ -68,7 +68,7 @@ public final class CloudKit {
 
     /**
      * When a CKErrorPartialFailure happens this key will be set in the error's userInfo dictionary.
-     * 
+     * <p>
      * The value of this key will be a dictionary, and the values will be errors for individual items with the keys being the item IDs that failed.
      */
     @Generated
@@ -165,4 +165,21 @@ public final class CloudKit {
     @CVariable()
     @NUInt
     public static native long CKQueryOperationMaximumResults();
+
+    /**
+     * On error CKErrorZoneNotFound, the userInfo dictionary may contain a NSNumber instance that specifies a boolean value representing if the error is caused by the user having reset all encrypted data for their account
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CKErrorUserDidResetEncryptedDataKey();
+
+    /**
+     * A zone-wide CKShare always uses the record name @c CKRecordNameZoneWideShare.
+     * You can use this to fetch the @c CKShare record for the zone with a @c CKFetchRecordsOperation.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CKRecordNameZoneWideShare();
 }

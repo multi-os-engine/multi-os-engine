@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A template for customizing the display of relevant shortcuts.
- * 
+ *
  * @see INRelevantShortcut
  */
 @Generated

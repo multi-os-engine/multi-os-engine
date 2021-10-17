@@ -101,10 +101,10 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     /**
      * Create an item that represents a binary value
-     * 
-     * @param         title           Title of the CLSBinaryItem.
-     * @param         identifier      An identifier that is unique within its owning activity.
-     * @param         valueType       The type of binary value. Ex. pass or fail.
+     *
+     * @param title      Title of the CLSBinaryItem.
+     * @param identifier An identifier that is unique within its owning activity.
+     * @param valueType  The type of binary value. Ex. pass or fail.
      */
     @Generated
     @Selector("initWithIdentifier:title:type:")
@@ -179,7 +179,7 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     /**
      * Value type of this CLSBinaryItem.
-     * 
+     * <p>
      * The type that best describes this CLSBinaryItem value.
      */
     @Generated

@@ -34,7 +34,7 @@ public interface UICollectionViewDropDelegate {
     /**
      * Allows customization of the preview used for the item being dropped.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
-     * 
+     * <p>
      * This will be called as needed when animating drops via -[UICollectionViewDropCoordinator dropItem:toItemAtIndexPath:]
      * (to customize placeholder drops, please see UICollectionViewDropPlaceholder.previewParametersProvider)
      */

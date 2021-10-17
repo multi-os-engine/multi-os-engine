@@ -226,7 +226,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 
     /**
      * The following three convenience methods allow you to enumerate the indexes in the receiver by ranges of contiguous indexes. The performance of these methods is not guaranteed to be any better than if they were implemented with enumerateIndexesInRange:options:usingBlock:. However, depending on the receiver's implementation, they may perform better than that.
-     * 
+     * <p>
      * If the specified range for enumeration intersects a range of contiguous indexes in the receiver, then the block will be invoked with the intersection of those two ranges.
      */
     @Generated

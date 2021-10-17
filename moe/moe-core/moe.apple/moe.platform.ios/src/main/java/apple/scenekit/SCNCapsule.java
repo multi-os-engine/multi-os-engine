@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNCapsule
- * 
+ * <p>
  * SCNCapsule represents a capsule with controllable height and cap radius.
  */
 @Generated
@@ -92,11 +92,11 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * capsuleWithCapRadius:height:
-     * 
+     * <p>
      * Creates and returns a capsule with given radius and height.
-     * 
+     *
      * @param capRadius The radius of the capsule.
-     * @param height The height of the capsule.
+     * @param height    The height of the capsule.
      */
     @Generated
     @Selector("capsuleWithCapRadius:height:")
@@ -190,9 +190,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] capRadius
-     * 
+     * <p>
      * The cap radius of the capsule. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -202,9 +202,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] capSegmentCount
-     * 
+     * <p>
      * The number of subdivisions in the cap. Animatable.
-     * 
+     * <p>
      * If the value is less than 2, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -214,9 +214,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the capsule. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 2.
      */
     @Generated
@@ -226,9 +226,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -246,9 +246,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the radial coordinate. Animatable.
-     * 
+     * <p>
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -258,9 +258,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] capRadius
-     * 
+     * <p>
      * The cap radius of the capsule. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -269,9 +269,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] capSegmentCount
-     * 
+     * <p>
      * The number of subdivisions in the cap. Animatable.
-     * 
+     * <p>
      * If the value is less than 2, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -280,9 +280,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the capsule. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 2.
      */
     @Generated
@@ -291,9 +291,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -302,9 +302,9 @@ public class SCNCapsule extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the radial coordinate. Animatable.
-     * 
+     * <p>
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated

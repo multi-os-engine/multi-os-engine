@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef]    vImageYpCbCrType
- * 
+ * <p>
  * An encoding of an image format type to be used with RGB <-> Y'CbCr conversions in vImage/Conversions.h
- * 
+ * <p>
  * These formats enumerate different vImage/CoreVideo Y'CbCr pixel formats.
- * 
- * @see    CVPixelBuffer OSTypes in CVPixelBuffer.h
+ *
+ * @see CVPixelBuffer OSTypes in CVPixelBuffer.h
  */
 @Generated
 public final class vImageYpCbCrType {

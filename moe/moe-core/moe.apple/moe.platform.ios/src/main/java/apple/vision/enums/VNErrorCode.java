@@ -28,4 +28,5 @@ public final class VNErrorCode {
     @Generated @NInt public static final long UnsupportedRevision = 0x0000000000000010L;
     @Generated @NInt public static final long DataUnavailable = 0x0000000000000011L;
     @Generated @NInt public static final long TimeStampNotFound = 0x0000000000000012L;
+    @Generated @NInt public static final long UnsupportedRequest = 0x0000000000000013L;
 }

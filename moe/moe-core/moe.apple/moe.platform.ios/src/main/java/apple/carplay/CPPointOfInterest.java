@@ -88,7 +88,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Subtitle to be used when POI detail card is visible
-     * 
+     * <p>
      * [@note] If not provided, the point of interest will fall back to displaying @c subtitle
      */
     @Generated
@@ -97,7 +97,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Summary text to be used when POI detail card is visible.
-     * 
+     * <p>
      * [@note] If not provided, the point of interest will fall back to displaying @c summary
      */
     @Generated
@@ -106,7 +106,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Title to be used when POI detail card is visible
-     * 
+     * <p>
      * [@note] If not provided, the point of interest will fall back to displaying @c title
      */
     @Generated
@@ -132,22 +132,22 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Initializes a point of interest to be used with @c CPPointOfInterestTemplate
-     * 
+     * <p>
      * [@note] When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * 
+     * <p>
      * CPPointOfInterest instances appear on the Point of Interest map view as both selectable items in the table view overlay and as map annotations.
-     * 
-     * @param location Location indicator use by map annotations.
-     * @param title Primary title for this point of interest
-     * @param subtitle Optional: Secondary title for this point of interest
-     * @param summary Optional: Summary text for this point of interest
-     * @param detailTitle Optional: Title to be used when POI detail card is visible
+     *
+     * @param location       Location indicator use by map annotations.
+     * @param title          Primary title for this point of interest
+     * @param subtitle       Optional: Secondary title for this point of interest
+     * @param summary        Optional: Summary text for this point of interest
+     * @param detailTitle    Optional: Title to be used when POI detail card is visible
      * @param detailSubtitle Optional: Subtitle to be used when POI detail card is visible
-     * @param detailSummary Optional: Summary text to be used when POI detail card is visible
-     * @param pinImage Optional: a custom map annotation image
+     * @param detailSummary  Optional: Summary text to be used when POI detail card is visible
+     * @param pinImage       Optional: a custom map annotation image
      */
     @Generated
     @Selector("initWithLocation:title:subtitle:summary:detailTitle:detailSubtitle:detailSummary:pinImage:")
@@ -217,7 +217,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Subtitle to be used when POI detail card is visible
-     * 
+     * <p>
      * [@note] If not provided, the point of interest will fall back to displaying @c subtitle
      */
     @Generated
@@ -226,7 +226,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Summary text to be used when POI detail card is visible.
-     * 
+     * <p>
      * [@note] If not provided, the point of interest will fall back to displaying @c summary
      */
     @Generated
@@ -235,7 +235,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Title to be used when POI detail card is visible
-     * 
+     * <p>
      * [@note] If not provided, the point of interest will fall back to displaying @c title
      */
     @Generated

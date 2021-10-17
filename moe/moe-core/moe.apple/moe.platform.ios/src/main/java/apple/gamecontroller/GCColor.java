@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a color used by a GCDeviceLight.
- * 
+ *
  * @see GCDeviceLight
  */
 @Generated

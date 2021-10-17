@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A rectangle feature found by a CIDetector
- * All positions are relative to the original image. 
+ * All positions are relative to the original image.
  */
 @Generated
 @Library("CoreImage")

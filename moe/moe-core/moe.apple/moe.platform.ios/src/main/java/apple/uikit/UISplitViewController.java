@@ -142,10 +142,6 @@ public class UISplitViewController extends UIViewController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -181,6 +177,7 @@ public class UISplitViewController extends UIViewController {
 
     /**
      * A system bar button item whose action will change the displayMode property depending on the result of targetDisplayModeForActionInSplitViewController:. When inserted into the navigation bar of the secondary view controller it will change its appearance to match its target display mode. When the target displayMode is PrimaryHidden, this will appear as a fullscreen button, for AllVisible or PrimaryOverlay it will appear as a Back button, and when it won't cause any action it will become hidden.
+     * Not supported for column-style UISplitViewController
      */
     @Generated
     @Selector("displayModeButtonItem")
@@ -365,23 +362,23 @@ public class UISplitViewController extends UIViewController {
     /**
      * -hideColumn: and -showColumn: do not accept the Compact column
      * Collapsed:
-     *    -hideColumn:
-     *        always ignored for the Primary column, or if the requested column is not on top;
-     *        otherwise the column is popped
-     *    -showColumn:
-     *        pushes the column (and any intervening columns) if the column is not in the stack;
-     *        does nothing if the column is on top;
-     *        pops any covering columns if the column is in the stack but not on top
+     * -hideColumn:
+     * always ignored for the Primary column, or if the requested column is not on top;
+     * otherwise the column is popped
+     * -showColumn:
+     * pushes the column (and any intervening columns) if the column is not in the stack;
+     * does nothing if the column is on top;
+     * pops any covering columns if the column is in the stack but not on top
      * Expanded:
-     *    -hideColumn:
-     *        ignored for the Secondary column;
-     *        ignored when the column is not visible in the current displayMode;
-     *        otherwise animates to the nearest displayMode where the column is not visible
-     *    -showColumn:
-     *        ignored for the Secondary column;
-     *        ignored when the column is already visible in the current displayMode;
-     *        otherwise animates to the nearest displayMode where the column is visible
-     * 
+     * -hideColumn:
+     * ignored for the Secondary column;
+     * ignored when the column is not visible in the current displayMode;
+     * otherwise animates to the nearest displayMode where the column is not visible
+     * -showColumn:
+     * ignored for the Secondary column;
+     * ignored when the column is already visible in the current displayMode;
+     * otherwise animates to the nearest displayMode where the column is visible
+     * <p>
      * If an animation is started due to -show/hideColumn:, the transitionCoordinator for the UISplitViewController is available following the -show/hideColumn: message.
      */
     @Generated
@@ -510,4 +507,19 @@ public class UISplitViewController extends UIViewController {
     @Generated
     @Selector("viewControllerForColumn:")
     public native UIViewController viewControllerForColumn(@NInt long column);
+
+    /**
+     * default: automatic
+     */
+    @Generated
+    @Selector("displayModeButtonVisibility")
+    @NInt
+    public native long displayModeButtonVisibility();
+
+    /**
+     * default: automatic
+     */
+    @Generated
+    @Selector("setDisplayModeButtonVisibility:")
+    public native void setDisplayModeButtonVisibility(@NInt long value);
 }

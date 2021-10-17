@@ -32,10 +32,10 @@ public final class UIDropOperation {
     @Generated @NUInt public static final long Copy = 0x0000000000000002L;
     /**
      * The data represented by the drag item(s) will be moved.
-     * 
+     * <p>
      * You may use this only if UIDropSession's allowsMoveOperation is true.
      * Otherwise it will be treated as UIDropOperationCancel.
-     * 
+     * <p>
      * Note that the system does not give any special meaning to this operation.
      * The delegates of both the UIDragInteraction and UIDropInteraction must
      * cooperate to produce the correct result. For instance, the UIDropInteraction's

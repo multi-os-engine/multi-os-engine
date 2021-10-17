@@ -160,7 +160,7 @@ public interface UITextInput extends UIKeyInput {
     }
 
     /**
-     * A system-provied input delegate is assigned when the system is interested in input changes.
+     * A system-provided input delegate is assigned when the system is interested in input changes.
      */
     @Generated
     @Selector("inputDelegate")
@@ -287,7 +287,7 @@ public interface UITextInput extends UIKeyInput {
     void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
     /**
-     * A system-provied input delegate is assigned when the system is interested in input changes.
+     * A system-provided input delegate is assigned when the system is interested in input changes.
      */
     @Generated
     @Selector("setInputDelegate:")
@@ -346,7 +346,7 @@ public interface UITextInput extends UIKeyInput {
 
     /**
      * An affiliated view that provides a coordinate system for all geometric values in this protocol.
-     * If unimplmeented, the first view in the responder chain will be selected.
+     * If unimplemented, the first view in the responder chain will be selected.
      */
     @Generated
     @IsOptional

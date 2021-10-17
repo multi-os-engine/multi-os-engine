@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueCurrentHeatingCooling
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueCurrentHeatingCoolingOff   Off.
  * [@constant]  HMCharacteristicValueCurrentHeatingCoolingHeat  The Heater is currently on.
  * [@constant]  HMCharacteristicValueCurrentHeatingCoolingCool  Cooler is currently on.

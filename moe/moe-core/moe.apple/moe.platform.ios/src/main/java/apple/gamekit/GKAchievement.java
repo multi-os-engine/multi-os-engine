@@ -170,10 +170,10 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
             @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
 
     /**
-     *  Reset the achievements progress for the local player. All the entries for the local player are removed from the server. Error will be nil on success.
+     * Reset the achievements progress for the local player. All the entries for the local player are removed from the server. Error will be nil on success.
      * Possible reasons for error:
-     *  1. Local player not authenticated
-     *  2. Communications failure
+     * 1. Local player not authenticated
+     * 2. Communications failure
      */
     @Generated
     @Selector("resetAchievementsWithCompletionHandler:")

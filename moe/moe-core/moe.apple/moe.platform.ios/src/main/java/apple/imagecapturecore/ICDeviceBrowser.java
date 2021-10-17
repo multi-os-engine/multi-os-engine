@@ -27,9 +27,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * -------------------------------------------------------------------------------------------------------------- ICDeviceBrowser
- * 
+ * <p>
  * ICDeviceBrowser
- * 
+ * <p>
  * The ICDeviceBrowser object is used to find devices such as digital cameras and scanners that are supported by Image Capture. These device may be directly attached to the USB or FireWire bus on the host computer, or available over a TCP/IP network. This object communicates with an Image Capture agent process asynchronously to accomplish this.
  */
 @Generated
@@ -88,7 +88,7 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
@@ -102,7 +102,7 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * [@property] devices
-     * 
+     * <p>
      * All devices found by the browser. This property will change as devices appear and disappear. This array is empty before the first invocation of the delegate method 'deviceBrowser:didAddDevice:moreComing:'.
      */
     @Generated
@@ -116,7 +116,7 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * init
-     * 
+     * <p>
      * This is the designated initializer.
      */
     @Generated
@@ -138,7 +138,7 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * [@property] browsing
-     * 
+     * <p>
      * Indicates whether the device browser is browsing for devices.
      */
     @Generated
@@ -169,7 +169,7 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
@@ -178,7 +178,7 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
@@ -199,9 +199,9 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * start:
-     * 
+     * <p>
      * This message tells the receiver to start looking for devices.
-     * 
+     * <p>
      * Make sure that the receiver's delegate is set prior to sending this message; otherwise this message will be ignored. The messages the delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
@@ -210,9 +210,9 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * stop:
-     * 
+     * <p>
      * This method tells the receiver to stop looking for devices.
-     * 
+     * <p>
      * This will free all device instances that are not in use.
      */
     @Generated
@@ -230,9 +230,9 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * contentsAuthorizationStatus
-     * 
+     * <p>
      * This method returns a constant indicating whether the app has permission to acces the contents of an attached media device.
-     * 
+     * <p>
      * A constant indicating authorization status.
      */
     @Generated
@@ -241,10 +241,8 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * controlAuthorizationStatus
-     * 
+     * <p>
      * This method returns a constant indicating whether the app has permission to control the attached camera device.
-     * 
-     * A constant indicating authorization status.
      */
     @Generated
     @Selector("controlAuthorizationStatus")
@@ -252,7 +250,7 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * [@property] suspended
-     * 
+     * <p>
      * Indicates whether the  devices in the browser have suspended communication.
      */
     @Generated
@@ -261,10 +259,8 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * requestContentsAuthorizationWithCompletion:
-     * 
+     * <p>
      * This method requests the user’s permission, if needed, for accessing the conents of an external media device.
-     * 
-     * A constant indicating authorization status.
      */
     @Generated
     @Selector("requestContentsAuthorizationWithCompletion:")
@@ -280,10 +276,8 @@ public class ICDeviceBrowser extends NSObject {
 
     /**
      * requestControlAuthorizationWithCompletion:
-     * 
+     * <p>
      * This method requests the user’s permission, if needed, for controlling the attached camera device.
-     * 
-     * A constant indicating authorization status.
      */
     @Generated
     @Selector("requestControlAuthorizationWithCompletion:")
@@ -295,5 +289,41 @@ public class ICDeviceBrowser extends NSObject {
     public interface Block_requestControlAuthorizationWithCompletion {
         @Generated
         void call_requestControlAuthorizationWithCompletion(String status);
+    }
+
+    /**
+     * resetContentsAuthorizationWithCompletion:
+     * <p>
+     * This method resets the authorization status for the application accessing the conents of an external media device.
+     */
+    @Generated
+    @Selector("resetContentsAuthorizationWithCompletion:")
+    public native void resetContentsAuthorizationWithCompletion(
+            @ObjCBlock(name = "call_resetContentsAuthorizationWithCompletion") Block_resetContentsAuthorizationWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resetContentsAuthorizationWithCompletion {
+        @Generated
+        void call_resetContentsAuthorizationWithCompletion(String status);
+    }
+
+    /**
+     * resetControlAuthorizationWithCompletion:
+     * <p>
+     * This method resets the authorization status for the application controlling the attached camera device.
+     * <p>
+     * If the application already has been granted camera access, this will reset only the presentation dialog letting the user know the app has permission, not the camera access itself.
+     */
+    @Generated
+    @Selector("resetControlAuthorizationWithCompletion:")
+    public native void resetControlAuthorizationWithCompletion(
+            @ObjCBlock(name = "call_resetControlAuthorizationWithCompletion") Block_resetControlAuthorizationWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resetControlAuthorizationWithCompletion {
+        @Generated
+        void call_resetControlAuthorizationWithCompletion(String status);
     }
 }

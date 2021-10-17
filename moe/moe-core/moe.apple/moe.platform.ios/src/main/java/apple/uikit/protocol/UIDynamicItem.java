@@ -46,7 +46,7 @@ public interface UIDynamicItem {
     CGPoint center();
 
     /**
-     * The path must represent a convex polygon with counter clockwise winding and no self intersection. 
+     * The path must represent a convex polygon with counter clockwise winding and no self intersection.
      * The point (0,0) in the path corresponds to the dynamic item's center.
      */
     @Generated
@@ -57,7 +57,7 @@ public interface UIDynamicItem {
     }
 
     /**
-     * The collision type represents how the dynamics system will evaluate collisions with 
+     * The collision type represents how the dynamics system will evaluate collisions with
      * respect to the dynamic item. defaults to UIDynamicItemCollisionBoundsTypeRectangle
      */
     @Generated

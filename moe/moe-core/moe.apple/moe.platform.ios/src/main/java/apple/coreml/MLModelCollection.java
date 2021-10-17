@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLModelCollection
- * 
+ * <p>
  * A collection of models managed as part of Core ML Model Deployment.
  */
 @Generated
@@ -67,11 +67,11 @@ public class MLModelCollection extends NSObject {
     /**
      * Request access to a model collection. If the collection is not downloaded on the device, it is requested
      * from Core ML Model Deployment.
-     * 
+     * <p>
      * When called, this method downloads the model collection if it is not already on the device. Once
      * all models are downloaded, an MLModelCollection instance is made available for use with the completion handler.
-     * 
-     * @param identifier The model collection identifier, as managed in Core ML Model Deployment.
+     *
+     * @param identifier        The model collection identifier, as managed in Core ML Model Deployment.
      * @param completionHandler The completion handler, invoked with a valid MLModelCollection instance on success or NSError on failure.
      * @return NSProgress for updates during setup and download of the model collection
      */
@@ -123,10 +123,10 @@ public class MLModelCollection extends NSObject {
 
     /**
      * End access to a model collection. This informs the system you have finished accessing the models within the collection.
-     * 
+     * <p>
      * Call this method as soon as you have finished using the models in this collection.
-     * 
-     * @param identifier The model collection identifier, as managed in Core ML Model Deployment.
+     *
+     * @param identifier        The model collection identifier, as managed in Core ML Model Deployment.
      * @param completionHandler The completion handler, invoked with YES on success or NSError on failure.
      */
     @Generated

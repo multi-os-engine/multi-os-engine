@@ -406,7 +406,7 @@ public class SKView extends UIView {
 
     /**
      * Converts a point from scene space to view space.
-     * 
+     *
      * @param point the point to convert.
      * @param scene the scene to convert the point into.
      */
@@ -417,7 +417,7 @@ public class SKView extends UIView {
 
     /**
      * Converts a point from view space to scene space.
-     * 
+     *
      * @param point the point to convert.
      * @param scene the scene to convert the point into.
      */
@@ -436,7 +436,7 @@ public class SKView extends UIView {
     /**
      * Deprecated, please use preferredFramesPerSecond.
      * Number of frames to skip between renders, defaults to 1 (render every frame)
-     * Actual requested rate will be preferredFramesPerSecond / frameInterval.  
+     * Actual requested rate will be preferredFramesPerSecond / frameInterval.
      */
     @Generated
     @Selector("frameInterval")
@@ -446,9 +446,9 @@ public class SKView extends UIView {
     /**
      * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
-     * 
+     * <p>
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
-     * 
+     * <p>
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
      * determines render order before the efficiency heuristics are used.
      */
@@ -506,7 +506,7 @@ public class SKView extends UIView {
 
     /**
      * Defines the desired rate for this SKView to it's content.
-     * Actual rate maybe be limited by hardware or other software. 
+     * Actual rate maybe be limited by hardware or other software.
      */
     @Generated
     @Selector("preferredFramesPerSecond")
@@ -515,7 +515,7 @@ public class SKView extends UIView {
 
     /**
      * Present an SKScene in the view, replacing the current scene.
-     * 
+     *
      * @param scene the scene to present.
      */
     @Generated
@@ -524,10 +524,10 @@ public class SKView extends UIView {
 
     /**
      * Present an SKScene in the view, replacing the current scene.
-     * 
+     * <p>
      * If there is currently a scene being presented in the view, the transition is used to swap between them.
-     * 
-     * @param scene the scene to present.
+     *
+     * @param scene      the scene to present.
      * @param transition the transition to use when presenting the scene.
      */
     @Generated
@@ -574,7 +574,7 @@ public class SKView extends UIView {
     /**
      * Deprecated, please use preferredFramesPerSecond.
      * Number of frames to skip between renders, defaults to 1 (render every frame)
-     * Actual requested rate will be preferredFramesPerSecond / frameInterval.  
+     * Actual requested rate will be preferredFramesPerSecond / frameInterval.
      */
     @Generated
     @Selector("setFrameInterval:")
@@ -583,9 +583,9 @@ public class SKView extends UIView {
     /**
      * Ignores sibling and traversal order to sort the rendered contents of a scene into the most efficient batching possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each other.
-     * 
+     * <p>
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in the view.
-     * 
+     * <p>
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only zPosition
      * determines render order before the efficiency heuristics are used.
      */
@@ -603,7 +603,7 @@ public class SKView extends UIView {
 
     /**
      * Defines the desired rate for this SKView to it's content.
-     * Actual rate maybe be limited by hardware or other software. 
+     * Actual rate maybe be limited by hardware or other software.
      */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
@@ -674,7 +674,7 @@ public class SKView extends UIView {
     /**
      * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
      * The texture is tightly cropped to the size of the node.
-     * 
+     *
      * @param node the node subtree to render to the texture.
      */
     @Generated
@@ -684,7 +684,7 @@ public class SKView extends UIView {
     /**
      * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
      * The texture is cropped to the specified rectangle
-     * 
+     *
      * @param node the node subtree to render to the texture.
      * @param crop the crop
      */

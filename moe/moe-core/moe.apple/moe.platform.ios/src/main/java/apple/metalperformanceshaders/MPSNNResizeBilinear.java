@@ -29,12 +29,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNResizeBilinear
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The MPSNNResizeBilinear filter resizes the source image  using bilinear interpolation to
- *             a destination whose dimensions are given by resizeWidth and resizeHeight
- * 
- *             The number of output feature channels remains the same as the number of input feature
- *             channels.
+ * a destination whose dimensions are given by resizeWidth and resizeHeight
+ * <p>
+ * The number of output feature channels remains the same as the number of input feature
+ * channels.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -56,10 +56,10 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property]   alignCorners
-     * 
+     * <p>
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
-     *             preserving the values at the corner pixels.
-     *             The default is NO.
+     * preserving the values at the corner pixels.
+     * The default is NO.
      */
     @Generated
     @Selector("alignCorners")
@@ -120,12 +120,12 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSNNResizeBilinear
-     * @param      device      The MTLDevice on which to make the MPSNNResizeBilinear
-     * @return     A new MPSNNResizeBilinear object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSNNResizeBilinear
+     * @param device   The MTLDevice on which to make the MPSNNResizeBilinear
+     * @return A new MPSNNResizeBilinear object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -138,13 +138,13 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * Initialize the resize bilinear filter.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     resizeWidth              The destination resize width in pixels
-     * @param     resizeHeight             The destination resize height in pixels
-     * @param     alignCorners             Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
-     *                                     preserving the values at the corner pixels.
-     * @return    A valid MPSNNResizeBilinear object or nil, if failure.
+     *
+     * @param device       The device the filter will run on.
+     * @param resizeWidth  The destination resize width in pixels
+     * @param resizeHeight The destination resize height in pixels
+     * @param alignCorners Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     *                     preserving the values at the corner pixels.
+     * @return A valid MPSNNResizeBilinear object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:resizeWidth:resizeHeight:alignCorners:")
@@ -181,7 +181,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property]   resizeHeight
-     * 
+     * <p>
      * The resize height.
      */
     @Generated
@@ -191,7 +191,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property]   resizeWidth
-     * 
+     * <p>
      * The resize width.
      */
     @Generated

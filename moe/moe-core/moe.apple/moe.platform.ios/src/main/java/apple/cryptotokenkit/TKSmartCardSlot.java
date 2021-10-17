@@ -123,9 +123,9 @@ public class TKSmartCardSlot extends NSObject {
 
     /**
      * Creates new object representing currently inserted and valid card.
-     * 
+     * <p>
      * It is possible to instantiate multiple objects for single card, exclusivity is handled by sessions on the level of created SmartCard objects.
-     * 
+     *
      * @return Newly created SmartCard object, or nil if slot does not contain valid card.
      */
     @Generated

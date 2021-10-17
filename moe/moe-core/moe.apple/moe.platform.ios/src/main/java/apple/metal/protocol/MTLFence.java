@@ -37,7 +37,7 @@ public interface MTLFence {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify this object.
      */
     @Generated
@@ -46,7 +46,7 @@ public interface MTLFence {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify this object.
      */
     @Generated

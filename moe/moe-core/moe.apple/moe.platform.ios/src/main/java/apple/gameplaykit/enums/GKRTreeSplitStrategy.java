@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Used to adjust the way in which RTree nodes are split when they grow too large.
- * 
+ * <p>
  * [@enum] GKRTreeSplitStrategyHalve Specifies that nodes should be split in half based on insert order.
  * [@enum] GKRTreeSplitStrategyLinear Specifies that nodes should be split along the best dividing axis.
  * [@enum] GKRTreeSplitStrategyQuadratic Specifies that nodes should be split into groups with the least area.

@@ -21,21 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SecKeyOperationType
- * 
+ * <p>
  * Defines types of cryptographic operations available with SecKey instance.
- * 
+ * <p>
  * [@constant] kSecKeyOperationTypeSign
  * Represents SecKeyCreateSignature()
- * 
+ * <p>
  * [@constant] kSecKeyOperationTypeVerify
  * Represents SecKeyVerifySignature()
- * 
+ * <p>
  * [@constant] kSecKeyOperationTypeEncrypt
  * Represents SecKeyCreateEncryptedData()
- * 
+ * <p>
  * [@constant] kSecKeyOperationTypeDecrypt
  * Represents SecKeyCreateDecryptedData()
- * 
+ * <p>
  * [@constant] kSecKeyOperationTypeKeyExchange
  * Represents SecKeyCopyKeyExchangeResult()
  */

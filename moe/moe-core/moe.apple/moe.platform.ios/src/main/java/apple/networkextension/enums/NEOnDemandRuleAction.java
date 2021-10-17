@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEOnDemandRuleAction
- * 
+ * <p>
  * On Demand rule actions
  */
 @Generated

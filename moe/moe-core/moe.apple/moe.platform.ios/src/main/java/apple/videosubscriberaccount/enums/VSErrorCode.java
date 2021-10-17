@@ -51,7 +51,7 @@ public final class VSErrorCode {
     }
 
     /**
-     * For use by TV Provider applications only.
+     * The system rejected the request.
      */
     @Generated @NInt public static final long Rejected = 0x0000000000000006L;
     /**

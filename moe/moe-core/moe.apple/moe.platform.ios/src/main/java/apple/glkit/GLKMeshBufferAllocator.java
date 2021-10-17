@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKMeshBufferAllocator
- * 
+ * <p>
  * Allocator passed to MDLAsset init method to load vertex and index data directly into OpenGL buffer object
  */
 @Generated

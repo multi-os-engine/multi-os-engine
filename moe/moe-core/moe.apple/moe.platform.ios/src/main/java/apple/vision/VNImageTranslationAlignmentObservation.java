@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNImageTranslationAlignmentObservation
  * [@superclass] VNImageAlignmentObservation
- * 
+ * <p>
  * An observation describing the results of performing a translational image alignment.
  */
 @Generated
@@ -143,10 +143,6 @@ public class VNImageTranslationAlignmentObservation extends VNImageAlignmentObse
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setAlignmentTransform:")
-    public native void setAlignmentTransform(@ByValue CGAffineTransform value);
 
     @Generated
     @Selector("setVersion:")

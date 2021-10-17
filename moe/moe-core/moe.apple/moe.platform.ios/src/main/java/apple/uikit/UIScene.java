@@ -235,4 +235,28 @@ public class UIScene extends UIResponder {
     @Generated
     @Selector("pointerLockState")
     public native UIPointerLockState pointerLockState();
+
+    @Generated
+    @Selector("completeStateRestoration")
+    public native void completeStateRestoration();
+
+    @Generated
+    @Selector("extendStateRestoration")
+    public native void extendStateRestoration();
+
+    /**
+     * A subtitle that may be displayed adjacent to or below the primary title on supported platforms.
+     * If set to an empty string, the system will not display a subtitle.
+     */
+    @Generated
+    @Selector("setSubtitle:")
+    public native void setSubtitle(String value);
+
+    /**
+     * A subtitle that may be displayed adjacent to or below the primary title on supported platforms.
+     * If set to an empty string, the system will not display a subtitle.
+     */
+    @Generated
+    @Selector("subtitle")
+    public native String subtitle();
 }

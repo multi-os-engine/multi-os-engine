@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueInputEvent
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueInputEventSinglePress  Single tap or press.
  * [@constant]  HMCharacteristicValueInputEventDoublePress  Double tap or press.
  * [@constant]  HMCharacteristicValueInputEventLongPress    Long Press.

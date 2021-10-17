@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNPixelBufferObservation
  * [@superclass] VNObservation
- * 
+ * <p>
  * VNPixelBufferObservation returns the prediction of a model as a CVPixelBufferRef.
- * 
+ * <p>
  * This is the returned observations for models that are not classifiers and return an image as a prediction. The confidence for these observations is always 1.0.
  */
 @Generated

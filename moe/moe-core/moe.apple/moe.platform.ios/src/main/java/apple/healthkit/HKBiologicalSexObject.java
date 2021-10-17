@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKBiologicalSexObject
- * 
+ * <p>
  * A wrapper object for HKBiologicalSex enumeration.
  */
 @Generated

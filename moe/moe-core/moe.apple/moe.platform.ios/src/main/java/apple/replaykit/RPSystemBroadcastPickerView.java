@@ -37,7 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * RPSystemBroadcastPickerView
- * 
+ * <p>
  * View that presents the user with a button for starting iOS system broadcast using preferred broadcast service.
  */
 @Generated

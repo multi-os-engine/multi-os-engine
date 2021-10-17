@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A WKSecurityOrigin object contains information about a security origin.
- * 
+ * <p>
  * An instance of this class is a transient, data-only object;
  * it does not uniquely identify a security origin across multiple delegate method
  * calls.

@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterDataVerdict
- * 
+ * <p>
  * The NEFilterDataVerdict class declares the programmatic interface of an object that is the verdict for a flow of network data after some of the data has been seen by the filter.
- * 
+ * <p>
  * NEFilterDataVerdict is part of NetworkExtension.framework
  */
 @Generated
@@ -80,9 +80,9 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * allowVerdict
-     * 
+     * <p>
      * This class method returns a verdict indicating that the flow should be allowed.
-     * 
+     *
      * @return The NEFilterDataVerdict object.
      */
     @Generated
@@ -113,9 +113,9 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * dataVerdictWithPassBytes:peekBytes:
-     * 
+     * <p>
      * This class method returns a data verdict indicating that the filter is passing a given number of bytes through the filter and needs to see a given number of bytes after the bytes that are passed.
-     * 
+     *
      * @param passBytes The number of bytes to pass through the filter.
      * @param peekBytes The number of bytes after the end of the bytes passed that the filter wants to see in the next call to -[NEFilterDataProvider handleOutboundDataFromFlow:readBytesStartOffset:readBytes:] or -[NEFilterDataProvider handleInboundDataFromFlow:readBytesStartOffset:readBytes:].
      * @return The data flow verdict.
@@ -135,9 +135,9 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * dropVerdict
-     * 
+     * <p>
      * This class method returns a verdict indicating that the flow should be dropped.
-     * 
+     *
      * @return The NEFilterDataVerdict object.
      */
     @Generated
@@ -172,9 +172,9 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * needRulesVerdict
-     * 
+     * <p>
      * This class method returns a verdict indicating that control provider needs to be asked how to handle the data flow. The control provider can either drop or allow the flow, or update the rules and ask the data provider to decide on the data flow again.
-     * 
+     *
      * @return The NEFilterDataVerdict object.
      */
     @Generated
@@ -189,10 +189,10 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
 
     /**
      * remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:
-     * 
+     * <p>
      * This class method returns a verdict indicating that a "content blocked" page should be displayed to the user. The block page should contain a link to the given URL.
-     * 
-     * @param remediationURLMapKey Remediation map key used by data plugin to get remediation url. Passing nil will result into data provider being notified with the callback handleRemediationForFlow:
+     *
+     * @param remediationURLMapKey        Remediation map key used by data plugin to get remediation url. Passing nil will result into data provider being notified with the callback handleRemediationForFlow:
      * @param remediationButtonTextMapKey Remediation button map key used by the data plugin to get the remediation button text. Passing nil will set the button text to "Request Access"
      * @return The NEFilterDataVerdict object.
      */

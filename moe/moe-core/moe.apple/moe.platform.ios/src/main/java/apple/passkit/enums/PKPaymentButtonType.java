@@ -42,4 +42,5 @@ public final class PKPaymentButtonType {
     @Generated @NInt public static final long Support = 0x000000000000000DL;
     @Generated @NInt public static final long Contribute = 0x000000000000000EL;
     @Generated @NInt public static final long Tip = 0x000000000000000FL;
+    @Generated @NInt public static final long Continue = 0x0000000000000010L;
 }

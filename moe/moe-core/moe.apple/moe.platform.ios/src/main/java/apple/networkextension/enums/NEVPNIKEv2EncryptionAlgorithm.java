@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEv2EncryptionAlgorithm
- * 
+ * <p>
  * IKEv2 Encryption Algorithms
  */
 @Generated

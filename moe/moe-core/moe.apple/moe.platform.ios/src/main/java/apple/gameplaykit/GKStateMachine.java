@@ -146,7 +146,7 @@ public class GKStateMachine extends NSObject {
 
     /**
      * Creates a state machine with an array of possible states and an initial state.
-     * 
+     *
      * @param states a list of possible states for this state machine.
      */
     @Generated
@@ -164,7 +164,7 @@ public class GKStateMachine extends NSObject {
 
     /**
      * Returns YES if the indicated class is a a valid next state or if currentState is nil
-     * 
+     *
      * @param stateClass the class of the state to be tested
      */
     @Generated
@@ -183,7 +183,7 @@ public class GKStateMachine extends NSObject {
      * Calls canEnterState to check if we can enter the given state and then enters that state if so.
      * [GKState willExitWithNextState:] is called on the old current state.
      * [GKState didEnterWithPreviousState:] is called on the new state.
-     * 
+     *
      * @param stateClass the class of the state to switch to
      * @return YES if state was entered.  NO otherwise.
      */
@@ -202,7 +202,7 @@ public class GKStateMachine extends NSObject {
     /**
      * Gets the instance of the indicated state class from this state machine.
      * Returns nil if the state does not exist
-     * 
+     *
      * @param stateClass the class of the state to be retrieved
      */
     @Generated
@@ -211,7 +211,7 @@ public class GKStateMachine extends NSObject {
 
     /**
      * Updates the current state machine.
-     * 
+     *
      * @param sec the time, in seconds, since the last frame
      */
     @Generated

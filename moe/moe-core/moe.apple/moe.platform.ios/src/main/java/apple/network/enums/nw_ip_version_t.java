@@ -4,8 +4,8 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ip_version_t
- * 
- * 	A specific version of the Internet Protocol.
+ * <p>
+ * A specific version of the Internet Protocol.
  */
 @Generated
 public final class nw_ip_version_t {

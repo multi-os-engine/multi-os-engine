@@ -164,10 +164,6 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     public native void prepareForClassificationRequest(ILClassificationRequest request);
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 

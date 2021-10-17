@@ -40,4 +40,22 @@ public interface CPListTemplateItem {
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
     Object userInfo();
+
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * <p>
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
+    @Generated
+    @Selector("isEnabled")
+    boolean isEnabled();
+
+    /**
+     * A Boolean value indicating whether the button is enabled.
+     * <p>
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     */
+    @Generated
+    @Selector("setEnabled:")
+    void setEnabled(boolean value);
 }

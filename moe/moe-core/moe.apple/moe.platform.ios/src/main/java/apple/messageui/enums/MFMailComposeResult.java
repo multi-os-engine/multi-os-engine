@@ -21,15 +21,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]       MFMailComposeResult
- * 
+ * <p>
  * Composition result sent to the delegate upon user completion.
- * 
+ * <p>
  * This result will inform of the user's choice in regards to email composition.  If the user
- *             cancels the composition, <tt>MFMailComposeResultCancelled</tt> will be sent to the delegate.
- *             Typically <tt>MFMailComposeResultSent</tt> or <tt>MFMailComposeResultSaved</tt> will
- *             be sent, but <tt>MFMailComposeResultFailed</tt> will be sent in the case of failure.
- *             </p>Send may only be interpreted as a successful queueing of the message for later sending.
- *             The actual send will occur when the device is able to send.
+ * cancels the composition, <tt>MFMailComposeResultCancelled</tt> will be sent to the delegate.
+ * Typically <tt>MFMailComposeResultSent</tt> or <tt>MFMailComposeResultSaved</tt> will
+ * be sent, but <tt>MFMailComposeResultFailed</tt> will be sent in the case of failure.
+ * </p>Send may only be interpreted as a successful queueing of the message for later sending.
+ * The actual send will occur when the device is able to send.
  * [@constant]   MFMailComposeResultCancelled   User canceled the composition.
  * [@constant]   MFMailComposeResultSaved       User successfully saved the message.
  * [@constant]   MFMailComposeResultSent        User successfully sent/queued the message.

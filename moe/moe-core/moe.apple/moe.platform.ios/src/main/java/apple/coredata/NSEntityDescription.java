@@ -292,7 +292,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     /**
      * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes whose value must be unique over the set of instances of that entity.
-     * 
+     * <p>
      * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings must be the names of attributes on the entity) on which the constraint is registered.
      * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the entity that comprise the constraint.
      * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should refuse to initialize when given a model containing such constraints.
@@ -328,7 +328,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     /**
      * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes whose value must be unique over the set of instances of that entity.
-     * 
+     * <p>
      * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings must be the names of attributes on the entity) on which the constraint is registered.
      * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the entity that comprise the constraint.
      * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should refuse to initialize when given a model containing such constraints.

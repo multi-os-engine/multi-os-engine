@@ -36,10 +36,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMCameraStreamControlDelegate {
     /**
      * Informs the delegate that the stream has stopped.
-     * 
+     *
      * @param cameraStreamControl Sender of this message.
-     * 
-     * @param error When stream stops because of an error, 'error' will be populated.
+     * @param error               When stream stops because of an error, 'error' will be populated.
      */
     @Generated
     @IsOptional
@@ -50,7 +49,7 @@ public interface HMCameraStreamControlDelegate {
 
     /**
      * Informs the delegate that the stream has started.
-     * 
+     *
      * @param cameraStreamControl Sender of this message.
      */
     @Generated

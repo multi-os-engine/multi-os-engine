@@ -25,13 +25,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNConcatenationGradientNode
- * 
+ * <p>
  * A MPSNNSlice filter that operates as the conjugate computation for concatentation operators during training
- * 
+ * <p>
  * As concatenation is formally just a copy and not a computation, there isn't a lot of arithmetic for
- *             the slice operator to do, but we still need to extract out the relevant portion
- *             of the gradient of the input signal that went into the corresponding concatenation
- *             destination image.
+ * the slice operator to do, but we still need to extract out the relevant portion
+ * of the gradient of the input signal that went into the corresponding concatenation
+ * destination image.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,12 +102,12 @@ public class MPSNNConcatenationGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * Init a MPSNNConcatenationGradientNode
-     * 
+     * <p>
      * Generally you should use [MPSNNConcatenationNode gradientFiltersWithSources:] instead.
-     * 
-     * @param          gradientSourceNode  The gradient image functioning as input for the operator
-     * @param          sourceImage         The particular input image to the concatentation, if any, that the slice corresponds with
-     * @param          gradientState       The gradient state produced by the concatenation filter, consumed by this filter
+     *
+     * @param gradientSourceNode The gradient image functioning as input for the operator
+     * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds with
+     * @param gradientState      The gradient state produced by the concatenation filter, consumed by this filter
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:")
@@ -143,12 +143,12 @@ public class MPSNNConcatenationGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a MPSNNConcatenationGradientNode
-     * 
+     * <p>
      * Generally you should use [MPSNNConcatenationNode gradientFiltersWithSources:] instead.
-     * 
-     * @param          gradientSourceNode  The gradient image functioning as input for the operator
-     * @param          sourceImage         The particular input image to the concatentation, if any, that the slice corresponds with
-     * @param          gradientState       The gradient state produced by the concatenation filter, consumed by this filter
+     *
+     * @param gradientSourceNode The gradient image functioning as input for the operator
+     * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds with
+     * @param gradientState      The gradient state produced by the concatenation filter, consumed by this filter
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:")

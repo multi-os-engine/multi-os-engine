@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNRectangleObservation
  * [@superclass] VNObservation
- * 
+ * <p>
  * VNRectangleObservation is the result of a rectangle detector
- * 
+ * <p>
  * The VNRectangleObservation has a bounding box that encompasses the rectangle found in the image. The rectangle itself is defined by the four corner point properties. The rectangle can be rotated in or even out of plane. A common use case is to use the CIPerspectiveTransform filter to correct a detected rectangle to its 'flat upright' representation. All coordinates are normalized and the coordinates can be outside the image.
  */
 @Generated

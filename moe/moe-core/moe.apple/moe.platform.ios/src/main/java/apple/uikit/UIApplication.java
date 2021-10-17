@@ -198,7 +198,7 @@ public class UIApplication extends UIResponder {
     /**
      * When background refresh is available for an application, it may launched or resumed in the background to handle significant
      * location changes, remote notifications, background fetches, etc. Observe UIApplicationBackgroundRefreshStatusDidChangeNotification to
-     * be notified of changes. 
+     * be notified of changes.
      */
     @Generated
     @Selector("backgroundRefreshStatus")
@@ -287,7 +287,7 @@ public class UIApplication extends UIResponder {
     public native void endReceivingRemoteControlEvents();
 
     /**
-     * These methods are used to inform the system that state restoration is occuring asynchronously after the application
+     * These methods are used to inform the system that state restoration is occurring asynchronously after the application
      * has processed its restoration archive on launch. In the even of a crash, the system will be able to detect that it may
      * have been caused by a bad restoration archive and arrange to ignore it on a subsequent application launch.
      */
@@ -482,10 +482,10 @@ public class UIApplication extends UIResponder {
      * frequently than the interval provided. Set to UIApplicationBackgroundFetchIntervalMinimum to be
      * woken as frequently as the system desires, or to UIApplicationBackgroundFetchIntervalNever (the
      * default) to never be woken for a background fetch.
-     * 
-     * This setter will have no effect unless your application has the "fetch" 
+     * <p>
+     * This setter will have no effect unless your application has the "fetch"
      * UIBackgroundMode. See the UIApplicationDelegate method
-     * `application:performFetchWithCompletionHandler:` for more. 
+     * `application:performFetchWithCompletionHandler:` for more.
      */
     @Generated
     @Selector("setMinimumBackgroundFetchInterval:")

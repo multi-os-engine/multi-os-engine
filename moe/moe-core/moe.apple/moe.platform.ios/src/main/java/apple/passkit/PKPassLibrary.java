@@ -366,4 +366,19 @@ public class PKPassLibrary extends NSObject {
         @Generated
         void call_signDataWithSecureElementPassCompletion(NSData signedData, NSData signature, NSError error);
     }
+
+    /**
+     * Returns custom data for a given secure element pass, if supported by that pass
+     */
+    @Generated
+    @Selector("serviceProviderDataForSecureElementPass:completion:")
+    public native void serviceProviderDataForSecureElementPassCompletion(PKSecureElementPass secureElementPass,
+            @ObjCBlock(name = "call_serviceProviderDataForSecureElementPassCompletion") Block_serviceProviderDataForSecureElementPassCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_serviceProviderDataForSecureElementPassCompletion {
+        @Generated
+        void call_serviceProviderDataForSecureElementPassCompletion(NSData serviceProviderData, NSError error);
+    }
 }

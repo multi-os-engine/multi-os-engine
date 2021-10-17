@@ -41,8 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBService
- * 
- *      Represents a peripheral's service or a service's included service.
+ * <p>
+ * Represents a peripheral's service or a service's included service.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -157,8 +157,8 @@ public class CBService extends CBAttribute {
 
     /**
      * [@property] characteristics
-     * 
-     *      A list of CBCharacteristics that have so far been discovered in this service.
+     * <p>
+     * A list of CBCharacteristics that have so far been discovered in this service.
      */
     @Generated
     @Selector("characteristics")
@@ -166,8 +166,8 @@ public class CBService extends CBAttribute {
 
     /**
      * [@property] includedServices
-     * 
-     *      A list of included CBServices that have so far been discovered in this service.
+     * <p>
+     * A list of included CBServices that have so far been discovered in this service.
      */
     @Generated
     @Selector("includedServices")
@@ -179,8 +179,8 @@ public class CBService extends CBAttribute {
 
     /**
      * [@property] isPrimary
-     * 
-     *      The type of the service (primary or secondary).
+     * <p>
+     * The type of the service (primary or secondary).
      */
     @Generated
     @Selector("isPrimary")
@@ -188,8 +188,8 @@ public class CBService extends CBAttribute {
 
     /**
      * [@property] peripheral
-     * 
-     *      A back-pointer to the peripheral this service belongs to.
+     * <p>
+     * A back-pointer to the peripheral this service belongs to.
      */
     @Generated
     @Selector("peripheral")

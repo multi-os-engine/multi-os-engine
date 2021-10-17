@@ -55,9 +55,9 @@ public class HKActivityRingView extends UIView {
 
     /**
      * [@property]      activitySummary
-     * 
+     * <p>
      * The activity summary that is currently being displayed in the activity ring view
-     * 
+     * <p>
      * Setting this property directly will not animate ring changes
      */
     @Generated
@@ -326,9 +326,9 @@ public class HKActivityRingView extends UIView {
 
     /**
      * [@property]      activitySummary
-     * 
+     * <p>
      * The activity summary that is currently being displayed in the activity ring view
-     * 
+     * <p>
      * Setting this property directly will not animate ring changes
      */
     @Generated

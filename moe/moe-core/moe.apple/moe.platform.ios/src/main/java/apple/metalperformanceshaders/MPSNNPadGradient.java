@@ -28,63 +28,63 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNPadGradient
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Computes the gradient for the @ref MPSNNPad layer.
- *             Since the padding forward operation typically increases the size of the image, the gradient operation
- *             decreases it. In case of zero or constant padding forward operation the gradient operation slices the
- *             input gradient and in other edge modes the padded values copied in the forward operation are
- *             summed together in the gradient operation.
- *             For Example for the @ref MPSImageEdgeModeClamp the forward operation with offset = -2, destSize = 8
- *             or @ref paddingSizeBefore = 2, @ref paddingSizeAfter = 3, sourceSize = 3:
+ * Since the padding forward operation typically increases the size of the image, the gradient operation
+ * decreases it. In case of zero or constant padding forward operation the gradient operation slices the
+ * input gradient and in other edge modes the padded values copied in the forward operation are
+ * summed together in the gradient operation.
+ * For Example for the @ref MPSImageEdgeModeClamp the forward operation with offset = -2, destSize = 8
+ * or @ref paddingSizeBefore = 2, @ref paddingSizeAfter = 3, sourceSize = 3:
  * [@code]
- *             Source Image:
- *               |--------------|
- *               | x0 | x1 | x2 |
- *               |--------------|
- *             Destination Image:
- *               |---------------------------------------|
- *               | x0 | x0 | x0 | x1 | x2 | x2 | x2 | x2 |
- *               |---------------------------------------|
+ * Source Image:
+ * |--------------|
+ * | x0 | x1 | x2 |
+ * |--------------|
+ * Destination Image:
+ * |---------------------------------------|
+ * | x0 | x0 | x0 | x1 | x2 | x2 | x2 | x2 |
+ * |---------------------------------------|
  * [@endcode]
- *             Then the gradient operation becomes:
+ * Then the gradient operation becomes:
  * [@code]
- *             Source Gradient Image:
- *               |---------------------------------------|
- *               | d0 | d1 | d2 | d3 | d4 | d5 | d6 | d7 |
- *               |---------------------------------------|
- *             Destination Gradient Image:
- *               |-----------------------------|
- *               | d0+d1+d2 | d3 | d4+d5+d6+d7 |
- *               |-----------------------------|
+ * Source Gradient Image:
+ * |---------------------------------------|
+ * | d0 | d1 | d2 | d3 | d4 | d5 | d6 | d7 |
+ * |---------------------------------------|
+ * Destination Gradient Image:
+ * |-----------------------------|
+ * | d0+d1+d2 | d3 | d4+d5+d6+d7 |
+ * |-----------------------------|
  * [@endcode]
- *             Another example with @ref MPSImageEdgeModeMirror, the forward operation with offset = -4, destSize = 8
- *             or @ref paddingSizeBefore = 4, @ref paddingSizeAfter = 1, sourceSize = 3:
+ * Another example with @ref MPSImageEdgeModeMirror, the forward operation with offset = -4, destSize = 8
+ * or @ref paddingSizeBefore = 4, @ref paddingSizeAfter = 1, sourceSize = 3:
  * [@code]
- *             Source Image:
- *               |--------------|
- *               | x0 | x1 | x2 |
- *               |--------------|
- *             Destination Image:
- *               |---------------------------------------|
- *               | x0 | x1 | x2 | x1 | x0 | x1 | x2 | x1 |
- *               |---------------------------------------|
+ * Source Image:
+ * |--------------|
+ * | x0 | x1 | x2 |
+ * |--------------|
+ * Destination Image:
+ * |---------------------------------------|
+ * | x0 | x1 | x2 | x1 | x0 | x1 | x2 | x1 |
+ * |---------------------------------------|
  * [@endcode]
- *             Then the gradient operation becomes:
+ * Then the gradient operation becomes:
  * [@code]
- *             Source Gradient Image:
- *               |---------------------------------------|
- *               | d0 | d1 | d2 | d3 | d4 | d5 | d6 | d7 |
- *               |---------------------------------------|
- *             Destination Gradient Image:
- *               |-----------------------------|
- *               | d0+d4 | d1+d3+d5+d7 | d2+d6 |
- *               |-----------------------------|
+ * Source Gradient Image:
+ * |---------------------------------------|
+ * | d0 | d1 | d2 | d3 | d4 | d5 | d6 | d7 |
+ * |---------------------------------------|
+ * Destination Gradient Image:
+ * |-----------------------------|
+ * | d0+d4 | d1+d3+d5+d7 | d2+d6 |
+ * |-----------------------------|
  * [@endcode]
- * 
- *             NOTE: There are no channel fill-values to use with @ref MPSImageEdgeModeConstant
- *             since the gradient values are independent of the constant of the forward pass.
- *             NOTE: In case the forward pass defined a slice operation in feature channels then
- *             the channels not read in the forward pass will be filled with zeros in the gradient pass.
+ * <p>
+ * NOTE: There are no channel fill-values to use with @ref MPSImageEdgeModeConstant
+ * since the gradient values are independent of the constant of the forward pass.
+ * NOTE: In case the forward pass defined a slice operation in feature channels then
+ * the channels not read in the forward pass will be filled with zeros in the gradient pass.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -159,12 +159,12 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSNNPadGradient.
-     * @param      device      The MTLDevice on which to make the MPSNNPadGradient.
-     * @return     A new MPSNNPadGradient object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSNNPadGradient.
+     * @param device   The MTLDevice on which to make the MPSNNPadGradient.
+     * @return A new MPSNNPadGradient object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -172,10 +172,9 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a MPSNNPadGradient filter
-     * 
-     * @param      device  The MTLDevice on which this filter will be used
-     * 
-     * @return     A valid MPSNNPadGradient object or nil, if failure.
+     *
+     * @param device The MTLDevice on which this filter will be used
+     * @return A valid MPSNNPadGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")

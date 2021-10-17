@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNUpsamplingNearest
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Specifies the nearest spatial upsampling filter.
  */
 @Generated
@@ -114,11 +114,11 @@ public class MPSCNNUpsamplingNearest extends MPSCNNUpsampling {
 
     /**
      * Initialize the nearest spatial upsampling filter.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     integerScaleFactorX      The upsampling factor for the x dimension.
-     * @param     integerScaleFactorY      The upsampling factor for the y dimension.
-     * @return    A valid MPSCNNUpsamplingNearest object or nil, if failure.
+     *
+     * @param device              The device the filter will run on.
+     * @param integerScaleFactorX The upsampling factor for the x dimension.
+     * @param integerScaleFactorY The upsampling factor for the y dimension.
+     * @return A valid MPSCNNUpsamplingNearest object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")

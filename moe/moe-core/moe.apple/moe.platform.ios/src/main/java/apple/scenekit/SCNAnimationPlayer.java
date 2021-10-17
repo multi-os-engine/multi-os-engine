@@ -91,7 +91,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Initialize an animation player with an animation
-     * 
+     *
      * @param animation The animation to play
      */
     @Generated
@@ -305,4 +305,8 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("removeAllAnimationsWithBlendOutDuration:")
+    public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
 }

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueCurrentAirPurifierState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueCurrentAirPurifierStateInactive    Inactive.
  * [@constant]  HMCharacteristicValueCurrentAirPurifierStateIdle        Idle.
  * [@constant]  HMCharacteristicValueCurrentAirPurifierStateActive      Active.

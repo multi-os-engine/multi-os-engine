@@ -156,7 +156,7 @@ public class WKScriptMessage extends NSObject {
 
     /**
      * The body of the message.
-     * 
+     * <p>
      * Allowed types are NSNumber, NSString, NSDate, NSArray,
      * NSDictionary, and NSNull.
      */

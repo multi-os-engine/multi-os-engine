@@ -95,15 +95,15 @@ public class MPSCNNUpsamplingNearestGradientNode extends MPSNNGradientFilterNode
 
     /**
      * A node to represent the gradient calculation for nearest upsampling training.
-     * 
+     * <p>
      * [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
-     * 
-     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
-     * @param sourceImage      The input image from the forward filter node
-     * @param gradientState    The gradient state from the forward filter
-     * @param scaleFactorX     The X scale factor from the forward pass
-     * @param scaleFactorY     The Y scale factor from the forward pass
-     * @return  A MPSCNNUpsamplingNearestGradientNode
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The input image from the forward filter node
+     * @param gradientState  The gradient state from the forward filter
+     * @param scaleFactorX   The X scale factor from the forward pass
+     * @param scaleFactorY   The Y scale factor from the forward pass
+     * @return A MPSCNNUpsamplingNearestGradientNode
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:scaleFactorX:scaleFactorY:")
@@ -140,15 +140,15 @@ public class MPSCNNUpsamplingNearestGradientNode extends MPSNNGradientFilterNode
 
     /**
      * A node to represent the gradient calculation for nearest upsampling training.
-     * 
+     * <p>
      * [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
-     * 
-     * @param sourceGradient   The input gradient from the 'downstream' gradient filter.
-     * @param sourceImage      The input image from the forward filter node
-     * @param gradientState    The gradient state from the forward filter
-     * @param scaleFactorX     The X scale factor from the forward pass
-     * @param scaleFactorY     The Y scale factor from the forward pass
-     * @return  A MPSCNNUpsamplingNearestGradientNode
+     *
+     * @param sourceGradient The input gradient from the 'downstream' gradient filter.
+     * @param sourceImage    The input image from the forward filter node
+     * @param gradientState  The gradient state from the forward filter
+     * @param scaleFactorX   The X scale factor from the forward pass
+     * @param scaleFactorY   The Y scale factor from the forward pass
+     * @return A MPSCNNUpsamplingNearestGradientNode
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:scaleFactorX:scaleFactorY:")

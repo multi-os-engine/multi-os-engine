@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKBloodTypeObject
- * 
+ * <p>
  * A wrapper object for HKBloodType enumeration.
  */
 @Generated

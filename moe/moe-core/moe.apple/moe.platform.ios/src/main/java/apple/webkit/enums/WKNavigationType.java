@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] WKNavigationType
- * 
+ * <p>
  * The type of action triggering a navigation.
  * [@constant] WKNavigationTypeLinkActivated    A link with an href attribute was activated by the user.
  * [@constant] WKNavigationTypeFormSubmitted    A form was submitted.

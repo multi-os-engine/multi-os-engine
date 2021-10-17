@@ -10,10 +10,10 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * CTTelephonyNetworkInfoDelegate
- * 
+ * <p>
  * Discussion:
- *   Delegate interface for CTTelephonyNetworkInfo.
- *   All delegate callbacks are dispatched asynchronously to a global queue with QoS QOS_CLASS_DEFAULT.
+ * Delegate interface for CTTelephonyNetworkInfo.
+ * All delegate callbacks are dispatched asynchronously to a global queue with QoS QOS_CLASS_DEFAULT.
  */
 @Generated
 @Library("CoreTelephony")
@@ -22,11 +22,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface CTTelephonyNetworkInfoDelegate {
     /**
      * dataServiceIdentifierDidChange:
-     * 
+     * <p>
      * Discussion:
-     *   Selector to be invoked whenever the data service identifier changes.
-     *   This identifier is meant to be used as a key in associated dictionaries,
-     *   e.g. serviceSubscriberCellularProviders.
+     * Selector to be invoked whenever the data service identifier changes.
+     * This identifier is meant to be used as a key in associated dictionaries,
+     * e.g. serviceSubscriberCellularProviders.
      */
     @Generated
     @IsOptional

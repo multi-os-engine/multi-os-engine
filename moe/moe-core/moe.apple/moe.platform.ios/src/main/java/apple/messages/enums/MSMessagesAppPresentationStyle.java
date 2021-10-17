@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum]       MSMessagesAppPresentationStyle
- * 
+ * <p>
  * Describes how the extension is presented in Messages.
  * [@constant]   MSMessagesAppPresentationStyleCompact     The extension's UI is presented compact in the keyboard area.
  * [@constant]   MSMessagesAppPresentationStyleExpanded   The extension's UI is presented expanded taking up most of the screen.

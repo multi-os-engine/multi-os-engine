@@ -17,6 +17,7 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
+import apple.appclip.APActivationPayload;
 import apple.coreimage.CIBarcodeDescriptor;
 import apple.corenfc.NFCNDEFMessage;
 import apple.corespotlight.CSSearchableItemAttributeSet;
@@ -604,9 +605,9 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Returns the context identifier path you should deep link to.
-     * 
+     * <p>
      * For example for the context identifier path @c @["swift-programming-book", @c "chapter1"],
-     *                your app should direct the user to @em chapter1 in @em swift-programming-book.
+     * your app should direct the user to @em chapter1 in @em swift-programming-book.
      */
     @Generated
     @Selector("contextIdentifierPath")
@@ -621,7 +622,7 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * [@property] ndefMessagePayload
-     * 
+     * <p>
      * The NFC NDEF message with an Universial Link object that triggers the application launch.
      */
     @Generated
@@ -642,4 +643,13 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     @Selector("shortcutAvailability")
     @NUInt
     public native long shortcutAvailability();
+
+    /**
+     * [@property] appClipActivationPayload
+     * <p>
+     * The activation payload object that triggers the app clip launch.
+     */
+    @Generated
+    @Selector("appClipActivationPayload")
+    public native APActivationPayload appClipActivationPayload();
 }

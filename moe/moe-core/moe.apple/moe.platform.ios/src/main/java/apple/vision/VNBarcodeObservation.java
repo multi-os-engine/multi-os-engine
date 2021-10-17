@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNBarcodeObservation
  * [@superclass] VNRectangleObservation
- * 
+ * <p>
  * VNBarcodeObservation Describes an area containing a barcode detected by the VNRequestNameDetectBarcodes request.
  */
 @Generated

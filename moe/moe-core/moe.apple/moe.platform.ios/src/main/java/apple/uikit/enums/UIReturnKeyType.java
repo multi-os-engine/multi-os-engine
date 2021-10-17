@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UIReturnKeyType
- * 
+ * <p>
  * Controls the display of the return key.
- * 
+ * <p>
  * Note: This enum is under discussion and may be replaced with a
  * different implementation.
  */

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotConfigurationEAPTLSVersion
- * 
+ * <p>
  * TLS version to use during TLS handshke.
  * [@const] NEHotspotConfigurationEAPTLSVersion_1_0 TLS version 1.0.
  * [@const] NEHotspotConfigurationEAPTLSVersion_1_1 TLS version 1.1.

@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.NSURL;
@@ -40,6 +41,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -161,11 +163,11 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     /**
      * [@property]       URLAssetInitializationOptions
-     * 
+     * <p>
      * Specifies the initialization options for the creation of AVURLAssets by the receiver, e.g. AVURLAssetPreferPreciseDurationAndTimingKey. The default behavior for creation of AVURLAssets by an AVComposition is equivalent to the behavior of +[AVURLAsset URLAssetWithURL:options:] when specifying no initialization options.
-     * 
-     *   AVCompositions create AVURLAssets internally for URLs specified by AVCompositionTrackSegments of AVCompositionTracks, as needed, whenever AVCompositionTrackSegments were originally added to a track via -[AVMutableCompositionTrack setSegments:] rather than by inserting timeranges of already existing AVAssets or AVAssetTracks.
-     *   The value of URLAssetInitializationOptions can be specified at the time an AVMutableComposition is created via +compositionWithURLAssetInitializationOptions:.
+     * <p>
+     * AVCompositions create AVURLAssets internally for URLs specified by AVCompositionTrackSegments of AVCompositionTracks, as needed, whenever AVCompositionTrackSegments were originally added to a track via -[AVMutableCompositionTrack setSegments:] rather than by inserting timeranges of already existing AVAssets or AVAssetTracks.
+     * The value of URLAssetInitializationOptions can be specified at the time an AVMutableComposition is created via +compositionWithURLAssetInitializationOptions:.
      */
     @Generated
     @Selector("URLAssetInitializationOptions")
@@ -183,7 +185,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     /**
      * [@property]       naturalSize
-     * 
+     * <p>
      * Indicates the authored size of the visual portion of the composition.
      */
     @Generated
@@ -193,14 +195,13 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     /**
      * trackWithTrackID:
-     * 
+     * <p>
      * Provides an instance of AVCompositionTrack that represents the track of the specified trackID.
-     * 
-     *   Becomes callable without blocking when the key @"tracks" has been loaded
-     * 
-     * @param          trackID
-     *                 The trackID of the requested AVCompositionTrack.
-     * @return         An instance of AVCompositionTrack; may be nil if no track of the specified trackID is available.
+     * <p>
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     *
+     * @param trackID The trackID of the requested AVCompositionTrack.
+     * @return An instance of AVCompositionTrack; may be nil if no track of the specified trackID is available.
      */
     @Generated
     @Selector("trackWithTrackID:")
@@ -208,7 +209,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     /**
      * [@property]       tracks
-     * 
+     * <p>
      * Provides the array of AVCompositionTracks contained by the composition.
      */
     @Generated
@@ -217,14 +218,13 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     /**
      * tracksWithMediaCharacteristic:
-     * 
+     * <p>
      * Provides an array of AVCompositionTracks of the asset that present media with the specified characteristic.
-     * 
-     *   Becomes callable without blocking when the key @"tracks" has been loaded
-     * 
-     * @param          mediaCharacteristic
-     *                 The media characteristic according to which the receiver filters its AVCompositionTracks. (Media characteristics are defined in AVMediaFormat.h)
-     * @return         An NSArray of AVCompositionTracks; may be empty if no tracks with the specified characteristic are available.
+     * <p>
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     *
+     * @param mediaCharacteristic The media characteristic according to which the receiver filters its AVCompositionTracks. (Media characteristics are defined in AVMediaFormat.h)
+     * @return An NSArray of AVCompositionTracks; may be empty if no tracks with the specified characteristic are available.
      */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
@@ -232,16 +232,76 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     /**
      * tracksWithMediaType:
-     * 
+     * <p>
      * Provides an array of AVCompositionTracks of the asset that present media of the specified media type.
-     * 
-     *   Becomes callable without blocking when the key @"tracks" has been loaded
-     * 
-     * @param          mediaType
-     *                 The media type according to which the receiver filters its AVCompositionTracks. (Media types are defined in AVMediaFormat.h)
-     * @return         An NSArray of AVCompositionTracks; may be empty if no tracks of the specified media type are available.
+     * <p>
+     * Becomes callable without blocking when the key @"tracks" has been loaded
+     *
+     * @param mediaType The media type according to which the receiver filters its AVCompositionTracks. (Media types are defined in AVMediaFormat.h)
+     * @return An NSArray of AVCompositionTracks; may be empty if no tracks of the specified media type are available.
      */
     @Generated
     @Selector("tracksWithMediaType:")
     public native NSArray<? extends AVCompositionTrack> tracksWithMediaType(String mediaType);
+
+    /**
+     * loadTrackWithTrackID:completionHandler:
+     * <p>
+     * Loads an instance of AVCompositionTrack that represents the track of the specified trackID.
+     *
+     * @param        trackID The trackID of the requested AVCompositionTrack.
+     * @param        completionHandler A block that is called when the loading is finished, with either the loaded track (which may be nil if no track of the specified trackID is available) or an error.
+     */
+    @Generated
+    @Selector("loadTrackWithTrackID:completionHandler:")
+    public native void loadTrackWithTrackIDCompletionHandler(int trackID,
+            @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadTrackWithTrackIDCompletionHandler {
+        @Generated
+        void call_loadTrackWithTrackIDCompletionHandler(AVCompositionTrack _Nullable_result, NSError arg1);
+    }
+
+    /**
+     * loadTracksWithMediaCharacteristic:completionHandler:
+     * <p>
+     * Loads an array of AVCompositionTracks of the asset that present media with the specified characteristic.
+     *
+     * @param        mediaCharacteristic The media characteristic according to which AVAsset filters its AVCompositionTracks. (Media characteristics are defined in AVMediaFormat.h.)
+     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks with the specified characteristic are available) or an error.
+     */
+    @Generated
+    @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
+    public native void loadTracksWithMediaCharacteristicCompletionHandler(String mediaCharacteristic,
+            @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadTracksWithMediaCharacteristicCompletionHandler {
+        @Generated
+        void call_loadTracksWithMediaCharacteristicCompletionHandler(NSArray<? extends AVCompositionTrack> arg0,
+                NSError arg1);
+    }
+
+    /**
+     * loadTracksWithMediaType:completionHandler:
+     * <p>
+     * Loads an array of AVCompositionTracks of the asset that present media of the specified media type.
+     *
+     * @param        mediaType The media type according to which AVAsset filters its AVCompositionTracks. (Media types are defined in AVMediaFormat.h.)
+     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks of the specified media type are available) or an error.
+     */
+    @Generated
+    @Selector("loadTracksWithMediaType:completionHandler:")
+    public native void loadTracksWithMediaTypeCompletionHandler(String mediaType,
+            @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadTracksWithMediaTypeCompletionHandler {
+        @Generated
+        void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVCompositionTrack> arg0, NSError arg1);
+    }
 }

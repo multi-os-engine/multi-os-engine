@@ -27,11 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEDNSProxyManager
- * 
+ * <p>
  * The NEDNSProxyManager class declares the programmatic interface for an object that manages DNS proxy configurations.
- * 
+ * <p>
  * NEDNSProxyManager declares methods and properties for configuring and controlling a DNS proxy.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -116,7 +116,7 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * [@property] enabled
-     * 
+     * <p>
      * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other apps. This property will be set to NO when other DNS proxy configurations are enabled.
      */
     @Generated
@@ -133,9 +133,9 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * loadFromPreferencesWithCompletionHandler:
-     * 
+     * <p>
      * This function loads the current DNS proxy configuration from the caller's DNS proxy preferences.
-     * 
+     *
      * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -152,7 +152,7 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * [@property] localizedDescription
-     * 
+     * <p>
      * A string containing a description of the DNS proxy.
      */
     @Generated
@@ -167,7 +167,7 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * [@property] providerProtocol
-     * 
+     * <p>
      * An NEDNSProxyProviderProtocol object containing the provider-specific portion of the DNS proxy configuration.
      */
     @Generated
@@ -176,9 +176,9 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * removeFromPreferencesWithCompletionHandler:
-     * 
+     * <p>
      * This function removes the DNS proxy configuration from the caller's DNS proxy preferences. If the DNS proxy is enabled, the DNS proxy becomes disabled.
-     * 
+     *
      * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -203,9 +203,9 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * saveToPreferencesWithCompletionHandler:
-     * 
+     * <p>
      * This function saves the DNS proxy configuration in the caller's DNS proxy preferences. If the DNS proxy is enabled, it will become active.
-     * 
+     *
      * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
      */
     @Generated
@@ -222,7 +222,7 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * [@property] enabled
-     * 
+     * <p>
      * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other apps. This property will be set to NO when other DNS proxy configurations are enabled.
      */
     @Generated
@@ -231,7 +231,7 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * [@property] localizedDescription
-     * 
+     * <p>
      * A string containing a description of the DNS proxy.
      */
     @Generated
@@ -240,7 +240,7 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * [@property] providerProtocol
-     * 
+     * <p>
      * An NEDNSProxyProviderProtocol object containing the provider-specific portion of the DNS proxy configuration.
      */
     @Generated
@@ -253,7 +253,7 @@ public class NEDNSProxyManager extends NSObject {
 
     /**
      * sharedManager
-     * 
+     *
      * @return The singleton NEDNSProxyManager object for the calling process.
      */
     @Generated

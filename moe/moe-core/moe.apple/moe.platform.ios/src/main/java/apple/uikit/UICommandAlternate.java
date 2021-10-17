@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents an alternate action to take for a command.
- * 
+ * <p>
  * Two alternates are equal iff their modifierFlags are equal.
  */
 @Generated
@@ -69,9 +69,9 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
 
     /**
      * Initialize an alternate action to take for a command.
-     * 
-     * @param title Short display title. This should be localized.
-     * @param action Action to take on choosing this command alternate.
+     *
+     * @param title         Short display title. This should be localized.
+     * @param action        Action to take on choosing this command alternate.
      * @param modifierFlags Bitmask of modifier flags to choose this command alternate.
      * @return A new command alternate.
      */

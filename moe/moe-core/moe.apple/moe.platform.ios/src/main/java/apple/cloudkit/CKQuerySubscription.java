@@ -46,9 +46,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKQuerySubscription
- * 
+ * <p>
  * A subscription that fires whenever a change matching the predicate occurs.
- * 
+ * <p>
  * [@c] CKQuerySubscriptions are not supported in a @c sharedCloudDatabase
  */
 @Generated
@@ -203,7 +203,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     /**
      * Options flags describing the firing behavior subscription.
-     * 
+     * <p>
      * One of
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordCreation,
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordUpdate, or
@@ -223,6 +223,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     /**
      * Optional property.  If set, a query subscription is scoped to only record changes in the indicated zone.
+     * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the database.
      */
     @Generated
     @Selector("setZoneID:")
@@ -236,6 +237,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     /**
      * Optional property.  If set, a query subscription is scoped to only record changes in the indicated zone.
+     * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the database.
      */
     @Generated
     @Selector("zoneID")

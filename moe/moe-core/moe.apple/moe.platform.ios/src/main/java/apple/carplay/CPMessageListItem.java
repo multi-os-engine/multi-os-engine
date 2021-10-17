@@ -30,16 +30,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * selects a @c CPMessageListItem in your list template. Instead, Siri will be invoked
  * using the parameters you specify in your message item and the user will continue a
  * message compose, read, or reply flow through Siri.
- * 
+ * <p>
  * There are two modes of operation for @c CPMessageListItem:
- * 
- *   To represent an existing conversation with one or more recipients, use the @c CPMessageListItem
- *   initializer that accepts a conversation identifier. This identifier is not directly displayed
- *   to the user; rather, it should be a value meaningful to your app to identify the conversation.
- * 
- *   To represent a contact or person entity, use the @c CPMessageListItem initializer that
- *   accepts a full name and phone/email. When the user selects this item, Siri will perform
- *   a message compose flow.
+ * <p>
+ * To represent an existing conversation with one or more recipients, use the @c CPMessageListItem
+ * initializer that accepts a conversation identifier. This identifier is not directly displayed
+ * to the user; rather, it should be a value meaningful to your app to identify the conversation.
+ * <p>
+ * To represent a contact or person entity, use the @c CPMessageListItem initializer that
+ * accepts a full name and phone/email. When the user selects this item, Siri will perform
+ * a message compose flow.
  */
 @Generated
 @Library("CarPlay")
@@ -118,19 +118,19 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
 
     /**
      * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
-     * 
+     * <p>
      * [@note] The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
      * it will be scaled down to this size.
-     * 
+     *
      * @param conversationIdentifier A value meaningful to your app to identify this conversation.
-     * This identifier is not directly displayed to the user; rather, when the user selects this list item,
-     * SiriKit will pass this identifier back to your app for your own use.
-     * @param text This is the main text label displayed to the user as well as spoken by
-     * Siri when the user selects this list item.
-     * @param leadingConfiguration A set of configuration options for the leading side of the list item.
-     * @param trailingConfiguration A set of configuration options for the trailing side of the list item.
-     * @param detailText Any additional text displayed underneath the @c conversationName.
-     * @param trailingText Any additional text displayed along the trailing side of the cell.
+     *                               This identifier is not directly displayed to the user; rather, when the user selects this list item,
+     *                               SiriKit will pass this identifier back to your app for your own use.
+     * @param text                   This is the main text label displayed to the user as well as spoken by
+     *                               Siri when the user selects this list item.
+     * @param leadingConfiguration   A set of configuration options for the leading side of the list item.
+     * @param trailingConfiguration  A set of configuration options for the trailing side of the list item.
+     * @param detailText             Any additional text displayed underneath the @c conversationName.
+     * @param trailingText           Any additional text displayed along the trailing side of the cell.
      */
     @Generated
     @Selector("initWithConversationIdentifier:text:leadingConfiguration:trailingConfiguration:detailText:trailingText:")
@@ -140,18 +140,18 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
 
     /**
      * Initialize a @c CPMessageListItem for use in a @c CPListTemplate.
-     * 
+     * <p>
      * [@note] The maximum image size is CPMaximumMessageItemImageSize. If you supply a larger image,
      * it will be scaled down to this size.
-     * 
-     * @param fullName The full name of the contact entity represented by this list item. This text
-     * will be displayed as the main text label in the cell and will be spoken by Siri.
-     * @param phoneOrEmailAddress A phone or email address for this contact entity that can be used
-     * to compose a message.
-     * @param leadingConfiguration A set of configuration options for the leading side of the list item.
+     *
+     * @param fullName              The full name of the contact entity represented by this list item. This text
+     *                              will be displayed as the main text label in the cell and will be spoken by Siri.
+     * @param phoneOrEmailAddress   A phone or email address for this contact entity that can be used
+     *                              to compose a message.
+     * @param leadingConfiguration  A set of configuration options for the leading side of the list item.
      * @param trailingConfiguration A set of configuration options for the trailing side of the list item.
-     * @param detailText Any additional text displayed underneath the @c conversationName.
-     * @param trailingText Any additional text displayed along the trailing side of the cell.
+     * @param detailText            Any additional text displayed underneath the @c conversationName.
+     * @param trailingText          Any additional text displayed along the trailing side of the cell.
      */
     @Generated
     @Selector("initWithFullName:phoneOrEmailAddress:leadingConfiguration:trailingConfiguration:detailText:trailingText:")
@@ -267,4 +267,12 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
 }

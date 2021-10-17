@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UIKeyboardType
- * 
+ * <p>
  * Requests that a particular keyboard type be displayed when a text widget
  * becomes first responder.
  * Note: Some keyboard/input methods types may not support every variant.

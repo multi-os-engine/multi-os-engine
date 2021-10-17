@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MDLNoiseTexture
  * [@summary] a noise texture containing vector or scalar noise
- * 
+ * <p>
  * the texture will be created if data is referenced, otherwise, this
  * object is merely a description
  */

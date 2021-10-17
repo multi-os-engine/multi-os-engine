@@ -155,7 +155,7 @@ public class UIFocusUpdateContext extends NSObject {
     public static native long version_static();
 
     /**
-     * The focus heading in which the update is occuring.
+     * The focus heading in which the update is occurring.
      */
     @Generated
     @Selector("focusHeading")

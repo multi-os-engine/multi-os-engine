@@ -111,9 +111,8 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     /**
      * Creates a calendar event
-     * 
+     *
      * @param fireDateComponents The date component that specifies the time when the event is fired
-     * 
      * @return Instance object representing the event trigger.
      */
     @Generated

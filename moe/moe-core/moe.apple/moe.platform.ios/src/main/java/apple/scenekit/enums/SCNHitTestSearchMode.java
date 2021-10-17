@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNHitTestSearchMode
- * 
+ * <p>
  * hit test modes
  */
 @Generated

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueTargetHumidifierDehumidifierState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueTargetHumidifierDehumidifierStateAutomatic   Humidifier or Dehumidifier.
  * [@constant]  HMCharacteristicValueTargetHumidifierDehumidifierStateHumidify    Humidifier.
  * [@constant]  HMCharacteristicValueTargetHumidifierDehumidifierStateDehumidify  Dehumidifier.

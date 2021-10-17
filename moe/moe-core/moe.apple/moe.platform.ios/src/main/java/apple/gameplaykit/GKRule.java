@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The concrete class that the GKRuleSystem uses to evaluate the current state and facts with predicated rules.
  * These are sharable between systems, so don't retain any state in the rules themselves. Use the system-provided
  * state storage.
- * 
+ *
  * @see GKRuleSystem.state
  */
 @Generated
@@ -189,12 +189,12 @@ public class GKRule extends NSObject {
      * Called by the rule system when it is this rule's turn to be evaluated. If the predicate returns YES then
      * the action for the rule will be performed. Once the action is performed the rule will move to the system's
      * executed list until the agenda is reset.
-     * 
+     *
+     * @return YES is the predicate passes and the action needs to be performed, NO otherwise.
      * @see performAction
      * @see GKRuleSystem.agenda
      * @see GKRuleSystem.executed
      * @see GKRuleSystem.reset
-     * @return YES is the predicate passes and the action needs to be performed, NO otherwise.
      */
     @Generated
     @Selector("evaluatePredicateWithSystem:")
@@ -216,9 +216,9 @@ public class GKRule extends NSObject {
     /**
      * Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
      * be evaluated before another rule in the agenda that has a lower salience.
-     * 
+     * <p>
      * Defaults to 0.
-     * 
+     *
      * @see GKRuleSystem.agenda
      */
     @Generated
@@ -229,9 +229,9 @@ public class GKRule extends NSObject {
     /**
      * Salience defines the order in the rule agenda that the system will evaluate. A rule with higher salience will
      * be evaluated before another rule in the agenda that has a lower salience.
-     * 
+     * <p>
      * Defaults to 0.
-     * 
+     *
      * @see GKRuleSystem.agenda
      */
     @Generated

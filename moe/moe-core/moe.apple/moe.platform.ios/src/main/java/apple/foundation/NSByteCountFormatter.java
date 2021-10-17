@@ -294,7 +294,7 @@ public class NSByteCountFormatter extends NSFormatter {
 
     /**
      * Formats `obj` as a byte count (if `obj` is an `NSNumber`) or specific byte measurement (if `obj` is an `NSMeasurement`) using the receiver's settings.
-     * 
+     * <p>
      * Returns `nil` if `obj` is not of the correct class (`NSNumber` or `NSMeasurement`).
      * Throws an exception if `obj` is an `NSMeasurement` whose unit does not belong to the `NSUnitInformationStorage` dimension.
      */
@@ -305,7 +305,7 @@ public class NSByteCountFormatter extends NSFormatter {
     /**
      * Formats the value of the given measurement using the receiver's `countStyle`.
      * Converts the measurement to the units allowed by the receiver's `allowedUnits` before formatting; depending on the value of the measurement, this may result in a string which implies an approximate value (e.g. if the measurement is too large to represent in `allowedUnits`, like `1e20 YB` expressed in `NSByteCountFormatterUseBytes`).
-     * 
+     * <p>
      * Throws an exception if the given measurement's unit does not belong to the `NSUnitInformationStorage` dimension.
      */
     @Generated
@@ -314,7 +314,7 @@ public class NSByteCountFormatter extends NSFormatter {
 
     /**
      * Formats the value of the given measurement using the given `countStyle`.
-     * 
+     * <p>
      * Throws an exception if the given measurement's unit does not belong to the `NSUnitInformationStorage` dimension.
      */
     @Generated

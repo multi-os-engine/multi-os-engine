@@ -12,4 +12,5 @@ public final class IOSurfaceComponentType {
     @Generated public static final int UnsignedInteger = 0x00000001;
     @Generated public static final int SignedInteger = 0x00000002;
     @Generated public static final int Float = 0x00000003;
+    @Generated public static final int SignedNormalized = 0x00000004;
 }

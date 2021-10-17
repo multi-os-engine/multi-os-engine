@@ -25,8 +25,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * ===================================================================================================
- *  Responders that implement the UIKeyInput protocol will be driven by the system-provided keyboard,
- *  which will be made available whenever a conforming responder becomes first responder.
+ * Responders that implement the UIKeyInput protocol will be driven by the system-provided keyboard,
+ * which will be made available whenever a conforming responder becomes first responder.
  */
 @Generated
 @Library("UIKit")

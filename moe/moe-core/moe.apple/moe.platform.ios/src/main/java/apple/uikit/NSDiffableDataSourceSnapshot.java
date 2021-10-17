@@ -26,19 +26,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A NSDiffableDataSourceSnapshot represents the complete state of a UI element (e.g. UICollectionView)
- * 
- *    Snapshots can be created in two ways:
- *    1. From a connected data source: e.g. UICollectionViewDiffableDataSource.snapshot()
- *       This will contain the current state of the UI element.
- * 
- *    2. Constructing a new instance: e.g. NSDiffableDataSourceSnapshot<Int,UUID>()
- *       This will construct an empty snapshot with no section or item identifiers.
- * 
- *    Notes:
- *      1. All identifiers must be unique. Section and Item identifiers do not overlap and may contain values that exist in the other (i.e. it is OK
- *         to have a section identifier == 1 and an item identifier == 1)
- * 
- *      2. If you pass duplicate values in an item or section array (e.g. -appendItemsWithIdentifiers:), the system will throw an exception.
+ * <p>
+ * Snapshots can be created in two ways:
+ * 1. From a connected data source: e.g. UICollectionViewDiffableDataSource.snapshot()
+ * This will contain the current state of the UI element.
+ * <p>
+ * 2. Constructing a new instance: e.g. NSDiffableDataSourceSnapshot<Int,UUID>()
+ * This will construct an empty snapshot with no section or item identifiers.
+ * <p>
+ * Notes:
+ * 1. All identifiers must be unique. Section and Item identifiers do not overlap and may contain values that exist in the other (i.e. it is OK
+ * to have a section identifier == 1 and an item identifier == 1)
+ * <p>
+ * 2. If you pass duplicate values in an item or section array (e.g. -appendItemsWithIdentifiers:), the system will throw an exception.
  */
 @Generated
 @Library("UIKit")
@@ -300,4 +300,24 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does not replace the
+     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the item.
+     */
+    @Generated
+    @Selector("reconfigureItemsWithIdentifiers:")
+    public native void reconfigureItemsWithIdentifiers(NSArray<_ItemIdentifierType> identifiers);
+
+    @Generated
+    @Selector("reconfiguredItemIdentifiers")
+    public native NSArray<_ItemIdentifierType> reconfiguredItemIdentifiers();
+
+    @Generated
+    @Selector("reloadedItemIdentifiers")
+    public native NSArray<_ItemIdentifierType> reloadedItemIdentifiers();
+
+    @Generated
+    @Selector("reloadedSectionIdentifiers")
+    public native NSArray<_SectionIdentifierType> reloadedSectionIdentifiers();
 }

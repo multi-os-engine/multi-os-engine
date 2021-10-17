@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A configuration for running face tracking.
- * 
+ * <p>
  * Face tracking uses the front facing camera to track the face in 3D providing details on the topology and expression of the face.
  * A detected face will be added to the session as an ARFaceAnchor object which contains information about head pose, mesh, eye pose, and blend shape
  * coefficients. If light estimation is enabled the detected face will be treated as a light probe and used to estimate the direction of incoming light.
@@ -151,7 +151,7 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable World Tracking. Disabled by default.
-     * 
+     * <p>
      * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world. The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
      */
     @Generated
@@ -160,7 +160,7 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of faces to track simultaneously.
-     * 
+     * <p>
      * Setting the maximum number of tracked faces will limit the number of faces that can be tracked in a given frame.
      * If more than the maximum is visible, only the faces already being tracked will continue to track until tracking is lost or another face is removed.
      * Default value is one.
@@ -172,7 +172,7 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of faces to track simultaneously.
-     * 
+     * <p>
      * Setting the maximum number of tracked faces will limit the number of faces that can be tracked in a given frame.
      * If more than the maximum is visible, only the faces already being tracked will continue to track until tracking is lost or another face is removed.
      * Default value is one.
@@ -183,7 +183,7 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable World Tracking. Disabled by default.
-     * 
+     * <p>
      * When enabled, ARSession uses the back facing camera to track the device's orientation and position in the world. The camera transform and the ARFaceAnchor transform will be in the world coordinate space.
      */
     @Generated

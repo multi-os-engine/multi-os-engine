@@ -138,4 +138,32 @@ public interface UIResponderStandardEditActions {
         @Generated
         NSDictionary<String, ?> call_updateTextAttributesWithConversionHandler(NSDictionary<String, ?> arg0);
     }
+
+    @Generated
+    @IsOptional
+    @Selector("pasteAndGo:")
+    default void pasteAndGo(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("pasteAndMatchStyle:")
+    default void pasteAndMatchStyle(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("pasteAndSearch:")
+    default void pasteAndSearch(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("print:")
+    default void print(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

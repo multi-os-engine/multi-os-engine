@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVPlayerActionAtItemEnd
- * 
+ * <p>
  * These constants are the allowable values of AVPlayer's actionAtItemEnd property.
- * 
+ * <p>
  * [@constant]	 AVPlayerActionAtItemEndAdvance
  * Indicates that when an AVPlayerItem reaches its end time the player will automatically advance to the next item in its queue.
  * This value is supported only for players of class AVQueuePlayer. An AVPlayer that's not an AVQueuePlayer will raise an NSInvalidArgumentException if an attempt is made to set its actionAtItemEnd to AVPlayerActionAtItemEndAdvance.

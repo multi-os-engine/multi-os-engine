@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEIPv4Route
- * 
+ * <p>
  * The NEIPv4Route class declares the programmatic interface for an object that contains settings for an IPv4 route.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -106,7 +106,7 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * defaultRoute
-     * 
+     *
      * @return A route object that represents the IPv4 default route.
      */
     @Generated
@@ -182,7 +182,7 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] destinationAddress
-     * 
+     * <p>
      * An IPv4 address represented as a dotted decimal string.
      */
     @Generated
@@ -191,7 +191,7 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] destinationSubnetMask
-     * 
+     * <p>
      * An IPv4 subnet mask represented as a dotted decimal string. This mask in combination with the destinationAddress property is used to determine the destination network of the route.
      */
     @Generated
@@ -204,7 +204,7 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] gatewayAddress
-     * 
+     * <p>
      * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
      */
     @Generated
@@ -221,10 +221,10 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * initWithDestinationAddress:subnetMask:
-     * 
+     * <p>
      * Initialize a newly-allocated NEIPv4Route.
-     * 
-     * @param address The IPv4 address of the destination network.
+     *
+     * @param address    The IPv4 address of the destination network.
      * @param subnetMask The subnet mask of the destination network.
      * @return The initialized NEIPv4Route.
      */
@@ -234,7 +234,7 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] gatewayAddress
-     * 
+     * <p>
      * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
      */
     @Generated

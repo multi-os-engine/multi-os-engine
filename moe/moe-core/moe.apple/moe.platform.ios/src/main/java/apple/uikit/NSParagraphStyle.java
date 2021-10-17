@@ -331,4 +331,11 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("lineBreakStrategy")
     @NUInt
     public native long lineBreakStrategy();
+
+    /**
+     * A property controlling the hyphenation behavior for the paragraph associated with the paragraph style. The exact hyphenation logic is dynamically determined by the layout context such as language, platform, etc. When YES, it affects the return value from -hyphenationFactor when the property is set to 0.0.
+     */
+    @Generated
+    @Selector("usesDefaultHyphenation")
+    public native boolean usesDefaultHyphenation();
 }

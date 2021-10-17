@@ -126,21 +126,15 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     /**
      * Fully specify a @c CPNavigationAlert with a title, image, primary and secondary action,
      * and duration.
-     * 
-     * @param titleVariants An array of titles. The system will select a title that fits in the available space. The variant strings should be provided as localized, displayable content.
-     * 
+     *
+     * @param titleVariants    An array of titles. The system will select a title that fits in the available space. The variant strings should be provided as localized, displayable content.
      * @param subtitleVariants An array of subtitles. The system will select a subtitle that fits in the available space. The variant strings should be provided as localized, displayable content.
-     * 
-     * @param imageSet An optional @c CPImageSet to display in this navigation alert. Animated images are not supported.
-     * If an animated image is provided, only the first image from each image set will be used.
-     * 
-     * @param primaryAction The alert must include at least one action button.
-     * 
-     * @param secondaryAction An optional secondary button to display on the trailing edge of this alert.
-     * 
-     * @param duration The duration for which this alert should be visible. Specify 0 for an alert
-     * that displays indefinitely.
-     * 
+     * @param imageSet         An optional @c CPImageSet to display in this navigation alert. Animated images are not supported.
+     *                         If an animated image is provided, only the first image from each image set will be used.
+     * @param primaryAction    The alert must include at least one action button.
+     * @param secondaryAction  An optional secondary button to display on the trailing edge of this alert.
+     * @param duration         The duration for which this alert should be visible. Specify 0 for an alert
+     *                         that displays indefinitely.
      * @return an initialized @c CPNavigationAlert.
      */
     @Generated
@@ -221,10 +215,10 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     /**
      * The navigation alert may be updated with new title and subtitle variants, either
      * after it has already been displayed on screen, or before its initial presentation on screen.
-     * 
+     * <p>
      * Updating an alert that has been already been dismissed has no effect.
-     * 
-     * @param newTitleVariants an updated array of title variants
+     *
+     * @param newTitleVariants    an updated array of title variants
      * @param newSubtitleVariants an updated array of subtitle variants
      */
     @Generated

@@ -22,15 +22,15 @@ import org.moe.natj.general.ann.Generated;
  * kCGPatternTilingNoDistortion: The pattern cell is not distorted when
  * painted, however the spacing between pattern cells may vary by as much as
  * 1 device pixel.
- * 
+ * <p>
  * kCGPatternTilingConstantSpacingMinimalDistortion: Pattern cells are
  * spaced consistently, however the pattern cell may be distorted by as much
  * as 1 device pixel when the pattern is painted.
- * 
+ * <p>
  * kCGPatternTilingConstantSpacing: Pattern cells are spaced consistently as
  * with kCGPatternTilingConstantSpacingMinimalDistortion, however the
  * pattern cell may be distorted additionally to permit a more efficient
- * implementation. 
+ * implementation.
  */
 @Generated
 public final class CGPatternTiling {

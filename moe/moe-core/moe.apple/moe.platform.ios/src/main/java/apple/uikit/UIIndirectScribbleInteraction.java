@@ -28,8 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An interaction that allows using Scribble to enter text by handwriting on a view that is not formally a text input. Use UIIndirectScribbleInteraction if your app has a view that looks to the user as a text input but does not implement UITextInput. It makes the view act as a container of one or more virtual "Text Input Elements", each of which defines an area the user can write into without having to tap first.
  * Some examples of when UIIndirectScribbleInteraction can be used:
- *   - A view that looks like a search field or a text field that in reality is a button, but installs a real text field when tapped
- *   - A view that contains multiple virtual text fields which the user can normally tap and type into, but are not full blown text fields all the time
+ * - A view that looks like a search field or a text field that in reality is a button, but installs a real text field when tapped
+ * - A view that contains multiple virtual text fields which the user can normally tap and type into, but are not full blown text fields all the time
  */
 @Generated
 @Library("UIKit")

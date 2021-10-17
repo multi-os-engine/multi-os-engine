@@ -44,18 +44,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMPedometer
- * 
+ * <p>
  * Discussion:
- *     CMPedometer allows access to the user's pedestrian activity. The
- *     activity can be retrieved in one of two ways:
- * 
- *     1. Via a query specifying a time range from which the pedometer data is
- *     tabulated and returned.
- *     (See queryPedometerDataFromDate:toDate:withHandler:)
- * 
- *     2. By providing a block to startPedometerUpdatesFromDate:withHandler:,
- *     pedometer updates will be provided on a best effort basis. Pedometer
- *     updates can be stopped by calling stopPedometerUpdates.
+ * CMPedometer allows access to the user's pedestrian activity. The
+ * activity can be retrieved in one of two ways:
+ * <p>
+ * 1. Via a query specifying a time range from which the pedometer data is
+ * tabulated and returned.
+ * (See queryPedometerDataFromDate:toDate:withHandler:)
+ * <p>
+ * 2. By providing a block to startPedometerUpdatesFromDate:withHandler:,
+ * pedometer updates will be provided on a best effort basis. Pedometer
+ * updates can be stopped by calling stopPedometerUpdates.
  */
 @Generated
 @Library("CoreMotion")
@@ -135,10 +135,10 @@ public class CMPedometer extends NSObject {
 
     /**
      * isCadenceAvailable
-     * 
+     * <p>
      * Discussion:
-     *     Determines whether the device supports cadence estimation
-     *     in addition to step counting.
+     * Determines whether the device supports cadence estimation
+     * in addition to step counting.
      */
     @Generated
     @Selector("isCadenceAvailable")
@@ -146,10 +146,10 @@ public class CMPedometer extends NSObject {
 
     /**
      * isDistanceAvailable
-     * 
+     * <p>
      * Discussion:
-     *     Determines whether the device supports distance estimation
-     *     in addition to step counting.
+     * Determines whether the device supports distance estimation
+     * in addition to step counting.
      */
     @Generated
     @Selector("isDistanceAvailable")
@@ -157,10 +157,10 @@ public class CMPedometer extends NSObject {
 
     /**
      * isFloorCountingAvailable
-     * 
+     * <p>
      * Discussion:
-     *     Determines whether the device supports counting flights of stairs
-     *     in addition to step counting.
+     * Determines whether the device supports counting flights of stairs
+     * in addition to step counting.
      */
     @Generated
     @Selector("isFloorCountingAvailable")
@@ -168,10 +168,10 @@ public class CMPedometer extends NSObject {
 
     /**
      * isPaceAvailable
-     * 
+     * <p>
      * Discussion:
-     *     Determines whether the device supports pace estimation
-     *     in addition to step counting.
+     * Determines whether the device supports pace estimation
+     * in addition to step counting.
      */
     @Generated
     @Selector("isPaceAvailable")
@@ -179,9 +179,9 @@ public class CMPedometer extends NSObject {
 
     /**
      * isPedometerEventTrackingAvailable
-     * 
+     * <p>
      * Discussion:
-     *     Determines whether the device supports pedometer events.
+     * Determines whether the device supports pedometer events.
      */
     @Generated
     @Selector("isPedometerEventTrackingAvailable")
@@ -189,9 +189,9 @@ public class CMPedometer extends NSObject {
 
     /**
      * isStepCountingAvailable
-     * 
+     * <p>
      * Discussion:
-     *     Determines whether the device supports step counting functionality.
+     * Determines whether the device supports step counting functionality.
      */
     @Generated
     @Selector("isStepCountingAvailable")
@@ -238,12 +238,12 @@ public class CMPedometer extends NSObject {
 
     /**
      * queryPedometerDataFromDate:toDate:withHandler:
-     * 
+     * <p>
      * Discussion:
-     *     Queries for the user's pedestrian activity in the given time range. Data
-     *     is available for up to 7 days. The data returned is computed from a
-     *     system-wide history that is continuously being collected in the
-     *     background. The result is returned on a serial queue.
+     * Queries for the user's pedestrian activity in the given time range. Data
+     * is available for up to 7 days. The data returned is computed from a
+     * system-wide history that is continuously being collected in the
+     * background. The result is returned on a serial queue.
      */
     @Generated
     @Selector("queryPedometerDataFromDate:toDate:withHandler:")
@@ -252,10 +252,10 @@ public class CMPedometer extends NSObject {
 
     /**
      * startPedometerEventUpdatesWithHandler:
-     * 
+     * <p>
      * Discussion:
-     *     Starts pedometer event updates on a serial queue.
-     *     Events are available only when the apps are running in foreground / background.
+     * Starts pedometer event updates on a serial queue.
+     * Events are available only when the apps are running in foreground / background.
      */
     @Generated
     @Selector("startPedometerEventUpdatesWithHandler:")
@@ -264,16 +264,16 @@ public class CMPedometer extends NSObject {
 
     /**
      * startPedometerUpdatesFromDate:withHandler:
-     * 
+     * <p>
      * Discussion:
-     *     Starts a series of continuous pedometer updates to the
-     *     handler on a serial queue. For each update, the app
-     *     will receive the cumulative pedestrian activity since the
-     *     start date specified and the timestamp associated with the
-     *     latest determination. If the app is backgrounded and resumed
-     *     at a later time, the app will receive all of the pedestrian
-     *     activity accumulated during the background period in the
-     *     very next update.
+     * Starts a series of continuous pedometer updates to the
+     * handler on a serial queue. For each update, the app
+     * will receive the cumulative pedestrian activity since the
+     * start date specified and the timestamp associated with the
+     * latest determination. If the app is backgrounded and resumed
+     * at a later time, the app will receive all of the pedestrian
+     * activity accumulated during the background period in the
+     * very next update.
      */
     @Generated
     @Selector("startPedometerUpdatesFromDate:withHandler:")
@@ -282,9 +282,9 @@ public class CMPedometer extends NSObject {
 
     /**
      * stopPedometerEventUpdates
-     * 
+     * <p>
      * Discussion:
-     *     Stops pedometer event updates.
+     * Stops pedometer event updates.
      */
     @Generated
     @Selector("stopPedometerEventUpdates")
@@ -292,9 +292,9 @@ public class CMPedometer extends NSObject {
 
     /**
      * stopPedometerUpdates
-     * 
+     * <p>
      * Discussion:
-     *     Stops pedometer updates.
+     * Stops pedometer updates.
      */
     @Generated
     @Selector("stopPedometerUpdates")
@@ -323,9 +323,9 @@ public class CMPedometer extends NSObject {
 
     /**
      * authorizationStatus
-     * 
+     * <p>
      * Discussion:
-     *     Returns the current authorization status for pedometer.
+     * Returns the current authorization status for pedometer.
      */
     @Generated
     @Selector("authorizationStatus")

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- *  [@enum] CBAttributePermissions
- * 
+ * [@enum] CBAttributePermissions
+ * <p>
  * Read, write, and encryption permissions for an ATT attribute. Can be combined.
- * 
+ * <p>
  * [@constant] CBAttributePermissionsReadable					Read-only.
  * [@constant] CBAttributePermissionsWriteable					Write-only.
  * [@constant] CBAttributePermissionsReadEncryptionRequired		Readable by trusted devices.

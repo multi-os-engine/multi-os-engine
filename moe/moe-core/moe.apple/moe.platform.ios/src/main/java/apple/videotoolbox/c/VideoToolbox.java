@@ -69,19 +69,19 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTSessionCopySupportedPropertyDictionary
-     * 
+     * <p>
      * Returns a dictionary enumerating all the supported properties of a video toolbox session.
-     * 
-     * 	The keys of the returned dictionary are the supported property keys.
-     * 	The values are themselves dictionaries, each containing the following optional fields:
-     * 	<OL>
-     * 	<LI> the type of value, (kVTPropertyTypeKey)
-     * 	<LI> the read/write status of the property (kVTPropertyReadWriteStatusKey),
-     * 	<LI> whether the property is suitable for serialization (kVTPropertyShouldBeSerializedKey),
-     * 	<LI> a range or list of the supported values, if appropriate, and
-     * 	<LI> developer-level documentation for the property (kVTPropertyDocumentationKey).
-     * 	</OL>
-     * 	The caller must release the returned dictionary.
+     * <p>
+     * The keys of the returned dictionary are the supported property keys.
+     * The values are themselves dictionaries, each containing the following optional fields:
+     * <OL>
+     * <LI> the type of value, (kVTPropertyTypeKey)
+     * <LI> the read/write status of the property (kVTPropertyReadWriteStatusKey),
+     * <LI> whether the property is suitable for serialization (kVTPropertyShouldBeSerializedKey),
+     * <LI> a range or list of the supported values, if appropriate, and
+     * <LI> developer-level documentation for the property (kVTPropertyDocumentationKey).
+     * </OL>
+     * The caller must release the returned dictionary.
      */
     @Generated
     @CFunction
@@ -90,10 +90,10 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTSessionSetProperty
-     * 
+     * <p>
      * Sets a property on a video toolbox session.
-     * 
-     * 	Setting a property value to NULL restores the default value.
+     * <p>
+     * Setting a property value to NULL restores the default value.
      */
     @Generated
     @CFunction
@@ -102,27 +102,23 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTSessionCopyProperty
-     * 
+     * <p>
      * Retrieves a property on a video toolbox session.
-     * 
-     * 	The caller must release the retrieved property value.
-     * 	<BR>
-     * 	Note: for most types of property, the returned values should be considered immutable.
-     * 	In particular, for CFPropertyList types, sharing of mutable property value 
-     * 	objects between the client, session and codec should be avoided.
-     * 	However, some properties will be used for exchanging service objects that are inherently 
-     * 	mutable (eg, CVPixelBufferPool).
-     * 
-     * @param	propertyKey
-     * 	The key for the property to retrieve.
-     * @param	allocator
-     * 	An allocator suitable for use when copying property values.
-     * @param propertyValueOut
-     * 	Points to a variable to receive the property value, which must be a CF-registered type --
-     * 	the caller may call CFGetTypeID() on it to identify which specific type.
-     * 	The caller must release the this property value.
-     * @return
-     * 	noErr if successful; kVTPropertyNotSupportedErr for unrecognized or unsupported properties.
+     * <p>
+     * The caller must release the retrieved property value.
+     * <BR>
+     * Note: for most types of property, the returned values should be considered immutable.
+     * In particular, for CFPropertyList types, sharing of mutable property value
+     * objects between the client, session and codec should be avoided.
+     * However, some properties will be used for exchanging service objects that are inherently
+     * mutable (eg, CVPixelBufferPool).
+     *
+     * @param propertyValueOut Points to a variable to receive the property value, which must be a CF-registered type --
+     *                         the caller may call CFGetTypeID() on it to identify which specific type.
+     *                         The caller must release the this property value.
+     * @return noErr if successful; kVTPropertyNotSupportedErr for unrecognized or unsupported properties.
+     * @param    propertyKey The key for the property to retrieve.
+     * @param    allocator An allocator suitable for use when copying property values.
      */
     @Generated
     @CFunction
@@ -131,10 +127,10 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTSessionSetProperties
-     * 
+     * <p>
      * Sets multiple properties at once.
-     * 
-     * 	Sets the properties specified by keys in propertyDictionary to the corresponding values.
+     * <p>
+     * Sets the properties specified by keys in propertyDictionary to the corresponding values.
      */
     @Generated
     @CFunction
@@ -142,11 +138,11 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTSessionCopySerializableProperties
-     * 
+     * <p>
      * Retrieves the set of serializable property keys and their current values.
-     * 
-     * 	The serializable properties are those which can be saved and applied to a different session.
-     * 	The caller must release the returned dictionary.
+     * <p>
+     * The serializable properties are those which can be saved and applied to a different session.
+     * The caller must release the returned dictionary.
      */
     @Generated
     @CFunction
@@ -155,39 +151,29 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionCreate
-     * 
+     * <p>
      * Creates a session for compressing video frames.
-     * 
-     * 	Compressed frames will be emitted through calls to outputCallback.
-     * 
-     * @param	allocator
-     * 	An allocator for the session.  Pass NULL to use the default allocator.
-     * @param	width
-     * 	The width of frames, in pixels.  
-     * 	If the video encoder cannot support the provided width and height it may change them.
-     * @param	height
-     * 	The height of frames in pixels.
-     * @param	cType
-     * 	The codec type.
-     * @param	encoderSpecification
-     * 	Specifies a particular video encoder that must be used.  
-     * 	Pass NULL to let the video toolbox choose a encoder.
-     * @param	sourceImageBufferAttributes
-     * 	Required attributes for source pixel buffers, used when creating a pixel buffer pool 
-     * 	for source frames.  If you do not want the Video Toolbox to create one for you, pass NULL.
-     * 	(Using pixel buffers not allocated by the Video Toolbox may increase the chance that
-     * 	it will be necessary to copy image data.)
-     * @param	compressedDataAllocator
-     * 	An allocator for the compressed data.  Pass NULL to use the default allocator.
-     * 		Note: on MacOS 10.12 and later, using a compressedDataAllocator may trigger an extra buffer copy.
-     * @param	outputCallback
-     * 	The callback to be called with compressed frames.
-     * 	This function may be called asynchronously, on a different thread from the one that calls VTCompressionSessionEncodeFrame.
-     * 	Pass NULL if and only if you will be calling VTCompressionSessionEncodeFrameWithOutputHandler for encoding frames.
-     * @param	outputCallbackRefCon
-     * 	Client-defined reference value for the output callback.
-     * @param	compressionSessionOut
-     * 	Points to a variable to receive the new compression session.
+     * <p>
+     * Compressed frames will be emitted through calls to outputCallback.
+     *
+     * @param    allocator An allocator for the session.  Pass NULL to use the default allocator.
+     * @param    width The width of frames, in pixels.
+     * If the video encoder cannot support the provided width and height it may change them.
+     * @param    height The height of frames in pixels.
+     * @param    cType The codec type.
+     * @param    encoderSpecification Specifies a particular video encoder that must be used.
+     * Pass NULL to let the video toolbox choose a encoder.
+     * @param    sourceImageBufferAttributes Required attributes for source pixel buffers, used when creating a pixel buffer pool
+     * for source frames.  If you do not want the Video Toolbox to create one for you, pass NULL.
+     * (Using pixel buffers not allocated by the Video Toolbox may increase the chance that
+     * it will be necessary to copy image data.)
+     * @param    compressedDataAllocator An allocator for the compressed data.  Pass NULL to use the default allocator.
+     * Note: on MacOS 10.12 and later, using a compressedDataAllocator may trigger an extra buffer copy.
+     * @param    outputCallback The callback to be called with compressed frames.
+     * This function may be called asynchronously, on a different thread from the one that calls VTCompressionSessionEncodeFrame.
+     * Pass NULL if and only if you will be calling VTCompressionSessionEncodeFrameWithOutputHandler for encoding frames.
+     * @param    outputCallbackRefCon Client-defined reference value for the output callback.
+     * @param    compressionSessionOut Points to a variable to receive the new compression session.
      */
     @Generated
     @CFunction
@@ -199,14 +185,14 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionInvalidate
-     * 
+     * <p>
      * Tears down a compression session.
-     * 
-     *    	When you are done with a compression session you created, call VTCompressionSessionInvalidate 
-     *    	to tear it down and then CFRelease to release your object reference.
-     *    	When a compression session's retain count reaches zero, it is automatically invalidated, but 
-     *    	since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
-     *    	Calling VTCompressionSessionInvalidate ensures a deterministic, orderly teardown.
+     * <p>
+     * When you are done with a compression session you created, call VTCompressionSessionInvalidate
+     * to tear it down and then CFRelease to release your object reference.
+     * When a compression session's retain count reaches zero, it is automatically invalidated, but
+     * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
+     * Calling VTCompressionSessionInvalidate ensures a deterministic, orderly teardown.
      */
     @Generated
     @CFunction
@@ -214,7 +200,7 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionGetTypeID
-     * 
+     * <p>
      * Returns the CFTypeID for compression sessions.
      */
     @Generated
@@ -224,22 +210,22 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionGetPixelBufferPool
-     * 
+     * <p>
      * Returns a pool that can provide ideal source pixel buffers for a compression session.
-     * 
-     * 	The compression session creates this pixel buffer pool based on
-     * 	the compressor's pixel buffer attributes and any pixel buffer
-     * 	attributes passed in to VTCompressionSessionCreate.  If the
-     * 	source pixel buffer attributes and the compressor pixel buffer
-     * 	attributes cannot be reconciled, the pool is based on the source
-     * 	pixel buffer attributes and the Video Toolbox converts each CVImageBuffer
-     * 	internally.
-     * 	<BR>
-     * 	While clients can call VTCompressionSessionGetPixelBufferPool once
-     * 	and retain the resulting pool, the call is cheap enough that it's OK 
-     * 	to call it once per frame.  If a change of session properties causes 
-     * 	the compressor's pixel buffer attributes to change, it's possible that
-     * 	VTCompressionSessionGetPixelBufferPool might return a different pool.
+     * <p>
+     * The compression session creates this pixel buffer pool based on
+     * the compressor's pixel buffer attributes and any pixel buffer
+     * attributes passed in to VTCompressionSessionCreate.  If the
+     * source pixel buffer attributes and the compressor pixel buffer
+     * attributes cannot be reconciled, the pool is based on the source
+     * pixel buffer attributes and the Video Toolbox converts each CVImageBuffer
+     * internally.
+     * <BR>
+     * While clients can call VTCompressionSessionGetPixelBufferPool once
+     * and retain the resulting pool, the call is cheap enough that it's OK
+     * to call it once per frame.  If a change of session properties causes
+     * the compressor's pixel buffer attributes to change, it's possible that
+     * VTCompressionSessionGetPixelBufferPool might return a different pool.
      */
     @Generated
     @CFunction
@@ -247,17 +233,16 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionPrepareToEncodeFrames
-     * 
-     * 	You can optionally call this function to provide the encoder with an opportunity to perform
-     * 	any necessary resource allocation before it begins encoding frames.
-     * 
-     * 	This optional call can be used to provide the encoder an opportunity to allocate
-     * 	any resources necessary before it begins encoding frames.  If this isn't called, any
-     * 	necessary resources will be allocated on the first VTCompressionSessionEncodeFrame call.
-     * 	Extra calls to this function will have no effect.
-     * 
-     * @param	session
-     * 	The compression session.
+     * <p>
+     * You can optionally call this function to provide the encoder with an opportunity to perform
+     * any necessary resource allocation before it begins encoding frames.
+     * <p>
+     * This optional call can be used to provide the encoder an opportunity to allocate
+     * any resources necessary before it begins encoding frames.  If this isn't called, any
+     * necessary resources will be allocated on the first VTCompressionSessionEncodeFrame call.
+     * Extra calls to this function will have no effect.
+     *
+     * @param    session The compression session.
      */
     @Generated
     @CFunction
@@ -265,36 +250,29 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionEncodeFrame
-     * 
-     * 	Call this function to present frames to the compression session.
-     * 	Encoded frames may or may not be output before the function returns.
-     * 
-     * 	The client should not modify the pixel data after making this call.
-     * 	The session and/or encoder will retain the image buffer as long as necessary. 
-     * 
-     * @param	session
-     * 	The compression session.
-     * @param	imageBuffer
-     * 	A CVImageBuffer containing a video frame to be compressed.  
-     * 	Must have a nonzero reference count.
-     * @param	presentationTimeStamp
-     * 	The presentation timestamp for this frame, to be attached to the sample buffer.
-     * 	Each presentation timestamp passed to a session must be greater than the previous one.
-     * @param	duration
-     * 	The presentation duration for this frame, to be attached to the sample buffer.  
-     * 	If you do not have duration information, pass kCMTimeInvalid.
-     * @param	frameProperties
-     * 	Contains key/value pairs specifying additional properties for encoding this frame.
-     * 	Note that some session properties may also be changed between frames.
-     * 	Such changes have effect on subsequently encoded frames.
-     * @param	sourceFrameRefcon
-     * 	Your reference value for the frame, which will be passed to the output callback function.
-     * @param	infoFlagsOut
-     * 	Points to a VTEncodeInfoFlags to receive information about the encode operation.
-     * 	The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
-     * 	asynchronously.
-     * 	The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
-     * 	Pass NULL if you do not want to receive this information.
+     * <p>
+     * Call this function to present frames to the compression session.
+     * Encoded frames may or may not be output before the function returns.
+     * <p>
+     * The client should not modify the pixel data after making this call.
+     * The session and/or encoder will retain the image buffer as long as necessary.
+     *
+     * @param    session The compression session.
+     * @param    imageBuffer A CVImageBuffer containing a video frame to be compressed.
+     * Must have a nonzero reference count.
+     * @param    presentationTimeStamp The presentation timestamp for this frame, to be attached to the sample buffer.
+     * Each presentation timestamp passed to a session must be greater than the previous one.
+     * @param    duration The presentation duration for this frame, to be attached to the sample buffer.
+     * If you do not have duration information, pass kCMTimeInvalid.
+     * @param    frameProperties Contains key/value pairs specifying additional properties for encoding this frame.
+     * Note that some session properties may also be changed between frames.
+     * Such changes have effect on subsequently encoded frames.
+     * @param    sourceFrameRefcon Your reference value for the frame, which will be passed to the output callback function.
+     * @param    infoFlagsOut Points to a VTEncodeInfoFlags to receive information about the encode operation.
+     * The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
+     * asynchronously.
+     * The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
+     * Pass NULL if you do not want to receive this information.
      */
     @Generated
     @CFunction
@@ -304,38 +282,31 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionEncodeFrameWithOutputHandler
-     * 
-     * 	Call this function to present frames to the compression session.
-     * 	Encoded frames may or may not be output before the function returns.
-     * 
-     * 	The client should not modify the pixel data after making this call.
-     * 	The session and/or encoder will retain the image buffer as long as necessary.
-     * 	Cannot be called with a session created with a VTCompressionOutputCallback/
-     * 
-     * @param	session
-     * 	The compression session.
-     * @param	imageBuffer
-     * 	A CVImageBuffer containing a video frame to be compressed.
-     * 	Must have a nonzero reference count.
-     * @param	presentationTimeStamp
-     * 	The presentation timestamp for this frame, to be attached to the sample buffer.
-     * 	Each presentation timestamp passed to a session must be greater than the previous one.
-     * @param	duration
-     * 	The presentation duration for this frame, to be attached to the sample buffer.
-     * 	If you do not have duration information, pass kCMTimeInvalid.
-     * @param	frameProperties
-     * 	Contains key/value pairs specifying additional properties for encoding this frame.
-     * 	Note that some session properties may also be changed between frames.
-     * 	Such changes have effect on subsequently encoded frames.
-     * @param	infoFlagsOut
-     * 	Points to a VTEncodeInfoFlags to receive information about the encode operation.
-     * 	The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
-     * 	asynchronously.
-     * 	The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
-     * 	Pass NULL if you do not want to receive this information.
-     * @param	outputHandler
-     * 	The block to be called when encoding the frame is completed.
-     * 	This block may be called asynchronously, on a different thread from the one that calls VTCompressionSessionEncodeFrameWithOutputHandler.
+     * <p>
+     * Call this function to present frames to the compression session.
+     * Encoded frames may or may not be output before the function returns.
+     * <p>
+     * The client should not modify the pixel data after making this call.
+     * The session and/or encoder will retain the image buffer as long as necessary.
+     * Cannot be called with a session created with a VTCompressionOutputCallback.
+     *
+     * @param    session The compression session.
+     * @param    imageBuffer A CVImageBuffer containing a video frame to be compressed.
+     * Must have a nonzero reference count.
+     * @param    presentationTimeStamp The presentation timestamp for this frame, to be attached to the sample buffer.
+     * Each presentation timestamp passed to a session must be greater than the previous one.
+     * @param    duration The presentation duration for this frame, to be attached to the sample buffer.
+     * If you do not have duration information, pass kCMTimeInvalid.
+     * @param    frameProperties Contains key/value pairs specifying additional properties for encoding this frame.
+     * Note that some session properties may also be changed between frames.
+     * Such changes have effect on subsequently encoded frames.
+     * @param    infoFlagsOut Points to a VTEncodeInfoFlags to receive information about the encode operation.
+     * The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
+     * asynchronously.
+     * The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
+     * Pass NULL if you do not want to receive this information.
+     * @param    outputHandler The block to be called when encoding the frame is completed.
+     * This block may be called asynchronously, on a different thread from the one that calls VTCompressionSessionEncodeFrameWithOutputHandler.
      */
     @Generated
     @CFunction
@@ -346,13 +317,13 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionCompleteFrames
-     * 
+     * <p>
      * Forces the compression session to complete encoding frames.
-     * 
-     * 	If completeUntilPresentationTimeStamp is numeric, frames with presentation timestamps
-     * 	up to and including this timestamp will be emitted before the function returns.
-     * 	If completeUntilPresentationTimeStamp is non-numeric, all pending frames
-     * 	will be emitted before the function returns.
+     * <p>
+     * If completeUntilPresentationTimeStamp is numeric, frames with presentation timestamps
+     * up to and including this timestamp will be emitted before the function returns.
+     * If completeUntilPresentationTimeStamp is non-numeric, all pending frames
+     * will be emitted before the function returns.
      */
     @Generated
     @CFunction
@@ -361,14 +332,13 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionBeginPass
-     * 
+     * <p>
      * Call to announce the start of a specific compression pass.
-     * 
-     * 	During multi-pass encoding, this function must be called before VTCompressionSessionEncodeFrame.
-     * 	It is an error to call this function when multi-pass encoding has not been enabled by setting kVTCompressionPropertyKey_MultiPassStorage.
-     * 
-     * @param	beginPassFlags
-     * 	Pass kVTCompressionSessionBeginFinalPass to inform the encoder that the pass must be the final pass.
+     * <p>
+     * During multi-pass encoding, this function must be called before VTCompressionSessionEncodeFrame.
+     * It is an error to call this function when multi-pass encoding has not been enabled by setting kVTCompressionPropertyKey_MultiPassStorage.
+     *
+     * @param    beginPassFlags Pass kVTCompressionSessionBeginFinalPass to inform the encoder that the pass must be the final pass.
      */
     @Generated
     @CFunction
@@ -377,16 +347,15 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionEndPass
-     * 
+     * <p>
      * Call to announce the end of a pass.
-     * 
-     * 	VTCompressionSessionEndPass can take a long time, since the video encoder may perform significant processing between passes.
-     * 	VTCompressionSessionEndPass will indicate via the furtherPassesRequestedOut argument whether the video encoder would like to perform another pass.  There is no particular bound on the number of passes the video encoder may request, but the client is free to disregard this request and use the last-emitted set of frames.
-     * 	It is an error to call this function when multi-pass encoding has not been enabled by setting kVTCompressionPropertyKey_MultiPassStorage.
-     * 
-     * @param furtherPassesRequestedOut
-     * 	Points to a Boolean that will be set to true if the video encoder would like to perform another pass, false otherwise.
-     * 	You may pass NULL to indicate that the client is certain to use this as the final pass, in which case the video encoder can skip that evaluation step.
+     * <p>
+     * VTCompressionSessionEndPass can take a long time, since the video encoder may perform significant processing between passes.
+     * VTCompressionSessionEndPass will indicate via the furtherPassesRequestedOut argument whether the video encoder would like to perform another pass.  There is no particular bound on the number of passes the video encoder may request, but the client is free to disregard this request and use the last-emitted set of frames.
+     * It is an error to call this function when multi-pass encoding has not been enabled by setting kVTCompressionPropertyKey_MultiPassStorage.
+     *
+     * @param furtherPassesRequestedOut Points to a Boolean that will be set to true if the video encoder would like to perform another pass, false otherwise.
+     *                                  You may pass NULL to indicate that the client is certain to use this as the final pass, in which case the video encoder can skip that evaluation step.
      */
     @Generated
     @CFunction
@@ -395,19 +364,17 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCompressionSessionGetTimeRangesForNextPass
-     * 
+     * <p>
      * Retrieves the time ranges for the next pass.
-     * 
+     * <p>
      * If VTCompressionSessionEndPass sets *furtherPassesRequestedOut to true, call VTCompressionSessionGetTimeRangesForNextPass to find out the time ranges for the next pass.  Source frames outside these time ranges should be skipped.
      * Each time range is considered to include any frame at its start time and not to include any frame at its end time.
      * It is an error to call this function when multi-pass encoding has not been enabled by setting kVTCompressionPropertyKey_MultiPassStorage, or when VTCompressionSessionEndPass did not set *furtherPassesRequestedOut to true.
-     * 
-     * @param timeRangeCountOut
-     * Points to a CMItemCount to receive the number of CMTimeRanges.
-     * @param timeRangeArrayOut
-     * Points to a const CMTimeRange * to receive a pointer to a C array of CMTimeRanges.
-     * The storage for this array belongs to the VTCompressionSession and should not be modified.
-     * The pointer will be valid until the next call to VTCompressionSessionEndPass, or until the VTCompressionSession is invalidated or finalized.
+     *
+     * @param timeRangeCountOut Points to a CMItemCount to receive the number of CMTimeRanges.
+     * @param timeRangeArrayOut Points to a const CMTimeRange * to receive a pointer to a C array of CMTimeRanges.
+     *                          The storage for this array belongs to the VTCompressionSession and should not be modified.
+     *                          The pointer will be valid until the next call to VTCompressionSessionEndPass, or until the VTCompressionSession is invalidated or finalized.
      */
     @Generated
     @CFunction
@@ -416,26 +383,20 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTDecompressionSessionCreate
-     * 
+     * <p>
      * Creates a session for decompressing video frames.
-     * 
-     * 	Decompressed frames will be emitted through calls to outputCallback.
-     * 
-     * @param	allocator
-     * 	An allocator for the session.  Pass NULL to use the default allocator.
-     * @param	videoFormatDescription
-     * 	Describes the source video frames.
-     * @param	videoDecoderSpecification
-     * 	Specifies a particular video decoder that must be used.  
-     * 	Pass NULL to let the video toolbox choose a decoder.
-     * @param	destinationImageBufferAttributes
-     * 	Describes requirements for emitted pixel buffers.
-     * 	Pass NULL to set no requirements.
-     * @param	outputCallback
-     * 	The callback to be called with decompressed frames.
-     * 	Pass NULL if and only if you will be calling VTDecompressionSessionDecodeFrameWithOutputHandler for decoding frames.
-     * @param	decompressionSessionOut
-     * 	Points to a variable to receive the new decompression session.
+     * <p>
+     * Decompressed frames will be emitted through calls to outputCallback.
+     *
+     * @param    allocator An allocator for the session.  Pass NULL to use the default allocator.
+     * @param    videoFormatDescription Describes the source video frames.
+     * @param    videoDecoderSpecification Specifies a particular video decoder that must be used.
+     * Pass NULL to let the video toolbox choose a decoder.
+     * @param    destinationImageBufferAttributes Describes requirements for emitted pixel buffers.
+     * Pass NULL to set no requirements.
+     * @param    outputCallback The callback to be called with decompressed frames.
+     * Pass NULL if and only if you will be calling VTDecompressionSessionDecodeFrameWithOutputHandler for decoding frames.
+     * @param    decompressionSessionOut Points to a variable to receive the new decompression session.
      */
     @Generated
     @CFunction
@@ -447,14 +408,14 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTDecompressionSessionInvalidate
-     * 
+     * <p>
      * Tears down a decompression session.
-     * 
-     *    	When you are done with a decompression session you created, call VTDecompressionSessionInvalidate 
-     *    	to tear it down and then CFRelease to release your object reference.
-     *    	When a decompression session's retain count reaches zero, it is automatically invalidated, but 
-     *    	since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
-     *    	Calling VTDecompressionSessionInvalidate ensures a deterministic, orderly teardown.
+     * <p>
+     * When you are done with a decompression session you created, call VTDecompressionSessionInvalidate
+     * to tear it down and then CFRelease to release your object reference.
+     * When a decompression session's retain count reaches zero, it is automatically invalidated, but
+     * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
+     * Calling VTDecompressionSessionInvalidate ensures a deterministic, orderly teardown.
      */
     @Generated
     @CFunction
@@ -462,7 +423,7 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionGetTypeID
-     * 
+     * <p>
      * Returns the CFTypeID for decompression sessions.
      */
     @Generated
@@ -472,35 +433,30 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTDecompressionSessionDecodeFrame
-     * 
+     * <p>
      * Decompresses a video frame.
-     * 
-     * 	If an error is returned from this function, there will be no callback.  Otherwise
-     * 	the callback provided during VTDecompressionSessionCreate will be called.
-     * 
-     * @param	session
-     * 	The decompression session.
-     * @param	sampleBuffer
-     * 	A CMSampleBuffer containing one or more video frames.  
-     * @param	decodeFlags
-     * 	A bitfield of directives to the decompression session and decoder.
-     * 	The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video decoder 
-     * 	may decompress the frame asynchronously.
-     * 	The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may delay calls to the output callback
-     * 	so as to enable processing in temporal (display) order.
-     * 	If both flags are clear, the decompression shall complete and your output callback function will be called 
-     * 	before VTDecompressionSessionDecodeFrame returns.
-     * 	If either flag is set, VTDecompressionSessionDecodeFrame may return before the output callback function is called.  
-     * @param	sourceFrameRefCon
-     * 	Your reference value for the frame.  
-     * 	Note that if sampleBuffer contains multiple frames, the output callback function will be called
-     * 	multiple times with this sourceFrameRefCon.
-     * @param	infoFlagsOut
-     * 	Points to a VTDecodeInfoFlags to receive information about the decode operation.
-     * 	The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
-     * 	asynchronously.
-     * 	The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
-     * 	Pass NULL if you do not want to receive this information.
+     * <p>
+     * If an error is returned from this function, there will be no callback.  Otherwise
+     * the callback provided during VTDecompressionSessionCreate will be called.
+     *
+     * @param    session The decompression session.
+     * @param    sampleBuffer A CMSampleBuffer containing one or more video frames.
+     * @param    decodeFlags A bitfield of directives to the decompression session and decoder.
+     * The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video decoder
+     * may decompress the frame asynchronously.
+     * The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may delay calls to the output callback
+     * so as to enable processing in temporal (display) order.
+     * If both flags are clear, the decompression shall complete and your output callback function will be called
+     * before VTDecompressionSessionDecodeFrame returns.
+     * If either flag is set, VTDecompressionSessionDecodeFrame may return before the output callback function is called.
+     * @param    sourceFrameRefCon Your reference value for the frame.
+     * Note that if sampleBuffer contains multiple frames, the output callback function will be called
+     * multiple times with this sourceFrameRefCon.
+     * @param    infoFlagsOut Points to a VTDecodeInfoFlags to receive information about the decode operation.
+     * The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
+     * asynchronously.
+     * The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
+     * Pass NULL if you do not want to receive this information.
      */
     @Generated
     @CFunction
@@ -509,35 +465,30 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTDecompressionSessionDecodeFrameWithOutputHandler
-     * 
+     * <p>
      * Decompresses a video frame.
-     * 
-     * 	Cannot be called with a session created with a VTDecompressionOutputCallbackRecord.
-     * 	If the VTDecompressionSessionDecodeFrameWithOutputHandler call returns an error, the block
-     * 	will not be called.
-     * 
-     * @param	session
-     * 	The decompression session.
-     * @param	sampleBuffer
-     * 	A CMSampleBuffer containing one or more video frames.
-     * @param	decodeFlags
-     * 	A bitfield of directives to the decompression session and decoder.
-     * 	The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video decoder
-     * 	may decompress the frame asynchronously.
-     * 	The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may delay calls to the output callback
-     * 	so as to enable processing in temporal (display) order.
-     * 	If both flags are clear, the decompression shall complete and your output callback function will be called
-     * 	before VTDecompressionSessionDecodeFrame returns.
-     * 	If either flag is set, VTDecompressionSessionDecodeFrame may return before the output callback function is called.
-     * @param	infoFlagsOut
-     * 	Points to a VTDecodeInfoFlags to receive information about the decode operation.
-     * 	The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
-     * 	asynchronously.
-     * 	The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
-     * 	Pass NULL if you do not want to receive this information.
-     * @param	outputHandler
-     * 	The block to be called when decoding the frame is completed.  If the VTDecompressionSessionDecodeFrameWithOutputHandler
-     * 	call returns an error, the block will not be called.
+     * <p>
+     * Cannot be called with a session created with a VTDecompressionOutputCallbackRecord.
+     * If the VTDecompressionSessionDecodeFrameWithOutputHandler call returns an error, the block
+     * will not be called.
+     *
+     * @param    session The decompression session.
+     * @param    sampleBuffer A CMSampleBuffer containing one or more video frames.
+     * @param    decodeFlags A bitfield of directives to the decompression session and decoder.
+     * The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video decoder
+     * may decompress the frame asynchronously.
+     * The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may delay calls to the output callback
+     * so as to enable processing in temporal (display) order.
+     * If both flags are clear, the decompression shall complete and your output callback function will be called
+     * before VTDecompressionSessionDecodeFrame returns.
+     * If either flag is set, VTDecompressionSessionDecodeFrame may return before the output callback function is called.
+     * @param    infoFlagsOut Points to a VTDecodeInfoFlags to receive information about the decode operation.
+     * The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
+     * asynchronously.
+     * The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
+     * Pass NULL if you do not want to receive this information.
+     * @param    outputHandler The block to be called when decoding the frame is completed.  If the VTDecompressionSessionDecodeFrameWithOutputHandler
+     * call returns an error, the block will not be called.
      */
     @Generated
     @CFunction
@@ -547,14 +498,14 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionFinishDelayedFrames
-     * 
+     * <p>
      * Directs the decompression session to emit all delayed frames.
-     * 
-     * 	By default, the decompression session may not delay frames indefinitely; 
-     * 	frames may only be indefinitely delayed if the client opts in via
-     * 	kVTDecodeFrame_EnableTemporalProcessing.
-     * 	IMPORTANT NOTE: This function may return before all delayed frames are emitted. 
-     * 	To wait for them, call VTDecompressionSessionWaitForAsynchronousFrames instead.
+     * <p>
+     * By default, the decompression session may not delay frames indefinitely;
+     * frames may only be indefinitely delayed if the client opts in via
+     * kVTDecodeFrame_EnableTemporalProcessing.
+     * IMPORTANT NOTE: This function may return before all delayed frames are emitted.
+     * To wait for them, call VTDecompressionSessionWaitForAsynchronousFrames instead.
      */
     @Generated
     @CFunction
@@ -562,12 +513,12 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionCanAcceptFormatDescription
-     * 
+     * <p>
      * Indicates whether the session can decode frames with the given format description.
-     * 
-     * 	Some video decoders are able to accommodate minor changes in format without needing to be
-     * 	completely reset in a new session.  This function can be used to test whether a format change
-     * 	is sufficiently minor.
+     * <p>
+     * Some video decoders are able to accommodate minor changes in format without needing to be
+     * completely reset in a new session.  This function can be used to test whether a format change
+     * is sufficiently minor.
      */
     @Generated
     @CFunction
@@ -576,11 +527,11 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionWaitForAsynchronousFrames
-     * 
+     * <p>
      * Waits for any and all outstanding asynchronous and delayed frames to complete, then returns.
-     * 
-     * 	This function automatically calls VTDecompressionSessionFinishDelayedFrames, 
-     * 	so clients don't have to call both.  
+     * <p>
+     * This function automatically calls VTDecompressionSessionFinishDelayedFrames,
+     * so clients don't have to call both.
      */
     @Generated
     @CFunction
@@ -588,15 +539,13 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTDecompressionSessionCopyBlackPixelBuffer
-     * 
+     * <p>
      * Copies a black pixel buffer from the decompression session.
-     * 
-     * 	The pixel buffer is in the same format that the session is decompressing to.
-     * 
-     * @param	session
-     * 	The decompression session.
-     * @param	pixelBufferOut
-     * 	Points to a variable to receive the copied pixel buffer.
+     * <p>
+     * The pixel buffer is in the same format that the session is decompressing to.
+     *
+     * @param    session The decompression session.
+     * @param    pixelBufferOut Points to a variable to receive the copied pixel buffer.
      */
     @Generated
     @CFunction
@@ -610,21 +559,17 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTFrameSiloCreate
-     * 
+     * <p>
      * Creates a VTFrameSilo object using a temporary file.
-     * 
-     * 	The returned VTFrameSilo object may be used to gather frames produced by multi-pass encoding.
-     * 
-     * @param fileURL
-     * 	Specifies where to put the backing file for the VTFrameSilo object.
-     * 	If you pass NULL for fileURL, the video toolbox will pick a unique temporary file name.
-     * @param options
-     * 	Reserved, pass NULL.
-     * @param timeRange
-     * 	The valid time range for the frame silo. Must be valid for progress reporting.
-     * @param frameSiloOut
-     * 	Points to a VTFrameSiloRef to receive the newly created object.
-     * 	Call CFRelease to release your retain on the created VTFrameSilo object when you are done with it.
+     * <p>
+     * The returned VTFrameSilo object may be used to gather frames produced by multi-pass encoding.
+     *
+     * @param fileURL      Specifies where to put the backing file for the VTFrameSilo object.
+     *                     If you pass NULL for fileURL, the video toolbox will pick a unique temporary file name.
+     * @param options      Reserved, pass NULL.
+     * @param timeRange    The valid time range for the frame silo. Must be valid for progress reporting.
+     * @param frameSiloOut Points to a VTFrameSiloRef to receive the newly created object.
+     *                     Call CFRelease to release your retain on the created VTFrameSilo object when you are done with it.
      */
     @Generated
     @CFunction
@@ -633,17 +578,16 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTFrameSiloAddSampleBuffer
-     * 
+     * <p>
      * Adds a sample buffer to a VTFrameSilo object.
-     * 
-     * 	Within each pass, sample buffers must have strictly increasing decode timestamps.
-     * 	Passes after the first pass are begun with a call to VTFrameSiloSetTimeRangesForNextPass.
-     * 	After a call to VTFrameSiloSetTimeRangesForNextPass, sample buffer decode timestamps must also be within 
-     * 	the stated time ranges.
-     * 	Note that CMTimeRanges are considered to contain their start times but not their end times.
-     * 
-     * @return
-     * 	Returns kVTFrameSiloInvalidTimeStampErr if an attempt is made to add a sample buffer with an inappropriate decode timestamp.
+     * <p>
+     * Within each pass, sample buffers must have strictly increasing decode timestamps.
+     * Passes after the first pass are begun with a call to VTFrameSiloSetTimeRangesForNextPass.
+     * After a call to VTFrameSiloSetTimeRangesForNextPass, sample buffer decode timestamps must also be within
+     * the stated time ranges.
+     * Note that CMTimeRanges are considered to contain their start times but not their end times.
+     *
+     * @return Returns kVTFrameSiloInvalidTimeStampErr if an attempt is made to add a sample buffer with an inappropriate decode timestamp.
      */
     @Generated
     @CFunction
@@ -651,14 +595,13 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTFrameSiloSetTimeRangesForNextPass
-     * 
+     * <p>
      * Begins a new pass of samples to be added to a VTFrameSilo object.
-     * 
-     * 	Previously-added sample buffers with decode timestamps within the time ranges will be deleted from the VTFrameSilo.
-     * 	It is not necessary to call VTFrameSiloSetTimeRangesForNextPass before adding the first pass' sample buffers.
-     * 
-     * @return
-     * 	Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
+     * <p>
+     * Previously-added sample buffers with decode timestamps within the time ranges will be deleted from the VTFrameSilo.
+     * It is not necessary to call VTFrameSiloSetTimeRangesForNextPass before adding the first pass' sample buffers.
+     *
+     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
      */
     @Generated
     @CFunction
@@ -667,13 +610,12 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTFrameSiloGetProgressOfCurrentPass
-     * 
+     * <p>
      * Gets the progress of the current pass.
-     * 
-     * 	Calculates the current progress based on the most recent sample buffer added and the current pass time ranges.
-     * 
-     * @return
-     * 	Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
+     * <p>
+     * Calculates the current progress based on the most recent sample buffer added and the current pass time ranges.
+     *
+     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
      */
     @Generated
     @CFunction
@@ -681,22 +623,19 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTFrameSiloCallFunctionForEachSampleBuffer
-     * 
+     * <p>
      * Retrieves sample buffers from a VTFrameSilo object.
-     * 
-     * 	You call this function to retrieve sample buffers at the end of a multi-pass compression session.
-     * 
-     * @param timeRange
-     * 	The decode time range of sample buffers to retrieve.
-     * 	Pass kCMTimeRangeInvalid to retrieve all sample buffers from the VTFrameSilo.
-     * @param callback
-     * 	A function to be called, in decode order, with each sample buffer that was added.
-     * 	To abort iteration early, return a nonzero status.
-     * 	The VTFrameSilo may write sample buffers and data to the backing file between addition and retrieval; 
-     * 	do not expect to get identical object pointers back.
-     * @return
-     * 	Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
-     * 	Returns any nonzero status returned by the callback function.
+     * <p>
+     * You call this function to retrieve sample buffers at the end of a multi-pass compression session.
+     *
+     * @param timeRange The decode time range of sample buffers to retrieve.
+     *                  Pass kCMTimeRangeInvalid to retrieve all sample buffers from the VTFrameSilo.
+     * @param callback  A function to be called, in decode order, with each sample buffer that was added.
+     *                  To abort iteration early, return a nonzero status.
+     *                  The VTFrameSilo may write sample buffers and data to the backing file between addition and retrieval;
+     *                  do not expect to get identical object pointers back.
+     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
+     * Returns any nonzero status returned by the callback function.
      */
     @Generated
     @CFunction
@@ -706,22 +645,19 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTFrameSiloCallBlockForEachSampleBuffer
-     * 
+     * <p>
      * Retrieves sample buffers from a VTFrameSilo object.
-     * 
-     * 	You call this function to retrieve sample buffers at the end of a multi-pass compression session.
-     * 
-     * @param timeRange
-     * 	The decode time range of sample buffers to retrieve.
-     * 	Pass kCMTimeRangeInvalid to retrieve all sample buffers from the VTFrameSilo.
-     * @param handler
-     * 	A block to be called, in decode order, with each sample buffer that was added.
-     * 	To abort iteration early, return a nonzero status.
-     * 	The VTFrameSilo may write sample buffers and data to the backing file between addition and retrieval; 
-     * 	do not expect to get identical object pointers back.
-     * @return
-     * 	Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
-     * 	Returns any nonzero status returned by the handler block.
+     * <p>
+     * You call this function to retrieve sample buffers at the end of a multi-pass compression session.
+     *
+     * @param timeRange The decode time range of sample buffers to retrieve.
+     *                  Pass kCMTimeRangeInvalid to retrieve all sample buffers from the VTFrameSilo.
+     * @param handler   A block to be called, in decode order, with each sample buffer that was added.
+     *                  To abort iteration early, return a nonzero status.
+     *                  The VTFrameSilo may write sample buffers and data to the backing file between addition and retrieval;
+     *                  do not expect to get identical object pointers back.
+     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in ascending order.
+     * Returns any nonzero status returned by the handler block.
      */
     @Generated
     @CFunction
@@ -736,19 +672,16 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTMultiPassStorageCreate
-     * 
+     * <p>
      * Creates a VTMultiPassStorage object using a temporary file.
-     * 
-     * 	The returned VTMultiPassStorage object may be used to perform multi-pass encoding; see kVTCompressionPropertyKey_MultiPassStorage.
-     * 	Call CFRelease to release your retain on the created VTMultiPassStorage object when you are done with it.
-     * 
-     * @param fileURL
-     * 	Specifies where to put the backing file for the VTMultiPassStorage object.
-     * 	If you pass NULL for fileURL, the video toolbox will pick a unique temporary file name.
-     * @param timeRange
-     * 	Gives a hint to the multi pass storage about valid time stamps for data.
-     * @param options
-     * 	If the file did not exist when the storage was created, the file will be deleted when the VTMultiPassStorage object is finalized, unless you set the kVTMultiPassStorageCreationOption_DoNotDelete option to kCFBooleanTrue in the options dictionary.
+     * <p>
+     * The returned VTMultiPassStorage object may be used to perform multi-pass encoding; see kVTCompressionPropertyKey_MultiPassStorage.
+     * Call CFRelease to release your retain on the created VTMultiPassStorage object when you are done with it.
+     *
+     * @param fileURL   Specifies where to put the backing file for the VTMultiPassStorage object.
+     *                  If you pass NULL for fileURL, the video toolbox will pick a unique temporary file name.
+     * @param timeRange Gives a hint to the multi pass storage about valid time stamps for data.
+     * @param options   If the file did not exist when the storage was created, the file will be deleted when the VTMultiPassStorage object is finalized, unless you set the kVTMultiPassStorageCreationOption_DoNotDelete option to kCFBooleanTrue in the options dictionary.
      */
     @Generated
     @CFunction
@@ -757,11 +690,11 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTMultiPassStorageClose
-     * 
+     * <p>
      * Ensures that any pending data is written to the multipass storage file and closes the file.
-     * 
-     * 	After this function is called, all methods on the multipass storage object will fail.
-     * 	It is still necessary to release the object by calling CFRelease.
+     * <p>
+     * After this function is called, all methods on the multipass storage object will fail.
+     * It is still necessary to release the object by calling CFRelease.
      */
     @Generated
     @CFunction
@@ -769,10 +702,10 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCopyVideoEncoderList
-     * 
+     * <p>
      * Builds a list of available video encoders.
-     * 
-     * 	The caller must CFRelease the returned list.
+     * <p>
+     * The caller must CFRelease the returned list.
      */
     @Generated
     @CFunction
@@ -780,23 +713,20 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCreateCGImageFromCVPixelBuffer
-     * 
+     * <p>
      * Creates a CGImage using the provided CVPixelBuffer
-     * 
-     * 	This routine creates a CGImage representation of the image data contained in
-     * 	the provided CVPixelBuffer.
-     * 	The source CVPixelBuffer may be retained for the lifetime of the CGImage.  Changes
-     * 	to the CVPixelBuffer after making this call (other than releasing it) will have 
-     * 	undefined results.
-     * 	Not all CVPixelBuffer pixel formats will support conversion into a CGImage compatible
-     * 	pixel format.
-     * 
-     * @param	pixelBuffer
-     * 	The pixelBuffer to be used as the image data source for the CGImage.
-     * @param	options
-     * 	no options currently.  pass NULL.
-     * @param	imageOut
-     * 	pointer to an address to receive the newly created CGImage.
+     * <p>
+     * This routine creates a CGImage representation of the image data contained in
+     * the provided CVPixelBuffer.
+     * The source CVPixelBuffer may be retained for the lifetime of the CGImage.  Changes
+     * to the CVPixelBuffer after making this call (other than releasing it) will have
+     * undefined results.
+     * Not all CVPixelBuffer pixel formats will support conversion into a CGImage compatible
+     * pixel format.
+     *
+     * @param    pixelBuffer The pixelBuffer to be used as the image data source for the CGImage.
+     * @param    options no options currently.  pass NULL.
+     * @param    imageOut pointer to an address to receive the newly created CGImage.
      */
     @Generated
     @CFunction
@@ -1709,14 +1639,14 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTIsHardwareDecodeSupported
-     * 
+     * <p>
      * Indicates whether the current system supports hardware decode for a given codec
-     * 
-     * 	This routine reports whether the current system supports hardware decode.  Using
-     * 	this information, clients can make informed decisions regarding remote assets to load,
-     * 	favoring alternate encodings when hardware decode is not supported.
-     * 	This call returning true does not guarantee that hardware decode resources will be
-     * 	available at all times.
+     * <p>
+     * This routine reports whether the current system supports hardware decode.  Using
+     * this information, clients can make informed decisions regarding remote assets to load,
+     * favoring alternate encodings when hardware decode is not supported.
+     * This call returning true does not guarantee that hardware decode resources will be
+     * available at all times.
      */
     @Generated
     @CFunction
@@ -1724,10 +1654,10 @@ public final class VideoToolbox {
 
     /**
      * [@function]	VTCopySupportedPropertyDictionaryForEncoder
-     * 
+     * <p>
      * Builds a list of supported properties and encoder ID for an encoder
-     * 
-     * 	The caller must CFRelease the returned supported properties and encoder ID.
+     * <p>
+     * The caller must CFRelease the returned supported properties and encoder ID.
      */
     @Generated
     @CFunction
@@ -1961,4 +1891,89 @@ public final class VideoToolbox {
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_SupportsFrameReordering();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTProfileLevel_H264_ConstrainedBaseline_AutoLevel();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTProfileLevel_H264_ConstrainedHigh_AutoLevel();
+
+    /**
+     * Read/write, CFNumber<Float>, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_BaseLayerFrameRateFraction();
+
+    /**
+     * Read/write, CFNumber<Float>, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_BaseLayerBitRateFraction();
+
+    /**
+     * Read only, CFBoolean, Optional, false by default
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_SupportsBaseFrameQP();
+
+    /**
+     * CFNumberRef, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTEncodeFrameOptionKey_BaseFrameQP();
+
+    /**
+     * Read/write, CFBoolean, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderSpecification_EnableLowLatencyRateControl();
+
+    /**
+     * Read/write, CFNumberRef, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_MaxAllowedFrameQP();
+
+    /**
+     * Read/write, CFBoolean, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_EnableLTR();
+
+    /**
+     * CFArray[CFNumberRef], Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTEncodeFrameOptionKey_AcknowledgedLTRTokens();
+
+    /**
+     * CFNumberRef, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTEncodeFrameOptionKey_ForceLTRRefresh();
+
+    /**
+     * CFNumberRef, Optional
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTSampleAttachmentKey_RequireLTRAcknowledgementToken();
+
+    /**
+     * optional. CFBoolean.  By default, DV encoders will not be included in the list.  If present and set to kCFBooleanTrue, DV encoders will be included.
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTVideoEncoderListOption_IncludeStandardDefinitionDVEncoders();
 }

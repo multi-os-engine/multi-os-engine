@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLRasterizationRateLayerArray
- * 
+ * <p>
  * Mutable array of MTLRasterizationRateLayerDescriptor
  */
 @Generated
@@ -124,9 +124,9 @@ public class MTLRasterizationRateLayerArray extends NSObject {
 
     /**
      * objectAtIndexedSubscript:
-     * 
+     * <p>
      * Use setObject:atIndexedSubscript: to set the layer
-     * 
+     *
      * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't been set for this index.
      */
     @Generated
@@ -143,9 +143,9 @@ public class MTLRasterizationRateLayerArray extends NSObject {
 
     /**
      * setObject:atIndexedSubscript:
-     * 
+     * <p>
      * Sets the MTLRasterizationRateLayerDescriptor instance for the given layerIndex.
-     * 
+     * <p>
      * The previous instance at this index will be overwritten.
      */
     @Generated

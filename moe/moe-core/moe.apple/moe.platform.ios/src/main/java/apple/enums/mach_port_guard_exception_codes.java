@@ -84,8 +84,10 @@ public final class mach_port_guard_exception_codes {
      */
     @Generated public static final int RCV_INVALID_NAME = 0x00080000;
     /**
-     * should never be fatal; for development only
+     * for development only
      */
     @Generated public static final int RCV_GUARDED_DESC = 0x00100000;
     @Generated public static final int MSG_FILTERED = 0x00000080;
+    @Generated public static final int MOD_REFS_NON_FATAL = 0x00200000;
+    @Generated public static final int IMMOVABLE_NON_FATAL = 0x00400000;
 }

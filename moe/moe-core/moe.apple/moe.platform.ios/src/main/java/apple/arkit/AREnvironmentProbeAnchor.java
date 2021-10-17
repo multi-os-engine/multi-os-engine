@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object representing an environment probe in the world.
- * 
+ * <p>
  * Environment probes are used to light virtual geometry by producing environment
  * textures from the probe's location in the world.
  */
@@ -92,7 +92,7 @@ public class AREnvironmentProbeAnchor extends ARAnchor {
 
     /**
      * The environment texture of the probe.
-     * 
+     * <p>
      * The texture is provided as a cube using MTLTextureTypeCube.
      */
     @Generated

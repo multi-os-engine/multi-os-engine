@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NETrafficDirection
- * 
+ * <p>
  * The direction of network traffic
  */
 @Generated

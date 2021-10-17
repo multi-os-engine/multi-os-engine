@@ -49,10 +49,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CIKernel is an object that encapsulates a Core Image Kernel Language
  * routine that generates a new images based on input images and agruments.
- * 
+ * <p>
  * General kernel functions are declared akin to this example:
- *   kernel vec4 myColorKernel (sampler fore, sampler back, vec4 params)
- * 
+ * kernel vec4 myColorKernel (sampler fore, sampler back, vec4 params)
+ * <p>
  * The function must take a sampler argument for each input image.
  * Additional arguments can be of type float, vec2, vec3, vec4, or __color.
  * The destination pixel location is obtained by calling destCoord().
@@ -195,13 +195,13 @@ public class CIKernel extends NSObject {
 
     /**
      * Apply the receiver CIKernel to produce a new CIImage object.
-     * 
+     * <p>
      * The 'extent' is the bounding box of all non-clear pixels produced by the kernel.
-     * 
+     * <p>
      * The 'callback' is a block that should return the rectangle of each input image
      * that is needed to produce a given rectangle in the coordinate space of the
      * new image.
-     * 
+     * <p>
      * The 'args' is an array of parameters needed to describe the new image.
      * The object types of the items in the array correspond to the argument types of the
      * kernel function.  For example, if the first argument in the kernel is a sampler,
@@ -227,19 +227,19 @@ public class CIKernel extends NSObject {
     /**
      * Sets the selector used by Core Image to ask what rectangles of a kernel's input images
      * are needed to produce a desired rectangle of the kernel's output image.
-     * 
+     * <p>
      * Using setROISelector: is suppoted but not recommended.
      * The selector is only used if one the [CIFilter apply:...] methods is used.
      * Instead, use one of the [CIKernel applyWithExtent:roiCallback:...] methods.
-     * 
+     * <p>
      * The method should have one of the following signatures:
-     *  - (CGRect)regionOf:(int)samplerIndex destRect:(CGRect)r userInfo:obj;
-     *  - (CGRect)regionOf:(int)samplerIndex destRect:(CGRect)r;
-     * 
+     * - (CGRect)regionOf:(int)samplerIndex destRect:(CGRect)r userInfo:obj;
+     * - (CGRect)regionOf:(int)samplerIndex destRect:(CGRect)r;
+     * <p>
      * 'samplerIndex' is the 0-based index specifying which of the kernel's input images is being queried.
      * 'destRect' is the extent rectangle of kernel's output image being queried.
      * 'userInfo' is the object associated with the kCIApplyOptionUserInfo when the kernel was applied.
-     * 
+     * <p>
      * The method should return the rectangle of the index'th input image that is needed to produce destRect.
      * Returning CGRectNull indicates that the index'th input image is not needed to produce destRect.
      */
@@ -258,7 +258,7 @@ public class CIKernel extends NSObject {
     /**
      * The data argument should represent a metallib file compiled with the Core Image Standard Library
      * and contain the given function written in the Metal Shading Language.
-     * 
+     * <p>
      * An optional output pixel format can be specified, and would be used if the output of the kernel
      * needs to be written to an intermediate texture.
      */
@@ -279,4 +279,16 @@ public class CIKernel extends NSObject {
     @Generated
     @Selector("kernelNamesFromMetalLibraryData:")
     public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
+
+    /**
+     * The string argument should contain a program in the Metal Language.
+     * All the kernel functions in the program are converted to instances of a CIKernel objects
+     * and returned in an array.
+     * The array will contain instances of CIKernel, CIColorKernel or CIWarpKernel classes.
+     * The kernels will only be usable on Metal-backed CIContext on a device that 'supportsDynamicLibraries'
+     */
+    @Generated
+    @Selector("kernelsWithMetalString:error:")
+    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(String source,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

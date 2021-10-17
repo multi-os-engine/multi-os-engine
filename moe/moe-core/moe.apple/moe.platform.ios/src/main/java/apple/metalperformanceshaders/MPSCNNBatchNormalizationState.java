@@ -30,13 +30,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNBatchNormalizationState
- * 
+ * <p>
  * MPSCNNBatchNormalizationState encapsulates the data necessary
- *             to execute batch normalization.
- * 
- *             MPSCNNBatchNormalizationState cannot initialize the size of its own
- *             underlying resources.  Use [MPSCNNBatchNormalizationStatistics resultStateForSourceImages:]
- *             or [MPSCNNBatchNormalizationStatistics temporaryResultStateForCommandBuffer:sourceImages:].
+ * to execute batch normalization.
+ * <p>
+ * MPSCNNBatchNormalizationState cannot initialize the size of its own
+ * underlying resources.  Use [MPSCNNBatchNormalizationStatistics resultStateForSourceImages:]
+ * or [MPSCNNBatchNormalizationStatistics temporaryResultStateForCommandBuffer:sourceImages:].
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -118,8 +118,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object containing the values of the gradient of the loss function
-     *             with respect to the bias terms.  If a MPSCNNBatchNormalizationGradient kernel
-     *             has not successfully generated these values nil will be returned.
+     * with respect to the bias terms.  If a MPSCNNBatchNormalizationGradient kernel
+     * has not successfully generated these values nil will be returned.
      */
     @Generated
     @Selector("gradientForBeta")
@@ -128,8 +128,8 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
 
     /**
      * Return an MTLBuffer object containing the values of the gradient of the loss function
-     *             with respect to the scale factors.  If a MPSCNNBatchNormalizationGradient kernel
-     *             has not successfully generated these values nil will be returned.
+     * with respect to the scale factors.  If a MPSCNNBatchNormalizationGradient kernel
+     * has not successfully generated these values nil will be returned.
      */
     @Generated
     @Selector("gradientForGamma")

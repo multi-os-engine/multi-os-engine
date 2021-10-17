@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] SecTrustResultType
- * 
+ * <p>
  * Specifies the trust result type.
- * 
+ * <p>
  * SecTrustResultType results have two dimensions.  They specify
  * both whether evaluation succeeded and whether this is because of a user
  * decision.  The commonly expected result is kSecTrustResultUnspecified,

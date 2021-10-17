@@ -90,11 +90,6 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
     public static native Class classForKeyedUnarchiver();
 
     @Generated
-    @Selector("confirmationRequiredWithValueToConfirm:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
-
-    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
@@ -155,11 +150,6 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("successWithResolvedValue:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public static native Object successWithResolvedValue(@NInt long resolvedValue);
 
     @Generated
     @Selector("superclass")

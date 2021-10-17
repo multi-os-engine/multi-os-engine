@@ -101,9 +101,9 @@ public class CLSQuantityItem extends CLSActivityItem {
 
     /**
      * Create a quantity item with an identifier and title.
-     * 
-     * @param         identifier      An identifier that is unique within activity.
-     * @param         title           Title of the quantity. Ex @em Hints
+     *
+     * @param identifier An identifier that is unique within activity.
+     * @param title      Title of the quantity. Ex @em Hints
      */
     @Generated
     @Selector("initWithIdentifier:title:")

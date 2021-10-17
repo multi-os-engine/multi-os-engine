@@ -146,13 +146,13 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Specify a block which will be called from the implementations of localizedDescription, localizedFailureReason, localizedRecoverySuggestion, localizedRecoveryOptions, recoveryAttempter, helpAnchor, and debugDescription when the underlying value for these is not present in the userInfo dictionary of NSError instances with the specified domain.  The provider will be called with the userInfo key corresponding to the queried property: For instance, NSLocalizedDescriptionKey for localizedDescription.  The provider should return nil for any keys it is not able to provide and, very importantly, any keys it does not recognize (since we may extend the list of keys in future releases).
-     * 
+     * <p>
      * The specified block will be called synchronously at the time when the above properties are queried. The results are not cached.
-     * 
+     * <p>
      * This provider is optional. It enables localization and formatting of error messages to be done lazily; rather than populating the userInfo at NSError creation time, these keys will be fetched on-demand when asked for.
-     * 
+     * <p>
      * It is expected that only the “owner” of an NSError domain specifies the provider for the domain, and this is done once. This facility is not meant for consumers of errors to customize the userInfo entries.  This facility should not be used to customize the behaviors of error domains provided by the system.
-     * 
+     * <p>
      * If an appropriate result for the requested key cannot be provided, return nil rather than choosing to manufacture a generic fallback response such as "Operation could not be completed, error 42." NSError will take care of the fallback cases.
      */
     @Generated
@@ -307,4 +307,11 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("fileProviderErrorForNonExistentItemWithIdentifier:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object fileProviderErrorForNonExistentItemWithIdentifier(String itemIdentifier);
+
+    /**
+     * Return a list of underlying errors, if any. It includes the values of both NSUnderlyingErrorKey and NSMultipleUnderlyingErrorsKey. If there are no underlying errors, returns an empty array.
+     */
+    @Generated
+    @Selector("underlyingErrors")
+    public native NSArray<? extends NSError> underlyingErrors();
 }

@@ -25,10 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronLogarithm kernel
- * 
+ * <p>
  * For each pixel, applies the following function:
  * [@code]
- *     f(x) = log_c(a * x + b)
+ * f(x) = log_c(a * x + b)
  * [@endcode]
  */
 @Generated
@@ -107,17 +107,17 @@ public class MPSCNNNeuronLogarithmNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node representing a MPSCNNNeuronLogarithm kernel
-     * 
+     * <p>
      * For each pixel, applies the following function:
      * [@code]
-     *     f(x) = log_c(a * x + b)
+     * f(x) = log_c(a * x + b)
      * [@endcode]
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      a                       See discussion above.
-     * @param      b                       See discussion above.
-     * @param      c                       See discussion above.
-     * @return     A new MPSNNFilter node for a MPSCNNNeuronLogarithm kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @param a          See discussion above.
+     * @param b          See discussion above.
+     * @param c          See discussion above.
+     * @return A new MPSNNFilter node for a MPSCNNNeuronLogarithm kernel.
      */
     @Generated
     @Selector("initWithSource:a:b:c:")

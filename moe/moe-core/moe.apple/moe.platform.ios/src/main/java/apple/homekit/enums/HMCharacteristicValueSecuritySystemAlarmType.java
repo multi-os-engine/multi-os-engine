@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueSecuritySystemAlarmType
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueSecuritySystemAlarmTypeNoAlarm     No alarm.
  * [@constant]  HMCharacteristicValueSecuritySystemAlarmTypeUnknown     Unknown alarm type.
  */

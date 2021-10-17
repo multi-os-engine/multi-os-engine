@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UILayoutGuides will not show up in the view hierarchy, but may be used as items in
  * an NSLayoutConstraint and represent a rectangle in the layout engine.
- * 
+ * <p>
  * Create a UILayoutGuide with -init, and add to a view with -[UIView addLayoutGuide:]
  * before using it in a constraint.
  */
@@ -236,8 +236,8 @@ public class UILayoutGuide extends NSObject implements NSCoding {
 
     /**
      * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
-     * Do not use this property directly to change the owningView of a layout guide. Instead, use 
-     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to 
+     * Do not use this property directly to change the owningView of a layout guide. Instead, use
+     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to
      * change the owningView.
      */
     @Generated
@@ -258,8 +258,8 @@ public class UILayoutGuide extends NSObject implements NSCoding {
 
     /**
      * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
-     * Do not use this property directly to change the owningView of a layout guide. Instead, use 
-     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to 
+     * Do not use this property directly to change the owningView of a layout guide. Instead, use
+     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to
      * change the owningView.
      */
     @Generated
@@ -268,8 +268,8 @@ public class UILayoutGuide extends NSObject implements NSCoding {
 
     /**
      * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
-     * Do not use this property directly to change the owningView of a layout guide. Instead, use 
-     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to 
+     * Do not use this property directly to change the owningView of a layout guide. Instead, use
+     * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to
      * change the owningView.
      */
     @Generated

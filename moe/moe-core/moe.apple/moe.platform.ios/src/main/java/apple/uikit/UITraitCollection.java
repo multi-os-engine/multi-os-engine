@@ -185,7 +185,7 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Returns a trait collection by merging the traits in `traitCollections`. The last trait along any given
-     * axis (e.g. interface usage) will supersede any others. 
+     * axis (e.g. interface usage) will supersede any others.
      */
     @Generated
     @Selector("traitCollectionWithTraitsFromCollections:")
@@ -317,9 +317,9 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
      * for dynamic colors that are provided by UIKit or are in an asset catalog.
      * If you need to be aware of when dynamic colors might change, override `traitCollectionDidChange` in your view or view controller,
      * and use this method to compare `self.traitCollection` with `previousTraitCollection`.
-     * 
+     * <p>
      * Currently, a change in any of these traits could affect dynamic colors:
-     *    userInterfaceIdiom, userInterfaceStyle, displayGamut, accessibilityContrast, userInterfaceLevel
+     * userInterfaceIdiom, userInterfaceStyle, displayGamut, accessibilityContrast, userInterfaceLevel
      * and more could be added in the future.
      */
     @Generated

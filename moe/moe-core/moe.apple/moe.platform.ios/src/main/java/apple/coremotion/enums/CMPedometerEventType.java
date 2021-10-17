@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CMPedometerEventType
- * 
+ * <p>
  * Discussion:
- *     Events describing the transitions of pedestrian activity.
+ * Events describing the transitions of pedestrian activity.
  */
 @Generated
 public final class CMPedometerEventType {

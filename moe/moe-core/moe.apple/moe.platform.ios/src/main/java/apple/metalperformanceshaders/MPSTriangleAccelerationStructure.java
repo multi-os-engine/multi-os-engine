@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An acceleration structure built over triangles
- * 
+ * <p>
  * See MPSPolygonAccelerationStructure for more information
  */
 @Generated
@@ -157,7 +157,7 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     /**
      * Number of triangles. Changes to this property require rebuilding the acceleration
      * structure.
-     * 
+     * <p>
      * Note that this property is an alias for the polygonCount property.
      */
     @Generated
@@ -185,7 +185,7 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     /**
      * Number of triangles. Changes to this property require rebuilding the acceleration
      * structure.
-     * 
+     * <p>
      * Note that this property is an alias for the polygonCount property.
      */
     @Generated

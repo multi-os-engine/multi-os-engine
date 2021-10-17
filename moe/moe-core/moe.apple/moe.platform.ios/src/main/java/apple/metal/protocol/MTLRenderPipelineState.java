@@ -16,13 +16,20 @@ limitations under the License.
 
 package apple.metal.protocol;
 
+import apple.foundation.NSError;
+import apple.metal.MTLIntersectionFunctionTableDescriptor;
+import apple.metal.MTLRenderPipelineFunctionsDescriptor;
+import apple.metal.MTLVisibleFunctionTableDescriptor;
 import apple.metal.struct.MTLSize;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
+import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
@@ -30,9 +37,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLRenderPipelineState
- * 
+ * <p>
  * MTLRenderPipelineState represents a compiled render pipeline
- * 
+ * <p>
  * MTLRenderPipelineState is a compiled render pipeline and can be set on a MTLRenderCommandEncoder.
  */
 @Generated
@@ -51,7 +58,7 @@ public interface MTLRenderPipelineState {
 
     /**
      * imageblockMemoryLengthForDimensions:sampleCount:
-     * 
+     * <p>
      * Returns imageblock memory length for given image block dimensions. Dimensions must be valid tile dimensions.
      */
     @Generated
@@ -61,7 +68,7 @@ public interface MTLRenderPipelineState {
 
     /**
      * [@property] imageblockSampleLength
-     * 
+     * <p>
      * Returns imageblock memory length used by a single sample when rendered using this pipeline.
      */
     @Generated
@@ -71,8 +78,8 @@ public interface MTLRenderPipelineState {
 
     /**
      * [@property] maxTotalThreadsPerThreadgroup
-     * 
-     * The maximum total number of threads that can be in a single threadgroup.
+     * <p>
+     * The maximum total number of threads that can be in a single tile shader threadgroup.
      */
     @Generated
     @Selector("maxTotalThreadsPerThreadgroup")
@@ -81,8 +88,8 @@ public interface MTLRenderPipelineState {
 
     /**
      * [@property] threadgroupSizeMatchesTileSize
-     * 
-     * Returns true when the pipeline state requires a threadgroup size equal to the tile size
+     * <p>
+     * Returns true when the pipeline state requires a tile shader threadgroup size equal to the tile size
      */
     @Generated
     @Selector("threadgroupSizeMatchesTileSize")
@@ -91,4 +98,49 @@ public interface MTLRenderPipelineState {
     @Generated
     @Selector("supportIndirectCommandBuffers")
     boolean supportIndirectCommandBuffers();
+
+    /**
+     * functionHandleWithFunction:stage:
+     * <p>
+     * Gets the function handle for the specified function on the specified stage of the pipeline.
+     */
+    @Generated
+    @Selector("functionHandleWithFunction:stage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLFunctionHandle functionHandleWithFunctionStage(@Mapped(ObjCObjectMapper.class) MTLFunction function,
+            @NUInt long stage);
+
+    /**
+     * newIntersectionFunctionTableWithDescriptor:stage:
+     * <p>
+     * Allocate an intersection function table for the specified stage of the pipeline with the provided descriptor.
+     */
+    @Generated
+    @Selector("newIntersectionFunctionTableWithDescriptor:stage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLIntersectionFunctionTable newIntersectionFunctionTableWithDescriptorStage(
+            MTLIntersectionFunctionTableDescriptor descriptor, @NUInt long stage);
+
+    /**
+     * newRenderPipelineStateWithAdditionalBinaryFunctions:error:
+     * <p>
+     * Allocate a new render pipeline state by adding binary functions for each stage of this pipeline state.
+     */
+    @Generated
+    @Selector("newRenderPipelineStateWithAdditionalBinaryFunctions:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLRenderPipelineState newRenderPipelineStateWithAdditionalBinaryFunctionsError(
+            MTLRenderPipelineFunctionsDescriptor additionalBinaryFunctions,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * newVisibleFunctionTableWithDescriptor:stage:
+     * <p>
+     * Allocate a visible function table for the specified stage of the pipeline with the provided descriptor.
+     */
+    @Generated
+    @Selector("newVisibleFunctionTableWithDescriptor:stage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLVisibleFunctionTable newVisibleFunctionTableWithDescriptorStage(MTLVisibleFunctionTableDescriptor descriptor,
+            @NUInt long stage);
 }

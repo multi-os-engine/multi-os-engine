@@ -34,7 +34,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface NSFileManagerDelegate {
     /**
      * fileManager:shouldCopyItemAtPath:toPath: gives the delegate an opportunity to filter the resulting copy. Returning YES from this method will allow the copy to happen. Returning NO from this method causes the item in question to be skipped. If the item skipped was a directory, no children of that directory will be copied, nor will the delegate be notified of those children.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated
@@ -53,7 +53,7 @@ public interface NSFileManagerDelegate {
 
     /**
      * fileManager:shouldLinkItemAtPath:toPath: acts as the other "should" methods, but this applies to the file manager creating hard links to the files in question.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated
@@ -72,7 +72,7 @@ public interface NSFileManagerDelegate {
 
     /**
      * fileManager:shouldMoveItemAtPath:toPath: gives the delegate an opportunity to not move the item at the specified path. If the source path and the destination path are not on the same device, a copy is performed to the destination path and the original is removed. If the copy does not succeed, an error is returned and the incomplete copy is removed, leaving the original in place.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated
@@ -91,7 +91,7 @@ public interface NSFileManagerDelegate {
 
     /**
      * fileManager:shouldProceedAfterError:copyingItemAtPath:toPath: gives the delegate an opportunity to recover from or continue copying after an error. If an error occurs, the error object will contain an NSError indicating the problem. The source path and destination paths are also provided. If this method returns YES, the NSFileManager instance will continue as if the error had not occurred. If this method returns NO, the NSFileManager instance will stop copying, return NO from copyItemAtPath:toPath:error: and the error will be provied there.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
@@ -112,7 +112,7 @@ public interface NSFileManagerDelegate {
 
     /**
      * fileManager:shouldProceedAfterError:linkingItemAtPath:toPath: allows the delegate an opportunity to remedy the error which occurred in linking srcPath to dstPath. If the delegate returns YES from this method, the linking will continue. If the delegate returns NO from this method, the linking operation will stop and the error will be returned via linkItemAtPath:toPath:error:.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
@@ -133,7 +133,7 @@ public interface NSFileManagerDelegate {
 
     /**
      * fileManager:shouldProceedAfterError:movingItemAtPath:toPath: functions much like fileManager:shouldProceedAfterError:copyingItemAtPath:toPath: above. The delegate has the opportunity to remedy the error condition and allow the move to continue.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
@@ -154,7 +154,7 @@ public interface NSFileManagerDelegate {
 
     /**
      * fileManager:shouldProceedAfterError:removingItemAtPath: allows the delegate an opportunity to remedy the error which occurred in removing the item at the path provided. If the delegate returns YES from this method, the removal operation will continue. If the delegate returns NO from this method, the removal operation will stop and the error will be returned via linkItemAtPath:toPath:error:.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned NO.
      */
     @Generated
@@ -175,7 +175,7 @@ public interface NSFileManagerDelegate {
 
     /**
      * fileManager:shouldRemoveItemAtPath: allows the delegate the opportunity to not remove the item at path. If the delegate returns YES from this method, the NSFileManager instance will attempt to remove the item. If the delegate returns NO from this method, the remove skips the item. If the item is a directory, no children of that item will be visited.
-     * 
+     * <p>
      * If the delegate does not implement this method, the NSFileManager instance acts as if this method returned YES.
      */
     @Generated

@@ -156,4 +156,11 @@ public class HMCameraSource extends NSObject {
     @Generated
     @Selector("init")
     public native HMCameraSource init();
+
+    /**
+     * Represents the aspect ratio of the camera source, defined as width over height.
+     */
+    @Generated
+    @Selector("aspectRatio")
+    public native double aspectRatio();
 }

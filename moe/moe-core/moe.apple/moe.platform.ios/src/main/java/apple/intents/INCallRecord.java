@@ -213,4 +213,31 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("numberOfCalls")
     public native NSNumber numberOfCalls();
+
+    @Generated
+    @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:")
+    public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseen(
+            String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
+            NSNumber callDuration, NSNumber unseen);
+
+    @Generated
+    @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:numberOfCalls:")
+    public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseenNumberOfCalls(
+            String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
+            NSNumber callDuration, NSNumber unseen, NSNumber numberOfCalls);
+
+    @Generated
+    @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:participants:numberOfCalls:isCallerIdBlocked:")
+    public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseenParticipantsNumberOfCallsIsCallerIdBlocked(
+            String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
+            NSNumber callDuration, NSNumber unseen, NSArray<? extends INPerson> participants, NSNumber numberOfCalls,
+            NSNumber isCallerIdBlocked);
+
+    @Generated
+    @Selector("isCallerIdBlocked")
+    public native NSNumber isCallerIdBlocked();
+
+    @Generated
+    @Selector("participants")
+    public native NSArray<? extends INPerson> participants();
 }

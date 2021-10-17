@@ -52,19 +52,28 @@ public final class CMSampleTimingInfo extends StructObject {
         setDecodeTimeStamp(decodeTimeStamp);
     }
 
+    /**
+     * < The duration of the sample. If a single struct applies to
+     * each of the samples, they all will have this duration.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native CMTime duration();
 
+    /**
+     * < The duration of the sample. If a single struct applies to
+     * each of the samples, they all will have this duration.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setDuration(@ByValue CMTime value);
 
     /**
-     * [@field] duration
-     * The duration of the sample. If a single struct applies to
-     * each of the samples, they all will have this duration. 
+     * < The time at which the sample will be presented. If a single
+     * struct applies to each of the samples, this is the presentationTime of the
+     * first sample. The presentationTime of subsequent samples will be derived by
+     * repeatedly adding the sample duration.
      */
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -72,20 +81,19 @@ public final class CMSampleTimingInfo extends StructObject {
     public native CMTime presentationTimeStamp();
 
     /**
-     * [@field] duration
-     * The duration of the sample. If a single struct applies to
-     * each of the samples, they all will have this duration. 
+     * < The time at which the sample will be presented. If a single
+     * struct applies to each of the samples, this is the presentationTime of the
+     * first sample. The presentationTime of subsequent samples will be derived by
+     * repeatedly adding the sample duration.
      */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setPresentationTimeStamp(@ByValue CMTime value);
 
     /**
-     * [@field] presentationTimeStamp
-     * The time at which the sample will be presented. If a single
-     * struct applies to each of the samples, this is the presentationTime of the
-     * first sample. The presentationTime of subsequent samples will be derived by
-     * repeatedly adding the sample duration. 
+     * < The time at which the sample will be decoded. If the samples
+     * are in presentation order (eg. audio samples, or video samples from a codec
+     * that doesn't support out-of-order samples), this can be set to kCMTimeInvalid.
      */
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -93,11 +101,9 @@ public final class CMSampleTimingInfo extends StructObject {
     public native CMTime decodeTimeStamp();
 
     /**
-     * [@field] presentationTimeStamp
-     * The time at which the sample will be presented. If a single
-     * struct applies to each of the samples, this is the presentationTime of the
-     * first sample. The presentationTime of subsequent samples will be derived by
-     * repeatedly adding the sample duration. 
+     * < The time at which the sample will be decoded. If the samples
+     * are in presentation order (eg. audio samples, or video samples from a codec
+     * that doesn't support out-of-order samples), this can be set to kCMTimeInvalid.
      */
     @Generated
     @StructureField(order = 2, isGetter = false)

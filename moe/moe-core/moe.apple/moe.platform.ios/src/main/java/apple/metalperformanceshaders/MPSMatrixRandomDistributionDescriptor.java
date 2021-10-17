@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSMatrixRandomDistributionDescriptor
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Decribes properties of a distribution of random values.
  */
 @Generated
@@ -92,8 +92,8 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * Make a descriptor for a default distribution.
-     * 
-     * @return    A valid MPSMatrixRandomDistribution object or nil, if failure.
+     *
+     * @return A valid MPSMatrixRandomDistribution object or nil, if failure.
      */
     @Generated
     @Selector("defaultDistributionDescriptor")
@@ -105,7 +105,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   distributionType
-     * 
+     * <p>
      * The type of distribution.
      */
     @Generated
@@ -145,7 +145,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   maximum
-     * 
+     * <p>
      * For distributions of values bounded above, this value describes the maximum.
      */
     @Generated
@@ -154,7 +154,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   mean
-     * 
+     * <p>
      * The value to use for distributions described by their mean.
      */
     @Generated
@@ -163,7 +163,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   minimum
-     * 
+     * <p>
      * For distributions of values bounded below, this value describes the minimum.
      */
     @Generated
@@ -186,7 +186,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   distributionType
-     * 
+     * <p>
      * The type of distribution.
      */
     @Generated
@@ -195,7 +195,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   maximum
-     * 
+     * <p>
      * For distributions of values bounded above, this value describes the maximum.
      */
     @Generated
@@ -204,7 +204,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   mean
-     * 
+     * <p>
      * The value to use for distributions described by their mean.
      */
     @Generated
@@ -213,7 +213,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   minimum
-     * 
+     * <p>
      * For distributions of values bounded below, this value describes the minimum.
      */
     @Generated
@@ -222,7 +222,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   standardDeviation
-     * 
+     * <p>
      * The value to use for distributions described by their standardDeviation.
      */
     @Generated
@@ -235,7 +235,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * [@property]   standardDeviation
-     * 
+     * <p>
      * The value to use for distributions described by their standardDeviation.
      */
     @Generated
@@ -248,11 +248,11 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * Make a descriptor for a uniform distribution of floating point values in
-     *             the range [minimum, maximum).
-     * 
-     * @param     minimum  The lower bound of the range.
-     * @param     maximum  The upper bound of the range.
-     * @return    A valid MPSMatrixRandomDistribution object or nil, if failure.
+     * the range [minimum, maximum).
+     *
+     * @param minimum The lower bound of the range.
+     * @param maximum The upper bound of the range.
+     * @return A valid MPSMatrixRandomDistribution object or nil, if failure.
      */
     @Generated
     @Selector("uniformDistributionDescriptorWithMinimum:maximum:")
@@ -266,11 +266,10 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * Make a descriptor for a normal distribution of floating point values.
-     * 
-     * @param    mean    The mean of the distribution
-     * @param    standardDeviation   The standard deviation of the distribution.
-     * 
-     * @return   A valid MPSMatrixRandomDistribution object or nil if failure.
+     *
+     * @param mean              The mean of the distribution
+     * @param standardDeviation The standard deviation of the distribution.
+     * @return A valid MPSMatrixRandomDistribution object or nil if failure.
      */
     @Generated
     @Selector("normalDistributionDescriptorWithMean:standardDeviation:")
@@ -279,13 +278,12 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
 
     /**
      * Make a descriptor for a truncated normal distribution of floating point values.
-     * 
-     * @param    mean    The mean of the distribution
-     * @param    standardDeviation   The standard deviation of the distribution.
-     * @param    minimum The lower bound of the distribution
-     * @param    maximum The upper bound of the distribution
-     * 
-     * @return   A valid MPSMatrixRandomDistribution object or nil if failure.
+     *
+     * @param mean              The mean of the distribution
+     * @param standardDeviation The standard deviation of the distribution.
+     * @param minimum           The lower bound of the distribution
+     * @param maximum           The upper bound of the distribution
+     * @return A valid MPSMatrixRandomDistribution object or nil if failure.
      */
     @Generated
     @Selector("normalDistributionDescriptorWithMean:standardDeviation:minimum:maximum:")

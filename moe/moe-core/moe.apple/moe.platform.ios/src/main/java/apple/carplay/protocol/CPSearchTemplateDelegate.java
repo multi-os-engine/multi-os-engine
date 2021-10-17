@@ -19,9 +19,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface CPSearchTemplateDelegate {
     /**
      * The user has selected an item in the search result list.
-     * 
-     * @param searchTemplate The search template in use by the user
-     * @param item The item selected by the user
+     *
+     * @param searchTemplate    The search template in use by the user
+     * @param item              The item selected by the user
      * @param completionHandler You must call the completionHandler when you have handled the row selection in the search result
      */
     @Generated
@@ -38,9 +38,9 @@ public interface CPSearchTemplateDelegate {
 
     /**
      * The user has entered characters in the search text field.
-     * 
-     * @param searchTemplate The search template in use by the user
-     * @param searchText The search text entered by the user
+     *
+     * @param searchTemplate    The search template in use by the user
+     * @param searchText        The search text entered by the user
      * @param completionHandler You must call the completionHandler with updated search results
      */
     @Generated
@@ -57,7 +57,7 @@ public interface CPSearchTemplateDelegate {
 
     /**
      * The user has selected the keyboard's search button. Generally, you should push a @c CPListTemplate containing the current search results.
-     * 
+     *
      * @param searchTemplate The search template in use by the user
      */
     @Generated

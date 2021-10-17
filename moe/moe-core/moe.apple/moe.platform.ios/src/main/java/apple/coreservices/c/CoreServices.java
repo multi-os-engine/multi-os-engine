@@ -26,47 +26,47 @@ public final class CoreServices {
 
     /**
      * UTTypeCreatePreferredIdentifierForTag()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Creates a uniform type identifier for the type indicated by the
-     *   specified tag. This is the primary function to use for going from
-     *   tag (extension/MIMEType/OSType) to uniform type identifier.
-     *   Optionally, the returned type identifiers must conform to the
-     *   identified "conforming-to" type argument. This is a hint to the
-     *   implementation to constrain the search to a particular tree of
-     *   types. For example, the client may want to know the type
-     *   indicated by a particular extension tag. If the client knows that
-     *   the extension is associated with a directory (rather than a
-     *   file), the client may specify "public.directory" for the
-     *   conforming-to argument. This will allow the implementation to
-     *   ignore all types associated with byte data formats (public.data
-     *   base type). If more than one type is indicated, preference is
-     *   given to a public type over a non-public type on the theory that
-     *   instances of public types are more common, and therefore more
-     *   likely to be correct. When there a choice must be made between
-     *   multiple public types or multiple non-public types, the selection
-     *   rules are undefined. Clients needing finer control should use
-     *   UTTypeCreateAllIdentifiersForTag. If no declared type is
-     *   indicated, a dynamic type identifier is generated which satisfies
-     *   the parameters.
-     * 
+     * Creates a uniform type identifier for the type indicated by the
+     * specified tag. This is the primary function to use for going from
+     * tag (extension/MIMEType/OSType) to uniform type identifier.
+     * Optionally, the returned type identifiers must conform to the
+     * identified "conforming-to" type argument. This is a hint to the
+     * implementation to constrain the search to a particular tree of
+     * types. For example, the client may want to know the type
+     * indicated by a particular extension tag. If the client knows that
+     * the extension is associated with a directory (rather than a
+     * file), the client may specify "public.directory" for the
+     * conforming-to argument. This will allow the implementation to
+     * ignore all types associated with byte data formats (public.data
+     * base type). If more than one type is indicated, preference is
+     * given to a public type over a non-public type on the theory that
+     * instances of public types are more common, and therefore more
+     * likely to be correct. When there a choice must be made between
+     * multiple public types or multiple non-public types, the selection
+     * rules are undefined. Clients needing finer control should use
+     * UTTypeCreateAllIdentifiersForTag. If no declared type is
+     * indicated, a dynamic type identifier is generated which satisfies
+     * the parameters.
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inTagClass:
-     *     the class identifier of the tag argument
-     * 
-     *   inTag:
-     *     the tag string
-     * 
-     *   inConformingToUTI:
-     *     the identifier of a type to which the result must conform
-     * 
+     * <p>
+     * inTagClass:
+     * the class identifier of the tag argument
+     * <p>
+     * inTag:
+     * the tag string
+     * <p>
+     * inConformingToUTI:
+     * the identifier of a type to which the result must conform
+     * <p>
      * Result:
-     *   a new CFStringRef containing the type identifier, or NULL if
-     *   inTagClass is not a known tag class
+     * a new CFStringRef containing the type identifier, or NULL if
+     * inTagClass is not a known tag class
      */
     @Generated
     @CFunction
@@ -75,41 +75,41 @@ public final class CoreServices {
 
     /**
      * UTTypeCreateAllIdentifiersForTag()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Creates an array of all uniform type identifiers indicated by the
-     *   specified tag. An overloaded tag (e.g., an extension used by
-     *   several applications for different file formats) may indicate
-     *   multiple types. If no declared type identifiers have the
-     *   specified tag, then a single dynamic type identifier will be
-     *   created for the tag. Optionally, the returned type identifiers
-     *   must conform to the identified "conforming-to" type argument.
-     *   This is a hint to the implementation to constrain the search to a
-     *   particular tree of types. For example, the client may want to
-     *   know the type indicated by a particular extension tag. If the
-     *   client knows that the extension is associated with a directory
-     *   (rather than a file), the client may specify "public.directory"
-     *   for the conforming-to argument. This will allow the
-     *   implementation to ignore all types associated with byte data
-     *   formats (public.data base type).
-     * 
+     * Creates an array of all uniform type identifiers indicated by the
+     * specified tag. An overloaded tag (e.g., an extension used by
+     * several applications for different file formats) may indicate
+     * multiple types. If no declared type identifiers have the
+     * specified tag, then a single dynamic type identifier will be
+     * created for the tag. Optionally, the returned type identifiers
+     * must conform to the identified "conforming-to" type argument.
+     * This is a hint to the implementation to constrain the search to a
+     * particular tree of types. For example, the client may want to
+     * know the type indicated by a particular extension tag. If the
+     * client knows that the extension is associated with a directory
+     * (rather than a file), the client may specify "public.directory"
+     * for the conforming-to argument. This will allow the
+     * implementation to ignore all types associated with byte data
+     * formats (public.data base type).
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inTagClass:
-     *     the class identifier of the tag argument
-     * 
-     *   inTag:
-     *     the tag string
-     * 
-     *   inConformingToUTI:
-     *     the identifier of a type to which the results must conform
-     * 
+     * <p>
+     * inTagClass:
+     * the class identifier of the tag argument
+     * <p>
+     * inTag:
+     * the tag string
+     * <p>
+     * inConformingToUTI:
+     * the identifier of a type to which the results must conform
+     * <p>
      * Result:
-     *   An array of uniform type identifiers, or NULL if inTagClass is
-     *   not a known tag class
+     * An array of uniform type identifiers, or NULL if inTagClass is
+     * not a known tag class
      */
     @Generated
     @CFunction
@@ -118,27 +118,27 @@ public final class CoreServices {
 
     /**
      * UTTypeCopyPreferredTagWithClass()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Returns the identified type's preferred tag with the specified
-     *   tag class as a CFString. This is the primary function to use for
-     *   going from uniform type identifier to tag. If the type
-     *   declaration included more than one tag with the specified class,
-     *   the first tag in the declared tag array is the preferred tag.
-     * 
+     * Returns the identified type's preferred tag with the specified
+     * tag class as a CFString. This is the primary function to use for
+     * going from uniform type identifier to tag. If the type
+     * declaration included more than one tag with the specified class,
+     * the first tag in the declared tag array is the preferred tag.
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier
-     * 
-     *   inTagClass:
-     *     the class of tags to return
-     * 
+     * <p>
+     * inUTI:
+     * the uniform type identifier
+     * <p>
+     * inTagClass:
+     * the class of tags to return
+     * <p>
      * Result:
-     *   the tag string, or NULL if there is no tag of the specified class.
+     * the tag string, or NULL if there is no tag of the specified class.
      */
     @Generated
     @CFunction
@@ -146,21 +146,21 @@ public final class CoreServices {
 
     /**
      * UTTypeCopyAllTagsWithClass()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Returns each of the identified type's tags with the specified
-     *   tag class as a CFArray of CFStrings.
-     * 
+     * Returns each of the identified type's tags with the specified
+     * tag class as a CFArray of CFStrings.
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier
-     * 
-     *   inTagClass:
-     *     the class of tags to return
-     * 
+     * <p>
+     * inUTI:
+     * the uniform type identifier
+     * <p>
+     * inTagClass:
+     * the class of tags to return
+     * <p>
      * Result:
-     *   an array of tag strings, or NULL if there is no tag of the specified class.
+     * an array of tag strings, or NULL if there is no tag of the specified class.
      */
     @Generated
     @CFunction
@@ -168,22 +168,22 @@ public final class CoreServices {
 
     /**
      * UTTypeEqual()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Compares two identified types for equality. Types are equal if
-     *   their identifier strings are equal using a case-insensitive
-     *   comparison.
-     * 
+     * Compares two identified types for equality. Types are equal if
+     * their identifier strings are equal using a case-insensitive
+     * comparison.
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inUTI1:
-     *     a uniform type identifier
-     * 
-     *   inUTI2:
-     *     another uniform type identifier
+     * <p>
+     * inUTI1:
+     * a uniform type identifier
+     * <p>
+     * inUTI2:
+     * another uniform type identifier
      */
     @Generated
     @CFunction
@@ -191,22 +191,22 @@ public final class CoreServices {
 
     /**
      * UTTypeConformsTo()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Tests for a conformance relationship between the two identified
-     *   types. Returns true if the types are equal, or if the first type
-     *   conforms, directly or indirectly, to the second type.
-     * 
+     * Tests for a conformance relationship between the two identified
+     * types. Returns true if the types are equal, or if the first type
+     * conforms, directly or indirectly, to the second type.
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier to test
-     * 
-     *   inConformsToUTI:
-     *     the uniform type identifier against which to test conformance.
+     * <p>
+     * inUTI:
+     * the uniform type identifier to test
+     * <p>
+     * inConformsToUTI:
+     * the uniform type identifier against which to test conformance.
      */
     @Generated
     @CFunction
@@ -214,20 +214,20 @@ public final class CoreServices {
 
     /**
      * UTTypeCopyDescription()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Returns the localized, user-readable type description string
-     * 
+     * Returns the localized, user-readable type description string
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier
-     * 
+     * <p>
+     * inUTI:
+     * the uniform type identifier
+     * <p>
      * Result:
-     *   a localized string, or NULL of no type description is available
+     * a localized string, or NULL of no type description is available
      */
     @Generated
     @CFunction
@@ -235,19 +235,19 @@ public final class CoreServices {
 
     /**
      * UTTypeIsDeclared()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Returns whether or not the specified UTI has a declaration
-     *   registered on the current system. Dynamic UTIs are never
-     *   registered.
-     * 
+     * Returns whether or not the specified UTI has a declaration
+     * registered on the current system. Dynamic UTIs are never
+     * registered.
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier
-     * 
+     * <p>
+     * inUTI:
+     * the uniform type identifier
+     * <p>
      * Result:
-     *   Whether or not the UTI is registered.
+     * Whether or not the UTI is registered.
      */
     @Generated
     @CFunction
@@ -255,17 +255,17 @@ public final class CoreServices {
 
     /**
      * UTTypeIsDynamic()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Returns whether or not the specified UTI is a dynamic UTI.
-     * 
+     * Returns whether or not the specified UTI is a dynamic UTI.
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier
-     * 
+     * <p>
+     * inUTI:
+     * the uniform type identifier
+     * <p>
      * Result:
-     *   Whether or not the UTI is dynamic.
+     * Whether or not the UTI is dynamic.
      */
     @Generated
     @CFunction
@@ -273,23 +273,23 @@ public final class CoreServices {
 
     /**
      * UTTypeCopyDeclaration()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Returns the identified type's declaration dictionary, as it
-     *   appears in the declaring bundle's info property list. This the
-     *   access path to other type properties for which direct access is
-     *   rarely needed.
-     * 
+     * Returns the identified type's declaration dictionary, as it
+     * appears in the declaring bundle's info property list. This the
+     * access path to other type properties for which direct access is
+     * rarely needed.
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier
-     * 
+     * <p>
+     * inUTI:
+     * the uniform type identifier
+     * <p>
      * Result:
-     *   a tag declaration dictionary, or NULL if the type is not declared
+     * a tag declaration dictionary, or NULL if the type is not declared
      */
     @Generated
     @CFunction
@@ -297,21 +297,21 @@ public final class CoreServices {
 
     /**
      * UTTypeCopyDeclaringBundleURL()   *** DEPRECATED ***
-     * 
+     * <p>
      * Discussion:
-     *   Returns the URL of the bundle containing the type declaration of
-     *   the identified type.
-     * 
+     * Returns the URL of the bundle containing the type declaration of
+     * the identified type.
+     * <p>
      * Mac OS X threading:
-     *   Thread safe since version 10.3
-     * 
+     * Thread safe since version 10.3
+     * <p>
      * Parameters:
-     * 
-     *   inUTI:
-     *     the uniform type identifier
-     * 
+     * <p>
+     * inUTI:
+     * the uniform type identifier
+     * <p>
      * Result:
-     *   a URL, or NULL if the bundle cannot be located.
+     * a URL, or NULL if the bundle cannot be located.
      */
     @Generated
     @CFunction
@@ -319,58 +319,58 @@ public final class CoreServices {
 
     /**
      * kUTTypeItem   *** DEPRECATED ***
-     * 
-     *   generic base type for most things
-     *   (files, directories)
-     * 
-     *   UTI: public.item
-     * 
-     * 
+     * <p>
+     * generic base type for most things
+     * (files, directories)
+     * <p>
+     * UTI: public.item
+     * <p>
+     * <p>
      * kUTTypeContent   *** DEPRECATED ***
-     * 
-     *   base type for anything containing user-viewable document content
-     *   (documents, pasteboard data, and document packages.) Types describing
-     *   files or packages must also conform to kUTTypeData or kUTTypePackage
-     *   in order for the system to bind documents to them.
-     * 
-     *   UTI: public.content
-     * 
-     * 
+     * <p>
+     * base type for anything containing user-viewable document content
+     * (documents, pasteboard data, and document packages.) Types describing
+     * files or packages must also conform to kUTTypeData or kUTTypePackage
+     * in order for the system to bind documents to them.
+     * <p>
+     * UTI: public.content
+     * <p>
+     * <p>
      * kUTTypeCompositeContent   *** DEPRECATED ***
-     * 
-     *   base type for content formats supporting mixed embedded content
-     *   (i.e., compound documents)
-     * 
-     *   UTI: public.composite-content
-     *   conforms to: public.content
-     * 
-     * 
+     * <p>
+     * base type for content formats supporting mixed embedded content
+     * (i.e., compound documents)
+     * <p>
+     * UTI: public.composite-content
+     * conforms to: public.content
+     * <p>
+     * <p>
      * kUTTypeMessage   *** DEPRECATED ***
-     * 
-     *   base type for messages (email, IM, etc.)
-     * 
-     *   UTI: public.message
-     * 
-     * 
+     * <p>
+     * base type for messages (email, IM, etc.)
+     * <p>
+     * UTI: public.message
+     * <p>
+     * <p>
      * kUTTypeContact   *** DEPRECATED ***
-     * 
-     *   contact information, e.g. for a person, group, organization
-     * 
-     *   UTI: public.contact
-     * 
-     * 
+     * <p>
+     * contact information, e.g. for a person, group, organization
+     * <p>
+     * UTI: public.contact
+     * <p>
+     * <p>
      * kUTTypeArchive   *** DEPRECATED ***
-     * 
-     *   an archive of files and directories
-     * 
-     *   UTI: public.archive
-     * 
-     * 
+     * <p>
+     * an archive of files and directories
+     * <p>
+     * UTI: public.archive
+     * <p>
+     * <p>
      * kUTTypeDiskImage   *** DEPRECATED ***
-     * 
-     *   a data item mountable as a volume
-     * 
-     *   UTI: public.disk-image
+     * <p>
+     * a data item mountable as a volume
+     * <p>
+     * UTI: public.disk-image
      */
     @Generated
     @CVariable()
@@ -402,75 +402,75 @@ public final class CoreServices {
 
     /**
      * kUTTypeData   *** DEPRECATED ***
-     * 
-     *   base type for any sort of simple byte stream,
-     *   including files and in-memory data
-     * 
-     *   UTI: public.data
-     *   conforms to: public.item
-     * 
-     * 
+     * <p>
+     * base type for any sort of simple byte stream,
+     * including files and in-memory data
+     * <p>
+     * UTI: public.data
+     * conforms to: public.item
+     * <p>
+     * <p>
      * kUTTypeDirectory   *** DEPRECATED ***
-     * 
-     *   file system directory
-     *   (includes packages AND folders)
-     * 
-     *   UTI: public.directory
-     *   conforms to: public.item
-     * 
-     * 
+     * <p>
+     * file system directory
+     * (includes packages AND folders)
+     * <p>
+     * UTI: public.directory
+     * conforms to: public.item
+     * <p>
+     * <p>
      * kUTTypeResolvable   *** DEPRECATED ***
-     * 
-     *   symlink and alias file types conform to this UTI
-     * 
-     *   UTI: com.apple.resolvable
-     * 
-     * 
+     * <p>
+     * symlink and alias file types conform to this UTI
+     * <p>
+     * UTI: com.apple.resolvable
+     * <p>
+     * <p>
      * kUTTypeSymLink   *** DEPRECATED ***
-     * 
-     *   a symbolic link
-     * 
-     *   UTI: public.symlink
-     *   conforms to: public.item, com.apple.resolvable
-     * 
-     * 
+     * <p>
+     * a symbolic link
+     * <p>
+     * UTI: public.symlink
+     * conforms to: public.item, com.apple.resolvable
+     * <p>
+     * <p>
      * kUTTypeExecutable   *** DEPRECATED ***
-     * 
-     *   an executable item
-     *   UTI: public.executable
-     *   conforms to: public.item
-     * 
-     * 
+     * <p>
+     * an executable item
+     * UTI: public.executable
+     * conforms to: public.item
+     * <p>
+     * <p>
      * kUTTypeMountPoint   *** DEPRECATED ***
-     * 
-     *   a volume mount point (resolvable, resolves to the root dir of a volume)
-     * 
-     *   UTI: com.apple.mount-point
-     *   conforms to: public.item, com.apple.resolvable
-     * 
-     * 
+     * <p>
+     * a volume mount point (resolvable, resolves to the root dir of a volume)
+     * <p>
+     * UTI: com.apple.mount-point
+     * conforms to: public.item, com.apple.resolvable
+     * <p>
+     * <p>
      * kUTTypeAliasFile   *** DEPRECATED ***
-     * 
-     *   a fully-formed alias file
-     * 
-     *   UTI: com.apple.alias-file
-     *   conforms to: public.data, com.apple.resolvable
-     * 
-     * 
+     * <p>
+     * a fully-formed alias file
+     * <p>
+     * UTI: com.apple.alias-file
+     * conforms to: public.data, com.apple.resolvable
+     * <p>
+     * <p>
      * kUTTypeAliasRecord   *** DEPRECATED ***
-     * 
-     *   raw alias data
-     * 
-     *   UTI: com.apple.alias-record
-     *   conforms to: public.data, com.apple.resolvable
-     * 
-     * 
+     * <p>
+     * raw alias data
+     * <p>
+     * UTI: com.apple.alias-record
+     * conforms to: public.data, com.apple.resolvable
+     * <p>
+     * <p>
      * kUTTypeURLBookmarkData   *** DEPRECATED ***
-     * 
-     *   URL bookmark
-     * 
-     *   UTI: com.apple.bookmark
-     *   conforms to: public.data, com.apple.resolvable
+     * <p>
+     * URL bookmark
+     * <p>
+     * UTI: com.apple.bookmark
+     * conforms to: public.data, com.apple.resolvable
      */
     @Generated
     @CVariable()
@@ -510,21 +510,21 @@ public final class CoreServices {
 
     /**
      * kUTTypeURL   *** DEPRECATED ***
-     * 
-     *   The bytes of a URL
-     *   (OSType 'url ')
-     * 
-     *   UTI: public.url
-     *   conforms to: public.data
-     * 
-     * 
+     * <p>
+     * The bytes of a URL
+     * (OSType 'url ')
+     * <p>
+     * UTI: public.url
+     * conforms to: public.data
+     * <p>
+     * <p>
      * kUTTypeFileURL   *** DEPRECATED ***
-     * 
-     *   The text of a "file:" URL
-     *   (OSType 'furl')
-     * 
-     *   UTI: public.file-url
-     *   conforms to: public.url
+     * <p>
+     * The text of a "file:" URL
+     * (OSType 'furl')
+     * <p>
+     * UTI: public.file-url
+     * conforms to: public.url
      */
     @Generated
     @CVariable()
@@ -536,89 +536,89 @@ public final class CoreServices {
 
     /**
      * kUTTypeText   *** DEPRECATED ***
-     * 
-     *   base type for all text-encoded data,
-     *   including text with markup (HTML, RTF, etc.)
-     * 
-     *   UTI: public.text
-     *   conforms to: public.data, public.content
-     * 
-     * 
+     * <p>
+     * base type for all text-encoded data,
+     * including text with markup (HTML, RTF, etc.)
+     * <p>
+     * UTI: public.text
+     * conforms to: public.data, public.content
+     * <p>
+     * <p>
      * kUTTypePlainText   *** DEPRECATED ***
-     * 
-     *   text with no markup, unspecified encoding
-     * 
-     *   UTI: public.plain-text
-     *   conforms to: public.text
-     * 
-     * 
+     * <p>
+     * text with no markup, unspecified encoding
+     * <p>
+     * UTI: public.plain-text
+     * conforms to: public.text
+     * <p>
+     * <p>
      * kUTTypeUTF8PlainText   *** DEPRECATED ***
-     * 
-     *   plain text, UTF-8 encoding
-     *   (OSType 'utf8', NSPasteboardType "NSStringPBoardType")
-     * 
-     *   UTI: public.utf8-plain-text
-     *   conforms to: public.plain-text
-     * 
-     * 
+     * <p>
+     * plain text, UTF-8 encoding
+     * (OSType 'utf8', NSPasteboardType "NSStringPBoardType")
+     * <p>
+     * UTI: public.utf8-plain-text
+     * conforms to: public.plain-text
+     * <p>
+     * <p>
      * kUTTypeUTF16ExternalPlainText   *** DEPRECATED ***
-     * 
-     *   plain text, UTF-16 encoding, with BOM, or if BOM
-     *   is not present, has "external representation"
-     *   byte order (big-endian).
-     *   (OSType 'ut16')
-     * 
-     *   UTI: public.utf16-external-plain-text
-     *   conforms to: public.plain-text
-     * 
-     * 
+     * <p>
+     * plain text, UTF-16 encoding, with BOM, or if BOM
+     * is not present, has "external representation"
+     * byte order (big-endian).
+     * (OSType 'ut16')
+     * <p>
+     * UTI: public.utf16-external-plain-text
+     * conforms to: public.plain-text
+     * <p>
+     * <p>
      * kUTTypeUTF16PlainText   *** DEPRECATED ***
-     * 
-     *   plain text, UTF-16 encoding, native byte order, optional BOM
-     *   (OSType 'utxt')
-     * 
-     *   UTI: public.utf16-plain-text
-     *   conforms to: public.plain-text
-     * 
-     * 
+     * <p>
+     * plain text, UTF-16 encoding, native byte order, optional BOM
+     * (OSType 'utxt')
+     * <p>
+     * UTI: public.utf16-plain-text
+     * conforms to: public.plain-text
+     * <p>
+     * <p>
      * kUTTypeDelimitedText   *** DEPRECATED ***
-     * 
-     *   text containing delimited values
-     * 
-     *   UTI: public.delimited-values-text
-     *   conforms to: public.text
-     * 
-     * 
+     * <p>
+     * text containing delimited values
+     * <p>
+     * UTI: public.delimited-values-text
+     * conforms to: public.text
+     * <p>
+     * <p>
      * kUTTypeCommaSeparatedText   *** DEPRECATED ***
-     * 
-     *   text containing comma-separated values (.csv)
-     * 
-     *   UTI: public.comma-separated-values-text
-     *   conforms to: public.delimited-values-text
-     * 
-     * 
+     * <p>
+     * text containing comma-separated values (.csv)
+     * <p>
+     * UTI: public.comma-separated-values-text
+     * conforms to: public.delimited-values-text
+     * <p>
+     * <p>
      * kUTTypeTabSeparatedText   *** DEPRECATED ***
-     * 
-     *   text containing tab-separated values
-     * 
-     *   UTI: public.tab-separated-values-text
-     *   conforms to: public.delimited-values-text
-     * 
-     * 
+     * <p>
+     * text containing tab-separated values
+     * <p>
+     * UTI: public.tab-separated-values-text
+     * conforms to: public.delimited-values-text
+     * <p>
+     * <p>
      * kUTTypeUTF8TabSeparatedText   *** DEPRECATED ***
-     * 
-     *   UTF-8 encoded text containing tab-separated values
-     * 
-     *   UTI: public.utf8-tab-separated-values-text
-     *   conforms to: public.tab-separated-values-text, public.utf8-plain-text
-     * 
-     * 
+     * <p>
+     * UTF-8 encoded text containing tab-separated values
+     * <p>
+     * UTI: public.utf8-tab-separated-values-text
+     * conforms to: public.tab-separated-values-text, public.utf8-plain-text
+     * <p>
+     * <p>
      * kUTTypeRTF   *** DEPRECATED ***
-     * 
-     *   Rich Text Format
-     * 
-     *   UTI: public.rtf
-     *   conforms to: public.text
+     * <p>
+     * Rich Text Format
+     * <p>
+     * UTI: public.rtf
+     * conforms to: public.text
      */
     @Generated
     @CVariable()
@@ -662,19 +662,19 @@ public final class CoreServices {
 
     /**
      * kUTTypeHTML   *** DEPRECATED ***
-     * 
-     *   HTML, any version
-     * 
-     *   UTI: public.html
-     *   conforms to: public.text
-     * 
-     * 
+     * <p>
+     * HTML, any version
+     * <p>
+     * UTI: public.html
+     * conforms to: public.text
+     * <p>
+     * <p>
      * kUTTypeXML   *** DEPRECATED ***
-     * 
-     *   generic XML
-     * 
-     *   UTI: public.xml
-     *   conforms to: public.text
+     * <p>
+     * generic XML
+     * <p>
+     * UTI: public.xml
+     * conforms to: public.text
      */
     @Generated
     @CVariable()
@@ -686,83 +686,83 @@ public final class CoreServices {
 
     /**
      * kUTTypeSourceCode   *** DEPRECATED ***
-     * 
-     *   abstract type for source code (any language)
-     * 
-     *   UTI: public.source-code
-     *   conforms to: public.plain-text
-     * 
-     * 
+     * <p>
+     * abstract type for source code (any language)
+     * <p>
+     * UTI: public.source-code
+     * conforms to: public.plain-text
+     * <p>
+     * <p>
      * kUTTypeAssemblyLanguageSource   *** DEPRECATED ***
-     * 
-     *   assembly language source (.s)
-     * 
-     *   UTI: public.assembly-source
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * assembly language source (.s)
+     * <p>
+     * UTI: public.assembly-source
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeCSource   *** DEPRECATED ***
-     * 
-     *   C source code (.c)
-     * 
-     *   UTI: public.c-source
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * C source code (.c)
+     * <p>
+     * UTI: public.c-source
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeObjectiveCSource   *** DEPRECATED ***
-     * 
-     *   Objective-C source code (.m)
-     * 
-     *   UTI: public.objective-c-source
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * Objective-C source code (.m)
+     * <p>
+     * UTI: public.objective-c-source
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeSwiftSource   *** DEPRECATED ***
-     * 
-     *   Swift source code (.swift)
-     * 
-     *   UTI: public.swift-source
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * Swift source code (.swift)
+     * <p>
+     * UTI: public.swift-source
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeCPlusPlusSource   *** DEPRECATED ***
-     * 
-     *   C++ source code (.cp, etc.)
-     * 
-     *   UTI: public.c-plus-plus-source
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * C++ source code (.cp, etc.)
+     * <p>
+     * UTI: public.c-plus-plus-source
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeObjectiveCPlusPlusSource   *** DEPRECATED ***
-     * 
-     *   Objective-C++ source code
-     * 
-     *   UTI: public.objective-c-plus-plus-source
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * Objective-C++ source code
+     * <p>
+     * UTI: public.objective-c-plus-plus-source
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeCHeader   *** DEPRECATED ***
-     * 
-     *   C header
-     * 
-     *   UTI: public.c-header
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * C header
+     * <p>
+     * UTI: public.c-header
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeCPlusPlusHeader   *** DEPRECATED ***
-     * 
-     *   C++ header
-     * 
-     *   UTI: public.c-plus-plus-header
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * C++ header
+     * <p>
+     * UTI: public.c-plus-plus-header
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeJavaSource   *** DEPRECATED ***
-     * 
-     *   Java source code
-     * 
-     *   UTI: com.sun.java-source
-     *   conforms to: public.source-code
+     * <p>
+     * Java source code
+     * <p>
+     * UTI: com.sun.java-source
+     * conforms to: public.source-code
      */
     @Generated
     @CVariable()
@@ -806,83 +806,83 @@ public final class CoreServices {
 
     /**
      * kUTTypeScript   *** DEPRECATED ***
-     * 
-     *   scripting language source
-     * 
-     *   UTI: public.script
-     *   conforms to: public.source-code
-     * 
-     * 
+     * <p>
+     * scripting language source
+     * <p>
+     * UTI: public.script
+     * conforms to: public.source-code
+     * <p>
+     * <p>
      * kUTTypeAppleScript   *** DEPRECATED ***
-     * 
-     *   AppleScript text format (.applescript)
-     * 
-     *   UTI: com.apple.applescript.text
-     *   conforms to: public.script
-     * 
-     * 
+     * <p>
+     * AppleScript text format (.applescript)
+     * <p>
+     * UTI: com.apple.applescript.text
+     * conforms to: public.script
+     * <p>
+     * <p>
      * kUTTypeOSAScript   *** DEPRECATED ***
-     * 
-     *   Open Scripting Architecture script binary format (.scpt)
-     * 
-     *   UTI: com.apple.applescript.script
-     *   conforms to: public.data, public.script
-     * 
-     * 
+     * <p>
+     * Open Scripting Architecture script binary format (.scpt)
+     * <p>
+     * UTI: com.apple.applescript.script
+     * conforms to: public.data, public.script
+     * <p>
+     * <p>
      * kUTTypeOSAScriptBundle   *** DEPRECATED ***
-     * 
-     *   Open Scripting Architecture script bundle format (.scptd)
-     * 
-     *   UTI: com.apple.applescript.script-bundle
-     *   conforms to: com.apple.bundle, com.apple.package, public.script
-     * 
-     * 
+     * <p>
+     * Open Scripting Architecture script bundle format (.scptd)
+     * <p>
+     * UTI: com.apple.applescript.script-bundle
+     * conforms to: com.apple.bundle, com.apple.package, public.script
+     * <p>
+     * <p>
      * kUTTypeJavaScript   *** DEPRECATED ***
-     * 
-     *   JavaScript source code
-     * 
-     *   UTI: com.netscape.javascript-source
-     *   conforms to: public.source-code, public.executable
-     * 
-     * 
+     * <p>
+     * JavaScript source code
+     * <p>
+     * UTI: com.netscape.javascript-source
+     * conforms to: public.source-code, public.executable
+     * <p>
+     * <p>
      * kUTTypeShellScript   *** DEPRECATED ***
-     * 
-     *   base type for shell scripts
-     * 
-     *   UTI: public.shell-script
-     *   conforms to: public.script
-     * 
-     * 
+     * <p>
+     * base type for shell scripts
+     * <p>
+     * UTI: public.shell-script
+     * conforms to: public.script
+     * <p>
+     * <p>
      * kUTTypePerlScript   *** DEPRECATED ***
-     * 
-     *   Perl script
-     * 
-     *   UTI: public.perl-script
-     *   conforms to: public.shell-script
-     * 
-     * 
+     * <p>
+     * Perl script
+     * <p>
+     * UTI: public.perl-script
+     * conforms to: public.shell-script
+     * <p>
+     * <p>
      * kUTTypePythonScript   *** DEPRECATED ***
-     * 
-     *   Python script
-     * 
-     *   UTI: public.python-script
-     *   conforms to: public.shell-script
-     * 
-     * 
+     * <p>
+     * Python script
+     * <p>
+     * UTI: public.python-script
+     * conforms to: public.shell-script
+     * <p>
+     * <p>
      * kUTTypeRubyScript   *** DEPRECATED ***
-     * 
-     *   Ruby script
-     * 
-     *   UTI: public.ruby-script
-     *   conforms to: public.shell-script
-     * 
-     * 
+     * <p>
+     * Ruby script
+     * <p>
+     * UTI: public.ruby-script
+     * conforms to: public.shell-script
+     * <p>
+     * <p>
      * kUTTypePHPScript   *** DEPRECATED ***
-     * 
-     *   PHP script
-     * 
-     *   UTI: public.php-script
-     *   conforms to: public.shell-script
+     * <p>
+     * PHP script
+     * <p>
+     * UTI: public.php-script
+     * conforms to: public.shell-script
      */
     @Generated
     @CVariable()
@@ -926,37 +926,37 @@ public final class CoreServices {
 
     /**
      * kUTTypeJSON   *** DEPRECATED ***
-     * 
-     *   JavaScript object notation (JSON) data
-     *   NOTE: JSON almost but doesn't quite conform to
-     *   com.netscape.javascript-source
-     * 
-     *   UTI: public.json
-     *   conforms to: public.text
-     * 
-     * 
+     * <p>
+     * JavaScript object notation (JSON) data
+     * NOTE: JSON almost but doesn't quite conform to
+     * com.netscape.javascript-source
+     * <p>
+     * UTI: public.json
+     * conforms to: public.text
+     * <p>
+     * <p>
      * kUTTypePropertyList   *** DEPRECATED ***
-     * 
-     *   base type for property lists
-     * 
-     *   UTI: com.apple.property-list
-     *   conforms to: public.data
-     * 
-     * 
+     * <p>
+     * base type for property lists
+     * <p>
+     * UTI: com.apple.property-list
+     * conforms to: public.data
+     * <p>
+     * <p>
      * kUTTypeXMLPropertyList   *** DEPRECATED ***
-     * 
-     *   XML property list
-     * 
-     *   UTI: com.apple.xml-property-list
-     *   conforms to: public.xml, com.apple.property-list
-     * 
-     * 
+     * <p>
+     * XML property list
+     * <p>
+     * UTI: com.apple.xml-property-list
+     * conforms to: public.xml, com.apple.property-list
+     * <p>
+     * <p>
      * kUTTypeBinaryPropertyList   *** DEPRECATED ***
-     * 
-     *   XML property list
-     * 
-     *   UTI: com.apple.binary-property-list
-     *   conforms to: com.apple.property-list
+     * <p>
+     * XML property list
+     * <p>
+     * UTI: com.apple.binary-property-list
+     * conforms to: com.apple.property-list
      */
     @Generated
     @CVariable()
@@ -976,45 +976,45 @@ public final class CoreServices {
 
     /**
      * kUTTypePDF   *** DEPRECATED ***
-     * 
-     *   Adobe PDF
-     * 
-     *   UTI: com.adobe.pdf
-     *   conforms to: public.data, public.composite-content
-     * 
-     * 
+     * <p>
+     * Adobe PDF
+     * <p>
+     * UTI: com.adobe.pdf
+     * conforms to: public.data, public.composite-content
+     * <p>
+     * <p>
      * kUTTypeRTFD   *** DEPRECATED ***
-     * 
-     *   Rich Text Format Directory
-     *   (RTF with content embedding, on-disk format)
-     * 
-     *   UTI: com.apple.rtfd
-     *   conforms to: com.apple.package, public.composite-content
-     * 
-     * 
+     * <p>
+     * Rich Text Format Directory
+     * (RTF with content embedding, on-disk format)
+     * <p>
+     * UTI: com.apple.rtfd
+     * conforms to: com.apple.package, public.composite-content
+     * <p>
+     * <p>
      * kUTTypeFlatRTFD   *** DEPRECATED ***
-     * 
-     *   Flattened RTFD (pasteboard format)
-     * 
-     *   UTI: com.apple.flat-rtfd
-     *   conforms to: public.data, public.composite-content
-     * 
-     * 
+     * <p>
+     * Flattened RTFD (pasteboard format)
+     * <p>
+     * UTI: com.apple.flat-rtfd
+     * conforms to: public.data, public.composite-content
+     * <p>
+     * <p>
      * kUTTypeTXNTextAndMultimediaData   *** DEPRECATED ***
-     * 
-     *   MLTE (Textension) format for mixed text & multimedia data
-     *   (OSType 'txtn')
-     * 
-     *   UTI: com.apple.txn.text-multimedia-data
-     *   conforms to: public.data, public.composite-content
-     * 
-     * 
+     * <p>
+     * MLTE (Textension) format for mixed text & multimedia data
+     * (OSType 'txtn')
+     * <p>
+     * UTI: com.apple.txn.text-multimedia-data
+     * conforms to: public.data, public.composite-content
+     * <p>
+     * <p>
      * kUTTypeWebArchive   *** DEPRECATED ***
-     * 
-     *   The WebKit webarchive format
-     * 
-     *   UTI: com.apple.webarchive
-     *   conforms to: public.data, public.composite-content
+     * <p>
+     * The WebKit webarchive format
+     * <p>
+     * UTI: com.apple.webarchive
+     * conforms to: public.data, public.composite-content
      */
     @Generated
     @CVariable()
@@ -1038,113 +1038,113 @@ public final class CoreServices {
 
     /**
      * kUTTypeImage   *** DEPRECATED ***
-     * 
-     *   abstract image data
-     * 
-     *   UTI: public.image
-     *   conforms to: public.data, public.content
-     * 
-     * 
+     * <p>
+     * abstract image data
+     * <p>
+     * UTI: public.image
+     * conforms to: public.data, public.content
+     * <p>
+     * <p>
      * kUTTypeJPEG   *** DEPRECATED ***
-     * 
-     *   JPEG image
-     * 
-     *   UTI: public.jpeg
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * JPEG image
+     * <p>
+     * UTI: public.jpeg
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeJPEG2000   *** DEPRECATED ***
-     * 
-     *   JPEG-2000 image
-     * 
-     *   UTI: public.jpeg-2000
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * JPEG-2000 image
+     * <p>
+     * UTI: public.jpeg-2000
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeTIFF   *** DEPRECATED ***
-     * 
-     *   TIFF image
-     * 
-     *   UTI: public.tiff
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * TIFF image
+     * <p>
+     * UTI: public.tiff
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypePICT   *** DEPRECATED ***
-     * 
-     *   Quickdraw PICT format
-     * 
-     *   UTI: com.apple.pict
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * Quickdraw PICT format
+     * <p>
+     * UTI: com.apple.pict
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeGIF   *** DEPRECATED ***
-     * 
-     *   GIF image
-     * 
-     *   UTI: com.compuserve.gif
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * GIF image
+     * <p>
+     * UTI: com.compuserve.gif
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypePNG   *** DEPRECATED ***
-     * 
-     *   PNG image
-     * 
-     *   UTI: public.png
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * PNG image
+     * <p>
+     * UTI: public.png
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeQuickTimeImage   *** DEPRECATED ***
-     * 
-     *   QuickTime image format (OSType 'qtif')
-     * 
-     *   UTI: com.apple.quicktime-image
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * QuickTime image format (OSType 'qtif')
+     * <p>
+     * UTI: com.apple.quicktime-image
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeAppleICNS   *** DEPRECATED ***
-     * 
-     *   Apple icon data
-     * 
-     *   UTI: com.apple.icns
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * Apple icon data
+     * <p>
+     * UTI: com.apple.icns
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeBMP   *** DEPRECATED ***
-     * 
-     *   Windows bitmap
-     * 
-     *   UTI: com.microsoft.bmp
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * Windows bitmap
+     * <p>
+     * UTI: com.microsoft.bmp
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeICO   *** DEPRECATED ***
-     * 
-     *   Windows icon data
-     * 
-     *   UTI: com.microsoft.ico
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * Windows icon data
+     * <p>
+     * UTI: com.microsoft.ico
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeRawImage   *** DEPRECATED ***
-     * 
-     *   base type for raw image data (.raw)
-     * 
-     *   UTI: public.camera-raw-image
-     *   conforms to: public.image
-     * 
-     * 
+     * <p>
+     * base type for raw image data (.raw)
+     * <p>
+     * UTI: public.camera-raw-image
+     * conforms to: public.image
+     * <p>
+     * <p>
      * kUTTypeScalableVectorGraphics   *** DEPRECATED ***
-     * 
-     *   SVG image
-     * 
-     *   UTI: public.svg-image
-     *   conforms to: public.image
-     * 
+     * <p>
+     * SVG image
+     * <p>
+     * UTI: public.svg-image
+     * conforms to: public.image
+     * <p>
      * kUTTypeLivePhoto   *** DEPRECATED ***
-     * 
-     *   Live Photo
-     * 
-     *   UTI: com.apple.live-photo
+     * <p>
+     * Live Photo
+     * <p>
+     * UTI: com.apple.live-photo
      */
     @Generated
     @CVariable()
@@ -1204,141 +1204,141 @@ public final class CoreServices {
 
     /**
      * kUTTypeAudiovisualContent   *** DEPRECATED ***
-     * 
-     *   audio and/or video content
-     * 
-     *   UTI: public.audiovisual-content
-     *   conforms to: public.data, public.content
-     * 
-     * 
+     * <p>
+     * audio and/or video content
+     * <p>
+     * UTI: public.audiovisual-content
+     * conforms to: public.data, public.content
+     * <p>
+     * <p>
      * kUTTypeMovie   *** DEPRECATED ***
-     * 
-     *   A media format which may contain both video and audio
-     *   Corresponds to what users would label a "movie"
-     * 
-     *   UTI: public.movie
-     *   conforms to: public.audiovisual-content
-     * 
-     * 
+     * <p>
+     * A media format which may contain both video and audio
+     * Corresponds to what users would label a "movie"
+     * <p>
+     * UTI: public.movie
+     * conforms to: public.audiovisual-content
+     * <p>
+     * <p>
      * kUTTypeVideo   *** DEPRECATED ***
-     * 
-     *   pure video (no audio)
-     * 
-     *   UTI: public.video
-     *   conforms to: public.movie
-     * 
-     * 
+     * <p>
+     * pure video (no audio)
+     * <p>
+     * UTI: public.video
+     * conforms to: public.movie
+     * <p>
+     * <p>
      * kUTTypeAudio   *** DEPRECATED ***
-     * 
-     *   pure audio (no video)
-     * 
-     *   UTI: public.audio
-     *   conforms to: public.audiovisual-content
-     * 
-     * 
+     * <p>
+     * pure audio (no video)
+     * <p>
+     * UTI: public.audio
+     * conforms to: public.audiovisual-content
+     * <p>
+     * <p>
      * kUTTypeQuickTimeMovie   *** DEPRECATED ***
-     * 
-     *   QuickTime movie
-     * 
-     *   UTI: com.apple.quicktime-movie
-     *   conforms to: public.movie
-     * 
-     * 
+     * <p>
+     * QuickTime movie
+     * <p>
+     * UTI: com.apple.quicktime-movie
+     * conforms to: public.movie
+     * <p>
+     * <p>
      * kUTTypeMPEG   *** DEPRECATED ***
-     * 
-     *   MPEG-1 or MPEG-2 movie
-     * 
-     *   UTI: public.mpeg
-     *   conforms to: public.movie
-     * 
-     * 
+     * <p>
+     * MPEG-1 or MPEG-2 movie
+     * <p>
+     * UTI: public.mpeg
+     * conforms to: public.movie
+     * <p>
+     * <p>
      * kUTTypeMPEG2Video   *** DEPRECATED ***
-     * 
-     *   MPEG-2 video
-     * 
-     *   UTI: public.mpeg-2-video
-     *   conforms to: public.video
-     * 
-     * 
+     * <p>
+     * MPEG-2 video
+     * <p>
+     * UTI: public.mpeg-2-video
+     * conforms to: public.video
+     * <p>
+     * <p>
      * kUTTypeMPEG2TransportStream   *** DEPRECATED ***
-     * 
-     *   MPEG-2 Transport Stream movie format
-     * 
-     *   UTI: public.mpeg-2-transport-stream
-     *   conforms to: public.movie
-     * 
-     * 
+     * <p>
+     * MPEG-2 Transport Stream movie format
+     * <p>
+     * UTI: public.mpeg-2-transport-stream
+     * conforms to: public.movie
+     * <p>
+     * <p>
      * kUTTypeMP3   *** DEPRECATED ***
-     * 
-     *   MP3 audio
-     * 
-     *   UTI: public.mp3
-     *   conforms to: public.audio
-     * 
-     * 
+     * <p>
+     * MP3 audio
+     * <p>
+     * UTI: public.mp3
+     * conforms to: public.audio
+     * <p>
+     * <p>
      * kUTTypeMPEG4   *** DEPRECATED ***
-     * 
-     *   MPEG-4 movie
-     * 
-     *   UTI: public.mpeg-4
-     *   conforms to: public.movie
-     * 
-     * 
+     * <p>
+     * MPEG-4 movie
+     * <p>
+     * UTI: public.mpeg-4
+     * conforms to: public.movie
+     * <p>
+     * <p>
      * kUTTypeMPEG4Audio   *** DEPRECATED ***
-     * 
-     *   MPEG-4 audio layer
-     * 
-     *   UTI: public.mpeg-4-audio
-     *   conforms to: public.mpeg-4, public.audio
-     * 
-     * 
+     * <p>
+     * MPEG-4 audio layer
+     * <p>
+     * UTI: public.mpeg-4-audio
+     * conforms to: public.mpeg-4, public.audio
+     * <p>
+     * <p>
      * kUTTypeAppleProtectedMPEG4Audio   *** DEPRECATED ***
-     * 
-     *   Apple protected MPEG4 format
-     *   (.m4p, iTunes music store format)
-     * 
-     *   UTI: com.apple.protected-mpeg-4-audio
-     *   conforms to: public.audio
-     * 
-     * 
+     * <p>
+     * Apple protected MPEG4 format
+     * (.m4p, iTunes music store format)
+     * <p>
+     * UTI: com.apple.protected-mpeg-4-audio
+     * conforms to: public.audio
+     * <p>
+     * <p>
      * kUTTypeAppleProtectedMPEG4Video   *** DEPRECATED ***
-     * 
-     *   Apple protected MPEG-4 movie
-     * 
-     *   UTI: com.apple.protected-mpeg-4-video
-     *   conforms to: com.apple.m4v-video
-     * 
-     * 
+     * <p>
+     * Apple protected MPEG-4 movie
+     * <p>
+     * UTI: com.apple.protected-mpeg-4-video
+     * conforms to: com.apple.m4v-video
+     * <p>
+     * <p>
      * kUTTypeAVIMovie   *** DEPRECATED ***
-     * 
-     *   Audio Video Interleaved (AVI) movie format
-     * 
-     *   UTI: public.avi
-     *   conforms to: public.movie
-     * 
-     * 
+     * <p>
+     * Audio Video Interleaved (AVI) movie format
+     * <p>
+     * UTI: public.avi
+     * conforms to: public.movie
+     * <p>
+     * <p>
      * kUTTypeAudioInterchangeFileFormat   *** DEPRECATED ***
-     * 
-     *   AIFF audio format
-     * 
-     *   UTI: public.aiff-audio
-     *   conforms to: public.aifc-audio
-     * 
-     * 
+     * <p>
+     * AIFF audio format
+     * <p>
+     * UTI: public.aiff-audio
+     * conforms to: public.aifc-audio
+     * <p>
+     * <p>
      * kUTTypeWaveformAudio   *** DEPRECATED ***
-     * 
-     *   Waveform audio format (.wav)
-     * 
-     *   UTI: com.microsoft.waveform-audio
-     *   conforms to: public.audio
-     * 
-     * 
+     * <p>
+     * Waveform audio format (.wav)
+     * <p>
+     * UTI: com.microsoft.waveform-audio
+     * conforms to: public.audio
+     * <p>
+     * <p>
      * kUTTypeMIDIAudio   *** DEPRECATED ***
-     * 
-     *   MIDI audio format
-     * 
-     *   UTI: public.midi-audio
-     *   conforms to: public.audio
+     * <p>
+     * MIDI audio format
+     * <p>
+     * UTI: public.midi-audio
+     * conforms to: public.audio
      */
     @Generated
     @CVariable()
@@ -1410,18 +1410,18 @@ public final class CoreServices {
 
     /**
      * kUTTypePlaylist   *** DEPRECATED ***
-     * 
-     *   base type for playlists
-     * 
-     *   UTI: public.playlist
-     * 
-     * 
+     * <p>
+     * base type for playlists
+     * <p>
+     * UTI: public.playlist
+     * <p>
+     * <p>
      * kUTTypeM3UPlaylist   *** DEPRECATED ***
-     * 
-     *   M3U or M3U8 playlist
-     * 
-     *   UTI: public.m3u-playlist
-     *   conforms to: public.text, public.playlist
+     * <p>
+     * M3U or M3U8 playlist
+     * <p>
+     * UTI: public.m3u-playlist
+     * conforms to: public.text, public.playlist
      */
     @Generated
     @CVariable()
@@ -1433,75 +1433,75 @@ public final class CoreServices {
 
     /**
      * kUTTypeFolder   *** DEPRECATED ***
-     * 
-     *   a user-browsable directory (i.e., not a package)
-     * 
-     *   UTI: public.folder
-     *   conforms to: public.directory
-     * 
-     * 
+     * <p>
+     * a user-browsable directory (i.e., not a package)
+     * <p>
+     * UTI: public.folder
+     * conforms to: public.directory
+     * <p>
+     * <p>
      * kUTTypeVolume   *** DEPRECATED ***
-     * 
-     *   the root folder of a volume/mount point
-     * 
-     *   UTI: public.volume
-     *   conforms to: public.folder
-     * 
-     * 
+     * <p>
+     * the root folder of a volume/mount point
+     * <p>
+     * UTI: public.volume
+     * conforms to: public.folder
+     * <p>
+     * <p>
      * kUTTypePackage   *** DEPRECATED ***
-     * 
-     *   a packaged directory
-     * 
-     *   UTI: com.apple.package
-     *   conforms to: public.directory
-     * 
-     * 
+     * <p>
+     * a packaged directory
+     * <p>
+     * UTI: com.apple.package
+     * conforms to: public.directory
+     * <p>
+     * <p>
      * kUTTypeBundle   *** DEPRECATED ***
-     * 
-     *   a directory conforming to one of the CFBundle layouts
-     * 
-     *   UTI: com.apple.bundle
-     *   conforms to: public.directory
-     * 
-     * 
+     * <p>
+     * a directory conforming to one of the CFBundle layouts
+     * <p>
+     * UTI: com.apple.bundle
+     * conforms to: public.directory
+     * <p>
+     * <p>
      * kUTTypePluginBundle   *** DEPRECATED ***
-     * 
-     *   base type for bundle-based plugins
-     * 
-     *   UTI: com.apple.plugin
-     *   conforms to: com.apple.bundle, com.apple.package
-     * 
-     * 
+     * <p>
+     * base type for bundle-based plugins
+     * <p>
+     * UTI: com.apple.plugin
+     * conforms to: com.apple.bundle, com.apple.package
+     * <p>
+     * <p>
      * kUTTypeSpotlightImporter   *** DEPRECATED ***
-     * 
-     *   a Spotlight metadata importer
-     * 
-     *   UTI: com.apple.metadata-importer
-     *   conforms to: com.apple.plugin
-     * 
-     * 
+     * <p>
+     * a Spotlight metadata importer
+     * <p>
+     * UTI: com.apple.metadata-importer
+     * conforms to: com.apple.plugin
+     * <p>
+     * <p>
      * kUTTypeQuickLookGenerator   *** DEPRECATED ***
-     * 
-     *   a QuickLook preview generator
-     * 
-     *   UTI: com.apple.quicklook-generator
-     *   conforms to: com.apple.plugin
-     * 
-     * 
+     * <p>
+     * a QuickLook preview generator
+     * <p>
+     * UTI: com.apple.quicklook-generator
+     * conforms to: com.apple.plugin
+     * <p>
+     * <p>
      * kUTTypeXPCService   *** DEPRECATED ***
-     * 
-     *   an XPC service
-     * 
-     *   UTI: com.apple.xpc-service
-     *   conforms to: com.apple.bundle, com.apple.package
-     * 
-     * 
+     * <p>
+     * an XPC service
+     * <p>
+     * UTI: com.apple.xpc-service
+     * conforms to: com.apple.bundle, com.apple.package
+     * <p>
+     * <p>
      * kUTTypeFramework   *** DEPRECATED ***
-     * 
-     *   a Mac OS X framework
-     * 
-     *   UTI: com.apple.framework
-     *   conforms to: com.apple.bundle
+     * <p>
+     * a Mac OS X framework
+     * <p>
+     * UTI: com.apple.framework
+     * conforms to: com.apple.bundle
      */
     @Generated
     @CVariable()
@@ -1541,69 +1541,69 @@ public final class CoreServices {
 
     /**
      * kUTTypeApplication   *** DEPRECATED ***
-     * 
-     *   base type for OS X applications, launchable items
-     * 
-     *   UTI: com.apple.application
-     *   conforms to: public.executable
-     * 
-     * 
+     * <p>
+     * base type for OS X applications, launchable items
+     * <p>
+     * UTI: com.apple.application
+     * conforms to: public.executable
+     * <p>
+     * <p>
      * kUTTypeApplicationBundle   *** DEPRECATED ***
-     * 
-     *   a bundled application
-     * 
-     *   UTI: com.apple.application-bundle
-     *   conforms to: com.apple.application, com.apple.bundle, com.apple.package
-     * 
-     * 
+     * <p>
+     * a bundled application
+     * <p>
+     * UTI: com.apple.application-bundle
+     * conforms to: com.apple.application, com.apple.bundle, com.apple.package
+     * <p>
+     * <p>
      * kUTTypeApplicationFile   *** DEPRECATED ***
-     * 
-     *   a single-file Carbon/Classic application
-     * 
-     *   UTI: com.apple.application-file
-     *   conforms to: com.apple.application, public.data
-     * 
-     * 
+     * <p>
+     * a single-file Carbon/Classic application
+     * <p>
+     * UTI: com.apple.application-file
+     * conforms to: com.apple.application, public.data
+     * <p>
+     * <p>
      * kUTTypeUnixExecutable   *** DEPRECATED ***
-     * 
-     *   a UNIX executable (flat file)
-     * 
-     *   UTI: public.unix-executable
-     *   conforms to: public.data, public.executable
-     * 
-     * 
+     * <p>
+     * a UNIX executable (flat file)
+     * <p>
+     * UTI: public.unix-executable
+     * conforms to: public.data, public.executable
+     * <p>
+     * <p>
      * kUTTypeWindowsExecutable   *** DEPRECATED ***
-     * 
-     *   a Windows executable (.exe files)
-     * 
-     *   UTI: com.microsoft.windows-executable
-     *   conforms to: public.data, public.executable
-     * 
-     * 
+     * <p>
+     * a Windows executable (.exe files)
+     * <p>
+     * UTI: com.microsoft.windows-executable
+     * conforms to: public.data, public.executable
+     * <p>
+     * <p>
      * kUTTypeJavaClass   *** DEPRECATED ***
-     * 
-     *   a Java class
-     * 
-     *   UTI: com.sun.java-class
-     *   conforms to: public.data, public.executable
-     * 
-     * 
+     * <p>
+     * a Java class
+     * <p>
+     * UTI: com.sun.java-class
+     * conforms to: public.data, public.executable
+     * <p>
+     * <p>
      * kUTTypeJavaArchive   *** DEPRECATED ***
-     * 
-     *   a Java archive (.jar)
-     * 
-     *   UTI: com.sun.java-archive
-     *   conforms to: public.zip-archive, public.executable
-     * 
-     * 
+     * <p>
+     * a Java archive (.jar)
+     * <p>
+     * UTI: com.sun.java-archive
+     * conforms to: public.zip-archive, public.executable
+     * <p>
+     * <p>
      * kUTTypeSystemPreferencesPane   *** DEPRECATED ***
-     * 
-     *   a System Preferences pane
-     * 
-     *   UTI: com.apple.systempreference.prefpane
-     *   conforms to: com.apple.package, com.apple.bundle
-     * 
-     *  Abstract executable types
+     * <p>
+     * a System Preferences pane
+     * <p>
+     * UTI: com.apple.systempreference.prefpane
+     * conforms to: com.apple.package, com.apple.bundle
+     * <p>
+     * Abstract executable types
      */
     @Generated
     @CVariable()
@@ -1645,27 +1645,27 @@ public final class CoreServices {
 
     /**
      * kUTTypeGNUZipArchive   *** DEPRECATED ***
-     * 
-     *   a GNU zip archive (gzip)
-     * 
-     *   UTI: org.gnu.gnu-zip-archive
-     *   conforms to: public.data, public.archive
-     * 
-     * 
+     * <p>
+     * a GNU zip archive (gzip)
+     * <p>
+     * UTI: org.gnu.gnu-zip-archive
+     * conforms to: public.data, public.archive
+     * <p>
+     * <p>
      * kUTTypeBzip2Archive   *** DEPRECATED ***
-     * 
-     *   a bzip2 archive (.bz2)
-     * 
-     *   UTI: public.bzip2-archive
-     *   conforms to: public.data, public.archive
-     * 
-     * 
+     * <p>
+     * a bzip2 archive (.bz2)
+     * <p>
+     * UTI: public.bzip2-archive
+     * conforms to: public.data, public.archive
+     * <p>
+     * <p>
      * kUTTypeZipArchive   *** DEPRECATED ***
-     * 
-     *   a zip archive
-     * 
-     *   UTI: public.zip-archive
-     *   conforms to: com.pkware.zip-archive
+     * <p>
+     * a zip archive
+     * <p>
+     * UTI: public.zip-archive
+     * conforms to: com.pkware.zip-archive
      */
     @Generated
     @CVariable()
@@ -1681,26 +1681,26 @@ public final class CoreServices {
 
     /**
      * kUTTypeSpreadsheet   *** DEPRECATED ***
-     * 
-     *   base spreadsheet document type
-     * 
-     *   UTI: public.spreadsheet
-     *   conforms to: public.content
-     * 
-     * 
+     * <p>
+     * base spreadsheet document type
+     * <p>
+     * UTI: public.spreadsheet
+     * conforms to: public.content
+     * <p>
+     * <p>
      * kUTTypePresentation   *** DEPRECATED ***
-     * 
-     *   base presentation document type
-     * 
-     *   UTI: public.presentation
-     *   conforms to: public.composite-content
-     * 
-     * 
+     * <p>
+     * base presentation document type
+     * <p>
+     * UTI: public.presentation
+     * conforms to: public.composite-content
+     * <p>
+     * <p>
      * kUTTypeDatabase   *** DEPRECATED ***
-     * 
-     *   a database store
-     * 
-     *   UTI: public.database
+     * <p>
+     * a database store
+     * <p>
+     * UTI: public.database
      */
     @Generated
     @CVariable()
@@ -1716,33 +1716,33 @@ public final class CoreServices {
 
     /**
      * kUTTypeVCard   *** DEPRECATED ***
-     * 
-     *   VCard format
-     * 
-     *   UTI: public.vcard
-     *   conforms to: public.text, public.contact
-     * 
-     * 
+     * <p>
+     * VCard format
+     * <p>
+     * UTI: public.vcard
+     * conforms to: public.text, public.contact
+     * <p>
+     * <p>
      * kUTTypeToDoItem   *** DEPRECATED ***
-     * 
-     *   to-do item
-     * 
-     *   UTI: public.to-do-item
-     * 
-     * 
+     * <p>
+     * to-do item
+     * <p>
+     * UTI: public.to-do-item
+     * <p>
+     * <p>
      * kUTTypeCalendarEvent   *** DEPRECATED ***
-     * 
-     *   calendar event
-     * 
-     *   UTI: public.calendar-event
-     * 
-     * 
+     * <p>
+     * calendar event
+     * <p>
+     * UTI: public.calendar-event
+     * <p>
+     * <p>
      * kUTTypeEmailMessage   *** DEPRECATED ***
-     * 
-     *   e-mail message
-     * 
-     *   UTI: public.email-message
-     *   conforms to: public.message
+     * <p>
+     * e-mail message
+     * <p>
+     * UTI: public.email-message
+     * conforms to: public.message
      */
     @Generated
     @CVariable()
@@ -1762,11 +1762,11 @@ public final class CoreServices {
 
     /**
      * kUTTypeInternetLocation   *** DEPRECATED ***
-     * 
-     *   base type for Apple Internet locations
-     * 
-     *   UTI: com.apple.internet-location
-     *   conforms to: public.data
+     * <p>
+     * base type for Apple Internet locations
+     * <p>
+     * UTI: com.apple.internet-location
+     * conforms to: public.data
      */
     @Generated
     @CVariable()
@@ -1774,64 +1774,64 @@ public final class CoreServices {
 
     /**
      * kUTTypeInkText   *** DEPRECATED ***
-     * 
-     *   Opaque InkText data
-     * 
-     *   UTI: com.apple.ink.inktext
-     *   conforms to: public.data
-     * 
-     * 
+     * <p>
+     * Opaque InkText data
+     * <p>
+     * UTI: com.apple.ink.inktext
+     * conforms to: public.data
+     * <p>
+     * <p>
      * kUTTypeFont   *** DEPRECATED ***
-     * 
-     *   base type for fonts
-     * 
-     *   UTI: public.font
-     * 
-     * 
+     * <p>
+     * base type for fonts
+     * <p>
+     * UTI: public.font
+     * <p>
+     * <p>
      * kUTTypeBookmark   *** DEPRECATED ***
-     * 
-     *   bookmark
-     * 
-     *   UTI: public.bookmark
-     * 
-     * 
+     * <p>
+     * bookmark
+     * <p>
+     * UTI: public.bookmark
+     * <p>
+     * <p>
      * kUTType3DContent   *** DEPRECATED ***
-     * 
-     *   base type for 3D content
-     * 
-     *   UTI: public.3d-content
-     *   conforms to: public.content
-     * 
-     * 
+     * <p>
+     * base type for 3D content
+     * <p>
+     * UTI: public.3d-content
+     * conforms to: public.content
+     * <p>
+     * <p>
      * kUTTypePKCS12   *** DEPRECATED ***
-     * 
-     *   PKCS#12 format
-     * 
-     *   UTI: com.rsa.pkcs-12
-     *   conforms to: public.data
-     * 
-     * 
+     * <p>
+     * PKCS#12 format
+     * <p>
+     * UTI: com.rsa.pkcs-12
+     * conforms to: public.data
+     * <p>
+     * <p>
      * kUTTypeX509Certificate   *** DEPRECATED ***
-     * 
-     *   X.509 certificate format
-     * 
-     *   UTI: public.x509-certificate
-     *   conforms to: public.data
-     * 
-     * 
+     * <p>
+     * X.509 certificate format
+     * <p>
+     * UTI: public.x509-certificate
+     * conforms to: public.data
+     * <p>
+     * <p>
      * kUTTypeElectronicPublication   *** DEPRECATED ***
-     * 
-     *   ePub format
-     * 
-     *   UTI: org.idpf.epub-container
-     *   conforms to: public.data, public.composite-content
-     * 
-     * 
+     * <p>
+     * ePub format
+     * <p>
+     * UTI: org.idpf.epub-container
+     * conforms to: public.data, public.composite-content
+     * <p>
+     * <p>
      * kUTTypeLog   *** DEPRECATED ***
-     * 
-     *   console log
-     * 
-     *   UTI: public.log
+     * <p>
+     * console log
+     * <p>
+     * UTI: public.log
      */
     @Generated
     @CVariable()
@@ -1867,7 +1867,7 @@ public final class CoreServices {
 
     /**
      * Type Declaration Dictionary Keys
-     * 
+     * <p>
      * The following keys are used in type declarations
      * kUTExportedTypeDeclarationsKey
      */
@@ -1933,8 +1933,8 @@ public final class CoreServices {
 
     /**
      * Type Tag Classes
-     * 
-     * The following constant strings identify tag classes for use 
+     * <p>
+     * The following constant strings identify tag classes for use
      * when converting uniform type identifiers to and from
      * equivalent tags.
      * kUTTagClassFilenameExtension   *** DEPRECATED ***

@@ -300,4 +300,11 @@ public class PHAsset extends PHObject {
     @Selector("playbackStyle")
     @NInt
     public native long playbackStyle();
+
+    /**
+     * only applies to adjusted assets
+     */
+    @Generated
+    @Selector("adjustmentFormatIdentifier")
+    public native String adjustmentFormatIdentifier();
 }

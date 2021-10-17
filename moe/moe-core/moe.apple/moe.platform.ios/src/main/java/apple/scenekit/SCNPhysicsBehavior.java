@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsBehavior
- * 
+ * <p>
  * SCNPhysicsBehavior is an abstract class that represents a behavior in the physics world.
  */
 @Generated

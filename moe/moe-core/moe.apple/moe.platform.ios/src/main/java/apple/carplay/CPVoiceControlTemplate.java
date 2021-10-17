@@ -45,15 +45,15 @@ public class CPVoiceControlTemplate extends CPTemplate {
 
     /**
      * Switch the voice control template to the state corresponding with a particular identifier.
-     * 
+     * <p>
      * [@note] The Voice Control template applies a rate-limit for voice control states; the template will
      * ignore voice control state changes that occur too rapidly or frequently in a short period of time.
-     * 
+     * <p>
      * [@warning] You must first present this voice control template through your @c CPInterfaceController before
      * activating a voice control state, otherwise this method will have no effect.
      * When the Voice Control template is first presented, the first state you specify in
      * [@c] initWithVoiceControlStates: will be visible.
-     * 
+     *
      * @param identifier An identifier corresponding to one of the voice control states used to initialize this template.
      */
     @Generated
@@ -122,11 +122,11 @@ public class CPVoiceControlTemplate extends CPTemplate {
 
     /**
      * Initialize a voice control template with a list of voice control states.
-     * 
+     * <p>
      * [@note] By default, the Voice Control template will begin on the first state specified.
-     * 
+     * <p>
      * [@warning] You may specify a maximum of 5 voice control states. If you specify more than 5, only the first 5 will be available.
-     * 
+     *
      * @param voiceControlStates An array of voice control states for this template. Your app can switch between these states after the template is presented.
      */
     @Generated

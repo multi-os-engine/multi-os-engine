@@ -162,7 +162,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a tile group with the specified rules.
-     * 
+     *
      * @param rules the rules the group will use to determine tile placement
      */
     @Generated
@@ -171,7 +171,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule necessary to place the provided tile definition in a tile map.
-     * 
+     *
      * @param tileDefinition the tile definition we wish to place in a tile map
      */
     @Generated
@@ -203,7 +203,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initilize a tile group with the specified rules.
-     * 
+     *
      * @param rules the rules the group will use to determine tile placement
      */
     @Generated
@@ -212,7 +212,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initilize a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule necessary to place the provided tile definition in a tile map.
-     * 
+     *
      * @param tileDefinition tile definition we wish to place in a tile map
      */
     @Generated

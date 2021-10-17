@@ -41,11 +41,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Specifies the changes to save.
- * 
+ * <p>
  * Create a new save request for each save execution on the contact store. Can have many changes batched into one save request. Do not access objects in the save request when it is executing.  A save request only applies the changes to the objects. If there are overlapping changes with multiple, concurrent CNSaveRequests then the last saved change wins.
- * 
+ * <p>
  * If adding an object (contact, group, container) and it is already in the contact store then the executing save request will fail to add that object and will return the error CNErrorCodeInsertedRecordAlreadyExists with CNErrorUserInfoAffectedRecordsKey value as an array containing that object.
- * 
+ * <p>
  * If updating/deleting an object (contact, group, container) and it is not in the contact store then the executing save request will fail to update/delete that object and will return the error CNErrorCodeRecordDoesNotExist with CNErrorUserInfoAffectedRecordsKey value as an array containing that object.
  */
 @Generated
@@ -161,10 +161,10 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Add a new contact to the contact store.
-     * 
+     * <p>
      * The contact may be modified by the executing save request. If the contact was previously specified to be deleted in the save request that will no longer occur.
-     * 
-     * @param contact The new contact to add.
+     *
+     * @param contact    The new contact to add.
      * @param identifier The container identifier to add the new contact to. Set to nil for the default container.
      */
     @Generated
@@ -173,10 +173,10 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Add a new group to the contact store.
-     * 
+     * <p>
      * If the group was previously specified to be deleted in the save request that will no longer occur.
-     * 
-     * @param group The new group to add.
+     *
+     * @param group      The new group to add.
      * @param identifier The container identifier to add the new group to. Set to nil for the default container.
      */
     @Generated
@@ -185,11 +185,11 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Add a new member to a group.
-     * 
+     * <p>
      * If the membership was previously specified to be deleted in the save request that will no longer occur.
-     * 
+     *
      * @param contact The new member to add to the group.
-     * @param group The group to add the member to.
+     * @param group   The group to add the member to.
      */
     @Generated
     @Selector("addMember:toGroup:")
@@ -197,7 +197,7 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Delete a contact from the contact store.
-     * 
+     * <p>
      * If the contact was previously specified to be added in the save request that will no longer occur.
      */
     @Generated
@@ -206,7 +206,7 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Delete a group from the contact store.
-     * 
+     * <p>
      * The contacts in the group are not deleted. If the group was previously specified to be added in the save request that will no longer occur.
      */
     @Generated
@@ -219,11 +219,11 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Remove a member from a group.
-     * 
+     * <p>
      * The contact is not deleted. It is only removed as a member of the group. If the membership was previously specified to be added in the save request that will no longer occur.
-     * 
+     *
      * @param contact The member to remove from the group.
-     * @param group The group to remove the member from.
+     * @param group   The group to remove the member from.
      */
     @Generated
     @Selector("removeMember:fromGroup:")
@@ -231,7 +231,7 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Update an existing contact in the contact store.
-     * 
+     * <p>
      * The contact must already exist in the contact store. The contact may be modified by the executing save request.
      */
     @Generated
@@ -240,10 +240,30 @@ public class CNSaveRequest extends NSObject {
 
     /**
      * Update an existing group in the contact store.
-     * 
+     * <p>
      * The group must already exist in the contact store.
      */
     @Generated
     @Selector("updateGroup:")
     public native void updateGroup(CNMutableGroup group);
+
+    /**
+     * The author of this transaction.
+     * <p>
+     * Use this, in conjunction with @c CNChangeHistoryFetchRequest.excludedTransactionAuthors,
+     * to suppress fetching of changes the author already knows about.
+     */
+    @Generated
+    @Selector("setTransactionAuthor:")
+    public native void setTransactionAuthor(String value);
+
+    /**
+     * The author of this transaction.
+     * <p>
+     * Use this, in conjunction with @c CNChangeHistoryFetchRequest.excludedTransactionAuthors,
+     * to suppress fetching of changes the author already knows about.
+     */
+    @Generated
+    @Selector("transactionAuthor")
+    public native String transactionAuthor();
 }

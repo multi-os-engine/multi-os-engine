@@ -106,7 +106,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Generate a data representation of the drawing.
-     * 
+     *
      * @return A NSData object containing a representation of the drawing.
      */
     @Generated
@@ -123,7 +123,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a new drawing by appending the contents of `drawing` on top of the receiver’s contents.
-     * 
+     *
      * @param drawing The drawing to append.
      * @return A new copy of this drawing with `drawing` appended onto it.
      */
@@ -133,7 +133,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a new drawing with `transform` applied.
-     * 
+     *
      * @param transform The transform to apply to this drawing.
      * @return A new copy of this drawing with `transform` applied.
      */
@@ -167,12 +167,12 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes and returns the drawing with the specified data.
-     * 
-     * @param data The data containing the drawing data.
+     *
+     * @param data  The data containing the drawing data.
      * @param error If an error occurs, upon return the NSError object describes the error.
-     *   Set to NULL to ignore errors.
+     *              Set to NULL to ignore errors.
      * @return On success, an initialized PKDrawing object. If nil, the outError parameter
-     *   contains an NSError instance describing the problem.
+     * contains an NSError instance describing the problem.
      */
     @Generated
     @Selector("initWithData:error:")
@@ -239,7 +239,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create a new drawing by appending an array of strokes to this drawing.
      * This is a convenience method, to quickly add strokes to a drawing.
-     * 
+     *
      * @param strokes The strokes to append.
      * @return A new copy of this drawing with `strokes` appended onto it.
      */

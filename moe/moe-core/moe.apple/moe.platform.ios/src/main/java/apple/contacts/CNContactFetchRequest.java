@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Specifies the search criteria to fetch contacts.
- * 
+ * <p>
  * Used with [CNContactStore enumerateContactsWithFetchRequest:error:usingBlock:]. Can combine any of these options to create a contact fetch request.
  */
 @Generated
@@ -177,9 +177,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * Only fetch the properties that will be used.
-     * 
-     * @param      keysToFetch
-     *             The properties to fetch for the returned contacts.
+     *
+     * @param keysToFetch The properties to fetch for the returned contacts.
      */
     @Generated
     @Selector("initWithKeysToFetch:")
@@ -187,7 +186,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * The properties to fetch in the returned contacts.
-     * 
+     * <p>
      * Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
      */
     @Generated
@@ -196,7 +195,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return mutable contacts.
-     * 
+     * <p>
      * If YES returns CNMutableContact objects, otherwise returns CNContact objects. Default is NO.
      */
     @Generated
@@ -205,7 +204,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * The predicate to match contacts against.
-     * 
+     * <p>
      * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all contacts.
      */
     @Generated
@@ -214,7 +213,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * The properties to fetch in the returned contacts.
-     * 
+     * <p>
      * Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
      */
     @Generated
@@ -223,7 +222,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return mutable contacts.
-     * 
+     * <p>
      * If YES returns CNMutableContact objects, otherwise returns CNContact objects. Default is NO.
      */
     @Generated
@@ -232,7 +231,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * The predicate to match contacts against.
-     * 
+     * <p>
      * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all contacts.
      */
     @Generated
@@ -241,7 +240,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return contacts in a specific sort order.
-     * 
+     * <p>
      * Default is CNContactSortOrderNone.
      */
     @Generated
@@ -250,9 +249,9 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return linked contacts as unified contacts.
-     * 
+     * <p>
      * If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
-     * 
+     * <p>
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated
@@ -261,7 +260,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return contacts in a specific sort order.
-     * 
+     * <p>
      * Default is CNContactSortOrderNone.
      */
     @Generated
@@ -277,9 +276,9 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     /**
      * To return linked contacts as unified contacts.
-     * 
+     * <p>
      * If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
-     * 
+     * <p>
      * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated

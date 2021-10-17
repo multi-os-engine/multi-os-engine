@@ -44,9 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMMotionManager
- * 
+ * <p>
  * Discussion:
- *   The CMMotionManager object is your entry point to the motion service.
+ * The CMMotionManager object is your entry point to the motion service.
  */
 @Generated
 @Library("CoreMotion")
@@ -82,9 +82,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * availableAttitudeReferenceFrames
-     * 
+     * <p>
      * Discussion:
-     *    Returns a bitmask specifying the available attitude reference frames on the device.
+     * Returns a bitmask specifying the available attitude reference frames on the device.
      */
     @Generated
     @Selector("availableAttitudeReferenceFrames")
@@ -172,9 +172,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerData
-     * 
+     * <p>
      * Discussion:
-     *   Returns the latest sample of accelerometer data, or nil if none is available.
+     * Returns the latest sample of accelerometer data, or nil if none is available.
      */
     @Generated
     @Selector("accelerometerData")
@@ -182,16 +182,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver accelerometer data to the specified
-     *   handler once startAccelerometerUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of acceleration data, an application should always check the
-     *   timestamps on the delivered CMAcceleration instances to determine the
-     *   true update interval.
+     * The interval at which to deliver accelerometer data to the specified
+     * handler once startAccelerometerUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of acceleration data, an application should always check the
+     * timestamps on the delivered CMAcceleration instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("accelerometerUpdateInterval")
@@ -199,12 +199,12 @@ public class CMMotionManager extends NSObject {
 
     /**
      * attitudeReferenceFrame
-     * 
+     * <p>
      * Discussion:
-     *   If device motion is active, returns the reference frame currently in-use.
-     *   If device motion is not active, returns the default attitude reference frame
-     *   for the device. If device motion is not available on the device, the value
-     *   is undefined.
+     * If device motion is active, returns the reference frame currently in-use.
+     * If device motion is not active, returns the default attitude reference frame
+     * for the device. If device motion is not available on the device, the value
+     * is undefined.
      */
     @Generated
     @Selector("attitudeReferenceFrame")
@@ -213,9 +213,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotion
-     * 
+     * <p>
      * Discussion:
-     *   Returns the latest sample of device motion data, or nil if none is available.
+     * Returns the latest sample of device motion data, or nil if none is available.
      */
     @Generated
     @Selector("deviceMotion")
@@ -223,16 +223,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotionUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver device motion data to the specified
-     *   handler once startDeviceMotionUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of device motion data, an application should always check the
-     *   timestamps on the delivered CMDeviceMotion instances to determine the
-     *   true update interval.
+     * The interval at which to deliver device motion data to the specified
+     * handler once startDeviceMotionUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of device motion data, an application should always check the
+     * timestamps on the delivered CMDeviceMotion instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("deviceMotionUpdateInterval")
@@ -240,9 +240,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroData
-     * 
+     * <p>
      * Discussion:
-     *   Returns the latest sample of gyro data, or nil if none is available.
+     * Returns the latest sample of gyro data, or nil if none is available.
      */
     @Generated
     @Selector("gyroData")
@@ -250,16 +250,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver gyro data to the specified
-     *   handler once startGyroUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of gyro data, an application should always check the
-     *   timestamps on the delivered CMGyroData instances to determine the
-     *   true update interval.
+     * The interval at which to deliver gyro data to the specified
+     * handler once startGyroUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of gyro data, an application should always check the
+     * timestamps on the delivered CMGyroData instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("gyroUpdateInterval")
@@ -271,10 +271,10 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerActive
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether the CMMotionManager is currently providing
-     *   accelerometer updates.
+     * Determines whether the CMMotionManager is currently providing
+     * accelerometer updates.
      */
     @Generated
     @Selector("isAccelerometerActive")
@@ -282,9 +282,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerAvailable
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether accelerometer is available.
+     * Determines whether accelerometer is available.
      */
     @Generated
     @Selector("isAccelerometerAvailable")
@@ -292,10 +292,10 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotionActive
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether the CMMotionManager is currently providing device
-     *   motion updates.
+     * Determines whether the CMMotionManager is currently providing device
+     * motion updates.
      */
     @Generated
     @Selector("isDeviceMotionActive")
@@ -303,9 +303,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotionAvailable
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether device motion is available using any available attitude reference frame.
+     * Determines whether device motion is available using any available attitude reference frame.
      */
     @Generated
     @Selector("isDeviceMotionAvailable")
@@ -313,9 +313,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroActive
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether the CMMotionManager is currently providing gyro updates.
+     * Determines whether the CMMotionManager is currently providing gyro updates.
      */
     @Generated
     @Selector("isGyroActive")
@@ -323,9 +323,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroAvailable
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether gyro is available.
+     * Determines whether gyro is available.
      */
     @Generated
     @Selector("isGyroAvailable")
@@ -333,9 +333,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerActive
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether the CMMotionManager is currently providing magnetometer updates.
+     * Determines whether the CMMotionManager is currently providing magnetometer updates.
      */
     @Generated
     @Selector("isMagnetometerActive")
@@ -343,9 +343,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerAvailable
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether magetometer is available.
+     * Determines whether magetometer is available.
      */
     @Generated
     @Selector("isMagnetometerAvailable")
@@ -353,9 +353,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerData
-     * 
+     * <p>
      * Discussion:
-     *   Returns the latest sample of magnetometer data, or nil if none is available.
+     * Returns the latest sample of magnetometer data, or nil if none is available.
      */
     @Generated
     @Selector("magnetometerData")
@@ -363,16 +363,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver magnetometer data to the specified
-     *   handler once startMagnetometerUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of magnetometer data, an application should always check the
-     *   timestamps on the delivered CMMagnetometerData instances to determine the
-     *   true update interval.
+     * The interval at which to deliver magnetometer data to the specified
+     * handler once startMagnetometerUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of magnetometer data, an application should always check the
+     * timestamps on the delivered CMMagnetometerData instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("magnetometerUpdateInterval")
@@ -380,16 +380,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * accelerometerUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver accelerometer data to the specified
-     *   handler once startAccelerometerUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of acceleration data, an application should always check the
-     *   timestamps on the delivered CMAcceleration instances to determine the
-     *   true update interval.
+     * The interval at which to deliver accelerometer data to the specified
+     * handler once startAccelerometerUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of acceleration data, an application should always check the
+     * timestamps on the delivered CMAcceleration instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("setAccelerometerUpdateInterval:")
@@ -397,16 +397,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * deviceMotionUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver device motion data to the specified
-     *   handler once startDeviceMotionUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of device motion data, an application should always check the
-     *   timestamps on the delivered CMDeviceMotion instances to determine the
-     *   true update interval.
+     * The interval at which to deliver device motion data to the specified
+     * handler once startDeviceMotionUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of device motion data, an application should always check the
+     * timestamps on the delivered CMDeviceMotion instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("setDeviceMotionUpdateInterval:")
@@ -414,16 +414,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * gyroUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver gyro data to the specified
-     *   handler once startGyroUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of gyro data, an application should always check the
-     *   timestamps on the delivered CMGyroData instances to determine the
-     *   true update interval.
+     * The interval at which to deliver gyro data to the specified
+     * handler once startGyroUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of gyro data, an application should always check the
+     * timestamps on the delivered CMGyroData instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("setGyroUpdateInterval:")
@@ -431,16 +431,16 @@ public class CMMotionManager extends NSObject {
 
     /**
      * magnetometerUpdateInterval
-     * 
+     * <p>
      * Discussion:
-     *   The interval at which to deliver magnetometer data to the specified
-     *   handler once startMagnetometerUpdatesToQueue:withHandler: is called.
-     *   The units are in seconds. The value of this property is capped to
-     *   certain minimum and maximum values. The maximum value is determined by
-     *   the maximum frequency supported by the hardware. If sensitive to the
-     *   interval of magnetometer data, an application should always check the
-     *   timestamps on the delivered CMMagnetometerData instances to determine the
-     *   true update interval.
+     * The interval at which to deliver magnetometer data to the specified
+     * handler once startMagnetometerUpdatesToQueue:withHandler: is called.
+     * The units are in seconds. The value of this property is capped to
+     * certain minimum and maximum values. The maximum value is determined by
+     * the maximum frequency supported by the hardware. If sensitive to the
+     * interval of magnetometer data, an application should always check the
+     * timestamps on the delivered CMMagnetometerData instances to determine the
+     * true update interval.
      */
     @Generated
     @Selector("setMagnetometerUpdateInterval:")
@@ -448,12 +448,12 @@ public class CMMotionManager extends NSObject {
 
     /**
      * showsDeviceMovementDisplay
-     * 
+     * <p>
      * Discussion:
-     *   When the device requires movement, showsDeviceMovementDisplay indicates if the system device
-     *   movement display should be shown. Note that when device requires movement,
-     *   CMErrorDeviceRequiresMovement is reported once via CMDeviceMotionHandler. By default,
-     *   showsDeviceMovementDisplay is NO.
+     * When the device requires movement, showsDeviceMovementDisplay indicates if the system device
+     * movement display should be shown. Note that when device requires movement,
+     * CMErrorDeviceRequiresMovement is reported once via CMDeviceMotionHandler. By default,
+     * showsDeviceMovementDisplay is NO.
      */
     @Generated
     @Selector("setShowsDeviceMovementDisplay:")
@@ -461,12 +461,12 @@ public class CMMotionManager extends NSObject {
 
     /**
      * showsDeviceMovementDisplay
-     * 
+     * <p>
      * Discussion:
-     *   When the device requires movement, showsDeviceMovementDisplay indicates if the system device
-     *   movement display should be shown. Note that when device requires movement,
-     *   CMErrorDeviceRequiresMovement is reported once via CMDeviceMotionHandler. By default,
-     *   showsDeviceMovementDisplay is NO.
+     * When the device requires movement, showsDeviceMovementDisplay indicates if the system device
+     * movement display should be shown. Note that when device requires movement,
+     * CMErrorDeviceRequiresMovement is reported once via CMDeviceMotionHandler. By default,
+     * showsDeviceMovementDisplay is NO.
      */
     @Generated
     @Selector("showsDeviceMovementDisplay")
@@ -474,10 +474,10 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startAccelerometerUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Starts accelerometer updates with no handler. To receive the latest accelerometer data
-     *   when desired, examine the accelerometerData property.
+     * Starts accelerometer updates with no handler. To receive the latest accelerometer data
+     * when desired, examine the accelerometerData property.
      */
     @Generated
     @Selector("startAccelerometerUpdates")
@@ -485,11 +485,11 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startAccelerometerUpdatesToQueue:withHandler:
-     * 
+     * <p>
      * Discussion:
-     *   Starts accelerometer updates, providing data to the given handler through the given queue.
-     *   Note that when the updates are stopped, all operations in the
-     *   given NSOperationQueue will be cancelled.
+     * Starts accelerometer updates, providing data to the given handler through the given queue.
+     * Note that when the updates are stopped, all operations in the
+     * given NSOperationQueue will be cancelled.
      */
     @Generated
     @Selector("startAccelerometerUpdatesToQueue:withHandler:")
@@ -498,11 +498,11 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Starts device motion updates with no handler. To receive the latest device motion data
-     *   when desired, examine the deviceMotion property. Uses the default reference frame for
-     *   the device. Examine CMMotionManager's attitudeReferenceFrame to determine this.
+     * Starts device motion updates with no handler. To receive the latest device motion data
+     * when desired, examine the deviceMotion property. Uses the default reference frame for
+     * the device. Examine CMMotionManager's attitudeReferenceFrame to determine this.
      */
     @Generated
     @Selector("startDeviceMotionUpdates")
@@ -510,11 +510,11 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesToQueue:withHandler:
-     * 
+     * <p>
      * Discussion:
-     *   Starts device motion updates, providing data to the given handler through the given queue.
-     *   Uses the default reference frame for the device. Examine CMMotionManager's
-     *   attitudeReferenceFrame to determine this.
+     * Starts device motion updates, providing data to the given handler through the given queue.
+     * Uses the default reference frame for the device. Examine CMMotionManager's
+     * attitudeReferenceFrame to determine this.
      */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
@@ -523,11 +523,11 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesUsingReferenceFrame:
-     * 
+     * <p>
      * Discussion:
-     *   Starts device motion updates with no handler. To receive the latest device motion data
-     *   when desired, examine the deviceMotion property. The specified frame will be used as
-     *   reference for the attitude estimates.
+     * Starts device motion updates with no handler. To receive the latest device motion data
+     * when desired, examine the deviceMotion property. The specified frame will be used as
+     * reference for the attitude estimates.
      */
     @Generated
     @Selector("startDeviceMotionUpdatesUsingReferenceFrame:")
@@ -535,10 +535,10 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler
-     * 
+     * <p>
      * Discussion:
-     *   Starts device motion updates, providing data to the given handler through the given queue.
-     *   The specified frame will be used as reference for the attitude estimates.
+     * Starts device motion updates, providing data to the given handler through the given queue.
+     * The specified frame will be used as reference for the attitude estimates.
      */
     @Generated
     @Selector("startDeviceMotionUpdatesUsingReferenceFrame:toQueue:withHandler:")
@@ -548,10 +548,10 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startGyroUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Starts gyro updates with no handler. To receive the latest gyro data
-     *   when desired, examine the gyroData property.
+     * Starts gyro updates with no handler. To receive the latest gyro data
+     * when desired, examine the gyroData property.
      */
     @Generated
     @Selector("startGyroUpdates")
@@ -572,10 +572,10 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startMagnetometerUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Starts magnetometer updates with no handler. To receive the latest magnetometer data
-     *   when desired, examine the magnetometerData property.
+     * Starts magnetometer updates with no handler. To receive the latest magnetometer data
+     * when desired, examine the magnetometerData property.
      */
     @Generated
     @Selector("startMagnetometerUpdates")
@@ -583,9 +583,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * startMagnetometerUpdatesToQueue:withHandler:
-     * 
+     * <p>
      * Discussion:
-     *   Starts magnetometer updates, providing data to the given handler through the given queue.
+     * Starts magnetometer updates, providing data to the given handler through the given queue.
      */
     @Generated
     @Selector("startMagnetometerUpdatesToQueue:withHandler:")
@@ -594,9 +594,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * stopAccelerometerUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Stop accelerometer updates.
+     * Stop accelerometer updates.
      */
     @Generated
     @Selector("stopAccelerometerUpdates")
@@ -604,9 +604,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * stopDeviceMotionUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Stops device motion updates.
+     * Stops device motion updates.
      */
     @Generated
     @Selector("stopDeviceMotionUpdates")
@@ -614,9 +614,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * stopGyroUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Stops gyro updates.
+     * Stops gyro updates.
      */
     @Generated
     @Selector("stopGyroUpdates")
@@ -624,9 +624,9 @@ public class CMMotionManager extends NSObject {
 
     /**
      * stopMagnetometerUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Stops magnetometer updates.
+     * Stops magnetometer updates.
      */
     @Generated
     @Selector("stopMagnetometerUpdates")

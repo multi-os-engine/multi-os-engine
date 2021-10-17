@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronSigmoid
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the sigmoid neuron filter.  For each pixel, applies the following function: f(x) = 1 / (1 + e^-x)
  */
 @Generated
@@ -165,9 +165,9 @@ public class MPSCNNNeuronSigmoid extends MPSCNNNeuron {
 
     /**
      * Initialize a neuron filter
-     * 
-     * @param      device          The device the filter will run on
-     * @return     A valid MPSCNNNeuronSigmoid object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @return A valid MPSCNNNeuronSigmoid object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")

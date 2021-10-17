@@ -2,9 +2,11 @@ package apple.coremidi;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -21,17 +23,15 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
-import apple.foundation.NSCoder;
-import apple.foundation.protocol.NSSecureCoding;
-import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * MIDICIDiscoveredNode
- * 
+ * <p>
  * An object created during MIDI-CI discovery representing a MIDI destination with an
- *             associated MIDI source that responds to capability inquiries.
+ * associated MIDI source that responds to capability inquiries.
  */
 @Generated
 @Library("CoreMIDI")

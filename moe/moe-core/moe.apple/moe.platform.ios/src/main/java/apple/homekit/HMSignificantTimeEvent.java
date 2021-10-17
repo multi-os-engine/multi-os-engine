@@ -104,13 +104,11 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
 
     /**
      * Creates a significant time event.
-     * 
+     *
      * @param significantEvent The significant event for the trigger.
-     * 
-     * @param offset An offset from the time of the signficant event. To specify an offset before the significant event, the
-     *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
-     *               'minute' property must be set to -30.
-     * 
+     * @param offset           An offset from the time of the signficant event. To specify an offset before the significant event, the
+     *                         properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     *                         'minute' property must be set to -30.
      * @return Instance object representing the significant event.
      */
     @Generated
@@ -157,8 +155,8 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
 
     /**
      * offset An offset from the time of the signficant event. To specify an offset before the significant event, the
-     *               properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
-     *               'minute' property must be set to -30.
+     * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     * 'minute' property must be set to -30.
      */
     @Generated
     @Selector("offset")

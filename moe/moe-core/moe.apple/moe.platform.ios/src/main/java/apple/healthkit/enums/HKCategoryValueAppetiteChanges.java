@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKCategoryValueAppetiteChanges
- * 
+ * <p>
  * Set of values to indicate the direction of appetite changes.
  */
 @Generated

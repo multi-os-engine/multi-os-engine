@@ -184,7 +184,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     /**
      * Connects the node to this graph by inserting it into an existing triangle and making the appropriate connections
      * Node must be in the space defined by the min and max coordinates of this graph.
-     * 
+     *
      * @param node the node to connect
      */
     @Generated
@@ -220,7 +220,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     /**
      * Specifies how graph nodes are generated when you triangulate this graph.
      * You can combine triangulation modes using the | (OR) operator
-     * 
+     *
      * @see GKMeshGraphTriangulationMode
      */
     @Generated
@@ -248,7 +248,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     /**
      * Specifies how graph nodes are generated when you triangulate this graph.
      * You can combine triangulation modes using the | (OR) operator
-     * 
+     *
      * @see GKMeshGraphTriangulationMode
      */
     @Generated

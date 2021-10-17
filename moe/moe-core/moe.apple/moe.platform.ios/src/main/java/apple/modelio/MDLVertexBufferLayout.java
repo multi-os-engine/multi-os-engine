@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLVertexBufferLayout
- * 
+ * <p>
  * Describes a vertex buffer's layout
  */
 @Generated
@@ -172,14 +172,14 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
 
     /**
      * [@property] stride
-     * 
+     * <p>
      * stride in bytes of each vertex element in the buffer.
-     * 
+     * <p>
      * - If you store multiple attributes interleaved in the vertex
-     *               buffer, the stride will be the sum of sizes of each attribute (and any padding).
-     *             - If you store multiple attributes non-interleaved (back to back),
-     *               the stride will be the size of an attribute (and all attributes are
-     *               required to have the same size).
+     * buffer, the stride will be the sum of sizes of each attribute (and any padding).
+     * - If you store multiple attributes non-interleaved (back to back),
+     * the stride will be the size of an attribute (and all attributes are
+     * required to have the same size).
      */
     @Generated
     @Selector("setStride:")
@@ -187,14 +187,14 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
 
     /**
      * [@property] stride
-     * 
+     * <p>
      * stride in bytes of each vertex element in the buffer.
-     * 
+     * <p>
      * - If you store multiple attributes interleaved in the vertex
-     *               buffer, the stride will be the sum of sizes of each attribute (and any padding).
-     *             - If you store multiple attributes non-interleaved (back to back),
-     *               the stride will be the size of an attribute (and all attributes are
-     *               required to have the same size).
+     * buffer, the stride will be the sum of sizes of each attribute (and any padding).
+     * - If you store multiple attributes non-interleaved (back to back),
+     * the stride will be the size of an attribute (and all attributes are
+     * required to have the same size).
      */
     @Generated
     @Selector("stride")

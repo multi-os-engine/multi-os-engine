@@ -47,10 +47,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMDeviceMotion
- * 
+ * <p>
  * Discussion:
- *   A CMDeviceMotion object contains basic information about the device's
- *   motion.
+ * A CMDeviceMotion object contains basic information about the device's
+ * motion.
  */
 @Generated
 @Library("CoreMotion")
@@ -169,9 +169,9 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * attitude
-     * 
+     * <p>
      * Discussion:
-     *   Returns the attitude of the device.
+     * Returns the attitude of the device.
      */
     @Generated
     @Selector("attitude")
@@ -179,11 +179,11 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * gravity
-     * 
+     * <p>
      * Discussion:
-     *   Returns the gravity vector expressed in the device's reference frame. Note
-     *   that the total acceleration of the device is equal to gravity plus
-     *   userAcceleration.
+     * Returns the gravity vector expressed in the device's reference frame. Note
+     * that the total acceleration of the device is equal to gravity plus
+     * userAcceleration.
      */
     @Generated
     @Selector("gravity")
@@ -200,12 +200,12 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * magneticField
-     * 
+     * <p>
      * Discussion:
-     *   Returns the magnetic field vector with respect to the device for devices with a magnetometer.
-     *   Note that this is the total magnetic field in the device's vicinity without device
-     *   bias (Earth's magnetic field plus surrounding fields, without device bias),
-     *   unlike CMMagnetometerData magneticField.
+     * Returns the magnetic field vector with respect to the device for devices with a magnetometer.
+     * Note that this is the total magnetic field in the device's vicinity without device
+     * bias (Earth's magnetic field plus surrounding fields, without device bias),
+     * unlike CMMagnetometerData magneticField.
      */
     @Generated
     @Selector("magneticField")
@@ -214,9 +214,9 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * rotationRate
-     * 
+     * <p>
      * Discussion:
-     *   Returns the rotation rate of the device for devices with a gyro.
+     * Returns the rotation rate of the device for devices with a gyro.
      */
     @Generated
     @Selector("rotationRate")
@@ -231,11 +231,11 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * userAcceleration
-     * 
+     * <p>
      * Discussion:
-     *   Returns the acceleration that the user is giving to the device. Note
-     *   that the total acceleration of the device is equal to gravity plus
-     *   userAcceleration.
+     * Returns the acceleration that the user is giving to the device. Note
+     * that the total acceleration of the device is equal to gravity plus
+     * userAcceleration.
      */
     @Generated
     @Selector("userAcceleration")
@@ -244,10 +244,10 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * heading
-     * 
+     * <p>
      * Discussion:
-     *   Returns heading angle in the range [0,360) degrees with respect to the CMAttitude reference frame. A negative value is returned
-     *   for CMAttitudeReferenceFrameXArbitraryZVertical and CMAttitudeReferenceFrameXArbitraryCorrectedZVertical.
+     * Returns heading angle in the range [0,360) degrees with respect to the CMAttitude reference frame. A negative value is returned
+     * for CMAttitudeReferenceFrameXArbitraryZVertical and CMAttitudeReferenceFrameXArbitraryCorrectedZVertical.
      */
     @Generated
     @Selector("heading")
@@ -255,9 +255,9 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * sensorLocation
-     * 
+     * <p>
      * Discussion:
-     *   Returns the location of the sensors used to compute the device motion data.
+     * Returns the location of the sensors used to compute the device motion data.
      */
     @Generated
     @Selector("sensorLocation")

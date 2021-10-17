@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Because NSBundle caches allocated instances, subclasses should be prepared
- * to receive an already initialized object back from [super initWithPath:] 
+ * to receive an already initialized object back from [super initWithPath:]
  */
 @Generated
 @Library("Foundation")
@@ -338,7 +338,7 @@ public class NSBundle extends NSObject {
     public native NSDictionary<String, ?> localizedInfoDictionary();
 
     /**
-     * Method for retrieving localized strings.
+     * Methods for retrieving localized strings.
      */
     @Generated
     @Selector("localizedStringForKey:value:table:")
@@ -412,9 +412,9 @@ public class NSBundle extends NSObject {
 
     /**
      * Set a preservation priority for tags that are included in this bundle for the On Demand Resources system. Preservation priorities may be between 0.0 and 1.0, with higher values being the last choice for purging by the system. The exact meaning of this value is up to your application as it only has meaning within the set of tags your application uses.
-     * 
+     * <p>
      * The default value is 0.0.
-     * 
+     * <p>
      * This method will throw an exception if the receiver bundle has no on demand resource tag information.
      */
     @Generated
@@ -440,4 +440,9 @@ public class NSBundle extends NSObject {
     @Generated
     @Selector("unload")
     public native boolean unload();
+
+    @Generated
+    @Selector("localizedAttributedStringForKey:value:table:")
+    public native NSAttributedString localizedAttributedStringForKeyValueTable(String key, String value,
+            String tableName);
 }

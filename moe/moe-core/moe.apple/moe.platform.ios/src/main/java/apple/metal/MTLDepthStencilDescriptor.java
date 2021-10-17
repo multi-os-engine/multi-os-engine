@@ -196,7 +196,7 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify the created object.
      */
     @Generated
@@ -223,7 +223,7 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify the created object.
      */
     @Generated

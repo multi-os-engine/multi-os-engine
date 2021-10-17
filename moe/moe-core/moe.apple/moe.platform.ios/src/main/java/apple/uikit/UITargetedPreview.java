@@ -165,7 +165,7 @@ public class UITargetedPreview extends NSObject implements NSCopying {
 
     /**
      * Returns a preview with the same view and parameters, but a new target.
-     * 
+     * <p>
      * You might call this in a UIDropInteractionDelegate in
      * -dropInteraction:previewForDroppingItem:withDefault:, or in
      * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,

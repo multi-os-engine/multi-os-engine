@@ -1648,4 +1648,9 @@ public final class Contacts {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CNLabelContactRelationGrandsonOrNephew();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CNLabelPhoneNumberAppleWatch();
 }

@@ -35,7 +35,7 @@ public final class NSFileCoordinatorReadingOptions {
     @Generated @NUInt public static final long ImmediatelyAvailableMetadataOnly = 0x0000000000000004L;
     /**
      * Whether reading of an item is being done for the purpose of uploading. When using this option, NSFileCoordinator will create a temporary snapshot of the item being read and will relinquish its claim on the file once that snapshot is made to avoid blocking other coordinated writes during a potentially long upload. If the item at the URL being read is a directory (such as a document package), then the snapshot will be a new file that contains the zipped contents of that directory, and the URL passed to the accessor block will locate that file.
-     * 
+     * <p>
      * When using this option, you may upload the document outside of the accessor block. However, you should open a file descriptor to the file or relocate the file within the accessor block before you do so, because NSFileCoordinator will unlink the file after the block returns, rendering it inaccessible via the URL.
      */
     @Generated @NUInt public static final long ForUploading = 0x0000000000000008L;

@@ -30,4 +30,6 @@ public final class NSJSONReadingOptions {
     }
 
     @Generated @NUInt public static final long FragmentsAllowed = 0x0000000000000004L;
+    @Generated @NUInt public static final long JSON5Allowed = 0x0000000000000008L;
+    @Generated @NUInt public static final long TopLevelDictionaryAssumed = 0x0000000000000010L;
 }

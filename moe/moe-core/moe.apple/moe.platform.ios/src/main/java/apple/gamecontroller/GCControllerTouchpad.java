@@ -132,11 +132,11 @@ public class GCControllerTouchpad extends GCControllerElement {
 
     /**
      * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
-     * 
+     * <p>
      * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
-     * 
+     * <p>
      * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
-     * 
+     * <p>
      * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
      */
     @Generated
@@ -153,11 +153,11 @@ public class GCControllerTouchpad extends GCControllerElement {
 
     /**
      * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
-     * 
+     * <p>
      * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
-     * 
+     * <p>
      * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
-     * 
+     * <p>
      * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
      */
     @Generated
@@ -211,9 +211,9 @@ public class GCControllerTouchpad extends GCControllerElement {
 
     /**
      * Sets the normalized value for the touchpad's axes, as well as its current touch and button state.
-     * 
+     * <p>
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     * 
+     *
      * @see touchSurface
      * @see touchState
      */
@@ -272,10 +272,10 @@ public class GCControllerTouchpad extends GCControllerElement {
 
     /**
      * The touch surface is a 2-axis control that represents the position of a touch event on the touchpad.
-     * 
+     * <p>
      * The axes will indicate the most recent touch position - a non-zero value does not indicate that the
      * surface is being touched, and a value of (0, 0) does not indicate the surface is not being touched.
-     * 
+     *
      * @see touchState - Should be polled in conjunction with touchSurface to determine if values are valid
      */
     @Generated

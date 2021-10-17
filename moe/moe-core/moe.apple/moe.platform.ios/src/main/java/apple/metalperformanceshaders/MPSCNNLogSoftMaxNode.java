@@ -95,9 +95,9 @@ public class MPSCNNLogSoftMaxNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNLogSoftMax kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @return     A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @return A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
      */
     @Generated
     @Selector("initWithSource:")
@@ -132,9 +132,9 @@ public class MPSCNNLogSoftMaxNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSCNNLogSoftMax kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @return     A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @return A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
      */
     @Generated
     @Selector("nodeWithSource:")

@@ -111,4 +111,12 @@ public final class ClassKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicHealthAndFitness();
+
+    /**
+     * Errors with the code `CLSErrorCodePartialFailure` may contain an array of successful entities in - [NSError userInfo]; under this key.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CLSErrorSuccessfulObjectsKey();
 }

@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.callkit.protocol.CXProviderDelegate;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -211,9 +212,9 @@ public class CXProvider extends NSObject {
 
     /**
      * Report a new incoming call to the system.
-     * 
+     * <p>
      * If completion is invoked with a non-nil `error`, the incoming call has been disallowed by the system and will not be displayed, so the provider should not proceed with the call.
-     * 
+     * <p>
      * Completion block will be called on delegate queue, if specified, otherwise on a private serial queue.
      */
     @Generated
@@ -255,5 +256,20 @@ public class CXProvider extends NSObject {
     public interface Block_reportNewIncomingCallWithUUIDUpdateCompletion {
         @Generated
         void call_reportNewIncomingCallWithUUIDUpdateCompletion(NSError error);
+    }
+
+    /**
+     * From within a Notification Service Extension, request the containing application be launched to handle an incoming VoIP call. The application's PKPushRegistryDelegate must handle the push upon launch.
+     */
+    @Generated
+    @Selector("reportNewIncomingVoIPPushPayload:completion:")
+    public static native void reportNewIncomingVoIPPushPayloadCompletion(NSDictionary<?, ?> dictionaryPayload,
+            @ObjCBlock(name = "call_reportNewIncomingVoIPPushPayloadCompletion") Block_reportNewIncomingVoIPPushPayloadCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_reportNewIncomingVoIPPushPayloadCompletion {
+        @Generated
+        void call_reportNewIncomingVoIPPushPayloadCompletion(NSError arg0);
     }
 }

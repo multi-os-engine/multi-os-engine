@@ -180,22 +180,22 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		controlTimebase
-     * 
+     * <p>
      * The layer's control timebase, which governs how time stamps are interpreted.
-     * 
+     * <p>
      * By default, this property is NULL, in which case time stamps will be interpreted
-     * 				according to the host time clock (mach_absolute_time with the appropriate timescale
-     * 				conversion; this is the same as Core Animation's CACurrentMediaTime).  With no 
-     * 				control timebase, once frames are enqueued, it is not possible to adjust exactly 
-     * 				when they are displayed.
-     * 
-     * 				If a non-NULL control timebase is set, it will be used to interpret time stamps.
-     * 				You can control the timing of frame display by setting the rate and time of the
-     * 				control timebase.  
-     * 				If you are synchronizing video to audio, you can use a timebase whose master clock
-     * 				is a CMAudioDeviceClock for the appropriate audio device to prevent drift.
-     * 
-     * 				Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer: was called.  As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
+     * according to the host time clock (mach_absolute_time with the appropriate timescale
+     * conversion; this is the same as Core Animation's CACurrentMediaTime).  With no
+     * control timebase, once frames are enqueued, it is not possible to adjust exactly
+     * when they are displayed.
+     * <p>
+     * If a non-NULL control timebase is set, it will be used to interpret time stamps.
+     * You can control the timing of frame display by setting the rate and time of the
+     * control timebase.
+     * If you are synchronizing video to audio, you can use a timebase whose source clock
+     * is a CMAudioDeviceClock for the appropriate audio device to prevent drift.
+     * <p>
+     * Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer: was called.  As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
      */
     @Generated
     @Selector("controlTimebase")
@@ -207,9 +207,9 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		error
-     * 
+     * <p>
      * If the display layer's status is AVQueuedSampleBufferRenderingStatusFailed, this describes the error that caused the failure.
-     * 
+     * <p>
      * The value of this property is an NSError that describes what caused the display layer to no longer be able to enqueue sample buffers. If the status is not AVQueuedSampleBufferRenderingStatusFailed, the value of this property is nil.
      */
     @Generated
@@ -222,13 +222,13 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * flushAndRemoveImage
-     * 
+     * <p>
      * Instructs the layer to discard pending enqueued sample buffers and remove any
-     * 				currently displayed image.
-     * 
+     * currently displayed image.
+     * <p>
      * It is not possible to determine which sample buffers have been decoded,
-     * 				so the next frame passed to enqueueSampleBuffer: should be an IDR frame
-     * 				(also known as a key frame or sync sample).
+     * so the next frame passed to enqueueSampleBuffer: should be an IDR frame
+     * (also known as a key frame or sync sample).
      */
     @Generated
     @Selector("flushAndRemoveImage")
@@ -257,22 +257,22 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		controlTimebase
-     * 
+     * <p>
      * The layer's control timebase, which governs how time stamps are interpreted.
-     * 
+     * <p>
      * By default, this property is NULL, in which case time stamps will be interpreted
-     * 				according to the host time clock (mach_absolute_time with the appropriate timescale
-     * 				conversion; this is the same as Core Animation's CACurrentMediaTime).  With no 
-     * 				control timebase, once frames are enqueued, it is not possible to adjust exactly 
-     * 				when they are displayed.
-     * 
-     * 				If a non-NULL control timebase is set, it will be used to interpret time stamps.
-     * 				You can control the timing of frame display by setting the rate and time of the
-     * 				control timebase.  
-     * 				If you are synchronizing video to audio, you can use a timebase whose master clock
-     * 				is a CMAudioDeviceClock for the appropriate audio device to prevent drift.
-     * 
-     * 				Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer: was called.  As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
+     * according to the host time clock (mach_absolute_time with the appropriate timescale
+     * conversion; this is the same as Core Animation's CACurrentMediaTime).  With no
+     * control timebase, once frames are enqueued, it is not possible to adjust exactly
+     * when they are displayed.
+     * <p>
+     * If a non-NULL control timebase is set, it will be used to interpret time stamps.
+     * You can control the timing of frame display by setting the rate and time of the
+     * control timebase.
+     * If you are synchronizing video to audio, you can use a timebase whose source clock
+     * is a CMAudioDeviceClock for the appropriate audio device to prevent drift.
+     * <p>
+     * Note that prior to OSX 10.10 and iOS 8.0, the control timebase could not be changed after enqueueSampleBuffer: was called.  As of OSX 10.10 and iOS 8.0, the control timebase may be changed at any time.
      */
     @Generated
     @Selector("setControlTimebase:")
@@ -280,11 +280,11 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		videoGravity
-     * 
+     * <p>
      * A string defining how the video is displayed within an AVSampleBufferDisplayLayer bounds rect.
-     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill 
-     * 					and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default. 
-     * 				See <AVFoundation/AVAnimation.h> for a description of these options.
+     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+     * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+     * See <AVFoundation/AVAnimation.h> for a description of these options.
      */
     @Generated
     @Selector("setVideoGravity:")
@@ -292,12 +292,12 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		status
-     * 
+     * <p>
      * The ability of the display layer to be used for enqueuing sample buffers.
-     * 
+     * <p>
      * The value of this property is an AVQueuedSampleBufferRenderingStatus that indicates whether the receiver can be used for enqueuing and rendering sample buffers. When the value of this property is AVQueuedSampleBufferRenderingStatusFailed, clients can check the value of the error property to determine the failure. To resume rendering sample buffers using the display layer after a failure, clients must first reset the status to AVQueuedSampleBufferRenderingStatusUnknown. This can be achieved by invoking -flush on the display layer.
-     * 
-     * 				This property is key value observable.
+     * <p>
+     * This property is key value observable.
      */
     @Generated
     @Selector("status")
@@ -310,11 +310,11 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		videoGravity
-     * 
+     * <p>
      * A string defining how the video is displayed within an AVSampleBufferDisplayLayer bounds rect.
-     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill 
-     * 					and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default. 
-     * 				See <AVFoundation/AVAnimation.h> for a description of these options.
+     * [@discusssion]	Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill
+     * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
+     * See <AVFoundation/AVAnimation.h> for a description of these options.
      */
     @Generated
     @Selector("videoGravity")
@@ -341,7 +341,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		preventsCapture
-     * 
+     * <p>
      * Indicates that image data should be protected from capture.
      */
     @Generated
@@ -350,10 +350,10 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]   preventsDisplaySleepDuringVideoPlayback
-     * 
+     * <p>
      * Indicates whether video playback prevents display and device sleep.
-     * 
-     * Default is YES on iOS.  Default is NO on macOS.
+     * <p>
+     * Default is YES on iOS, tvOS and in Mac Catalyst apps.  Default is NO on macOS.
      * Setting this property to NO does not force the display to sleep, it simply stops preventing display sleep.  Other apps or frameworks within your app may still be preventing display sleep for various reasons.
      * Note: If sample buffers are being enqueued for playback at the user's request, you should ensure that the value of this property is set to YES. If video is not being displayed as part of the user's primary focus, you should ensure that the value of this property is set to NO.
      */
@@ -363,7 +363,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		preventsCapture
-     * 
+     * <p>
      * Indicates that image data should be protected from capture.
      */
     @Generated
@@ -372,10 +372,10 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]   preventsDisplaySleepDuringVideoPlayback
-     * 
+     * <p>
      * Indicates whether video playback prevents display and device sleep.
-     * 
-     * Default is YES on iOS.  Default is NO on macOS.
+     * <p>
+     * Default is YES on iOS, tvOS and in Mac Catalyst apps.  Default is NO on macOS.
      * Setting this property to NO does not force the display to sleep, it simply stops preventing display sleep.  Other apps or frameworks within your app may still be preventing display sleep for various reasons.
      * Note: If sample buffers are being enqueued for playback at the user's request, you should ensure that the value of this property is set to YES. If video is not being displayed as part of the user's primary focus, you should ensure that the value of this property is set to NO.
      */
@@ -385,15 +385,41 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
 
     /**
      * [@property]		requiresFlushToResumeDecoding
-     * 
+     * <p>
      * Indicates that the receiver is in a state where it requires a call to -flush to continue decoding frames.
-     * 
+     * <p>
      * When the application enters a state where use of video decoder resources is not permissible, the value of this property changes to YES along with the display layer's status changing to AVQueuedSampleBufferRenderingStatusFailed.
-     * 				To resume rendering sample buffers using the display layer after this property's value is YES, clients must first reset the display layer's status to AVQueuedSampleBufferRenderingStatusUnknown. This can be achieved by invoking -flush on the display layer.
-     * 				Clients can track changes to this property via AVSampleBufferDisplayLayerRequiresFlushToResumeDecodingDidChangeNotification.
-     * 				This property is not key value observable.
+     * To resume rendering sample buffers using the display layer after this property's value is YES, clients must first reset the display layer's status to AVQueuedSampleBufferRenderingStatusUnknown. This can be achieved by invoking -flush on the display layer.
+     * Clients can track changes to this property via AVSampleBufferDisplayLayerRequiresFlushToResumeDecodingDidChangeNotification.
+     * This property is not key value observable.
      */
     @Generated
     @Selector("requiresFlushToResumeDecoding")
     public native boolean requiresFlushToResumeDecoding();
+
+    @Generated
+    @Selector("hasSufficientMediaDataForReliablePlaybackStart")
+    public native boolean hasSufficientMediaDataForReliablePlaybackStart();
+
+    /**
+     * [@property]      outputObscuredDueToInsufficientExternalProtection
+     * <p>
+     * Whether or not decoded output is being obscured due to insufficient external protection.
+     * <p>
+     * The value of this property indicates whether the layer is purposefully obscuring its visual output
+     * because the requirement for an external protection mechanism is not met by the current device
+     * configuration. The change of this property can be observed through AVSampleBufferDisplayLayerOutputObscuredDueToInsufficientExternalProtectionDidChangeNotification
+     * <p>
+     * It is highly recommended that clients whose content requires external
+     * protection observe this property and set the playback rate to zero and display an appropriate user
+     * interface when the value changes to YES.
+     * <p>
+     * Note that the value of this property is dependent on the external protection requirements of the
+     * media being displayed by the layer. These requirements are inherent to the content itself and cannot
+     * be externally specified. If the content does not require external protection, the value of this
+     * property will be NO.
+     */
+    @Generated
+    @Selector("outputObscuredDueToInsufficientExternalProtection")
+    public native boolean outputObscuredDueToInsufficientExternalProtection();
 }

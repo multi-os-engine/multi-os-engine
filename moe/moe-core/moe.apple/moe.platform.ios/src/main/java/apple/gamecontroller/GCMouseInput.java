@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Mouse profile that represent a physical mouse object with two axis cursor, two axis scroll,
  * left button, optional right and middle buttons and optional set of auxiliary buttons.
- * 
+ * <p>
  * It only provides information about raw mouse movement deltas. For the valid cursor position
  * at given point in time, use UIHoverGestureRecognizer and NSEvent.mouseLocation.
  */

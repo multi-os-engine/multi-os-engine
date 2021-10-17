@@ -251,13 +251,13 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
 
     /**
      * Concatenate MLMultiArrays to form a new MLMultiArray.
-     * 
+     * <p>
      * All the source MLMultiArrays must have a same shape except the specified axis. The resultant
      * MLMultiArray has the same shape as inputs except this axis, which dimension will be the sum of
      * all the input dimensions of the axis.
-     * 
+     * <p>
      * For example,
-     * 
+     * <p>
      * \code
      * // Swift
      * let A = try MLMultiArray(shape: [2, 3], dataType: .int32)
@@ -265,7 +265,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * let C = MLMultiArray(concatenating: [A, B], axis: 1, dataType: .int32)
      * assert(C.shape == [2, 5])
      * \endcode
-     * 
+     * <p>
      * \code
      * // Obj-C
      * MLMultiArray *A = [[MLMultiArray alloc] initWithShape:@[@2, @3] dataType:MLMultiArrayDataTypeInt32 error:NULL];
@@ -273,18 +273,16 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * MLMultiArray *C = [MLMultiArray multiArrayByConcatenatingMultiArrays:@[A, B] alongAxis:1 dataType:MLMultiArrayDataTypeInt32];
      * assert(C.shape == @[@2, @5])
      * \endcode
-     * 
+     * <p>
      * Numeric data will be up or down casted as needed.
-     * 
+     * <p>
      * The method raises NSInvalidArgumentException if the shapes of input multi arrays are not
      * compatible for concatenation.
-     * 
+     *
      * @param multiArrays Array of MLMultiArray instances to be concatenated.
-     * 
-     * @param axis Axis index with which the concatenation will performed. The value is wrapped by the
-     * dimension of the axis. For example, -1 is the last axis.
-     * 
-     * @param dataType The data type of the resultant MLMultiArray
+     * @param axis        Axis index with which the concatenation will performed. The value is wrapped by the
+     *                    dimension of the axis. For example, -1 is the last axis.
+     * @param dataType    The data type of the resultant MLMultiArray
      */
     @Generated
     @Selector("multiArrayByConcatenatingMultiArrays:alongAxis:dataType:")

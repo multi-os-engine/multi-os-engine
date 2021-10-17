@@ -38,6 +38,7 @@ import apple.metal.MTLRenderPipelineReflection;
 import apple.metal.MTLSamplerDescriptor;
 import apple.metal.MTLSharedEventHandle;
 import apple.metal.MTLSharedTextureHandle;
+import apple.metal.MTLStitchedLibraryDescriptor;
 import apple.metal.MTLTextureDescriptor;
 import apple.metal.MTLTileRenderPipelineDescriptor;
 import apple.metal.struct.MTLAccelerationStructureSizes;
@@ -68,7 +69,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLDevice
- * 
+ * <p>
  * MTLDevice represents a processor capable of data parallel computations
  */
 @Generated
@@ -78,9 +79,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLDevice {
     /**
      * heapBufferSizeAndAlignWithLength:options:
-     * 
+     * <p>
      * Determine the byte size of buffers when sub-allocated from a heap.
-     * 
+     * <p>
      * This method can be used to help determine the required heap size.
      */
     @Generated
@@ -90,9 +91,9 @@ public interface MTLDevice {
 
     /**
      * heapTextureSizeAndAlignWithDescriptor:
-     * 
+     * <p>
      * Determine the byte size of textures when sub-allocated from a heap.
-     * 
+     * <p>
      * This method can be used to help determine the required heap size.
      */
     @Generated
@@ -102,7 +103,7 @@ public interface MTLDevice {
 
     /**
      * [@property] maxThreadsPerThreadgroup
-     * 
+     * <p>
      * The maximum number of threads along each dimension.
      */
     @Generated
@@ -112,7 +113,7 @@ public interface MTLDevice {
 
     /**
      * [@property] name
-     * 
+     * <p>
      * The full name of the vendor device.
      */
     @Generated
@@ -121,7 +122,7 @@ public interface MTLDevice {
 
     /**
      * newBufferWithBytes:length:options:
-     * 
+     * <p>
      * Create a buffer by allocating new memory and specifing the initial contents to be copied into it.
      */
     @Generated
@@ -131,7 +132,7 @@ public interface MTLDevice {
 
     /**
      * newBufferWithBytesNoCopy:length:options:deallocator:
-     * 
+     * <p>
      * Create a buffer by wrapping an existing part of the address space.
      */
     @Generated
@@ -142,7 +143,7 @@ public interface MTLDevice {
 
     /**
      * newBufferWithLength:options:
-     * 
+     * <p>
      * Create a buffer by allocating new memory.
      */
     @Generated
@@ -152,9 +153,9 @@ public interface MTLDevice {
 
     /**
      * newCommandQueue
-     * 
+     * <p>
      * Create and return a new command queue.   Command Queues created via this method will only allow up to 64 non-completed command buffers.
-     * 
+     *
      * @return The new command queue object
      */
     @Generated
@@ -164,9 +165,9 @@ public interface MTLDevice {
 
     /**
      * newCommandQueueWithMaxCommandBufferCount
-     * 
+     * <p>
      * Create and return a new command queue with a given upper bound on non-completed command buffers.
-     * 
+     *
      * @return The new command queue object
      */
     @Generated
@@ -176,7 +177,7 @@ public interface MTLDevice {
 
     /**
      * newComputePipelineStateWithDescriptor:options:completionHandler:
-     * 
+     * <p>
      * Create and compile a new MTLComputePipelineState object asynchronously.
      */
     @Generated
@@ -187,7 +188,7 @@ public interface MTLDevice {
 
     /**
      * newComputePipelineStateWithDescriptor:options:reflection:error:
-     * 
+     * <p>
      * Create and compile a new MTLComputePipelineState object synchronously.
      */
     @Generated
@@ -200,7 +201,7 @@ public interface MTLDevice {
 
     /**
      * newComputePipelineStateWithDescriptor:completionHandler:
-     * 
+     * <p>
      * Create and compile a new MTLComputePipelineState object asynchronously.
      */
     @Generated
@@ -211,7 +212,7 @@ public interface MTLDevice {
 
     /**
      * newComputePipelineStateWithDescriptor:error:
-     * 
+     * <p>
      * Create and compile a new MTLComputePipelineState object synchronously.
      */
     @Generated
@@ -223,7 +224,7 @@ public interface MTLDevice {
 
     /**
      * newComputePipelineStateWithDescriptor:options:completionHandler:
-     * 
+     * <p>
      * Create and compile a new MTLComputePipelineState object asynchronously.
      */
     @Generated
@@ -234,7 +235,7 @@ public interface MTLDevice {
 
     /**
      * newComputePipelineStateWithDescriptor:options:reflection:error:
-     * 
+     * <p>
      * Create and compile a new MTLComputePipelineState object synchronously.
      */
     @Generated
@@ -247,9 +248,9 @@ public interface MTLDevice {
 
     /**
      * newDefaultLibrary
-     * 
+     * <p>
      * Returns the default library for the main bundle.
-     * 
+     * <p>
      * use newDefaultLibraryWithBundle:error: to get an NSError in case of failure.
      */
     @Generated
@@ -259,9 +260,9 @@ public interface MTLDevice {
 
     /**
      * newDefaultLibraryWithBundle:error:
-     * 
+     * <p>
      * Returns the default library for a given bundle.
-     * 
+     *
      * @return A pointer to the library, nil if an error occurs.
      */
     @Generated
@@ -272,7 +273,7 @@ public interface MTLDevice {
 
     /**
      * newDepthStencilStateWithDescriptor:
-     * 
+     * <p>
      * Create a depth/stencil test state object.
      */
     @Generated
@@ -282,7 +283,7 @@ public interface MTLDevice {
 
     /**
      * newFence
-     * 
+     * <p>
      * Create a new MTLFence object
      */
     @Generated
@@ -292,7 +293,7 @@ public interface MTLDevice {
 
     /**
      * newHeapWithDescriptor:
-     * 
+     * <p>
      * Create a new heap with the given descriptor.
      */
     @Generated
@@ -302,10 +303,10 @@ public interface MTLDevice {
 
     /**
      * newLibraryWithData:
-     * 
+     * <p>
      * Load a MTLLibrary from a dispatch_data_t
-     * 
-     * @param data A metallib file already loaded as data in the form of dispatch_data_t.
+     *
+     * @param data  A metallib file already loaded as data in the form of dispatch_data_t.
      * @param error An error if we fail to open the metallib data.
      */
     @Generated
@@ -315,7 +316,7 @@ public interface MTLDevice {
 
     /**
      * newLibraryWithFile:
-     * 
+     * <p>
      * Load a MTLLibrary from a metallib file.
      */
     @Generated
@@ -325,7 +326,7 @@ public interface MTLDevice {
 
     /**
      * newLibraryWithSource:options:completionHandler:
-     * 
+     * <p>
      * Load a MTLLibrary from source.
      */
     @Generated
@@ -335,7 +336,7 @@ public interface MTLDevice {
 
     /**
      * newLibraryWithSource:options:error:
-     * 
+     * <p>
      * Load a MTLLibrary from source.
      */
     @Generated
@@ -346,7 +347,7 @@ public interface MTLDevice {
 
     /**
      * newRenderPipelineState:completionHandler:
-     * 
+     * <p>
      * Create and compile a new MTLRenderPipelineState object asynchronously.
      */
     @Generated
@@ -356,7 +357,7 @@ public interface MTLDevice {
 
     /**
      * newRenderPipelineStateWithDescriptor:error:
-     * 
+     * <p>
      * Create and compile a new MTLRenderPipelineState object synchronously.
      */
     @Generated
@@ -367,7 +368,7 @@ public interface MTLDevice {
 
     /**
      * newRenderPipelineState:options:completionHandler:
-     * 
+     * <p>
      * Create and compile a new MTLRenderPipelineState object asynchronously and returns additional reflection information
      */
     @Generated
@@ -378,7 +379,7 @@ public interface MTLDevice {
 
     /**
      * newRenderPipelineStateWithDescriptor:options:reflection:error:
-     * 
+     * <p>
      * Create and compile a new MTLRenderPipelineState object synchronously and returns additional reflection information.
      */
     @Generated
@@ -391,7 +392,7 @@ public interface MTLDevice {
 
     /**
      * newSamplerStateWithDescriptor:
-     * 
+     * <p>
      * Create a new sampler.
      */
     @Generated
@@ -401,7 +402,7 @@ public interface MTLDevice {
 
     /**
      * newTextureWithDescriptor:
-     * 
+     * <p>
      * Allocate a new texture with privately owned storage.
      */
     @Generated
@@ -411,7 +412,7 @@ public interface MTLDevice {
 
     /**
      * supportsFeatureSet:
-     * 
+     * <p>
      * Returns TRUE if the feature set is supported by this MTLDevice.
      */
     @Generated
@@ -420,9 +421,9 @@ public interface MTLDevice {
 
     /**
      * supportsTextureSampleCount:
-     * 
+     * <p>
      * Query device if it support textures with a given sampleCount.
-     * 
+     *
      * @return BOOL value. If YES, device supports the given sampleCount for textures. If NO, device does not support the given sampleCount.
      */
     @Generated
@@ -441,8 +442,8 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object computePipelineState, MTLComputePipelineReflection reflection,
-                NSError error);
+                @Mapped(ObjCObjectMapper.class) Object computePipelineState,
+                MTLComputePipelineReflection _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -458,8 +459,8 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithFunctionOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithFunctionOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object computePipelineState, MTLComputePipelineReflection reflection,
-                NSError error);
+                @Mapped(ObjCObjectMapper.class) Object computePipelineState,
+                MTLComputePipelineReflection _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -483,15 +484,15 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object renderPipelineState, MTLRenderPipelineReflection reflection,
-                NSError error);
+                @Mapped(ObjCObjectMapper.class) Object renderPipelineState,
+                MTLRenderPipelineReflection _Nullable_result);
     }
 
     /**
      * [@property] programmableSaplePositionsSupported
-     * 
+     * <p>
      * Query device for programmable sample position support.
-     * 
+     *
      * @return BOOL value. If YES, the device supports programmable sample positions. If NO, the device does not.
      */
     @Generated
@@ -500,9 +501,9 @@ public interface MTLDevice {
 
     /**
      * [@property] rasterOrderGroupsSupported
-     * 
+     * <p>
      * Query device for raster order groups support.
-     * 
+     *
      * @return BOOL value. If YES, the device supports raster order groups. If NO, the device does not.
      */
     @Generated
@@ -511,9 +512,9 @@ public interface MTLDevice {
 
     /**
      * [@property] argumentBuffersSupport
-     * 
+     * <p>
      * Query support tier for Argument Buffers.
-     * 
+     *
      * @return MTLArgumentBuffersTier enum value.
      */
     @Generated
@@ -523,7 +524,7 @@ public interface MTLDevice {
 
     /**
      * [@property] currentAllocatedSize
-     * 
+     * <p>
      * The current size in bytes of all resources allocated by this device
      */
     @Generated
@@ -533,11 +534,11 @@ public interface MTLDevice {
 
     /**
      * getDefaultSamplePositions:count:
-     * 
+     * <p>
      * Retrieve the default sample positions.
-     * 
+     *
      * @param positions The destination array for default sample position data.
-     * @param count Specifies the sample count for which to retrieve the default positions, the length of the positions array, and must be set to a valid sample count.
+     * @param count     Specifies the sample count for which to retrieve the default positions, the length of the positions array, and must be set to a valid sample count.
      */
     @Generated
     @Selector("getDefaultSamplePositions:count:")
@@ -547,7 +548,7 @@ public interface MTLDevice {
 
     /**
      * [@property] maxThreadgroupMemoryLength
-     * 
+     * <p>
      * The maximum threadgroup memory available, in bytes.
      */
     @Generated
@@ -557,7 +558,7 @@ public interface MTLDevice {
 
     /**
      * minimumLinearTextureAlignmentForPixelFormat:
-     * 
+     * <p>
      * Returns the minimum alignment required for offset and rowBytes when creating a linear texture. An error is thrown for queries with invalid pixel formats (depth, stencil, or compressed formats).
      */
     @Generated
@@ -567,7 +568,7 @@ public interface MTLDevice {
 
     /**
      * newArgumentEncoderWithArguments:count:
-     * 
+     * <p>
      * Creates an argument encoder for an array of argument descriptors which will be encoded sequentially.
      */
     @Generated
@@ -577,7 +578,7 @@ public interface MTLDevice {
 
     /**
      * newLibraryWithURL:
-     * 
+     * <p>
      * Load a MTLLibrary from a metallib file.
      */
     @Generated
@@ -587,7 +588,7 @@ public interface MTLDevice {
 
     /**
      * newRenderPipelineStateWithTileDescriptor:options:completionHandler:
-     * 
+     * <p>
      * Create and compile a new MTLRenderPipelineState object asynchronously given a MTLTileRenderPipelineDescriptor.
      */
     @Generated
@@ -601,13 +602,13 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object renderPipelineState, MTLRenderPipelineReflection reflection,
-                NSError error);
+                @Mapped(ObjCObjectMapper.class) Object renderPipelineState,
+                MTLRenderPipelineReflection _Nullable_result);
     }
 
     /**
      * newRenderPipelineStateWithTileDescriptor:options:reflection:error:
-     * 
+     * <p>
      * Create and compile a new MTLRenderPipelineState object synchronously given a MTLTileRenderPipelineDescriptor.
      */
     @Generated
@@ -620,12 +621,12 @@ public interface MTLDevice {
 
     /**
      * newTextureWithDescriptor:iosurface:plane
-     * 
+     * <p>
      * Create a new texture from an IOSurface.
-     * 
+     *
      * @param descriptor A description of the properties for the new texture.
-     * @param iosurface The IOSurface to use as storage for the new texture.
-     * @param plane The plane within the IOSurface to use.
+     * @param iosurface  The IOSurface to use as storage for the new texture.
+     * @param plane      The plane within the IOSurface to use.
      * @return A new texture object.
      */
     @Generated
@@ -636,9 +637,9 @@ public interface MTLDevice {
 
     /**
      * [@property] readWriteTextureSupport
-     * 
+     * <p>
      * Query support tier for read-write texture formats.
-     * 
+     *
      * @return MTLReadWriteTextureTier enum value.
      */
     @Generated
@@ -648,9 +649,9 @@ public interface MTLDevice {
 
     /**
      * [@property] registryID
-     * 
+     * <p>
      * Returns the IORegistry ID for the Metal device
-     * 
+     * <p>
      * The registryID value for a Metal device is global to all tasks, and may be used
      * to identify the GPU across task boundaries.
      */
@@ -661,7 +662,7 @@ public interface MTLDevice {
     /**
      * * @method convertSparsePixelRegions:toTileRegions:withTileSize:alignmentMode:numRegions:
      * * @abstract Converts regions in pixels to regions in sparse tiles using specified alignment mode.
-     *   Tile size can be obtained from tileSizeWithTextureType:pixelFormat:sampleCount: method.
+     * Tile size can be obtained from tileSizeWithTextureType:pixelFormat:sampleCount: method.
      */
     @Generated
     @IsOptional
@@ -676,7 +677,7 @@ public interface MTLDevice {
     /**
      * * @method convertSparseTileRegions:toPixelRegions:withTileSize:numRegions:
      * * @abstract Convertes region in sparse tiles to region in pixels
-     *   Tile size can be obtained from tileSizeWithTextureType:pixelFormat:sampleCount: method.
+     * Tile size can be obtained from tileSizeWithTextureType:pixelFormat:sampleCount: method.
      */
     @Generated
     @IsOptional
@@ -690,9 +691,9 @@ public interface MTLDevice {
 
     /**
      * [@property] hasUnifiedMemory
-     * 
+     * <p>
      * Returns YES if this GPU shares its memory with the rest of the machine (CPU, etc.)
-     * 
+     * <p>
      * Some GPU architectures do not have dedicated local memory and instead only use the same memory shared with the rest
      * of the machine.  This property will return YES for GPUs that fall into that category.
      */
@@ -702,9 +703,9 @@ public interface MTLDevice {
 
     /**
      * [@property] maxArgumentBufferSamplerCount
-     * 
+     * <p>
      * The maximum number of unique argument buffer samplers per app.
-     * 
+     * <p>
      * This limit is only applicable to samplers that have their supportArgumentBuffers property set to true. A MTLSamplerState object is considered unique if the configuration of its originating MTLSamplerDescriptor properties is unique. For example, two samplers with equal minFilter values but different magFilter values are considered unique.
      */
     @Generated
@@ -719,7 +720,7 @@ public interface MTLDevice {
 
     /**
      * minimumTextureBufferAlignmentForPixelFormat:
-     * 
+     * <p>
      * Returns the minimum alignment required for offset and rowBytes when creating a texture buffer from a buffer.
      */
     @Generated
@@ -729,7 +730,7 @@ public interface MTLDevice {
 
     /**
      * newEvent
-     * 
+     * <p>
      * Returns a new single-device non-shareable Metal event object
      */
     @Generated
@@ -739,14 +740,14 @@ public interface MTLDevice {
 
     /**
      * newIndirectCommandBufferWithDescriptor:maxCommandCount:options
-     * 
+     * <p>
      * Creates a new indirect command buffer with the given descriptor and count.
-     * 
+     * <p>
      * The returned buffer can be safely executed without first encoding into (but is wasteful).
-     * 
+     *
      * @param descriptor The descriptor encodes the maximum logical stride of each command.
-     * @param maxCount The maximum number of commands that this buffer can contain.
-     * @param options The options for the indirect command buffer.
+     * @param maxCount   The maximum number of commands that this buffer can contain.
+     * @param options    The options for the indirect command buffer.
      */
     @Generated
     @Selector("newIndirectCommandBufferWithDescriptor:maxCommandCount:options:")
@@ -756,11 +757,11 @@ public interface MTLDevice {
 
     /**
      * newRasterizationRateMapWithDescriptor:
-     * 
+     * <p>
      * Creates a new variable rasterization rate map with the given descriptor.
-     * 
+     * <p>
      * If '[self supportsRasterizationRateMapWithLayerCount:descriptor.layerCount]' returns NO, or descriptor.screenSize describes an empty region, the result will always be nil.
-     * 
+     *
      * @return A MTLRasterizationRateMap instance that can be used for rendering on this MTLDevice, or nil if the device does not support the combination of parameters stored in the descriptor.
      */
     @Generated
@@ -770,7 +771,7 @@ public interface MTLDevice {
 
     /**
      * newSharedEvent
-     * 
+     * <p>
      * Returns a shareable multi-device event.
      */
     @Generated
@@ -780,7 +781,7 @@ public interface MTLDevice {
 
     /**
      * newSharedEventWithHandle
-     * 
+     * <p>
      * Creates a shareable multi-device event from an existing shared event handle.
      */
     @Generated
@@ -790,12 +791,12 @@ public interface MTLDevice {
 
     /**
      * newSharedTextureWithDescriptor
-     * 
+     * <p>
      * Create a new texture that can be shared across process boundaries.
-     * 
+     * <p>
      * This texture can be shared between process boundaries
      * but not between different GPUs, by passing its MTLSharedTextureHandle.
-     * 
+     *
      * @param descriptor A description of the properties for the new texture.
      * @return A new texture object.
      */
@@ -806,14 +807,14 @@ public interface MTLDevice {
 
     /**
      * newSharedTextureWithHandle
-     * 
+     * <p>
      * Recreate shared texture from received texture handle.
-     * 
+     * <p>
      * This texture was shared between process boundaries by other
      * process using MTLSharedTextureHandle. Current process will now share
      * it with other processes and will be able to interact with it (but still
      * in scope of the same GPUs).
-     * 
+     *
      * @param sharedHandle Handle to shared texture in this process space.
      * @return A new texture object.
      */
@@ -824,7 +825,7 @@ public interface MTLDevice {
 
     /**
      * [@property] sparseTileSizeInBytes
-     * 
+     * <p>
      * Returns the number of bytes required to map one sparse texture tile.
      */
     @Generated
@@ -834,7 +835,7 @@ public interface MTLDevice {
 
     /**
      * sparseTileSizeWithTextureType:pixelFormat:sampleCount:
-     * 
+     * <p>
      * Returns tile size for sparse texture with given type, pixel format and sample count.
      */
     @Generated
@@ -845,7 +846,7 @@ public interface MTLDevice {
 
     /**
      * supportsFamily:
-     * 
+     * <p>
      * Returns TRUE if the GPU Family is supported by this MTLDevice.
      */
     @Generated
@@ -854,9 +855,9 @@ public interface MTLDevice {
 
     /**
      * supportsRasterizationRateMapWithLayerCount:
-     * 
+     * <p>
      * Query device for variable rasterization rate support with the given number of layers.
-     * 
+     *
      * @param layerCount The number of layers for which to query device support.
      * @return YES if the device supports creation of rendering using a MTLRasterizationRateMap with the given number of layers.
      */
@@ -866,9 +867,9 @@ public interface MTLDevice {
 
     /**
      * [@property] supportsVertexAmplificationCount:
-     * 
+     * <p>
      * Query device for vertex amplification support.
-     * 
+     *
      * @param count The amplification count to check
      * @return BOOL value. If YES, the device supports vertex amplification with the given count. If NO, the device does not.
      */
@@ -884,9 +885,9 @@ public interface MTLDevice {
 
     /**
      * [@property] barycentricsSupported
-     * 
+     * <p>
      * Query device for Barycentric coordinates support; deprecated, use supportsShaderBarycentricCoordinates
-     * 
+     *
      * @return BOOL value. If YES, the device barycentric coordinates
      */
     @Generated
@@ -895,7 +896,7 @@ public interface MTLDevice {
 
     /**
      * [@property] counterSets
-     * 
+     * <p>
      * Returns the set of Counter Sets exposed by the device.
      */
     @Generated
@@ -914,13 +915,13 @@ public interface MTLDevice {
 
     /**
      * newBinaryArchiveWithDescriptor:error:
-     * 
+     * <p>
      * Creates a MTLBinaryArchive using the configuration in the descriptor.
-     * 
-     * @see MTLBinaryArchive
+     *
      * @param descriptor The descriptor for the configuration of the binary archive to create.
-     * @param error If an error occurs during creation, this parameter is updated to describe the failure.
+     * @param error      If an error occurs during creation, this parameter is updated to describe the failure.
      * @return On success, the created MTLBinaryArchive. On failure, nil.
+     * @see MTLBinaryArchive
      */
     @Generated
     @Selector("newBinaryArchiveWithDescriptor:error:")
@@ -930,13 +931,13 @@ public interface MTLDevice {
 
     /**
      * newCounterSampleBufferWithDescriptor:error:
-     * 
+     * <p>
      * Given a counter sample buffer descriptor, allocate a new counter
      * sample buffer.
      * This may return nil if the counters may not all be collected simultaneously.
-     * 
+     *
      * @param descriptor The descriptor to create a sample buffer for
-     * @param error An error return on failure.
+     * @param error      An error return on failure.
      */
     @Generated
     @Selector("newCounterSampleBufferWithDescriptor:error:")
@@ -946,13 +947,13 @@ public interface MTLDevice {
 
     /**
      * newDynamicLibrary:error:
-     * 
+     * <p>
      * Creates a MTLDynamicLibrary by compiling the code in a MTLLibrary.
-     * 
-     * @see MTLDynamicLibrary
+     *
      * @param library The MTLLibrary from which to compile code. This library must have .type set to MTLLibraryTypeDynamic.
-     * @param error If an error occurs during creation, this parameter is updated to describe the failure.
+     * @param error   If an error occurs during creation, this parameter is updated to describe the failure.
      * @return On success, the MTLDynamicLibrary containing compiled code. On failure, nil.
+     * @see MTLDynamicLibrary
      */
     @Generated
     @Selector("newDynamicLibrary:error:")
@@ -962,13 +963,13 @@ public interface MTLDevice {
 
     /**
      * newDynamicLibraryWithURL:error:
-     * 
+     * <p>
      * Creates a MTLDynamicLibrary by loading compiled code from a file.
-     * 
-     * @see MTLDynamicLibrary
-     * @param url The file URL from which to load. If the file contains no compiled code for this device, compilation is attempted as with newDynamicLibrary:error:
+     *
+     * @param url   The file URL from which to load. If the file contains no compiled code for this device, compilation is attempted as with newDynamicLibrary:error:
      * @param error If an error occurs during creation, this parameter is updated to describe the failure.
      * @return On success, the MTLDynamicLibrary containing compiled code (either loaded or compiled). On failure, nil.
+     * @see MTLDynamicLibrary
      */
     @Generated
     @Selector("newDynamicLibraryWithURL:error:")
@@ -977,9 +978,9 @@ public interface MTLDevice {
 
     /**
      * sampleTimestamps:gpuTimestamp:
-     * 
+     * <p>
      * Sample the CPU and GPU timestamps as closely as possible.
-     * 
+     *
      * @param cpuTimestamp The timestamp on the CPU
      * @param gpuTimestamp The timestamp on the GPU
      */
@@ -989,9 +990,9 @@ public interface MTLDevice {
 
     /**
      * supportsCounterSampling:
-     * 
+     * <p>
      * Query device for counter sampling points support.
-     * 
+     *
      * @param samplingPoint Query index
      * @return BOOL value. If YES, the device supports counter sampling at given point.
      */
@@ -1001,42 +1002,162 @@ public interface MTLDevice {
 
     /**
      * [@property] supportsDynamicLibraries
-     * 
-     * Query device support for compiling dynamic libraries.
-     * 
-     * @return BOOL value. If YES, the device supports compiling dynamic libraries. If NO, the devices does not.
+     * <p>
+     * Query device support for creating and using dynamic libraries in a compute pipeline.
+     *
+     * @return BOOL value. If YES, the device supports creating and using dynamic libraries in a compute pipeline. If NO, the device does not.
      */
     @Generated
     @Selector("supportsDynamicLibraries")
     boolean supportsDynamicLibraries();
 
+    /**
+     * [@property] supportsFunctionPointers
+     * <p>
+     * Query device support for using function pointers from compute pipelines.
+     *
+     * @return BOOL value. If YES, the device supports function pointers from compute pipelines. If NO, the device does not.
+     */
     @Generated
     @Selector("supportsFunctionPointers")
     boolean supportsFunctionPointers();
 
     /**
      * [@property] supportsPullModelInterpolation
-     * 
+     * <p>
      * Query device for pull model interpolation support which allows a fragment shader to compute multiple interpolations (at center, at centroid, at offset, at sample) of a fragment input.
-     * 
+     *
      * @return BOOL value. If YES, the device supports pull model interpolation. If NO, the device does not.
      */
     @Generated
     @Selector("supportsPullModelInterpolation")
     boolean supportsPullModelInterpolation();
 
+    /**
+     * [@property] supportsRaytracing
+     * <p>
+     * Query device support for using ray tracing from compute pipelines.
+     *
+     * @return BOOL value. If YES, the device supports ray tracing from compute pipelines. If NO, the device does not.
+     */
     @Generated
     @Selector("supportsRaytracing")
     boolean supportsRaytracing();
 
     /**
      * [@property] supportsShaderBarycentricCoordinates
-     * 
+     * <p>
      * Query device for Barycentric Coordinates support.
-     * 
+     *
      * @return BOOL value. If YES, the device supports barycentric coordinates. If NO, the device does not.
      */
     @Generated
     @Selector("supportsShaderBarycentricCoordinates")
     boolean supportsShaderBarycentricCoordinates();
+
+    /**
+     * newLibraryWithStitchedDescriptor:completionHandler:
+     * <p>
+     * Generates a new library using the graphs in the descriptor.
+     */
+    @Generated
+    @Selector("newLibraryWithStitchedDescriptor:completionHandler:")
+    void newLibraryWithStitchedDescriptorCompletionHandler(MTLStitchedLibraryDescriptor descriptor,
+            @ObjCBlock(name = "call_newLibraryWithStitchedDescriptorCompletionHandler") Block_newLibraryWithStitchedDescriptorCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_newLibraryWithStitchedDescriptorCompletionHandler {
+        @Generated
+        void call_newLibraryWithStitchedDescriptorCompletionHandler(@Mapped(ObjCObjectMapper.class) Object library,
+                NSError error);
+    }
+
+    /**
+     * newLibraryWithStitchedDescriptor:error:
+     * <p>
+     * Returns a library generated using the graphs in the descriptor.
+     */
+    @Generated
+    @Selector("newLibraryWithStitchedDescriptor:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    MTLLibrary newLibraryWithStitchedDescriptorError(MTLStitchedLibraryDescriptor descriptor,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * [@property] supports32BitFloatFiltering
+     * <p>
+     * Query device for 32-bit Float texture filtering support. Specifically, R32Float, RG32Float, and RGBA32Float.
+     *
+     * @return BOOL value. If YES, the device supports filtering 32-bit Float textures. If NO, the device does not.
+     */
+    @Generated
+    @Selector("supports32BitFloatFiltering")
+    boolean supports32BitFloatFiltering();
+
+    /**
+     * [@property] supports32BitMSAA
+     * <p>
+     * Query device for 32-bit MSAA texture support. Specifically, added support for allocating 32-bit Integer format textures (R32Uint, R32Sint, RG32Uint, RG32Sint, RGBA32Uint, and RGBA32Sint) and resolving 32-bit Float format textures (R32Float, RG32Float, and RGBA32Float).
+     *
+     * @return BOOL value. If YES, the device supports these additional 32-bit MSAA texture capabilities. If NO, the devices does not.
+     */
+    @Generated
+    @Selector("supports32BitMSAA")
+    boolean supports32BitMSAA();
+
+    /**
+     * [@property] supportsFunctionPointersFromRender
+     * <p>
+     * Query device support for using function pointers from render pipeline stages.
+     *
+     * @return BOOL value. If YES, the device supports function pointers from render pipeline stages. If NO, the device does not.
+     */
+    @Generated
+    @Selector("supportsFunctionPointersFromRender")
+    boolean supportsFunctionPointersFromRender();
+
+    /**
+     * [@property] supportsPrimitiveMotionBlur
+     * <p>
+     * Query device support for using ray tracing primitive motion blur.
+     *
+     * @return BOOL value. If YES, the device supports the primitive motion blur api. If NO, the device does not.
+     */
+    @Generated
+    @Selector("supportsPrimitiveMotionBlur")
+    boolean supportsPrimitiveMotionBlur();
+
+    /**
+     * [@property] supportsQueryTextureLOD
+     * <p>
+     * Query device for whether it supports the `calculate_clampled_lod` and `calculate_unclamped_lod` Metal shading language functionality.
+     *
+     * @return BOOL value. If YES, the device supports the calculate LOD functionality. If NO, the device does not.
+     */
+    @Generated
+    @Selector("supportsQueryTextureLOD")
+    boolean supportsQueryTextureLOD();
+
+    /**
+     * [@property] supportsRaytracingFromRender
+     * <p>
+     * Query device support for using ray tracing from render pipeline stages.
+     *
+     * @return BOOL value. If YES, the device supports ray tracing from render pipeline stages. If NO, the device does not.
+     */
+    @Generated
+    @Selector("supportsRaytracingFromRender")
+    boolean supportsRaytracingFromRender();
+
+    /**
+     * [@property] supportsRenderDynamicLibraries
+     * <p>
+     * Query device support for creating and using dynamic libraries in render pipeline stages.
+     *
+     * @return BOOL value. If YES, the device supports creating and using dynamic libraries in render pipeline stages. If NO, the device does not.
+     */
+    @Generated
+    @Selector("supportsRenderDynamicLibraries")
+    boolean supportsRenderDynamicLibraries();
 }

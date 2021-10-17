@@ -99,13 +99,13 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * Exports the object as an archive at the given URL.
-     * 
+     * <p>
      * The URL path should use ARReferenceObjectArchiveExtension (.arobject) for the file extension.
      * If serialization across devices is desired, NSKeyedArchiver should be used instead.
-     * 
-     * @param url The URL at which to write the exported object.
+     *
+     * @param url          The URL at which to write the exported object.
      * @param previewImage An optional preview image to include in the archive.
-     * @param error The error to populate if the write is not successful.
+     * @param error        The error to populate if the write is not successful.
      * @return YES if the location is written successfully, otherwise NO.
      */
     @Generated
@@ -124,8 +124,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * Initializes a new reference object with the contents of an archive at the specified URL.
-     * 
-     * @param url The URL from which to read data (.arobject archive).
+     *
+     * @param url   The URL from which to read data (.arobject archive).
      * @param error The error to populate if the object could not be initialized.
      */
     @Generated
@@ -180,12 +180,12 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * Returns a new reference object by aligning and merging the provided object with this reference.
-     * 
+     * <p>
      * This can be used to combine multiple scans of the same object for detection in different conditions. The object being merged
      * must share similar feature points for the merge to succeed.
-     * 
+     *
      * @param object The reference object to align and merge.
-     * @param error The error to populate if the merge is not successful.
+     * @param error  The error to populate if the merge is not successful.
      * @return A new reference object combining features of both scans or nil if the merge was not successful.
      */
     @Generated
@@ -195,8 +195,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * Returns the set of ARReferenceObjects in the specified resource group and bundle.
-     * 
-     * @param name The name of the resource group.
+     *
+     * @param name   The name of the resource group.
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference objects or nil on error.
      */
@@ -215,7 +215,7 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     /**
      * The AR resource group name for this object.
-     * 
+     * <p>
      * If this object was loaded via an AR resource group in the Xcode asset catalogue this property will have the name of the resource group,
      * else be set to nil.
      */

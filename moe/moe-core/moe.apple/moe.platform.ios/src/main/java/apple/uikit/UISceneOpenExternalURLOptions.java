@@ -154,4 +154,18 @@ public class UISceneOpenExternalURLOptions extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * An event attribution associated with the external URL to open.
+     */
+    @Generated
+    @Selector("eventAttribution")
+    public native UIEventAttribution eventAttribution();
+
+    /**
+     * An event attribution associated with the external URL to open.
+     */
+    @Generated
+    @Selector("setEventAttribution:")
+    public native void setEventAttribution(UIEventAttribution value);
 }

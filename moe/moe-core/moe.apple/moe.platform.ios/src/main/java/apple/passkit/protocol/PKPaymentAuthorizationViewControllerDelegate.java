@@ -22,6 +22,7 @@ import apple.passkit.PKPayment;
 import apple.passkit.PKPaymentAuthorizationResult;
 import apple.passkit.PKPaymentAuthorizationViewController;
 import apple.passkit.PKPaymentMethod;
+import apple.passkit.PKPaymentRequestCouponCodeUpdate;
 import apple.passkit.PKPaymentRequestMerchantSessionUpdate;
 import apple.passkit.PKPaymentRequestPaymentMethodUpdate;
 import apple.passkit.PKPaymentRequestShippingContactUpdate;
@@ -98,7 +99,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
      * Sent to the delegate when payment authorization is finished.  This may occur when
      * the user cancels the request, or after the PKPaymentAuthorizationStatus parameter of the
      * paymentAuthorizationViewController:didAuthorizePayment:completion: has been shown to the user.
-     * 
+     * <p>
      * The delegate is responsible for dismissing the view controller in this method.
      */
     @Generated
@@ -161,9 +162,9 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Sent to the delegate after the user has acted on the payment request.  The application
      * should inspect the payment to determine whether the payment request was authorized.
-     * 
+     * <p>
      * If the application requested a shipping address then the full addresses is now part of the payment.
-     * 
+     * <p>
      * The delegate must call completion with an appropriate authorization status, as may be determined
      * by submitting the payment credential to a processing gateway for payment authorization.
      */
@@ -186,7 +187,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Sent when the user has selected a new payment card.  Use this delegate callback if you need to
      * update the summary items in response to the card type changing (for example, applying credit card surcharges)
-     * 
+     * <p>
      * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
      * until it has invoked the completion block.
      */
@@ -210,7 +211,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Sent when the user has selected a new shipping address.  The delegate should inspect the
      * address and must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
-     * 
+     * <p>
      * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
      * until it has invoked the completion block.
      */
@@ -236,9 +237,9 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
      * shipping costs based on the shipping method and either the shipping address supplied in the original
      * PKPaymentRequest or the address fragment provided by the last call to paymentAuthorizationViewController:
      * didSelectShippingAddress:completion:.
-     * 
+     * <p>
      * The delegate must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
-     * 
+     * <p>
      * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
      * until it has invoked the completion block.
      */
@@ -274,5 +275,21 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         @Generated
         void call_paymentAuthorizationViewControllerDidRequestMerchantSessionUpdate(
                 PKPaymentRequestMerchantSessionUpdate update);
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("paymentAuthorizationViewController:didChangeCouponCode:handler:")
+    default void paymentAuthorizationViewControllerDidChangeCouponCodeHandler(
+            PKPaymentAuthorizationViewController controller, String couponCode,
+            @ObjCBlock(name = "call_paymentAuthorizationViewControllerDidChangeCouponCodeHandler") Block_paymentAuthorizationViewControllerDidChangeCouponCodeHandler completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_paymentAuthorizationViewControllerDidChangeCouponCodeHandler {
+        @Generated
+        void call_paymentAuthorizationViewControllerDidChangeCouponCodeHandler(PKPaymentRequestCouponCodeUpdate update);
     }
 }

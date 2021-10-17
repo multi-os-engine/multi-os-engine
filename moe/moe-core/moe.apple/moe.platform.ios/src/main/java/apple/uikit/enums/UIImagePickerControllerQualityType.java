@@ -30,7 +30,7 @@ public final class UIImagePickerControllerQualityType {
      */
     @Generated @NInt public static final long TypeMedium = 0x0000000000000001L;
     /**
-     * lowest quality, suitable for tranmission via cellular network
+     * lowest quality, suitable for transmission via cellular network
      */
     @Generated @NInt public static final long TypeLow = 0x0000000000000002L;
     /**

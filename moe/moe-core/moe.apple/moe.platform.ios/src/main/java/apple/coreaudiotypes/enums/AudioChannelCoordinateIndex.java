@@ -3,26 +3,26 @@ package apple.coreaudiotypes.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- *  these are indices for acessing the mCoordinates array in struct AudioChannelDescription
+ * these are indices for accessing the mCoordinates array in struct AudioChannelDescription
  * [@enum]           AudioChannelCoordinateIndex
- * 
+ * <p>
  * Constants for indexing the mCoordinates array in an AudioChannelDescription
- *                 structure.
+ * structure.
  * [@constant]       kAudioChannelCoordinates_LeftRight
- *                     For rectangulare coordinates, negative is left and positive is right.
+ * For rectangular coordinates, negative is left and positive is right.
  * [@constant]       kAudioChannelCoordinates_BackFront
- *                     For rectangulare coordinates, negative is back and positive is front.
+ * For rectangular coordinates, negative is back and positive is front.
  * [@constant]       kAudioChannelCoordinates_DownUp
- *                     For rectangulare coordinates, negative is below ground level, 0 is ground
- *                     level, and positive is above ground level.
+ * For rectangular coordinates, negative is below ground level, 0 is ground
+ * level, and positive is above ground level.
  * [@constant]       kAudioChannelCoordinates_Azimuth
- *                     For spherical coordinates, 0 is front center, positive is right, negative is
- *                     left. This is measured in degrees.
+ * For spherical coordinates, 0 is front center, positive is right, negative is
+ * left. This is measured in degrees.
  * [@constant]       kAudioChannelCoordinates_Elevation
- *                     For spherical coordinates, +90 is zenith, 0 is horizontal, -90 is nadir.
- *                     This is measured in degrees.
+ * For spherical coordinates, +90 is zenith, 0 is horizontal, -90 is nadir.
+ * This is measured in degrees.
  * [@constant]       kAudioChannelCoordinates_Distance
- *                     For spherical coordinates, the units are described by flags.
+ * For spherical coordinates, the units are described by flags.
  */
 @Generated
 public final class AudioChannelCoordinateIndex {

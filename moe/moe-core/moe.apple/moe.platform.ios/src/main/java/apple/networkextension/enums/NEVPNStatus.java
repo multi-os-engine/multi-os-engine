@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNStatus
- * 
+ * <p>
  * VPN status codes
  */
 @Generated

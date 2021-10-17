@@ -9,6 +9,7 @@ import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSSecureCoding;
 import apple.foundation.struct.NSRange;
+import apple.vision.protocol.VNRequestRevisionProviding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -34,14 +35,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNRecognizedText
- * 
+ * <p>
  * VNRecognizedText A block of recognized text. There can be multiple VNRecognizedText objects returned in a VNRecognizedTextObservation - one for each candidate.
  */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCoding {
+public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCoding, VNRequestRevisionProviding {
     static {
         NatJ.register();
     }
@@ -71,7 +72,7 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Calculate the bounding box around the characters in the range of the string.
-     * 
+     * <p>
      * The bounding boxes are not guaranteed to be an exact fit around the characters and are purely meant for UI purposes and not for image processing.
      */
     @Generated
@@ -176,7 +177,7 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Field that contains recognized text.
-     * 
+     * <p>
      * This is the top candidate of the recognized text.
      */
     @Generated
@@ -201,4 +202,9 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("requestRevision")
+    @NUInt
+    public native long requestRevision();
 }

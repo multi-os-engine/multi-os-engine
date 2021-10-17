@@ -20,17 +20,17 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]       CTFramePathFillRule
- * 
+ * <p>
  * These constants specify fill rule used by the frame.
- * 
+ * <p>
  * When a path intersects with itself, the client should specify which rule to use for deciding the
- *             area of the path.
- * 
+ * area of the path.
+ * <p>
  * [@constant]   kCTFramePathFillEvenOdd
- *             Text is filled in the area that would be painted if the path were given to CGContextEOFillPath.
- * 
+ * Text is filled in the area that would be painted if the path were given to CGContextEOFillPath.
+ * <p>
  * [@constant]   kCTFramePathFillWindingNumber
- *             Text is fill in the area that would be painted if the path were given to CGContextFillPath.
+ * Text is fill in the area that would be painted if the path were given to CGContextFillPath.
  */
 @Generated
 public final class CTFramePathFillRule {

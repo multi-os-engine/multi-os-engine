@@ -137,15 +137,15 @@ public class GLKMesh extends NSObject {
 
     /**
      * newMeshesFromAsset:sourceMeshes:error:
-     * 
+     * <p>
      * Initialize all meshes in a Model I/O asset.
      * [@dicussion] A convenience method to create GLKit meshes from each mesh in a Model/IO asset.  Resulting meshes are returned while Model I/O meshes from which they were generated will appear in the sourceMeshes array.
-     * 
-     * @return An array of GLKit meshes built an asset
-     * @param asset Model I/O asset from which to create GLKit meshes
+     *
+     * @param asset        Model I/O asset from which to create GLKit meshes
      * @param sourceMeshes Model I/O meshes corresponding the newly created GLKMeshes
-     * @param error Pointer to an NSError object set if an error occurred
-     * @param return GLKit meshes created from the Model I/O asset
+     * @param error        Pointer to an NSError object set if an error occurred
+     * @param return       GLKit meshes created from the Model I/O asset
+     * @return An array of GLKit meshes built an asset
      */
     @Generated
     @Owned
@@ -181,12 +181,12 @@ public class GLKMesh extends NSObject {
 
     /**
      * initWithMesh:error:
-     * 
+     * <p>
      * Initialize the mesh and the mesh's submeshes
-     * 
+     * <p>
      * This does NOT initialize any meshes that are children of the Model I/O mesh
      * [@error] Pointer to an NSError object which will be set if an error occurred
-     * 
+     *
      * @param mesh Model I/O Mesh from which to create this GLKit mesh
      */
     @Generated
@@ -195,9 +195,9 @@ public class GLKMesh extends NSObject {
 
     /**
      * [@property] name
-     * 
+     * <p>
      * Name of the mesh copies from the originating Model I/O mesh
-     * 
+     * <p>
      * Can be used by the app to identiry the mesh in it's scene/world/renderer etc.
      */
     @Generated
@@ -206,9 +206,9 @@ public class GLKMesh extends NSObject {
 
     /**
      * [@property] submeshes
-     * 
+     * <p>
      * Submeshes containing index buffers to rendering mesh verticies.
-     * 
+     * <p>
      * Submeshes may also contain texture materials to apply when rendering this object
      */
     @Generated
@@ -217,7 +217,7 @@ public class GLKMesh extends NSObject {
 
     /**
      * [@property] vertexBuffers
-     * 
+     * <p>
      * Array of buffers in which mesh vertex data resides
      */
     @Generated
@@ -226,7 +226,7 @@ public class GLKMesh extends NSObject {
 
     /**
      * [@property] vertexCount
-     * 
+     * <p>
      * Number of verticies in the vertexBuffers
      */
     @Generated
@@ -236,9 +236,9 @@ public class GLKMesh extends NSObject {
 
     /**
      * [@property] vertexDescriptor
-     * 
+     * <p>
      * Model I/O vertex descriptor specifying the layout of data in vertexBuffers
-     * 
+     * <p>
      * This is not directly used by this object, but the application can use this information to determine rendering state or setup a vertex attribute object.
      */
     @Generated

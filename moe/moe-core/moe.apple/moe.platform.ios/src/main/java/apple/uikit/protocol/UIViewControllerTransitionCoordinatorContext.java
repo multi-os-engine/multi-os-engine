@@ -52,9 +52,9 @@ public interface UIViewControllerTransitionCoordinatorContext {
     UIView containerView();
 
     /**
-     *  initiallyInteractive indicates whether the transition was initiated as an interactive transition.
-     *  It never changes during the course of a transition.
-     *  It can only be YES if isAnimated is YES.
+     * initiallyInteractive indicates whether the transition was initiated as an interactive transition.
+     * It never changes during the course of a transition.
+     * It can only be YES if isAnimated is YES.
      * If it is NO, then isInteractive can only be YES if isInterruptible is YES
      */
     @Generated
@@ -101,7 +101,7 @@ public interface UIViewControllerTransitionCoordinatorContext {
     double percentComplete();
 
     /**
-     * A modal presentation style whose transition is being customized or UIModaPresentationNone if this is not a modal presentation
+     * A modal presentation style whose transition is being customized or UIModalPresentationNone if this is not a modal presentation
      * or dismissal.
      */
     @Generated
@@ -126,8 +126,8 @@ public interface UIViewControllerTransitionCoordinatorContext {
 
     /**
      * Currently only two keys are defined by the system:
-     *   UITransitionContextToViewControllerKey
-     *   UITransitionContextFromViewControllerKey
+     * UITransitionContextToViewControllerKey
+     * UITransitionContextFromViewControllerKey
      */
     @Generated
     @Selector("viewControllerForKey:")
@@ -135,8 +135,8 @@ public interface UIViewControllerTransitionCoordinatorContext {
 
     /**
      * Currently only two keys are defined by the system:
-     *   UITransitionContextToViewKey
-     *   UITransitionContextFromViewKey
+     * UITransitionContextToViewKey
+     * UITransitionContextFromViewKey
      */
     @Generated
     @Selector("viewForKey:")

@@ -162,7 +162,7 @@ public class GKOctree<_ElementType> extends NSObject {
      * Removes the given NSObject from this octree
      * Note that this is an exhaustive search and is can be slow for larger trees.
      * Cache the relevant GKOctreeNode and use removeElement:WithNode: for better performance.
-     * 
+     *
      * @param element the element to be removed
      * @return returns YES if the data was removed, NO otherwise
      */
@@ -173,9 +173,9 @@ public class GKOctree<_ElementType> extends NSObject {
     /**
      * Removes the given NSObject from the given node
      * Note that this is not an exhaustive search and is faster than removeData:
-     * 
+     *
      * @param element the element to be removed
-     * @param node the node in which this data resides
+     * @param node    the node in which this data resides
      * @return returns YES if the element was removed, NO otherwise
      */
     @Generated

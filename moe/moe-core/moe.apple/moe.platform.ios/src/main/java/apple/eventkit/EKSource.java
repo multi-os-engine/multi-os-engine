@@ -152,7 +152,7 @@ public class EKSource extends EKObject {
 
     /**
      * [@property]    calendars
-     * 
+     * <p>
      * This is now deprecated in favor of -[EKSource calendarsForEntityType:]
      */
     @Generated
@@ -162,9 +162,9 @@ public class EKSource extends EKObject {
 
     /**
      * calendarsForEntityType
-     * 
+     * <p>
      * Returns the calendars that belong to this source that
-     *              support a given entity type (reminders, events)
+     * support a given entity type (reminders, events)
      */
     @Generated
     @Selector("calendarsForEntityType:")

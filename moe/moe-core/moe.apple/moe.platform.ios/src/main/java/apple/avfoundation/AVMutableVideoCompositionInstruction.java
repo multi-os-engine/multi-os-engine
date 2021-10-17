@@ -22,6 +22,7 @@ import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
+import apple.foundation.NSNumber;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -161,10 +162,10 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
 
     /**
      * videoCompositionInstruction
-     * 
+     * <p>
      * Returns a new instance of AVMutableVideoCompositionInstruction.
-     * 
-     *   The returned AVMutableVideoCompositionInstruction will have a timeRange of kCMTimeRangeInvalid, a NULL backgroundColor, and a nil array of layerInstructions.
+     * <p>
+     * The returned AVMutableVideoCompositionInstruction will have a timeRange of kCMTimeRangeInvalid, a NULL backgroundColor, and a nil array of layerInstructions.
      */
     @Generated
     @Selector("videoCompositionInstruction")
@@ -173,7 +174,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     /**
      * Indicates the background color of the composition. Solid BGRA colors only are supported; patterns and other color refs that are not supported will be ignored.
      * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
-     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored. 
+     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
      */
     @Generated
     @Selector("backgroundColor")
@@ -199,7 +200,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * Provides an array of instances of AVVideoCompositionLayerInstruction that specify how video frames from source tracks should be layered and composed.
      * Tracks are layered in the composition according to the top-to-bottom order of the layerInstructions array; the track with trackID of the first instruction
      * in the array will be layered on top, with the track with the trackID of the second instruction immediately underneath, etc.
-     * If this key is nil, the output will be a fill of the background color. 
+     * If this key is nil, the output will be a fill of the background color.
      */
     @Generated
     @Selector("layerInstructions")
@@ -208,7 +209,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     /**
      * Indicates the background color of the composition. Solid BGRA colors only are supported; patterns and other color refs that are not supported will be ignored.
      * If the background color is not specified the video compositor will use a default backgroundColor of opaque black.
-     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored. 
+     * If the rendered pixel buffer does not have alpha, the alpha value of the backgroundColor will be ignored.
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -226,7 +227,7 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * Provides an array of instances of AVVideoCompositionLayerInstruction that specify how video frames from source tracks should be layered and composed.
      * Tracks are layered in the composition according to the top-to-bottom order of the layerInstructions array; the track with trackID of the first instruction
      * in the array will be layered on top, with the track with the trackID of the second instruction immediately underneath, etc.
-     * If this key is nil, the output will be a fill of the background color. 
+     * If this key is nil, the output will be a fill of the background color.
      */
     @Generated
     @Selector("setLayerInstructions:")
@@ -252,4 +253,18 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     @Selector("timeRange")
     @ByValue
     public native CMTimeRange timeRange();
+
+    /**
+     * List of sample data track IDs required to compose frames for this instruction.  Currently only tracks of type kCMMediaType_Metadata are allowed to be specified.  If this property is unspecified or is an empty array, no sample data is considered to be required for this instruction.  Note that you must also specify all tracks for which sample data is required for ANY instruction in the AVVideoComposition, in AVVideoComposition's property sourceSampleDataTrackIDs.
+     */
+    @Generated
+    @Selector("requiredSourceSampleDataTrackIDs")
+    public native NSArray<? extends NSNumber> requiredSourceSampleDataTrackIDs();
+
+    /**
+     * List of sample data track IDs required to compose frames for this instruction.  Currently only tracks of type kCMMediaType_Metadata are allowed to be specified.  If this property is unspecified or is an empty array, no sample data is considered to be required for this instruction.  Note that you must also specify all tracks for which sample data is required for ANY instruction in the AVVideoComposition, in AVVideoComposition's property sourceSampleDataTrackIDs.
+     */
+    @Generated
+    @Selector("setRequiredSourceSampleDataTrackIDs:")
+    public native void setRequiredSourceSampleDataTrackIDs(NSArray<? extends NSNumber> value);
 }

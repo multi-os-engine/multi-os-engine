@@ -97,7 +97,7 @@ public class TKTokenKeychainContents extends NSObject {
 
     /**
      * Fills keychain with the set of specified items.  All items belonging to token are first removed from the keychain and then the keychain is populated with new items.
-     * 
+     *
      * @param items New items to be stored into the keychain.
      */
     @Generated

@@ -173,9 +173,8 @@ public final class Globals {
 
     /**
      * Returns the name of the method specified by a given selector.
-     * 
+     *
      * @param sel A pointer of type \c SEL. Pass the selector whose name you wish to determine.
-     * 
      * @return A C string indicating the name of the selector.
      */
     @Generated
@@ -186,13 +185,12 @@ public final class Globals {
     /**
      * Registers a method with the Objective-C runtime system, maps the method
      * name to a selector, and returns the selector value.
-     * 
+     * <p>
      * [@note] You must register a method name with the Objective-C runtime system to obtain the
-     *  method’s selector before you can add the method to a class definition. If the method name
-     *  has already been registered, this function simply returns the selector.
-     * 
+     * method’s selector before you can add the method to a class definition. If the method name
+     * has already been registered, this function simply returns the selector.
+     *
      * @param str A pointer to a C string. Pass the name of the method you wish to register.
-     * 
      * @return A pointer of type SEL specifying the selector for the named method.
      */
     @Generated
@@ -202,9 +200,8 @@ public final class Globals {
 
     /**
      * Returns the class name of a given object.
-     * 
+     *
      * @param obj An Objective-C object.
-     * 
      * @return The name of the class of which \e obj is an instance.
      */
     @Generated
@@ -214,12 +211,11 @@ public final class Globals {
 
     /**
      * Identifies a selector as being valid or invalid.
-     * 
+     * <p>
      * [@warning] On some platforms, an invalid reference (to invalid memory addresses) can cause
-     *  a crash.
-     * 
+     * a crash.
+     *
      * @param sel The selector you want to identify.
-     * 
      * @return YES if selector is valid and has a function implementation, NO otherwise.
      */
     @Generated
@@ -228,14 +224,13 @@ public final class Globals {
 
     /**
      * Registers a method name with the Objective-C runtime system.
-     * 
+     * <p>
      * [@note] The implementation of this method is identical to the implementation of \c sel_registerName.
      * [@note] Prior to OS X version 10.0, this method tried to find the selector mapped to the given name
-     *  and returned \c NULL if the selector was not found. This was changed for safety, because it was
-     *  observed that many of the callers of this function did not check the return value for \c NULL.
-     * 
+     * and returned \c NULL if the selector was not found. This was changed for safety, because it was
+     * observed that many of the callers of this function did not check the return value for \c NULL.
+     *
      * @param str A pointer to a C string. Pass the name of the method you wish to register.
-     * 
      * @return A pointer of type SEL specifying the selector for the named method.
      */
     @Generated
@@ -637,6 +632,7 @@ public final class Globals {
     @CFunction
     public static native int usleep(int arg1);
 
+    @Deprecated
     @Generated
     @CFunction
     public static native int vfork();
@@ -1058,7 +1054,7 @@ public final class Globals {
 
     /**
      * data-protected non-portable open(2) :
-     *  int open_dprotected_np(user_addr_t path, int flags, int class, int dpflags, int mode)
+     * int open_dprotected_np(user_addr_t path, int flags, int class, int dpflags, int mode)
      */
     @Generated
     @Variadic()
@@ -1101,17 +1097,14 @@ public final class Globals {
 
     /**
      * [@function] os_retain
-     * 
+     * <p>
      * Increment the reference count of an os_object.
-     * 
+     * <p>
      * On a platform with the modern Objective-C runtime this is exactly equivalent
      * to sending the object the -[retain] message.
-     * 
-     * @param object
-     * The object to retain.
-     * 
-     * @return
-     * The retained object.
+     *
+     * @param object The object to retain.
+     * @return The retained object.
      */
     @Generated
     @CFunction
@@ -1119,14 +1112,13 @@ public final class Globals {
 
     /**
      * [@function] os_release
-     * 
+     * <p>
      * Decrement the reference count of a os_object.
-     * 
+     * <p>
      * On a platform with the modern Objective-C runtime this is exactly equivalent
      * to sending the object the -[release] message.
-     * 
-     * @param object
-     * The object to release.
+     *
+     * @param object The object to release.
      */
     @Generated
     @CFunction
@@ -1134,25 +1126,20 @@ public final class Globals {
 
     /**
      * [@function] dispatch_time
-     * 
+     * <p>
      * Create a dispatch_time_t relative to the current value of the default or
      * wall time clock, or modify an existing dispatch_time_t.
-     * 
+     * <p>
      * On Apple platforms, the default clock is based on mach_absolute_time().
-     * 
-     * @param when
-     * An optional dispatch_time_t to add nanoseconds to. If DISPATCH_TIME_NOW is
-     * passed, then dispatch_time() will use the default clock (which is based on
-     * mach_absolute_time() on Apple platforms). If DISPATCH_WALLTIME_NOW is used,
-     * dispatch_time() will use the value returned by gettimeofday(3).
-     * dispatch_time(DISPATCH_WALLTIME_NOW, delta) is equivalent to
-     * dispatch_walltime(NULL, delta).
-     * 
-     * @param delta
-     * Nanoseconds to add.
-     * 
-     * @return
-     * A new dispatch_time_t.
+     *
+     * @param when  An optional dispatch_time_t to add nanoseconds to. If DISPATCH_TIME_NOW is
+     *              passed, then dispatch_time() will use the default clock (which is based on
+     *              mach_absolute_time() on Apple platforms). If DISPATCH_WALLTIME_NOW is used,
+     *              dispatch_time() will use the value returned by gettimeofday(3).
+     *              dispatch_time(DISPATCH_WALLTIME_NOW, delta) is equivalent to
+     *              dispatch_walltime(NULL, delta).
+     * @param delta Nanoseconds to add.
+     * @return A new dispatch_time_t.
      */
     @Generated
     @CFunction
@@ -1160,22 +1147,17 @@ public final class Globals {
 
     /**
      * [@function] dispatch_walltime
-     * 
+     * <p>
      * Create a dispatch_time_t using the wall clock.
-     * 
+     * <p>
      * On Mac OS X the wall clock is based on gettimeofday(3).
-     * 
-     * @param when
-     * A struct timespec to add time to. If NULL is passed, then
-     * dispatch_walltime() will use the result of gettimeofday(3).
-     * dispatch_walltime(NULL, delta) returns the same value as
-     * dispatch_time(DISPATCH_WALLTIME_NOW, delta).
-     * 
-     * @param delta
-     * Nanoseconds to add.
-     * 
-     * @return
-     * A new dispatch_time_t.
+     *
+     * @param when  A struct timespec to add time to. If NULL is passed, then
+     *              dispatch_walltime() will use the result of gettimeofday(3).
+     *              dispatch_walltime(NULL, delta) returns the same value as
+     *              dispatch_time(DISPATCH_WALLTIME_NOW, delta).
+     * @param delta Nanoseconds to add.
+     * @return A new dispatch_time_t.
      */
     @Generated
     @CFunction
@@ -1189,15 +1171,14 @@ public final class Globals {
 
     /**
      * [@function] dispatch_retain
-     * 
+     * <p>
      * Increment the reference count of a dispatch object.
-     * 
+     * <p>
      * Calls to dispatch_retain() must be balanced with calls to
      * dispatch_release().
-     * 
-     * @param object
-     * The object to retain.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param object The object to retain.
+     *               The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1205,17 +1186,16 @@ public final class Globals {
 
     /**
      * [@function] dispatch_release
-     * 
+     * <p>
      * Decrement the reference count of a dispatch object.
-     * 
+     * <p>
      * A dispatch object is asynchronously deallocated once all references are
      * released (i.e. the reference count becomes zero). The system does not
      * guarantee that a given client is the last or only reference to a given
      * object.
-     * 
-     * @param object
-     * The object to release.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param object The object to release.
+     *               The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1223,14 +1203,11 @@ public final class Globals {
 
     /**
      * [@function] dispatch_get_context
-     * 
+     * <p>
      * Returns the application defined context of the object.
-     * 
-     * @param object
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @return
-     * The context of the object; may be NULL.
+     *
+     * @param object The result of passing NULL in this parameter is undefined.
+     * @return The context of the object; may be NULL.
      */
     @Generated
     @CFunction
@@ -1238,14 +1215,11 @@ public final class Globals {
 
     /**
      * [@function] dispatch_set_context
-     * 
+     * <p>
      * Associates an application defined context with the object.
-     * 
-     * @param object
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The new client defined context for the object. This may be NULL.
+     *
+     * @param object  The result of passing NULL in this parameter is undefined.
+     * @param context The new client defined context for the object. This may be NULL.
      */
     @Generated
     @CFunction
@@ -1253,22 +1227,19 @@ public final class Globals {
 
     /**
      * [@function] dispatch_set_finalizer_f
-     * 
+     * <p>
      * Set the finalizer function for a dispatch object.
-     * 
+     * <p>
      * A dispatch object's finalizer will be invoked on the object's target queue
      * after all references to the object have been released. This finalizer may be
      * used by the application to release any resources associated with the object,
      * such as freeing the object's context.
      * The context parameter passed to the finalizer function is the current
      * context of the dispatch object at the time the finalizer call is made.
-     * 
-     * @param object
-     * The dispatch object to modify.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param finalizer
-     * The finalizer function pointer.
+     *
+     * @param object    The dispatch object to modify.
+     *                  The result of passing NULL in this parameter is undefined.
+     * @param finalizer The finalizer function pointer.
      */
     @Generated
     @CFunction
@@ -1277,23 +1248,22 @@ public final class Globals {
 
     /**
      * [@function] dispatch_activate
-     * 
+     * <p>
      * Activates the specified dispatch object.
-     * 
+     * <p>
      * Dispatch objects such as queues and sources may be created in an inactive
      * state. Objects in this state have to be activated before any blocks
      * associated with them will be invoked.
-     * 
+     * <p>
      * The target queue of inactive objects can be changed using
      * dispatch_set_target_queue(). Change of target queue is no longer permitted
      * once an initially inactive object has been activated.
-     * 
+     * <p>
      * Calling dispatch_activate() on an active object has no effect.
      * Releasing the last reference count on an inactive object is undefined.
-     * 
-     * @param object
-     * The object to be activated.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param object The object to be activated.
+     *               The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1301,19 +1271,18 @@ public final class Globals {
 
     /**
      * [@function] dispatch_suspend
-     * 
+     * <p>
      * Suspends the invocation of blocks on a dispatch object.
-     * 
+     * <p>
      * A suspended object will not invoke any blocks associated with it. The
      * suspension of an object will occur after any running block associated with
      * the object completes.
-     * 
+     * <p>
      * Calls to dispatch_suspend() must be balanced with calls
      * to dispatch_resume().
-     * 
-     * @param object
-     * The object to be suspended.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param object The object to be suspended.
+     *               The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1321,25 +1290,24 @@ public final class Globals {
 
     /**
      * [@function] dispatch_resume
-     * 
+     * <p>
      * Resumes the invocation of blocks on a dispatch object.
-     * 
+     * <p>
      * Dispatch objects can be suspended with dispatch_suspend(), which increments
      * an internal suspension count. dispatch_resume() is the inverse operation,
      * and consumes suspension counts. When the last suspension count is consumed,
      * blocks associated with the object will be invoked again.
-     * 
+     * <p>
      * For backward compatibility reasons, dispatch_resume() on an inactive and not
      * otherwise suspended dispatch source object has the same effect as calling
      * dispatch_activate(). For new code, using dispatch_activate() is preferred.
-     * 
+     * <p>
      * If the specified object has zero suspension count and is not an inactive
      * source, this function will result in an assertion and the process being
      * terminated.
-     * 
-     * @param object
-     * The object to be resumed.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param object The object to be resumed.
+     *               The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1347,23 +1315,20 @@ public final class Globals {
 
     /**
      * [@function] dispatch_debug
-     * 
+     * <p>
      * Programmatically log debug information about a dispatch object.
-     * 
+     * <p>
      * Programmatically log debug information about a dispatch object. By default,
      * the log output is sent to syslog at notice level. In the debug version of
      * the library, the log output is sent to a file in /var/tmp.
      * The log output destination can be configured via the LIBDISPATCH_LOG
      * environment variable, valid values are: YES, NO, syslog, stderr, file.
-     * 
+     * <p>
      * This function is deprecated and will be removed in a future release.
      * Objective-C callers may use -debugDescription instead.
-     * 
-     * @param object
-     * The object to introspect.
-     * 
-     * @param message
-     * The message to log above and beyond the introspection.
+     *
+     * @param object  The object to introspect.
+     * @param message The message to log above and beyond the introspection.
      */
     @Generated
     @Variadic()
@@ -1382,11 +1347,10 @@ public final class Globals {
 
     /**
      * [@function] qos_class_self
-     * 
+     * <p>
      * Returns the requested QOS class of the current thread.
-     * 
-     * @return
-     * One of the QOS class values in qos_class_t.
+     *
+     * @return One of the QOS class values in qos_class_t.
      */
     @Generated
     @CFunction
@@ -1394,19 +1358,18 @@ public final class Globals {
 
     /**
      * [@function] qos_class_main
-     * 
+     * <p>
      * Returns the initial requested QOS class of the main thread.
-     * 
+     * <p>
      * The QOS class that the main thread of a process is created with depends on
      * the type of process (e.g. application or daemon) and on how it has been
      * launched.
-     * 
+     * <p>
      * This function returns that initial requested QOS class value chosen by the
      * system to enable propagation of that classification to matching work not
      * executing on the main thread.
-     * 
-     * @return
-     * One of the QOS class values in qos_class_t.
+     *
+     * @return One of the QOS class values in qos_class_t.
      */
     @Generated
     @CFunction
@@ -1419,25 +1382,20 @@ public final class Globals {
 
     /**
      * [@function] dispatch_async_f
-     * 
+     * <p>
      * Submits a function for asynchronous execution on a dispatch queue.
-     * 
+     * <p>
      * See dispatch_async() for details.
-     * 
-     * @param queue
-     * The target dispatch queue to which the function is submitted.
-     * The system will hold a reference on the target queue until the function
-     * has returned.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_async_f().
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue   The target dispatch queue to which the function is submitted.
+     *                The system will hold a reference on the target queue until the function
+     *                has returned.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_async_f().
+     *                The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1451,23 +1409,18 @@ public final class Globals {
 
     /**
      * [@function] dispatch_sync_f
-     * 
+     * <p>
      * Submits a function for synchronous execution on a dispatch queue.
-     * 
+     * <p>
      * See dispatch_sync() for details.
-     * 
-     * @param queue
-     * The target dispatch queue to which the function is submitted.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_sync_f().
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue   The target dispatch queue to which the function is submitted.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_sync_f().
+     *                The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1481,28 +1434,21 @@ public final class Globals {
 
     /**
      * [@function] dispatch_apply_f
-     * 
+     * <p>
      * Submits a function to a dispatch queue for parallel invocation.
-     * 
+     * <p>
      * See dispatch_apply() for details.
-     * 
-     * @param iterations
-     * The number of iterations to perform.
-     * 
-     * @param queue
-     * The dispatch queue to which the function is submitted.
-     * The preferred value to pass is DISPATCH_APPLY_AUTO to automatically use
-     * a queue appropriate for the calling thread.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the specified queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_apply_f(). The second parameter passed to this function is the
-     * current index of iteration.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param iterations The number of iterations to perform.
+     * @param queue      The dispatch queue to which the function is submitted.
+     *                   The preferred value to pass is DISPATCH_APPLY_AUTO to automatically use
+     *                   a queue appropriate for the calling thread.
+     * @param context    The application-defined context parameter to pass to the function.
+     * @param work       The application-defined function to invoke on the specified queue. The first
+     *                   parameter passed to this function is the context provided to
+     *                   dispatch_apply_f(). The second parameter passed to this function is the
+     *                   current index of iteration.
+     *                   The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -1511,30 +1457,29 @@ public final class Globals {
 
     /**
      * [@function] dispatch_get_current_queue
-     * 
+     * <p>
      * Returns the queue on which the currently executing block is running.
-     * 
+     * <p>
      * Returns the queue on which the currently executing block is running.
-     * 
+     * <p>
      * When dispatch_get_current_queue() is called outside of the context of a
      * submitted block, it will return the default concurrent queue.
-     * 
+     * <p>
      * Recommended for debugging and logging purposes only:
      * The code must not make any assumptions about the queue returned, unless it
      * is one of the global queues or a queue the code has itself created.
      * The code must not assume that synchronous execution onto a queue is safe
      * from deadlock if that queue is not the one returned by
      * dispatch_get_current_queue().
-     * 
+     * <p>
      * When dispatch_get_current_queue() is called on the main thread, it may
      * or may not return the same value as dispatch_get_main_queue(). Comparing
      * the two is not a valid way to test whether code is executing on the
      * main thread (see dispatch_assert_queue() and dispatch_assert_queue_not()).
-     * 
+     * <p>
      * This function is deprecated and will be removed in a future release.
-     * 
-     * @return
-     * Returns the current queue.
+     *
+     * @return Returns the current queue.
      */
     @Generated
     @Deprecated
@@ -1543,25 +1488,23 @@ public final class Globals {
 
     /**
      * [@function] dispatch_get_main_queue
-     * 
+     * <p>
      * Returns the default queue that is bound to the main thread.
-     * 
+     * <p>
      * In order to invoke blocks submitted to the main queue, the application must
      * call dispatch_main(), NSApplicationMain(), or use a CFRunLoop on the main
      * thread.
-     * 
+     * <p>
      * The main queue is meant to be used in application context to interact with
      * the main thread and the main runloop.
-     * 
+     * <p>
      * Because the main queue doesn't behave entirely like a regular serial queue,
      * it may have unwanted side-effects when used in processes that are not UI apps
      * (daemons). For such processes, the main queue should be avoided.
-     * 
-     * @see dispatch_queue_main_t
-     * 
-     * @return
-     * Returns the main queue. This queue is created automatically on behalf of
+     *
+     * @return Returns the main queue. This queue is created automatically on behalf of
      * the main thread before main() is called.
+     * @see dispatch_queue_main_t
      */
     @Generated
     @Inline
@@ -1570,37 +1513,32 @@ public final class Globals {
 
     /**
      * [@function] dispatch_get_global_queue
-     * 
+     * <p>
      * Returns a well-known global concurrent queue of a given quality of service
      * class.
-     * 
+     * <p>
      * See dispatch_queue_global_t.
-     * 
-     * @param identifier
-     * A quality of service class defined in qos_class_t or a priority defined in
-     * dispatch_queue_priority_t.
-     * 
-     * It is recommended to use quality of service class values to identify the
-     * well-known global concurrent queues:
-     *  - QOS_CLASS_USER_INTERACTIVE
-     *  - QOS_CLASS_USER_INITIATED
-     *  - QOS_CLASS_DEFAULT
-     *  - QOS_CLASS_UTILITY
-     *  - QOS_CLASS_BACKGROUND
-     * 
-     * The global concurrent queues may still be identified by their priority,
-     * which map to the following QOS classes:
-     *  - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
-     *  - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
-     *  - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
-     *  - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
-     * 
-     * @param flags
-     * Reserved for future use. Passing any value other than zero may result in
-     * a NULL return value.
-     * 
-     * @return
-     * Returns the requested global queue or NULL if the requested global queue
+     *
+     * @param identifier A quality of service class defined in qos_class_t or a priority defined in
+     *                   dispatch_queue_priority_t.
+     *                   <p>
+     *                   It is recommended to use quality of service class values to identify the
+     *                   well-known global concurrent queues:
+     *                   - QOS_CLASS_USER_INTERACTIVE
+     *                   - QOS_CLASS_USER_INITIATED
+     *                   - QOS_CLASS_DEFAULT
+     *                   - QOS_CLASS_UTILITY
+     *                   - QOS_CLASS_BACKGROUND
+     *                   <p>
+     *                   The global concurrent queues may still be identified by their priority,
+     *                   which map to the following QOS classes:
+     *                   - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
+     *                   - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
+     *                   - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
+     *                   - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
+     * @param flags      Reserved for future use. Passing any value other than zero may result in
+     *                   a NULL return value.
+     * @return Returns the requested global queue or NULL if the requested global queue
      * does not exist.
      */
     @Generated
@@ -1609,27 +1547,24 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_attr_make_initially_inactive
-     * 
+     * <p>
      * Returns an attribute value which may be provided to dispatch_queue_create()
      * or dispatch_queue_create_with_target(), in order to make the created queue
      * initially inactive.
-     * 
+     * <p>
      * Dispatch queues may be created in an inactive state. Queues in this state
      * have to be activated before any blocks associated with them will be invoked.
-     * 
+     * <p>
      * A queue in inactive state cannot be deallocated, dispatch_activate() must be
      * called before the last reference to a queue created with this attribute is
      * released.
-     * 
+     * <p>
      * The target queue of a queue in inactive state can be changed using
      * dispatch_set_target_queue(). Change of target queue is no longer permitted
      * once an initially inactive queue has been activated.
-     * 
-     * @param attr
-     * A queue attribute value to be combined with the initially inactive attribute.
-     * 
-     * @return
-     * Returns an attribute value which may be provided to dispatch_queue_create()
+     *
+     * @param attr A queue attribute value to be combined with the initially inactive attribute.
+     * @return Returns an attribute value which may be provided to dispatch_queue_create()
      * and dispatch_queue_create_with_target().
      * The new value combines the attributes specified by the 'attr' parameter with
      * the initially inactive attribute.
@@ -1640,35 +1575,30 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_attr_make_with_autorelease_frequency
-     * 
+     * <p>
      * Returns a dispatch queue attribute value with the autorelease frequency
      * set to the specified value.
-     * 
+     * <p>
      * When a queue uses the per-workitem autorelease frequency (either directly
      * or inherithed from its target queue), any block submitted asynchronously to
      * this queue (via dispatch_async(), dispatch_barrier_async(),
      * dispatch_group_notify(), etc...) is executed as if surrounded by a individual
      * Objective-C <code>@autoreleasepool</code> scope.
-     * 
+     * <p>
      * Autorelease frequency has no effect on blocks that are submitted
      * synchronously to a queue (via dispatch_sync(), dispatch_barrier_sync()).
-     * 
+     * <p>
      * The global concurrent queues have the DISPATCH_AUTORELEASE_FREQUENCY_NEVER
      * behavior. Manually created dispatch queues use
      * DISPATCH_AUTORELEASE_FREQUENCY_INHERIT by default.
-     * 
+     * <p>
      * Queues created with this attribute cannot change target queues after having
      * been activated. See dispatch_set_target_queue() and dispatch_activate().
-     * 
-     * @param attr
-     * A queue attribute value to be combined with the specified autorelease
-     * frequency or NULL.
-     * 
-     * @param frequency
-     * The requested autorelease frequency.
-     * 
-     * @return
-     * Returns an attribute value which may be provided to dispatch_queue_create()
+     *
+     * @param attr      A queue attribute value to be combined with the specified autorelease
+     *                  frequency or NULL.
+     * @param frequency The requested autorelease frequency.
+     * @return Returns an attribute value which may be provided to dispatch_queue_create()
      * or NULL if an invalid autorelease frequency was requested.
      * This new value combines the attributes specified by the 'attr' parameter and
      * the chosen autorelease frequency.
@@ -1680,54 +1610,47 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_attr_make_with_qos_class
-     * 
+     * <p>
      * Returns an attribute value which may be provided to dispatch_queue_create()
      * or dispatch_queue_create_with_target(), in order to assign a QOS class and
      * relative priority to the queue.
-     * 
+     * <p>
      * When specified in this manner, the QOS class and relative priority take
      * precedence over those inherited from the dispatch queue's target queue (if
      * any) as long that does not result in a lower QOS class and relative priority.
-     * 
+     * <p>
      * The global queue priorities map to the following QOS classes:
-     *  - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
-     *  - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
-     *  - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
-     *  - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
-     * 
+     * - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
+     * - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
+     * - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
+     * - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
+     * <p>
      * Example:
      * <code>
      * dispatch_queue_t queue;
      * dispatch_queue_attr_t attr;
      * attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL,
-     * 		QOS_CLASS_UTILITY, 0);
+     * QOS_CLASS_UTILITY, 0);
      * queue = dispatch_queue_create("com.example.myqueue", attr);
      * </code>
-     * 
+     * <p>
      * The QOS class and relative priority set this way on a queue have no effect on
      * blocks that are submitted synchronously to a queue (via dispatch_sync(),
      * dispatch_barrier_sync()).
-     * 
-     * @param attr
-     * A queue attribute value to be combined with the QOS class, or NULL.
-     * 
-     * @param qos_class
-     * A QOS class value:
-     *  - QOS_CLASS_USER_INTERACTIVE
-     *  - QOS_CLASS_USER_INITIATED
-     *  - QOS_CLASS_DEFAULT
-     *  - QOS_CLASS_UTILITY
-     *  - QOS_CLASS_BACKGROUND
-     * Passing any other value results in NULL being returned.
-     * 
-     * @param relative_priority
-     * A relative priority within the QOS class. This value is a negative
-     * offset from the maximum supported scheduler priority for the given class.
-     * Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
-     * results in NULL being returned.
-     * 
-     * @return
-     * Returns an attribute value which may be provided to dispatch_queue_create()
+     *
+     * @param attr              A queue attribute value to be combined with the QOS class, or NULL.
+     * @param qos_class         A QOS class value:
+     *                          - QOS_CLASS_USER_INTERACTIVE
+     *                          - QOS_CLASS_USER_INITIATED
+     *                          - QOS_CLASS_DEFAULT
+     *                          - QOS_CLASS_UTILITY
+     *                          - QOS_CLASS_BACKGROUND
+     *                          Passing any other value results in NULL being returned.
+     * @param relative_priority A relative priority within the QOS class. This value is a negative
+     *                          offset from the maximum supported scheduler priority for the given class.
+     *                          Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
+     *                          results in NULL being returned.
+     * @return Returns an attribute value which may be provided to dispatch_queue_create()
      * and dispatch_queue_create_with_target(), or NULL if an invalid QOS class was
      * requested.
      * The new value combines the attributes specified by the 'attr' parameter and
@@ -1740,51 +1663,44 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_create_with_target
-     * 
+     * <p>
      * Creates a new dispatch queue with a specified target queue.
-     * 
+     * <p>
      * Dispatch queues created with the DISPATCH_QUEUE_SERIAL or a NULL attribute
      * invoke blocks serially in FIFO order.
-     * 
+     * <p>
      * Dispatch queues created with the DISPATCH_QUEUE_CONCURRENT attribute may
      * invoke blocks concurrently (similarly to the global concurrent queues, but
      * potentially with more overhead), and support barrier blocks submitted with
      * the dispatch barrier API, which e.g. enables the implementation of efficient
      * reader-writer schemes.
-     * 
+     * <p>
      * When a dispatch queue is no longer needed, it should be released with
      * dispatch_release(). Note that any pending blocks submitted asynchronously to
      * a queue will hold a reference to that queue. Therefore a queue will not be
      * deallocated until all pending blocks have finished.
-     * 
+     * <p>
      * When using a dispatch queue attribute @a attr specifying a QoS class (derived
      * from the result of dispatch_queue_attr_make_with_qos_class()), passing the
      * result of dispatch_get_global_queue() in @a target will ignore the QoS class
      * of that global queue and will use the global queue with the QoS class
      * specified by attr instead.
-     * 
+     * <p>
      * Queues created with dispatch_queue_create_with_target() cannot have their
      * target queue changed, unless created inactive (See
      * dispatch_queue_attr_make_initially_inactive()), in which case the target
      * queue can be changed until the newly created queue is activated with
      * dispatch_activate().
-     * 
-     * @param label
-     * A string label to attach to the queue.
-     * This parameter is optional and may be NULL.
-     * 
-     * @param attr
-     * A predefined attribute such as DISPATCH_QUEUE_SERIAL,
-     * DISPATCH_QUEUE_CONCURRENT, or the result of a call to
-     * a dispatch_queue_attr_make_with_* function.
-     * 
-     * @param target
-     * The target queue for the newly created queue. The target queue is retained.
-     * If this parameter is DISPATCH_TARGET_QUEUE_DEFAULT, sets the queue's target
-     * queue to the default target queue for the given queue type.
-     * 
-     * @return
-     * The newly created dispatch queue.
+     *
+     * @param label  A string label to attach to the queue.
+     *               This parameter is optional and may be NULL.
+     * @param attr   A predefined attribute such as DISPATCH_QUEUE_SERIAL,
+     *               DISPATCH_QUEUE_CONCURRENT, or the result of a call to
+     *               a dispatch_queue_attr_make_with_* function.
+     * @param target The target queue for the newly created queue. The target queue is retained.
+     *               If this parameter is DISPATCH_TARGET_QUEUE_DEFAULT, sets the queue's target
+     *               queue to the default target queue for the given queue type.
+     * @return The newly created dispatch queue.
      */
     @Generated
     @CFunction
@@ -1794,44 +1710,39 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_create
-     * 
+     * <p>
      * Creates a new dispatch queue to which blocks may be submitted.
-     * 
+     * <p>
      * Dispatch queues created with the DISPATCH_QUEUE_SERIAL or a NULL attribute
      * invoke blocks serially in FIFO order.
-     * 
+     * <p>
      * Dispatch queues created with the DISPATCH_QUEUE_CONCURRENT attribute may
      * invoke blocks concurrently (similarly to the global concurrent queues, but
      * potentially with more overhead), and support barrier blocks submitted with
      * the dispatch barrier API, which e.g. enables the implementation of efficient
      * reader-writer schemes.
-     * 
+     * <p>
      * When a dispatch queue is no longer needed, it should be released with
      * dispatch_release(). Note that any pending blocks submitted asynchronously to
      * a queue will hold a reference to that queue. Therefore a queue will not be
      * deallocated until all pending blocks have finished.
-     * 
+     * <p>
      * Passing the result of the dispatch_queue_attr_make_with_qos_class() function
      * to the attr parameter of this function allows a quality of service class and
      * relative priority to be specified for the newly created queue.
      * The quality of service class so specified takes precedence over the quality
      * of service class of the newly created dispatch queue's target queue (if any)
      * as long that does not result in a lower QOS class and relative priority.
-     * 
+     * <p>
      * When no quality of service class is specified, the target queue of a newly
      * created dispatch queue is the default priority global concurrent queue.
-     * 
-     * @param label
-     * A string label to attach to the queue.
-     * This parameter is optional and may be NULL.
-     * 
-     * @param attr
-     * A predefined attribute such as DISPATCH_QUEUE_SERIAL,
-     * DISPATCH_QUEUE_CONCURRENT, or the result of a call to
-     * a dispatch_queue_attr_make_with_* function.
-     * 
-     * @return
-     * The newly created dispatch queue.
+     *
+     * @param label A string label to attach to the queue.
+     *              This parameter is optional and may be NULL.
+     * @param attr  A predefined attribute such as DISPATCH_QUEUE_SERIAL,
+     *              DISPATCH_QUEUE_CONCURRENT, or the result of a call to
+     *              a dispatch_queue_attr_make_with_* function.
+     * @return The newly created dispatch queue.
      */
     @Generated
     @CFunction
@@ -1841,18 +1752,15 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_get_label
-     * 
+     * <p>
      * Returns the label of the given queue, as specified when the queue was
      * created, or the empty string if a NULL label was specified.
-     * 
+     * <p>
      * Passing DISPATCH_CURRENT_QUEUE_LABEL will return the label of the current
      * queue.
-     * 
-     * @param queue
-     * The queue to query, or DISPATCH_CURRENT_QUEUE_LABEL.
-     * 
-     * @return
-     * The label of the queue.
+     *
+     * @param queue The queue to query, or DISPATCH_CURRENT_QUEUE_LABEL.
+     * @return The label of the queue.
      */
     @Generated
     @CFunction
@@ -1861,29 +1769,24 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_get_qos_class
-     * 
+     * <p>
      * Returns the QOS class and relative priority of the given queue.
-     * 
+     * <p>
      * If the given queue was created with an attribute value returned from
      * dispatch_queue_attr_make_with_qos_class(), this function returns the QOS
      * class and relative priority specified at that time; for any other attribute
      * value it returns a QOS class of QOS_CLASS_UNSPECIFIED and a relative
      * priority of 0.
-     * 
+     * <p>
      * If the given queue is one of the global queues, this function returns its
      * assigned QOS class value as documented under dispatch_get_global_queue() and
      * a relative priority of 0; in the case of the main queue it returns the QOS
      * value provided by qos_class_main() and a relative priority of 0.
-     * 
-     * @param queue
-     * The queue to query.
-     * 
-     * @param relative_priority_ptr
-     * A pointer to an int variable to be filled with the relative priority offset
-     * within the QOS class, or NULL.
-     * 
-     * @return
-     * A QOS class value:
+     *
+     * @param queue                 The queue to query.
+     * @param relative_priority_ptr A pointer to an int variable to be filled with the relative priority offset
+     *                              within the QOS class, or NULL.
+     * @return A QOS class value:
      * - QOS_CLASS_USER_INTERACTIVE
      * - QOS_CLASS_USER_INITIATED
      * - QOS_CLASS_DEFAULT
@@ -1897,60 +1800,57 @@ public final class Globals {
 
     /**
      * [@function] dispatch_set_target_queue
-     * 
+     * <p>
      * Sets the target queue for the given object.
-     * 
+     * <p>
      * An object's target queue is responsible for processing the object.
-     * 
+     * <p>
      * When no quality of service class and relative priority is specified for a
      * dispatch queue at the time of creation, a dispatch queue's quality of service
      * class is inherited from its target queue. The dispatch_get_global_queue()
      * function may be used to obtain a target queue of a specific quality of
      * service class, however the use of dispatch_queue_attr_make_with_qos_class()
      * is recommended instead.
-     * 
+     * <p>
      * Blocks submitted to a serial queue whose target queue is another serial
      * queue will not be invoked concurrently with blocks submitted to the target
      * queue or to any other queue with that same target queue.
-     * 
+     * <p>
      * The result of introducing a cycle into the hierarchy of target queues is
      * undefined.
-     * 
+     * <p>
      * A dispatch source's target queue specifies where its event handler and
      * cancellation handler blocks will be submitted.
-     * 
+     * <p>
      * A dispatch I/O channel's target queue specifies where where its I/O
      * operations are executed. If the channel's target queue's priority is set to
      * DISPATCH_QUEUE_PRIORITY_BACKGROUND, then the I/O operations performed by
      * dispatch_io_read() or dispatch_io_write() on that queue will be
      * throttled when there is I/O contention.
-     * 
+     * <p>
      * For all other dispatch object types, the only function of the target queue
      * is to determine where an object's finalizer function is invoked.
-     * 
+     * <p>
      * In general, changing the target queue of an object is an asynchronous
      * operation that doesn't take effect immediately, and doesn't affect blocks
      * already associated with the specified object.
-     * 
+     * <p>
      * However, if an object is inactive at the time dispatch_set_target_queue() is
      * called, then the target queue change takes effect immediately, and will
      * affect blocks already associated with the specified object. After an
      * initially inactive object has been activated, calling
      * dispatch_set_target_queue() results in an assertion and the process being
      * terminated.
-     * 
+     * <p>
      * If a dispatch queue is active and targeted by other dispatch objects,
      * changing its target queue results in undefined behavior.
-     * 
-     * @param object
-     * The object to modify.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param queue
-     * The new target queue for the object. The queue is retained, and the
-     * previous target queue, if any, is released.
-     * If queue is DISPATCH_TARGET_QUEUE_DEFAULT, set the object's target queue
-     * to the default target queue for the given object type.
+     *
+     * @param object The object to modify.
+     *               The result of passing NULL in this parameter is undefined.
+     * @param queue  The new target queue for the object. The queue is retained, and the
+     *               previous target queue, if any, is released.
+     *               If queue is DISPATCH_TARGET_QUEUE_DEFAULT, set the object's target queue
+     *               to the default target queue for the given object type.
      */
     @Generated
     @CFunction
@@ -1958,12 +1858,12 @@ public final class Globals {
 
     /**
      * [@function] dispatch_main
-     * 
+     * <p>
      * Execute blocks submitted to the main queue.
-     * 
+     * <p>
      * This function "parks" the main thread and waits for blocks to be submitted
      * to the main queue. This function never returns.
-     * 
+     * <p>
      * Applications that call NSApplicationMain() or CFRunLoopRun() on the
      * main thread do not need to call dispatch_main().
      */
@@ -1978,26 +1878,19 @@ public final class Globals {
 
     /**
      * [@function] dispatch_after_f
-     * 
+     * <p>
      * Schedule a function for execution on a given queue at a specified time.
-     * 
+     * <p>
      * See dispatch_after() for details.
-     * 
-     * @param when
-     * A temporal milestone returned by dispatch_time() or dispatch_walltime().
-     * 
-     * @param queue
-     * A queue to which the given function will be submitted at the specified time.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_after_f().
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param when    A temporal milestone returned by dispatch_time() or dispatch_walltime().
+     * @param queue   A queue to which the given function will be submitted at the specified time.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_after_f().
+     *                The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -2011,30 +1904,25 @@ public final class Globals {
 
     /**
      * [@function] dispatch_barrier_async_f
-     * 
+     * <p>
      * Submits a barrier function for asynchronous execution on a dispatch queue.
-     * 
+     * <p>
      * Submits a function to a dispatch queue like dispatch_async_f(), but marks
      * that function as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT
      * queues).
-     * 
+     * <p>
      * See dispatch_async_f() for details and "Dispatch Barrier API" for a
      * description of the barrier semantics.
-     * 
-     * @param queue
-     * The target dispatch queue to which the function is submitted.
-     * The system will hold a reference on the target queue until the function
-     * has returned.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_barrier_async_f().
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue   The target dispatch queue to which the function is submitted.
+     *                The system will hold a reference on the target queue until the function
+     *                has returned.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_barrier_async_f().
+     *                The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -2048,26 +1936,21 @@ public final class Globals {
 
     /**
      * [@function] dispatch_barrier_sync_f
-     * 
+     * <p>
      * Submits a barrier function for synchronous execution on a dispatch queue.
-     * 
+     * <p>
      * Submits a function to a dispatch queue like dispatch_sync_f(), but marks that
      * fuction as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT queues).
-     * 
+     * <p>
      * See dispatch_sync_f() for details.
-     * 
-     * @param queue
-     * The target dispatch queue to which the function is submitted.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_barrier_sync_f().
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue   The target dispatch queue to which the function is submitted.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_barrier_sync_f().
+     *                The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -2076,30 +1959,23 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_set_specific
-     * 
+     * <p>
      * Associates a subsystem-specific context with a dispatch queue, for a key
      * unique to the subsystem.
-     * 
+     * <p>
      * The specified destructor will be invoked with the context on the default
      * priority global concurrent queue when a new context is set for the same key,
      * or after all references to the queue have been released.
-     * 
-     * @param queue
-     * The dispatch queue to modify.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param key
-     * The key to set the context for, typically a pointer to a static variable
-     * specific to the subsystem. Keys are only compared as pointers and never
-     * dereferenced. Passing a string constant directly is not recommended.
-     * The NULL key is reserved and attempts to set a context for it are ignored.
-     * 
-     * @param context
-     * The new subsystem-specific context for the object. This may be NULL.
-     * 
-     * @param destructor
-     * The destructor function pointer. This may be NULL and is ignored if context
-     * is NULL.
+     *
+     * @param queue      The dispatch queue to modify.
+     *                   The result of passing NULL in this parameter is undefined.
+     * @param key        The key to set the context for, typically a pointer to a static variable
+     *                   specific to the subsystem. Keys are only compared as pointers and never
+     *                   dereferenced. Passing a string constant directly is not recommended.
+     *                   The NULL key is reserved and attempts to set a context for it are ignored.
+     * @param context    The new subsystem-specific context for the object. This may be NULL.
+     * @param destructor The destructor function pointer. This may be NULL and is ignored if context
+     *                   is NULL.
      */
     @Generated
     @CFunction
@@ -2108,24 +1984,19 @@ public final class Globals {
 
     /**
      * [@function] dispatch_queue_get_specific
-     * 
+     * <p>
      * Returns the subsystem-specific context associated with a dispatch queue, for
      * a key unique to the subsystem.
-     * 
+     * <p>
      * Returns the context for the specified key if it has been set on the specified
      * queue.
-     * 
-     * @param queue
-     * The dispatch queue to query.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param key
-     * The key to get the context for, typically a pointer to a static variable
-     * specific to the subsystem. Keys are only compared as pointers and never
-     * dereferenced. Passing a string constant directly is not recommended.
-     * 
-     * @return
-     * The context for the specified key or NULL if no context was found.
+     *
+     * @param queue The dispatch queue to query.
+     *              The result of passing NULL in this parameter is undefined.
+     * @param key   The key to get the context for, typically a pointer to a static variable
+     *              specific to the subsystem. Keys are only compared as pointers and never
+     *              dereferenced. Passing a string constant directly is not recommended.
+     * @return The context for the specified key or NULL if no context was found.
      */
     @Generated
     @CFunction
@@ -2133,22 +2004,19 @@ public final class Globals {
 
     /**
      * [@function] dispatch_get_specific
-     * 
+     * <p>
      * Returns the current subsystem-specific context for a key unique to the
      * subsystem.
-     * 
+     * <p>
      * When called from a block executing on a queue, returns the context for the
      * specified key if it has been set on the queue, otherwise returns the result
      * of dispatch_get_specific() executed on the queue's target queue or NULL
      * if the current queue is a global concurrent queue.
-     * 
-     * @param key
-     * The key to get the context for, typically a pointer to a static variable
-     * specific to the subsystem. Keys are only compared as pointers and never
-     * dereferenced. Passing a string constant directly is not recommended.
-     * 
-     * @return
-     * The context for the specified key or NULL if no context was found.
+     *
+     * @param key The key to get the context for, typically a pointer to a static variable
+     *            specific to the subsystem. Keys are only compared as pointers and never
+     *            dereferenced. Passing a string constant directly is not recommended.
+     * @return The context for the specified key or NULL if no context was found.
      */
     @Generated
     @CFunction
@@ -2156,40 +2024,39 @@ public final class Globals {
 
     /**
      * [@function] dispatch_assert_queue
-     * 
+     * <p>
      * Verifies that the current block is executing on a given dispatch queue.
-     * 
+     * <p>
      * Some code expects to be run on a specific dispatch queue. This function
      * verifies that that expectation is true.
-     * 
+     * <p>
      * If the currently executing block was submitted to the specified queue or to
      * any queue targeting it (see dispatch_set_target_queue()), this function
      * returns.
-     * 
+     * <p>
      * If the currently executing block was submitted with a synchronous API
      * (dispatch_sync(), dispatch_barrier_sync(), ...), the context of the
      * submitting block is also evaluated (recursively).
      * If a synchronously submitting block is found that was itself submitted to
      * the specified queue or to any queue targeting it, this function returns.
-     * 
+     * <p>
      * Otherwise this function asserts: it logs an explanation to the system log and
      * terminates the application.
-     * 
+     * <p>
      * Passing the result of dispatch_get_main_queue() to this function verifies
      * that the current block was submitted to the main queue, or to a queue
      * targeting it, or is running on the main thread (in any context).
-     * 
+     * <p>
      * When dispatch_assert_queue() is called outside of the context of a
      * submitted block (for example from the context of a thread created manually
      * with pthread_create()) then this function will also assert and terminate
      * the application.
-     * 
+     * <p>
      * The variant dispatch_assert_queue_debug() is compiled out when the
      * preprocessor macro NDEBUG is defined. (See also assert(3)).
-     * 
-     * @param queue
-     * The dispatch queue that the current block is expected to run on.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue The dispatch queue that the current block is expected to run on.
+     *              The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -2197,21 +2064,20 @@ public final class Globals {
 
     /**
      * [@function] dispatch_assert_queue_barrier
-     * 
+     * <p>
      * Verifies that the current block is executing on a given dispatch queue,
      * and that the block acts as a barrier on that queue.
-     * 
+     * <p>
      * This behaves exactly like dispatch_assert_queue(), with the additional check
      * that the current block acts as a barrier on the specified queue, which is
      * always true if the specified queue is serial (see DISPATCH_BLOCK_BARRIER or
      * dispatch_barrier_async() for details).
-     * 
+     * <p>
      * The variant dispatch_assert_queue_barrier_debug() is compiled out when the
      * preprocessor macro NDEBUG is defined. (See also assert()).
-     * 
-     * @param queue
-     * The dispatch queue that the current block is expected to run as a barrier on.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue The dispatch queue that the current block is expected to run as a barrier on.
+     *              The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -2219,19 +2085,18 @@ public final class Globals {
 
     /**
      * [@function] dispatch_assert_queue_not
-     * 
+     * <p>
      * Verifies that the current block is not executing on a given dispatch queue.
-     * 
+     * <p>
      * This function is the equivalent of dispatch_assert_queue() with the test for
      * equality inverted. That means that it will terminate the application when
      * dispatch_assert_queue() would return, and vice-versa. See discussion there.
-     * 
+     * <p>
      * The variant dispatch_assert_queue_not_debug() is compiled out when the
      * preprocessor macro NDEBUG is defined. (See also assert(3)).
-     * 
-     * @param queue
-     * The dispatch queue that the current block is expected not to run on.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue The dispatch queue that the current block is expected not to run on.
+     *              The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -2239,49 +2104,44 @@ public final class Globals {
 
     /**
      * [@function] dispatch_block_create
-     * 
+     * <p>
      * Create a new dispatch block object on the heap from an existing block and
      * the given flags.
-     * 
+     * <p>
      * The provided block is Block_copy'ed to the heap and retained by the newly
      * created dispatch block object.
-     * 
+     * <p>
      * The returned dispatch block object is intended to be submitted to a dispatch
      * queue with dispatch_async() and related functions, but may also be invoked
      * directly. Both operations can be performed an arbitrary number of times but
      * only the first completed execution of a dispatch block object can be waited
      * on with dispatch_block_wait() or observed with dispatch_block_notify().
-     * 
+     * <p>
      * If the returned dispatch block object is submitted to a dispatch queue, the
      * submitted block instance will be associated with the QOS class current at the
      * time of submission, unless one of the following flags assigned a specific QOS
      * class (or no QOS class) at the time of block creation:
-     *  - DISPATCH_BLOCK_ASSIGN_CURRENT
-     *  - DISPATCH_BLOCK_NO_QOS_CLASS
-     *  - DISPATCH_BLOCK_DETACHED
+     * - DISPATCH_BLOCK_ASSIGN_CURRENT
+     * - DISPATCH_BLOCK_NO_QOS_CLASS
+     * - DISPATCH_BLOCK_DETACHED
      * The QOS class the block object will be executed with also depends on the QOS
      * class assigned to the queue and which of the following flags was specified or
      * defaulted to:
-     *  - DISPATCH_BLOCK_INHERIT_QOS_CLASS (default for asynchronous execution)
-     *  - DISPATCH_BLOCK_ENFORCE_QOS_CLASS (default for synchronous execution)
+     * - DISPATCH_BLOCK_INHERIT_QOS_CLASS (default for asynchronous execution)
+     * - DISPATCH_BLOCK_ENFORCE_QOS_CLASS (default for synchronous execution)
      * See description of dispatch_block_flags_t for details.
-     * 
+     * <p>
      * If the returned dispatch block object is submitted directly to a serial queue
      * and is configured to execute with a specific QOS class, the system will make
      * a best effort to apply the necessary QOS overrides to ensure that blocks
      * submitted earlier to the serial queue are executed at that same QOS class or
      * higher.
-     * 
-     * @param flags
-     * Configuration flags for the block object.
-     * Passing a value that is not a bitwise OR of flags from dispatch_block_flags_t
-     * results in NULL being returned.
-     * 
-     * @param block
-     * The block to create the dispatch block object from.
-     * 
-     * @return
-     * The newly created dispatch block object, or NULL.
+     *
+     * @param flags Configuration flags for the block object.
+     *              Passing a value that is not a bitwise OR of flags from dispatch_block_flags_t
+     *              results in NULL being returned.
+     * @param block The block to create the dispatch block object from.
+     * @return The newly created dispatch block object, or NULL.
      * When not building with Objective-C ARC, must be released with a -[release]
      * message or the Block_release() function.
      */
@@ -2293,65 +2153,56 @@ public final class Globals {
 
     /**
      * [@function] dispatch_block_create_with_qos_class
-     * 
+     * <p>
      * Create a new dispatch block object on the heap from an existing block and
      * the given flags, and assign it the specified QOS class and relative priority.
-     * 
+     * <p>
      * The provided block is Block_copy'ed to the heap and retained by the newly
      * created dispatch block object.
-     * 
+     * <p>
      * The returned dispatch block object is intended to be submitted to a dispatch
      * queue with dispatch_async() and related functions, but may also be invoked
      * directly. Both operations can be performed an arbitrary number of times but
      * only the first completed execution of a dispatch block object can be waited
      * on with dispatch_block_wait() or observed with dispatch_block_notify().
-     * 
+     * <p>
      * If invoked directly, the returned dispatch block object will be executed with
      * the assigned QOS class as long as that does not result in a lower QOS class
      * than what is current on the calling thread.
-     * 
+     * <p>
      * If the returned dispatch block object is submitted to a dispatch queue, the
      * QOS class it will be executed with depends on the QOS class assigned to the
      * block, the QOS class assigned to the queue and which of the following flags
      * was specified or defaulted to:
-     *  - DISPATCH_BLOCK_INHERIT_QOS_CLASS: default for asynchronous execution
-     *  - DISPATCH_BLOCK_ENFORCE_QOS_CLASS: default for synchronous execution
+     * - DISPATCH_BLOCK_INHERIT_QOS_CLASS: default for asynchronous execution
+     * - DISPATCH_BLOCK_ENFORCE_QOS_CLASS: default for synchronous execution
      * See description of dispatch_block_flags_t for details.
-     * 
+     * <p>
      * If the returned dispatch block object is submitted directly to a serial queue
      * and is configured to execute with a specific QOS class, the system will make
      * a best effort to apply the necessary QOS overrides to ensure that blocks
      * submitted earlier to the serial queue are executed at that same QOS class or
      * higher.
-     * 
-     * @param flags
-     * Configuration flags for the new block object.
-     * Passing a value that is not a bitwise OR of flags from dispatch_block_flags_t
-     * results in NULL being returned.
-     * 
-     * @param qos_class
-     * A QOS class value:
-     *  - QOS_CLASS_USER_INTERACTIVE
-     *  - QOS_CLASS_USER_INITIATED
-     *  - QOS_CLASS_DEFAULT
-     *  - QOS_CLASS_UTILITY
-     *  - QOS_CLASS_BACKGROUND
-     *  - QOS_CLASS_UNSPECIFIED
-     * Passing QOS_CLASS_UNSPECIFIED is equivalent to specifying the
-     * DISPATCH_BLOCK_NO_QOS_CLASS flag. Passing any other value results in NULL
-     * being returned.
-     * 
-     * @param relative_priority
-     * A relative priority within the QOS class. This value is a negative
-     * offset from the maximum supported scheduler priority for the given class.
-     * Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
-     * results in NULL being returned.
-     * 
-     * @param block
-     * The block to create the dispatch block object from.
-     * 
-     * @return
-     * The newly created dispatch block object, or NULL.
+     *
+     * @param flags             Configuration flags for the new block object.
+     *                          Passing a value that is not a bitwise OR of flags from dispatch_block_flags_t
+     *                          results in NULL being returned.
+     * @param qos_class         A QOS class value:
+     *                          - QOS_CLASS_USER_INTERACTIVE
+     *                          - QOS_CLASS_USER_INITIATED
+     *                          - QOS_CLASS_DEFAULT
+     *                          - QOS_CLASS_UTILITY
+     *                          - QOS_CLASS_BACKGROUND
+     *                          - QOS_CLASS_UNSPECIFIED
+     *                          Passing QOS_CLASS_UNSPECIFIED is equivalent to specifying the
+     *                          DISPATCH_BLOCK_NO_QOS_CLASS flag. Passing any other value results in NULL
+     *                          being returned.
+     * @param relative_priority A relative priority within the QOS class. This value is a negative
+     *                          offset from the maximum supported scheduler priority for the given class.
+     *                          Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
+     *                          results in NULL being returned.
+     * @param block             The block to create the dispatch block object from.
+     * @return The newly created dispatch block object, or NULL.
      * When not building with Objective-C ARC, must be released with a -[release]
      * message or the Block_release() function.
      */
@@ -2364,10 +2215,10 @@ public final class Globals {
 
     /**
      * [@function] dispatch_block_perform
-     * 
+     * <p>
      * Create, synchronously execute and release a dispatch block object from the
      * specified block and flags.
-     * 
+     * <p>
      * Behaves identically to the sequence
      * <code>
      * dispatch_block_t b = dispatch_block_create(flags, block);
@@ -2376,14 +2227,11 @@ public final class Globals {
      * </code>
      * but may be implemented more efficiently internally by not requiring a copy
      * to the heap of the specified block or the allocation of a new block object.
-     * 
-     * @param flags
-     * Configuration flags for the temporary block object.
-     * The result of passing a value that is not a bitwise OR of flags from
-     * dispatch_block_flags_t is undefined.
-     * 
-     * @param block
-     * The block to create the temporary block object from.
+     *
+     * @param flags Configuration flags for the temporary block object.
+     *              The result of passing a value that is not a bitwise OR of flags from
+     *              dispatch_block_flags_t is undefined.
+     * @param block The block to create the temporary block object from.
      */
     @Generated
     @CFunction
@@ -2392,13 +2240,13 @@ public final class Globals {
 
     /**
      * [@function] dispatch_block_wait
-     * 
+     * <p>
      * Wait synchronously until execution of the specified dispatch block object has
      * completed or until the specified timeout has elapsed.
-     * 
+     * <p>
      * This function will return immediately if execution of the block object has
      * already completed.
-     * 
+     * <p>
      * It is not possible to wait for multiple executions of the same block object
      * with this interface; use dispatch_group_wait() for that purpose. A single
      * dispatch block object may either be waited on once and executed once,
@@ -2406,31 +2254,26 @@ public final class Globals {
      * combination is undefined. Submission to a dispatch queue counts as an
      * execution, even if cancellation (dispatch_block_cancel) means the block's
      * code never runs.
-     * 
+     * <p>
      * The result of calling this function from multiple threads simultaneously
      * with the same dispatch block object is undefined, but note that doing so
      * would violate the rules described in the previous paragraph.
-     * 
+     * <p>
      * If this function returns indicating that the specified timeout has elapsed,
      * then that invocation does not count as the one allowed wait.
-     * 
+     * <p>
      * If at the time this function is called, the specified dispatch block object
      * has been submitted directly to a serial queue, the system will make a best
      * effort to apply the necessary QOS overrides to ensure that the block and any
      * blocks submitted earlier to that serial queue are executed at the QOS class
      * (or higher) of the thread calling dispatch_block_wait().
-     * 
-     * @param block
-     * The dispatch block object to wait on.
-     * The result of passing NULL or a block object not returned by one of the
-     * dispatch_block_create* functions is undefined.
-     * 
-     * @param timeout
-     * When to timeout (see dispatch_time). As a convenience, there are the
-     * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
-     * 
-     * @return
-     * Returns zero on success (the dispatch block object completed within the
+     *
+     * @param block   The dispatch block object to wait on.
+     *                The result of passing NULL or a block object not returned by one of the
+     *                dispatch_block_create* functions is undefined.
+     * @param timeout When to timeout (see dispatch_time). As a convenience, there are the
+     *                DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
+     * @return Returns zero on success (the dispatch block object completed within the
      * specified timeout) or non-zero on error (i.e. timed out).
      */
     @Generated
@@ -2441,37 +2284,32 @@ public final class Globals {
 
     /**
      * [@function] dispatch_block_notify
-     * 
+     * <p>
      * Schedule a notification block to be submitted to a queue when the execution
      * of a specified dispatch block object has completed.
-     * 
+     * <p>
      * This function will submit the notification block immediately if execution of
      * the observed block object has already completed.
-     * 
+     * <p>
      * It is not possible to be notified of multiple executions of the same block
      * object with this interface, use dispatch_group_notify() for that purpose.
-     * 
+     * <p>
      * A single dispatch block object may either be observed one or more times
      * and executed once, or it may be executed any number of times. The behavior
      * of any other combination is undefined. Submission to a dispatch queue
      * counts as an execution, even if cancellation (dispatch_block_cancel) means
      * the block's code never runs.
-     * 
+     * <p>
      * If multiple notification blocks are scheduled for a single block object,
      * there is no defined order in which the notification blocks will be submitted
      * to their associated queues.
-     * 
-     * @param block
-     * The dispatch block object to observe.
-     * The result of passing NULL or a block object not returned by one of the
-     * dispatch_block_create* functions is undefined.
-     * 
-     * @param queue
-     * The queue to which the supplied notification block will be submitted when
-     * the observed block completes.
-     * 
-     * @param notification_block
-     * The notification block to submit when the observed block object completes.
+     *
+     * @param block              The dispatch block object to observe.
+     *                           The result of passing NULL or a block object not returned by one of the
+     *                           dispatch_block_create* functions is undefined.
+     * @param queue              The queue to which the supplied notification block will be submitted when
+     *                           the observed block completes.
+     * @param notification_block The notification block to submit when the observed block object completes.
      */
     @Generated
     @CFunction
@@ -2481,27 +2319,26 @@ public final class Globals {
 
     /**
      * [@function] dispatch_block_cancel
-     * 
+     * <p>
      * Asynchronously cancel the specified dispatch block object.
-     * 
+     * <p>
      * Cancellation causes any future execution of the dispatch block object to
      * return immediately, but does not affect any execution of the block object
      * that is already in progress.
-     * 
+     * <p>
      * Release of any resources associated with the block object will be delayed
      * until execution of the block object is next attempted (or any execution
      * already in progress completes).
-     * 
+     * <p>
      * NOTE: care needs to be taken to ensure that a block object that may be
-     *       canceled does not capture any resources that require execution of the
-     *       block body in order to be released (e.g. memory allocated with
-     *       malloc(3) that the block body calls free(3) on). Such resources will
-     *       be leaked if the block body is never executed due to cancellation.
-     * 
-     * @param block
-     * The dispatch block object to cancel.
-     * The result of passing NULL or a block object not returned by one of the
-     * dispatch_block_create* functions is undefined.
+     * canceled does not capture any resources that require execution of the
+     * block body in order to be released (e.g. memory allocated with
+     * malloc(3) that the block body calls free(3) on). Such resources will
+     * be leaked if the block body is never executed due to cancellation.
+     *
+     * @param block The dispatch block object to cancel.
+     *              The result of passing NULL or a block object not returned by one of the
+     *              dispatch_block_create* functions is undefined.
      */
     @Generated
     @CFunction
@@ -2510,16 +2347,13 @@ public final class Globals {
 
     /**
      * [@function] dispatch_block_testcancel
-     * 
+     * <p>
      * Tests whether the given dispatch block object has been canceled.
-     * 
-     * @param block
-     * The dispatch block object to test.
-     * The result of passing NULL or a block object not returned by one of the
-     * dispatch_block_create* functions is undefined.
-     * 
-     * @return
-     * Non-zero if canceled and zero if not canceled.
+     *
+     * @param block The dispatch block object to test.
+     *              The result of passing NULL or a block object not returned by one of the
+     *              dispatch_block_create* functions is undefined.
+     * @return Non-zero if canceled and zero if not canceled.
      */
     @Generated
     @CFunction
@@ -2530,18 +2364,18 @@ public final class Globals {
     /**
      * Routine:	mach_msg_overwrite
      * Purpose:
-     * 	Send and/or receive a message.  If the message operation
-     * 	is interrupted, and the user did not request an indication
-     * 	of that fact, then restart the appropriate parts of the
-     * 	operation silently (trap version does not restart).
-     * 
-     * 	Distinct send and receive buffers may be specified.  If
-     * 	no separate receive buffer is specified, the msg parameter
-     * 	will be used for both send and receive operations.
-     * 
-     * 	In addition to a distinct receive buffer, that buffer may
-     * 	already contain scatter control information to direct the
-     * 	receiving of the message.
+     * Send and/or receive a message.  If the message operation
+     * is interrupted, and the user did not request an indication
+     * of that fact, then restart the appropriate parts of the
+     * operation silently (trap version does not restart).
+     * <p>
+     * Distinct send and receive buffers may be specified.  If
+     * no separate receive buffer is specified, the msg parameter
+     * will be used for both send and receive operations.
+     * <p>
+     * In addition to a distinct receive buffer, that buffer may
+     * already contain scatter control information to direct the
+     * receiving of the message.
      */
     @Generated
     @CFunction
@@ -2554,10 +2388,10 @@ public final class Globals {
     /**
      * Routine:	mach_msg
      * Purpose:
-     * 	Send and/or receive a message.  If the message operation
-     * 	is interrupted, and the user did not request an indication
-     * 	of that fact, then restart the appropriate parts of the
-     * 	operation silently (trap version does not restart).
+     * Send and/or receive a message.  If the message operation
+     * is interrupted, and the user did not request an indication
+     * of that fact, then restart the appropriate parts of the
+     * operation silently (trap version does not restart).
      */
     @Generated
     @CFunction
@@ -2568,8 +2402,8 @@ public final class Globals {
     /**
      * Routine:	mach_voucher_deallocate
      * Purpose:
-     * 	Deallocate a mach voucher created or received in a message.  Drops
-     * 	one (send right) reference to the voucher.
+     * Deallocate a mach voucher created or received in a message.  Drops
+     * one (send right) reference to the voucher.
      */
     @Generated
     @CFunction
@@ -2586,45 +2420,36 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_create
-     * 
+     * <p>
      * Creates a new dispatch source to monitor low-level system objects and auto-
      * matically submit a handler block to a dispatch queue in response to events.
-     * 
+     * <p>
      * Dispatch sources are not reentrant. Any events received while the dispatch
      * source is suspended or while the event handler block is currently executing
      * will be coalesced and delivered after the dispatch source is resumed or the
      * event handler block has returned.
-     * 
+     * <p>
      * Dispatch sources are created in an inactive state. After creating the
      * source and setting any desired attributes (i.e. the handler, context, etc.),
      * a call must be made to dispatch_activate() in order to begin event delivery.
-     * 
+     * <p>
      * Calling dispatch_set_target_queue() on a source once it has been activated
      * is not allowed (see dispatch_activate() and dispatch_set_target_queue()).
-     * 
+     * <p>
      * For backward compatibility reasons, dispatch_resume() on an inactive,
      * and not otherwise suspended source has the same effect as calling
      * dispatch_activate(). For new code, using dispatch_activate() is preferred.
-     * 
-     * @param type
-     * Declares the type of the dispatch source. Must be one of the defined
-     * dispatch_source_type_t constants.
-     * 
-     * @param handle
-     * The underlying system handle to monitor. The interpretation of this argument
-     * is determined by the constant provided in the type parameter.
-     * 
-     * @param mask
-     * A mask of flags specifying which events are desired. The interpretation of
-     * this argument is determined by the constant provided in the type parameter.
-     * 
-     * @param queue
-     * The dispatch queue to which the event handler block will be submitted.
-     * If queue is DISPATCH_TARGET_QUEUE_DEFAULT, the source will submit the event
-     * handler block to the default priority global queue.
-     * 
-     * @return
-     * The newly created dispatch source. Or NULL if invalid arguments are passed.
+     *
+     * @param type   Declares the type of the dispatch source. Must be one of the defined
+     *               dispatch_source_type_t constants.
+     * @param handle The underlying system handle to monitor. The interpretation of this argument
+     *               is determined by the constant provided in the type parameter.
+     * @param mask   A mask of flags specifying which events are desired. The interpretation of
+     *               this argument is determined by the constant provided in the type parameter.
+     * @param queue  The dispatch queue to which the event handler block will be submitted.
+     *               If queue is DISPATCH_TARGET_QUEUE_DEFAULT, the source will submit the event
+     *               handler block to the default priority global queue.
+     * @return The newly created dispatch source. Or NULL if invalid arguments are passed.
      */
     @Generated
     @CFunction
@@ -2638,17 +2463,14 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_set_event_handler_f
-     * 
+     * <p>
      * Sets the event handler function for the given dispatch source.
-     * 
-     * @param source
-     * The dispatch source to modify.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param handler
-     * The event handler function to submit to the source's target queue.
-     * The context parameter passed to the event handler function is the context of
-     * the dispatch source current at the time the event handler was set.
+     *
+     * @param source  The dispatch source to modify.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param handler The event handler function to submit to the source's target queue.
+     *                The context parameter passed to the event handler function is the context of
+     *                the dispatch source current at the time the event handler was set.
      */
     @Generated
     @CFunction
@@ -2662,19 +2484,16 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_set_cancel_handler_f
-     * 
+     * <p>
      * Sets the cancellation handler function for the given dispatch source.
-     * 
+     * <p>
      * See dispatch_source_set_cancel_handler() for more details.
-     * 
-     * @param source
-     * The dispatch source to modify.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param handler
-     * The cancellation handler function to submit to the source's target queue.
-     * The context parameter passed to the event handler function is the current
-     * context of the dispatch source at the time the handler call is made.
+     *
+     * @param source  The dispatch source to modify.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param handler The cancellation handler function to submit to the source's target queue.
+     *                The context parameter passed to the event handler function is the current
+     *                context of the dispatch source at the time the handler call is made.
      */
     @Generated
     @CFunction
@@ -2683,23 +2502,22 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_cancel
-     * 
+     * <p>
      * Asynchronously cancel the dispatch source, preventing any further invocation
      * of its event handler block.
-     * 
+     * <p>
      * Cancellation prevents any further invocation of the event handler block for
      * the specified dispatch source, but does not interrupt an event handler
      * block that is already in progress.
-     * 
+     * <p>
      * The cancellation handler is submitted to the source's target queue once the
      * the source's event handler has finished, indicating it is now safe to close
      * the source's handle (i.e. file descriptor or mach port).
-     * 
+     * <p>
      * See dispatch_source_set_cancel_handler() for more information.
-     * 
-     * @param source
-     * The dispatch source to be canceled.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param source The dispatch source to be canceled.
+     *               The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -2707,15 +2525,12 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_testcancel
-     * 
+     * <p>
      * Tests whether the given dispatch source has been canceled.
-     * 
-     * @param source
-     * The dispatch source to be tested.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @return
-     * Non-zero if canceled and zero if not canceled.
+     *
+     * @param source The dispatch source to be tested.
+     *               The result of passing NULL in this parameter is undefined.
+     * @return Non-zero if canceled and zero if not canceled.
      */
     @Generated
     @CFunction
@@ -2724,28 +2539,25 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_get_handle
-     * 
+     * <p>
      * Returns the underlying system handle associated with this dispatch source.
-     * 
-     * @param source
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @return
-     * The return value should be interpreted according to the type of the dispatch
+     *
+     * @param source The result of passing NULL in this parameter is undefined.
+     * @return The return value should be interpreted according to the type of the dispatch
      * source, and may be one of the following handles:
-     * 
-     *  DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
-     *  DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
-     *  DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
-     *  DISPATCH_SOURCE_TYPE_MACH_SEND:       mach port (mach_port_t)
-     *  DISPATCH_SOURCE_TYPE_MACH_RECV:       mach port (mach_port_t)
-     *  DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   n/a
-     *  DISPATCH_SOURCE_TYPE_PROC:            process identifier (pid_t)
-     *  DISPATCH_SOURCE_TYPE_READ:            file descriptor (int)
-     *  DISPATCH_SOURCE_TYPE_SIGNAL:          signal number (int)
-     *  DISPATCH_SOURCE_TYPE_TIMER:           n/a
-     *  DISPATCH_SOURCE_TYPE_VNODE:           file descriptor (int)
-     *  DISPATCH_SOURCE_TYPE_WRITE:           file descriptor (int)
+     * <p>
+     * DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
+     * DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
+     * DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
+     * DISPATCH_SOURCE_TYPE_MACH_SEND:       mach port (mach_port_t)
+     * DISPATCH_SOURCE_TYPE_MACH_RECV:       mach port (mach_port_t)
+     * DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   n/a
+     * DISPATCH_SOURCE_TYPE_PROC:            process identifier (pid_t)
+     * DISPATCH_SOURCE_TYPE_READ:            file descriptor (int)
+     * DISPATCH_SOURCE_TYPE_SIGNAL:          signal number (int)
+     * DISPATCH_SOURCE_TYPE_TIMER:           n/a
+     * DISPATCH_SOURCE_TYPE_VNODE:           file descriptor (int)
+     * DISPATCH_SOURCE_TYPE_WRITE:           file descriptor (int)
      */
     @Generated
     @CFunction
@@ -2754,28 +2566,25 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_get_mask
-     * 
+     * <p>
      * Returns the mask of events monitored by the dispatch source.
-     * 
-     * @param source
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @return
-     * The return value should be interpreted according to the type of the dispatch
+     *
+     * @param source The result of passing NULL in this parameter is undefined.
+     * @return The return value should be interpreted according to the type of the dispatch
      * source, and may be one of the following flag sets:
-     * 
-     *  DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
-     *  DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
-     *  DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
-     *  DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
-     *  DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
-     *  DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
-     *  DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
-     *  DISPATCH_SOURCE_TYPE_READ:            n/a
-     *  DISPATCH_SOURCE_TYPE_SIGNAL:          n/a
-     *  DISPATCH_SOURCE_TYPE_TIMER:           dispatch_source_timer_flags_t
-     *  DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
-     *  DISPATCH_SOURCE_TYPE_WRITE:           n/a
+     * <p>
+     * DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
+     * DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
+     * DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
+     * DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
+     * DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
+     * DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
+     * DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
+     * DISPATCH_SOURCE_TYPE_READ:            n/a
+     * DISPATCH_SOURCE_TYPE_SIGNAL:          n/a
+     * DISPATCH_SOURCE_TYPE_TIMER:           dispatch_source_timer_flags_t
+     * DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
+     * DISPATCH_SOURCE_TYPE_WRITE:           n/a
      */
     @Generated
     @CFunction
@@ -2784,34 +2593,31 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_get_data
-     * 
+     * <p>
      * Returns pending data for the dispatch source.
-     * 
+     * <p>
      * This function is intended to be called from within the event handler block.
      * The result of calling this function outside of the event handler callback is
      * undefined.
-     * 
-     * @param source
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @return
-     * The return value should be interpreted according to the type of the dispatch
+     *
+     * @param source The result of passing NULL in this parameter is undefined.
+     * @return The return value should be interpreted according to the type of the dispatch
      * source, and may be one of the following:
-     * 
-     *  DISPATCH_SOURCE_TYPE_DATA_ADD:        application defined data
-     *  DISPATCH_SOURCE_TYPE_DATA_OR:         application defined data
-     *  DISPATCH_SOURCE_TYPE_DATA_REPLACE:    application defined data
-     *  DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
-     *  DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
-     *  DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
-     *  DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
-     *  DISPATCH_SOURCE_TYPE_READ:            estimated bytes available to read
-     *  DISPATCH_SOURCE_TYPE_SIGNAL:          number of signals delivered since
-     *                                            the last handler invocation
-     *  DISPATCH_SOURCE_TYPE_TIMER:           number of times the timer has fired
-     *                                            since the last handler invocation
-     *  DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
-     *  DISPATCH_SOURCE_TYPE_WRITE:           estimated buffer space available
+     * <p>
+     * DISPATCH_SOURCE_TYPE_DATA_ADD:        application defined data
+     * DISPATCH_SOURCE_TYPE_DATA_OR:         application defined data
+     * DISPATCH_SOURCE_TYPE_DATA_REPLACE:    application defined data
+     * DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
+     * DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
+     * DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
+     * DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
+     * DISPATCH_SOURCE_TYPE_READ:            estimated bytes available to read
+     * DISPATCH_SOURCE_TYPE_SIGNAL:          number of signals delivered since
+     * the last handler invocation
+     * DISPATCH_SOURCE_TYPE_TIMER:           number of times the timer has fired
+     * since the last handler invocation
+     * DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
+     * DISPATCH_SOURCE_TYPE_WRITE:           estimated buffer space available
      */
     @Generated
     @CFunction
@@ -2820,18 +2626,15 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_merge_data
-     * 
+     * <p>
      * Merges data into a dispatch source of type DISPATCH_SOURCE_TYPE_DATA_ADD,
      * DISPATCH_SOURCE_TYPE_DATA_OR or DISPATCH_SOURCE_TYPE_DATA_REPLACE,
      * and submits its event handler block to its target queue.
-     * 
-     * @param source
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param value
-     * The value to coalesce with the pending data using a logical OR or an ADD
-     * as specified by the dispatch source type. A value of zero has no effect
-     * and will not result in the submission of the event handler block.
+     *
+     * @param source The result of passing NULL in this parameter is undefined.
+     * @param value  The value to coalesce with the pending data using a logical OR or an ADD
+     *               as specified by the dispatch source type. A value of zero has no effect
+     *               and will not result in the submission of the event handler block.
      */
     @Generated
     @CFunction
@@ -2839,49 +2642,44 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_set_timer
-     * 
+     * <p>
      * Sets a start time, interval, and leeway value for a timer source.
-     * 
+     * <p>
      * Once this function returns, any pending source data accumulated for the
      * previous timer values has been cleared; the next fire of the timer will
      * occur at 'start', and every 'interval' nanoseconds thereafter until the
      * timer source is canceled.
-     * 
+     * <p>
      * Any fire of the timer may be delayed by the system in order to improve power
      * consumption and system performance. The upper limit to the allowable delay
      * may be configured with the 'leeway' argument, the lower limit is under the
      * control of the system.
-     * 
+     * <p>
      * For the initial timer fire at 'start', the upper limit to the allowable
      * delay is set to 'leeway' nanoseconds. For the subsequent timer fires at
      * 'start' + N * 'interval', the upper limit is MIN('leeway','interval'/2).
-     * 
+     * <p>
      * The lower limit to the allowable delay may vary with process state such as
      * visibility of application UI. If the specified timer source was created with
      * a mask of DISPATCH_TIMER_STRICT, the system will make a best effort to
      * strictly observe the provided 'leeway' value even if it is smaller than the
      * current lower limit. Note that a minimal amount of delay is to be expected
      * even if this flag is specified.
-     * 
+     * <p>
      * The 'start' argument also determines which clock will be used for the timer:
      * If 'start' is DISPATCH_TIME_NOW or was created with dispatch_time(3), the
      * timer is based on up time (which is obtained from mach_absolute_time() on
      * Apple platforms). If 'start' was created with dispatch_walltime(3), the
      * timer is based on gettimeofday(3).
-     * 
+     * <p>
      * Calling this function has no effect if the timer source has already been
      * canceled.
-     * 
-     * @param start
-     * The start time of the timer. See dispatch_time() and dispatch_walltime()
-     * for more information.
-     * 
-     * @param interval
-     * The nanosecond interval for the timer. Use DISPATCH_TIME_FOREVER for a
-     * one-shot timer.
-     * 
-     * @param leeway
-     * The nanosecond leeway for the timer.
+     *
+     * @param start    The start time of the timer. See dispatch_time() and dispatch_walltime()
+     *                 for more information.
+     * @param interval The nanosecond interval for the timer. Use DISPATCH_TIME_FOREVER for a
+     *                 one-shot timer.
+     * @param leeway   The nanosecond leeway for the timer.
      */
     @Generated
     @CFunction
@@ -2894,19 +2692,16 @@ public final class Globals {
 
     /**
      * [@function] dispatch_source_set_registration_handler_f
-     * 
+     * <p>
      * Sets the registration handler function for the given dispatch source.
-     * 
+     * <p>
      * See dispatch_source_set_registration_handler() for more details.
-     * 
-     * @param source
-     * The dispatch source to modify.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param handler
-     * The registration handler function to submit to the source's target queue.
-     * The context parameter passed to the registration handler function is the
-     * current context of the dispatch source at the time the handler call is made.
+     *
+     * @param source  The dispatch source to modify.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param handler The registration handler function to submit to the source's target queue.
+     *                The context parameter passed to the registration handler function is the
+     *                current context of the dispatch source at the time the handler call is made.
      */
     @Generated
     @CFunction
@@ -2915,15 +2710,14 @@ public final class Globals {
 
     /**
      * [@function] dispatch_group_create
-     * 
+     * <p>
      * Creates new group with which blocks may be associated.
-     * 
+     * <p>
      * This function creates a new group with which blocks may be associated.
      * The dispatch group may be used to wait for the completion of the blocks it
      * references. The group object memory is freed with dispatch_release().
-     * 
-     * @return
-     * The newly created group, or NULL on failure.
+     *
+     * @return The newly created group, or NULL on failure.
      */
     @Generated
     @CFunction
@@ -2936,27 +2730,20 @@ public final class Globals {
 
     /**
      * [@function] dispatch_group_async_f
-     * 
+     * <p>
      * Submits a function to a dispatch queue and associates the block with the
      * given dispatch group.
-     * 
+     * <p>
      * See dispatch_group_async() for details.
-     * 
-     * @param group
-     * A dispatch group to associate with the submitted function.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param queue
-     * The dispatch queue to which the function will be submitted for asynchronous
-     * invocation.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_group_async_f().
+     *
+     * @param group   A dispatch group to associate with the submitted function.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param queue   The dispatch queue to which the function will be submitted for asynchronous
+     *                invocation.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_group_async_f().
      */
     @Generated
     @CFunction
@@ -2965,34 +2752,29 @@ public final class Globals {
 
     /**
      * [@function] dispatch_group_wait
-     * 
+     * <p>
      * Wait synchronously until all the blocks associated with a group have
      * completed or until the specified timeout has elapsed.
-     * 
+     * <p>
      * This function waits for the completion of the blocks associated with the
      * given dispatch group, and returns after all blocks have completed or when
      * the specified timeout has elapsed.
-     * 
+     * <p>
      * This function will return immediately if there are no blocks associated
      * with the dispatch group (i.e. the group is empty).
-     * 
+     * <p>
      * The result of calling this function from multiple threads simultaneously
      * with the same dispatch group is undefined.
-     * 
+     * <p>
      * After the successful return of this function, the dispatch group is empty.
      * It may either be released with dispatch_release() or re-used for additional
      * blocks. See dispatch_group_async() for more information.
-     * 
-     * @param group
-     * The dispatch group to wait on.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param timeout
-     * When to timeout (see dispatch_time). As a convenience, there are the
-     * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
-     * 
-     * @return
-     * Returns zero on success (all blocks associated with the group completed
+     *
+     * @param group   The dispatch group to wait on.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param timeout When to timeout (see dispatch_time). As a convenience, there are the
+     *                DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
+     * @return Returns zero on success (all blocks associated with the group completed
      * within the specified timeout) or non-zero on error (i.e. timed out).
      */
     @Generated
@@ -3007,23 +2789,18 @@ public final class Globals {
 
     /**
      * [@function] dispatch_group_notify_f
-     * 
+     * <p>
      * Schedule a function to be submitted to a queue when all the blocks
      * associated with a group have completed.
-     * 
+     * <p>
      * See dispatch_group_notify() for details.
-     * 
-     * @param group
-     * The dispatch group to observe.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_group_notify_f().
+     *
+     * @param group   The dispatch group to observe.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_group_notify_f().
      */
     @Generated
     @CFunction
@@ -3032,16 +2809,15 @@ public final class Globals {
 
     /**
      * [@function] dispatch_group_enter
-     * 
+     * <p>
      * Manually indicate a block has entered the group
-     * 
+     * <p>
      * Calling this function indicates another block has joined the group through
      * a means other than dispatch_group_async(). Calls to this function must be
      * balanced with dispatch_group_leave().
-     * 
-     * @param group
-     * The dispatch group to update.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param group The dispatch group to update.
+     *              The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -3049,15 +2825,14 @@ public final class Globals {
 
     /**
      * [@function] dispatch_group_leave
-     * 
+     * <p>
      * Manually indicate a block in the group has completed
-     * 
+     * <p>
      * Calling this function indicates block has completed and left the dispatch
      * group by a means other than dispatch_group_async().
-     * 
-     * @param group
-     * The dispatch group to update.
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param group The dispatch group to update.
+     *              The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -3065,20 +2840,17 @@ public final class Globals {
 
     /**
      * [@function] dispatch_semaphore_create
-     * 
+     * <p>
      * Creates new counting semaphore with an initial value.
-     * 
+     * <p>
      * Passing zero for the value is useful for when two threads need to reconcile
      * the completion of a particular event. Passing a value greater than zero is
      * useful for managing a finite pool of resources, where the pool size is equal
      * to the value.
-     * 
-     * @param value
-     * The starting value for the semaphore. Passing a value less than zero will
-     * cause NULL to be returned.
-     * 
-     * @return
-     * The newly created semaphore, or NULL on failure.
+     *
+     * @param value The starting value for the semaphore. Passing a value less than zero will
+     *              cause NULL to be returned.
+     * @return The newly created semaphore, or NULL on failure.
      */
     @Generated
     @CFunction
@@ -3086,21 +2858,16 @@ public final class Globals {
 
     /**
      * [@function] dispatch_semaphore_wait
-     * 
+     * <p>
      * Wait (decrement) for a semaphore.
-     * 
+     * <p>
      * Decrement the counting semaphore. If the resulting value is less than zero,
      * this function waits for a signal to occur before returning.
-     * 
-     * @param dsema
-     * The semaphore. The result of passing NULL in this parameter is undefined.
-     * 
-     * @param timeout
-     * When to timeout (see dispatch_time). As a convenience, there are the
-     * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
-     * 
-     * @return
-     * Returns zero on success, or non-zero if the timeout occurred.
+     *
+     * @param dsema   The semaphore. The result of passing NULL in this parameter is undefined.
+     * @param timeout When to timeout (see dispatch_time). As a convenience, there are the
+     *                DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
+     * @return Returns zero on success, or non-zero if the timeout occurred.
      */
     @Generated
     @CFunction
@@ -3109,17 +2876,15 @@ public final class Globals {
 
     /**
      * [@function] dispatch_semaphore_signal
-     * 
+     * <p>
      * Signal (increment) a semaphore.
-     * 
+     * <p>
      * Increment the counting semaphore. If the previous value was less than zero,
      * this function wakes a waiting thread before returning.
-     * 
+     *
      * @param dsema The counting semaphore.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @return
-     * This function returns non-zero if a thread is woken. Otherwise, zero is
+     *              The result of passing NULL in this parameter is undefined.
+     * @return This function returns non-zero if a thread is woken. Otherwise, zero is
      * returned.
      */
     @Generated
@@ -3156,19 +2921,19 @@ public final class Globals {
      * the caller (i.e. the bytes will not be copied). The last release of the data
      * object will result in the invocation of the specified destructor on the
      * specified queue to free the buffer.
-     * 
+     * <p>
      * If the DISPATCH_DATA_DESTRUCTOR_FREE destructor is provided the buffer will
      * be freed via free(3) and the queue argument ignored.
-     * 
+     * <p>
      * If the DISPATCH_DATA_DESTRUCTOR_DEFAULT destructor is provided, data object
      * creation will copy the buffer into internal memory managed by the system.
-     * 
-     * @param buffer	A contiguous buffer of data.
-     * @param size		The size of the contiguous buffer of data.
-     * @param queue		The queue to which the destructor should be submitted.
-     * @param destructor	The destructor responsible for freeing the data when it
-     * 		is no longer needed.
-     * @return		A newly created dispatch data object.
+     *
+     * @param buffer     A contiguous buffer of data.
+     * @param size       The size of the contiguous buffer of data.
+     * @param queue      The queue to which the destructor should be submitted.
+     * @param destructor The destructor responsible for freeing the data when it
+     *                   is no longer needed.
+     * @return A newly created dispatch data object.
      */
     @Generated
     @CFunction
@@ -3179,9 +2944,9 @@ public final class Globals {
      * [@function] dispatch_data_get_size
      * Returns the logical size of the memory region(s) represented by the specified
      * dispatch data object.
-     * 
-     * @param data	The dispatch data object to query.
-     * @return	The number of bytes represented by the data object.
+     *
+     * @param data The dispatch data object to query.
+     * @return The number of bytes represented by the data object.
      */
     @Generated
     @CFunction
@@ -3198,14 +2963,14 @@ public final class Globals {
      * object is released. Under ARC, if that object is held in a variable with
      * automatic storage, care needs to be taken to ensure that it is not released
      * by the compiler before memory access via the pointer has been completed.
-     * 
-     * @param data		The dispatch data object to map.
-     * @param buffer_ptr	A pointer to a pointer variable to be filled with the
-     * 		location of the mapped contiguous memory region, or
-     * 		NULL.
-     * @param size_ptr	A pointer to a size_t variable to be filled with the
-     * 		size of the mapped contiguous memory region, or NULL.
-     * @return		A newly created dispatch data object.
+     *
+     * @param data       The dispatch data object to map.
+     * @param buffer_ptr A pointer to a pointer variable to be filled with the
+     *                   location of the mapped contiguous memory region, or
+     *                   NULL.
+     * @param size_ptr   A pointer to a size_t variable to be filled with the
+     *                   size of the mapped contiguous memory region, or NULL.
+     * @return A newly created dispatch data object.
      */
     @Generated
     @CFunction
@@ -3219,13 +2984,13 @@ public final class Globals {
      * after the call returns (however, the system might not deallocate the memory
      * region(s) described by them until the newly created object has also been
      * released).
-     * 
-     * @param data1	The data object representing the region(s) of memory to place
-     * 	at the beginning of the newly created object.
-     * @param data2	The data object representing the region(s) of memory to place
-     * 	at the end of the newly created object.
-     * @return	A newly created object representing the concatenation of the
-     * 	data1 and data2 objects.
+     *
+     * @param data1 The data object representing the region(s) of memory to place
+     *              at the beginning of the newly created object.
+     * @param data2 The data object representing the region(s) of memory to place
+     *              at the end of the newly created object.
+     * @return A newly created object representing the concatenation of the
+     * data1 and data2 objects.
      */
     @Generated
     @CFunction
@@ -3237,14 +3002,14 @@ public final class Globals {
      * data object, which may be released by the application after the call returns
      * (however, the system might not deallocate the memory region(s) described by
      * that object until the newly created object has also been released).
-     * 
-     * @param data		The data object representing the region(s) of memory to
-     * 		create a subrange of.
-     * @param offset	The offset into the data object where the subrange
-     * 		starts.
-     * @param length	The length of the range.
-     * @return		A newly created object representing the specified
-     * 		subrange of the data object.
+     *
+     * @param data   The data object representing the region(s) of memory to
+     *               create a subrange of.
+     * @param offset The offset into the data object where the subrange
+     *               starts.
+     * @param length The length of the range.
+     * @return A newly created object representing the specified
+     * subrange of the data object.
      */
     @Generated
     @CFunction
@@ -3255,7 +3020,7 @@ public final class Globals {
      * Traverse the memory regions represented by the specified dispatch data object
      * in logical order and invoke the specified block once for every contiguous
      * memory region encountered.
-     * 
+     * <p>
      * Each invocation of the block is passed a data object representing the current
      * region and its logical offset, along with the memory location and extent of
      * the region. These allow direct read access to the memory region, but are only
@@ -3263,12 +3028,12 @@ public final class Globals {
      * object is released by the system when the block returns, it is the
      * responsibility of the application to retain it if the region object or the
      * associated memory location are needed after the block returns.
-     * 
-     * @param data		The data object to traverse.
-     * @param applier	The block to be invoked for every contiguous memory
-     * 		region in the data object.
-     * @return		A Boolean indicating whether traversal completed
-     * 		successfully.
+     *
+     * @param data    The data object to traverse.
+     * @param applier The block to be invoked for every contiguous memory
+     *                region in the data object.
+     * @return A Boolean indicating whether traversal completed
+     * successfully.
      */
     @Generated
     @CFunction
@@ -3281,13 +3046,13 @@ public final class Globals {
      * the regions represented by the specified object and returns a copy of the
      * internal dispatch data object representing that region along with its logical
      * offset in the specified object.
-     * 
-     * @param data		The dispatch data object to query.
-     * @param location	The logical position in the data object to query.
-     * @param offset_ptr	A pointer to a size_t variable to be filled with the
-     * 		logical offset of the returned region object to the
-     * 		start of the queried data object.
-     * @return		A newly created dispatch data object.
+     *
+     * @param data       The dispatch data object to query.
+     * @param location   The logical position in the data object to query.
+     * @param offset_ptr A pointer to a size_t variable to be filled with the
+     *                   logical offset of the returned region object to the
+     *                   start of the queried data object.
+     * @return A newly created dispatch data object.
      */
     @Generated
     @CFunction
@@ -3298,40 +3063,40 @@ public final class Globals {
      * Schedule a read operation for asynchronous execution on the specified file
      * descriptor. The specified handler is enqueued with the data read from the
      * file descriptor when the operation has completed or an error occurs.
-     * 
+     * <p>
      * The data object passed to the handler will be automatically released by the
      * system when the handler returns. It is the responsibility of the application
      * to retain, concatenate or copy the data object if it is needed after the
      * handler returns.
-     * 
+     * <p>
      * The data object passed to the handler will only contain as much data as is
      * currently available from the file descriptor (up to the specified length).
-     * 
+     * <p>
      * If an unrecoverable error occurs on the file descriptor, the handler will be
      * enqueued with the appropriate error code along with a data object of any data
      * that could be read successfully.
-     * 
+     * <p>
      * An invocation of the handler with an error code of zero and an empty data
      * object indicates that EOF was reached.
-     * 
+     * <p>
      * The system takes control of the file descriptor until the handler is
      * enqueued, and during this time file descriptor flags such as O_NONBLOCK will
      * be modified by the system on behalf of the application. It is an error for
      * the application to modify a file descriptor directly while it is under the
      * control of the system, but it may create additional dispatch I/O convenience
      * operations or dispatch I/O channels associated with that file descriptor.
-     * 
-     * @param fd		The file descriptor from which to read the data.
-     * @param length	The length of data to read from the file descriptor,
-     * 		or SIZE_MAX to indicate that all of the data currently
-     * 		available from the file descriptor should be read.
-     * @param queue		The dispatch queue to which the handler should be
-     * 		submitted.
-     * @param handler	The handler to enqueue when data is ready to be
-     * 		delivered.
-     * 	param data	The data read from the file descriptor.
-     * 	param error	An errno condition for the read operation or
-     * 			zero if the read was successful.
+     *
+     * @param fd      The file descriptor from which to read the data.
+     * @param length  The length of data to read from the file descriptor,
+     *                or SIZE_MAX to indicate that all of the data currently
+     *                available from the file descriptor should be read.
+     * @param queue   The dispatch queue to which the handler should be
+     *                submitted.
+     * @param handler The handler to enqueue when data is ready to be
+     *                delivered.
+     *                param data	The data read from the file descriptor.
+     *                param error	An errno condition for the read operation or
+     *                zero if the read was successful.
      */
     @Generated
     @CFunction
@@ -3343,30 +3108,30 @@ public final class Globals {
      * Schedule a write operation for asynchronous execution on the specified file
      * descriptor. The specified handler is enqueued when the operation has
      * completed or an error occurs.
-     * 
+     * <p>
      * If an unrecoverable error occurs on the file descriptor, the handler will be
      * enqueued with the appropriate error code along with the data that could not
      * be successfully written.
-     * 
+     * <p>
      * An invocation of the handler with an error code of zero indicates that the
      * data was fully written to the channel.
-     * 
+     * <p>
      * The system takes control of the file descriptor until the handler is
      * enqueued, and during this time file descriptor flags such as O_NONBLOCK will
      * be modified by the system on behalf of the application. It is an error for
      * the application to modify a file descriptor directly while it is under the
      * control of the system, but it may create additional dispatch I/O convenience
      * operations or dispatch I/O channels associated with that file descriptor.
-     * 
-     * @param fd		The file descriptor to which to write the data.
-     * @param data		The data object to write to the file descriptor.
-     * @param queue		The dispatch queue to which the handler should be
-     * 		submitted.
-     * @param handler	The handler to enqueue when the data has been written.
-     * 	param data	The data that could not be written to the I/O
-     * 			channel, or NULL.
-     * 	param error	An errno condition for the write operation or
-     * 			zero if the write was successful.
+     *
+     * @param fd      The file descriptor to which to write the data.
+     * @param data    The data object to write to the file descriptor.
+     * @param queue   The dispatch queue to which the handler should be
+     *                submitted.
+     * @param handler The handler to enqueue when the data has been written.
+     *                param data	The data that could not be written to the I/O
+     *                channel, or NULL.
+     *                param error	An errno condition for the write operation or
+     *                zero if the write was successful.
      */
     @Generated
     @CFunction
@@ -3380,23 +3145,23 @@ public final class Globals {
      * occurs on the file descriptor or all references to the channel are released.
      * At that time the specified cleanup handler will be enqueued and control over
      * the file descriptor relinquished.
-     * 
+     * <p>
      * While a file descriptor is under the control of a dispatch I/O channel, file
      * descriptor flags such as O_NONBLOCK will be modified by the system on behalf
      * of the application. It is an error for the application to modify a file
      * descriptor directly while it is under the control of a dispatch I/O channel,
      * but it may create additional channels associated with that file descriptor.
-     * 
-     * @param type	The desired type of I/O channel (DISPATCH_IO_STREAM
-     * 	or DISPATCH_IO_RANDOM).
-     * @param fd	The file descriptor to associate with the I/O channel.
-     * @param queue	The dispatch queue to which the handler should be submitted.
-     * @param cleanup_handler	The handler to enqueue when the system
-     * 			relinquishes control over the file descriptor.
-     * param error		An errno condition if control is relinquished
-     * 			because channel creation failed, zero otherwise.
-     * @return	The newly created dispatch I/O channel or NULL if an error
-     * 	occurred (invalid type specified).
+     *
+     * @param type            The desired type of I/O channel (DISPATCH_IO_STREAM
+     *                        or DISPATCH_IO_RANDOM).
+     * @param fd              The file descriptor to associate with the I/O channel.
+     * @param queue           The dispatch queue to which the handler should be submitted.
+     * @param cleanup_handler The handler to enqueue when the system
+     *                        relinquishes control over the file descriptor.
+     *                        param error		An errno condition if control is relinquished
+     *                        because channel creation failed, zero otherwise.
+     * @return The newly created dispatch I/O channel or NULL if an error
+     * occurred (invalid type specified).
      */
     @Generated
     @CFunction
@@ -3412,23 +3177,23 @@ public final class Globals {
      * channel is closed, an error occurs on the file descriptor or all references
      * to the channel are released. At that time the file descriptor will be closed
      * and the specified cleanup handler will be enqueued.
-     * 
-     * @param type	The desired type of I/O channel (DISPATCH_IO_STREAM
-     * 	or DISPATCH_IO_RANDOM).
-     * @param path	The absolute path to associate with the I/O channel.
-     * @param oflag	The flags to pass to open(2) when opening the file at
-     * 	path.
-     * @param mode	The mode to pass to open(2) when creating the file at
-     * 	path (i.e. with flag O_CREAT), zero otherwise.
-     * @param queue	The dispatch queue to which the handler should be
-     * 	submitted.
-     * @param cleanup_handler	The handler to enqueue when the system
-     * 			has closed the file at path.
-     * param error		An errno condition if control is relinquished
-     * 			because channel creation or opening of the
-     * 			specified file failed, zero otherwise.
-     * @return	The newly created dispatch I/O channel or NULL if an error
-     * 	occurred (invalid type or non-absolute path specified).
+     *
+     * @param type            The desired type of I/O channel (DISPATCH_IO_STREAM
+     *                        or DISPATCH_IO_RANDOM).
+     * @param path            The absolute path to associate with the I/O channel.
+     * @param oflag           The flags to pass to open(2) when opening the file at
+     *                        path.
+     * @param mode            The mode to pass to open(2) when creating the file at
+     *                        path (i.e. with flag O_CREAT), zero otherwise.
+     * @param queue           The dispatch queue to which the handler should be
+     *                        submitted.
+     * @param cleanup_handler The handler to enqueue when the system
+     *                        has closed the file at path.
+     *                        param error		An errno condition if control is relinquished
+     *                        because channel creation or opening of the
+     *                        specified file failed, zero otherwise.
+     * @return The newly created dispatch I/O channel or NULL if an error
+     * occurred (invalid type or non-absolute path specified).
      */
     @Generated
     @CFunction
@@ -3442,31 +3207,31 @@ public final class Globals {
      * Create a new dispatch I/O channel from an existing dispatch I/O channel.
      * The new channel inherits the file descriptor or path name associated with
      * the existing channel, but not its channel type or policies.
-     * 
+     * <p>
      * If the existing channel is associated with a file descriptor, control by the
      * system over that file descriptor is extended until the new channel is also
      * closed, an error occurs on the file descriptor, or all references to both
      * channels are released. At that time the specified cleanup handler will be
      * enqueued and control over the file descriptor relinquished.
-     * 
+     * <p>
      * While a file descriptor is under the control of a dispatch I/O channel, file
      * descriptor flags such as O_NONBLOCK will be modified by the system on behalf
      * of the application. It is an error for the application to modify a file
      * descriptor directly while it is under the control of a dispatch I/O channel,
      * but it may create additional channels associated with that file descriptor.
-     * 
-     * @param type	The desired type of I/O channel (DISPATCH_IO_STREAM
-     * 	or DISPATCH_IO_RANDOM).
-     * @param io	The existing channel to create the new I/O channel from.
-     * @param queue	The dispatch queue to which the handler should be submitted.
-     * @param cleanup_handler	The handler to enqueue when the system
-     * 			relinquishes control over the file descriptor
-     * 			(resp. closes the file at path) associated with
-     * 			the existing channel.
-     * param error		An errno condition if control is relinquished
-     * 			because channel creation failed, zero otherwise.
-     * @return	The newly created dispatch I/O channel or NULL if an error
-     * 	occurred (invalid type specified).
+     *
+     * @param type            The desired type of I/O channel (DISPATCH_IO_STREAM
+     *                        or DISPATCH_IO_RANDOM).
+     * @param io              The existing channel to create the new I/O channel from.
+     * @param queue           The dispatch queue to which the handler should be submitted.
+     * @param cleanup_handler The handler to enqueue when the system
+     *                        relinquishes control over the file descriptor
+     *                        (resp. closes the file at path) associated with
+     *                        the existing channel.
+     *                        param error		An errno condition if control is relinquished
+     *                        because channel creation failed, zero otherwise.
+     * @return The newly created dispatch I/O channel or NULL if an error
+     * occurred (invalid type specified).
      */
     @Generated
     @CFunction
@@ -3478,42 +3243,42 @@ public final class Globals {
      * Schedule a read operation for asynchronous execution on the specified I/O
      * channel. The I/O handler is enqueued one or more times depending on the
      * general load of the system and the policy specified on the I/O channel.
-     * 
+     * <p>
      * Any data read from the channel is described by the dispatch data object
      * passed to the I/O handler. This object will be automatically released by the
      * system when the I/O handler returns. It is the responsibility of the
      * application to retain, concatenate or copy the data object if it is needed
      * after the I/O handler returns.
-     * 
+     * <p>
      * Dispatch I/O handlers are not reentrant. The system will ensure that no new
      * I/O handler instance is invoked until the previously enqueued handler block
      * has returned.
-     * 
+     * <p>
      * An invocation of the I/O handler with the done flag set indicates that the
      * read operation is complete and that the handler will not be enqueued again.
-     * 
+     * <p>
      * If an unrecoverable error occurs on the I/O channel's underlying file
      * descriptor, the I/O handler will be enqueued with the done flag set, the
      * appropriate error code and a NULL data object.
-     * 
+     * <p>
      * An invocation of the I/O handler with the done flag set, an error code of
      * zero and an empty data object indicates that EOF was reached.
-     * 
-     * @param channel	The dispatch I/O channel from which to read the data.
-     * @param offset	The offset relative to the channel position from which
-     * 		to start reading (only for DISPATCH_IO_RANDOM).
-     * @param length	The length of data to read from the I/O channel, or
-     * 		SIZE_MAX to indicate that data should be read until EOF
-     * 		is reached.
-     * @param queue		The dispatch queue to which the I/O handler should be
-     * 		submitted.
-     * @param io_handler	The I/O handler to enqueue when data is ready to be
-     * 		delivered.
-     * param done	A flag indicating whether the operation is complete.
-     * param data	An object with the data most recently read from the
-     * 		I/O channel as part of this read operation, or NULL.
-     * param error	An errno condition for the read operation or zero if
-     * 		the read was successful.
+     *
+     * @param channel    The dispatch I/O channel from which to read the data.
+     * @param offset     The offset relative to the channel position from which
+     *                   to start reading (only for DISPATCH_IO_RANDOM).
+     * @param length     The length of data to read from the I/O channel, or
+     *                   SIZE_MAX to indicate that data should be read until EOF
+     *                   is reached.
+     * @param queue      The dispatch queue to which the I/O handler should be
+     *                   submitted.
+     * @param io_handler The I/O handler to enqueue when data is ready to be
+     *                   delivered.
+     *                   param done	A flag indicating whether the operation is complete.
+     *                   param data	An object with the data most recently read from the
+     *                   I/O channel as part of this read operation, or NULL.
+     *                   param error	An errno condition for the read operation or zero if
+     *                   the read was successful.
      */
     @Generated
     @CFunction
@@ -3525,43 +3290,43 @@ public final class Globals {
      * Schedule a write operation for asynchronous execution on the specified I/O
      * channel. The I/O handler is enqueued one or more times depending on the
      * general load of the system and the policy specified on the I/O channel.
-     * 
+     * <p>
      * Any data remaining to be written to the I/O channel is described by the
      * dispatch data object passed to the I/O handler. This object will be
      * automatically released by the system when the I/O handler returns. It is the
      * responsibility of the application to retain, concatenate or copy the data
      * object if it is needed after the I/O handler returns.
-     * 
+     * <p>
      * Dispatch I/O handlers are not reentrant. The system will ensure that no new
      * I/O handler instance is invoked until the previously enqueued handler block
      * has returned.
-     * 
+     * <p>
      * An invocation of the I/O handler with the done flag set indicates that the
      * write operation is complete and that the handler will not be enqueued again.
-     * 
+     * <p>
      * If an unrecoverable error occurs on the I/O channel's underlying file
      * descriptor, the I/O handler will be enqueued with the done flag set, the
      * appropriate error code and an object containing the data that could not be
      * written.
-     * 
+     * <p>
      * An invocation of the I/O handler with the done flag set and an error code of
      * zero indicates that the data was fully written to the channel.
-     * 
-     * @param channel	The dispatch I/O channel on which to write the data.
-     * @param offset	The offset relative to the channel position from which
-     * 		to start writing (only for DISPATCH_IO_RANDOM).
-     * @param data		The data to write to the I/O channel. The data object
-     * 		will be retained by the system until the write operation
-     * 		is complete.
-     * @param queue		The dispatch queue to which the I/O handler should be
-     * 		submitted.
-     * @param io_handler	The I/O handler to enqueue when data has been delivered.
-     * param done	A flag indicating whether the operation is complete.
-     * param data	An object of the data remaining to be
-     * 		written to the I/O channel as part of this write
-     * 		operation, or NULL.
-     * param error	An errno condition for the write operation or zero
-     * 		if the write was successful.
+     *
+     * @param channel    The dispatch I/O channel on which to write the data.
+     * @param offset     The offset relative to the channel position from which
+     *                   to start writing (only for DISPATCH_IO_RANDOM).
+     * @param data       The data to write to the I/O channel. The data object
+     *                   will be retained by the system until the write operation
+     *                   is complete.
+     * @param queue      The dispatch queue to which the I/O handler should be
+     *                   submitted.
+     * @param io_handler The I/O handler to enqueue when data has been delivered.
+     *                   param done	A flag indicating whether the operation is complete.
+     *                   param data	An object of the data remaining to be
+     *                   written to the I/O channel as part of this write
+     *                   operation, or NULL.
+     *                   param error	An errno condition for the write operation or zero
+     *                   if the write was successful.
      */
     @Generated
     @CFunction
@@ -3572,7 +3337,7 @@ public final class Globals {
      * [@function] dispatch_io_close
      * Close the specified I/O channel to new read or write operations; scheduling
      * operations on a closed channel results in their handler returning an error.
-     * 
+     * <p>
      * If the DISPATCH_IO_STOP flag is provided, the system will make a best effort
      * to interrupt any outstanding read and write operations on the I/O channel,
      * otherwise those operations will run to completion normally.
@@ -3581,9 +3346,9 @@ public final class Globals {
      * The final invocation of an I/O handler of an interrupted operation will be
      * passed an ECANCELED error code, as will the I/O handler of an operation
      * scheduled on a closed channel.
-     * 
-     * @param channel	The dispatch I/O channel to close.
-     * @param flags		The flags for the close operation.
+     *
+     * @param channel The dispatch I/O channel to close.
+     * @param flags   The flags for the close operation.
      */
     @Generated
     @CFunction
@@ -3596,19 +3361,19 @@ public final class Globals {
      * barrier block is enqueued onto the global queue determined by the channel's
      * target queue, and no subsequently scheduled operations will start until the
      * barrier block has returned.
-     * 
+     * <p>
      * If multiple channels are associated with the same file descriptor, a barrier
      * operation scheduled on any of these channels will act as a barrier across all
      * channels in question, i.e. all previously scheduled operations on any of the
      * channels will complete before the barrier block is enqueued, and no
      * operations subsequently scheduled on any of the channels will start until the
      * barrier block has returned.
-     * 
+     * <p>
      * While the barrier block is running, it may safely operate on the channel's
      * underlying file descriptor with fsync(2), lseek(2) etc. (but not close(2)).
-     * 
-     * @param channel	The dispatch I/O channel to schedule the barrier on.
-     * @param barrier	The barrier block.
+     *
+     * @param channel The dispatch I/O channel to schedule the barrier on.
+     * @param barrier The barrier block.
      */
     @Generated
     @CFunction
@@ -3618,16 +3383,16 @@ public final class Globals {
     /**
      * [@function] dispatch_io_get_descriptor
      * Returns the file descriptor underlying a dispatch I/O channel.
-     * 
+     * <p>
      * Will return -1 for a channel closed with dispatch_io_close() and for a
      * channel associated with a path name that has not yet been open(2)ed.
-     * 
+     * <p>
      * If called from a barrier block scheduled on a channel associated with a path
      * name that has not yet been open(2)ed, this will trigger the channel open(2)
      * operation and return the resulting file descriptor.
-     * 
-     * @param channel	The dispatch I/O channel to query.
-     * @return		The file descriptor underlying the channel, or -1.
+     *
+     * @param channel The dispatch I/O channel to query.
+     * @return The file descriptor underlying the channel, or -1.
      */
     @Generated
     @CFunction
@@ -3636,18 +3401,18 @@ public final class Globals {
     /**
      * [@function] dispatch_io_set_high_water
      * Set a high water mark on the I/O channel for all operations.
-     * 
+     * <p>
      * The system will make a best effort to enqueue I/O handlers with partial
      * results as soon the number of bytes processed by an operation (i.e. read or
      * written) reaches the high water mark.
-     * 
+     * <p>
      * The size of data objects passed to I/O handlers for this channel will never
      * exceed the specified high water mark.
-     * 
+     * <p>
      * The default value for the high water mark is unlimited (i.e. SIZE_MAX).
-     * 
-     * @param channel	The dispatch I/O channel on which to set the policy.
-     * @param high_water	The number of bytes to use as a high water mark.
+     *
+     * @param channel    The dispatch I/O channel on which to set the policy.
+     * @param high_water The number of bytes to use as a high water mark.
      */
     @Generated
     @CFunction
@@ -3656,28 +3421,28 @@ public final class Globals {
     /**
      * [@function] dispatch_io_set_low_water
      * Set a low water mark on the I/O channel for all operations.
-     * 
+     * <p>
      * The system will process (i.e. read or write) at least the low water mark
      * number of bytes for an operation before enqueueing I/O handlers with partial
      * results.
-     * 
+     * <p>
      * The size of data objects passed to intermediate I/O handler invocations for
      * this channel (i.e. excluding the final invocation) will never be smaller than
      * the specified low water mark, except if the channel has an interval with the
      * DISPATCH_IO_STRICT_INTERVAL flag set or if EOF or an error was encountered.
-     * 
+     * <p>
      * I/O handlers should be prepared to receive amounts of data significantly
      * larger than the low water mark in general. If an I/O handler requires
      * intermediate results of fixed size, set both the low and and the high water
      * mark to that size.
-     * 
+     * <p>
      * The default value for the low water mark is unspecified, but must be assumed
      * to be such that intermediate handler invocations may occur.
      * If I/O handler invocations with partial results are not desired, set the
      * low water mark to SIZE_MAX.
-     * 
-     * @param channel	The dispatch I/O channel on which to set the policy.
-     * @param low_water	The number of bytes to use as a low water mark.
+     *
+     * @param channel   The dispatch I/O channel on which to set the policy.
+     * @param low_water The number of bytes to use as a low water mark.
      */
     @Generated
     @CFunction
@@ -3687,23 +3452,23 @@ public final class Globals {
      * [@function] dispatch_io_set_interval
      * Set a nanosecond interval at which I/O handlers are to be enqueued on the
      * I/O channel for all operations.
-     * 
+     * <p>
      * This allows an application to receive periodic feedback on the progress of
      * read and write operations, e.g. for the purposes of displaying progress bars.
-     * 
+     * <p>
      * If the amount of data ready to be delivered to an I/O handler at the interval
      * is inferior to the channel low water mark, the handler will only be enqueued
      * if the DISPATCH_IO_STRICT_INTERVAL flag is set.
-     * 
+     * <p>
      * Note that the system may defer enqueueing interval I/O handlers by a small
      * unspecified amount of leeway in order to align with other system activity for
      * improved system performance or power consumption.
-     * 
-     * @param channel	The dispatch I/O channel on which to set the policy.
-     * @param interval	The interval in nanoseconds at which delivery of the I/O
-     * 				handler is desired.
-     * @param flags		Flags indicating desired data delivery behavior at
-     * 				interval time.
+     *
+     * @param channel  The dispatch I/O channel on which to set the policy.
+     * @param interval The interval in nanoseconds at which delivery of the I/O
+     *                 handler is desired.
+     * @param flags    Flags indicating desired data delivery behavior at
+     *                 interval time.
      */
     @Generated
     @CFunction
@@ -3772,9 +3537,9 @@ public final class Globals {
     public static native int __inline_signbitd(double arg1);
 
     /**
-     *                                                                             *
-     *                               Math Functions                                *
-     *                                                                             *
+     * *
+     * Math Functions                                *
+     * *
      * ****************************************************************************
      */
     @Generated
@@ -4052,7 +3817,7 @@ public final class Globals {
     /**
      * lgammaf, lgamma, and lgammal are not thread-safe. The thread-safe
      * variants lgammaf_r, lgamma_r, and lgammal_r are made available if
-     * you define the _REENTRANT symbol before including <math.h>                
+     * you define the _REENTRANT symbol before including <math.h>
      */
     @Generated
     @CFunction
@@ -4251,7 +4016,7 @@ public final class Globals {
      * __sincos(x,sinp,cosp) computes the sine and cosine of x with a single
      * function call, storing the sine in the memory pointed to by sinp, and
      * the cosine in the memory pointed to by cosp. Edge cases match those of
-     * separate calls to sin( ) and cos( ).                                      
+     * separate calls to sin( ) and cos( ).
      */
     @Generated
     @Inline
@@ -4270,7 +4035,7 @@ public final class Globals {
      * avoid any loss of precision that results from rounding the result of the
      * multiplication M_PI * x.  They may also be significantly more efficient in
      * some cases because the argument reduction for these functions is easier
-     * to compute.  Consult the man pages for edge case details.                 
+     * to compute.  Consult the man pages for edge case details.
      */
     @Generated
     @CFunction
@@ -4302,10 +4067,10 @@ public final class Globals {
      * and the cosine in the memory pointed to by cosp.  Edge cases match those
      * of separate calls to __sinpi( ) and __cospi( ), and are documented in the
      * man pages.
-     * 
+     * <p>
      * These functions were introduced in OSX 10.9 and iOS 7.0.  Because they are
      * implemented as header inlines, weak-linking does not function as normal,
-     * and they are simply hidden when targeting earlier OS versions.            
+     * and they are simply hidden when targeting earlier OS versions.
      */
     @Generated
     @Inline
@@ -5157,13 +4922,6 @@ public final class Globals {
     public static native int vasprintf(Ptr<BytePtr> arg1,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2,
             BytePtr arg3);
-
-    @Generated
-    @CFunction
-    @UncertainReturn("Options: reference, array Fallback: reference")
-    public static native FILE zopen(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg2, int arg3);
 
     /**
      * Stdio function-access interface.
@@ -6465,11 +6223,10 @@ public final class Globals {
 
     /**
      * [@function] os_unfair_lock_lock
-     * 
+     * <p>
      * Locks an os_unfair_lock.
-     * 
-     * @param lock
-     * Pointer to an os_unfair_lock.
+     *
+     * @param lock Pointer to an os_unfair_lock.
      */
     @Generated
     @CFunction
@@ -6478,21 +6235,18 @@ public final class Globals {
 
     /**
      * [@function] os_unfair_lock_trylock
-     * 
+     * <p>
      * Locks an os_unfair_lock if it is not already locked.
-     * 
+     * <p>
      * It is invalid to surround this function with a retry loop, if this function
      * returns false, the program must be able to proceed without having acquired
      * the lock, or it must call os_unfair_lock_lock() directly (a retry loop around
      * os_unfair_lock_trylock() amounts to an inefficient implementation of
      * os_unfair_lock_lock() that hides the lock waiter from the system and prevents
      * resolution of priority inversions).
-     * 
-     * @param lock
-     * Pointer to an os_unfair_lock.
-     * 
-     * @return
-     * Returns true if the lock was succesfully locked and false if the lock was
+     *
+     * @param lock Pointer to an os_unfair_lock.
+     * @return Returns true if the lock was succesfully locked and false if the lock was
      * already locked.
      */
     @Generated
@@ -6502,11 +6256,10 @@ public final class Globals {
 
     /**
      * [@function] os_unfair_lock_unlock
-     * 
+     * <p>
      * Unlocks an os_unfair_lock.
-     * 
-     * @param lock
-     * Pointer to an os_unfair_lock.
+     *
+     * @param lock Pointer to an os_unfair_lock.
      */
     @Generated
     @CFunction
@@ -8324,7 +8077,7 @@ public final class Globals {
 
     /**
      * A good approximation to 1/x.
-     * 
+     * <p>
      * If x is very close to the limits of representation, the
      * result may overflow or underflow; otherwise this function is accurate to
      * a few units in the last place (ULPs).
@@ -8336,7 +8089,7 @@ public final class Globals {
 
     /**
      * A fast approximation to 1/x.
-     * 
+     * <p>
      * If x is very close to the limits of representation, the
      * result may overflow or underflow; otherwise this function is accurate to
      * at least 11 bits for float and 22 bits for double.
@@ -8348,7 +8101,7 @@ public final class Globals {
 
     /**
      * An approximation to 1/x.
-     * 
+     * <p>
      * If x is very close to the limits of representation, the
      * result may overflow or underflow. This function maps to
      * simd_fast_recip(x) if -ffast-math is specified, and to
@@ -8361,7 +8114,7 @@ public final class Globals {
 
     /**
      * A good approximation to 1/sqrt(x).
-     * 
+     * <p>
      * This function is accurate to a few units in the last place
      * (ULPs).
      */
@@ -8372,7 +8125,7 @@ public final class Globals {
 
     /**
      * A fast approximation to 1/sqrt(x).
-     * 
+     * <p>
      * This function is accurate to at least 11 bits for float and
      * 22 bits for double.
      */
@@ -8383,7 +8136,7 @@ public final class Globals {
 
     /**
      * An approximation to 1/sqrt(x).
-     * 
+     * <p>
      * This function maps to simd_fast_recip(x) if -ffast-math is
      * specified, and to simd_precise_recip(x) otherwise.
      */
@@ -8394,7 +8147,7 @@ public final class Globals {
 
     /**
      * The "fractional part" of x, lying in the range [0, 1).
-     * 
+     * <p>
      * floor(x) + fract(x) is *approximately* equal to x. If x is
      * positive and finite, then the two values are exactly equal.
      */
@@ -8405,7 +8158,7 @@ public final class Globals {
 
     /**
      * 0 if x < edge, and 1 otherwise.
-     * 
+     * <p>
      * Use a scalar value for edge if you want to apply the same
      * threshold to all lanes.
      */
@@ -8416,7 +8169,7 @@ public final class Globals {
 
     /**
      * Interpolates smoothly between 0 at edge0 and 1 at edge1
-     * 
+     * <p>
      * You can use a scalar value for edge0 and edge1 if you want
      * to clamp all lanes at the same points.
      */
@@ -8427,38 +8180,33 @@ public final class Globals {
 
     /**
      * [@function] dispatch_set_qos_class_floor
-     * 
+     * <p>
      * Sets the QOS class floor on a dispatch queue, source or workloop.
-     * 
+     * <p>
      * The QOS class of workitems submitted to this object asynchronously will be
      * elevated to at least the specified QOS class floor. The QOS of the workitem
      * will be used if higher than the floor even when the workitem has been created
      * without "ENFORCE" semantics.
-     * 
+     * <p>
      * Setting the QOS class floor is equivalent to the QOS effects of configuring
      * a queue whose target queue has a QoS class set to the same value.
-     * 
-     * @param object
-     * A dispatch queue, workloop, or source to configure.
-     * The object must be inactive.
-     * 
-     * Passing another object type or an object that has been activated is undefined
-     * and will cause the process to be terminated.
-     * 
-     * @param qos_class
-     * A QOS class value:
-     *  - QOS_CLASS_USER_INTERACTIVE
-     *  - QOS_CLASS_USER_INITIATED
-     *  - QOS_CLASS_DEFAULT
-     *  - QOS_CLASS_UTILITY
-     *  - QOS_CLASS_BACKGROUND
-     * Passing any other value is undefined.
-     * 
-     * @param relative_priority
-     * A relative priority within the QOS class. This value is a negative
-     * offset from the maximum supported scheduler priority for the given class.
-     * Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
-     * is undefined.
+     *
+     * @param object            A dispatch queue, workloop, or source to configure.
+     *                          The object must be inactive.
+     *                          <p>
+     *                          Passing another object type or an object that has been activated is undefined
+     *                          and will cause the process to be terminated.
+     * @param qos_class         A QOS class value:
+     *                          - QOS_CLASS_USER_INTERACTIVE
+     *                          - QOS_CLASS_USER_INITIATED
+     *                          - QOS_CLASS_DEFAULT
+     *                          - QOS_CLASS_UTILITY
+     *                          - QOS_CLASS_BACKGROUND
+     *                          Passing any other value is undefined.
+     * @param relative_priority A relative priority within the QOS class. This value is a negative
+     *                          offset from the maximum supported scheduler priority for the given class.
+     *                          Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
+     *                          is undefined.
      */
     @Generated
     @CFunction
@@ -8478,23 +8226,18 @@ public final class Globals {
 
     /**
      * [@function] dispatch_async_and_wait_f
-     * 
+     * <p>
      * Submits a function for synchronous execution on a dispatch queue.
-     * 
+     * <p>
      * See dispatch_async_and_wait() for details.
-     * 
-     * @param queue
-     * The target dispatch queue to which the function is submitted.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_async_and_wait_f().
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue   The target dispatch queue to which the function is submitted.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_async_and_wait_f().
+     *                The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -8522,27 +8265,22 @@ public final class Globals {
 
     /**
      * [@function] dispatch_barrier_async_and_wait_f
-     * 
+     * <p>
      * Submits a function for synchronous execution on a dispatch queue.
-     * 
+     * <p>
      * Submits a function to a dispatch queue like dispatch_async_and_wait_f(), but
      * marks that function as a barrier (relevant only on DISPATCH_QUEUE_CONCURRENT
      * queues).
-     * 
+     * <p>
      * See "Dispatch Barrier API" for a description of the barrier semantics.
-     * 
-     * @param queue
-     * The target dispatch queue to which the function is submitted.
-     * The result of passing NULL in this parameter is undefined.
-     * 
-     * @param context
-     * The application-defined context parameter to pass to the function.
-     * 
-     * @param work
-     * The application-defined function to invoke on the target queue. The first
-     * parameter passed to this function is the context provided to
-     * dispatch_barrier_async_and_wait_f().
-     * The result of passing NULL in this parameter is undefined.
+     *
+     * @param queue   The target dispatch queue to which the function is submitted.
+     *                The result of passing NULL in this parameter is undefined.
+     * @param context The application-defined context parameter to pass to the function.
+     * @param work    The application-defined function to invoke on the target queue. The first
+     *                parameter passed to this function is the context provided to
+     *                dispatch_barrier_async_and_wait_f().
+     *                The result of passing NULL in this parameter is undefined.
      */
     @Generated
     @CFunction
@@ -8558,14 +8296,11 @@ public final class Globals {
 
     /**
      * [@function] dispatch_workloop_create
-     * 
+     * <p>
      * Creates a new dispatch workloop to which workitems may be submitted.
-     * 
-     * @param label
-     * A string label to attach to the workloop.
-     * 
-     * @return
-     * The newly created dispatch workloop.
+     *
+     * @param label A string label to attach to the workloop.
+     * @return The newly created dispatch workloop.
      */
     @Generated
     @CFunction
@@ -8574,21 +8309,18 @@ public final class Globals {
 
     /**
      * [@function] dispatch_workloop_create_inactive
-     * 
+     * <p>
      * Creates a new inactive dispatch workloop that can be setup and then
      * activated.
-     * 
+     * <p>
      * Creating an inactive workloop allows for it to receive further configuration
      * before it is activated, and workitems can be submitted to it.
-     * 
+     * <p>
      * Submitting workitems to an inactive workloop is undefined and will cause the
      * process to be terminated.
-     * 
-     * @param label
-     * A string label to attach to the workloop.
-     * 
-     * @return
-     * The newly created dispatch workloop.
+     *
+     * @param label A string label to attach to the workloop.
+     * @return The newly created dispatch workloop.
      */
     @Generated
     @CFunction
@@ -8597,21 +8329,18 @@ public final class Globals {
 
     /**
      * [@function] dispatch_workloop_set_autorelease_frequency
-     * 
+     * <p>
      * Sets the autorelease frequency of the workloop.
-     * 
+     * <p>
      * See dispatch_queue_attr_make_with_autorelease_frequency().
      * The default policy for a workloop is
      * DISPATCH_AUTORELEASE_FREQUENCY_WORK_ITEM.
-     * 
-     * @param workloop
-     * The dispatch workloop to modify.
-     * 
-     * This workloop must be inactive, passing an activated object is undefined
-     * and will cause the process to be terminated.
-     * 
-     * @param frequency
-     * The requested autorelease frequency.
+     *
+     * @param workloop  The dispatch workloop to modify.
+     *                  <p>
+     *                  This workloop must be inactive, passing an activated object is undefined
+     *                  and will cause the process to be terminated.
+     * @param frequency The requested autorelease frequency.
      */
     @Generated
     @CFunction
@@ -8890,25 +8619,24 @@ public final class Globals {
 
     /**
      * [@function] os_trace_info_enabled
-     * 
+     * <p>
      * Avoid unnecessary work for a trace point by checking if additional
      * information is enabled.
-     * 
+     * <p>
      * Avoid unnecessary work for a trace point by checking if additional
      * information is enabled. Generally trace points should not involve expensive
      * operations, but some circumstances warrant it.  Use this function to avoid
      * doing the work unless debug level trace messages are requested.
-     * 
+     *
      * <code>
-     *     if (os_trace_info_enabled()) {
-     *         os_trace_info("value = %d, average = %d",
-     *                 [[dict objectForKey: @"myKey"] intValue],
-     *                 (int)[self getAverage:dict]);
-     *     }
+     * if (os_trace_info_enabled()) {
+     * os_trace_info("value = %d, average = %d",
+     * [[dict objectForKey: @"myKey"] intValue],
+     * (int)[self getAverage:dict]);
+     * }
      * </code>
-     * 
-     * @return
-     * Returns true if info types are enabled.
+     *
+     * @return Returns true if info types are enabled.
      */
     @Generated
     @CFunction
@@ -8916,25 +8644,24 @@ public final class Globals {
 
     /**
      * [@function] os_trace_debug_enabled
-     * 
+     * <p>
      * Avoid unnecessary work for a trace point by checking if debug level is
      * enabled.
-     * 
+     * <p>
      * Avoid unnecessary work for a trace point by checking if debug level is
      * enabled.  Generally trace points should not involve expensive operations, but
      * some circumstances warrant it.  Use this function to avoid doing the work
      * unless debug level trace messages are requested.
-     * 
+     *
      * <code>
-     *     if (os_trace_debug_enabled()) {
-     *         os_trace_debug("value = %d, average = %d",
-     *                 [[dict objectForKey: @"myKey"] intValue],
-     *                 (int)[self getAverage:dict]);
-     *     }
+     * if (os_trace_debug_enabled()) {
+     * os_trace_debug("value = %d, average = %d",
+     * [[dict objectForKey: @"myKey"] intValue],
+     * (int)[self getAverage:dict]);
+     * }
      * </code>
-     * 
-     * @return
-     * Returns true if debug mode is enabled.
+     *
+     * @return Returns true if debug mode is enabled.
      */
     @Generated
     @CFunction
@@ -8942,13 +8669,12 @@ public final class Globals {
 
     /**
      * [@function] os_trace_type_enabled
-     * 
+     * <p>
      * Avoid unnecessary work for a trace point by checking a specific type
-     * 
+     * <p>
      * Avoid unnecessary work for a trace point by checking a specific type
-     * 
-     * @return
-     * Returns true if type is enabled.
+     *
+     * @return Returns true if type is enabled.
      */
     @Generated
     @Inline
@@ -8957,7 +8683,7 @@ public final class Globals {
 
     /**
      * [@function] _os_trace_with_buffer
-     * 
+     * <p>
      * Internal function to support pre-encoded buffer.
      */
     @Generated
@@ -8976,28 +8702,23 @@ public final class Globals {
 
     /**
      * [@function] os_log_create
-     * 
+     * <p>
      * Creates a log object to be used with other log related functions.
-     * 
+     * <p>
      * Creates a log object to be used with other log related functions.  The
      * log object serves two purposes:  (1) tag related messages by subsystem
      * and category name for easy filtering, and (2) control logging system
      * behavior for messages.
-     * 
-     * @param subsystem
-     * The identifier of the given subsystem should be in reverse DNS form
-     * (i.e., com.company.mysubsystem).
-     * 
-     * @param category
-     * The category within the given subsystem that specifies the settings for
-     * the log object.
-     * 
-     * @return
-     * Returns an os_log_t value to be passed to other os_log API calls.  This
+     *
+     * @param subsystem The identifier of the given subsystem should be in reverse DNS form
+     *                  (i.e., com.company.mysubsystem).
+     * @param category  The category within the given subsystem that specifies the settings for
+     *                  the log object.
+     * @return Returns an os_log_t value to be passed to other os_log API calls.  This
      * should be called once at log initialization and rely on system to detect
      * changes to settings.  This object should be released when no longer used
      * via os_release or -[release] method.
-     * 
+     * <p>
      * A value will always be returned to allow for dynamic enablement.
      */
     @Generated
@@ -9008,19 +8729,14 @@ public final class Globals {
 
     /**
      * [@function] os_log_type_enabled
-     * 
+     * <p>
      * Evaluate if a specific log type is enabled before doing work
-     * 
+     * <p>
      * Evaluate if a specific log type is enabled before doing work
-     * 
-     * @param oslog
-     * Pass OS_LOG_DEFAULT or a log object previously created with os_log_create.
-     * 
-     * @param type
-     * Pass a valid type from os_log_type_t.
-     * 
-     * @return
-     * Will return a boolean.
+     *
+     * @param oslog Pass OS_LOG_DEFAULT or a log object previously created with os_log_create.
+     * @param type  Pass a valid type from os_log_type_t.
+     * @return Will return a boolean.
      */
     @Generated
     @CFunction
@@ -9028,7 +8744,7 @@ public final class Globals {
 
     /**
      * [@function] _os_log_impl
-     * 
+     * <p>
      * Internal function that takes compiler generated encoding and captures the necessary content.
      */
     @Generated
@@ -9039,7 +8755,7 @@ public final class Globals {
 
     /**
      * [@function] _os_log_debug_impl
-     * 
+     * <p>
      * Internal function that is taken for any debug log emitted in the system.
      */
     @Generated
@@ -9050,7 +8766,7 @@ public final class Globals {
 
     /**
      * [@function] _os_log_error_impl
-     * 
+     * <p>
      * Internal function that is taken for any error emitted in the system.
      */
     @Generated
@@ -9061,7 +8777,7 @@ public final class Globals {
 
     /**
      * [@function] _os_log_fault_impl
-     * 
+     * <p>
      * Internal function that is taken for any fault emitted in the system.
      */
     @Generated
@@ -9101,17 +8817,16 @@ public final class Globals {
 
     /**
      * [@function] os_unfair_lock_assert_owner
-     * 
+     * <p>
      * Asserts that the calling thread is the current owner of the specified
      * unfair lock.
-     * 
+     * <p>
      * If the lock is currently owned by the calling thread, this function returns.
-     * 
+     * <p>
      * If the lock is unlocked or owned by a different thread, this function
      * asserts and terminates the process.
-     * 
-     * @param lock
-     * Pointer to an os_unfair_lock.
+     *
+     * @param lock Pointer to an os_unfair_lock.
      */
     @Generated
     @CFunction
@@ -9120,18 +8835,17 @@ public final class Globals {
 
     /**
      * [@function] os_unfair_lock_assert_not_owner
-     * 
+     * <p>
      * Asserts that the calling thread is not the current owner of the specified
      * unfair lock.
-     * 
+     * <p>
      * If the lock is unlocked or owned by a different thread, this function
      * returns.
-     * 
+     * <p>
      * If the lock is currently owned by the current thread, this function asserts
      * and terminates the process.
-     * 
-     * @param lock
-     * Pointer to an os_unfair_lock.
+     *
+     * @param lock Pointer to an os_unfair_lock.
      */
     @Generated
     @CFunction
@@ -9140,21 +8854,21 @@ public final class Globals {
 
     /**
      * DNSServiceGetProperty() Parameters:
-     * 
+     * <p>
      * property:        The requested property.
-     *                  Currently the only property defined is kDNSServiceProperty_DaemonVersion.
-     * 
+     * Currently the only property defined is kDNSServiceProperty_DaemonVersion.
+     * <p>
      * result:          Place to store result.
-     *                  For retrieving DaemonVersion, this should be the address of a uint32_t.
-     * 
+     * For retrieving DaemonVersion, this should be the address of a uint32_t.
+     * <p>
      * size:            Pointer to uint32_t containing size of the result location.
-     *                  For retrieving DaemonVersion, this should be sizeof(uint32_t).
-     *                  On return the uint32_t is updated to the size of the data returned.
-     *                  For DaemonVersion, the returned size is always sizeof(uint32_t), but
-     *                  future properties could be defined which return variable-sized results.
-     * 
+     * For retrieving DaemonVersion, this should be sizeof(uint32_t).
+     * On return the uint32_t is updated to the size of the data returned.
+     * For DaemonVersion, the returned size is always sizeof(uint32_t), but
+     * future properties could be defined which return variable-sized results.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success, or kDNSServiceErr_ServiceNotRunning
-     *                  if the daemon (or "system service" on Windows) is not running.
+     * if the daemon (or "system service" on Windows) is not running.
      */
     @Generated
     @CFunction
@@ -9164,7 +8878,7 @@ public final class Globals {
 
     /**
      * DNSServiceRefSockFD()
-     * 
+     * <p>
      * Access underlying Unix domain socket for an initialized DNSServiceRef.
      * The DNS Service Discovery implementation uses this socket to communicate between the client and
      * the daemon. The application MUST NOT directly read from or write to this socket.
@@ -9182,11 +8896,11 @@ public final class Globals {
      * When data arrives on the socket, the client is responsible for calling DNSServiceProcessResult(ref)
      * in a timely fashion -- if the client allows a large backlog of data to build up the daemon
      * may terminate the connection.
-     * 
+     * <p>
      * sdRef:           A DNSServiceRef initialized by any of the DNSService calls.
-     * 
+     * <p>
      * return value:    The DNSServiceRef's underlying socket descriptor, or -1 on
-     *                  error.
+     * error.
      */
     @Generated
     @CFunction
@@ -9194,7 +8908,7 @@ public final class Globals {
 
     /**
      * DNSServiceProcessResult()
-     * 
+     * <p>
      * Read a reply from the daemon, calling the appropriate application callback. This call will
      * block until the daemon's response is received. Use DNSServiceRefSockFD() in
      * conjunction with a run loop or select() to determine the presence of a response from the
@@ -9203,12 +8917,12 @@ public final class Globals {
      * client is responsible for ensuring that DNSServiceProcessResult() is called whenever there is
      * a reply from the daemon - the daemon may terminate its connection with a client that does not
      * process the daemon's responses.
-     * 
+     * <p>
      * sdRef:           A DNSServiceRef initialized by any of the DNSService calls
-     *                  that take a callback parameter.
-     * 
+     * that take a callback parameter.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns
-     *                  an error code indicating the specific failure that occurred.
+     * an error code indicating the specific failure that occurred.
      */
     @Generated
     @CFunction
@@ -9216,15 +8930,15 @@ public final class Globals {
 
     /**
      * DNSServiceRefDeallocate()
-     * 
+     * <p>
      * Terminate a connection with the daemon and free memory associated with the DNSServiceRef.
      * Any services or records registered with this DNSServiceRef will be deregistered. Any
      * Browse, Resolve, or Query operations called with this reference will be terminated.
-     * 
+     * <p>
      * Note: If the reference's underlying socket is used in a run loop or select() call, it should
      * be removed BEFORE DNSServiceRefDeallocate() is called, as this function closes the reference's
      * socket.
-     * 
+     * <p>
      * Note: If the reference was initialized with DNSServiceCreateConnection(), any DNSRecordRefs
      * created via this reference will be invalidated by this call - the resource records are
      * deregistered, and their DNSRecordRefs may not be used in subsequent functions. Similarly,
@@ -9232,12 +8946,12 @@ public final class Globals {
      * added to the service via DNSServiceAddRecord(), the DNSRecordRef created by the Add() call
      * is invalidated when this function is called - the DNSRecordRef may not be used in subsequent
      * functions.
-     * 
+     * <p>
      * If the reference was passed to DNSServiceSetDispatchQueue(), DNSServiceRefDeallocate() must
      * be called on the same queue originally passed as an argument to DNSServiceSetDispatchQueue().
-     * 
+     * <p>
      * Note: This call is to be used only with the DNSServiceRef defined by this API.
-     * 
+     * <p>
      * sdRef:           A DNSServiceRef initialized by any of the DNSService calls.
      */
     @Generated
@@ -9246,37 +8960,37 @@ public final class Globals {
 
     /**
      * DNSServiceEnumerateDomains() Parameters:
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef
-     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
-     *                  a copy of the shared connection reference that is to be used).
-     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
-     *                  returns kDNSServiceErr_NoError, and the enumeration operation
-     *                  will remain active indefinitely until the client terminates it
-     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
-     *                  (or by closing the underlying shared connection, if used).
-     * 
+     * (or, if the kDNSServiceFlagsShareConnection flag is used,
+     * a copy of the shared connection reference that is to be used).
+     * If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     * returns kDNSServiceErr_NoError, and the enumeration operation
+     * will remain active indefinitely until the client terminates it
+     * by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     * (or by closing the underlying shared connection, if used).
+     * <p>
      * flags:           Possible values are:
-     *                  kDNSServiceFlagsShareConnection to use a shared connection.
-     *                  kDNSServiceFlagsBrowseDomains to enumerate domains recommended for browsing.
-     *                  kDNSServiceFlagsRegistrationDomains to enumerate domains recommended
-     *                  for registration.
-     * 
+     * kDNSServiceFlagsShareConnection to use a shared connection.
+     * kDNSServiceFlagsBrowseDomains to enumerate domains recommended for browsing.
+     * kDNSServiceFlagsRegistrationDomains to enumerate domains recommended
+     * for registration.
+     * <p>
      * interfaceIndex:  If non-zero, specifies the interface on which to look for domains.
-     *                  (the index for a given interface is determined via the if_nametoindex()
-     *                  family of calls.) Most applications will pass 0 to enumerate domains on
-     *                  all interfaces. See "Constants for specifying an interface index" for more details.
-     * 
+     * (the index for a given interface is determined via the if_nametoindex()
+     * family of calls.) Most applications will pass 0 to enumerate domains on
+     * all interfaces. See "Constants for specifying an interface index" for more details.
+     * <p>
      * callBack:        The function to be called when a domain is found or the call asynchronously
-     *                  fails.
-     * 
+     * fails.
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred (the callback is not invoked and the DNSServiceRef
-     *                  is not initialized).
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred (the callback is not invoked and the DNSServiceRef
+     * is not initialized).
      */
     @Generated
     @CFunction
@@ -9295,112 +9009,112 @@ public final class Globals {
 
     /**
      * DNSServiceRegister() Parameters:
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef
-     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
-     *                  a copy of the shared connection reference that is to be used).
-     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
-     *                  returns kDNSServiceErr_NoError, and the service registration
-     *                  will remain active indefinitely until the client terminates it
-     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
-     *                  (or by closing the underlying shared connection, if used).
-     * 
+     * (or, if the kDNSServiceFlagsShareConnection flag is used,
+     * a copy of the shared connection reference that is to be used).
+     * If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     * returns kDNSServiceErr_NoError, and the service registration
+     * will remain active indefinitely until the client terminates it
+     * by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     * (or by closing the underlying shared connection, if used).
+     * <p>
      * flags:           Possible values are:
-     *                  kDNSServiceFlagsShareConnection to use a shared connection.
-     *                  Other flags indicate the renaming behavior on name conflict
-     *                  (not required for most applications).
-     *                  See flag definitions above for details.
-     * 
+     * kDNSServiceFlagsShareConnection to use a shared connection.
+     * Other flags indicate the renaming behavior on name conflict
+     * (not required for most applications).
+     * See flag definitions above for details.
+     * <p>
      * interfaceIndex:  If non-zero, specifies the interface on which to register the service
-     *                  (the index for a given interface is determined via the if_nametoindex()
-     *                  family of calls.) Most applications will pass 0 to register on all
-     *                  available interfaces. See "Constants for specifying an interface index" for more details.
-     * 
+     * (the index for a given interface is determined via the if_nametoindex()
+     * family of calls.) Most applications will pass 0 to register on all
+     * available interfaces. See "Constants for specifying an interface index" for more details.
+     * <p>
      * name:            If non-NULL, specifies the service name to be registered.
-     *                  Most applications will not specify a name, in which case the computer
-     *                  name is used (this name is communicated to the client via the callback).
-     *                  If a name is specified, it must be 1-63 bytes of UTF-8 text.
-     *                  If the name is longer than 63 bytes it will be automatically truncated
-     *                  to a legal length, unless the NoAutoRename flag is set,
-     *                  in which case kDNSServiceErr_BadParam will be returned.
-     * 
+     * Most applications will not specify a name, in which case the computer
+     * name is used (this name is communicated to the client via the callback).
+     * If a name is specified, it must be 1-63 bytes of UTF-8 text.
+     * If the name is longer than 63 bytes it will be automatically truncated
+     * to a legal length, unless the NoAutoRename flag is set,
+     * in which case kDNSServiceErr_BadParam will be returned.
+     * <p>
      * regtype:         The service type followed by the protocol, separated by a dot
-     *                  (e.g. "_ftp._tcp"). The service type must be an underscore, followed
-     *                  by 1-15 characters, which may be letters, digits, or hyphens.
-     *                  The transport protocol must be "_tcp" or "_udp". New service types
-     *                  should be registered at <http://www.dns-sd.org/ServiceTypes.html>.
-     * 
-     *                  Additional subtypes of the primary service type (where a service
-     *                  type has defined subtypes) follow the primary service type in a
-     *                  comma-separated list, with no additional spaces, e.g.
-     *                      "_primarytype._tcp,_subtype1,_subtype2,_subtype3"
-     *                  Subtypes provide a mechanism for filtered browsing: A client browsing
-     *                  for "_primarytype._tcp" will discover all instances of this type;
-     *                  a client browsing for "_primarytype._tcp,_subtype2" will discover only
-     *                  those instances that were registered with "_subtype2" in their list of
-     *                  registered subtypes.
-     * 
-     *                  The subtype mechanism can be illustrated with some examples using the
-     *                  dns-sd command-line tool:
-     * 
-     *                  % dns-sd -R Simple _test._tcp "" 1001 &
-     *                  % dns-sd -R Better _test._tcp,HasFeatureA "" 1002 &
-     *                  % dns-sd -R Best   _test._tcp,HasFeatureA,HasFeatureB "" 1003 &
-     * 
-     *                  Now:
-     *                  % dns-sd -B _test._tcp             # will find all three services
-     *                  % dns-sd -B _test._tcp,HasFeatureA # finds "Better" and "Best"
-     *                  % dns-sd -B _test._tcp,HasFeatureB # finds only "Best"
-     * 
-     *                  Subtype labels may be up to 63 bytes long, and may contain any eight-
-     *                  bit byte values, including zero bytes. However, due to the nature of
-     *                  using a C-string-based API, conventional DNS escaping must be used for
-     *                  dots ('.'), commas (','), backslashes ('\') and zero bytes, as shown below:
-     * 
-     *                  % dns-sd -R Test '_test._tcp,s\.one,s\,two,s\\three,s\000four' local 123
-     * 
+     * (e.g. "_ftp._tcp"). The service type must be an underscore, followed
+     * by 1-15 characters, which may be letters, digits, or hyphens.
+     * The transport protocol must be "_tcp" or "_udp". New service types
+     * should be registered at <http://www.dns-sd.org/ServiceTypes.html>.
+     * <p>
+     * Additional subtypes of the primary service type (where a service
+     * type has defined subtypes) follow the primary service type in a
+     * comma-separated list, with no additional spaces, e.g.
+     * "_primarytype._tcp,_subtype1,_subtype2,_subtype3"
+     * Subtypes provide a mechanism for filtered browsing: A client browsing
+     * for "_primarytype._tcp" will discover all instances of this type;
+     * a client browsing for "_primarytype._tcp,_subtype2" will discover only
+     * those instances that were registered with "_subtype2" in their list of
+     * registered subtypes.
+     * <p>
+     * The subtype mechanism can be illustrated with some examples using the
+     * dns-sd command-line tool:
+     * <p>
+     * % dns-sd -R Simple _test._tcp "" 1001 &
+     * % dns-sd -R Better _test._tcp,HasFeatureA "" 1002 &
+     * % dns-sd -R Best   _test._tcp,HasFeatureA,HasFeatureB "" 1003 &
+     * <p>
+     * Now:
+     * % dns-sd -B _test._tcp             # will find all three services
+     * % dns-sd -B _test._tcp,HasFeatureA # finds "Better" and "Best"
+     * % dns-sd -B _test._tcp,HasFeatureB # finds only "Best"
+     * <p>
+     * Subtype labels may be up to 63 bytes long, and may contain any eight-
+     * bit byte values, including zero bytes. However, due to the nature of
+     * using a C-string-based API, conventional DNS escaping must be used for
+     * dots ('.'), commas (','), backslashes ('\') and zero bytes, as shown below:
+     * <p>
+     * % dns-sd -R Test '_test._tcp,s\.one,s\,two,s\\three,s\000four' local 123
+     * <p>
      * domain:          If non-NULL, specifies the domain on which to advertise the service.
-     *                  Most applications will not specify a domain, instead automatically
-     *                  registering in the default domain(s).
-     * 
+     * Most applications will not specify a domain, instead automatically
+     * registering in the default domain(s).
+     * <p>
      * host:            If non-NULL, specifies the SRV target host name. Most applications
-     *                  will not specify a host, instead automatically using the machine's
-     *                  default host name(s). Note that specifying a non-NULL host does NOT
-     *                  create an address record for that host - the application is responsible
-     *                  for ensuring that the appropriate address record exists, or creating it
-     *                  via DNSServiceRegisterRecord().
-     * 
+     * will not specify a host, instead automatically using the machine's
+     * default host name(s). Note that specifying a non-NULL host does NOT
+     * create an address record for that host - the application is responsible
+     * for ensuring that the appropriate address record exists, or creating it
+     * via DNSServiceRegisterRecord().
+     * <p>
      * port:            The port, in network byte order, on which the service accepts connections.
-     *                  Pass 0 for a "placeholder" service (i.e. a service that will not be discovered
-     *                  by browsing, but will cause a name conflict if another client tries to
-     *                  register that same name). Most clients will not use placeholder services.
-     * 
+     * Pass 0 for a "placeholder" service (i.e. a service that will not be discovered
+     * by browsing, but will cause a name conflict if another client tries to
+     * register that same name). Most clients will not use placeholder services.
+     * <p>
      * txtLen:          The length of the txtRecord, in bytes. Must be zero if the txtRecord is NULL.
-     * 
+     * <p>
      * txtRecord:       The TXT record rdata. A non-NULL txtRecord MUST be a properly formatted DNS
-     *                  TXT record, i.e. <length byte> <data> <length byte> <data> ...
-     *                  Passing NULL for the txtRecord is allowed as a synonym for txtLen=1, txtRecord="",
-     *                  i.e. it creates a TXT record of length one containing a single empty string.
-     *                  RFC 1035 doesn't allow a TXT record to contain *zero* strings, so a single empty
-     *                  string is the smallest legal DNS TXT record.
-     *                  As with the other parameters, the DNSServiceRegister call copies the txtRecord
-     *                  data; e.g. if you allocated the storage for the txtRecord parameter with malloc()
-     *                  then you can safely free that memory right after the DNSServiceRegister call returns.
-     * 
+     * TXT record, i.e. <length byte> <data> <length byte> <data> ...
+     * Passing NULL for the txtRecord is allowed as a synonym for txtLen=1, txtRecord="",
+     * i.e. it creates a TXT record of length one containing a single empty string.
+     * RFC 1035 doesn't allow a TXT record to contain *zero* strings, so a single empty
+     * string is the smallest legal DNS TXT record.
+     * As with the other parameters, the DNSServiceRegister call copies the txtRecord
+     * data; e.g. if you allocated the storage for the txtRecord parameter with malloc()
+     * then you can safely free that memory right after the DNSServiceRegister call returns.
+     * <p>
      * callBack:        The function to be called when the registration completes or asynchronously
-     *                  fails. The client MAY pass NULL for the callback -  The client will NOT be notified
-     *                  of the default values picked on its behalf, and the client will NOT be notified of any
-     *                  asynchronous errors (e.g. out of memory errors, etc.) that may prevent the registration
-     *                  of the service. The client may NOT pass the NoAutoRename flag if the callback is NULL.
-     *                  The client may still deregister the service at any time via DNSServiceRefDeallocate().
-     * 
+     * fails. The client MAY pass NULL for the callback -  The client will NOT be notified
+     * of the default values picked on its behalf, and the client will NOT be notified of any
+     * asynchronous errors (e.g. out of memory errors, etc.) that may prevent the registration
+     * of the service. The client may NOT pass the NoAutoRename flag if the callback is NULL.
+     * The client may still deregister the service at any time via DNSServiceRefDeallocate().
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred (the callback is never invoked and the DNSServiceRef
-     *                  is not initialized).
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred (the callback is never invoked and the DNSServiceRef
+     * is not initialized).
      */
     @Generated
     @CFunction
@@ -9425,41 +9139,41 @@ public final class Globals {
 
     /**
      * DNSServiceAddRecord()
-     * 
+     * <p>
      * Add a record to a registered service. The name of the record will be the same as the
      * registered service's name.
      * The record can later be updated or deregistered by passing the RecordRef initialized
      * by this function to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
-     * 
+     * <p>
      * Note that the DNSServiceAddRecord/UpdateRecord/RemoveRecord are *NOT* thread-safe
      * with respect to a single DNSServiceRef. If you plan to have multiple threads
      * in your program simultaneously add, update, or remove records from the same
      * DNSServiceRef, then it's the caller's responsibility to use a mutex lock
      * or take similar appropriate precautions to serialize those calls.
-     * 
+     * <p>
      * Parameters;
-     * 
+     * <p>
      * sdRef:           A DNSServiceRef initialized by DNSServiceRegister().
-     * 
+     * <p>
      * RecordRef:       A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
-     *                  call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
-     *                  If the above DNSServiceRef is passed to DNSServiceRefDeallocate(), RecordRef is also
-     *                  invalidated and may not be used further.
-     * 
+     * call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
+     * If the above DNSServiceRef is passed to DNSServiceRefDeallocate(), RecordRef is also
+     * invalidated and may not be used further.
+     * <p>
      * flags:           Currently ignored, reserved for future use.
-     * 
+     * <p>
      * rrtype:          The type of the record (e.g. kDNSServiceType_TXT, kDNSServiceType_SRV, etc)
-     * 
+     * <p>
      * rdlen:           The length, in bytes, of the rdata.
-     * 
+     * <p>
      * rdata:           The raw rdata to be contained in the added resource record.
-     * 
+     * <p>
      * ttl:             The time to live of the resource record, in seconds.
-     *                  Most clients should pass 0 to indicate that the system should
-     *                  select a sensible default value.
-     * 
+     * Most clients should pass 0 to indicate that the system should
+     * select a sensible default value.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
-     *                  error code indicating the error that occurred (the RecordRef is not initialized).
+     * error code indicating the error that occurred (the RecordRef is not initialized).
      */
     @Generated
     @CFunction
@@ -9468,32 +9182,32 @@ public final class Globals {
 
     /**
      * DNSServiceUpdateRecord
-     * 
+     * <p>
      * Update a registered resource record. The record must either be:
-     *   - The primary txt record of a service registered via DNSServiceRegister()
-     *   - A record added to a registered service via DNSServiceAddRecord()
-     *   - An individual record registered by DNSServiceRegisterRecord()
-     * 
+     * - The primary txt record of a service registered via DNSServiceRegister()
+     * - A record added to a registered service via DNSServiceAddRecord()
+     * - An individual record registered by DNSServiceRegisterRecord()
+     * <p>
      * Parameters:
-     * 
+     * <p>
      * sdRef:           A DNSServiceRef that was initialized by DNSServiceRegister()
-     *                  or DNSServiceCreateConnection().
-     * 
+     * or DNSServiceCreateConnection().
+     * <p>
      * RecordRef:       A DNSRecordRef initialized by DNSServiceAddRecord, or NULL to update the
-     *                  service's primary txt record.
-     * 
+     * service's primary txt record.
+     * <p>
      * flags:           Currently ignored, reserved for future use.
-     * 
+     * <p>
      * rdlen:           The length, in bytes, of the new rdata.
-     * 
+     * <p>
      * rdata:           The new rdata to be contained in the updated resource record.
-     * 
+     * <p>
      * ttl:             The time to live of the updated resource record, in seconds.
-     *                  Most clients should pass 0 to indicate that the system should
-     *                  select a sensible default value.
-     * 
+     * Most clients should pass 0 to indicate that the system should
+     * select a sensible default value.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
-     *                  error code indicating the error that occurred.
+     * error code indicating the error that occurred.
      */
     @Generated
     @CFunction
@@ -9502,24 +9216,24 @@ public final class Globals {
 
     /**
      * DNSServiceRemoveRecord
-     * 
+     * <p>
      * Remove a record previously added to a service record set via DNSServiceAddRecord(), or deregister
      * a record registered individually via DNSServiceRegisterRecord().
-     * 
+     * <p>
      * Parameters:
-     * 
+     * <p>
      * sdRef:           A DNSServiceRef initialized by DNSServiceRegister() (if the
-     *                  record being removed was registered via DNSServiceAddRecord()) or by
-     *                  DNSServiceCreateConnection() (if the record being removed was registered via
-     *                  DNSServiceRegisterRecord()).
-     * 
+     * record being removed was registered via DNSServiceAddRecord()) or by
+     * DNSServiceCreateConnection() (if the record being removed was registered via
+     * DNSServiceRegisterRecord()).
+     * <p>
      * recordRef:       A DNSRecordRef initialized by a successful call to DNSServiceAddRecord()
-     *                  or DNSServiceRegisterRecord().
-     * 
+     * or DNSServiceRegisterRecord().
+     * <p>
      * flags:           Currently ignored, reserved for future use.
-     * 
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
-     *                  error code indicating the error that occurred.
+     * error code indicating the error that occurred.
      */
     @Generated
     @CFunction
@@ -9527,45 +9241,45 @@ public final class Globals {
 
     /**
      * DNSServiceBrowse() Parameters:
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef
-     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
-     *                  a copy of the shared connection reference that is to be used).
-     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
-     *                  returns kDNSServiceErr_NoError, and the browse operation
-     *                  will remain active indefinitely until the client terminates it
-     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
-     *                  (or by closing the underlying shared connection, if used).
-     * 
+     * (or, if the kDNSServiceFlagsShareConnection flag is used,
+     * a copy of the shared connection reference that is to be used).
+     * If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     * returns kDNSServiceErr_NoError, and the browse operation
+     * will remain active indefinitely until the client terminates it
+     * by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     * (or by closing the underlying shared connection, if used).
+     * <p>
      * flags:           Possible values are:
-     *                  kDNSServiceFlagsShareConnection to use a shared connection.
-     * 
+     * kDNSServiceFlagsShareConnection to use a shared connection.
+     * <p>
      * interfaceIndex:  If non-zero, specifies the interface on which to browse for services
-     *                  (the index for a given interface is determined via the if_nametoindex()
-     *                  family of calls.) Most applications will pass 0 to browse on all available
-     *                  interfaces. See "Constants for specifying an interface index" for more details.
-     * 
+     * (the index for a given interface is determined via the if_nametoindex()
+     * family of calls.) Most applications will pass 0 to browse on all available
+     * interfaces. See "Constants for specifying an interface index" for more details.
+     * <p>
      * regtype:         The service type being browsed for followed by the protocol, separated by a
-     *                  dot (e.g. "_ftp._tcp"). The transport protocol must be "_tcp" or "_udp".
-     *                  A client may optionally specify a single subtype to perform filtered browsing:
-     *                  e.g. browsing for "_primarytype._tcp,_subtype" will discover only those
-     *                  instances of "_primarytype._tcp" that were registered specifying "_subtype"
-     *                  in their list of registered subtypes.
-     * 
+     * dot (e.g. "_ftp._tcp"). The transport protocol must be "_tcp" or "_udp".
+     * A client may optionally specify a single subtype to perform filtered browsing:
+     * e.g. browsing for "_primarytype._tcp,_subtype" will discover only those
+     * instances of "_primarytype._tcp" that were registered specifying "_subtype"
+     * in their list of registered subtypes.
+     * <p>
      * domain:          If non-NULL, specifies the domain on which to browse for services.
-     *                  Most applications will not specify a domain, instead browsing on the
-     *                  default domain(s).
-     * 
+     * Most applications will not specify a domain, instead browsing on the
+     * default domain(s).
+     * <p>
      * callBack:        The function to be called when an instance of the service being browsed for
-     *                  is found, or if the call asynchronously fails.
-     * 
+     * is found, or if the call asynchronously fails.
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred (the callback is not invoked and the DNSServiceRef
-     *                  is not initialized).
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred (the callback is not invoked and the DNSServiceRef
+     * is not initialized).
      */
     @Generated
     @CFunction
@@ -9587,49 +9301,49 @@ public final class Globals {
 
     /**
      * DNSServiceResolve() Parameters
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef
-     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
-     *                  a copy of the shared connection reference that is to be used).
-     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
-     *                  returns kDNSServiceErr_NoError, and the resolve operation
-     *                  will remain active indefinitely until the client terminates it
-     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
-     *                  (or by closing the underlying shared connection, if used).
-     * 
+     * (or, if the kDNSServiceFlagsShareConnection flag is used,
+     * a copy of the shared connection reference that is to be used).
+     * If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     * returns kDNSServiceErr_NoError, and the resolve operation
+     * will remain active indefinitely until the client terminates it
+     * by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     * (or by closing the underlying shared connection, if used).
+     * <p>
      * flags:           Possible values are:
-     *                  kDNSServiceFlagsShareConnection to use a shared connection.
-     *                  Specifying kDNSServiceFlagsForceMulticast will cause query to be
-     *                  performed with a link-local mDNS query, even if the name is an
-     *                  apparently non-local name (i.e. a name not ending in ".local.")
-     * 
+     * kDNSServiceFlagsShareConnection to use a shared connection.
+     * Specifying kDNSServiceFlagsForceMulticast will cause query to be
+     * performed with a link-local mDNS query, even if the name is an
+     * apparently non-local name (i.e. a name not ending in ".local.")
+     * <p>
      * interfaceIndex:  The interface on which to resolve the service. If this resolve call is
-     *                  as a result of a currently active DNSServiceBrowse() operation, then the
-     *                  interfaceIndex should be the index reported in the DNSServiceBrowseReply
-     *                  callback. If this resolve call is using information previously saved
-     *                  (e.g. in a preference file) for later use, then use interfaceIndex 0, because
-     *                  the desired service may now be reachable via a different physical interface.
-     *                  See "Constants for specifying an interface index" for more details.
-     * 
+     * as a result of a currently active DNSServiceBrowse() operation, then the
+     * interfaceIndex should be the index reported in the DNSServiceBrowseReply
+     * callback. If this resolve call is using information previously saved
+     * (e.g. in a preference file) for later use, then use interfaceIndex 0, because
+     * the desired service may now be reachable via a different physical interface.
+     * See "Constants for specifying an interface index" for more details.
+     * <p>
      * name:            The name of the service instance to be resolved, as reported to the
-     *                  DNSServiceBrowseReply() callback.
-     * 
+     * DNSServiceBrowseReply() callback.
+     * <p>
      * regtype:         The type of the service instance to be resolved, as reported to the
-     *                  DNSServiceBrowseReply() callback.
-     * 
+     * DNSServiceBrowseReply() callback.
+     * <p>
      * domain:          The domain of the service instance to be resolved, as reported to the
-     *                  DNSServiceBrowseReply() callback.
-     * 
+     * DNSServiceBrowseReply() callback.
+     * <p>
      * callBack:        The function to be called when a result is found, or if the call
-     *                  asynchronously fails.
-     * 
+     * asynchronously fails.
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred (the callback is never invoked and the DNSServiceRef
-     *                  is not initialized).
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred (the callback is never invoked and the DNSServiceRef
+     * is not initialized).
      */
     @Generated
     @CFunction
@@ -9653,45 +9367,45 @@ public final class Globals {
 
     /**
      * DNSServiceQueryRecord() Parameters:
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef
-     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
-     *                  a copy of the shared connection reference that is to be used).
-     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
-     *                  returns kDNSServiceErr_NoError, and the query operation
-     *                  will remain active indefinitely until the client terminates it
-     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
-     *                  (or by closing the underlying shared connection, if used).
-     * 
+     * (or, if the kDNSServiceFlagsShareConnection flag is used,
+     * a copy of the shared connection reference that is to be used).
+     * If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     * returns kDNSServiceErr_NoError, and the query operation
+     * will remain active indefinitely until the client terminates it
+     * by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     * (or by closing the underlying shared connection, if used).
+     * <p>
      * flags:           Possible values are:
-     *                  kDNSServiceFlagsShareConnection to use a shared connection.
-     *                  kDNSServiceFlagsForceMulticast or kDNSServiceFlagsLongLivedQuery.
-     *                  Pass kDNSServiceFlagsLongLivedQuery to create a "long-lived" unicast
-     *                  query to a unicast DNS server that implements the protocol. This flag
-     *                  has no effect on link-local multicast queries.
-     * 
+     * kDNSServiceFlagsShareConnection to use a shared connection.
+     * kDNSServiceFlagsForceMulticast or kDNSServiceFlagsLongLivedQuery.
+     * Pass kDNSServiceFlagsLongLivedQuery to create a "long-lived" unicast
+     * query to a unicast DNS server that implements the protocol. This flag
+     * has no effect on link-local multicast queries.
+     * <p>
      * interfaceIndex:  If non-zero, specifies the interface on which to issue the query
-     *                  (the index for a given interface is determined via the if_nametoindex()
-     *                  family of calls.) Passing 0 causes the name to be queried for on all
-     *                  interfaces. See "Constants for specifying an interface index" for more details.
-     * 
+     * (the index for a given interface is determined via the if_nametoindex()
+     * family of calls.) Passing 0 causes the name to be queried for on all
+     * interfaces. See "Constants for specifying an interface index" for more details.
+     * <p>
      * fullname:        The full domain name of the resource record to be queried for.
-     * 
+     * <p>
      * rrtype:          The numerical type of the resource record to be queried for
-     *                  (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
-     * 
+     * (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
+     * <p>
      * rrclass:         The class of the resource record (usually kDNSServiceClass_IN).
-     * 
+     * <p>
      * callBack:        The function to be called when a result is found, or if the call
-     *                  asynchronously fails.
-     * 
+     * asynchronously fails.
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred (the callback is never invoked and the DNSServiceRef
-     *                  is not initialized).
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred (the callback is never invoked and the DNSServiceRef
+     * is not initialized).
      */
     @Generated
     @CFunction
@@ -9711,44 +9425,44 @@ public final class Globals {
 
     /**
      * DNSServiceGetAddrInfo() Parameters:
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef
-     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
-     *                  a copy of the shared connection reference that is to be used).
-     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
-     *                  returns kDNSServiceErr_NoError, and the address query operation
-     *                  will remain active indefinitely until the client terminates it
-     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
-     *                  (or by closing the underlying shared connection, if used).
-     * 
+     * (or, if the kDNSServiceFlagsShareConnection flag is used,
+     * a copy of the shared connection reference that is to be used).
+     * If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     * returns kDNSServiceErr_NoError, and the address query operation
+     * will remain active indefinitely until the client terminates it
+     * by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     * (or by closing the underlying shared connection, if used).
+     * <p>
      * flags:           Possible values are:
-     *                  kDNSServiceFlagsShareConnection to use a shared connection.
-     *                  kDNSServiceFlagsForceMulticast
-     * 
+     * kDNSServiceFlagsShareConnection to use a shared connection.
+     * kDNSServiceFlagsForceMulticast
+     * <p>
      * interfaceIndex:  The interface on which to issue the query.  Passing 0 causes the query to be
-     *                  sent on all active interfaces via Multicast or the primary interface via Unicast.
-     * 
+     * sent on all active interfaces via Multicast or the primary interface via Unicast.
+     * <p>
      * protocol:        Pass in kDNSServiceProtocol_IPv4 to look up IPv4 addresses, or kDNSServiceProtocol_IPv6
-     *                  to look up IPv6 addresses, or both to look up both kinds. If neither flag is
-     *                  set, the system will apply an intelligent heuristic, which is (currently)
-     *                  that it will attempt to look up both, except:
-     * 
-     *                   * If "hostname" is a wide-area unicast DNS hostname (i.e. not a ".local." name)
-     *                     but this host has no routable IPv6 address, then the call will not try to
-     *                     look up IPv6 addresses for "hostname", since any addresses it found would be
-     *                     unlikely to be of any use anyway. Similarly, if this host has no routable
-     *                     IPv4 address, the call will not try to look up IPv4 addresses for "hostname".
-     * 
+     * to look up IPv6 addresses, or both to look up both kinds. If neither flag is
+     * set, the system will apply an intelligent heuristic, which is (currently)
+     * that it will attempt to look up both, except:
+     * <p>
+     * * If "hostname" is a wide-area unicast DNS hostname (i.e. not a ".local." name)
+     * but this host has no routable IPv6 address, then the call will not try to
+     * look up IPv6 addresses for "hostname", since any addresses it found would be
+     * unlikely to be of any use anyway. Similarly, if this host has no routable
+     * IPv4 address, the call will not try to look up IPv4 addresses for "hostname".
+     * <p>
      * hostname:        The fully qualified domain name of the host to be queried for.
-     * 
+     * <p>
      * callBack:        The function to be called when the query succeeds or fails asynchronously.
-     * 
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred.
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred.
      */
     @Generated
     @CFunction
@@ -9769,20 +9483,20 @@ public final class Globals {
 
     /**
      * DNSServiceCreateConnection()
-     * 
+     * <p>
      * Create a connection to the daemon allowing efficient registration of
      * multiple individual records.
-     * 
+     * <p>
      * Parameters:
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef.
-     *                  Deallocating the reference (via DNSServiceRefDeallocate())
-     *                  severs the connection and cancels all operations and
-     *                  deregisters all records registered on this connection.
-     * 
+     * Deallocating the reference (via DNSServiceRefDeallocate())
+     * severs the connection and cancels all operations and
+     * deregisters all records registered on this connection.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns
-     *                  an error code indicating the specific failure that occurred
-     *                  (in which case the DNSServiceRef is not initialized).
+     * an error code indicating the specific failure that occurred
+     * (in which case the DNSServiceRef is not initialized).
      */
     @Generated
     @CFunction
@@ -9790,46 +9504,52 @@ public final class Globals {
 
     /**
      * DNSServiceRegisterRecord() Parameters:
-     * 
+     * <p>
      * sdRef:           A DNSServiceRef initialized by DNSServiceCreateConnection().
-     * 
+     * <p>
      * RecordRef:       A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
-     *                  call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
-     *                  (To deregister ALL records registered on a single connected DNSServiceRef
-     *                  and deallocate each of their corresponding DNSServiceRecordRefs, call
-     *                  DNSServiceRefDeallocate()).
-     * 
-     * flags:           One of either kDNSServiceFlagsShared, kDNSServiceFlagsUnique or kDNSServiceFlagsKnownUnique must be set.
-     * 
+     * call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
+     * (To deregister ALL records registered on a single connected DNSServiceRef
+     * and deallocate each of their corresponding DNSServiceRecordRefs, call
+     * DNSServiceRefDeallocate()).
+     * <p>
+     * flags:           Required values are:
+     * One of kDNSServiceFlagsShared, kDNSServiceFlagsUnique or kDNSServiceFlagsKnownUnique flags.
+     * <p>
+     * Possible values are:
+     * kDNSServiceFlagsForceMulticast: If it is specified, the registration will be performed just like
+     * a link-local mDNS registration even if the name is an apparently non-local name (i.e. a name not
+     * ending in ".local.")
+     * <p>
      * interfaceIndex:  If non-zero, specifies the interface on which to register the record
-     *                  (the index for a given interface is determined via the if_nametoindex()
-     *                  family of calls.) Passing 0 causes the record to be registered on all interfaces.
-     *                  See "Constants for specifying an interface index" for more details.
-     * 
+     * (the index for a given interface is determined via the if_nametoindex()
+     * family of calls.) Passing 0 causes the record to be registered on all interfaces.
+     * See "Constants for specifying an interface index" for more details.
+     * <p>
      * fullname:        The full domain name of the resource record.
-     * 
+     * <p>
      * rrtype:          The numerical type of the resource record (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
-     * 
+     * <p>
      * rrclass:         The class of the resource record (usually kDNSServiceClass_IN)
-     * 
+     * <p>
      * rdlen:           Length, in bytes, of the rdata.
-     * 
+     * <p>
      * rdata:           A pointer to the raw rdata, as it is to appear in the DNS record.
-     * 
+     * <p>
      * ttl:             The time to live of the resource record, in seconds.
-     *                  Most clients should pass 0 to indicate that the system should
-     *                  select a sensible default value.
-     * 
+     * Most clients should pass 0 to indicate that the system should
+     * select a sensible default value.
+     * <p>
      * callBack:        The function to be called when a result is found, or if the call
-     *                  asynchronously fails (e.g. because of a name conflict.)
-     * 
+     * asynchronously fails (e.g. because of a name conflict.)
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred (the callback is never invoked and the DNSRecordRef is
-     *                  not initialized).
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred (the callback is never invoked and the DNSRecordRef is
+     * not initialized).
      */
     @Generated
     @CFunction
@@ -9849,33 +9569,33 @@ public final class Globals {
 
     /**
      * DNSServiceReconfirmRecord
-     * 
+     * <p>
      * Instruct the daemon to verify the validity of a resource record that appears
      * to be out of date (e.g. because TCP connection to a service's target failed.)
      * Causes the record to be flushed from the daemon's cache (as well as all other
      * daemons' caches on the network) if the record is determined to be invalid.
      * Use this routine conservatively. Reconfirming a record necessarily consumes
      * network bandwidth, so this should not be done indiscriminately.
-     * 
+     * <p>
      * Parameters:
-     * 
+     * <p>
      * flags:           Not currently used.
-     * 
+     * <p>
      * interfaceIndex:  Specifies the interface of the record in question.
-     *                  The caller must specify the interface.
-     *                  This API (by design) causes increased network traffic, so it requires
-     *                  the caller to be precise about which record should be reconfirmed.
-     *                  It is not possible to pass zero for the interface index to perform
-     *                  a "wildcard" reconfirmation, where *all* matching records are reconfirmed.
-     * 
+     * The caller must specify the interface.
+     * This API (by design) causes increased network traffic, so it requires
+     * the caller to be precise about which record should be reconfirmed.
+     * It is not possible to pass zero for the interface index to perform
+     * a "wildcard" reconfirmation, where *all* matching records are reconfirmed.
+     * <p>
      * fullname:        The resource record's full domain name.
-     * 
+     * <p>
      * rrtype:          The resource record's type (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
-     * 
+     * <p>
      * rrclass:         The class of the resource record (usually kDNSServiceClass_IN).
-     * 
+     * <p>
      * rdlen:           The length, in bytes, of the resource record rdata.
-     * 
+     * <p>
      * rdata:           The raw rdata of the resource record.
      */
     @Generated
@@ -9886,7 +9606,7 @@ public final class Globals {
 
     /**
      * PeerConnectionRelease() Parameters
-     * 
+     * <p>
      * Release P2P connection resources associated with the service instance.
      * When a service is resolved over a P2P interface, a connection is brought up to the
      * peer advertising the service instance.  This call will free the resources associated
@@ -9894,34 +9614,34 @@ public final class Globals {
      * be maintained by the daemon while the browse for the service type is still
      * running.  Thus the sequence of calls to discover, resolve, and then terminate the connection
      * associated with a given P2P service instance would be:
-     * 
-     *   DNSServiceRef BrowseRef, ResolveRef;
-     *      DNSServiceBrowse(&BrowseRef, ...)    // browse for all instances of the service
-     *      DNSServiceResolve(&ResolveRef, ...)  // resolving a service instance creates a
-     *                                           // connection to the peer device advertising that service
-     *      DNSServiceRefDeallocate(ResolveRef)  // Stop the resolve, which does not close the peer connection
-     * 
-     *          // Communicate with the peer application.
-     * 
-     *      PeerConnectionRelease()  // release the connection to the peer device for the specified service instance
-     * 
-     *      DNSServiceRefDeallocate(BrowseRef)  // stop the browse
-     *          // Any further calls to PeerConnectionRelease() will have no affect since the
-     *          // service instance to peer connection relationship is only maintained by the
-     *          // daemon while the browse is running.
-     * 
-     * 
+     * <p>
+     * DNSServiceRef BrowseRef, ResolveRef;
+     * DNSServiceBrowse(&BrowseRef, ...)    // browse for all instances of the service
+     * DNSServiceResolve(&ResolveRef, ...)  // resolving a service instance creates a
+     * // connection to the peer device advertising that service
+     * DNSServiceRefDeallocate(ResolveRef)  // Stop the resolve, which does not close the peer connection
+     * <p>
+     * // Communicate with the peer application.
+     * <p>
+     * PeerConnectionRelease()  // release the connection to the peer device for the specified service instance
+     * <p>
+     * DNSServiceRefDeallocate(BrowseRef)  // stop the browse
+     * // Any further calls to PeerConnectionRelease() will have no affect since the
+     * // service instance to peer connection relationship is only maintained by the
+     * // daemon while the browse is running.
+     * <p>
+     * <p>
      * flags:           Not currently used.
-     * 
+     * <p>
      * name:            The name of the service instance to be resolved, as reported to the
-     *                  DNSServiceBrowseReply() callback.
-     * 
+     * DNSServiceBrowseReply() callback.
+     * <p>
      * regtype:         The type of the service instance to be resolved, as reported to the
-     *                  DNSServiceBrowseReply() callback.
-     * 
+     * DNSServiceBrowseReply() callback.
+     * <p>
      * domain:          The domain of the service instance to be resolved, as reported to the
-     *                  DNSServiceBrowseReply() callback.
-     * 
+     * DNSServiceBrowseReply() callback.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success or the error that occurred.
      */
     @Generated
@@ -9933,57 +9653,57 @@ public final class Globals {
 
     /**
      * DNSServiceNATPortMappingCreate() Parameters:
-     * 
+     * <p>
      * sdRef:           A pointer to an uninitialized DNSServiceRef
-     *                  (or, if the kDNSServiceFlagsShareConnection flag is used,
-     *                  a copy of the shared connection reference that is to be used).
-     *                  If the call succeeds then it initializes (or updates) the DNSServiceRef,
-     *                  returns kDNSServiceErr_NoError, and the NAT port mapping
-     *                  will remain active indefinitely until the client terminates it
-     *                  by passing this DNSServiceRef to DNSServiceRefDeallocate()
-     *                  (or by closing the underlying shared connection, if used).
-     * 
+     * (or, if the kDNSServiceFlagsShareConnection flag is used,
+     * a copy of the shared connection reference that is to be used).
+     * If the call succeeds then it initializes (or updates) the DNSServiceRef,
+     * returns kDNSServiceErr_NoError, and the NAT port mapping
+     * will remain active indefinitely until the client terminates it
+     * by passing this DNSServiceRef to DNSServiceRefDeallocate()
+     * (or by closing the underlying shared connection, if used).
+     * <p>
      * flags:           Possible values are:
-     *                  kDNSServiceFlagsShareConnection to use a shared connection.
-     * 
+     * kDNSServiceFlagsShareConnection to use a shared connection.
+     * <p>
      * interfaceIndex:  The interface on which to create port mappings in a NAT gateway.
-     *                  Passing 0 causes the port mapping request to be sent on the primary interface.
-     * 
+     * Passing 0 causes the port mapping request to be sent on the primary interface.
+     * <p>
      * protocol:        To request a port mapping, pass in kDNSServiceProtocol_UDP, or kDNSServiceProtocol_TCP,
-     *                  or (kDNSServiceProtocol_UDP | kDNSServiceProtocol_TCP) to map both.
-     *                  The local listening port number must also be specified in the internalPort parameter.
-     *                  To just discover the NAT gateway's external IP address, pass zero for protocol,
-     *                  internalPort, externalPort and ttl.
-     * 
+     * or (kDNSServiceProtocol_UDP | kDNSServiceProtocol_TCP) to map both.
+     * The local listening port number must also be specified in the internalPort parameter.
+     * To just discover the NAT gateway's external IP address, pass zero for protocol,
+     * internalPort, externalPort and ttl.
+     * <p>
      * internalPort:    The port number in network byte order on the local machine which is listening for packets.
-     * 
+     * <p>
      * externalPort:    The requested external port in network byte order in the NAT gateway that you would
-     *                  like to map to the internal port. Pass 0 if you don't care which external port is chosen for you.
-     * 
+     * like to map to the internal port. Pass 0 if you don't care which external port is chosen for you.
+     * <p>
      * ttl:             The requested renewal period of the NAT port mapping, in seconds.
-     *                  If the client machine crashes, suffers a power failure, is disconnected from
-     *                  the network, or suffers some other unfortunate demise which causes it to vanish
-     *                  unexpectedly without explicitly removing its NAT port mappings, then the NAT gateway
-     *                  will garbage-collect old stale NAT port mappings when their lifetime expires.
-     *                  Requesting a short TTL causes such orphaned mappings to be garbage-collected
-     *                  more promptly, but consumes system resources and network bandwidth with
-     *                  frequent renewal packets to keep the mapping from expiring.
-     *                  Requesting a long TTL is more efficient on the network, but in the event of the
-     *                  client vanishing, stale NAT port mappings will not be garbage-collected as quickly.
-     *                  Most clients should pass 0 to use a system-wide default value.
-     * 
+     * If the client machine crashes, suffers a power failure, is disconnected from
+     * the network, or suffers some other unfortunate demise which causes it to vanish
+     * unexpectedly without explicitly removing its NAT port mappings, then the NAT gateway
+     * will garbage-collect old stale NAT port mappings when their lifetime expires.
+     * Requesting a short TTL causes such orphaned mappings to be garbage-collected
+     * more promptly, but consumes system resources and network bandwidth with
+     * frequent renewal packets to keep the mapping from expiring.
+     * Requesting a long TTL is more efficient on the network, but in the event of the
+     * client vanishing, stale NAT port mappings will not be garbage-collected as quickly.
+     * Most clients should pass 0 to use a system-wide default value.
+     * <p>
      * callBack:        The function to be called when the port mapping request succeeds or fails asynchronously.
-     * 
+     * <p>
      * context:         An application context pointer which is passed to the callback function
-     *                  (may be NULL).
-     * 
+     * (may be NULL).
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
-     *                  errors are delivered to the callback), otherwise returns an error code indicating
-     *                  the error that occurred.
-     * 
-     *                  If you don't actually want a port mapped, and are just calling the API
-     *                  because you want to find out the NAT's external IP address (e.g. for UI
-     *                  display) then pass zero for protocol, internalPort, externalPort and ttl.
+     * errors are delivered to the callback), otherwise returns an error code indicating
+     * the error that occurred.
+     * <p>
+     * If you don't actually want a port mapped, and are just calling the API
+     * because you want to find out the NAT's external IP address (e.g. for UI
+     * display) then pass zero for protocol, internalPort, externalPort and ttl.
      */
     @Generated
     @CFunction
@@ -10002,27 +9722,27 @@ public final class Globals {
 
     /**
      * DNSServiceConstructFullName()
-     * 
+     * <p>
      * Concatenate a three-part domain name (as returned by the above callbacks) into a
      * properly-escaped full domain name. Note that callbacks in the above functions ALREADY ESCAPE
      * strings where necessary.
-     * 
+     * <p>
      * Parameters:
-     * 
+     * <p>
      * fullName:        A pointer to a buffer that where the resulting full domain name is to be written.
-     *                  The buffer must be kDNSServiceMaxDomainName (1009) bytes in length to
-     *                  accommodate the longest legal domain name without buffer overrun.
-     * 
+     * The buffer must be kDNSServiceMaxDomainName (1009) bytes in length to
+     * accommodate the longest legal domain name without buffer overrun.
+     * <p>
      * service:         The service name - any dots or backslashes must NOT be escaped.
-     *                  May be NULL (to construct a PTR record name, e.g.
-     *                  "_ftp._tcp.apple.com.").
-     * 
+     * May be NULL (to construct a PTR record name, e.g.
+     * "_ftp._tcp.apple.com.").
+     * <p>
      * regtype:         The service type followed by the protocol, separated by a dot
-     *                  (e.g. "_ftp._tcp").
-     * 
+     * (e.g. "_ftp._tcp").
+     * <p>
      * domain:          The domain name, e.g. "apple.com.". Literal dots or backslashes,
-     *                  if any, must be escaped, e.g. "1st\. Floor.apple.com."
-     * 
+     * if any, must be escaped, e.g. "1st\. Floor.apple.com."
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError (0) on success, kDNSServiceErr_BadParam on error.
      */
     @Generated
@@ -10034,9 +9754,9 @@ public final class Globals {
 
     /**
      * TXTRecordCreate()
-     * 
+     * <p>
      * Creates a new empty TXTRecordRef referencing the specified storage.
-     * 
+     * <p>
      * If the buffer parameter is NULL, or the specified storage size is not
      * large enough to hold a key subsequently added using TXTRecordSetValue(),
      * then additional memory will be added as needed using malloc(). Note that
@@ -10044,11 +9764,11 @@ public final class Globals {
      * to create a copy of another TXT Record. The correct way to copy TXTRecordRef
      * is creating an empty TXTRecordRef with TXTRecordCreate() first, and using
      * TXTRecordSetValue to set the same value.
-     * 
+     * <p>
      * On some platforms, when memory is low, malloc() may fail. In this
      * case, TXTRecordSetValue() will return kDNSServiceErr_NoMemory, and this
      * error condition will need to be handled as appropriate by the caller.
-     * 
+     * <p>
      * You can avoid the need to handle this error condition if you ensure
      * that the storage you initially provide is large enough to hold all
      * the key/value pairs that are to be added to the record.
@@ -10063,19 +9783,19 @@ public final class Globals {
      * 256-byte buffer will be more than sufficient.
      * Recommended size limits for DNS-SD TXT Records are discussed in RFC 6763
      * <https://tools.ietf.org/html/rfc6763#section-6.2>
-     * 
+     * <p>
      * Note: When passing parameters to and from these TXT record APIs,
      * the key name does not include the '=' character. The '=' character
      * is the separator between the key and value in the on-the-wire
      * packet format; it is not part of either the key or the value.
-     * 
+     * <p>
      * txtRecord:       A pointer to an uninitialized TXTRecordRef.
-     * 
+     * <p>
      * bufferLen:       The size of the storage provided in the "buffer" parameter.
-     * 
+     * <p>
      * buffer:          Optional caller-supplied storage used to hold the TXTRecord data.
-     *                  This storage must remain valid for as long as
-     *                  the TXTRecordRef.
+     * This storage must remain valid for as long as
+     * the TXTRecordRef.
      */
     @Generated
     @CFunction
@@ -10083,11 +9803,11 @@ public final class Globals {
 
     /**
      * TXTRecordDeallocate()
-     * 
+     * <p>
      * Releases any resources allocated in the course of preparing a TXT Record
      * using TXTRecordCreate()/TXTRecordSetValue()/TXTRecordRemoveValue().
      * Ownership of the buffer provided in TXTRecordCreate() returns to the client.
-     * 
+     * <p>
      * txtRecord:           A TXTRecordRef initialized by calling TXTRecordCreate().
      */
     @Generated
@@ -10096,40 +9816,40 @@ public final class Globals {
 
     /**
      * TXTRecordSetValue()
-     * 
+     * <p>
      * Adds a key (optionally with value) to a TXTRecordRef. If the "key" already
      * exists in the TXTRecordRef, then the current value will be replaced with
      * the new value.
      * Keys may exist in four states with respect to a given TXT record:
-     *  - Absent (key does not appear at all)
-     *  - Present with no value ("key" appears alone)
-     *  - Present with empty value ("key=" appears in TXT record)
-     *  - Present with non-empty value ("key=value" appears in TXT record)
+     * - Absent (key does not appear at all)
+     * - Present with no value ("key" appears alone)
+     * - Present with empty value ("key=" appears in TXT record)
+     * - Present with non-empty value ("key=value" appears in TXT record)
      * For more details refer to "Data Syntax for DNS-SD TXT Records" in RFC 6763
      * <https://tools.ietf.org/html/rfc6763#section-6>
-     * 
+     * <p>
      * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
-     * 
+     * <p>
      * key:             A null-terminated string which only contains printable ASCII
-     *                  values (0x20-0x7E), excluding '=' (0x3D). Keys should be
-     *                  9 characters or fewer (not counting the terminating null).
-     * 
+     * values (0x20-0x7E), excluding '=' (0x3D). Keys should be
+     * 9 characters or fewer (not counting the terminating null).
+     * <p>
      * valueSize:       The size of the value.
-     * 
+     * <p>
      * value:           Any binary value. For values that represent
-     *                  textual data, UTF-8 is STRONGLY recommended.
-     *                  For values that represent textual data, valueSize
-     *                  should NOT include the terminating null (if any)
-     *                  at the end of the string.
-     *                  If NULL, then "key" will be added with no value.
-     *                  If non-NULL but valueSize is zero, then "key=" will be
-     *                  added with empty value.
-     * 
+     * textual data, UTF-8 is STRONGLY recommended.
+     * For values that represent textual data, valueSize
+     * should NOT include the terminating null (if any)
+     * at the end of the string.
+     * If NULL, then "key" will be added with no value.
+     * If non-NULL but valueSize is zero, then "key=" will be
+     * added with empty value.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success.
-     *                  Returns kDNSServiceErr_Invalid if the "key" string contains
-     *                  illegal characters.
-     *                  Returns kDNSServiceErr_NoMemory if adding this key would
-     *                  exceed the available storage.
+     * Returns kDNSServiceErr_Invalid if the "key" string contains
+     * illegal characters.
+     * Returns kDNSServiceErr_NoMemory if adding this key would
+     * exceed the available storage.
      */
     @Generated
     @CFunction
@@ -10139,17 +9859,17 @@ public final class Globals {
 
     /**
      * TXTRecordRemoveValue()
-     * 
+     * <p>
      * Removes a key from a TXTRecordRef. The "key" must be an
      * ASCII string which exists in the TXTRecordRef.
-     * 
+     * <p>
      * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
-     * 
+     * <p>
      * key:             A key name which exists in the TXTRecordRef.
-     * 
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success.
-     *                  Returns kDNSServiceErr_NoSuchKey if the "key" does not
-     *                  exist in the TXTRecordRef.
+     * Returns kDNSServiceErr_NoSuchKey if the "key" does not
+     * exist in the TXTRecordRef.
      */
     @Generated
     @CFunction
@@ -10158,15 +9878,15 @@ public final class Globals {
 
     /**
      * TXTRecordGetLength()
-     * 
+     * <p>
      * Allows you to determine the length of the raw bytes within a TXTRecordRef.
-     * 
+     * <p>
      * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
-     * 
+     * <p>
      * return value:    Returns the size of the raw bytes inside a TXTRecordRef
-     *                  which you can pass directly to DNSServiceRegister() or
-     *                  to DNSServiceUpdateRecord().
-     *                  Returns 0 if the TXTRecordRef is empty.
+     * which you can pass directly to DNSServiceRegister() or
+     * to DNSServiceUpdateRecord().
+     * Returns 0 if the TXTRecordRef is empty.
      */
     @Generated
     @CFunction
@@ -10174,14 +9894,14 @@ public final class Globals {
 
     /**
      * TXTRecordGetBytesPtr()
-     * 
+     * <p>
      * Allows you to retrieve a pointer to the raw bytes within a TXTRecordRef.
-     * 
+     * <p>
      * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
-     * 
+     * <p>
      * return value:    Returns a pointer to the raw bytes inside the TXTRecordRef
-     *                  which you can pass directly to DNSServiceRegister() or
-     *                  to DNSServiceUpdateRecord().
+     * which you can pass directly to DNSServiceRegister() or
+     * to DNSServiceUpdateRecord().
      */
     @Generated
     @CFunction
@@ -10189,17 +9909,17 @@ public final class Globals {
 
     /**
      * TXTRecordContainsKey()
-     * 
+     * <p>
      * Allows you to determine if a given TXT Record contains a specified key.
-     * 
+     * <p>
      * txtLen:          The size of the received TXT Record.
-     * 
+     * <p>
      * txtRecord:       Pointer to the received TXT Record bytes.
-     * 
+     * <p>
      * key:             A null-terminated ASCII string containing the key name.
-     * 
+     * <p>
      * return value:    Returns 1 if the TXT Record contains the specified key.
-     *                  Otherwise, it returns 0.
+     * Otherwise, it returns 0.
      */
     @Generated
     @CFunction
@@ -10208,24 +9928,24 @@ public final class Globals {
 
     /**
      * TXTRecordGetValuePtr()
-     * 
+     * <p>
      * Allows you to retrieve the value for a given key from a TXT Record.
-     * 
+     * <p>
      * txtLen:          The size of the received TXT Record
-     * 
+     * <p>
      * txtRecord:       Pointer to the received TXT Record bytes.
-     * 
+     * <p>
      * key:             A null-terminated ASCII string containing the key name.
-     * 
+     * <p>
      * valueLen:        On output, will be set to the size of the "value" data.
-     * 
+     * <p>
      * return value:    Returns NULL if the key does not exist in this TXT record,
-     *                  or exists with no value (to differentiate between
-     *                  these two cases use TXTRecordContainsKey()).
-     *                  Returns pointer to location within TXT Record bytes
-     *                  if the key exists with empty or non-empty value.
-     *                  For empty value, valueLen will be zero.
-     *                  For non-empty value, valueLen will be length of value data.
+     * or exists with no value (to differentiate between
+     * these two cases use TXTRecordContainsKey()).
+     * Returns pointer to location within TXT Record bytes
+     * if the key exists with empty or non-empty value.
+     * For empty value, valueLen will be zero.
+     * For non-empty value, valueLen will be length of value data.
      */
     @Generated
     @CFunction
@@ -10235,14 +9955,14 @@ public final class Globals {
 
     /**
      * TXTRecordGetCount()
-     * 
+     * <p>
      * Returns the number of keys stored in the TXT Record. The count
      * can be used with TXTRecordGetItemAtIndex() to iterate through the keys.
-     * 
+     * <p>
      * txtLen:          The size of the received TXT Record.
-     * 
+     * <p>
      * txtRecord:       Pointer to the received TXT Record bytes.
-     * 
+     * <p>
      * return value:    Returns the total number of keys in the TXT Record.
      */
     @Generated
@@ -10251,41 +9971,41 @@ public final class Globals {
 
     /**
      * TXTRecordGetItemAtIndex()
-     * 
+     * <p>
      * Allows you to retrieve a key name and value pointer, given an index into
      * a TXT Record. Legal index values range from zero to TXTRecordGetCount()-1.
      * It's also possible to iterate through keys in a TXT record by simply
      * calling TXTRecordGetItemAtIndex() repeatedly, beginning with index zero
      * and increasing until TXTRecordGetItemAtIndex() returns kDNSServiceErr_Invalid.
-     * 
+     * <p>
      * On return:
      * For keys with no value, *value is set to NULL and *valueLen is zero.
      * For keys with empty value, *value is non-NULL and *valueLen is zero.
      * For keys with non-empty value, *value is non-NULL and *valueLen is non-zero.
-     * 
+     * <p>
      * txtLen:          The size of the received TXT Record.
-     * 
+     * <p>
      * txtRecord:       Pointer to the received TXT Record bytes.
-     * 
+     * <p>
      * itemIndex:       An index into the TXT Record.
-     * 
+     * <p>
      * keyBufLen:       The size of the string buffer being supplied.
-     * 
+     * <p>
      * key:             A string buffer used to store the key name.
-     *                  On return, the buffer contains a null-terminated C-string
-     *                  giving the key name. DNS-SD TXT keys are usually
-     *                  9 characters or fewer. To hold the maximum possible
-     *                  key name, the buffer should be 256 bytes long.
-     * 
+     * On return, the buffer contains a null-terminated C-string
+     * giving the key name. DNS-SD TXT keys are usually
+     * 9 characters or fewer. To hold the maximum possible
+     * key name, the buffer should be 256 bytes long.
+     * <p>
      * valueLen:        On output, will be set to the size of the "value" data.
-     * 
+     * <p>
      * value:           On output, *value is set to point to location within TXT
-     *                  Record bytes that holds the value data.
-     * 
+     * Record bytes that holds the value data.
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success.
-     *                  Returns kDNSServiceErr_NoMemory if keyBufLen is too short.
-     *                  Returns kDNSServiceErr_Invalid if index is greater than
-     *                  TXTRecordGetCount()-1.
+     * Returns kDNSServiceErr_NoMemory if keyBufLen is too short.
+     * Returns kDNSServiceErr_Invalid if index is greater than
+     * TXTRecordGetCount()-1.
      */
     @Generated
     @CFunction
@@ -10294,14 +10014,14 @@ public final class Globals {
 
     /**
      * DNSServiceSetDispatchQueue
-     * 
+     * <p>
      * Allows you to schedule a DNSServiceRef on a serial dispatch queue for receiving asynchronous
      * callbacks.  It's the clients responsibility to ensure that the provided dispatch queue is running.
-     * 
+     * <p>
      * A typical application that uses CFRunLoopRun or dispatch_main on its main thread will
      * usually schedule DNSServiceRefs on its main queue (which is always a serial queue)
      * using "DNSServiceSetDispatchQueue(sdref, dispatch_get_main_queue());"
-     * 
+     * <p>
      * If there is any error during the processing of events, the application callback will
      * be called with an error code. For shared connections, each subordinate DNSServiceRef
      * will get its own error callback. Currently these error callbacks only happen
@@ -10311,10 +10031,10 @@ public final class Globals {
      * These error callbacks are rare and should not normally happen on customer machines,
      * but application code should be written defensively to handle such error callbacks
      * gracefully if they occur.
-     * 
+     * <p>
      * After using DNSServiceSetDispatchQueue on a DNSServiceRef, calling DNSServiceProcessResult
      * on the same DNSServiceRef will result in undefined behavior and should be avoided.
-     * 
+     * <p>
      * Once the application successfully schedules a DNSServiceRef on a serial dispatch queue using
      * DNSServiceSetDispatchQueue, it cannot remove the DNSServiceRef from the dispatch queue, or use
      * DNSServiceSetDispatchQueue a second time to schedule the DNSServiceRef onto a different serial dispatch
@@ -10322,16 +10042,16 @@ public final class Globals {
      * the application no longer requires that operation and terminates it using DNSServiceRefDeallocate.
      * Note that the call to DNSServiceRefDeallocate() must be done on the same queue originally passed
      * as an argument to DNSServiceSetDispatchQueue().
-     * 
+     * <p>
      * service:         DNSServiceRef that was allocated and returned to the application, when the
-     *                  application calls one of the DNSService API.
-     * 
+     * application calls one of the DNSService API.
+     * <p>
      * queue:           dispatch queue where the application callback will be scheduled
-     * 
+     * <p>
      * return value:    Returns kDNSServiceErr_NoError on success.
-     *                  Returns kDNSServiceErr_NoMemory if it cannot create a dispatch source
-     *                  Returns kDNSServiceErr_BadParam if the service param is invalid or the
-     *                  queue param is invalid
+     * Returns kDNSServiceErr_NoMemory if it cannot create a dispatch source
+     * Returns kDNSServiceErr_BadParam if the service param is invalid or the
+     * queue param is invalid
      */
     @Generated
     @CFunction
@@ -10357,22 +10077,17 @@ public final class Globals {
 
     /**
      * [@function] os_signpost_id_make_with_pointer
-     * 
+     * <p>
      * Make an os_signpost_id from a pointer value.
-     * 
+     * <p>
      * Mangles the pointer to create a valid os_signpost_id, including removing
      * address randomization. Checks that the signpost matching scope is not
      * system-wide.
-     * 
-     * @param log
-     * Log handle previously created with os_log_create.
-     * 
-     * @param ptr
-     * Any pointer that disambiguates among concurrent intervals with the same
-     * os_log_t and interval names.
-     * 
-     * @return
-     * Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
+     *
+     * @param log Log handle previously created with os_log_create.
+     * @param ptr Any pointer that disambiguates among concurrent intervals with the same
+     *            os_log_t and interval names.
+     * @return Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
      * are turned off. Returns OS_SIGNPOST_ID_INVALID if the log handle is
      * system-scoped.
      */
@@ -10382,18 +10097,15 @@ public final class Globals {
 
     /**
      * [@function] os_signpost_id_generate
-     * 
+     * <p>
      * Generates an ID guaranteed to be unique within the matching scope of the
      * provided log handle.
-     * 
+     * <p>
      * Each call to os_signpost_id_generate() with a given log handle and its
      * matching scope will return a different os_signpost_id_t.
-     * 
-     * @param log
-     * Log handle previously created with os_log_create.
-     * 
-     * @return
-     * Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
+     *
+     * @param log Log handle previously created with os_log_create.
+     * @return Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
      * are disabled.
      */
     @Generated
@@ -10402,19 +10114,16 @@ public final class Globals {
 
     /**
      * [@function] os_signpost_enabled
-     * 
+     * <p>
      * Returns true if signpost log messages are enabled for a particular log
      * handle.
-     * 
+     * <p>
      * Returns true if signpost log messages are enabled for a particular log.
      * Use this to avoid doing expensive argument marshalling leading into a call
      * to os_signpost_*
-     * 
-     * @param log
-     * Log handle previously created with os_log_create.
-     * 
-     * @return
-     * Returns ‘true’ if signpost log messages are enabled.
+     *
+     * @param log Log handle previously created with os_log_create.
+     * @return Returns ‘true’ if signpost log messages are enabled.
      */
     @Generated
     @CFunction
@@ -10450,19 +10159,18 @@ public final class Globals {
 
     /**
      * Returns a pointer to any extra bytes allocated with an instance given object.
-     * 
+     * <p>
      * [@note] This function returns a pointer to any extra bytes allocated with the instance
-     *  (as specified by \c class_createInstance with extraBytes>0). This memory follows the
-     *  object's ordinary ivars, but may not be adjacent to the last ivar.
+     * (as specified by \c class_createInstance with extraBytes>0). This memory follows the
+     * object's ordinary ivars, but may not be adjacent to the last ivar.
      * [@note] The returned pointer is guaranteed to be pointer-size aligned, even if the area following
-     *  the object's last ivar is less aligned than that. Alignment greater than pointer-size is never
-     *  guaranteed, even if the area following the object's last ivar is more aligned than that.
+     * the object's last ivar is less aligned than that. Alignment greater than pointer-size is never
+     * guaranteed, even if the area following the object's last ivar is more aligned than that.
      * [@note] In a garbage-collected environment, the memory is scanned conservatively.
-     * 
+     *
      * @param obj An Objective-C object.
-     * 
      * @return A pointer to any extra bytes allocated with \e obj. If \e obj was
-     *   not allocated with any extra bytes, then dereferencing the returned pointer is undefined.
+     * not allocated with any extra bytes, then dereferencing the returned pointer is undefined.
      */
     @Generated
     @CFunction
@@ -10485,18 +10193,15 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_create_with_workgroup
-     * 
+     * <p>
      * Create a new os_workgroup object from an existing os_workgroup.
-     * 
+     * <p>
      * The newly created os_workgroup has no initial member threads - in particular
      * the creating threaad does not join the os_workgroup_t implicitly.
-     * 
-     * @param name
-     * A client specified string for labelling the workgroup. This parameter is
-     * optional and can be NULL.
-     * 
-     * @param wg
-     * The existing workgroup to create a new workgroup object from.
+     *
+     * @param name A client specified string for labelling the workgroup. This parameter is
+     *             optional and can be NULL.
+     * @param wg   The existing workgroup to create a new workgroup object from.
      */
     @Generated
     @CFunction
@@ -10506,23 +10211,20 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_join
-     * 
+     * <p>
      * Joins the current thread to the specified workgroup and populates the join
      * token that has been passed in. This API is real-time safe.
-     * 
-     * @param wg
-     * The workgroup that the current thread would like to join
-     * 
-     * @param token_out
-     * Pointer to a client allocated struct which the function will populate
-     * with the join token. This token must be passed in by the thread when it calls
-     * os_workgroup_leave().
-     * 
-     * Errors will be returned in the following cases:
-     * 
-     * EALREADY		The thread is already part of a workgroup that the specified
-     * 			workgroup does not nest with
-     * EINVAL		The workgroup has been cancelled
+     *
+     * @param wg        The workgroup that the current thread would like to join
+     * @param token_out Pointer to a client allocated struct which the function will populate
+     *                  with the join token. This token must be passed in by the thread when it calls
+     *                  os_workgroup_leave().
+     *                  <p>
+     *                  Errors will be returned in the following cases:
+     *                  <p>
+     *                  EALREADY		The thread is already part of a workgroup that the specified
+     *                  workgroup does not nest with
+     *                  EINVAL		The workgroup has been cancelled
      */
     @Generated
     @CFunction
@@ -10531,22 +10233,19 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_leave
-     * 
+     * <p>
      * This removes the current thread from a workgroup it has previously
      * joined. Threads must leave all workgroups in the reverse order that they
      * have joined them. Failing to do so before exiting will result in undefined
      * behavior.
-     * 
+     * <p>
      * If the join token is malformed, the process will be aborted.
-     * 
+     * <p>
      * This API is real time safe.
-     * 
-     * @param wg
-     * The workgroup that the current thread would like to leave.
-     * 
-     * @param token
-     * This is the join token populated by the most recent call to
-     * os_workgroup_join().
+     *
+     * @param wg    The workgroup that the current thread would like to leave.
+     * @param token This is the join token populated by the most recent call to
+     *              os_workgroup_join().
      */
     @Generated
     @CFunction
@@ -10555,31 +10254,24 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_set_working_arena
-     * 
+     * <p>
      * Associates a client defined working arena with the workgroup. The arena
      * is local to the workgroup object in the process. This is intended for
      * distributing a manually managed memory allocation between member threads
      * of the workgroup.
-     * 
+     * <p>
      * This function can be called multiple times and the client specified
      * destructor will be called on the previously assigned arena, if any. This
      * function can only be called when no threads have currently joined the
      * workgroup and all workloops associated with the workgroup are idle.
-     * 
-     * @param wg
-     * The workgroup to associate the working arena with
-     * 
-     * @param arena
-     * The client managed arena to associate with the workgroup. This value can
-     * be NULL.
-     * 
-     * @param max_workers
-     * The maximum number of threads that will ever query the workgroup for the
-     * arena and request an index into it.  If the arena is not used to partition
-     * work amongst member threads, then this field can be 0.
-     * 
-     * @param destructor
-     * A destructor to call on the previously assigned working arena, if any
+     *
+     * @param wg          The workgroup to associate the working arena with
+     * @param arena       The client managed arena to associate with the workgroup. This value can
+     *                    be NULL.
+     * @param max_workers The maximum number of threads that will ever query the workgroup for the
+     *                    arena and request an index into it.  If the arena is not used to partition
+     *                    work amongst member threads, then this field can be 0.
+     * @param destructor  A destructor to call on the previously assigned working arena, if any
      */
     @Generated
     @CFunction
@@ -10595,26 +10287,23 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_get_working_arena
-     * 
+     * <p>
      * Returns the working arena associated with the workgroup and the current
      * thread's index in the workgroup. This function can only be called by a member
      * of the workgroup. Multiple calls to this API by a member thread will return
      * the same arena and index until the thread leaves the workgroup.
-     * 
+     * <p>
      * For workloops with an associated workgroup, every work item on the workloop
      * will receive the same index in the arena.
-     * 
+     * <p>
      * This method returns NULL if no arena is set on the workgroup. The index
      * returned by this function is zero-based and is namespaced per workgroup
      * object in the process. The indices provided are strictly monotonic and never
      * reused until a future call to os_workgroup_set_working_arena.
-     * 
-     * @param wg
-     * The workgroup to get the working arena from.
-     * 
-     * @param index_out
-     * A pointer to a os_workgroup_index which will be populated by the caller's
-     * index in the workgroup.
+     *
+     * @param wg        The workgroup to get the working arena from.
+     * @param index_out A pointer to a os_workgroup_index which will be populated by the caller's
+     *                  index in the workgroup.
      */
     @Generated
     @CFunction
@@ -10622,24 +10311,23 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_cancel
-     * 
+     * <p>
      * This API invalidates a workgroup and indicates to the system that the
      * workload is no longer relevant to the caller.
-     * 
+     * <p>
      * No new work should be initiated for a cancelled workgroup and
      * work that is already underway should periodically check for
      * cancellation with os_workgroup_testcancel and initiate cleanup if needed.
-     * 
+     * <p>
      * Threads currently in the workgroup continue to be tracked together but no
      * new threads may join this workgroup - the only possible operation allowed is
      * to leave the workgroup. Other actions may have undefined behavior or
      * otherwise fail.
-     * 
+     * <p>
      * This API is idempotent. Cancellation is local to the workgroup object
      * it is called on and does not affect other workgroups.
-     * 
-     * @param wg
-     * The workgroup that that the thread would like to cancel
+     *
+     * @param wg The workgroup that that the thread would like to cancel
      */
     @Generated
     @CFunction
@@ -10647,7 +10335,7 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_testcancel
-     * 
+     * <p>
      * Returns true if the workgroup object has been cancelled. See also
      * os_workgroup_cancel
      */
@@ -10657,22 +10345,19 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_max_parallel_threads
-     * 
+     * <p>
      * Returns the system's recommendation for maximum number of threads the client
      * should make for a multi-threaded workload in a given workgroup.
-     * 
+     * <p>
      * This API takes into consideration the current hardware the code is running on
      * and the attributes of the workgroup. It does not take into consideration the
      * current load of the system and therefore always provides the most optimal
      * recommendation for the workload.
-     * 
-     * @param wg
-     * The workgroup in which the multi-threaded workload will be performed in. The
-     * threads performing the multi-threaded workload are expected to join this
-     * workgroup.
-     * 
-     * @param attr
-     * This value is currently unused and should be NULL.
+     *
+     * @param wg   The workgroup in which the multi-threaded workload will be performed in. The
+     *             threads performing the multi-threaded workload are expected to join this
+     *             workgroup.
+     * @param attr This value is currently unused and should be NULL.
      */
     @Generated
     @CFunction
@@ -10680,33 +10365,28 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_interval_start
-     * 
+     * <p>
      * Indicates to the system that the member threads of this
      * os_workgroup_interval_t have begun working on an instance of the repeatable
      * interval workload with the specified timestamps. This function is real time
      * safe.
-     * 
+     * <p>
      * This function will set and return an errno in the following cases:
-     * 
+     * <p>
      * - The current thread is not a member of the os_workgroup_interval_t
      * - The os_workgroup_interval_t has been cancelled
      * - The timestamps passed in are malformed
      * - os_workgroup_interval_start() was previously called on the
      * os_workgroup_interval_t without an intervening os_workgroup_interval_finish()
      * - A concurrent workgroup interval configuration operation is taking place.
-     * 
-     * @param start
-     * Start timestamp specified in the os_clockid_t with which the
-     * os_workgroup_interval_t was created. This is generally a time in the past and
-     * indicates when the workgroup started working on an interval period
-     * 
-     * @param deadline
-     * Deadline timestamp specified in the os_clockid_t with which the
-     * os_workgroup_interval_t was created. This specifies the deadline which the
-     * interval period would like to meet.
-     * 
-     * @param data
-     * This field is currently unused and should be NULL
+     *
+     * @param start    Start timestamp specified in the os_clockid_t with which the
+     *                 os_workgroup_interval_t was created. This is generally a time in the past and
+     *                 indicates when the workgroup started working on an interval period
+     * @param deadline Deadline timestamp specified in the os_clockid_t with which the
+     *                 os_workgroup_interval_t was created. This specifies the deadline which the
+     *                 interval period would like to meet.
+     * @param data     This field is currently unused and should be NULL
      */
     @Generated
     @CFunction
@@ -10715,10 +10395,10 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_interval_update
-     * 
+     * <p>
      * Updates an already started interval workgroup to have the new
      * deadline specified. This function is real time safe.
-     * 
+     * <p>
      * This function will return an error in the following cases:
      * - The current thread is not a member of the os_workgroup_interval_t
      * - The os_workgroup_interval_t has been cancelled
@@ -10727,13 +10407,10 @@ public final class Globals {
      * os_workgroup_interval_t or was already matched with an
      * os_workgroup_interval_finish()
      * - A concurrent workgroup interval configuration operation is taking place
-     * 
-     * @param deadline
-     * Timestamp specified in the os_clockid_t with
-     * which the os_workgroup_interval_t was created.
-     * 
-     * @param data
-     * This field is currently unused and should be NULL
+     *
+     * @param deadline Timestamp specified in the os_clockid_t with
+     *                 which the os_workgroup_interval_t was created.
+     * @param data     This field is currently unused and should be NULL
      */
     @Generated
     @CFunction
@@ -10742,20 +10419,19 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_interval_finish
-     * 
+     * <p>
      * Indicates to the system that the member threads of
      * this os_workgroup_interval_t have finished working on the current instance
      * of the interval workload. This function is real time safe.
-     * 
+     * <p>
      * This function will return an error in the following cases:
-     *  - The current thread is not a member of the os_workgroup_interval_t
-     *  - os_workgroup_interval_start() was not previously called on the
+     * - The current thread is not a member of the os_workgroup_interval_t
+     * - os_workgroup_interval_start() was not previously called on the
      * os_workgroup_interval_t or was already matched with an
      * os_workgroup_interval_finish()
      * - A concurrent workgroup interval configuration operation is taking place.
-     * 
-     * @param data
-     * This field is currently unused and should be NULL
+     *
+     * @param data This field is currently unused and should be NULL
      */
     @Generated
     @CFunction
@@ -10764,21 +10440,18 @@ public final class Globals {
 
     /**
      * [@function] os_workgroup_parallel_create
-     * 
+     * <p>
      * Creates an os_workgroup_t which tracks a parallel workload.
      * A newly created os_workgroup_interval_t has no initial member threads -
      * in particular the creating thread does not join the os_workgroup_parallel_t
      * implicitly.
-     * 
+     * <p>
      * See also os_workgroup_max_parallel_threads().
-     * 
-     * @param name
-     * A client specified string for labelling the workgroup. This parameter is
-     * optional and can be NULL.
-     * 
-     * @param attr
-     * The requested set of workgroup attributes. NULL is to be specified for the
-     * default set of attributes.
+     *
+     * @param name A client specified string for labelling the workgroup. This parameter is
+     *             optional and can be NULL.
+     * @param attr The requested set of workgroup attributes. NULL is to be specified for the
+     *             default set of attributes.
      */
     @Generated
     @CFunction
@@ -10788,23 +10461,20 @@ public final class Globals {
 
     /**
      * [@function] dispatch_workloop_set_os_workgroup
-     * 
+     * <p>
      * Associates an os_workgroup_t with the specified dispatch workloop.
-     * 
+     * <p>
      * The worker thread will be a member of the specified os_workgroup_t while executing
      * work items submitted to the workloop.
-     * 
-     * @param workloop
-     * The dispatch workloop to modify.
-     * 
-     * This workloop must be inactive, passing an activated object is undefined
-     * and will cause the process to be terminated.
-     * 
-     * @param workgroup
-     * The workgroup to associate with this workloop.
-     * 
-     * The workgroup specified is retained and the previously associated workgroup
-     * (if any) is released.
+     *
+     * @param workloop  The dispatch workloop to modify.
+     *                  <p>
+     *                  This workloop must be inactive, passing an activated object is undefined
+     *                  and will cause the process to be terminated.
+     * @param workgroup The workgroup to associate with this workloop.
+     *                  <p>
+     *                  The workgroup specified is retained and the previously associated workgroup
+     *                  (if any) is released.
      */
     @Generated
     @CFunction
@@ -10817,4 +10487,125 @@ public final class Globals {
     @Inline
     @CFunction
     public static native int __sigbits(int __signo);
+
+    @Generated
+    @CFunction
+    public static native int timespec_get(
+            @UncertainArgument("Options: reference, array Fallback: reference") timespec ts, int base);
+
+    /**
+     * [@function] _os_activity_label_useraction
+     * <p>
+     * Internal function for use by os_activity_label_useraction.
+     * <p>
+     * [@warning]
+     * Do not use directly.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_activity_label_useraction(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
+
+    /**
+     * [@function] _os_activity_initiate
+     * <p>
+     * Do not use directly because your description will not be preserved.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_activity_initiate(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
+            int flags, @ObjCBlock(name = "call__os_activity_initiate") Block__os_activity_initiate activity_block);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block__os_activity_initiate {
+        @Generated
+        void call__os_activity_initiate();
+    }
+
+    /**
+     * [@function] _os_activity_initiate_f
+     * <p>
+     * Do not use directly because your description will not be preserved.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_activity_initiate_f(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
+            int flags, VoidPtr context,
+            @FunctionPtr(name = "call__os_activity_initiate_f") Function__os_activity_initiate_f function);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function__os_activity_initiate_f {
+        @Generated
+        void call__os_activity_initiate_f(VoidPtr arg0);
+    }
+
+    /**
+     * [@function] os_activity_get_active
+     * <p>
+     * Returns the stack of nested activities associated with the current thread.
+     * <p>
+     * Activities have a sense of nesting and therefore there could be more than
+     * one activity involved on the current thread.  This should be used by
+     * diagnostic tools only for making additional decisions about a situation.
+     *
+     * @param entries Pass a buffer of sufficient size to hold the the number of os_activity_id_t
+     *                being requested.
+     * @param count   Pointer to the requested number of activity identifiers.
+     *                On output will be filled with the number of activities that are available.
+     * @return Number of activity identifiers written to 'entries'
+     */
+    @Generated
+    @CFunction
+    public static native int os_activity_get_active(LongPtr entries, IntPtr count);
+
+    /**
+     * [@function] os_activity_get_identifier
+     * <p>
+     * Returns the current activity ID and will fill the parent_id if present.
+     * <p>
+     * Returns the current activity ID and will fill the parent_id if present.
+     *
+     * @param parent_id If non-null will set the parent activity ID.
+     * @return The identifier for the provided activity.
+     */
+    @Generated
+    @CFunction
+    public static native long os_activity_get_identifier(long activity, LongPtr parent_id);
+
+    /**
+     * [@function] _os_activity_start
+     * <p>
+     * Internal function for activity start, do not use directly will not preserve
+     * description.
+     */
+    @Generated
+    @CFunction
+    public static native long _os_activity_start(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description,
+            int flags);
+
+    /**
+     * [@function] os_activity_end
+     * <p>
+     * [@warning]
+     * Deprecated please use new os_activity_create and os_activity_apply.
+     */
+    @Generated
+    @CFunction
+    public static native void os_activity_end(long activity);
+
+    /**
+     * [@function] _os_activity_set_breadcrumb
+     * <p>
+     * [@warning]
+     * Deprecated, please use os_activity_label_useraction.
+     */
+    @Generated
+    @CFunction
+    public static native void _os_activity_set_breadcrumb(VoidPtr dso,
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name);
 }

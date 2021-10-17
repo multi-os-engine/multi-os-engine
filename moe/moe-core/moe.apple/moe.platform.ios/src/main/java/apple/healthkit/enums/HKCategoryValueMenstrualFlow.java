@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKCategoryValueMenstrualFlow
- * 
+ * <p>
  * Set of values to indicate the type of menstrual flow.
  */
 @Generated

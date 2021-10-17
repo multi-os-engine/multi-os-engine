@@ -57,7 +57,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * Scaling factor for the output. Default: 1.0f.
      */
     @Generated
@@ -105,9 +105,9 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNGramMatrixCalculationNode kernel.
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
-     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
+     * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
      */
     @Generated
     @Selector("initWithSource:")
@@ -115,10 +115,10 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNGramMatrixCalculationNode kernel.
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
-     * @param      alpha                   Scaling factor for the output.
-     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
+     * @param alpha      Scaling factor for the output.
+     * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
      */
     @Generated
     @Selector("initWithSource:alpha:")
@@ -153,9 +153,9 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
-     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
+     * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
      */
     @Generated
     @Selector("nodeWithSource:")
@@ -163,10 +163,10 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter.
-     * @param      alpha                   Scaling factor for the output.
-     * @return     A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
+     * @param alpha      Scaling factor for the output.
+     * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
      */
     @Generated
     @Selector("nodeWithSource:alpha:")
@@ -174,9 +174,9 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * [@property]   propertyCallBack
-     * 
+     * <p>
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
-     *             Default value: nil.
+     * Default value: nil.
      */
     @Generated
     @Selector("propertyCallBack")
@@ -193,9 +193,9 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * [@property]   propertyCallBack
-     * 
+     * <p>
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
-     *             Default value: nil.
+     * Default value: nil.
      */
     @Generated
     @Selector("setPropertyCallBack:")

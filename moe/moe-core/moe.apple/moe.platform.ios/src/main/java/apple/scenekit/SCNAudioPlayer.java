@@ -17,7 +17,6 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
-import apple.avfoundation.AVAudioNode;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -71,16 +70,16 @@ public class SCNAudioPlayer extends NSObject {
 
     /**
      * [@property] audioPlayerWithAVAudioNode:
-     * 
+     * <p>
      * Create an audio player with a custom AVAudioNode instance.
      */
     @Generated
     @Selector("audioPlayerWithAVAudioNode:")
-    public static native SCNAudioPlayer audioPlayerWithAVAudioNode(AVAudioNode audioNode);
+    public static native SCNAudioPlayer audioPlayerWithAVAudioNode(apple.avfaudio.AVAudioNode audioNode);
 
     /**
      * [@property] audioPlayerWithSource:
-     * 
+     * <p>
      * Create an audio player with a source.
      */
     @Generated
@@ -172,16 +171,16 @@ public class SCNAudioPlayer extends NSObject {
 
     /**
      * [@property] audioNode
-     * 
+     * <p>
      * The audioNode. If this player was not initialised with a custom AVAudioNode this contains the internal audio player node used by scene kit internally.
      */
     @Generated
     @Selector("audioNode")
-    public native AVAudioNode audioNode();
+    public native apple.avfaudio.AVAudioNode audioNode();
 
     /**
      * [@property] audioSource
-     * 
+     * <p>
      * The audioSource if there is one.
      */
     @Generated
@@ -190,7 +189,7 @@ public class SCNAudioPlayer extends NSObject {
 
     /**
      * [@property] playbackFinished
-     * 
+     * <p>
      * This block is called when the playback stops in case a valid audio source is present.
      */
     @Generated
@@ -204,16 +203,16 @@ public class SCNAudioPlayer extends NSObject {
 
     /**
      * [@property] initWithAVAudioNode:
-     * 
+     * <p>
      * Init an audio player with an AVAudioNode. Most people should use audioPlayerWithAVAudioNode as it permits to recycle previous players instead of creating new ones for each instance.
      */
     @Generated
     @Selector("initWithAVAudioNode:")
-    public native SCNAudioPlayer initWithAVAudioNode(AVAudioNode audioNode);
+    public native SCNAudioPlayer initWithAVAudioNode(apple.avfaudio.AVAudioNode audioNode);
 
     /**
      * [@property] initWithSource:
-     * 
+     * <p>
      * Init an audio player with a source. Most people should use audioPlayerWithSource as it permits to recycle previous players instead of creating new ones for each instance.
      */
     @Generated
@@ -222,7 +221,7 @@ public class SCNAudioPlayer extends NSObject {
 
     /**
      * [@property] playbackFinished
-     * 
+     * <p>
      * This block is called when the playback stops in case a valid audio source is present.
      */
     @Generated
@@ -232,7 +231,7 @@ public class SCNAudioPlayer extends NSObject {
 
     /**
      * [@property] playbackStarted
-     * 
+     * <p>
      * This block is called when the playback starts in case a valid audio source is present.
      */
     @Generated
@@ -242,7 +241,7 @@ public class SCNAudioPlayer extends NSObject {
 
     /**
      * [@property] playbackStarted
-     * 
+     * <p>
      * This block is called when the playback starts in case a valid audio source is present.
      */
     @Generated

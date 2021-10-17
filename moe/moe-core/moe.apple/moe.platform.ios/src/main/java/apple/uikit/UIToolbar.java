@@ -462,10 +462,10 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * Use these methods to set and access custom background images for toolbars.
-     *      Default is nil. When non-nil the image will be used instead of the system image for toolbars in the
+     * Default is nil. When non-nil the image will be used instead of the system image for toolbars in the
      * specified position.
-     *      For the barMetrics argument, UIBarMetricsDefault is the fallback.
-     * 
+     * For the barMetrics argument, UIBarMetricsDefault is the fallback.
+     * <p>
      * DISCUSSION: Interdependence of barStyle, tintColor, backgroundImage.
      * When barStyle or tintColor is set as well as the bar's background image,
      * the bar buttons (unless otherwise customized) will inherit the underlying
@@ -588,4 +588,32 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Generated
     @Selector("standardAppearance")
     public native UIToolbarAppearance standardAppearance();
+
+    /**
+     * Describes the appearance attributes for the toolbar to use at compact height when an observable scroll view is scrolled to the bottom. If not set, will fall back to scrollEdgeAppearance followed by compactAppearance and finally standardAppearance.
+     */
+    @Generated
+    @Selector("compactScrollEdgeAppearance")
+    public native UIToolbarAppearance compactScrollEdgeAppearance();
+
+    /**
+     * Describes the appearance attributes for the toolbar to use at standard height when an observable scroll view is scrolled to the bottom. If not set, standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("scrollEdgeAppearance")
+    public native UIToolbarAppearance scrollEdgeAppearance();
+
+    /**
+     * Describes the appearance attributes for the toolbar to use at compact height when an observable scroll view is scrolled to the bottom. If not set, will fall back to scrollEdgeAppearance followed by compactAppearance and finally standardAppearance.
+     */
+    @Generated
+    @Selector("setCompactScrollEdgeAppearance:")
+    public native void setCompactScrollEdgeAppearance(UIToolbarAppearance value);
+
+    /**
+     * Describes the appearance attributes for the toolbar to use at standard height when an observable scroll view is scrolled to the bottom. If not set, standardAppearance will be used instead.
+     */
+    @Generated
+    @Selector("setScrollEdgeAppearance:")
+    public native void setScrollEdgeAppearance(UIToolbarAppearance value);
 }

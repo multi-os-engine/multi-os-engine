@@ -41,7 +41,7 @@ public final class linkedit_data_command extends StructObject {
      * LC_DYLIB_CODE_SIGN_DRS,
      * LC_LINKER_OPTIMIZATION_HINT,
      * LC_DYLD_EXPORTS_TRIE, or
-     * LC_DYLD_CHAINED_FIXUPS. 
+     * LC_DYLD_CHAINED_FIXUPS.
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -53,7 +53,7 @@ public final class linkedit_data_command extends StructObject {
      * LC_DYLIB_CODE_SIGN_DRS,
      * LC_LINKER_OPTIMIZATION_HINT,
      * LC_DYLD_EXPORTS_TRIE, or
-     * LC_DYLD_CHAINED_FIXUPS. 
+     * LC_DYLD_CHAINED_FIXUPS.
      */
     @Generated
     @StructureField(order = 0, isGetter = false)

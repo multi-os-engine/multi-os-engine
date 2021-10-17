@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SSLProtocol enumeration
- * 
+ * <p>
  * Enumerations for the set of supported TLS and DTLS protocol versions.
- * 
+ * <p>
  * [@note] This enumeration is deprecated. Use `tls_protocol_version_t` instead.
  */
 @Generated

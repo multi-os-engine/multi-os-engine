@@ -21,6 +21,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface CPSelectableListItem extends CPListTemplateItem {
     /**
      * An optional action block, fired when the user selects this item in a list template.
+     * <p>
+     * You must call the completion block after processing the user's selection.
      */
     @Generated
     @Selector("handler")
@@ -44,6 +46,8 @@ public interface CPSelectableListItem extends CPListTemplateItem {
 
     /**
      * An optional action block, fired when the user selects this item in a list template.
+     * <p>
+     * You must call the completion block after processing the user's selection.
      */
     @Generated
     @Selector("setHandler:")

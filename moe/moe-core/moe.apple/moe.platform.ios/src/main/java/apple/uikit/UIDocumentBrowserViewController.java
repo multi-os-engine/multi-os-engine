@@ -183,7 +183,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     public native UIDocumentBrowserViewController init();
 
     /**
-     * @param allowedContentTypes  The document types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
+     * @param allowedContentTypes The document types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
      */
     @Generated
     @Selector("initForOpeningFilesWithContentTypes:")
@@ -224,10 +224,6 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("new")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object new_objc();
-
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -400,7 +396,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     public native NSArray<? extends UTType> contentTypesForRecentDocuments();
 
     /**
-     * @param contentTypes  The content types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
+     * @param contentTypes The content types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
      */
     @Generated
     @Selector("initForOpeningContentTypes:")

@@ -451,7 +451,7 @@ public class UITableView extends UIScrollView
     public native void beginUpdates();
 
     /**
-     * returns nil if cell is not visible or index path is out of range
+     * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index path is out of range.
      */
     @Generated
     @Selector("cellForRowAtIndexPath:")
@@ -1082,9 +1082,8 @@ public class UITableView extends UIScrollView
     public native UITableViewDragDelegate dragDelegate();
 
     /**
-     * To enable intra-app drags on iPhone, set this to YES.
-     * You can also force drags to be disabled for this table view by setting this to NO.
-     * By default, this will return YES on iPad and NO on iPhone.
+     * You can force drags to be disabled for this table view by setting this to NO.
+     * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
      */
     @Generated
     @Selector("dragInteractionEnabled")
@@ -1189,9 +1188,8 @@ public class UITableView extends UIScrollView
     }
 
     /**
-     * To enable intra-app drags on iPhone, set this to YES.
-     * You can also force drags to be disabled for this table view by setting this to NO.
-     * By default, this will return YES on iPad and NO on iPhone.
+     * You can force drags to be disabled for this table view by setting this to NO.
+     * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
      */
     @Generated
     @Selector("setDragInteractionEnabled:")
@@ -1239,6 +1237,7 @@ public class UITableView extends UIScrollView
 
     /**
      * When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
+     * Defaults to a system derived value based on platform and other properties of the table view.
      */
     @Generated
     @Selector("selectionFollowsFocus")
@@ -1246,8 +1245,97 @@ public class UITableView extends UIScrollView
 
     /**
      * When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
+     * Defaults to a system derived value based on platform and other properties of the table view.
      */
     @Generated
     @Selector("setSelectionFollowsFocus:")
     public native void setSelectionFollowsFocus(boolean value);
+
+    /**
+     * Determines if the table view allows its cells to become focused.
+     * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the table view.
+     */
+    @Generated
+    @Selector("allowsFocus")
+    public native boolean allowsFocus();
+
+    /**
+     * Determines if the table view allows its cells to become focused while editing.
+     * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the table view.
+     */
+    @Generated
+    @Selector("allowsFocusDuringEditing")
+    public native boolean allowsFocusDuringEditing();
+
+    @Generated
+    @Selector("contextMenuInteraction")
+    public native UIContextMenuInteraction contextMenuInteraction();
+
+    /**
+     * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table view.
+     * Set 0 to disable filler rows entirely, use `UITableViewAutomaticDimension` for the default height.
+     */
+    @Generated
+    @Selector("fillerRowHeight")
+    @NFloat
+    public native double fillerRowHeight();
+
+    @Generated
+    @Selector("isPrefetchingEnabled")
+    public native boolean isPrefetchingEnabled();
+
+    /**
+     * Reconfigures any existing cells for the rows. Reconfiguring is more efficient than reloading a row, as it does not replace the
+     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the row.
+     */
+    @Generated
+    @Selector("reconfigureRowsAtIndexPaths:")
+    public native void reconfigureRowsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
+
+    /**
+     * Padding above each section header. The default value is `UITableViewAutomaticDimension`.
+     */
+    @Generated
+    @Selector("sectionHeaderTopPadding")
+    @NFloat
+    public native double sectionHeaderTopPadding();
+
+    /**
+     * Determines if the table view allows its cells to become focused.
+     * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the table view.
+     */
+    @Generated
+    @Selector("setAllowsFocus:")
+    public native void setAllowsFocus(boolean value);
+
+    /**
+     * Determines if the table view allows its cells to become focused while editing.
+     * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
+     * Defaults to a system derived value based on platform and other properties of the table view.
+     */
+    @Generated
+    @Selector("setAllowsFocusDuringEditing:")
+    public native void setAllowsFocusDuringEditing(boolean value);
+
+    /**
+     * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table view.
+     * Set 0 to disable filler rows entirely, use `UITableViewAutomaticDimension` for the default height.
+     */
+    @Generated
+    @Selector("setFillerRowHeight:")
+    public native void setFillerRowHeight(@NFloat double value);
+
+    @Generated
+    @Selector("setPrefetchingEnabled:")
+    public native void setPrefetchingEnabled(boolean value);
+
+    /**
+     * Padding above each section header. The default value is `UITableViewAutomaticDimension`.
+     */
+    @Generated
+    @Selector("setSectionHeaderTopPadding:")
+    public native void setSectionHeaderTopPadding(@NFloat double value);
 }

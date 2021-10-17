@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect rectangles in an image.
- * 
+ * <p>
  * This request will generate VNRectangleObservation objects describing the location of rectangles detected in an image.
  */
 @Generated
@@ -248,4 +248,11 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    /**
+     * VNRectangleObservation results.
+     */
+    @Generated
+    @Selector("results")
+    public native NSArray<? extends VNRectangleObservation> results();
 }

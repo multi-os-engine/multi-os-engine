@@ -158,11 +158,11 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Return a set of key paths for properties whose values affect the value of the keyed property. When an observer for the key is registered with an instance of the receiving class, KVO itself automatically observes all of the key paths for the same instance, and sends change notifications for the key to the observer when the value for any of those key paths changes. The default implementation of this method searches the receiving class for a method whose name matches the pattern +keyPathsForValuesAffecting<Key>, and returns the result of invoking that method if it is found. So, any such method must return an NSSet too. If no such method is found, an NSSet that is computed from information provided by previous invocations of the now-deprecated +setKeys:triggerChangeNotificationsForDependentKey: method is returned, for backward binary compatibility.
-     * 
+     * <p>
      * This method and KVO's automatic use of it comprise a dependency mechanism that you can use instead of sending -willChangeValueForKey:/-didChangeValueForKey: messages for dependent, computed, properties.
-     * 
+     * <p>
      * You can override this method when the getter method of one of your properties computes a value to return using the values of other properties, including those that are located by key paths. Your override should typically invoke super and return a set that includes any members in the set that result from doing that (so as not to interfere with overrides of this method in superclasses).
-     * 
+     * <p>
      * You can't really override this method when you add a computed property to an existing class using a category, because you're not supposed to override methods in categories. In that case, implement a matching +keyPathsForValuesAffecting<Key> to take advantage of this mechanism.
      */
     @Generated
@@ -297,7 +297,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Returns the frame of the element in screen coordinates.
      * default == CGRectZero
      * default on UIViews == the frame of the view
-     * Setting the property will change the frame that is returned to the accessibility client. 
+     * Setting the property will change the frame that is returned to the accessibility client.
      */
     @Generated
     @Selector("accessibilityFrame")
@@ -309,7 +309,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * The hint should be a brief phrase.
      * For example: "Purchases the item." or "Downloads the attachment."
      * default == nil
-     * Setting the property will change the hint that is returned to the accessibility client. 
+     * Setting the property will change the hint that is returned to the accessibility client.
      */
     @Generated
     @Selector("accessibilityHint")
@@ -326,21 +326,21 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void accessibilityIncrement();
 
     /**
-     * Returns the localized label that represents the element. 
+     * Returns the localized label that represents the element.
      * If the element does not display text (an icon for example), this method
      * should return text that best labels the element. For example: "Play" could be used for
      * a button that is used to play music. "Play button" should not be used, since there is a trait
      * that identifies the control is a button.
      * default == nil
      * default on UIKit controls == derived from the title
-     * Setting the property will change the label that is returned to the accessibility client. 
+     * Setting the property will change the label that is returned to the accessibility client.
      */
     @Generated
     @Selector("accessibilityLabel")
     public native String accessibilityLabel();
 
     /**
-     * Returns the language code that the element's label, value and hint should be spoken in. 
+     * Returns the language code that the element's label, value and hint should be spoken in.
      * If no language is set, the user's language is used.
      * The format for the language code should follow Internet BCP 47 for language tags.
      * For example, en-US specifies U.S. English.
@@ -404,27 +404,27 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * When overriding this method, remember to combine your custom traits
      * with [super accessibilityTraits].
      * default == UIAccessibilityTraitNone
-     * default on UIKit controls == traits that best characterize individual controls. 
-     * Setting the property will change the traits that are returned to the accessibility client. 
+     * default on UIKit controls == traits that best characterize individual controls.
+     * Setting the property will change the traits that are returned to the accessibility client.
      */
     @Generated
     @Selector("accessibilityTraits")
     public native long accessibilityTraits();
 
     /**
-     * Returns a localized string that represents the value of the element, such as the value 
+     * Returns a localized string that represents the value of the element, such as the value
      * of a slider or the text in a text field. Use only when the label of the element
      * differs from a value. For example: A volume slider has a label of "Volume", but a value of "60%".
      * default == nil
-     * default on UIKit controls == values for appropriate controls 
-     * Setting the property will change the value that is returned to the accessibility client.  
+     * default on UIKit controls == values for appropriate controls
+     * Setting the property will change the value that is returned to the accessibility client.
      */
     @Generated
     @Selector("accessibilityValue")
     public native String accessibilityValue();
 
     /**
-     * Informs whether the receiving view should be considered modal by accessibility. If YES, then 
+     * Informs whether the receiving view should be considered modal by accessibility. If YES, then
      * elements outside this view will be ignored. Only elements inside this view will be exposed.
      * default == NO
      */
@@ -449,9 +449,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given that an error alert has been presented document-modally to the user, and the user has chosen one of the error's recovery options, attempt recovery from the error, and send the selected message to the specified delegate. The option index is an index into the error's array of localized recovery options. The method selected by didRecoverSelector must have the same signature as:
-     * 
-     *     - (void)didPresentErrorWithRecovery:(BOOL)didRecover contextInfo:(void *)contextInfo;
-     * 
+     * <p>
+     * - (void)didPresentErrorWithRecovery:(BOOL)didRecover contextInfo:(void *)contextInfo;
+     * <p>
      * The value passed for didRecover must be YES if error recovery was completely successful, NO otherwise.
      */
     @Generated
@@ -573,10 +573,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native NSObject init();
 
     /**
-     * Return YES if the receiver should be exposed as an accessibility element. 
+     * Return YES if the receiver should be exposed as an accessibility element.
      * default == NO
-     * default on UIKit controls == YES 
-     * Setting the property to YES will cause the receiver to be visible to assistive applications. 
+     * default on UIKit controls == YES
+     * Setting the property to YES will cause the receiver to be visible to assistive applications.
      */
     @Generated
     @Selector("isAccessibilityElement")
@@ -609,13 +609,13 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a key that identifies an _ordered_ to-many relationship, return a mutable array that provides read-write access to the related objects. Objects added to the mutable array will become related to the receiver, and objects removed from the mutable array will become unrelated.
-     * 
+     * <p>
      * The default implementation of this method recognizes the same simple accessor methods and array accessor methods as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
-     *     1. Searches the class of the receiver for methods whose names match the patterns -insertObject:in<Key>AtIndex: and -removeObjectFrom<Key>AtIndex: (corresponding to the two most primitive methods defined by the NSMutableArray class), and (introduced in Mac OS 10.4) also -insert<Key>:atIndexes: and -remove<Key>AtIndexes: (corresponding to -[NSMutableArray insertObjects:atIndexes:] and -[NSMutableArray removeObjectsAtIndexes:). If at least one insertion method and at least one removal method are found each NSMutableArray message sent to the collection proxy object will result in some combination of -insertObject:in<Key>AtIndex:, -removeObjectFrom<Key>AtIndex:, -insert<Key>:atIndexes:, and -remove<Key>AtIndexes: messages being sent to the original receiver of -mutableArrayValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -replaceObjectIn<Key>AtIndex:withObject: or (introduced in Mac OS 10.4) -replace<Key>AtIndexes:with<Key>: that method will be used when appropriate for best performance.
-     *     2. Otherwise (no set of array mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableArray message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableArrayValueForKey:.
-     *     3. Otherwise (no set of array mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableArray message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableArray or a subclass of NSMutableArray.
-     *     4. Otherwise (no set of array mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableArray message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableArrayValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
-     * 
+     * 1. Searches the class of the receiver for methods whose names match the patterns -insertObject:in<Key>AtIndex: and -removeObjectFrom<Key>AtIndex: (corresponding to the two most primitive methods defined by the NSMutableArray class), and (introduced in Mac OS 10.4) also -insert<Key>:atIndexes: and -remove<Key>AtIndexes: (corresponding to -[NSMutableArray insertObjects:atIndexes:] and -[NSMutableArray removeObjectsAtIndexes:). If at least one insertion method and at least one removal method are found each NSMutableArray message sent to the collection proxy object will result in some combination of -insertObject:in<Key>AtIndex:, -removeObjectFrom<Key>AtIndex:, -insert<Key>:atIndexes:, and -remove<Key>AtIndexes: messages being sent to the original receiver of -mutableArrayValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -replaceObjectIn<Key>AtIndex:withObject: or (introduced in Mac OS 10.4) -replace<Key>AtIndexes:with<Key>: that method will be used when appropriate for best performance.
+     * 2. Otherwise (no set of array mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableArray message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableArrayValueForKey:.
+     * 3. Otherwise (no set of array mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableArray message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableArray or a subclass of NSMutableArray.
+     * 4. Otherwise (no set of array mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableArray message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableArrayValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
+     * <p>
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1 in your KVC-compliant class. For best performance implement a replacement method too.
      */
     @Generated
@@ -634,13 +634,13 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a key that identifies an _ordered_ and uniquing to-many relationship, return a mutable ordered set that provides read-write access to the related objects. Objects added to the mutable ordered set will become related to the receiver, and objects removed from the mutable ordered set will become unrelated.
-     * 
+     * <p>
      * The default implementation of this method recognizes the same simple accessor methods and ordered set accessor methods as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
-     *     1. Searches the class of the receiver for methods whose names match the patterns -insertObject:in<Key>AtIndex: and -removeObjectFrom<Key>AtIndex: (corresponding to the two most primitive methods defined by the NSMutableOrderedSet class), and also -insert<Key>:atIndexes: and -remove<Key>AtIndexes: (corresponding to -[NSMutableOrderedSet insertObjects:atIndexes:] and -[NSMutableOrderedSet removeObjectsAtIndexes:). If at least one insertion method and at least one removal method are found each NSMutableOrderedSet message sent to the collection proxy object will result in some combination of -insertObject:in<Key>AtIndex:, -removeObjectFrom<Key>AtIndex:, -insert<Key>:atIndexes:, and -remove<Key>AtIndexes: messages being sent to the original receiver of -mutableOrderedSetValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -replaceObjectIn<Key>AtIndex:withObject: or -replace<Key>AtIndexes:with<Key>: that method will be used when appropriate for best performance.
-     *     2. Otherwise (no set of ordered set mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableOrderedSet message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableOrderedSetValueForKey:.
-     *     3. Otherwise (no set of ordered set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableOrderedSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableOrderedSet or a subclass of NSMutableOrderedSet.
-     *     4. Otherwise (no set of ordered set mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableOrderedSet message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableOrderedSetValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
-     * 
+     * 1. Searches the class of the receiver for methods whose names match the patterns -insertObject:in<Key>AtIndex: and -removeObjectFrom<Key>AtIndex: (corresponding to the two most primitive methods defined by the NSMutableOrderedSet class), and also -insert<Key>:atIndexes: and -remove<Key>AtIndexes: (corresponding to -[NSMutableOrderedSet insertObjects:atIndexes:] and -[NSMutableOrderedSet removeObjectsAtIndexes:). If at least one insertion method and at least one removal method are found each NSMutableOrderedSet message sent to the collection proxy object will result in some combination of -insertObject:in<Key>AtIndex:, -removeObjectFrom<Key>AtIndex:, -insert<Key>:atIndexes:, and -remove<Key>AtIndexes: messages being sent to the original receiver of -mutableOrderedSetValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -replaceObjectIn<Key>AtIndex:withObject: or -replace<Key>AtIndexes:with<Key>: that method will be used when appropriate for best performance.
+     * 2. Otherwise (no set of ordered set mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableOrderedSet message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableOrderedSetValueForKey:.
+     * 3. Otherwise (no set of ordered set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableOrderedSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableOrderedSet or a subclass of NSMutableOrderedSet.
+     * 4. Otherwise (no set of ordered set mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableOrderedSet message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableOrderedSetValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
+     * <p>
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1 in your KVC-compliant class. For best performance implement a replacement method too.
      */
     @Generated
@@ -653,13 +653,13 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a key that identifies an _unordered_ and uniquing to-many relationship, return a mutable set that provides read-write access to the related objects. Objects added to the mutable set will become related to the receiver, and objects removed from the mutable set will become unrelated.
-     * 
+     * <p>
      * The default implementation of this method recognizes the same simple accessor methods and set accessor methods as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
-     *     1. Searches the class of the receiver for methods whose names match the patterns -add<Key>Object: and -remove<Key>Object: (corresponding to the two primitive methods defined by the NSMutableSet class) and also -add<Key>: and -remove<Key>: (corresponding to -[NSMutableSet unionSet:] and -[NSMutableSet minusSet:]). If at least one addition method and at least one removal method are found each NSMutableSet message sent to the collection proxy object will result in some combination of -add<Key>Object:, -remove<Key>Object:, -add<Key>:, and -remove<Key>: messages being sent to the original receiver of -mutableSetValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -intersect<Key>: or -set<Key>: that method will be used when appropriate for best performance.
-     *     2. Otherwise (no set of set mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableSet message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableSetValueForKey:.
-     *     3. Otherwise (no set of set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableSet or a subclass of NSMutableSet.
-     *     4. Otherwise (no set of set mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableSet message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableSetValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
-     * 
+     * 1. Searches the class of the receiver for methods whose names match the patterns -add<Key>Object: and -remove<Key>Object: (corresponding to the two primitive methods defined by the NSMutableSet class) and also -add<Key>: and -remove<Key>: (corresponding to -[NSMutableSet unionSet:] and -[NSMutableSet minusSet:]). If at least one addition method and at least one removal method are found each NSMutableSet message sent to the collection proxy object will result in some combination of -add<Key>Object:, -remove<Key>Object:, -add<Key>:, and -remove<Key>: messages being sent to the original receiver of -mutableSetValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -intersect<Key>: or -set<Key>: that method will be used when appropriate for best performance.
+     * 2. Otherwise (no set of set mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableSet message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableSetValueForKey:.
+     * 3. Otherwise (no set of set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableSet or a subclass of NSMutableSet.
+     * 4. Otherwise (no set of set mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableSet message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableSetValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
+     * <p>
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance problem. For better performance implement methods that fulfill the requirements for step 1 in your KVC-compliant class.
      */
     @Generated
@@ -679,18 +679,18 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given that the receiver has been registered as an observer of the value at a key path relative to an object, be notified of a change to that value.
-     * 
+     * <p>
      * The change dictionary always contains an NSKeyValueChangeKindKey entry whose value is an NSNumber wrapping an NSKeyValueChange (use -[NSNumber unsignedIntegerValue]). The meaning of NSKeyValueChange depends on what sort of property is identified by the key path:
-     *     - For any sort of property (attribute, to-one relationship, or ordered or unordered to-many relationship) NSKeyValueChangeSetting indicates that the observed object has received a -setValue:forKey: message, or that the key-value coding-compliant set method for the key has been invoked, or that a -willChangeValueForKey:/-didChangeValueForKey: pair has otherwise been invoked.
-     *     - For an _ordered_ to-many relationship, NSKeyValueChangeInsertion, NSKeyValueChangeRemoval, and NSKeyValueChangeReplacement indicate that a mutating message has been sent to the array returned by a -mutableArrayValueForKey: message sent to the object, or sent to the ordered set returned by a -mutableOrderedSetValueForKey: message sent to the object, or that one of the key-value coding-compliant array or ordered set mutation methods for the key has been invoked, or that a -willChange:valuesAtIndexes:forKey:/-didChange:valuesAtIndexes:forKey: pair has otherwise been invoked.
-     *     - For an _unordered_ to-many relationship (introduced in Mac OS 10.4), NSKeyValueChangeInsertion, NSKeyValueChangeRemoval, and NSKeyValueChangeReplacement indicate that a mutating message has been sent to the set returned by a -mutableSetValueForKey: message sent to the object, or that one of the key-value coding-compliant set mutation methods for the key has been invoked, or that a -willChangeValueForKey:withSetMutation:usingObjects:/-didChangeValueForKey:withSetMutation:usingObjects: pair has otherwise been invoked.
-     * 
+     * - For any sort of property (attribute, to-one relationship, or ordered or unordered to-many relationship) NSKeyValueChangeSetting indicates that the observed object has received a -setValue:forKey: message, or that the key-value coding-compliant set method for the key has been invoked, or that a -willChangeValueForKey:/-didChangeValueForKey: pair has otherwise been invoked.
+     * - For an _ordered_ to-many relationship, NSKeyValueChangeInsertion, NSKeyValueChangeRemoval, and NSKeyValueChangeReplacement indicate that a mutating message has been sent to the array returned by a -mutableArrayValueForKey: message sent to the object, or sent to the ordered set returned by a -mutableOrderedSetValueForKey: message sent to the object, or that one of the key-value coding-compliant array or ordered set mutation methods for the key has been invoked, or that a -willChange:valuesAtIndexes:forKey:/-didChange:valuesAtIndexes:forKey: pair has otherwise been invoked.
+     * - For an _unordered_ to-many relationship (introduced in Mac OS 10.4), NSKeyValueChangeInsertion, NSKeyValueChangeRemoval, and NSKeyValueChangeReplacement indicate that a mutating message has been sent to the set returned by a -mutableSetValueForKey: message sent to the object, or that one of the key-value coding-compliant set mutation methods for the key has been invoked, or that a -willChangeValueForKey:withSetMutation:usingObjects:/-didChangeValueForKey:withSetMutation:usingObjects: pair has otherwise been invoked.
+     * <p>
      * For any sort of property, the change dictionary contains an NSKeyValueChangeNewKey entry if NSKeyValueObservingOptionNew was specified at observer registration time, it's the right kind of change, and this isn't a prior notification. The change dictionary contains an NSKeyValueChangeOldKey if NSKeyValueObservingOptionOld was specified and it's the right kind of change. See the comments for the NSKeyValueObserverNotification informal protocol methods for what the values of those entries can be.
-     * 
+     * <p>
      * For an _ordered_ to-many relationship, the change dictionary always contains an NSKeyValueChangeIndexesKey entry whose value is an NSIndexSet containing the indexes of the inserted, removed, or replaced objects, unless the change is an NSKeyValueChangeSetting.
-     * 
+     * <p>
      * If NSKeyValueObservingOptionPrior (introduced in Mac OS 10.5) was specified at observer registration time, and this notification is one being sent prior to a change as a result, the change dictionary contains an NSKeyValueChangeNotificationIsPriorKey entry whose value is an NSNumber wrapping YES (use -[NSNumber boolValue]).
-     * 
+     * <p>
      * context is always the same pointer that was passed in at observer registration time.
      */
     @Generated
@@ -763,14 +763,14 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * width,height of the image. (this subregion is defined in the image's
      * local coordinate space, i.e. the origin is the top left corner of
      * the image).
-     * 
+     * <p>
      * By default, this method will be called to requests the full image
      * data regardless of what subregion is needed for the current render.
      * All of the image is loaded or none of it is.
-     * 
+     * <p>
      * If the kCIImageProviderTileSize option is specified, then only the
      * tiles that are needed are requested.
-     * 
+     * <p>
      * Changing the virtual memory mapping of the supplied buffer (e.g. using
      * vm_copy () to modify it) will give undefined behavior.
      */
@@ -859,7 +859,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Returns the frame of the element in screen coordinates.
      * default == CGRectZero
      * default on UIViews == the frame of the view
-     * Setting the property will change the frame that is returned to the accessibility client. 
+     * Setting the property will change the frame that is returned to the accessibility client.
      */
     @Generated
     @Selector("setAccessibilityFrame:")
@@ -870,28 +870,28 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * The hint should be a brief phrase.
      * For example: "Purchases the item." or "Downloads the attachment."
      * default == nil
-     * Setting the property will change the hint that is returned to the accessibility client. 
+     * Setting the property will change the hint that is returned to the accessibility client.
      */
     @Generated
     @Selector("setAccessibilityHint:")
     public native void setAccessibilityHint(String value);
 
     /**
-     * Returns the localized label that represents the element. 
+     * Returns the localized label that represents the element.
      * If the element does not display text (an icon for example), this method
      * should return text that best labels the element. For example: "Play" could be used for
      * a button that is used to play music. "Play button" should not be used, since there is a trait
      * that identifies the control is a button.
      * default == nil
      * default on UIKit controls == derived from the title
-     * Setting the property will change the label that is returned to the accessibility client. 
+     * Setting the property will change the label that is returned to the accessibility client.
      */
     @Generated
     @Selector("setAccessibilityLabel:")
     public native void setAccessibilityLabel(String value);
 
     /**
-     * Returns the language code that the element's label, value and hint should be spoken in. 
+     * Returns the language code that the element's label, value and hint should be spoken in.
      * If no language is set, the user's language is used.
      * The format for the language code should follow Internet BCP 47 for language tags.
      * For example, en-US specifies U.S. English.
@@ -929,27 +929,27 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * When overriding this method, remember to combine your custom traits
      * with [super accessibilityTraits].
      * default == UIAccessibilityTraitNone
-     * default on UIKit controls == traits that best characterize individual controls. 
-     * Setting the property will change the traits that are returned to the accessibility client. 
+     * default on UIKit controls == traits that best characterize individual controls.
+     * Setting the property will change the traits that are returned to the accessibility client.
      */
     @Generated
     @Selector("setAccessibilityTraits:")
     public native void setAccessibilityTraits(long value);
 
     /**
-     * Returns a localized string that represents the value of the element, such as the value 
+     * Returns a localized string that represents the value of the element, such as the value
      * of a slider or the text in a text field. Use only when the label of the element
      * differs from a value. For example: A volume slider has a label of "Volume", but a value of "60%".
      * default == nil
-     * default on UIKit controls == values for appropriate controls 
-     * Setting the property will change the value that is returned to the accessibility client.  
+     * default on UIKit controls == values for appropriate controls
+     * Setting the property will change the value that is returned to the accessibility client.
      */
     @Generated
     @Selector("setAccessibilityValue:")
     public native void setAccessibilityValue(String value);
 
     /**
-     * Informs whether the receiving view should be considered modal by accessibility. If YES, then 
+     * Informs whether the receiving view should be considered modal by accessibility. If YES, then
      * elements outside this view will be ignored. Only elements inside this view will be exposed.
      * default == NO
      */
@@ -958,10 +958,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void setAccessibilityViewIsModal(boolean value);
 
     /**
-     * Return YES if the receiver should be exposed as an accessibility element. 
+     * Return YES if the receiver should be exposed as an accessibility element.
      * default == NO
-     * default on UIKit controls == YES 
-     * Setting the property to YES will cause the receiver to be visible to assistive applications. 
+     * default on UIKit controls == YES
+     * Setting the property to YES will cause the receiver to be visible to assistive applications.
      */
     @Generated
     @Selector("setIsAccessibilityElement:")
@@ -983,7 +983,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Forces children elements to be grouped together regardless of their position on screen.
-     * For example, your app may show items that are meant to be grouped together in vertical columns. 
+     * For example, your app may show items that are meant to be grouped together in vertical columns.
      * By default, VoiceOver will navigate those items in horizontal rows. If shouldGroupAccessibilityChildren is set on
      * a parent view of the items in the vertical column, VoiceOver will navigate the order correctly.
      * default == NO
@@ -994,17 +994,17 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a value and a key that identifies an attribute, set the value of the attribute. Given an object and a key that identifies a to-one relationship, relate the object to the receiver, unrelating the previously related object if there was one. Given a collection object and a key that identifies a to-many relationship, relate the objects contained in the collection to the receiver, unrelating previously related objects if there were any.
-     * 
+     * <p>
      * The default implementation of this method does the following:
-     *     1. Searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found the type of its parameter is checked. If the parameter type is not an object pointer type but the value is nil -setNilValueForKey: is invoked. The default implementation of -setNilValueForKey: raises an NSInvalidArgumentException, but you can override it in your application. Otherwise, if the type of the method's parameter is an object pointer type the method is simply invoked with the value as the argument. If the type of the method's parameter is some other type the inverse of the NSNumber/NSValue conversion done by -valueForKey: is performed before the method is invoked.
-     *     2. Otherwise (no accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found and its type is an object pointer type the value is retained and the result is set in the instance variable, after the instance variable's old value is first released. If the instance variable's type is some other type its value is set after the same sort of conversion from NSNumber or NSValue as in step 1.
-     *     3. Otherwise (no accessor method or instance variable is found), invokes -setValue:forUndefinedKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
-     * 
+     * 1. Searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found the type of its parameter is checked. If the parameter type is not an object pointer type but the value is nil -setNilValueForKey: is invoked. The default implementation of -setNilValueForKey: raises an NSInvalidArgumentException, but you can override it in your application. Otherwise, if the type of the method's parameter is an object pointer type the method is simply invoked with the value as the argument. If the type of the method's parameter is some other type the inverse of the NSNumber/NSValue conversion done by -valueForKey: is performed before the method is invoked.
+     * 2. Otherwise (no accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found and its type is an object pointer type the value is retained and the result is set in the instance variable, after the instance variable's old value is first released. If the instance variable's type is some other type its value is set after the same sort of conversion from NSNumber or NSValue as in step 1.
+     * 3. Otherwise (no accessor method or instance variable is found), invokes -setValue:forUndefinedKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
+     * <p>
      * Compatibility notes:
-     *     - For backward binary compatibility with -takeValue:forKey:'s behavior, a method whose name matches the pattern -_set<Key>: is also recognized in step 1. KVC accessor methods whose names start with underscores were deprecated as of Mac OS 10.3 though.
-     *     - For backward binary compatibility, -unableToSetNilForKey: will be invoked instead of -setNilValueForKey: in step 1, if the implementation of -unableToSetNilForKey: in the receiver's class is not NSObject's.
-     *     - The behavior described in step 2 is different from -takeValue:forKey:'s, in which the instance variable search order is <key>, _<key>.
-     *     - For backward binary compatibility with -takeValue:forKey:'s behavior, -handleTakeValue:forUnboundKey: will be invoked instead of -setValue:forUndefinedKey: in step 3, if the implementation of -handleTakeValue:forUnboundKey: in the receiver's class is not NSObject's.
+     * - For backward binary compatibility with -takeValue:forKey:'s behavior, a method whose name matches the pattern -_set<Key>: is also recognized in step 1. KVC accessor methods whose names start with underscores were deprecated as of Mac OS 10.3 though.
+     * - For backward binary compatibility, -unableToSetNilForKey: will be invoked instead of -setNilValueForKey: in step 1, if the implementation of -unableToSetNilForKey: in the receiver's class is not NSObject's.
+     * - The behavior described in step 2 is different from -takeValue:forKey:'s, in which the instance variable search order is <key>, _<key>.
+     * - For backward binary compatibility with -takeValue:forKey:'s behavior, -handleTakeValue:forUnboundKey: will be invoked instead of -setValue:forUndefinedKey: in step 3, if the implementation of -handleTakeValue:forUnboundKey: in the receiver's class is not NSObject's.
      */
     @Generated
     @Selector("setValue:forKey:")
@@ -1030,7 +1030,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Forces children elements to be grouped together regardless of their position on screen.
-     * For example, your app may show items that are meant to be grouped together in vertical columns. 
+     * For example, your app may show items that are meant to be grouped together in vertical columns.
      * By default, VoiceOver will navigate those items in horizontal rows. If shouldGroupAccessibilityChildren is set on
      * a parent view of the items in the vertical column, VoiceOver will navigate the order correctly.
      * default == NO
@@ -1045,7 +1045,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a pointer to a value pointer, a key that identifies an attribute or to-one relationship, and a pointer to an NSError pointer, return a value that is suitable for use in subsequent -setValue:forKey: messages sent to the same receiver. If no validation is necessary, return YES without altering *ioValue or *outError. If validation is necessary and possible, return YES after setting *ioValue to an object that is the validated version of the original value, but without altering *outError. If validation is necessary but not possible, return NO after setting *outError to an NSError that encapsulates the reason that validation was not possible, but without altering *ioValue. The sender of the message is never given responsibility for releasing ioValue or outError.
-     * 
+     * <p>
      * The default implementation of this method searches the class of the receiver for a validator method whose name matches the pattern -validate<Key>:error:. If such a method is found it is invoked and the result is returned. If no such method is found, YES is returned.
      */
     @Generated
@@ -1060,19 +1060,19 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a key that identifies an attribute or to-one relationship, return the attribute value or the related object. Given a key that identifies a to-many relationship, return an immutable array or an immutable set that contains all of the related objects.
-     * 
+     * <p>
      * The default implementation of this method does the following:
-     *     1. Searches the class of the receiver for an accessor method whose name matches the pattern -get<Key>, -<key>, or -is<Key>, in that order. If such a method is found it is invoked. If the type of the method's result is an object pointer type the result is simply returned. If the type of the result is one of the scalar types supported by NSNumber conversion is done and an NSNumber is returned. Otherwise, conversion is done and an NSValue is returned (new in Mac OS 10.5: results of arbitrary type are converted to NSValues, not just NSPoint, NRange, NSRect, and NSSize).
-     *     2 (introduced in Mac OS 10.7). Otherwise (no simple accessor method is found), searches the class of the receiver for methods whose names match the patterns -countOf<Key> and -indexIn<Key>OfObject: and -objectIn<Key>AtIndex: (corresponding to the primitive methods defined by the NSOrderedSet class) and also -<key>AtIndexes: (corresponding to -[NSOrderedSet objectsAtIndexes:]). If a count method and an indexOf method and at least one of the other two possible methods are found, a collection proxy object that responds to all NSOrderedSet methods is returned. Each NSOrderedSet message sent to the collection proxy object will result in some combination of -countOf<Key>, -indexIn<Key>OfObject:, -objectIn<Key>AtIndex:, and -<key>AtIndexes: messages being sent to the original receiver of -valueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -get<Key>:range: that method will be used when appropriate for best performance.
-     *     3. Otherwise (no simple accessor method or set of ordered set access methods is found), searches the class of the receiver for methods whose names match the patterns -countOf<Key> and -objectIn<Key>AtIndex: (corresponding to the primitive methods defined by the NSArray class) and (introduced in Mac OS 10.4) also -<key>AtIndexes: (corresponding to -[NSArray objectsAtIndexes:]). If a count method and at least one of the other two possible methods are found, a collection proxy object that responds to all NSArray methods is returned. Each NSArray message sent to the collection proxy object will result in some combination of -countOf<Key>, -objectIn<Key>AtIndex:, and -<key>AtIndexes: messages being sent to the original receiver of -valueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -get<Key>:range: that method will be used when appropriate for best performance.
-     *     4 (introduced in Mac OS 10.4). Otherwise (no simple accessor method or set of ordered set or array access methods is found), searches the class of the receiver for a threesome of methods whose names match the patterns -countOf<Key>, -enumeratorOf<Key>, and -memberOf<Key>: (corresponding to the primitive methods defined by the NSSet class). If all three such methods are found a collection proxy object that responds to all NSSet methods is returned. Each NSSet message sent to the collection proxy object will result in some combination of -countOf<Key>, -enumeratorOf<Key>, and -memberOf<Key>: messages being sent to the original receiver of -valueForKey:.
-     *     5. Otherwise (no simple accessor method or set of collection access methods is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found, the value of the instance variable in the receiver is returned, with the same sort of conversion to NSNumber or NSValue as in step 1.
-     *     6. Otherwise (no simple accessor method, set of collection access methods, or instance variable is found), invokes -valueForUndefinedKey: and returns the result. The default implementation of -valueForUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
-     * 
+     * 1. Searches the class of the receiver for an accessor method whose name matches the pattern -get<Key>, -<key>, or -is<Key>, in that order. If such a method is found it is invoked. If the type of the method's result is an object pointer type the result is simply returned. If the type of the result is one of the scalar types supported by NSNumber conversion is done and an NSNumber is returned. Otherwise, conversion is done and an NSValue is returned (new in Mac OS 10.5: results of arbitrary type are converted to NSValues, not just NSPoint, NRange, NSRect, and NSSize).
+     * 2 (introduced in Mac OS 10.7). Otherwise (no simple accessor method is found), searches the class of the receiver for methods whose names match the patterns -countOf<Key> and -indexIn<Key>OfObject: and -objectIn<Key>AtIndex: (corresponding to the primitive methods defined by the NSOrderedSet class) and also -<key>AtIndexes: (corresponding to -[NSOrderedSet objectsAtIndexes:]). If a count method and an indexOf method and at least one of the other two possible methods are found, a collection proxy object that responds to all NSOrderedSet methods is returned. Each NSOrderedSet message sent to the collection proxy object will result in some combination of -countOf<Key>, -indexIn<Key>OfObject:, -objectIn<Key>AtIndex:, and -<key>AtIndexes: messages being sent to the original receiver of -valueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -get<Key>:range: that method will be used when appropriate for best performance.
+     * 3. Otherwise (no simple accessor method or set of ordered set access methods is found), searches the class of the receiver for methods whose names match the patterns -countOf<Key> and -objectIn<Key>AtIndex: (corresponding to the primitive methods defined by the NSArray class) and (introduced in Mac OS 10.4) also -<key>AtIndexes: (corresponding to -[NSArray objectsAtIndexes:]). If a count method and at least one of the other two possible methods are found, a collection proxy object that responds to all NSArray methods is returned. Each NSArray message sent to the collection proxy object will result in some combination of -countOf<Key>, -objectIn<Key>AtIndex:, and -<key>AtIndexes: messages being sent to the original receiver of -valueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -get<Key>:range: that method will be used when appropriate for best performance.
+     * 4 (introduced in Mac OS 10.4). Otherwise (no simple accessor method or set of ordered set or array access methods is found), searches the class of the receiver for a threesome of methods whose names match the patterns -countOf<Key>, -enumeratorOf<Key>, and -memberOf<Key>: (corresponding to the primitive methods defined by the NSSet class). If all three such methods are found a collection proxy object that responds to all NSSet methods is returned. Each NSSet message sent to the collection proxy object will result in some combination of -countOf<Key>, -enumeratorOf<Key>, and -memberOf<Key>: messages being sent to the original receiver of -valueForKey:.
+     * 5. Otherwise (no simple accessor method or set of collection access methods is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found, the value of the instance variable in the receiver is returned, with the same sort of conversion to NSNumber or NSValue as in step 1.
+     * 6. Otherwise (no simple accessor method, set of collection access methods, or instance variable is found), invokes -valueForUndefinedKey: and returns the result. The default implementation of -valueForUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
+     * <p>
      * Compatibility notes:
-     *     - For backward binary compatibility, an accessor method whose name matches the pattern -_get<Key>, or -_<key> is searched for between steps 1 and 3. If such a method is found it is invoked, with the same sort of conversion to NSNumber or NSValue as in step 1. KVC accessor methods whose names start with underscores were deprecated as of Mac OS 10.3 though.
-     *     - The behavior described in step 5 is a change from Mac OS 10.2, in which the instance variable search order was <key>, _<key>.
-     *     - For backward binary compatibility, -handleQueryWithUnboundKey: will be invoked instead of -valueForUndefinedKey: in step 6, if the implementation of -handleQueryWithUnboundKey: in the receiver's class is not NSObject's.
+     * - For backward binary compatibility, an accessor method whose name matches the pattern -_get<Key>, or -_<key> is searched for between steps 1 and 3. If such a method is found it is invoked, with the same sort of conversion to NSNumber or NSValue as in step 1. KVC accessor methods whose names start with underscores were deprecated as of Mac OS 10.3 though.
+     * - The behavior described in step 5 is a change from Mac OS 10.2, in which the instance variable search order was <key>, _<key>.
+     * - For backward binary compatibility, -handleQueryWithUnboundKey: will be invoked instead of -valueForUndefinedKey: in step 6, if the implementation of -handleQueryWithUnboundKey: in the receiver's class is not NSObject's.
      */
     @Generated
     @Selector("valueForKey:")
@@ -1097,10 +1097,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a key that identifies an _ordered_ to-many relationship, send -observeValueForKeyPath:ofObject:change:context: notification messages of the passed-in change kind to each observer registered for the key, including those that are registered with other objects using key paths that locate the keyed value in this object. The passed-in kind must be NSKeyValueChangeInsertion, NSKeyValueChangeRemoval, or NSKeyValueChangeReplacement. The passed-in index set must be the indexes of the objects being inserted, removed, or replaced. Invocations of these methods must always be paired, with identical arguments.
-     * 
+     * <p>
      * The change dictionaries in notifications resulting from use of these methods contain optional entries if requested at observer registration time:
-     *     - The NSKeyValueChangeOldKey entry, if present (only for NSKeyValueChangeRemoval and NSKeyValueChangeReplacement), contains an array of the indexed objects from the array returned by -valueForKey: at the instant that -willChangeValueForKey:valuesAtIndexes:forKey: is invoked.
-     *     - The NSKeyValueChangeNewKey entry, if present (only for NSKeyValueChangeInsertion and NSKeyValueChangeReplacement), contains an array of the indexed objects from the array returned by -valueForKey: at the instant that -didChangeValueForKey:valuesAtIndexes:forKey: is invoked.
+     * - The NSKeyValueChangeOldKey entry, if present (only for NSKeyValueChangeRemoval and NSKeyValueChangeReplacement), contains an array of the indexed objects from the array returned by -valueForKey: at the instant that -willChangeValueForKey:valuesAtIndexes:forKey: is invoked.
+     * - The NSKeyValueChangeNewKey entry, if present (only for NSKeyValueChangeInsertion and NSKeyValueChangeReplacement), contains an array of the indexed objects from the array returned by -valueForKey: at the instant that -didChangeValueForKey:valuesAtIndexes:forKey: is invoked.
      */
     @Generated
     @Selector("willChange:valuesAtIndexes:forKey:")
@@ -1108,10 +1108,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a key that identifies a property (attribute, to-one relationship, or ordered or unordered to-many relationship), send -observeValueForKeyPath:ofObject:change:context: notification messages of kind NSKeyValueChangeSetting to each observer registered for the key, including those that are registered with other objects using key paths that locate the keyed value in this object. Invocations of these methods must always be paired.
-     * 
+     * <p>
      * The change dictionaries in notifications resulting from use of these methods contain optional entries if requested at observer registration time:
-     *     - The NSKeyValueChangeOldKey entry, if present, contains the value returned by -valueForKey: at the instant that -willChangeValueForKey: is invoked (or an NSNull if -valueForKey: returns nil).
-     *     - The NSKeyValueChangeNewKey entry, if present, contains the value returned by -valueForKey: at the instant that -didChangeValueForKey: is invoked (or an NSNull if -valueForKey: returns nil).
+     * - The NSKeyValueChangeOldKey entry, if present, contains the value returned by -valueForKey: at the instant that -willChangeValueForKey: is invoked (or an NSNull if -valueForKey: returns nil).
+     * - The NSKeyValueChangeNewKey entry, if present, contains the value returned by -valueForKey: at the instant that -didChangeValueForKey: is invoked (or an NSNull if -valueForKey: returns nil).
      */
     @Generated
     @Selector("willChangeValueForKey:")
@@ -1119,16 +1119,16 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Given a key that identifies an _unordered_ to-many relationship, send -observeValueForKeyPath:ofObject:change:context: notification messages to each observer registered for the key, including those that are registered with other objects using key paths that locate the keyed value in this object. The passed-in mutation kind corresponds to an NSMutableSet method. The passed-in set must contain the set that would be passed to the corresponding NSMutableSet method. Invocations of these methods must always be paired, with identical arguments.
-     * 
+     * <p>
      * The value of the NSKeyValueChangeKindKey entry in change dictionaries in notifications resulting from use of these methods depends on the passed-in mutationKind value:
-     *     - NSKeyValueUnionSetMutation -> NSKeyValueChangeInsertion
-     *     - NSKeyValueMinusSetMutation -> NSKeyValueChangeRemoval
-     *     - NSKeyValueIntersectSetMutation -> NSKeyValueChangeRemoval
-     *     - NSKeyValueSetSetMutation -> NSKeyValueChangeReplacement
-     * 
+     * - NSKeyValueUnionSetMutation -> NSKeyValueChangeInsertion
+     * - NSKeyValueMinusSetMutation -> NSKeyValueChangeRemoval
+     * - NSKeyValueIntersectSetMutation -> NSKeyValueChangeRemoval
+     * - NSKeyValueSetSetMutation -> NSKeyValueChangeReplacement
+     * <p>
      * The change dictionaries may also contain optional entries:
-     *     - The NSKeyValueChangeOldKey entry, if present (only for for NSKeyValueChangeRemoval and NSKeyValueChangeReplacement), contains the set of objects that were removed.
-     *     - The NSKeyValueChangeNewKey entry, if present (only for NSKeyValueChangeInsertion and NSKeyValueChangeReplacement), contains the set of objects that were added.
+     * - The NSKeyValueChangeOldKey entry, if present (only for for NSKeyValueChangeRemoval and NSKeyValueChangeReplacement), contains the set of objects that were removed.
+     * - The NSKeyValueChangeNewKey entry, if present (only for NSKeyValueChangeInsertion and NSKeyValueChangeReplacement), contains the set of objects that were added.
      */
     @Generated
     @Selector("willChangeValueForKey:withSetMutation:usingObjects:")
@@ -1190,10 +1190,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * experience. Also, there may be situations in which you want to expose drags or drops from an
      * element, and those interactions are installed on views that are not part of that element's view
      * hierarchy subtree.
-     * 
+     * <p>
      * This is trivially the case when the element is not a view at all, but an instance of
      * UIAccessibilityElement.
-     * 
+     * <p>
      * Another example is when a container view maintains interactions that are logically
      * associated with subviews. For instance, UITableView has associated drag interactions that allow
      * for dragging its rows; to make the rows draggable by assistive technologies, UITableViewCell has
@@ -1201,19 +1201,19 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * the cell.
      * (Note that this implementation detail is noted here for expository purposes only and may change
      * at any time without warning.)
-     * 
+     * <p>
      * Properties defined here allow you to fine-tune how drags and drops are exposed to assistive
      * technologies. Both of their getter methods can be overridden to provide information on-demand.
      * For each location descriptor, the associated view should be the UIView with the appropriate
      * UIInteraction object for that drag or drop.
-     * 
+     * <p>
      * `accessibilityDragSourceDescriptors` is an array of UIAccessibilityLocationDescriptor
      * objects and is used to define and describe what drags are available from an element.
-     * 
+     * <p>
      * `accessibilityDropPointDescriptors` is similarly an array of
      * UIAccessibilityLocationDescriptor objects and is used to define and describe where
      * drops are possible on this element.
-     * 
+     * <p>
      * To restore the default automatic behavior for these properties, assign (or return) the default
      * value of nil. Note that nil does not describe the same behavior as the empty array, which
      * specifies that there are no relevant interactions for this element.
@@ -1266,10 +1266,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * experience. Also, there may be situations in which you want to expose drags or drops from an
      * element, and those interactions are installed on views that are not part of that element's view
      * hierarchy subtree.
-     * 
+     * <p>
      * This is trivially the case when the element is not a view at all, but an instance of
      * UIAccessibilityElement.
-     * 
+     * <p>
      * Another example is when a container view maintains interactions that are logically
      * associated with subviews. For instance, UITableView has associated drag interactions that allow
      * for dragging its rows; to make the rows draggable by assistive technologies, UITableViewCell has
@@ -1277,19 +1277,19 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * the cell.
      * (Note that this implementation detail is noted here for expository purposes only and may change
      * at any time without warning.)
-     * 
+     * <p>
      * Properties defined here allow you to fine-tune how drags and drops are exposed to assistive
      * technologies. Both of their getter methods can be overridden to provide information on-demand.
      * For each location descriptor, the associated view should be the UIView with the appropriate
      * UIInteraction object for that drag or drop.
-     * 
+     * <p>
      * `accessibilityDragSourceDescriptors` is an array of UIAccessibilityLocationDescriptor
      * objects and is used to define and describe what drags are available from an element.
-     * 
+     * <p>
      * `accessibilityDropPointDescriptors` is similarly an array of
      * UIAccessibilityLocationDescriptor objects and is used to define and describe where
      * drops are possible on this element.
-     * 
+     * <p>
      * To restore the default automatic behavior for these properties, assign (or return) the default
      * value of nil. Note that nil does not describe the same behavior as the empty array, which
      * specifies that there are no relevant interactions for this element.

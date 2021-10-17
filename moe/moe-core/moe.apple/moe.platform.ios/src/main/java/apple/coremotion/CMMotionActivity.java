@@ -44,23 +44,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMMotionActivity
- * 
+ * <p>
  * Discussion:
- *   An estimate of the user's activity based on the motion of the device.
- * 
- *   The activity is exposed as a set of properties, the properties are not
- *   mutually exclusive.
- * 
- *   For example, if you're in a car stopped at a stop sign the state might
- *   look like:
- *      stationary = YES, walking = NO, running = NO, automotive = YES
- * 
- *   Or a moving vehicle,
- *      stationary = NO, walking = NO, running = NO, automotive = YES
- * 
- *   Or the device could be in motion but not walking or in a vehicle.
- *      stationary = NO, walking = NO, running = NO, automotive = NO.
- *   Note in this case all of the properties are NO.
+ * An estimate of the user's activity based on the motion of the device.
+ * <p>
+ * The activity is exposed as a set of properties, the properties are not
+ * mutually exclusive.
+ * <p>
+ * For example, if you're in a car stopped at a stop sign the state might
+ * look like:
+ * stationary = YES, walking = NO, running = NO, automotive = YES
+ * <p>
+ * Or a moving vehicle,
+ * stationary = NO, walking = NO, running = NO, automotive = YES
+ * <p>
+ * Or the device could be in motion but not walking or in a vehicle.
+ * stationary = NO, walking = NO, running = NO, automotive = NO.
+ * Note in this case all of the properties are NO.
  */
 @Generated
 @Library("CoreMotion")
@@ -179,9 +179,9 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * automotive
-     * 
+     * <p>
      * Discussion:
-     *   True if the device is in a vehicle.
+     * True if the device is in a vehicle.
      */
     @Generated
     @Selector("automotive")
@@ -189,12 +189,12 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * confidence
-     * 
+     * <p>
      * Discussion:
-     *   A confidence estimate associated with this state.
-     * 
-     *   CoreMotion always provides the most likely state.  Confidence represents
-     *   how likely that the state is to be correct.
+     * A confidence estimate associated with this state.
+     * <p>
+     * CoreMotion always provides the most likely state.  Confidence represents
+     * how likely that the state is to be correct.
      */
     @Generated
     @Selector("confidence")
@@ -203,9 +203,9 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * cycling
-     * 
+     * <p>
      * Discussion:
-     *   True if the device is on a bicycle.
+     * True if the device is on a bicycle.
      */
     @Generated
     @Selector("cycling")
@@ -221,9 +221,9 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * running
-     * 
+     * <p>
      * Discussion:
-     *   True if the device is on a running person.
+     * True if the device is on a running person.
      */
     @Generated
     @Selector("running")
@@ -231,9 +231,9 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * startDate
-     * 
+     * <p>
      * Discussion:
-     *   Time at which the activity started.
+     * Time at which the activity started.
      */
     @Generated
     @Selector("startDate")
@@ -241,9 +241,9 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * stationary
-     * 
+     * <p>
      * Discussion:
-     *   True if the device is not moving.
+     * True if the device is not moving.
      */
     @Generated
     @Selector("stationary")
@@ -257,10 +257,10 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * unknown
-     * 
+     * <p>
      * Discussion:
-     *   True if there is no estimate of the current state.  This can happen if
-     *   the device was turned off.
+     * True if there is no estimate of the current state.  This can happen if
+     * the device was turned off.
      */
     @Generated
     @Selector("unknown")
@@ -268,9 +268,9 @@ public class CMMotionActivity extends CMLogItem {
 
     /**
      * walking
-     * 
+     * <p>
      * Discussion:
-     *   True if the device is on a walking person.
+     * True if the device is on a walking person.
      */
     @Generated
     @Selector("walking")

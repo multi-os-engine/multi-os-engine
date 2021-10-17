@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNPoolingMax kernel
- * 
+ * <p>
  * The default edge mode is MPSImageEdgeModeClamp
  */
 @Generated

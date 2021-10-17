@@ -38,10 +38,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMHomeManagerDelegate {
     /**
      * Informs the delegate when a new home is added.
-     * 
-     * @param      manager     Sender of this message.
-     * 
-     * @param      home        New home that was added.
+     *
+     * @param manager Sender of this message.
+     * @param home    New home that was added.
      */
     @Generated
     @IsOptional
@@ -52,10 +51,9 @@ public interface HMHomeManagerDelegate {
 
     /**
      * Informs the delegate when an existing home is removed.
-     * 
-     * @param      manager     Sender of this message.
-     * 
-     * @param      home        Home that was removed.
+     *
+     * @param manager Sender of this message.
+     * @param home    Home that was removed.
      */
     @Generated
     @IsOptional
@@ -66,12 +64,12 @@ public interface HMHomeManagerDelegate {
 
     /**
      * Informs the delegate when homes configured by the user have been detected by the system.
-     * 
+     * <p>
      * This delegate method is also invoked to inform an application of significant changes
-     *             to the home configuration. Applications should use this as a cue to invalidate their
-     *             current references to HomeKit objects and refresh their views with the new list of homes.
-     * 
-     * @param      manager     Sender of this message.
+     * to the home configuration. Applications should use this as a cue to invalidate their
+     * current references to HomeKit objects and refresh their views with the new list of homes.
+     *
+     * @param manager Sender of this message.
      */
     @Generated
     @IsOptional
@@ -82,8 +80,8 @@ public interface HMHomeManagerDelegate {
 
     /**
      * Informs the delegate when the primary home is modified.
-     * 
-     * @param      manager     Sender of this message.
+     *
+     * @param manager Sender of this message.
      */
     @Generated
     @IsOptional
@@ -94,11 +92,10 @@ public interface HMHomeManagerDelegate {
 
     /**
      * Informs the delegate an accessory needs to be added to the home by using one of the
-     *       HMAccessorySetupPayload factory methods on the request parameter.
-     * 
-     * @param      manager     Sender of this message.
-     * 
-     * @param      request     Information for the add accessory request.
+     * HMAccessorySetupPayload factory methods on the request parameter.
+     *
+     * @param manager Sender of this message.
+     * @param request Information for the add accessory request.
      */
     @Generated
     @IsOptional
@@ -109,9 +106,9 @@ public interface HMHomeManagerDelegate {
 
     /**
      * Informs the delegate a change in authorization status has occurred.
-     * 
-     * @param      manager     Sender of this message.
-     * @param      status      The updated authorization status.
+     *
+     * @param manager Sender of this message.
+     * @param status  The updated authorization status.
      */
     @Generated
     @IsOptional

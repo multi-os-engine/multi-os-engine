@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * A relevant daily routine situation.
- * 
+ *
  * @see INDailyRoutineRelevanceProvider
  */
 @Generated
@@ -25,28 +25,28 @@ public final class INDailyRoutineSituation {
     /**
      * A situation that occurs when the user is at home.
      * [@note] Your app needs Always location authorization to use this situation.
-     * 
+     *
      * @see CLLocationManager
      */
     @Generated @NInt public static final long Home = 0x0000000000000002L;
     /**
      * A situation that occurs when the user is at work.
      * [@note] Your app needs Always location authorization to use this situation.
-     * 
+     *
      * @see CLLocationManager
      */
     @Generated @NInt public static final long Work = 0x0000000000000003L;
     /**
      * A situation that occurs when the user is at school.
      * [@note] Your app needs Always location authorization to use this situation.
-     * 
+     *
      * @see CLLocationManager
      */
     @Generated @NInt public static final long School = 0x0000000000000004L;
     /**
      * A situation that occurs when the user is at the gym.
      * [@note] Your app needs Always location authorization to use this situation.
-     * 
+     *
      * @see CLLocationManager
      */
     @Generated @NInt public static final long Gym = 0x0000000000000005L;

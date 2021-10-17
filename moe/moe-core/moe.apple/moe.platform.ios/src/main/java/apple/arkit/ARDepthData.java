@@ -79,7 +79,7 @@ public class ARDepthData extends NSObject {
 
     /**
      * A pixel buffer containing the confidence level for each depth value in the `depthMap`.
-     * 
+     *
      * @see ARConfidenceLevel
      */
     @Generated

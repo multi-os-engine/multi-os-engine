@@ -474,4 +474,61 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Selector("supportedCountries")
     public native NSSet<String> supportedCountries();
+
+    /**
+     * An optional coupon code that is valid and has been applied to the payment request already.
+     */
+    @Generated
+    @Selector("couponCode")
+    public native String couponCode();
+
+    /**
+     * Convenience method to create a payment coupon code expired error with the supplied description.
+     */
+    @Generated
+    @Selector("paymentCouponCodeExpiredErrorWithLocalizedDescription:")
+    public static native NSError paymentCouponCodeExpiredErrorWithLocalizedDescription(String localizedDescription);
+
+    /**
+     * Convenience method to create a payment coupon code invalid error with the supplied description.
+     */
+    @Generated
+    @Selector("paymentCouponCodeInvalidErrorWithLocalizedDescription:")
+    public static native NSError paymentCouponCodeInvalidErrorWithLocalizedDescription(String localizedDescription);
+
+    /**
+     * An optional coupon code that is valid and has been applied to the payment request already.
+     */
+    @Generated
+    @Selector("setCouponCode:")
+    public native void setCouponCode(String value);
+
+    /**
+     * Indicates the editing mode for the shipping contact. The default is PKShippingContactEditingModeEnabled.
+     */
+    @Generated
+    @Selector("setShippingContactEditingMode:")
+    public native void setShippingContactEditingMode(@NUInt long value);
+
+    /**
+     * Indicates whether the merchant supports coupon code entry and validation. Defaults to NO.
+     */
+    @Generated
+    @Selector("setSupportsCouponCode:")
+    public native void setSupportsCouponCode(boolean value);
+
+    /**
+     * Indicates the editing mode for the shipping contact. The default is PKShippingContactEditingModeEnabled.
+     */
+    @Generated
+    @Selector("shippingContactEditingMode")
+    @NUInt
+    public native long shippingContactEditingMode();
+
+    /**
+     * Indicates whether the merchant supports coupon code entry and validation. Defaults to NO.
+     */
+    @Generated
+    @Selector("supportsCouponCode")
+    public native boolean supportsCouponCode();
 }

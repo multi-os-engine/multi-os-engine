@@ -289,11 +289,11 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Initializes the receiver for decoding an archive previously encoded by \c NSKeyedUnarchiver.
-     * 
+     * <p>
      * Enables \c requiresSecureCoding by default. If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off manually; for improved security, \c requiresSecureCoding should be left enabled whenever possible.
-     * 
+     * <p>
      * Sets the unarchiver's \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * 
+     * <p>
      * Returns \c nil if the given data is not valid, and sets the \c error out parameter.
      */
     @Generated
@@ -303,9 +303,9 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Decodes the root object of the given class from the given archive, previously encoded by \c NSKeyedArchiver.
-     * 
+     * <p>
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * 
+     * <p>
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
      */
     @Generated
@@ -316,9 +316,9 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Decodes the root object of one of the given classes from the given archive, previously encoded by \c NSKeyedArchiver.
-     * 
+     * <p>
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * 
+     * <p>
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
      */
     @Generated
@@ -329,9 +329,9 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Decodes the \c NSArray root object from \c data which should be an \c NSArray<cls> containing the given non-collection class (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded by \c NSKeyedArchiver.
-     * 
+     * <p>
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * 
+     * <p>
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
      */
     @Generated
@@ -341,9 +341,9 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Decodes the \c NSArray root object from \c data which should be an \c NSArray, containing the given non-collection classes in \c classes  (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded by \c NSKeyedArchiver.
-     * 
+     * <p>
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * 
+     * <p>
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
      */
     @Generated
@@ -353,9 +353,9 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Decodes the \c NSDictionary root object from \c data which should be an \c NSDictionary<keyCls,objectCls>  with keys of type given in \c keyCls and objects of the given non-collection class \c objectCls (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded by \c NSKeyedArchiver.
-     * 
+     * <p>
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * 
+     * <p>
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
      */
     @Generated
@@ -365,9 +365,9 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Decodes the \c NSDictionary root object from \c data which should be an \c NSDictionary, with keys of the types given in \c keyClasses and objects of the given non-collection classes in \c objectClasses (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded by \c NSKeyedArchiver.
-     * 
+     * <p>
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * 
+     * <p>
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
      */
     @Generated

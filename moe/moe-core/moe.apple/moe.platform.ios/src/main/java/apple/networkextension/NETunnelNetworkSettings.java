@@ -45,11 +45,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NETunnelNetworkSettings
- * 
+ * <p>
  * The NETunnelNetworkSettings class declares the programmatic interface for an object that contains network settings.
- * 
+ * <p>
  * NETunnelNetworkSettings is used by NETunnelProviders to communicate the desired network settings for the tunnel to the framework. The framework takes care of applying the contained settings to the system.
- * 
+ * <p>
  * Instances of this class are thread safe.
  */
 @Generated
@@ -169,7 +169,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     /**
      * [@property] DNSSettings
-     * 
+     * <p>
      * An NEDNSSettings object that contains the desired tunnel DNS settings.
      */
     @Generated
@@ -196,9 +196,9 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     /**
      * initWithTunnelRemoteAddress:
-     * 
+     * <p>
      * This function initializes a newly-allocated NETunnelNetworkSettings object with a given tunnel remote address.
-     * 
+     *
      * @param address The address of the remote endpoint that is providing the tunnel service.
      */
     @Generated
@@ -207,7 +207,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     /**
      * [@property] proxySettings
-     * 
+     * <p>
      * An NEProxySettings object that contains the desired tunnel proxy settings.
      */
     @Generated
@@ -216,7 +216,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     /**
      * [@property] DNSSettings
-     * 
+     * <p>
      * An NEDNSSettings object that contains the desired tunnel DNS settings.
      */
     @Generated
@@ -225,7 +225,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     /**
      * [@property] proxySettings
-     * 
+     * <p>
      * An NEProxySettings object that contains the desired tunnel proxy settings.
      */
     @Generated
@@ -240,7 +240,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
 
     /**
      * [@property] tunnelRemoteAddress
-     * 
+     * <p>
      * A string containing the IP address of the remote endpoint that is providing the tunnel service.
      */
     @Generated

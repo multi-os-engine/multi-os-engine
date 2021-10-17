@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueDoorState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueDoorStateOpen     The door is fully open.
  * [@constant]  HMCharacteristicValueDoorStateClosed   The door is fully closed.
  * [@constant]  HMCharacteristicValueDoorStateOpening  The door is actively opening.

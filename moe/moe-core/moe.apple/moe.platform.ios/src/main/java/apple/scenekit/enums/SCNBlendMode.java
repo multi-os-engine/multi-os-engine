@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNBlendMode
- * 
+ * <p>
  * Blend modes that SCNMaterial uses to compose with the framebuffer to produce blended colors.
  */
 @Generated

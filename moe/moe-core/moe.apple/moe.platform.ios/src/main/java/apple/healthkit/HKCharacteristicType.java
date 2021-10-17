@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCharacteristicType
- * 
+ * <p>
  * Represents a type of object that describes a characteristic of the user (such as date of birth).
  */
 @Generated

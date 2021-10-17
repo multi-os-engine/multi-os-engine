@@ -46,13 +46,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The ACAccountStore class provides an interface for accessing and manipulating
  * accounts. You must create an ACAccountStore object to retrieve, add and delete
  * accounts from the Accounts database.
- * 
+ * <p>
  * IMPORTANT NOTE: You MUST keep the account store around for as long as you have
  * any objects fetched from that store if you expect other 'sub-fetches' to work,
  * most notably being fetching credentials. If you really just want to open the
  * store to grab credentials, just be sure to grab the credential object and then
  * you can release the owning account and store, e.g.
- * 
+ * <p>
  * WARNING: All synchronous methods on ACAccountStore invoke xpc methods
  * on accountsd. They are not appropriate to call on a UI Application's main thread.
  */

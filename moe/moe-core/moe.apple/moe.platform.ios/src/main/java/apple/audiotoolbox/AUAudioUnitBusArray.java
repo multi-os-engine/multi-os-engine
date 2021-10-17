@@ -46,23 +46,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AUAudioUnitBusArray
- * 
+ * <p>
  * Container for an audio unit's input or output busses.
- * 
- * 	Hosts can observe a bus property across all busses by using KVO on this object, without
- * 	having to observe it on each individual bus. (One could add listeners to individual busses,
- * 	but that means one has to observe bus count changes and add/remove listeners in response.
- * 	Also, NSArray's addObserver:toObjectsAtIndexes:forKeyPath:options:context: is problematic;
- * 	it does not let the individual objects override the observation request, and so a bus which
- * 	is proxying a bus in an extension process does not get the message.)
- * 
- * 	Some audio units (e.g. mixers) support variable numbers of busses, via subclassing. When the
- * 	bus count changes, a KVO notification is sent on "inputBusses" or "outputBusses," as
- * 	appropriate.
- * 
- * 	Subclassers should see also the AUAudioUnitBusImplementation category.
- * 
- * 	The bus array is bridged to the v2 property kAudioUnitProperty_ElementCount.
+ * <p>
+ * Hosts can observe a bus property across all busses by using KVO on this object, without
+ * having to observe it on each individual bus. (One could add listeners to individual busses,
+ * but that means one has to observe bus count changes and add/remove listeners in response.
+ * Also, NSArray's addObserver:toObjectsAtIndexes:forKeyPath:options:context: is problematic;
+ * it does not let the individual objects override the observation request, and so a bus which
+ * is proxying a bus in an extension process does not get the message.)
+ * <p>
+ * Some audio units (e.g. mixers) support variable numbers of busses, via subclassing. When the
+ * bus count changes, a KVO notification is sent on "inputBusses" or "outputBusses," as
+ * appropriate.
+ * <p>
+ * Subclassers should see also the AUAudioUnitBusImplementation category.
+ * <p>
+ * The bus array is bridged to the v2 property kAudioUnitProperty_ElementCount.
  */
 @Generated
 @Library("AudioToolbox")
@@ -177,7 +177,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * addObserverToAllBusses:forKeyPath:options:context:
-     * 
+     * <p>
      * Add a KVO observer for a property on all busses in the array.
      */
     @Generated
@@ -213,7 +213,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * initWithAudioUnit:busType:
-     * 
+     * <p>
      * Initializes an empty bus array.
      */
     @Generated
@@ -222,7 +222,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * initWithAudioUnit:busType:busses:
-     * 
+     * <p>
      * Initializes by making a copy of the supplied bus array.
      */
     @Generated
@@ -232,10 +232,10 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * [@property]	countChangeable
-     * 
+     * <p>
      * Whether the array can have a variable number of busses.
-     * 
-     * 	The base implementation returns false.
+     * <p>
+     * The base implementation returns false.
      */
     @Generated
     @Selector("isCountChangeable")
@@ -257,7 +257,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * removeObserverFromAllBusses:forKeyPath:context:
-     * 
+     * <p>
      * Remove a KVO observer for a property on all busses in the array.
      */
     @Generated
@@ -273,7 +273,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     /**
      * [@property]	setBusCount:error:
-     * 
+     * <p>
      * Change the number of busses in the array.
      */
     @Generated

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NWPathStatus
- * 
+ * <p>
  * Path status values
  */
 @Generated

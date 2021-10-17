@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] JSType
- * 
+ * <p>
  * A constant identifying the type of a JSValue.
  * [@constant]     kJSTypeUndefined  The unique undefined value.
  * [@constant]     kJSTypeNull       The unique null value.

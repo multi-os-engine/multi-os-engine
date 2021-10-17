@@ -10,7 +10,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] MTLCounterSet
- * 
+ * <p>
  * A collection of MTLCounters that the device can capture in
  * a single pass.
  */
@@ -21,7 +21,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface MTLCounterSet {
     /**
      * [@property] counters The set of counters captured by the counter set.
-     * 
+     * <p>
      * The counters array contains all the counters that will be written
      * when a counter sample is collected.  Counters that do not appear in this array
      * will not be written to the resolved buffer when the samples are resolved, even if

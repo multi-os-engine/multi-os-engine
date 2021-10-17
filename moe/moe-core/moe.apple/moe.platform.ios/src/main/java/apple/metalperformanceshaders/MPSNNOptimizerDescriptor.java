@@ -25,12 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNOptimizerDescriptor
- * 
+ * <p>
  * The MPSNNOptimizerDescriptor base class. Optimizers are generally used to update trainable neural network parameters.
- *             Users are usually expected to call these MPSKernels from the update methods on their Convolution or BatchNormalization data sources.
- * 
- *             Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is scaled or clipped
- *             If regularization is chosen the appropriate regularization loss gradient is added to the value gradient.
+ * Users are usually expected to call these MPSKernels from the update methods on their Convolution or BatchNormalization data sources.
+ * <p>
+ * Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is scaled or clipped
+ * If regularization is chosen the appropriate regularization loss gradient is added to the value gradient.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -62,9 +62,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   applyGradientClipping
-     * 
+     * <p>
      * A bool which decides if gradient will be clipped
-     * 
+     * <p>
      * The default value is NO
      */
     @Generated
@@ -103,7 +103,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   gradientClipMax
-     * 
+     * <p>
      * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
@@ -112,7 +112,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   gradientClipMin
-     * 
+     * <p>
      * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
@@ -121,9 +121,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   gradientRescale
-     * 
+     * <p>
      * The gradientRescale at which we apply to incoming gradient values
-     * 
+     * <p>
      * The default value is 1.0
      */
     @Generated
@@ -141,16 +141,15 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * Initialization for the MPSNNOptimizerDescriptor object
-     * 
-     * @param      learningRate               The learningRate which will be applied
-     * @param      gradientRescale            The gradientRescale which will be applied
-     * @param      applyGradientClipping      The BOOL which sets if gradientClipping would be applied to the gradient
-     * @param      gradientClipMax            The gradientClipMax which will be applied
-     * @param      gradientClipMin            The gradientClipMin which will be applied
-     * @param      regularizationType         The regularizationType which will be applied
-     * @param      regularizationScale        The regularizationScale which will be applied
-     * 
-     * @return     A valid MPSNNOptimizerDescriptor object or nil, if failure.
+     *
+     * @param learningRate          The learningRate which will be applied
+     * @param gradientRescale       The gradientRescale which will be applied
+     * @param applyGradientClipping The BOOL which sets if gradientClipping would be applied to the gradient
+     * @param gradientClipMax       The gradientClipMax which will be applied
+     * @param gradientClipMin       The gradientClipMin which will be applied
+     * @param regularizationType    The regularizationType which will be applied
+     * @param regularizationScale   The regularizationScale which will be applied
+     * @return A valid MPSNNOptimizerDescriptor object or nil, if failure.
      */
     @Generated
     @Selector("initWithLearningRate:gradientRescale:applyGradientClipping:gradientClipMax:gradientClipMin:regularizationType:regularizationScale:")
@@ -160,13 +159,12 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * Initialization for the MPSNNOptimizerDescriptor object, no gradient clipping would be applied
-     * 
-     * @param      learningRate               The learningRate which will be applied
-     * @param      gradientRescale            The gradientRescale which will be applied
-     * @param      regularizationType         The regularizationType which will be applied
-     * @param      regularizationScale        The regularizationScale which will be applied
-     * 
-     * @return     A valid MPSNNOptimizerDescriptor object or nil, if failure.
+     *
+     * @param learningRate        The learningRate which will be applied
+     * @param gradientRescale     The gradientRescale which will be applied
+     * @param regularizationType  The regularizationType which will be applied
+     * @param regularizationScale The regularizationScale which will be applied
+     * @return A valid MPSNNOptimizerDescriptor object or nil, if failure.
      */
     @Generated
     @Selector("initWithLearningRate:gradientRescale:regularizationType:regularizationScale:")
@@ -196,9 +194,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   learningRate
-     * 
+     * <p>
      * The learningRate at which we update values
-     * 
+     * <p>
      * The default value is 0.001f
      */
     @Generated
@@ -213,16 +211,15 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object
-     * 
-     * @param      learningRate               The learningRate which will be applied
-     * @param      gradientRescale            The gradientRescale which will be applied
-     * @param      applyGradientClipping      The BOOL which sets if gradientClipping would be applied to the gradient
-     * @param      gradientClipMax            The gradientClipMax which will be applied
-     * @param      gradientClipMin            The gradientClipMin which will be applied
-     * @param      regularizationType         The regularizationType which will be applied
-     * @param      regularizationScale        The regularizationScale which will be applied
-     * 
-     * @return     A valid MPSNNOptimizerDescriptor object or nil, if failure.
+     *
+     * @param learningRate          The learningRate which will be applied
+     * @param gradientRescale       The gradientRescale which will be applied
+     * @param applyGradientClipping The BOOL which sets if gradientClipping would be applied to the gradient
+     * @param gradientClipMax       The gradientClipMax which will be applied
+     * @param gradientClipMin       The gradientClipMin which will be applied
+     * @param regularizationType    The regularizationType which will be applied
+     * @param regularizationScale   The regularizationScale which will be applied
+     * @return A valid MPSNNOptimizerDescriptor object or nil, if failure.
      */
     @Generated
     @Selector("optimizerDescriptorWithLearningRate:gradientRescale:applyGradientClipping:gradientClipMax:gradientClipMin:regularizationType:regularizationScale:")
@@ -232,13 +229,12 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object, no gradient clipping would be applied
-     * 
-     * @param      learningRate               The learningRate which will be applied
-     * @param      gradientRescale            The gradientRescale which will be applied
-     * @param      regularizationType         The regularizationType which will be applied
-     * @param      regularizationScale        The regularizationScale which will be applied
-     * 
-     * @return     A valid MPSNNOptimizerDescriptor object or nil, if failure.
+     *
+     * @param learningRate        The learningRate which will be applied
+     * @param gradientRescale     The gradientRescale which will be applied
+     * @param regularizationType  The regularizationType which will be applied
+     * @param regularizationScale The regularizationScale which will be applied
+     * @return A valid MPSNNOptimizerDescriptor object or nil, if failure.
      */
     @Generated
     @Selector("optimizerDescriptorWithLearningRate:gradientRescale:regularizationType:regularizationScale:")
@@ -247,9 +243,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   regularizationScale
-     * 
+     * <p>
      * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
-     * 
+     * <p>
      * The default value is 0.0
      */
     @Generated
@@ -258,9 +254,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   regularizationType
-     * 
+     * <p>
      * The regularizationType which we apply.
-     * 
+     * <p>
      * The default value is MPSRegularizationTypeNone
      */
     @Generated
@@ -278,9 +274,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   applyGradientClipping
-     * 
+     * <p>
      * A bool which decides if gradient will be clipped
-     * 
+     * <p>
      * The default value is NO
      */
     @Generated
@@ -289,7 +285,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   gradientClipMax
-     * 
+     * <p>
      * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
@@ -298,7 +294,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   gradientClipMin
-     * 
+     * <p>
      * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
     @Generated
@@ -307,9 +303,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   gradientRescale
-     * 
+     * <p>
      * The gradientRescale at which we apply to incoming gradient values
-     * 
+     * <p>
      * The default value is 1.0
      */
     @Generated
@@ -318,9 +314,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   learningRate
-     * 
+     * <p>
      * The learningRate at which we update values
-     * 
+     * <p>
      * The default value is 0.001f
      */
     @Generated
@@ -329,9 +325,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   regularizationScale
-     * 
+     * <p>
      * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
-     * 
+     * <p>
      * The default value is 0.0
      */
     @Generated
@@ -340,9 +336,9 @@ public class MPSNNOptimizerDescriptor extends NSObject {
 
     /**
      * [@property]   regularizationType
-     * 
+     * <p>
      * The regularizationType which we apply.
-     * 
+     * <p>
      * The default value is MPSRegularizationTypeNone
      */
     @Generated

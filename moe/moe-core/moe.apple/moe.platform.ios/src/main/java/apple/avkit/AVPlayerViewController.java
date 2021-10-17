@@ -24,7 +24,6 @@ import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
-import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UIView;
@@ -45,14 +44,13 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
-import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPlayerViewController
- * 
+ * <p>
  * AVPlayerViewController is a subclass of UIViewController that can be used to display the visual content of an AVPlayer object and the standard playback controls.
  */
 @Generated
@@ -154,21 +152,6 @@ public class AVPlayerViewController extends UIViewController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    /**
-     * +preparePrerollAds
-     * 
-     * Inform iAd that the application intends to use AVPlayerViewController's
-     * -playPrerollAdWithCompletionHandler: API. Ad metadata will be fetched eagerly,
-     * increasing the likelihood of an ad being available when first requested.
-     */
-    @Generated
-    @Selector("preparePrerollAds")
-    public static native void preparePrerollAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -191,7 +174,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	allowsPictureInPicturePlayback
-     * 
+     * <p>
      * Whether or not the receiver allows Picture in Picture playback. Default is YES.
      */
     @Generated
@@ -199,17 +182,8 @@ public class AVPlayerViewController extends UIViewController {
     public native boolean allowsPictureInPicturePlayback();
 
     /**
-     * -cancelPreroll
-     * 
-     * Cancel pre-roll video ad playback.
-     */
-    @Generated
-    @Selector("cancelPreroll")
-    public native void cancelPreroll();
-
-    /**
      * [@property]	contentOverlayView
-     * 
+     * <p>
      * Use the content overlay view to add additional custom views between the video content and the controls.
      */
     @Generated
@@ -218,7 +192,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	delegate
-     * 
+     * <p>
      * The receiver's delegate.
      */
     @Generated
@@ -240,7 +214,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	readyForDisplay
-     * 
+     * <p>
      * Boolean indicating that the first video frame has been made ready for display for the current item of the associated AVPlayer.
      */
     @Generated
@@ -248,29 +222,8 @@ public class AVPlayerViewController extends UIViewController {
     public native boolean isReadyForDisplay();
 
     /**
-     * -playPrerollAdWithCompletionHandler:
-     * 
-     * Request playback of a pre-roll video iAd.
-     * 
-     * If -[AVPlayerViewController player] begins playing during a pre-roll ad, the
-     * video ad will stop immediately.
-     * 
-     * The completion handler's error argument will be non-nil if the pre-roll ad
-     * could not be played. Errors can occur for a number of reasons, such as lack
-     * of ad inventory, exceeding the maximum pre-roll ad playback frequency, iAd
-     * account configuration issues, and media playback issues. See ADError for an
-     * exhaustive list of possible errors.
-     * 
-     * Passing nil as the completion handler is an error and will throw an exception.
-     */
-    @Generated
-    @Selector("playPrerollAdWithCompletionHandler:")
-    public native void playPrerollAdWithCompletionHandler(
-            @ObjCBlock(name = "call_playPrerollAdWithCompletionHandler") Block_playPrerollAdWithCompletionHandler completionHandler);
-
-    /**
      * [@property]	player
-     * 
+     * <p>
      * The player from which to source the media content for the view controller.
      */
     @Generated
@@ -279,7 +232,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	allowsPictureInPicturePlayback
-     * 
+     * <p>
      * Whether or not the receiver allows Picture in Picture playback. Default is YES.
      */
     @Generated
@@ -288,7 +241,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	delegate
-     * 
+     * <p>
      * The receiver's delegate.
      */
     @Generated
@@ -297,7 +250,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	delegate
-     * 
+     * <p>
      * The receiver's delegate.
      */
     @Generated
@@ -314,7 +267,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	player
-     * 
+     * <p>
      * The player from which to source the media content for the view controller.
      */
     @Generated
@@ -323,9 +276,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	showsPlaybackControls
-     * 
+     * <p>
      * Whether or not the receiver shows playback controls. Default is YES.
-     * 
+     * <p>
      * Clients can set this property to NO when they don't want to have any playback controls on top of the visual content (e.g. for a game splash screen).
      */
     @Generated
@@ -334,7 +287,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	updatesNowPlayingInfoCenter
-     * 
+     * <p>
      * Whether or not the now playing info center should be updated. Default is YES.
      */
     @Generated
@@ -343,9 +296,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	videoGravity
-     * 
+     * <p>
      * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * 
+     * <p>
      * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      */
     @Generated
@@ -354,9 +307,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	showsPlaybackControls
-     * 
+     * <p>
      * Whether or not the receiver shows playback controls. Default is YES.
-     * 
+     * <p>
      * Clients can set this property to NO when they don't want to have any playback controls on top of the visual content (e.g. for a game splash screen).
      */
     @Generated
@@ -365,7 +318,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	updatesNowPlayingInfoCenter
-     * 
+     * <p>
      * Whether or not the now playing info center should be updated. Default is YES.
      */
     @Generated
@@ -374,7 +327,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	videoBounds
-     * 
+     * <p>
      * The current size and position of the video image as displayed within the receiver's view's bounds.
      */
     @Generated
@@ -384,27 +337,20 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	videoGravity
-     * 
+     * <p>
      * A string defining how the video is displayed within an AVPlayerLayer bounds rect.
-     * 
+     * <p>
      * Options are AVLayerVideoGravityResizeAspect, AVLayerVideoGravityResizeAspectFill and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      */
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
 
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_playPrerollAdWithCompletionHandler {
-        @Generated
-        void call_playPrerollAdWithCompletionHandler(NSError error);
-    }
-
     /**
      * [@property]	entersFullScreenWhenPlaybackBegins
-     * 
+     * <p>
      * Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
-     * 
+     * <p>
      * If YES, the receiver will show a user interface tailored to this behavior.
      */
     @Generated
@@ -413,9 +359,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	exitsFullScreenWhenPlaybackEnds
-     * 
+     * <p>
      * Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
-     * 
+     * <p>
      * If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in the queue.
      */
     @Generated
@@ -424,9 +370,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	entersFullScreenWhenPlaybackBegins
-     * 
+     * <p>
      * Whether or not the receiver automatically enters full screen when the play button is tapped. Default is NO.
-     * 
+     * <p>
      * If YES, the receiver will show a user interface tailored to this behavior.
      */
     @Generated
@@ -435,9 +381,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	exitsFullScreenWhenPlaybackEnds
-     * 
+     * <p>
      * Whether or not the receiver automatically exits full screen when playback ends. Default is NO.
-     * 
+     * <p>
      * If multiple player items have been enqueued, the receiver exits fullscreen once no more items are remaining in the queue.
      */
     @Generated
@@ -446,9 +392,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	pixelBufferAttributes
-     * 
+     * <p>
      * The client requirements for the visual output during playback.
-     * 
+     * <p>
      * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
      */
     @Generated
@@ -457,9 +403,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	pixelBufferAttributes
-     * 
+     * <p>
      * The client requirements for the visual output during playback.
-     * 
+     * <p>
      * Pixel buffer attribute keys are defined in <CoreVideo/CVPixelBuffer.h>
      */
     @Generated
@@ -468,9 +414,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]    requiresLinearPlayback
-     * 
+     * <p>
      * Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * 
+     * <p>
      * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
      */
     @Generated
@@ -479,9 +425,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]    requiresLinearPlayback
-     * 
+     * <p>
      * Disables certain user operations (fast forward, forward skip, and scrubbing).
-     * 
+     * <p>
      * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
      */
     @Generated
@@ -490,7 +436,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	showsTimecodes
-     * 
+     * <p>
      * Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes. Default NO.
      */
     @Generated
@@ -499,7 +445,7 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]	showsTimecodes
-     * 
+     * <p>
      * Controls whether timecodes can be displayed in the playback UI when playing media with embedded timecodes. Default NO.
      */
     @Generated
@@ -508,9 +454,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]    canStartPictureInPictureAutomaticallyFromInline
-     * 
+     * <p>
      * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
-     * 
+     * <p>
      * This property must only be set to YES for content intended to be the user's primary focus.
      */
     @Generated
@@ -519,9 +465,9 @@ public class AVPlayerViewController extends UIViewController {
 
     /**
      * [@property]    canStartPictureInPictureAutomaticallyFromInline
-     * 
+     * <p>
      * Indicates whether Picture in Picture should be allowed to start automatically when transitioning to background when the receiver’s content is embedded inline. Default is NO.
-     * 
+     * <p>
      * This property must only be set to YES for content intended to be the user's primary focus.
      */
     @Generated

@@ -30,8 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNFaceLandmarkRegion
- * 
- * VNFaceLandmarkRegion the object acting as a collection of landmark points for defining a specific region of the face (including potentially all of the landmark points for a face). The VNFaceLandmarkRegion is an abstract base class.
+ * <p>
+ * VNFaceLandmarkRegion is an immutable object acting as a collection of landmark points for defining a specific region of the face (including potentially all of the landmark points for a face). The VNFaceLandmarkRegion is an abstract base class.
  */
 @Generated
 @Library("Vision")

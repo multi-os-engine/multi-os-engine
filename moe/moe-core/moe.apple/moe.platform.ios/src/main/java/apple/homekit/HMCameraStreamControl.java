@@ -197,7 +197,7 @@ public class HMCameraStreamControl extends HMCameraControl {
 
     /**
      * Starts the camera stream. 'currentCameraStream' will be updated upon
-     *        successfully starting the stream.
+     * successfully starting the stream.
      */
     @Generated
     @Selector("startStream")

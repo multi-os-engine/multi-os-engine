@@ -73,7 +73,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * audioMixInputParameters
-     * 
+     * <p>
      * Returns a new instance of AVMutableAudioMixInputParameters with no volume ramps and a trackID initialized to kCMPersistentTrackID_Invalid.
      */
     @Generated
@@ -82,11 +82,10 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * audioMixInputParametersWithTrack:
-     * 
+     * <p>
      * Returns a new instance of AVMutableAudioMixInputParameters with no volume ramps and a trackID set to the specified track's trackID.
-     * 
-     * @param			track
-     *   A reference to an AVAssetTrack.
+     *
+     * @param            track A reference to an AVAssetTrack.
      */
     @Generated
     @Selector("audioMixInputParametersWithTrack:")
@@ -177,7 +176,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * [@property]		audioTapProcessor
-     * 
+     * <p>
      * Indicates the audio processing tap that will be used for the audio track.
      */
     @Generated
@@ -186,11 +185,11 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * [@property]		audioTimePitchAlgorithm
-     * 
+     * <p>
      * Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
-     * 
-     *   Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
-     *   Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
+     * <p>
+     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
+     * Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
      */
     @Generated
     @Selector("audioTimePitchAlgorithm")
@@ -202,7 +201,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * [@property]		audioTapProcessor
-     * 
+     * <p>
      * Indicates the audio processing tap that will be used for the audio track.
      */
     @Generated
@@ -211,11 +210,11 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * [@property]		audioTimePitchAlgorithm
-     * 
+     * <p>
      * Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
-     * 
-     *   Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
-     *   Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
+     * <p>
+     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
+     * Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
@@ -223,7 +222,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * [@property]		trackID
-     * 
+     * <p>
      * Indicates the trackID of the audio track to which the parameters should be applied.
      */
     @Generated
@@ -232,7 +231,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * setVolume:atTime:
-     * 
+     * <p>
      * Sets the value of the audio volume at a specific time.
      */
     @Generated
@@ -241,7 +240,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * setVolumeRampFromStartVolume:toEndVolume:timeRange:
-     * 
+     * <p>
      * Sets a volume ramp to apply during the specified timeRange.
      */
     @Generated
@@ -251,7 +250,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
 
     /**
      * [@property]		trackID
-     * 
+     * <p>
      * Indicates the trackID of the audio track to which the parameters should be applied.
      */
     @Generated

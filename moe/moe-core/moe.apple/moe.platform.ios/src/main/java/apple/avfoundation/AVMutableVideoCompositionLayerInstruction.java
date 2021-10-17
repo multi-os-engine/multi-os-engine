@@ -163,7 +163,7 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * videoCompositionLayerInstruction
-     * 
+     * <p>
      * Returns a new instance of AVMutableVideoCompositionLayerInstruction with no transform or opacity ramps and a trackID initialized to kCMPersistentTrackID_Invalid.
      */
     @Generated
@@ -172,11 +172,10 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * videoCompositionLayerInstructionWithAssetTrack:
-     * 
+     * <p>
      * Returns a new instance of AVMutableVideoCompositionLayerInstruction with no transform or opacity ramps and a trackID set to the specified track's trackID.
-     * 
-     * @param			track
-     *   A reference to an AVAssetTrack.
+     *
+     * @param            track A reference to an AVAssetTrack.
      */
     @Generated
     @Selector("videoCompositionLayerInstructionWithAssetTrack:")
@@ -193,21 +192,19 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * setCropRectangle:atTime:
-     * 
+     * <p>
      * Sets a value of the crop rectangle at a time within the timeRange of the instruction.
-     * 
-     *   The origin of the crop rectangle is the top-left corner of the buffer clean aperture rectangle. The crop rectangle is defined in
-     *   square pixel space, i.e. without taking the pixel aspect ratio into account. Crop rectangles extending outside of the clean aperture,
-     *   are cropped to the clean aperture.
-     * 
-     *   Sets a fixed crop rectangle to apply from the specified time until the next time at which a crop rectangle is set; this is the same as setting a flat ramp for that time range.
-     *   Before the first specified time for which a crop rectangle is set, the crop rectangle is held constant to CGRectInfinite
-     *   after the last time for which a crop rectangle is set, the crop rectangle is held constant at that last value.
-     * 
-     * @param			cropRectangle
-     *   The crop rectangle to be applied at the specified time. See the discussion below of how crop rectangles are applied to video frames.
-     * @param			time
-     *   A time value within the timeRange of the composition instruction.
+     * <p>
+     * The origin of the crop rectangle is the top-left corner of the buffer clean aperture rectangle. The crop rectangle is defined in
+     * square pixel space, i.e. without taking the pixel aspect ratio into account. Crop rectangles extending outside of the clean aperture,
+     * are cropped to the clean aperture.
+     * <p>
+     * Sets a fixed crop rectangle to apply from the specified time until the next time at which a crop rectangle is set; this is the same as setting a flat ramp for that time range.
+     * Before the first specified time for which a crop rectangle is set, the crop rectangle is held constant to CGRectInfinite
+     * after the last time for which a crop rectangle is set, the crop rectangle is held constant at that last value.
+     *
+     * @param            cropRectangle The crop rectangle to be applied at the specified time. See the discussion below of how crop rectangles are applied to video frames.
+     * @param            time A time value within the timeRange of the composition instruction.
      */
     @Generated
     @Selector("setCropRectangle:atTime:")
@@ -215,24 +212,21 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * setCropRectangleRampFromStartCropRectangle:toEndCropRectangle:timeRange:
-     * 
+     * <p>
      * Sets an crop rectangle ramp to apply during the specified timerange.
-     * 
-     *   The origin of the crop rectangle is the top-left corner of the buffer clean aperture rectangle. The crop rectangle is defined in
-     *   square pixel space, i.e. without taking the pixel aspect ratio into account. Crop rectangles extending outside of the clean aperture,
-     *   are cropped to the clean aperture.
-     * 
-     *   During a crop rectangle ramp, the rectangle is interpolated between the values set at the ramp's start time and end time. 
-     *   When the starting or ending rectangle is empty, interpolations take into account the origin and size of the empty rectangle.
-     *   Before the first specified time for which a crop rectangle is set, the crop rectangle is held constant to CGRectInfinite
-     *   after the last time for which a crop rectangle is set, the crop rectangle is held constant at that last value.
-     * 
-     * @param			startCropRectangle
-     *   The crop rectangle to be applied at the starting time of the timeRange. See the discussion below of how crop rectangles are applied to video frames.
-     * @param			endCropRectangle
-     *   The crop rectangle to be applied at the end time of the timeRange.
-     * @param			timeRange
-     *   The timeRange over which the value of the opacity will be interpolated between startCropRectangle and endCropRectangle.
+     * <p>
+     * The origin of the crop rectangle is the top-left corner of the buffer clean aperture rectangle. The crop rectangle is defined in
+     * square pixel space, i.e. without taking the pixel aspect ratio into account. Crop rectangles extending outside of the clean aperture,
+     * are cropped to the clean aperture.
+     * <p>
+     * During a crop rectangle ramp, the rectangle is interpolated between the values set at the ramp's start time and end time.
+     * When the starting or ending rectangle is empty, interpolations take into account the origin and size of the empty rectangle.
+     * Before the first specified time for which a crop rectangle is set, the crop rectangle is held constant to CGRectInfinite
+     * after the last time for which a crop rectangle is set, the crop rectangle is held constant at that last value.
+     *
+     * @param            startCropRectangle The crop rectangle to be applied at the starting time of the timeRange. See the discussion below of how crop rectangles are applied to video frames.
+     * @param            endCropRectangle The crop rectangle to be applied at the end time of the timeRange.
+     * @param            timeRange The timeRange over which the value of the opacity will be interpolated between startCropRectangle and endCropRectangle.
      */
     @Generated
     @Selector("setCropRectangleRampFromStartCropRectangle:toEndCropRectangle:timeRange:")
@@ -241,16 +235,14 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * setOpacity:atTime:
-     * 
+     * <p>
      * Sets a value of the opacity at a time within the timeRange of the instruction.
-     * 
-     *   Sets a fixed opacity to apply from the specified time until the next time at which an opacity is set; this is the same as setting a flat ramp for that time range.
-     *   Before the first time for which an opacity is set, the opacity is held constant at 1.0; after the last specified time, the opacity is held constant at the last value.
-     * 
-     * @param			opacity
-     *   The opacity to be applied at the specified time. The value must be between 0.0 and 1.0.
-     * @param			time
-     *   A time value within the timeRange of the composition instruction.
+     * <p>
+     * Sets a fixed opacity to apply from the specified time until the next time at which an opacity is set; this is the same as setting a flat ramp for that time range.
+     * Before the first time for which an opacity is set, the opacity is held constant at 1.0; after the last specified time, the opacity is held constant at the last value.
+     *
+     * @param            opacity The opacity to be applied at the specified time. The value must be between 0.0 and 1.0.
+     * @param            time A time value within the timeRange of the composition instruction.
      */
     @Generated
     @Selector("setOpacity:atTime:")
@@ -258,18 +250,15 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * setOpacityRampFromStartOpacity:toEndOpacity:timeRange:
-     * 
+     * <p>
      * Sets an opacity ramp to apply during the specified timerange.
-     * 
-     *   During an opacity ramp, opacity is computed using a linear interpolation.
-     *   Before the first time for which an opacity is set, the opacity is held constant at 1.0; after the last specified time, the opacity is held constant at the last value.
-     * 
-     * @param			startOpacity
-     *   The opacity to be applied at the starting time of the timeRange. The value must be between 0.0 and 1.0.
-     * @param			endOpacity
-     *   The opacity to be applied at the end time of the timeRange. The value must be between 0.0 and 1.0.
-     * @param			timeRange
-     *   The timeRange over which the value of the opacity will be interpolated between startOpacity and endOpacity.
+     * <p>
+     * During an opacity ramp, opacity is computed using a linear interpolation.
+     * Before the first time for which an opacity is set, the opacity is held constant at 1.0; after the last specified time, the opacity is held constant at the last value.
+     *
+     * @param            startOpacity The opacity to be applied at the starting time of the timeRange. The value must be between 0.0 and 1.0.
+     * @param            endOpacity The opacity to be applied at the end time of the timeRange. The value must be between 0.0 and 1.0.
+     * @param            timeRange The timeRange over which the value of the opacity will be interpolated between startOpacity and endOpacity.
      */
     @Generated
     @Selector("setOpacityRampFromStartOpacity:toEndOpacity:timeRange:")
@@ -285,23 +274,21 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * setTransform:atTime:
-     * 
+     * <p>
      * Sets a value of the transform at a time within the timeRange of the instruction.
-     * 
-     *   For purposes of spatial positioning of video frames, the origin is in the top-left corner, so
-     *   (a) positive translation values in an affine transform move a video frame right and down; and
-     *   (b) with an identity transform a video frame is positioned with its top-left corner in the top-left corner of the composited frame.
-     *   Video frames shall be interpreted at their display sizes (as described by CVImageBufferGetDisplaySize,
-     *   ie, taking pixel aspect ratio attachments into account) before any affine transform is applied.
-     * 
-     *   Sets a fixed transform to apply from the specified time until the next time at which a transform is set; this is the same as setting a flat ramp for that time range.
-     *   Before the first specified time for which a transform is set, the affine transform is held constant at the value of CGAffineTransformIdentity;
-     *   after the last time for which a transform is set, the affine transform is held constant at that last value;
-     * 
-     * @param			transform
-     *   The transform to be applied at the specified time. See the discussion below of how transforms are applied to video frames.
-     * @param			time
-     *   A time value within the timeRange of the composition instruction.
+     * <p>
+     * For purposes of spatial positioning of video frames, the origin is in the top-left corner, so
+     * (a) positive translation values in an affine transform move a video frame right and down; and
+     * (b) with an identity transform a video frame is positioned with its top-left corner in the top-left corner of the composited frame.
+     * Video frames shall be interpreted at their display sizes (as described by CVImageBufferGetDisplaySize,
+     * ie, taking pixel aspect ratio attachments into account) before any affine transform is applied.
+     * <p>
+     * Sets a fixed transform to apply from the specified time until the next time at which a transform is set; this is the same as setting a flat ramp for that time range.
+     * Before the first specified time for which a transform is set, the affine transform is held constant at the value of CGAffineTransformIdentity;
+     * after the last time for which a transform is set, the affine transform is held constant at that last value;
+     *
+     * @param            transform The transform to be applied at the specified time. See the discussion below of how transforms are applied to video frames.
+     * @param            time A time value within the timeRange of the composition instruction.
      */
     @Generated
     @Selector("setTransform:atTime:")
@@ -309,25 +296,22 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
 
     /**
      * setTransformRampFromStartTransform:toEndTransform:timeRange:
-     * 
+     * <p>
      * Sets a transform ramp to apply during the specified timerange.
-     * 
-     *   For purposes of spatial positioning of video frames, the origin is in the top-left corner, so
-     *   (a) positive translation values in an affine transform move a video frame right and down; and
-     *   (b) with an identity transform a video frame is positioned with its top-left corner in the top-left corner of the composited frame.
-     *   Video frames shall be interpreted at their display sizes (as described by CVImageBufferGetDisplaySize,
-     *   ie, taking pixel aspect ratio attachments into account) before any affine transform is applied.
-     * 
-     *   During a transform ramp, the affine transform is interpolated between the values set at the ramp's start time and end time.
-     *   Before the first specified time for which a transform is set, the affine transform is held constant at the value of CGAffineTransformIdentity;
-     *   after the last time for which a transform is set, the affine transform is held constant at that last value;
-     * 
-     * @param			startTransform
-     *   The transform to be applied at the starting time of the timeRange. See the discussion below of how transforms are applied to video frames.
-     * @param			endTransform
-     *   The transform to be applied at the end time of the timeRange.
-     * @param			timeRange
-     *   The timeRange over which the value of the transform will be interpolated between startTransform and endTransform.
+     * <p>
+     * For purposes of spatial positioning of video frames, the origin is in the top-left corner, so
+     * (a) positive translation values in an affine transform move a video frame right and down; and
+     * (b) with an identity transform a video frame is positioned with its top-left corner in the top-left corner of the composited frame.
+     * Video frames shall be interpreted at their display sizes (as described by CVImageBufferGetDisplaySize,
+     * ie, taking pixel aspect ratio attachments into account) before any affine transform is applied.
+     * <p>
+     * During a transform ramp, the affine transform is interpolated between the values set at the ramp's start time and end time.
+     * Before the first specified time for which a transform is set, the affine transform is held constant at the value of CGAffineTransformIdentity;
+     * after the last time for which a transform is set, the affine transform is held constant at that last value;
+     *
+     * @param            startTransform The transform to be applied at the starting time of the timeRange. See the discussion below of how transforms are applied to video frames.
+     * @param            endTransform The transform to be applied at the end time of the timeRange.
+     * @param            timeRange The timeRange over which the value of the transform will be interpolated between startTransform and endTransform.
      */
     @Generated
     @Selector("setTransformRampFromStartTransform:toEndTransform:timeRange:")

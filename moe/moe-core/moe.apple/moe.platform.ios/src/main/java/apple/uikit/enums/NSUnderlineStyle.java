@@ -21,8 +21,8 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Attribute values ***********************
- *  This defines currently supported values for NSUnderlineStyleAttributeName and NSStrikethroughStyleAttributeName. These values are or'ed together to produce an underline style.
- *  Underlines will be drawn with a solid pattern by default, so NSUnderlineStylePatternSolid does not need to be specified.
+ * This defines currently supported values for NSUnderlineStyleAttributeName and NSStrikethroughStyleAttributeName. These values are or'ed together to produce an underline style.
+ * Underlines will be drawn with a solid pattern by default, so NSUnderlineStylePatternSolid does not need to be specified.
  */
 @Generated
 public final class NSUnderlineStyle {

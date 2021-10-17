@@ -44,7 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * If a color is encoded in a floatN property, it is to be interpreted as 
+ * If a color is encoded in a floatN property, it is to be interpreted as
  * a Rec 709 color.
  */
 @Generated

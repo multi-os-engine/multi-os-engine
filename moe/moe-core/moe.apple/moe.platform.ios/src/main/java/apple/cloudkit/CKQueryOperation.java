@@ -158,7 +158,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
-     * 
+     * <p>
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
      * Defaults to @c nil.
      */
@@ -187,8 +187,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.  These errors are repeats of those sent back in previous @c recordMatchedBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -198,8 +199,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * This block will be called once for every record that is returned as a result of the query.
-     * 
+     * <p>
      * The callbacks will happen in the order that the results were sorted in.
+     * If the replacement callback @c recordMatchedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -225,7 +227,7 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
-     * 
+     * <p>
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
      * Defaults to @c nil.
      */
@@ -239,8 +241,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.  These errors are repeats of those sent back in previous @c recordMatchedBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -250,8 +253,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * This block will be called once for every record that is returned as a result of the query.
-     * 
+     * <p>
      * The callbacks will happen in the order that the results were sorted in.
+     * If the replacement callback @c recordMatchedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -272,8 +276,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * Indicates which record zone to query.
-     * 
+     * <p>
      * For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the record zone in which the cursor was originally created.
+     * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
      */
     @Generated
     @Selector("setZoneID:")
@@ -281,8 +286,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
 
     /**
      * Indicates which record zone to query.
-     * 
+     * <p>
      * For query operations constructed using a cursor, this property is ignored and instead will be evaluated in the record zone in which the cursor was originally created.
+     * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
      */
     @Generated
     @Selector("zoneID")
@@ -314,5 +320,41 @@ public class CKQueryOperation extends CKDatabaseOperation {
     public interface Block_setRecordFetchedBlock {
         @Generated
         void call_setRecordFetchedBlock(CKRecord arg0);
+    }
+
+    /**
+     * This block will be called once for every record that is returned as a result of the query.
+     * <p>
+     * The callbacks will happen in the order that the results were sorted in.  If a record fails in post-processing (say, a network failure materializing a @c CKAsset record field), the per-record error will be passed here.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("recordMatchedBlock")
+    @ObjCBlock(name = "call_recordMatchedBlock_ret")
+    public native Block_recordMatchedBlock_ret recordMatchedBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_recordMatchedBlock_ret {
+        @Generated
+        void call_recordMatchedBlock_ret(CKRecordID arg0, CKRecord arg1, NSError arg2);
+    }
+
+    /**
+     * This block will be called once for every record that is returned as a result of the query.
+     * <p>
+     * The callbacks will happen in the order that the results were sorted in.  If a record fails in post-processing (say, a network failure materializing a @c CKAsset record field), the per-record error will be passed here.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("setRecordMatchedBlock:")
+    public native void setRecordMatchedBlock(
+            @ObjCBlock(name = "call_setRecordMatchedBlock") Block_setRecordMatchedBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setRecordMatchedBlock {
+        @Generated
+        void call_setRecordMatchedBlock(CKRecordID arg0, CKRecord arg1, NSError arg2);
     }
 }

@@ -133,12 +133,12 @@ public class UIPrinter extends NSObject {
 
     /**
      * printerWithURL:
-     * 
+     * <p>
      * Create a printer from its URL
-     * 
+     * <p>
      * This method creates a new printer object from the printer's URL.
-     *        A UIPrinter object is returned even if the printer is not available
-     *        on the network.
+     * A UIPrinter object is returned even if the printer is not available
+     * on the network.
      */
     @Generated
     @Selector("printerWithURL:")
@@ -167,10 +167,10 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return the URL of the printer.
-     * 
+     * <p>
      * This method returns the full URL of the printer which can be
-     *        used in future calls to printerWithURL to access the same
-     *        printer.
+     * used in future calls to printerWithURL to access the same
+     * printer.
      */
     @Generated
     @Selector("URL")
@@ -178,11 +178,11 @@ public class UIPrinter extends NSObject {
 
     /**
      * contactPrinter:
-     * 
+     * <p>
      * Check if printer is reachable, and update printer information.
-     * 
+     * <p>
      * This method checks to see if this printer is available on the network,
-     * 	and sets the displayName, displayLocation, supportedJobTypes, makeAndModel,
+     * and sets the displayName, displayLocation, supportedJobTypes, makeAndModel,
      * supportsColor, and supportsDuplex for the printer.
      * The operation can take up to 30 seconds.
      */
@@ -192,10 +192,10 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return a human-readable location.
-     * 
+     * <p>
      * This method returns the printer's location. This is human-readable text that
-     *         usually appears in the UI below the printer's name (such as "Front Office").
-     * 	        Returns nil if the printer doesn't have a location string.
+     * usually appears in the UI below the printer's name (such as "Front Office").
+     * Returns nil if the printer doesn't have a location string.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
      */
@@ -205,7 +205,7 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return a human-readable printer name.
-     * 
+     * <p>
      * This method returns the printer name suitable for displaying in the UI.
      */
     @Generated
@@ -218,7 +218,7 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return make (manufacturer) and model of the printer.
-     * 
+     * <p>
      * This method returns the make and model of the printer, which
      * is usually the manufacturer, model, and model number.
      * This property's value is undefined until contactPrinter: has been called and
@@ -230,7 +230,7 @@ public class UIPrinter extends NSObject {
 
     /**
      * Returns the supported job types of this printer.
-     * 
+     * <p>
      * This method returns a mask with all the UIPrinterJobTypes values that
      * the printer supports.
      * This property's value is undefined until contactPrinter: has been called and
@@ -243,9 +243,9 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return whether this printer supports color printing.
-     * 
+     * <p>
      * This method returns YES if the printer supports full color printing, NO
-     * 	otherwise.
+     * otherwise.
      * This property's value is undefined until contactPrinter: has been called and
      * completed successfully.
      */
@@ -255,7 +255,7 @@ public class UIPrinter extends NSObject {
 
     /**
      * Return whether this printer supports duplex (double-sided) printing.
-     * 
+     * <p>
      * This method returns YES if the printer supports duplex (double-sided)
      * printing, NO otherwise.
      * This property's value is undefined until contactPrinter: has been called and

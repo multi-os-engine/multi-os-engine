@@ -23,8 +23,10 @@ import org.moe.natj.general.ann.NInt;
  * [@enum] CKAccountStatus
  * [@constant] CKAccountStatusCouldNotDetermine An error occurred when getting the account status, consult the corresponding NSError.
  * [@constant] CKAccountStatusAvailable The iCloud account credentials are available for this application
- * [@constant] Parental Controls / Device Management has denied access to iCloud account credentials
- * [@constant] No iCloud account is logged in on this device
+ * [@constant] CKAccountStatusRestricted Parental Controls / Device Management has denied access to iCloud account credentials
+ * [@constant] CKAccountStatusNoAccount No iCloud account is logged in on this device
+ * [@constant] CKAccountStatusTemporarilyUnavailable An iCloud account is logged in but not ready. The user can be asked to verify their
+ * credentials in Settings app.
  */
 @Generated
 public final class CKAccountStatus {
@@ -36,4 +38,6 @@ public final class CKAccountStatus {
     @Generated
     private CKAccountStatus() {
     }
+
+    @Generated @NInt public static final long TemporarilyUnavailable = 0x0000000000000004L;
 }

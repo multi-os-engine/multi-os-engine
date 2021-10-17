@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] tls_protocol_version_t enumeration
- * 
+ * <p>
  * Enumerations for the set of supported TLS and DTLS protocol versions.
- * 
+ * <p>
  * [@constant] tls_protocol_version_TLSv10 TLS 1.0 [https://tools.ietf.org/html/rfc4346]
  * [@constant] tls_protocol_version_TLSv11 TLS 1.1 [https://tools.ietf.org/html/rfc2246]
  * [@constant] tls_protocol_version_TLSv12 TLS 1.2 [https://tools.ietf.org/html/rfc5246]

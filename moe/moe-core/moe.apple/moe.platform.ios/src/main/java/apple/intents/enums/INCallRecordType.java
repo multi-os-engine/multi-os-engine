@@ -32,4 +32,7 @@ public final class INCallRecordType {
 
     @Generated @NInt public static final long Latest = 0x0000000000000004L;
     @Generated @NInt public static final long Voicemail = 0x0000000000000005L;
+    @Generated @NInt public static final long Ringing = 0x0000000000000006L;
+    @Generated @NInt public static final long InProgress = 0x0000000000000007L;
+    @Generated @NInt public static final long OnHold = 0x0000000000000008L;
 }

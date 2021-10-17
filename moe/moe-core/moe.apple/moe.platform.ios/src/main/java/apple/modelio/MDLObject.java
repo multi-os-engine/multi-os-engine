@@ -48,11 +48,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLObject
- * 
+ * <p>
  * Base class for object in a ModelIO asset hierarchy
- * 
+ * <p>
  * Includes transformation and bounds info, links to parent and
- *             children in the hierachy
+ * children in the hierachy
  */
 @Generated
 @Library("ModelIO")
@@ -176,14 +176,14 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * addChild:
-     * 
+     * <p>
      * Short hand for adding a child to the current container component and
-     *           setting the parent to this object.
-     * 
+     * setting the parent to this object.
+     * <p>
      * It will create a default container if none exists. If children are
-     *              explicitly disallowed for an object, then add a container component 
-     *              that throws on addition.
-     * 
+     * explicitly disallowed for an object, then add a container component
+     * that throws on addition.
+     *
      * @see MDLObjectContainer
      */
     @Generated
@@ -192,11 +192,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] children
-     * 
+     * <p>
      * Short hand property for the MDLObjectContainerComponent.
-     * 
+     * <p>
      * The default value is nil
-     * 
+     *
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -212,9 +212,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] hidden
-     * 
+     * <p>
      * Visibility of the node
-     * 
+     * <p>
      * default is NO
      */
     @Generated
@@ -227,18 +227,18 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] instance
-     * 
+     * <p>
      * Instance object
-     * 
-     * nil, unless this object refers to master data to be instanced. The
-     *             master data object can be any MDLObject that does not have a parent.
-     *             If an MDLAsset has been created from a data file, any master objects
-     *             parsed from that file will be found in the masters property.
-     *             A typical use of a master and instance might be to have one master
-     *             chair MDLObject, and instance six chairs around a table. The
-     *             transform of each chair would be found on the parent MDLObject, but
-     *             the various items making up the chair would be found in the master
-     *             object.
+     * <p>
+     * nil, unless this object refers to original data to be instanced. The
+     * original data object can be any MDLObject that does not have a parent.
+     * If an MDLAsset has been created from a data file, any original objects
+     * parsed from that file will be found in the originals property.
+     * A typical use of a original and instance might be to have one original
+     * chair MDLObject, and instance six chairs around a table. The
+     * transform of each chair would be found on the parent MDLObject, but
+     * the various items making up the chair would be found in the original
+     * object.
      */
     @Generated
     @Selector("instance")
@@ -257,11 +257,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] parent
-     * 
+     * <p>
      * Parent object. Nil if no parent.
-     * 
+     * <p>
      * Set to nil when you remove this from an object container inside the
-     *             parent object.
+     * parent object.
      */
     @Generated
     @Selector("parent")
@@ -269,14 +269,14 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] path
-     * 
+     * <p>
      * a string representing a path to the object
-     * 
+     * <p>
      * a path is of the form /path/to/object where the path is formed by
-     *             concatenating the names of the objects up the parent chain.
-     *             Requesting a path will force any unnamed objects to became uniquely
-     *             named. Any characters outside of [A-Z][a-z][0-9][:-_.] will be
-     *             forced to underscore.
+     * concatenating the names of the objects up the parent chain.
+     * Requesting a path will force any unnamed objects to became uniquely
+     * named. Any characters outside of [A-Z][a-z][0-9][:-_.] will be
+     * forced to underscore.
      */
     @Generated
     @Selector("path")
@@ -284,11 +284,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] children
-     * 
+     * <p>
      * Short hand property for the MDLObjectContainerComponent.
-     * 
+     * <p>
      * The default value is nil
-     * 
+     *
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -297,9 +297,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] hidden
-     * 
+     * <p>
      * Visibility of the node
-     * 
+     * <p>
      * default is NO
      */
     @Generated
@@ -308,18 +308,18 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] instance
-     * 
+     * <p>
      * Instance object
-     * 
-     * nil, unless this object refers to master data to be instanced. The
-     *             master data object can be any MDLObject that does not have a parent.
-     *             If an MDLAsset has been created from a data file, any master objects
-     *             parsed from that file will be found in the masters property.
-     *             A typical use of a master and instance might be to have one master
-     *             chair MDLObject, and instance six chairs around a table. The
-     *             transform of each chair would be found on the parent MDLObject, but
-     *             the various items making up the chair would be found in the master
-     *             object.
+     * <p>
+     * nil, unless this object refers to original data to be instanced. The
+     * original data object can be any MDLObject that does not have a parent.
+     * If an MDLAsset has been created from a data file, any original objects
+     * parsed from that file will be found in the originals property.
+     * A typical use of a original and instance might be to have one original
+     * chair MDLObject, and instance six chairs around a table. The
+     * transform of each chair would be found on the parent MDLObject, but
+     * the various items making up the chair would be found in the original
+     * object.
      */
     @Generated
     @Selector("setInstance:")
@@ -331,11 +331,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] parent
-     * 
+     * <p>
      * Parent object. Nil if no parent.
-     * 
+     * <p>
      * Set to nil when you remove this from an object container inside the
-     *             parent object.
+     * parent object.
      */
     @Generated
     @Selector("setParent:")
@@ -343,11 +343,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] parent
-     * 
+     * <p>
      * Parent object. Nil if no parent.
-     * 
+     * <p>
      * Set to nil when you remove this from an object container inside the
-     *             parent object.
+     * parent object.
      */
     @Generated
     public void setParent(MDLObject value) {
@@ -363,11 +363,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] transform
-     * 
+     * <p>
      * Short hand property for the MDLTransformComponent.
-     * 
+     * <p>
      * The default value is nil
-     * 
+     *
      * @see MDLTransformComponent
      */
     @Generated
@@ -376,11 +376,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] transform
-     * 
+     * <p>
      * Short hand property for the MDLTransformComponent.
-     * 
+     * <p>
      * The default value is nil
-     * 
+     *
      * @see MDLTransformComponent
      */
     @Generated
@@ -397,7 +397,7 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] components
-     * 
+     * <p>
      * Allows applications to introspect the components on the objects.
      */
     @Generated

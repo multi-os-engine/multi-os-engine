@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNTextObservation
  * [@superclass] VNDetectedObjectObservation
- * 
+ * <p>
  * VNTextObservation Describes a text area detected by the VNRequestNameDetectTextRectangles request.
  */
 @Generated
@@ -78,8 +78,8 @@ public class VNTextObservation extends VNRectangleObservation {
 
     /**
      * Array of individual character bounding boxes found within the observation's boundingBox.
-     * 
-     * If the associated request indicated that it is interested in character boxes by setting the VNRequestOptionReportCharacterBoxes option to @YES, this property will be non-nil (but may still be empty, depending on the detection results).
+     * <p>
+     * If the associated request indicated that it is interested in character boxes by setting the VNDetectTextRectanglesRequest reportCharacterBoxes property to @YES, this property will be non-nil (but may still be empty, depending on the detection results).
      */
     @Generated
     @Selector("characterBoxes")

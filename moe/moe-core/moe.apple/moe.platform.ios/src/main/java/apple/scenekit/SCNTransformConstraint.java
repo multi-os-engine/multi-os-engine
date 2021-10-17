@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNTransformConstraint
- * 
+ * <p>
  * A SCNTransformConstraint applies on the transform of a node via a custom block.
  */
 @Generated
@@ -163,11 +163,11 @@ public class SCNTransformConstraint extends SCNConstraint {
 
     /**
      * transformConstraintInWorldSpace:withBlock:
-     * 
+     * <p>
      * Creates and returns a SCNTransformConstraint object with the specified parameters.
-     * 
+     * <p>
      * The node and its transform are passed to the block. The transform returned by the block will be used to render the node.
-     * 
+     *
      * @param world Determines whether the constraint is evaluated in world or local space.
      * @param block The custom block to call to evaluate the constraint.
      */
@@ -205,11 +205,11 @@ public class SCNTransformConstraint extends SCNConstraint {
 
     /**
      * orientationConstraintInWorldSpace:withBlock:
-     * 
+     * <p>
      * Creates and returns a SCNTransformConstraint object with the specified parameters.
-     * 
+     * <p>
      * The node and its quaternion are passed to the block. The quaternion returned by the block will be used to render the node.
-     * 
+     *
      * @param world Determines whether the constraint is evaluated in world or local space.
      * @param block The custom block to call to evaluate the constraint.
      */
@@ -229,11 +229,11 @@ public class SCNTransformConstraint extends SCNConstraint {
 
     /**
      * positionConstraintInWorldSpace:withBlock:
-     * 
+     * <p>
      * Creates and returns a SCNTransformConstraint object with the specified parameters.
-     * 
+     * <p>
      * The node and its position are passed to the block. The position returned by the block will be used to render the node.
-     * 
+     *
      * @param world Determines whether the constraint is evaluated in world or local space.
      * @param block The custom block to call to evaluate the constraint.
      */

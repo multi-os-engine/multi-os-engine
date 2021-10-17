@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNVector
- * 
+ * <p>
  * VNVector is a two-dimensional vector represented its X and Y axis projections. Once created, VNVector objects are immutable.
  */
 @Generated
@@ -122,7 +122,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes a vector in polar coordinate space, using R and Theta (radians), where R is the length of the vector and
-     *        Theta is the ange that the vector forms with the positive direction of X axis.
+     * Theta is the ange that the vector forms with the positive direction of X axis.
      */
     @Generated
     @Selector("initWithR:theta:")

@@ -44,7 +44,7 @@ public final class MPSImageFeatureChannelFormat {
 
     /**
      * No format. This can mean  according to context invalid format or any format.  In the
-     * latter case, it is an invitation to MPS to pick a format. 
+     * latter case, it is an invitation to MPS to pick a format.
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**

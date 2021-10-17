@@ -32,13 +32,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLBuffer
- * 
+ * <p>
  * A typeless allocation accessible by both the CPU and the GPU (MTLDevice) or by only the GPU when the storage mode is
  * MTLResourceStorageModePrivate.
- * 
+ * <p>
  * Unlike in OpenGL and OpenCL, access to buffers is not synchronized.  The caller may use the CPU to modify the data at any time
  * but is also responsible for ensuring synchronization and coherency.
- * 
+ * <p>
  * The contents become undefined if both the CPU and GPU write to the same buffer without a synchronizing action between those writes.
  * This is true even when the regions written do not overlap.
  */
@@ -49,12 +49,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLBuffer extends MTLResource {
     /**
      * addDebugMarker:range:
-     * 
+     * <p>
      * Adds a marker to a specific range in the buffer.
      * When inspecting a buffer in the GPU debugging tools the marker will be shown.
-     * 
+     *
      * @param marker A label used for the marker.
-     * @param range The range of bytes the marker is using.
+     * @param range  The range of bytes the marker is using.
      */
     @Generated
     @Selector("addDebugMarker:range:")
@@ -62,7 +62,7 @@ public interface MTLBuffer extends MTLResource {
 
     /**
      * contents
-     * 
+     * <p>
      * Returns the data pointer of this buffer's shared copy.
      */
     @Generated
@@ -71,7 +71,7 @@ public interface MTLBuffer extends MTLResource {
 
     /**
      * [@property] length
-     * 
+     * <p>
      * The length of the buffer in bytes.
      */
     @Generated
@@ -81,7 +81,7 @@ public interface MTLBuffer extends MTLResource {
 
     /**
      * newTextureWithDescriptor:offset:bytesPerRow:
-     * 
+     * <p>
      * Create a 2D texture or texture buffer that shares storage with this buffer.
      */
     @Generated
@@ -92,7 +92,7 @@ public interface MTLBuffer extends MTLResource {
 
     /**
      * removeAllDebugMarkers
-     * 
+     * <p>
      * Removes all debug markers from a buffer.
      */
     @Generated

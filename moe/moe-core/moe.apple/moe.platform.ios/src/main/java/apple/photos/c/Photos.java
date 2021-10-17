@@ -150,10 +150,10 @@ public final class Photos {
     public static native String PHPhotosErrorDomain();
 
     /**
-     * If the local object cannot be resolved from a global identifier, PHLocalIdentifierNotFound is provided in that array slot.
+     * Array of NSString values representing local identifiers related to the specific error
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
-    public static native String PHLocalIdentifierNotFound();
+    public static native String PHLocalIdentifiersErrorKey();
 }

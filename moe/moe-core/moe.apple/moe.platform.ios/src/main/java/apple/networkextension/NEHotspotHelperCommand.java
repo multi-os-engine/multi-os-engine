@@ -41,12 +41,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEHotspotHelperCommand
- * 
- *   An NEHotspotHelperCommand object is provided to the helper's
- *   command handler block. The HotspotHelper processes the command
- *   instantiates an NEHotspotHelperResponse object, sets the annotated
- *   network or networkList (Evaluate/FilterScanList only),
- *   then delivers it.
+ * <p>
+ * An NEHotspotHelperCommand object is provided to the helper's
+ * command handler block. The HotspotHelper processes the command
+ * instantiates an NEHotspotHelperResponse object, sets the annotated
+ * network or networkList (Evaluate/FilterScanList only),
+ * then delivers it.
  */
 @Generated
 @Library("NetworkExtension")
@@ -161,8 +161,8 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * [@property] commandType
-     * 
-     *   The type of the command.
+     * <p>
+     * The type of the command.
      */
     @Generated
     @Selector("commandType")
@@ -171,13 +171,12 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * createResponse:
-     * 
-     *   Create a response to the command.
-     * 
-     *   Instantiate an NEHotspotHelperResponse for the command.
-     * 
-     * @return
-     *   NEHotspotHelperResponse with the specified result.
+     * <p>
+     * Create a response to the command.
+     * <p>
+     * Instantiate an NEHotspotHelperResponse for the command.
+     *
+     * @return NEHotspotHelperResponse with the specified result.
      */
     @Generated
     @Selector("createResponse:")
@@ -185,14 +184,13 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * createTCPConnection
-     * 
-     *   Create a new TCP connection over the interface associated with the command.
-     * 
-     *   Instantiate an NWTCPConnection to the specified endpoint
-     *   bound to the network interface associated with the command.
-     * 
-     * @return
-     *   non-nil NWTCPConnection object if successful, nil otherwise
+     * <p>
+     * Create a new TCP connection over the interface associated with the command.
+     * <p>
+     * Instantiate an NWTCPConnection to the specified endpoint
+     * bound to the network interface associated with the command.
+     *
+     * @return non-nil NWTCPConnection object if successful, nil otherwise
      */
     @Generated
     @Selector("createTCPConnection:")
@@ -200,14 +198,13 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * createUDPSession
-     * 
-     *   Create a new UDP session over the interface associated with the command.
-     * 
-     *   Instantiate an NWUDPSession to the specified endpoint
-     *   bound to the network interface associated with the command.
-     * 
-     * @return
-     *   non-nil NWUDPSession object if successful, nil otherwise
+     * <p>
+     * Create a new UDP session over the interface associated with the command.
+     * <p>
+     * Instantiate an NWUDPSession to the specified endpoint
+     * bound to the network interface associated with the command.
+     *
+     * @return non-nil NWUDPSession object if successful, nil otherwise
      */
     @Generated
     @Selector("createUDPSession:")
@@ -219,8 +216,8 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * [@property] network
-     * 
-     *   The network associated with the command. May be nil.
+     * <p>
+     * The network associated with the command. May be nil.
      */
     @Generated
     @Selector("network")
@@ -228,10 +225,10 @@ public class NEHotspotHelperCommand extends NSObject {
 
     /**
      * [@property] networkList
-     * 
-     *   The list of networks associated with a command. Will be nil unless
-     *   the command type is kNEHotspotHelperCommandTypeFilterScanList.
-     *   This property returns an NSArray of NEHotspotNetwork.
+     * <p>
+     * The list of networks associated with a command. Will be nil unless
+     * the command type is kNEHotspotHelperCommandTypeFilterScanList.
+     * This property returns an NSArray of NEHotspotNetwork.
      */
     @Generated
     @Selector("networkList")

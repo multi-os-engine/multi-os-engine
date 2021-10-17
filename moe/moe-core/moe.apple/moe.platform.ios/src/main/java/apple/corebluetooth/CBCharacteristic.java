@@ -42,8 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBCharacteristic
- * 
- *     Represents a service's characteristic.
+ * <p>
+ * Represents a service's characteristic.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -158,8 +158,8 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] descriptors
-     * 
-     *      A list of the CBDescriptors that have so far been discovered in this characteristic.
+     * <p>
+     * A list of the CBDescriptors that have so far been discovered in this characteristic.
      */
     @Generated
     @Selector("descriptors")
@@ -171,8 +171,8 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] isBroadcasted
-     * 
-     *      Whether the characteristic is currently broadcasted or not.
+     * <p>
+     * Whether the characteristic is currently broadcasted or not.
      */
     @Generated
     @Deprecated
@@ -181,8 +181,8 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] isNotifying
-     * 
-     *      Whether the characteristic is currently notifying or not.
+     * <p>
+     * Whether the characteristic is currently notifying or not.
      */
     @Generated
     @Selector("isNotifying")
@@ -190,8 +190,8 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] properties
-     * 
-     *      The properties of the characteristic.
+     * <p>
+     * The properties of the characteristic.
      */
     @Generated
     @Selector("properties")
@@ -200,8 +200,8 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] service
-     * 
-     *      A back-pointer to the service this characteristic belongs to.
+     * <p>
+     * A back-pointer to the service this characteristic belongs to.
      */
     @Generated
     @Selector("service")
@@ -209,8 +209,8 @@ public class CBCharacteristic extends CBAttribute {
 
     /**
      * [@property] value
-     * 
-     *      The value of the characteristic.
+     * <p>
+     * The value of the characteristic.
      */
     @Generated
     @Selector("value")

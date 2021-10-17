@@ -128,7 +128,7 @@ public class MLDictionaryFeatureProvider extends NSObject
     /**
      * Create from a generic dictionary by converting all values to MLFeatureValues
      * or from a dictionary with values already stored as MLFeatureValues.
-     * 
+     * <p>
      * An error results if the values are not or cannot be represented as MLFeatureValues.
      */
     @Generated

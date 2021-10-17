@@ -5,17 +5,17 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@constant]    AVContentKeyRequestStatusRequestingResponse
- *    Indicates that the request has just been created.
+ * Indicates that the request has just been created.
  * [@constant]    AVContentKeyRequestStatusReceivedResponse
- *    Indicates that a response to a key reequest was received and key is in use. This does not indicate that the key is valid.
+ * Indicates that a response to a key reequest was received and key is in use. This does not indicate that the key is valid.
  * [@constant]    AVContentKeyRequestStatusRenewed
- *    Indicates that the key request was renewed. This does not indicate that the key is valid.
+ * Indicates that the key request was renewed. This does not indicate that the key is valid.
  * [@constant]    AVContentKeyRequestStatusRetried
  * Indicates that the key request was retried.
  * [@constant]    AVContentKeyRequestStatusCancelled
- *    Indicates that the key request was cancelled.
+ * Indicates that the key request was cancelled.
  * [@constant]    AVContentKeyRequestStatusFailed
- *    Indicates that the request has encountered an error. See also the error property.
+ * Indicates that the request has encountered an error. See also the error property.
  */
 @Generated
 public final class AVContentKeyRequestStatus {

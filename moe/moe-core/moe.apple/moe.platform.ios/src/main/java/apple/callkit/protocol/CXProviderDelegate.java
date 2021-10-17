@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.callkit.protocol;
 
-import apple.avfoundation.AVAudioSession;
 import apple.callkit.CXAction;
 import apple.callkit.CXAnswerCallAction;
 import apple.callkit.CXEndCallAction;
@@ -46,23 +45,23 @@ public interface CXProviderDelegate {
     @Generated
     @IsOptional
     @Selector("provider:didActivateAudioSession:")
-    default void providerDidActivateAudioSession(CXProvider provider, AVAudioSession audioSession) {
+    default void providerDidActivateAudioSession(CXProvider provider, apple.avfaudio.AVAudioSession audioSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("provider:didDeactivateAudioSession:")
-    default void providerDidDeactivateAudioSession(CXProvider provider, AVAudioSession audioSession) {
+    default void providerDidDeactivateAudioSession(CXProvider provider, apple.avfaudio.AVAudioSession audioSession) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * Called whenever a new transaction should be executed. Return whether or not the transaction was handled:
-     * 
+     * <p>
      * - NO: the transaction was not handled indicating that the perform*CallAction methods should be called sequentially for each action in the transaction
      * - YES: the transaction was handled and the perform*CallAction methods should not be called sequentially
-     * 
+     * <p>
      * If the method is not implemented, NO is assumed.
      */
     @Generated

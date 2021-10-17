@@ -105,14 +105,14 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * An image displayed on the leading side of a cell displaying this list item.
-     * 
+     * <p>
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * 
+     * <p>
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * 
+     * <p>
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
@@ -134,19 +134,19 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Initialize a list item with text, detail text, and an image.
-     * 
+     * <p>
      * Your app should provide a @c UIImage that is display-ready, containing
      * two @c UIImageAssets, corresponding to night and day mode.
-     * 
+     * <p>
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
-     * 
+     * <p>
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * 
+     * <p>
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * 
+     * <p>
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
@@ -156,9 +156,9 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Initialize a list item with text, detailtext, an image, and a disclosure indicator.
-     * 
+     * <p>
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
-     * 
+     * <p>
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
@@ -213,9 +213,9 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * If YES, a cell displaying this list item will render with a disclosure indicator
      * in the trailing side of the cell.
-     * 
+     * <p>
      * [@note] If set, this property takes precedence over showsCloudLabel.
-     * 
+     * <p>
      * Defaults to NO.
      */
     @Generated
@@ -242,16 +242,16 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * An image displayed on the trailing side of a cell displaying this list item.
-     * 
+     * <p>
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * 
+     * <p>
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * 
+     * <p>
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
-     * 
+     * <p>
      * [@note] If set, this property takes precedence over the @c accessoryType.
      */
     @Generated
@@ -260,7 +260,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * An accessory image type to display in the trailing portion of this list item.
-     * 
+     * <p>
      * [@note] If you specify a custom accessoryImage, it will take priority over one of the
      * built-in accessory types specified here.
      */
@@ -276,18 +276,18 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Initialize a list item with text, detailtext, an image, an accessory type, and an accessory image.
-     * 
+     * <p>
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
-     * 
+     * <p>
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * 
+     * <p>
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * 
+     * <p>
      * If you specify an @c accessoryImage, your @c accessoryType will be set to @c CPListItemAccessoryTypeNone.
-     * 
+     * <p>
      * To properly size your list images, your app should consider the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
@@ -298,7 +298,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * If YES, a cell displaying this list item will render with an explicit indicator to the trailing edge of the text
-     * 
+     * <p>
      * Defaults to NO.
      */
     @Generated
@@ -315,7 +315,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * The expected image size for your @c CPListItem.
-     * 
+     * <p>
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
@@ -334,7 +334,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Specify the location in the list item for the now playing indicator.
-     * 
+     * <p>
      * Defaults to CPListItemPlayingIndicatorLocationLeading.
      */
     @Generated
@@ -344,12 +344,12 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Update the accessory image in this list item, reloading this item in the table if needed.
-     * 
+     * <p>
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * 
+     * <p>
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      */
     @Generated
@@ -358,7 +358,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * An accessory image type to display in the trailing portion of this list item.
-     * 
+     * <p>
      * [@note] If you specify a custom accessoryImage, it will take priority over one of the
      * built-in accessory types specified here.
      */
@@ -375,7 +375,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * If YES, a cell displaying this list item will render with an explicit indicator to the trailing edge of the text
-     * 
+     * <p>
      * Defaults to NO.
      */
     @Generated
@@ -388,12 +388,12 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Update the image in this list item, reloading this item in the table if needed.
-     * 
+     * <p>
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * 
+     * <p>
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      */
     @Generated
@@ -417,7 +417,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * Specify the location in the list item for the now playing indicator.
-     * 
+     * <p>
      * Defaults to CPListItemPlayingIndicatorLocationLeading.
      */
     @Generated
@@ -426,7 +426,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * If YES, a cell displaying this list item will render with an explicit label to the trailing edge of the text
-     * 
+     * <p>
      * Defaults to NO.
      */
     @Generated
@@ -442,10 +442,18 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     /**
      * If YES, a cell displaying this list item will render with an explicit label to the trailing edge of the text
-     * 
+     * <p>
      * Defaults to NO.
      */
     @Generated
     @Selector("showsExplicitLabel")
     public native boolean showsExplicitLabel();
+
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
 }

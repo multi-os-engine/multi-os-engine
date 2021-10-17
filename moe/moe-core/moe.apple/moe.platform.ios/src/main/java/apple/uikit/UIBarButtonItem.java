@@ -369,9 +369,9 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
 
     /**
      * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
-     * 
+     * <p>
      * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a different height from standard), be sure to specify a value for UIBarMetricsDefault.
-     * 
+     * <p>
      * This sets the background image for buttons of any style.
      */
     @Generated
@@ -576,4 +576,30 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Generated
     @Selector("setPrimaryAction:")
     public native void setPrimaryAction(UIAction value);
+
+    /**
+     * Indicates if the button changes selection as its primary action.
+     * This shows the menu as options for selection if a menu is populated and no action when tapped is enabled.
+     * If no menu is provided and no action is enabled when tapped, the item is toggled on and off for the primary action.
+     */
+    @Generated
+    @Selector("changesSelectionAsPrimaryAction")
+    public native boolean changesSelectionAsPrimaryAction();
+
+    @Generated
+    @Selector("isSelected")
+    public native boolean isSelected();
+
+    /**
+     * Indicates if the button changes selection as its primary action.
+     * This shows the menu as options for selection if a menu is populated and no action when tapped is enabled.
+     * If no menu is provided and no action is enabled when tapped, the item is toggled on and off for the primary action.
+     */
+    @Generated
+    @Selector("setChangesSelectionAsPrimaryAction:")
+    public native void setChangesSelectionAsPrimaryAction(boolean value);
+
+    @Generated
+    @Selector("setSelected:")
+    public native void setSelected(boolean value);
 }

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKCategoryValueSeverity
- * 
+ * <p>
  * Set of values to indicate the severity of a symptom.
  */
 @Generated

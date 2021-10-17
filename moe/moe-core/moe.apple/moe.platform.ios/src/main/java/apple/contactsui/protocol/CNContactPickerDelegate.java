@@ -35,7 +35,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CNContactPickerDelegate {
     /**
      * Singular delegate methods.
-     * 
+     * <p>
      * These delegate methods will be invoked when the user selects a single contact or property.
      */
     @Generated
@@ -63,9 +63,9 @@ public interface CNContactPickerDelegate {
 
     /**
      * Plural delegate methods.
-     * 
+     * <p>
      * These delegate methods will be invoked when the user is done selecting multiple contacts or properties.
-     *              Implementing one of these methods will configure the picker for multi-selection.
+     * Implementing one of these methods will configure the picker for multi-selection.
      */
     @Generated
     @IsOptional
@@ -77,7 +77,7 @@ public interface CNContactPickerDelegate {
 
     /**
      * Invoked when the picker is closed.
-     * 
+     * <p>
      * The picker will be dismissed automatically after a contact or property is picked.
      */
     @Generated

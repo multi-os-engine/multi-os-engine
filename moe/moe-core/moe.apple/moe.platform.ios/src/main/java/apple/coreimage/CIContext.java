@@ -115,10 +115,10 @@ public class CIContext extends NSObject {
 
     /**
      * Create a context specifying a destination CGContext.
-     * 
+     * <p>
      * Core Image will use an internal destination context when methods such
      * as [context render:to...] or [context createCGImage:...] are called.
-     * 
+     * <p>
      * The [context drawImage:...] render methods will render to the CGContext.
      */
     @Generated
@@ -150,10 +150,10 @@ public class CIContext extends NSObject {
 
     /**
      * Create a context without specifying a destination CG/GL/Metal context.
-     * 
+     * <p>
      * Core Image will use an internal destination context when methods such
      * as [context render:to...] or [context createCGImage:...] are called.
-     * 
+     * <p>
      * The [context drawImage:...] render methods will not operate on this type
      * of context.
      */
@@ -336,12 +336,12 @@ public class CIContext extends NSObject {
      * Render 'image' to the given bitmap.
      * The 'data' parameter must point to at least rowBytes*floor(bounds.size.height) bytes.
      * The 'bounds' parameter has the following behavior:
-     *    The 'bounds' parameter acts to specify the region of 'image' to render.
-     *    This region (regardless of its origin) is rendered at upper-left corner of 'data'.
+     * The 'bounds' parameter acts to specify the region of 'image' to render.
+     * This region (regardless of its origin) is rendered at upper-left corner of 'data'.
      * Passing a 'colorSpace' value of null means:
-     *   Disable output color management if app is linked against iOS SDK
-     *   Disable output color management if app is linked against OSX 10.11 SDK or later
-     *   Match to context's output color space if app is linked against OSX 10.10 SDK or earlier
+     * Disable output color management if app is linked against iOS SDK
+     * Disable output color management if app is linked against OSX 10.11 SDK or later
+     * Match to context's output color space if app is linked against OSX 10.10 SDK or earlier
      */
     @Generated
     @Selector("render:toBitmap:rowBytes:bounds:format:colorSpace:")
@@ -351,9 +351,9 @@ public class CIContext extends NSObject {
     /**
      * Render 'image' into the given CVPixelBuffer.
      * In OS X 10.11.3 and iOS 9.3 and later
-     *   CI will color match to the colorspace of the buffer.
+     * CI will color match to the colorspace of the buffer.
      * otherwise
-     *   CI will color match to the context's output colorspace.
+     * CI will color match to the context's output colorspace.
      */
     @Generated
     @Selector("render:toCVPixelBuffer:")
@@ -362,11 +362,11 @@ public class CIContext extends NSObject {
     /**
      * Render 'image' to the given CVPixelBufferRef.
      * The 'bounds' parameter has the following behavior:
-     *    In OS X and iOS 9 and later:  The 'image' is rendered into 'buffer' so that
-     *      point (0,0) of 'image' aligns to the lower left corner of 'buffer'.
-     *      The 'bounds' acts like a clip rect to limit what region of 'buffer' is modified.
-     *    In iOS 8 and earlier: The 'bounds' parameter acts to specify the region of 'image' to render.
-     *      This region (regardless of its origin) is rendered at upper-left corner of 'buffer'.
+     * In OS X and iOS 9 and later:  The 'image' is rendered into 'buffer' so that
+     * point (0,0) of 'image' aligns to the lower left corner of 'buffer'.
+     * The 'bounds' acts like a clip rect to limit what region of 'buffer' is modified.
+     * In iOS 8 and earlier: The 'bounds' parameter acts to specify the region of 'image' to render.
+     * This region (regardless of its origin) is rendered at upper-left corner of 'buffer'.
      * If 'colorSpace' is nil, CI will not color match to the destination.
      */
     @Generated
@@ -454,8 +454,8 @@ public class CIContext extends NSObject {
      * This is an optional call which can be used to "warm up" a CIContext so that
      * a subsequent call to render with the same arguments can be more efficient.
      * By making this call, Core Image will ensure that
-     *  - any needed kernels will be compiled
-     *  - any intermedate buffers are allocated and marked volatile
+     * - any needed kernels will be compiled
+     * - any intermedate buffers are allocated and marked volatile
      */
     @Generated
     @Selector("prepareRender:fromRect:toDestination:atPoint:error:")
@@ -466,9 +466,9 @@ public class CIContext extends NSObject {
     /**
      * Render 'image' to the given IOSurface.
      * The 'bounds' parameter has the following behavior:
-     *    The 'image' is rendered into 'surface' so that
-     *      point (0,0) of 'image' aligns to the lower left corner of 'surface'.
-     *      The 'bounds' acts like a clip rect to limit what region of 'surface' is modified.
+     * The 'image' is rendered into 'surface' so that
+     * point (0,0) of 'image' aligns to the lower left corner of 'surface'.
+     * The 'bounds' acts like a clip rect to limit what region of 'surface' is modified.
      */
     @Generated
     @Selector("render:toIOSurface:bounds:colorSpace:")
@@ -488,29 +488,29 @@ public class CIContext extends NSObject {
      * Renders a portion of image to a point of destination
      * It renders as if 'image' is cropped to 'fromRect'
      * and the origin of the result is placed at 'atPoint'
-     * 
+     * <p>
      * If image.extent and fromRect are infinite, then it renders
      * so that point (0,0) of image is placed at 'atPoint'
-     * 
+     * <p>
      * MTLTexture-backed CIRenderDestinations are only supported by MTLTexture-backed CIContexts.
      * GLTexture-backed CIRenderDestinations are only supported by GLContext-backed CIContexts.
-     * 
+     * <p>
      * For contexts that are initialized with a command queue, this call will return as soon as all the work for the render is enqueued on the
      * context's device.
      * Otherwise, it will return as soon as all the work is scheduled.
-     * 
+     * <p>
      * In many situations, after issuing a render, the client can use the destination
      * or its backing object without waiting for the enqueued work to complete.
      * For example, after rendering a surface CIRenderDestination, the surface can be passed
      * on for further processing by the GPU.
-     * 
+     * <p>
      * In other situations, the client may need to wait for the render to be complete.
      * For example, after rendering a surface CIRenderDestination, the surface can be accessed
      * by CPU code by calling IOSurfaceGetBytePointer only after the render is completed.
-     * 
+     * <p>
      * In this case the client can use the returned CIRenderTask like this:
-     *   CIRenderTask* task = [context render:...];
-     *   [task waitUntilCompletedAndReturnError:&error];
+     * CIRenderTask* task = [context render:...];
+     * [task waitUntilCompletedAndReturnError:&error];
      */
     @Generated
     @Selector("startTaskToRender:fromRect:toDestination:atPoint:error:")
@@ -573,12 +573,12 @@ public class CIContext extends NSObject {
 
     /**
      * Create and CIFilter instance for 'image' that can be used to apply the CIDepthBlurEffect.
-     * 
+     * <p>
      * The receiver context is user to render the image in order to get the facial landmarks
-     * 
+     * <p>
      * The 'orientation' parameter should be CGImagePropertyOrientation enum value
      * as defined in the TIFF spec.
-     * 
+     * <p>
      * The 'options' parameter is a key value/pair reserved for future use.
      */
     @Generated
@@ -597,9 +597,9 @@ public class CIContext extends NSObject {
 
     /**
      * Create and CIFilter instance for 'image' that can be used to apply the CIDepthBlurEffect.
-     * 
+     * <p>
      * The receiver context is user to render the image in order to get the facial landmarks
-     * 
+     * <p>
      * The 'options' parameter is a key value/pair reserved for future use.
      */
     @Generated
@@ -611,4 +611,27 @@ public class CIContext extends NSObject {
     public native CIFilter depthBlurEffectFilterForImageDisparityImagePortraitEffectsMatteHairSemanticSegmentationGlassesMatteGainMapOrientationOptions(
             CIImage image, CIImage disparityImage, CIImage portraitEffectsMatte, CIImage hairSemanticSegmentation,
             CIImage glassesMatte, CIImage gainMap, int orientation, NSDictionary<?, ?> options);
+
+    /**
+     * Render a CIImage to HEIF data. Image must have a finite non-empty extent.
+     * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
+     * Supported options keys are kCGImageDestinationLossyCompressionQuality,
+     * and the depth, disparity, and matte options.
+     */
+    @Generated
+    @Selector("HEIF10RepresentationOfImage:colorSpace:options:error:")
+    public native NSData HEIF10RepresentationOfImageColorSpaceOptionsError(CIImage image, CGColorSpaceRef colorSpace,
+            NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+
+    /**
+     * Render a CIImage to 10-bit deep HEIF file. Image must have a finite non-empty extent.
+     * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
+     * Supported options keys are kCGImageDestinationLossyCompressionQuality,
+     * and the depth, disparity, and matte options.
+     */
+    @Generated
+    @Selector("writeHEIF10RepresentationOfImage:toURL:colorSpace:options:error:")
+    public native boolean writeHEIF10RepresentationOfImageToURLColorSpaceOptionsError(CIImage image, NSURL url,
+            CGColorSpaceRef colorSpace, NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 }

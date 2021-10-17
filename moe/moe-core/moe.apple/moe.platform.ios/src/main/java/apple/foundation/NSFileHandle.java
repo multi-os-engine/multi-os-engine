@@ -250,7 +250,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
 
     /**
      * The API below may throw exceptions and will be deprecated in a future version of the OS.
-     * Use their replacements instead. 
+     * Use their replacements instead.
      */
     @Generated
     @Selector("readDataToEndOfFile")

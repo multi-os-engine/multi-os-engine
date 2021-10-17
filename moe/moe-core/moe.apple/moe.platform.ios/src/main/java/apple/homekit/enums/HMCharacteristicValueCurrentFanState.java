@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueCurrentFanState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueCurrentFanStateInactive  Inactive.
  * [@constant]  HMCharacteristicValueCurrentFanStateIdle      Idle.
  * [@constant]  HMCharacteristicValueCurrentFanStateActive    Blowing Air.

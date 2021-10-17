@@ -93,7 +93,9 @@ public final class SKErrorCode {
      * User is not eligible for the subscription offer
      */
     @Generated @NInt public static final long IneligibleForOffer = 0x0000000000000012L;
-    @Generated
-    @NInt
-    public static final long UnsupportedPlatform = 0x0000000000000013L;
+    @Generated @NInt public static final long UnsupportedPlatform = 0x0000000000000013L;
+    /**
+     * Client tried to present an SKOverlay in UIWindowScene not in the foreground
+     */
+    @Generated @NInt public static final long OverlayPresentedInBackgroundScene = 0x0000000000000014L;
 }

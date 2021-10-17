@@ -850,67 +850,67 @@ public final class Enums {
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN = 0x000001F4;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_0 = 0x00020000;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_1 = 0x00020001;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_2 = 0x00020002;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_3 = 0x00020003;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_4 = 0x00020004;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_5 = 0x00020005;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_6 = 0x00020006;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_7 = 0x00020007;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_8 = 0x00020008;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_9 = 0x00020009;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_10 = 0x0002000A;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_11 = 0x0002000B;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_12 = 0x0002000C;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_13 = 0x0002000D;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_14 = 0x0002000E;
     /**
-     * numbered HOA ACN channels
+     * numbered HOA ACN channels, SN3D normalization
      */
     @Generated public static final int kAudioChannelLabel_HOA_ACN_15 = 0x0002000F;
     /**
@@ -973,4 +973,144 @@ public final class Enums {
      * < L R C LFE Ls Rs Rls Rrs Ltm Rtm
      */
     @Generated public static final int kAudioChannelLayoutTag_Atmos_7_1_2 = 0x00C4000A;
+    /**
+     * Needs to be ORed with the channel index, not HOA order
+     */
+    @Generated public static final int kAudioChannelLabel_HOA_SN3D = 0x00020000;
+    /**
+     * Needs to be ORed with the channel index, not HOA order
+     */
+    @Generated public static final int kAudioChannelLabel_HOA_N3D = 0x00030000;
+    /**
+     * < C
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Mono = 0x00640001;
+    /**
+     * < L R
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Stereo = 0x00650002;
+    /**
+     * < L R Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Quadraphonic = 0x006C0004;
+    /**
+     * < L R C Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_4_0_A = 0x00730004;
+    /**
+     * < C L R Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_4_0_B = 0x00740004;
+    /**
+     * < L R Cs C
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_4_0_C = 0x00C50004;
+    /**
+     * < L R C Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_0_A = 0x00750005;
+    /**
+     * < L R Ls Rs C
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_0_B = 0x00760005;
+    /**
+     * < L C R Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_0_C = 0x00770005;
+    /**
+     * < C L R Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_0_D = 0x00780005;
+    /**
+     * < L R C LFE Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_1_A = 0x00790006;
+    /**
+     * < L R Ls Rs C LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_1_B = 0x007A0006;
+    /**
+     * < L C R Ls Rs LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_1_C = 0x007B0006;
+    /**
+     * < C L R Ls Rs LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_5_1_D = 0x007C0006;
+    /**
+     * < C L R Ls Rs Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_6_0_A = 0x008D0006;
+    /**
+     * < L R Ls Rs Cs C
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_6_0_B = 0x00C60006;
+    /**
+     * < L R Ls Rs C Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_6_0_C = 0x008B0006;
+    /**
+     * < C L R Ls Rs Cs LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_6_1_A = 0x008E0007;
+    /**
+     * < L R Ls Rs Cs C LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_6_1_B = 0x00C70007;
+    /**
+     * < L R C LFE Ls Rs Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_6_1_C = 0x007D0007;
+    /**
+     * < L C R Ls Cs Rs LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_6_1_D = 0x00C80007;
+    /**
+     * < L R C LFE Ls Rs Rls Rrs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_7_1_A = 0x00800008;
+    /**
+     * < L R Ls Rs Rls Rrs C LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_7_1_B = 0x00C90008;
+    /**
+     * < L R C LFE Ls Rs Rls Rrs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_7_1_C = 0x00800008;
+    /**
+     * < L R C LFE Ls Rs Lc Rc
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_7_1_SDDS_A = 0x007E0008;
+    /**
+     * < C Lc Rc L R Ls Rs LFE
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_7_1_SDDS_B = 0x007F0008;
+    /**
+     * < L R Ls Rs C LFE Lc Rc
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_7_1_SDDS_C = 0x00810008;
+    /**
+     * < L R C LFE Ls Rs Ltm Rtm
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Atmos_5_1_2 = 0x00C20008;
+    /**
+     * < L R C LFE Ls Rs Vhl Vhr Ltr Rtr
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Atmos_5_1_4 = 0x00C3000A;
+    /**
+     * < L R C LFE Ls Rs Rls Rrs Ltm Rtm
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Atmos_7_1_2 = 0x00C4000A;
+    /**
+     * < L R C LFE Ls Rs Rls Rrs Vhl Vhr Ltr Rtr
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Atmos_7_1_4_A = 0x00C0000C;
+    /**
+     * < L R Rls Rrs Ls Rs C LFE Vhl Vhr Ltr Rtr
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Atmos_7_1_4_B = 0x00CA000C;
+    /**
+     * < L R Rls Rrs Ls Rs C LFE Vhl Vhr Ltm Rtm Ltr Rtr
+     */
+    @Generated public static final int kAudioChannelLayoutTag_Logic_Atmos_7_1_6 = 0x00CB000E;
 }

@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -276,12 +277,12 @@ public class HKObserverQuery extends HKQuery {
 
     /**
      * initWithSampleType:predicate:updateHandler:
-     * 
+     * <p>
      * This method installs a handler that is called when a sample type has a new sample added.
-     * 
+     * <p>
      * If you have subscribed to background updates you must call the passed completion block
-     *                once you have processed data from this notification. Otherwise the system will continue
-     *                to notify you of this data.
+     * once you have processed data from this notification. Otherwise the system will continue
+     * to notify you of this data.
      */
     @Generated
     @Selector("initWithSampleType:predicate:updateHandler:")
@@ -317,4 +318,44 @@ public class HKObserverQuery extends HKQuery {
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
             HKElectrocardiogram electrocardiogram);
+
+    /**
+     * initWithQueryDescriptors:updateHandler:
+     * <p>
+     * This method installs a handler that is called when a sample matching the query descriptors is added.
+     * <p>
+     * If you have subscribed to background updates you must call the passed completion block
+     * once you have processed data from this notification. Otherwise the system will continue
+     * to notify you of this data.
+     *
+     * @param queryDescriptors An array of query descriptors that describes the sample types and predicates for
+     *                         which you are interested in getting notified.
+     */
+    @Generated
+    @Selector("initWithQueryDescriptors:updateHandler:")
+    public native HKObserverQuery initWithQueryDescriptorsUpdateHandler(
+            NSArray<? extends HKQueryDescriptor> queryDescriptors,
+            @ObjCBlock(name = "call_initWithQueryDescriptorsUpdateHandler") Block_initWithQueryDescriptorsUpdateHandler updateHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithQueryDescriptorsUpdateHandler {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_initWithQueryDescriptorsUpdateHandler {
+            @Generated
+            void call_Block_initWithQueryDescriptorsUpdateHandler();
+        }
+
+        @Generated
+        void call_initWithQueryDescriptorsUpdateHandler(HKObserverQuery query,
+                NSSet<? extends HKSampleType> sampleTypesAdded,
+                @ObjCBlock(name = "call_Block_initWithQueryDescriptorsUpdateHandler") Block_Block_initWithQueryDescriptorsUpdateHandler completionHandler,
+                NSError error);
+    }
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

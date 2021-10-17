@@ -120,14 +120,14 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     /**
      * Creates a new difference representing the changes in the parameter.
-     * 
+     * <p>
      * For clients interested in the difference between two collections, the
      * collection's differenceFrom method should be used instead.
-     * 
+     * <p>
      * To guarantee that instances are unambiguous and safe for compatible base
      * states, this method requires that its parameter conform to the following
      * requirements:
-     * 
+     * <p>
      * 1) All insertion offsets are unique
      * 2) All removal offsets are unique
      * 3) All associated indexes match a change with the opposite parity.
@@ -168,10 +168,10 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     /**
      * Returns a difference that is the inverse of the receiver.
-     * 
+     * <p>
      * In other words, given a valid difference `diff` the array `a` is equal to
      * [[a arrayByApplyingDifference:diff] arrayByApplyingDifference:diff.inverseDifference]
-     * 
+     * <p>
      * To revert a chronological sequence of diffs, apply their inverses in reverse order.
      */
     @Generated

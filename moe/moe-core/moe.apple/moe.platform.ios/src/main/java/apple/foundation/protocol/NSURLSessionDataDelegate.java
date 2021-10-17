@@ -59,13 +59,13 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
      * task.  No future messages will be sent to the data task.  The newly
      * created streamTask will carry the original request and response as
      * properties.
-     * 
+     * <p>
      * For requests that were pipelined, the stream object will only allow
      * reading, and the object will immediately issue a
      * -URLSession:writeClosedForStream:.  Pipelining can be disabled for
      * all requests in a session, or by the NSURLRequest
      * HTTPShouldUsePipelining property.
-     * 
+     * <p>
      * The underlying connection is no longer considered part of the HTTP
      * connection cache and won't count against the total number of
      * connections per host.
@@ -97,7 +97,7 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
      * allows you to cancel a request or to turn a data task into a
      * download task. This delegate message is optional - if you do not
      * implement it, you can get the response as a property of the task.
-     * 
+     * <p>
      * This method will not be called for background upload tasks (which cannot be converted to download tasks).
      */
     @Generated

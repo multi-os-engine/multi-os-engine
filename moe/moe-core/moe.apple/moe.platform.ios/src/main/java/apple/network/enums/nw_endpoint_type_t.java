@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_endpoint_type_t
- * 
- * 	Endpoint types represent a well-known form of endpoint. Values may be
- * 	added to this enumeration, and some custom endpoint types may use
- * 	values not defined in this enumeration.
+ * <p>
+ * Endpoint types represent a well-known form of endpoint. Values may be
+ * added to this enumeration, and some custom endpoint types may use
+ * values not defined in this enumeration.
  */
 @Generated
 public final class nw_endpoint_type_t {

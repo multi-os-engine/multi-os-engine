@@ -31,15 +31,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNGroupNormalization
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * This kernel normalizes each image, on a per-group basis, to
- *             have zero mean and unit variance:
- * 
- *             for each image:
- *                 for each channel:
- *                     y = (x - mean) * gamma / sqrt(variance + epsilon) + beta;
- * 
- *             The mean and variance are computed per group of channels, as given by the dataSource.
+ * have zero mean and unit variance:
+ * <p>
+ * for each image:
+ * for each channel:
+ * y = (x - mean) * gamma / sqrt(variance + epsilon) + beta;
+ * <p>
+ * The mean and variance are computed per group of channels, as given by the dataSource.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -109,7 +109,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * [@property]  epsilon
-     * 
+     * <p>
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated
@@ -131,16 +131,16 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSCNNGroupNormalization object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSCNNGroupNormalization object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -153,9 +153,9 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * Initialize a MPSCNNGroupNormalization kernel on a device.
-     * 
-     * @param      dataSource  An object conforming to the MPSCNNGroupNormalizationDataSource
-     *                         protocol which
+     *
+     * @param dataSource An object conforming to the MPSCNNGroupNormalizationDataSource
+     *                   protocol which
      */
     @Generated
     @Selector("initWithDevice:dataSource:")
@@ -198,12 +198,11 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * Reload data using new gamma and beta terms contained within an
-     *             MPSCNNGroupNormalizationGradientState object.
-     * 
-     * @param      commandBuffer               The command buffer on which to encode the reload.
-     * 
-     * @param      gammaAndBetaState           The state containing the updated weights which are to
-     *                                         be reloaded.
+     * MPSCNNGroupNormalizationGradientState object.
+     *
+     * @param commandBuffer     The command buffer on which to encode the reload.
+     * @param gammaAndBetaState The state containing the updated weights which are to
+     *                          be reloaded.
      */
     @Generated
     @Selector("reloadGammaAndBetaWithCommandBuffer:gammaAndBetaState:")
@@ -221,7 +220,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * Return a MPSCNNGroupNormalizationGradientState object for the provided
-     *             source image, source states, and destination image.
+     * source image, source states, and destination image.
      */
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
@@ -230,7 +229,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * [@property]  epsilon
-     * 
+     * <p>
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated

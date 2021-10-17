@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Object representing the geometry of a plane.
- * 
+ * <p>
  * The plane geometry will have a growing number of triangles
  * and vertices updated from frame to frame.
  */

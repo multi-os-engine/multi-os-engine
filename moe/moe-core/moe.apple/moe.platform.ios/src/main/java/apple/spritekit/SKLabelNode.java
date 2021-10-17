@@ -198,7 +198,7 @@ public class SKLabelNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
-     * 
+     *
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -256,7 +256,7 @@ public class SKLabelNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
-     * 
+     *
      * @see SKNode.SKBlendMode
      */
     @Generated

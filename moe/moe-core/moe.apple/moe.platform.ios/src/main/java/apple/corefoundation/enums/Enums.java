@@ -27,28 +27,28 @@ public final class Enums {
     /**
      * Tokenization Unit
      * Use one of tokenization unit options with CFStringTokenizerCreate to
-     * specify how the string should be tokenized. 
+     * specify how the string should be tokenized.
      * kCFStringTokenizerUnitWord doesn't return space between words as a token.
      */
     @Generated @NUInt public static final long kCFStringTokenizerUnitWord = 0x0000000000000000L;
     /**
      * Tokenization Unit
      * Use one of tokenization unit options with CFStringTokenizerCreate to
-     * specify how the string should be tokenized. 
+     * specify how the string should be tokenized.
      * kCFStringTokenizerUnitWord doesn't return space between words as a token.
      */
     @Generated @NUInt public static final long kCFStringTokenizerUnitSentence = 0x0000000000000001L;
     /**
      * Tokenization Unit
      * Use one of tokenization unit options with CFStringTokenizerCreate to
-     * specify how the string should be tokenized. 
+     * specify how the string should be tokenized.
      * kCFStringTokenizerUnitWord doesn't return space between words as a token.
      */
     @Generated @NUInt public static final long kCFStringTokenizerUnitParagraph = 0x0000000000000002L;
     /**
      * Tokenization Unit
      * Use one of tokenization unit options with CFStringTokenizerCreate to
-     * specify how the string should be tokenized. 
+     * specify how the string should be tokenized.
      * kCFStringTokenizerUnitWord doesn't return space between words as a token.
      */
     @Generated @NUInt public static final long kCFStringTokenizerUnitLineBreak = 0x0000000000000003L;
@@ -56,7 +56,7 @@ public final class Enums {
      * kCFStringTokenizerUnitWordBoundary can be used in double click detection
      * and whole word search. It is locale sensitive. If the locale parameter of
      * CFStringTokenizerCreate is NULL, default locale is used.
-     * kCFStringTokenizerUnitWordBoundary returns space between words as a token. 
+     * kCFStringTokenizerUnitWordBoundary returns space between words as a token.
      */
     @Generated @NUInt public static final long kCFStringTokenizerUnitWordBoundary = 0x0000000000000004L;
     /**
@@ -64,14 +64,14 @@ public final class Enums {
      * Use attribute specifier to tell tokenizer to prepare the specified attribute
      * when it tokenizes the given string. The attribute value can be retrieved by
      * calling CFStringTokenizerCopyCurrentTokenAttribute with one of the attribute
-     * option. 
+     * option.
      * Latin Transcription. Used with kCFStringTokenizerUnitWord or
-     * kCFStringTokenizerUnitWordBoundary 
+     * kCFStringTokenizerUnitWordBoundary
      */
     @Generated @NUInt public static final long kCFStringTokenizerAttributeLatinTranscription = 0x0000000000010000L;
     /**
      * Language in BCP 47 string. Used with kCFStringTokenizerUnitSentence
-     * or kCFStringTokenizerUnitParagraph. 
+     * or kCFStringTokenizerUnitParagraph.
      */
     @Generated @NUInt public static final long kCFStringTokenizerAttributeLanguage = 0x0000000000020000L;
     /**

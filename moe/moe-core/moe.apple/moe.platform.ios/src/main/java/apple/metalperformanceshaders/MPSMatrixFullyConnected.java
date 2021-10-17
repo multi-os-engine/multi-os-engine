@@ -29,23 +29,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixFullyConnected
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Applies a fully connected neural network layer by performing a
- *             a matrix multiplication, adding a bias vector, scaling, and applying a
- *             neuron activation function.
- * 
+ * a matrix multiplication, adding a bias vector, scaling, and applying a
+ * neuron activation function.
+ * <p>
  * A MPSMatrixFullyConnected object computes:
- * 
- *                 y = neuron(alpha * x * W + bias)
- * 
- *             y is the output matrix, x and W are input matrices corresponding
- *             to a collection of input vectors and weights respectively, and bias
- *             is a vector which is broadcast and accumulated to each row
- *             of the product.  alpha is a scale factor applied to the product.
- * 
- *             neuron() is a pointwise function applied to the intermediate result.
+ * <p>
+ * y = neuron(alpha * x * W + bias)
+ * <p>
+ * y is the output matrix, x and W are input matrices corresponding
+ * to a collection of input vectors and weights respectively, and bias
+ * is a vector which is broadcast and accumulated to each row
+ * of the product.  alpha is a scale factor applied to the product.
+ * <p>
+ * neuron() is a pointwise function applied to the intermediate result.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -77,11 +77,11 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The scale factor to apply to the product.  Specified in double
-     *             precision.  Will be converted to the appropriate precision in the
-     *             implementation subject to rounding and/or clamping as necessary.
-     *             Defaults to 1.0 at initialization time.
+     * precision.  Will be converted to the appropriate precision in the
+     * implementation subject to rounding and/or clamping as necessary.
+     * Defaults to 1.0 at initialization time.
      */
     @Generated
     @Selector("alpha")
@@ -111,13 +111,13 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * Make a copy of this kernel for a new device - @see MPSKernel
-     * 
-     * @param      zone        The NSZone in which to allocate the object
-     * @param      device      The device for the new MPSKernel. If nil, then use
-     *                         self.device.
-     * @return     A pointer to a copy of this MPSKernel. This will fail, returning
-     *             nil if the device is not supported. Devices must be
-     *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *
+     * @param zone   The NSZone in which to allocate the object
+     * @param device The device for the new MPSKernel. If nil, then use
+     *               self.device.
+     * @return A pointer to a copy of this MPSKernel. This will fail, returning
+     * nil if the device is not supported. Devices must be
+     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -135,28 +135,24 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * Encode a MPSMatrixFullyConnected object to a command buffer.
-     * 
+     * <p>
      * Encodes the operation to the specified command buffer.  resultMatrix
-     *             must be large enough to hold a
-     *                 MIN(sourceNumberOfInputs,
-     *                     inputMatrix.rows - primarySourceMatrixOrigin.x)
-     *                 x
-     *                 MIN(sourceOutputFeatureChannels,
-     *                     weightMatrix.columns - secondarySourceMatrixOrigin.y) array.
-     * 
-     *             The bias vector must contain at least
-     *                 MIN(sourceOutputFeatureChannels, weightMatrix.columns - secondarySourceMatrixOrigin.y) elements.
-     * 
-     * @param      commandBuffer   A valid MTLCommandBuffer to receive the encoded kernel.
-     * 
-     * @param      inputMatrix     A valid MPSMatrix object which specifies the input array.
-     * 
-     * @param      weightMatrix    A valid MPSMatrix object which specifies the weight array.
-     * 
-     * @param      biasVector      A valid MPSVector object which specifies the bias values, or
-     *                             a null object to indicate that no bias is to be applied.
-     * 
-     * @param      resultMatrix    A valid MPSMatrix object which specifies the output array.
+     * must be large enough to hold a
+     * MIN(sourceNumberOfInputs,
+     * inputMatrix.rows - primarySourceMatrixOrigin.x)
+     * x
+     * MIN(sourceOutputFeatureChannels,
+     * weightMatrix.columns - secondarySourceMatrixOrigin.y) array.
+     * <p>
+     * The bias vector must contain at least
+     * MIN(sourceOutputFeatureChannels, weightMatrix.columns - secondarySourceMatrixOrigin.y) elements.
+     *
+     * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
+     * @param inputMatrix   A valid MPSMatrix object which specifies the input array.
+     * @param weightMatrix  A valid MPSMatrix object which specifies the weight array.
+     * @param biasVector    A valid MPSVector object which specifies the bias values, or
+     *                      a null object to indicate that no bias is to be applied.
+     * @param resultMatrix  A valid MPSMatrix object which specifies the output array.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:weightMatrix:biasVector:resultMatrix:")
@@ -179,12 +175,12 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixFullyConnected
-     * @param      device      The MTLDevice on which to make the MPSMatrixFullyConnected object.
-     * @return     A new MPSMatrixFullyConnected object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSMatrixFullyConnected
+     * @param device   The MTLDevice on which to make the MPSMatrixFullyConnected object.
+     * @return A new MPSMatrixFullyConnected object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -260,11 +256,11 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The scale factor to apply to the product.  Specified in double
-     *             precision.  Will be converted to the appropriate precision in the
-     *             implementation subject to rounding and/or clamping as necessary.
-     *             Defaults to 1.0 at initialization time.
+     * precision.  Will be converted to the appropriate precision in the
+     * implementation subject to rounding and/or clamping as necessary.
+     * Defaults to 1.0 at initialization time.
      */
     @Generated
     @Selector("setAlpha:")
@@ -272,20 +268,20 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * Specifies a neuron activation function to be used.
-     * 
+     * <p>
      * This method can be used to add a neuron activation funtion of given type with
-     *             associated scalar parameters A, B, and C that are shared across all output values.
-     *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
-     *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
-     *             this method for neuron activation functions like MPSCNNNeuronTypePReLU,
-     *             which require per-channel parameter values. For those kind of neuron activation functions,
-     *             use appropriate setter functions.  An MPSMatrixFullyConnected kernel is initialized
-     *             with a default neuron function of MPSCNNNeuronTypeNone.
-     * 
-     * @param      neuronType      Type of neuron activation function. For full list see MPSCNNNeuronType.h
-     * @param      parameterA      parameterA of neuron activation that is shared across all output values.
-     * @param      parameterB      parameterB of neuron activation that is shared across all output values.
-     * @param      parameterC      parameterC of neuron activation that is shared across all output values.
+     * associated scalar parameters A, B, and C that are shared across all output values.
+     * Note that this method can only be used to specify neurons which are specified by three (or fewer)
+     * parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
+     * this method for neuron activation functions like MPSCNNNeuronTypePReLU,
+     * which require per-channel parameter values. For those kind of neuron activation functions,
+     * use appropriate setter functions.  An MPSMatrixFullyConnected kernel is initialized
+     * with a default neuron function of MPSCNNNeuronTypeNone.
+     *
+     * @param neuronType Type of neuron activation function. For full list see MPSCNNNeuronType.h
+     * @param parameterA parameterA of neuron activation that is shared across all output values.
+     * @param parameterB parameterB of neuron activation that is shared across all output values.
+     * @param parameterC parameterC of neuron activation that is shared across all output values.
      */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
@@ -294,20 +290,20 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceInputFeatureChannels
-     * 
+     * <p>
      * The input size to to use in the operation.  This is equivalent to the
-     *             number of columns and the number of rows in the primary (input array) and
-     *             secondary (weight array) source matrices respectively.
-     *             This property is modifiable and defaults to NSUIntegerMax.  At encode
-     *             time the larger of this property or the available input size is used.
-     *             The value of NSUIntegerMax thus indicates that all available
-     *             columns in the input array (beginning at primarySourceMatrixOrigin.y) and all
-     *             available rows in the weight array (beginning at secondarySourceMatrixOrigin.x)
-     *             should be considered.
-     *             Note: The value used in the operation will be
-     *             MIN(MIN(inputMatrix.columns - primarySourceMatrixOrigin.y,
-     *                     weightMatrix.rows - secondarySourceMatrixOrigin.x),
-     *                 sourceInputFeatureChannels)
+     * number of columns and the number of rows in the primary (input array) and
+     * secondary (weight array) source matrices respectively.
+     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * time the larger of this property or the available input size is used.
+     * The value of NSUIntegerMax thus indicates that all available
+     * columns in the input array (beginning at primarySourceMatrixOrigin.y) and all
+     * available rows in the weight array (beginning at secondarySourceMatrixOrigin.x)
+     * should be considered.
+     * Note: The value used in the operation will be
+     * MIN(MIN(inputMatrix.columns - primarySourceMatrixOrigin.y,
+     * weightMatrix.rows - secondarySourceMatrixOrigin.x),
+     * sourceInputFeatureChannels)
      */
     @Generated
     @Selector("setSourceInputFeatureChannels:")
@@ -315,14 +311,14 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceNumberOfFeatureVectors
-     * 
+     * <p>
      * The number of input vectors which make up the input array.  This
-     *             is equivalent to the number of rows to consider from the primary
-     *             source matrix.
-     *             This property is modifiable and defaults to NSUIntegerMax.  At encode
-     *             time the larger of this property or the available number of inputs is
-     *             used.  The value of NSUIntegerMax thus indicates that all available input
-     *             rows (beginning at primarySourceMatrixOrigin.x) should be considered.
+     * is equivalent to the number of rows to consider from the primary
+     * source matrix.
+     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * time the larger of this property or the available number of inputs is
+     * used.  The value of NSUIntegerMax thus indicates that all available input
+     * rows (beginning at primarySourceMatrixOrigin.x) should be considered.
      */
     @Generated
     @Selector("setSourceNumberOfFeatureVectors:")
@@ -330,14 +326,14 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceOutputFeatureChannels
-     * 
+     * <p>
      * The output size to to use in the operation.  This is equivalent to the
-     *             number of columns to consider in the weight array, or the secondary source matrix.
-     *             This property is modifiable and defaults to NSUIntegerMax.  At encode
-     *             time the larger of this property or the available output size is used.
-     *             The value of NSUIntegerMax thus indicates that all available
-     *             columns in the weight array (beginning at secondarySourceMatrixOrigin.y)
-     *             should be considered.
+     * number of columns to consider in the weight array, or the secondary source matrix.
+     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * time the larger of this property or the available output size is used.
+     * The value of NSUIntegerMax thus indicates that all available
+     * columns in the weight array (beginning at secondarySourceMatrixOrigin.y)
+     * should be considered.
      */
     @Generated
     @Selector("setSourceOutputFeatureChannels:")
@@ -349,20 +345,20 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceInputFeatureChannels
-     * 
+     * <p>
      * The input size to to use in the operation.  This is equivalent to the
-     *             number of columns and the number of rows in the primary (input array) and
-     *             secondary (weight array) source matrices respectively.
-     *             This property is modifiable and defaults to NSUIntegerMax.  At encode
-     *             time the larger of this property or the available input size is used.
-     *             The value of NSUIntegerMax thus indicates that all available
-     *             columns in the input array (beginning at primarySourceMatrixOrigin.y) and all
-     *             available rows in the weight array (beginning at secondarySourceMatrixOrigin.x)
-     *             should be considered.
-     *             Note: The value used in the operation will be
-     *             MIN(MIN(inputMatrix.columns - primarySourceMatrixOrigin.y,
-     *                     weightMatrix.rows - secondarySourceMatrixOrigin.x),
-     *                 sourceInputFeatureChannels)
+     * number of columns and the number of rows in the primary (input array) and
+     * secondary (weight array) source matrices respectively.
+     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * time the larger of this property or the available input size is used.
+     * The value of NSUIntegerMax thus indicates that all available
+     * columns in the input array (beginning at primarySourceMatrixOrigin.y) and all
+     * available rows in the weight array (beginning at secondarySourceMatrixOrigin.x)
+     * should be considered.
+     * Note: The value used in the operation will be
+     * MIN(MIN(inputMatrix.columns - primarySourceMatrixOrigin.y,
+     * weightMatrix.rows - secondarySourceMatrixOrigin.x),
+     * sourceInputFeatureChannels)
      */
     @Generated
     @Selector("sourceInputFeatureChannels")
@@ -371,14 +367,14 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceNumberOfFeatureVectors
-     * 
+     * <p>
      * The number of input vectors which make up the input array.  This
-     *             is equivalent to the number of rows to consider from the primary
-     *             source matrix.
-     *             This property is modifiable and defaults to NSUIntegerMax.  At encode
-     *             time the larger of this property or the available number of inputs is
-     *             used.  The value of NSUIntegerMax thus indicates that all available input
-     *             rows (beginning at primarySourceMatrixOrigin.x) should be considered.
+     * is equivalent to the number of rows to consider from the primary
+     * source matrix.
+     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * time the larger of this property or the available number of inputs is
+     * used.  The value of NSUIntegerMax thus indicates that all available input
+     * rows (beginning at primarySourceMatrixOrigin.x) should be considered.
      */
     @Generated
     @Selector("sourceNumberOfFeatureVectors")
@@ -387,14 +383,14 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceOutputFeatureChannels
-     * 
+     * <p>
      * The output size to to use in the operation.  This is equivalent to the
-     *             number of columns to consider in the weight array, or the secondary source matrix.
-     *             This property is modifiable and defaults to NSUIntegerMax.  At encode
-     *             time the larger of this property or the available output size is used.
-     *             The value of NSUIntegerMax thus indicates that all available
-     *             columns in the weight array (beginning at secondarySourceMatrixOrigin.y)
-     *             should be considered.
+     * number of columns to consider in the weight array, or the secondary source matrix.
+     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * time the larger of this property or the available output size is used.
+     * The value of NSUIntegerMax thus indicates that all available
+     * columns in the weight array (beginning at secondarySourceMatrixOrigin.y)
+     * should be considered.
      */
     @Generated
     @Selector("sourceOutputFeatureChannels")

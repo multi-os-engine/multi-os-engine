@@ -24,7 +24,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UISpringLoadedInteractionContext {
     /**
      * Returns the point computed as the location of the current drag in a given view.
-     * 
+     *
      * @param view A view on which the drag is taking place. Specify nil to indicate the window.
      * @return A point in the local coordinate system of `view`.
      */

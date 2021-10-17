@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Adjust the timing of an action
- * 
+ * <p>
  * [@enum] SKActionTimingLinear Specifies linear pacing. Linear pacing causes an
  * animation to occur evenly over its duration.
  * [@enum] SKActionTimingEaseIn Specifies ease-in pacing. Ease-in pacing causes the

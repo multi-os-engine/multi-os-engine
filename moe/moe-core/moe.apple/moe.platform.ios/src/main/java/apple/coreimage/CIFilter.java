@@ -56,8 +56,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CIFilter are filter objects for Core Image that encapsulate the filter with its attributes
- * 
- * The CIFilter class produces a CIImage object as output. Typically, a filter takes one or more images as input. Some filters, however, generate an image based on other types of input parameters. The parameters of a CIFilter object are set and retrieved through the use of key-value pairs. You use the CIFilter object in conjunction with the CIImage, CIContext, CIVector, CIImageAccumulator, and CIColor objects to take advantage of the built-in Core Image filters when processing images. CIFilter objects are also used along with CIKernel, CISampler, and CIFilterShape objects to create custom filters. 
+ * <p>
+ * The CIFilter class produces a CIImage object as output. Typically, a filter takes one or more images as input. Some filters, however, generate an image based on other types of input parameters. The parameters of a CIFilter object are set and retrieved through the use of key-value pairs. You use the CIFilter object in conjunction with the CIImage, CIContext, CIVector, CIImageAccumulator, and CIColor objects to take advantage of the built-in Core Image filters when processing images. CIFilter objects are also used along with CIKernel, CISampler, and CIFilterShape objects to create custom filters.
  */
 @Generated
 @Library("CoreImage")
@@ -141,10 +141,10 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a CIFilter that will in turn return a properly processed CIImage as "outputImage".
-     * 
+     * <p>
      * Note that when using this initializer, you should pass in a CVPixelBufferRef with one of the following Raw pixel format types
-     *    kCVPixelFormatType_14Bayer_GRBG, kCVPixelFormatType_14Bayer_RGGB, kCVPixelFormatType_14Bayer_BGGR, kCVPixelFormatType_14Bayer_GBRG
-     * as well as the root properties attachment from the CMSampleBufferRef. 
+     * kCVPixelFormatType_14Bayer_GRBG, kCVPixelFormatType_14Bayer_RGGB, kCVPixelFormatType_14Bayer_BGGR, kCVPixelFormatType_14Bayer_GBRG
+     * as well as the root properties attachment from the CMSampleBufferRef.
      */
     @Generated
     @Selector("filterWithCVPixelBuffer:properties:options:")
@@ -153,8 +153,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a CIFilter that will in turn return a properly processed CIImage as "outputImage".
-     * 
-     * Note that when using this initializer, you should pass in a source type identifier hint (kCGImageSourceTypeIdentifierHint) key/value pair in order to help the decoder determine the file type, as otherwise confusion and incorrect results are possible. 
+     * <p>
+     * Note that when using this initializer, you should pass in a source type identifier hint (kCGImageSourceTypeIdentifierHint) key/value pair in order to help the decoder determine the file type, as otherwise confusion and incorrect results are possible.
      */
     @Generated
     @Selector("filterWithImageData:options:")
@@ -170,7 +170,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Creates a new filter of type 'name'.
      * On OSX, all input values will be undefined.
-     * On iOS, all input values will be set to default values. 
+     * On iOS, all input values will be set to default values.
      */
     @Generated
     @Selector("filterWithName:")
@@ -180,7 +180,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
      * Creates a new filter of type 'name'.
      * The filter's input parameters are set from the list of key-value pairs which must be nil-terminated.
      * On OSX, any of the filter input parameters not specified in the list will be undefined.
-     * On iOS, any of the filter input parameters not specified in the list will be set to default values. 
+     * On iOS, any of the filter input parameters not specified in the list will be set to default values.
      */
     @Generated
     @Variadic()
@@ -192,7 +192,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
      * Creates a new filter of type 'name'.
      * The filter's input parameters are set from the dictionary of key-value pairs.
      * On OSX, any of the filter input parameters not specified in the dictionary will be undefined.
-     * On iOS, any of the filter input parameters not specified in the dictionary will be set to default values. 
+     * On iOS, any of the filter input parameters not specified in the dictionary will be set to default values.
      */
     @Generated
     @Selector("filterWithName:withInputParameters:")
@@ -247,8 +247,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns the URL to the localized reference documentation describing the filter.
-     * 
-     * The URL can be a local file or a remote document on a webserver. It is possible, that this method returns nil (like filters that predate this feature). A client of this API has to handle this case gracefully. 
+     * <p>
+     * The URL can be a local file or a remote document on a webserver. It is possible, that this method returns nil (like filters that predate this feature). A client of this API has to handle this case gracefully.
      */
     @Generated
     @Selector("localizedReferenceDocumentationForFilterName:")
@@ -262,12 +262,12 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Publishes a new filter called 'name'.
-     * 
+     * <p>
      * The constructor object 'anObject' should implement the filterWithName: method.
      * That method will be invoked with the name of the filter to create.
      * The class attributes must have a kCIAttributeFilterCategories key associated with a set of categories.
-     * 
-     * @param   attributes    Dictionary of the registration attributes of the filter. See below for attribute keys.
+     *
+     * @param attributes Dictionary of the registration attributes of the filter. See below for attribute keys.
      */
     @Generated
     @Selector("registerFilterName:constructor:classAttributes:")

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEEvaluateConnectionRuleAction
- * 
+ * <p>
  * Evaluate Connection rule actions
  */
 @Generated

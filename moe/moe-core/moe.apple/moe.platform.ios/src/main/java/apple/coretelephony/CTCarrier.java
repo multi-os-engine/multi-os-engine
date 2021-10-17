@@ -152,10 +152,10 @@ public class CTCarrier extends NSObject {
 
     /**
      * allowsVOIP
-     * 
+     * <p>
      * Discussion:
-     *   A BOOL value that is YES if this carrier allows VOIP calls to be
-     *   made on its network, NO otherwise.
+     * A BOOL value that is YES if this carrier allows VOIP calls to be
+     * made on its network, NO otherwise.
      */
     @Generated
     @Selector("allowsVOIP")
@@ -163,9 +163,9 @@ public class CTCarrier extends NSObject {
 
     /**
      * carrierName
-     * 
+     * <p>
      * Discussion:
-     *   An NSString containing the name of the subscriber's cellular service provider.
+     * An NSString containing the name of the subscriber's cellular service provider.
      */
     @Generated
     @Selector("carrierName")
@@ -177,11 +177,11 @@ public class CTCarrier extends NSObject {
 
     /**
      * isoCountryCode
-     * 
+     * <p>
      * Discussion:
-     *   Returns an NSString object that contains country code for
-     *   the subscriber's cellular service provider, represented as an ISO 3166-1
-     *   country code string
+     * Returns an NSString object that contains country code for
+     * the subscriber's cellular service provider, represented as an ISO 3166-1
+     * country code string
      */
     @Generated
     @Selector("isoCountryCode")
@@ -189,10 +189,10 @@ public class CTCarrier extends NSObject {
 
     /**
      * mobileCountryCode
-     * 
+     * <p>
      * Discussion:
-     *   An NSString containing the mobile country code for the subscriber's
-     *   cellular service provider, in its numeric representation
+     * An NSString containing the mobile country code for the subscriber's
+     * cellular service provider, in its numeric representation
      */
     @Generated
     @Selector("mobileCountryCode")
@@ -200,10 +200,10 @@ public class CTCarrier extends NSObject {
 
     /**
      * mobileNetworkCode
-     * 
+     * <p>
      * Discussion:
-     *   An NSString containing the  mobile network code for the subscriber's
-     *   cellular service provider, in its numeric representation
+     * An NSString containing the  mobile network code for the subscriber's
+     * cellular service provider, in its numeric representation
      */
     @Generated
     @Selector("mobileNetworkCode")

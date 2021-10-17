@@ -42,8 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * inputs and outputs will contain all of the inputs and outputs
- *             external to the graph, which are all the inputs and outputs not
- *             internally connected to something
+ * external to the graph, which are all the inputs and outputs not
+ * internally connected to something
  */
 @Generated
 @Library("ModelIO")

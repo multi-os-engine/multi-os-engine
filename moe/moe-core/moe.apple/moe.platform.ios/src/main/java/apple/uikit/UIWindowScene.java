@@ -4,6 +4,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.protocol.UIActivityItemsConfigurationProviding;
 import apple.uikit.protocol.UICoordinateSpace;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
@@ -151,7 +152,7 @@ public class UIWindowScene extends UIScene {
 
     /**
      * The screenshot object associated with the scene
-     * 
+     * <p>
      * This is non-null if the screenshot service is available for this window scene
      */
     @Generated
@@ -192,4 +193,59 @@ public class UIWindowScene extends UIScene {
     @Generated
     @Selector("windows")
     public native NSArray<? extends UIWindow> windows();
+
+    /**
+     * An optional object used as a source of scene-level activity items configuration
+     * <p>
+     * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
+     * of the scene's key window will be used for scene-level sharing and activities.
+     */
+    @Generated
+    @Selector("activityItemsConfigurationSource")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIActivityItemsConfigurationProviding activityItemsConfigurationSource();
+
+    /**
+     * Returns the focus system that is responsible for this scene or nil if this scene does not support focus.
+     */
+    @Generated
+    @Selector("focusSystem")
+    public native UIFocusSystem focusSystem();
+
+    /**
+     * The key window for this UIWindowScene
+     */
+    @Generated
+    @Selector("keyWindow")
+    public native UIWindow keyWindow();
+
+    /**
+     * An optional object used as a source of scene-level activity items configuration
+     * <p>
+     * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
+     * of the scene's key window will be used for scene-level sharing and activities.
+     */
+    @Generated
+    @Selector("setActivityItemsConfigurationSource:")
+    public native void setActivityItemsConfigurationSource_unsafe(
+            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationProviding value);
+
+    /**
+     * An optional object used as a source of scene-level activity items configuration
+     * <p>
+     * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
+     * of the scene's key window will be used for scene-level sharing and activities.
+     */
+    @Generated
+    public void setActivityItemsConfigurationSource(
+            @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationProviding value) {
+        Object __old = activityItemsConfigurationSource();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setActivityItemsConfigurationSource_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

@@ -36,4 +36,8 @@ public final class BNNSArithmeticFunction {
     @Generated public static final int BNNSArithmeticLog2 = 0x00000019;
     @Generated public static final int BNNSArithmeticMultiplyNoNaN = 0x0000001A;
     @Generated public static final int BNNSArithmeticDivideNoNaN = 0x0000001B;
+    @Generated public static final int BNNSArithmeticMultiplyAdd = 0x0000001C;
+    @Generated public static final int BNNSArithmeticMinimum = 0x0000001D;
+    @Generated public static final int BNNSArithmeticMaximum = 0x0000001E;
+    @Generated public static final int BNNSArithmeticSelect = 0x0000001F;
 }

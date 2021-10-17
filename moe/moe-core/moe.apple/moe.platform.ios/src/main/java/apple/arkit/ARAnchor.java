@@ -180,7 +180,7 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
 
     /**
      * Identifier of the session that owns the anchor.
-     * 
+     * <p>
      * The session identifier will be assigned to anchor when added to the session.
      */
     @Generated

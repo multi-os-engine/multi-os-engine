@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class is used to discover new accessories in the home
- *        that have never been paired with and therefore not part of the home.
+ * that have never been paired with and therefore not part of the home.
  */
 @Generated
 @Library("HomeKit")
@@ -165,8 +165,8 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * This is the array of HMAccessory objects that represents new
-     *        accessories that were discovered as part of a search session.
-     *        This array is not updated when a search session is not in progress.
+     * accessories that were discovered as part of a search session.
+     * This array is not updated when a search session is not in progress.
      */
     @Generated
     @Selector("discoveredAccessories")
@@ -200,16 +200,16 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Starts searching for accessories that are not associated to any home.
-     * 
+     * <p>
      * If any accessories are discovered, updates are sent to the delegate.
-     *             This will scan for the following types of accessories:
-     *                 Accessories supporting HomeKit Wireless Accessory Configuration profile
-     *                 Accessories supporting HomeKit Accessory Protocol and are already on
-     *                     the same infrastructure IP network
-     *                 Accessories supporting HomeKit Accessory Protocol on Bluetooth LE transport
-     *             The array of discovered accessories will be updated when this method
-     *             is called, so applications should clear and reload any stored copies
-     *             of that array or previous new accessory objects.
+     * This will scan for the following types of accessories:
+     * Accessories supporting HomeKit Wireless Accessory Configuration profile
+     * Accessories supporting HomeKit Accessory Protocol and are already on
+     * the same infrastructure IP network
+     * Accessories supporting HomeKit Accessory Protocol on Bluetooth LE transport
+     * The array of discovered accessories will be updated when this method
+     * is called, so applications should clear and reload any stored copies
+     * of that array or previous new accessory objects.
      */
     @Generated
     @Selector("startSearchingForNewAccessories")
@@ -217,12 +217,12 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Stops searching for new accessories.
-     * 
+     * <p>
      * After this method is called, updates will not be sent to the delegate
-     *             if new accessories are found or removed. Scanning may continue for system
-     *             reasons or if other delegates are still in active searching sessions.
-     *             The contents of the array of discovered accessories will not be updated until
-     *             startSearchingForNewAccessories is called.
+     * if new accessories are found or removed. Scanning may continue for system
+     * reasons or if other delegates are still in active searching sessions.
+     * The contents of the array of discovered accessories will not be updated until
+     * startSearchingForNewAccessories is called.
      */
     @Generated
     @Selector("stopSearchingForNewAccessories")

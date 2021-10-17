@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNLossGradient
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * The MPSNNLossGradient filter specifies the gradient filter for @ref MPSNNForwardLoss.
  */
 @Generated
@@ -84,10 +84,10 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   computeLabelGradients
-     * 
+     * <p>
      * The computeLabelGradients property is used to control whether the loss gradient
-     *             filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
-     *             Default: NO.
+     * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
+     * Default: NO.
      */
     @Generated
     @Selector("computeLabelGradients")
@@ -136,10 +136,10 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
 
     /**
      * Initialize the loss gradient filter with a loss descriptor.
-     * 
-     * @param      device                   The device the filter will run on.
-     * @param      lossDescriptor           The loss descriptor.
-     * @return     A valid MPSNNLossGradient object or nil, if failure.
+     *
+     * @param device         The device the filter will run on.
+     * @param lossDescriptor The loss descriptor.
+     * @return A valid MPSNNLossGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:lossDescriptor:")
@@ -203,10 +203,10 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
 
     /**
      * [@property]   computeLabelGradients
-     * 
+     * <p>
      * The computeLabelGradients property is used to control whether the loss gradient
-     *             filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
-     *             Default: NO.
+     * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
+     * Default: NO.
      */
     @Generated
     @Selector("setComputeLabelGradients:")

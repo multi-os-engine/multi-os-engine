@@ -158,7 +158,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
-     * 
+     *
      * @param texture the texture to reference for size and content
      */
     @Generated
@@ -167,10 +167,10 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create a tile definition with an SKTexture and the specified size.
-     * 
-     * @param texture the texture to reference for content
+     *
+     * @param texture       the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
-     * @param size the size of the tile in points
+     * @param size          the size of the tile in points
      */
     @Generated
     @Selector("tileDefinitionWithTexture:normalTexture:size:")
@@ -179,9 +179,9 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create a tile definition with an SKTexture and the specified size.
-     * 
+     *
      * @param texture the texture to reference for content
-     * @param size the size of the tile in points
+     * @param size    the size of the tile in points
      */
     @Generated
     @Selector("tileDefinitionWithTexture:size:")
@@ -189,11 +189,11 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
-     * 
-     * @param textures the textures to reference for animated content
+     *
+     * @param textures       the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
-     * @param size the size of the tile in points
-     * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
+     * @param size           the size of the tile in points
+     * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
      */
     @Generated
     @Selector("tileDefinitionWithTextures:normalTextures:size:timePerFrame:")
@@ -203,9 +203,9 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
-     * 
-     * @param textures the textures to reference for animated content
-     * @param size the size of the tile in points
+     *
+     * @param textures     the textures to reference for animated content
+     * @param size         the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
      */
     @Generated
@@ -252,7 +252,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize a tile definition with an SKTexture, and set its size to the SKTexture's width/height.
-     * 
+     *
      * @param texture the texture to reference for size and content
      */
     @Generated
@@ -261,10 +261,10 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize a tile definition with an SKTexture and the specified size.
-     * 
-     * @param texture the texture to reference for content
+     *
+     * @param texture       the texture to reference for content
      * @param normalTexture the normal texture to use for generating normals for lighting
-     * @param size the size of the tile in points
+     * @param size          the size of the tile in points
      */
     @Generated
     @Selector("initWithTexture:normalTexture:size:")
@@ -273,9 +273,9 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize a tile definition with an SKTexture and the specified size.
-     * 
+     *
      * @param texture the texture to reference for content
-     * @param size the size of the tile in points
+     * @param size    the size of the tile in points
      */
     @Generated
     @Selector("initWithTexture:size:")
@@ -283,11 +283,11 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
-     * 
-     * @param textures the textures to reference for animated content
+     *
+     * @param textures       the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
-     * @param size the size of the tile in points
-     * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
+     * @param size           the size of the tile in points
+     * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
      */
     @Generated
     @Selector("initWithTextures:normalTextures:size:timePerFrame:")
@@ -296,9 +296,9 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
-     * 
-     * @param textures the textures to reference for animated content
-     * @param size the size of the tile in points
+     *
+     * @param textures     the textures to reference for animated content
+     * @param size         the size of the tile in points
      * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
      */
     @Generated

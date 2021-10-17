@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Behaves like CAAnimationGroup. Merges key/value pairs of constituent
- * using Core Animation's implementations of addition for all the standard types. 
+ * using Core Animation's implementations of addition for all the standard types.
  */
 @Generated
 @Library("UIKit")

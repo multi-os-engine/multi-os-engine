@@ -46,12 +46,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The CNContactPickerViewController allows the user to select one or multiple contacts or properties.
- * 
+ * <p>
  * The entire list of contacts will be presented to the user.
- *              The picker supports both single selection and multi-selection.
- *              The app does not need access to the user’s contacts and the user will
- *              not be prompted for access. It will only have access to the final selection of the user.
- *              Changing the predicates only takes effect before the view is presented.
+ * The picker supports both single selection and multi-selection.
+ * The app does not need access to the user’s contacts and the user will
+ * not be prompted for access. It will only have access to the final selection of the user.
+ * Changing the predicates only takes effect before the view is presented.
  */
 @Generated
 @Library("ContactsUI")
@@ -152,10 +152,6 @@ public class CNContactPickerViewController extends UIViewController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -186,7 +182,7 @@ public class CNContactPickerViewController extends UIViewController {
 
     /**
      * The CNContact property keys to display in the contact detail card.
-     * 
+     * <p>
      * If not set all properties are displayed.
      */
     @Generated
@@ -250,7 +246,7 @@ public class CNContactPickerViewController extends UIViewController {
 
     /**
      * The CNContact property keys to display in the contact detail card.
-     * 
+     * <p>
      * If not set all properties are displayed.
      */
     @Generated

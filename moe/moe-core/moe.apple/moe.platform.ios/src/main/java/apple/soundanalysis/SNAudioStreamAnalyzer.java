@@ -1,8 +1,6 @@
 package apple.soundanalysis;
 
 import apple.NSObject;
-import apple.avfoundation.AVAudioBuffer;
-import apple.avfoundation.AVAudioFormat;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -32,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Analyzes a stream of audio data and provides analysis results to the client
- * 
+ * <p>
  * SNAudioStreamAnalyzer should be used to analyze a stream of audio, represented by a sequence of audio buffers over time.
  */
 @Generated
@@ -55,12 +53,12 @@ public class SNAudioStreamAnalyzer extends NSObject {
 
     /**
      * Adds a new analysis request to the analyzer
-     * 
+     * <p>
      * Requests can be added while analysis is in progress. If the analyzer cannot perform the requested analysis, an error will be returned. For example, an error could be returned if the request requires a stream format that doesn't match the analyzer's stream format.
-     * 
-     * @param request An audio analysis request to be performed on the audio stream
+     *
+     * @param request  An audio analysis request to be performed on the audio stream
      * @param observer The object that will receive the analysis results for the supplied request. The observer is weakly retained by the analyzer.
-     * @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
+     * @param error    On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error object containing the error information. You may specify nil for this parameter if you do not want the error information.
      * @return YES if the request was successfully added, and NO otherwise.
      */
     @Generated
@@ -81,15 +79,16 @@ public class SNAudioStreamAnalyzer extends NSObject {
 
     /**
      * Provides the next buffer for analysis
-     * 
+     * <p>
      * The framePosition should be a monotonically increasing sample timestamp. If the sample timeline is detected to be non-continuous, the analyzer's internal state may reset to account for the jump. Some types of audio analysis are performed at a fixed block size, which may differ from the buffer sizes provided for analysis. For this reason, an invocation of analyzeAudioBuffer may cause an analysis request observer to be called zero times, one time, or many times, depending on the relationship between the input buffer size, current analyzer state, and native analysis block size. Any errors produced during analysis will be provided through the request observers. This method may block as a means of indicating backpressure to the caller. These methods are not safe to call from a realtime audio context but may be called from lower priority threads (i.e. AVAudioEngine tap callback or AudioQueue callback).
-     * 
-     * @param audioBuffer The buffer containing the audio to be processed
+     *
+     * @param audioBuffer        The buffer containing the audio to be processed
      * @param audioFramePosition The frame position of the data in the buffer
      */
     @Generated
     @Selector("analyzeAudioBuffer:atAudioFramePosition:")
-    public native void analyzeAudioBufferAtAudioFramePosition(AVAudioBuffer audioBuffer, long audioFramePosition);
+    public native void analyzeAudioBufferAtAudioFramePosition(apple.avfaudio.AVAudioBuffer audioBuffer,
+            long audioFramePosition);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -115,7 +114,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
 
     /**
      * Indicates that the audio stream has ended, and no more audio buffers will be analyzed
-     * 
+     * <p>
      * After this method has been called, it is invalid to provide any more audio data for analysis, and any provided buffers will be ignored. This method is useful for types of analysis that may have final results to provide upon the completion of the stream.
      */
     @Generated
@@ -141,12 +140,12 @@ public class SNAudioStreamAnalyzer extends NSObject {
 
     /**
      * Creates a new analyzer
-     * 
+     *
      * @param format The format of the audio stream to be analyzed. Only PCM formats are supported.
      */
     @Generated
     @Selector("initWithFormat:")
-    public native SNAudioStreamAnalyzer initWithFormat(AVAudioFormat format);
+    public native SNAudioStreamAnalyzer initWithFormat(apple.avfaudio.AVAudioFormat format);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -184,9 +183,9 @@ public class SNAudioStreamAnalyzer extends NSObject {
 
     /**
      * Removes an existing analysis request from the analyzer
-     * 
+     * <p>
      * Requests can be removed while analysis is in progress. Once the removeRequest method returns, the previously registered observer will not receive any more callbacks.
-     * 
+     *
      * @param request An audio analysis request to be removed
      */
     @Generated

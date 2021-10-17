@@ -22,11 +22,11 @@ import org.moe.natj.general.ann.NInt;
 /**
  * UINavigationController manages a stack of view controllers and a navigation bar.
  * It performs horizontal view transitions for pushed and popped views while keeping the navigation bar in sync.
- * 
+ * <p>
  * Most clients will not need to subclass UINavigationController.
- * 
- * If a navigation controller is nested in a tabbar controller, it uses the title and toolbar attributes of the bottom view controller on the stack.
- * 
+ * <p>
+ * If a navigation controller is nested in a tab bar controller, it uses the title and toolbar attributes of the bottom view controller on the stack.
+ * <p>
  * UINavigationController is rotatable if its top view controller is rotatable.
  * Navigation between controllers with non-uniform rotatability is currently not supported.
  */

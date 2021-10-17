@@ -212,8 +212,8 @@ public class NSMergePolicy extends NSObject {
 
     /**
      * Resolve optimistic locking failures for the list of failures. In a subclass, you are strongly encouraged to override initWithMergeType: and customize
-     *  the results from calling super instead of performing your own actions from scratch. Correctly merging to-many relationships is very challenging and
-     *  any mistakes will cause permanent data corruption in the form of dangling foreign keys.
+     * the results from calling super instead of performing your own actions from scratch. Correctly merging to-many relationships is very challenging and
+     * any mistakes will cause permanent data corruption in the form of dangling foreign keys.
      * Will be called before -resolveConstraintConflicts:error:
      */
     @Generated

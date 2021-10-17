@@ -18,7 +18,7 @@ public final class LPErrorCode {
     @Generated @NInt public static final long Unknown = 0x0000000000000001L;
     /**
      * LPErrorMetadataFetchFailed indicates that a metadata fetch failed.
-     * This can be due to network conditions, server availability, or any number of other causes. 
+     * This can be due to network conditions, server availability, or any number of other causes.
      */
     @Generated @NInt public static final long MetadataFetchFailed = 0x0000000000000002L;
     /**

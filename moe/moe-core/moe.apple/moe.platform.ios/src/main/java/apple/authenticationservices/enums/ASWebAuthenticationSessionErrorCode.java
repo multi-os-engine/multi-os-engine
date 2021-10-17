@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] ASWebAuthenticationSessionErrorCode
- * 
+ * <p>
  * Error code of the NSError object passed in by ASWebAuthenticationSessionCompletionHandler.
  * [@constant] ASWebAuthenticationSessionErrorCodeCanceledLogin The user has canceled login by cancelling the
  * alert asking for permission to log in to this app, or by dismissing the view controller for loading the

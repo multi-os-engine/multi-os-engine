@@ -32,7 +32,7 @@ import org.moe.natj.objc.ann.Selector;
  * The availability of deterministic random sources is critical to creating reliable gameplay mechanics.
  * Ensure that systems that should not influence each other have unique random sources and avoid sharing
  * sources unless absolutely needed.
- * 
+ * <p>
  * This protocol allows you to provide custom random sources from classes that are not able to
  * derive from GKRandomSource directly.
  */
@@ -46,10 +46,10 @@ public interface GKRandom {
      * The value is either nonzero (true) or zero (false).
      * Use this for simple boolean switches in logic that don't require fuzzy evaluation.
      * For fuzzy evaluation use nextUniform.
-     * 
+     * <p>
      * By default this should be based on nextIntWithUpperBound:. Implementations may base it on
      * another representation if needed.
-     * 
+     *
      * @see nextIntWithUpperBound:
      * @see nextUniform
      */
@@ -62,7 +62,7 @@ public interface GKRandom {
      * The value is in the range of [INT32_MIN, INT32_MAX].
      * The lower bits are not guaranteed to be random so please use another
      * property for simple choices.
-     * 
+     *
      * @see nextBool
      * @see nextUniform
      */
@@ -76,7 +76,7 @@ public interface GKRandom {
      * The value is in the range of [0, upperBound). Thus the value never equals or exceeeds upperBound.
      * The unsigned nature and upper bound allows implementations to use logical shifts to return a
      * value whose lower bits are more random than a similar call to nextInt.
-     * 
+     * <p>
      * This is used to implement nextBool and nextUniform by default.
      */
     @Generated
@@ -89,10 +89,10 @@ public interface GKRandom {
      * The value is in the range of [0.0, 1.0].
      * There is no weighting across the range so remapping this with a curve may give the best
      * sampling distribution for your algorithm.
-     * 
+     * <p>
      * By default this should be based on nextIntWithUpperBound:. Implementions may base it on
      * another representation if needed.
-     * 
+     *
      * @see nextIntWithUpperBound:
      * @see nextInt
      */

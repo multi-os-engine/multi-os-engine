@@ -472,10 +472,6 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Selector("paths")
     public native NSArray<? extends UIBezierPath> paths();
 
-    /**
-     * Optional (-[popup] may return nil). Not used with links or widgets, a popup annotation associated with this
-     * annotation. The bounds and open state of the popup indicate the placement and open state of the popup window.
-     */
     @Generated
     @Selector("popup")
     public native PDFAnnotation popup();
@@ -768,10 +764,6 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
         }
     }
 
-    /**
-     * Optional (-[popup] may return nil). Not used with links or widgets, a popup annotation associated with this
-     * annotation. The bounds and open state of the popup indicate the placement and open state of the popup window.
-     */
     @Generated
     @Selector("setPopup:")
     public native void setPopup(PDFAnnotation value);

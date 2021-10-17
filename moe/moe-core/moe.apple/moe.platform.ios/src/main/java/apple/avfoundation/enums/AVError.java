@@ -119,7 +119,7 @@ public final class AVError {
     @Generated @NInt public static final long UnsupportedDeviceActiveFormat = 0xFFFFFFFFFFFFD19FL;
     @Generated @NInt public static final long IncorrectlyConfigured = 0xFFFFFFFFFFFFD19DL;
     @Generated @NInt public static final long SegmentStartedWithNonSyncSample = 0xFFFFFFFFFFFFD19CL;
-    @Generated
-    @NInt
-    public static final long RosettaNotInstalled = 0xFFFFFFFFFFFFD19BL;
+    @Generated @NInt public static final long RosettaNotInstalled = 0xFFFFFFFFFFFFD19BL;
+    @Generated @NInt public static final long OperationCancelled = 0xFFFFFFFFFFFFD19AL;
+    @Generated @NInt public static final long ContentKeyRequestCancelled = 0xFFFFFFFFFFFFD199L;
 }

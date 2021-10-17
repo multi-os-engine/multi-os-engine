@@ -39,18 +39,18 @@ public interface UIDragInteractionDelegate {
     /**
      * To allow touches on this view to add items to an existing drag,
      * implement `-dragInteraction:itemsForAddingToSession:withTouchAtPoint:`.
-     * 
+     * <p>
      * If the provided session is an appropriate one to use, then return an array of items,
      * just like in `-dragInteraction:itemsForBeginningSession:`. They will be added to the
      * drag session.
      * Afterwards, `-dragInteraction:session:willAddItems:forInteraction:` will be sent
      * to each interaction which has contributed items to the session, including this one.
-     * 
+     * <p>
      * Otherwise, return an empty array. No items will be added, and the touch
      * will be handled as if the other drag session did not exist.
-     * 
+     * <p>
      * If this method is not implemented, acts as though an an empty array was returned.
-     * 
+     * <p>
      * Use the point, in the view's coordinate space, to determine what part of your view
      * has been touched.
      */
@@ -65,11 +65,11 @@ public interface UIDragInteractionDelegate {
 
     /**
      * Provide items to begin a drag.
-     * 
+     * <p>
      * If these items represent things that are displayed in a linear order
      * (for example, rows in a table), provide them in the same order, first
      * to last.
-     * 
+     * <p>
      * If an empty array is returned, then no drag will begin.
      */
     @Generated
@@ -81,7 +81,7 @@ public interface UIDragInteractionDelegate {
      * Return whether this drag's items' previews should be shown in their full
      * original size while over the source view. For instance, if you are reordering
      * items, you may want them not to shrink like they otherwise would.
-     * 
+     * <p>
      * If not implemented, defaults to false.
      */
     @Generated
@@ -126,7 +126,7 @@ public interface UIDragInteractionDelegate {
     /**
      * Called when the user is done dragging and all related animations are
      * completed. The app should now return to its normal appearance.
-     * 
+     * <p>
      * If the operation is UIDropOperationCopy or UIDropOperationMove,
      * then data transfer will begin, and -dragInteraction:sessionDidTransferItems: will be called later.
      */
@@ -141,7 +141,7 @@ public interface UIDragInteractionDelegate {
     /**
      * Similar to -dragInteraction:sessionWillBegin:, but for
      * items added to an session after it has already begun.
-     * 
+     * <p>
      * Note that the interaction that is causing the items to be added
      * may be different than the interaction that started the drag.
      * This method is called on the delegates of all interactions that ever added items
@@ -159,7 +159,7 @@ public interface UIDragInteractionDelegate {
 
     /**
      * Called when the user is done dragging, and the drag will finish.
-     * 
+     * <p>
      * If the operation is UIDropOperationCancel or UIDropOperationForbidden,
      * the delegate should prepare its views to show an appropriate appearance
      * before the cancel animation starts.
@@ -175,11 +175,11 @@ public interface UIDragInteractionDelegate {
     /**
      * Return whether this drag allows the "move" drop operation to happen.
      * This only applies to drops inside the same app. Drops in other apps are always copies.
-     * 
+     * <p>
      * If true, then a UIDropInteraction's delegate's -dropInteraction:sessionDidUpdate:
      * may choose to return UIDropOperationMove, and that operation will be provided to
      * -dragInteraction:session:willEndWithOperation: and -dragInteraction:session:didEndWithOperation:.
-     * 
+     * <p>
      * If not implemented, defaults to true.
      */
     @Generated
@@ -218,13 +218,13 @@ public interface UIDragInteractionDelegate {
     /**
      * If there are two or more existing drag sessions, it may not be clear to the user
      * which session items will be added to. Therefore, by default, we do not add to any session.
-     * 
+     * <p>
      * If you *do* want to add the item to a session, implement
      * `-dragInteraction:sessionForAddingItems:withTouchAtPoint:` and return the
      * appropriate session. This should be rare.
-     * 
+     * <p>
      * To continue without adding items, return nil.
-     * 
+     * <p>
      * If this method is not implemented, defaults to nil.
      */
     @Generated
@@ -238,16 +238,16 @@ public interface UIDragInteractionDelegate {
 
     /**
      * Return whether this drag is restricted to only this application.
-     * 
+     * <p>
      * If true, then the drag will be restricted. Only this application will be
      * able to see the drag, and other applications will not.
      * If the user drops it on another application, the drag will be cancelled.
-     * 
+     * <p>
      * If false, then the drag is not restricted. Other applications may see the drag,
      * and the user may drop it onto them.
-     * 
+     * <p>
      * If not implemented, defaults to false.
-     * 
+     * <p>
      * Note that this method is called only on devices that support dragging across applications.
      */
     @Generated

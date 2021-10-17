@@ -94,9 +94,9 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new dropout gradient node
-     * 
+     * <p>
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
-     *             for an easier way to do this
+     * for an easier way to do this
      */
     @Generated
     @Selector("initWithSourceGradient:sourceImage:gradientState:keepProbability:seed:maskStrideInPixels:")
@@ -142,9 +142,9 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new dropout gradient node
-     * 
+     * <p>
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
-     *             for an easier way to do this
+     * for an easier way to do this
      */
     @Generated
     @Selector("nodeWithSourceGradient:sourceImage:gradientState:keepProbability:seed:maskStrideInPixels:")

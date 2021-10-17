@@ -20,15 +20,15 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]       MIDITransformControlType
- * 
+ * <p>
  * Specifies how control numbers are interpreted.
- * 
+ * <p>
  * [@constant]   kMIDIControlType_7Bit
- *     control numbers may be 0-127
+ * control numbers may be 0-127
  * [@constant]   kMIDIControlType_14Bit
- *     control numbers may be 0-31
+ * control numbers may be 0-31
  * [@constant]   kMIDIControlType_7BitRPN
- *     control numbers may be 0-16383
+ * control numbers may be 0-16383
  * [@constant]   kMIDIControlType_14BitRPN
  * [@constant]   kMIDIControlType_7BitNRPN
  * [@constant]   kMIDIControlType_14BitNRPN

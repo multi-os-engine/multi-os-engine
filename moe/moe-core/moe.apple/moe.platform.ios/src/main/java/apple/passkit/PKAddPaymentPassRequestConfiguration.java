@@ -169,10 +169,10 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     /**
      * Schemes defined in PKConstants.h.
      * Supported Schemes:
-     *  PKEncryptionSchemeECC_V2:
-     *      ephemeralPublicKey
-     *  PKEncryptionSchemeRSA_V2:
-     *      wrappedKey
+     * PKEncryptionSchemeECC_V2:
+     * ephemeralPublicKey
+     * PKEncryptionSchemeRSA_V2:
+     * wrappedKey
      */
     @Generated
     @Selector("initWithEncryptionScheme:")

@@ -201,7 +201,7 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Whether the request should provide incremental data.
-     * 
+     * <p>
      * If this is called at the beginning of the request (before any entries have been added or removed) and the result is YES,
      * then the request must only provide an "incremental" set of entries, i.e. only add or remove entries relative to the last time data
      * was loaded for the extension. Otherwise, if this method is not called OR is called and returns NO, then the request must provide
@@ -214,7 +214,7 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove all currently-stored blocking entries.
-     * 
+     * <p>
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
      * API to remove all previously-added blocking entries.
      */
@@ -224,7 +224,7 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove all currently-stored identification entries.
-     * 
+     * <p>
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
      * API to remove all previously-added identification entries.
      */
@@ -234,10 +234,10 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove blocking entry with the specified phone number.
-     * 
+     * <p>
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
      * API to remove a previously-added blocking entry.
-     * 
+     *
      * @param phoneNumber The blocking entry phone number to remove.
      */
     @Generated
@@ -246,11 +246,11 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
 
     /**
      * Remove identification entry with the specified phone number.
-     * 
+     * <p>
      * May only be used when `-isIncremental` returns YES, indicating that the request should provide incremental entries and thus may use this
      * API to remove a previously-added identification entry. Removes all identification entries with the specified phone number, even if
      * multiple identification entries with different labels are present for a single phone number.
-     * 
+     *
      * @param phoneNumber The identification entry phone number to remove.
      */
     @Generated

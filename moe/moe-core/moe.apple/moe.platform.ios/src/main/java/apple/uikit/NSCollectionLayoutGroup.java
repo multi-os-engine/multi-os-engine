@@ -83,9 +83,9 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Specifies a custom group with client-specified frames.
-     *   During layout, the itemProvider will be called with the group's current geometry provided via the NSCollectionLayoutEnvironment supplied.
-     *   The coordinate space for returned frames should be {0,0} relative to this group's geometry.
-     *   Custom groups can be nested arbitrarily inside other groups.
+     * During layout, the itemProvider will be called with the group's current geometry provided via the NSCollectionLayoutEnvironment supplied.
+     * The coordinate space for returned frames should be {0,0} relative to this group's geometry.
+     * Custom groups can be nested arbitrarily inside other groups.
      */
     @Generated
     @Selector("customGroupWithLayoutSize:itemProvider:")
@@ -116,17 +116,17 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Specifies a group that will have N items equally sized along the horizontal axis. use interItemSpacing to insert space between items
-     * 
-     *   +------+--+------+--+------+
-     *   |~~~~~~|  |~~~~~~|  |~~~~~~|
-     *   |~~~~~~|  |~~~~~~|  |~~~~~~|
-     *   |~~~~~~|  |~~~~~~|  |~~~~~~|
-     *   +------+--+------+--+------+
-     *            ^        ^
-     *            |        |
-     *    +-----------------------+
-     *    |  Inter Item Spacing   |
-     *    +-----------------------+
+     * <p>
+     * +------+--+------+--+------+
+     * |~~~~~~|  |~~~~~~|  |~~~~~~|
+     * |~~~~~~|  |~~~~~~|  |~~~~~~|
+     * |~~~~~~|  |~~~~~~|  |~~~~~~|
+     * +------+--+------+--+------+
+     * ^        ^
+     * |        |
+     * +-----------------------+
+     * |  Inter Item Spacing   |
+     * +-----------------------+
      */
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitem:count:")
@@ -136,7 +136,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Specifies a group that will repeat items until available horizontal space is exhausted.
-     *   note: any remaining space after laying out items can be apportioned among flexible interItemSpacing defintions
+     * note: any remaining space after laying out items can be apportioned among flexible interItemSpacing definitions
      */
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitems:")
@@ -239,23 +239,23 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Specifies a group that will have N items equally sized along the vertical axis. use interItemSpacing to insert space between items
-     *   +------+
-     *   |~~~~~~|
-     *   |~~~~~~|
-     *   |~~~~~~|
-     *   +------+
-     *   |      |<--+
-     *   +------+   |
-     *   |~~~~~~|   |    +-----------------------+
-     *   |~~~~~~|   +----|  Inter Item Spacing   |
-     *   |~~~~~~|   |    +-----------------------+
-     *   +------+   |
-     *   |      |<--+
-     *   +------+
-     *   |~~~~~~|
-     *   |~~~~~~|
-     *   |~~~~~~|
-     *   +------+
+     * +------+
+     * |~~~~~~|
+     * |~~~~~~|
+     * |~~~~~~|
+     * +------+
+     * |      |<--+
+     * +------+   |
+     * |~~~~~~|   |    +-----------------------+
+     * |~~~~~~|   +----|  Inter Item Spacing   |
+     * |~~~~~~|   |    +-----------------------+
+     * +------+   |
+     * |      |<--+
+     * +------+
+     * |~~~~~~|
+     * |~~~~~~|
+     * |~~~~~~|
+     * +------+
      */
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitem:count:")
@@ -265,7 +265,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Specifies a group that will repeat items until available vertical space is exhausted.
-     *   note: any remaining space after laying out items can be apportioned among flexible interItemSpacing defintions
+     * note: any remaining space after laying out items can be apportioned among flexible interItemSpacing definitions
      */
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitems:")

@@ -395,11 +395,11 @@ public class NSURL extends NSObject
      * - NSMetadataQueryUbiquitousDataScope
      * - NSMetadataQueryUbiquitousDocumentsScope
      * - An NSFilePresenter presenting the contents of the directory located by -URLForUbiquitousContainerIdentifier: or a subdirectory thereof
-     * 
+     * <p>
      * The following methods behave identically to their similarly named methods above (-getResourceValue:forKey:error:, etc.), except that they allow you to get resource values and check for presence regardless of whether the promised item's contents currently exist at the URL. You must use these APIs instead of the normal NSURL resource value APIs if and only if any of the following are true:
      * - You are using a URL that you know came directly from one of the above APIs
      * - You are inside the accessor block of a coordinated read or write that used NSFileCoordinatorReadingImmediatelyAvailableMetadataOnly, NSFileCoordinatorWritingForDeleting, NSFileCoordinatorWritingForMoving, or NSFileCoordinatorWritingContentIndependentMetadataOnly
-     * 
+     * <p>
      * Most of the NSURL resource value keys will work with these APIs. However, there are some that are tied to the item's contents that will not work, such as NSURLContentAccessDateKey or NSURLGenerationIdentifierKey. If one of these keys is used, the method will return YES, but the value for the key will be nil.
      */
     @Generated
@@ -737,22 +737,22 @@ public class NSURL extends NSObject
 
     /**
      * \brief Generate a path component based on a partial filename and a file
-     * 	type, then append it to a copy of the receiver.
-     * 
+     * type, then append it to a copy of the receiver.
+     * <p>
      * \param partialName The partial filename that should be expanded upon,
-     * 	e.g. \c "readme".
+     * e.g. \c "readme".
      * \param contentType The type the resulting file should conform to, e.g.
-     * 	\c UTTypePlainText.
-     * 
+     * \c UTTypePlainText.
+     * <p>
      * \result A complete URL. Using the argument examples above, this method would
-     * 	return a URL with a last path component of \c "readme.txt".
-     * 
+     * return a URL with a last path component of \c "readme.txt".
+     * <p>
      * Use this method when you have partial input from a user or other source and
      * need to produce a complete filename suitable for that input. For example, if
      * you are downloading a file from the Internet and know its MIME type, you can
      * use this method to ensure the correct filename extension is applied to the
      * URL where you save the file.
-     * 
+     * <p>
      * If \a partialName already has a path extension, and that path extension is
      * valid for file system objects of type \a contentType, no additional
      * extension is appended to the path component before constructing the URL. For
@@ -762,12 +762,12 @@ public class NSURL extends NSObject
      * respectively, the resulting URL will have a last path component of
      * \c "puppy.jpg.txt" . If you want to ensure any existing path extension is
      * replaced, you can use the \c URLByDeletingPathExtension property first.
-     * 
+     * <p>
      * If the path component could not be appended, this method returns a copy of
      * \c self .
-     * 
+     * <p>
      * \note The resulting URL has a directory path if \c contentType conforms to
-     * 	\c UTTypeDirectory .
+     * \c UTTypeDirectory .
      */
     @Generated
     @Selector("URLByAppendingPathComponent:conformingToType:")
@@ -775,21 +775,21 @@ public class NSURL extends NSObject
 
     /**
      * \brief Generate a path component based on the last path component of the
-     * 	receiver and a file type, then append it to a copy of the receiver.
-     * 
+     * receiver and a file type, then append it to a copy of the receiver.
+     * <p>
      * \param contentType The type the resulting file should conform to, e.g.
-     * 	\c UTTypePlainText.
-     * 
+     * \c UTTypePlainText.
+     * <p>
      * \result A complete URL. Using the argument example above and assuming
-     * 	the receiver equals \c "file:///readme" , this method would return
-     * 	\c "file:///readme.txt".
-     * 
+     * the receiver equals \c "file:///readme" , this method would return
+     * \c "file:///readme.txt".
+     * <p>
      * Use this method when you have partial input from a user or other source and
      * need to produce a complete filename suitable for that input. For example, if
      * you are downloading a file from the Internet and know its MIME type, you can
      * use this method to ensure the correct filename extension is applied to the
      * URL where you save the file.
-     * 
+     * <p>
      * If the receiver already has a path extension, and that path extension is
      * valid for file system objects of type \a contentType, no additional
      * extension is appended to the path component before constructing the URL.
@@ -800,12 +800,12 @@ public class NSURL extends NSObject
      * have a last path component of \c "puppy.jpg.txt" . If you want to ensure any
      * existing path extension is replaced, you can use the
      * \c URLByDeletingPathExtension property first.
-     * 
+     * <p>
      * If the extension could not be appended, this method returns a copy of
      * \c self .
-     * 
+     * <p>
      * \note The resulting URL has a directory path if \c contentType conforms to
-     * 	\c UTTypeDirectory .
+     * \c UTTypeDirectory .
      */
     @Generated
     @Selector("URLByAppendingPathExtensionForType:")

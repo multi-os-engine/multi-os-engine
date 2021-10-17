@@ -28,9 +28,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNDArrayGatherGradient
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Applies the gradient operation corresponding to a forward gather operation.
  */
 @Generated

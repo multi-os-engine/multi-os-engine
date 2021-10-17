@@ -80,7 +80,7 @@ public class SNClassificationResult extends NSObject implements SNResult {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The top classification candidates, sorted with highest confidence first
+     * All classification candidates, sorted with highest confidence first.
      */
     @Generated
     @Selector("classifications")
@@ -148,7 +148,7 @@ public class SNClassificationResult extends NSObject implements SNResult {
 
     /**
      * The time range in the client-provided audio stream to which this classification result corresponds
-     * 
+     * <p>
      * Each CMTime contains of a value (audio frame count) and timescale (client sample rate). This enables the client to precisely identify the frame range in the original audio stream to which this result corresponds. Time ranges will often be in the past compared to the frame count of the most recent audio buffer provided to the analyzer, due to the inherent audio buffering operations required to deliver a full block of audio to an MLModel.
      */
     @Generated
@@ -160,4 +160,14 @@ public class SNClassificationResult extends NSObject implements SNResult {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Retrieves the classification candidate with the specified identifier.
+     *
+     * @param identifier An identifier on which to query for a particular classification candidate. The query will match to any classification candidate whose `identifier` property (see `identifier` property of `SNClassification`) contains a value equal to the provided argument.
+     * @return The classification candidate which has the specified identifier, if it exists. If no such candidate exists, `nil` will be returned.
+     */
+    @Generated
+    @Selector("classificationForIdentifier:")
+    public native SNClassification classificationForIdentifier(String identifier);
 }

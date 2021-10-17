@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNGramMatrixCalculationGradient
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The MPSNNGramMatrixCalculationGradient defines the gradient filter for MPSNNGramMatrixCalculation.
  */
 @Generated
@@ -62,9 +62,9 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
-     *             the @ref MPSNNGradientState when it is provided in the encode call.
+     * the @ref MPSNNGradientState when it is provided in the encode call.
      */
     @Generated
     @Selector("alpha")
@@ -115,16 +115,16 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -133,9 +133,9 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a MPSNNGramMatrixCalculationGradient kernel with scaling factor alpha = 1.0f.
-     * 
-     * @param      device      The MTLDevice on which this MPSNNGramMatrixCalculationGradient filter will be used.
-     * @return     A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
+     *
+     * @param device The MTLDevice on which this MPSNNGramMatrixCalculationGradient filter will be used.
+     * @return A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -143,11 +143,11 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a MPSNNGramMatrixCalculationGradient kernel.
-     * 
-     * @param      device      The MTLDevice on which this MPSNNGramMatrixCalculationGradient filter will be used.
-     * @param      alpha       Scaling factor for the output. NOTE: the value for alpha is automatically adjusted by
-     *                         the @ref MPSNNGradientState when it is provided in the encode call.
-     * @return     A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
+     *
+     * @param device The MTLDevice on which this MPSNNGramMatrixCalculationGradient filter will be used.
+     * @param alpha  Scaling factor for the output. NOTE: the value for alpha is automatically adjusted by
+     *               the @ref MPSNNGradientState when it is provided in the encode call.
+     * @return A valid MPSNNGramMatrixCalculationGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:alpha:")
@@ -191,9 +191,9 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
-     *             the @ref MPSNNGradientState when it is provided in the encode call.
+     * the @ref MPSNNGradientState when it is provided in the encode call.
      */
     @Generated
     @Selector("setAlpha:")

@@ -156,7 +156,7 @@ public class MSSticker extends NSObject {
 
     /**
      * [@property]   imageFileURL
-     * 
+     * <p>
      * The file URL to the Sticker was initialized with.
      */
     @Generated
@@ -169,19 +169,19 @@ public class MSSticker extends NSObject {
 
     /**
      * initWithContentsOfFileURL:localizedDescription:error:
-     * 
+     * <p>
      * Initializes a sticker with the contents of the URL and the localized description.
-     * 
+     * <p>
      * Initializes a sticker with the contents of the URL and the localized description.
      * The specified file must have a maximum size of 500KB and must conform to kUTTypePNG, kUTTypeGIF
      * or kUTTypeJPEG. The image loaded from the file must be no smaller than 300px X 300px and must
      * be no larger 618px x 618px. This localized description string is limited to 150 Unicode
      * characters in length.
-     * 
-     * @param      fileURL    The URL from which to read sticker data.
-     * @param      localizedDescription   A succinct localized string describing the sticker.
-     * @param      error  If this method could not initialize a sticker, this will contain an NSError object describing the failure.
-     * @return     A new sticker object or nil if the method could not initialize a sticker from the specified file and localizedDescription.
+     *
+     * @param fileURL              The URL from which to read sticker data.
+     * @param localizedDescription A succinct localized string describing the sticker.
+     * @param error                If this method could not initialize a sticker, this will contain an NSError object describing the failure.
+     * @return A new sticker object or nil if the method could not initialize a sticker from the specified file and localizedDescription.
      */
     @Generated
     @Selector("initWithContentsOfFileURL:localizedDescription:error:")
@@ -190,7 +190,7 @@ public class MSSticker extends NSObject {
 
     /**
      * [@property]   localizedDescription
-     * 
+     * <p>
      * A succinct localized string describing the sticker.
      */
     @Generated

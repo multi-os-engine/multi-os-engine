@@ -27,7 +27,7 @@ public final class CarPlay {
     /**
      * Your @c CPNavigationAlert may specify a duration for which the alert will be visible onscreen,
      * or 0 for an alert that is visible indefinitely.
-     * 
+     * <p>
      * For non-indefinite alerts, this is the minimum duration the alert will be visible.
      */
     @Generated public static final double CPNavigationAlertMinimumDuration = 5.0;
@@ -79,4 +79,20 @@ public final class CarPlay {
     @CVariable()
     @ByValue
     public static native CGSize CPNowPlayingButtonMaximumImageSize();
+
+    @Generated
+    @CVariable()
+    @NUInt
+    public static native long CPGridTemplateMaximumItems();
+
+    /**
+     * The expected maximum size of an image size for your @c CPListSection.
+     * <p>
+     * To properly size your images, your app should size them to the display scale of the car screen.
+     * See -[CPInterfaceController carTraitCollection].
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CGSize CPMaximumListSectionImageSize();
 }

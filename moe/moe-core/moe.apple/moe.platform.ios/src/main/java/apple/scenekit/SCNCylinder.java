@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNCylinder
- * 
+ * <p>
  * SCNCylinder represents a cylinder with controllable height and radius.
  */
 @Generated
@@ -100,11 +100,11 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * cylinderWithRadius:height:
-     * 
+     * <p>
      * Creates and returns a cylinder with given radius and height.
-     * 
+     *
      * @param radius The radius of the cylinder.
-     * @param height The height of the cylinder. 
+     * @param height The height of the cylinder.
      */
     @Generated
     @Selector("cylinderWithRadius:height:")
@@ -190,9 +190,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the cylinder. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -202,9 +202,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -222,9 +222,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the radial coordinate. Animatable.
-     * 
+     * <p>
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -234,9 +234,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] radius
-     * 
+     * <p>
      * The radius of the cylinder. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -246,9 +246,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the cylinder. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -257,9 +257,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the Y axis. Animatable.
-     * 
+     * <p>
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -268,9 +268,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * 
+     * <p>
      * The number of subdivisions along the radial coordinate. Animatable.
-     * 
+     * <p>
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -279,9 +279,9 @@ public class SCNCylinder extends SCNGeometry {
 
     /**
      * [@property] radius
-     * 
+     * <p>
      * The radius of the cylinder. Animatable.
-     * 
+     * <p>
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated

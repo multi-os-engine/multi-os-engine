@@ -240,4 +240,19 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("providesAppNotificationSettings")
     public native boolean providesAppNotificationSettings();
+
+    @Generated
+    @Selector("directMessagesSetting")
+    @NInt
+    public native long directMessagesSetting();
+
+    @Generated
+    @Selector("scheduledDeliverySetting")
+    @NInt
+    public native long scheduledDeliverySetting();
+
+    @Generated
+    @Selector("timeSensitiveSetting")
+    @NInt
+    public native long timeSensitiveSetting();
 }

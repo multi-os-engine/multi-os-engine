@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Keeps track of where an ARGeoAnchor altitude value came from and informs the user about the expected accuracy.
+ * Keeps track of where an altitude value came from and informs the user about the expected accuracy.
  */
 @Generated
 public final class ARAltitudeSource {

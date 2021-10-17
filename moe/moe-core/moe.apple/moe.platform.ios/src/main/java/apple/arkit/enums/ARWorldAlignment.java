@@ -18,7 +18,7 @@ public final class ARWorldAlignment {
     @Generated @NInt public static final long Gravity = 0x0000000000000000L;
     /**
      * Aligns the world with gravity that is defined by the vector (0, -1, 0)
-     * and heading (w.r.t. True North) that is given by the vector (0, 0, -1). 
+     * and heading (w.r.t. True North) that is given by the vector (0, 0, -1).
      */
     @Generated @NInt public static final long GravityAndHeading = 0x0000000000000001L;
     /**

@@ -415,11 +415,11 @@ public class GKTurnBasedMatch extends NSObject {
      * If the developer wishes to display a message in GKTurnBasedMatchmakerViewController at the end of a turn or end of the match.  Only the current participant can set this.
      * Sets a localizable mesage that will be localized on the receiver side if the game is installed and on the sender side as a fallback.
      * The key and arguments offer a subset of formated strings as follows
-     *    key is a string in a Localizable.strings file for the current localization (which is set by the user’s language preference).  key string can be formatted with %@ and %n$@ specifiers to take the variables specified in loc-args
-     *    arguments is an array of strings that will be substituted using the format string.
+     * key is a string in a Localizable.strings file for the current localization (which is set by the user’s language preference).  key string can be formatted with %@ and %n$@ specifiers to take the variables specified in loc-args
+     * arguments is an array of strings that will be substituted using the format string.
      * Notes: The localized message will be evaluated locally from these keys and sent across as well so that devices that do not have the game installed will see the message in the sender's localization
-     *        The developer can access resulting string using the message property
-     *        This is a similar concept to the way we handle localization for Push Notifications. See the "Local and Push Notification Programming Guide" for more details.
+     * The developer can access resulting string using the message property
+     * This is a similar concept to the way we handle localization for Push Notifications. See the "Local and Push Notification Programming Guide" for more details.
      */
     @Generated
     @Selector("setLocalizableMessageWithKey:arguments:")
@@ -490,7 +490,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     public interface Block_loadMatchDataWithCompletionHandler {
         @Generated
-        void call_loadMatchDataWithCompletionHandler(NSData matchData, NSError error);
+        void call_loadMatchDataWithCompletionHandler(NSData _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)

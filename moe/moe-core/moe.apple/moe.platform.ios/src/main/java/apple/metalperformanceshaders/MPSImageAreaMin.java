@@ -44,11 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageAreaMin
- * 
+ * <p>
  * The MPSImageAreaMin finds the minimum pixel value in a rectangular region centered around each pixel in the
- *              source image. If there are multiple channels in the source image, each channel is processed independently.
- *              It has the same methods as MPSImageAreaMax
- *              The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
+ * source image. If there are multiple channels in the source image, each channel is processed independently.
+ * It has the same methods as MPSImageAreaMax
+ * The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
  */
 @Generated
 @Library("MetalPerformanceShaders")

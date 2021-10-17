@@ -168,4 +168,22 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Enables or disables the authorization user interface.
+     * <p>
+     * The default values is YES. If user interface is not enabled, then the authorization will fail with @see ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
+     */
+    @Generated
+    @Selector("isUserInterfaceEnabled")
+    public native boolean isUserInterfaceEnabled();
+
+    /**
+     * Enables or disables the authorization user interface.
+     * <p>
+     * The default values is YES. If user interface is not enabled, then the authorization will fail with @see ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
+     */
+    @Generated
+    @Selector("setUserInterfaceEnabled:")
+    public native void setUserInterfaceEnabled(boolean value);
 }

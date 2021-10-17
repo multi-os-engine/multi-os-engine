@@ -6,7 +6,7 @@ import org.moe.natj.general.ann.NInt;
 /**
  * An object conforming to UISpringLoadedInteractionEffect uses UISpringLoadedInteractionEffectState
  * to style the interaction view for the current springloading state.
- * 
+ * <p>
  * - UISpringLoadedInteractionEffectStateInactive: the view is not engaged in springloading and should be displayed with its default style.
  * - UISpringLoadedInteractionEffectStatePossible: the view may springload and should provide a visual cue to the user. The default effect highlights the view.
  * - UISpringLoadedInteractionEffectStateActivating: the view is about to springload. The default effect will briefly flash while in this state.

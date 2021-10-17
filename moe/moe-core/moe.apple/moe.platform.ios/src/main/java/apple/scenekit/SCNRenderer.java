@@ -17,8 +17,6 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
-import apple.avfoundation.AVAudioEngine;
-import apple.avfoundation.AVAudioEnvironmentNode;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;
 import apple.coregraphics.struct.CGSize;
@@ -61,7 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNRenderer
- * 
+ * <p>
  * SCNRenderer lets you use the SceneKit renderer in an OpenGL context or Metal render pass descriptor of your own.
  */
 @Generated
@@ -156,9 +154,9 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * rendererWithContext:options:
-     * 
+     * <p>
      * Creates a new renderer object.
-     * 
+     *
      * @param context The context to render into.
      * @param options An optional dictionary for future extensions.
      */
@@ -168,10 +166,10 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * rendererWithDevice:options:
-     * 
+     * <p>
      * Creates a new renderer object that renders using Metal.
-     * 
-     * @param device The metal device to use. Pass nil to let SceneKit choose a default device.
+     *
+     * @param device  The metal device to use. Pass nil to let SceneKit choose a default device.
      * @param options An optional dictionary for future extensions.
      */
     @Generated
@@ -202,11 +200,11 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("audioEngine")
-    public native AVAudioEngine audioEngine();
+    public native apple.avfaudio.AVAudioEngine audioEngine();
 
     @Generated
     @Selector("audioEnvironmentNode")
-    public native AVAudioEnvironmentNode audioEnvironmentNode();
+    public native apple.avfaudio.AVAudioEnvironmentNode audioEnvironmentNode();
 
     @Generated
     @Selector("audioListener")
@@ -290,7 +288,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * [@property] nextFrameTime
-     * 
+     * <p>
      * Returns the time at which the next update should happen. If infinite no update needs to be scheduled yet. If the current frame time, a continuous animation is running and an update should be scheduled after a "natural" delay.
      */
     @Generated
@@ -331,12 +329,12 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     public native SCNVector3 projectPoint(@ByValue SCNVector3 point);
 
     /**
-     *  Deprecated
-     * 
+     * Deprecated
+     * <p>
      * render
-     * 
+     * <p>
      * renders the receiver's scene at the current system time.
-     * 
+     * <p>
      * This method only work if the receiver was allocated with an OpenGL context and it is deprecated (use renderAtTime: instead). Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
      */
     @Generated
@@ -346,9 +344,9 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * renderAtTime:
-     * 
+     * <p>
      * updates and renders the receiver's scene at the specified time (system time).
-     * 
+     * <p>
      * This method only work if the receiver was allocated with an OpenGL context. Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
      */
     @Generated
@@ -357,9 +355,9 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * renderAtTime:viewport:commandBuffer:passDescriptor:
-     * 
+     * <p>
      * updates and renders the receiver's scene at the specified time (system time) viewport, Metal command buffer and pass descriptor.
-     * 
+     * <p>
      * Use this method to render using Metal.
      */
     @Generated
@@ -443,7 +441,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * snapshotAtTime:withSize:antialiasingMode:
-     * 
+     * <p>
      * renders the receiver's scene at the specified time (system time) into an image.
      */
     @Generated
@@ -467,13 +465,13 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * updateProbes:atTime:
-     * 
+     * <p>
      * Update the specified probes by computing their incoming irradiance in the receiver's scene at the specified time.
-     * 
+     * <p>
      * Light probes are only supported with Metal. This method is observable using NSProgress.
-     * 
+     *
      * @param lightProbes An array of nodes that must have a light probe attached.
-     * @param time The time used to render the scene when computing the light probes irradiance.
+     * @param time        The time used to render the scene when computing the light probes irradiance.
      */
     @Generated
     @Selector("updateProbes:atTime:")
@@ -481,9 +479,9 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * renderWithViewport:viewport:commandBuffer:passDescriptor:
-     * 
+     * <p>
      * renders the receiver's scene with the specified viewport, Metal command buffer and pass descriptor.
-     * 
+     * <p>
      * Use this method to render using Metal. This method doesn't update the scene's animations, physics, particles etc... It's up to you to call "updateAtTime:" to update the scene.
      */
     @Generated
@@ -494,7 +492,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     /**
      * updateAtTime:
-     * 
+     * <p>
      * updates the receiver's scene at the specified time (system time).
      */
     @Generated

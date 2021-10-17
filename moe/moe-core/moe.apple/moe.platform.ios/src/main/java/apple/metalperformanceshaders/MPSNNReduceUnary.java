@@ -6,6 +6,7 @@ import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.metal.struct.MTLRegion;
+import apple.metalperformanceshaders.struct.MPSOffset;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -29,21 +30,21 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceUnary
- * 
+ * <p>
  * The MPSNNReduce performs a reduction operation
- *             The reduction operations supported are:
- *                  - Reduce row min
- *                  - Reduce column min
- *                  - Reduce feature channels min
- *                  - Reduce row max
- *                  - Reduce column max
- *                  - Reduce feature channels max
- *                  - Reduce row mean
- *                  - Reduce column mean
- *                  - Reduce feature channels mean
- *                  - Reduce row sum
- *                  - Reduce column sum
- *                  - Reduce feature channels sum
+ * The reduction operations supported are:
+ * - Reduce row min
+ * - Reduce column min
+ * - Reduce feature channels min
+ * - Reduce row max
+ * - Reduce column max
+ * - Reduce feature channels max
+ * - Reduce row mean
+ * - Reduce column mean
+ * - Reduce feature channels mean
+ * - Reduce row sum
+ * - Reduce column sum
+ * - Reduce feature channels sum
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -97,13 +98,13 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
 
     /**
      * [@property]   clipRectSource
-     * 
+     * <p>
      * The source rectangle to use when reading data.
-     * 
+     * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
-     *             completely within the source image, the intersection of the image bounds and clipRectSource will
-     *             be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
-     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * completely within the source image, the intersection of the image bounds and clipRectSource will
+     * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
+     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("clipRectSource")
@@ -176,13 +177,13 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
 
     /**
      * [@property]   clipRectSource
-     * 
+     * <p>
      * The source rectangle to use when reading data.
-     * 
+     * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
-     *             completely within the source image, the intersection of the image bounds and clipRectSource will
-     *             be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
-     *             The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * completely within the source image, the intersection of the image bounds and clipRectSource will
+     * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
+     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("setClipRectSource:")
@@ -210,4 +211,21 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
+     * this property is deprecated..
+     */
+    @Generated
+    @Selector("offset")
+    @ByValue
+    public native MPSOffset offset();
+
+    /**
+     * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
+     * this property is deprecated..
+     */
+    @Generated
+    @Selector("setOffset:")
+    public native void setOffset(@ByValue MPSOffset value);
 }

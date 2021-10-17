@@ -44,7 +44,8 @@ public final class SFNTLookupSegmentHeader extends StructObject {
     }
 
     @Generated
-    public SFNTLookupSegmentHeader(@ByValue SFNTLookupBinarySearchHeader binSearch, @ByValue SFNTLookupSegment segments) {
+    public SFNTLookupSegmentHeader(@ByValue SFNTLookupBinarySearchHeader binSearch,
+            @ByValue SFNTLookupSegment segments) {
         super(SFNTLookupSegmentHeader.class);
         setBinSearch(binSearch);
         setSegments(segments);

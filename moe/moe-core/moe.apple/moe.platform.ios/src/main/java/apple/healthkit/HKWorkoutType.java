@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKWorkoutType
- * 
+ * <p>
  * Represents a workout or exercise
  */
 @Generated

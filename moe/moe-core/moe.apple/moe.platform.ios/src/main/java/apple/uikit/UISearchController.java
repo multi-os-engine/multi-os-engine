@@ -149,10 +149,6 @@ public class UISearchController extends UIViewController
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -274,7 +270,8 @@ public class UISearchController extends UIViewController
     public native void setActive(boolean value);
 
     /**
-     * default is YES. On tvOS, defaults to NO when contained in UISearchContainerViewController.
+     * On iOS, default is NO for apps linked on iOS 15.0 and later, YES otherwise.
+     * On tvOS, default is NO when contained in UISearchContainerViewController, YES otherwise.
      */
     @Generated
     @Selector("obscuresBackgroundDuringPresentation")
@@ -336,7 +333,8 @@ public class UISearchController extends UIViewController
     public native void setHidesNavigationBarDuringPresentation(boolean value);
 
     /**
-     * default is YES. On tvOS, defaults to NO when contained in UISearchContainerViewController.
+     * On iOS, default is NO for apps linked on iOS 15.0 and later, YES otherwise.
+     * On tvOS, default is NO when contained in UISearchContainerViewController, YES otherwise.
      */
     @Generated
     @Selector("setObscuresBackgroundDuringPresentation:")

@@ -634,4 +634,22 @@ public final class CoreData {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersistentCloudKitContainerEventUserInfoKey();
+
+    /**
+     * * When a change occurs to an entity or entities that are indexed in Spotlight
+     * * using NSCoreDataCoreSpotlightDelegate, that index is updated asynchronously.
+     * * NSCoreDataCoreSpotlightDelegate will post NSCoreDataCoreSpotlightDelegateIndexDidUpdateNotification
+     * * when the index is updated.
+     * *
+     * * This notification will have a .userInfo that contains two key-value pairs:
+     * <p>
+     * * NSStoreUUIDKey: A NSString UUID of the store that contains the
+     * *  NSCoreDataCoreSpotlightDelegate that updated its index.
+     * * NSPersistentHistoryTokenKey: The NSPersistentHistoryToken of the store that
+     * *  contains the NSCoreDataCoreSpotlightDelegate that updated its index.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSCoreDataCoreSpotlightDelegateIndexDidUpdateNotification();
 }

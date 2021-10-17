@@ -5,14 +5,14 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLDispatchType
- * 
+ * <p>
  * MTLDispatchType Describes how a command encoder will execute dispatched work.
- * 
+ * <p>
  * [@constant] MTLDispatchTypeSerial
  * Command encoder dispatches are executed in dispatched order.
- * 
+ * <p>
  * [@constant] MTLDispatchTypeConcurrent
- * Command encoder dispatches are executed in parallel with each other. 
+ * Command encoder dispatches are executed in parallel with each other.
  */
 @Generated
 public final class MTLDispatchType {

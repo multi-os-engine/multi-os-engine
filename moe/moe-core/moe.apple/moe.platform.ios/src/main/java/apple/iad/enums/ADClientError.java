@@ -21,34 +21,34 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] ADClientError
- * 
+ * <p>
  * [@const] ADClientErrorUnknown
  * This is not used and should never be returned.
- * 
+ * <p>
  * [@const] ADClientErrorTrackingRestrictedOrDenied
  * The user is restricted or has denied tracking for the calling application.
- * 
+ * <p>
  * [@const] ADClientErrorLimitAdTracking
  * This is deprecated, please use ADClientErrorTrackingRestrictedOrDenied.
- * 
+ * <p>
  * [@const] ADClientErrorMissingData
  * The downloaded app received a payload lacking enough data to perform an attribution check.
- * 
+ * <p>
  * [@const] ADClientErrorCorruptResponse
  * The response received from the Attribution Server was corrupt.
- * 
+ * <p>
  * [@const] ADClientErrorRequestClientError
  * The response received from the Attribution Server had an HTTP 4xx status code.
- * 
+ * <p>
  * [@const] ADClientErrorRequestServerError
  * The response received from the Attribution Server had an HTTP 5xx status code.
- * 
+ * <p>
  * [@const] ADClientErrorRequestNetworkError
  * The communication with the  Attribution Server had a network error. The underlying error will be provided in the user info dictionary if available.
- * 
+ * <p>
  * [@const] ADClientErrorUnsupportedPlatform
  * The attribution API was called on an unsupported platform. Only iOS and iPadOS are supported.
- * 
+ * <p>
  * Error codes for NSErrors passed to the completionHandler block when calling the requestAttributionDetailsWithBlock: method.
  */
 @Generated

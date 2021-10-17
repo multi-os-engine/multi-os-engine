@@ -179,8 +179,8 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     public native void finishWithError(NSError error);
 
     /**
-     * Callback the filter should call when filtering succeeded. The pixel format of the filteredImage must be kCIFormatBGRA8 (kCVPixelFormatType_32BGRA). If context is nil then a default context will be used, GPU-accelerated if possible.
-     * 
+     * Callback the filter should call when filtering succeeded. If context is nil then a default context will be used, GPU-accelerated if possible.
+     * <p>
      * It is safe to pass in the sourceImage in which case the filter will appear to have no effect, essentially functioning as a pass-through.
      */
     @Generated
@@ -200,7 +200,7 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     public native CGSize renderSize();
 
     /**
-     * CIImage for the first enabled source video track. The pixel format will be kCIFormatBGRA8 (kCVPixelFormatType_32BGRA). Unlike AVAsynchronousVideoCompositionRequest, renderContext.renderTransform is already applied to the source image.
+     * CIImage for the first enabled source video track. Unlike AVAsynchronousVideoCompositionRequest, renderContext.renderTransform is already applied to the source image.
      */
     @Generated
     @Selector("sourceImage")

@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef]    vImageARGBType
- * 
+ * <p>
  * An encoding of an image format type to be used with RGB <-> Y'CbCr conversions in vImage/Conversions.h
- * 
+ * <p>
  * These formats enumerate different vImage ARGB pixel formats.
  */
 @Generated

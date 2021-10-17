@@ -28,9 +28,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNClassificationObservation
  * [@superclass] VNObservation
- * 
+ * <p>
  * VNClassificationObservation returns the classifcation in form of a string.
- * 
+ * <p>
  * VNClassificationObservation is the observation returned by VNCoreMLRequests that using a model that is a classifier. A classifier produces an arrary (this can be a single entry) of classifications which are labels (identifiers) and confidence scores.
  */
 @Generated
@@ -171,11 +171,9 @@ public class VNClassificationObservation extends VNObservation {
 
     /**
      * Determine whether or not the observation's operation point for a specific recall has a minimum precision value.
-     * 
-     * @param minimumPrecision	The minimum precision desired for an operation point.
-     * 
-     * @param recall		The recall value used to select the operation point.
-     * 
+     *
+     * @param minimumPrecision The minimum precision desired for an operation point.
+     * @param recall           The recall value used to select the operation point.
      * @return YES if the precision value for the operation point specified by a recall value has the minimum value; otherwise, NO.
      */
     @Generated
@@ -184,11 +182,9 @@ public class VNClassificationObservation extends VNObservation {
 
     /**
      * Determine whether or not the observation's operation point for a specific precision has a minimum recall value.
-     * 
-     * @param minimumRecall	The minimum recall desired for an operation point.
-     * 
-     * @param precision		The precision value used to select the operation point.
-     * 
+     *
+     * @param minimumRecall The minimum recall desired for an operation point.
+     * @param precision     The precision value used to select the operation point.
      * @return YES if the recall value for the operation point specified by a precision value has the minimum value; otherwise, NO.
      */
     @Generated
@@ -197,7 +193,7 @@ public class VNClassificationObservation extends VNObservation {
 
     /**
      * Determine whether or not precision/recall curves are available with the observation.
-     * 
+     * <p>
      * If this property is YES, then all other precision/recall related methods in this addition can be called.
      */
     @Generated

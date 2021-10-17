@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSeriesSample
- * 
+ * <p>
  * This class represents a type of HKSample that references a series of data.
  */
 @Generated
@@ -82,9 +82,9 @@ public class HKSeriesSample extends HKSample {
 
     /**
      * [@property]      count
-     * 
+     * <p>
      * The number of individual series datum represented by the receiver and accessible
-     *                through the appropriate HKQuery series subclass.
+     * through the appropriate HKQuery series subclass.
      */
     @Generated
     @Selector("count")

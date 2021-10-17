@@ -525,4 +525,12 @@ public class PDFDocument extends NSObject implements NSCopying {
     @Generated
     @Selector("writeToURL:withOptions:")
     public native boolean writeToURLWithOptions(NSURL url, NSDictionary<String, ?> options);
+
+    /**
+     * Returns all 7 properties above as a PDFAccessPermissions value.
+     */
+    @Generated
+    @Selector("accessPermissions")
+    @NUInt
+    public native long accessPermissions();
 }

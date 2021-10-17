@@ -46,10 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuron
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * This filter applies a neuron activation function.
- *             You must use one of the sub-classes of MPSCNNNeuron.
- * 
+ * You must use one of the sub-classes of MPSCNNNeuron.
+ * <p>
  * The following filter types are supported:
  * MPSCNNNeuronTypeNone            ///< f(x) = x
  * MPSCNNNeuronTypeLinear          ///< f(x) = a * x + b
@@ -193,16 +193,16 @@ public class MPSCNNNeuron extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use initWithCoder:device instead.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSKernel object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use initWithCoder:device instead.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSKernel object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -236,14 +236,14 @@ public class MPSCNNNeuron extends MPSCNNKernel {
 
     /**
      * Initialize the neuron filter with a neuron descriptor.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     neuronDescriptor         The neuron descriptor.
-     *                                     For the neuron of type MPSCNNNeuronTypePReLU, the neuron
-     *                                     descriptor references an NSData object containing a float array
-     *                                     with the per feature channel value of PReLu parameter and, in this
-     *                                     case, the MPSCNNNeuron retains the NSData object.
-     * @return    A valid MPSCNNNeuron object or nil, if failure.
+     *
+     * @param device           The device the filter will run on.
+     * @param neuronDescriptor The neuron descriptor.
+     *                         For the neuron of type MPSCNNNeuronTypePReLU, the neuron
+     *                         descriptor references an NSData object containing a float array
+     *                         with the per feature channel value of PReLu parameter and, in this
+     *                         case, the MPSCNNNeuron retains the NSData object.
+     * @return A valid MPSCNNNeuron object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:neuronDescriptor:")

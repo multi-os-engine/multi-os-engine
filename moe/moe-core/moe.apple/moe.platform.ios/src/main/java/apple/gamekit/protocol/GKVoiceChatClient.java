@@ -84,7 +84,7 @@ public interface GKVoiceChatClient {
 
     /**
      * should be sent immediately with no delay on a UDP peer-to-peer connection.
-     *  If this method is implemented, then the Voice Chat Service will not attempt to set up a peer-to-peer connection. And will rely on this one.  To transmit audio.
+     * If this method is implemented, then the Voice Chat Service will not attempt to set up a peer-to-peer connection. And will rely on this one.  To transmit audio.
      */
     @Generated
     @IsOptional

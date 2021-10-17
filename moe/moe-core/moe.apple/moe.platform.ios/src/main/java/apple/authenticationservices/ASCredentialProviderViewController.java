@@ -143,14 +143,14 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show a list of credentials.
-     * 
+     * <p>
      * This method is called by the system to prepare the extension's view controller to present the list of credentials.
      * A service identifier array is passed which can be used to filter or prioritize the credentials that closely match each service.
      * The service identifier array could have zero or more items. If there are more than one item in the array, items with lower indexes
      * represent more specific identifiers for which a credential is being requested. For example, the array could contain identifiers
      * [m.example.com, example.com] with the first item representing the more specifc service that requires a credential.
      * If the array of service identifiers is empty, it is expected that the credential list should still show credentials that the user can pick from.
-     * 
+     *
      * @param serviceIdentifiers the array of service identifiers.
      */
     @Generated
@@ -160,7 +160,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show user interface when the user enables your extension.
-     * 
+     * <p>
      * The system calls this method after your extension is enabled by the user in Settings. You can
      * use this method to give the user a chance to configure the extension or to provide credential identities
      * to the system. After the configuration is done, call -[ASCredentialProviderExtensionContext completeExtensionConfigurationRequest].
@@ -173,7 +173,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show user interface for providing the user-requested credential.
-     * 
+     * <p>
      * The system calls this method when your extension cannot provide the requested credential without user interaction.
      * Set up the view controller for any user interaction required to provide the requested credential only. The user interaction should
      * be limited in nature to operations required for providing the requested credential. An example is showing an authentication UI to
@@ -182,20 +182,16 @@ public class ASCredentialProviderViewController extends UIViewController {
      * If an error occurs, call -[ASCredentialProviderExtensionContext cancelRequestWithError:] and pass an error with domain
      * ASExtensionErrorDomain and an appropriate error code from ASExtensionErrorCode. For example, if the credential identity cannot
      * be found in the database, pass an error with code ASExtensionErrorCodeCredentialIdentityNotFound.
-     * 
+     *
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
     @Generated
     @Selector("prepareInterfaceToProvideCredentialForIdentity:")
     public native void prepareInterfaceToProvideCredentialForIdentity(ASPasswordCredentialIdentity credentialIdentity);
 
-    @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
     /**
      * Attempt to provide the user-requested credential without any user interaction.
-     * 
+     * <p>
      * After the user selects a credential identity, the system may ask your extension to provide the credential without showing any
      * user interface if possible to enhance the user experience. If your extension can accomplish this (for example, the user’s passwords database is
      * still unlocked from a recent interaction), call -[ASCredentialProviderExtensionContext completeRequestWithSelectedCredential:completionHandler:]
@@ -205,7 +201,7 @@ public class ASCredentialProviderViewController extends UIViewController {
      * because the passwords database needs to be unlocked, pass an error with code ASExtensionErrorCodeUserInteractionRequired.
      * [@note] When this method is called, your extension's view controller is not present on the screen. Do not attempt or expect to show any user
      * interface in this method.
-     * 
+     *
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
     @Generated

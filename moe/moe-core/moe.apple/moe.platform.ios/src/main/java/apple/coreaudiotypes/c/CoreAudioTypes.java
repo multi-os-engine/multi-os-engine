@@ -27,8 +27,8 @@ public final class CoreAudioTypes {
 
     /**
      * [@constant]       kAudioStreamAnyRate
-     *                     The format can use any sample rate. Note that this constant can only appear
-     *                     in listings of supported formats. It will never appear in a current format.
+     * The format can use any sample rate. Note that this constant can only appear
+     * in listings of supported formats. It will never appear in a current format.
      */
     @Generated public static final double kAudioStreamAnyRate = 0.0;
 }

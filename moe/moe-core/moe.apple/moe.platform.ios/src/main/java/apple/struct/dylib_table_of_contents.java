@@ -35,7 +35,7 @@ public final class dylib_table_of_contents extends StructObject {
 
     /**
      * the defined external symbol
-     * (index into the symbol table) 
+     * (index into the symbol table)
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -43,7 +43,7 @@ public final class dylib_table_of_contents extends StructObject {
 
     /**
      * the defined external symbol
-     * (index into the symbol table) 
+     * (index into the symbol table)
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
@@ -51,7 +51,7 @@ public final class dylib_table_of_contents extends StructObject {
 
     /**
      * index into the module table this symbol
-     * is defined in 
+     * is defined in
      */
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -59,7 +59,7 @@ public final class dylib_table_of_contents extends StructObject {
 
     /**
      * index into the module table this symbol
-     * is defined in 
+     * is defined in
      */
     @Generated
     @StructureField(order = 1, isGetter = false)

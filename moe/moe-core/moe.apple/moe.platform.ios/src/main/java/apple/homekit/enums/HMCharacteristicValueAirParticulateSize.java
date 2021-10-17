@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueAirParticulateSize
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueAirParticulateSize2_5          Air particulate size of 2.5 micrometers.
  * [@constant]  HMCharacteristicValueAirParticulateSize10           Air particulate size of 10 micrometers.
  */

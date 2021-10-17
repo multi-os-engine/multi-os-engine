@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCorrelationType
- * 
+ * <p>
  * Represents a type of HKCorrelation
  */
 @Generated

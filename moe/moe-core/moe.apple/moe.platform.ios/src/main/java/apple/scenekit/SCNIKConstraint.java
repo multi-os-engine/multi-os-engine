@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNIKConstraint
- * 
+ * <p>
  * A SCNIKConstraint applies an inverse kinematics constraint
  */
 @Generated
@@ -127,11 +127,11 @@ public class SCNIKConstraint extends SCNConstraint {
 
     /**
      * inverseKinematicsConstraintWithChainRootNode:
-     * 
+     * <p>
      * Creates and returns a SCNIKConstraint object with the specified parameter.
-     * 
+     * <p>
      * "chainRootNode" must be an ancestor of the node on which the constraint is applied.
-     * 
+     *
      * @param chainRootNode The root node of the kinematic chain.
      */
     @Generated
@@ -180,7 +180,7 @@ public class SCNIKConstraint extends SCNConstraint {
 
     /**
      * [@property] chainRootNode
-     * 
+     * <p>
      * Specifies the root node of the kinematic chain.
      */
     @Generated
@@ -193,11 +193,11 @@ public class SCNIKConstraint extends SCNConstraint {
 
     /**
      * initWithChainRootNode:
-     * 
+     * <p>
      * Creates and returns a SCNIKConstraint object with the specified parameter.
-     * 
+     * <p>
      * "chainRootNode" must be an ancestor of the node on which the constraint is applied.
-     * 
+     *
      * @param chainRootNode The root node of the kinematic chain.
      */
     @Generated
@@ -215,7 +215,7 @@ public class SCNIKConstraint extends SCNConstraint {
 
     /**
      * setMaxAllowedRotationAngle:forJoint:
-     * 
+     * <p>
      * Specifies the maximum rotation allowed (in degrees) for the specified joint from its initial orientation. Defaults to 180.
      */
     @Generated
@@ -224,7 +224,7 @@ public class SCNIKConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * 
+     * <p>
      * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
      */
     @Generated
@@ -239,7 +239,7 @@ public class SCNIKConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * 
+     * <p>
      * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
      */
     @Generated

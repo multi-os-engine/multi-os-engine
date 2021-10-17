@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A WKFrameInfo object contains information about a frame on a webpage.
- * 
+ * <p>
  * An instance of this class is a transient, data-only object;
  * it does not uniquely identify a frame across multiple delegate method
  * calls.

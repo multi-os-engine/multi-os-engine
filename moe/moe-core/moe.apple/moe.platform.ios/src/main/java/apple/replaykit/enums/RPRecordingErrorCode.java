@@ -171,4 +171,8 @@ public final class RPRecordingErrorCode {
      * Failed due to file permissions error
      */
     @Generated @NInt public static final long FilePermissions = 0xFFFFFFFFFFFFE935L;
+    /**
+     * Failed due to clip export in progress
+     */
+    @Generated @NInt public static final long ExportClipToURLInProgress = 0xFFFFFFFFFFFFE934L;
 }

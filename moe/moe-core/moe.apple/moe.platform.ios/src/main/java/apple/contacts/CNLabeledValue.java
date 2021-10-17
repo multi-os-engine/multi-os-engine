@@ -140,9 +140,9 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     /**
      * Get a localized label.
-     * 
+     * <p>
      * Some labels are special keys representing generic labels. Use this to obtain a localized string for a label to display to a user.
-     * 
+     *
      * @param label to localize.
      * @return The localized string if a Contacts framework defined label, otherwise just returns the label.
      */

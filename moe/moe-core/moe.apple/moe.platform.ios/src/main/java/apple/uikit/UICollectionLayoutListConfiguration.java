@@ -13,6 +13,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -110,7 +111,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     public static native String description_static();
 
     /**
-     * Definies whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
+     * Defines whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
      */
     @Generated
     @Selector("footerMode")
@@ -123,7 +124,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     public static native long hash_static();
 
     /**
-     * Definies whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
+     * Defines whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
      */
     @Generated
     @Selector("headerMode")
@@ -198,14 +199,14 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     public native void setBackgroundColor(UIColor value);
 
     /**
-     * Definies whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
+     * Defines whether the section has a footer. Defaults to UICollectionLayoutListFooterModeNone.
      */
     @Generated
     @Selector("setFooterMode:")
     public native void setFooterMode(@NInt long value);
 
     /**
-     * Definies whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
+     * Defines whether the section has a header. Defaults to UICollectionLayoutListHeaderModeNone.
      */
     @Generated
     @Selector("setHeaderMode:")
@@ -228,7 +229,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     }
 
     /**
-     * Whether this section shows separators or not.
+     * Whether this section shows separators or not. For additional control, see separatorConfiguration.
+     * Note that when this property is NO, the separatorConfiguration is ineffective.
      */
     @Generated
     @Selector("setShowsSeparators:")
@@ -255,7 +257,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Whether this section shows separators or not.
+     * Whether this section shows separators or not. For additional control, see separatorConfiguration.
+     * Note that when this property is NO, the separatorConfiguration is ineffective.
      */
     @Generated
     @Selector("showsSeparators")
@@ -285,4 +288,69 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Padding above each section header. The default value is `UICollectionViewLayoutAutomaticDimension`
+     */
+    @Generated
+    @Selector("headerTopPadding")
+    @NFloat
+    public native double headerTopPadding();
+
+    /**
+     * This handler is executed when the list section is configuring separator appearance for an item. The index path for the item being configured and
+     * a resolved separator configuration are passed in to this block. The configuration returned from this block will be treated as the final
+     * separator configuration for this item.
+     */
+    @Generated
+    @Selector("itemSeparatorHandler")
+    @ObjCBlock(name = "call_itemSeparatorHandler_ret")
+    public native Block_itemSeparatorHandler_ret itemSeparatorHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_itemSeparatorHandler_ret {
+        @Generated
+        UIListSeparatorConfiguration call_itemSeparatorHandler_ret(NSIndexPath indexPath,
+                UIListSeparatorConfiguration sectionSeparatorConfiguration);
+    }
+
+    /**
+     * The preferred configuration for separators. Used as a baseline for a section in a list using this \c UICollectionLayoutListConfiguration
+     */
+    @Generated
+    @Selector("separatorConfiguration")
+    public native UIListSeparatorConfiguration separatorConfiguration();
+
+    /**
+     * Padding above each section header. The default value is `UICollectionViewLayoutAutomaticDimension`
+     */
+    @Generated
+    @Selector("setHeaderTopPadding:")
+    public native void setHeaderTopPadding(@NFloat double value);
+
+    /**
+     * This handler is executed when the list section is configuring separator appearance for an item. The index path for the item being configured and
+     * a resolved separator configuration are passed in to this block. The configuration returned from this block will be treated as the final
+     * separator configuration for this item.
+     */
+    @Generated
+    @Selector("setItemSeparatorHandler:")
+    public native void setItemSeparatorHandler(
+            @ObjCBlock(name = "call_setItemSeparatorHandler") Block_setItemSeparatorHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setItemSeparatorHandler {
+        @Generated
+        UIListSeparatorConfiguration call_setItemSeparatorHandler(NSIndexPath indexPath,
+                UIListSeparatorConfiguration sectionSeparatorConfiguration);
+    }
+
+    /**
+     * The preferred configuration for separators. Used as a baseline for a section in a list using this \c UICollectionLayoutListConfiguration
+     */
+    @Generated
+    @Selector("setSeparatorConfiguration:")
+    public native void setSeparatorConfiguration(UIListSeparatorConfiguration value);
 }

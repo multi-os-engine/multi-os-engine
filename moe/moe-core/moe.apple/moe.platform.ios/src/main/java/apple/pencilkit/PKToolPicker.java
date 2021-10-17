@@ -52,7 +52,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Add an observer for a tool picker changes.
-     * 
+     * <p>
      * Adding a `PKCanvasView` as an observer, will also set its initial state.
      * Observers are held weakly.
      */
@@ -97,7 +97,7 @@ public class PKToolPicker extends NSObject {
      * specified user interface style. If this tool picker is used for selecting tools for canvas views that
      * have different user interface styles, `colorUserInterfaceStyle` should be set to the canvas's user
      * interface style.
-     * 
+     * <p>
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -115,7 +115,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * The frame within a specific view that the tool picker covers.
-     * 
+     *
      * @param view The view in which to return the frame to avoid.
      * @return The rect in `view` that the tool picker obscures. Will return
      * `CGRectNull` if no rect is obscured, or the tool picker is movable.
@@ -132,7 +132,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Returns a new `PKToolPicker` instance.
-     * 
+     * <p>
      * If two tool pickers are visible for the same first responder, or the same tool picker is visible in two windows
      * the result is deterministic, but undefined.
      */
@@ -184,7 +184,7 @@ public class PKToolPicker extends NSObject {
     /**
      * Set `overrideUserInterfaceStyle` to cause this tool picker UI to have a specific user interface style.
      * Consider if you need to set `colorUserInterfaceStyle` if you set this property.
-     * 
+     * <p>
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -219,7 +219,7 @@ public class PKToolPicker extends NSObject {
      * specified user interface style. If this tool picker is used for selecting tools for canvas views that
      * have different user interface styles, `colorUserInterfaceStyle` should be set to the canvas's user
      * interface style.
-     * 
+     * <p>
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -229,7 +229,7 @@ public class PKToolPicker extends NSObject {
     /**
      * Set `overrideUserInterfaceStyle` to cause this tool picker UI to have a specific user interface style.
      * Consider if you need to set `colorUserInterfaceStyle` if you set this property.
-     * 
+     * <p>
      * By default this is `UIUserInterfaceStyleUnspecified`.
      */
     @Generated
@@ -256,9 +256,9 @@ public class PKToolPicker extends NSObject {
 
     /**
      * Sets when this tool picker should be visible.
-     * 
-     * @param visible  The visible state of this tool picker.
-     * @param responder  The first responder for which this visible state applies.
+     *
+     * @param visible   The visible state of this tool picker.
+     * @param responder The first responder for which this visible state applies.
      */
     @Generated
     @Selector("setVisible:forFirstResponder:")
@@ -283,7 +283,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * If this is true the tool picker will show UI that allows the default drawing policy to be changed.
-     * 
+     * <p>
      * By default this is true.
      */
     @Generated
@@ -299,7 +299,7 @@ public class PKToolPicker extends NSObject {
 
     /**
      * If this is true the tool picker will show UI that allows the default drawing policy to be changed.
-     * 
+     * <p>
      * By default this is true.
      */
     @Generated

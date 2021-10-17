@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A relevance provider that specifies relevance during a specific situation.
- * 
+ *
  * @see INDailyRoutineSituation
  */
 @Generated

@@ -59,4 +59,8 @@ public final class MIDISystemStatus {
      * MIDI 1.0 and 2.0
      */
     @Generated public static final int SystemReset = 0x000000FF;
+    /**
+     * MIDI 1.0 and 2.0
+     */
+    @Generated public static final int ActiveSensing = 0x000000FE;
 }

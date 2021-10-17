@@ -6,7 +6,7 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * ------------------------------------------------------------------------------------------------------------------------------
  * [@const] ICDeviceType
- * 
+ * <p>
  * Image Capture Device Types
  * [@constant] ICDeviceTypeCamera Camera device.
  * [@constant] ICDeviceTypeScanner Scanner device.

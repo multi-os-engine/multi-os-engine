@@ -62,27 +62,27 @@ public final class GSS {
     /**
      * [@page] internalVSmechname Internal names and mechanism names
      * [@section] gssapi_api_INvsMN Name forms
-     * 
+     * <p>
      * There are two forms of name in GSS-API, Internal form and
      * Contiguous string ("flat") form. gss_export_name() and
      * gss_import_name() can be used to convert between the two forms.
-     * 
+     * <p>
      * - The contiguous string form is described by an oid specificing the
-     *   type and an octet string. A special form of the contiguous
-     *   string form is the exported name object. The exported name
-     *   defined for each mechanism, is something that can be stored and
-     *   complared later. The exported name is what should be used for
-     *   ACLs comparisons.
-     * 
+     * type and an octet string. A special form of the contiguous
+     * string form is the exported name object. The exported name
+     * defined for each mechanism, is something that can be stored and
+     * complared later. The exported name is what should be used for
+     * ACLs comparisons.
+     * <p>
      * - The Internal form
-     * 
-     *   There is also special form of the Internal Name (IN), and that is
-     *   the Mechanism Name (MN). In the mechanism name all the generic
-     *   information is stripped of and only contain the information for
-     *   one mechanism.  In GSS-API some function return MN and some
-     *   require MN as input. Each of these function is marked up as such.
-     * 
-     * 
+     * <p>
+     * There is also special form of the Internal Name (IN), and that is
+     * the Mechanism Name (MN). In the mechanism name all the generic
+     * information is stripped of and only contain the information for
+     * one mechanism.  In GSS-API some function return MN and some
+     * require MN as input. Each of these function is marked up as such.
+     * <p>
+     * <p>
      * Describe relationship between import_name, canonicalize_name,
      * export_name and friends.
      */
@@ -129,18 +129,18 @@ public final class GSS {
      * Add a oid to the oid set, function does not make a copy of the oid,
      * so the pointer to member_oid needs to be stable for the whole time
      * oid_set is used.
-     * 
+     * <p>
      * If there is a duplicate member of the oid, the new member is not
      * added to to the set.
-     * 
+     * <p>
      * [@returns] a gss_error code, see gss_display_status() about printing
-     *          the error code.
-     * 
+     * the error code.
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param minor_status minor status code.
-     * @param member_oid member to add to the oid set
-     * @param oid_set oid set to add the member too
+     * @param member_oid   member to add to the oid set
+     * @param oid_set      oid set to add the member too
      */
     @Generated
     @CFunction
@@ -151,25 +151,25 @@ public final class GSS {
     /**
      * gss_canonicalize_name takes a Internal Name (IN) and converts in into a
      * mechanism specific Mechanism Name (MN).
-     * 
+     * <p>
      * The input name may multiple name, or generic name types.
-     * 
+     * <p>
      * If the input_name if of the GSS_C_NT_USER_NAME, and the Kerberos
      * mechanism is specified, the resulting MN type is a
      * GSS_KRB5_NT_PRINCIPAL_NAME.
-     * 
+     * <p>
      * For more information about @ref internalVSmechname.
-     * 
+     * <p>
      * [@returns] a gss_error code, see gss_display_status() about printing
-     *        the error code.
-     * 
+     * the error code.
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param minor_status minor status code.
-     * @param input_name name to covert, unchanged by gss_canonicalize_name().
-     * @param mech_type the type to convert Name too.
-     * @param output_name the resulting type, release with
-     *        gss_release_name(), independent of input_name.
+     * @param input_name   name to covert, unchanged by gss_canonicalize_name().
+     * @param mech_type    the type to convert Name too.
+     * @param output_name  the resulting type, release with
+     *                     gss_release_name(), independent of input_name.
      */
     @Generated
     @CFunction
@@ -209,15 +209,15 @@ public final class GSS {
 
     /**
      * Destroy a credential
-     * 
+     * <p>
      * gss_release_cred() frees the memory, gss_destroy_cred() removes the credentials from memory/disk and then call gss_release_cred() on the credential.
-     * 
+     * <p>
      * [@returns] a gss_error code, see gss_display_status() about printing
-     *          the error code.
-     * 
+     * the error code.
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param min_stat minor status code
+     *
+     * @param min_stat    minor status code
      * @param cred_handle credentail to destory
      */
     @Generated
@@ -226,13 +226,12 @@ public final class GSS {
 
     /**
      * Return names and descriptions of mech attributes
-     * 
+     *
      * @param minor_status minor status code
-     * @param mech_attr attributes wanted
-     * @param name name of attribute
-     * @param short_desc short description
-     * @param long_desc long description
-     * 
+     * @param mech_attr    attributes wanted
+     * @param name         name of attribute
+     * @param short_desc   short description
+     * @param long_desc    long description
      * @return returns GSS_S_COMPLETE or an error code.
      */
     @Generated
@@ -245,19 +244,19 @@ public final class GSS {
 
     /**
      * Create a representstion of a name suitable for display
-     * 
+     * <p>
      * A name that is useful to print to user, not suitable for
      * authorization. For authorization use gss_authorize_localname(), or
      * gss_userok().
-     * 
+     * <p>
      * [@returns] GSS major status code
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param minor_status minor status code returned
-     * @param input_name name to be converted into a name
+     *
+     * @param minor_status       minor status code returned
+     * @param input_name         name to be converted into a name
      * @param output_name_buffer output buffer with name, must be released with gss_release_buffer() on success.
-     * @param output_name_type type OID of then name
+     * @param output_name_type   type OID of then name
      */
     @Generated
     @CFunction
@@ -319,7 +318,7 @@ public final class GSS {
 
     /**
      * Import a name internal or mechanism name
-     * 
+     * <p>
      * Type of name and their format:
      * - GSS_C_NO_OID
      * - GSS_C_NT_USER_NAME
@@ -327,19 +326,19 @@ public final class GSS {
      * - GSS_C_NT_EXPORT_NAME
      * - GSS_C_NT_ANONYMOUS
      * - GSS_KRB5_NT_PRINCIPAL_NAME
-     * 
+     * <p>
      * For more information about @ref internalVSmechname.
-     * 
+     * <p>
      * [@returns] a gss_error code, see gss_display_status() about printing
-     *        the error code.
-     * 
+     * the error code.
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param minor_status minor status code
+     *
+     * @param minor_status      minor status code
      * @param input_name_buffer import name buffer
-     * @param input_name_type type of the import name buffer
-     * @param output_name the resulting type, release with
-     *        gss_release_name(), independent of input_name
+     * @param input_name_type   type of the import name buffer
+     * @param output_name       the resulting type, release with
+     *                          gss_release_name(), independent of input_name
      */
     @Generated
     @CFunction
@@ -363,7 +362,7 @@ public final class GSS {
 
     /**
      * Return set of mechanism that fullfill the criteria
-     * 
+     *
      * @return returns GSS_S_COMPLETE or an error code.
      */
     @Generated
@@ -376,63 +375,51 @@ public final class GSS {
 
     /**
      * As the initiator build a context with an acceptor.
-     * 
+     * <p>
      * This function is blocking and should not be used on threads blocking UI updates.
-     * 
+     * <p>
      * Returns in the major
      * - GSS_S_COMPLETE - if the context if build
      * - GSS_S_CONTINUE_NEEDED -  if the caller needs  to continue another
      * round of gss_i nit_sec_context
      * - error code - any other error code
-     * 
+     * <p>
      * [@returns] a gss_error code, see gss_display_status() about printing
-     *          the error code.
-     * 
+     * the error code.
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param minor_status minor status code.
-     * 
+     *
+     * @param minor_status          minor status code.
      * @param initiator_cred_handle the credential to use when building
-     *        the context, if GSS_C_NO_CREDENTIAL is passed, the default
-     *        credential for the mechanism will be used.
-     * 
-     * @param context_handle a pointer to a context handle, will be
-     * 	  returned as long as there is not an error.
-     * 
-     * @param target_name the target name of acceptor, created using
-     * 	  gss_import_name(). The name is can be of any name types the
-     * 	  mechanism supports, check supported name types with
-     * 	  gss_inquire_names_for_mech().
-     * 
-     * @param input_mech_type mechanism type to use, if GSS_C_NO_OID is
-     *        used, Kerberos (GSS_KRB5_MECHANISM) will be tried. Other
-     *        available mechanism are listed in the @ref gssapi_mechs_intro
-     *        section.
-     * 
-     * @param req_flags flags using when building the context, see @ref
-     *        gssapi_context_flags
-     * 
-     * @param time_req time requested this context should be valid in
-     *        seconds, common used value is GSS_C_INDEFINITE
-     * 
-     * @param input_chan_bindings Channel bindings used, if not exepected
-     *        otherwise, used GSS_C_NO_CHANNEL_BINDINGS
-     * 
-     * @param input_token input token sent from the acceptor, for the
-     * 	  initial packet the buffer of { NULL, 0 } should be used.
-     * 
-     * @param actual_mech_type the actual mech used, MUST NOT be freed
-     *        since it pointing to static memory.
-     * 
-     * @param output_token if there is an output token, regardless of
-     * 	  complete, continue_needed, or error it should be sent to the
-     * 	  acceptor
-     * 
-     * @param ret_flags return what flags was negotitated, caller should
-     * 	  check if they are accetable. For example, if
-     * 	  GSS_C_MUTUAL_FLAG was negotiated with the acceptor or not.
-     * 
-     * @param time_rec amount of time this context is valid for
+     *                              the context, if GSS_C_NO_CREDENTIAL is passed, the default
+     *                              credential for the mechanism will be used.
+     * @param context_handle        a pointer to a context handle, will be
+     *                              returned as long as there is not an error.
+     * @param target_name           the target name of acceptor, created using
+     *                              gss_import_name(). The name is can be of any name types the
+     *                              mechanism supports, check supported name types with
+     *                              gss_inquire_names_for_mech().
+     * @param input_mech_type       mechanism type to use, if GSS_C_NO_OID is
+     *                              used, Kerberos (GSS_KRB5_MECHANISM) will be tried. Other
+     *                              available mechanism are listed in the @ref gssapi_mechs_intro
+     *                              section.
+     * @param req_flags             flags using when building the context, see @ref
+     *                              gssapi_context_flags
+     * @param time_req              time requested this context should be valid in
+     *                              seconds, common used value is GSS_C_INDEFINITE
+     * @param input_chan_bindings   Channel bindings used, if not exepected
+     *                              otherwise, used GSS_C_NO_CHANNEL_BINDINGS
+     * @param input_token           input token sent from the acceptor, for the
+     *                              initial packet the buffer of { NULL, 0 } should be used.
+     * @param actual_mech_type      the actual mech used, MUST NOT be freed
+     *                              since it pointing to static memory.
+     * @param output_token          if there is an output token, regardless of
+     *                              complete, continue_needed, or error it should be sent to the
+     *                              acceptor
+     * @param ret_flags             return what flags was negotitated, caller should
+     *                              check if they are accetable. For example, if
+     *                              GSS_C_MUTUAL_FLAG was negotiated with the acceptor or not.
+     * @param time_rec              amount of time this context is valid for
      */
     @Generated
     @CFunction
@@ -448,16 +435,16 @@ public final class GSS {
 
     /**
      * List support attributes for a mech and/or all mechanisms.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param minor_status minor status code
-     * @param mech given together with mech_attr will return the list of
-     *        attributes for mechanism, can optionally be GSS_C_NO_OID.
-     * @param mech_attr see mech parameter, can optionally be NULL,
-     *        release with gss_release_oid_set().
+     *
+     * @param minor_status     minor status code
+     * @param mech             given together with mech_attr will return the list of
+     *                         attributes for mechanism, can optionally be GSS_C_NO_OID.
+     * @param mech_attr        see mech parameter, can optionally be NULL,
+     *                         release with gss_release_oid_set().
      * @param known_mech_attrs all attributes for mechanisms supported,
-     *        release with gss_release_oid_set().
+     *                         release with gss_release_oid_set().
      */
     @Generated
     @CFunction
@@ -490,11 +477,10 @@ public final class GSS {
 
     /**
      * Find a mech for a sasl name
-     * 
-     * @param minor_status minor status code
+     *
+     * @param minor_status   minor status code
      * @param sasl_mech_name sasl mech name
-     * @param mech_type mech type
-     * 
+     * @param mech_type      mech type
      * @return returns GSS_S_COMPLETE or an error code.
      */
     @Generated
@@ -521,15 +507,14 @@ public final class GSS {
 
     /**
      * Returns different protocol names and description of the mechanism.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param minor_status minor status code
-     * @param desired_mech mech list query
-     * @param sasl_mech_name SASL GS2 protocol name
-     * @param mech_name gssapi protocol name
+     *
+     * @param minor_status     minor status code
+     * @param desired_mech     mech list query
+     * @param sasl_mech_name   SASL GS2 protocol name
+     * @param mech_name        gssapi protocol name
      * @param mech_description description of gssapi mech
-     * 
      * @return returns GSS_S_COMPLETE or a error code.
      */
     @Generated
@@ -554,13 +539,13 @@ public final class GSS {
 
     /**
      * Iterate over all credentials
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param min_stat set to minor status in case of an error
-     * @param flags flags argument, no flags currently defined, pass in 0 (zero)
-     * @param mech the mechanism type of credentials to iterate over, by passing in GSS_C_NO_OID, the function will iterate over all credentails
-     * @param userctx user context passed to the useriter funcion
+     * @param flags    flags argument, no flags currently defined, pass in 0 (zero)
+     * @param mech     the mechanism type of credentials to iterate over, by passing in GSS_C_NO_OID, the function will iterate over all credentails
+     * @param userctx  user context passed to the useriter funcion
      * @param useriter function that will be called on each gss_cred_id_t, when NULL is passed the list is completed. Must free the credential with gss_release_cred().
      */
     @Generated
@@ -596,16 +581,15 @@ public final class GSS {
 
     /**
      * Compare two GSS-API OIDs with each other.
-     * 
+     * <p>
      * GSS_C_NO_OID matches nothing, not even it-self.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param a first oid to compare
      * @param b second oid to compare
-     * 
      * @return non-zero when both oid are the same OID, zero when they are
-     *         not the same.
+     * not the same.
      */
     @Generated
     @CFunction
@@ -615,20 +599,20 @@ public final class GSS {
 
     /**
      * Turn an mech OID into an name
-     * 
+     * <p>
      * Try to turn a OID into a mechanism name. If a matching OID can't be
      * found, this function will return NULL.
-     * 
+     * <p>
      * The caller must free the oid_str buffer with gss_release_buffer()
      * when done with the string.
-     * 
+     * <p>
      * [@returns] a gss major status code
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param minor_status an minor status code
-     * @param oid an oid
-     * @param oid_str buffer that will point to a NUL terminated string that is the numreric OID
+     * @param oid          an oid
+     * @param oid_str      buffer that will point to a NUL terminated string that is the numreric OID
      */
     @Generated
     @CFunction
@@ -660,23 +644,22 @@ public final class GSS {
 
     /**
      * Release a credentials
-     * 
+     * <p>
      * Its ok to release the GSS_C_NO_CREDENTIAL/NULL credential, it will
      * return a GSS_S_COMPLETE error code. On return cred_handle is set ot
      * GSS_C_NO_CREDENTIAL.
-     * 
+     * <p>
      * Example:
-     * 
+     * <p>
      * [@code]
      * gss_cred_id_t cred = GSS_C_NO_CREDENTIAL;
      * major = gss_release_cred(&minor, &cred);
      * [@endcode]
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param minor_status minor status return code, mech specific
-     * @param cred_handle a pointer to the credential too release
-     * 
+     * @param cred_handle  a pointer to the credential too release
      * @return an gssapi error code
      */
     @Generated
@@ -685,18 +668,18 @@ public final class GSS {
 
     /**
      * Free a name
-     * 
+     * <p>
      * import_name can point to NULL or be NULL, or a pointer to a
      * gss_name_t structure. If it was a pointer to gss_name_t, the
      * pointer will be set to NULL on success and failure.
-     * 
+     * <p>
      * [@returns] a gss_error code, see gss_display_status() about printing
-     *        the error code.
-     * 
+     * the error code.
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param minor_status minor status code
-     * @param input_name name to free
+     * @param input_name   name to free
      */
     @Generated
     @CFunction
@@ -704,24 +687,24 @@ public final class GSS {
 
     /**
      * Release a gss_OID
-     * 
+     * <p>
      * This function should never be used, this is since many of the
      * gss_OID objects passed around are stack and data objected that are
      * not free-able.
-     * 
+     * <p>
      * The function tries to find internal OIDs that are static and avoid
      * trying to free them.
-     * 
+     * <p>
      * One could guess that gss_name_to_oid() might return an allocated
      * OID.  In this implementation it wont, so there is no need to call
      * gss_release_oid().
-     * 
+     * <p>
      * [@returns] GSS major status code
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param minor_status minor status code returned
-     * @param oid oid to be released/freed.
+     * @param oid          oid to be released/freed.
      */
     @Generated
     @Deprecated
@@ -804,15 +787,15 @@ public final class GSS {
     /**
      * Wrap a message using either confidentiality (encryption +
      * signature) or sealing (signature).
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param minor_status minor status code.
-     * @param context_handle context handle.
-     * @param conf_req_flag if non zero, confidentiality is requestd.
-     * @param qop_req type of protection needed, in most cases it GSS_C_QOP_DEFAULT should be passed in.
-     * @param input_message_buffer messages to wrap
-     * @param conf_state returns non zero if confidentiality was honoured.
+     *
+     * @param minor_status          minor status code.
+     * @param context_handle        context handle.
+     * @param conf_req_flag         if non zero, confidentiality is requestd.
+     * @param qop_req               type of protection needed, in most cases it GSS_C_QOP_DEFAULT should be passed in.
+     * @param input_message_buffer  messages to wrap
+     * @param conf_state            returns non zero if confidentiality was honoured.
      * @param output_message_buffer the resulting buffer, release with gss_release_buffer().
      */
     @Generated
@@ -845,12 +828,12 @@ public final class GSS {
 
     /**
      * Returns a GSS credential for a given UUID if the credential exists.
-     * 
+     * <p>
      * [@returns] a gss_cred_id_t, normal CoreFoundaton rules for rules
      * applies so the CFUUIDRef needs to be released with either CFRelease() or gss_release_name().
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param uuid the UUID of the credential to fetch
      */
     @Generated
@@ -865,14 +848,14 @@ public final class GSS {
 
     /**
      * Create a GSS name from a buffer and type.
-     * 
+     * <p>
      * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows CoreFoundation Create/Copy rule.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param name name buffer describing a credential, can be either a CFDataRef or CFStringRef of a name.
+     *
+     * @param name      name buffer describing a credential, can be either a CFDataRef or CFStringRef of a name.
      * @param name_type on OID of the GSS_C_NT_* OIDs constants specifiy the name type.
-     * @param error if an error happen, this may be set to a CFErrorRef describing the failure futher.
+     * @param error     if an error happen, this may be set to a CFErrorRef describing the failure futher.
      */
     @Generated
     @CFunction
@@ -882,11 +865,11 @@ public final class GSS {
 
     /**
      * Copy the name describing the credential
-     * 
+     * <p>
      * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows CoreFoundation Create/Copy rule.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param cred the credential to get the name from
      */
     @Generated
@@ -895,13 +878,13 @@ public final class GSS {
 
     /**
      * Returns a copy of the UUID of the GSS credential
-     * 
+     * <p>
      * [@returns] CFUUIDRef that can be used to turn into a credential,
      * normal CoreFoundaton rules for rules applies so the CFUUIDRef needs
      * to be released.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param credential credential
      */
     @Generated
@@ -910,12 +893,12 @@ public final class GSS {
 
     /**
      * Return the lifetime (in seconds) left of the credential.
-     * 
+     * <p>
      * [@returns] the lifetime of the credentials. 0 on failure and
      * GSS_C_INDEFINITE on credentials that never expire.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param cred the credential to get the name from
      */
     @Generated
@@ -925,11 +908,11 @@ public final class GSS {
     /**
      * Returns a string that is suitable for displaying to user, must not
      * be used for verify subjects on an ACLs.
-     * 
+     * <p>
      * [@returns] a string that is printable. Follows CoreFoundation Create/Copy rule.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
+     *
      * @param name to get a display strings from
      */
     @Generated
@@ -938,17 +921,17 @@ public final class GSS {
 
     /**
      * Change pasword for a gss name
-     * 
+     * <p>
      * [@returns] returns GSS_S_COMPLETE on success, error might be set if passed in.
-     * 
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param name name to change password for
-     * @param mech mechanism to use
+     *
+     * @param name       name to change password for
+     * @param mech       mechanism to use
      * @param attributes old and new password (kGSSChangePasswordOldPassword and kGSSChangePasswordNewPassword) and other attributes.
-     * @param error if not NULL, error might be set case function doesn't
-     *       return GSS_S_COMPLETE, in that case is must be released with
-     *       CFRelease().
+     * @param error      if not NULL, error might be set case function doesn't
+     *                   return GSS_S_COMPLETE, in that case is must be released with
+     *                   CFRelease().
      */
     @Generated
     @CFunction
@@ -958,23 +941,23 @@ public final class GSS {
 
     /**
      * Acquire a new initial credentials using long term credentials (password, certificate).
-     * 
+     * <p>
      * Credentials acquired should be free-ed with gss_release_cred() or
      * destroyed with (removed from storage) gss_destroy_cred().
-     * 
+     * <p>
      * Some mechanism types can not directly acquire or validate
      * credential (for example PK-U2U, SCRAM, NTLM or IAKERB), for those
      * mechanisms its instead the gss_init_sec_context() that will either acquire or
      * force validation of the credential.
-     * 
+     * <p>
      * This function is blocking and should not be used on threads used for UI updates.
-     * 
+     * <p>
      * [@returns] a gss_error code, see the CFErrorRef passed back in error for the failure message.
-     * 
+     * <p>
      * attributes must contains one of the following keys
      * * kGSSICPassword - CFStringRef password
      * * kGSSICCertificate - SecIdentityRef, SecCertificate, or CFDataRef[data of a Keychain Persistent Reference] to the certificate to use with PKINIT/PKU2U
-     * 
+     * <p>
      * optional keys
      * * kGSSCredentialUsage - one of kGSS_C_INITIATE, kGSS_C_ACCEPT, kGSS_C_BOTH, default if not given is kGSS_C_INITIATE
      * * kGSSICVerifyCredential - validate the credential with a trusted source that there was no MITM
@@ -984,31 +967,27 @@ public final class GSS {
      * * kGSSICAppIdentifierACL - CFArrayRef[CFStringRef] prefix of bundle ID allowed to access this credential
      * * kGSSICCreateNewCredential - CFBooleanRef if set caller wants to create a new credential and not overwrite a credential with the same name
      * * kGSSICAuthenticationContext - CFBooleanRef/YES to allow authentication UI, or LAContext to pass a pre-evaluated authentication context
-     * 
+     * <p>
      * * kGSSICAppleSourceApp - CFDictionaryRef application we are performing this on behalf of (only applies to AppVPN)
-     * 
+     * <p>
      * Keys for kGSSICAppleSourceApp dictionary:
-     * 
+     * <p>
      * - kGSSICAppleSourceAppAuditToken - audit token of process this is
-     *  		preformed on behalf of, the audit_token_t is wrapped
-     *  		in a CFDataRef.
+     * preformed on behalf of, the audit_token_t is wrapped
+     * in a CFDataRef.
      * - kGSSICAppleSourceAppPID - PID in a CFNumberRef of process this is
-     *              preformed on behalf of
+     * preformed on behalf of
      * - kGSSICAppleSourceAppUUID - UUID of the application
      * - kGSSICAppleSourceAppSigningIdentity - bundle/signing identity of the application
-     * 
-     * 
+     * <p>
+     * <p>
      * [@ingroup] gssapi
-     * 
-     * @param desired_name name to use to acquire credential. Import the name using gss_import_name(). The type of the name has to be supported by the desired_mech used.
-     * 
-     * @param desired_mech mechanism to use to acquire credential. GSS_C_NO_OID is not valid input and a mechanism must be selected. For example GSS_KRB5_MECHANISM, GSS_NTLM_MECHNISM or any other mechanisms supported by the implementation. See gss_indicate_mechs().
-     * 
-     * @param attributes CFDictionary that contains how to acquire the credential, see below for examples
-     * 
+     *
+     * @param desired_name       name to use to acquire credential. Import the name using gss_import_name(). The type of the name has to be supported by the desired_mech used.
+     * @param desired_mech       mechanism to use to acquire credential. GSS_C_NO_OID is not valid input and a mechanism must be selected. For example GSS_KRB5_MECHANISM, GSS_NTLM_MECHNISM or any other mechanisms supported by the implementation. See gss_indicate_mechs().
+     * @param attributes         CFDictionary that contains how to acquire the credential, see below for examples
      * @param output_cred_handle the resulting credential handle, value is set to GSS_C_NO_CREDENTIAL on failure.
-     * 
-     * @param error an CFErrorRef returned in case of an error, that needs to be released with CFRelease() by the caller, input can be NULL.
+     * @param error              an CFErrorRef returned in case of an error, that needs to be released with CFRelease() by the caller, input can be NULL.
      */
     @Generated
     @CFunction

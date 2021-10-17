@@ -190,7 +190,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
 
     /**
      * Given an NSMeasurement object, these methods will first check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the unit contained in that object.  If the unit type of the unit in the given NSMeasurement object is not the same as the unit type of the unit within the current NSMeasurement instance (i.e. the units are of differing dimensionalities), these methods will throw an InvalidArgumentException.
-     * 
+     *
      * @return A new NSMeasurement object with the adjusted value and a unit that is the same type as the current NSMeasurement instance.
      */
     @Generated
@@ -199,7 +199,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
 
     /**
      * Given an NSUnit object, measurementByConvertingUnit: will first check for dimensionality i.e. check the unit type (NSUnitAngle, NSUnitLength, NSUnitCustom, etc.) of the NSUnit object.  If the unit type of the given unit is not the same as the unit type of the unit within the NSMeasurement object (i.e. the units are of differing dimensionalities), measurementByConvertingToUnit: will throw an InvalidArgumentException.
-     * 
+     *
      * @return A new NSMeasurement object with the given unit and converted value.
      */
     @Generated

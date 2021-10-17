@@ -77,7 +77,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
 
     /**
      * Setting this property will invalidate the layout immediately to affect any changes
-     *    Note: any changes made to properites directly will have no effect.
+     * Note: any changes made to properties directly will have no effect.
      */
     @Generated
     @Selector("configuration")
@@ -185,7 +185,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
 
     /**
      * Setting this property will invalidate the layout immediately to affect any changes
-     *    Note: any changes made to properites directly will have no effect.
+     * Note: any changes made to properties directly will have no effect.
      */
     @Generated
     @Selector("setConfiguration:")

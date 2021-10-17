@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXDiskIOMetric
- * 
+ * <p>
  * An MXMetric subclass that encapsulates disk IO metrics.
  */
 @Generated
@@ -84,9 +84,9 @@ public class MXDiskIOMetric extends MXMetric {
 
     /**
      * [@property]      cumulativeLogicalWrites
-     * 
+     * <p>
      * Cumulative amount of logical writes.
-     * 
+     * <p>
      * Dimensioned as NSUnitInformationStorage.
      */
     @Generated

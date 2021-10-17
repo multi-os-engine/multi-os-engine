@@ -215,4 +215,23 @@ public final class CoreHaptics {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CHHapticPatternKeyParameterCurveControlPoints();
+
+    /**
+     * [@enum] CHHapticAudioResourceKey
+     * <p>
+     * Keys used to configure the playback behavior of a custom waveform.
+     * [@constant]   CHHapticAudioResourceKeyUseVolumeEnvelope
+     * Indicates whether the audio file playback should be ramped in and out with an envelope.  This can be useful for preventing clicks during playback,
+     * or for cases where the application wants to modulate this envelope to use different attack and release times.
+     * Value type: boolean.  Default is @true.
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CHHapticAudioResourceKeyUseVolumeEnvelope();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CHHapticPatternKeyEventWaveformUseVolumeEnvelope();
 }

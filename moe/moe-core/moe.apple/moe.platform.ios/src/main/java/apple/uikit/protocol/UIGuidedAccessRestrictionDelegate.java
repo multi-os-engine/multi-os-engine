@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * UIGuidedAccessRestrictionDelegate
- * 
+ * <p>
  * Implement on the application delegate to present the user with additional Guided Access restrictions.
- * 
+ * <p>
  * The initial state of all Guided Access restrictions is UIGuidedAccessRestrictionStateAllow.
  */
 @Generated

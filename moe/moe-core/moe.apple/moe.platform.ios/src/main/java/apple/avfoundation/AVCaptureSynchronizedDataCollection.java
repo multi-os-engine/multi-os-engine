@@ -29,10 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureSynchronizedDataCollection
- * 
- *    A collection of AVCaptureSynchronizedData objects.
- * 
- *    AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedDataCollection: delegate method delivers a collection of AVCaptureSynchronizedData objects which can be iterated by use AVCaptureOutput. AVCaptureSynchronizedDataCollection supports object subscripting and fast enumeration of the data outputs as keys.
+ * <p>
+ * A collection of AVCaptureSynchronizedData objects.
+ * <p>
+ * AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedDataCollection: delegate method delivers a collection of AVCaptureSynchronizedData objects which can be iterated by use AVCaptureOutput. AVCaptureSynchronizedDataCollection supports object subscripting and fast enumeration of the data outputs as keys.
  */
 @Generated
 @Library("AVFoundation")
@@ -86,10 +86,10 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
 
     /**
      * [@property] count
-     * 
-     *    The number of items in the collection.
-     * 
-     *    Returns the number of data output / synchronized data pairs present in the collection.
+     * <p>
+     * The number of items in the collection.
+     * <p>
+     * Returns the number of data output / synchronized data pairs present in the collection.
      */
     @Generated
     @Selector("count")
@@ -148,16 +148,14 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
 
     /**
      * objectForKeyedSubscript:
-     * 
-     *    Method that provides support for object subscripting.
-     * 
-     *    AVCaptureSynchronizedDataCollection supports object subscripting. If you'd like to find the synchronized data for a given data output, simply:
-     *        AVCaptureSynchronizedData *synchronizedData = synchronizedDataCollection[dataOutput];
-     * 
-     * @param key
-     *    The data output whose synchronized data you'd like to inspect.
-     * @return
-     *    The synchronized data object associated with the provided output, or nil, if there is none.
+     * <p>
+     * Method that provides support for object subscripting.
+     * <p>
+     * AVCaptureSynchronizedDataCollection supports object subscripting. If you'd like to find the synchronized data for a given data output, simply:
+     * AVCaptureSynchronizedData *synchronizedData = synchronizedDataCollection[dataOutput];
+     *
+     * @param key The data output whose synchronized data you'd like to inspect.
+     * @return The synchronized data object associated with the provided output, or nil, if there is none.
      */
     @Generated
     @Selector("objectForKeyedSubscript:")
@@ -181,13 +179,11 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
 
     /**
      * synchronizedDataForCaptureOutput:
-     * 
-     *    Provides the synchronized data object for a given capture output.
-     * 
-     * @param captureOutput
-     *    The data output whose synchronized data you'd like to inspect.
-     * @return
-     *    The synchronized data object associated with the provided output, or nil, if there is none.
+     * <p>
+     * Provides the synchronized data object for a given capture output.
+     *
+     * @param captureOutput The data output whose synchronized data you'd like to inspect.
+     * @return The synchronized data object associated with the provided output, or nil, if there is none.
      */
     @Generated
     @Selector("synchronizedDataForCaptureOutput:")

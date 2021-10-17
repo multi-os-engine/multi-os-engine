@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CMMagneticFieldCalibrationAccuracy
- * 
+ * <p>
  * Discussion:
- *   CMMagneticFieldCalibrationAccuracy indicates the calibration
- *   accuracy of a magnetic field estimate.
+ * CMMagneticFieldCalibrationAccuracy indicates the calibration
+ * accuracy of a magnetic field estimate.
  */
 @Generated
 public final class CMMagneticFieldCalibrationAccuracy {

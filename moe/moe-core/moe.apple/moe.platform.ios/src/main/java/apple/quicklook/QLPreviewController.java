@@ -151,10 +151,6 @@ public class QLPreviewController extends UIViewController {
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -201,7 +197,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * The Preview Controller delegate.
-     * 
+     * <p>
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
     @Generated
@@ -230,7 +226,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * Asks the Preview Controller to reload its data from its data source.
-     * 
+     * <p>
      * This method does not refresh the visible item if it has not changed.
      */
     @Generated
@@ -268,7 +264,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * The Preview Controller delegate.
-     * 
+     * <p>
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
     @Generated
@@ -277,7 +273,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * The Preview Controller delegate.
-     * 
+     * <p>
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
     @Generated

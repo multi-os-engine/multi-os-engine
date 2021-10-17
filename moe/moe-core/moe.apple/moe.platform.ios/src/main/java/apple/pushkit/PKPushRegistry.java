@@ -43,9 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * PKPushRegistry
- * 
+ * <p>
  * An instance of this class can be used to register for 3rd party notifications. The supported push
- *                notification types are listed above as PKPushType constants.
+ * notification types are listed above as PKPushType constants.
  */
 @Generated
 @Library("PushKit")
@@ -160,7 +160,7 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property]      delegate
-     * 
+     * <p>
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
@@ -170,9 +170,9 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property]      desiredPushTypes
-     * 
+     * <p>
      * An app requests registration for various types of pushes by setting this NSSet to the desired
-     *                PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
+     * PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
      */
     @Generated
     @Selector("desiredPushTypes")
@@ -184,13 +184,12 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * initWithQueue:
-     * 
+     * <p>
      * Instantiates a PKPushRegistry with a delegate callback dispatch queue.
-     * 
-     * @param         queue
-     *                All delegate callbacks are performed asynchronously by PKPushRegistry on this queue.
-     * @return        A PKPushRegistry instance that can be used to register for push tokens and notifications for supported
-     *                push types.
+     *
+     * @param queue All delegate callbacks are performed asynchronously by PKPushRegistry on this queue.
+     * @return A PKPushRegistry instance that can be used to register for push tokens and notifications for supported
+     * push types.
      */
     @Generated
     @Selector("initWithQueue:")
@@ -198,16 +197,15 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * pushTokenForType:
-     * 
+     * <p>
      * Access the locally cached push token for a specified PKPushType.
-     * 
+     * <p>
      * A push token returned here has previously been given to the delegate via handlePushTokenUpdate:forType:
-     *                callback.
-     * 
-     * @param         type
-     *                This is a PKPushType constant that is already in desiredPushTypes.
-     * @return        Returns the push token that can be used to send pushes to the device for the specified PKPushType.
-     *                Returns nil if no push token is available for this PKPushType at the time of invocation.
+     * callback.
+     *
+     * @param type This is a PKPushType constant that is already in desiredPushTypes.
+     * @return Returns the push token that can be used to send pushes to the device for the specified PKPushType.
+     * Returns nil if no push token is available for this PKPushType at the time of invocation.
      */
     @Generated
     @Selector("pushTokenForType:")
@@ -215,7 +213,7 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property]      delegate
-     * 
+     * <p>
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
@@ -224,7 +222,7 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property]      delegate
-     * 
+     * <p>
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
     @Generated
@@ -241,9 +239,9 @@ public class PKPushRegistry extends NSObject {
 
     /**
      * [@property]      desiredPushTypes
-     * 
+     * <p>
      * An app requests registration for various types of pushes by setting this NSSet to the desired
-     *                PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
+     * PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
      */
     @Generated
     @Selector("setDesiredPushTypes:")

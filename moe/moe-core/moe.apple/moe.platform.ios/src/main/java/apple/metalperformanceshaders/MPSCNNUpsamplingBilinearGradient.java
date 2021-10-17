@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNUpsamplingBilinearGradient
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * Specifies the bilinear spatial downsampling filter.
  */
 @Generated
@@ -114,11 +114,11 @@ public class MPSCNNUpsamplingBilinearGradient extends MPSCNNUpsamplingGradient {
 
     /**
      * Initialize the bilinear spatial downsampling filter.
-     * 
-     * @param     device                   The device the filter will run on.
-     * @param     integerScaleFactorX      The downsampling factor for the x dimension.
-     * @param     integerScaleFactorY      The downsampling factor for the y dimension.
-     * @return    A valid MPSCNNUpsamplingBilinearGradient object or nil, if failure.
+     *
+     * @param device              The device the filter will run on.
+     * @param integerScaleFactorX The downsampling factor for the x dimension.
+     * @param integerScaleFactorY The downsampling factor for the y dimension.
+     * @return A valid MPSCNNUpsamplingBilinearGradient object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:integerScaleFactorX:integerScaleFactorY:")

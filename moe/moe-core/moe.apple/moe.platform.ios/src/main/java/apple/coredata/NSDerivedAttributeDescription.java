@@ -33,9 +33,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * case and diacritics stripped for more efficient comparisons during fetching
  * * creating a 'relationshipCount' attribute reflecting the number of objects in
  * a relationship and so avoid having to do a join during fetching
- * 
+ * <p>
  * IMPORTANT: Derived attributes will be recomputed during save, recomputed values will not be reflected in a managed object's property until after a save.
- * 
+ * <p>
  * NOTE: Prior to macOS 10.16, iOS 14.0, tvOS 14.0, and watchOS 7.0 a refresh of the object is required after a save to reflect recomputed values
  */
 @Generated
@@ -101,7 +101,7 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
      * Any keypaths used in the expression must be accessible from the entity on which
      * the derived attribute is specified.
      * If a store is added to a coordinator whose model contains derived attributes of
-     * a type not supported by the store, the add will fail and an NSError will be returned. 
+     * a type not supported by the store, the add will fail and an NSError will be returned.
      */
     @Generated
     @Selector("derivationExpression")
@@ -168,7 +168,7 @@ public class NSDerivedAttributeDescription extends NSAttributeDescription {
      * Any keypaths used in the expression must be accessible from the entity on which
      * the derived attribute is specified.
      * If a store is added to a coordinator whose model contains derived attributes of
-     * a type not supported by the store, the add will fail and an NSError will be returned. 
+     * a type not supported by the store, the add will fail and an NSError will be returned.
      */
     @Generated
     @Selector("setDerivationExpression:")

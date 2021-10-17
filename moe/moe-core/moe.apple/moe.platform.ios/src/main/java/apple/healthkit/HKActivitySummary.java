@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKActivitySummary
- * 
+ * <p>
  * An object that represents a summary of a user's activity for a given day.
  */
 @Generated
@@ -167,9 +167,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      activeEnergyBurned
-     * 
+     * <p>
      * The amount of active energy that the user burned.
-     * 
+     * <p>
      * This quantity is compatible with energy units.
      */
     @Generated
@@ -178,9 +178,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      activeEnergyBurnedGoal
-     * 
+     * <p>
      * The user's active energy goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with energy units.
      */
     @Generated
@@ -189,11 +189,11 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleExerciseTime
-     * 
+     * <p>
      * The amount of exercise time that the user performed.
-     * 
+     * <p>
      * This quantity is compatible with time units. The measurement criteria of
-     *                exercise time is defined by Apple.
+     * exercise time is defined by Apple.
      */
     @Generated
     @Selector("appleExerciseTime")
@@ -201,9 +201,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleExerciseTimeGoal
-     * 
+     * <p>
      * The user's exercise time goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with time units.
      */
     @Generated
@@ -211,12 +211,12 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity appleExerciseTimeGoal();
 
     /**
-     *  [@property]      appleStandHours
-     * 
+     * [@property]      appleStandHours
+     * <p>
      * The number of stand hours that the user earned.
-     * 
+     * <p>
      * This quantity is compatible with the count unit. The measurement criteria of
-     *                 stand hours is defined by Apple.
+     * stand hours is defined by Apple.
      */
     @Generated
     @Selector("appleStandHours")
@@ -224,9 +224,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleStandHoursGoal
-     * 
+     * <p>
      * The user's active stand hours goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with the count unit.
      */
     @Generated
@@ -241,9 +241,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * dateComponentsForCalendar:
-     * 
+     * <p>
      * The date components representing the day for this particular HKActivitySummary.
-     * 
+     * <p>
      * These date components will contain era, year, month, and day components in the provided calendar.
      */
     @Generated
@@ -264,9 +264,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      activeEnergyBurned
-     * 
+     * <p>
      * The amount of active energy that the user burned.
-     * 
+     * <p>
      * This quantity is compatible with energy units.
      */
     @Generated
@@ -275,9 +275,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      activeEnergyBurnedGoal
-     * 
+     * <p>
      * The user's active energy goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with energy units.
      */
     @Generated
@@ -286,11 +286,11 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleExerciseTime
-     * 
+     * <p>
      * The amount of exercise time that the user performed.
-     * 
+     * <p>
      * This quantity is compatible with time units. The measurement criteria of
-     *                exercise time is defined by Apple.
+     * exercise time is defined by Apple.
      */
     @Generated
     @Selector("setAppleExerciseTime:")
@@ -298,9 +298,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleExerciseTimeGoal
-     * 
+     * <p>
      * The user's exercise time goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with time units.
      */
     @Generated
@@ -308,12 +308,12 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native void setAppleExerciseTimeGoal(HKQuantity value);
 
     /**
-     *  [@property]      appleStandHours
-     * 
+     * [@property]      appleStandHours
+     * <p>
      * The number of stand hours that the user earned.
-     * 
+     * <p>
      * This quantity is compatible with the count unit. The measurement criteria of
-     *                 stand hours is defined by Apple.
+     * stand hours is defined by Apple.
      */
     @Generated
     @Selector("setAppleStandHours:")
@@ -321,9 +321,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleStandHoursGoal
-     * 
+     * <p>
      * The user's active stand hours goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with the count unit.
      */
     @Generated
@@ -338,9 +338,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      activityMoveMode
-     * 
+     * <p>
      * The move mode of this activity summary
-     * 
+     * <p>
      * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move ring.
      */
     @Generated
@@ -350,11 +350,11 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleMoveTime
-     * 
+     * <p>
      * The amount of move time that the user performed.
-     * 
+     * <p>
      * This quantity is compatible with time units. The measurement criteria of
-     *                move time time is defined by Apple.
+     * move time time is defined by Apple.
      */
     @Generated
     @Selector("appleMoveTime")
@@ -362,9 +362,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleMoveTimeGoal
-     * 
+     * <p>
      * The user's move time goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with time units.
      */
     @Generated
@@ -373,9 +373,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      activityMoveMode
-     * 
+     * <p>
      * The move mode of this activity summary
-     * 
+     * <p>
      * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move ring.
      */
     @Generated
@@ -384,11 +384,11 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleMoveTime
-     * 
+     * <p>
      * The amount of move time that the user performed.
-     * 
+     * <p>
      * This quantity is compatible with time units. The measurement criteria of
-     *                move time time is defined by Apple.
+     * move time time is defined by Apple.
      */
     @Generated
     @Selector("setAppleMoveTime:")
@@ -396,9 +396,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * [@property]      appleMoveTimeGoal
-     * 
+     * <p>
      * The user's move time goal for the day.
-     * 
+     * <p>
      * This quantity is compatible with time units.
      */
     @Generated

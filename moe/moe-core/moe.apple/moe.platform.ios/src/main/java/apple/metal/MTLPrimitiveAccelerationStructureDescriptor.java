@@ -89,7 +89,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     public static native MTLPrimitiveAccelerationStructureDescriptor descriptor();
 
     /**
-     * Array of geometry descriptors
+     * Array of geometry descriptors. If motionKeyframeCount is greater than one all geometryDescriptors
+     * must be motion versions and have motionKeyframeCount of primitive buffers.
      */
     @Generated
     @Selector("geometryDescriptors")
@@ -140,7 +141,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Array of geometry descriptors
+     * Array of geometry descriptors. If motionKeyframeCount is greater than one all geometryDescriptors
+     * must be motion versions and have motionKeyframeCount of primitive buffers.
      */
     @Generated
     @Selector("setGeometryDescriptors:")
@@ -158,4 +160,79 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Motion border mode describing what happens if acceleration structure is sampled after
+     * motionEndTime. If not set defaults to MTLMotionBorderModeClamp.
+     */
+    @Generated
+    @Selector("motionEndBorderMode")
+    public native int motionEndBorderMode();
+
+    /**
+     * Motion end time of this geometry. If not set defaults to 1.0f.
+     */
+    @Generated
+    @Selector("motionEndTime")
+    public native float motionEndTime();
+
+    /**
+     * Motion keyframe count. Is 1 by default which means no motion.
+     */
+    @Generated
+    @Selector("motionKeyframeCount")
+    @NUInt
+    public native long motionKeyframeCount();
+
+    /**
+     * Motion border mode describing what happens if acceleration structure is sampled before
+     * motionStartTime. If not set defaults to MTLMotionBorderModeClamp.
+     */
+    @Generated
+    @Selector("motionStartBorderMode")
+    public native int motionStartBorderMode();
+
+    /**
+     * Motion start time of this geometry. If not set defaults to 0.0f.
+     */
+    @Generated
+    @Selector("motionStartTime")
+    public native float motionStartTime();
+
+    /**
+     * Motion border mode describing what happens if acceleration structure is sampled after
+     * motionEndTime. If not set defaults to MTLMotionBorderModeClamp.
+     */
+    @Generated
+    @Selector("setMotionEndBorderMode:")
+    public native void setMotionEndBorderMode(int value);
+
+    /**
+     * Motion end time of this geometry. If not set defaults to 1.0f.
+     */
+    @Generated
+    @Selector("setMotionEndTime:")
+    public native void setMotionEndTime(float value);
+
+    /**
+     * Motion keyframe count. Is 1 by default which means no motion.
+     */
+    @Generated
+    @Selector("setMotionKeyframeCount:")
+    public native void setMotionKeyframeCount(@NUInt long value);
+
+    /**
+     * Motion border mode describing what happens if acceleration structure is sampled before
+     * motionStartTime. If not set defaults to MTLMotionBorderModeClamp.
+     */
+    @Generated
+    @Selector("setMotionStartBorderMode:")
+    public native void setMotionStartBorderMode(int value);
+
+    /**
+     * Motion start time of this geometry. If not set defaults to 0.0f.
+     */
+    @Generated
+    @Selector("setMotionStartTime:")
+    public native void setMotionStartTime(float value);
 }

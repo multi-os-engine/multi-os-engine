@@ -245,7 +245,7 @@ public class UIListContentView extends UIView implements UIContentView {
 
     /**
      * This guide reflects the positioning of the image rendered by this content view, if specified by the configuration.
-     * 
+     * <p>
      * Returns nil if there is no image. If a new configuration is applied that does contain an image, then this layout
      * guide is removed from the view, and any constraints associated with it will be deactivated.
      */
@@ -336,7 +336,7 @@ public class UIListContentView extends UIView implements UIContentView {
 
     /**
      * This guide reflects the positioning of the secondary text rendered by this content view, if specified by the configuration.
-     * 
+     * <p>
      * Returns nil if there is no secondary text. If a new configuration is applied that does not contain secondary text, then this layout
      * guide is removed from the view, and any constraints associated with it will be deactivated.
      */
@@ -402,7 +402,7 @@ public class UIListContentView extends UIView implements UIContentView {
 
     /**
      * This guide reflects the positioning of the primary text rendered by this content view, if specified by the configuration.
-     * 
+     * <p>
      * Returns nil if there is no primary text. If a new configuration is applied that does not contain primary text, then this layout
      * guide is removed from the view, and any constraints associated with it will be deactivated.
      */

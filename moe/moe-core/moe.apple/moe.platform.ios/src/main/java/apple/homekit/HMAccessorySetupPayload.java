@@ -93,9 +93,8 @@ public class HMAccessorySetupPayload extends NSObject {
 
     /**
      * Creates a new accessory setup payload to add an accessory to the home.
-     * 
+     *
      * @param setupPayloadURL The HomeKit setup payload for the accessory being added to the home.
-     * 
      * @return Returns an accessory setup payload object if successful or nil on error.
      */
     @Generated
@@ -104,11 +103,9 @@ public class HMAccessorySetupPayload extends NSObject {
 
     /**
      * Creates a new accessory setup payload to add an accessory to the home.
-     * 
+     *
      * @param setupPayloadURL The HomeKit setup payload URL for the accessory being added to the home.`
-     * 
-     * @param ownershipToken The token proving ownership of the accessory being added to the home.
-     * 
+     * @param ownershipToken  The token proving ownership of the accessory being added to the home.
      * @return Returns an accessory setup payload object if successful or nil on error.
      */
     @Generated

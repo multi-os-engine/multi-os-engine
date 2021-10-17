@@ -34,9 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface RPScreenRecorderDelegate {
     /**
      * Called when recording has stopped due to an error.
-     * 
-     * @param screenRecorder The instance of the screen recorder.
-     * @param error An NSError describing why recording has stopped in the RPRecordingErrorDomain.
+     *
+     * @param screenRecorder        The instance of the screen recorder.
+     * @param error                 An NSError describing why recording has stopped in the RPRecordingErrorDomain.
      * @param previewViewController If a partial movie is available before it was stopped, an instance of RPPreviewViewController will be returned.
      */
     @Generated
@@ -49,7 +49,7 @@ public interface RPScreenRecorderDelegate {
 
     /**
      * Called when the recorder becomes available or stops being available. Check the screen recorder's availability property to check the current availability state. Possible reasons for the recorder to be unavailable include an in-progress Airplay/TVOut session or unsupported hardware.
-     * 
+     *
      * @param screenRecorder The instance of the screen recorder.
      */
     @Generated

@@ -243,4 +243,30 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Generated
     @Selector("setPreservesValueInHistoryOnDeletion:")
     public native void setPreservesValueInHistoryOnDeletion(boolean value);
+
+    /**
+     * This property can be set to enable encryption-at-rest on data stored in CloudKit servers.
+     * <p>
+     * There are several restrictions on how clients can use this property:
+     * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the production schema cannot be changed to support encryption.
+     * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or not) it will forever be so.
+     * <p>
+     * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be managed by using NSFileProtection and other standard platform security mechanisms.
+     */
+    @Generated
+    @Selector("allowsCloudEncryption")
+    public native boolean allowsCloudEncryption();
+
+    /**
+     * This property can be set to enable encryption-at-rest on data stored in CloudKit servers.
+     * <p>
+     * There are several restrictions on how clients can use this property:
+     * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the production schema cannot be changed to support encryption.
+     * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or not) it will forever be so.
+     * <p>
+     * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be managed by using NSFileProtection and other standard platform security mechanisms.
+     */
+    @Generated
+    @Selector("setAllowsCloudEncryption:")
+    public native void setAllowsCloudEncryption(boolean value);
 }

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] WKAudiovisualMediaTypes
- * 
+ * <p>
  * The types of audiovisual media which will require a user gesture to begin playing.
  * [@constant] WKAudiovisualMediaTypeNone No audiovisual media will require a user gesture to begin playing.
  * [@constant] WKAudiovisualMediaTypeAudio Audiovisual media containing audio will require a user gesture to begin playing.
@@ -33,7 +33,9 @@ public final class WKAudiovisualMediaTypes {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     @Generated @NUInt public static final long Audio = 0x0000000000000001L;
     @Generated @NUInt public static final long Video = 0x0000000000000002L;
-    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
+    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
+            0xFFFFFFFFFFFFFFFFL :
+            0x00000000FFFFFFFFL;
 
     @Generated
     private WKAudiovisualMediaTypes() {

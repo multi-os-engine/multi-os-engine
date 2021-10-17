@@ -612,8 +612,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, the userInfo dictionary
-     *     contains the page index as an NSNumber for the key
-     *     @"PDFDocumentPageIndex".
+     * contains the page index as an NSNumber for the key
+     * PDFDocumentPageIndexKey.
      */
     @Generated
     @CVariable()
@@ -622,8 +622,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, the userInfo dictionary
-     *     contains the page index as an NSNumber for the key
-     *     @"PDFDocumentPageIndex".
+     * contains the page index as an NSNumber for the key
+     * PDFDocumentPageIndexKey.
      */
     @Generated
     @CVariable()
@@ -632,8 +632,9 @@ public final class PDFKit {
 
     /**
      * The notification object is self, the userInfo dictionary
-     *     contains a PDFSelection (found instance) for the key
-     *     @"PDFDocumentFoundSelection".
+     * contains a PDFSelection (found instance) for the key
+     *
+     * @"PDFDocumentFoundSelection".
      */
     @Generated
     @CVariable()
@@ -658,8 +659,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, the userInfo dictionary
-     *     contains the page index as an NSNumber for the key
-     *     @"PDFDocumentPageIndex".
+     * contains the page index as an NSNumber for the key
+     * PDFDocumentPageIndexKey.
      */
     @Generated
     @CVariable()
@@ -668,8 +669,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, the userInfo dictionary
-     *     contains the page index as an NSNumber for the key
-     *     @"PDFDocumentPageIndex".
+     * contains the page index as an NSNumber for the key
+     * PDFDocumentPageIndexKey.
      */
     @Generated
     @CVariable()
@@ -861,4 +862,30 @@ public final class PDFKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFViewVisiblePagesChangedNotification();
+
+    /**
+     * User info dictionary key to get PDFSelection from some
+     * notifications described above
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFDocumentFoundSelectionKey();
+
+    /**
+     * User info dictionary key to get page index from some
+     * notifications described above
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFDocumentPageIndexKey();
+
+    /**
+     * NSNumber containing a PDFAccessPermissions
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFDocumentAccessPermissionsOption();
 }

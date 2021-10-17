@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEDNSProxyError
- * 
+ * <p>
  * DNS proxy error codes
  */
 @Generated

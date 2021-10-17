@@ -44,9 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEVPNProtocolIPSec
- * 
+ * <p>
  * The NEVPNProtocolIPSec class declares the programmatic interface of an object that manages the IPSec-specific portion of a VPN configuration.
- * 
+ * <p>
  * Instances of this class use IKE version 1 for key negotiation.
  */
 @Generated
@@ -166,7 +166,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] authenticationMethod
-     * 
+     * <p>
      * The method used to authenticate with the IPSec server. Note that if this property is set to NEVPNIKEAuthenticationMethodNone, extended authentication will still be negotiated if useExtendedAuthentication is set to YES.
      */
     @Generated
@@ -184,7 +184,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] localIdentifier
-     * 
+     * <p>
      * A string identifying the local IPSec endpoint for authentication purposes.
      */
     @Generated
@@ -193,7 +193,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] remoteIdentifier
-     * 
+     * <p>
      * A string identifying the remote IPSec endpoint for authentication purposes.
      */
     @Generated
@@ -202,7 +202,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] authenticationMethod
-     * 
+     * <p>
      * The method used to authenticate with the IPSec server. Note that if this property is set to NEVPNIKEAuthenticationMethodNone, extended authentication will still be negotiated if useExtendedAuthentication is set to YES.
      */
     @Generated
@@ -211,7 +211,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] localIdentifier
-     * 
+     * <p>
      * A string identifying the local IPSec endpoint for authentication purposes.
      */
     @Generated
@@ -220,7 +220,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] remoteIdentifier
-     * 
+     * <p>
      * A string identifying the remote IPSec endpoint for authentication purposes.
      */
     @Generated
@@ -229,7 +229,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] sharedSecretReference
-     * 
+     * <p>
      * A persistent reference to a keychain item of class kSecClassGenericPassword containing the IKE shared secret.
      */
     @Generated
@@ -238,10 +238,10 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] useExtendedAuthentication
-     * 
+     * <p>
      * A flag indicating if extended authentication will be negotiated. This authentication is in addition to the IKE authentication used to authenticate the endpoints of the IKE session.
-     *   For IKE version 1, when this flag is set X-Auth authentication will be negotiated as part of the IKE session, using the username and password properties as the credential.
-     *   For IKE version 2, when this flag is set EAP authentication will be negotiated as part of the IKE session, using the username, password, and/or identity properties as the credential depending on which EAP method the server requires.
+     * For IKE version 1, when this flag is set X-Auth authentication will be negotiated as part of the IKE session, using the username and password properties as the credential.
+     * For IKE version 2, when this flag is set EAP authentication will be negotiated as part of the IKE session, using the username, password, and/or identity properties as the credential depending on which EAP method the server requires.
      */
     @Generated
     @Selector("setUseExtendedAuthentication:")
@@ -249,7 +249,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] sharedSecretReference
-     * 
+     * <p>
      * A persistent reference to a keychain item of class kSecClassGenericPassword containing the IKE shared secret.
      */
     @Generated
@@ -264,10 +264,10 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
 
     /**
      * [@property] useExtendedAuthentication
-     * 
+     * <p>
      * A flag indicating if extended authentication will be negotiated. This authentication is in addition to the IKE authentication used to authenticate the endpoints of the IKE session.
-     *   For IKE version 1, when this flag is set X-Auth authentication will be negotiated as part of the IKE session, using the username and password properties as the credential.
-     *   For IKE version 2, when this flag is set EAP authentication will be negotiated as part of the IKE session, using the username, password, and/or identity properties as the credential depending on which EAP method the server requires.
+     * For IKE version 1, when this flag is set X-Auth authentication will be negotiated as part of the IKE session, using the username and password properties as the credential.
+     * For IKE version 2, when this flag is set EAP authentication will be negotiated as part of the IKE session, using the username, password, and/or identity properties as the credential depending on which EAP method the server requires.
      */
     @Generated
     @Selector("useExtendedAuthentication")

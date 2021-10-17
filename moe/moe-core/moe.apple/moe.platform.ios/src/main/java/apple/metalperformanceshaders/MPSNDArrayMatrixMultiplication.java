@@ -28,23 +28,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNDArrayMatrixMultiplication
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * A matrix multiplication kernel operating on MPSNDArray objects.
- * 
+ * <p>
  * A MPSNDArrayMatrixMultiplication object computes, for each 2-D matrix within
- *             a 4-D MPSNDArray object:
- * 
- *                 D = alpha * A * B + beta * C
- * 
- *             A, B, C, and D are matrices which are represented by objects stored
- *             in the two most major dimensions of the MPSNDArray. alpha and beta
- *             are scalar values (of the same data type as values of D and C) which
- *             are applied as shown above.
- * 
- *             If an input's 3rd or 4th dimension is 1 its data will be broadcast as
- *             appropriate to the remaining input's 3rd or 4th dimension respectively.
+ * a 4-D MPSNDArray object:
+ * <p>
+ * D = alpha * A * B + beta * C
+ * <p>
+ * A, B, C, and D are matrices which are represented by objects stored
+ * in the two most major dimensions of the MPSNDArray. alpha and beta
+ * are scalar values (of the same data type as values of D and C) which
+ * are applied as shown above.
+ * <p>
+ * If an input's 3rd or 4th dimension is 1 its data will be broadcast as
+ * appropriate to the remaining input's 3rd or 4th dimension respectively.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -76,11 +76,11 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The scale factor to apply to the product.  Specified in double
-     *             precision.  Will be converted to the appropriate precision in the
-     *             implementation subject to rounding and/or clamping as necessary.
-     *             Defaults to 1.0 at initialization time.
+     * precision.  Will be converted to the appropriate precision in the
+     * implementation subject to rounding and/or clamping as necessary.
+     * Defaults to 1.0 at initialization time.
      */
     @Generated
     @Selector("alpha")
@@ -92,11 +92,11 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]   beta
-     * 
+     * <p>
      * The scale factor to apply to the addend if available.  Specified in double
-     *             precision.  Will be converted to the appropriate precision in the
-     *             implementation subject to rounding and/or clamping as necessary.
-     *             Defaults to 1.0 at initialization time.
+     * precision.  Will be converted to the appropriate precision in the
+     * implementation subject to rounding and/or clamping as necessary.
+     * Defaults to 1.0 at initialization time.
      */
     @Generated
     @Selector("beta")
@@ -192,11 +192,11 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The scale factor to apply to the product.  Specified in double
-     *             precision.  Will be converted to the appropriate precision in the
-     *             implementation subject to rounding and/or clamping as necessary.
-     *             Defaults to 1.0 at initialization time.
+     * precision.  Will be converted to the appropriate precision in the
+     * implementation subject to rounding and/or clamping as necessary.
+     * Defaults to 1.0 at initialization time.
      */
     @Generated
     @Selector("setAlpha:")
@@ -204,11 +204,11 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property]   beta
-     * 
+     * <p>
      * The scale factor to apply to the addend if available.  Specified in double
-     *             precision.  Will be converted to the appropriate precision in the
-     *             implementation subject to rounding and/or clamping as necessary.
-     *             Defaults to 1.0 at initialization time.
+     * precision.  Will be converted to the appropriate precision in the
+     * implementation subject to rounding and/or clamping as necessary.
+     * Defaults to 1.0 at initialization time.
      */
     @Generated
     @Selector("setBeta:")

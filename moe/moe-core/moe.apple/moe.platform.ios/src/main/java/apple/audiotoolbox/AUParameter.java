@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AUParameter
- * 
+ * <p>
  * A node representing a single parameter.
  */
 @Generated
@@ -173,9 +173,9 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * Parameters whose values may change as a side effect of this parameter's value
-     * 			changing.
-     * 
-     * 	Each array value is an NSNumber representing AUParameterAddress.
+     * changing.
+     * <p>
+     * Each array value is an NSNumber representing AUParameterAddress.
      */
     @Generated
     @Selector("dependentParameters")
@@ -223,8 +223,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * Set the parameter's value, avoiding redundant notifications to the originator.
-     * 
-     * 		Bridged to the v2 function AudioUnitSetParameter.
+     * <p>
+     * Bridged to the v2 function AudioUnitSetParameter.
      */
     @Generated
     @Selector("setValue:originator:")
@@ -232,8 +232,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * Convenience for setValue:originator:atHostTime:eventType:
-     * 
-     * 		Bridged to the v2 function AudioUnitSetParameter.
+     * <p>
+     * Bridged to the v2 function AudioUnitSetParameter.
      */
     @Generated
     @Selector("setValue:originator:atHostTime:")
@@ -241,17 +241,17 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * Set the parameter's value, preserving the host time of the gesture that initiated the
-     * 		change, and associating an event type such as touch/release.
-     * 
-     * 	In general, this method should only be called from a user interface. It initiates a change
-     * 	to a parameter in a way that captures the gesture such that it can be recorded later --
-     * 	any AUParameterAutomationObservers will receive the host time and event type associated
-     * 	with the parameter change.
-     * 
-     * 	From an audio playback engine, a host should schedule automated parameter changes through
-     * 	AUAudioUnit's scheduleParameterBlock.
-     * 
-     * 	Bridged to the v2 function AudioUnitSetParameter.
+     * change, and associating an event type such as touch/release.
+     * <p>
+     * In general, this method should only be called from a user interface. It initiates a change
+     * to a parameter in a way that captures the gesture such that it can be recorded later --
+     * any AUParameterAutomationObservers will receive the host time and event type associated
+     * with the parameter change.
+     * <p>
+     * From an audio playback engine, a host should schedule automated parameter changes through
+     * AUAudioUnit's scheduleParameterBlock.
+     * <p>
+     * Bridged to the v2 function AudioUnitSetParameter.
      */
     @Generated
     @Selector("setValue:originator:atHostTime:eventType:")
@@ -260,10 +260,10 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * Get a textual representation of a value for the parameter. Use value==nil to use the
-     * 	   current value. Bridged to the v2 property kAudioUnitProperty_ParameterStringFromValue.
-     * 
-     * 	This is currently only supported for parameters whose flags include
-     * 	kAudioUnitParameterFlag_ValuesHaveStrings.
+     * current value. Bridged to the v2 property kAudioUnitProperty_ParameterStringFromValue.
+     * <p>
+     * This is currently only supported for parameters whose flags include
+     * kAudioUnitParameterFlag_ValuesHaveStrings.
      */
     @Generated
     @Selector("stringFromValue:")
@@ -298,9 +298,9 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
 
     /**
      * Convert a textual representation of a value to a numeric one.
-     * 
-     * 	This is currently only supported for parameters whose flags include
-     * 	kAudioUnitParameterFlag_ValuesHaveStrings.
+     * <p>
+     * This is currently only supported for parameters whose flags include
+     * kAudioUnitParameterFlag_ValuesHaveStrings.
      */
     @Generated
     @Selector("valueFromString:")

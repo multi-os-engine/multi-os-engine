@@ -25,15 +25,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNLossNode
- * 
+ * <p>
  * This node calculates loss information during training
- *              typically immediately after the inference portion
- *              of network evaluation is performed. The result image
- *              of the loss operations is typically the first gradient
- *              image to be comsumed by the gradient passes that work
- *              their way back up the graph. In addition, the node will
- *              update the loss image in the MPSNNLabels with the
- *              desired estimate of correctness.
+ * typically immediately after the inference portion
+ * of network evaluation is performed. The result image
+ * of the loss operations is typically the first gradient
+ * image to be comsumed by the gradient passes that work
+ * their way back up the graph. In addition, the node will
+ * update the loss image in the MPSNNLabels with the
+ * desired estimate of correctness.
  */
 @Generated
 @Library("MetalPerformanceShaders")

@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.struct.NSRange;
 import apple.uikit.NSTextAttachment;
 import org.moe.natj.c.ann.FunctionPtr;
+import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
@@ -32,6 +33,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
@@ -363,4 +365,55 @@ public class NSMutableAttributedString extends NSAttributedString {
     public static native void loadFromHTMLWithStringOptionsCompletionHandler(String string,
             NSDictionary<String, ?> options,
             @ObjCBlock(name = "call_loadFromHTMLWithStringOptionsCompletionHandler") NSAttributedString.Block_loadFromHTMLWithStringOptionsCompletionHandler completionHandler);
+
+    /**
+     * Formats the specified string and arguments with the current locale,
+     * then appends the result to the receiver.
+     */
+    @Generated
+    @Variadic()
+    @Selector("appendLocalizedFormat:")
+    public native void appendLocalizedFormat(NSAttributedString format, Object... varargs);
+
+    @Generated
+    @Selector("initWithContentsOfMarkdownFileAtURL:options:baseURL:error:")
+    public native NSMutableAttributedString initWithContentsOfMarkdownFileAtURLOptionsBaseURLError(NSURL markdownFile,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:options:locale:")
+    public native NSMutableAttributedString initWithFormatOptionsLocale(NSAttributedString format, @NUInt long options,
+            NSLocale locale, Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:options:locale:arguments:")
+    public native NSMutableAttributedString initWithFormatOptionsLocaleArguments(NSAttributedString format,
+            @NUInt long options, NSLocale locale, BytePtr arguments);
+
+    @Generated
+    @Selector("initWithMarkdown:options:baseURL:error:")
+    public native NSMutableAttributedString initWithMarkdownOptionsBaseURLError(NSData markdown,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("initWithMarkdownString:options:baseURL:error:")
+    public native NSMutableAttributedString initWithMarkdownStringOptionsBaseURLError(String markdownString,
+            NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedAttributedStringWithFormat(NSAttributedString format, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:options:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object localizedAttributedStringWithFormatOptions(NSAttributedString format,
+            @NUInt long options, Object... varargs);
 }

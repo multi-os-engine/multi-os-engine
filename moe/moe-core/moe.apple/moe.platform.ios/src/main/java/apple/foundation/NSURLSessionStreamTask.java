@@ -43,14 +43,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * may be explicitly created from an NSURLSession, or created as a
  * result of the appropriate disposition response to a
  * -URLSession:dataTask:didReceiveResponse: delegate message.
- * 
+ * <p>
  * NSURLSessionStreamTask can be used to perform asynchronous reads
  * and writes.  Reads and writes are enquened and executed serially,
  * with the completion handler being invoked on the sessions delegate
  * queuee.  If an error occurs, or the task is canceled, all
  * outstanding read and write calls will have their completion
  * handlers invoked with an appropriate error.
- * 
+ * <p>
  * It is also possible to create NSInputStream and NSOutputStream
  * instances from an NSURLSessionTask by sending
  * -captureStreams to the task.  All outstanding read and writess are
@@ -230,7 +230,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     /**
      * Cleanly close a secure connection after all pending secure IO has
      * completed.
-     * 
+     * <p>
      * [@warning] This API is non-functional.
      */
     @Generated
@@ -253,7 +253,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Generated
     public interface Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler {
         @Generated
-        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData data, boolean atEOF, NSError error);
+        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData _Nullable_result);
     }
 
     @Runtime(ObjCRuntime.class)

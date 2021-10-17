@@ -31,7 +31,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * _______________________________________________________________________________________________________________
- *  this protocol represents the data model object. as such, it supplies no information about appearance (including the cells)
+ * this protocol represents the data model object. as such, it supplies no information about appearance (including the cells)
  */
 @Generated
 @Library("UIKit")

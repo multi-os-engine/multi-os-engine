@@ -21,9 +21,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UISpringLoadedInteractionEffect {
     /**
      * Informs the effect that the springloading state changed.
-     * 
+     *
      * @param interaction The springloaded interaction providing this information.
-     * @param context An object that provides information about the current springloading state.
+     * @param context     An object that provides information about the current springloading state.
      */
     @Generated
     @Selector("interaction:didChangeWithContext:")

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNMovabilityHint
- * 
+ * <p>
  * The available modes of movability.
- * 
+ * <p>
  * Movable nodes are not captured when computing light probes.
  */
 @Generated

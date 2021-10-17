@@ -35,7 +35,9 @@ public final class SCNPhysicsCollisionCategory {
     /**
      * default for collision mask
      */
-    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ? 0xFFFFFFFFFFFFFFFFL : 0x00000000FFFFFFFFL;
+    @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
+            0xFFFFFFFFFFFFFFFFL :
+            0x00000000FFFFFFFFL;
 
     @Generated
     private SCNPhysicsCollisionCategory() {

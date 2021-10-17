@@ -455,4 +455,33 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Generated
     @Selector("visualEffect")
     public native UIVisualEffect visualEffect();
+
+    /**
+     * The image to use. Default is nil.
+     */
+    @Generated
+    @Selector("image")
+    public native UIImage image();
+
+    /**
+     * The content mode to use when rendering the image. Default is UIViewContentModeScaleToFill.
+     */
+    @Generated
+    @Selector("imageContentMode")
+    @NInt
+    public native long imageContentMode();
+
+    /**
+     * The image to use. Default is nil.
+     */
+    @Generated
+    @Selector("setImage:")
+    public native void setImage(UIImage value);
+
+    /**
+     * The content mode to use when rendering the image. Default is UIViewContentModeScaleToFill.
+     */
+    @Generated
+    @Selector("setImageContentMode:")
+    public native void setImageContentMode(@NInt long value);
 }

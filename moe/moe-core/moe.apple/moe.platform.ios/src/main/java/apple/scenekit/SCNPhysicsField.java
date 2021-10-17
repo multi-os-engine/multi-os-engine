@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsField
- * 
+ * <p>
  * SCNPhysicsField is an abstract class that describes a force field that applies in the physics world.
  */
 @Generated
@@ -171,7 +171,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native SCNPhysicsField linearGravityField();
 
     /**
-     * A force proportional to the charge on the object and the object’s velocity. 
+     * A force proportional to the charge on the object and the object’s velocity.
      * An example use of this field is to make objects behavior differently from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the second part of the Lorentz equation, F = qvB
      */
@@ -259,7 +259,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * [@property] categoryBitMask
-     * 
+     * <p>
      * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated
@@ -363,7 +363,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * [@property] categoryBitMask
-     * 
+     * <p>
      * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated

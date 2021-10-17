@@ -75,7 +75,7 @@ public final class MPSKernelOptions {
      * even more detailed output on a MPS object, you can use the po command in llvm
      * with MPS objects:
      * [@code]
-     *   llvm>  po  <MPS object pointer>
+     * llvm>  po  <MPS object pointer>
      * [@endcode]
      */
     @Generated @NUInt public static final long Verbose = 0x0000000000000010L;

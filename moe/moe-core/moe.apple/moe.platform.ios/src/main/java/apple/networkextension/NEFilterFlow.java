@@ -48,9 +48,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterFlow
- * 
+ * <p>
  * The NEFilterFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered.
- * 
+ * <p>
  * NEFilterFlow is part of NetworkExtension.framework
  */
 @Generated
@@ -170,7 +170,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] URL
-     * 
+     * <p>
      * The flow's HTTP request URL. Will be nil if the flow did not originate from WebKit.
      */
     @Generated
@@ -203,7 +203,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] sourceAppIdentifier
-     * 
+     * <p>
      * A string containing the identifier of the source application of the flow. This identifier stays the same for all versions and builds of the application. This identifier is unique among all applications.
      */
     @Generated
@@ -212,7 +212,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] sourceAppUniqueIdentifier
-     * 
+     * <p>
      * A byte string that uniquely identifies the binary for each build of the source application of the flow.
      */
     @Generated
@@ -221,7 +221,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] sourceAppVersion
-     * 
+     * <p>
      * The short version string of the source application. Will be nil if the app info is unavailable.
      */
     @Generated
@@ -230,8 +230,8 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] direction
-     * 
-     * Initial direciton of the flow (outgoing or incoming flow)
+     * <p>
+     * Initial direction of the flow (outgoing or incoming flow)
      */
     @Generated
     @Selector("direction")
@@ -240,7 +240,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] identifier
-     * 
+     * <p>
      * The unique identifier of the flow.
      */
     @Generated

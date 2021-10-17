@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLFunctionConstant
- * 
+ * <p>
  * describe an uberShader constant used by the function
  */
 @Generated

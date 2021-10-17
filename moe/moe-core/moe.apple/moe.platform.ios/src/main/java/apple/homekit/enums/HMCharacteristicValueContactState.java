@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueContactState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueContactStateDetected           Contact is detected.
  * [@constant]  HMCharacteristicValueContactStateNone               Contact is not detected.
  */

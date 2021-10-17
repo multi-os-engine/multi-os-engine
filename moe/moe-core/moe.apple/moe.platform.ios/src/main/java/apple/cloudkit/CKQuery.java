@@ -47,21 +47,21 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKQuery
- * 
+ * <p>
  * Only AND compound predicates are allowed.
- * 
- *  Key names must begin with either an upper or lower case character ([a-zA-Z]) and may be followed by characters, numbers, or underscores ([0-9a-zA-Z_]). Keypaths may only resolve to the currently evaluated object, so the '.' character is not allowed in key names.
- * 
- *  A limited subset of classes are allowed as predicate arguments:
- *  - NSString
- *  - NSDate
- *  - NSData
- *  - NSNumber
- *  - NSArray
- *  - CKReference
- *  - CKRecord
- *  - CLLocation
- * 
+ * <p>
+ * Key names must begin with either an upper or lower case character ([a-zA-Z]) and may be followed by characters, numbers, or underscores ([0-9a-zA-Z_]). Keypaths may only resolve to the currently evaluated object, so the '.' character is not allowed in key names.
+ * <p>
+ * A limited subset of classes are allowed as predicate arguments:
+ * - NSString
+ * - NSDate
+ * - NSData
+ * - NSNumber
+ * - NSArray
+ * - CKReference
+ * - CKRecord
+ * - CLLocation
+ * <p>
  * Any other class as an argument will result in an error when executing the query.
  */
 @Generated

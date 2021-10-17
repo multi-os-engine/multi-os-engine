@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] ASAuthorizationAppleIDProviderCredentialState
- * 
+ * <p>
  * Authorization state of an Apple ID credential.
  * [@constant] ASAuthorizationAppleIDProviderCredentialAuthorized The Opaque user ID is in good state.
  * [@constant] ASAuthorizationAppleIDProviderCredentialRevoked The Opaque user ID was revoked by the user.

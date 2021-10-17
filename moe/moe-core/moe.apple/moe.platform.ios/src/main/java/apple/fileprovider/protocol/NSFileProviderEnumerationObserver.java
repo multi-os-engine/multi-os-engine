@@ -25,7 +25,7 @@ public interface NSFileProviderEnumerationObserver {
      * might be called with nextPage to enumerate more items.  This is typically
      * driven by the user scrolling a UIDocumentBrowserViewController presenting a
      * directory containing more child items that would fit in the view.
-     * 
+     * <p>
      * Page data is limited to 500 bytes.  Setting a larger nextPage interrupts the
      * enumeration.
      */

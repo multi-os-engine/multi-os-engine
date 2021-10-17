@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLActivityType
- * 
- *  Discussion:
- * 	Expected user activity for the lifetime of the corresponding CLLocationManager instance.
- * 	Used to optimize the positioning experience delivered to this CLLocationManager instance
- * 	for the expected activity.
+ * <p>
+ * Discussion:
+ * Expected user activity for the lifetime of the corresponding CLLocationManager instance.
+ * Used to optimize the positioning experience delivered to this CLLocationManager instance
+ * for the expected activity.
  */
 @Generated
 public final class CLActivityType {

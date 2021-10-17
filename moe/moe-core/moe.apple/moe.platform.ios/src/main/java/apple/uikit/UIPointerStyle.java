@@ -146,9 +146,9 @@ public class UIPointerStyle extends NSObject implements NSCopying {
 
     /**
      * Applies the provided content effect and pointer shape within the current region.
-     * 
-     * @param effect  The desired pointer effect.
-     * @param shape   The desired pointer shape. If omitted, a pointer will be generated automatically from the effect's preview view.
+     *
+     * @param effect The desired pointer effect.
+     * @param shape  The desired pointer shape. If omitted, a pointer will be generated automatically from the effect's preview view.
      */
     @Generated
     @Selector("styleWithEffect:shape:")
@@ -156,9 +156,9 @@ public class UIPointerStyle extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer into the provided shape when hovering over the current region.
-     * 
-     * @param shape  The desired pointer shape.
-     * @param axes   Axes along which to recenter the pointer on touch up.
+     *
+     * @param shape The desired pointer shape.
+     * @param axes  Axes along which to recenter the pointer on touch up.
      */
     @Generated
     @Selector("styleWithShape:constrainedAxes:")
@@ -172,4 +172,28 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Accessories to display alongside this UIPointerStyle. Supports up to 4 accessories.
+     * The system will attempt to animate between neighboring or similar accessories.
+     */
+    @Generated
+    @Selector("accessories")
+    public native NSArray<? extends UIPointerAccessory> accessories();
+
+    /**
+     * Accessories to display alongside this UIPointerStyle. Supports up to 4 accessories.
+     * The system will attempt to animate between neighboring or similar accessories.
+     */
+    @Generated
+    @Selector("setAccessories:")
+    public native void setAccessories(NSArray<? extends UIPointerAccessory> value);
+
+    /**
+     * Pointer style that displays an unconstrained system pointer. Use this to display accessories alongside the default pointer.
+     */
+    @Generated
+    @Selector("systemPointerStyle")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object systemPointerStyle();
 }

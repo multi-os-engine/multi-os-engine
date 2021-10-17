@@ -148,7 +148,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
      * This method provides compatibility with the old style [UIView
      * animationWithDuration:...]  method. It is also useful for controlling
      * how animations options are inherited.
-     * 
+     * <p>
      * Creates a UIViewPropertyAnimator, sets the duration, options, etc. And starts the
      * animation with the associated animation and completion blocks. The animator
      * returned is interruptible only if it is not called from within the execution
@@ -271,14 +271,14 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     public native void setInterruptible(boolean value);
 
     /**
-     * Defaults to NO. Set if you need to manage the the hittesting of animating view hierarchies
+     * Defaults to NO. Set if you need to manage the the hit-testing of animating view hierarchies
      */
     @Generated
     @Selector("isManualHitTestingEnabled")
     public native boolean isManualHitTestingEnabled();
 
     /**
-     * Defaults to NO. Set if you need to manage the the hittesting of animating view hierarchies
+     * Defaults to NO. Set if you need to manage the the hit-testing of animating view hierarchies
      */
     @Generated
     @Selector("setManualHitTestingEnabled:")

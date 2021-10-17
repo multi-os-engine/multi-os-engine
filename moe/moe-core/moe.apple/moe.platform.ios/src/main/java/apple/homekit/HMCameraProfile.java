@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a camera profile the accessory implements.
- * 
+ * <p>
  * Provides an interface to interact with a Camera in an Accessory.
  */
 @Generated

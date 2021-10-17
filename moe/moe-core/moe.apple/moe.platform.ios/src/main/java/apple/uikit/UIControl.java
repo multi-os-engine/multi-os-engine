@@ -767,4 +767,25 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Generated
     @Selector("showsMenuAsPrimaryAction")
     public native boolean showsMenuAsPrimaryAction();
+
+    /**
+     * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil cancels the display of the tool tip for the view.
+     */
+    @Generated
+    @Selector("setToolTip:")
+    public native void setToolTip(String value);
+
+    /**
+     * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil cancels the display of the tool tip for the view.
+     */
+    @Generated
+    @Selector("toolTip")
+    public native String toolTip();
+
+    /**
+     * Returns the control's default UIToolTipInteraction.
+     */
+    @Generated
+    @Selector("toolTipInteraction")
+    public native UIToolTipInteraction toolTipInteraction();
 }

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] NFCVASErrorCode
- * 
+ * <p>
  * Response APDU status word.
  */
 @Generated

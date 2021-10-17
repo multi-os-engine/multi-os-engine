@@ -96,12 +96,12 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
 
     /**
      * Init a node representing a MPSCNNFullyConnected kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
-     *                                     protocol. This object is provided by you to encapsulate storage for
-     *                                     convolution weights and biases.
-     * @return     A new MPSNNFilter node for a MPSCNNFullyConnected kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                   protocol. This object is provided by you to encapsulate storage for
+     *                   convolution weights and biases.
+     * @return A new MPSNNFilter node for a MPSCNNFullyConnected kernel.
      */
     @Generated
     @Selector("initWithSource:weights:")
@@ -137,12 +137,12 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
 
     /**
      * Init an autoreleased not representing a MPSCNNFullyConnected kernel
-     * 
-     * @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
-     * @param      weights                 A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
-     *                                     protocol. This object is provided by you to encapsulate storage for
-     *                                     convolution weights and biases.
-     * @return     A new MPSNNFilter node for a MPSCNNConvolution kernel.
+     *
+     * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
+     * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
+     *                   protocol. This object is provided by you to encapsulate storage for
+     *                   convolution weights and biases.
+     * @return A new MPSNNFilter node for a MPSCNNConvolution kernel.
      */
     @Generated
     @Selector("nodeWithSource:weights:")

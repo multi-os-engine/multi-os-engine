@@ -441,7 +441,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
 
     /**
      * The arrow offset represents how far from the center of the view the center of the arrow should appear. For `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset; negative to toward the top.
-     * 
+     * <p>
      * This method is called inside an animation block managed by the `UIPopoverController`.
      */
     @Generated
@@ -477,7 +477,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
 
     /**
      * The arrow offset represents how far from the center of the view the center of the arrow should appear. For `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset; negative to toward the top.
-     * 
+     * <p>
      * This method is called inside an animation block managed by the `UIPopoverController`.
      */
     @Generated

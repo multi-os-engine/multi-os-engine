@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UITextSmartQuotesType
- * 
+ * <p>
  * Controls the automatic conversion of typographic quote characters for a text widget.
  */
 @Generated

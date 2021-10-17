@@ -47,9 +47,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@file] NETunnelProviderSession.h
- * 
+ * <p>
  * This file declares the NETunnelProviderSession API. The NETunnelProviderSession API is used to control network tunnel services provided by NETunnelProvider implementations.
- * 
+ * <p>
  * This API is part of NetworkExtension.framework.
  */
 @Generated
@@ -169,13 +169,13 @@ public class NETunnelProviderSession extends NEVPNConnection {
 
     /**
      * sendProviderMessage:responseHandler:
-     * 
+     * <p>
      * This function sends a message to the NETunnelProvider and provides a way to receive a response.
-     * 
-     * @param messageData An NSData object containing the message to be sent.
-     * @param error If the message was sent successfully, this parameter is set to nil. Otherwise this parameter is set to the error that occurred. Possible errors include:
-     *    1. NEVPNErrorConfigurationInvalid
-     *    2. NEVPNErrorConfigurationDisabled
+     *
+     * @param messageData     An NSData object containing the message to be sent.
+     * @param error           If the message was sent successfully, this parameter is set to nil. Otherwise this parameter is set to the error that occurred. Possible errors include:
+     *                        1. NEVPNErrorConfigurationInvalid
+     *                        2. NEVPNErrorConfigurationDisabled
      * @param responseHandler A block that handles the response. Can be set to nil if no response is expected.
      * @return YES if the message was sent successfully, NO if an error occurred.
      */
@@ -187,13 +187,13 @@ public class NETunnelProviderSession extends NEVPNConnection {
 
     /**
      * startTunnelWithOptions:andReturnError:
-     * 
+     * <p>
      * This function is used to start the tunnel using the configuration associated with this connection object. The tunnel connection process is started and this function returns immediately.
-     * 
+     *
      * @param options A dictionary that will be passed as-is to the tunnel provider during the process of starting the tunnel.
-     * @param error If the tunnel was started successfully, this parameter is set to nil. Otherwise this parameter is set to the error that occurred. Possible errors include:
-     *    1. NEVPNErrorConfigurationInvalid
-     *    2. NEVPNErrorConfigurationDisabled
+     * @param error   If the tunnel was started successfully, this parameter is set to nil. Otherwise this parameter is set to the error that occurred. Possible errors include:
+     *                1. NEVPNErrorConfigurationInvalid
+     *                2. NEVPNErrorConfigurationDisabled
      * @return YES if the tunnel was started successfully, NO if an error occurred.
      */
     @Generated
@@ -203,7 +203,7 @@ public class NETunnelProviderSession extends NEVPNConnection {
 
     /**
      * stopTunnel
-     * 
+     * <p>
      * This function is used to stop the tunnel. The tunnel disconnect process is started and this function returns immediately.
      */
     @Generated

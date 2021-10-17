@@ -37,4 +37,9 @@ public final class CFURLBookmarkCreationOptions {
     @Generated
     private CFURLBookmarkCreationOptions() {
     }
+
+    /**
+     * Disable automatic embedding of an implicit security scope. The resolving process will not be able gain access to the resource by security scope, either implicitly or explicitly, through the returned URL. Not applicable to security-scoped bookmarks.
+     */
+    @Generated @NUInt public static final long WithoutImplicitSecurityScope = 0x0000000020000000L;
 }

@@ -100,7 +100,7 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     /**
      * Creates a component that encapsulate the given SpriteKit node. When the component is
      * added to an entity, the SKNode's entity property will be set.
-     * 
+     *
      * @param node Node to associate with the component.
      * @see SKNode.entity
      */
@@ -190,7 +190,7 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     /**
      * Initializes component to encapsulate the given SpriteKit node. When the component is
      * added to an entity, the SKNode's entity property will be set.
-     * 
+     *
      * @param node Node to associate with the component.
      * @see SKNode.entity
      */

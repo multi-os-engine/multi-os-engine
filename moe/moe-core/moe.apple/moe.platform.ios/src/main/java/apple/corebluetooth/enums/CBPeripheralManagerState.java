@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBPeripheralManagerState
- * 
+ * <p>
  * Represents the current state of a CBPeripheralManager.
- * 
+ * <p>
  * [@constant] CBPeripheralManagerStateUnknown       State unknown, update imminent.
  * [@constant] CBPeripheralManagerStateResetting     The connection with the system service was momentarily lost, update imminent.
  * [@constant] CBPeripheralManagerStateUnsupported   The platform doesn't support the Bluetooth Low Energy Peripheral/Server role.

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueLockMechanismState
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueLockMechanismStateUnsecured  Unsecured.
  * [@constant]  HMCharacteristicValueLockMechanismStateSecured    Secured.
  * [@constant]  HMCharacteristicValueLockMechanismStateJammed     Jammed.

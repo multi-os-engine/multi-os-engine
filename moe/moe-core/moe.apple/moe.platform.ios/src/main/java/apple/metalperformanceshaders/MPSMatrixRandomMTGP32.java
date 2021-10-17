@@ -29,11 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixRandomMTGP32
- * 
+ * <p>
  * Generates random numbers using a Mersenne Twister algorithm
- *             suitable for GPU execution.  It uses a period of 2**11214.
- *             For further details see:
- *         Mutsuo Saito. A Variant of Mersenne Twister Suitable for Graphic Processors. arXiv:1005.4973
+ * suitable for GPU execution.  It uses a period of 2**11214.
+ * For further details see:
+ * Mutsuo Saito. A Variant of Mersenne Twister Suitable for Graphic Processors. arXiv:1005.4973
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -113,9 +113,9 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
 
     /**
      * initialize a MPSMatrixRandomMTGP32 filter to generate 32-bit unsigned
-     *             integer values with an initial seed of 0.
-     * 
-     * @param      device          The device the filter will run on
+     * integer values with an initial seed of 0.
+     *
+     * @param device The device the filter will run on
      */
     @Generated
     @Selector("initWithDevice:")
@@ -123,10 +123,10 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
 
     /**
      * initialize a MPSMatrixRandomMTGP32 filter using a default distribution.
-     * 
-     * @param      device                  The device the filter will run on
-     * @param      destinationDataType     The data type of the result.
-     * @param      seed                    The seed to initialize the random number generators with.
+     *
+     * @param device              The device the filter will run on
+     * @param destinationDataType The data type of the result.
+     * @param seed                The seed to initialize the random number generators with.
      */
     @Generated
     @Selector("initWithDevice:destinationDataType:seed:")
@@ -135,11 +135,11 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
 
     /**
      * initialize a MPSMatrixRandomMTGP32 filter
-     * 
-     * @param      device                  The device the filter will run on
-     * @param      destinationDataType     The data type of the result.
-     * @param      seed                    The seed to initialize the random number generators with.
-     * @param      distributionDescriptor  A descriptor containing information about the distribution.
+     *
+     * @param device                 The device the filter will run on
+     * @param destinationDataType    The data type of the result.
+     * @param seed                   The seed to initialize the random number generators with.
+     * @param distributionDescriptor A descriptor containing information about the distribution.
      */
     @Generated
     @Selector("initWithDevice:destinationDataType:seed:distributionDescriptor:")
@@ -202,8 +202,8 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
 
     /**
      * Synchronize internal MTGP32 state between GPU and CPU.
-     * 
-     * @param      commandBuffer       The command buffer on which to encode the synchronization.
+     *
+     * @param commandBuffer The command buffer on which to encode the synchronization.
      */
     @Generated
     @Selector("synchronizeStateOnCommandBuffer:")

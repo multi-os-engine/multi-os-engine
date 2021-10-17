@@ -29,10 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronELU
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * Specifies the parametric ELU neuron filter.
- *             For each pixel, applies the following function: f(x) = [ a * (exp(x) - 1), x <  0
- *                                                                    [ x               , x >= 0
+ * For each pixel, applies the following function: f(x) = [ a * (exp(x) - 1), x <  0
+ * [ x               , x >= 0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -115,10 +115,10 @@ public class MPSCNNNeuronELU extends MPSCNNNeuron {
 
     /**
      * Initialize a parametric ELU neuron filter
-     * 
-     * @param      device          The device the filter will run on
-     * @param      a               Filter property "a". See class discussion.
-     * @return     A valid MPSCNNNeuronELU object or nil, if failure.
+     *
+     * @param device The device the filter will run on
+     * @param a      Filter property "a". See class discussion.
+     * @return A valid MPSCNNNeuronELU object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:a:")

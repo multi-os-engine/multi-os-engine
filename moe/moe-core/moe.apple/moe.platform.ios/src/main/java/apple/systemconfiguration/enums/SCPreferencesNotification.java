@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SCPreferencesNotification
- * 
+ * <p>
  * Used with the SCPreferencesCallBack callback
- * 	to describe the type of notification.
+ * to describe the type of notification.
  * [@constant] kSCPreferencesNotificationCommit Indicates when new
- * 	preferences have been saved.
+ * preferences have been saved.
  * [@constant] kSCPreferencesNotificationApply Key Indicates when a
- * 	request has been made to apply the currently saved
- * 	preferences to the active system configuration.
+ * request has been made to apply the currently saved
+ * preferences to the active system configuration.
  */
 @Generated
 public final class SCPreferencesNotification {

@@ -227,4 +227,8 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @Selector("participantRole")
     @NInt
     public native long participantRole();
+
+    @Generated
+    @Selector("hierarchicalRootRecordID")
+    public native CKRecordID hierarchicalRootRecordID();
 }

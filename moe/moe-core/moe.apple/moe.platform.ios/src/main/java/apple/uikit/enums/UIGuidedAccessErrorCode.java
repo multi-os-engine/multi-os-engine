@@ -16,5 +16,7 @@ public final class UIGuidedAccessErrorCode {
     /**
      * Generic failure.
      */
-    @Generated @NInt public static final long Failed = org.moe.natj.general.NatJ.is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
+    @Generated @NInt public static final long Failed = org.moe.natj.general.NatJ.is64Bit() ?
+            0x7FFFFFFFFFFFFFFFL :
+            0x000000007FFFFFFFL;
 }

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEAuthenticationMethod
- * 
+ * <p>
  * Internet Key Exchange (IKE) authentication methods used to authenticate with the IPSec server.
  */
 @Generated

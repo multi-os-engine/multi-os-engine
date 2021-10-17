@@ -44,18 +44,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBPeripheralManager
- * 
+ * <p>
  * The <code>CBPeripheralManager</code> class is an abstraction of the Peripheral and Broadcaster GAP roles, and the GATT Server
- *             role. Its primary function is to allow you to manage published services within the GATT database, and to advertise these services
- *             to other devices.
- *             Each application has sandboxed access to the shared GATT database. You can add services to the database by calling {@link addService:};
- *             they can be removed via {@link removeService:} and {@link removeAllServices}, as appropriate. While a service is in the database,
- *             it is visible to and can be accessed by any connected GATT Client. However, applications that have not specified the "bluetooth-peripheral"
- *             background mode will have the contents of their service(s) "disabled" when in the background. Any remote device trying to access
- *             characteristic values or descriptors during this time will receive an error response.
- *             Once you've published services that you want to share, you can ask to advertise their availability and allow other devices to connect
- *             to you by calling {@link startAdvertising:}. Like the GATT database, advertisement is managed at the system level and shared by all
- *             applications. This means that even if you aren't advertising at the moment, someone else might be!
+ * role. Its primary function is to allow you to manage published services within the GATT database, and to advertise these services
+ * to other devices.
+ * Each application has sandboxed access to the shared GATT database. You can add services to the database by calling {@link addService:};
+ * they can be removed via {@link removeService:} and {@link removeAllServices}, as appropriate. While a service is in the database,
+ * it is visible to and can be accessed by any connected GATT Client. However, applications that have not specified the "bluetooth-peripheral"
+ * background mode will have the contents of their service(s) "disabled" when in the background. Any remote device trying to access
+ * characteristic values or descriptors during this time will receive an error response.
+ * Once you've published services that you want to share, you can ask to advertise their availability and allow other devices to connect
+ * to you by calling {@link startAdvertising:}. Like the GATT database, advertisement is managed at the system level and shared by all
+ * applications. This means that even if you aren't advertising at the moment, someone else might be!
  */
 @Generated
 @Library("CoreBluetooth")
@@ -87,13 +87,12 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * authorizationStatus
-     * 
+     * <p>
      * This method does not prompt the user for access. You can use it to detect restricted access and simply hide UI instead of
-     * 		prompting for access.
-     * 
-     * @return		The current authorization status for sharing data while backgrounded. For the constants returned, see {@link CBPeripheralManagerAuthorizationStatus}.
-     * 
-     * @see		CBPeripheralManagerAuthorizationStatus
+     * prompting for access.
+     *
+     * @return The current authorization status for sharing data while backgrounded. For the constants returned, see {@link CBPeripheralManagerAuthorizationStatus}.
+     * @see        CBPeripheralManagerAuthorizationStatus
      */
     @Generated
     @Selector("authorizationStatus")
@@ -185,13 +184,12 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * addService:
-     * 
+     * <p>
      * Publishes a service and its associated characteristic(s) to the local database. If the service contains included services,
-     *                 they must be published first.
-     * 
-     * @param service  A GATT service.
-     * 
-     * @see            peripheralManager:didAddService:error:
+     * they must be published first.
+     *
+     * @param service A GATT service.
+     * @see peripheralManager:didAddService:error:
      */
     @Generated
     @Selector("addService:")
@@ -199,7 +197,7 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate object that will receive peripheral events.
      */
     @Generated
@@ -213,10 +211,10 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * initWithDelegate:queue:
-     * 
+     * <p>
      * The initialization call. The events of the peripheral role will be dispatched on the provided queue.
-     *                 If <i>nil</i>, the main queue will be used.
-     * 
+     * If <i>nil</i>, the main queue will be used.
+     *
      * @param delegate The delegate that will receive peripheral role events.
      * @param queue    The dispatch queue on which the events will be dispatched.
      */
@@ -227,16 +225,15 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * initWithDelegate:queue:options:
-     * 
+     * <p>
      * The initialization call. The events of the peripheral role will be dispatched on the provided queue.
-     *                  If <i>nil</i>, the main queue will be used.
-     * 
-     *  @param delegate The delegate that will receive peripheral role events.
-     *  @param queue    The dispatch queue on which the events will be dispatched.
-     *  @param options  An optional dictionary specifying options for the manager.
-     * 
-     * @see		CBPeripheralManagerOptionShowPowerAlertKey
-     * @see		CBPeripheralManagerOptionRestoreIdentifierKey
+     * If <i>nil</i>, the main queue will be used.
+     *
+     * @param delegate The delegate that will receive peripheral role events.
+     * @param queue    The dispatch queue on which the events will be dispatched.
+     * @param options  An optional dictionary specifying options for the manager.
+     * @see        CBPeripheralManagerOptionShowPowerAlertKey
+     * @see        CBPeripheralManagerOptionRestoreIdentifierKey
      */
     @Generated
     @Selector("initWithDelegate:queue:options:")
@@ -246,7 +243,7 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * [@property] isAdvertising
-     * 
+     * <p>
      * Whether or not the peripheral is currently advertising data.
      */
     @Generated
@@ -255,7 +252,7 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * removeAllServices
-     * 
+     * <p>
      * Removes all published services from the local database.
      */
     @Generated
@@ -264,11 +261,11 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * removeService:
-     * 
+     * <p>
      * Removes a published service from the local database. If the service is included by other service(s), they must be removed
-     *                 first.
-     * 
-     * @param service  A GATT service.
+     * first.
+     *
+     * @param service A GATT service.
      */
     @Generated
     @Selector("removeService:")
@@ -276,15 +273,14 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * respondToRequest:withResult:
-     * 
+     * <p>
      * Used to respond to request(s) received via the @link peripheralManager:didReceiveReadRequest: @/link or
-     *                 [@link] peripheralManager:didReceiveWriteRequests: @/link delegate methods.
-     * 
-     * @param request  The original request that was received from the central.
-     * @param result   The result of attempting to fulfill <i>request</i>.
-     * 
-     * @see            peripheralManager:didReceiveReadRequest:
-     * @see            peripheralManager:didReceiveWriteRequests:
+     * [@link] peripheralManager:didReceiveWriteRequests: @/link delegate methods.
+     *
+     * @param request The original request that was received from the central.
+     * @param result  The result of attempting to fulfill <i>request</i>.
+     * @see peripheralManager:didReceiveReadRequest:
+     * @see peripheralManager:didReceiveWriteRequests:
      */
     @Generated
     @Selector("respondToRequest:withResult:")
@@ -292,7 +288,7 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate object that will receive peripheral events.
      */
     @Generated
@@ -301,7 +297,7 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * [@property] delegate
-     * 
+     * <p>
      * The delegate object that will receive peripheral events.
      */
     @Generated
@@ -318,15 +314,14 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * setDesiredConnectionLatency:forCentral:
-     * 
+     * <p>
      * Sets the desired connection latency for an existing connection to <i>central</i>. Connection latency changes are not guaranteed, so the
-     *                 resultant latency may vary. If a desired latency is not set, the latency chosen by <i>central</i> at the time of connection establishment
-     *                 will be used. Typically, it is not necessary to change the latency.
-     * 
-     * @param latency  The desired connection latency.
-     * @param central  A connected central.
-     * 
-     * @see            CBPeripheralManagerConnectionLatency
+     * resultant latency may vary. If a desired latency is not set, the latency chosen by <i>central</i> at the time of connection establishment
+     * will be used. Typically, it is not necessary to change the latency.
+     *
+     * @param latency The desired connection latency.
+     * @param central A connected central.
+     * @see CBPeripheralManagerConnectionLatency
      */
     @Generated
     @Selector("setDesiredConnectionLatency:forCentral:")
@@ -334,23 +329,22 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * startAdvertising:
-     * 
+     * <p>
      * Starts advertising. Supported advertising data types are <code>CBAdvertisementDataLocalNameKey</code>
-     *                             and <code>CBAdvertisementDataServiceUUIDsKey</code>.
-     *                             When in the foreground, an application can utilize up to 28 bytes of space in the initial advertisement data for
-     *                             any combination of the supported advertising data types. If this space is used up, there are an additional 10 bytes of
-     *                             space in the scan response that can be used only for the local name. Note that these sizes do not include the 2 bytes
-     *                             of header information that are required for each new data type. Any service UUIDs that do not fit in the allotted space
-     *                             will be added to a special "overflow" area, and can only be discovered by an iOS device that is explicitly scanning
-     *                             for them.
-     *                             While an application is in the background, the local name will not be used and all service UUIDs will be placed in the
-     *                             "overflow" area. However, applications that have not specified the "bluetooth-peripheral" background mode will not be able
-     *                             to advertise anything while in the background.
-     * 
-     * @param advertisementData    An optional dictionary containing the data to be advertised.
-     * 
-     * @see                        peripheralManagerDidStartAdvertising:error:
-     * @see                    CBAdvertisementData.h
+     * and <code>CBAdvertisementDataServiceUUIDsKey</code>.
+     * When in the foreground, an application can utilize up to 28 bytes of space in the initial advertisement data for
+     * any combination of the supported advertising data types. If this space is used up, there are an additional 10 bytes of
+     * space in the scan response that can be used only for the local name. Note that these sizes do not include the 2 bytes
+     * of header information that are required for each new data type. Any service UUIDs that do not fit in the allotted space
+     * will be added to a special "overflow" area, and can only be discovered by an iOS device that is explicitly scanning
+     * for them.
+     * While an application is in the background, the local name will not be used and all service UUIDs will be placed in the
+     * "overflow" area. However, applications that have not specified the "bluetooth-peripheral" background mode will not be able
+     * to advertise anything while in the background.
+     *
+     * @param advertisementData An optional dictionary containing the data to be advertised.
+     * @see peripheralManagerDidStartAdvertising:error:
+     * @see CBAdvertisementData.h
      */
     @Generated
     @Selector("startAdvertising:")
@@ -358,7 +352,7 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * stopAdvertising
-     * 
+     * <p>
      * Stops advertising.
      */
     @Generated
@@ -367,23 +361,21 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * updateValue:forCharacteristic:onSubscribedCentrals:
-     * 
+     * <p>
      * Sends an updated characteristic value to one or more centrals, via a notification or indication. If <i>value</i> exceeds
-     * 						{@link maximumUpdateValueLength}, it will be truncated to fit.
-     * 
-     *  @param value            The value to be sent via a notification/indication.
-     *  @param characteristic   The characteristic whose value has changed.
-     *  @param centrals         A list of <code>CBCentral</code> objects to receive the update. Note that centrals which have not subscribed to
-     *                          <i>characteristic</i> will be ignored. If <i>nil</i>, all centrals that are subscribed to <i>characteristic</i> will be updated.
-     * 
-     *  @return                 <i>YES</i> if the update could be sent, or <i>NO</i> if the underlying transmit queue is full. If <i>NO</i> was returned,
-     *                          the delegate method @link peripheralManagerIsReadyToUpdateSubscribers: @/link will be called once space has become
-     *                          available, and the update should be re-sent if so desired.
-     * 
-     *  @see                    peripheralManager:central:didSubscribeToCharacteristic:
-     *  @see                    peripheralManager:central:didUnsubscribeFromCharacteristic:
-     *  @see                    peripheralManagerIsReadyToUpdateSubscribers:
-     * @see				maximumUpdateValueLength
+     * {@link maximumUpdateValueLength}, it will be truncated to fit.
+     *
+     * @param value          The value to be sent via a notification/indication.
+     * @param characteristic The characteristic whose value has changed.
+     * @param centrals       A list of <code>CBCentral</code> objects to receive the update. Note that centrals which have not subscribed to
+     *                       <i>characteristic</i> will be ignored. If <i>nil</i>, all centrals that are subscribed to <i>characteristic</i> will be updated.
+     * @return <i>YES</i> if the update could be sent, or <i>NO</i> if the underlying transmit queue is full. If <i>NO</i> was returned,
+     * the delegate method @link peripheralManagerIsReadyToUpdateSubscribers: @/link will be called once space has become
+     * available, and the update should be re-sent if so desired.
+     * @see                maximumUpdateValueLength
+     * @see peripheralManager:central:didSubscribeToCharacteristic:
+     * @see peripheralManager:central:didUnsubscribeFromCharacteristic:
+     * @see peripheralManagerIsReadyToUpdateSubscribers:
      */
     @Generated
     @Selector("updateValue:forCharacteristic:onSubscribedCentrals:")
@@ -392,13 +384,13 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * publishL2CAPChannelWithEncryption:
-     * 
+     * <p>
      * Create a listener for incoming L2CAP Channel connections.  The system will determine an unused PSM at the time of publishing, which will be returned
-     * 			with @link peripheralManager:didPublishL2CAPChannel:error: @/link.  L2CAP Channels are not discoverable by themselves, so it is the application's
-     * 			responsibility to handle PSM discovery on the client.
-     * 
-     * @param encryptionRequired		YES if the service requires the link to be encrypted before a stream can be established.  NO if the service can be used over
-     * 							an unsecured link.
+     * with @link peripheralManager:didPublishL2CAPChannel:error: @/link.  L2CAP Channels are not discoverable by themselves, so it is the application's
+     * responsibility to handle PSM discovery on the client.
+     *
+     * @param encryptionRequired YES if the service requires the link to be encrypted before a stream can be established.  NO if the service can be used over
+     *                           an unsecured link.
      */
     @Generated
     @Selector("publishL2CAPChannelWithEncryption:")
@@ -406,11 +398,11 @@ public class CBPeripheralManager extends CBManager {
 
     /**
      * unpublishL2CAPChannel:
-     * 
+     * <p>
      * Removes a published service from the local system.  No new connections for this PSM will be accepted, and any existing L2CAP channels
-     * 			using this PSM will be closed.
-     * 
-     * @param PSM		The service PSM to be removed from the system.
+     * using this PSM will be closed.
+     *
+     * @param PSM The service PSM to be removed from the system.
      */
     @Generated
     @Selector("unpublishL2CAPChannel:")

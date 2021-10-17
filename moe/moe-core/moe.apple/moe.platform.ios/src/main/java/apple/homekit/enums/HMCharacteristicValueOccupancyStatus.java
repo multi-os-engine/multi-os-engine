@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueOccupancyStatus
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueOccupancyStatusNotOccupied     Occupancy is not detected.
  * [@constant]  HMCharacteristicValueOccupancyStatusOccupied        Occupancy is detected.
  */

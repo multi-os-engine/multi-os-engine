@@ -70,7 +70,7 @@ public class QLThumbnailGenerator extends NSObject {
 
     /**
      * Cancels the given QLThumbnailGenerationRequest.
-     * 
+     *
      * @param request The request that should be cancelled.
      */
     @Generated
@@ -94,11 +94,10 @@ public class QLThumbnailGenerator extends NSObject {
     public static native String description_static();
 
     /**
-     * @param completionHandler
-     * Always called when the thumbnail generation is over.
-     * The thumbnail passed to this handler is the most representative version of the thumbnail that was successfully generated (if any).
-     * If set, the error contains information about the issue that occurred while trying to generate the thumbnail.
-     * QLThumbnail error codes can be found in <QuickLookThumbnailing/QLThumbnailErrors.h>.
+     * @param completionHandler Always called when the thumbnail generation is over.
+     *                          The thumbnail passed to this handler is the most representative version of the thumbnail that was successfully generated (if any).
+     *                          If set, the error contains information about the issue that occurred while trying to generate the thumbnail.
+     *                          QLThumbnail error codes can be found in <QuickLookThumbnailing/QLThumbnailErrors.h>.
      */
     @Generated
     @Selector("generateBestRepresentationForRequest:completionHandler:")
@@ -114,13 +113,12 @@ public class QLThumbnailGenerator extends NSObject {
     }
 
     /**
-     * @param updateHandler
-     * Called for the successive requested representations of a thumbnail.
-     * If a representation was not successfully generated, this may be called with a nil representation.
-     * If a requested more representative version was successfully generated before a less representative one, this handler will be called only for the more representative version, skipping the less representative one.
-     * This handler is guaranteed to be called at least once, for the requested most representative version, whether a representation could be successfully generated or not.
-     * If set, the error contains information about the issue that occurred while trying to generate the representation of the given type.
-     * QLThumbnail error codes can be found in <QuickLookThumbnailing/QLThumbnailErrors.h>.
+     * @param updateHandler Called for the successive requested representations of a thumbnail.
+     *                      If a representation was not successfully generated, this may be called with a nil representation.
+     *                      If a requested more representative version was successfully generated before a less representative one, this handler will be called only for the more representative version, skipping the less representative one.
+     *                      This handler is guaranteed to be called at least once, for the requested most representative version, whether a representation could be successfully generated or not.
+     *                      If set, the error contains information about the issue that occurred while trying to generate the representation of the given type.
+     *                      QLThumbnail error codes can be found in <QuickLookThumbnailing/QLThumbnailErrors.h>.
      */
     @Generated
     @Selector("generateRepresentationsForRequest:updateHandler:")
@@ -183,10 +181,9 @@ public class QLThumbnailGenerator extends NSObject {
      * Saves a thumbnail for the request on disk at fileURL.
      * The file saved at fileURL has to be deleted when it is not used anymore.
      * This is primarily intended for file provider extensions which need to upload thumbnails and have a small memory limit.
-     * 
-     * @param contentType An image content type to save the thumbnail as, supported by CGImageDestination, such as kUTTypePNG or kUTTypeJPEG
-     * @param completionHandler
-     * Always called when the thumbnail generation is over. Will contain an error if the thumbnail could not be successfully saved to disk at fileURL.
+     *
+     * @param contentType       An image content type to save the thumbnail as, supported by CGImageDestination, such as kUTTypePNG or kUTTypeJPEG
+     * @param completionHandler Always called when the thumbnail generation is over. Will contain an error if the thumbnail could not be successfully saved to disk at fileURL.
      */
     @Generated
     @Selector("saveBestRepresentationForRequest:toFileAtURL:withContentType:completionHandler:")

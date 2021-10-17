@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EKParticipant
- * 
+ * <p>
  * Abstract class representing a participant attached to an event.
  */
 @Generated
@@ -161,9 +161,9 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * ABRecordWithAddressBook
-     * 
+     * <p>
      * Returns the ABRecordRef that represents this participant.
-     * 
+     * <p>
      * This method returns the ABRecordRef that represents this participant,
      * if a match can be found based on email address in the address book
      * passed. If we cannot find the participant, nil is returned.
@@ -175,7 +175,7 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * [@property]   url
-     * 
+     * <p>
      * URL representing this participant.
      */
     @Generated
@@ -184,12 +184,12 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * contactPredicate
-     * 
+     * <p>
      * Returns a predicate to use with Contacts.framework to retrieve the corresponding
-     *             CNContact instance.
-     * 
+     * CNContact instance.
+     * <p>
      * This method returns a predicate that can be used with a CNContactStore to fetch
-     *             a CNContact instance for this participant, if one exists.
+     * a CNContact instance for this participant, if one exists.
      */
     @Generated
     @Selector("contactPredicate")
@@ -207,9 +207,9 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * [@property]   currentUser
-     * 
+     * <p>
      * A boolean indicating whether this participant represents the
-     *             owner of this account.
+     * owner of this account.
      */
     @Generated
     @Selector("isCurrentUser")
@@ -217,7 +217,7 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * [@property]   name
-     * 
+     * <p>
      * Name of this participant.
      */
     @Generated
@@ -226,9 +226,9 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * [@property]   participantRole
-     * 
+     * <p>
      * The role of the attendee.
-     * 
+     * <p>
      * Returns the role of the attendee as a EKParticipantRole value.
      */
     @Generated
@@ -238,9 +238,9 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * [@property]   participantStatus
-     * 
+     * <p>
      * The status of the attendee.
-     * 
+     * <p>
      * Returns the status of the attendee as a EKParticipantStatus value.
      */
     @Generated
@@ -250,9 +250,9 @@ public class EKParticipant extends EKObject implements NSCopying {
 
     /**
      * [@property]   participantType
-     * 
+     * <p>
      * The type of the attendee.
-     * 
+     * <p>
      * Returns the type of the attendee as a EKParticipantType value.
      */
     @Generated

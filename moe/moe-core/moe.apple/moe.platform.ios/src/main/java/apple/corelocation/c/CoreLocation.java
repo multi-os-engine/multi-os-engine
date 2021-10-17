@@ -42,9 +42,9 @@ public final class CoreLocation {
 
     /**
      * CLLocationCoordinate2DIsValid
-     * 
+     * <p>
      * Discussion:
-     *   Returns YES if the specified coordinate is valid, NO otherwise.
+     * Returns YES if the specified coordinate is valid, NO otherwise.
      */
     @Generated
     @CFunction
@@ -52,9 +52,9 @@ public final class CoreLocation {
 
     /**
      * CLLocationCoordinate2DMake:
-     * 
+     * <p>
      * Discussion:
-     *   Returns a new CLLocationCoordinate2D at the given latitude and longitude
+     * Returns a new CLLocationCoordinate2D at the given latitude and longitude
      */
     @Generated
     @CFunction
@@ -63,11 +63,11 @@ public final class CoreLocation {
 
     /**
      * kCLDistanceFilterNone
-     * 
+     * <p>
      * Discussion:
-     *   Use as the distanceFilter property for CLLocationManager. This indicates
-     *   to the location service that no minimum movement filter is desired - ie, client will be informed
-     *   of any movement.
+     * Use as the distanceFilter property for CLLocationManager. This indicates
+     * to the location service that no minimum movement filter is desired - ie, client will be informed
+     * of any movement.
      */
     @Generated
     @CVariable()
@@ -75,12 +75,12 @@ public final class CoreLocation {
 
     /**
      * kCLLocationAccuracy<x>
-     * 
+     * <p>
      * Discussion:
-     *   Used to specify the accuracy level desired. The location service will try its best to achieve
-     *   your desired accuracy. However, it is not guaranteed. To optimize
-     *   power performance, be sure to specify an appropriate accuracy for your usage scenario (eg,
-     *   use a large accuracy value when only a coarse location is needed).
+     * Used to specify the accuracy level desired. The location service will try its best to achieve
+     * your desired accuracy. However, it is not guaranteed. To optimize
+     * power performance, be sure to specify an appropriate accuracy for your usage scenario (eg,
+     * use a large accuracy value when only a coarse location is needed).
      */
     @Generated
     @CVariable()
@@ -108,9 +108,9 @@ public final class CoreLocation {
 
     /**
      * CLLocationDistanceMax
-     * 
+     * <p>
      * Discussion:
-     * 	Used to specify the maximum CLLocationDistance
+     * Used to specify the maximum CLLocationDistance
      */
     @Generated
     @CVariable()
@@ -118,9 +118,9 @@ public final class CoreLocation {
 
     /**
      * CLTimeIntervalMax
-     * 
+     * <p>
      * Discussion:
-     * 	Used to specify the maximum NSTimeInterval
+     * Used to specify the maximum NSTimeInterval
      */
     @Generated
     @CVariable()
@@ -128,9 +128,9 @@ public final class CoreLocation {
 
     /**
      * kCLLocationCoordinate2DInvalid
-     * 
+     * <p>
      * Discussion:
-     *   Used to specify an invalid CLLocationCoordinate2D.
+     * Used to specify an invalid CLLocationCoordinate2D.
      */
     @Generated
     @CVariable()
@@ -139,10 +139,10 @@ public final class CoreLocation {
 
     /**
      * kCLErrorDomain
-     * 
+     * <p>
      * Discussion:
-     *   Error returned as the domain to NSError from CoreLocation.
-     * 
+     * Error returned as the domain to NSError from CoreLocation.
+     * <p>
      * The file CLError.h defines constants for the errors in kCLErrorDomain.
      */
     @Generated
@@ -152,10 +152,10 @@ public final class CoreLocation {
 
     /**
      * kCLErrorUserInfoAlternateRegionKey
-     * 
+     * <p>
      * Discussion:
-     *   When an error with code kCLErrorRegionMonitoringResponseDelayed is received, this key may be populated
-     *   in the userInfo dictionary.  The value is a CLRegion that the location service can more effectively monitor.
+     * When an error with code kCLErrorRegionMonitoringResponseDelayed is received, this key may be populated
+     * in the userInfo dictionary.  The value is a CLRegion that the location service can more effectively monitor.
      */
     @Generated
     @CVariable()
@@ -164,11 +164,11 @@ public final class CoreLocation {
 
     /**
      * kCLHeadingFilterNone
-     * 
+     * <p>
      * Discussion:
-     *   Use as the headingFilter property for CLLocationManager. This indicates
-     *   to the heading service that no minimum movement filter is desired - ie, client will be informed
-     *   of any movement.
+     * Use as the headingFilter property for CLLocationManager. This indicates
+     * to the heading service that no minimum movement filter is desired - ie, client will be informed
+     * of any movement.
      */
     @Generated
     @CVariable()
@@ -176,16 +176,27 @@ public final class CoreLocation {
 
     /**
      * kCLLocationAccuracyReduced
-     * 
+     * <p>
      * Discussion:
-     *   If you set your CLLocationManager's desiredAccuracy property to
-     *   this value, locations delivered to your delegate in response to
-     *   startUpdatingLocation or requestLocation will have their
-     *   accuracy reduced.  The locations you receive will match the
-     *   locations your app would have received if the user had decided
-     *   not to grant your app authorization for precise location.
+     * If you set your CLLocationManager's desiredAccuracy property to
+     * this value, locations delivered to your delegate in response to
+     * startUpdatingLocation or requestLocation will have their
+     * accuracy reduced.  The locations you receive will match the
+     * locations your app would have received if the user had decided
+     * not to grant your app authorization for precise location.
      */
     @Generated
     @CVariable()
     public static native double kCLLocationAccuracyReduced();
+
+    /**
+     * CLLocationPushServiceErrorDomain
+     * <p>
+     * Discussion:
+     * Error returned as the domain to NSError from -[CLLocationManager startMonitoringLocationPushesWithCompletion:].
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CLLocationPushServiceErrorDomain();
 }

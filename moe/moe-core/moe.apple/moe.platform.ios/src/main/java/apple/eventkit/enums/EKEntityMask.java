@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum]       EKEntityMask
- * 
+ * <p>
  * A bitmask based on EKEntityType that can be used to specify multiple entities at once.
  */
 @Generated

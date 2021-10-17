@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTKMeshBufferAllocator
- * 
+ * <p>
  * Allocator passed to MDLAsset init method to load vertex and index data directly into Metal buffers.
  */
 @Generated
@@ -163,7 +163,7 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
 
     /**
      * [@property] device
-     * 
+     * <p>
      * Device used to create buffers.
      */
     @Generated
@@ -177,9 +177,9 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
 
     /**
      * initWithDevice
-     * 
+     * <p>
      * Initialize the allocator with a device to be used to create buffers.
-     * 
+     * <p>
      * The designated initializer for this class.
      */
     @Generated

@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_data_transfer_report_state_t
- * 
- * 	The state of a Data Transfer Report indicates whether or not the contents
- * 	have been collected, and are ready to be accessed.
+ * <p>
+ * The state of a Data Transfer Report indicates whether or not the contents
+ * have been collected, and are ready to be accessed.
  */
 @Generated
 public final class nw_data_transfer_report_state_t {

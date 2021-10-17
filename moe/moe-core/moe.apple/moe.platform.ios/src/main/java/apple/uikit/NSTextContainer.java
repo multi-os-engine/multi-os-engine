@@ -343,4 +343,11 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Returns NSTextLayoutManager owning the text container. When non-nil, -layoutManager should be nil.
+     */
+    @Generated
+    @Selector("textLayoutManager")
+    public native NSTextLayoutManager textLayoutManager();
 }

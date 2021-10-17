@@ -20,24 +20,24 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]       CTTextAlignment
- * 
+ * <p>
  * These constants specify text alignment.
- * 
+ * <p>
  * [@constant]   kCTTextAlignmentLeft
- *             Text is visually left-aligned.
- * 
+ * Text is visually left-aligned.
+ * <p>
  * [@constant]   kCTTextAlignmentRight
- *             Text is visually right-aligned.
- * 
+ * Text is visually right-aligned.
+ * <p>
  * [@constant]   kCTTextAlignmentCenter
- *             Text is visually center-aligned.
- * 
+ * Text is visually center-aligned.
+ * <p>
  * [@constant]   kCTTextAlignmentJustified
- *             Text is fully justified. The last line in a paragraph is
- *             naturally aligned.
- * 
+ * Text is fully justified. The last line in a paragraph is
+ * naturally aligned.
+ * <p>
  * [@constant]   kCTTextAlignmentNatural
- *             Use the natural alignment of the text's script.
+ * Use the natural alignment of the text's script.
  */
 @Generated
 public final class CTTextAlignment {

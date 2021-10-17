@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- *  CFNetServiceBrowser flags
- * 
- *  Discussion:
+ * CFNetServiceBrowser flags
+ * <p>
+ * Discussion:
  * Result bit flags passed to CFNetServiceBrowserClientCallBack.
  */
 @Generated

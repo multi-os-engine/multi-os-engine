@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLPipelineOption
- * 
+ * <p>
  * Controls the creation of the pipeline
  */
 @Generated

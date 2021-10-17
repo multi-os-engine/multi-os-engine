@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBCentral
- * 
+ * <p>
  * Represents a remote central.
  */
 @Generated
@@ -160,11 +160,11 @@ public class CBCentral extends CBPeer {
     public native CBCentral init();
 
     /**
-     *  [@property]	maximumUpdateValueLength
-     * 
+     * [@property]	maximumUpdateValueLength
+     * <p>
      * The maximum amount of data, in bytes, that can be received by the central in a single notification or indication.
-     * 
-     * @see		updateValue:forCharacteristic:onSubscribedCentrals:
+     *
+     * @see        updateValue:forCharacteristic:onSubscribedCentrals:
      */
     @Generated
     @Selector("maximumUpdateValueLength")

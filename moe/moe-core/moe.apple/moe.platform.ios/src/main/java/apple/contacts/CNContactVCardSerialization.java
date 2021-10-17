@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Contact vCard support.
- * 
+ * <p>
  * This converts between a contact and its vCard representation.
  */
 @Generated
@@ -101,14 +101,11 @@ public class CNContactVCardSerialization extends NSObject {
 
     /**
      * Parse data into contacts.
-     * 
+     * <p>
      * [@returns]     The parsed contacts. If the parsing fails, this will be @c nil.
-     * 
-     * @param       data
-     *              The data to parse.
-     * 
-     * @param       error
-     *              An optional outparameter. If the parsing fails, this will be set.
+     *
+     * @param data  The data to parse.
+     * @param error An optional outparameter. If the parsing fails, this will be set.
      */
     @Generated
     @Selector("contactsWithData:error:")
@@ -117,17 +114,14 @@ public class CNContactVCardSerialization extends NSObject {
 
     /**
      * Serialize contacts to data.
-     * 
+     * <p>
      * The contacts to be serialized must have been fetched with
-     *              [@c] +descriptorForRequiredKeys.
-     * 
+     * [@c] +descriptorForRequiredKeys.
+     * <p>
      * [@returns]     The encoded data. If the serialization fails, this will be @c nil.
-     * 
-     * @param       contacts
-     *              The contacts to serialize.
-     * 
-     * @param       error
-     *              An optional outparameter. If the serialization fails, this will be set.
+     *
+     * @param contacts The contacts to serialize.
+     * @param error    An optional outparameter. If the serialization fails, this will be set.
      */
     @Generated
     @Selector("dataWithContacts:error:")
@@ -144,9 +138,9 @@ public class CNContactVCardSerialization extends NSObject {
 
     /**
      * Descriptor for all contact keys required by vCard serialization
-     * 
+     * <p>
      * This descriptor must be passed to the fetch request if the returned
-     *              contacts are to be serialized with dataWithContacts:error:.
+     * contacts are to be serialized with dataWithContacts:error:.
      */
     @Generated
     @Selector("descriptorForRequiredKeys")

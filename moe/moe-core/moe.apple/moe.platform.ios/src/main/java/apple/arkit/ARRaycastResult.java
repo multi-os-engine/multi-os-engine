@@ -56,7 +56,7 @@ public class ARRaycastResult extends NSObject {
 
     /**
      * The anchor that the ray intersected.
-     * 
+     * <p>
      * In case of an existing plane target, an anchor will always be provided. In case of an estimated plane target,
      * an anchor may be provided if the ray hit an existing plane.
      */

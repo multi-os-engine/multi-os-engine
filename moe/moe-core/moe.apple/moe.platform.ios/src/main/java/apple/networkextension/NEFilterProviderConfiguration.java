@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterProviderConfiguration
- * 
+ * <p>
  * The NEFilterProviderConfiguration class declares the programmatic interface of an object that configures a plugin-based content filter.
  */
 @Generated
@@ -177,7 +177,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] filterBrowsers
-     * 
+     * <p>
      * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
      */
     @Generated
@@ -186,7 +186,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] filterSockets
-     * 
+     * <p>
      * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
      */
     @Generated
@@ -195,7 +195,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] identityReference
-     * 
+     * <p>
      * The optional certificate identity keychain reference associated with the filter.
      */
     @Generated
@@ -212,7 +212,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] organization
-     * 
+     * <p>
      * The optional organization associated with the filter.
      */
     @Generated
@@ -221,7 +221,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] passwordReference
-     * 
+     * <p>
      * The optional password keychain reference associated with the filter.
      */
     @Generated
@@ -230,7 +230,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] serverAddress
-     * 
+     * <p>
      * The optional address of the server used to support the filter.
      */
     @Generated
@@ -239,7 +239,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] filterBrowsers
-     * 
+     * <p>
      * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
      */
     @Generated
@@ -248,7 +248,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] filterSockets
-     * 
+     * <p>
      * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
      */
     @Generated
@@ -257,7 +257,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] identityReference
-     * 
+     * <p>
      * The optional certificate identity keychain reference associated with the filter.
      */
     @Generated
@@ -266,7 +266,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] organization
-     * 
+     * <p>
      * The optional organization associated with the filter.
      */
     @Generated
@@ -275,7 +275,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] passwordReference
-     * 
+     * <p>
      * The optional password keychain reference associated with the filter.
      */
     @Generated
@@ -284,7 +284,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] serverAddress
-     * 
+     * <p>
      * The optional address of the server used to support the filter.
      */
     @Generated
@@ -293,7 +293,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] username
-     * 
+     * <p>
      * The optional username associated with the filter.
      */
     @Generated
@@ -302,7 +302,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] vendorConfiguration
-     * 
+     * <p>
      * An optional dictionary of plugin-specific keys to be passed to the plugin.
      */
     @Generated
@@ -317,7 +317,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] username
-     * 
+     * <p>
      * The optional username associated with the filter.
      */
     @Generated
@@ -326,7 +326,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
 
     /**
      * [@property] vendorConfiguration
-     * 
+     * <p>
      * An optional dictionary of plugin-specific keys to be passed to the plugin.
      */
     @Generated

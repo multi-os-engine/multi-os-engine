@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -48,12 +49,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCorrelationQuery
- * 
+ * <p>
  * A query to find HKCorrelations
- * 
+ * <p>
  * Correlations are HKSamples that contain a set of correlated samples. HKCorrelationQuery
- *                accepts a predicate to filter HKCorrelations and a dictionary of predicates to filter the
- *                correlated samples.
+ * accepts a predicate to filter HKCorrelations and a dictionary of predicates to filter the
+ * correlated samples.
  */
 @Generated
 @Library("HealthKit")
@@ -276,16 +277,14 @@ public class HKCorrelationQuery extends HKQuery {
 
     /**
      * initWithTypes:predicate:samplePredicate:completion:
-     * 
+     * <p>
      * The designated initializer for HKCorrelationQuery.
-     * 
-     * @param     correlationType     The type of correlation that is being queried for
-     * 
-     * @param     predicate           The predicate for scoping which HKCorrelations are returned
-     * 
-     * @param     samplePredicates    A dictionary mapping HKSampleTypes to NSPredicates. If no predicate for a particular type
-     *                                is provided, it is assumed to be a nil predicate and objects of that type will not be
-     *                                filtered.
+     *
+     * @param correlationType  The type of correlation that is being queried for
+     * @param predicate        The predicate for scoping which HKCorrelations are returned
+     * @param samplePredicates A dictionary mapping HKSampleTypes to NSPredicates. If no predicate for a particular type
+     *                         is provided, it is assumed to be a nil predicate and objects of that type will not be
+     *                         filtered.
      */
     @Generated
     @Selector("initWithType:predicate:samplePredicates:completion:")
@@ -295,11 +294,11 @@ public class HKCorrelationQuery extends HKQuery {
 
     /**
      * [@property]      samplePredicates
-     * 
+     * <p>
      * A dictionary of predicates for the HKCorrelation's objects
-     * 
+     * <p>
      * samplePredicates maps HKSampleTypes to NSPredicates. The predicate value will apply
-     *                to objects of the key type. 
+     * to objects of the key type.
      */
     @Generated
     @Selector("samplePredicates")
@@ -339,4 +338,9 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
             HKElectrocardiogram electrocardiogram);
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

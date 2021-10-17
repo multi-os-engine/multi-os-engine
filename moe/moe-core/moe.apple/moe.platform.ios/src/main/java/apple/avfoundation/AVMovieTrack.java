@@ -120,9 +120,9 @@ public class AVMovieTrack extends AVAssetTrack {
 
     /**
      * [@property]       mediaDataStorage
-     * 
+     * <p>
      * The storage container for media data added to a track.
-     * 
+     * <p>
      * The value of this property is an AVMediaDataStorage object that indicates the location at which media data inserted or appended to the track will be written.
      */
     @Generated
@@ -131,7 +131,7 @@ public class AVMovieTrack extends AVAssetTrack {
 
     /**
      * [@property]       mediaDecodeTimeRange
-     * 
+     * <p>
      * A CMTimeRange indicating the range of decode times for the track's media.
      */
     @Generated
@@ -141,7 +141,7 @@ public class AVMovieTrack extends AVAssetTrack {
 
     /**
      * [@property]       mediaPresentationTimeRange
-     * 
+     * <p>
      * A CMTimeRange indicating the range of presentation times for the track's media.
      */
     @Generated

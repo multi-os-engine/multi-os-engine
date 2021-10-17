@@ -50,24 +50,24 @@ public final class MediaAccessibility {
      * ——————————————————————————————————————————————————————————————————————————————————————
      * [@group] Language preferences
      * ——————————————————————————————————————————————————————————————————————————————————————
-     *  [@function] MACaptionAppearanceAddSelectedLanguage
-     * 
+     * [@function] MACaptionAppearanceAddSelectedLanguage
+     * <p>
      * Adds a user's selected caption language to stack of languages.
-     * 
+     * <p>
      * After a language is added it will appear first in the array returned by MACaptionAppearanceCopySelectedLanguages. Applications should call this anytime a user selects a specific languages for captioning tracks.
-     * 
-     *  For example, an AVFoundation clients may execute the following code in response to a user selecting a captioning track:
-     *  <code>
-     *  // in response to a user selection (from a pop-up menu or any other UI affordance), make the selection effective
-     *  -[AVPlayerItem selectMediaOption:legibleOption inMediaSelectionGroup:legibleGroup];
-     * 
-     *  // now update system-wide captioning preferences by registering the language of the option selected by the user
-     *   MACaptionAppearanceAddSelectedLanguage(kMACaptionAppearanceDomainUser, (CFStringRef)[[legibleOption locale] localeIdentifier]);
-     * </code> 
-     * 
-     *  @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link
-     *  @param language Canonical language identifier (see @link CFLocale@/link) of the user's preferred caption language.
-     *  @return <code>true</code> if addition was successful. Unsuccessful additions are most liketly the result of invalid language codes.
+     * <p>
+     * For example, an AVFoundation clients may execute the following code in response to a user selecting a captioning track:
+     * <code>
+     * // in response to a user selection (from a pop-up menu or any other UI affordance), make the selection effective
+     * -[AVPlayerItem selectMediaOption:legibleOption inMediaSelectionGroup:legibleGroup];
+     * <p>
+     * // now update system-wide captioning preferences by registering the language of the option selected by the user
+     * MACaptionAppearanceAddSelectedLanguage(kMACaptionAppearanceDomainUser, (CFStringRef)[[legibleOption locale] localeIdentifier]);
+     * </code>
+     *
+     * @param domain   Preference domain, see  @link MACaptionAppearanceDomain @/link
+     * @param language Canonical language identifier (see @link CFLocale@/link) of the user's preferred caption language.
+     * @return <code>true</code> if addition was successful. Unsuccessful additions are most liketly the result of invalid language codes.
      */
     @Generated
     @CFunction
@@ -75,13 +75,12 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceCopySelectedLanguages
-     * 
+     * <p>
      * Copies the user's preferred caption languages.
-     * 
+     * <p>
      * Languages added using MACaptionAppearanceAddSelectedLanguage are normalized, and thus the contents of this array may have slightly different strings than those passed into MACaptionAppearanceAddSelectedLanguage.
-     * 
+     *
      * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
-     * 
      * @return Ordered array of preferred canonical language identifiers.
      */
     @Generated
@@ -93,9 +92,9 @@ public final class MediaAccessibility {
      * [@group] General preferences
      * ——————————————————————————————————————————————————————————————————————————————————————
      * [@function] MACaptionAppearanceGetDisplayType
-     * 
+     * <p>
      * User preference representing what type of captions should be displayed
-     * 
+     *
      * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @return User preference representing what type of captions should be displayed. See @link MACaptionAppearanceDisplayType @/link.
      */
@@ -106,10 +105,10 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceSetDisplayType
-     * 
+     * <p>
      * User preference representing what type of captions should be displayed
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain      Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param displayType Captions display type, see  @link MACaptionAppearanceDisplayType @/link.
      */
     @Generated
@@ -118,9 +117,9 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceCopyPreferredCaptioningMediaCharacteristics
-     * 
+     * <p>
      * User preference for captioning media characteristic
-     * 
+     *
      * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @return An array containing the preferred order of media characteristics for captions.
      */
@@ -133,10 +132,10 @@ public final class MediaAccessibility {
      * [@group] Color preferences
      * ——————————————————————————————————————————————————————————————————————————————————————
      * [@function] MACaptionAppearanceCopyForegroundColor
-     * 
+     * <p>
      * User preference for foreground/text color.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for foreground/text color.
      */
@@ -146,12 +145,12 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceCopyBackgroundColor
-     * 
+     * <p>
      * User preference for background color.
-     * 
+     * <p>
      * The background color is the color behind each caption glyph.
-     * 
-     * @param domain Preference domain, see @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for background color.
      */
@@ -161,12 +160,12 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceCopyWindowColor
-     * 
+     * <p>
      * User preference for window color.
-     * 
+     * <p>
      * The window color is the color of a box behind all of the caption glyphs.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for window color.
      */
@@ -176,10 +175,10 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceGetForegroundOpacity
-     * 
+     * <p>
      * User preference for foreground opacity.
-     * 
-     * @param domain Preference domain, see @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for foreground opacity.
      */
@@ -190,10 +189,10 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceGetBackgroundOpacity
-     * 
+     * <p>
      * User preference for background opacity.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for background opacity.
      */
@@ -204,10 +203,10 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceGetWindowOpacity
-     * 
+     * <p>
      * User preference for window opacity.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for window opacity.
      */
@@ -218,10 +217,10 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceGetWindowRoundedCornerRadius
-     * 
+     * <p>
      * User preference for caption-window corner radius.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for caption-window corner radius.
      */
@@ -235,10 +234,10 @@ public final class MediaAccessibility {
      * [@group] Text preferences
      * ——————————————————————————————————————————————————————————————————————————————————————
      * [@function] MACaptionAppearanceCopyFontForStyle
-     * 
+     * <p>
      * User font preference for the specified style.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @param fontStyle Font style, see  @link MACaptionAppearanceFontStyle @/link.
      * @return User font preference for the specified style.
@@ -250,10 +249,10 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceGetRelativeCharacterSize
-     * 
+     * <p>
      * User preference for font scaling.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User font scaling preference for the specified style.
      */
@@ -264,10 +263,10 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceGetTextEdgeStyle
-     * 
+     * <p>
      * User preference for text edge style.
-     * 
-     * @param domain Preference domain, see  @link MACaptionAppearanceDomain @/link.
+     *
+     * @param domain    Preference domain, see  @link MACaptionAppearanceDomain @/link.
      * @param *behavior (see @link MACaptionAppearanceBehavior @/link)
      * @return User preference for text edge style.
      */
@@ -278,9 +277,9 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MAAudibleMediaCopyPreferredCharacteristics
-     * 
+     * <p>
      * User preference for audible media characteristic
-     * 
+     *
      * @return An array containing the preferred order of media characteristics for audible media.
      */
     @Generated
@@ -289,7 +288,7 @@ public final class MediaAccessibility {
 
     /**
      * [@const] kMACaptionAppearanceSettingsChangedNotification
-     * 
+     * <p>
      * CFNotification sent when any user-defined captioning settings are changed.
      */
     @Generated
@@ -298,11 +297,11 @@ public final class MediaAccessibility {
 
     /**
      * [@constant] MAMediaCharacteristicDescribesMusicAndSoundForAccessibility
-     * 
+     * <p>
      * A media characteristic that indicates that a track or media selection option includes legible content in the language of its specified locale that:
      * - describes music and
      * - describes sound other than spoken dialog, such as sound effects and significant silences, occurring in program audio.
-     * 
+     * <p>
      * Legible tracks provided for accessibility purposes are typically tagged both with this characteristic as well as with MAMediaCharacteristicTranscribesSpokenDialogForAccessibility.
      * A legible track provided for accessibility purposes that's associated with an audio track without music and without sound other than spoken dialog -- lacking even significant silences -- can be tagged with this characteristic, because it trivially meets these requirements.
      */
@@ -312,11 +311,11 @@ public final class MediaAccessibility {
 
     /**
      * [@constant] MAMediaCharacteristicTranscribesSpokenDialogForAccessibility
-     * 
+     * <p>
      * A media characteristic that indicates that a track or media selection option includes legible content in the language of its specified locale that:
      * - transcribes spoken dialog and
      * - identifies speakers whenever other visual cues are insufficient for a viewer to determine who is speaking.
-     * 
+     * <p>
      * Legible tracks provided for accessibility purposes are typically tagged both with this characteristic as well as with MAMediaCharacteristicDescribesMusicAndSoundForAccessibility.
      * A legible track provided for accessibility purposes that's associated with an audio track that has no spoken dialog can be tagged with this characteristic, because it trivially meets these requirements.
      */
@@ -326,7 +325,7 @@ public final class MediaAccessibility {
 
     /**
      * [@constant] kMAAudibleMediaSettingsChangedNotification
-     * 
+     * <p>
      * CFNotification sent when any user-defined audible media settings are changed.
      */
     @Generated
@@ -335,7 +334,7 @@ public final class MediaAccessibility {
 
     /**
      * [@constant] MAMediaCharacteristicDescribesVideoForAccessibility
-     * 
+     * <p>
      * A media characteristic that indicates that a track or media selection option includes audible content that descries a video for accessibility.
      */
     @Generated
@@ -344,9 +343,9 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MACaptionAppearanceDidDisplayCaptions
-     * 
+     * <p>
      * Called by clients to inform accessibility products that captions have been displayed onscreen.
-     * 
+     *
      * @param strings An array of CFStringRef or CFAttributedStringRef objects that represent the text that is being displayed. An empty array is used to indicate that no captions are being displayed.
      */
     @Generated
@@ -355,13 +354,13 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MAImageCaptioningCopyCaption
-     * 
+     * <p>
      * Returns an accessibility caption from an image's metadata.
-     * 
+     * <p>
      * A convenience function for retrieving a caption from an image file that aims to describe the photo accurately.
      * This checks for XMP metadata field: Iptc4xmpExt:AOContentDescription.
-     * 
-     * @param url The URL locating the image on disk.
+     *
+     * @param url   The URL locating the image on disk.
      * @param error If an error occurs, a description will be provided.
      * @return A string with the image caption. Nil if there's no caption.
      */
@@ -371,14 +370,14 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MAImageCaptioningSetCaption
-     * 
+     * <p>
      * Sets the accessibility caption into an image's metadata.
-     * 
+     * <p>
      * A convenience function for setting a caption to an image file that aims to describe the photo accurately.
      * This sets the XMP metadata field: Iptc4xmpExt:AOContentDescription.
-     * 
-     * @param url The URL locating the image on disk.
-     * @param error If an error occurs, a description will be provided.
+     *
+     * @param url    The URL locating the image on disk.
+     * @param error  If an error occurs, a description will be provided.
      * @param string The accessility caption.
      * @return A bool representing whether the operation was successful.
      */
@@ -388,12 +387,12 @@ public final class MediaAccessibility {
 
     /**
      * [@function] MAImageCaptioningCopyMetadataTagPath
-     * 
+     * <p>
      * Returns the metadata tagpath for this key.
      * This tag path can be used to copy metadata directly using CGImageMetadataCopyTagWithPath from the CGImageMetadataRef, for example.
-     * 
+     * <p>
      * This returns the appropriate metadata tag path to be used.
-     * 
+     *
      * @return A string representing the tag path.
      */
     @Generated

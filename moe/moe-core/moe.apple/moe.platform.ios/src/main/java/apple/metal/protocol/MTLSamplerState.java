@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLSamplerState
- * 
+ * <p>
  * An immutable collection of sampler state compiled for a single device.
  */
 @Generated
@@ -37,7 +37,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLSamplerState {
     /**
      * [@property] device
-     * 
+     * <p>
      * The device this resource was created against.  This resource can only be used with this device.
      */
     @Generated
@@ -47,7 +47,7 @@ public interface MTLSamplerState {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify this object.
      */
     @Generated

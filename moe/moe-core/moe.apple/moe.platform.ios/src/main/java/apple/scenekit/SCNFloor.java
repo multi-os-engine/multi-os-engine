@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNFloor
- * 
+ * <p>
  * SCNFloor represents an infinite plane geometry.
  */
 @Generated
@@ -108,9 +108,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * floor
-     * 
+     * <p>
      * Creates and returns a floor.
-     * 
+     * <p>
      * A floor is an infinite plane.
      */
     @Generated
@@ -197,9 +197,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] length
-     * 
+     * <p>
      * The floor extent along the Z axis. Animatable.
-     * 
+     * <p>
      * If the value is equal to 0, the floor is infinite on the Z axis. The default value is 0.
      */
     @Generated
@@ -209,7 +209,7 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionCategoryBitMask
-     * 
+     * <p>
      * Determines the node categories to reflect. Defaults to all bits set.
      */
     @Generated
@@ -219,9 +219,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffEnd
-     * 
+     * <p>
      * Specifies the distance from the floor where the falloff finishes. Animatable.
-     * 
+     * <p>
      * If the value is 0 then there is no falloff. The default value is 0.
      */
     @Generated
@@ -231,9 +231,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffStart
-     * 
+     * <p>
      * Specifies the distance from the floor where the falloff begins. Animatable.
-     * 
+     * <p>
      * The default value is 0.
      */
     @Generated
@@ -242,10 +242,10 @@ public class SCNFloor extends SCNGeometry {
     public native double reflectionFalloffStart();
 
     /**
-     *  [@property] reflectionResolutionScaleFactor
-     * 
+     * [@property] reflectionResolutionScaleFactor
+     * <p>
      * Specifies the resolution scale factor of the buffer used to render the reflection.
-     * 
+     * <p>
      * Defaults to 0.5.
      * #endif
      */
@@ -256,9 +256,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectivity
-     * 
+     * <p>
      * Specifies the reflectivity of the floor. Animatable.
-     * 
+     * <p>
      * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is 0.25.
      */
     @Generated
@@ -268,9 +268,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] length
-     * 
+     * <p>
      * The floor extent along the Z axis. Animatable.
-     * 
+     * <p>
      * If the value is equal to 0, the floor is infinite on the Z axis. The default value is 0.
      */
     @Generated
@@ -279,7 +279,7 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionCategoryBitMask
-     * 
+     * <p>
      * Determines the node categories to reflect. Defaults to all bits set.
      */
     @Generated
@@ -288,9 +288,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffEnd
-     * 
+     * <p>
      * Specifies the distance from the floor where the falloff finishes. Animatable.
-     * 
+     * <p>
      * If the value is 0 then there is no falloff. The default value is 0.
      */
     @Generated
@@ -299,9 +299,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectionFalloffStart
-     * 
+     * <p>
      * Specifies the distance from the floor where the falloff begins. Animatable.
-     * 
+     * <p>
      * The default value is 0.
      */
     @Generated
@@ -309,10 +309,10 @@ public class SCNFloor extends SCNGeometry {
     public native void setReflectionFalloffStart(@NFloat double value);
 
     /**
-     *  [@property] reflectionResolutionScaleFactor
-     * 
+     * [@property] reflectionResolutionScaleFactor
+     * <p>
      * Specifies the resolution scale factor of the buffer used to render the reflection.
-     * 
+     * <p>
      * Defaults to 0.5.
      * #endif
      */
@@ -322,9 +322,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] reflectivity
-     * 
+     * <p>
      * Specifies the reflectivity of the floor. Animatable.
-     * 
+     * <p>
      * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is 0.25.
      */
     @Generated
@@ -333,9 +333,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] width
-     * 
+     * <p>
      * The floor extent along the X axis. Animatable.
-     * 
+     * <p>
      * If the value is equal to 0, the floor is infinite on the X axis. The default value is 0.
      */
     @Generated
@@ -350,9 +350,9 @@ public class SCNFloor extends SCNGeometry {
 
     /**
      * [@property] width
-     * 
+     * <p>
      * The floor extent along the X axis. Animatable.
-     * 
+     * <p>
      * If the value is equal to 0, the floor is infinite on the X axis. The default value is 0.
      */
     @Generated

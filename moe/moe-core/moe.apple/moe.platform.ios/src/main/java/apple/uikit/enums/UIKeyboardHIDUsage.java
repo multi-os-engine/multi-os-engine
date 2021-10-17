@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * This file defines a table of standardized key codes, called "HID usages" used by USB keyboards to identify individual keys.
- * 
+ * <p>
  * A general note on Usages and languages: Due to the variation of keyboards from language to language, it is not feasible
  * to specify exact key mappings for every language. Where this list is not specific for a key function in a language, the
  * closest equivalent key position should be used, so that a keyboard may be modified for a different language by simply printing
@@ -13,7 +13,7 @@ import org.moe.natj.general.ann.NInt;
  * the keyboard firmware to put the Z Usage into that place in the descriptor list, the vendor uses the Y Usage on both the North
  * American and German keyboards. This continues to be the existing practice in the industry, in order to minimize the number of
  * changes to the electronics to accommodate other languages.
- * 
+ * <p>
  * The following constants are from the USB 'HID Usage Tables' specification, revision 1.1rc3.
  */
 @Generated
@@ -222,7 +222,7 @@ public final class UIKeyboardHIDUsage {
      * Non-US # or _
      * Typical language mappings: US: \| Belg: μ`£ FrCa: <}> Dan:’* Dutch: <> Fren:*μ
      * Ger: #’ Ital: ù§ LatAm: }`] Nor:,* Span: }Ç Swed: ,*
-     * Swiss: $£ UK: #~. 
+     * Swiss: $£ UK: #~.
      */
     @Generated @NInt public static final long KeyboardNonUSPound = 0x0000000000000032L;
     /**
@@ -426,7 +426,7 @@ public final class UIKeyboardHIDUsage {
      * On Apple ISO keyboards, this is the section symbol (§/±)
      * Typical language mappings: Belg:<\> FrCa:«°» Dan:<\> Dutch:]|[ Fren:<> Ger:<|>
      * Ital:<> LatAm:<> Nor:<> Span:<> Swed:<|> Swiss:<\>
-     * UK:\| Brazil: \|. 
+     * UK:\| Brazil: \|.
      */
     @Generated @NInt public static final long KeyboardNonUSBackslash = 0x0000000000000064L;
     /**
@@ -552,7 +552,7 @@ public final class UIKeyboardHIDUsage {
     /**
      * Locking Num Lock
      * Implemented as a locking key; sent as a toggle button. Available for legacy support;
-     * however, most systems should use the non-locking version of this key. 
+     * however, most systems should use the non-locking version of this key.
      */
     @Generated @NInt public static final long KeyboardLockingNumLock = 0x0000000000000083L;
     /**

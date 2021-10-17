@@ -153,7 +153,7 @@ public class UICellAccessoryCustomView extends UICellAccessory {
 
     /**
      * Allows customizing the relative position of the accessory amongst any other accessories displayed on the same edge.
-     * The default is to insert the acccessory at a position closest to the inside of the cell.
+     * The default is to insert the accessory at a position closest to the inside of the cell.
      */
     @Generated
     @Selector("position")
@@ -185,7 +185,7 @@ public class UICellAccessoryCustomView extends UICellAccessory {
 
     /**
      * Allows customizing the relative position of the accessory amongst any other accessories displayed on the same edge.
-     * The default is to insert the acccessory at a position closest to the inside of the cell.
+     * The default is to insert the accessory at a position closest to the inside of the cell.
      */
     @Generated
     @Selector("setPosition:")

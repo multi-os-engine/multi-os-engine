@@ -14,13 +14,13 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NFCMiFareTag
- * 
+ * <p>
  * A @link NFCTagReaderSession @link/ reader session returns an instance conforming to this protocol when a MiFare tag is detected.  Unless it is specified
- *              all block completion handlers are dispatched on the session work queue that is associated with the tag.  Your process requires to include the
- *              "com.apple.developer.nfc.readersession.formats" entitlement to receive this tag object from the @link NFCTagReaderSessionDelegate @link/ delegate.
- *              Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly.
- *              [@link] NFCReaderErrorSecurityViolation @link/ will be returned from the @link NFCTagReaderSessionDelegate @link/ invalidation method if the required entitlement
- *              is missing when session is started.
+ * all block completion handlers are dispatched on the session work queue that is associated with the tag.  Your process requires to include the
+ * "com.apple.developer.nfc.readersession.formats" entitlement to receive this tag object from the @link NFCTagReaderSessionDelegate @link/ delegate.
+ * Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly.
+ * [@link] NFCReaderErrorSecurityViolation @link/ will be returned from the @link NFCTagReaderSessionDelegate @link/ invalidation method if the required entitlement
+ * is missing when session is started.
  */
 @Generated
 @Library("CoreNFC")
@@ -51,11 +51,11 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
 
     /**
      * sendMiFareCommand:completionHandler:
-     * 
+     * <p>
      * Send native MIFARE command to a tag.  Support MIFARE UltraLight, Plus, and DESFire products.
-     *                          Crypto1 protocol is not supported.  Command chainning is handled internally by the method and the full response composed of the
-     *                          individual fragment is returned in the completion handler.
-     * 
+     * Crypto1 protocol is not supported.  Command chainning is handled internally by the method and the full response composed of the
+     * individual fragment is returned in the completion handler.
+     *
      * @param command           The complete MiFare command.  CRC bytes are calculated and inserted automatically to the provided packet data frame.
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds. A @link NFCErrorDomain @link/ error
      *                          is returned when there is a communication issue with the tag. Successfully read data blocks will be returned from the NSData object.
@@ -74,9 +74,9 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
 
     /**
      * sendMiFareISO7816Command:completionHandler:
-     * 
+     * <p>
      * Send a ISO7816 command APDU to the tag and receives a response APDU.  Only available when @link mifareFamily @link/ returns NFCMiFarePlus, NFCMiFareDESFire.
-     * 
+     *
      * @param apdu              The ISO7816-4 command APDU object.
      * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds.
      *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with the tag or tag does not support ISO7816-4 commands,

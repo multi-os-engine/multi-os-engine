@@ -145,10 +145,6 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     public static native Object new_objc();
 
     @Generated
-    @Selector("prepareInterstitialAds")
-    public static native void prepareInterstitialAds();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -183,7 +179,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
 
     /**
      * initWithStickerSize:
-     * 
+     * <p>
      * Initializes a MSStickerBrowserViewController and configures it's MSStickerBrowserView with the provided sticker size class.
      */
     @Generated
@@ -197,7 +193,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
 
     /**
      * [@property]   stickerBrowserView
-     * 
+     * <p>
      * Returns the sticker browser view managed by the controller object.
      */
     @Generated

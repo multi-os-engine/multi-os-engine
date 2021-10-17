@@ -164,7 +164,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * -URLForDirectory:inDomain:appropriateForURL:create:error: is a URL-based replacement for FSFindFolder(). It allows for the specification and (optional) creation of a specific directory for a particular purpose (e.g. the replacement of a particular item on disk, or a particular Library directory.
-     * 
+     * <p>
      * You may pass only one of the values from the NSSearchPathDomainMask enumeration, and you may not pass NSAllDomainsMask.
      */
     @Generated
@@ -197,7 +197,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * attributesOfFileSystemForPath:error: returns an NSDictionary of key/value pairs containing the attributes of the filesystem containing the provided path. If this method returns 'nil', an NSError will be returned by reference in the 'error' parameter. This method does not traverse a terminal symlink.
-     * 
+     * <p>
      * This method replaces fileSystemAttributesAtPath:.
      */
     @Generated
@@ -207,7 +207,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * attributesOfItemAtPath:error: returns an NSDictionary of key/value pairs containing the attributes of the item (file, directory, symlink, etc.) at the path in question. If this method returns 'nil', an NSError will be returned by reference in the 'error' parameter. This method does not traverse a terminal symlink.
-     * 
+     * <p>
      * This method replaces fileAttributesAtPath:traverseLink:.
      */
     @Generated
@@ -254,7 +254,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * contentsOfDirectoryAtPath:error: returns an NSArray of NSStrings representing the filenames of the items in the directory. If this method returns 'nil', an NSError will be returned by reference in the 'error' parameter. If the directory contains no items, this method will return the empty array.
-     * 
+     * <p>
      * This method replaces directoryContentsAtPath:
      */
     @Generated
@@ -264,9 +264,9 @@ public class NSFileManager extends NSObject {
 
     /**
      * -contentsOfDirectoryAtURL:includingPropertiesForKeys:options:error: returns an NSArray of NSURLs identifying the the directory entries. If this method returns nil, an NSError will be returned by reference in the 'error' parameter. If the directory contains no entries, this method will return the empty array. When an array is specified for the 'keys' parameter, the specified property values will be pre-fetched and cached with each enumerated URL.
-     * 
+     * <p>
      * This method always does a shallow enumeration of the specified directory (i.e. it always acts as if NSDirectoryEnumerationSkipsSubdirectoryDescendants has been specified). If you need to perform a deep enumeration, use -[NSFileManager enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:].
-     * 
+     * <p>
      * If you wish to only receive the URLs and no other attributes, then pass '0' for 'options' and an empty NSArray ('[NSArray array]') for 'keys'. If you wish to have the property caches of the vended URLs pre-populated with a default set of attributes, then pass '0' for 'options' and 'nil' for 'keys'.
      */
     @Generated
@@ -297,7 +297,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * createDirectoryAtPath:withIntermediateDirectories:attributes:error: creates a directory at the specified path. If you pass 'NO' for createIntermediates, the directory must not exist at the time this call is made. Passing 'YES' for 'createIntermediates' will create any necessary intermediate directories. This method returns YES if all directories specified in 'path' were created and attributes were set. Directories are created with attributes specified by the dictionary passed to 'attributes'. If no dictionary is supplied, directories are created according to the umask of the process. This method returns NO if a failure occurs at any stage of the operation. If an error parameter was provided, a presentable NSError will be returned by reference.
-     * 
+     * <p>
      * This method replaces createDirectoryAtPath:attributes:
      */
     @Generated
@@ -326,7 +326,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * createSymbolicLinkAtPath:withDestination:error: returns YES if the symbolic link that point at 'destPath' was able to be created at the location specified by 'path'. If this method returns NO, the link was unable to be created and an NSError will be returned by reference in the 'error' parameter. This method does not traverse a terminal symlink.
-     * 
+     * <p>
      * This method replaces createSymbolicLinkAtPath:pathContent:
      */
     @Generated
@@ -359,7 +359,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * destinationOfSymbolicLinkAtPath:error: returns an NSString containing the path of the item pointed at by the symlink specified by 'path'. If this method returns 'nil', an NSError will be returned by reference in the 'error' parameter.
-     * 
+     * <p>
      * This method replaces pathContentOfSymbolicLinkAtPath:
      */
     @Generated
@@ -388,7 +388,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * enumeratorAtURL:includingPropertiesForKeys:options:errorHandler: returns an NSDirectoryEnumerator rooted at the provided directory URL. The NSDirectoryEnumerator returns NSURLs from the -nextObject method. The optional 'includingPropertiesForKeys' parameter indicates which resource properties should be pre-fetched and cached with each enumerated URL. The optional 'errorHandler' block argument is invoked when an error occurs. Parameters to the block are the URL on which an error occurred and the error. When the error handler returns YES, enumeration continues if possible. Enumeration stops immediately when the error handler returns NO.
-     * 
+     * <p>
      * If you wish to only receive the URLs and no other attributes, then pass '0' for 'options' and an empty NSArray ('[NSArray array]') for 'keys'. If you wish to have the property caches of the vended URLs pre-populated with a default set of attributes, then pass '0' for 'options' and 'nil' for 'keys'.
      */
     @Generated
@@ -524,7 +524,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: is for developers who wish to perform a safe-save without using the full NSDocument machinery that is available in the AppKit.
-     * 
+     * <p>
      * The `originalItemURL` is the item being replaced.
      * `newItemURL` is the item which will replace the original item. This item should be placed in a temporary directory as provided by the OS, or in a uniquely named directory placed in the same directory as the original item if the temporary directory is not available.
      * If `backupItemName` is provided, that name will be used to create a backup of the original item. The backup is placed in the same directory as the original item. If an error occurs during the creation of the backup item, the operation will fail. If there is already an item with the same name as the backup item, that item will be removed. The backup item will be removed in the event of success unless the `NSFileManagerItemReplacementWithoutDeletingBackupItem` option is provided in `options`.
@@ -539,7 +539,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * setAttributes:ofItemAtPath:error: returns YES when the attributes specified in the 'attributes' dictionary are set successfully on the item specified by 'path'. If this method returns NO, a presentable NSError will be provided by-reference in the 'error' parameter. If no error is required, you may pass 'nil' for the error.
-     * 
+     * <p>
      * This method replaces changeFileAttributes:atPath:.
      */
     @Generated
@@ -601,7 +601,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * subpathsOfDirectoryAtPath:error: returns an NSArray of NSStrings representing the filenames of the items in the specified directory and all its subdirectories recursively. If this method returns 'nil', an NSError will be returned by reference in the 'error' parameter. If the directory contains no items, this method will return the empty array.
-     * 
+     * <p>
      * This method replaces subpathsAtPath:
      */
     @Generated
@@ -615,7 +615,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * Returns an opaque token that represents the current ubiquity identity. This object can be copied, encoded, or compared with isEqual:. When ubiquity containers are unavailable because the user has disabled them, or when the user is simply not logged in, this method will return nil. The NSUbiquityIdentityDidChangeNotification notification is posted after this value changes.
-     * 
+     * <p>
      * If you don't need the container URL and just want to check if ubiquity containers are available you should use this method instead of checking -URLForUbiquityContainerIdentifier:.
      */
     @Generated
@@ -648,7 +648,7 @@ public class NSFileManager extends NSObject {
 
     /**
      * trashItemAtURL:resultingItemURL:error: returns YES if the item at 'url' was successfully moved to a Trash. Since the operation may require renaming the file to avoid collisions, it also returns by reference the resulting URL that the item was moved to. If this method returns NO, the item was not moved and an NSError will be returned by reference in the 'error' parameter.
-     * 
+     * <p>
      * To easily discover if an item is in the Trash, you may use [fileManager getRelationship:&result ofDirectory:NSTrashDirectory inDomain:0 toItemAtURL:url error:&error] && result == NSURLRelationshipContains.
      */
     @Generated

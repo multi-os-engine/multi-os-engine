@@ -28,18 +28,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNUpsampling
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * The MPSCNNUpsampling filter can be used to resample an existing MPSImage
- *             using a different sampling frequency for the x and y dimensions with the purpose of
- *             enlarging the size of an image.
- * 
- *             The number of output feature channels remains the same as the number of input feature
- *             channels.
- * 
- *             The scaleFactor must be an integer value >= 1. The default value is 1.
- *             If scaleFactor == 1, the filter acts as a copy kernel.
- * 
- *             Nearest and bilinear variants are supported.
+ * using a different sampling frequency for the x and y dimensions with the purpose of
+ * enlarging the size of an image.
+ * <p>
+ * The number of output feature channels remains the same as the number of input feature
+ * channels.
+ * <p>
+ * The scaleFactor must be an integer value >= 1. The default value is 1.
+ * If scaleFactor == 1, the filter acts as a copy kernel.
+ * <p>
+ * Nearest and bilinear variants are supported.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -157,7 +157,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     /**
      * [@property]   scaleFactorX
-     * 
+     * <p>
      * The upsampling scale factor for the x dimension. The default value is 1.
      */
     @Generated
@@ -166,7 +166,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     /**
      * [@property]   scaleFactorY
-     * 
+     * <p>
      * The upsampling scale factor for the y dimension. The default value is 1.
      */
     @Generated
@@ -198,10 +198,10 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
 
     /**
      * [@property]   alignCorners
-     * 
+     * <p>
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
-     *             preserving the values at the corner pixels.
-     *             The default is NO.
+     * preserving the values at the corner pixels.
+     * The default is NO.
      */
     @Generated
     @Selector("alignCorners")

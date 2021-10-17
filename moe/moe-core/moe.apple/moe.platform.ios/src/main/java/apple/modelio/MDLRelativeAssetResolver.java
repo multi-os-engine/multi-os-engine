@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLRelativeAssetResolver
- * 
+ * <p>
  * The relative asset resolver searches for referenced files
  * by checking the location of the asset for sibling files
  * satisfying the requested name.

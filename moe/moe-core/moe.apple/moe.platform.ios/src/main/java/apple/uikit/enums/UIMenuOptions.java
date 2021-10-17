@@ -17,4 +17,8 @@ public final class UIMenuOptions {
      * Indicates whether the menu should be rendered with a destructive appearance in its parent
      */
     @Generated @NUInt public static final long Destructive = 0x0000000000000002L;
+    /**
+     * Indicates whether the menu (and any submenus) should only allow a single "on" menu item.
+     */
+    @Generated @NUInt public static final long SingleSelection = 0x0000000000000020L;
 }

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MTLHeapType
- * 
+ * <p>
  * Describes the mode of operation for an MTLHeap.
  * [@constant] MTLHeapTypeAutomatic
  * In this mode, resources are placed in the heap automatically.

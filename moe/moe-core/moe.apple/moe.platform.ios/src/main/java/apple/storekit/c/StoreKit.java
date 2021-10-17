@@ -262,4 +262,12 @@ public final class StoreKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SKStoreProductParameterAdNetworkVersion();
+
+    /**
+     * Identifier to specify a custom product page for a given `SKStoreProductParameterITunesItemIdentifier` (NSString).
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SKStoreProductParameterCustomProductPageIdentifier();
 }

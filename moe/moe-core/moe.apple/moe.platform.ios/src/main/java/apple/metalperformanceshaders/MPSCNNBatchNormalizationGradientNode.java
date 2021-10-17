@@ -26,13 +26,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNBatchNormalizationGradientNode
- * 
+ * <p>
  * A node representing batch normalization gradient for training
- * 
+ * <p>
  * This filter encapsulates the MPSCNNBatchNormalizationStatisticsGradient
- *             and MPSCNNBatchNormalizationGradient low level filters as a single
- *             node. They will be called in sequence: statistics gradient until the
- *             batch is complete, then batch normalization gradient on the result.
+ * and MPSCNNBatchNormalizationGradient low level filters as a single
+ * node. They will be called in sequence: statistics gradient until the
+ * batch is complete, then batch normalization gradient on the result.
  */
 @Generated
 @Library("MetalPerformanceShaders")

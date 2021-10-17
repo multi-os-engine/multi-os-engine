@@ -209,9 +209,9 @@ public class GCControllerDirectionPad extends GCControllerElement {
 
     /**
      * Sets the normalized value for the direction pad's axis inputs. Will update the states of the direction pad's button inputs as well.
-     * 
+     * <p>
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     * 
+     *
      * @param xAxis the value to set the xAxis of the touchpad to.
      * @param yAxis the value to set the yAxis of the touchpad to.
      * @see value

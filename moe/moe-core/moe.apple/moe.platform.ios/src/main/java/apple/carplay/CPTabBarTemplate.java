@@ -108,7 +108,7 @@ public class CPTabBarTemplate extends CPTemplate {
     /**
      * Initialize the tab bar with an array of templates. Each template in the array
      * becomes a tab on the tab bar.
-     * 
+     * <p>
      * The maximum number of tabs in the tab bar template is given by @c maximumTabCount.
      */
     @Generated
@@ -139,7 +139,7 @@ public class CPTabBarTemplate extends CPTemplate {
     /**
      * The maximum number of tabs that your app may display in a @c CPTabBarTemplate,
      * depending on the entitlements that your app declares.
-     * 
+     * <p>
      * [@warning] The system will throw an exception if your app attempts to display more
      * than this number of tabs in your tab bar template.
      */

@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NWEndpoint
- * 
+ * <p>
  * NWEndpoint is a generic class to represent network endpoints, such as a port on a remote server.
  */
 @Generated

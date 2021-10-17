@@ -395,7 +395,10 @@ public class UIWindow extends UIView {
     }
 
     /**
-     * override point for subclass. Do not call directly
+     * Override point for subclasses. Do not call directly. Informs the window it has become the
+     * key window. In apps built against the iOS 15 or tvOS 15 SDK (or later), this method will
+     * be called when the window becomes its scene's key window. For apps built against earlier
+     * SDKs, this method will be called when the window becomes the application's key window.
      */
     @Generated
     @Selector("becomeKeyWindow")
@@ -439,23 +442,35 @@ public class UIWindow extends UIView {
     @Selector("initWithFrame:")
     public native UIWindow initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * In apps built against the iOS 15 or tvOS 15 SDK (or later), this property returns YES if
+     * the window is its scene's key window. For apps built against earlier SDKs, this property
+     * returns YES if the window is the application's key window.
+     */
     @Generated
     @Selector("isKeyWindow")
     public native boolean isKeyWindow();
 
     /**
-     * convenience. most apps call this to show the main window and also make it key. otherwise use view hidden property
+     * Convenience. Most apps call this to show a window and also make it key.
+     * To make the window visible without becoming key, just use UIView's hidden property.
      */
     @Generated
     @Selector("makeKeyAndVisible")
     public native void makeKeyAndVisible();
 
+    /**
+     * Make the window key without changing visibility.
+     */
     @Generated
     @Selector("makeKeyWindow")
     public native void makeKeyWindow();
 
     /**
-     * override point for subclass. Do not call directly
+     * Override point for subclasses. Do not call directly. Informs the window it has resigned key
+     * window status. In apps built against the iOS 15 or tvOS 15 SDK (or later), this method will
+     * be called when the window resigns key in its scene. For apps built against earlier SDKs,
+     * this method will be called when the window resigns key in the application.
      */
     @Generated
     @Selector("resignKeyWindow")
@@ -566,4 +581,11 @@ public class UIWindow extends UIView {
     @Generated
     @Selector("windowScene")
     public native UIWindowScene windowScene();
+
+    /**
+     * Default is YES. Return NO to indicate the window cannot become the key window.
+     */
+    @Generated
+    @Selector("canBecomeKeyWindow")
+    public native boolean canBecomeKeyWindow();
 }

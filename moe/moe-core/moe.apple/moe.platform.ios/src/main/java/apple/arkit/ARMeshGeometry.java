@@ -146,7 +146,7 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
     public static native Object new_objc();
 
     /**
-     * The normals of the mesh.
+     * Normal of each vertex in the mesh.
      */
     @Generated
     @Selector("normals")

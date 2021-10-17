@@ -137,7 +137,7 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
 
     /**
      * The region representing the relevant location.
-     * 
+     *
      * @see CLCircularRegion
      */
     @Generated

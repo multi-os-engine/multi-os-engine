@@ -16,12 +16,12 @@ import org.moe.natj.objc.ann.Selector;
 public interface MSMessagesAppTranscriptPresentation {
     /**
      * contentSizeThatFits:
-     * 
+     * <p>
      * The content size of the view controller's view fitting the constraining size.
-     * 
+     * <p>
      * This method will only be called if the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`.
-     * 
-     * @param      size    The maximum size the view will be displayed at.
+     *
+     * @param size The maximum size the view will be displayed at.
      */
     @Generated
     @Selector("contentSizeThatFits:")

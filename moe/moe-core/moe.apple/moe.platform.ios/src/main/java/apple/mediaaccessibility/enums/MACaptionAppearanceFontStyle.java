@@ -21,25 +21,25 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceFontStyle
- * 
+ * <p>
  * MACaptionAppearanceFontStyle is used to specify a font style
- * 
+ * <p>
  * [@constant] kMACaptionAppearanceFontStyleDefault
- *    Default font style.
+ * Default font style.
  * [@constant] kMACaptionAppearanceFontStyleMonospacedWithSerif
- *    Font style for fonts similar to Courier.
+ * Font style for fonts similar to Courier.
  * [@constant] kMACaptionAppearanceFontStyleProportionalWithSerif
- *    Font style for fonts similar to Times New Roman.
+ * Font style for fonts similar to Times New Roman.
  * [@constant] kMACaptionAppearanceFontStyleMonospacedWithoutSerif
- *    Font style for fonts similar to Helvetica Monospaced.
+ * Font style for fonts similar to Helvetica Monospaced.
  * [@constant] kMACaptionAppearanceFontStyleProportionalWithoutSerif
- *    Font style for fonts similar to Arial.
+ * Font style for fonts similar to Arial.
  * [@constant] kMACaptionAppearanceFontStyleCasual
- *    Font style for fonts similar to Dom and Impress.
+ * Font style for fonts similar to Dom and Impress.
  * [@constant] kMACaptionAppearanceFontStyleCursive
- *    Font style for fonts similar to Coronet and Marigold.
+ * Font style for fonts similar to Coronet and Marigold.
  * [@constant] kMACaptionAppearanceFontStyleSmallCapital
- *    Font style for fonts similar to Engravers Gothic.
+ * Font style for fonts similar to Engravers Gothic.
  */
 @Generated
 public final class MACaptionAppearanceFontStyle {

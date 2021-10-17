@@ -163,10 +163,10 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * [@c] savedRecordZones, @c deletedRecordZoneIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordZoneSaveBlock and @c perRecordZoneDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -184,10 +184,10 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * 
+     * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * [@c] savedRecordZones, @c deletedRecordZoneIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordZoneSaveBlock and @c perRecordZoneDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -217,5 +217,73 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
         @Generated
         void call_setModifyRecordZonesCompletionBlock(NSArray<? extends CKRecordZone> arg0,
                 NSArray<? extends CKRecordZoneID> arg1, NSError arg2);
+    }
+
+    /**
+     * Called on success or failure of a record zone deletion
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("perRecordZoneDeleteBlock")
+    @ObjCBlock(name = "call_perRecordZoneDeleteBlock_ret")
+    public native Block_perRecordZoneDeleteBlock_ret perRecordZoneDeleteBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perRecordZoneDeleteBlock_ret {
+        @Generated
+        void call_perRecordZoneDeleteBlock_ret(CKRecordZoneID arg0, NSError arg1);
+    }
+
+    /**
+     * Called on success or failure of a record zone save
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("perRecordZoneSaveBlock")
+    @ObjCBlock(name = "call_perRecordZoneSaveBlock_ret")
+    public native Block_perRecordZoneSaveBlock_ret perRecordZoneSaveBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_perRecordZoneSaveBlock_ret {
+        @Generated
+        void call_perRecordZoneSaveBlock_ret(CKRecordZoneID arg0, CKRecordZone arg1, NSError arg2);
+    }
+
+    /**
+     * Called on success or failure of a record zone deletion
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("setPerRecordZoneDeleteBlock:")
+    public native void setPerRecordZoneDeleteBlock(
+            @ObjCBlock(name = "call_setPerRecordZoneDeleteBlock") Block_setPerRecordZoneDeleteBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerRecordZoneDeleteBlock {
+        @Generated
+        void call_setPerRecordZoneDeleteBlock(CKRecordZoneID arg0, NSError arg1);
+    }
+
+    /**
+     * Called on success or failure of a record zone save
+     * <p>
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     */
+    @Generated
+    @Selector("setPerRecordZoneSaveBlock:")
+    public native void setPerRecordZoneSaveBlock(
+            @ObjCBlock(name = "call_setPerRecordZoneSaveBlock") Block_setPerRecordZoneSaveBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setPerRecordZoneSaveBlock {
+        @Generated
+        void call_setPerRecordZoneSaveBlock(CKRecordZoneID arg0, CKRecordZone arg1, NSError arg2);
     }
 }

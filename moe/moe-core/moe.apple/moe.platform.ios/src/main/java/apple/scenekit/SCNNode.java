@@ -38,6 +38,7 @@ import apple.scenekit.struct.SCNMatrix4;
 import apple.scenekit.struct.SCNVector3;
 import apple.scenekit.struct.SCNVector4;
 import apple.uikit.UIFocusAnimationCoordinator;
+import apple.uikit.UIFocusEffect;
 import apple.uikit.UIFocusMovementHint;
 import apple.uikit.UIFocusUpdateContext;
 import apple.uikit.UIView;
@@ -72,11 +73,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNNode
- * 
+ * <p>
  * SCNNode is the model class for node-tree objects.
- * 
+ * <p>
  * It encapsulates the position, rotations, and other transforms of a node, which define a coordinate system.
- * 	     The coordinate systems of all the sub-nodes are relative to the one of their parent node.
+ * The coordinate systems of all the sub-nodes are relative to the one of their parent node.
  */
 @Generated
 @Library("SceneKit")
@@ -171,7 +172,7 @@ public class SCNNode extends NSObject
 
     /**
      * node
-     * 
+     * <p>
      * Creates and initializes a node instance.
      */
     @Generated
@@ -180,9 +181,9 @@ public class SCNNode extends NSObject
 
     /**
      * nodeWithGeometry:
-     * 
+     * <p>
      * Creates and initializes a node instance with the specified geometry attached.
-     * 
+     *
      * @param geometry The geometry to attach.
      */
     @Generated
@@ -232,7 +233,7 @@ public class SCNNode extends NSObject
 
     /**
      * addAudioPlayer:
-     * 
+     * <p>
      * Add an audio player to the node and starts playing it right away.
      */
     @Generated
@@ -241,9 +242,9 @@ public class SCNNode extends NSObject
 
     /**
      * addChildNode:
-     * 
+     * <p>
      * Appends the node to the receiver’s childNodes array.
-     * 
+     *
      * @param child The node to be added to the receiver’s childNodes array.
      */
     @Generated
@@ -267,7 +268,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] audioPlayers
-     * 
+     * <p>
      * Get an array with all the audio players connected and playing on this node.
      */
     @Generated
@@ -276,7 +277,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] camera
-     * 
+     * <p>
      * Determines the camera attached to the receiver.
      */
     @Generated
@@ -285,7 +286,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] castsShadow
-     * 
+     * <p>
      * Determines if the node is rendered in shadow maps. Defaults to YES.
      */
     @Generated
@@ -294,13 +295,13 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] categoryBitMask
-     * 
+     * <p>
      * Defines what logical 'categories' the receiver belongs too. Defaults to 1.
-     * 
+     * <p>
      * Categories can be used to
-     *                1. exclude nodes from the influence of a given light (see SCNLight.categoryBitMask)
-     *                2. include/exclude nodes from render passes (see SCNTechnique.h)
-     *                3. specify which nodes to use when hit-testing (see SCNHitTestOptionCategoryBitMask)
+     * 1. exclude nodes from the influence of a given light (see SCNLight.categoryBitMask)
+     * 2. include/exclude nodes from render passes (see SCNTechnique.h)
+     * 3. specify which nodes to use when hit-testing (see SCNHitTestOptionCategoryBitMask)
      */
     @Generated
     @Selector("categoryBitMask")
@@ -309,12 +310,12 @@ public class SCNNode extends NSObject
 
     /**
      * childNodeWithName:recursively:
-     * 
+     * <p>
      * Returns the first node found in the node tree with the specified name.
-     * 
+     * <p>
      * The search uses a pre-order tree traversal.
-     * 
-     * @param name The name of the node you are searching for.
+     *
+     * @param name        The name of the node you are searching for.
      * @param recursively Set to YES if you want the search to look through the sub-nodes recursively.
      */
     @Generated
@@ -323,7 +324,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] childNodes
-     * 
+     * <p>
      * Returns the child node array of the receiver.
      */
     @Generated
@@ -332,11 +333,11 @@ public class SCNNode extends NSObject
 
     /**
      * childNodesPassingTest:
-     * 
+     * <p>
      * Returns the child nodes of the receiver that passes a test in a given Block.
-     * 
+     * <p>
      * The search is recursive and uses a pre-order tree traversal.
-     * 
+     *
      * @param predicate The block to apply to child nodes of the receiver. The block takes two arguments: "child" is a child node and "stop" is a reference to a Boolean value. The block can set the value to YES to stop further processing of the node hierarchy. The stop argument is an out-only argument. You should only ever set this Boolean to YES within the Block. The Block returns a Boolean value that indicates whether "child" passed the test.
      */
     @Generated
@@ -346,9 +347,9 @@ public class SCNNode extends NSObject
 
     /**
      * clone
-     * 
+     * <p>
      * Returns a copy of the receiver. The returned instance is autoreleased.
-     * 
+     * <p>
      * The copy is recursive: every child node will be cloned, too. For a non-recursive copy, use copy instead.
      * The copied nodes will share their attached objects (light, geometry, camera, ...) with the original instances;
      * if you want, for example, to change the materials of the copy independently of the original object, you'll
@@ -361,9 +362,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] constraints
-     * 
+     * <p>
      * An array of SCNConstraint that are applied to the receiver.
-     * 
+     * <p>
      * Adding or removing a constraint can be implicitly animated based on the current transaction.
      */
     @Generated
@@ -372,11 +373,11 @@ public class SCNNode extends NSObject
 
     /**
      * convertPosition:fromNode:
-     * 
+     * <p>
      * Converts a position from the coordinate system of a given node to that of the receiver.
-     * 
+     *
      * @param position A position specified in the local coordinate system of "node".
-     * @param node The node from whose coordinate system "position" is to be converted. If "node" is nil, this method instead converts from world coordinates.
+     * @param node     The node from whose coordinate system "position" is to be converted. If "node" is nil, this method instead converts from world coordinates.
      */
     @Generated
     @Selector("convertPosition:fromNode:")
@@ -385,11 +386,11 @@ public class SCNNode extends NSObject
 
     /**
      * convertPosition:toNode:
-     * 
+     * <p>
      * Converts a position from the receiver’s coordinate system to that of the specified node.
-     * 
+     *
      * @param position A position specified in the local coordinate system of the receiver.
-     * @param node The node into whose coordinate system "position" is to be converted. If "node" is nil, this method instead converts to world coordinates.
+     * @param node     The node into whose coordinate system "position" is to be converted. If "node" is nil, this method instead converts to world coordinates.
      */
     @Generated
     @Selector("convertPosition:toNode:")
@@ -398,11 +399,11 @@ public class SCNNode extends NSObject
 
     /**
      * convertTransform:fromNode:
-     * 
+     * <p>
      * Converts a transform from the coordinate system of a given node to that of the receiver.
-     * 
+     *
      * @param transform A transform specified in the local coordinate system of "node".
-     * @param node The node from whose coordinate system "transform" is to be converted. If "node" is nil, this method instead converts from world coordinates.
+     * @param node      The node from whose coordinate system "transform" is to be converted. If "node" is nil, this method instead converts from world coordinates.
      */
     @Generated
     @Selector("convertTransform:fromNode:")
@@ -411,11 +412,11 @@ public class SCNNode extends NSObject
 
     /**
      * convertTransform:toNode:
-     * 
+     * <p>
      * Converts a transform from the receiver’s coordinate system to that of the specified node.
-     * 
+     *
      * @param transform A transform specified in the local coordinate system of the receiver.
-     * @param node The node into whose coordinate system "transform" is to be converted. If "node" is nil, this method instead converts to world coordinates.
+     * @param node      The node into whose coordinate system "transform" is to be converted. If "node" is nil, this method instead converts to world coordinates.
      */
     @Generated
     @Selector("convertTransform:toNode:")
@@ -434,11 +435,11 @@ public class SCNNode extends NSObject
 
     /**
      * enumerateChildNodesUsingBlock:
-     * 
+     * <p>
      * Executes a given block on each child node under the receiver.
-     * 
+     * <p>
      * The search is recursive and uses a pre-order tree traversal.
-     * 
+     *
      * @param block The block to apply to child nodes of the receiver. The block takes two arguments: "child" is a child node and "stop" is a reference to a Boolean value. The block can set the value to YES to stop further processing of the node hierarchy. The stop argument is an out-only argument. You should only ever set this Boolean to YES within the Block.
      */
     @Generated
@@ -448,11 +449,11 @@ public class SCNNode extends NSObject
 
     /**
      * enumerateHierarchyUsingBlock:
-     * 
+     * <p>
      * Executes a given block on the receiver and its child nodes.
-     * 
+     * <p>
      * The search is recursive and uses a pre-order tree traversal.
-     * 
+     *
      * @param block The block to apply to the receiver and its child nodes. The block takes two arguments: "node" is a node in the hierarchy of the receiver (including the receiver) and "stop" is a reference to a Boolean value. The block can set the value to YES to stop further processing of the node hierarchy. The stop argument is an out-only argument. You should only ever set this Boolean to YES within the Block.
      */
     @Generated
@@ -462,16 +463,16 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] eulerAngles
-     * 
+     * <p>
      * Determines the receiver's euler angles. Animatable.
      * [@dicussion] The order of components in this vector matches the axes of rotation:
-     *               1. Pitch (the x component) is the rotation about the node's x-axis (in radians)
-     *               2. Yaw   (the y component) is the rotation about the node's y-axis (in radians)
-     *               3. Roll  (the z component) is the rotation about the node's z-axis (in radians)
-     *            SceneKit applies these rotations in the reverse order of the components:
-     *               1. first roll
-     *               2. then yaw
-     *               3. then pitch
+     * 1. Pitch (the x component) is the rotation about the node's x-axis (in radians)
+     * 2. Yaw   (the y component) is the rotation about the node's y-axis (in radians)
+     * 3. Roll  (the z component) is the rotation about the node's z-axis (in radians)
+     * SceneKit applies these rotations in the reverse order of the components:
+     * 1. first roll
+     * 2. then yaw
+     * 3. then pitch
      */
     @Generated
     @Selector("eulerAngles")
@@ -480,9 +481,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] filters
-     * 
+     * <p>
      * An array of Core Image filters that are applied to the rendering of the receiver and its child nodes. Animatable.
-     * 
+     * <p>
      * Defaults to nil. Filter properties should be modified by calling setValue:forKeyPath: on each node that the filter is attached to. If the inputs of the filter are modified directly after the filter is attached to a node, the behavior is undefined.
      */
     @Generated
@@ -491,7 +492,7 @@ public class SCNNode extends NSObject
 
     /**
      * flattenedClone
-     * 
+     * <p>
      * Returns a clone of the node containing a geometry that concatenates all the geometries contained in the node hierarchy.
      * The returned clone is autoreleased.
      */
@@ -502,7 +503,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] geometry
-     * 
+     * <p>
      * Returns the geometry attached to the receiver.
      */
     @Generated
@@ -523,13 +524,13 @@ public class SCNNode extends NSObject
 
     /**
      * hitTestWithSegmentFromPoint:toPoint:options:
-     * 
+     * <p>
      * Returns an array of SCNHitTestResult for each node in the receiver's sub tree that intersects the specified segment.
-     * 
+     * <p>
      * See SCNSceneRenderer.h for a screen-space hit testing method.
-     * 
-     * @param pointA The first point of the segment relative to the receiver.
-     * @param pointB The second point of the segment relative to the receiver.
+     *
+     * @param pointA  The first point of the segment relative to the receiver.
+     * @param pointB  The second point of the segment relative to the receiver.
      * @param options Optional parameters (see the "Hit test options" section in SCNSceneRenderer.h for the available options).
      */
     @Generated
@@ -547,9 +548,9 @@ public class SCNNode extends NSObject
 
     /**
      * insertChildNode:atIndex:
-     * 
+     * <p>
      * Insert a node in the childNodes array at the specified index.
-     * 
+     *
      * @param child The node to insert.
      * @param index Index in the childNodes array to insert the node.
      */
@@ -563,7 +564,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] hidden
-     * 
+     * <p>
      * Determines whether the receiver is displayed. Defaults to NO. Animatable.
      */
     @Generated
@@ -572,7 +573,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] hidden
-     * 
+     * <p>
      * Determines whether the receiver is displayed. Defaults to NO. Animatable.
      */
     @Generated
@@ -581,7 +582,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] paused
-     * 
+     * <p>
      * Controls whether or not the node's actions and animations are updated or paused. Defaults to NO.
      */
     @Generated
@@ -590,7 +591,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] paused
-     * 
+     * <p>
      * Controls whether or not the node's actions and animations are updated or paused. Defaults to NO.
      */
     @Generated
@@ -599,7 +600,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] light
-     * 
+     * <p>
      * Determines the light attached to the receiver.
      */
     @Generated
@@ -608,7 +609,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] morpher
-     * 
+     * <p>
      * Returns the morpher attached to the receiver.
      */
     @Generated
@@ -617,7 +618,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] movabilityHint
-     * 
+     * <p>
      * Communicates to SceneKit’s rendering system about how you want to move content in your scene; it does not affect your ability to change the node’s position or add animations or physics to the node. Defaults to SCNMovabilityHintFixed.
      */
     @Generated
@@ -627,7 +628,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] name
-     * 
+     * <p>
      * Determines the name of the receiver.
      */
     @Generated
@@ -636,7 +637,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] opacity
-     * 
+     * <p>
      * Determines the opacity of the receiver. Default is 1. Animatable.
      */
     @Generated
@@ -646,7 +647,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] orientation
-     * 
+     * <p>
      * Determines the receiver's orientation as a unit quaternion. Animatable.
      */
     @Generated
@@ -656,7 +657,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] parentNode
-     * 
+     * <p>
      * Returns the parent node of the receiver.
      */
     @Generated
@@ -676,9 +677,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] physicsBody
-     * 
+     * <p>
      * The description of the physics body of the receiver.
-     * 
+     * <p>
      * Default is nil.
      */
     @Generated
@@ -687,9 +688,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] physicsField
-     * 
+     * <p>
      * The description of the physics field of the receiver.
-     * 
+     * <p>
      * Default is nil.
      */
     @Generated
@@ -698,7 +699,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] pivot
-     * 
+     * <p>
      * Determines the receiver's pivot. Animatable.
      */
     @Generated
@@ -708,7 +709,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] position
-     * 
+     * <p>
      * Determines the receiver's position. Animatable.
      */
     @Generated
@@ -718,12 +719,12 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] presentationNode
-     * 
+     * <p>
      * Returns the presentation node.
-     * 
+     * <p>
      * Returns a copy of the node containing all the properties as they were at the start of the current transaction, with any active animations applied.
-     *             This gives a close approximation to the version of the node that is currently displayed.
-     *             The effect of attempting to modify the returned node in any way is undefined. The returned node has no parent and no child nodes.
+     * This gives a close approximation to the version of the node that is currently displayed.
+     * The effect of attempting to modify the returned node in any way is undefined. The returned node has no parent and no child nodes.
      */
     @Generated
     @Selector("presentationNode")
@@ -743,7 +744,7 @@ public class SCNNode extends NSObject
 
     /**
      * removeAllAudioPlayers
-     * 
+     * <p>
      * Remove all audio players from this node and stop playing them.
      */
     @Generated
@@ -767,7 +768,7 @@ public class SCNNode extends NSObject
 
     /**
      * removeAudioPlayer:
-     * 
+     * <p>
      * Remove the given audio player from this node and stop playing it.
      */
     @Generated
@@ -776,7 +777,7 @@ public class SCNNode extends NSObject
 
     /**
      * removeFromParentNode
-     * 
+     * <p>
      * Removes the node from the childNodes array of the receiver’s parentNode.
      */
     @Generated
@@ -792,12 +793,12 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] rendererDelegate
-     * 
+     * <p>
      * Specifies the receiver's renderer delegate object.
-     * 
+     * <p>
      * Setting a renderer delegate prevents the SceneKit renderer from drawing the node and lets you use custom OpenGL code instead.
-     *             The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
-     *             You would typically use a renderer delegate with a node that has no geometry and only serves as a location in space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
+     * The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
+     * You would typically use a renderer delegate with a node that has no geometry and only serves as a location in space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
      */
     @Generated
     @Selector("rendererDelegate")
@@ -806,9 +807,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] renderingOrder
-     * 
+     * <p>
      * Determines the rendering order of the receiver.
-     * 
+     * <p>
      * Nodes with greater rendering orders are rendered last. Defaults to 0.
      */
     @Generated
@@ -818,11 +819,11 @@ public class SCNNode extends NSObject
 
     /**
      * replaceChildNode:with:
-     * 
+     * <p>
      * Remove `child' from the childNode array of the receiver and insert 'child2' if non-nil in its position.
-     * 
+     * <p>
      * If the parentNode of `child' is not the receiver, the behavior is undefined.
-     * 
+     *
      * @param oldChild The node to replace in the childNodes array.
      * @param newChild The new node that will replace the previous one.
      */
@@ -836,9 +837,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] rotation
-     * 
+     * <p>
      * Determines the receiver's rotation. Animatable.
-     * 
+     * <p>
      * The rotation is axis angle rotation. The three first components are the axis, the fourth one is the rotation (in radian).
      */
     @Generated
@@ -866,7 +867,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] scale
-     * 
+     * <p>
      * Determines the receiver's scale. Animatable.
      */
     @Generated
@@ -880,7 +881,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] camera
-     * 
+     * <p>
      * Determines the camera attached to the receiver.
      */
     @Generated
@@ -889,7 +890,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] castsShadow
-     * 
+     * <p>
      * Determines if the node is rendered in shadow maps. Defaults to YES.
      */
     @Generated
@@ -898,13 +899,13 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] categoryBitMask
-     * 
+     * <p>
      * Defines what logical 'categories' the receiver belongs too. Defaults to 1.
-     * 
+     * <p>
      * Categories can be used to
-     *                1. exclude nodes from the influence of a given light (see SCNLight.categoryBitMask)
-     *                2. include/exclude nodes from render passes (see SCNTechnique.h)
-     *                3. specify which nodes to use when hit-testing (see SCNHitTestOptionCategoryBitMask)
+     * 1. exclude nodes from the influence of a given light (see SCNLight.categoryBitMask)
+     * 2. include/exclude nodes from render passes (see SCNTechnique.h)
+     * 3. specify which nodes to use when hit-testing (see SCNHitTestOptionCategoryBitMask)
      */
     @Generated
     @Selector("setCategoryBitMask:")
@@ -912,9 +913,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] constraints
-     * 
+     * <p>
      * An array of SCNConstraint that are applied to the receiver.
-     * 
+     * <p>
      * Adding or removing a constraint can be implicitly animated based on the current transaction.
      */
     @Generated
@@ -923,16 +924,16 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] eulerAngles
-     * 
+     * <p>
      * Determines the receiver's euler angles. Animatable.
      * [@dicussion] The order of components in this vector matches the axes of rotation:
-     *               1. Pitch (the x component) is the rotation about the node's x-axis (in radians)
-     *               2. Yaw   (the y component) is the rotation about the node's y-axis (in radians)
-     *               3. Roll  (the z component) is the rotation about the node's z-axis (in radians)
-     *            SceneKit applies these rotations in the reverse order of the components:
-     *               1. first roll
-     *               2. then yaw
-     *               3. then pitch
+     * 1. Pitch (the x component) is the rotation about the node's x-axis (in radians)
+     * 2. Yaw   (the y component) is the rotation about the node's y-axis (in radians)
+     * 3. Roll  (the z component) is the rotation about the node's z-axis (in radians)
+     * SceneKit applies these rotations in the reverse order of the components:
+     * 1. first roll
+     * 2. then yaw
+     * 3. then pitch
      */
     @Generated
     @Selector("setEulerAngles:")
@@ -940,9 +941,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] filters
-     * 
+     * <p>
      * An array of Core Image filters that are applied to the rendering of the receiver and its child nodes. Animatable.
-     * 
+     * <p>
      * Defaults to nil. Filter properties should be modified by calling setValue:forKeyPath: on each node that the filter is attached to. If the inputs of the filter are modified directly after the filter is attached to a node, the behavior is undefined.
      */
     @Generated
@@ -951,7 +952,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] geometry
-     * 
+     * <p>
      * Returns the geometry attached to the receiver.
      */
     @Generated
@@ -960,7 +961,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] light
-     * 
+     * <p>
      * Determines the light attached to the receiver.
      */
     @Generated
@@ -969,7 +970,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] morpher
-     * 
+     * <p>
      * Returns the morpher attached to the receiver.
      */
     @Generated
@@ -978,7 +979,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] movabilityHint
-     * 
+     * <p>
      * Communicates to SceneKit’s rendering system about how you want to move content in your scene; it does not affect your ability to change the node’s position or add animations or physics to the node. Defaults to SCNMovabilityHintFixed.
      */
     @Generated
@@ -987,7 +988,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] name
-     * 
+     * <p>
      * Determines the name of the receiver.
      */
     @Generated
@@ -996,7 +997,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] opacity
-     * 
+     * <p>
      * Determines the opacity of the receiver. Default is 1. Animatable.
      */
     @Generated
@@ -1005,7 +1006,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] orientation
-     * 
+     * <p>
      * Determines the receiver's orientation as a unit quaternion. Animatable.
      */
     @Generated
@@ -1014,9 +1015,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] physicsBody
-     * 
+     * <p>
      * The description of the physics body of the receiver.
-     * 
+     * <p>
      * Default is nil.
      */
     @Generated
@@ -1025,9 +1026,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] physicsField
-     * 
+     * <p>
      * The description of the physics field of the receiver.
-     * 
+     * <p>
      * Default is nil.
      */
     @Generated
@@ -1036,7 +1037,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] pivot
-     * 
+     * <p>
      * Determines the receiver's pivot. Animatable.
      */
     @Generated
@@ -1045,7 +1046,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] position
-     * 
+     * <p>
      * Determines the receiver's position. Animatable.
      */
     @Generated
@@ -1054,12 +1055,12 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] rendererDelegate
-     * 
+     * <p>
      * Specifies the receiver's renderer delegate object.
-     * 
+     * <p>
      * Setting a renderer delegate prevents the SceneKit renderer from drawing the node and lets you use custom OpenGL code instead.
-     *             The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
-     *             You would typically use a renderer delegate with a node that has no geometry and only serves as a location in space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
+     * The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
+     * You would typically use a renderer delegate with a node that has no geometry and only serves as a location in space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
      */
     @Generated
     @Selector("setRendererDelegate:")
@@ -1067,12 +1068,12 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] rendererDelegate
-     * 
+     * <p>
      * Specifies the receiver's renderer delegate object.
-     * 
+     * <p>
      * Setting a renderer delegate prevents the SceneKit renderer from drawing the node and lets you use custom OpenGL code instead.
-     *             The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
-     *             You would typically use a renderer delegate with a node that has no geometry and only serves as a location in space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
+     * The preferred way to customize the rendering is to tweak the material properties of the different materials of the node's geometry. SCNMaterial conforms to the SCNShadable protocol and allows for more advanced rendering using GLSL.
+     * You would typically use a renderer delegate with a node that has no geometry and only serves as a location in space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
      */
     @Generated
     public void setRendererDelegate(@Mapped(ObjCObjectMapper.class) SCNNodeRendererDelegate value) {
@@ -1088,9 +1089,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] renderingOrder
-     * 
+     * <p>
      * Determines the rendering order of the receiver.
-     * 
+     * <p>
      * Nodes with greater rendering orders are rendered last. Defaults to 0.
      */
     @Generated
@@ -1099,9 +1100,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] rotation
-     * 
+     * <p>
      * Determines the receiver's rotation. Animatable.
-     * 
+     * <p>
      * The rotation is axis angle rotation. The three first components are the axis, the fourth one is the rotation (in radian).
      */
     @Generated
@@ -1110,7 +1111,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] scale
-     * 
+     * <p>
      * Determines the receiver's scale. Animatable.
      */
     @Generated
@@ -1119,7 +1120,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] skinner
-     * 
+     * <p>
      * Returns the skinner attached to the receiver.
      */
     @Generated
@@ -1132,9 +1133,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] transform
-     * 
+     * <p>
      * Determines the receiver's transform. Animatable.
-     * 
+     * <p>
      * The transform is the combination of the position, rotation and scale defined below. So when the transform is set, the receiver's position, rotation and scale are changed to match the new transform.
      */
     @Generated
@@ -1143,7 +1144,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] skinner
-     * 
+     * <p>
      * Returns the skinner attached to the receiver.
      */
     @Generated
@@ -1158,9 +1159,9 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] transform
-     * 
+     * <p>
      * Determines the receiver's transform. Animatable.
-     * 
+     * <p>
      * The transform is the combination of the position, rotation and scale defined below. So when the transform is set, the receiver's position, rotation and scale are changed to match the new transform.
      */
     @Generated
@@ -1170,7 +1171,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldTransform
-     * 
+     * <p>
      * Determines the receiver's transform in world space (relative to the scene's root node). Animatable.
      */
     @Generated
@@ -1213,10 +1214,9 @@ public class SCNNode extends NSObject
 
     /**
      * Converts a vector from the coordinate system of a given node to that of the receiver.
-     * 
+     *
      * @param vector A vector specified in the local coordinate system of "node".
-     * @param node The node defining the space to which the vector should be transformed to. If "node" is nil, this method instead converts from world coordinates.
-     * 
+     * @param node   The node defining the space to which the vector should be transformed to. If "node" is nil, this method instead converts from world coordinates.
      * @return vector transformed from node space to reveiver local space.
      */
     @Generated
@@ -1226,10 +1226,9 @@ public class SCNNode extends NSObject
 
     /**
      * Converts a vector from the coordinate system of a given node to that of the receiver.
-     * 
+     *
      * @param vector A vector specified in the local coordinate system the receiver.
-     * @param node The node defining the space from which the vector should be transformed. If "node" is nil, this method instead converts from world coordinates.
-     * 
+     * @param node   The node defining the space from which the vector should be transformed. If "node" is nil, this method instead converts from world coordinates.
      * @return vector transformed from receiver local space to node local space.
      */
     @Generated
@@ -1244,7 +1243,7 @@ public class SCNNode extends NSObject
 
     /**
      * The GKEntity associated with the node via a GKSCNNodeComponent.
-     * 
+     *
      * @see GKEntity
      */
     @Generated
@@ -1253,7 +1252,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] focusBehavior
-     * 
+     * <p>
      * Controls the behavior of the receiver regarding the UIFocus system. Defaults to SCNNodeFocusBehaviorNone.
      */
     @Generated
@@ -1263,7 +1262,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] localFront
-     * 
+     * <p>
      * The local unit -Z axis (0, 0, -1).
      */
     @Generated
@@ -1273,7 +1272,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] localRight
-     * 
+     * <p>
      * The local unit X axis (1, 0, 0).
      */
     @Generated
@@ -1283,7 +1282,7 @@ public class SCNNode extends NSObject
 
     /**
      * Apply a the given rotation to the current one.
-     * 
+     *
      * @param rotation rotation in local space.
      */
     @Generated
@@ -1292,7 +1291,7 @@ public class SCNNode extends NSObject
 
     /**
      * Translate the current node position along the given vector in local space.
-     * 
+     *
      * @param translation the translation in local space.
      */
     @Generated
@@ -1301,7 +1300,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] localUp
-     * 
+     * <p>
      * The local unit Y axis (0, 1, 0).
      */
     @Generated
@@ -1312,7 +1311,7 @@ public class SCNNode extends NSObject
     /**
      * Convenience for calling lookAt:up:localFront: with worldUp set to `self.worldUp`
      * and localFront [SCNNode localFront].
-     * 
+     *
      * @param worldTarget target position in world space.
      */
     @Generated
@@ -1323,10 +1322,10 @@ public class SCNNode extends NSObject
      * Set the orientation of the node so its front vector is pointing toward a given
      * target. Using a reference up vector in world space and a front vector in
      * local space.
-     * 
+     *
      * @param worldTarget position in world space.
-     * @param worldUp the up vector in world space.
-     * @param localFront the front vector in local space.
+     * @param worldUp     the up vector in world space.
+     * @param localFront  the front vector in local space.
      */
     @Generated
     @Selector("lookAt:up:localFront:")
@@ -1348,9 +1347,9 @@ public class SCNNode extends NSObject
 
     /**
      * Apply a rotation relative to a target point in parent space.
-     * 
+     *
      * @param worldRotation rotation to apply in world space.
-     * @param worldTarget position of the target in world space.
+     * @param worldTarget   position of the target in world space.
      */
     @Generated
     @Selector("rotateBy:aroundTarget:")
@@ -1358,7 +1357,7 @@ public class SCNNode extends NSObject
 
     /**
      * The GKEntity associated with the node via a GKSCNNodeComponent.
-     * 
+     *
      * @see GKEntity
      */
     @Generated
@@ -1367,7 +1366,7 @@ public class SCNNode extends NSObject
 
     /**
      * The GKEntity associated with the node via a GKSCNNodeComponent.
-     * 
+     *
      * @see GKEntity
      */
     @Generated
@@ -1384,7 +1383,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] focusBehavior
-     * 
+     * <p>
      * Controls the behavior of the receiver regarding the UIFocus system. Defaults to SCNNodeFocusBehaviorNone.
      */
     @Generated
@@ -1397,7 +1396,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldOrientation
-     * 
+     * <p>
      * Determines the receiver's orientation in world space (relative to the scene's root node). Animatable.
      */
     @Generated
@@ -1406,7 +1405,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldPosition
-     * 
+     * <p>
      * Determines the receiver's position in world space (relative to the scene's root node).
      */
     @Generated
@@ -1427,7 +1426,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldFront
-     * 
+     * <p>
      * The local unit -Z axis (0, 0, -1) in world space.
      */
     @Generated
@@ -1437,7 +1436,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldOrientation
-     * 
+     * <p>
      * Determines the receiver's orientation in world space (relative to the scene's root node). Animatable.
      */
     @Generated
@@ -1447,7 +1446,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldPosition
-     * 
+     * <p>
      * Determines the receiver's position in world space (relative to the scene's root node).
      */
     @Generated
@@ -1457,7 +1456,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldRight
-     * 
+     * <p>
      * The local unit X axis (1, 0, 0) in world space.
      */
     @Generated
@@ -1467,7 +1466,7 @@ public class SCNNode extends NSObject
 
     /**
      * [@property] worldUp
-     * 
+     * <p>
      * The local unit Y axis (0, 1, 0) in world space.
      */
     @Generated
@@ -1499,4 +1498,24 @@ public class SCNNode extends NSObject
     @IsOptional
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
+
+    @Generated
+    @IsOptional
+    @Selector("focusEffect")
+    public native UIFocusEffect focusEffect();
+
+    @Generated
+    @IsOptional
+    @Selector("focusGroupPriority")
+    @NInt
+    public native long focusGroupPriority();
+
+    @Generated
+    @IsOptional
+    @Selector("isTransparentFocusItem")
+    public native boolean isTransparentFocusItem();
+
+    @Generated
+    @Selector("removeAllAnimationsWithBlendOutDuration:")
+    public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
 }

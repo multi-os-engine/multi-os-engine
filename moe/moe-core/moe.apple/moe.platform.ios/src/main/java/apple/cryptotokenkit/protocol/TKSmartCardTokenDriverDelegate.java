@@ -24,10 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface TKSmartCardTokenDriverDelegate extends TKTokenDriverDelegate {
     /**
      * Called by system when new SmartCard is detected.  You must override this method to create a new valid token TKSmartCardToken instance for @c smartCard.
-     * 
+     *
      * @param smartCard Target SmartCard.
-     * @param AID ISO7816-4 AID (application ID) which is already selected on the card.  If @c com.apple.ctk.aid is not present, no application is selected and this parameter is nil.
-     * @param error Error details if operation fails.
+     * @param AID       ISO7816-4 AID (application ID) which is already selected on the card.  If @c com.apple.ctk.aid is not present, no application is selected and this parameter is nil.
+     * @param error     Error details if operation fails.
      * @return Newly created token instance representing @c smartCard.  If an error occurs or driver decides that it does not want to handle specified smartCard as token, return nil.
      */
     @Generated

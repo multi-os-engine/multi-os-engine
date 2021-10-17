@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXCellConditionMetric
- * 
+ * <p>
  * An MXMetric subclass that encapsulates cellular condition metrics.
  */
 @Generated
@@ -95,13 +95,13 @@ public class MXCellularConditionMetric extends MXMetric {
 
     /**
      * [@property]      cellularConditionTime
-     * 
+     * <p>
      * Application run time bucketized by cellular condition.
-     * 
+     * <p>
      * This data represents the percentage of time an application spent running in different cellular conditions.
-     * 
+     * <p>
      * In the event that no data for any buckets is available, the histogram data will be empty.
-     * 
+     * <p>
      * Dimensioned as MXUnitSignalBars.
      */
     @Generated

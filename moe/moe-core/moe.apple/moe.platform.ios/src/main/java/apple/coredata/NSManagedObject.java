@@ -118,9 +118,6 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     @Selector("entity")
     public static native NSEntityDescription entity_static();
 
-    /**
-     * A new fetch request initialized with the Entity represented by this subclass. This property's getter is only legal to call on subclasses of NSManagedObject that represent a single entity in the model.
-     */
     @Generated
     @Selector("fetchRequest")
     public static native NSFetchRequest<?> fetchRequest();

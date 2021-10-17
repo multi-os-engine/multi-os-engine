@@ -173,7 +173,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * A remote URL corresponding to a representative video for the URL.
-     * 
+     * <p>
      * This may point to to a remote video file that AVFoundation can stream,
      * or to a YouTube video URL.
      */
@@ -214,7 +214,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * A remote URL corresponding to a representative video for the URL.
-     * 
+     * <p>
      * This may point to to a remote video file that AVFoundation can stream,
      * or to a YouTube video URL.
      */

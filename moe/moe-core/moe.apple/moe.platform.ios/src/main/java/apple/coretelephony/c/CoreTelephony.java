@@ -59,10 +59,10 @@ public final class CoreTelephony {
 
     /**
      * CTSubscriberTokenRefreshed
-     * 
+     * <p>
      * Description:
-     *     The name of the NSNotification sent when the carrier token is available.
-     *     The `object' argument is set to the CTSubscriber instance for which the token was refreshed.
+     * The name of the NSNotification sent when the carrier token is available.
+     * The `object' argument is set to the CTSubscriber instance for which the token was refreshed.
      */
     @Generated
     @CVariable()
@@ -71,9 +71,9 @@ public final class CoreTelephony {
 
     /**
      * CTRadioAccessTechnologyDataTechnologyDidChangeNotification
-     * 
+     * <p>
      * Description:
-     *     A NSNotification broadcast when radio access technology changes
+     * A NSNotification broadcast when radio access technology changes
      */
     @Generated
     @CVariable()
@@ -140,12 +140,12 @@ public final class CoreTelephony {
 
     /**
      * CTServiceRadioAccessTechnologyDataTechnologyDidChangeNotification
-     * 
+     * <p>
      * Description:
-     *     A NSNotification broadcast when radio access technology changes for one of the services.  Only an object is sent with
-     *     this notfication.  The object is an NSString that represents the service identifier of the service whose radio access
-     *     technology has changed.  This NSString should be used as the key in serviceCurrentRadioAccessTechnology to get the
-     *     value of the new radio access technology for the service.
+     * A NSNotification broadcast when radio access technology changes for one of the services.  Only an object is sent with
+     * this notfication.  The object is an NSString that represents the service identifier of the service whose radio access
+     * technology has changed.  This NSString should be used as the key in serviceCurrentRadioAccessTechnology to get the
+     * value of the new radio access technology for the service.
      */
     @Generated
     @CVariable()

@@ -58,4 +58,9 @@ public final class CallKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomainCallDirectoryManager();
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CXErrorDomainNotificationServiceExtension();
 }

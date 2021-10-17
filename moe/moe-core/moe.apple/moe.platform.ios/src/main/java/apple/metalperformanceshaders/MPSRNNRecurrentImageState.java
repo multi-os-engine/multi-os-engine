@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSRNNRecurrentImageState
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * This class holds all the data that is passed from one sequence iteration of the image-based RNN layer (stack) to the next.
  */
 @Generated
@@ -93,9 +93,9 @@ public class MPSRNNRecurrentImageState extends MPSState {
 
     /**
      * Access the stored memory cell image data (if present).
-     * 
-     * @param      layerIndex      Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
-     * @return     For valid layerIndex the memory cell image data, otherwise nil.
+     *
+     * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
+     * @return For valid layerIndex the memory cell image data, otherwise nil.
      */
     @Generated
     @Selector("getMemoryCellImageForLayerIndex:")
@@ -103,9 +103,9 @@ public class MPSRNNRecurrentImageState extends MPSState {
 
     /**
      * Access the stored recurrent image data.
-     * 
-     * @param      layerIndex      Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
-     * @return     For valid layerIndex the recurrent output image data, otherwise nil.
+     *
+     * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
+     * @return For valid layerIndex the recurrent output image data, otherwise nil.
      */
     @Generated
     @Selector("getRecurrentOutputImageForLayerIndex:")

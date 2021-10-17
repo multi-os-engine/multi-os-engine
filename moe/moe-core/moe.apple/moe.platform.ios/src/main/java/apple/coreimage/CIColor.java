@@ -127,7 +127,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Create a new color object in CI's default RGB colorspace
      * which is kCGColorSpaceSRGB or, if running on OSX before 10.10,
-     * kCGColorSpaceGenericRGB. 
+     * kCGColorSpaceGenericRGB.
      */
     @Generated
     @Selector("colorWithRed:green:blue:alpha:")
@@ -317,7 +317,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Initialize a new color object in CI's default RGB colorspace
      * which is kCGColorSpaceSRGB or, if running on OSX before 10.10,
-     * kCGColorSpaceGenericRGB. 
+     * kCGColorSpaceGenericRGB.
      */
     @Generated
     @Selector("initWithRed:green:blue:alpha:")

@@ -187,4 +187,18 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Label
+     */
+    @Generated
+    @Selector("label")
+    public native String label();
+
+    /**
+     * Label
+     */
+    @Generated
+    @Selector("setLabel:")
+    public native void setLabel(String value);
 }

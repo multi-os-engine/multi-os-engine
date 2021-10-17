@@ -224,7 +224,7 @@ public class GKPlayer extends GKBasePlayer {
     }
 
     /**
-     * This is the local player's unique and persistent ID that is scoped to this application. For non-local players, this ID is unique for this instantiation of this app.
+     * This is the player's unique and persistent ID that is scoped to this application.
      */
     @Generated
     @Selector("gamePlayerID")
@@ -238,7 +238,7 @@ public class GKPlayer extends GKBasePlayer {
     public native boolean scopedIDsArePersistent();
 
     /**
-     * This is the local player's unique and persistent ID that is scoped to the Apple Store Connect Team identifier of this application. For non-local players, this ID is unique for this instantiation of this app.
+     * This is the player's unique and persistent ID that is scoped to the Apple Store Connect Team identifier of this application.
      */
     @Generated
     @Selector("teamPlayerID")

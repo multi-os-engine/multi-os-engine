@@ -32,4 +32,7 @@ public final class UIFocusHeading {
     @Generated
     private UIFocusHeading() {
     }
+
+    @Generated @NUInt public static final long First = 0x0000000000000100L;
+    @Generated @NUInt public static final long Last = 0x0000000000000200L;
 }

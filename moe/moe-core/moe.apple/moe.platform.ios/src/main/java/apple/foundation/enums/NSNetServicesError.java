@@ -60,7 +60,7 @@ public final class NSNetServicesError {
 
     /**
      * Missing required configuration for local network access.
-     * 
+     * <p>
      * NSBonjourServices and NSLocalNetworkUsageDescription are required in Info.plist
      */
     @Generated @NInt public static final long MissingRequiredConfigurationError = 0xFFFFFFFFFFFEE6B8L;

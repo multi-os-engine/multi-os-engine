@@ -7,6 +7,7 @@ import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
 import apple.foundation.NSSet;
+import apple.foundation.NSURL;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -89,7 +90,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Complete all assigned actvities.
-     * 
+     * <p>
      * Marks all of the currently active assigned activities for this contextPath as complete.
      */
     @Generated
@@ -98,11 +99,11 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Returns contexts matching a set of identifiers where each identifier is the parent of the following identifier.
-     * 
+     * <p>
      * For example: @c@["math-game", @c"level1"] returns two contexts where @em math-game is the parent of @em level1.
-     *                If there are any missing contexts, they will be filled in by calling the following method on the data store's delegate:
-     *                [@code] -[CLSDataStoreDelegate createContextForIdentifier:parentContext:parentIdentifierPath:] @endcode
-     *                If the dataStore does not have a delegate and there are missing contexts then an incomplete list of contexts will be passed to the completion handler.  Completion block may be called on a background thread.
+     * If there are any missing contexts, they will be filled in by calling the following method on the data store's delegate:
+     * [@code] -[CLSDataStoreDelegate createContextForIdentifier:parentContext:parentIdentifierPath:] @endcode
+     * If the dataStore does not have a delegate and there are missing contexts then an incomplete list of contexts will be passed to the completion handler.  Completion block may be called on a background thread.
      */
     @Generated
     @Selector("contextsMatchingIdentifierPath:completion:")
@@ -118,7 +119,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Fetch contexts matching a predicate.
-     * 
+     * <p>
      * For example: NSPredicate<topic == kCLSContextTopicPhysics AND parent == someContext>.  Completion block may be called on a background thread.
      */
     @Generated
@@ -181,7 +182,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Fetch the top level context for the current app.
-     * 
+     * <p>
      * The main context is automatically created. Add child contexts to this context to persist them in the data store.
      */
     @Generated
@@ -196,7 +197,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Mark a context for removal.
-     * 
+     * <p>
      * Save to commit removal. Removal cascades and deletes all descendants.
      */
     @Generated
@@ -220,7 +221,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Save changes made in the data store.
-     * 
+     * <p>
      * Save new/modified/removed contexts, activities, etc. to the local store. In case of an error -[NSError userInfo] will contain the object that caused the error under the CLSErrorObjectKey..
      */
     @Generated
@@ -263,7 +264,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * The data store provides read/write access to your app's ClassKit data.
-     * 
+     * <p>
      * Data written to the data store is automatically synced via iCloud across the user's devices.
      */
     @Generated
@@ -278,4 +279,23 @@ public class CLSDataStore extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Implement to fetch the current CLSActivity instance for your document to add progress to.
+     * <p>
+     * Gets the currently CLSActivity for the file. If no current activity exists, one will be created for you.
+     *
+     * @param url File url for the document.
+     */
+    @Generated
+    @Selector("fetchActivityForURL:completion:")
+    public native void fetchActivityForURLCompletion(NSURL url,
+            @ObjCBlock(name = "call_fetchActivityForURLCompletion") Block_fetchActivityForURLCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchActivityForURLCompletion {
+        @Generated
+        void call_fetchActivityForURLCompletion(CLSActivity activity, NSError error);
+    }
 }

@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKEffectPropertyMaterial
- * 
+ * <p>
  * GLKEffectPropertyMaterial encapsulates material properties for an GLKEffect in
  * accordance with the specification and lighting behavior of OpenGL ES 1.1.
  */

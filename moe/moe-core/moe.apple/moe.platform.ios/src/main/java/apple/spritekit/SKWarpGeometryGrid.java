@@ -197,7 +197,7 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding
 
     /**
      * the total number of (sourcePosition + destPosition) pairs that define this grid.
-     * For a given dimension this is equal to (numberOfColumns + 1) * (numberOfRows + 1). 
+     * For a given dimension this is equal to (numberOfColumns + 1) * (numberOfRows + 1).
      */
     @Generated
     @Selector("vertexCount")

@@ -26,12 +26,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVMetadataHumanBodyObject
- * 
- *    AVMetadataHumanBodyObject is a concrete subclass of AVMetadataBodyObject defining a detected human body.
- * 
- *    AVMetadataHumanBodyObject represents a single detected human body in a picture. It is an immutable object describing the various features found in the body.
- * 
- *    On supported platforms, AVCaptureMetadataOutput outputs arrays of detected human body objects. See AVCaptureOutput.h.
+ * <p>
+ * AVMetadataHumanBodyObject is a concrete subclass of AVMetadataBodyObject defining a detected human body.
+ * <p>
+ * AVMetadataHumanBodyObject represents a single detected human body in a picture. It is an immutable object describing the various features found in the body.
+ * <p>
+ * On supported platforms, AVCaptureMetadataOutput outputs arrays of detected human body objects. See AVCaptureOutput.h.
  */
 @Generated
 @Library("AVFoundation")

@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLImageConstraint
- * 
+ * <p>
  * Constraint on image properties.
  */
 @Generated

@@ -46,10 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureMetadataInput
- * 
- *    AVCaptureMetadataInput is a concrete subclass of AVCaptureInput that provides a way for clients to supply AVMetadataItems to an AVCaptureSession.
- * 
- *    Instances of AVCaptureMetadataInput are input sources for AVCaptureSession that provide AVMetadataItems to an AVCaptureSession. AVCaptureMetadataInputs present one and only one AVCaptureInputPort, which currently may only be connected to an AVCaptureMovieFileOutput. The metadata supplied over the input port is provided by the client, and must conform to a client-supplied CMFormatDescription. The AVMetadataItems are supplied in an AVTimedMetadataGroup.
+ * <p>
+ * AVCaptureMetadataInput is a concrete subclass of AVCaptureInput that provides a way for clients to supply AVMetadataItems to an AVCaptureSession.
+ * <p>
+ * Instances of AVCaptureMetadataInput are input sources for AVCaptureSession that provide AVMetadataItems to an AVCaptureSession. AVCaptureMetadataInputs present one and only one AVCaptureInputPort, which currently may only be connected to an AVCaptureMovieFileOutput. The metadata supplied over the input port is provided by the client, and must conform to a client-supplied CMFormatDescription. The AVMetadataItems are supplied in an AVTimedMetadataGroup.
  */
 @Generated
 @Library("AVFoundation")
@@ -137,17 +137,14 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
 
     /**
      * metadataInputWithFormatDescription:clock:
-     * 
-     *    Returns an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an AVCaptureSession.
-     * 
-     *    This method returns an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups supplied by the client to an AVCaptureSession.
-     * 
-     * @param desc
-     *    A CMFormatDescription that defines the metadata to be supplied by the client. Throws an NSInvalidArgumentException if NULL is passed.
-     * @param clock
-     *    A CMClock that provided the timebase for the supplied samples. Throws an NSInvalidArgumentException if NULL is passed.
-     * @return
-     *    An AVCaptureMetadataInput instance.
+     * <p>
+     * Returns an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an AVCaptureSession.
+     * <p>
+     * This method returns an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups supplied by the client to an AVCaptureSession.
+     *
+     * @param desc  A CMFormatDescription that defines the metadata to be supplied by the client. Throws an NSInvalidArgumentException if NULL is passed.
+     * @param clock A CMClock that provided the timebase for the supplied samples. Throws an NSInvalidArgumentException if NULL is passed.
+     * @return An AVCaptureMetadataInput instance.
      */
     @Generated
     @Selector("metadataInputWithFormatDescription:clock:")
@@ -183,13 +180,12 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
 
     /**
      * appendTimedMetadataGroup:
-     * 
-     *    Provides metadata to the AVCaptureSession.
-     * 
-     *    The provided AVTimedMetadataGroup will be provided to the AVCaptureSession. The group's presentation timestamp is expressed in the context of the clock supplied to the initializer. It is not required that the AVTimedMetadataGroup have a duration; an empty AVTimedMetadataGroup can be supplied to denote a period of no metadata.
-     * 
-     * @param metadata
-     *    An AVTimedMetadataGroup of metadata. Will throw an exception if nil. In order to denote a period of no metadata, an empty AVTimedMetadataGroup should be passed.
+     * <p>
+     * Provides metadata to the AVCaptureSession.
+     * <p>
+     * The provided AVTimedMetadataGroup will be provided to the AVCaptureSession. The group's presentation timestamp is expressed in the context of the clock supplied to the initializer. It is not required that the AVTimedMetadataGroup have a duration; an empty AVTimedMetadataGroup can be supplied to denote a period of no metadata.
+     *
+     * @param metadata An AVTimedMetadataGroup of metadata. Will throw an exception if nil. In order to denote a period of no metadata, an empty AVTimedMetadataGroup should be passed.
      */
     @Generated
     @Selector("appendTimedMetadataGroup:error:")
@@ -202,17 +198,14 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
 
     /**
      * initWithFormatDescription:clock:
-     * 
-     *    Creates an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an AVCaptureSession.
-     * 
-     *    This method creates an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups supplied by the client to an AVCaptureSession.
-     * 
-     * @param desc
-     *    A CMFormatDescription that defines the metadata to be supplied by the client. Throws NSInvalidArgumentException if NULL is passed.
-     * @param clock
-     *    A CMClock that provided the timebase for the supplied samples. Throws NSInvalidArgumentException if NULL is passed.
-     * @return
-     *    An AVCaptureMetadataInput instance, or nil, if the device could not be used for capture.
+     * <p>
+     * Creates an AVCaptureMetadataInput instance that allows a client to provide AVTimedMetadataGroups to an AVCaptureSession.
+     * <p>
+     * This method creates an instance of AVCaptureMetadataInput that can be used to capture AVTimedMetadataGroups supplied by the client to an AVCaptureSession.
+     *
+     * @param desc  A CMFormatDescription that defines the metadata to be supplied by the client. Throws NSInvalidArgumentException if NULL is passed.
+     * @param clock A CMClock that provided the timebase for the supplied samples. Throws NSInvalidArgumentException if NULL is passed.
+     * @return An AVCaptureMetadataInput instance, or nil, if the device could not be used for capture.
      */
     @Generated
     @Selector("initWithFormatDescription:clock:")

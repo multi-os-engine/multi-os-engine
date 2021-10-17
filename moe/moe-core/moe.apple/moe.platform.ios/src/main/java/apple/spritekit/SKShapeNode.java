@@ -55,7 +55,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A SpriteKit Node used to stroke or fill a shape. CGPaths are used to supply the path.
- * 
+ * <p>
  * See CGPath <a href="http://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html">reference pages</a> for details on how to construct a CGPath.
  */
 @Generated
@@ -282,7 +282,7 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the shape with the final framebuffer.
-     * 
+     *
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -396,7 +396,7 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the shape with the final framebuffer.
-     * 
+     *
      * @see SKNode.SKBlendMode
      */
     @Generated

@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSeriesType
- * 
+ * <p>
  * Represents a type of HKSeriesSample
  */
 @Generated

@@ -326,10 +326,10 @@ public class NSDateFormatter extends NSFormatter {
 
     /**
      * A convenient way to generate an appropriate localized date format, and set it, in a single operation.
-     * 
+     * <p>
      * Equivalent to, though not necessarily implemented as:
      * formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:dateFormatTemplate options:0 locale:formatter.locale];
-     * 
+     * <p>
      * Note that the template string is used only to specify which date format components should be included. Ordering and other text will not be preserved.
      * The parameter is also not stored, or updated when the locale or other options change, just as with the ‘dateFormat’ property.
      */
@@ -459,7 +459,7 @@ public class NSDateFormatter extends NSFormatter {
 
     /**
      * Even though NSDateFormatter responds to the usual NSFormatter methods,
-     *   here are some convenience methods which are a little more obvious.
+     * here are some convenience methods which are a little more obvious.
      */
     @Generated
     @Selector("stringFromDate:")

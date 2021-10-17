@@ -20,6 +20,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDateComponents;
+import apple.foundation.NSDateInterval;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSPredicate;
@@ -48,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSampleQuery
- * 
+ * <p>
  * A concrete subclass of HKQuery that provides an interface to retrieve HKSample objects.
  */
 @Generated
@@ -268,14 +269,14 @@ public class HKSampleQuery extends HKQuery {
 
     /**
      * initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:
-     * 
+     * <p>
      * Returns a query that will retrieve HKSamples matching the given predicate.
-     * 
-     * @param         sampleType      The type of sample to retrieve.
-     * @param         predicate       The predicate which samples should match.
-     * @param         limit           The maximum number of samples to return.  Pass HKObjectQueryNoLimit for no limit.
-     * @param         sortDescriptors The sort descriptors to use to order the resulting samples.
-     * @param         resultsHandler  The block to invoke with results when the query has finished executing.
+     *
+     * @param sampleType      The type of sample to retrieve.
+     * @param predicate       The predicate which samples should match.
+     * @param limit           The maximum number of samples to return.  Pass HKObjectQueryNoLimit for no limit.
+     * @param sortDescriptors The sort descriptors to use to order the resulting samples.
+     * @param resultsHandler  The block to invoke with results when the query has finished executing.
      */
     @Generated
     @Selector("initWithSampleType:predicate:limit:sortDescriptors:resultsHandler:")
@@ -285,7 +286,7 @@ public class HKSampleQuery extends HKQuery {
 
     /**
      * [@property]      limit
-     * 
+     * <p>
      * The maximum number of results the receiver will return upon completion.
      */
     @Generated
@@ -295,7 +296,7 @@ public class HKSampleQuery extends HKQuery {
 
     /**
      * [@property]      sortDescriptors
-     * 
+     * <p>
      * An array of NSSortDescriptors.
      */
     @Generated
@@ -336,4 +337,66 @@ public class HKSampleQuery extends HKQuery {
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
             HKElectrocardiogram electrocardiogram);
+
+    /**
+     * initWithQueryDescriptors:limit:resultsHandler:
+     * <p>
+     * Returns a query that will retrieve HKSamples matching any of the given queryDescriptors.
+     *
+     * @param queryDescriptors An array of query descriptors that describes the sample types and predicates
+     *                         used for querying.
+     * @param limit            The maximum number of samples to return. Pass HKObjectQueryNoLimit
+     *                         for no limit.
+     * @param resultsHandler   The block to invoke with results when the query has finished executing. This
+     *                         block is invoked once with results, an array of HKSamples matching the
+     *                         queryDescriptors passed in, or nil if an error occurred.
+     */
+    @Generated
+    @Selector("initWithQueryDescriptors:limit:resultsHandler:")
+    public native HKSampleQuery initWithQueryDescriptorsLimitResultsHandler(
+            NSArray<? extends HKQueryDescriptor> queryDescriptors, @NInt long limit,
+            @ObjCBlock(name = "call_initWithQueryDescriptorsLimitResultsHandler") Block_initWithQueryDescriptorsLimitResultsHandler resultsHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithQueryDescriptorsLimitResultsHandler {
+        @Generated
+        void call_initWithQueryDescriptorsLimitResultsHandler(HKSampleQuery query, NSArray<? extends HKSample> results,
+                NSError error);
+    }
+
+    /**
+     * initWithQueryDescriptors:limit:sortDescriptors:resultsHandler:
+     * <p>
+     * Returns a query that will retrieve HKSamples matching any of the given queryDescriptors.
+     *
+     * @param queryDescriptors An array of query descriptors that describes the sample types and predicates
+     *                         used for querying.
+     * @param limit            The maximum number of samples to return. Pass HKObjectQueryNoLimit
+     *                         for no limit.
+     * @param sortDescriptors  The sort descriptors to use to order the resulting samples.
+     * @param resultsHandler   The block to invoke with results when the query has finished executing. This
+     *                         block is invoked once with results, an array of HKSamples matching the
+     *                         queryDescriptors passed in, or nil if an error occurred. The HKSamples in the
+     *                         array are sorted by the specified sortDescriptors.
+     */
+    @Generated
+    @Selector("initWithQueryDescriptors:limit:sortDescriptors:resultsHandler:")
+    public native HKSampleQuery initWithQueryDescriptorsLimitSortDescriptorsResultsHandler(
+            NSArray<? extends HKQueryDescriptor> queryDescriptors, @NInt long limit,
+            NSArray<? extends NSSortDescriptor> sortDescriptors,
+            @ObjCBlock(name = "call_initWithQueryDescriptorsLimitSortDescriptorsResultsHandler") Block_initWithQueryDescriptorsLimitSortDescriptorsResultsHandler resultsHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithQueryDescriptorsLimitSortDescriptorsResultsHandler {
+        @Generated
+        void call_initWithQueryDescriptorsLimitSortDescriptorsResultsHandler(HKSampleQuery query,
+                NSArray<? extends HKSample> results, NSError error);
+    }
+
+    @Generated
+    @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
+    public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
+            NSDateInterval dateInterval);
 }

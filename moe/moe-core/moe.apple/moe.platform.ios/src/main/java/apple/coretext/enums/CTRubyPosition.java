@@ -20,20 +20,20 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]       CTRubyPosition
- * 
+ * <p>
  * These constants specify the position of the ruby text with respect to the base text.
- * 
+ * <p>
  * [@constant]   kCTRubyPositionBefore
- *             The ruby text is positioned before the base text; i.e. above horizontal text and to the right of vertical text.
- * 
+ * The ruby text is positioned before the base text; i.e. above horizontal text and to the right of vertical text.
+ * <p>
  * [@constant]   kCTRubyPositionAfter
- *             The ruby text is positioned after the base text; i.e. below horizontal text and to the left of vertical text.
- * 
+ * The ruby text is positioned after the base text; i.e. below horizontal text and to the left of vertical text.
+ * <p>
  * [@constant]   kCTRubyPositionInterCharacter
- *             The ruby text is positioned to the right of the base text whether it is horizontal or vertical. This is the way that Bopomofo annotations are attached to Chinese text in Taiwan.
- * 
+ * The ruby text is positioned to the right of the base text whether it is horizontal or vertical. This is the way that Bopomofo annotations are attached to Chinese text in Taiwan.
+ * <p>
  * [@constant]   kCTRubyPositionInline
- *             The ruby text follows the base text with no special styling.
+ * The ruby text follows the base text with no special styling.
  */
 @Generated
 public final class CTRubyPosition {

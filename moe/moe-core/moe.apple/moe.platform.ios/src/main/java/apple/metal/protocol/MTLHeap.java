@@ -38,9 +38,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLHeap {
     /**
      * [@property] cpuCacheMode
-     * 
+     * <p>
      * CPU cache mode for the heap. Default is MTLCPUCacheModeDefaultCache.
-     * 
+     * <p>
      * All resources created from this heap share the same cache mode.
      */
     @Generated
@@ -50,7 +50,7 @@ public interface MTLHeap {
 
     /**
      * [@property] device
-     * 
+     * <p>
      * The device this heap was created against. This heap can only be used with this device.
      */
     @Generated
@@ -60,7 +60,7 @@ public interface MTLHeap {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify this heap.
      */
     @Generated
@@ -69,9 +69,9 @@ public interface MTLHeap {
 
     /**
      * maxAvailableSizeWithAlignment:
-     * 
+     * <p>
      * The maximum size that can be successfully allocated from the heap in bytes, taking into notice given alignment. Alignment needs to be zero, or power of two.
-     * 
+     * <p>
      * Provides a measure of fragmentation within the heap.
      */
     @Generated
@@ -81,11 +81,11 @@ public interface MTLHeap {
 
     /**
      * newBufferWithLength:options:
-     * 
+     * <p>
      * Create a new buffer backed by heap memory.
-     * 
+     * <p>
      * The requested storage and CPU cache modes must match the storage and CPU cache modes of the heap.
-     * 
+     *
      * @return The buffer or nil if heap is full.
      */
     @Generated
@@ -95,11 +95,11 @@ public interface MTLHeap {
 
     /**
      * newTextureWithDescriptor:
-     * 
+     * <p>
      * Create a new texture backed by heap memory.
-     * 
+     * <p>
      * The requested storage and CPU cache modes must match the storage and CPU cache modes of the heap, with the exception that the requested storage mode can be MTLStorageModeMemoryless.
-     * 
+     *
      * @return The texture or nil if heap is full.
      */
     @Generated
@@ -109,7 +109,7 @@ public interface MTLHeap {
 
     /**
      * [@property] label
-     * 
+     * <p>
      * A string to help identify this heap.
      */
     @Generated
@@ -118,7 +118,7 @@ public interface MTLHeap {
 
     /**
      * setPurgeabilityState:
-     * 
+     * <p>
      * Set or query the purgeability state of the heap.
      */
     @Generated
@@ -128,7 +128,7 @@ public interface MTLHeap {
 
     /**
      * [@property] size
-     * 
+     * <p>
      * Heap size in bytes, specified at creation time and rounded up to device specific alignment.
      */
     @Generated
@@ -138,9 +138,9 @@ public interface MTLHeap {
 
     /**
      * [@property] storageMode
-     * 
+     * <p>
      * Current heap storage mode, default is MTLStorageModePrivate.
-     * 
+     * <p>
      * All resources created from this heap share the same storage mode.
      */
     @Generated
@@ -150,7 +150,7 @@ public interface MTLHeap {
 
     /**
      * [@property] usedSize
-     * 
+     * <p>
      * The size in bytes, of all resources allocated from the heap.
      */
     @Generated
@@ -160,7 +160,7 @@ public interface MTLHeap {
 
     /**
      * [@property] currentAllocatedSize
-     * 
+     * <p>
      * The size in bytes of the current heap allocation.
      */
     @Generated
@@ -170,9 +170,9 @@ public interface MTLHeap {
 
     /**
      * [@property] hazardTrackingMode
-     * 
+     * <p>
      * Whether or not the heap is hazard tracked.
-     * 
+     * <p>
      * When a resource on a hazard tracked heap is modified, reads and writes from any other resource on that heap will be delayed until the modification is complete.
      * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from resources suballocated on that heap have completed.
      * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
@@ -186,16 +186,16 @@ public interface MTLHeap {
 
     /**
      * newBufferWithLength:options:offset:
-     * 
+     * <p>
      * Create a new buffer backed by heap memory at the specified placement offset.
-     * 
+     * <p>
      * This method can only be used when heapType is set to MTLHeapTypePlacement.
      * Use "MTLDevice heapBufferSizeAndAlignWithLength:options:" to determine requiredSize and requiredAlignment.
      * Any resources that exist in this heap at overlapping half-open range [offset, offset + requiredSize) are implicitly aliased with the new resource.
-     * 
-     * @param length The requested size of the buffer, in bytes.
+     *
+     * @param length  The requested size of the buffer, in bytes.
      * @param options The requested options of the buffer, of which the storage and CPU cache mode must match these of the heap.
-     * @param offset The requested offset of the buffer inside the heap, in bytes. Behavior is undefined if "offset + requiredSize > heap.size" or "offset % requiredAlignment != 0".
+     * @param offset  The requested offset of the buffer inside the heap, in bytes. Behavior is undefined if "offset + requiredSize > heap.size" or "offset % requiredAlignment != 0".
      * @return The buffer, or nil if the heap is not a placement heap
      */
     @Generated
@@ -205,15 +205,15 @@ public interface MTLHeap {
 
     /**
      * newTextureWithDescriptor:offset:
-     * 
+     * <p>
      * Create a new texture backed by heap memory at the specified placement offset.
-     * 
+     * <p>
      * This method can only be used when heapType is set to MTLHeapTypePlacement.
      * Use "MTLDevice heapTextureSizeAndAlignWithDescriptor:" to determine requiredSize and requiredAlignment.
      * Any resources that exist in this heap at overlapping half-open range [offset, offset + requiredSize) are implicitly aliased with the new resource.
-     * 
+     *
      * @param descriptor The requested properties of the texture, of which the storage and CPU cache mode must match those of the heap.
-     * @param offset The requested offset of the texture inside the heap, in bytes. Behavior is undefined if "offset + requiredSize > heap.size" and "offset % requiredAlignment != 0".
+     * @param offset     The requested offset of the texture inside the heap, in bytes. Behavior is undefined if "offset + requiredSize > heap.size" and "offset % requiredAlignment != 0".
      * @return The texture, or nil if the heap is not a placement heap.
      */
     @Generated
@@ -223,7 +223,7 @@ public interface MTLHeap {
 
     /**
      * [@property] resourceOptions
-     * 
+     * <p>
      * A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
      */
     @Generated
@@ -233,9 +233,9 @@ public interface MTLHeap {
 
     /**
      * [@property] type
-     * 
+     * <p>
      * The type of the heap. The default value is MTLHeapTypeAutomatic.
-     * 
+     * <p>
      * This constrains the resource creation functions that are available on the heap.
      */
     @Generated

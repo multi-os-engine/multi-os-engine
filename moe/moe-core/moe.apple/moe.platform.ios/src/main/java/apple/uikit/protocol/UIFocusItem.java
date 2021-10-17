@@ -17,10 +17,12 @@ limitations under the License.
 package apple.uikit.protocol;
 
 import apple.coregraphics.struct.CGRect;
+import apple.uikit.UIFocusEffect;
 import apple.uikit.UIFocusMovementHint;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
@@ -61,4 +63,38 @@ public interface UIFocusItem extends UIFocusEnvironment {
     @Selector("frame")
     @ByValue
     CGRect frame();
+
+    /**
+     * Describes a visual effect to apply when this item is focused. When not implemented, the system may create a default effect for this item.
+     * Returning nil indicates that the system should not apply any visual effects, and that the app will handle applying the appropriate visuals.
+     */
+    @Generated
+    @IsOptional
+    @Selector("focusEffect")
+    default UIFocusEffect focusEffect() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * The priority this item has in its focus group. The higher the priority, the more likely it is to get picked when focus moves into this group.
+     * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority, UIFocusGroupPrioritySelected).
+     */
+    @Generated
+    @IsOptional
+    @Selector("focusGroupPriority")
+    @NInt
+    default long focusGroupPriority() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * If this returns YES, the focus item is considered transparent in terms of occlusion. Items that are behind it are focusable.
+     * This value is ignored when the item is focusable, in which case the item is never considered transparent.
+     */
+    @Generated
+    @IsOptional
+    @Selector("isTransparentFocusItem")
+    default boolean isTransparentFocusItem() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

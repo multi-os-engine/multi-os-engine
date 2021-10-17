@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNError
- * 
+ * <p>
  * VPN error codes
  */
 @Generated

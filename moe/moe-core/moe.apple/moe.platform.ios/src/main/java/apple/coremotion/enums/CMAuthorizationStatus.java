@@ -5,14 +5,14 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CMAuthorizationStatus
- * 
+ * <p>
  * Discussion:
- *     Represents the current motion authorization state.
- * 
- *     CMAuthorizationStatusNotDetermined when the user has not been prompted yet.
- *     CMAuthorizationStatusRestricted when access is denied due to system-wide restrictions.
- *     CMAuthorizationStatusDenied when access is denied by the user.
- *     CMAuthorizationStatusAuthorized when access is authorized by the user.
+ * Represents the current motion authorization state.
+ * <p>
+ * CMAuthorizationStatusNotDetermined when the user has not been prompted yet.
+ * CMAuthorizationStatusRestricted when access is denied due to system-wide restrictions.
+ * CMAuthorizationStatusDenied when access is denied by the user.
+ * CMAuthorizationStatusAuthorized when access is authorized by the user.
  */
 @Generated
 public final class CMAuthorizationStatus {

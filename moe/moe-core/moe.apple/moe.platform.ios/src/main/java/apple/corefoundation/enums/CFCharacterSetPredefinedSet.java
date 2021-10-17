@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] CFCharacterSetPredefinedSet
- *        Type of the predefined CFCharacterSet selector values.
+ * Type of the predefined CFCharacterSet selector values.
  */
 @Generated
 public final class CFCharacterSetPredefinedSet {

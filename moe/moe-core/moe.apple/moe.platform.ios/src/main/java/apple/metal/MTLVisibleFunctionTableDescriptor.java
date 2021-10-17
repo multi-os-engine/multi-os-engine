@@ -90,7 +90,7 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] functionCount
-     * 
+     * <p>
      * The number of functions in the table.
      */
     @Generated
@@ -144,7 +144,7 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] functionCount
-     * 
+     * <p>
      * The number of functions in the table.
      */
     @Generated
@@ -166,7 +166,7 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
 
     /**
      * visibleFunctionTableDescriptor
-     * 
+     * <p>
      * Create an autoreleased visible function table descriptor
      */
     @Generated

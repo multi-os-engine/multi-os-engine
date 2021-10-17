@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Detects specific landmark points on human hands.
- * 
+ * <p>
  * This request will produce a collection of VNRecognizedPointsObservation objects which describe the pose of each detected human hand.
  */
 @Generated
@@ -138,8 +138,8 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
 
     /**
      * Defines an upper bounds to the maximum number of hands that will be processed for key points in an image.
-     * 
-     * The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2.
+     * <p>
+     * The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2. The maximum value for VNDetectHumanHandPoseRequestRevision1 is 6.
      */
     @Generated
     @Selector("maximumHandCount")
@@ -169,8 +169,8 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
 
     /**
      * Defines an upper bounds to the maximum number of hands that will be processed for key points in an image.
-     * 
-     * The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2.
+     * <p>
+     * The complexity in key points determination is scalable by the number of hands to be processed.  All hands detected in an image will be ordered by relative size, with only the N largest ones having key points determined.  The default value for this property is 2. The maximum value for VNDetectHumanHandPoseRequestRevision1 is 6.
      */
     @Generated
     @Selector("setMaximumHandCount:")
@@ -184,21 +184,11 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
-    @Generated
-    @Selector("supportedIdentifiedPointGroupKeysForRevision:error:")
-    public static native NSArray<String> supportedIdentifiedPointGroupKeysForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportedIdentifiedPointKeysForRevision:error:")
-    public static native NSArray<String> supportedIdentifiedPointKeysForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
     /**
      * Obtain the collection of human hand joint names that are supported by a given request revision.
-     * 
+     *
      * @param revision The revision of VNDetectHumanHandPoseRequest being queried.
-     * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
+     * @param error    The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanHandPoseObservationJointName symbols that are supported by the request revision, or nil if a failure occurs.
      */
     @Generated
@@ -208,24 +198,14 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of human hand joints group names that are supported by a given request revision.
-     * 
+     *
      * @param revision The revision of VNDetectHumanHandPoseRequest being queried.
-     * @param error The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
+     * @param error    The address of a variable that will be populated with an error upon failure.  If the caller does not need this information, NULL can be passed.
      * @return An array of VNHumanHandPoseObservationJointsGroupName symbols that are supported by the request revision, or nil if a failure occurs.
      */
     @Generated
     @Selector("supportedJointsGroupNamesForRevision:error:")
     public static native NSArray<String> supportedJointsGroupNamesForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportedRecognizedPointGroupKeysForRevision:error:")
-    public static native NSArray<String> supportedRecognizedPointGroupKeysForRevisionError(@NUInt long revision,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
-    @Selector("supportedRecognizedPointKeysForRevision:error:")
-    public static native NSArray<String> supportedRecognizedPointKeysForRevisionError(@NUInt long revision,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated

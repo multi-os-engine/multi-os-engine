@@ -90,10 +90,10 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The factor between estimated physical size and default size of the skeleton.
-     * 
+     * <p>
      * This value will be estimated if automaticSkeletonScaleEstimationEnabled is set to true on the ARBodyTrackingConfiguration.
      * It is used to correct the transform's translation. Default value is 1.0.
-     * 
+     *
      * @see -[ARSkeletonDefinition neutralBodySkeleton3D]
      */
     @Generated

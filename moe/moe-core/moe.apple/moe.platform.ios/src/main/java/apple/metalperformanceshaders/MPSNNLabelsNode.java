@@ -25,14 +25,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNLabelsNode
- * 
+ * <p>
  * The labels and weights for each MPSImage are passed in
- *              separately to the graph in a MPSNNLabels object. If
- *              the batch interface is used then there will be a
- *              MPSStateBatch of these of the same size as the MPSImageBatch
- *              that holds the images.  The MPSNNLabelsNode is a place
- *              holder in the graph for these nodes. The MPSNNLabels node
- *              is taken as an input to the Loss node
+ * separately to the graph in a MPSNNLabels object. If
+ * the batch interface is used then there will be a
+ * MPSStateBatch of these of the same size as the MPSImageBatch
+ * that holds the images.  The MPSNNLabelsNode is a place
+ * holder in the graph for these nodes. The MPSNNLabels node
+ * is taken as an input to the Loss node
  */
 @Generated
 @Library("MetalPerformanceShaders")

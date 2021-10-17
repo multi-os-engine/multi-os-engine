@@ -178,7 +178,7 @@ public class UIDynamicAnimator extends NSObject {
 
     /**
      * When you initialize a dynamic animator with this method, you should only associate collection view layout attributes with your behaviors.
-     * The animator will employ thecollection view layout’s content size coordinate system.
+     * The animator will employ the collection view layout’s content size coordinate system.
      */
     @Generated
     @Selector("initWithCollectionViewLayout:")

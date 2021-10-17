@@ -31,16 +31,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNBatchNormalization
  * [@dependency] This depends on Metal.framework
- * 
+ * <p>
  * MPSCNNBatchNormalization normalizes input images using per-channel
- *             means and variances.
- * 
- *             for (c = 0; c < numberOfFeatureChannels; ++c)
- *             {
- *                 input_image = in(:,:,c,:);
- *                 output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
- *                 out(:,:,c,:) = output_image;
- *             }
+ * means and variances.
+ * <p>
+ * for (c = 0; c < numberOfFeatureChannels; ++c)
+ * {
+ * input_image = in(:,:,c,:);
+ * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
+ * out(:,:,c,:) = output_image;
+ * }
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -110,15 +110,15 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * Encode this kernel to a command buffer for a single image using
-     *             a batch normalization state.
-     * 
-     * @param      commandBuffer               A valid command buffer to receive the kernel.
-     * @param      sourceImage                 The source MPSImage.
-     * @param      batchNormalizationState     A MPSCNNBatchNormalizationState containing weights and/or
-     *                                         statistics to use for the batch normalization. If the state
-     *                                         is temporary its read count will be decremented.
-     * @param      destinationImage            An MPSImage to contain the resulting normalized and scaled
-     *                                         image.
+     * a batch normalization state.
+     *
+     * @param commandBuffer           A valid command buffer to receive the kernel.
+     * @param sourceImage             The source MPSImage.
+     * @param batchNormalizationState A MPSCNNBatchNormalizationState containing weights and/or
+     *                                statistics to use for the batch normalization. If the state
+     *                                is temporary its read count will be decremented.
+     * @param destinationImage        An MPSImage to contain the resulting normalized and scaled
+     *                                image.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:batchNormalizationState:destinationImage:")
@@ -128,9 +128,9 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * [@property]   epsilon
-     * 
+     * <p>
      * The epsilon value used in the batch normalization formula to
-     *             bias the variance when normalizing.
+     * bias the variance when normalizing.
      */
     @Generated
     @Selector("epsilon")
@@ -151,18 +151,18 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * While the standard NSSecureCoding/NSCoding method
-     *             -initWithCoder: should work, since the file can't
-     *             know which device your data is allocated on, we
-     *             have to guess and may guess incorrectly.  To avoid
-     *             that problem, use a subclass of NSCoder that
-     *             implements the <MPSDeviceProvider> protocol  to
-     *             tell MPS the MTLDevice to use.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSKernel
-     * @param      device      The MTLDevice on which to make the MPSKernel
-     * @return     A new MPSCNNBatchNormalization object, or nil if failure.
+     * -initWithCoder: should work, since the file can't
+     * know which device your data is allocated on, we
+     * have to guess and may guess incorrectly.  To avoid
+     * that problem, use a subclass of NSCoder that
+     * implements the <MPSDeviceProvider> protocol  to
+     * tell MPS the MTLDevice to use.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSKernel
+     * @param device   The MTLDevice on which to make the MPSKernel
+     * @return A new MPSCNNBatchNormalization object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -175,13 +175,12 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * Initializes a batch normalization kernel using a data source.
-     * 
-     * @param      device                          The MTLDevice on which this filter will be used
-     * @param      dataSource                      A pointer to a object that conforms to the MPSCNNBatchNormalizationDataSource
-     *                                             protocol.  The data source provides filter weights and bias terms and, optionally,
-     *                                             image statistics which may be used to perform the normalization.
-     * 
-     * @return     A valid MPSCNNBatchNormalization object or nil, if failure.
+     *
+     * @param device     The MTLDevice on which this filter will be used
+     * @param dataSource A pointer to a object that conforms to the MPSCNNBatchNormalizationDataSource
+     *                   protocol.  The data source provides filter weights and bias terms and, optionally,
+     *                   image statistics which may be used to perform the normalization.
+     * @return A valid MPSCNNBatchNormalization object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:dataSource:")
@@ -190,15 +189,14 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * Initializes a batch normalization kernel using a data source and a neuron descriptor.
-     * 
-     * @param      device                          The MTLDevice on which this filter will be used
-     * @param      dataSource                      A pointer to a object that conforms to the MPSCNNBatchNormalizationDataSource
-     *                                             protocol.  The data source provides filter weights and bias terms and, optionally,
-     *                                             image statistics which may be used to perform the normalization.
-     * @param      fusedNeuronDescriptor           A MPSNNNeuronDescriptor object which specifies a neuron activation function to
-     *                                             be applied to the result of the batch normalization.
-     * 
-     * @return     A valid MPSCNNBatchNormalization object or nil, if failure.
+     *
+     * @param device                The MTLDevice on which this filter will be used
+     * @param dataSource            A pointer to a object that conforms to the MPSCNNBatchNormalizationDataSource
+     *                              protocol.  The data source provides filter weights and bias terms and, optionally,
+     *                              image statistics which may be used to perform the normalization.
+     * @param fusedNeuronDescriptor A MPSNNNeuronDescriptor object which specifies a neuron activation function to
+     *                              be applied to the result of the batch normalization.
+     * @return A valid MPSCNNBatchNormalization object or nil, if failure.
      */
     @Generated
     @Selector("initWithDevice:dataSource:fusedNeuronDescriptor:")
@@ -236,7 +234,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * [@property]   numberOfFeatureChannels
-     * 
+     * <p>
      * The number of feature channels in an image to be normalized.
      */
     @Generated
@@ -246,9 +244,9 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * Reinitialize the filter using a data source.
-     * 
-     * @param      dataSource  The data source which will provide the weights and, optionally, the
-     *                         image batch statistics with which to normalize.
+     *
+     * @param dataSource The data source which will provide the weights and, optionally, the
+     *                   image batch statistics with which to normalize.
      */
     @Generated
     @Selector("reloadDataSource:")
@@ -263,12 +261,11 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * Reload data using new gamma and beta terms contained within an
-     *             MPSCNNNormalizationGammaAndBetaState object.
-     * 
-     * @param      commandBuffer               The command buffer on which to encode the reload.
-     * 
-     * @param      gammaAndBetaState           The state containing the updated weights which are to
-     *                                         be reloaded.
+     * MPSCNNNormalizationGammaAndBetaState object.
+     *
+     * @param commandBuffer     The command buffer on which to encode the reload.
+     * @param gammaAndBetaState The state containing the updated weights which are to
+     *                          be reloaded.
      */
     @Generated
     @Selector("reloadGammaAndBetaWithCommandBuffer:gammaAndBetaState:")
@@ -285,12 +282,11 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * Reload data using new mean and variance terms contained within an
-     *             MPSCNNNormalizationMeanAndVarianceState object.
-     * 
-     * @param      commandBuffer               The command buffer on which to encode the reload.
-     * 
-     * @param      meanAndVarianceState        The state containing the updated statistics which are to
-     *                                         be reloaded.
+     * MPSCNNNormalizationMeanAndVarianceState object.
+     *
+     * @param commandBuffer        The command buffer on which to encode the reload.
+     * @param meanAndVarianceState The state containing the updated statistics which are to
+     *                             be reloaded.
      */
     @Generated
     @Selector("reloadMeanAndVarianceWithCommandBuffer:meanAndVarianceState:")
@@ -316,9 +312,9 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
 
     /**
      * [@property]   epsilon
-     * 
+     * <p>
      * The epsilon value used in the batch normalization formula to
-     *             bias the variance when normalizing.
+     * bias the variance when normalizing.
      */
     @Generated
     @Selector("setEpsilon:")

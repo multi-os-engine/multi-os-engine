@@ -28,9 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Provide a custom status string when VoiceOver scrolls with accessibilityScroll:
- * For example, in a bookcase user interface that displays a list of books, you can implement 
+ * For example, in a bookcase user interface that displays a list of books, you can implement
  * this protocol to announce "Showing books 10 through 20".
- * By default, VoiceOver will announce "Page X of Y" when scrolling. 
+ * By default, VoiceOver will announce "Page X of Y" when scrolling.
  */
 @Generated
 @Library("UIKit")

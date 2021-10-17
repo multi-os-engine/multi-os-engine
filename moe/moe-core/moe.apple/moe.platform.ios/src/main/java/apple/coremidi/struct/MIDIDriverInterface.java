@@ -88,14 +88,14 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] FindDevices
-     * 
-     * 	This is only called for version 1 drivers.  The server is requesting that the driver
-     * 	detect the devices which are present.  For each device present, the driver should
-     * 	create a MIDIDeviceRef with entities, using MIDIDeviceCreate and
-     * 	MIDIDeviceAddEntity, and add the device to the supplied MIDIDeviceListRef, using
-     * 	MIDIDeviceListAddDevice.
-     * 
-     * 	The driver should not retain any references to the created devices and entities.
+     * <p>
+     * This is only called for version 1 drivers.  The server is requesting that the driver
+     * detect the devices which are present.  For each device present, the driver should
+     * create a MIDIDeviceRef with entities, using MIDIDeviceCreate and
+     * MIDIDeviceAddEntity, and add the device to the supplied MIDIDeviceListRef, using
+     * MIDIDeviceListAddDevice.
+     * <p>
+     * The driver should not retain any references to the created devices and entities.
      */
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -104,14 +104,14 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] FindDevices
-     * 
-     * 	This is only called for version 1 drivers.  The server is requesting that the driver
-     * 	detect the devices which are present.  For each device present, the driver should
-     * 	create a MIDIDeviceRef with entities, using MIDIDeviceCreate and
-     * 	MIDIDeviceAddEntity, and add the device to the supplied MIDIDeviceListRef, using
-     * 	MIDIDeviceListAddDevice.
-     * 
-     * 	The driver should not retain any references to the created devices and entities.
+     * <p>
+     * This is only called for version 1 drivers.  The server is requesting that the driver
+     * detect the devices which are present.  For each device present, the driver should
+     * create a MIDIDeviceRef with entities, using MIDIDeviceCreate and
+     * MIDIDeviceAddEntity, and add the device to the supplied MIDIDeviceListRef, using
+     * MIDIDeviceListAddDevice.
+     * <p>
+     * The driver should not retain any references to the created devices and entities.
      */
     @Generated
     @StructureField(order = 4, isGetter = false)
@@ -119,34 +119,34 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Start
-     * 
-     * 	The server is telling the driver to begin MIDI I/O.
-     * 
-     * 	The provided device list contains the devices which were previously located by
-     * 	FindDevices (in the case of a version 1 driver), or the devices which are owned by
-     * 	this driver and are currently in the current MIDISetup (for version 2 drivers).
-     * 
-     * 	The provided devices may or may not still be present.  A version 1 driver should
-     * 	attempt to use as many of the devices as are actually present.
-     * 
-     * 	A version 2 driver may make calls such as MIDISetupAddDevice, MIDIDeviceAddEntity,
-     * 	MIDIDeviceRemoveEntity to dynamically modify the system's current state. For devices
-     * 	in the provided device list which are not present, the driver should set their
-     * 	kMIDIPropertyOffline property to 1.  A version 2 driver may also set up
-     * 	notifications when the IORegistry changes, to detect connection and disconnection of
-     * 	devices it wishes to control.  At these times also, the driver may change the
-     * 	devices' kMIDIPropertyOffline, and dynamically modify the system's current state to
-     * 	reflect the devices which are present.  When passing a CFRunLoopRef to IOKit for
-     * 	notification purposes, the driver must use the server's main runloop, which is
-     * 	obtained with CFRunLoopGetCurrent().
-     * 
-     * 	The driver will probably want to iterate through the destination endpoints and
-     * 	assign their driver refCons, so as to identify multiple destinations when Send() is
-     * 	called.
-     * 
-     * 	The provided device list remains owned by the system and can be assumed to contain
-     * 	only devices owned by this driver.  The driver may retain references to the devices
-     * 	in this list and any it creates while running.
+     * <p>
+     * The server is telling the driver to begin MIDI I/O.
+     * <p>
+     * The provided device list contains the devices which were previously located by
+     * FindDevices (in the case of a version 1 driver), or the devices which are owned by
+     * this driver and are currently in the current MIDISetup (for version 2 drivers).
+     * <p>
+     * The provided devices may or may not still be present.  A version 1 driver should
+     * attempt to use as many of the devices as are actually present.
+     * <p>
+     * A version 2 driver may make calls such as MIDISetupAddDevice, MIDIDeviceAddEntity,
+     * MIDIDeviceRemoveEntity to dynamically modify the system's current state. For devices
+     * in the provided device list which are not present, the driver should set their
+     * kMIDIPropertyOffline property to 1.  A version 2 driver may also set up
+     * notifications when the IORegistry changes, to detect connection and disconnection of
+     * devices it wishes to control.  At these times also, the driver may change the
+     * devices' kMIDIPropertyOffline, and dynamically modify the system's current state to
+     * reflect the devices which are present.  When passing a CFRunLoopRef to IOKit for
+     * notification purposes, the driver must use the server's main runloop, which is
+     * obtained with CFRunLoopGetCurrent().
+     * <p>
+     * The driver will probably want to iterate through the destination endpoints and
+     * assign their driver refCons, so as to identify multiple destinations when Send() is
+     * called.
+     * <p>
+     * The provided device list remains owned by the system and can be assumed to contain
+     * only devices owned by this driver.  The driver may retain references to the devices
+     * in this list and any it creates while running.
      */
     @Generated
     @StructureField(order = 5, isGetter = true)
@@ -155,34 +155,34 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Start
-     * 
-     * 	The server is telling the driver to begin MIDI I/O.
-     * 
-     * 	The provided device list contains the devices which were previously located by
-     * 	FindDevices (in the case of a version 1 driver), or the devices which are owned by
-     * 	this driver and are currently in the current MIDISetup (for version 2 drivers).
-     * 
-     * 	The provided devices may or may not still be present.  A version 1 driver should
-     * 	attempt to use as many of the devices as are actually present.
-     * 
-     * 	A version 2 driver may make calls such as MIDISetupAddDevice, MIDIDeviceAddEntity,
-     * 	MIDIDeviceRemoveEntity to dynamically modify the system's current state. For devices
-     * 	in the provided device list which are not present, the driver should set their
-     * 	kMIDIPropertyOffline property to 1.  A version 2 driver may also set up
-     * 	notifications when the IORegistry changes, to detect connection and disconnection of
-     * 	devices it wishes to control.  At these times also, the driver may change the
-     * 	devices' kMIDIPropertyOffline, and dynamically modify the system's current state to
-     * 	reflect the devices which are present.  When passing a CFRunLoopRef to IOKit for
-     * 	notification purposes, the driver must use the server's main runloop, which is
-     * 	obtained with CFRunLoopGetCurrent().
-     * 
-     * 	The driver will probably want to iterate through the destination endpoints and
-     * 	assign their driver refCons, so as to identify multiple destinations when Send() is
-     * 	called.
-     * 
-     * 	The provided device list remains owned by the system and can be assumed to contain
-     * 	only devices owned by this driver.  The driver may retain references to the devices
-     * 	in this list and any it creates while running.
+     * <p>
+     * The server is telling the driver to begin MIDI I/O.
+     * <p>
+     * The provided device list contains the devices which were previously located by
+     * FindDevices (in the case of a version 1 driver), or the devices which are owned by
+     * this driver and are currently in the current MIDISetup (for version 2 drivers).
+     * <p>
+     * The provided devices may or may not still be present.  A version 1 driver should
+     * attempt to use as many of the devices as are actually present.
+     * <p>
+     * A version 2 driver may make calls such as MIDISetupAddDevice, MIDIDeviceAddEntity,
+     * MIDIDeviceRemoveEntity to dynamically modify the system's current state. For devices
+     * in the provided device list which are not present, the driver should set their
+     * kMIDIPropertyOffline property to 1.  A version 2 driver may also set up
+     * notifications when the IORegistry changes, to detect connection and disconnection of
+     * devices it wishes to control.  At these times also, the driver may change the
+     * devices' kMIDIPropertyOffline, and dynamically modify the system's current state to
+     * reflect the devices which are present.  When passing a CFRunLoopRef to IOKit for
+     * notification purposes, the driver must use the server's main runloop, which is
+     * obtained with CFRunLoopGetCurrent().
+     * <p>
+     * The driver will probably want to iterate through the destination endpoints and
+     * assign their driver refCons, so as to identify multiple destinations when Send() is
+     * called.
+     * <p>
+     * The provided device list remains owned by the system and can be assumed to contain
+     * only devices owned by this driver.  The driver may retain references to the devices
+     * in this list and any it creates while running.
      */
     @Generated
     @StructureField(order = 5, isGetter = false)
@@ -190,10 +190,10 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Stop
-     * 
-     * 	The server is telling the driver to terminate MIDI I/O.  All I/O operations that
-     * 	were begun in Start, or as a result of a subsequent IOKit notification, should be
-     * 	terminated.
+     * <p>
+     * The server is telling the driver to terminate MIDI I/O.  All I/O operations that
+     * were begun in Start, or as a result of a subsequent IOKit notification, should be
+     * terminated.
      */
     @Generated
     @StructureField(order = 6, isGetter = true)
@@ -202,10 +202,10 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Stop
-     * 
-     * 	The server is telling the driver to terminate MIDI I/O.  All I/O operations that
-     * 	were begun in Start, or as a result of a subsequent IOKit notification, should be
-     * 	terminated.
+     * <p>
+     * The server is telling the driver to terminate MIDI I/O.  All I/O operations that
+     * were begun in Start, or as a result of a subsequent IOKit notification, should be
+     * terminated.
      */
     @Generated
     @StructureField(order = 6, isGetter = false)
@@ -213,8 +213,8 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Configure
-     * 
-     * 	not currently used
+     * <p>
+     * not currently used
      */
     @Generated
     @StructureField(order = 7, isGetter = true)
@@ -223,8 +223,8 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Configure
-     * 
-     * 	not currently used
+     * <p>
+     * not currently used
      */
     @Generated
     @StructureField(order = 7, isGetter = false)
@@ -232,9 +232,9 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Send
-     * 
-     * 	Send a MIDIPacketList to the destination endpoint whose refCons are being passed as
-     * 	arguments.
+     * <p>
+     * Send a MIDIPacketList to the destination endpoint whose refCons are being passed as
+     * arguments.
      */
     @Generated
     @StructureField(order = 8, isGetter = true)
@@ -243,9 +243,9 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Send
-     * 
-     * 	Send a MIDIPacketList to the destination endpoint whose refCons are being passed as
-     * 	arguments.
+     * <p>
+     * Send a MIDIPacketList to the destination endpoint whose refCons are being passed as
+     * arguments.
      */
     @Generated
     @StructureField(order = 8, isGetter = false)
@@ -253,12 +253,12 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] EnableSource
-     * 
-     * 	A client has opened or closed a connection, and now the server is telling the driver
-     * 	that input from a particular source either does or does not have any listeners in
-     * 	the system.  The driver may use this information to decide whether to pass messages
-     * 	from the source to the server, and it may even be able to tell the source hardware
-     * 	not to generate incoming MIDI I/O for that source.
+     * <p>
+     * A client has opened or closed a connection, and now the server is telling the driver
+     * that input from a particular source either does or does not have any listeners in
+     * the system.  The driver may use this information to decide whether to pass messages
+     * from the source to the server, and it may even be able to tell the source hardware
+     * not to generate incoming MIDI I/O for that source.
      */
     @Generated
     @StructureField(order = 9, isGetter = true)
@@ -267,12 +267,12 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] EnableSource
-     * 
-     * 	A client has opened or closed a connection, and now the server is telling the driver
-     * 	that input from a particular source either does or does not have any listeners in
-     * 	the system.  The driver may use this information to decide whether to pass messages
-     * 	from the source to the server, and it may even be able to tell the source hardware
-     * 	not to generate incoming MIDI I/O for that source.
+     * <p>
+     * A client has opened or closed a connection, and now the server is telling the driver
+     * that input from a particular source either does or does not have any listeners in
+     * the system.  The driver may use this information to decide whether to pass messages
+     * from the source to the server, and it may even be able to tell the source hardware
+     * not to generate incoming MIDI I/O for that source.
      */
     @Generated
     @StructureField(order = 9, isGetter = false)
@@ -280,12 +280,12 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Flush
-     * 
-     * 	Only for version 2 drivers (new for CoreMIDI 1.1).
-     * 
-     * 	Drivers which support schedule-ahead, when receiving this message, should unschedule
-     * 	all pending output to the specified destination.  If the destination is null/0, the
-     * 	driver should unschedule all pending output to all destinations.
+     * <p>
+     * Only for version 2 drivers (new for CoreMIDI 1.1).
+     * <p>
+     * Drivers which support schedule-ahead, when receiving this message, should unschedule
+     * all pending output to the specified destination.  If the destination is null/0, the
+     * driver should unschedule all pending output to all destinations.
      */
     @Generated
     @StructureField(order = 10, isGetter = true)
@@ -294,12 +294,12 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Flush
-     * 
-     * 	Only for version 2 drivers (new for CoreMIDI 1.1).
-     * 
-     * 	Drivers which support schedule-ahead, when receiving this message, should unschedule
-     * 	all pending output to the specified destination.  If the destination is null/0, the
-     * 	driver should unschedule all pending output to all destinations.
+     * <p>
+     * Only for version 2 drivers (new for CoreMIDI 1.1).
+     * <p>
+     * Drivers which support schedule-ahead, when receiving this message, should unschedule
+     * all pending output to the specified destination.  If the destination is null/0, the
+     * driver should unschedule all pending output to all destinations.
      */
     @Generated
     @StructureField(order = 10, isGetter = false)
@@ -307,15 +307,15 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Monitor
-     * 
-     * 	Only for version 2 drivers (new for CoreMIDI 1.1).
-     * 
-     * 	Some specialized drivers (e.g. a MIDI monitor display) may wish to intercept and
-     * 	look at all outgoing MIDI messages.  After a driver calls
-     * 	MIDIDriverEnableMonitoring(true) on itself, this function is called with the
-     * 	outgoing MIDI packets for all destinations in the system.  The Monitor function
-     * 	cannot rely on the MIDI events arriving in order, due to MIDIServer's schedule-ahead
-     * 	facilities.
+     * <p>
+     * Only for version 2 drivers (new for CoreMIDI 1.1).
+     * <p>
+     * Some specialized drivers (e.g. a MIDI monitor display) may wish to intercept and
+     * look at all outgoing MIDI messages.  After a driver calls
+     * MIDIDriverEnableMonitoring(true) on itself, this function is called with the
+     * outgoing MIDI packets for all destinations in the system.  The Monitor function
+     * cannot rely on the MIDI events arriving in order, due to MIDIServer's schedule-ahead
+     * facilities.
      */
     @Generated
     @StructureField(order = 11, isGetter = true)
@@ -324,15 +324,15 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] Monitor
-     * 
-     * 	Only for version 2 drivers (new for CoreMIDI 1.1).
-     * 
-     * 	Some specialized drivers (e.g. a MIDI monitor display) may wish to intercept and
-     * 	look at all outgoing MIDI messages.  After a driver calls
-     * 	MIDIDriverEnableMonitoring(true) on itself, this function is called with the
-     * 	outgoing MIDI packets for all destinations in the system.  The Monitor function
-     * 	cannot rely on the MIDI events arriving in order, due to MIDIServer's schedule-ahead
-     * 	facilities.
+     * <p>
+     * Only for version 2 drivers (new for CoreMIDI 1.1).
+     * <p>
+     * Some specialized drivers (e.g. a MIDI monitor display) may wish to intercept and
+     * look at all outgoing MIDI messages.  After a driver calls
+     * MIDIDriverEnableMonitoring(true) on itself, this function is called with the
+     * outgoing MIDI packets for all destinations in the system.  The Monitor function
+     * cannot rely on the MIDI events arriving in order, due to MIDIServer's schedule-ahead
+     * facilities.
      */
     @Generated
     @StructureField(order = 11, isGetter = false)
@@ -429,11 +429,11 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] SendPackets
-     * 
-     * 		Only for provisional drivers.
-     * 
-     * 	Send a MIDIEventList to the destination endpoint whose refCons are being passed as
-     * 	arguments.
+     * <p>
+     * Only for provisional drivers.
+     * <p>
+     * Send a MIDIEventList to the destination endpoint whose refCons are being passed as
+     * arguments.
      */
     @Generated
     @StructureField(order = 12, isGetter = true)
@@ -452,11 +452,11 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] SendPackets
-     * 
-     * 		Only for provisional drivers.
-     * 
-     * 	Send a MIDIEventList to the destination endpoint whose refCons are being passed as
-     * 	arguments.
+     * <p>
+     * Only for provisional drivers.
+     * <p>
+     * Send a MIDIEventList to the destination endpoint whose refCons are being passed as
+     * arguments.
      */
     @Generated
     @StructureField(order = 12, isGetter = false)
@@ -464,10 +464,10 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] MonitorEvents
-     * 
-     * 	Only for provisional drivers.
-     * 
-     * 	Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.
+     * <p>
+     * Only for provisional drivers.
+     * <p>
+     * Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.
      */
     @Generated
     @StructureField(order = 13, isGetter = true)
@@ -485,10 +485,10 @@ public final class MIDIDriverInterface extends StructObject {
 
     /**
      * [@fn] MonitorEvents
-     * 
-     * 	Only for provisional drivers.
-     * 
-     * 	Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.
+     * <p>
+     * Only for provisional drivers.
+     * <p>
+     * Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.
      */
     @Generated
     @StructureField(order = 13, isGetter = false)

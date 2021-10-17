@@ -21,14 +21,14 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MDLVertexFormat
- * 
+ * <p>
  * Describes the format of a an attribute in a vertex buffer
- * 
+ * <p>
  * Designed to be very similar to MTLVertexDescriptor to ease the
- *             translation from one to the other. Values are chosen such that 
- *             packed types would all be less than 0x1000 and the bottom 5 bits 
- *             can be used to determine the number of channels/components in the 
- *             format.
+ * translation from one to the other. Values are chosen such that
+ * packed types would all be less than 0x1000 and the bottom 5 bits
+ * can be used to determine the number of channels/components in the
+ * format.
  */
 @Generated
 public final class MDLVertexFormat {

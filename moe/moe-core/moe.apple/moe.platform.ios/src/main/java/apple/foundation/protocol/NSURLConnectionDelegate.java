@@ -30,43 +30,43 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol]       NSURLConnectionDelegate
- * 
- *                 Delegate methods that are common to all forms of
- *                 NSURLConnection.  These are all optional.  This
- *                 protocol should be considered a base class for the
- *                 NSURLConnectionDataDelegate and
- *                 NSURLConnectionDownloadDelegate protocols.
- * 
- *                 connection:didFailWithError: will be called at
- *                 most once, if an error occurs during a resource
- *                 load.  No other callbacks will be made after.<p>
- * 
- *                 connectionShouldUseCredentialStorage: will be
- *                 called at most once, before a resource load begins
- *                 (which means it may be called during construction
- *                 of the connection.)  The delegate should return
- *                 TRUE if the connection should consult the shared
- *                 NSURLCredentialStorage in response to
- *                 authentication challenges.  Regardless of the
- *                 result, the authentication challenge methods may
- *                 still be called.
- * 
- *                 connection:willSendRequestForAuthenticationChallenge:
- *                 is the preferred (Mac OS X 10.7 and iOS 5.0 or
- *                 later) mechanism for responding to authentication
- *                 challenges.  See
- *                 <Foundation/NSURLAuthenticationChallenge.h> for
- *                 more information on dealing with the various types
- *                 of authentication challenges.
- * 
- *                 connection:canAuthenticateAgainstProtectionSpace:
- *                 connection:didReciveAuthenticationChallenge:
- *                 connection:didCancelAuthenticationChallenge: are
- *                 deprected and new code should adopt
- *                 connection:willSendRequestForAuthenticationChallenge.
- *                 The older delegates will still be called for
- *                 compatability, but incur more latency in dealing
- *                 with the authentication challenge.
+ * <p>
+ * Delegate methods that are common to all forms of
+ * NSURLConnection.  These are all optional.  This
+ * protocol should be considered a base class for the
+ * NSURLConnectionDataDelegate and
+ * NSURLConnectionDownloadDelegate protocols.
+ * <p>
+ * connection:didFailWithError: will be called at
+ * most once, if an error occurs during a resource
+ * load.  No other callbacks will be made after.<p>
+ * <p>
+ * connectionShouldUseCredentialStorage: will be
+ * called at most once, before a resource load begins
+ * (which means it may be called during construction
+ * of the connection.)  The delegate should return
+ * TRUE if the connection should consult the shared
+ * NSURLCredentialStorage in response to
+ * authentication challenges.  Regardless of the
+ * result, the authentication challenge methods may
+ * still be called.
+ * <p>
+ * connection:willSendRequestForAuthenticationChallenge:
+ * is the preferred (Mac OS X 10.7 and iOS 5.0 or
+ * later) mechanism for responding to authentication
+ * challenges.  See
+ * <Foundation/NSURLAuthenticationChallenge.h> for
+ * more information on dealing with the various types
+ * of authentication challenges.
+ * <p>
+ * connection:canAuthenticateAgainstProtectionSpace:
+ * connection:didReciveAuthenticationChallenge:
+ * connection:didCancelAuthenticationChallenge: are
+ * deprected and new code should adopt
+ * connection:willSendRequestForAuthenticationChallenge.
+ * The older delegates will still be called for
+ * compatability, but incur more latency in dealing
+ * with the authentication challenge.
  */
 @Generated
 @Library("Foundation")

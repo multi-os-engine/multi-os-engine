@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXDiskWriteExceptionDiagnostic
- * 
+ * <p>
  * An MXDiagnostic subclass that encapsulates disk write exception reports.
- * 
+ * <p>
  * Disk write exceptions occur when your application writes data excessively to disk.
  */
 @Generated
@@ -68,7 +68,7 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
 
     /**
      * [@property]      callStackTree
-     * 
+     * <p>
      * The application call stack tree associated with the excessive disk writes.
      */
     @Generated
@@ -169,9 +169,9 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
 
     /**
      * [@property]      totalWritesCaused
-     * 
+     * <p>
      * Total disk writes caused in the scope of this disk write exception.
-     * 
+     * <p>
      * Dimensioned as NSUnitInformationStorage.
      */
     @Generated

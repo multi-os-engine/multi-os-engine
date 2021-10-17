@@ -44,9 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMRecordedAccelerometerData
- * 
+ * <p>
  * Discussion:
- *   CMRecordedAccelerometerData contains data for each accelerometer sample.
+ * CMRecordedAccelerometerData contains data for each accelerometer sample.
  */
 @Generated
 @Library("CoreMotion")
@@ -165,11 +165,11 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
 
     /**
      * identifier
-     * 
+     * <p>
      * Discussion:
-     *   Unique identifier that identifies the batch for which the accelerometer sample
-     *   was recorded in. This identifier will be monotonically increased
-     *   for each new sensor batch recorded and can be used as an anchor for future queries.
+     * Unique identifier that identifies the batch for which the accelerometer sample
+     * was recorded in. This identifier will be monotonically increased
+     * for each new sensor batch recorded and can be used as an anchor for future queries.
      */
     @Generated
     @Selector("identifier")
@@ -185,9 +185,9 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
 
     /**
      * startDate
-     * 
+     * <p>
      * Discussion:
-     *   Time at which the acceleration measurement was observed.
+     * Time at which the acceleration measurement was observed.
      */
     @Generated
     @Selector("startDate")

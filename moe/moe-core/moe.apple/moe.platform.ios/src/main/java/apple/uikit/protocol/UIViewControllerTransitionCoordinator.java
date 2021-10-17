@@ -43,7 +43,7 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
      * Any animations specified will be run in the same animation context as the
      * transition. If the animations are occurring in a view that is a not
      * descendent of the containerView, then an ancestor view in which all of the
-     * animations are occuring should be specified.  The completionBlock is invoked
+     * animations are occurring should be specified.  The completionBlock is invoked
      * after the transition completes. (Note that this may not be after all the
      * animations specified by to call complete if the duration is not inherited.)
      * It is perfectly legitimate to only specify a completion block. This method

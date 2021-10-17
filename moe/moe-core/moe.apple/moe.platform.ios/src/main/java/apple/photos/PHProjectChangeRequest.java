@@ -139,7 +139,7 @@ public class PHProjectChangeRequest extends PHChangeRequest {
 
     /**
      * Removes the specified assets from the project.
-     * 
+     *
      * @param assets A collection of PHAsset objects to be removed from the project.
      */
     @Generated
@@ -171,7 +171,7 @@ public class PHProjectChangeRequest extends PHChangeRequest {
      * - In or after -[id<PHProjectExtensionController> resumeProjectWithExtensionContext:projectInfo:]
      * if -[PHProject hasProjectPreview] returns NO.
      * - Whenever the project changes in a way that a new preview is needed.
-     * 
+     *
      * @param previewImage A rendered project preview, expected dimensions are 1024x1024.
      */
     @Generated

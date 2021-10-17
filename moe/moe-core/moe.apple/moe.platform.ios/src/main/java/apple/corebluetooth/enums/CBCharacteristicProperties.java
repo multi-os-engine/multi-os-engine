@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- *  [@enum] CBCharacteristicProperties
- * 
+ * [@enum] CBCharacteristicProperties
+ * <p>
  * Characteristic properties determine how the characteristic value can be	used, or how the descriptor(s) can be accessed. Can be combined. Unless
- * 			otherwise specified, properties are valid for local characteristics published via @link CBPeripheralManager @/link.
- * 
+ * otherwise specified, properties are valid for local characteristics published via @link CBPeripheralManager @/link.
+ * <p>
  * [@constant] CBCharacteristicPropertyBroadcast						Permits broadcasts of the characteristic value using a characteristic configuration descriptor. Not allowed for local characteristics.
  * [@constant] CBCharacteristicPropertyRead							Permits reads of the characteristic value.
  * [@constant] CBCharacteristicPropertyWriteWithoutResponse			Permits writes of the characteristic value, without a response.

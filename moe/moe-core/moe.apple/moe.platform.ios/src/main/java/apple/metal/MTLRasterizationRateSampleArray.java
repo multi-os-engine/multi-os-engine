@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLRasterizationRateSampleArray
- * 
+ * <p>
  * A helper object for convient access to samples stored in an array.
  */
 @Generated
@@ -125,9 +125,9 @@ public class MTLRasterizationRateSampleArray extends NSObject {
 
     /**
      * objectAtIndexedSubscript:
-     * 
+     * <p>
      * Retrieves the sample value at the specified index.
-     * 
+     *
      * @return NSNumber instance describing the value of the sample at the specified index, or 0 if the index is out of range.
      */
     @Generated
@@ -144,9 +144,9 @@ public class MTLRasterizationRateSampleArray extends NSObject {
 
     /**
      * setObject:atIndexedSubscript:
-     * 
+     * <p>
      * Stores a sample value at the specified index.
-     * 
+     * <p>
      * The value will be converted to a single precision floating point value.
      */
     @Generated

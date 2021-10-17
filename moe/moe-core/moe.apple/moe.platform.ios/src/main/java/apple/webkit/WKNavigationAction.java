@@ -160,7 +160,7 @@ public class WKNavigationAction extends NSObject {
 
     /**
      * The type of action that triggered the navigation.
-     * 
+     * <p>
      * The value is one of the constants of the enumerated type WKNavigationType.
      */
     @Generated
@@ -188,4 +188,11 @@ public class WKNavigationAction extends NSObject {
     @Generated
     @Selector("targetFrame")
     public native WKFrameInfo targetFrame();
+
+    /**
+     * A value indicating whether the web content used a download attribute to indicate that this should be downloaded.
+     */
+    @Generated
+    @Selector("shouldPerformDownload")
+    public native boolean shouldPerformDownload();
 }

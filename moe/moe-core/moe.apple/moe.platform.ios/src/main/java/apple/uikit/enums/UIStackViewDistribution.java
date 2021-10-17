@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Distribution—the layout along the stacking axis.
- * 
+ * <p>
  * All UIStackViewDistribution enum values fit first and last arranged subviews tightly to the container,
  * and except for UIStackViewDistributionFillEqually, fit all items to intrinsicContentSize when possible.
  */
@@ -56,9 +56,9 @@ public final class UIStackViewDistribution {
      * Equal center-to-center spacing of the items is maintained as much
      * as possible while still maintaining a minimum edge-to-edge spacing within the
      * allowed area.
-     *    Additional underflow spacing is divided equally in the spacing. Overflow 
-     * squeezing is distributed first according to compressionResistance priorities 
-     * of items, then according to subview order while maintaining the configured 
+     * Additional underflow spacing is divided equally in the spacing. Overflow
+     * squeezing is distributed first according to compressionResistance priorities
+     * of items, then according to subview order while maintaining the configured
      * (edge-to-edge) spacing as a minimum.
      */
     @Generated @NInt public static final long EqualCentering = 0x0000000000000004L;

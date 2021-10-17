@@ -17,7 +17,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface INUIAddVoiceShortcutViewControllerDelegate {
     /**
      * Called after the user finishes the setup flow for the voice shortcut, with either the successfully-added voice shortcut, or an error.
-     * 
+     * <p>
      * Your implementation of this method should dismiss the view controller.
      */
     @Generated
@@ -27,7 +27,7 @@ public interface INUIAddVoiceShortcutViewControllerDelegate {
 
     /**
      * Called if the user cancels the setup flow; the voice shortcut was not added.
-     * 
+     * <p>
      * Your implementation of this method should dismiss the view controller.
      */
     @Generated

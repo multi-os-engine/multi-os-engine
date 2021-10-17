@@ -17,8 +17,6 @@ limitations under the License.
 package apple.speech;
 
 import apple.NSObject;
-import apple.avfoundation.AVAudioFormat;
-import apple.avfoundation.AVAudioPCMBuffer;
 import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
@@ -161,7 +159,7 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
      */
     @Generated
     @Selector("appendAudioPCMBuffer:")
-    public native void appendAudioPCMBuffer(AVAudioPCMBuffer audioPCMBuffer);
+    public native void appendAudioPCMBuffer(apple.avfaudio.AVAudioPCMBuffer audioPCMBuffer);
 
     @Generated
     @Selector("appendAudioSampleBuffer:")
@@ -183,5 +181,5 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
      */
     @Generated
     @Selector("nativeAudioFormat")
-    public native AVAudioFormat nativeAudioFormat();
+    public native apple.avfaudio.AVAudioFormat nativeAudioFormat();
 }

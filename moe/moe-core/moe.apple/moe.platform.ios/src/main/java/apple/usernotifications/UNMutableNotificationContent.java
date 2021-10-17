@@ -360,4 +360,33 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     @Generated
     @Selector("targetContentIdentifier")
     public native String targetContentIdentifier();
+
+    /**
+     * The interruption level determines the degree of interruption associated with the notification
+     */
+    @Generated
+    @Selector("interruptionLevel")
+    @NUInt
+    public native long interruptionLevel();
+
+    /**
+     * Relevance score determines the sorting for the notification across app notifications. The expected range is between 0.0f and 1.0f.
+     */
+    @Generated
+    @Selector("relevanceScore")
+    public native double relevanceScore();
+
+    /**
+     * The interruption level determines the degree of interruption associated with the notification
+     */
+    @Generated
+    @Selector("setInterruptionLevel:")
+    public native void setInterruptionLevel(@NUInt long value);
+
+    /**
+     * Relevance score determines the sorting for the notification across app notifications. The expected range is between 0.0f and 1.0f.
+     */
+    @Generated
+    @Selector("setRelevanceScore:")
+    public native void setRelevanceScore(double value);
 }

@@ -53,7 +53,7 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The value of alpha.  Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -66,7 +66,7 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property]   beta
-     * 
+     * <p>
      * The value of beta.  Default is 5.0
      */
     @Generated
@@ -97,7 +97,7 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property]   delta
-     * 
+     * <p>
      * The value of delta.  Default is 1.0
      */
     @Generated
@@ -176,7 +176,7 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The value of alpha.  Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -185,7 +185,7 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property]   beta
-     * 
+     * <p>
      * The value of beta.  Default is 5.0
      */
     @Generated
@@ -194,7 +194,7 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property]   delta
-     * 
+     * <p>
      * The value of delta.  Default is 1.0
      */
     @Generated

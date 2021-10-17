@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]          HKQuantityAggregationStyle
- * 
+ * <p>
  * Describes how quantities can be aggregated over time.
- * 
+ * <p>
  * [@constant]      HKQuantityAggregationStyleCumulative                        Samples may be summed over a time interval.
  * [@constant]      HKQuantityAggregationStyleDiscreteArithmetic                Samples may be averaged over a time interval using the arithmetic mean
  * [@constant]      HKQuantityAggregationStyleDiscreteTemporallyWeighted        Samples may be averaged over a time interval using a temporally weighted integration function

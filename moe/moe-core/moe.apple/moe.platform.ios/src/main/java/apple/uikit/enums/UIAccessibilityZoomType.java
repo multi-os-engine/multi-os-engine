@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Use to inform system Zoom that focus has changed to a new location. 
+ * Use to inform system Zoom that focus has changed to a new location.
  * The frame should be in the coordinate space of the view.
  */
 @Generated

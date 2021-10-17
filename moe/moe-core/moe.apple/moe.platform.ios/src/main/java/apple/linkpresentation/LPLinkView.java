@@ -287,7 +287,7 @@ public class LPLinkView extends UIView {
 
     /**
      * The LPLinkMetadata object with which to generate a rich presentation.
-     * 
+     * <p>
      * The metadata can either be generated automatically from a URL by LPMetadataProvider,
      * or manually constructed with the desired data.
      */
@@ -381,7 +381,7 @@ public class LPLinkView extends UIView {
 
     /**
      * The LPLinkMetadata object with which to generate a rich presentation.
-     * 
+     * <p>
      * The metadata can either be generated automatically from a URL by LPMetadataProvider,
      * or manually constructed with the desired data.
      */

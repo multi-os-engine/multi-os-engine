@@ -110,8 +110,11 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Initialize a grid template with an array of @c CPGridButton and a title.
-     * [@note] A grid template will only display the first 8 buttons in the provided gridButtons array.
-     * A grid template presenting more than 4 buttons will balance the buttons between 2 rows.
+     * <p>
+     * [@note] A grid template will only display the first @c CPGridTemplateMaximumItems buttons in the provided @c gridButtons array.
+     *
+     * @param title       Title shown in template's navigation bar.
+     * @param gridButtons A list of grid buttons on the template. The maximum button count is  @c CPGridTemplateMaximumItems.
      */
     @Generated
     @Selector("initWithTitle:gridButtons:")
@@ -201,4 +204,19 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Update the grid buttons displayed in this template, reloading
+     * the view displaying these buttons.
+     */
+    @Generated
+    @Selector("updateGridButtons:")
+    public native void updateGridButtons(NSArray<? extends CPGridButton> gridButtons);
+
+    /**
+     * Update the title displayed in this template.
+     */
+    @Generated
+    @Selector("updateTitle:")
+    public native void updateTitle(String title);
 }

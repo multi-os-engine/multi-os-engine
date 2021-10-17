@@ -92,9 +92,9 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button when focused.
-     * 
+     * <p>
      * The button will automatically create a focused image using the alpha values from the source image.
-     * 
+     * <p>
      * [@note] If unspecified, the button will use the default @c image
      */
     @Generated
@@ -108,7 +108,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button.
-     * 
+     * <p>
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
     @Generated
@@ -125,7 +125,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * Initializes a new map button.
-     * 
+     *
      * @param handler A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
      */
     @Generated
@@ -154,7 +154,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * 
+     * <p>
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
@@ -163,7 +163,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is hidden.
-     * 
+     * <p>
      * Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
      */
     @Generated
@@ -194,7 +194,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * 
+     * <p>
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
      */
     @Generated
@@ -203,9 +203,9 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button when focused.
-     * 
+     * <p>
      * The button will automatically create a focused image using the alpha values from the source image.
-     * 
+     * <p>
      * [@note] If unspecified, the button will use the default @c image
      */
     @Generated
@@ -214,7 +214,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is hidden.
-     * 
+     * <p>
      * Setting the value of this property to @c YES hides the button and setting it to @c NO shows it. The default value is @c NO.
      */
     @Generated
@@ -223,7 +223,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button.
-     * 
+     * <p>
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
     @Generated

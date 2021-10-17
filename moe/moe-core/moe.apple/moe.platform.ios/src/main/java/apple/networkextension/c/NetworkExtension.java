@@ -103,16 +103,16 @@ public final class NetworkExtension {
 
     /**
      * [@const] kNEHotspotHelperOptionDisplayName
-     * 
-     *   The string displayed in Wi-Fi Settings for a network handled by
-     *   the application.
-     * 
-     *   This key specifies the display name for the application, if an alternate
-     *   name is desired.  If this property is not specified, the application's
-     *   name is used.
-     * 
-     *   This name appears in Settings -> Wi-Fi underneath the Wi-Fi network
-     *   name if the helper indicated that it was able to handle the network.
+     * <p>
+     * The string displayed in Wi-Fi Settings for a network handled by
+     * the application.
+     * <p>
+     * This key specifies the display name for the application, if an alternate
+     * name is desired.  If this property is not specified, the application's
+     * name is used.
+     * <p>
+     * This name appears in Settings -> Wi-Fi underneath the Wi-Fi network
+     * name if the helper indicated that it was able to handle the network.
      */
     @Generated
     @CVariable()

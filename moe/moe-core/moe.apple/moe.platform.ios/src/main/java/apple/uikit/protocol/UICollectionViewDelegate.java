@@ -27,6 +27,7 @@ import apple.uikit.UICollectionViewTransitionLayout;
 import apple.uikit.UIContextMenuConfiguration;
 import apple.uikit.UIFocusAnimationCoordinator;
 import apple.uikit.UITargetedPreview;
+import apple.uikit.UIWindowSceneActivationConfiguration;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -136,11 +137,11 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     /**
      * Methods for notification of selection/deselection and highlight/unhighlight events.
      * The sequence of calls leading to selection from a user touch is:
-     * 
+     * <p>
      * (when the touch begins)
      * 1. -collectionView:shouldHighlightItemAtIndexPath:
      * 2. -collectionView:didHighlightItemAtIndexPath:
-     * 
+     * <p>
      * (when the touch lifts)
      * 3. -collectionView:shouldSelectItemAtIndexPath: or -collectionView:shouldDeselectItemAtIndexPath:
      * 4. -collectionView:didSelectItemAtIndexPath: or -collectionView:didDeselectItemAtIndexPath:
@@ -197,7 +198,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
     default NSIndexPath collectionViewTargetIndexPathForMoveFromItemAtIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath proposedIndexPath) {
+            UICollectionView collectionView, NSIndexPath currentIndexPath, NSIndexPath proposedIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -237,10 +238,10 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Allows opting-out of spring loading for an particular item.
-     * 
+     * <p>
      * If you want the interaction effect on a different subview of the spring loaded cell, modify the context.targetView property.
      * The default is the cell.
-     * 
+     * <p>
      * If this method is not implemented, the default is YES.
      */
     @Generated
@@ -253,15 +254,14 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction begins.
-     * 
-     * @param collectionView  This UICollectionView.
-     * @param indexPath       IndexPath of the item for which a configuration is being requested.
-     * @param point           Location in the collection view's coordinate space
-     * 
+     *
+     * @param collectionView This UICollectionView.
+     * @param indexPath      IndexPath of the item for which a configuration is being requested.
+     * @param point          Location in the collection view's coordinate space
      * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction from beginning.
-     *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
-     *         to indicate to users that it's possible for a menu to be presented from this element, but that there are no actions to
-     *         present at this particular time.
+     * Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
+     * to indicate to users that it's possible for a menu to be presented from this element, but that there are no actions to
+     * present at this particular time.
      */
     @Generated
     @IsOptional
@@ -274,7 +274,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     /**
      * Called right after allowsMultipleSelection is set to YES if -collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:
      * returned YES.
-     * 
+     * <p>
      * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is now selecting
      * multiple items at once; such as updating buttons to say "Done" instead of "Select"/"Edit", for instance.
      */
@@ -289,9 +289,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     /**
      * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
-     * 
-     * @param collectionView  This UICollectionView.
-     * @param configuration   The configuration of the menu displayed by this interaction.
+     *
+     * @param collectionView This UICollectionView.
+     * @param configuration  The configuration of the menu displayed by this interaction.
      */
     @Generated
     @IsOptional
@@ -303,9 +303,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction begins. Return a UITargetedPreview describing the desired highlight preview.
-     * 
-     * @param collectionView  This UICollectionView.
-     * @param configuration   The configuration of the menu about to be displayed by this interaction.
+     *
+     * @param collectionView This UICollectionView.
+     * @param configuration  The configuration of the menu about to be displayed by this interaction.
      */
     @Generated
     @IsOptional
@@ -317,14 +317,14 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Allows a two-finger pan gesture to automatically enable allowsMultipleSelection and start selecting multiple cells.
-     * 
+     * <p>
      * After a multi-select gesture is recognized, this method will be called before allowsMultipleSelection is automatically
      * set to YES to allow the user to select multiple contiguous items using a two-finger pan gesture across the constrained
      * scroll direction.
-     * 
+     * <p>
      * If the collection view has no constrained scroll direction (i.e., the collection view scrolls both horizontally and vertically),
      * then this method will not be called and the multi-select gesture will be disabled.
-     * 
+     * <p>
      * If this method is not implemented, the default is NO.
      */
     @Generated
@@ -337,10 +337,10 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction is about to "commit" in response to the user tapping the preview.
-     * 
-     * @param collectionView  This UICollectionView.
-     * @param configuration   Configuration of the currently displayed menu.
-     * @param animator        Commit animator. Add animations to this object to run them alongside the commit transition.
+     *
+     * @param collectionView This UICollectionView.
+     * @param configuration  Configuration of the currently displayed menu.
+     * @param animator       Commit animator. Add animations to this object to run them alongside the commit transition.
      */
     @Generated
     @IsOptional
@@ -353,7 +353,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the multi-select interaction ends.
-     * 
+     * <p>
      * At this point, the collection view will remain in multi-select mode, but this delegate method is called to indicate that the
      * multiple selection gesture or hardware keyboard interaction has ended.
      */
@@ -365,12 +365,11 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     *  Editing
+     * Editing
      * Asks the delegate to verify that the given item is editable.
-     * 
+     *
      * @param collectionView The collection view object requesting this information.
-     * @param indexPath An index path locating an item in `collectionView`.
-     * 
+     * @param indexPath      An index path locating an item in `collectionView`.
      * @return `YES` if the item is editable; otherwise, `NO`. Defaults to `YES`.
      */
     @Generated
@@ -382,10 +381,10 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the collection view is about to display a menu.
-     * 
-     * @param collectionView  This UICollectionView.
-     * @param configuration   The configuration of the menu about to be displayed.
-     * @param animator        Appearance animator. Add animations to run them alongside the appearance transition.
+     *
+     * @param collectionView This UICollectionView.
+     * @param configuration  The configuration of the menu about to be displayed.
+     * @param animator       Appearance animator. Add animations to run them alongside the appearance transition.
      */
     @Generated
     @IsOptional
@@ -398,10 +397,10 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the collection view's context menu interaction is about to end.
-     * 
-     * @param collectionView  This UICollectionView.
-     * @param configuration   Ending configuration.
-     * @param animator        Disappearance animator. Add animations to run them alongside the disappearance transition.
+     *
+     * @param collectionView This UICollectionView.
+     * @param configuration  Ending configuration.
+     * @param animator       Disappearance animator. Add animations to run them alongside the disappearance transition.
      */
     @Generated
     @IsOptional
@@ -409,6 +408,42 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     default void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(UICollectionView collectionView,
             UIContextMenuConfiguration configuration,
             @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Return a valid @c UIWindowSceneActivationConfiguration to allow for the cell to be expanded into a new scene. Return nil to prevent the interaction from starting.
+     *
+     * @param collectionView The collection view
+     * @param indexPath      The index path of the cell being interacted with
+     * @param point          The centroid of the interaction in the collection view's coordinate space.
+     */
+    @Generated
+    @IsOptional
+    @Selector("collectionView:sceneActivationConfigurationForItemAtIndexPath:point:")
+    default UIWindowSceneActivationConfiguration collectionViewSceneActivationConfigurationForItemAtIndexPathPoint(
+            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Determines if the item at the specified index path should also become selected when focus moves to it.
+     * If the collection view's global selectionFollowsFocus is enabled, this method will allow you to override that behavior on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
+     */
+    @Generated
+    @IsOptional
+    @Selector("collectionView:selectionFollowsFocusForItemAtIndexPath:")
+    default boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:targetIndexPathForMoveOfItemFromOriginalIndexPath:atCurrentIndexPath:toProposedIndexPath:")
+    default NSIndexPath collectionViewTargetIndexPathForMoveOfItemFromOriginalIndexPathAtCurrentIndexPathToProposedIndexPath(
+            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath currentIndexPath,
+            NSIndexPath proposedIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

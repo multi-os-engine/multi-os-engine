@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCISO7816APDU
- * 
+ * <p>
  * ISO7816 Application Data Unit (APDU).
  */
 @Generated
@@ -120,9 +120,8 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * initWithData:
-     * 
-     * @param data  Data buffer containing the full APDU.
-     * 
+     *
+     * @param data Data buffer containing the full APDU.
      * @return nil if input data does not contain a valid APDU.
      */
     @Generated
@@ -131,15 +130,15 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
 
     /**
      * initWithInstructionClass:instructionCode:p1Parameter:p2Parameter:data:expectedResponseLength:
-     * 
+     * <p>
      * Generates an ISO7816 APDU object.  The Lc value is generated base on the size of the data object; possible value ranges from
-     *              1 to 65535 inclusively.  Use @link -initWithData: @link/ in cases where a finer control on the APDU format is required.
-     * 
-     * @param instructionClass  Instruction class (CLA) byte
-     * @param instructionCode   Instruction code (INS) byte
-     * @param p1Parameter       P1 parameter byte
-     * @param p2Parameter       P2 parameter byte
-     * @param data              Data to transmit.  Value of Lc field is set according to the data size.
+     * 1 to 65535 inclusively.  Use @link -initWithData: @link/ in cases where a finer control on the APDU format is required.
+     *
+     * @param instructionClass       Instruction class (CLA) byte
+     * @param instructionCode        Instruction code (INS) byte
+     * @param p1Parameter            P1 parameter byte
+     * @param p2Parameter            P2 parameter byte
+     * @param data                   Data to transmit.  Value of Lc field is set according to the data size.
      * @param expectedResponseLength Response data length (Le) in bytes. Valid range is from 1 to 65536 inclusively;
      *                               -1 means no response data field is expected.  Use 256 if you want to send '00' as the short Le field
      *                               assuming the data field is less than 256 bytes.  Use 65536 if you want to send '0000' as the extended

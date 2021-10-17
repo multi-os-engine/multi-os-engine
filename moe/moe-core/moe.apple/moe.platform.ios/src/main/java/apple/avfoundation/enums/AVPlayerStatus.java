@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVPlayerStatus
- * 
+ * <p>
  * These constants are returned by the AVPlayer status property to indicate whether it can successfully play items.
- * 
+ * <p>
  * [@constant]	 AVPlayerStatusUnknown
  * Indicates that the status of the player is not yet known because it has not tried to load new media resources for
  * playback.

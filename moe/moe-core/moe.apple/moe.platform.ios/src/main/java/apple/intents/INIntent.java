@@ -243,4 +243,18 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("shortcutAvailability")
     @NUInt
     public native long shortcutAvailability();
+
+    /**
+     * A metadata object to attach additional metadata to this intent when donated
+     */
+    @Generated
+    @Selector("donationMetadata")
+    public native INIntentDonationMetadata donationMetadata();
+
+    /**
+     * A metadata object to attach additional metadata to this intent when donated
+     */
+    @Generated
+    @Selector("setDonationMetadata:")
+    public native void setDonationMetadata(INIntentDonationMetadata value);
 }

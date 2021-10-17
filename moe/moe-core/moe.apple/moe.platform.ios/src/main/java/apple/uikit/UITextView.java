@@ -1185,4 +1185,31 @@ public class UITextView extends UIScrollView
     @Generated
     @Selector("usesStandardTextScaling")
     public native boolean usesStandardTextScaling();
+
+    /**
+     * Note that the interaction state of a UITextView does _not_ encode the
+     * textual content of the field. It should be saved separately, and restored
+     * _before_ the interaction state.
+     * Currently, this encodes selection (and/or cursor position), scroll position,
+     * and first responder status.
+     * The object returned here will be a plist type, so can e.g. be stored in
+     * an NSUserActivity's userInfo dictionary.
+     */
+    @Generated
+    @Selector("interactionState")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object interactionState();
+
+    /**
+     * Note that the interaction state of a UITextView does _not_ encode the
+     * textual content of the field. It should be saved separately, and restored
+     * _before_ the interaction state.
+     * Currently, this encodes selection (and/or cursor position), scroll position,
+     * and first responder status.
+     * The object returned here will be a plist type, so can e.g. be stored in
+     * an NSUserActivity's userInfo dictionary.
+     */
+    @Generated
+    @Selector("setInteractionState:")
+    public native void setInteractionState(@Mapped(ObjCObjectMapper.class) Object value);
 }

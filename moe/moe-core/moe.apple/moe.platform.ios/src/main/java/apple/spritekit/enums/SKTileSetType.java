@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * The tile set type is used to describe how the tiles will be arranged in a tile map.
- * 
+ * <p>
  * [@enum] SKTileSetTypeGrid Specifies that the tiles will be axis-alligned rectangles that are placed in rows and columns at right angles to one another. This is the default type.
  * [@enum] SKTileSetTypeIsometric Specifies that the tiles will be rectangles that are rotated and scaled to give the appearance of 3/4 perspective.
  * [@enum] SKTileSetTypeHexagonalFlat Specifies that the tiles will be flat bottomed hexagons.

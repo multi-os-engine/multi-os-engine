@@ -29,9 +29,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMHeadphoneMotionManager
- * 
+ * <p>
  * Discussion:
- *   The CMHeadphoneMotionManager object is your entry point to the headphone motion service.
+ * The CMHeadphoneMotionManager object is your entry point to the headphone motion service.
  */
 @Generated
 @Library("CoreMotion")
@@ -63,9 +63,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * authorizationStatus
-     * 
+     * <p>
      * Discussion:
-     *   Returns the current authorization status for headphone motion.
+     * Returns the current authorization status for headphone motion.
      */
     @Generated
     @Selector("authorizationStatus")
@@ -100,9 +100,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * 
+     * <p>
      * Discussion:
-     *   The delegate object to receive motion manager events.
+     * The delegate object to receive motion manager events.
      */
     @Generated
     @Selector("delegate")
@@ -115,9 +115,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotion
-     * 
+     * <p>
      * Discussion:
-     *   Returns the latest sample of device motion data, or nil if none is available.
+     * Returns the latest sample of device motion data, or nil if none is available.
      */
     @Generated
     @Selector("deviceMotion")
@@ -147,10 +147,10 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotionActive
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether the CMHeadphoneMotionManager is currently providing device
-     *   motion updates.
+     * Determines whether the CMHeadphoneMotionManager is currently providing device
+     * motion updates.
      */
     @Generated
     @Selector("isDeviceMotionActive")
@@ -158,9 +158,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotionAvailable
-     * 
+     * <p>
      * Discussion:
-     *   Determines whether device motion is available.
+     * Determines whether device motion is available.
      */
     @Generated
     @Selector("isDeviceMotionAvailable")
@@ -190,9 +190,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * 
+     * <p>
      * Discussion:
-     *   The delegate object to receive motion manager events.
+     * The delegate object to receive motion manager events.
      */
     @Generated
     @Selector("setDelegate:")
@@ -200,9 +200,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * 
+     * <p>
      * Discussion:
-     *   The delegate object to receive motion manager events.
+     * The delegate object to receive motion manager events.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CMHeadphoneMotionManagerDelegate value) {
@@ -222,10 +222,10 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Starts device motion updates with no handler. To receive the latest device motion data
-     *   when desired, examine the deviceMotion property.
+     * Starts device motion updates with no handler. To receive the latest device motion data
+     * when desired, examine the deviceMotion property.
      */
     @Generated
     @Selector("startDeviceMotionUpdates")
@@ -233,9 +233,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesToQueue:withHandler:
-     * 
+     * <p>
      * Discussion:
-     *   Starts device motion updates, providing data to the given handler through the given queue.
+     * Starts device motion updates, providing data to the given handler through the given queue.
      */
     @Generated
     @Selector("startDeviceMotionUpdatesToQueue:withHandler:")
@@ -251,9 +251,9 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * stopDeviceMotionUpdates
-     * 
+     * <p>
      * Discussion:
-     *   Stops device motion updates.
+     * Stops device motion updates.
      */
     @Generated
     @Selector("stopDeviceMotionUpdates")

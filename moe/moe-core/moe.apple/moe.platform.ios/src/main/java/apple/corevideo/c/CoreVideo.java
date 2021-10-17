@@ -64,13 +64,13 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferRetain
-     * 
+     * <p>
      * Retains a CVBuffer object
-     * 
+     * <p>
      * Like CFRetain CVBufferRetain increments the retain count of a CVBuffer object. In contrast to the CF call it is NULL safe.
-     * 
-     * @param      buffer A CVBuffer object that you want to retain.
-     * @return     A CVBuffer object that is the same as the passed in buffer.
+     *
+     * @param buffer A CVBuffer object that you want to retain.
+     * @return A CVBuffer object that is the same as the passed in buffer.
      */
     @Generated
     @CFunction
@@ -78,12 +78,12 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferRelease
-     * 
+     * <p>
      * Release a CVBuffer object
-     * 
+     * <p>
      * Like CFRetain CVBufferRetain decrements the retain count of a CVBuffer object. If that count consequently becomes zero the memory allocated to the object is deallocated and the object is destroyed. In contrast to the CF call it is NULL safe.
-     * 
-     * @param      buffer A CVBuffer object that you want to release.
+     *
+     * @param buffer A CVBuffer object that you want to release.
      */
     @Generated
     @CFunction
@@ -91,16 +91,16 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferSetAttachment
-     * 
+     * <p>
      * Sets or adds a attachment of a CVBuffer object
-     * 
+     * <p>
      * You can attach any CF object to a CVBuffer object to store additional information. CVBufferGetAttachment stores an attachement identified by a key. If the key doesn't exist, the attachment will be added. If the key does exist, the existing attachment will be replaced. In bouth cases the retain count of the attachment will be incremented. The value can be any CFType but nil has no defined behavior.
-     * 
-     * @param      buffer  Target CVBuffer object.
-     * @param      key     Key in form of a CFString identifying the desired attachment.
-     * @param      value	Attachment in form af a CF object.
-     * @param      attachmentMode	Specifies which attachment mode is desired for this attachment.   A particular attachment key may only exist in
-     *                             a single mode at a time.
+     *
+     * @param buffer         Target CVBuffer object.
+     * @param key            Key in form of a CFString identifying the desired attachment.
+     * @param value          Attachment in form af a CF object.
+     * @param attachmentMode Specifies which attachment mode is desired for this attachment.   A particular attachment key may only exist in
+     *                       a single mode at a time.
      */
     @Generated
     @CFunction
@@ -109,15 +109,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferGetAttachment
-     * 
+     * <p>
      * Returns a specific attachment of a CVBuffer object
-     * 
+     * <p>
      * You can attach any CF object to a CVBuffer object to store additional information. CVBufferGetAttachment retrieves an attachement identified by a key.
-     * 
-     * @param      buffer  Target CVBuffer object.
-     * @param      key	Key in form of a CFString identifying the desired attachment.
-     * @param      attachmentMode.  Returns the mode of the attachment, if desired.  May be NULL.
-     * @return     If found the attachment object
+     *
+     * @param buffer          Target CVBuffer object.
+     * @param key             Key in form of a CFString identifying the desired attachment.
+     * @param attachmentMode. Returns the mode of the attachment, if desired.  May be NULL.
+     * @return If found the attachment object
      */
     @Generated
     @CFunction
@@ -125,13 +125,13 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferRemoveAttachment
-     * 
+     * <p>
      * Removes a specific attachment of a CVBuffer object
-     * 
+     * <p>
      * CVBufferRemoveAttachment removes an attachement identified by a key. If found the attachement is removed and the retain count decremented.
-     * 
-     * @param      buffer  Target CVBuffer object.
-     * @param      key	Key in form of a CFString identifying the desired attachment.
+     *
+     * @param buffer Target CVBuffer object.
+     * @param key    Key in form of a CFString identifying the desired attachment.
      */
     @Generated
     @CFunction
@@ -139,26 +139,26 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferRemoveAllAttachments
-     * 
+     * <p>
      * Removes all attachments of a CVBuffer object
-     * 
+     * <p>
      * While CVBufferRemoveAttachment removes a specific attachement identified by a key CVBufferRemoveAllAttachments removes all attachments of a buffer and decrements their retain counts.
-     * 
-     * @param      buffer  Target CVBuffer object.
+     *
+     * @param buffer Target CVBuffer object.
      */
     @Generated
     @CFunction
     public static native void CVBufferRemoveAllAttachments(CVBufferRef buffer);
 
     /**
-     *   [@function]   CVBufferGetAttachments
-     * 
+     * [@function]   CVBufferGetAttachments
+     * <p>
      * Returns all attachments of a CVBuffer object
-     * 
+     * <p>
      * CVBufferGetAttachments is a convenience call that returns all attachments with their corresponding keys in a CFDictionary.
-     * 
-     *   @param      buffer  Target CVBuffer object.
-     *   @return     A CFDictionary with all buffer attachments identified by there keys. If no attachment is present, the dictionary is empty.  Returns NULL
+     *
+     * @param buffer Target CVBuffer object.
+     * @return A CFDictionary with all buffer attachments identified by there keys. If no attachment is present, the dictionary is empty.  Returns NULL
      * for invalid attachment mode.
      */
     @Generated
@@ -167,12 +167,12 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferSetAttachments
-     * 
+     * <p>
      * Sets a set of attachments for a CVBuffer
-     * 
+     * <p>
      * CVBufferSetAttachments is a convenience call that in turn calls CVBufferSetAttachment for each key and value in the given dictionary. All key value pairs must be in the root level of the dictionary.
-     * 
-     * @param      buffer  Target CVBuffer object.
+     *
+     * @param buffer Target CVBuffer object.
      */
     @Generated
     @CFunction
@@ -181,26 +181,26 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVBufferPropagateAttachments
-     * 
+     * <p>
      * Copy all propagatable attachments from one buffer to another.
-     * 
+     * <p>
      * CVBufferPropagateAttachments is a convenience call that copies all attachments with a mode of kCVAttachmentMode_ShouldPropagate from one
-     *             buffer to another.
-     * 
-     * @param      sourceBuffer  CVBuffer to copy attachments from.
-     * @param      destinationBuffer  CVBuffer to copy attachments to.
+     * buffer to another.
+     *
+     * @param sourceBuffer      CVBuffer to copy attachments from.
+     * @param destinationBuffer CVBuffer to copy attachments to.
      */
     @Generated
     @CFunction
     public static native void CVBufferPropagateAttachments(CVBufferRef sourceBuffer, CVBufferRef destinationBuffer);
 
     /**
-     *   [@function]   CVImageBufferGetEncodedSize
-     * 
+     * [@function]   CVImageBufferGetEncodedSize
+     * <p>
      * Returns the full encoded dimensions of a CVImageBuffer.  For example, for an NTSC DV frame this would be 720x480
-     * 
-     *   @param      imageBuffer A CVImageBuffer that you wish to retrieve the encoded size from.
-     *   @return     A CGSize returning the full encoded size of the buffer
+     *
+     * @param imageBuffer A CVImageBuffer that you wish to retrieve the encoded size from.
+     * @return A CGSize returning the full encoded size of the buffer
      * Returns zero size if called with a non-CVImageBufferRef type or NULL.
      */
     @Generated
@@ -209,13 +209,13 @@ public final class CoreVideo {
     public static native CGSize CVImageBufferGetEncodedSize(CVBufferRef imageBuffer);
 
     /**
-     *   [@function]   CVImageBufferGetDisplaySize
-     * 
+     * [@function]   CVImageBufferGetDisplaySize
+     * <p>
      * Returns the nominal output display size (in square pixels) of a CVImageBuffer.
-     *               For example, for an NTSC DV frame this would be 640x480
-     * 
-     *   @param      imageBuffer A CVImageBuffer that you wish to retrieve the display size from.
-     *   @return     A CGSize returning the nominal display size of the buffer
+     * For example, for an NTSC DV frame this would be 640x480
+     *
+     * @param imageBuffer A CVImageBuffer that you wish to retrieve the display size from.
+     * @return A CGSize returning the nominal display size of the buffer
      * Returns zero size if called with a non-CVImageBufferRef type or NULL.
      */
     @Generated
@@ -224,16 +224,16 @@ public final class CoreVideo {
     public static native CGSize CVImageBufferGetDisplaySize(CVBufferRef imageBuffer);
 
     /**
-     *   [@function]   CVImageBufferGetCleanRect
-     * 
+     * [@function]   CVImageBufferGetCleanRect
+     * <p>
      * Returns the source rectangle of a CVImageBuffer that represents the clean aperture
      * of the buffer in encoded pixels.    For example, an NTSC DV frame would return a CGRect with an
-     * origin of 8,0 and a size of 704,480.		
+     * origin of 8,0 and a size of 704,480.
      * Note that the origin of this rect always the lower left	corner.   This is the same coordinate system as
      * used by CoreImage.
-     * 
-     *   @param      imageBuffer A CVImageBuffer that you wish to retrieve the display size from.
-     *   @return     A CGSize returning the nominal display size of the buffer
+     *
+     * @param imageBuffer A CVImageBuffer that you wish to retrieve the display size from.
+     * @return A CGSize returning the nominal display size of the buffer
      * Returns zero rect if called with a non-CVImageBufferRef type or NULL.
      */
     @Generated
@@ -243,11 +243,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVImageBufferIsFlipped
-     * 
+     * <p>
      * Returns whether the image is flipped vertically or not.
-     * 
-     * @param      CVImageBuffer target
-     * @return     True if 0,0 in the texture is upper left, false if 0,0 is lower left.
+     *
+     * @param CVImageBuffer target
+     * @return True if 0,0 in the texture is upper left, false if 0,0 is lower left.
      */
     @Generated
     @CFunction
@@ -260,13 +260,13 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferRetain
-     * 
+     * <p>
      * Retains a CVPixelBuffer object
-     * 
+     * <p>
      * Equivalent to CFRetain, but NULL safe
-     * 
-     * @param      buffer A CVPixelBuffer object that you want to retain.
-     * @return     A CVPixelBuffer object that is the same as the passed in buffer.
+     *
+     * @param buffer A CVPixelBuffer object that you want to retain.
+     * @return A CVPixelBuffer object that is the same as the passed in buffer.
      */
     @Generated
     @CFunction
@@ -274,12 +274,12 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferRelease
-     * 
+     * <p>
      * Releases a CVPixelBuffer object
-     * 
+     * <p>
      * Equivalent to CFRelease, but NULL safe
-     * 
-     * @param      buffer A CVPixelBuffer object that you want to release.
+     *
+     * @param buffer A CVPixelBuffer object that you want to release.
      */
     @Generated
     @CFunction
@@ -287,15 +287,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferCreateResolvedAttributesDictionary
-     * 
+     * <p>
      * Takes a CFArray of CFDictionary objects describing various pixel buffer attributes and tries to resolve them into a
-     *             single dictionary.
-     * 
+     * single dictionary.
+     * <p>
      * This is useful when you need to resolve multiple requirements between different potential clients of a buffer.
-     * 
-     * @param      attributes CFArray of CFDictionaries containing kCVPixelBuffer key/value pairs.
-     * @param      resolvedDictionaryOut The resulting dictionary will be placed here.
-     * @return     Return value that may be useful in discovering why resolution failed.
+     *
+     * @param attributes            CFArray of CFDictionaries containing kCVPixelBuffer key/value pairs.
+     * @param resolvedDictionaryOut The resulting dictionary will be placed here.
+     * @return Return value that may be useful in discovering why resolution failed.
      */
     @Generated
     @CFunction
@@ -304,17 +304,17 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferCreate
-     * 
+     * <p>
      * Call to create a single PixelBuffer for a given size and pixelFormatType.
-     * 
+     * <p>
      * Creates a single PixelBuffer for a given size and pixelFormatType. It allocates the necessary memory based on the pixel dimensions, pixelFormatType and extended pixels described in the pixelBufferAttributes. Not all parameters of the pixelBufferAttributes will be used here.
-     * 
-     * @param      width   Width of the PixelBuffer in pixels.
-     * @param      height  Height of the PixelBuffer in pixels.
-     * @param	pixelFormatType		Pixel format indentified by its respective OSType.
-     * @param	pixelBufferAttributes      A dictionary with additional attributes for a pixel buffer. This parameter is optional. See BufferAttributeKeys for more details.
-     * @param      pixelBufferOut          The new pixel buffer will be returned here
-     * @return	returns kCVReturnSuccess on success.
+     *
+     * @param width          Width of the PixelBuffer in pixels.
+     * @param height         Height of the PixelBuffer in pixels.
+     * @param pixelBufferOut The new pixel buffer will be returned here
+     * @param    pixelFormatType        Pixel format indentified by its respective OSType.
+     * @param    pixelBufferAttributes A dictionary with additional attributes for a pixel buffer. This parameter is optional. See BufferAttributeKeys for more details.
+     * @return returns kCVReturnSuccess on success.
      */
     @Generated
     @CFunction
@@ -323,21 +323,21 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferCreateWithBytes
-     * 
+     * <p>
      * Call to create a single PixelBuffer for a given size and pixelFormatType based on a passed in piece of memory.
-     * 
+     * <p>
      * Creates a single PixelBuffer for a given size and pixelFormatType. Not all parameters of the pixelBufferAttributes will be used here. It requires a release callback function that will be called, when the PixelBuffer gets destroyed so that the owner of the pixels can free the memory.
-     * 
-     * @param      width   Width of the PixelBuffer in pixels
-     * @param      height  Height of the PixelBuffer in pixels
-     * @param      pixelFormatType		Pixel format indentified by its respective OSType.
-     * @param      baseAddress		Address of the memory storing the pixels.
-     * @param      bytesPerRow		Row bytes of the pixel storage memory.
-     * @param      releaseCallback         CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
-     * @param      releaseRefCon           User data identifying the PixelBuffer for the release callback.
-     * @param      pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
-     * @param      pixelBufferOut          The new pixel buffer will be returned here
-     * @return	returns kCVReturnSuccess on success.
+     *
+     * @param width                 Width of the PixelBuffer in pixels
+     * @param height                Height of the PixelBuffer in pixels
+     * @param pixelFormatType       Pixel format indentified by its respective OSType.
+     * @param baseAddress           Address of the memory storing the pixels.
+     * @param bytesPerRow           Row bytes of the pixel storage memory.
+     * @param releaseCallback       CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
+     * @param releaseRefCon         User data identifying the PixelBuffer for the release callback.
+     * @param pixelBufferAttributes A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+     * @param pixelBufferOut        The new pixel buffer will be returned here
+     * @return returns kCVReturnSuccess on success.
      */
     @Generated
     @CFunction
@@ -348,26 +348,26 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferCreateWithPlanarBytes
-     * 
+     * <p>
      * Call to create a single PixelBuffer in planar format for a given size and pixelFormatType based on a passed in piece of memory.
-     * 
+     * <p>
      * Creates a single PixelBuffer for a given size and pixelFormatType. Not all parameters of the pixelBufferAttributes will be used here. It requires a release callback function that will be called, when the PixelBuffer gets destroyed so that the owner of the pixels can free the memory.
-     * 
-     * @param      width			Width of the PixelBuffer in pixels
-     * @param      height			Height of the PixelBuffer in pixels
-     * @param      pixelFormatType		Pixel format indentified by its respective OSType.
-     * @param	dataPtr			Pass a pointer to a plane descriptor block, or NULL.
-     * @param	dataSize		pass size if planes are contiguous, NULL if not.
-     * @param	numberOfPlanes		Number of planes.
-     * @param	planeBaseAddress	Array of base addresses for the planes.
-     * @param	planeWidth		Array of plane widths.
-     * @param	planeHeight		Array of plane heights.
-     * @param	planeBytesPerRow	Array of plane bytesPerRow values.
-     * @param	releaseCallback		CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
-     * @param	releaseRefCon		User data identifying the PixelBuffer for the release callback.
-     * @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
-     * @param      pixelBufferOut          The new pixel buffer will be returned here
-     * @return	returns kCVReturnSuccess on success.
+     *
+     * @param width           Width of the PixelBuffer in pixels
+     * @param height          Height of the PixelBuffer in pixels
+     * @param pixelFormatType Pixel format indentified by its respective OSType.
+     * @param pixelBufferOut  The new pixel buffer will be returned here
+     * @param    dataPtr            Pass a pointer to a plane descriptor block, or NULL.
+     * @param    dataSize        pass size if planes are contiguous, NULL if not.
+     * @param    numberOfPlanes        Number of planes.
+     * @param    planeBaseAddress    Array of base addresses for the planes.
+     * @param    planeWidth        Array of plane widths.
+     * @param    planeHeight        Array of plane heights.
+     * @param    planeBytesPerRow    Array of plane bytesPerRow values.
+     * @param    releaseCallback        CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
+     * @param    releaseRefCon        User data identifying the PixelBuffer for the release callback.
+     * @param    pixelBufferAttributes A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+     * @return returns kCVReturnSuccess on success.
      */
     @Generated
     @CFunction
@@ -379,14 +379,14 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferLockBaseAddress
-     * 
+     * <p>
      * Description Locks the BaseAddress of the PixelBuffer to ensure that the memory is accessible.
-     * 
+     * <p>
      * This API ensures that the CVPixelBuffer is accessible in system memory. This should only be called if the base address is going to be used and the pixel data will be accessed by the CPU.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @param      lockFlags See CVPixelBufferLockFlags.
-     * @return     kCVReturnSuccess if the lock succeeded, or error code on failure
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @param lockFlags   See CVPixelBufferLockFlags.
+     * @return kCVReturnSuccess if the lock succeeded, or error code on failure
      */
     @Generated
     @CFunction
@@ -394,12 +394,12 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferUnlockBaseAddress
-     * 
+     * <p>
      * Description Unlocks the BaseAddress of the PixelBuffer.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @param      unlockFlags See CVPixelBufferLockFlags.
-     * @return     kCVReturnSuccess if the unlock succeeded, or error code on failure
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @param unlockFlags See CVPixelBufferLockFlags.
+     * @return kCVReturnSuccess if the unlock succeeded, or error code on failure
      */
     @Generated
     @CFunction
@@ -407,11 +407,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetWidth
-     * 
+     * <p>
      * Returns the width of the PixelBuffer.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @return     Width in pixels.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return Width in pixels.
      */
     @Generated
     @CFunction
@@ -420,11 +420,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetHeight
-     * 
+     * <p>
      * Returns the height of the PixelBuffer.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @return     Height in pixels.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return Height in pixels.
      */
     @Generated
     @CFunction
@@ -433,26 +433,26 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetPixelFormatType
-     * 
+     * <p>
      * Returns the PixelFormatType of the PixelBuffer.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @return     OSType identifying the pixel format by its type.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return OSType identifying the pixel format by its type.
      */
     @Generated
     @CFunction
     public static native int CVPixelBufferGetPixelFormatType(CVBufferRef pixelBuffer);
 
     /**
-     *   [@function]   CVPixelBufferGetBaseAddress
-     * 
+     * [@function]   CVPixelBufferGetBaseAddress
+     * <p>
      * Returns the base address of the PixelBuffer.
-     * 
+     * <p>
      * Retrieving the base address for a PixelBuffer requires that the buffer base address be locked
-     *               via a successful call to CVPixelBufferLockBaseAddress.
-     * 
-     *   @param      pixelBuffer Target PixelBuffer.
-     *   @return     Base address of the pixels.
+     * via a successful call to CVPixelBufferLockBaseAddress.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return Base address of the pixels.
      * For chunky buffers, this will return a pointer to the pixel at 0,0 in the buffer
      * For planar buffers this will return a pointer to a PlanarComponentInfo struct (defined in QuickTime).
      */
@@ -462,12 +462,12 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetBytesPerRow
-     * 
+     * <p>
      * Returns the rowBytes of the PixelBuffer.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @return     Bytes per row of the image data.   For planar buffers this will return a rowBytes value such that bytesPerRow * height
-     *             will cover the entire image including all planes.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return Bytes per row of the image data.   For planar buffers this will return a rowBytes value such that bytesPerRow * height
+     * will cover the entire image including all planes.
      */
     @Generated
     @CFunction
@@ -476,11 +476,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetDataSize
-     * 
+     * <p>
      * Returns the data size for contigous planes of the PixelBuffer.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @return     Data size used in CVPixelBufferCreateWithPlanarBytes.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return Data size used in CVPixelBufferCreateWithPlanarBytes.
      */
     @Generated
     @CFunction
@@ -489,11 +489,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferIsPlanar
-     * 
+     * <p>
      * Returns if the PixelBuffer is planar.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @return     True if the PixelBuffer was created using CVPixelBufferCreateWithPlanarBytes.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return True if the PixelBuffer was created using CVPixelBufferCreateWithPlanarBytes.
      */
     @Generated
     @CFunction
@@ -501,11 +501,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetPlaneCount
-     * 
+     * <p>
      * Returns number of planes of the PixelBuffer.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @return     Number of planes.  Returns 0 for non-planar CVPixelBufferRefs.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @return Number of planes.  Returns 0 for non-planar CVPixelBufferRefs.
      */
     @Generated
     @CFunction
@@ -514,15 +514,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetWidthOfPlane
-     * 
+     * <p>
      * Returns the width of the plane at planeIndex in the PixelBuffer.
-     * 
+     * <p>
      * On OSX 10.10 and earlier, or iOS 8 and earlier, calling this
-     *             function with a non-planar buffer will have undefined behavior.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @param      planeIndex  Identifying the plane.
-     * @return     Width in pixels, or 0 for non-planar CVPixelBufferRefs.
+     * function with a non-planar buffer will have undefined behavior.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @param planeIndex  Identifying the plane.
+     * @return Width in pixels, or 0 for non-planar CVPixelBufferRefs.
      */
     @Generated
     @CFunction
@@ -531,15 +531,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetHeightOfPlane
-     * 
+     * <p>
      * Returns the height of the plane at planeIndex in the PixelBuffer.
-     * 
+     * <p>
      * On OSX 10.10 and earlier, or iOS 8 and earlier, calling this
-     *             function with a non-planar buffer will have undefined behavior.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @param      planeIndex  Identifying the plane.
-     * @return     Height in pixels, or 0 for non-planar CVPixelBufferRefs.
+     * function with a non-planar buffer will have undefined behavior.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @param planeIndex  Identifying the plane.
+     * @return Height in pixels, or 0 for non-planar CVPixelBufferRefs.
      */
     @Generated
     @CFunction
@@ -548,16 +548,16 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetBaseAddressOfPlane
-     * 
+     * <p>
      * Returns the base address of the plane at planeIndex in the PixelBuffer.
-     * 
+     * <p>
      * Retrieving the base address for a PixelBuffer requires that the buffer base address be locked
-     *             via a successful call to CVPixelBufferLockBaseAddress. On OSX 10.10 and earlier, or iOS 8 and
-     *             earlier, calling this function with a non-planar buffer will have undefined behavior.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @param      planeIndex  Identifying the plane.
-     * @return     Base address of the plane, or NULL for non-planar CVPixelBufferRefs.
+     * via a successful call to CVPixelBufferLockBaseAddress. On OSX 10.10 and earlier, or iOS 8 and
+     * earlier, calling this function with a non-planar buffer will have undefined behavior.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @param planeIndex  Identifying the plane.
+     * @return Base address of the plane, or NULL for non-planar CVPixelBufferRefs.
      */
     @Generated
     @CFunction
@@ -565,15 +565,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetBytesPerRowOfPlane
-     * 
+     * <p>
      * Returns the row bytes of the plane at planeIndex in the PixelBuffer.
-     * 
+     * <p>
      * On OSX 10.10 and earlier, or iOS 8 and earlier, calling this
-     *             function with a non-planar buffer will have undefined behavior.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @param      planeIndex  Identifying the plane.
-     * @return     Row bytes of the plane, or NULL for non-planar CVPixelBufferRefs.
+     * function with a non-planar buffer will have undefined behavior.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     * @param planeIndex  Identifying the plane.
+     * @return Row bytes of the plane, or NULL for non-planar CVPixelBufferRefs.
      */
     @Generated
     @CFunction
@@ -582,17 +582,17 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetExtendedPixels
-     * 
+     * <p>
      * Returns the size of extended pixels of the PixelBuffer.
-     * 
+     * <p>
      * On OSX 10.10 and earlier, or iOS 8 and earlier, calling this
-     *             function with a non-planar buffer will have undefined behavior.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
-     * @param      extraColumnsOnLeft Returns the pixel row padding to the left.  May be NULL.
-     * @param      extraRowsOnTop Returns the pixel row padding to the top.  May be NULL. 
-     * @param      extraColumnsOnRight Returns the pixel row padding to the right. May be NULL.
-     * @param      extraRowsOnBottom Returns the pixel row padding to the bottom. May be NULL.
+     * function with a non-planar buffer will have undefined behavior.
+     *
+     * @param pixelBuffer         Target PixelBuffer.
+     * @param extraColumnsOnLeft  Returns the pixel row padding to the left.  May be NULL.
+     * @param extraRowsOnTop      Returns the pixel row padding to the top.  May be NULL.
+     * @param extraColumnsOnRight Returns the pixel row padding to the right. May be NULL.
+     * @param extraRowsOnBottom   Returns the pixel row padding to the bottom. May be NULL.
      */
     @Generated
     @CFunction
@@ -601,10 +601,10 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferFillExtendedPixels
-     * 
+     * <p>
      * Fills the extended pixels of the PixelBuffer.   This function replicates edge pixels to fill the entire extended region of the image.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
+     *
+     * @param pixelBuffer Target PixelBuffer.
      */
     @Generated
     @CFunction
@@ -617,13 +617,13 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferPoolRetain
-     * 
+     * <p>
      * Retains a CVPixelBufferPoolRef object
-     * 
+     * <p>
      * Equivalent to CFRetain, but NULL safe
-     * 
-     * @param      buffer A CVPixelBufferPoolRef object that you want to retain.
-     * @return     A CVPixelBufferPoolRef object that is the same as the passed in buffer.
+     *
+     * @param buffer A CVPixelBufferPoolRef object that you want to retain.
+     * @return A CVPixelBufferPoolRef object that is the same as the passed in buffer.
      */
     @Generated
     @CFunction
@@ -631,12 +631,12 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferPoolRelease
-     * 
+     * <p>
      * Releases a CVPixelBufferPoolRef object
-     * 
+     * <p>
      * Equivalent to CFRelease, but NULL safe
-     * 
-     * @param      buffer A CVPixelBufferPoolRef object that you want to release.
+     *
+     * @param buffer A CVPixelBufferPoolRef object that you want to release.
      */
     @Generated
     @CFunction
@@ -644,13 +644,13 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferPoolCreate
-     * 
+     * <p>
      * Creates a new Pixel Buffer pool.
-     * 
-     * @param      allocator The CFAllocatorRef to use for allocating this buffer pool.  May be NULL.
-     * @param      attributes   A CFDictionaryRef containing the attributes to be used for creating new PixelBuffers within the pool.
-     * @param      poolOut   The newly created pool will be placed here
-     * @return     Returns kCVReturnSuccess on success
+     *
+     * @param allocator  The CFAllocatorRef to use for allocating this buffer pool.  May be NULL.
+     * @param attributes A CFDictionaryRef containing the attributes to be used for creating new PixelBuffers within the pool.
+     * @param poolOut    The newly created pool will be placed here
+     * @return Returns kCVReturnSuccess on success
      */
     @Generated
     @CFunction
@@ -659,11 +659,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferPoolGetAttributes
-     * 
+     * <p>
      * Returns the pool attributes dictionary for a CVPixelBufferPool
-     * 
-     * @param      pool  The CVPixelBufferPoolRef to retrieve the attributes from
-     * @return     Returns the pool attributes dictionary, or NULL on failure.
+     *
+     * @param pool The CVPixelBufferPoolRef to retrieve the attributes from
+     * @return Returns the pool attributes dictionary, or NULL on failure.
      */
     @Generated
     @CFunction
@@ -671,14 +671,14 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferPoolGetPixelBufferAttributes
-     * 
+     * <p>
      * Returns the attributes of pixel buffers that will be created from this pool.
-     * 
+     * <p>
      * This function is provided for those cases where you may need to know some information about the buffers that
-     *             will be created up front.
-     * 
-     * @param      pool  The CVPixelBufferPoolRef to retrieve the attributes from
-     * @return     Returns the pixel buffer attributes dictionary, or NULL on failure.
+     * will be created up front.
+     *
+     * @param pool The CVPixelBufferPoolRef to retrieve the attributes from
+     * @return Returns the pixel buffer attributes dictionary, or NULL on failure.
      */
     @Generated
     @CFunction
@@ -686,15 +686,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferPoolCreatePixelBuffer
-     * 
+     * <p>
      * Creates a new PixelBuffer object from the pool.
-     * 
+     * <p>
      * The function creates a new (attachment-free) CVPixelBuffer using the pixel buffer attributes specifed during pool creation.
-     * 
-     * @param      allocator The CFAllocatorRef to use for creating the pixel buffer.  May be NULL.
-     * @param      pool      The CVPixelBufferPool that should create the new CVPixelBuffer.
-     * @param      pixelBufferOut   The newly created pixel buffer will be placed here
-     * @return     Returns kCVReturnSuccess on success
+     *
+     * @param allocator      The CFAllocatorRef to use for creating the pixel buffer.  May be NULL.
+     * @param pool           The CVPixelBufferPool that should create the new CVPixelBuffer.
+     * @param pixelBufferOut The newly created pixel buffer will be placed here
+     * @return Returns kCVReturnSuccess on success
      */
     @Generated
     @CFunction
@@ -703,16 +703,16 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferPoolCreatePixelBufferWithAuxAttributes
-     * 
+     * <p>
      * Creates a new PixelBuffer object from the pool.
-     * 
+     * <p>
      * This function creates a new CVPixelBuffer using the pixel buffer attributes specified during pool creation and the attributes specified in the auxAttributes parameter.
-     * 
-     * @param      allocator The CFAllocatorRef to use for creating the pixel buffer.  May be NULL.
-     * @param      pixelBufferPool      The CVPixelBufferPool that should create the new CVPixelBuffer.
-     * @param      auxAttributes	Attributes describing this specific allocation request.  May be NULL.
-     * @param      pixelBufferOut   The newly created pixel buffer will be placed here
-     * @return     Returns kCVReturnSuccess on success
+     *
+     * @param allocator       The CFAllocatorRef to use for creating the pixel buffer.  May be NULL.
+     * @param pixelBufferPool The CVPixelBufferPool that should create the new CVPixelBuffer.
+     * @param auxAttributes   Attributes describing this specific allocation request.  May be NULL.
+     * @param pixelBufferOut  The newly created pixel buffer will be placed here
+     * @return Returns kCVReturnSuccess on success
      */
     @Generated
     @CFunction
@@ -721,16 +721,16 @@ public final class CoreVideo {
 
     /**
      * [@function]       CVPixelBufferPoolFlush
-     * 
+     * <p>
      * Frees as many buffers from the pool as possible.
-     * 
+     * <p>
      * By default, this function will free all aged out buffers.  Setting the
-     *            kCVPixelBufferPoolFlushExcessBuffers flag will cause this call to free all unused
-     *            buffers regardless of age.
-     * 
-     * @param		pool    The CVPixelBufferPool to be flushed.
-     * @param		options Set to kCVPixelBufferPoolFlushExcessBuffers to free all unused buffers
-     *            regardless of their age.
+     * kCVPixelBufferPoolFlushExcessBuffers flag will cause this call to free all unused
+     * buffers regardless of age.
+     *
+     * @param        pool The CVPixelBufferPool to be flushed.
+     * @param        options Set to kCVPixelBufferPoolFlushExcessBuffers to free all unused buffers
+     * regardless of their age.
      */
     @Generated
     @CFunction
@@ -743,11 +743,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVOpenGLESTextureGetTarget
-     * 
+     * <p>
      * Returns the texture target (eg. 2D vs. rect texture extension) of the CVOpenGLESTexture
-     * 
-     * @param      image Target CVOpenGLESTexture
-     * @return     OpenGLES texture target
+     *
+     * @param image Target CVOpenGLESTexture
+     * @return OpenGLES texture target
      */
     @Generated
     @CFunction
@@ -755,11 +755,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVOpenGLESTextureGetName
-     * 
+     * <p>
      * Returns the texture target name of the CVOpenGLESTexture
-     * 
-     * @param      image Target CVOpenGLESTexture
-     * @return     OpenGLES texture target name
+     *
+     * @param image Target CVOpenGLESTexture
+     * @return OpenGLES texture target name
      */
     @Generated
     @CFunction
@@ -767,11 +767,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVOpenGLESTextureIsFlipped
-     * 
+     * <p>
      * Returns whether the image is flipped vertically or not.
-     * 
-     * @param      image Target CVOpenGLESTexture
-     * @return     True if 0,0 in the texture is upper left, false if 0,0 is lower left
+     *
+     * @param image Target CVOpenGLESTexture
+     * @return True if 0,0 in the texture is upper left, false if 0,0 is lower left
      */
     @Generated
     @CFunction
@@ -787,15 +787,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVOpenGLESTextureCacheCreate
-     * 
+     * <p>
      * Creates a new Texture Cache.
-     * 
-     * @param      allocator The CFAllocatorRef to use for allocating the cache.  May be NULL.
-     * @param      cacheAttributes A CFDictionaryRef containing the attributes of the cache itself.   May be NULL.
-     * @param      eaglContext The OpenGLES 2.0 context into which the texture objects will be created.  OpenGLES 1.x contexts are not supported.
-     * @param      textureAttributes A CFDictionaryRef containing the attributes to be used for creating the CVOpenGLESTexture objects.  May be NULL.
-     * @param      cacheOut   The newly created texture cache will be placed here
-     * @return     Returns kCVReturnSuccess on success
+     *
+     * @param allocator         The CFAllocatorRef to use for allocating the cache.  May be NULL.
+     * @param cacheAttributes   A CFDictionaryRef containing the attributes of the cache itself.   May be NULL.
+     * @param eaglContext       The OpenGLES 2.0 context into which the texture objects will be created.  OpenGLES 1.x contexts are not supported.
+     * @param textureAttributes A CFDictionaryRef containing the attributes to be used for creating the CVOpenGLESTexture objects.  May be NULL.
+     * @param cacheOut          The newly created texture cache will be placed here
+     * @return Returns kCVReturnSuccess on success
      */
     @Generated
     @CFunction
@@ -804,46 +804,46 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVOpenGLESTextureCacheCreateTextureFromImage
-     * 
+     * <p>
      * Creates a CVOpenGLESTexture object from an existing CVImageBuffer
-     * 
+     * <p>
      * Creates or returns a cached CVOpenGLESTexture texture object mapped to the CVImageBuffer and
-     *             associated params.  This creates a live binding between the CVImageBuffer and underlying
-     *             CVOpenGLESTexture texture object.  The EAGLContext associated with the cache may be modified,
-     *             to create, delete, or bind textures.  When used as a source texture or GL_COLOR_ATTACHMENT,
-     *             the CVImageBuffer must be unlocked before rendering.  The source or render buffer texture should
-     *             not be re-used until the rendering has completed.  This can be guaranteed by calling glFlush().
-     * 
-     *             Here are some example mappings:
-     * 
-     *             Mapping a BGRA buffer as a source texture:
-     *             CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_RGBA, width, height, GL_RGBA, GL_UNSIGNED_BYTE, 0, &outTexture);
-     * 
-     *             Mapping a BGRA buffer as a renderbuffer:
-     *             CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_RENDERBUFFER, GL_RGBA8_OES, width, height, GL_RGBA, GL_UNSIGNED_BYTE, 0, &outTexture);
-     * 
-     *             Mapping the luma plane of a 420v buffer as a source texture:
-     *             CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_LUMINANCE, width, height, GL_LUMINANCE, GL_UNSIGNED_BYTE, 0, &outTexture);
-     * 
-     *             Mapping the chroma plane of a 420v buffer as a source texture:
-     *             CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_LUMINANCE_ALPHA, width/2, height/2, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, 1, &outTexture);
-     * 
-     *             Mapping a yuvs buffer as a source texture (note: yuvs/f and 2vuy are unpacked and resampled -- not colorspace converted)
-     *             CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_RGB_422_APPLE, width, height, GL_RGB_422_APPLE, GL_UNSIGNED_SHORT_8_8_APPLE, 1, &outTexture);
-     * 
-     * @param      allocator The CFAllocatorRef to use for allocating the CVOpenGLESTexture object.  May be NULL.
-     * @param      textureCache The texture cache object that will manage the texture.
-     * @param      sourceImage The CVImageBuffer that you want to create a CVOpenGLESTexture from.
-     * @param      textureAttributes A CFDictionaryRef containing attributes to be used for creating the CVOpenGLESTexture objects.  May be NULL.
-     * @param      target Specifies the target texture.  GL_TEXTURE_2D and GL_RENDERBUFFER are the only targets currently supported.
-     * @param      internalFormat Specifies the number of color components in the texture.  Examples are GL_RGBA, GL_LUMINANCE, GL_RGBA8_OES, GL_RG, and GL_RED (NOTE: On GLES3 use GL_R8 instead of GL_RED).
-     * @param      width Specifies the width of the texture image.
-     * @param      height Specifies the height of the texture image.
-     * @param      format Specifies the format of the pixel data.  Examples are GL_RGBA and GL_LUMINANCE.
-     * @param      type Specifies the data type of the pixel data.  Examples are GL_UNSIGNED_BYTE.
-     * @param      planeIndex Specifies the plane of the CVImageBuffer to map bind.  Ignored for non-planar CVImageBuffers.
-     * @param      textureOut The newly created texture object will be placed here.
-     * @return     Returns kCVReturnSuccess on success
+     * associated params.  This creates a live binding between the CVImageBuffer and underlying
+     * CVOpenGLESTexture texture object.  The EAGLContext associated with the cache may be modified,
+     * to create, delete, or bind textures.  When used as a source texture or GL_COLOR_ATTACHMENT,
+     * the CVImageBuffer must be unlocked before rendering.  The source or render buffer texture should
+     * not be re-used until the rendering has completed.  This can be guaranteed by calling glFlush().
+     * <p>
+     * Here are some example mappings:
+     * <p>
+     * Mapping a BGRA buffer as a source texture:
+     * CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_RGBA, width, height, GL_RGBA, GL_UNSIGNED_BYTE, 0, &outTexture);
+     * <p>
+     * Mapping a BGRA buffer as a renderbuffer:
+     * CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_RENDERBUFFER, GL_RGBA8_OES, width, height, GL_RGBA, GL_UNSIGNED_BYTE, 0, &outTexture);
+     * <p>
+     * Mapping the luma plane of a 420v buffer as a source texture:
+     * CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_LUMINANCE, width, height, GL_LUMINANCE, GL_UNSIGNED_BYTE, 0, &outTexture);
+     * <p>
+     * Mapping the chroma plane of a 420v buffer as a source texture:
+     * CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_LUMINANCE_ALPHA, width/2, height/2, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE, 1, &outTexture);
+     * <p>
+     * Mapping a yuvs buffer as a source texture (note: yuvs/f and 2vuy are unpacked and resampled -- not colorspace converted)
+     * CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, GL_TEXTURE_2D, GL_RGB_422_APPLE, width, height, GL_RGB_422_APPLE, GL_UNSIGNED_SHORT_8_8_APPLE, 1, &outTexture);
+     *
+     * @param allocator         The CFAllocatorRef to use for allocating the CVOpenGLESTexture object.  May be NULL.
+     * @param textureCache      The texture cache object that will manage the texture.
+     * @param sourceImage       The CVImageBuffer that you want to create a CVOpenGLESTexture from.
+     * @param textureAttributes A CFDictionaryRef containing attributes to be used for creating the CVOpenGLESTexture objects.  May be NULL.
+     * @param target            Specifies the target texture.  GL_TEXTURE_2D and GL_RENDERBUFFER are the only targets currently supported.
+     * @param internalFormat    Specifies the number of color components in the texture.  Examples are GL_RGBA, GL_LUMINANCE, GL_RGBA8_OES, GL_RG, and GL_RED (NOTE: On GLES3 use GL_R8 instead of GL_RED).
+     * @param width             Specifies the width of the texture image.
+     * @param height            Specifies the height of the texture image.
+     * @param format            Specifies the format of the pixel data.  Examples are GL_RGBA and GL_LUMINANCE.
+     * @param type              Specifies the data type of the pixel data.  Examples are GL_UNSIGNED_BYTE.
+     * @param planeIndex        Specifies the plane of the CVImageBuffer to map bind.  Ignored for non-planar CVImageBuffers.
+     * @param textureOut        The newly created texture object will be placed here.
+     * @return Returns kCVReturnSuccess on success
      */
     @Generated
     @CFunction
@@ -854,15 +854,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVOpenGLESTextureCacheFlush
-     * 
+     * <p>
      * Performs internal housekeeping/recycling operations
-     * 
+     * <p>
      * This call must be made periodically to give the texture cache a chance to make OpenGLES calls
-     *             on the OpenGLES context used to create it in order to do housekeeping operations.  The EAGLContext
-     *          associated with the cache may be used to delete or unbind textures.
-     * 
-     * @param      textureCache The texture cache object to flush
-     * @param      options Currently unused, set to 0.
+     * on the OpenGLES context used to create it in order to do housekeeping operations.  The EAGLContext
+     * associated with the cache may be used to delete or unbind textures.
+     *
+     * @param textureCache The texture cache object to flush
+     * @param options      Currently unused, set to 0.
      */
     @Generated
     @CFunction
@@ -899,11 +899,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVMetalTextureGetTexture
-     * 
+     * <p>
      * Returns the Meta MTLTexture object of the CVMetalTextureRef
-     * 
-     * @param      image Target CVMetalTexture
-     * @return     Metal texture
+     *
+     * @param image Target CVMetalTexture
+     * @return Metal texture
      */
     @Generated
     @CFunction
@@ -912,11 +912,11 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVMetalTextureIsFlipped
-     * 
+     * <p>
      * Returns whether the image is flipped vertically or not.
-     * 
-     * @param      image Target CVMetalTexture
-     * @return     True if 0,0 in the texture is upper left, false if 0,0 is lower left
+     *
+     * @param image Target CVMetalTexture
+     * @return True if 0,0 in the texture is upper left, false if 0,0 is lower left
      */
     @Generated
     @CFunction
@@ -929,15 +929,15 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVMetalTextureCacheCreate
-     * 
+     * <p>
      * Creates a new Texture Cache.
-     * 
-     * @param      allocator The CFAllocatorRef to use for allocating the cache.  May be NULL.
-     * @param      cacheAttributes A CFDictionaryRef containing the attributes of the cache itself.   May be NULL.
-     * @param      metalDevice The Metal device for which the texture objects will be created.
-     * @param      textureAttributes A CFDictionaryRef containing the attributes to be used for creating the CVMetalTexture objects.  May be NULL.
-     * @param      cacheOut   The newly created texture cache will be placed here
-     * @return     Returns kCVReturnSuccess on success
+     *
+     * @param allocator         The CFAllocatorRef to use for allocating the cache.  May be NULL.
+     * @param cacheAttributes   A CFDictionaryRef containing the attributes of the cache itself.   May be NULL.
+     * @param metalDevice       The Metal device for which the texture objects will be created.
+     * @param textureAttributes A CFDictionaryRef containing the attributes to be used for creating the CVMetalTexture objects.  May be NULL.
+     * @param cacheOut          The newly created texture cache will be placed here
+     * @return Returns kCVReturnSuccess on success
      */
     @Generated
     @CFunction
@@ -947,42 +947,42 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVMetalTextureCacheCreateTextureFromImage
-     * 
+     * <p>
      * Creates a CVMetalTexture object from an existing CVImageBuffer
-     * 
+     * <p>
      * Creates or returns a cached CVMetalTexture texture object mapped to the CVImageBuffer and
-     *             associated params.  This creates a live binding between the CVImageBuffer and underlying
-     *             CVMetalTexture texture object.
-     * 
-     *             Note that CoreVideo does not explicitly declare any pixel format types to be Metal compatible.  The assumption
-     *             is that if the CVPixelBufferMetalCompatibilityKey has been specified, all buffers will be Metal compatible
-     *             (IOSurface backed), and thus it is the developer's responsibility to choose an appropriate Metal pixel format
-     *             for the CVPixelBuffers.
-     * 
-     *             Here are some example mappings:
-     * 
-     *             Mapping a BGRA buffer:
-     *             CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatBGRA8Unorm, width, height, 0, &outTexture);
-     * 
-     *             Mapping the luma plane of a 420v buffer:
-     *             CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatR8Unorm, width, height, 0, &outTexture);
-     * 
-     *             Mapping the chroma plane of a 420v buffer as a source texture:
-     *             CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatRG8Unorm width/2, height/2, 1, &outTexture);
-     * 
-     *             Mapping a yuvs buffer as a source texture (note: yuvs/f and 2vuy are unpacked and resampled -- not colorspace converted)
-     *             CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatGBGR422, width, height, 1, &outTexture);
-     * 
-     * @param      allocator The CFAllocatorRef to use for allocating the CVMetalTexture object.  May be NULL.
-     * @param      textureCache The texture cache object that will manage the texture.
-     * @param      sourceImage The CVImageBuffer that you want to create a CVMetalTexture from.
-     * @param      textureAttributes A CFDictionaryRef containing attributes to be used for creating the CVMetalTexture objects.  May be NULL.
-     * @param      pixelFormat Specifies the Metal pixel format.
-     * @param      width Specifies the width of the texture image.
-     * @param      height Specifies the height of the texture image.
-     * @param      planeIndex Specifies the plane of the CVImageBuffer to map bind.  Ignored for non-planar CVImageBuffers.
-     * @param      textureOut The newly created texture object will be placed here.
-     * @return     Returns kCVReturnSuccess on success
+     * associated params.  This creates a live binding between the CVImageBuffer and underlying
+     * CVMetalTexture texture object.
+     * <p>
+     * Note that CoreVideo does not explicitly declare any pixel format types to be Metal compatible.  The assumption
+     * is that if the CVPixelBufferMetalCompatibilityKey has been specified, all buffers will be Metal compatible
+     * (IOSurface backed), and thus it is the developer's responsibility to choose an appropriate Metal pixel format
+     * for the CVPixelBuffers.
+     * <p>
+     * Here are some example mappings:
+     * <p>
+     * Mapping a BGRA buffer:
+     * CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatBGRA8Unorm, width, height, 0, &outTexture);
+     * <p>
+     * Mapping the luma plane of a 420v buffer:
+     * CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatR8Unorm, width, height, 0, &outTexture);
+     * <p>
+     * Mapping the chroma plane of a 420v buffer as a source texture:
+     * CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatRG8Unorm width/2, height/2, 1, &outTexture);
+     * <p>
+     * Mapping a yuvs buffer as a source texture (note: yuvs/f and 2vuy are unpacked and resampled -- not colorspace converted)
+     * CVMetalTextureCacheCreateTextureFromImage(kCFAllocatorDefault, textureCache, pixelBuffer, NULL, MTLPixelFormatGBGR422, width, height, 1, &outTexture);
+     *
+     * @param allocator         The CFAllocatorRef to use for allocating the CVMetalTexture object.  May be NULL.
+     * @param textureCache      The texture cache object that will manage the texture.
+     * @param sourceImage       The CVImageBuffer that you want to create a CVMetalTexture from.
+     * @param textureAttributes A CFDictionaryRef containing attributes to be used for creating the CVMetalTexture objects.  May be NULL.
+     * @param pixelFormat       Specifies the Metal pixel format.
+     * @param width             Specifies the width of the texture image.
+     * @param height            Specifies the height of the texture image.
+     * @param planeIndex        Specifies the plane of the CVImageBuffer to map bind.  Ignored for non-planar CVImageBuffers.
+     * @param textureOut        The newly created texture object will be placed here.
+     * @return Returns kCVReturnSuccess on success
      */
     @Generated
     @CFunction
@@ -993,13 +993,13 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVMetalTextureCacheFlush
-     * 
+     * <p>
      * Performs internal housekeeping/recycling operations
-     * 
+     * <p>
      * This call must be made periodically to give the texture cache a chance to do internal housekeeping operations.
-     * 
-     * @param      textureCache The texture cache object to flush
-     * @param      options Currently unused, set to 0.
+     *
+     * @param textureCache The texture cache object to flush
+     * @param options      Currently unused, set to 0.
      */
     @Generated
     @CFunction
@@ -1017,7 +1017,7 @@ public final class CoreVideo {
 
     /**
      * The following two keys are useful with the CoreVideo pool and texture cache APIs so that you can specify
-     * an initial set of default buffer attachments to automatically be attached to the buffer when it is created. 
+     * an initial set of default buffer attachments to automatically be attached to the buffer when it is created.
      */
     @Generated
     @CVariable()
@@ -1539,7 +1539,7 @@ public final class CoreVideo {
 
     /**
      * cacheAttributes
-     * 
+     * <p>
      * By default, textures will age out after one second.  Setting a maximum
      * texture age of zero will disable the age-out mechanism completely.
      * CVOpenGLESTextureCacheFlush() can be used to force eviction in either case.
@@ -1578,7 +1578,7 @@ public final class CoreVideo {
 
     /**
      * kCFBooleanTrue indicates that the format contains alpha and some images may be considered transparent;
-     * kCFBooleanFalse indicates that there is no alpha and images are always opaque. 
+     * kCFBooleanFalse indicates that there is no alpha and images are always opaque.
      */
     @Generated
     @CVariable()
@@ -1617,7 +1617,7 @@ public final class CoreVideo {
     /**
      * All buffers have one or more image planes.  Each plane may contain a single or an interleaved set of components
      * For simplicity sake, pixel formats that are not planar may place the required format keys at the top
-     * level dictionary. 
+     * level dictionary.
      */
     @Generated
     @CVariable()
@@ -1625,7 +1625,7 @@ public final class CoreVideo {
 
     /**
      * Used to assist with allocating memory for pixel formats that don't have an integer value for
-     * bytes per pixel 
+     * bytes per pixel
      * Block width is essentially the width in pixels of the smallest "byte addressable" group of pixels
      * This works in close conjunction with BitsPerBlock
      * Examples:
@@ -1634,7 +1634,7 @@ public final class CoreVideo {
      * 32-bit 8888 ARGB, BlockWidth would be 1, BitsPerBlock would be 32
      * 2vuy (CbYCrY), BlockWidth would be 2, BitsPerBlock would be 32
      * 1-bit bitmap, BlockWidth would be 8, BitsPerBlock would be 8
-     * v210, BlockWidth would be 6, BitsPerBlock would be 128 
+     * v210, BlockWidth would be 6, BitsPerBlock would be 128
      * Values assumed to 1 be one if not present
      */
     @Generated
@@ -1647,7 +1647,7 @@ public final class CoreVideo {
 
     /**
      * This value must be present.  For simple pixel formats this will be equivalent to the traditional
-     * bitsPerPixel value. 
+     * bitsPerPixel value.
      */
     @Generated
     @CVariable()
@@ -1656,7 +1656,7 @@ public final class CoreVideo {
     /**
      * Used to state requirements on block multiples.  v210 would be '8' here for the horizontal case,
      * to match the standard v210 row alignment value of 48.
-     * These may be assumed as 1 if not present. 
+     * These may be assumed as 1 if not present.
      */
     @Generated
     @CVariable()
@@ -1668,8 +1668,8 @@ public final class CoreVideo {
 
     /**
      * CFData containing the bit pattern for a block of black pixels.  If absent, black is assumed to be all zeros.
-     * If present, this should be bitsPerPixel bits long -- if bitsPerPixel is less than a byte, repeat the bit pattern 
-     * for the full byte.  
+     * If present, this should be bitsPerPixel bits long -- if bitsPerPixel is less than a byte, repeat the bit pattern
+     * for the full byte.
      */
     @Generated
     @CVariable()
@@ -1688,7 +1688,7 @@ public final class CoreVideo {
 
     /**
      * If present, these two keys describe the OpenGL format and type enums you would use to describe this
-     * image plane to OpenGL 
+     * image plane to OpenGL
      */
     @Generated
     @CVariable()
@@ -1741,7 +1741,7 @@ public final class CoreVideo {
 
     /**
      * cacheAttributes
-     * 
+     * <p>
      * By default, textures will age out after one second.  Setting a maximum
      * texture age of zero will disable the age-out mechanism completely.
      * CVMetalTextureCacheFlush() can be used to force eviction in either case.
@@ -1808,18 +1808,18 @@ public final class CoreVideo {
     public static native CFStringRef CVTransferFunctionGetStringForIntegerCodePoint(int transferFunctionCodePoint);
 
     /**
-     *   [@function]   CVImageBufferCreateColorSpaceFromAttachments
-     * 
+     * [@function]   CVImageBufferCreateColorSpaceFromAttachments
+     * <p>
      * Attempts to synthesize a CGColorSpace from an image buffer's attachments.
-     * 
+     * <p>
      * To generate a CGColorSpace, the attachments dictionary should include values for either:
-     * 	1. kCVImageBufferICCProfile
-     * 	2. kCVImageBufferColorPrimariesKey, kCVImageBufferTransferFunctionKey, and kCVImageBufferYCbCrMatrixKey (and possibly kCVImageBufferGammaLevelKey)
+     * 1. kCVImageBufferICCProfile
+     * 2. kCVImageBufferColorPrimariesKey, kCVImageBufferTransferFunctionKey, and kCVImageBufferYCbCrMatrixKey (and possibly kCVImageBufferGammaLevelKey)
      * The client is responsible for releasing the CGColorSpaceRef when it is done with it (CGColorSpaceRelease() or CFRelease())
-     * 
-     *   @param      attachments A CFDictionary of attachments for an image buffer, obtained using CVBufferGetAttachments().
-     *   @return     A CGColorSpaceRef representing the color space of the buffer.
-     * 	Returns NULL if the attachments dictionary does not contain the information required to synthesize a CGColorSpace.
+     *
+     * @param attachments A CFDictionary of attachments for an image buffer, obtained using CVBufferCopyAttachments().
+     * @return A CGColorSpaceRef representing the color space of the buffer.
+     * Returns NULL if the attachments dictionary does not contain the information required to synthesize a CGColorSpace.
      */
     @Generated
     @CFunction
@@ -1827,10 +1827,10 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferGetIOSurface
-     * 
+     * <p>
      * Returns the IOSurface backing the pixel buffer, or NULL if it is not backed by an IOSurface.
-     * 
-     * @param      pixelBuffer Target PixelBuffer.
+     *
+     * @param pixelBuffer Target PixelBuffer.
      */
     @Generated
     @CFunction
@@ -1838,21 +1838,21 @@ public final class CoreVideo {
 
     /**
      * [@function]   CVPixelBufferCreateWithIOSurface
-     * 
+     * <p>
      * Call to create a single CVPixelBuffer for a passed-in IOSurface.
-     * 
+     * <p>
      * The CVPixelBuffer will retain the IOSurface.
-     * 	IMPORTANT NOTE: If you are using IOSurface to share CVPixelBuffers between processes
-     * 	and those CVPixelBuffers are allocated via a CVPixelBufferPool, it is important
-     * 	that the CVPixelBufferPool does not reuse CVPixelBuffers whose IOSurfaces are still
-     * 	in use in other processes.  
-     * 	CoreVideo and IOSurface will take care of this for if you use IOSurfaceCreateMachPort 
-     * 	and IOSurfaceLookupFromMachPort, but NOT if you pass IOSurfaceIDs.
-     * 
-     * @param      surface		            The IOSurface to wrap.
-     * @param      pixelBufferAttributes   A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
-     * @param      pixelBufferOut          The new pixel buffer will be returned here
-     * @return     returns kCVReturnSuccess on success.
+     * IMPORTANT NOTE: If you are using IOSurface to share CVPixelBuffers between processes
+     * and those CVPixelBuffers are allocated via a CVPixelBufferPool, it is important
+     * that the CVPixelBufferPool does not reuse CVPixelBuffers whose IOSurfaces are still
+     * in use in other processes.
+     * CoreVideo and IOSurface will take care of this for if you use IOSurfaceCreateMachPort
+     * and IOSurfaceLookupFromMachPort, but NOT if you pass IOSurfaceIDs.
+     *
+     * @param surface               The IOSurface to wrap.
+     * @param pixelBufferAttributes A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+     * @param pixelBufferOut        The new pixel buffer will be returned here
+     * @return returns kCVReturnSuccess on success.
      */
     @Generated
     @CFunction
@@ -1948,9 +1948,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferVersatileBayerKey_BayerPattern
-     * 
+     * <p>
      * Buffer attachment key for code indicating Bayer pattern (sensel arrangement).
-     * 
+     * <p>
      * Associated attachment is a CFNumber of type kCFNumberSInt32Type.  The value follows the semantics of the ProRes RAW bayer_pattern bitstream syntax element, namely 0, 1, 2, or 3, where 0 means the top-left sensel of the frame is red-filtered ("RGGB"); 1 means the top-left sensel of the frame is green-filtered, with the top row alternating between green- and red-filtered sensels ("GRBG"); 2 means the top-left sensel of the frame is green- filtered, with the top row alternating between green- and blue-filtered sensels ("GBRG"); and 3 means the top-left sensel of the frame is blue-filtered ("BGGR").  This attachment applies only to buffers with VersatileBayer formats.
      */
     @Generated
@@ -1959,9 +1959,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_SenselSitingOffsets
-     * 
+     * <p>
      * Buffer attachment key for siting offsets, relative to pixel center, of individual sensels/components constituting each pixel.
-     * 
+     * <p>
      * Associated attachment is CFData containing an array of 8 32-bit floats.  The eight CFData array elements specify, in order, the following sensel/component offsets from pixel center: red horizontal offset, red vertical offset, green horizontal offset, green vertical offset, blue horizontal offset, blue vertical offset, alpha horizontal offset, and alpha vertical offset.  A positive offset value indicates that the sensel/component lies to the right of or below the center of its pixel, while a negative value indicates that the sensel/component lies to the left of or above the center of its pixel.  Horizontal and vertical offset magnitudes are respectively in terms of the spacing between horizontally- and vertically-adjacent pixel centers.  This attachment applies only to buffers with the bp64 format, and is optional for those buffers; if not present, all offsets are considered to be 0.
      */
     @Generated
@@ -1970,9 +1970,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_BlackLevel
-     * 
+     * <p>
      * Buffer attachment key for sensel black level.
-     * 
+     * <p>
      * Associated attachment is a CFNumber of type kCFNumberSInt32Type.  The value is the sensel level corresponding to no light exposure.  This attachment is required for buffers with either the bp16 or bp64 format.
      */
     @Generated
@@ -1981,9 +1981,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_WhiteLevel
-     * 
+     * <p>
      * Buffer attachment key for sensel white level.
-     * 
+     * <p>
      * Associated attachment is a CFNumber of type kCFNumberSInt32Type.  The value is the sensel level corresponding to sensor (or camera A-to-D converter) saturation.  This attachment is required for buffers with either the bp16 or bp64 format.
      */
     @Generated
@@ -1992,9 +1992,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_WhiteBalanceCCT
-     * 
+     * <p>
      * Buffer attachment key for illuminant correlated color temperature.
-     * 
+     * <p>
      * Associated attachment is a CFNumber of type kCFNumberSInt32Type.  The value is the illuminant correlated color temperature (CCT), in kelvins, selected at the time of capture.  May be 0, indicating that the CCT is unknown or unspecified.  This attachment is optional for buffers with either the bp16 or bp64 format; if not present, the CCT is considered unknown or unspecified.
      */
     @Generated
@@ -2003,9 +2003,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_WhiteBalanceRedFactor
-     * 
+     * <p>
      * Buffer attachment key for white balance red factor.
-     * 
+     * <p>
      * Associated attachment is a CFNumber of type kCFNumberFloat32Type.  The value is the white balance multiplication factor for red-filtered sensels.  This attachment is required for buffers with either the bp16 or bp64 format.
      */
     @Generated
@@ -2014,9 +2014,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_WhiteBalanceBlueFactor
-     * 
+     * <p>
      * Buffer attachment key for white balance blue factor.
-     * 
+     * <p>
      * Associated attachment is a CFNumber of type kCFNumberFloat32Type.  The value is the white balance multiplication factor for blue-filtered sensels.  This attachment is required for buffers with either the bp16 or bp64 format.
      */
     @Generated
@@ -2025,9 +2025,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_ColorMatrix
-     * 
+     * <p>
      * Buffer attachment key for color translation matrix.
-     * 
+     * <p>
      * Associated attachment is CFData containing an array of 9 32-bit floats.  The value is a 3x3 matrix which transforms linear RGB pixel values in the camera native color space to CIE 1931 XYZ values relative to the D65 illuminant, where the matrix entries are stored in the CFData in row-major order.  This attachment is required for buffers with either the bp16 or bp64 format.
      */
     @Generated
@@ -2036,9 +2036,9 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_GainFactor
-     * 
+     * <p>
      * Buffer attachment key for gain factor.
-     * 
+     * <p>
      * Associated attachment is a CFNumber of type kCFNumberFloat32Type.  The value is the overall gain factor for raw conversion.  This attachment is required for buffers with either the bp16 or bp64 format.
      */
     @Generated
@@ -2047,12 +2047,108 @@ public final class CoreVideo {
 
     /**
      * [@const]      kCVPixelBufferProResRAWKey_RecommendedCrop
-     * 
+     * <p>
      * Buffer attachment key for recommended number of pixels/rows to discard from the sides of the image after raw conversion.
-     * 
+     * <p>
      * Associated attachment is CFData containing an array of 4 32-bit floats.  The four CFData array elements specify, in order, the recommended number of: pixels to discard from the start (left) of each row of the image; pixels to discard from the end (right) of each row of the image; rows of pixels to discard from the top of the image; and rows of pixels to discard from the bottom of the image.  (Pixels/rows are discarded after raw conversion.)  This attachment is optional for buffers with either the bp16 or bp64 format; if not present, the recommended crop values are considered to be 0.  For buffers with the bp64 format, the values may be nonintegral due to downscaling, in which case the handling of fractional parts is implementation-dependent.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_RecommendedCrop();
+
+    /**
+     * [@function]   CVBufferCopyAttachments
+     * <p>
+     * Returns a copy of all attachments of a CVBuffer object. It is the caller’s responsibility to release the returned dictionary.
+     * <p>
+     * CVBufferCopyAttachments is a convenience call that returns a copy of all attachments with their corresponding keys in a CFDictionary.
+     *
+     * @param buffer Target CVBuffer object.
+     * @return A CFDictionary with all buffer attachments identified by their keys. If no attachment is present or invalid attachment mode,   returns NULL
+     */
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef CVBufferCopyAttachments(CVBufferRef buffer, int attachmentMode);
+
+    /**
+     * [@function]   CVBufferCopyAttachment
+     * <p>
+     * Returns a retained specific attachment of a CVBuffer object. It is the caller’s responsibility to release the returned value.
+     * <p>
+     * You can attach any CF object to a CVBuffer object to store additional information. CVBufferCopyAttachment retrieves a retained attachment identified by a key.
+     *
+     * @param buffer          Target CVBuffer object.
+     * @param key             Key in form of a CFString identifying the desired attachment.
+     * @param attachmentMode. Returns the mode of the attachment, if desired.  May be NULL.
+     * @return If found the attachment object, return the value; otherwize, return NULL.
+     */
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr CVBufferCopyAttachment(CVBufferRef buffer, CFStringRef key,
+            IntPtr attachmentMode);
+
+    /**
+     * [@function]   CVBufferHasAttachment
+     * <p>
+     * Returns true if an attachment with the passed key is present on a CVBuffer object.
+     *
+     * @param buffer Target CVBuffer object.
+     * @param key    Key in form of a CFString identifying the desired attachment.
+     * @return True if an attachment with this key is present, otherwise false.
+     */
+    @Generated
+    @CFunction
+    public static native byte CVBufferHasAttachment(CVBufferRef buffer, CFStringRef key);
+
+    /**
+     * [@function]   CVPixelBufferCopyCreationAttributes
+     * <p>
+     * Returns a copy of pixelBufferAttributes dictionary used to create the PixelBuffer.
+     * <p>
+     * Can be used to create similar pixelbuffers.
+     *
+     * @param pixelBuffer Target PixelBuffer.
+     */
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef CVPixelBufferCopyCreationAttributes(CVBufferRef pixelBuffer);
+
+    /**
+     * [@function]   CVIsCompressedPixelFormatAvailable
+     * <p>
+     * Checks if a compressed pixel format is supported on the current platform.
+     *
+     * @param pixelFormatType compressed pixel format.
+     * @return True if pixel format is supported on the current platform.
+     */
+    @Generated
+    @CFunction
+    public static native byte CVIsCompressedPixelFormatAvailable(int pixelFormatType);
+
+    /**
+     * CFData (8 bytes) containing big-endian data matching payload of Ambient Viewing Environment SEI message
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferAmbientViewingEnvironmentKey();
+
+    /**
+     * [@constant]    kCVImageBufferRegionOfInterestKey
+     * <p>
+     * Specifies region of interest that image statistics cover. This value should be a CGRect dictionary created by CGRectCreateDictionaryRepresentation(). The origin in the CGRect represents the x,y coordinate within the CVPixelBuffer where region of interest is located.
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVImageBufferRegionOfInterestKey();
+
+    /**
+     * [@const]      kCVPixelBufferProResRAWKey_MetadataExtension
+     * <p>
+     * Buffer attachment key for metadata extension.
+     * <p>
+     * Associated attachment is CFData containing ProRes RAW metadata extension. This attachment is optional for buffers with either bp16 or bp64.  The CFData contains a big-endian uint32 representing the size of the item in bytes followed by a 4-character code ('psim') followed by a variable-length pascal string identifying the metadata (like a key string) followed by the metadata payload.
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCVPixelBufferProResRAWKey_MetadataExtension();
 }

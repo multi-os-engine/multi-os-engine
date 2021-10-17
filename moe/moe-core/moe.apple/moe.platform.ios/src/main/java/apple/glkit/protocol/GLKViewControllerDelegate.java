@@ -31,7 +31,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("GLKViewControllerDelegate")
 public interface GLKViewControllerDelegate {
     /**
-     * Delegate method that gets called when the pause state changes. 
+     * Delegate method that gets called when the pause state changes.
      */
     @Generated
     @IsOptional

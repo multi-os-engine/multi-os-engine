@@ -530,7 +530,7 @@ public class UIPageControl extends UIControl {
 
     /**
      * Returns the override indicator image for the specific page, nil if no override image was set.
-     * 
+     *
      * @param page Must be in the range of 0..numberOfPages
      */
     @Generated
@@ -572,9 +572,9 @@ public class UIPageControl extends UIControl {
 
     /**
      * Override the indicator image for a specific page. Symbol images are recommended.
-     * 
-     * @param image    The image for the indicator. Resets to the default if image is nil.
-     * @param page      Must be in the range of 0..numberOfPages
+     *
+     * @param image The image for the indicator. Resets to the default if image is nil.
+     * @param page  Must be in the range of 0..numberOfPages
      */
     @Generated
     @Selector("setIndicatorImage:forPage:")

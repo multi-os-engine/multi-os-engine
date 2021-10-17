@@ -57,42 +57,42 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     }
 
     /**
-     * Returns a character set containing the characters allowed in an URL's fragment component.
+     * Returns a character set containing the characters allowed in a URL's fragment component.
      */
     @Generated
     @Selector("URLFragmentAllowedCharacterSet")
     public static native NSCharacterSet URLFragmentAllowedCharacterSet();
 
     /**
-     * Returns a character set containing the characters allowed in an URL's host subcomponent.
+     * Returns a character set containing the characters allowed in a URL's host subcomponent.
      */
     @Generated
     @Selector("URLHostAllowedCharacterSet")
     public static native NSCharacterSet URLHostAllowedCharacterSet();
 
     /**
-     * Returns a character set containing the characters allowed in an URL's password subcomponent.
+     * Returns a character set containing the characters allowed in a URL's password subcomponent.
      */
     @Generated
     @Selector("URLPasswordAllowedCharacterSet")
     public static native NSCharacterSet URLPasswordAllowedCharacterSet();
 
     /**
-     * Returns a character set containing the characters allowed in an URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
+     * Returns a character set containing the characters allowed in a URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
      */
     @Generated
     @Selector("URLPathAllowedCharacterSet")
     public static native NSCharacterSet URLPathAllowedCharacterSet();
 
     /**
-     * Returns a character set containing the characters allowed in an URL's query component.
+     * Returns a character set containing the characters allowed in a URL's query component.
      */
     @Generated
     @Selector("URLQueryAllowedCharacterSet")
     public static native NSCharacterSet URLQueryAllowedCharacterSet();
 
     /**
-     * Returns a character set containing the characters allowed in an URL's user subcomponent.
+     * Returns a character set containing the characters allowed in a URL's user subcomponent.
      */
     @Generated
     @Selector("URLUserAllowedCharacterSet")

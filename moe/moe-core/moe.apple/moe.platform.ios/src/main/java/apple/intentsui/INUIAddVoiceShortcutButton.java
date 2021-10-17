@@ -11,6 +11,7 @@ import apple.intents.INShortcut;
 import apple.intentsui.protocol.INUIAddVoiceShortcutButtonDelegate;
 import apple.uikit.UIAction;
 import apple.uikit.UIButton;
+import apple.uikit.UIButtonConfiguration;
 import apple.uikit.UIImage;
 import apple.uikit.UITraitCollection;
 import apple.uikit.UIView;
@@ -233,7 +234,7 @@ public class INUIAddVoiceShortcutButton extends UIButton {
 
     /**
      * A custom corner radius for the @c INUIAddVoiceShortcutButton.
-     * 
+     * <p>
      * If the provided corner radius is greater than half of the button’s height, it will be capped at half of the button’s height.
      */
     @Generated
@@ -390,7 +391,7 @@ public class INUIAddVoiceShortcutButton extends UIButton {
 
     /**
      * A custom corner radius for the @c INUIAddVoiceShortcutButton.
-     * 
+     * <p>
      * If the provided corner radius is greater than half of the button’s height, it will be capped at half of the button’s height.
      */
     @Generated
@@ -486,4 +487,9 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("systemButtonWithPrimaryAction:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object systemButtonWithPrimaryAction(UIAction primaryAction);
+
+    @Generated
+    @Selector("buttonWithConfiguration:primaryAction:")
+    public static native INUIAddVoiceShortcutButton buttonWithConfigurationPrimaryAction(
+            UIButtonConfiguration configuration, UIAction primaryAction);
 }

@@ -59,7 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNParticleSystem
- * 
+ * <p>
  * The SCNParticleSystem class represents a system of particles.
  */
 @Generated
@@ -1270,4 +1270,26 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("setParticleIntensityVariation:")
     public native void setParticleIntensityVariation(@NFloat double value);
+
+    @Generated
+    @Selector("removeAllAnimationsWithBlendOutDuration:")
+    public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
+
+    /**
+     * [@property] writeToDepthBuffer
+     * <p>
+     * Determines whether the receiver writes to the depth buffer when rendered. Defaults to NO.
+     */
+    @Generated
+    @Selector("setWritesToDepthBuffer:")
+    public native void setWritesToDepthBuffer(boolean value);
+
+    /**
+     * [@property] writeToDepthBuffer
+     * <p>
+     * Determines whether the receiver writes to the depth buffer when rendered. Defaults to NO.
+     */
+    @Generated
+    @Selector("writesToDepthBuffer")
+    public native boolean writesToDepthBuffer();
 }

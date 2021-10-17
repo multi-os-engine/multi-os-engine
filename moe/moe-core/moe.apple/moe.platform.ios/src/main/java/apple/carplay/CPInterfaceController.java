@@ -95,7 +95,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Dismiss the current modally-presented template, optionally animating the dismissal.
-     * 
+     * <p>
      * [@note] If there is no current modally-presented template, this method will have no effect.
      */
     @Generated
@@ -154,7 +154,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Pop back to a specified template.
-     * 
+     * <p>
      * targetTemplate must exist in the current template navigation hierarchy.
      */
     @Generated
@@ -171,7 +171,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Present a template modally over the navigation hierarchy. Only one template may be presented at a time.
-     * 
+     * <p>
      * [@note] Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
      */
     @Generated
@@ -180,7 +180,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The current modally-presented template.
-     * 
+     * <p>
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current presented template.
      */
     @Generated
@@ -257,7 +257,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The current stack of templates in the navigation hierarchy.
-     * 
+     * <p>
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current stack of templates.
      */
     @Generated
@@ -266,7 +266,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The top template in the navigation hierarchy.
-     * 
+     * <p>
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current top-most template.
      */
     @Generated
@@ -280,7 +280,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The trait collection for the car's primary screen.
-     * 
+     * <p>
      * Your app should use this trait collection when deriving metrics, like screen scale, for
      * your templates. For example, images you display in any template should be sized to a
      * display scale matching the scale of the @c carTraitCollection, not the scale of the
@@ -292,9 +292,9 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Dismiss the current modally-presented template, optionally animating the dismissal.
-     * 
+     * <p>
      * [@note] If there is no current modally-presented template, this method will have no effect.
-     * 
+     * <p>
      * The completion block will be called after the template has been dismissed. If the template was dismissed successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
      */
@@ -346,9 +346,9 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Pop back to a specified template.
-     * 
+     * <p>
      * targetTemplate must exist in the current template navigation hierarchy.
-     * 
+     * <p>
      * The completion block will be called after the pop completes.
      * If the specified template does not exist in the template stack,
      * the completion block will be called with a success parameter of NO and a non-nil NSError.
@@ -367,12 +367,12 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Present a template modally over the navigation hierarchy. Only one template may be presented at a time.
-     * 
+     * <p>
      * [@note] Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
-     * 
+     * <p>
      * The completion block will be called after the template has been presented. If the template was presented successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
-     * 
+     * <p>
      * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
      */
     @Generated
@@ -389,10 +389,10 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Push a new template onto the template navigation hierarchy, showing it immediately.
-     * 
+     * <p>
      * The completion block will be called after the template has been presented. If the template was presented successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
-     * 
+     * <p>
      * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
      */
     @Generated
@@ -410,10 +410,10 @@ public class CPInterfaceController extends NSObject {
     /**
      * Set the root template. If no existing templates exist in the template navigation hierarchy, the animated flag will be ignored.
      * If there is an existing template navigation hierarchy, the existing stack will be replaced by the new root template.
-     * 
+     * <p>
      * The completion block will be called after the template has been presented. If the template was presented successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
-     * 
+     * <p>
      * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
      */
     @Generated

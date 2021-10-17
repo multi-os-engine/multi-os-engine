@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLFloor
- * 
+ * <p>
  * Discussion:
- *   Encapsulates the information about a floor.
+ * Encapsulates the information about a floor.
  */
 @Generated
 @Library("CoreLocation")
@@ -184,14 +184,14 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * level
-     * 
+     * <p>
      * Discussion:
-     *   This is a logical representation that will vary on definition from building-to-building.
-     *   Floor 0 will always represent the floor designated as "ground".
-     *   This number may be negative to designate floors below the ground floor
-     *   and positive to indicate floors above the ground floor.
-     *   It is not intended to match any numbering that might actually be used in the building.
-     *   It is erroneous to use as an estimate of altitude.
+     * This is a logical representation that will vary on definition from building-to-building.
+     * Floor 0 will always represent the floor designated as "ground".
+     * This number may be negative to designate floors below the ground floor
+     * and positive to indicate floors above the ground floor.
+     * It is not intended to match any numbering that might actually be used in the building.
+     * It is erroneous to use as an estimate of altitude.
      */
     @Generated
     @Selector("level")

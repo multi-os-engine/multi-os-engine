@@ -30,16 +30,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixNeuronGradient
- * 
+ * <p>
  * [@dependency] This depends on Metal.framework.
- * 
+ * <p>
  * A neuron gradient activation kernel that operates on matrices.
- * 
+ * <p>
  * A MPSMatrixNeuronGradient object computes the results of backpropagating
- *             the gradients of a loss function with respect to the outputs of an
- *             MPSMatrixNeuron object.  The corresponding properties and data used by
- *             the MPSMatrixNeuronGradient object should correspond to those used by
- *             the forward MPSMatrixNeuron object for which the gradient is being computed.
+ * the gradients of a loss function with respect to the outputs of an
+ * MPSMatrixNeuron object.  The corresponding properties and data used by
+ * the MPSMatrixNeuronGradient object should correspond to those used by
+ * the forward MPSMatrixNeuron object for which the gradient is being computed.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -71,7 +71,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The scale factor to apply to the input.
      */
     @Generated
@@ -102,13 +102,13 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Make a copy of this kernel for a new device - @see MPSKernel
-     * 
-     * @param      zone        The NSZone in which to allocate the object
-     * @param      device      The device for the new MPSKernel. If nil, then use
-     *                         self.device.
-     * @return     A pointer to a copy of this MPSKernel. This will fail, returning
-     *             nil if the device is not supported. Devices must be
-     *             MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *
+     * @param zone   The NSZone in which to allocate the object
+     * @param device The device for the new MPSKernel. If nil, then use
+     *               self.device.
+     * @return A pointer to a copy of this MPSKernel. This will fail, returning
+     * nil if the device is not supported. Devices must be
+     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -126,23 +126,18 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Encode a MPSMatrixNeuronGradient object to a command buffer and compute
-     *             its gradient with respect to its input data.
-     * 
-     * @param      commandBuffer               The commandBuffer on which to encode the operation.
-     * 
-     * @param      gradientMatrix              A matrix whose values represent the gradient of a
-     *                                         loss function with respect to the results of a forward
-     *                                         MPSMatrixNeuron operation.
-     * 
-     * @param      inputMatrix                 A matrix containing the inputs to a forward MPSMatrixNeuron
-     *                                         operation for which the gradient values are to be computed.
-     * 
-     * @param      biasVector                  A vector containing the bias terms.
-     * 
-     * @param      resultGradientForDataMatrix The matrix containing the resulting gradient values.
-     * 
-     * @param      resultGradientForBiasVector If non-NULL the vector containing gradients for the bias
-     *                                         terms.
+     * its gradient with respect to its input data.
+     *
+     * @param commandBuffer               The commandBuffer on which to encode the operation.
+     * @param gradientMatrix              A matrix whose values represent the gradient of a
+     *                                    loss function with respect to the results of a forward
+     *                                    MPSMatrixNeuron operation.
+     * @param inputMatrix                 A matrix containing the inputs to a forward MPSMatrixNeuron
+     *                                    operation for which the gradient values are to be computed.
+     * @param biasVector                  A vector containing the bias terms.
+     * @param resultGradientForDataMatrix The matrix containing the resulting gradient values.
+     * @param resultGradientForBiasVector If non-NULL the vector containing gradients for the bias
+     *                                    terms.
      */
     @Generated
     @Selector("encodeToCommandBuffer:gradientMatrix:inputMatrix:biasVector:resultGradientForDataMatrix:resultGradientForBiasVector:")
@@ -166,12 +161,12 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * NSSecureCoding compatability
-     * 
+     * <p>
      * See @ref MPSKernel#initWithCoder.
-     * 
-     * @param      aDecoder    The NSCoder subclass with your serialized MPSMatrixNeuronGradient
-     * @param      device      The MTLDevice on which to make the MPSMatrixNeuronGradient object.
-     * @return     A new MPSMatrixNeuronGradient object, or nil if failure.
+     *
+     * @param aDecoder The NSCoder subclass with your serialized MPSMatrixNeuronGradient
+     * @param device   The MTLDevice on which to make the MPSMatrixNeuronGradient object.
+     * @return A new MPSMatrixNeuronGradient object, or nil if failure.
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -247,7 +242,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   alpha
-     * 
+     * <p>
      * The scale factor to apply to the input.
      */
     @Generated
@@ -256,23 +251,23 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Add per output value neuron parameters A for PReLu neuron activation functions.
-     * 
+     * <p>
      * This method sets the neuron to PReLU, zeros parameters A and B and sets the per output value
-     *             neuron parameters A to an array containing a unique value of A for each output value.
-     * 
-     *             If the neuron function is f(v,a,b), it will apply
-     * 
-     *                    resultMatrix(i, j) = f( input(i, j), A[j], B[j] )
-     *                 where j in [0, sourceInputFeatureChannels]
-     * 
-     *             See https://arxiv.org/pdf/1502.01852.pdf for details.
-     * 
-     *             All other neuron types, where parameter A
-     *             and parameter B are shared across output values must be set using
-     *             -setNeuronType:parameterA:parameterB:
-     * 
-     * @param      A       An array containing float values for neuron parameter A.
-     *                     Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     * neuron parameters A to an array containing a unique value of A for each output value.
+     * <p>
+     * If the neuron function is f(v,a,b), it will apply
+     * <p>
+     * resultMatrix(i, j) = f( input(i, j), A[j], B[j] )
+     * where j in [0, sourceInputFeatureChannels]
+     * <p>
+     * See https://arxiv.org/pdf/1502.01852.pdf for details.
+     * <p>
+     * All other neuron types, where parameter A
+     * and parameter B are shared across output values must be set using
+     * -setNeuronType:parameterA:parameterB:
+     *
+     * @param A An array containing float values for neuron parameter A.
+     *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
      */
     @Generated
     @Selector("setNeuronToPReLUWithParametersA:")
@@ -280,20 +275,20 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Specifies a neuron activation function to be used.
-     * 
+     * <p>
      * This method can be used to add a neuron activation funtion of given type with
-     *             associated scalar parameters A, B, and C that are shared across all output values.
-     *             Note that this method can only be used to specify neurons which are specified by three (or fewer)
-     *             parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
-     *             this method for neuron activation functions like MPSCNNNeuronTypePReLU,
-     *             which require per-channel parameter values. For those kind of neuron activation functions,
-     *             use appropriate setter functions.  An MPSMatrixNeuron kernel is initialized
-     *             with a default neuron function of MPSCNNNeuronTypeNone.
-     * 
-     * @param      neuronType      Type of neuron activation function. For full list see MPSCNNNeuronType.h
-     * @param      parameterA      parameterA of neuron activation that is shared across all output values.
-     * @param      parameterB      parameterB of neuron activation that is shared across all output values.
-     * @param      parameterC      parameterC of neuron activation that is shared across all output values.
+     * associated scalar parameters A, B, and C that are shared across all output values.
+     * Note that this method can only be used to specify neurons which are specified by three (or fewer)
+     * parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
+     * this method for neuron activation functions like MPSCNNNeuronTypePReLU,
+     * which require per-channel parameter values. For those kind of neuron activation functions,
+     * use appropriate setter functions.  An MPSMatrixNeuron kernel is initialized
+     * with a default neuron function of MPSCNNNeuronTypeNone.
+     *
+     * @param neuronType Type of neuron activation function. For full list see MPSCNNNeuronType.h
+     * @param parameterA parameterA of neuron activation that is shared across all output values.
+     * @param parameterB parameterB of neuron activation that is shared across all output values.
+     * @param parameterC parameterC of neuron activation that is shared across all output values.
      */
     @Generated
     @Selector("setNeuronType:parameterA:parameterB:parameterC:")
@@ -302,7 +297,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceInputFeatureChannels
-     * 
+     * <p>
      * The number of feature channels in the input vectors.
      */
     @Generated
@@ -311,7 +306,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceNumberOfFeatureVectors
-     * 
+     * <p>
      * The number of input vectors which make up the input array.
      */
     @Generated
@@ -324,7 +319,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceInputFeatureChannels
-     * 
+     * <p>
      * The number of feature channels in the input vectors.
      */
     @Generated
@@ -334,7 +329,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property]   sourceNumberOfFeatureVectors
-     * 
+     * <p>
      * The number of input vectors which make up the input array.
      */
     @Generated

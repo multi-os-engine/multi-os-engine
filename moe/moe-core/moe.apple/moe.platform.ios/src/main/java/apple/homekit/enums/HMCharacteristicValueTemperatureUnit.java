@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]      HMCharacteristicValueTemperatureUnit
- * 
+ * <p>
  * [@constant]  HMCharacteristicValueTemperatureUnitCelsius     Celsius.
  * [@constant]  HMCharacteristicValueTemperatureUnitFahrenheit  Fahrenheit.
  */

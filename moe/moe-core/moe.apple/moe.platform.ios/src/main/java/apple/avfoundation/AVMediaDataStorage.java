@@ -41,7 +41,7 @@ public class AVMediaDataStorage extends NSObject {
 
     /**
      * URL
-     * 
+     * <p>
      * The URL from which the receiver was initialized; may be nil.
      */
     @Generated
@@ -103,14 +103,12 @@ public class AVMediaDataStorage extends NSObject {
 
     /**
      * initWithURL:options:
-     * 
+     * <p>
      * Creates an AVMediaDataStorage object associated with a file URL.
-     * 
-     * @param			URL
-     * 				An NSURL object that specifies a file where sample data that is added to a movie or track should be written.
-     * @param			options
-     * 				An NSDictionary object that contains keys for specifying options for the initialization of the AVMediaDataStorage object. Currently no keys are defined.
-     * @return			An AVMediaDataStorage object
+     *
+     * @param            URL An NSURL object that specifies a file where sample data that is added to a movie or track should be written.
+     * @param            options An NSDictionary object that contains keys for specifying options for the initialization of the AVMediaDataStorage object. Currently no keys are defined.
+     * @return An AVMediaDataStorage object
      */
     @Generated
     @Selector("initWithURL:options:")

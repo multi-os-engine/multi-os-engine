@@ -4,6 +4,7 @@ import apple.NSObject;
 import apple.corespotlight.CSSearchableIndex;
 import apple.corespotlight.CSSearchableItemAttributeSet;
 import apple.foundation.NSArray;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -118,11 +119,6 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("init")
     public native NSCoreDataCoreSpotlightDelegate init();
 
-    /**
-     * NSCoreDataSpotlightDelegate requires that
-     *  - the store type is NSSQLiteStoreType.
-     *  - the store has persistent history tracking enabled.
-     */
     @Generated
     @Selector("initForStoreWithDescription:model:")
     public native NSCoreDataCoreSpotlightDelegate initForStoreWithDescriptionModel(
@@ -204,4 +200,54 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Deletes all searchable items for the configured Spotlight index. Calling this method may return
+     * errors from lower layer dependencies, such as Core Data and Core Spotlight.
+     */
+    @Generated
+    @Selector("deleteSpotlightIndexWithCompletionHandler:")
+    public native void deleteSpotlightIndexWithCompletionHandler(
+            @ObjCBlock(name = "call_deleteSpotlightIndexWithCompletionHandler") Block_deleteSpotlightIndexWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_deleteSpotlightIndexWithCompletionHandler {
+        @Generated
+        void call_deleteSpotlightIndexWithCompletionHandler(NSError error);
+    }
+
+    /**
+     * Designated initializer for NSCoreDataCoreSpotlightDelegate. If this method is used to create the object,
+     * -[NSCoreDataCoreSpotlightDelegate startSpotlightIndexing] must be called for the delegate to begin indexing.
+     * <p>
+     * NSCoreDataSpotlightDelegate requires that
+     * - the store type is NSSQLiteStoreType.
+     * - the store has persistent history tracking enabled.
+     */
+    @Generated
+    @Selector("initForStoreWithDescription:coordinator:")
+    public native NSCoreDataCoreSpotlightDelegate initForStoreWithDescriptionCoordinator(
+            NSPersistentStoreDescription description, NSPersistentStoreCoordinator psc);
+
+    /**
+     * Returns if indexing is enabled or not.
+     */
+    @Generated
+    @Selector("isIndexingEnabled")
+    public native boolean isIndexingEnabled();
+
+    /**
+     * Starts Spotlight indexing.
+     */
+    @Generated
+    @Selector("startSpotlightIndexing")
+    public native void startSpotlightIndexing();
+
+    /**
+     * Stops Spotlight indexing.
+     */
+    @Generated
+    @Selector("stopSpotlightIndexing")
+    public native void stopSpotlightIndexing();
 }

@@ -50,7 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNGeometrySource
- * 
+ * <p>
  * A geometry source contains geometry data for a specific semantic. The data format is described by properties.
  */
 @Generated
@@ -113,36 +113,36 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * geometrySourceWithBuffer:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:
-     * 
+     * <p>
      * Creates and returns a geometry source from the given data and parameters.
-     * 
+     * <p>
      * Attempting to modify the Metal buffer outside the SCNSceneRenderer delegate callbacks is undefined.
      * The typical usage it to modify the MTLBuffer within the willRenderScene callback, using a compute kernel or a vertex function in the user own command buffer. So something like:
-     * 
+     * <p>
      * - (void)renderer:(id <SCNSceneRenderer>)aRenderer willRenderScene:(SCNScene *)scene atTime:(NSTimeInterval)time
      * {
-     *     // ask for a new command buffer
-     *     id <MTLCommandBuffer> myCommandBuffer = [aRenderer.commandQueue commandBuffer];
-     * 
-     *     // get a compute command encoder
-     *     id <MTLComputeCommandEncoder> myComputeCommandEncoder = [myCommandBuffer computeCommandEncoder];
-     * 
-     *     // configure the compute command encoder's pipeline state, buffer inputs etc...
-     *     //...
-     * 
-     *     // dispatch the
-     *     [myComputeCommandEncoder dispatchThreadgroups:numberOfWorkingGroups threadsPerThreadgroup:numberOfThreads];
-     *     [myComputeCommandEncoder endEncoding];
-     * 
-     *     [myCommandBuffer commit];
+     * // ask for a new command buffer
+     * id <MTLCommandBuffer> myCommandBuffer = [aRenderer.commandQueue commandBuffer];
+     * <p>
+     * // get a compute command encoder
+     * id <MTLComputeCommandEncoder> myComputeCommandEncoder = [myCommandBuffer computeCommandEncoder];
+     * <p>
+     * // configure the compute command encoder's pipeline state, buffer inputs etc...
+     * //...
+     * <p>
+     * // dispatch the
+     * [myComputeCommandEncoder dispatchThreadgroups:numberOfWorkingGroups threadsPerThreadgroup:numberOfThreads];
+     * [myComputeCommandEncoder endEncoding];
+     * <p>
+     * [myCommandBuffer commit];
      * }
-     * 
-     * @param buffer A Metal buffer.
+     *
+     * @param buffer       A Metal buffer.
      * @param vertexFormat The vertex format.
-     * @param semantic The semantic of the geometry source.
-     * @param vertexCount The number of vertex.
-     * @param offset The offset from the beginning of the data. In bytes.
-     * @param stride The number of bytes from a vector to the next one in the data.
+     * @param semantic     The semantic of the geometry source.
+     * @param vertexCount  The number of vertex.
+     * @param offset       The offset from the beginning of the data. In bytes.
+     * @param stride       The number of bytes from a vector to the next one in the data.
      */
     @Generated
     @Selector("geometrySourceWithBuffer:vertexFormat:semantic:vertexCount:dataOffset:dataStride:")
@@ -152,17 +152,17 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:
-     * 
+     * <p>
      * Creates and returns a geometry source from the given data and parameters.
-     * 
-     * @param data The geometry data.
-     * @param semantic The semantic of the geometry source.
-     * @param vectorCount The number of geometry source vectors.
-     * @param floatComponents A flag that indicates if vector components are floating point values.
+     *
+     * @param data                The geometry data.
+     * @param semantic            The semantic of the geometry source.
+     * @param vectorCount         The number of geometry source vectors.
+     * @param floatComponents     A flag that indicates if vector components are floating point values.
      * @param componentsPerVector The number of scalar components in a vector.
-     * @param bytesPerComponent The number of bytes that represent a vector component.
-     * @param offset The offset from the beginning of the data. In bytes.
-     * @param stride The number of bytes from a vector to the next one in the data.
+     * @param bytesPerComponent   The number of bytes that represent a vector component.
+     * @param offset              The offset from the beginning of the data. In bytes.
+     * @param stride              The number of bytes from a vector to the next one in the data.
      */
     @Generated
     @Selector("geometrySourceWithData:semantic:vectorCount:floatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:")
@@ -172,13 +172,13 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * geometrySourceWithNormals:count:
-     * 
+     * <p>
      * Creates and returns a geometry source from normals stored in a buffer of SCNVector3 values.
-     * 
+     * <p>
      * Input normals are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
-     * 
+     *
      * @param normals The buffer of normals.
-     * @param count The number of normals.
+     * @param count   The number of normals.
      */
     @Generated
     @Selector("geometrySourceWithNormals:count:")
@@ -187,13 +187,13 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * geometrySourceWithTextureCoordinates:count:
-     * 
+     * <p>
      * Creates and returns a geometry source from texture coordinates stored in a buffer of CGPoint values.
-     * 
+     * <p>
      * Input texture coordinates are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
-     * 
+     *
      * @param texcoord The buffer of texture coordinates.
-     * @param count The number of texture coordinate points.
+     * @param count    The number of texture coordinate points.
      */
     @Generated
     @Selector("geometrySourceWithTextureCoordinates:count:")
@@ -202,13 +202,13 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * geometrySourceWithVertices:count:
-     * 
+     * <p>
      * Creates and returns a geometry source from vertices stored in a buffer of SCNVector3 values.
-     * 
+     * <p>
      * Input vertices are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
-     * 
+     *
      * @param vertices The buffer of vertices.
-     * @param count The number of vertices.
+     * @param count    The number of vertices.
      */
     @Generated
     @Selector("geometrySourceWithVertices:count:")
@@ -274,7 +274,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] bytesPerComponent
-     * 
+     * <p>
      * The size of a vector component in bytes.
      */
     @Generated
@@ -284,7 +284,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] componentsPerVector
-     * 
+     * <p>
      * The number of scalar components in each vector.
      */
     @Generated
@@ -294,7 +294,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] data
-     * 
+     * <p>
      * The data for the geometry source
      */
     @Generated
@@ -303,7 +303,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] dataOffset
-     * 
+     * <p>
      * The offset from the beginning of the data. In bytes.
      */
     @Generated
@@ -313,7 +313,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] dataStride
-     * 
+     * <p>
      * The number of bytes from a vector to the next one in the data.
      */
     @Generated
@@ -327,7 +327,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] floatComponents
-     * 
+     * <p>
      * A flag that indicates if vector components are floating point values.
      */
     @Generated
@@ -344,7 +344,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] semantic
-     * 
+     * <p>
      * The semantic of the geometry source
      */
     @Generated
@@ -359,7 +359,7 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] vectorCount
-     * 
+     * <p>
      * The number of vectors in the data.
      */
     @Generated

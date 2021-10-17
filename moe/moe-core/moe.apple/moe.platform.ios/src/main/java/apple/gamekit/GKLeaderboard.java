@@ -48,8 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * GKLeaderboard represents a single instance of a leaderboard for the current game.
  * Leaderboards can be of the following types:
- *      1. Classic - Traditional, non-expiring leaderboards
- *      2. Recurring - Periodic timed leaderboards that follow a recurrence rule defined in App Store Connect.
+ * 1. Classic - Traditional, non-expiring leaderboards
+ * 2. Recurring - Periodic timed leaderboards that follow a recurrence rule defined in App Store Connect.
  */
 @Generated
 @Library("GameKit")
@@ -387,13 +387,13 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Loads leaderboard entries based on the supplied parameters.
-     *   playerScope - Friends or Global
-     *   timeScope - Today, Week, All Time (Only applicable to classic leaderboards)
-     *   range - Range of ranked entries to return (minimum start index 1, maximum length 100)
+     * playerScope - Friends or Global
+     * timeScope - Today, Week, All Time (Only applicable to classic leaderboards)
+     * range - Range of ranked entries to return (minimum start index 1, maximum length 100)
      * Upon completion, will return:
-     *   localPlayerEntry - entry for the local player
-     *   entries - requested entries matching supplied parameters
-     *   totalPlayerCount - total player count matching specified scope
+     * localPlayerEntry - entry for the local player
+     * entries - requested entries matching supplied parameters
+     * totalPlayerCount - total player count matching specified scope
      */
     @Generated
     @Selector("loadEntriesForPlayerScope:timeScope:range:completionHandler:")
@@ -405,17 +405,16 @@ public class GKLeaderboard extends NSObject {
     @Generated
     public interface Block_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler {
         @Generated
-        void call_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler(GKLeaderboardEntry localPlayerEntry,
-                NSArray<? extends GKLeaderboardEntry> entries, @NInt long totalPlayerCount, NSError error);
+        void call_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler(GKLeaderboardEntry _Nullable_result);
     }
 
     /**
      * Loads leaderboard entries for specific players based on the supplied parameters.
-     *   players - Array of players to load entries for
-     *   timeScope - Today, Week, All Time (Only applicable to classic leaderboards)
+     * players - Array of players to load entries for
+     * timeScope - Today, Week, All Time (Only applicable to classic leaderboards)
      * Upon completion, will return:
-     *   localPlayerEntry - entry for the local player
-     *   entries - requested entries matching supplied parameters
+     * localPlayerEntry - entry for the local player
+     * entries - requested entries matching supplied parameters
      */
     @Generated
     @Selector("loadEntriesForPlayers:timeScope:completionHandler:")
@@ -427,8 +426,7 @@ public class GKLeaderboard extends NSObject {
     @Generated
     public interface Block_loadEntriesForPlayersTimeScopeCompletionHandler {
         @Generated
-        void call_loadEntriesForPlayersTimeScopeCompletionHandler(GKLeaderboardEntry localPlayerEntry,
-                NSArray<? extends GKLeaderboardEntry> entries, NSError error);
+        void call_loadEntriesForPlayersTimeScopeCompletionHandler(GKLeaderboardEntry _Nullable_result);
     }
 
     /**
@@ -460,7 +458,7 @@ public class GKLeaderboard extends NSObject {
     @Generated
     public interface Block_loadPreviousOccurrenceWithCompletionHandler {
         @Generated
-        void call_loadPreviousOccurrenceWithCompletionHandler(GKLeaderboard leaderboard, NSError error);
+        void call_loadPreviousOccurrenceWithCompletionHandler(GKLeaderboard _Nullable_result);
     }
 
     /**
@@ -479,9 +477,9 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Instance method to submit a single score to the leaderboard associated with this instance
-     *   score - earned by the player
-     *   context - developer supplied metadata associated with the player's score
-     *   player - the player for whom this score is being submitted
+     * score - earned by the player
+     * context - developer supplied metadata associated with the player's score
+     * player - the player for whom this score is being submitted
      */
     @Generated
     @Selector("submitScore:context:player:completionHandler:")
@@ -497,10 +495,10 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Class method to submit a single score to multiple leaderboards
-     *   score - earned by the player
-     *   context - developer supplied metadata associated with the player's score
-     *   player - the player for whom this score is being submitted
-     *   leaderboardIDs - one or more leaderboard IDs defined in App Store Connect
+     * score - earned by the player
+     * context - developer supplied metadata associated with the player's score
+     * player - the player for whom this score is being submitted
+     * leaderboardIDs - one or more leaderboard IDs defined in App Store Connect
      */
     @Generated
     @Selector("submitScore:context:player:leaderboardIDs:completionHandler:")

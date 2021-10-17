@@ -5,12 +5,13 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum]           MPEG4ObjectID
+ *
  * @ deprecated    in version 10.5
- * 
+ * <p>
  * Constants that describe the various kinds of MPEG-4 audio data.
- * 
+ * <p>
  * These constants are used in the flags field of an AudioStreamBasicDescription
- *                 that describes an MPEG-4 audio stream.
+ * that describes an MPEG-4 audio stream.
  */
 @Generated
 public final class MPEG4ObjectID {

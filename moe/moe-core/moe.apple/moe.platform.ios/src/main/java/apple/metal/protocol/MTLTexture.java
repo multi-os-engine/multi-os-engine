@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstVoidPtr;
@@ -36,11 +37,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLTexture
- * 
+ * <p>
  * MTLTexture represents a collection of 1D, 2D, or 3D images.
- * 
+ * <p>
  * Each image in a texture is a 1D, 2D, 2DMultisample, or 3D image. The texture contains one or more images arranged in a mipmap stack. If there are multiple mipmap stacks, each one is referred to as a slice of the texture. 1D, 2D, 2DMultisample, and 3D textures have a single slice. In 1DArray and 2DArray textures, every slice is an array element. A Cube texture always has 6 slices, one for each face. In a CubeArray texture, each set of six slices is one element in the array.
- * 
+ * <p>
  * Most APIs that operate on individual images in a texture address those images via a tuple of a Slice, and Mipmap Level within that slice.
  */
 @Generated
@@ -50,9 +51,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLTexture extends MTLResource {
     /**
      * [@property] arrayLength
-     * 
+     * <p>
      * The number of array elements in this MTLTexture.
-     * 
+     * <p>
      * For non-Array texture types, arrayLength is 1.
      */
     @Generated
@@ -62,7 +63,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] buffer
-     * 
+     * <p>
      * The buffer this texture view was created from, or nil if this is not a texture view or it was not created from a buffer.
      */
     @Generated
@@ -72,7 +73,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] bufferBytesPerRow
-     * 
+     * <p>
      * The bytesPerRow of the buffer this texture view was created from, or 0 if this is not a texture view.
      */
     @Generated
@@ -82,7 +83,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] bufferOffset
-     * 
+     * <p>
      * The offset of the buffer this texture view was created from, or 0 if this is not a texture view.
      */
     @Generated
@@ -92,9 +93,9 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] depth
-     * 
+     * <p>
      * The depth of this MTLTexture instance in pixels.
-     * 
+     * <p>
      * If this MTLTexture is not a 3D texture, the depth is 1
      */
     @Generated
@@ -104,7 +105,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice:
-     * 
+     * <p>
      * Copies a block of pixels from a texture slice into the application's memory.
      */
     @Generated
@@ -114,7 +115,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * getBytes:bytesPerRow:fromRegion:mipmapLevel:
-     * 
+     * <p>
      * Convenience for getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice: that doesn't require slice related arguments
      */
     @Generated
@@ -124,8 +125,9 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] height
-     * 
+     * <p>
      * The height of the MTLTexture instance in pixels.
+     *
      * @discussion. height is 1 if the texture is 1D.
      */
     @Generated
@@ -135,9 +137,9 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] framebufferOnly
-     * 
+     * <p>
      * If YES, this texture can only be used with a MTLAttachmentDescriptor, and cannot be used as a texture argument for MTLRenderCommandEncoder, MTLBlitCommandEncoder, or MTLComputeCommandEncoder. Furthermore, when this property's value is YES, readPixels/writePixels may not be used with this texture.
-     * 
+     * <p>
      * Textures obtained from CAMetalDrawables may have this property set to YES, depending on the value of frameBufferOnly passed to their parent CAMetalLayer. Textures created directly by the application will not have any restrictions.
      */
     @Generated
@@ -146,7 +148,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] mipmapLevelCount
-     * 
+     * <p>
      * The number of mipmap levels in each slice of this MTLTexture.
      */
     @Generated
@@ -156,7 +158,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * newTextureViewWithPixelFormat:
-     * 
+     * <p>
      * Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format.
      */
     @Generated
@@ -166,7 +168,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * newTextureViewWithPixelFormat:textureType:levels:slices:
-     * 
+     * <p>
      * Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format, texture type, levels and slices.
      */
     @Generated
@@ -177,7 +179,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] parentRelativeLevel
-     * 
+     * <p>
      * The base level of the texture this texture view was created from, or 0 if this is not a texture view.
      */
     @Generated
@@ -187,7 +189,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] parentRelativeSlice
-     * 
+     * <p>
      * The base slice of the texture this texture view was created from, or 0 if this is not a texture view.
      */
     @Generated
@@ -197,7 +199,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] parentTexture
-     * 
+     * <p>
      * The texture this texture view was created from, or nil if this is not a texture view or it was not created from a texture.
      */
     @Generated
@@ -207,7 +209,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] pixelFormat
-     * 
+     * <p>
      * The MTLPixelFormat that is used to interpret this texture's contents.
      */
     @Generated
@@ -217,7 +219,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage:
-     * 
+     * <p>
      * Copy a block of pixel data from the caller's pointer into a texture slice.
      */
     @Generated
@@ -227,7 +229,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * replaceRegion:mipmapLevel:withBytes:bytesPerRow:
-     * 
+     * <p>
      * Convenience for replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage: that doesn't require slice related arguments
      */
     @Generated
@@ -237,7 +239,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] rootResource
-     * 
+     * <p>
      * The resource this texture was created from. It may be a texture or a buffer. If this texture is not reusing storage of another MTLResource, then nil is returned.
      */
     @Generated
@@ -247,9 +249,9 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] sampleCount
-     * 
+     * <p>
      * The number of samples in each pixel of this MTLTexture.
-     * 
+     * <p>
      * If this texture is any type other than 2DMultisample, samples is 1.
      */
     @Generated
@@ -259,7 +261,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] type
-     * 
+     * <p>
      * The type of this texture.
      */
     @Generated
@@ -269,7 +271,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] usage
-     * 
+     * <p>
      * Description of texture usage.
      */
     @Generated
@@ -279,7 +281,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] width
-     * 
+     * <p>
      * The width of the MTLTexture instance in pixels.
      */
     @Generated
@@ -289,7 +291,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] iosurface
-     * 
+     * <p>
      * If this texture was created from an IOSurface, this returns a reference to that IOSurface. iosurface is nil if this texture was not created from an IOSurface.
      */
     @Generated
@@ -298,7 +300,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] iosurfacePlane
-     * 
+     * <p>
      * If this texture was created from an IOSurface, this returns the plane of the IOSurface from which the texture was created. iosurfacePlane is 0 if this texture was not created from an IOSurface.
      */
     @Generated
@@ -308,9 +310,9 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] allowGPUOptimizedContents
-     * 
+     * <p>
      * Allow GPU-optimization for the contents texture. The default value is true.
-     * 
+     * <p>
      * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
      */
     @Generated
@@ -319,7 +321,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] firstMipmapInTail
-     * 
+     * <p>
      * For sparse textures this property returns index of first mipmap that is packed in tail.
      * Mapping this mipmap level will map all subsequent mipmap levels.
      */
@@ -330,9 +332,9 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] shareable
-     * 
+     * <p>
      * If YES, this texture can be shared with other processes.
-     * 
+     * <p>
      * Texture can be shared across process addres space boundaries through use of sharedTextureHandle and XPC.
      */
     @Generated
@@ -345,7 +347,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * newSharedTextureHandle
-     * 
+     * <p>
      * Create a new texture handle, that can be shared across process addres space boundaries.
      */
     @Generated
@@ -354,7 +356,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:
-     * 
+     * <p>
      * Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format, texture type, levels, slices and swizzle.
      */
     @Generated
@@ -366,7 +368,7 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] swizzle
-     * 
+     * <p>
      * The channel swizzle used when reading or sampling from this texture
      */
     @Generated
@@ -376,11 +378,23 @@ public interface MTLTexture extends MTLResource {
 
     /**
      * [@property] tailSizeInBytes
-     * 
+     * <p>
      * Amount of memory in bytes required to map sparse texture tail.
      */
     @Generated
     @Selector("tailSizeInBytes")
     @NUInt
     long tailSizeInBytes();
+
+    /**
+     * [@property] compressionType
+     * <p>
+     * Returns the compression type of the texture
+     * <p>
+     * See the compressionType property on MTLTextureDescriptor
+     */
+    @Generated
+    @Selector("compressionType")
+    @NInt
+    long compressionType();
 }
