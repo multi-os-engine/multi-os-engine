@@ -349,7 +349,7 @@ public class NatJ {
      */
     private static final ConcurrentHashMap<Class<?>, Class<? extends NativeRuntime>> CLASS_RUNTIME_CACHE =
             new ConcurrentHashMap<Class<?>, Class<? extends NativeRuntime>>();
-    
+
     /**
      * Determines the runtime of the class by looking for a {@link Runtime}
      * annotation of the class or its ascendants and interfaces.
@@ -370,7 +370,7 @@ public class NatJ {
         }
         return nativeRuntime;
     }
-    
+
     /**
      * Determines the runtime of the class by looking for a {@link Runtime}
      * annotation of the class or its ascendants and interfaces.
@@ -935,6 +935,12 @@ public class NatJ {
      * Java one.
      */
     public static class NativeObjectConstructionInfo {
+        /**
+         * The compile-time Java type this native object was converted from.
+         * Only used when calling back to java method from native blocks.
+         */
+        public Class<?> type;
+
         /** Extra information for callbacks. */
         public Object callback;
 
@@ -1105,6 +1111,7 @@ public class NatJ {
             Class<?> mapperClass, Annotation callback, boolean owned, boolean byvalue,
             boolean arg) {
         NativeObjectConstructionInfo info = new NativeObjectConstructionInfo();
+        info.type = type;
         info.owned = owned;
         info.arg = arg;
         info.callback = callback;
