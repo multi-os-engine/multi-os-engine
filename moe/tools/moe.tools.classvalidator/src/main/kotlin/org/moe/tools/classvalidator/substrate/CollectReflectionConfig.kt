@@ -4,9 +4,12 @@ import org.moe.tools.classvalidator.natj.NatJRuntime
 import org.moe.tools.classvalidator.natj.NatJRuntime.getDescriptor
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.ConstantDynamic
 import org.objectweb.asm.FieldVisitor
+import org.objectweb.asm.Handle
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
+import org.objectweb.asm.Type
 import java.lang.reflect.Modifier
 
 /**
@@ -134,23 +137,6 @@ class CollectReflectionConfig(
                 }
             }
 
-            //Maybe move inside the MethodInspector in visitParameter? But for some reason it didn't got called
-            val params: List<String> = descriptor.replace("(", "").split(")")[0].split(";")
-            params.filter { s: String -> s.isNotBlank() }.forEach { s: String ->
-                if (s.matches(Regex(".*/opaque/.*"))) {
-                    val param: String = s.removePrefix("L")
-                    config.addClass(
-                            param,
-                            allDeclaredClasses = true
-                    )
-                    config.addClass(
-                            "$param\$Impl",
-                            allDeclaredConstructors = true
-                    )
-                }
-            }
-
-
             return MethodInspector(
                 declaringClass = this,
                 name = name,
@@ -208,49 +194,57 @@ class CollectReflectionConfig(
             return super.visitAnnotation(descriptor, visible)
         }
 
-        override fun visitEnd() {
-            if (visit) {
-                declaringClass.config.addMethod(declaringClass.name, name, methodDescriptor)
+        override fun visitLdcInsn(value: Any) {
+            when(value) {
+                is Type -> {
+                    when (value.sort) {
+                        Type.OBJECT -> {
+                            // We are using reflection in our code, check if it's opaque ptr.
+                            if (NatJRuntime.isOpaquePtrDescendant(value.internalName)) {
+                                declaringClass.config.addOpaquePtrClass(value.internalName)
+                            }
+                        }
+                        Type.METHOD -> {
+                            // TODO: add this
+                        }
+                    }
+                }
+                is Handle -> {
+                    // TODO: add this
+                }
+                is ConstantDynamic -> {
+                    // TODO: add this
+                }
             }
-            super.visitEnd()
-        }
 
-        override fun visitParameter(name: String?, access: Int) {
-            super.visitParameter(name, access)
-        }
-
-        override fun visitLdcInsn(value: Any?) {
-            val s: String = value.toString()
-            if (s.matches(Regex(".*/opaque/.*"))){
-                val className: String = s.removePrefix("L").removeSuffix(";")
-                declaringClass.config.addClass(
-                        className,
-                        allDeclaredClasses = true
-                )
-                declaringClass.config.addClass(
-                        "$className\$Impl",
-                        allDeclaredConstructors = true
-                )
-            }
             super.visitLdcInsn(value)
         }
 
-        override fun visitMethodInsn(opcode: Int, owner: String?, name: String?, descriptor: String?, isInterface: Boolean) {
-            val splitDescriptor: List<String> = descriptor?.split(")L").orEmpty()
-            if (splitDescriptor.size == 2){
-                val returnType: String = splitDescriptor[1].replace(";","")
-                if (returnType.matches(Regex(".*/opaque/.*"))){
-                    declaringClass.config.addClass(
-                            returnType,
-                            allDeclaredClasses = true
-                    )
-                    declaringClass.config.addClass(
-                            "$returnType\$Impl",
-                            allDeclaredConstructors = true
-                    )
+        override fun visitMethodInsn(opcode: Int, owner: String, name: String, descriptor: String, isInterface: Boolean) {
+            // We are calling a method, check if the return type is an opaque ptr. If so, we need to export it to reflection
+            // because the value might be returned from native via reflection.
+            Type.getMethodType(methodDescriptor).returnType.let { type ->
+                if (type.sort == Type.OBJECT && NatJRuntime.isOpaquePtrDescendant(type.internalName)) {
+                    declaringClass.config.addOpaquePtrClass(type.internalName)
                 }
             }
+
             super.visitMethodInsn(opcode, owner, name, descriptor, isInterface)
+        }
+
+        override fun visitEnd() {
+            if (visit) {
+                declaringClass.config.addMethod(declaringClass.name, name, methodDescriptor)
+
+                // This method could be called from native, we inspect its parameters to see if opaque ptr
+                // is used. If so, we need to export the opaque ptr impl class to reflection as well.
+                Type.getMethodType(methodDescriptor).argumentTypes.forEach { type ->
+                    if (type.sort == Type.OBJECT && NatJRuntime.isOpaquePtrDescendant(type.internalName)) {
+                        declaringClass.config.addOpaquePtrClass(type.internalName)
+                    }
+                }
+            }
+            super.visitEnd()
         }
     }
 
@@ -294,6 +288,20 @@ class CollectReflectionConfig(
             }
 
             return hasRuntime
+        }
+
+        private fun ReflectionConfig.addOpaquePtrClass(className: String) {
+            // Add the outer class that contains the Impl class
+            addClass(
+                className,
+                allDeclaredClasses = true
+            )
+
+            // Add the impl class
+            val implClassName = "$className\$Impl"
+            addClass(implClassName)
+            // Add the constructor of the impl class
+            addMethod(implClassName, "<init>", NatJRuntime.NATJ_NATIVE_OBJECT_CONSTRUCTOR_DESC)
         }
     }
 }
