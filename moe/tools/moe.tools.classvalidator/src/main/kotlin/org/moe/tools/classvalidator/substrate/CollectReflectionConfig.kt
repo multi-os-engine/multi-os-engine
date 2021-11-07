@@ -2,6 +2,7 @@ package org.moe.tools.classvalidator.substrate
 
 import org.moe.tools.classvalidator.natj.NatJRuntime
 import org.moe.tools.classvalidator.natj.NatJRuntime.getDescriptor
+import org.moe.tools.classvalidator.natj.NatJRuntime.toClass
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ConstantDynamic
@@ -232,6 +233,34 @@ class CollectReflectionConfig(
             super.visitMethodInsn(opcode, owner, name, descriptor, isInterface)
         }
 
+        override fun visitInvokeDynamicInsn(
+            name: String,
+            descriptor: String,
+            bootstrapMethodHandle: Handle,
+            vararg bootstrapMethodArguments: Any
+        ) {
+            super.visitInvokeDynamicInsn(name, descriptor, bootstrapMethodHandle, *bootstrapMethodArguments)
+
+            if (bootstrapMethodHandle.owner == JAVA_LANG_INVOKE_LAMBDA_METAFACTORY && name.startsWith("call_")) {
+                // Get the class of the lambda, by checking the return type of the bootstrap method
+                Type.getMethodType(descriptor).returnType.let { type ->
+                    if (type.sort == Type.OBJECT) {
+                        val itf = type.toClass()
+                        if (itf.isBlockClass()) {
+                            val methods = itf.declaredMethods.filter {
+                                it.name == name && Modifier.isPublic(it.modifiers)
+                            }
+
+                            // Add block methods to reflection
+                            methods.forEach { m ->
+                                declaringClass.config.addMethod(type.internalName, m.name, Type.getMethodDescriptor(m))
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         override fun visitEnd() {
             if (visit) {
                 declaringClass.config.addMethod(declaringClass.name, name, methodDescriptor)
@@ -267,6 +296,8 @@ class CollectReflectionConfig(
             "Lorg/moe/svm/anns/JNI;",
             "Lorg/moe/svm/anns/Reflection;",
         )
+
+        private const val JAVA_LANG_INVOKE_LAMBDA_METAFACTORY = "java/lang/invoke/LambdaMetafactory"
 
         private fun Class<*>.isBlockClass(): Boolean {
             if (!isInterface) {
