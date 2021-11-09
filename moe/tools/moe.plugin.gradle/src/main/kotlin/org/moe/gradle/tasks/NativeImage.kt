@@ -177,7 +177,7 @@ open class NativeImage : AbstractBaseTask() {
 
     override fun run() {
         if (arch == Arch.X86_64 && !moePlugin.isX86_64Supported) {
-            throw GradleException("Architecture '$arch' is not enabled. Enable it by setting property 'moe.graalvm.x86_64Supported' to 'true'.")
+            throw GradleException("Architecture '$arch' is not enabled. Enable it by setting property '${MoePlugin.MOE_GRAALVM_X86_64_SUPPORTED_PROPERTY}' to 'true'.")
         }
 
         val svmConf = Config(
