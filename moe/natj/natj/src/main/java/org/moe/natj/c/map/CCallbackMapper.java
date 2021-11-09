@@ -105,6 +105,10 @@ public class CCallbackMapper implements Mapper {
             int[] countRef = new int[1];
             FunctionPtr cb = (FunctionPtr) info.callback;
             method = NatJ.getMethod(cls, cb.name(), cb.argTypes(), idxRef, countRef);
+            if (method == null && info.type != null) {
+                method = NatJ.getMethod(info.type, cb.name(), cb.argTypes(), idxRef, countRef);
+                cls = info.type;
+            }
             if (method == null) {
                 return 0;
             }
