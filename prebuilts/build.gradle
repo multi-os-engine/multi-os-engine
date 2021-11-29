@@ -196,16 +196,14 @@ task llvm(type: Script) {
                 '-DLLVM_TARGETS_TO_BUILD=AArch64;ARM;X86',
                 '-DLLVM_BUILD_TOOLS=OFF',
                 '-DLLVM_BUILD_EXAMPLES=OFF',
+                '-DLLVM_ENABLE_PROJECTS=clang',
                 '-G', 'Unix Makefiles',
-                file('../external/llvm').absolutePath
+                file('../external/llvm/llvm').absolutePath
     }
 
     progress 'Building LLVM'
     exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
     exec 'make', 'install'
-
-    exec 'make', 'llvm-config'
-    exec 'cp', 'bin/llvm-config', file('llvm/macos/bin/llvm-config').absolutePath
 }
 
 task llvmPresence() {
