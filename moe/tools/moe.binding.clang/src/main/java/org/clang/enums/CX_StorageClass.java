@@ -18,6 +18,10 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Represents the storage classes as declared in the source. CX_SC_Invalid
+ * was added for the case that the passed cursor in not a declaration.
+ */
 @Generated
 public final class CX_StorageClass {
     @Generated public static final int Invalid = 0x00000000;

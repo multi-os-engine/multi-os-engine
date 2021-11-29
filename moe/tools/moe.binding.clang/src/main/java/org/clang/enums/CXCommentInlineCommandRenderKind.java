@@ -18,14 +18,36 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * The most appropriate rendering mode for an inline command, chosen on
+ * command semantics in Doxygen.
+ */
 @Generated
 public final class CXCommentInlineCommandRenderKind {
+    /**
+     * Command argument should be rendered in a normal font.
+     */
     @Generated public static final int Normal = 0x00000000;
+    /**
+     * Command argument should be rendered in a bold font.
+     */
     @Generated public static final int Bold = 0x00000001;
+    /**
+     * Command argument should be rendered in a monospaced font.
+     */
     @Generated public static final int Monospaced = 0x00000002;
+    /**
+     * Command argument should be rendered emphasized (typically italic
+     * font).
+     */
     @Generated public static final int Emphasized = 0x00000003;
 
     @Generated
     private CXCommentInlineCommandRenderKind() {
     }
+
+    /**
+     * Command argument should not be rendered (since it only defines an anchor).
+     */
+    @Generated public static final int Anchor = 0x00000004;
 }

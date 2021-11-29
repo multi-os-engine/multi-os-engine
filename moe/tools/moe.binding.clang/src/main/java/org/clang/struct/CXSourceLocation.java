@@ -66,8 +66,8 @@ public final class CXSourceLocation extends StructObject {
 
     /* Comfort java methods */
     public VoidPtr getFile() {
-        @SuppressWarnings("unchecked") Ptr<VoidPtr> file_ref = (Ptr<VoidPtr>)PtrFactory
-                .newPointerPtr(Void.class, 2, 1, true, false);
+        @SuppressWarnings("unchecked") Ptr<VoidPtr> file_ref = (Ptr<VoidPtr>)PtrFactory.newPointerPtr(Void.class, 2, 1,
+                true, false);
         clang.clang_getExpansionLocation(this, file_ref, null, null, null);
         VoidPtr file = file_ref.get();
         return file;

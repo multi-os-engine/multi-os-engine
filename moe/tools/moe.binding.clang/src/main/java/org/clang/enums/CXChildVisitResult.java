@@ -18,10 +18,28 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describes how the traversal of the children of a particular
+ * cursor should proceed after visiting a particular child cursor.
+ * <p>
+ * A value of this enumeration type should be returned by each
+ * \c CXCursorVisitor to indicate how clang_visitChildren() proceed.
+ */
 @Generated
 public final class CXChildVisitResult {
+    /**
+     * Terminates the cursor traversal.
+     */
     @Generated public static final int Break = 0x00000000;
+    /**
+     * Continues the cursor traversal with the next sibling of
+     * the cursor just visited, without visiting its children.
+     */
     @Generated public static final int Continue = 0x00000001;
+    /**
+     * Recursively traverse the children of this cursor, using
+     * the same visitor and client data.
+     */
     @Generated public static final int Recurse = 0x00000002;
 
     @Generated

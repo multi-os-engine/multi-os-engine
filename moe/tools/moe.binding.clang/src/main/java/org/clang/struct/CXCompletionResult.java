@@ -50,18 +50,46 @@ public final class CXCompletionResult extends StructObject {
         setCompletionString(CompletionString);
     }
 
+    /**
+     * The kind of entity that this completion refers to.
+     * <p>
+     * The cursor kind will be a macro, keyword, or a declaration (one of the
+     * *Decl cursor kinds), describing the entity that the completion is
+     * referring to.
+     * <p>
+     * \todo In the future, we would like to provide a full cursor, to allow
+     * the client to extract additional information from declaration.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int CursorKind();
 
+    /**
+     * The kind of entity that this completion refers to.
+     * <p>
+     * The cursor kind will be a macro, keyword, or a declaration (one of the
+     * *Decl cursor kinds), describing the entity that the completion is
+     * referring to.
+     * <p>
+     * \todo In the future, we would like to provide a full cursor, to allow
+     * the client to extract additional information from declaration.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCursorKind(int value);
 
+    /**
+     * The code-completion string that describes how to insert this
+     * code-completion result into the editing buffer.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr CompletionString();
 
+    /**
+     * The code-completion string that describes how to insert this
+     * code-completion result into the editing buffer.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCompletionString(VoidPtr value);

@@ -20,9 +20,30 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXGlobalOptFlags {
+    /**
+     * Used to indicate that no special CXIndex options are needed.
+     */
     @Generated public static final int CXGlobalOpt_None = 0x00000000;
+    /**
+     * Used to indicate that threads that libclang creates for indexing
+     * purposes should use background priority.
+     * <p>
+     * Affects #clang_indexSourceFile, #clang_indexTranslationUnit,
+     * #clang_parseTranslationUnit, #clang_saveTranslationUnit.
+     */
     @Generated public static final int CXGlobalOpt_ThreadBackgroundPriorityForIndexing = 0x00000001;
+    /**
+     * Used to indicate that threads that libclang creates for editing
+     * purposes should use background priority.
+     * <p>
+     * Affects #clang_reparseTranslationUnit, #clang_codeCompleteAt,
+     * #clang_annotateTokens
+     */
     @Generated public static final int CXGlobalOpt_ThreadBackgroundPriorityForEditing = 0x00000002;
+    /**
+     * Used to indicate that all threads that libclang creates should use
+     * background priority.
+     */
     @Generated public static final int CXGlobalOpt_ThreadBackgroundPriorityForAll = 0x00000003;
 
     @Generated

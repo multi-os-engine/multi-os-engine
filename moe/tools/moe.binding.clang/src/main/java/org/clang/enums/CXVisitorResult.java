@@ -18,6 +18,11 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * \defgroup CINDEX_HIGH Higher level API functions
+ *
+ * @{
+ */
 @Generated
 public final class CXVisitorResult {
     @Generated public static final int Break = 0x00000000;

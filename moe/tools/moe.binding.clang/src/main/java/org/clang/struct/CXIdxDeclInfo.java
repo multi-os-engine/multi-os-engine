@@ -86,11 +86,19 @@ public final class CXIdxDeclInfo extends StructObject {
     public native void setSemanticContainer(
             @UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
 
+    /**
+     * Generally same as #semanticContainer but can be different in
+     * cases like out-of-line C++ member functions.
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native CXIdxContainerInfo lexicalContainer();
 
+    /**
+     * Generally same as #semanticContainer but can be different in
+     * cases like out-of-line C++ member functions.
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setLexicalContainer(
@@ -130,10 +138,18 @@ public final class CXIdxDeclInfo extends StructObject {
     public native void setDeclAsContainer(
             @UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
 
+    /**
+     * Whether the declaration exists in code or was created implicitly
+     * by the compiler, e.g. implicit Objective-C methods for properties.
+     */
     @Generated
     @StructureField(order = 9, isGetter = true)
     public native int isImplicit();
 
+    /**
+     * Whether the declaration exists in code or was created implicitly
+     * by the compiler, e.g. implicit Objective-C methods for properties.
+     */
     @Generated
     @StructureField(order = 9, isGetter = false)
     public native void setIsImplicit(int value);

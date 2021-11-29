@@ -18,12 +18,30 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describes a kind of token.
+ */
 @Generated
 public final class CXTokenKind {
+    /**
+     * A token that contains some kind of punctuation.
+     */
     @Generated public static final int Punctuation = 0x00000000;
+    /**
+     * A language keyword.
+     */
     @Generated public static final int Keyword = 0x00000001;
+    /**
+     * An identifier (that is not a keyword).
+     */
     @Generated public static final int Identifier = 0x00000002;
+    /**
+     * A numeric, string, or character literal.
+     */
     @Generated public static final int Literal = 0x00000003;
+    /**
+     * A comment.
+     */
     @Generated public static final int Comment = 0x00000004;
 
     @Generated
