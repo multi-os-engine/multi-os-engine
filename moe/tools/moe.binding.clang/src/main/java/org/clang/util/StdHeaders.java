@@ -16,10 +16,14 @@ limitations under the License.
 
 package org.clang.util;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StdHeaders {
 
@@ -43,95 +47,34 @@ public class StdHeaders {
         tmp.mkdir();
         PATH = tmp.getAbsolutePath();
 
-        copyStdHeader("__clang_cuda_cmath.h");
-        copyStdHeader("__clang_cuda_intrinsics.h");
-        copyStdHeader("__clang_cuda_math_forward_declares.h");
-        copyStdHeader("__clang_cuda_runtime_wrapper.h");
-        copyStdHeader("__stddef_max_align_t.h");
-        copyStdHeader("__wmmintrin_aes.h");
-        copyStdHeader("__wmmintrin_pclmul.h");
-        copyStdHeader("adxintrin.h");
-        copyStdHeader("altivec.h");
-        copyStdHeader("ammintrin.h");
-        copyStdHeader("arm_acle.h");
-        copyStdHeader("arm_neon.h");
-        copyStdHeader("avx2intrin.h");
-        copyStdHeader("avx512bwintrin.h");
-        copyStdHeader("avx512cdintrin.h");
-        copyStdHeader("avx512dqintrin.h");
-        copyStdHeader("avx512erintrin.h");
-        copyStdHeader("avx512fintrin.h");
-        copyStdHeader("avx512ifmaintrin.h");
-        copyStdHeader("avx512ifmavlintrin.h");
-        copyStdHeader("avx512pfintrin.h");
-        copyStdHeader("avx512vbmiintrin.h");
-        copyStdHeader("avx512vbmivlintrin.h");
-        copyStdHeader("avx512vlbwintrin.h");
-        copyStdHeader("avx512vlcdintrin.h");
-        copyStdHeader("avx512vldqintrin.h");
-        copyStdHeader("avx512vlintrin.h");
-        copyStdHeader("avxintrin.h");
-        copyStdHeader("bmi2intrin.h");
-        copyStdHeader("bmiintrin.h");
-        copyStdHeader("clflushoptintrin.h");
-        copyStdHeader("cpuid.h");
-        copyStdHeader("cuda_builtin_vars.h");
-        copyStdHeader("emmintrin.h");
-        copyStdHeader("f16cintrin.h");
-        copyStdHeader("float.h");
-        copyStdHeader("fma4intrin.h");
-        copyStdHeader("fmaintrin.h");
-        copyStdHeader("fxsrintrin.h");
-        copyStdHeader("htmintrin.h");
-        copyStdHeader("htmxlintrin.h");
-        copyStdHeader("ia32intrin.h");
-        copyStdHeader("immintrin.h");
-        copyStdHeader("intrin.h");
-        copyStdHeader("inttypes.h");
-        copyStdHeader("iso646.h");
-        copyStdHeader("limits.h");
-        copyStdHeader("lzcntintrin.h");
-        copyStdHeader("mm_malloc.h");
-        copyStdHeader("mm3dnow.h");
-        copyStdHeader("mmintrin.h");
-        copyStdHeader("module.modulemap");
-        copyStdHeader("mwaitxintrin.h");
-        copyStdHeader("nmmintrin.h");
-        copyStdHeader("opencl-c.h");
-        copyStdHeader("pkuintrin.h");
-        copyStdHeader("pmmintrin.h");
-        copyStdHeader("popcntintrin.h");
-        copyStdHeader("prfchwintrin.h");
-        copyStdHeader("rdseedintrin.h");
-        copyStdHeader("rtmintrin.h");
-        copyStdHeader("s390intrin.h");
-        copyStdHeader("shaintrin.h");
-        copyStdHeader("smmintrin.h");
-        copyStdHeader("stdalign.h");
-        copyStdHeader("stdarg.h");
-        copyStdHeader("stdatomic.h");
-        copyStdHeader("stdbool.h");
-        copyStdHeader("stddef.h");
-        copyStdHeader("stdint.h");
-        copyStdHeader("stdnoreturn.h");
-        copyStdHeader("tbmintrin.h");
-        copyStdHeader("tgmath.h");
-        copyStdHeader("tmmintrin.h");
-        copyStdHeader("unwind.h");
-        copyStdHeader("vadefs.h");
-        copyStdHeader("varargs.h");
-        copyStdHeader("vecintrin.h");
-        copyStdHeader("wmmintrin.h");
-        copyStdHeader("x86intrin.h");
-        copyStdHeader("xmmintrin.h");
-        copyStdHeader("xopintrin.h");
-        copyStdHeader("xsavecintrin.h");
-        copyStdHeader("xsaveintrin.h");
-        copyStdHeader("xsaveoptintrin.h");
-        copyStdHeader("xsavesintrin.h");
-        copyStdHeader("xtestintrin.h");
+        for (String s : getHeaderList()) {
+            copyStdHeader(s);
+        }
 
         return PATH;
+    }
+
+    private static List<String> getHeaderList() {
+        try (InputStream stream = StdHeaders.class.getResourceAsStream("std_headers.txt")) {
+            if (stream == null) {
+                throw new IOException("std_headers.txt not found");
+            }
+
+            ArrayList<String> result = new ArrayList<>();
+
+            BufferedReader r = new BufferedReader(new InputStreamReader(stream));
+            String line;
+            while ((line = r.readLine()) != null) {
+                line = line.trim();
+                if (!line.isEmpty()) {
+                    result.add(line);
+                }
+            }
+
+            return result;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void copyStdHeader(String resourceName) {

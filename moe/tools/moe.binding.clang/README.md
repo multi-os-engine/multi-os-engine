@@ -20,3 +20,8 @@ java -cp <repo>/moe/tools/moe.generator.natjgen/build/libs/moe.generator.natjgen
 ```
 
 Before commiting changes, it is recommended that code formatting is applied. This project uses the same formatting rules/options as [moe-core's iOS bindings](https://github.com/multi-os-engine/moe-core/blob/master/moe.apple/moe.platform.ios/UPDATE_IOS_BINDING.md).
+
+# Update std Headers
+After updating clang, replace all files in `./src/main/resources/org/clang/util`
+with the latest versions from `${repo_root}/prebuilts/llvm/macos/lib/clang/${clang_version}/include`,
+then run the `update_std_headers.py` to update the header list.
