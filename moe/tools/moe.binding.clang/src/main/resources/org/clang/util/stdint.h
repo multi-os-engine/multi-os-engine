@@ -1,29 +1,18 @@
 /*===---- stdint.h - Standard header for sized integer types --------------===*\
  *
- * Copyright (c) 2009 Chris Lattner
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
+ * Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+ * See https://llvm.org/LICENSE.txt for license information.
+ * SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
  *
 \*===----------------------------------------------------------------------===*/
 
 #ifndef __CLANG_STDINT_H
+// AIX system headers need stdint.h to be re-enterable while _STD_TYPES_T
+// is defined until an inclusion of it without _STD_TYPES_T occurs, in which
+// case the header guard macro is defined.
+#if !defined(_AIX) || !defined(_STD_TYPES_T) || !defined(__STDC_HOSTED__)
 #define __CLANG_STDINT_H
+#endif
 
 /* If we're hosted, fall back to the system's stdint.h, which might have
  * additional definitions.
@@ -88,7 +77,7 @@
  *
  * To accommodate targets that are missing types that are exactly 8, 16, 32, or
  * 64 bits wide, this implementation takes an approach of cascading
- * redefintions, redefining __int_leastN_t to successively smaller exact-width
+ * redefinitions, redefining __int_leastN_t to successively smaller exact-width
  * types. It is therefore important that the types are defined in order of
  * descending widths.
  *
@@ -255,19 +244,16 @@ typedef __uint_least8_t uint_fast8_t;
  */
 #define __stdint_join3(a,b,c) a ## b ## c
 
-#define  __intn_t(n) __stdint_join3( int, n, _t)
-#define __uintn_t(n) __stdint_join3(uint, n, _t)
-
 #ifndef _INTPTR_T
 #ifndef __intptr_t_defined
-typedef  __intn_t(__INTPTR_WIDTH__)  intptr_t;
+typedef __INTPTR_TYPE__ intptr_t;
 #define __intptr_t_defined
 #define _INTPTR_T
 #endif
 #endif
 
 #ifndef _UINTPTR_T
-typedef __uintn_t(__INTPTR_WIDTH__) uintptr_t;
+typedef __UINTPTR_TYPE__ uintptr_t;
 #define _UINTPTR_T
 #endif
 
@@ -464,7 +450,7 @@ typedef __UINTMAX_TYPE__ uintmax_t;
  * As in the type definitions, this section takes an approach of
  * successive-shrinking to determine which limits to use for the standard (8,
  * 16, 32, 64) bit widths when they don't have exact representations. It is
- * therefore important that the defintions be kept in order of decending
+ * therefore important that the definitions be kept in order of decending
  * widths.
  *
  * Note that C++ should not check __STDC_LIMIT_MACROS here, contrary to the
@@ -659,12 +645,12 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 /* C99 7.18.2.4 Limits of integer types capable of holding object pointers. */
 /* C99 7.18.3 Limits of other integer types. */
 
-#define  INTPTR_MIN  __INTN_MIN(__INTPTR_WIDTH__)
-#define  INTPTR_MAX  __INTN_MAX(__INTPTR_WIDTH__)
-#define UINTPTR_MAX __UINTN_MAX(__INTPTR_WIDTH__)
-#define PTRDIFF_MIN  __INTN_MIN(__PTRDIFF_WIDTH__)
-#define PTRDIFF_MAX  __INTN_MAX(__PTRDIFF_WIDTH__)
-#define    SIZE_MAX __UINTN_MAX(__SIZE_WIDTH__)
+#define  INTPTR_MIN  (-__INTPTR_MAX__-1)
+#define  INTPTR_MAX    __INTPTR_MAX__
+#define UINTPTR_MAX   __UINTPTR_MAX__
+#define PTRDIFF_MIN (-__PTRDIFF_MAX__-1)
+#define PTRDIFF_MAX   __PTRDIFF_MAX__
+#define    SIZE_MAX      __SIZE_MAX__
 
 /* ISO9899:2011 7.20 (C11 Annex K): Define RSIZE_MAX if __STDC_WANT_LIB_EXT1__
  * is enabled. */
@@ -673,9 +659,9 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 #endif
 
 /* C99 7.18.2.5 Limits of greatest-width integer types. */
-#define INTMAX_MIN   __INTN_MIN(__INTMAX_WIDTH__)
-#define INTMAX_MAX   __INTN_MAX(__INTMAX_WIDTH__)
-#define UINTMAX_MAX __UINTN_MAX(__INTMAX_WIDTH__)
+#define  INTMAX_MIN (-__INTMAX_MAX__-1)
+#define  INTMAX_MAX   __INTMAX_MAX__
+#define UINTMAX_MAX  __UINTMAX_MAX__
 
 /* C99 7.18.3 Limits of other integer types. */
 #define SIG_ATOMIC_MIN __INTN_MIN(__SIG_ATOMIC_WIDTH__)
@@ -700,8 +686,8 @@ typedef __UINTMAX_TYPE__ uintmax_t;
 #endif
 
 /* 7.18.4.2 Macros for greatest-width integer constants. */
-#define INTMAX_C(v)   __INTN_C(__INTMAX_WIDTH__, v)
-#define UINTMAX_C(v) __UINTN_C(__INTMAX_WIDTH__, v)
+#define  INTMAX_C(v) __int_c(v,  __INTMAX_C_SUFFIX__)
+#define UINTMAX_C(v) __int_c(v, __UINTMAX_C_SUFFIX__)
 
 #endif /* __STDC_HOSTED__ */
 #endif /* __CLANG_STDINT_H */

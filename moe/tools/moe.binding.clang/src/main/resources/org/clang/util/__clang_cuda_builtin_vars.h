@@ -1,22 +1,8 @@
 /*===---- cuda_builtin_vars.h - CUDA built-in variables ---------------------===
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
+ * Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+ * See https://llvm.org/LICENSE.txt for license information.
+ * SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
  *
  *===-----------------------------------------------------------------------===
  */
@@ -54,7 +40,7 @@ struct dim3;
 #define __DELETE
 #endif
 
-// Make sure nobody can create instances of the special varible types.  nvcc
+// Make sure nobody can create instances of the special variable types.  nvcc
 // also disallows taking address of special variables, so we disable address-of
 // operator as well.
 #define __CUDA_DISALLOW_BUILTINVAR_ACCESS(TypeName)                            \
@@ -69,7 +55,9 @@ struct __cuda_builtin_threadIdx_t {
   __CUDA_DEVICE_BUILTIN(z,__nvvm_read_ptx_sreg_tid_z());
   // threadIdx should be convertible to uint3 (in fact in nvcc, it *is* a
   // uint3).  This function is defined after we pull in vector_types.h.
+  __attribute__((device)) operator dim3() const;
   __attribute__((device)) operator uint3() const;
+
 private:
   __CUDA_DISALLOW_BUILTINVAR_ACCESS(__cuda_builtin_threadIdx_t);
 };
@@ -80,7 +68,9 @@ struct __cuda_builtin_blockIdx_t {
   __CUDA_DEVICE_BUILTIN(z,__nvvm_read_ptx_sreg_ctaid_z());
   // blockIdx should be convertible to uint3 (in fact in nvcc, it *is* a
   // uint3).  This function is defined after we pull in vector_types.h.
+  __attribute__((device)) operator dim3() const;
   __attribute__((device)) operator uint3() const;
+
 private:
   __CUDA_DISALLOW_BUILTINVAR_ACCESS(__cuda_builtin_blockIdx_t);
 };
@@ -92,6 +82,8 @@ struct __cuda_builtin_blockDim_t {
   // blockDim should be convertible to dim3 (in fact in nvcc, it *is* a
   // dim3).  This function is defined after we pull in vector_types.h.
   __attribute__((device)) operator dim3() const;
+  __attribute__((device)) operator uint3() const;
+
 private:
   __CUDA_DISALLOW_BUILTINVAR_ACCESS(__cuda_builtin_blockDim_t);
 };
@@ -103,6 +95,8 @@ struct __cuda_builtin_gridDim_t {
   // gridDim should be convertible to dim3 (in fact in nvcc, it *is* a
   // dim3).  This function is defined after we pull in vector_types.h.
   __attribute__((device)) operator dim3() const;
+  __attribute__((device)) operator uint3() const;
+
 private:
   __CUDA_DISALLOW_BUILTINVAR_ACCESS(__cuda_builtin_gridDim_t);
 };
@@ -122,5 +116,6 @@ __attribute__((device)) const int warpSize = 32;
 #undef __CUDA_DEVICE_BUILTIN
 #undef __CUDA_BUILTIN_VAR
 #undef __CUDA_DISALLOW_BUILTINVAR_ACCESS
+#undef __DELETE
 
 #endif /* __CUDA_BUILTIN_VARS_H */
