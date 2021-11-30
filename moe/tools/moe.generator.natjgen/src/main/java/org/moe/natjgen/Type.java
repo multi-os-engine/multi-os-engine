@@ -614,7 +614,8 @@ public class Type {
 
         // Resolve typedefs and save most inner typedef's name
         CXType typeDefType = null;
-        while (typeKind == CXTypeKind.Typedef) {
+        while (typeKind == CXTypeKind.Typedef
+               || typeKind == CXTypeKind.ObjCTypeParam) {
             // TODO: skip names with '_' prefix?
             typeDefType = type;
             type = type.getTypeDeclaration().getTypedefDeclUnderlyingType();

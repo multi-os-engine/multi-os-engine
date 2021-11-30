@@ -51,7 +51,7 @@ public class ParamedClass1 extends AbstractObjCClassTest {
         MethodDeclaration method = getMethod("v__ptr");
         assertExistsAndGenerated(method);
         assertEquals(0, method.parameters().size());
-        assertParameterizedType(method.getReturnType2(), "Ptr<ObjCObject>");
+        assertParameterizedType(method.getReturnType2(), "Ptr<_T>");
     }
 
     public void test_method_v__array() {
@@ -108,14 +108,14 @@ public class ParamedClass1 extends AbstractObjCClassTest {
         MethodDeclaration method = getMethod("prop__v__ptr");
         assertExistsAndGenerated(method);
         assertEquals(0, method.parameters().size());
-        assertParameterizedType(method.getReturnType2(), "Ptr<ObjCObject>");
+        assertParameterizedType(method.getReturnType2(), "Ptr<_T>");
     }
 
     public void test_setter_prop__v__ptr() {
         MethodDeclaration method = getMethod("setProp__v__ptr");
         assertExistsAndGenerated(method);
         assertEquals(1, method.parameters().size());
-        assertParameterizedType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "Ptr<ObjCObject>");
+        assertParameterizedType(((SingleVariableDeclaration)method.parameters().get(0)).getType(), "Ptr<_T>");
     }
 
     public void test_getter_prop__v__array() {
