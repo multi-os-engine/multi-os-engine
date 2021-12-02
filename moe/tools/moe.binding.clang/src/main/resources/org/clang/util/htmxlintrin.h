@@ -1,22 +1,8 @@
 /*===---- htmxlintrin.h - XL compiler HTM execution intrinsics-------------===*\
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
+ * Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+ * See https://llvm.org/LICENSE.txt for license information.
+ * SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
  *
 \*===----------------------------------------------------------------------===*/
 
@@ -35,14 +21,10 @@
 extern "C" {
 #endif
 
-#define _TEXASR_PTR(TM_BUF) \
-  ((texasr_t *)((TM_BUF)+0))
-#define _TEXASRU_PTR(TM_BUF) \
-  ((texasru_t *)((TM_BUF)+0))
-#define _TEXASRL_PTR(TM_BUF) \
-  ((texasrl_t *)((TM_BUF)+4))
-#define _TFIAR_PTR(TM_BUF) \
-  ((tfiar_t *)((TM_BUF)+8))
+#define _TEXASR_PTR(TM_BUF) ((texasr_t *)((char *)(TM_BUF) + 0))
+#define _TEXASRU_PTR(TM_BUF) ((texasru_t *)((char *)(TM_BUF) + 0))
+#define _TEXASRL_PTR(TM_BUF) ((texasrl_t *)((char *)(TM_BUF) + 4))
+#define _TFIAR_PTR(TM_BUF) ((tfiar_t *)((char *)(TM_BUF) + 8))
 
 typedef char TM_buff_type[16];
 
@@ -178,7 +160,7 @@ extern __inline long
 __attribute__ ((__gnu_inline__, __always_inline__, __artificial__))
 __TM_is_conflict(void* const __TM_buff)
 {
-  texasru_t texasru = *_TEXASRU_PTR (TM_buff);
+  texasru_t texasru = *_TEXASRU_PTR (__TM_buff);
   /* Return TEXASR bits 11 (Self-Induced Conflict) through
      14 (Translation Invalidation Conflict).  */
   return (_TEXASRU_EXTRACT_BITS (texasru, 14, 4)) ? 1 : 0;
@@ -218,7 +200,7 @@ __TM_failure_code(void* const __TM_buff)
 
 /* These intrinsics are being made available for compatibility with
    the IBM XL compiler.  For documentation please see the "z/OS XL
-   C/C++ Programming Guide" publically available on the web.  */
+   C/C++ Programming Guide" publicly available on the web.  */
 
 static __inline long __attribute__((__always_inline__, __nodebug__))
 __TM_simple_begin ()

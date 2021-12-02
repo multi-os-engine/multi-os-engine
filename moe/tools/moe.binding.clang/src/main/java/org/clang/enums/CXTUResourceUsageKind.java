@@ -18,6 +18,9 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Categorizes how memory is being used by a translation unit.
+ */
 @Generated
 public final class CXTUResourceUsageKind {
     @Generated public static final int AST = 0x00000001;

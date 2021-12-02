@@ -28,4 +28,6 @@ public final class CXIdxEntityLanguage {
     @Generated
     private CXIdxEntityLanguage() {
     }
+
+    @Generated public static final int CXIdxEntityLang_Swift = 0x00000004;
 }

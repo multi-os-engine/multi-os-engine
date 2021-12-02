@@ -18,6 +18,9 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describes the calling convention of a function type
+ */
 @Generated
 public final class CXCallingConv {
     @Generated public static final int Default = 0x00000000;
@@ -29,16 +32,51 @@ public final class CXCallingConv {
     @Generated public static final int AAPCS = 0x00000006;
     @Generated public static final int AAPCS_VFP = 0x00000007;
     @Generated public static final int IntelOclBicc = 0x00000009;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int X86_64Win64 = 0x0000000A;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int X86_64SysV = 0x0000000B;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int X86VectorCall = 0x0000000C;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int Invalid = 0x00000064;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int Unexposed = 0x000000C8;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int Swift = 0x0000000D;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int PreserveMost = 0x0000000E;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
     @Generated public static final int PreserveAll = 0x0000000F;
 
     @Generated
     private CXCallingConv() {
     }
+
+    @Generated public static final int X86RegCall = 0x00000008;
+    @Generated public static final int Win64 = 0x0000000A;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
+    @Generated public static final int AArch64VectorCall = 0x00000010;
+    /**
+     * Alias for compatibility with older versions of API.
+     */
+    @Generated public static final int SwiftAsync = 0x00000011;
 }

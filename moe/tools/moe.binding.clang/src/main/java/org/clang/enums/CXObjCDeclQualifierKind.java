@@ -18,6 +18,10 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * 'Qualifiers' written next to the return and parameter types in
+ * Objective-C method declarations.
+ */
 @Generated
 public final class CXObjCDeclQualifierKind {
     @Generated public static final int CXObjCDeclQualifier_None = 0x00000000;

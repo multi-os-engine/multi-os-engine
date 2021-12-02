@@ -64,8 +64,8 @@ public final class CXIdxLoc extends StructObject {
 
     /* Comfort java methods */
     public VoidPtr getFileLocation() {
-        @SuppressWarnings("unchecked") Ptr<VoidPtr> file_ref = (Ptr<VoidPtr>)PtrFactory
-                .newPointerPtr(Void.class, 2, 1, true, false);
+        @SuppressWarnings("unchecked") Ptr<VoidPtr> file_ref = (Ptr<VoidPtr>)PtrFactory.newPointerPtr(Void.class, 2, 1,
+                true, false);
         clang.clang_indexLoc_getFileLocation(this, null, file_ref, null, null, null);
         return file_ref.get();
     }

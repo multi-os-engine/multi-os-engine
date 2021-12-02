@@ -49,18 +49,32 @@ public final class CXTUResourceUsageEntry extends StructObject {
         setAmount(amount);
     }
 
+    /**
+     * The memory usage category.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int kind();
 
+    /**
+     * The memory usage category.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setKind(int value);
 
+    /**
+     * Amount of resources used.
+     * The units will depend on the resource kind.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long amount();
 
+    /**
+     * Amount of resources used.
+     * The units will depend on the resource kind.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setAmount(long value);

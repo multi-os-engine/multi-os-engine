@@ -18,9 +18,22 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Data for IndexerCallbacks#indexEntityReference.
+ * <p>
+ * This may be deprecated in a future version as this duplicates
+ * the \c CXSymbolRole_Implicit bit in \c CXSymbolRole.
+ */
 @Generated
 public final class CXIdxEntityRefKind {
+    /**
+     * The entity is referenced directly in user's code.
+     */
     @Generated public static final int CXIdxEntityRef_Direct = 0x00000001;
+    /**
+     * An implicit reference, e.g. a reference of an Objective-C method
+     * via the dot syntax.
+     */
     @Generated public static final int CXIdxEntityRef_Implicit = 0x00000002;
 
     @Generated

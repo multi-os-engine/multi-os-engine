@@ -18,6 +18,12 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describes the kind of a template argument.
+ * <p>
+ * See the definition of llvm::clang::TemplateArgument::ArgKind for full
+ * element descriptions.
+ */
 @Generated
 public final class CXTemplateArgumentKind {
     @Generated public static final int Null = 0x00000000;
@@ -29,6 +35,9 @@ public final class CXTemplateArgumentKind {
     @Generated public static final int TemplateExpansion = 0x00000006;
     @Generated public static final int Expression = 0x00000007;
     @Generated public static final int Pack = 0x00000008;
+    /**
+     * Indicates an error case, preventing the kind from being deduced.
+     */
     @Generated public static final int Invalid = 0x00000009;
 
     @Generated

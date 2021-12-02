@@ -55,30 +55,52 @@ public final class CXUnsavedFile extends StructObject {
         setLength(Length);
     }
 
+    /**
+     * The file whose contents have not yet been saved.
+     * <p>
+     * This file must already exist in the file system.
+     */
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native String Filename();
 
+    /**
+     * The file whose contents have not yet been saved.
+     * <p>
+     * This file must already exist in the file system.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFilename(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
+    /**
+     * A buffer containing the unsaved contents of this file.
+     */
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native String Contents();
 
+    /**
+     * A buffer containing the unsaved contents of this file.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setContents(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
+    /**
+     * The length of the unsaved contents of this buffer.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native long Length();
 
+    /**
+     * The length of the unsaved contents of this buffer.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setLength(long value);

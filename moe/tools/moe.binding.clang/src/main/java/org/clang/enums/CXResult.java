@@ -20,8 +20,18 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXResult {
+    /**
+     * Function returned successfully.
+     */
     @Generated public static final int CXResult_Success = 0x00000000;
+    /**
+     * One of the parameters was invalid for the function.
+     */
     @Generated public static final int CXResult_Invalid = 0x00000001;
+    /**
+     * The function was terminated by a callback (e.g. it returned
+     * CXVisit_Break)
+     */
     @Generated public static final int CXResult_VisitBreak = 0x00000002;
 
     @Generated

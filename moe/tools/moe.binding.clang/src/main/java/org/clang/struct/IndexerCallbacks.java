@@ -47,10 +47,17 @@ public final class IndexerCallbacks extends StructObject {
         super(peer);
     }
 
+    /**
+     * Called periodically to check whether indexing should be aborted.
+     * Should return 0 to continue, and non-zero to abort.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setAbortQuery(@FunctionPtr(name = "call_abortQuery") Function_abortQuery value);
 
+    /**
+     * Called at the end of indexing; passes the complete diagnostic set.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setDiagnostic(@FunctionPtr(name = "call_diagnostic") Function_diagnostic value);
@@ -59,14 +66,28 @@ public final class IndexerCallbacks extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setEnteredMainFile(@FunctionPtr(name = "call_enteredMainFile") Function_enteredMainFile value);
 
+    /**
+     * Called when a file gets \#included/\#imported.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setPpIncludedFile(@FunctionPtr(name = "call_ppIncludedFile") Function_ppIncludedFile value);
 
+    /**
+     * Called when a AST file (PCH or module) gets imported.
+     * <p>
+     * AST files will not get indexed (there will not be callbacks to index all
+     * the entities in an AST file). The recommended action is that, if the AST
+     * file is not already indexed, to initiate a new indexing job specific to
+     * the AST file.
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setImportedASTFile(@FunctionPtr(name = "call_importedASTFile") Function_importedASTFile value);
 
+    /**
+     * Called at the beginning of indexing a translation unit.
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setStartedTranslationUnit(
@@ -77,16 +98,26 @@ public final class IndexerCallbacks extends StructObject {
     public native void setIndexDeclaration(
             @FunctionPtr(name = "call_indexDeclaration") Function_indexDeclaration value);
 
+    /**
+     * Called to index a reference of an entity.
+     */
     @Generated
     @StructureField(order = 7, isGetter = false)
     public native void setIndexEntityReference(
             @FunctionPtr(name = "call_indexEntityReference") Function_indexEntityReference value);
 
+    /**
+     * Called periodically to check whether indexing should be aborted.
+     * Should return 0 to continue, and non-zero to abort.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_abortQuery")
     public native Function_abortQuery abortQuery();
 
+    /**
+     * Called at the end of indexing; passes the complete diagnostic set.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_diagnostic")
@@ -97,16 +128,30 @@ public final class IndexerCallbacks extends StructObject {
     @FunctionPtr(name = "call_enteredMainFile")
     public native Function_enteredMainFile enteredMainFile();
 
+    /**
+     * Called when a file gets \#included/\#imported.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_ppIncludedFile")
     public native Function_ppIncludedFile ppIncludedFile();
 
+    /**
+     * Called when a AST file (PCH or module) gets imported.
+     * <p>
+     * AST files will not get indexed (there will not be callbacks to index all
+     * the entities in an AST file). The recommended action is that, if the AST
+     * file is not already indexed, to initiate a new indexing job specific to
+     * the AST file.
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_importedASTFile")
     public native Function_importedASTFile importedASTFile();
 
+    /**
+     * Called at the beginning of indexing a translation unit.
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     @FunctionPtr(name = "call_startedTranslationUnit")
@@ -117,6 +162,9 @@ public final class IndexerCallbacks extends StructObject {
     @FunctionPtr(name = "call_indexDeclaration")
     public native Function_indexDeclaration indexDeclaration();
 
+    /**
+     * Called to index a reference of an entity.
+     */
     @Generated
     @StructureField(order = 7, isGetter = true)
     @FunctionPtr(name = "call_indexEntityReference")

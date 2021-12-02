@@ -53,35 +53,61 @@ public final class CXIdxImportedASTFileInfo extends StructObject {
         setIsImplicit(isImplicit);
     }
 
+    /**
+     * Top level AST file containing the imported PCH, module or submodule.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr file();
 
+    /**
+     * Top level AST file containing the imported PCH, module or submodule.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setFile(VoidPtr value);
 
+    /**
+     * The imported module or NULL if the AST file is a PCH.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr module();
 
+    /**
+     * The imported module or NULL if the AST file is a PCH.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setModule(VoidPtr value);
 
+    /**
+     * Location where the file is imported. Applicable only for modules.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @ByValue
     public native CXIdxLoc loc();
 
+    /**
+     * Location where the file is imported. Applicable only for modules.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setLoc(@ByValue CXIdxLoc value);
 
+    /**
+     * Non-zero if an inclusion directive was automatically turned into
+     * a module import. Applicable only for modules.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native int isImplicit();
 
+    /**
+     * Non-zero if an inclusion directive was automatically turned into
+     * a module import. Applicable only for modules.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setIsImplicit(int value);

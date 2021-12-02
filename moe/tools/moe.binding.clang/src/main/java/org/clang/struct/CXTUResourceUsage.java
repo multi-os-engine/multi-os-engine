@@ -54,27 +54,47 @@ public final class CXTUResourceUsage extends StructObject {
         setEntries(entries);
     }
 
+    /**
+     * Private data member, used for queries.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr data();
 
+    /**
+     * Private data member, used for queries.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setData(VoidPtr value);
 
+    /**
+     * The number of entries in the 'entries' array.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int numEntries();
 
+    /**
+     * The number of entries in the 'entries' array.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setNumEntries(int value);
 
+    /**
+     * An array of key-value pairs, representing the breakdown of memory
+     * usage.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native CXTUResourceUsageEntry entries();
 
+    /**
+     * An array of key-value pairs, representing the breakdown of memory
+     * usage.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setEntries(
