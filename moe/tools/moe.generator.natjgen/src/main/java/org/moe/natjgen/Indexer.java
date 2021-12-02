@@ -326,7 +326,7 @@ public class Indexer {
             String[] args = configuration.getCMDLine(arch);
             LOG.debug("Clang options: " + Arrays.asList(args));
             tu = clang_parseTranslationUnit(index, file, args, args.length, null, 0,
-                    CXTranslationUnit_Flags.SkipFunctionBodies);
+                    CXTranslationUnit_Flags.SkipFunctionBodies | CXTranslationUnit_Flags.IncludeAttributedTypes);
             VoidPtr iaction = clang_IndexAction_create(index);
 
             // Create indexer callbacks
