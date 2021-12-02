@@ -80,4 +80,16 @@ public final class CXSourceLocation extends StructObject {
     public void getExpansionLocation(Ptr<VoidPtr> file, IntPtr line, IntPtr column, IntPtr offset) {
         clang.clang_getExpansionLocation(this, file, line, column, offset);
     }
+
+    @Override
+    public String toString() {
+        @SuppressWarnings("unchecked") Ptr<VoidPtr> fileRef = (Ptr<VoidPtr>)PtrFactory.newPointerPtr(Void.class, 2, 1,
+                true, false);
+        IntPtr lineRef = PtrFactory.newIntReference();
+        IntPtr colRef = PtrFactory.newIntReference();
+        getExpansionLocation(fileRef, lineRef, colRef, null);
+        CXString fileName = clang.clang_getFileName(fileRef.get());
+
+        return "CXSourceLocation(" + fileName + ":" + lineRef.get() + ":" + colRef.get() + ")";
+    }
 }

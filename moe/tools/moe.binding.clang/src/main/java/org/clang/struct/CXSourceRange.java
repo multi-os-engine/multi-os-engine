@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.clang.struct;
 
+import org.clang.c.clang;
 import org.moe.natj.c.StructObject;
 import org.moe.natj.c.ann.Structure;
 import org.moe.natj.c.ann.StructureField;
@@ -66,4 +67,19 @@ public final class CXSourceRange extends StructObject {
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setEnd_int_data(int value);
+
+    public CXSourceLocation getStartLocation() {
+        return clang.clang_getRangeStart(this);
+    }
+
+    public CXSourceLocation getEndLocation() {
+        return clang.clang_getRangeEnd(this);
+    }
+
+    @Override
+    public String toString() {
+        CXSourceLocation start = getStartLocation();
+        CXSourceLocation end = getEndLocation();
+        return "CXSourceRange(start=" + start + ", end=" + end + ")";
+    }
 }
