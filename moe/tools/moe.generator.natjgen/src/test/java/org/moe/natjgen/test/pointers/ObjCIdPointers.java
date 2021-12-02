@@ -28,10 +28,7 @@ public class ObjCIdPointers extends AbstractPointersTest {
     @Override
     protected void setUp() throws Exception {
         String name = ObjCObject.class.getSimpleName();
-        // clang 13 somehow does not keep the const modifier in place like __strong id const * prop__v__ptr;
-        // No sure why this is the case, but it doesn't really matter at the moment.
-        // TODO: figure out why clang 13 does this (while clang 3.9 doesn't)
-        super.setUp(name, "id", "Ptr<" + name + ">", "Ptr<" + name + ">");
+        super.setUp(name, "id", "Ptr<" + name + ">", "ConstPtr<" + name + ">");
     }
 
     @Override

@@ -583,6 +583,11 @@ public class Type {
             type = type.getNamedType();
         }
 
+        // Deal with attribute
+        while (type.kind() == CXTypeKind.Attributed) {
+            type = clang.clang_Type_getModifiedType(type);
+        }
+
         // Deal with nullability
         {
             CXType sType = clang.clang_getTypeByStrippingOuterNullability(type);
