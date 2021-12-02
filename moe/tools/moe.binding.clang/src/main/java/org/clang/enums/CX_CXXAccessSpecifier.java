@@ -18,6 +18,10 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Represents the C++ access control level to a base class for a
+ * cursor with kind CX_CXXBaseSpecifier.
+ */
 @Generated
 public final class CX_CXXAccessSpecifier {
     @Generated public static final int InvalidAccessSpecifier = 0x00000000;

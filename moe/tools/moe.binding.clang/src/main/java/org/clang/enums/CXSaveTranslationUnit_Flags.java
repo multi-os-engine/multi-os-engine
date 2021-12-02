@@ -18,8 +18,18 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Flags that control how translation units are saved.
+ * <p>
+ * The enumerators in this enumeration type are meant to be bitwise
+ * ORed together to specify which options should be used when
+ * saving the translation unit.
+ */
 @Generated
 public final class CXSaveTranslationUnit_Flags {
+    /**
+     * Used to indicate that no special saving options are needed.
+     */
     @Generated public static final int CXSaveTranslationUnit_None = 0x00000000;
 
     @Generated

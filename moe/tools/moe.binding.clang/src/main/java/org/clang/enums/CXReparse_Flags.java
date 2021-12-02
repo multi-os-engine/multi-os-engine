@@ -18,8 +18,18 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Flags that control the reparsing of translation units.
+ * <p>
+ * The enumerators in this enumeration type are meant to be bitwise
+ * ORed together to specify which options should be used when
+ * reparsing the translation unit.
+ */
 @Generated
 public final class CXReparse_Flags {
+    /**
+     * Used to indicate that no special reparsing options are needed.
+     */
     @Generated public static final int CXReparse_None = 0x00000000;
 
     @Generated

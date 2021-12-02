@@ -53,11 +53,17 @@ public final class CXIdxEntityRefInfo extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setKind(int value);
 
+    /**
+     * Reference cursor.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @ByValue
     public native CXCursor cursor();
 
+    /**
+     * Reference cursor.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setCursor(@ByValue CXCursor value);
@@ -71,33 +77,81 @@ public final class CXIdxEntityRefInfo extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setLoc(@ByValue CXIdxLoc value);
 
+    /**
+     * The entity that gets referenced.
+     */
     @Generated
     @StructureField(order = 3, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native CXIdxEntityInfo referencedEntity();
 
+    /**
+     * The entity that gets referenced.
+     */
     @Generated
     @StructureField(order = 3, isGetter = false)
     public native void setReferencedEntity(
             @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
 
+    /**
+     * Immediate "parent" of the reference. For example:
+     * <p>
+     * \code
+     * Foo *var;
+     * \endcode
+     * <p>
+     * The parent of reference of type 'Foo' is the variable 'var'.
+     * For references inside statement bodies of functions/methods,
+     * the parentEntity will be the function/method.
+     */
     @Generated
     @StructureField(order = 4, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native CXIdxEntityInfo parentEntity();
 
+    /**
+     * Immediate "parent" of the reference. For example:
+     * <p>
+     * \code
+     * Foo *var;
+     * \endcode
+     * <p>
+     * The parent of reference of type 'Foo' is the variable 'var'.
+     * For references inside statement bodies of functions/methods,
+     * the parentEntity will be the function/method.
+     */
     @Generated
     @StructureField(order = 4, isGetter = false)
     public native void setParentEntity(
             @UncertainArgument("Options: reference, array Fallback: reference") CXIdxEntityInfo value);
 
+    /**
+     * Lexical container context of the reference.
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native CXIdxContainerInfo container();
 
+    /**
+     * Lexical container context of the reference.
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setContainer(
             @UncertainArgument("Options: reference, array Fallback: reference") CXIdxContainerInfo value);
+
+    /**
+     * Sets of symbol roles of the reference.
+     */
+    @Generated
+    @StructureField(order = 6, isGetter = true)
+    public native int role();
+
+    /**
+     * Sets of symbol roles of the reference.
+     */
+    @Generated
+    @StructureField(order = 6, isGetter = false)
+    public native void setRole(int value);
 }

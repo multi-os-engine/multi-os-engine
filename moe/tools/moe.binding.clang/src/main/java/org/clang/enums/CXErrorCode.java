@@ -18,12 +18,37 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Error codes returned by libclang routines.
+ * <p>
+ * Zero (\c CXError_Success) is the only error code indicating success.  Other
+ * error codes, including not yet assigned non-zero values, indicate errors.
+ */
 @Generated
 public final class CXErrorCode {
+    /**
+     * No error.
+     */
     @Generated public static final int Success = 0x00000000;
+    /**
+     * A generic error code, no further details are available.
+     * <p>
+     * Errors of this kind can get their own specific error codes in future
+     * libclang versions.
+     */
     @Generated public static final int Failure = 0x00000001;
+    /**
+     * libclang crashed while performing the requested operation.
+     */
     @Generated public static final int Crashed = 0x00000002;
+    /**
+     * The function detected that the arguments violate the function
+     * contract.
+     */
     @Generated public static final int InvalidArguments = 0x00000003;
+    /**
+     * An AST deserialization error has occurred.
+     */
     @Generated public static final int ASTReadError = 0x00000004;
 
     @Generated

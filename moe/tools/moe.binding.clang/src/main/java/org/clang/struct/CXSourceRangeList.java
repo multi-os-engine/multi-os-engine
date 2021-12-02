@@ -52,19 +52,31 @@ public final class CXSourceRangeList extends StructObject {
         setRanges(ranges);
     }
 
+    /**
+     * The number of ranges in the \c ranges array.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int count();
 
+    /**
+     * The number of ranges in the \c ranges array.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setCount(int value);
 
+    /**
+     * An array of \c CXSourceRanges.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native CXSourceRange ranges();
 
+    /**
+     * An array of \c CXSourceRanges.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setRanges(

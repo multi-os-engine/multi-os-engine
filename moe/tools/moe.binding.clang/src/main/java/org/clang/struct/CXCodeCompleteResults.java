@@ -53,20 +53,34 @@ public final class CXCodeCompleteResults extends StructObject {
         setNumResults(NumResults);
     }
 
+    /**
+     * The code-completion results.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @UncertainReturn("Options: reference, array Fallback: reference")
     public native CXCompletionResult Results();
 
+    /**
+     * The code-completion results.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setResults(
             @UncertainArgument("Options: reference, array Fallback: reference") CXCompletionResult value);
 
+    /**
+     * The number of code-completion results stored in the
+     * \c Results array.
+     */
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native int NumResults();
 
+    /**
+     * The number of code-completion results stored in the
+     * \c Results array.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setNumResults(int value);

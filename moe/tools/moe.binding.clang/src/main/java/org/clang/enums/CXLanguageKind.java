@@ -18,6 +18,9 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describe the "language" of the entity referred to by a cursor.
+ */
 @Generated
 public final class CXLanguageKind {
     @Generated public static final int Invalid = 0x00000000;

@@ -46,29 +46,47 @@ public final class CXIdxIncludedFileInfo extends StructObject {
         super(peer);
     }
 
+    /**
+     * Location of '#' in the \#include/\#import directive.
+     */
     @Generated
     @StructureField(order = 0, isGetter = true)
     @ByValue
     public native CXIdxLoc hashLoc();
 
+    /**
+     * Location of '#' in the \#include/\#import directive.
+     */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setHashLoc(@ByValue CXIdxLoc value);
 
+    /**
+     * Filename as written in the \#include/\#import directive.
+     */
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native String filename();
 
+    /**
+     * Filename as written in the \#include/\#import directive.
+     */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setFilename(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
+    /**
+     * The actual file that the \#include/\#import directive resolved to.
+     */
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr file();
 
+    /**
+     * The actual file that the \#include/\#import directive resolved to.
+     */
     @Generated
     @StructureField(order = 2, isGetter = false)
     public native void setFile(VoidPtr value);
@@ -89,10 +107,18 @@ public final class CXIdxIncludedFileInfo extends StructObject {
     @StructureField(order = 4, isGetter = false)
     public native void setIsAngled(int value);
 
+    /**
+     * Non-zero if the directive was automatically turned into a module
+     * import.
+     */
     @Generated
     @StructureField(order = 5, isGetter = true)
     public native int isModuleImport();
 
+    /**
+     * Non-zero if the directive was automatically turned into a module
+     * import.
+     */
     @Generated
     @StructureField(order = 5, isGetter = false)
     public native void setIsModuleImport(int value);

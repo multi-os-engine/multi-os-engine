@@ -20,8 +20,17 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class CXRefQualifierKind {
+    /**
+     * No ref-qualifier was provided.
+     */
     @Generated public static final int None = 0x00000000;
+    /**
+     * An lvalue ref-qualifier was provided (\c &).
+     */
     @Generated public static final int LValue = 0x00000001;
+    /**
+     * An rvalue ref-qualifier was provided (\c &&).
+     */
     @Generated public static final int RValue = 0x00000002;
 
     @Generated

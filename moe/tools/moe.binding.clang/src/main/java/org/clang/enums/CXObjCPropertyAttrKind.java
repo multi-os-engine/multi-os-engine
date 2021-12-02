@@ -18,6 +18,9 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Property attributes for a \c CXCursor_ObjCPropertyDecl.
+ */
 @Generated
 public final class CXObjCPropertyAttrKind {
     @Generated public static final int CXObjCPropertyAttr_noattr = 0x00000000;

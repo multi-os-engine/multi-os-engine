@@ -18,10 +18,22 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describes parameter passing direction for \\param or \\arg command.
+ */
 @Generated
 public final class CXCommentParamPassDirection {
+    /**
+     * The parameter is an input parameter.
+     */
     @Generated public static final int In = 0x00000000;
+    /**
+     * The parameter is an output parameter.
+     */
     @Generated public static final int Out = 0x00000001;
+    /**
+     * The parameter is an input and output parameter.
+     */
     @Generated public static final int InOut = 0x00000002;
 
     @Generated

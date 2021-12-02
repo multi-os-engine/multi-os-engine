@@ -18,12 +18,35 @@ package org.clang.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * Describes the severity of a particular diagnostic.
+ */
 @Generated
 public final class CXDiagnosticSeverity {
+    /**
+     * A diagnostic that has been suppressed, e.g., by a command-line
+     * option.
+     */
     @Generated public static final int Ignored = 0x00000000;
+    /**
+     * This diagnostic is a note that should be attached to the
+     * previous (non-note) diagnostic.
+     */
     @Generated public static final int Note = 0x00000001;
+    /**
+     * This diagnostic indicates suspicious code that may not be
+     * wrong.
+     */
     @Generated public static final int Warning = 0x00000002;
+    /**
+     * This diagnostic indicates that the code is ill-formed.
+     */
     @Generated public static final int Error = 0x00000003;
+    /**
+     * This diagnostic indicates that the code is ill-formed such
+     * that future parser recovery is unlikely to produce useful
+     * results.
+     */
     @Generated public static final int Fatal = 0x00000004;
 
     @Generated

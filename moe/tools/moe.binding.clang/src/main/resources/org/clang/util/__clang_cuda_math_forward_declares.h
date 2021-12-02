@@ -1,29 +1,15 @@
 /*===- __clang_math_forward_declares.h - Prototypes of __device__ math fns --===
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
+ * Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+ * See https://llvm.org/LICENSE.txt for license information.
+ * SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
  *
  *===-----------------------------------------------------------------------===
  */
 #ifndef __CLANG__CUDA_MATH_FORWARD_DECLARES_H__
 #define __CLANG__CUDA_MATH_FORWARD_DECLARES_H__
-#ifndef __CUDA__
-#error "This file is for CUDA compilation only."
+#if !defined(__CUDA__) && !__HIP__
+#error "This file is for CUDA/HIP compilation only."
 #endif
 
 // This file forward-declares of some math functions we (or the CUDA headers)
@@ -37,11 +23,11 @@
 #define __DEVICE__                                                             \
   static __inline__ __attribute__((always_inline)) __attribute__((device))
 
+__DEVICE__ long abs(long);
+__DEVICE__ long long abs(long long);
 __DEVICE__ double abs(double);
 __DEVICE__ float abs(float);
 __DEVICE__ int abs(int);
-__DEVICE__ long abs(long);
-__DEVICE__ long long abs(long long);
 __DEVICE__ double acos(double);
 __DEVICE__ float acos(float);
 __DEVICE__ double acosh(double);
@@ -98,12 +84,18 @@ __DEVICE__ double hypot(double, double);
 __DEVICE__ float hypot(float, float);
 __DEVICE__ int ilogb(double);
 __DEVICE__ int ilogb(float);
+#ifdef _MSC_VER
+__DEVICE__ bool isfinite(long double);
+#endif
 __DEVICE__ bool isfinite(double);
 __DEVICE__ bool isfinite(float);
 __DEVICE__ bool isgreater(double, double);
 __DEVICE__ bool isgreaterequal(double, double);
 __DEVICE__ bool isgreaterequal(float, float);
 __DEVICE__ bool isgreater(float, float);
+#ifdef _MSC_VER
+__DEVICE__ bool isinf(long double);
+#endif
 __DEVICE__ bool isinf(double);
 __DEVICE__ bool isinf(float);
 __DEVICE__ bool isless(double, double);
@@ -112,6 +104,9 @@ __DEVICE__ bool islessequal(float, float);
 __DEVICE__ bool isless(float, float);
 __DEVICE__ bool islessgreater(double, double);
 __DEVICE__ bool islessgreater(float, float);
+#ifdef _MSC_VER
+__DEVICE__ bool isnan(long double);
+#endif
 __DEVICE__ bool isnan(double);
 __DEVICE__ bool isnan(float);
 __DEVICE__ bool isnormal(double);
@@ -140,6 +135,7 @@ __DEVICE__ long lrint(double);
 __DEVICE__ long lrint(float);
 __DEVICE__ long lround(double);
 __DEVICE__ long lround(float);
+__DEVICE__ long long llround(float); // No llround(double).
 __DEVICE__ double modf(double, double *);
 __DEVICE__ float modf(float, float *);
 __DEVICE__ double nan(const char *);
@@ -148,8 +144,6 @@ __DEVICE__ double nearbyint(double);
 __DEVICE__ float nearbyint(float);
 __DEVICE__ double nextafter(double, double);
 __DEVICE__ float nextafter(float, float);
-__DEVICE__ double nexttoward(double, double);
-__DEVICE__ float nexttoward(float, float);
 __DEVICE__ double pow(double, double);
 __DEVICE__ double pow(double, int);
 __DEVICE__ float pow(float, float);
@@ -166,6 +160,9 @@ __DEVICE__ double scalbln(double, long);
 __DEVICE__ float scalbln(float, long);
 __DEVICE__ double scalbn(double, int);
 __DEVICE__ float scalbn(float, int);
+#ifdef _MSC_VER
+__DEVICE__ bool signbit(long double);
+#endif
 __DEVICE__ bool signbit(double);
 __DEVICE__ bool signbit(float);
 __DEVICE__ double sin(double);
@@ -183,7 +180,23 @@ __DEVICE__ float tgamma(float);
 __DEVICE__ double trunc(double);
 __DEVICE__ float trunc(float);
 
+// Notably missing above is nexttoward, which we don't define on
+// the device side because libdevice doesn't give us an implementation, and we
+// don't want to be in the business of writing one ourselves.
+
+// We need to define these overloads in exactly the namespace our standard
+// library uses (including the right inline namespace), otherwise they won't be
+// picked up by other functions in the standard library (e.g. functions in
+// <complex>).  Thus the ugliness below.
+#ifdef _LIBCPP_BEGIN_NAMESPACE_STD
+_LIBCPP_BEGIN_NAMESPACE_STD
+#else
 namespace std {
+#ifdef _GLIBCXX_BEGIN_NAMESPACE_VERSION
+_GLIBCXX_BEGIN_NAMESPACE_VERSION
+#endif
+#endif
+
 using ::abs;
 using ::acos;
 using ::acosh;
@@ -235,12 +248,12 @@ using ::log2;
 using ::logb;
 using ::lrint;
 using ::lround;
+using ::llround;
 using ::modf;
 using ::nan;
 using ::nanf;
 using ::nearbyint;
 using ::nextafter;
-using ::nexttoward;
 using ::pow;
 using ::remainder;
 using ::remquo;
@@ -256,7 +269,15 @@ using ::tan;
 using ::tanh;
 using ::tgamma;
 using ::trunc;
+
+#ifdef _LIBCPP_END_NAMESPACE_STD
+_LIBCPP_END_NAMESPACE_STD
+#else
+#ifdef _GLIBCXX_BEGIN_NAMESPACE_VERSION
+_GLIBCXX_END_NAMESPACE_VERSION
+#endif
 } // namespace std
+#endif
 
 #pragma pop_macro("__DEVICE__")
 
