@@ -226,6 +226,9 @@ class ModelDowngrader extends AbstractModelEditor {
 
     @Override
     public void processStruct(CXIdxDeclInfo decl) {
+        if (decl.isDefinition() == 0) {
+            return;
+        }
         CStructManager struct = getGenerator().getStruct(decl.cursor().getCursorUSR().toString());
         if (struct == null || struct.isFatal()) {
             return;

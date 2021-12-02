@@ -106,7 +106,6 @@ public class NatJGenTest {
         conf.setCleanOutputTypeConfiguration(true);
 
         // Paths
-        conf.setUseIncludedStandardHeaders(false);
         conf.getHeaderSearchPaths().add(INCLUDES_DIR.getAbsolutePath());
         conf.getUserHeaderSearchPaths().add(INCLUDES_DIR.getAbsolutePath());
         conf.getUserHeaderSearchPaths().add(FRAMEWORKS_DIR.getAbsolutePath());

@@ -569,6 +569,20 @@ public class Type {
         this(inType, memModel, null);
     }
 
+    private static CXType stripAttribute(CXType type) {
+        while (type.kind() == CXTypeKind.Unexposed || type.kind() == CXTypeKind.Attributed) {
+            // Try removing attribute
+            CXType sType = clang.clang_Type_getModifiedType(type);
+            if (sType.kind() != CXTypeKind.Invalid && clang.clang_equalTypes(type, sType) == 0) {
+                type = sType;
+            } else {
+                break;
+            }
+        }
+
+        return type;
+    }
+
     /**
      * Create a new type with a CXType
      *
@@ -582,6 +596,9 @@ public class Type {
         if (type.kind() == CXTypeKind.Elaborated) {
             type = type.getNamedType();
         }
+
+        // Deal with attribute
+        type = stripAttribute(type);
 
         // Deal with nullability
         {
@@ -614,10 +631,12 @@ public class Type {
 
         // Resolve typedefs and save most inner typedef's name
         CXType typeDefType = null;
-        while (typeKind == CXTypeKind.Typedef) {
+        while (typeKind == CXTypeKind.Typedef
+               || typeKind == CXTypeKind.ObjCTypeParam) {
             // TODO: skip names with '_' prefix?
             typeDefType = type;
             type = type.getTypeDeclaration().getTypedefDeclUnderlyingType();
+            type = stripAttribute(type);
             if (type.kind() == CXTypeKind.Elaborated) {
                 type = type.getNamedType();
             }
@@ -871,6 +890,9 @@ public class Type {
         case CXTypeKind.BlockPointer: {
             kind = ObjCBlock;
             CXType pointee = nonCanonical.getPointeeType();
+            if (pointee.kind() == CXTypeKind.Invalid) {
+                pointee = type.getPointeeType();
+            }
             int arg_count = pointee.getNumArgTypes();
             callbackDescriptor = new CallbackDescriptor(ObjCBlock, new Type(pointee.getResultType(), memModel),
                     arg_count);
