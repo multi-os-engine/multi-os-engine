@@ -302,7 +302,7 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVFragmentedAssetTrack _Nullable_result, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(AVFragmentedAssetTrack arg0, NSError arg1);
     }
 
     /**

@@ -406,7 +406,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVMovieTrack _Nullable_result, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(AVMovieTrack arg0, NSError arg1);
     }
 
     /**

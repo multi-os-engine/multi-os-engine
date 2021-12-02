@@ -684,7 +684,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     public interface Block_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler {
         @Generated
-        void call_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler(AVMediaSelectionGroup _Nullable_result,
+        void call_loadMediaSelectionGroupForMediaCharacteristicCompletionHandler(AVMediaSelectionGroup arg0,
                 NSError arg1);
     }
 
@@ -725,7 +725,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVAssetTrack _Nullable_result, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(AVAssetTrack arg0, NSError arg1);
     }
 
     /**

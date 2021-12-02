@@ -271,7 +271,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     public interface Block_finishWorkoutWithCompletion {
         @Generated
-        void call_finishWorkoutWithCompletion(HKWorkout _Nullable_result);
+        void call_finishWorkoutWithCompletion(HKWorkout workout, NSError error);
     }
 
     @Generated

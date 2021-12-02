@@ -157,6 +157,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     /**
      * The URI of the playback item.
      */
+    @Deprecated
     @Generated
     @Selector("URI")
     public native String URI();
@@ -170,6 +171,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     /**
      * The date and time when the error occured.
      */
+    @Deprecated
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -177,6 +179,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     /**
      * A description of the error encountered.
      */
+    @Deprecated
     @Generated
     @Selector("errorComment")
     public native String errorComment();
@@ -184,6 +187,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     /**
      * The domain of the error.
      */
+    @Deprecated
     @Generated
     @Selector("errorDomain")
     public native String errorDomain();
@@ -191,6 +195,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     /**
      * A unique error code identifier. The value is negative if unknown.
      */
+    @Deprecated
     @Generated
     @Selector("errorStatusCode")
     @NInt
@@ -203,6 +208,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     /**
      * A GUID that identifies the playback session. This value is used in HTTP requests.
      */
+    @Deprecated
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
@@ -210,6 +216,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     /**
      * The IP address of the server that was the source of the error.
      */
+    @Deprecated
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

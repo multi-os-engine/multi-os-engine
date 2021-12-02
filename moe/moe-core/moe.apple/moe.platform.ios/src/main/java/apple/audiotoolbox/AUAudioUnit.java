@@ -2010,4 +2010,34 @@ public class AUAudioUnit extends NSObject {
         int call_setMIDIOutputEventListBlock(long eventSampleTime, byte cable,
                 @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
     }
+
+    /**
+     * Block which subclassers must provide (via a getter) to implement rendering.
+     */
+    @Generated
+    @Selector("internalRenderBlock")
+    @ObjCBlock(name = "call_internalRenderBlock_ret")
+    public native Block_internalRenderBlock_ret internalRenderBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_internalRenderBlock_ret {
+        @Runtime(ObjCRuntime.class)
+        @Generated
+        public interface Block_Block_internalRenderBlock_ret {
+            @Generated
+            int call_Block_internalRenderBlock_ret(IntPtr actionFlags,
+                    @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+                    int frameCount, @NInt long inputBusNumber,
+                    @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList inputData);
+        }
+
+        @Generated
+        int call_internalRenderBlock_ret(IntPtr actionFlags,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp timestamp,
+                int frameCount, @NInt long outputBusNumber,
+                @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList outputData,
+                VoidPtr realtimeEventListHead,
+                @ObjCBlock(name = "call_Block_internalRenderBlock_ret") Block_Block_internalRenderBlock_ret pullInputBlock);
+    }
 }

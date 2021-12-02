@@ -427,9 +427,8 @@ public class MPSUnaryImageKernel extends MPSKernel {
     public interface Block_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator {
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(MPSKernel filter,
-                @Mapped(ObjCObjectMapper.class) Object commandBuffer,
-                @Mapped(ObjCObjectMapper.class) Object sourceTexture);
+        Object call_encodeToCommandBufferInPlaceTextureFallbackCopyAllocator(MPSKernel arg0,
+                @Mapped(ObjCObjectMapper.class) Object arg1, @Mapped(ObjCObjectMapper.class) Object arg2);
     }
 
     /**

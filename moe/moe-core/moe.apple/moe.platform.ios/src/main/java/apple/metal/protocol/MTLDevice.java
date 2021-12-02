@@ -442,8 +442,8 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object computePipelineState,
-                MTLComputePipelineReflection _Nullable_result);
+                @Mapped(ObjCObjectMapper.class) Object computePipelineState, MTLComputePipelineReflection reflection,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -459,8 +459,8 @@ public interface MTLDevice {
     public interface Block_newComputePipelineStateWithFunctionOptionsCompletionHandler {
         @Generated
         void call_newComputePipelineStateWithFunctionOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object computePipelineState,
-                MTLComputePipelineReflection _Nullable_result);
+                @Mapped(ObjCObjectMapper.class) Object computePipelineState, MTLComputePipelineReflection reflection,
+                NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -484,8 +484,8 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object renderPipelineState,
-                MTLRenderPipelineReflection _Nullable_result);
+                @Mapped(ObjCObjectMapper.class) Object renderPipelineState, MTLRenderPipelineReflection reflection,
+                NSError error);
     }
 
     /**
@@ -602,8 +602,8 @@ public interface MTLDevice {
     public interface Block_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler {
         @Generated
         void call_newRenderPipelineStateWithTileDescriptorOptionsCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object renderPipelineState,
-                MTLRenderPipelineReflection _Nullable_result);
+                @Mapped(ObjCObjectMapper.class) Object renderPipelineState, MTLRenderPipelineReflection reflection,
+                NSError error);
     }
 
     /**

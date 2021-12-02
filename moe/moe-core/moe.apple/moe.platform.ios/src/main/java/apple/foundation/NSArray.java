@@ -303,11 +303,11 @@ public class NSArray<_ObjectType> extends NSObject
      */
     @Generated
     @Selector("getObjects:")
-    public native void getObjects(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects);
+    public native void getObjects(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects);
 
     @Generated
     @Selector("getObjects:range:")
-    public native void getObjectsRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
+    public native void getObjectsRange(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
             @ByValue NSRange range);
 
     @Generated

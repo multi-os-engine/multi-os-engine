@@ -259,7 +259,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVCompositionTrack _Nullable_result, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(AVCompositionTrack arg0, NSError arg1);
     }
 
     /**

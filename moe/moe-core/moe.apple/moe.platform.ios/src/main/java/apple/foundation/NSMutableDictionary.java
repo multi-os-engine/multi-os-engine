@@ -132,18 +132,18 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Generated
     @Selector("dictionaryWithObject:forKey:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectForKey(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object, @Mapped(ObjCObjectMapper.class) Object key);
+            @Mapped(ObjCObjectMapper.class) _ObjectType object, @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsForKeys(
-            NSArray<_ObjectType> objects, NSArray<?> keys);
+            NSArray<_ObjectType> objects, NSArray<_KeyType> keys);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSMutableDictionary<?, ?> dictionaryWithObjectsForKeysCount(
             @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -209,7 +209,7 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Generated
     @Selector("sharedKeySetForKeys:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<?> keys);
+    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<_KeyType> keys);
 
     @Generated
     @Selector("superclass")
@@ -259,13 +259,14 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
 
     @Generated
     @Selector("initWithObjects:forKeys:")
-    public native NSMutableDictionary<?, ?> initWithObjectsForKeys(NSArray<_ObjectType> objects, NSArray<?> keys);
+    public native NSMutableDictionary<?, ?> initWithObjectsForKeys(NSArray<_ObjectType> objects,
+            NSArray<_KeyType> keys);
 
     @Generated
     @Selector("initWithObjects:forKeys:count:")
     public native NSMutableDictionary<?, ?> initWithObjectsForKeysCount(
             @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -292,12 +293,12 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     @Generated
     @Selector("setObject:forKey:")
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
-            @Mapped(ObjCObjectMapper.class) Object aKey);
+            @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj,
-            @Mapped(ObjCObjectMapper.class) Object key);
+            @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Override
     public void clear() {
@@ -409,7 +410,7 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
                 throw new NullPointerException();
             }
             boolean cont = dict.containsKey(e.getKey());
-            dict.setObjectForKey((_ObjectType)e.getValue(), e.getKey());
+            dict.setObjectForKey((_ObjectType)e.getValue(), (_KeyType)e.getKey());
             return !cont;
         }
 
@@ -425,7 +426,7 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
             }
             boolean changed = false;
             for (Entry e : coll) {
-                dict.setObjectForKey((_ObjectType)e.getValue(), e.getKey());
+                dict.setObjectForKey((_ObjectType)e.getValue(), (_KeyType)e.getKey());
                 changed = true;
             }
             return changed;

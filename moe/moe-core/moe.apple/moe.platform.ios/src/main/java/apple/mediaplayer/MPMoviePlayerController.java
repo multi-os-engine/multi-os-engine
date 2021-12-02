@@ -170,6 +170,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Indicates whether the movie player allows AirPlay video playback. Defaults to YES on iOS 5.0 and later.
      */
+    @Deprecated
     @Generated
     @Selector("allowsAirPlay")
     public native boolean allowsAirPlay();
@@ -177,6 +178,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * A view for customization which is always displayed behind movie content.
      */
+    @Deprecated
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
@@ -192,10 +194,12 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Cancels all pending asynchronous thumbnail requests.
      */
+    @Deprecated
     @Generated
     @Selector("cancelAllThumbnailImageRequests")
     public native void cancelAllThumbnailImageRequests();
 
+    @Deprecated
     @Generated
     @Selector("contentURL")
     public native NSURL contentURL();
@@ -203,6 +207,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The style of the playback controls. Defaults to MPMovieControlStyleDefault.
      */
+    @Deprecated
     @Generated
     @Selector("controlStyle")
     @NInt
@@ -219,6 +224,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The duration of the movie, or 0.0 if not known.
      */
+    @Deprecated
     @Generated
     @Selector("duration")
     public native double duration();
@@ -226,6 +232,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The end time of movie playback. Defaults to NaN, which indicates natural end time of the movie.
      */
+    @Deprecated
     @Generated
     @Selector("endPlaybackTime")
     public native double endPlaybackTime();
@@ -246,6 +253,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("init")
     public native MPMoviePlayerController init();
 
+    @Deprecated
     @Generated
     @Selector("initWithContentURL:")
     public native MPMoviePlayerController initWithContentURL(NSURL url);
@@ -253,6 +261,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The start time of movie playback. Defaults to NaN, indicating the natural start time of the movie.
      */
+    @Deprecated
     @Generated
     @Selector("initialPlaybackTime")
     public native double initialPlaybackTime();
@@ -260,6 +269,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Indicates whether the movie player is currently playing video via AirPlay.
      */
+    @Deprecated
     @Generated
     @Selector("isAirPlayVideoActive")
     public native boolean isAirPlayVideoActive();
@@ -268,6 +278,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is NO.
      * Setting this property to YES before the movie player's view is visible will have no effect.
      */
+    @Deprecated
     @Generated
     @Selector("isFullscreen")
     public native boolean isFullscreen();
@@ -276,6 +287,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is NO.
      * Setting this property to YES before the movie player's view is visible will have no effect.
      */
+    @Deprecated
     @Generated
     @Selector("setFullscreen:")
     public native void setFullscreen(boolean value);
@@ -287,6 +299,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Returns the network load state of the movie player.
      */
+    @Deprecated
     @Generated
     @Selector("loadState")
     @NUInt
@@ -295,6 +308,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The types of media in the movie, or MPMovieMediaTypeNone if not known.
      */
+    @Deprecated
     @Generated
     @Selector("movieMediaTypes")
     @NUInt
@@ -304,6 +318,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * The playback type of the movie. Defaults to MPMovieSourceTypeUnknown.
      * Specifying a playback type before playing the movie can result in faster load times.
      */
+    @Deprecated
     @Generated
     @Selector("movieSourceType")
     @NInt
@@ -312,6 +327,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The natural size of the movie, or CGSizeZero if not known/applicable.
      */
+    @Deprecated
     @Generated
     @Selector("naturalSize")
     @ByValue
@@ -328,6 +344,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The currently playable duration of the movie, for progressively downloaded network content.
      */
+    @Deprecated
     @Generated
     @Selector("playableDuration")
     public native double playableDuration();
@@ -335,6 +352,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Returns the current playback state of the movie player.
      */
+    @Deprecated
     @Generated
     @Selector("playbackState")
     @NInt
@@ -355,6 +373,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Determines how the movie player repeats when reaching the end of playback. Defaults to MPMovieRepeatModeNone.
      */
+    @Deprecated
     @Generated
     @Selector("repeatMode")
     @NInt
@@ -364,6 +383,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * Asynchronously request thumbnails for one or more times, provided as an array of NSNumbers (double).
      * Posts MPMoviePlayerThumbnailImageRequestDidFinishNotification on completion.
      */
+    @Deprecated
     @Generated
     @Selector("requestThumbnailImagesAtTimes:timeOption:")
     public native void requestThumbnailImagesAtTimesTimeOption(NSArray<?> playbackTimes, @NInt long option);
@@ -371,6 +391,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Determines how the content scales to fit the view. Defaults to MPMovieScalingModeAspectFit.
      */
+    @Deprecated
     @Generated
     @Selector("scalingMode")
     @NInt
@@ -379,10 +400,12 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Indicates whether the movie player allows AirPlay video playback. Defaults to YES on iOS 5.0 and later.
      */
+    @Deprecated
     @Generated
     @Selector("setAllowsAirPlay:")
     public native void setAllowsAirPlay(boolean value);
 
+    @Deprecated
     @Generated
     @Selector("setContentURL:")
     public native void setContentURL(NSURL value);
@@ -390,6 +413,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The style of the playback controls. Defaults to MPMovieControlStyleDefault.
      */
+    @Deprecated
     @Generated
     @Selector("setControlStyle:")
     public native void setControlStyle(@NInt long value);
@@ -405,10 +429,12 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The end time of movie playback. Defaults to NaN, which indicates natural end time of the movie.
      */
+    @Deprecated
     @Generated
     @Selector("setEndPlaybackTime:")
     public native void setEndPlaybackTime(double value);
 
+    @Deprecated
     @Generated
     @Selector("setFullscreen:animated:")
     public native void setFullscreenAnimated(boolean fullscreen, boolean animated);
@@ -416,6 +442,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The start time of movie playback. Defaults to NaN, indicating the natural start time of the movie.
      */
+    @Deprecated
     @Generated
     @Selector("setInitialPlaybackTime:")
     public native void setInitialPlaybackTime(double value);
@@ -424,6 +451,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * The playback type of the movie. Defaults to MPMovieSourceTypeUnknown.
      * Specifying a playback type before playing the movie can result in faster load times.
      */
+    @Deprecated
     @Generated
     @Selector("setMovieSourceType:")
     public native void setMovieSourceType(@NInt long value);
@@ -431,6 +459,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Determines how the movie player repeats when reaching the end of playback. Defaults to MPMovieRepeatModeNone.
      */
+    @Deprecated
     @Generated
     @Selector("setRepeatMode:")
     public native void setRepeatMode(@NInt long value);
@@ -438,6 +467,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Determines how the content scales to fit the view. Defaults to MPMovieScalingModeAspectFit.
      */
+    @Deprecated
     @Generated
     @Selector("setScalingMode:")
     public native void setScalingMode(@NInt long value);
@@ -445,6 +475,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g. network conditions. Defaults to YES.
      */
+    @Deprecated
     @Generated
     @Selector("setShouldAutoplay:")
     public native void setShouldAutoplay(boolean value);
@@ -461,6 +492,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g. network conditions. Defaults to YES.
      */
+    @Deprecated
     @Generated
     @Selector("shouldAutoplay")
     public native boolean shouldAutoplay();
@@ -473,6 +505,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * Returns a thumbnail at the given time.
      * Deprecated.  Use -requestThumbnailImagesAtTimes:timeOption: / MPMoviePlayerThumbnailImageRequestDidFinishNotification instead.
      */
+    @Deprecated
     @Generated
     @Selector("thumbnailImageAtTime:timeOption:")
     public native UIImage thumbnailImageAtTimeTimeOption(double playbackTime, @NInt long option);
@@ -497,6 +530,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The view in which the media and playback controls are displayed.
      */
+    @Deprecated
     @Generated
     @Selector("view")
     public native UIView view();

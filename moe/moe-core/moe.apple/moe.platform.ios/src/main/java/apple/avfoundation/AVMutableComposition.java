@@ -394,7 +394,7 @@ public class AVMutableComposition extends AVComposition {
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVMutableCompositionTrack _Nullable_result, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(AVMutableCompositionTrack arg0, NSError arg1);
     }
 
     /**

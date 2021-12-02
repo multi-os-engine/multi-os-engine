@@ -7149,6 +7149,11 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
+    public static native float vrndns_f32(float __p0);
+
+    @Generated
+    @Inline
+    @CFunction
     public static native int vsha1h_u32(int __p0);
 
     @Generated
@@ -7669,7 +7674,7 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
-    public static native short vqmovuns_s32(int __p0);
+    public static native char vqmovuns_s32(int __p0);
 
     @Generated
     @Inline
@@ -7729,7 +7734,7 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
-    public static native char vqrshlh_u16(char __p0, char __p1);
+    public static native char vqrshlh_u16(char __p0, short __p1);
 
     @Generated
     @Inline
@@ -7769,7 +7774,7 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
-    public static native char vqshlh_u16(char __p0, char __p1);
+    public static native char vqshlh_u16(char __p0, short __p1);
 
     @Generated
     @Inline
@@ -7919,7 +7924,7 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
-    public static native char vsqaddh_u16(char __p0, char __p1);
+    public static native char vsqaddh_u16(char __p0, short __p1);
 
     @Generated
     @Inline
@@ -7959,7 +7964,7 @@ public final class Globals {
     @Generated
     @Inline
     @CFunction
-    public static native short vuqaddh_s16(short __p0, short __p1);
+    public static native short vuqaddh_s16(short __p0, char __p1);
 
     @Generated
     @CFunction

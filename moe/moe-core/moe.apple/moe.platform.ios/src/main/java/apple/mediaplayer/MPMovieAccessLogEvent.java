@@ -157,6 +157,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The URI of the playback item.
      */
+    @Deprecated
     @Generated
     @Selector("URI")
     public native String URI();
@@ -170,6 +171,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The accumulated duration of the media played, in seconds.
      */
+    @Deprecated
     @Generated
     @Selector("durationWatched")
     public native double durationWatched();
@@ -177,6 +179,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The throughput required to play the stream, as advertised by the server, in bits per second.
      */
+    @Deprecated
     @Generated
     @Selector("indicatedBitrate")
     public native double indicatedBitrate();
@@ -188,6 +191,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The accumulated number of bytes transferred. The value is negative if unknown.
      */
+    @Deprecated
     @Generated
     @Selector("numberOfBytesTransferred")
     public native long numberOfBytesTransferred();
@@ -195,6 +199,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The total number of dropped video frames.
      */
+    @Deprecated
     @Generated
     @Selector("numberOfDroppedVideoFrames")
     @NInt
@@ -203,6 +208,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * A count of media segments downloaded from the server to this client.
      */
+    @Deprecated
     @Generated
     @Selector("numberOfSegmentsDownloaded")
     @NUInt
@@ -211,6 +217,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * A count of changes to the serverAddress property over the last uninterrupted period of playback.
      */
+    @Deprecated
     @Generated
     @Selector("numberOfServerAddressChanges")
     @NUInt
@@ -219,6 +226,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The total number of playback stalls encountered. The value is negative if unknown.
      */
+    @Deprecated
     @Generated
     @Selector("numberOfStalls")
     @NInt
@@ -227,6 +235,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The empirical throughput across all media downloaded, in bits per second.
      */
+    @Deprecated
     @Generated
     @Selector("observedBitrate")
     public native double observedBitrate();
@@ -234,6 +243,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * A GUID that identifies the playback session. This value is used in HTTP requests.
      */
+    @Deprecated
     @Generated
     @Selector("playbackSessionID")
     public native String playbackSessionID();
@@ -241,6 +251,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The date/time at which playback began for this event.
      */
+    @Deprecated
     @Generated
     @Selector("playbackStartDate")
     public native NSDate playbackStartDate();
@@ -248,6 +259,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * An offset into the playlist where the last uninterrupted period of playback began, in seconds. The value is negative if unknown.
      */
+    @Deprecated
     @Generated
     @Selector("playbackStartOffset")
     public native double playbackStartOffset();
@@ -255,6 +267,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The accumulated duration of the media downloaded, in seconds. The value is negative if unknown.
      */
+    @Deprecated
     @Generated
     @Selector("segmentsDownloadedDuration")
     public native double segmentsDownloadedDuration();
@@ -262,6 +275,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     /**
      * The IP address of the server that was the source of the last delivered media segment. Can be either an IPv4 or IPv6 address.
      */
+    @Deprecated
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();

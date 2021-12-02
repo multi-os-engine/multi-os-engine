@@ -167,7 +167,6 @@ public class EKParticipant extends EKObject implements NSCopying {
      * passed. If we cannot find the participant, nil is returned.
      */
     @Generated
-    @Deprecated
     @Selector("ABRecordWithAddressBook:")
     public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
 

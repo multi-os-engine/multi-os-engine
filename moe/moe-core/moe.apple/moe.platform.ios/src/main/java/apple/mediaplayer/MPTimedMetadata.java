@@ -152,6 +152,7 @@ public class MPTimedMetadata extends NSObject {
     /**
      * A dictionary containing all metadata information associated with this object, which may hold additional key-specific data (see below).
      */
+    @Deprecated
     @Generated
     @Selector("allMetadata")
     public native NSDictionary<?, ?> allMetadata();
@@ -163,6 +164,7 @@ public class MPTimedMetadata extends NSObject {
     /**
      * A key which identifies a piece of timed metadata.
      */
+    @Deprecated
     @Generated
     @Selector("key")
     public native String key();
@@ -170,6 +172,7 @@ public class MPTimedMetadata extends NSObject {
     /**
      * The namespace of the identifying key.
      */
+    @Deprecated
     @Generated
     @Selector("keyspace")
     public native String keyspace();
@@ -177,6 +180,7 @@ public class MPTimedMetadata extends NSObject {
     /**
      * The timestamp of the metadata, in the timebase of the media stream.
      */
+    @Deprecated
     @Generated
     @Selector("timestamp")
     public native double timestamp();
@@ -184,6 +188,7 @@ public class MPTimedMetadata extends NSObject {
     /**
      * The object value of the metadata.
      */
+    @Deprecated
     @Generated
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)

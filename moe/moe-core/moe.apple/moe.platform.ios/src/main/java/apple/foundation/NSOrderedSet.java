@@ -294,7 +294,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     @Generated
     @Selector("getObjects:range:")
-    public native void getObjectsRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
+    public native void getObjectsRange(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
             @ByValue NSRange range);
 
     @Generated

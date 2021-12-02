@@ -299,6 +299,10 @@ EXPORT void __natj_inline__dispatch_once_f(dispatch_once_t * _Nonnull predicate,
 
 #ifdef __aarch64__
 
+EXPORT float32_t __natj_inline_vrndns_f32(float32_t __p0) {
+	return vrndns_f32(__p0);
+}
+
 EXPORT uint32_t __natj_inline_vsha1h_u32(uint32_t __p0) {
 	return vsha1h_u32(__p0);
 }
@@ -359,7 +363,7 @@ EXPORT uint64_t __natj_inline_vceqd_u64(uint64_t __p0, uint64_t __p1) {
 	return vceqd_u64(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vceqd_s64(int64_t __p0, int64_t __p1) {
+EXPORT uint64_t __natj_inline_vceqd_s64(int64_t __p0, int64_t __p1) {
 	return vceqd_s64(__p0, __p1);
 }
 
@@ -375,7 +379,7 @@ EXPORT uint64_t __natj_inline_vceqzd_u64(uint64_t __p0) {
 	return vceqzd_u64(__p0);
 }
 
-EXPORT int64_t __natj_inline_vceqzd_s64(int64_t __p0) {
+EXPORT uint64_t __natj_inline_vceqzd_s64(int64_t __p0) {
 	return vceqzd_s64(__p0);
 }
 
@@ -387,7 +391,7 @@ EXPORT uint32_t __natj_inline_vceqzs_f32(float32_t __p0) {
 	return vceqzs_f32(__p0);
 }
 
-EXPORT int64_t __natj_inline_vcged_s64(int64_t __p0, int64_t __p1) {
+EXPORT uint64_t __natj_inline_vcged_s64(int64_t __p0, int64_t __p1) {
 	return vcged_s64(__p0, __p1);
 }
 
@@ -403,7 +407,7 @@ EXPORT uint32_t __natj_inline_vcges_f32(float32_t __p0, float32_t __p1) {
 	return vcges_f32(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vcgezd_s64(int64_t __p0) {
+EXPORT uint64_t __natj_inline_vcgezd_s64(int64_t __p0) {
 	return vcgezd_s64(__p0);
 }
 
@@ -415,7 +419,7 @@ EXPORT uint32_t __natj_inline_vcgezs_f32(float32_t __p0) {
 	return vcgezs_f32(__p0);
 }
 
-EXPORT int64_t __natj_inline_vcgtd_s64(int64_t __p0, int64_t __p1) {
+EXPORT uint64_t __natj_inline_vcgtd_s64(int64_t __p0, int64_t __p1) {
 	return vcgtd_s64(__p0, __p1);
 }
 
@@ -431,7 +435,7 @@ EXPORT uint32_t __natj_inline_vcgts_f32(float32_t __p0, float32_t __p1) {
 	return vcgts_f32(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vcgtzd_s64(int64_t __p0) {
+EXPORT uint64_t __natj_inline_vcgtzd_s64(int64_t __p0) {
 	return vcgtzd_s64(__p0);
 }
 
@@ -447,7 +451,7 @@ EXPORT uint64_t __natj_inline_vcled_u64(uint64_t __p0, uint64_t __p1) {
 	return vcled_u64(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vcled_s64(int64_t __p0, int64_t __p1) {
+EXPORT uint64_t __natj_inline_vcled_s64(int64_t __p0, int64_t __p1) {
 	return vcled_s64(__p0, __p1);
 }
 
@@ -459,7 +463,7 @@ EXPORT uint32_t __natj_inline_vcles_f32(float32_t __p0, float32_t __p1) {
 	return vcles_f32(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vclezd_s64(int64_t __p0) {
+EXPORT uint64_t __natj_inline_vclezd_s64(int64_t __p0) {
 	return vclezd_s64(__p0);
 }
 
@@ -475,7 +479,7 @@ EXPORT uint64_t __natj_inline_vcltd_u64(uint64_t __p0, uint64_t __p1) {
 	return vcltd_u64(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vcltd_s64(int64_t __p0, int64_t __p1) {
+EXPORT uint64_t __natj_inline_vcltd_s64(int64_t __p0, int64_t __p1) {
 	return vcltd_s64(__p0, __p1);
 }
 
@@ -487,7 +491,7 @@ EXPORT uint32_t __natj_inline_vclts_f32(float32_t __p0, float32_t __p1) {
 	return vclts_f32(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vcltzd_s64(int64_t __p0) {
+EXPORT uint64_t __natj_inline_vcltzd_s64(int64_t __p0) {
 	return vcltzd_s64(__p0);
 }
 
@@ -715,15 +719,15 @@ EXPORT uint8_t __natj_inline_vqmovnh_u16(uint16_t __p0) {
 	return vqmovnh_u16(__p0);
 }
 
-EXPORT int16_t __natj_inline_vqmovuns_s32(int32_t __p0) {
+EXPORT uint16_t __natj_inline_vqmovuns_s32(int32_t __p0) {
 	return vqmovuns_s32(__p0);
 }
 
-EXPORT int32_t __natj_inline_vqmovund_s64(int64_t __p0) {
+EXPORT uint32_t __natj_inline_vqmovund_s64(int64_t __p0) {
 	return vqmovund_s64(__p0);
 }
 
-EXPORT int8_t __natj_inline_vqmovunh_s16(int16_t __p0) {
+EXPORT uint8_t __natj_inline_vqmovunh_s16(int16_t __p0) {
 	return vqmovunh_s16(__p0);
 }
 
@@ -751,19 +755,19 @@ EXPORT int16_t __natj_inline_vqrdmulhh_s16(int16_t __p0, int16_t __p1) {
 	return vqrdmulhh_s16(__p0, __p1);
 }
 
-EXPORT uint8_t __natj_inline_vqrshlb_u8(uint8_t __p0, uint8_t __p1) {
+EXPORT uint8_t __natj_inline_vqrshlb_u8(uint8_t __p0, int8_t __p1) {
 	return vqrshlb_u8(__p0, __p1);
 }
 
-EXPORT uint32_t __natj_inline_vqrshls_u32(uint32_t __p0, uint32_t __p1) {
+EXPORT uint32_t __natj_inline_vqrshls_u32(uint32_t __p0, int32_t __p1) {
 	return vqrshls_u32(__p0, __p1);
 }
 
-EXPORT uint64_t __natj_inline_vqrshld_u64(uint64_t __p0, uint64_t __p1) {
+EXPORT uint64_t __natj_inline_vqrshld_u64(uint64_t __p0, int64_t __p1) {
 	return vqrshld_u64(__p0, __p1);
 }
 
-EXPORT uint16_t __natj_inline_vqrshlh_u16(uint16_t __p0, uint16_t __p1) {
+EXPORT uint16_t __natj_inline_vqrshlh_u16(uint16_t __p0, int16_t __p1) {
 	return vqrshlh_u16(__p0, __p1);
 }
 
@@ -783,19 +787,19 @@ EXPORT int16_t __natj_inline_vqrshlh_s16(int16_t __p0, int16_t __p1) {
 	return vqrshlh_s16(__p0, __p1);
 }
 
-EXPORT uint8_t __natj_inline_vqshlb_u8(uint8_t __p0, uint8_t __p1) {
+EXPORT uint8_t __natj_inline_vqshlb_u8(uint8_t __p0, int8_t __p1) {
 	return vqshlb_u8(__p0, __p1);
 }
 
-EXPORT uint32_t __natj_inline_vqshls_u32(uint32_t __p0, uint32_t __p1) {
+EXPORT uint32_t __natj_inline_vqshls_u32(uint32_t __p0, int32_t __p1) {
 	return vqshls_u32(__p0, __p1);
 }
 
-EXPORT uint64_t __natj_inline_vqshld_u64(uint64_t __p0, uint64_t __p1) {
+EXPORT uint64_t __natj_inline_vqshld_u64(uint64_t __p0, int64_t __p1) {
 	return vqshld_u64(__p0, __p1);
 }
 
-EXPORT uint16_t __natj_inline_vqshlh_u16(uint16_t __p0, uint16_t __p1) {
+EXPORT uint16_t __natj_inline_vqshlh_u16(uint16_t __p0, int16_t __p1) {
 	return vqshlh_u16(__p0, __p1);
 }
 
@@ -871,7 +875,7 @@ EXPORT float32_t __natj_inline_vrecpxs_f32(float32_t __p0) {
 	return vrecpxs_f32(__p0);
 }
 
-EXPORT uint64_t __natj_inline_vrshld_u64(uint64_t __p0, uint64_t __p1) {
+EXPORT uint64_t __natj_inline_vrshld_u64(uint64_t __p0, int64_t __p1) {
 	return vrshld_u64(__p0, __p1);
 }
 
@@ -895,7 +899,7 @@ EXPORT float32_t __natj_inline_vrsqrtss_f32(float32_t __p0, float32_t __p1) {
 	return vrsqrtss_f32(__p0, __p1);
 }
 
-EXPORT uint64_t __natj_inline_vshld_u64(uint64_t __p0, uint64_t __p1) {
+EXPORT uint64_t __natj_inline_vshld_u64(uint64_t __p0, int64_t __p1) {
 	return vshld_u64(__p0, __p1);
 }
 
@@ -903,19 +907,19 @@ EXPORT int64_t __natj_inline_vshld_s64(int64_t __p0, int64_t __p1) {
 	return vshld_s64(__p0, __p1);
 }
 
-EXPORT uint8_t __natj_inline_vsqaddb_u8(uint8_t __p0, uint8_t __p1) {
+EXPORT uint8_t __natj_inline_vsqaddb_u8(uint8_t __p0, int8_t __p1) {
 	return vsqaddb_u8(__p0, __p1);
 }
 
-EXPORT uint32_t __natj_inline_vsqadds_u32(uint32_t __p0, uint32_t __p1) {
+EXPORT uint32_t __natj_inline_vsqadds_u32(uint32_t __p0, int32_t __p1) {
 	return vsqadds_u32(__p0, __p1);
 }
 
-EXPORT uint64_t __natj_inline_vsqaddd_u64(uint64_t __p0, uint64_t __p1) {
+EXPORT uint64_t __natj_inline_vsqaddd_u64(uint64_t __p0, int64_t __p1) {
 	return vsqaddd_u64(__p0, __p1);
 }
 
-EXPORT uint16_t __natj_inline_vsqaddh_u16(uint16_t __p0, uint16_t __p1) {
+EXPORT uint16_t __natj_inline_vsqaddh_u16(uint16_t __p0, int16_t __p1) {
 	return vsqaddh_u16(__p0, __p1);
 }
 
@@ -931,23 +935,23 @@ EXPORT uint64_t __natj_inline_vtstd_u64(uint64_t __p0, uint64_t __p1) {
 	return vtstd_u64(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vtstd_s64(int64_t __p0, int64_t __p1) {
+EXPORT uint64_t __natj_inline_vtstd_s64(int64_t __p0, int64_t __p1) {
 	return vtstd_s64(__p0, __p1);
 }
 
-EXPORT int8_t __natj_inline_vuqaddb_s8(int8_t __p0, int8_t __p1) {
+EXPORT int8_t __natj_inline_vuqaddb_s8(int8_t __p0, uint8_t __p1) {
 	return vuqaddb_s8(__p0, __p1);
 }
 
-EXPORT int32_t __natj_inline_vuqadds_s32(int32_t __p0, int32_t __p1) {
+EXPORT int32_t __natj_inline_vuqadds_s32(int32_t __p0, uint32_t __p1) {
 	return vuqadds_s32(__p0, __p1);
 }
 
-EXPORT int64_t __natj_inline_vuqaddd_s64(int64_t __p0, int64_t __p1) {
+EXPORT int64_t __natj_inline_vuqaddd_s64(int64_t __p0, uint64_t __p1) {
 	return vuqaddd_s64(__p0, __p1);
 }
 
-EXPORT int16_t __natj_inline_vuqaddh_s16(int16_t __p0, int16_t __p1) {
+EXPORT int16_t __natj_inline_vuqaddh_s16(int16_t __p0, uint16_t __p1) {
 	return vuqaddh_s16(__p0, __p1);
 }
 

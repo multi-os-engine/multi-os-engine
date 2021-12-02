@@ -250,7 +250,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Generated
     public interface Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler {
         @Generated
-        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData _Nullable_result);
+        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData data, boolean atEOF, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
