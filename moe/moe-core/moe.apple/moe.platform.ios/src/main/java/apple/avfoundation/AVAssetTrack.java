@@ -530,6 +530,6 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     public interface Block_loadSegmentForTrackTimeCompletionHandler {
         @Generated
-        void call_loadSegmentForTrackTimeCompletionHandler(AVAssetTrackSegment _Nullable_result, NSError arg1);
+        void call_loadSegmentForTrackTimeCompletionHandler(AVAssetTrackSegment arg0, NSError arg1);
     }
 }

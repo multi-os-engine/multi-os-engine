@@ -164,6 +164,7 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     /**
      * An ordered collection of MPMovieAccessLogEvent instances that represent the chronological sequence of events contained in the access log.
      */
+    @Deprecated
     @Generated
     @Selector("events")
     public native NSArray<?> events();
@@ -172,6 +173,7 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
      * Returns the webserver access log into a textual format that conforms to the W3C Extended Log File Format for web server log files.
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
      */
+    @Deprecated
     @Generated
     @Selector("extendedLogData")
     public native NSData extendedLogData();
@@ -179,6 +181,7 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     /**
      * Returns the string encoding of the extendedLogData property.
      */
+    @Deprecated
     @Generated
     @Selector("extendedLogDataStringEncoding")
     @NUInt

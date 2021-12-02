@@ -402,7 +402,8 @@ public class GKLeaderboard extends NSObject {
     @Generated
     public interface Block_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler {
         @Generated
-        void call_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler(GKLeaderboardEntry _Nullable_result);
+        void call_loadEntriesForPlayerScopeTimeScopeRangeCompletionHandler(GKLeaderboardEntry localPlayerEntry,
+                NSArray<? extends GKLeaderboardEntry> entries, @NInt long totalPlayerCount, NSError error);
     }
 
     /**
@@ -423,7 +424,8 @@ public class GKLeaderboard extends NSObject {
     @Generated
     public interface Block_loadEntriesForPlayersTimeScopeCompletionHandler {
         @Generated
-        void call_loadEntriesForPlayersTimeScopeCompletionHandler(GKLeaderboardEntry _Nullable_result);
+        void call_loadEntriesForPlayersTimeScopeCompletionHandler(GKLeaderboardEntry localPlayerEntry,
+                NSArray<? extends GKLeaderboardEntry> entries, NSError error);
     }
 
     /**
@@ -455,7 +457,7 @@ public class GKLeaderboard extends NSObject {
     @Generated
     public interface Block_loadPreviousOccurrenceWithCompletionHandler {
         @Generated
-        void call_loadPreviousOccurrenceWithCompletionHandler(GKLeaderboard _Nullable_result);
+        void call_loadPreviousOccurrenceWithCompletionHandler(GKLeaderboard leaderboard, NSError error);
     }
 
     /**

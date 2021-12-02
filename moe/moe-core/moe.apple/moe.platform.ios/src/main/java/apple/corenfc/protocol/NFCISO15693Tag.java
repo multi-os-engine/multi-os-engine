@@ -877,6 +877,6 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     @Generated
     public interface Block_sendRequestWithFlagCommandCodeDataCompletionHandler {
         @Generated
-        void call_sendRequestWithFlagCommandCodeDataCompletionHandler(byte responseFlag, NSData _Nullable_result);
+        void call_sendRequestWithFlagCommandCodeDataCompletionHandler(byte responseFlag, NSData data, NSError error);
     }
 }

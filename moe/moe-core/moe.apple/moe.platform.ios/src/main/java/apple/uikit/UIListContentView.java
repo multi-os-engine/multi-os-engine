@@ -214,7 +214,7 @@ public class UIListContentView extends UIView implements UIContentView {
 
     @Generated
     @Selector("setConfiguration:")
-    public native void setConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
+    public native void setConfiguration(UIContentConfiguration value);
 
     @Generated
     @Selector("debugDescription")

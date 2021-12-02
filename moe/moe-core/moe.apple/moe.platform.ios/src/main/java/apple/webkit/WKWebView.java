@@ -827,7 +827,8 @@ public class WKWebView extends UIView {
     @Generated
     public interface Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler {
         @Generated
-        void call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(int id, NSError error);
+        void call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) Object arg0, NSError error);
     }
 
     /**

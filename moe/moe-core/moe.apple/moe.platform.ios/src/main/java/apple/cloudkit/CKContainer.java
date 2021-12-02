@@ -349,21 +349,21 @@ public class CKContainer extends NSObject {
     @Generated
     public interface Block_discoverUserIdentityWithEmailAddressCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithEmailAddressCompletionHandler(CKUserIdentity _Nullable_result);
+        void call_discoverUserIdentityWithEmailAddressCompletionHandler(CKUserIdentity userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithPhoneNumberCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(CKUserIdentity _Nullable_result);
+        void call_discoverUserIdentityWithPhoneNumberCompletionHandler(CKUserIdentity userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_discoverUserIdentityWithUserRecordIDCompletionHandler {
         @Generated
-        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity _Nullable_result);
+        void call_discoverUserIdentityWithUserRecordIDCompletionHandler(CKUserIdentity userInfo, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -378,7 +378,7 @@ public class CKContainer extends NSObject {
     @Generated
     public interface Block_fetchLongLivedOperationWithIDCompletionHandler {
         @Generated
-        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation _Nullable_result);
+        void call_fetchLongLivedOperationWithIDCompletionHandler(CKOperation outstandingOperation, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

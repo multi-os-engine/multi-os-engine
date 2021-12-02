@@ -656,7 +656,7 @@ public class AVMutableMovie extends AVMovie {
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVMutableMovieTrack _Nullable_result, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(AVMutableMovieTrack arg0, NSError arg1);
     }
 
     /**

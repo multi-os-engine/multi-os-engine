@@ -167,6 +167,7 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("initWithCoder:")
     public native MPMoviePlayerViewController initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("initWithContentURL:")
     public native MPMoviePlayerViewController initWithContentURL(NSURL contentURL);
@@ -175,6 +176,7 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native MPMoviePlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    @Deprecated
     @Generated
     @Selector("moviePlayer")
     public native MPMoviePlayerController moviePlayer();

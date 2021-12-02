@@ -487,7 +487,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Generated
     public interface Block_loadMatchDataWithCompletionHandler {
         @Generated
-        void call_loadMatchDataWithCompletionHandler(NSData _Nullable_result);
+        void call_loadMatchDataWithCompletionHandler(NSData matchData, NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

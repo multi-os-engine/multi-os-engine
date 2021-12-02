@@ -58,6 +58,9 @@
 * `setValueForKey` method in `apple.foundation.NSMutableDictionary` has been removed due to a compiler error
 * `apple.uikit.UIControl` was extended to be able to use custom `TargetActionProxy` and `ITargetAction` classes/interfaces, both of which can be found in the apple.uikit package.
 * `playerDidRequestMatchWithPlayers` method was added to `apple.gamekit.protocol.GKLocalPlayerListener` to override duplicate default methods in 2 parent interfaces.
+* In `apple.foundation.NSDictionary` method was change:
+    * from: `public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> buffer, @NUInt long len);`
+    * to: `public native long countByEnumeratingWithStateObjectsCount(VoidPtr state, @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);`
 * In `apple.callkit.CXCallDirectoryProvider` method was changed:
     * from: `public native void beginRequestWithExtensionContext(CXCallDirectoryExtensionContext context);`
     * to: `public native void beginRequestWithExtensionContext(NSExtensionContext context);`
@@ -70,8 +73,8 @@
     * from `MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage, NSArray<? extends MPSCNNConvolutionGradientState> sourceStates, MPSImage destinationImage);`
     * to: `MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);`
 * In `apple.uikit.UIListContentView` method was changed:
-    * from `void setConfiguration(@Mapped(ObjCObjectMapper.class) UIListContentConfiguration value);`
-    * to: `void setConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);`
+    * from `void setConfiguration(UIListContentConfiguration value);`
+    * to: `void setConfiguration(UIContentConfiguration value);`
 * In `apple.authenticationservices.ASAuthorizationSecurityKeyPublicKeyCredentialAssertionRequest` method was changed:
     * from `void setAllowedCredentials(NSArray<? extends ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor> value);`
     * to: `void setAllowedCredentials(NSArray<?> value);`

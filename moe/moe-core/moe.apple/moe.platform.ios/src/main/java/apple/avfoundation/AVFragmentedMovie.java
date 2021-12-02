@@ -239,7 +239,7 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVFragmentedMovieTrack _Nullable_result, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(AVFragmentedMovieTrack arg0, NSError arg1);
     }
 
     /**

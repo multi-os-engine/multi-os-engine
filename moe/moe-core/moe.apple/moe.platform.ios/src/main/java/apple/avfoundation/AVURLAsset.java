@@ -364,7 +364,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Generated
     public interface Block_findCompatibleTrackForCompositionTrackCompletionHandler {
         @Generated
-        void call_findCompatibleTrackForCompositionTrackCompletionHandler(AVAssetTrack _Nullable_result, NSError arg1);
+        void call_findCompatibleTrackForCompositionTrackCompletionHandler(AVAssetTrack arg0, NSError arg1);
     }
 
     /**

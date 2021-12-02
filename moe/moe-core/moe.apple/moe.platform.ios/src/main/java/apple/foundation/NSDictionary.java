@@ -134,18 +134,18 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     @Selector("dictionaryWithObject:forKey:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectForKey(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object, @Mapped(ObjCObjectMapper.class) Object key);
+            @Mapped(ObjCObjectMapper.class) _ObjectType object, @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeys(
-            NSArray<_ObjectType> objects, NSArray<?> keys);
+            NSArray<_ObjectType> objects, NSArray<_KeyType> keys);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeysCount(
             @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
@@ -208,7 +208,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Generated
     @Selector("sharedKeySetForKeys:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<?> keys);
+    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<_KeyType> keys);
 
     @Generated
     @Selector("superclass")
@@ -354,16 +354,16 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
      */
     @Generated
     @Selector("getObjects:andKeys:")
-    public native void getObjectsAndKeys(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys);
+    public native void getObjectsAndKeys(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys);
 
     /**
      * count refers to the number of elements in the dictionary
      */
     @Generated
     @Selector("getObjects:andKeys:count:")
-    public native void getObjectsAndKeysCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long count);
+    public native void getObjectsAndKeysCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long count);
 
     @Generated
     @Selector("init")
@@ -392,13 +392,13 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
 
     @Generated
     @Selector("initWithObjects:forKeys:")
-    public native NSDictionary<?, ?> initWithObjectsForKeys(NSArray<_ObjectType> objects, NSArray<?> keys);
+    public native NSDictionary<?, ?> initWithObjectsForKeys(NSArray<_ObjectType> objects, NSArray<_KeyType> keys);
 
     @Generated
     @Selector("initWithObjects:forKeys:count:")
     public native NSDictionary<?, ?> initWithObjectsForKeysCount(
             @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> keys, @NUInt long cnt);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
