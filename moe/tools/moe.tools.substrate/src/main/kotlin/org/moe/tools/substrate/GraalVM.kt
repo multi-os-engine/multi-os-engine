@@ -50,6 +50,14 @@ class GraalVM(
             "Support Java 11 based GraalVM only"
         }
 
+        require (version.vmVersion >= MIN_GRAALVM_VERSION) {
+            "Support GraalVM $MIN_GRAALVM_VERSION and later"
+        }
+
+        if (version.vmVersion > MAX_GRAALVM_VERSION) {
+            LOG.warn("Using GraalVM version higher than $MAX_GRAALVM_VERSION. This version has not been tested and might not work")
+        }
+
         ensureNativeImage()
     }
 
@@ -158,7 +166,14 @@ class GraalVM(
             val interim: Int,
             val update: Int,
             val patch: Int
-    ) {
+    ): Comparable<JDKVersion> {
+
+        override fun compareTo(other: JDKVersion): Int = compareValuesBy(this, other,
+            { it.feature },
+            { it.interim },
+            { it.update },
+            { it.patch }
+        )
 
         override fun toString(): String {
             return if (feature <= 8) {
@@ -236,7 +251,14 @@ class GraalVM(
             val feature: Int,
             val patch: Int,
             val bugfix: Int,
-    ) {
+    ): Comparable<GraalVMVersion> {
+        override fun compareTo(other: GraalVMVersion): Int = compareValuesBy(this, other,
+            { it.year },
+            { it.feature },
+            { it.patch },
+            { it.bugfix }
+        )
+
         override fun toString(): String {
             val base = "$year.$feature.$patch"
             return if (bugfix > 0) {
@@ -269,5 +291,11 @@ class GraalVM(
         private const val MAC_ATTR_COM_APPLE_QUARANTINE = "com.apple.quarantine"
 
         private fun List<String>.parseComponent(index: Int): Int = getOrNull(index)?.toInt() ?: 0
+
+        /** Minimum supported version, inclusive */
+        private val MIN_GRAALVM_VERSION = GraalVMVersion(21, 3, 0, 0)
+
+        /** Latest GraalVM version that has been tested with */
+        private val MAX_GRAALVM_VERSION = GraalVMVersion(21, 3, 0, 0)
     }
 }
