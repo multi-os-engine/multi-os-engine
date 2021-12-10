@@ -142,7 +142,6 @@ class SubstrateExecutor(
                 "AMD64LibCHelperDirectives.cap",
                 "BuiltinDirectives.cap",
                 "JNIHeaderDirectives.cap",
-                "LibFFIHeaderDirectives.cap",
                 "LLVMDirectives.cap",
                 "PosixDirectives.cap",
         )
