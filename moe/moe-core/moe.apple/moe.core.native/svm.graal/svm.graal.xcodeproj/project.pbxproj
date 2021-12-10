@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		55815C222624889C005B6E03 /* amd64cpufeatures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amd64cpufeatures.h; path = src/com.oracle.svm.native.libchelper/include/amd64cpufeatures.h; sourceTree = "<group>"; };
+		5593D3C22762D7C800411CCC /* amd64hotspotcpuinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = amd64hotspotcpuinfo.h; path = src/com.oracle.svm.native.libchelper/include/amd64hotspotcpuinfo.h; sourceTree = "<group>"; };
 		55B98D0A2629F0CE006CABE4 /* aarch64cpufeatures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = aarch64cpufeatures.h; path = src/com.oracle.svm.native.libchelper/include/aarch64cpufeatures.h; sourceTree = "<group>"; };
 		55B98D13262A084E006CABE4 /* cpuid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = cpuid.c; path = src/com.oracle.svm.native.libchelper/src/cpuid.c; sourceTree = "<group>"; };
 		5A7FF98F261CAE7500129BCA /* libjvm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjvm.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +50,7 @@
 			children = (
 				55B98D0A2629F0CE006CABE4 /* aarch64cpufeatures.h */,
 				55815C222624889C005B6E03 /* amd64cpufeatures.h */,
+				5593D3C22762D7C800411CCC /* amd64hotspotcpuinfo.h */,
 				5A7FF9A6261CAF0200129BCA /* codeSynchronization.c */,
 				55B98D13262A084E006CABE4 /* cpuid.c */,
 				5A7FF9A5261CAF0200129BCA /* cSunMiscSignal.c */,
