@@ -5,7 +5,9 @@ task('jdk_gensrc', type: Script) {
     progress 'Fetching boot JDK'
     rawWorkDir external.svm.mx
     def bootJDK = file("${external.svm.root}/bootJDK").absolutePath
-    exec 'arch', '-x86_64', './mx',
+    env 'MX_PYTHON', 'python3'
+    exec './mx',
+            '--arch', 'amd64',
             '-y', '--no-warning',
             'fetch-jdk',
             '--java-distribution', 'labsjdk-ce-11',
