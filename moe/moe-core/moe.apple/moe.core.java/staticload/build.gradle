@@ -14,10 +14,17 @@
  * limitations under the License.
  */
 
+import org.gradle.internal.jvm.Jvm
+
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-dependencies {
+def currentJvm = Jvm.current()
+if (Integer.parseInt(currentJvm.javaVersion.majorVersion) <= 8) {
+    dependencies {
+        compile files(javax.tools.ToolProvider.systemToolClassLoader.asType(URLClassLoader).URLs
+                .find({it.toString().endsWith("tools.jar")}))
+    }
 }
