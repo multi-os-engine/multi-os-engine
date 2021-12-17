@@ -5,35 +5,48 @@ import java.io.IOException
 import java.io.InputStream
 import java.nio.file.Files
 import java.nio.file.Path
-import java.nio.file.StandardCopyOption
 import java.nio.file.StandardOpenOption
 import java.util.jar.JarFile
 
-fun Iterable<File>.classAndJarInputIterator(consumer: (InputStream) -> Unit): Unit = forEach {
-    if (!it.exists()) {
-        return@forEach
+fun File.classpathIterator(consumer: (path: String, inputStream: InputStream) -> Unit, filter: (path: String) -> Boolean) {
+    if (!this.exists()) {
+        return
     }
 
-    if (it.isDirectory) {
-        it.walk().forEach walk@{ f ->
-            if (f.isDirectory || !f.name.endsWith(".class")) {
+    if (this.isDirectory) {
+        this.walk().forEach walk@{ f ->
+            if (f.isDirectory) {
                 return@walk
             }
 
-            f.inputStream().use(consumer)
+            val relPath = f.relativeToOrSelf(this)
+
+            if (!filter(relPath.path)) {
+                return@walk
+            }
+
+            f.inputStream().use {
+                it.reader()
+                consumer(relPath.path, it) }
         }
-    } else if (it.name.endsWith(".jar")) {
-        val file = JarFile(it)
+    } else if (this.name.endsWith(".jar")) {
+        val file = JarFile(this)
 
         file.stream().forEach jar@{ entry ->
-            if (!entry.name.endsWith(".class")) {
+            if (!filter(entry.name)) {
                 return@jar
             }
 
-            file.getInputStream(entry).use(consumer)
+            file.getInputStream(entry).use { consumer(entry.name, it) }
         }
     }
 }
+
+fun Iterable<File>.classpathIterator(consumer: (path: String, inputStream: InputStream) -> Unit, filter: (path: String) -> Boolean): Unit = forEach {
+    it.classpathIterator(consumer, filter)
+}
+
+fun Iterable<File>.classAndJarInputIterator(consumer: (path: String, inputStream: InputStream) -> Unit): Unit = classpathIterator(consumer) { it.endsWith(".class") }
 
 fun File.prepareDir(): Boolean {
     return if (this.exists()) {
