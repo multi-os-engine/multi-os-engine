@@ -24,8 +24,8 @@ object ClassValidator {
             val classSaver = ClassSaver(outputDir.resolve(OUTPUT_CLASSES))
             val reflectionConfig = ReflectionConfig()
 
-            inputFiles.classAndJarInputIterator {
-                val cr = ClassReader(it)
+            inputFiles.classAndJarInputIterator { _, inputStream ->
+                val cr = ClassReader(inputStream)
 
                 val byteCode = processClass(cr) { next ->
                     next

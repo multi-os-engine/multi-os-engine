@@ -24,8 +24,8 @@ object ProtocolCollector {
         ContextClassLoaderHolder(
             ChildFirstClassLoader(classpath.map { it.toURI().toURL() }.toTypedArray())
         ).use {
-            inputFiles.classAndJarInputIterator {
-                val cr = ClassReader(it)
+            inputFiles.classAndJarInputIterator { _, inputStream ->
+                val cr = ClassReader(inputStream)
 
                 cr.accept(object : ClassVisitor(Opcodes.ASM6) {
 

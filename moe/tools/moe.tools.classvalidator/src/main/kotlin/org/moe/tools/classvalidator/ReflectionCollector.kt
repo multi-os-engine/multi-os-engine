@@ -19,8 +19,8 @@ object ReflectionCollector {
         ).use {
             val reflectionConfig = ReflectionConfig()
 
-            inputFiles.classAndJarInputIterator {
-                val cr = ClassReader(it)
+            inputFiles.classAndJarInputIterator { _, inputStream ->
+                val cr = ClassReader(inputStream)
                 cr.accept(CollectReflectionConfig(
                     config = reflectionConfig,
                     collectAll = true,
