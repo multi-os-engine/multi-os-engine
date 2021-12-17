@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
+import kotlin.Unit;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
 import org.gradle.api.Task;
@@ -32,6 +33,7 @@ import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.compile.JavaCompile;
+import org.moe.common.utils.FileUtilsKt;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
@@ -42,9 +44,14 @@ import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
 import org.moe.tools.classvalidator.natj.ProtocolCollector;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -215,6 +222,33 @@ public class ProGuard extends AbstractBaseTask {
         @NotNull final File baseCfgFile = getBaseCfgFile();
         startSection(conf, "Appending from " + baseCfgFile);
         conf.append(FileUtils.read(baseCfgFile));
+
+        // Add external configuration
+        PathMatcher externalCfgMatcher = FileSystems.getDefault().getPathMatcher("glob:META-INF/proguard/*.pro");
+        getInJars().forEach(jar-> {
+            FileUtilsKt.classpathIterator(jar, (path, inputStream) -> {
+                String fullPath;
+                if (jar.isFile()) {
+                    fullPath = jar.getAbsolutePath() + "!/" + path;
+                } else {
+                    fullPath = new File(jar, path).getAbsolutePath();
+                }
+                LOG.debug("Append proguard rule from {}", fullPath);
+                startSection(conf, "Appending from " + fullPath);
+
+                try (BufferedReader isr = new BufferedReader(
+                    new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+                    String line;
+                    while ((line = isr.readLine()) != null) {
+                        conf.append(line).append('\n');
+                    }
+                } catch (IOException e) {
+                    throw new GradleException("Failed to read " + fullPath, e);
+                }
+
+                return Unit.INSTANCE;
+            }, path -> externalCfgMatcher.matches(new File(path).toPath()));
+        });
 
         // Add used protocols
         {

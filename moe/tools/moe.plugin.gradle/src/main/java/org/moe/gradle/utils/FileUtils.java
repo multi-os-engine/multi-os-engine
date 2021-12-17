@@ -123,7 +123,7 @@ public class FileUtils {
             @NotNull FileCollection fileCollection,
             @NotNull Consumer<InputStream> consumer
     ) {
-        FileUtilsKt.classAndJarInputIterator(fileCollection, inputStream -> {
+        FileUtilsKt.classAndJarInputIterator(fileCollection, (path, inputStream) -> {
             consumer.accept(inputStream);
             return Unit.INSTANCE;
         });
