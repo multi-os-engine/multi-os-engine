@@ -142,7 +142,14 @@ object NatJRuntime {
     ): List<Method> {
         val ps: MutableSet<Class<*>> = linkedSetOf()
 
-        var s: Class<*>? = superName?.let { getClassFor(it) }
+        fun tryGetClassFor(cls: String): Class<*>? = try {
+            getClassFor(cls)
+        } catch (_: ClassNotFoundException) {
+            println("Warning: failed to process class hierarchy, cannot find super class/interface $cls, ignored")
+            null
+        }
+
+        var s: Class<*>? = superName?.let { tryGetClassFor(it) }
         while (s != null) {
             ps.add(s)
 
@@ -150,7 +157,7 @@ object NatJRuntime {
         }
 
         val itfs: LinkedList<Class<*>> = LinkedList()
-        interfaces?.let { itfs.addAll(it.map(this::getClassFor)) }
+        interfaces?.mapNotNullTo(itfs, ::tryGetClassFor)
         while (itfs.isNotEmpty()) {
             val itf = itfs.pop()
             ps.add(itf)
@@ -177,6 +184,10 @@ object NatJRuntime {
                     }
                 }
             } catch (e: NoSuchMethodException) {
+                // Do nothing
+            } catch (e: ClassNotFoundException) {
+                // Do nothing
+            } catch (e: LinkageError) {
                 // Do nothing
             }
         }
