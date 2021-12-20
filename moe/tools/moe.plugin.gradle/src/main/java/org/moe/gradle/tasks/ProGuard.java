@@ -43,7 +43,6 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Require;
-import org.moe.tools.classvalidator.natj.ProtocolCollector;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -282,26 +281,6 @@ public class ProGuard extends AbstractBaseTask {
                 return Unit.INSTANCE;
             }, path -> externalCfgMatcher.matches(new File(path).toPath()));
         });
-
-        // Add used protocols
-        {
-            startSection(conf, "Keep used protocols");
-
-            final HashSet<File> appInputs = new HashSet<>();
-            appInputs.addAll(getInJars().getFiles());
-            appInputs.remove(getMoeSDK().getCoreJar());
-            appInputs.remove(getMoeExtension().getPlatformJar());
-
-            final HashSet<File> classpath = new HashSet<>();
-            classpath.addAll(getInJars().getFiles());
-            classpath.addAll(getLibraryJars().getFiles());
-
-            Set<String> usedProtocols = ProtocolCollector.process(appInputs, classpath);
-            for (String protocol : usedProtocols) {
-                // TODO: keep only used methods, not everything from this class
-                conf.append("-keep class ").append(protocol.replace('/', '.')).append(" { *; }\n");
-            }
-        }
 
         // Add appending configuration
         @Nullable final File appendCfgFile = getAppendCfgFile();
