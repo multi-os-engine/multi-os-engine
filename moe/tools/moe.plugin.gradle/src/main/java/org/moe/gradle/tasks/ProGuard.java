@@ -26,6 +26,7 @@ import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.tasks.Classpath;
+import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.Internal;
@@ -56,7 +57,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -69,6 +72,7 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_BASE_CFG_FILE = "baseCfgFile";
     private static final String CONVENTION_APPEND_CFG_FILE = "appendCfgFile";
     private static final String CONVENTION_IN_JARS = "inJars";
+    private static final String CONVENTION_EXCLUDED_FILES = "excludedFiles";
     private static final String CONVENTION_LIBRARY_JARS = "libraryJars";
     private static final String CONVENTION_OUT_JAR = "outJar";
     private static final String CONVENTION_COMPOSED_CFG_FILE = "composedCfgFile";
@@ -134,6 +138,20 @@ public class ProGuard extends AbstractBaseTask {
     }
 
     @Nullable
+    private Set<String> excludedFiles;
+
+    @Input
+    @NotNull
+    public Collection<String> getExcludedFiles() {
+        return getOrConvention(excludedFiles, CONVENTION_EXCLUDED_FILES);
+    }
+
+    @IgnoreUnused
+    public void setExcludedFiles(@Nullable Collection<String> excludedFiles) {
+        this.excludedFiles = excludedFiles == null ? null : new LinkedHashSet<>(excludedFiles);
+    }
+
+    @Nullable
     private Set<Object> libraryJars;
 
     @InputFiles
@@ -190,14 +208,30 @@ public class ProGuard extends AbstractBaseTask {
         });
     }
 
+    private String composeInputFileFilter() {
+        StringBuilder sb = new StringBuilder();
+        // Add default exclusions
+        sb.append("(!**.framework/**,!**.bundle/**,!module-info.class");
+
+        // Add user specified
+        for (String excludedFile : getExcludedFiles()) {
+            sb.append(",!").append(excludedFile);
+        }
+
+        sb.append(")");
+
+        return sb.toString();
+    }
+
     private void composeConfigurationFile() {
         final StringBuilder conf = new StringBuilder();
 
         // Add injars
         startSection(conf, "Generating -injars");
+        String inputFilter = composeInputFileFilter();
         getInJars().forEach(it -> {
             if (it.exists()) {
-                conf.append("-injars ").append(it.getAbsolutePath()).append("(!**.framework/**,!**.bundle/**,!module-info.class)\n");
+                conf.append("-injars ").append(it.getAbsolutePath()).append(inputFilter).append('\n');
             } else {
                 LOG.debug("inJars file doesn't exist: " + it.getAbsolutePath());
             }
@@ -429,6 +463,7 @@ public class ProGuard extends AbstractBaseTask {
 
             return jars;
         });
+        addConvention(CONVENTION_EXCLUDED_FILES, Collections::emptySet);
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
             final HashSet<Object> jars = new HashSet<>();
             switch (ext.getProguardLevelRaw()) {
