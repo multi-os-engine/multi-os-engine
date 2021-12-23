@@ -353,14 +353,13 @@ public class MoeSDK {
             validate(FIL, path, "sdk/moe-core.jar");
             validate(FIL, path, "sdk/moe-core-javadoc.jar");
             validate(FIL, path, "sdk/moe-core-sources.jar");
-            
+
             validate(FIL, path, "sdk/moe-ios-junit.dex");
             validate(FIL, path, "sdk/moe-ios-junit.jar");
             validate(FIL, path, "sdk/moe-ios-junit-javadoc.jar");
             validate(FIL, path, "sdk/moe-ios-junit-sources.jar");
 
-            validate(FIL, path, "sdk/moe-ios-retro.jar");
-            validate(FIL, path, "sdk/moe-ios-retro-dex.jar");            
+            validate(FIL, path, "sdk/moe-ios-dex.jar");
             validate(FIL, path, "sdk/moe-ios.jar");
             validate(FIL, path, "sdk/moe-ios-javadoc.jar");
             validate(FIL, path, "sdk/moe-ios-sources.jar");
@@ -423,8 +422,7 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_IOS_JUNIT_DEX;
     private @Nullable File MOE_SDK_IOS_JAR;
     private @Nullable File MOE_SDK_IOS_SOURCES_JAR;
-    private @Nullable File MOE_SDK_IOS_RETRO_JAR;
-    private @Nullable File MOE_SDK_IOS_RETRO_DEX;
+    private @Nullable File MOE_SDK_IOS_DEX;
     private @Nullable File MOE_SDK_DEX2OAT_EXEC;
     private @Nullable File MOE_SDK_DX_JAR;
     private @Nullable File MOE_SDK_IOS_DEVICE_JAR;
@@ -447,15 +445,14 @@ public class MoeSDK {
         MOE_SDK_CORE_DEX = path.resolve("sdk/moe-core.dex").toFile();
         MOE_SDK_CORE_SOURCES_JAR = path.resolve("sdk/moe-core-sources.jar").toFile();
         MOE_SDK_CORE_JAVADOC_JAR = path.resolve("sdk/moe-core-javadoc.jar").toFile();
-        MOE_SDK_IOS_RETRO_JAR = path.resolve("sdk/moe-ios-retro.jar").toFile();
-        MOE_SDK_IOS_RETRO_DEX = path.resolve("sdk/moe-ios-retro-dex.jar").toFile();
+        MOE_SDK_IOS_DEX = path.resolve("sdk/moe-ios-dex.jar").toFile();
         MOE_SDK_IOS_JAR = path.resolve("sdk/moe-ios.jar").toFile();
         MOE_SDK_IOS_SOURCES_JAR = path.resolve("sdk/moe-ios-sources.jar").toFile();
         MOE_SDK_IOS_JAVADOC_JAR = path.resolve("sdk/moe-ios-javadoc.jar").toFile();
         MOE_SDK_IOS_JUNIT_JAR = path.resolve("sdk/moe-ios-junit.jar").toFile();
         MOE_SDK_IOS_JUNIT_DEX = path.resolve("sdk/moe-ios-junit.dex").toFile();
         MOE_SDK_IOS_JUNIT_SOURCES_JAR = path.resolve("sdk/moe-ios-junit-sources.jar").toFile();
-        MOE_SDK_IOS_JUNIT_JAVADOC_JAR = path.resolve("sdk/moe-ios-junit-javadoc.jar").toFile();        
+        MOE_SDK_IOS_JUNIT_JAVADOC_JAR = path.resolve("sdk/moe-ios-junit-javadoc.jar").toFile();
         MOE_SDK_DEX2OAT_EXEC = path.resolve("tools/dex2oat").toFile();
         MOE_SDK_DX_JAR = path.resolve("tools/dx.jar").toFile();
         MOE_SDK_IOS_DEVICE_JAR = path.resolve("tools/ios-device.jar").toFile();
@@ -550,14 +547,8 @@ public class MoeSDK {
     }
 
     @NotNull
-    @IgnoreUnused
-    private File getiOSRetroJar() {
-        return safeVariable(MOE_SDK_IOS_RETRO_JAR, "MOE_SDK_IOS_RETRO_JAR");
-    }
-
-    @NotNull
-    private File getiOSRetroDex() {
-        return safeVariable(MOE_SDK_IOS_RETRO_DEX, "MOE_SDK_IOS_RETRO_DEX");
+    private File getiOSDex() {
+        return safeVariable(MOE_SDK_IOS_DEX, "MOE_SDK_IOS_DEX");
     }
 
     @NotNull
@@ -639,7 +630,7 @@ public class MoeSDK {
     @NotNull
     public File getPlatformDex(final @NotNull MoePlatform platform) {
         if (platform == MoePlatform.IOS) {
-            return getiOSRetroDex();
+            return getiOSDex();
         }
         throw new GradleException("platform dex is unsupported for " + platform.displayName);
     }

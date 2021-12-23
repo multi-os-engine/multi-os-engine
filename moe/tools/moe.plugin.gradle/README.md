@@ -125,8 +125,7 @@ The SDK's structure must be as follows, otherwise the validation will fail:
 |  +- moe-ios-javadoc.jar
 |  +- moe-ios-junit.dex
 |  +- moe-ios-junit.jar
-|  +- moe-ios-retro-dex.jar
-|  +- moe-ios-retro.jar
+|  +- moe-ios-dex.jar
 |  +- moe-ios.jar
 |  +- iphoneos/MOE.framework
 |  \- iphonesimulator/MOE.framework
