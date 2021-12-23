@@ -53,62 +53,108 @@ if (!rootProject.hasProperty('moe.tools.sdk.mac_only')) {
     tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_windows'
 }
 
-task processExtractiOS(type: Copy) {
+//////////////////////////////////////////////////////////////////////////
+// Backport to Java 7
+//////////////////////////////////////////////////////////////////////////
+
+def backport_base_cfg = """
+# Disable everything as we only want to backport
+-dontshrink
+-dontobfuscate
+-dontoptimize
+-dontwarn
+-dontnote
+
+# Backport to Java 7
+-target 7
+"""
+
+task backportCore(type: JavaExec) {
     dependsOn buildDeps
-    doFirst {
-        delete files("$buildDir/ios.srcs")
-    }
-    from zipTree(rootProject.external.moe_core.out.moe_ios_jar)
-    into "$buildDir/ios.srcs"
-}
 
-task processRetroiOS(type: JavaExec) {
-    dependsOn processExtractiOS
+    ext.jarOutput = file("${buildDir}/libs/moe-core-backport.jar")
+
     doFirst {
-        delete files("$buildDir/ios.retro")
+        // Write rule
+        file("$buildDir/core.pro").text = """
+-injars "${rootProject.external.moe_core.out.moe_core_jar}"
+
+-outjars "${jarOutput.absolutePath}"
+
+${backport_base_cfg}
+"""
     }
-    systemProperties['retrolambda.inputDir'] = file("$buildDir/ios.srcs").absolutePath
-    systemProperties['retrolambda.classpath'] = rootProject.external.moe_core.out.moe_core_jar.absolutePath
-    systemProperties['retrolambda.defaultMethods'] = 'true'
-    systemProperties['retrolambda.outputDir'] = file("$buildDir/ios.retro").absolutePath
+
     main '-jar'
-    args rootProject.external.moe_core.out.retrolambda_jar.absolutePath
+    args "${project(":proguard:app").buildDir.absolutePath}/libs/proguard.jar", "@${buildDir}/core.pro"
 
-    inputs.dir(systemProperties['retrolambda.inputDir'])
-    inputs.file(systemProperties['retrolambda.classpath'])
-    inputs.property('retrolambda_defaultMethods', systemProperties['retrolambda.defaultMethods'])
-    outputs.dir(systemProperties['retrolambda.outputDir'])
+    inputs.file("$buildDir/core.pro")
+    inputs.file(rootProject.external.moe_core.out.moe_core_jar)
+    outputs.file(jarOutput)
 }
 
-task processJarRetroiOS(type: Jar) {
-    dependsOn processRetroiOS
-    from file("$buildDir/ios.retro")
-    archiveName 'moe-ios-retro.jar'
+task backportiOS(type: JavaExec) {
+    dependsOn buildDeps
+
+    ext.jarOutput = file("${buildDir}/libs/moe-ios-backport.jar")
+
+    doFirst {
+        // Write rule
+        file("$buildDir/ios.pro").text = """
+-injars "${rootProject.external.moe_core.out.moe_ios_jar}"
+
+-libraryjars "${rootProject.external.moe_core.out.moe_core_jar}"
+
+-outjars "${jarOutput.absolutePath}"
+
+${backport_base_cfg}
+"""
+    }
+
+    main '-jar'
+    args "${project(":proguard:app").buildDir.absolutePath}/libs/proguard.jar", "@${buildDir}/ios.pro"
+
+    inputs.file("$buildDir/ios.pro")
+    inputs.file(rootProject.external.moe_core.out.moe_ios_jar)
+    inputs.file(rootProject.external.moe_core.out.moe_core_jar)
+    outputs.file(jarOutput)
 }
 
-task processDexRetroiOS(type: Exec) {
-    dependsOn processJarRetroiOS
+task backportJUnit(type: JavaExec) {
+    dependsOn buildDeps
 
-    def cmd = ["--dex"]
+    ext.jarOutput = file("${buildDir}/libs/moe-junit-backport.jar")
 
-    cmd.add("--output")
-    def dexOutput = file("$buildDir/moe-ios-retro-dex.jar")
-    cmd.add(dexOutput.absolutePath)
-    ext.dexOutput = dexOutput
-    outputs.file(dexOutput)
+    doFirst {
+        // Write rule
+        file("$buildDir/junit.pro").text = """
+-injars "${rootProject.external.moe_core.out.moe_ios_junit_jar}"
 
-    cmd.add("--core-library")
-    cmd.add("--multi-dex")
-    def jarInput = processJarRetroiOS.archivePath
-    cmd.add(jarInput.absolutePath)
-    inputs.file(jarInput)
+-libraryjars "${rootProject.external.moe_core.out.moe_core_jar}"
+-libraryjars "${rootProject.external.moe_core.out.moe_ios_jar}"
 
-    executable rootProject.external.moe_core.out.dx_exec
-    args cmd
+-outjars "${jarOutput.absolutePath}"
+
+${backport_base_cfg}
+"""
+    }
+
+    main '-jar'
+    args "${project(":proguard:app").buildDir.absolutePath}/libs/proguard.jar", "@${buildDir}/junit.pro"
+
+    inputs.file("$buildDir/junit.pro")
+    inputs.file(rootProject.external.moe_core.out.moe_ios_junit_jar)
+    inputs.file(rootProject.external.moe_core.out.moe_core_jar)
+    inputs.file(rootProject.external.moe_core.out.moe_ios_jar)
+    outputs.file(jarOutput)
 }
+
+//////////////////////////////////////////////////////////////////////////
+// Prebuild dex files
+//////////////////////////////////////////////////////////////////////////
 
 task processDexCore(type: Exec) {
-    dependsOn buildDeps
+    dependsOn backportCore
 
     def cmd = ["--dex"]
 
@@ -119,7 +165,28 @@ task processDexCore(type: Exec) {
     outputs.file(dexOutput)
 
     cmd.add("--core-library")
-    def jarInput = rootProject.external.moe_core.out.moe_core_jar
+    def jarInput = backportCore.jarOutput
+    cmd.add(jarInput.absolutePath)
+    inputs.file(jarInput)
+
+    executable rootProject.external.moe_core.out.dx_exec
+    args cmd
+}
+
+task processDexiOS(type: Exec) {
+    dependsOn backportiOS
+
+    def cmd = ["--dex"]
+
+    cmd.add("--output")
+    def dexOutput = file("$buildDir/moe-ios-dex.jar")
+    cmd.add(dexOutput.absolutePath)
+    ext.dexOutput = dexOutput
+    outputs.file(dexOutput)
+
+    cmd.add("--core-library")
+    cmd.add("--multi-dex")
+    def jarInput = backportiOS.jarOutput
     cmd.add(jarInput.absolutePath)
     inputs.file(jarInput)
 
@@ -128,7 +195,7 @@ task processDexCore(type: Exec) {
 }
 
 task processDexiOSJUnit(type: Exec) {
-    dependsOn buildDeps
+    dependsOn backportJUnit
 
     def cmd = ["--dex"]
 
@@ -139,7 +206,7 @@ task processDexiOSJUnit(type: Exec) {
     outputs.file(dexOutput)
 
     cmd.add("--core-library")
-    def jarInput = rootProject.external.moe_core.out.moe_ios_junit_jar
+    def jarInput = backportJUnit.jarOutput
     cmd.add(jarInput.absolutePath)
     inputs.file(jarInput)
 
@@ -148,9 +215,8 @@ task processDexiOSJUnit(type: Exec) {
 }
 
 task processSDK {
-    dependsOn processJarRetroiOS
-    dependsOn processDexRetroiOS
     dependsOn processDexCore
+    dependsOn processDexiOS
     dependsOn processDexiOSJUnit
 }
 
@@ -191,11 +257,8 @@ def getSDKCopySpec() {
             from files(processDexCore.dexOutput) {
                 rename processDexCore.dexOutput.name, processDexCore.dexOutput.name
             }
-            from files(processJarRetroiOS.archivePath) {
-                rename processJarRetroiOS.archivePath.name, processJarRetroiOS.archivePath.name
-            }
-            from files(processDexRetroiOS.dexOutput) {
-                rename processDexRetroiOS.dexOutput.name, processDexRetroiOS.dexOutput.name
+            from files(processDexiOS.dexOutput) {
+                rename processDexiOS.dexOutput.name, processDexiOS.dexOutput.name
             }
             from files(processDexiOSJUnit.dexOutput) {
                 rename processDexiOSJUnit.dexOutput.name, processDexiOSJUnit.dexOutput.name
