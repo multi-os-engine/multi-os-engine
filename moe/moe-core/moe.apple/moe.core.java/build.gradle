@@ -169,7 +169,7 @@ configurations {
 }
 
 dependencies {
-    jarjarJar 'com.googlecode.jarjar:jarjar:1.3'
+    jarjarJar 'com.eed3si9n.jarjar:jarjar:1.8.0'
 }
 
 tasks.compileCoreJava.sourceCompatibility = "1.8"
@@ -201,8 +201,8 @@ task jarjaredCoreBaseJar(dependsOn: compileCoreJava) {
         ant {
             taskdef(
                     name: 'jarjar',
-                    classname: 'com.tonicsystems.jarjar.JarJarTask',
-                    classpath: configurations.jarjarJar.files[0]
+                    classname: 'com.eed3si9n.jarjar.JarJarTask',
+                    classpath: configurations.jarjarJar.asPath
             )
             jarjar(jarfile: outputs.files[0]) {
                 sourceSets.core.output.each {
