@@ -314,7 +314,7 @@ public class NatJ {
      */
     private static final ConcurrentHashMap<Class<?>, Class<? extends NativeRuntime>> CLASS_RUNTIME_CACHE =
             new ConcurrentHashMap<Class<?>, Class<? extends NativeRuntime>>();
-    
+
     /**
      * Determines the runtime of the class by looking for a {@link Runtime}
      * annotation of the class or its ascendants and interfaces.
@@ -335,7 +335,7 @@ public class NatJ {
         }
         return nativeRuntime;
     }
-    
+
     /**
      * Determines the runtime of the class by looking for a {@link Runtime}
      * annotation of the class or its ascendants and interfaces.
@@ -480,6 +480,7 @@ public class NatJ {
                 for (String path : new String[] {
                         "/System/Library/Frameworks/" + name + ".framework"
                 }) {
+                    String exec_path = path + "/" + name;
                     File file = new File(path);
                     if (file.exists() && file.isDirectory()) {
                         /* Framework bundle was found.
@@ -491,7 +492,6 @@ public class NatJ {
                          * separate framework executable on file system but we can load it
                          * by name.
                          */
-                        String exec_path = path + "/" + name;
                         resolvedLibraries.put(name, exec_path);
                         if (load) {
                             boolean res = loadFramework(exec_path);
@@ -499,6 +499,15 @@ public class NatJ {
                                     "Cannot load executable file from system framework " + path );
                         }
                         return exec_path;
+                    } else if (load) {
+                        // On ios simulator the framework path is dynamic based on the location of the Xcode,
+                        // so we cannot reliably determine if the framework exists, and we have to just try
+                        // loading the framework and if it succeeded then we assume it exist.
+                        boolean res = loadFramework(exec_path);
+                        if (res) {
+                            resolvedLibraries.put(name, exec_path);
+                            return exec_path;
+                        }
                     }
                 }
             } else if (isDalvik()) {
