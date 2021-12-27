@@ -982,6 +982,8 @@ public class ObjCClassManager extends AbstractUnitManager {
                 }
                 if (method.isStatic() && !method.isAlloc() && !method.isInheritedFromNonTemplateClass()) {
                     editor.setTemplates(genericParamTypes);
+                } else {
+                    editor.setTemplates(Collections.emptyList());
                 }
                 editor.setArgumentCount(numArgs);
                 int idx = 0;

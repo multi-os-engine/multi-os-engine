@@ -462,7 +462,7 @@ public class MethodEditor extends EditContext {
     }
 
     @SuppressWarnings("unchecked")
-    public void setTemplates(ArrayList<ObjCGenericParamType> genericParamTypes) throws GeneratorException {
+    public void setTemplates(List<ObjCGenericParamType> genericParamTypes) throws GeneratorException {
         editLock();
 
         ListRewrite params = getRewrite().getListRewrite(methodDecl, MethodDeclaration.TYPE_PARAMETERS_PROPERTY);
