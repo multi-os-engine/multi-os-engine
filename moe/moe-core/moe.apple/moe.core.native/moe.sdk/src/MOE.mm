@@ -154,6 +154,12 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
 #error Unsupported OS
 #endif
     [args addObject:@"-Dmoe.version=" xstr(BUILD_VERSION)];
+      
+    /* Set the properties for locale */
+    {
+        NSString* localeStr = [NSLocale.currentLocale.localeIdentifier stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
+        [args addObject:[NSString stringWithFormat:@"-Duser.locale=%@", localeStr]];
+    }
 
     // Create arguments for classpath
     [args addObject:@CLASSPATH_PREFIX];
