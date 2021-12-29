@@ -64,6 +64,7 @@ public class AVContentKeySession extends NSObject {
     @Selector("alloc")
     public static native AVContentKeySession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVContentKeySession allocWithZone(VoidPtr zone);

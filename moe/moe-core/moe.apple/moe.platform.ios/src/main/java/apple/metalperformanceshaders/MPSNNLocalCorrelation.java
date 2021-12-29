@@ -65,6 +65,7 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Selector("alloc")
     public static native MPSNNLocalCorrelation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNLocalCorrelation allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class VNDocumentCameraViewController extends UIViewController {
     @Selector("alloc")
     public static native VNDocumentCameraViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDocumentCameraViewController allocWithZone(VoidPtr zone);

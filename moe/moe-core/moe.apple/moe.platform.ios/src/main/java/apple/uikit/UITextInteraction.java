@@ -48,6 +48,7 @@ public class UITextInteraction extends NSObject implements UIInteraction {
     @Selector("alloc")
     public static native UITextInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextInteraction allocWithZone(VoidPtr zone);

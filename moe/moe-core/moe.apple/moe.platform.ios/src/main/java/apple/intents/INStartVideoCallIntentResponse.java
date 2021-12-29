@@ -64,6 +64,7 @@ public class INStartVideoCallIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INStartVideoCallIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartVideoCallIntentResponse allocWithZone(VoidPtr zone);

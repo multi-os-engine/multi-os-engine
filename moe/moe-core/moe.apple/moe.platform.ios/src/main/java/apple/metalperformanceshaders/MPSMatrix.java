@@ -85,6 +85,7 @@ public class MPSMatrix extends NSObject {
     @Selector("alloc")
     public static native MPSMatrix alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrix allocWithZone(VoidPtr zone);

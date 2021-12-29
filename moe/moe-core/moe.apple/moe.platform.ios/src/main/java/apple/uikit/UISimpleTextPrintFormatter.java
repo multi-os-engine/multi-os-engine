@@ -65,6 +65,7 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("alloc")
     public static native UISimpleTextPrintFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISimpleTextPrintFormatter allocWithZone(VoidPtr zone);

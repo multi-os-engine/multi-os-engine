@@ -66,6 +66,7 @@ public class NSMigrationManager extends NSObject {
     @Selector("alloc")
     public static native NSMigrationManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMigrationManager allocWithZone(VoidPtr zone);

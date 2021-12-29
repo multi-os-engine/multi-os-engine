@@ -62,6 +62,7 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
     @Selector("alloc")
     public static native UICommandAlternate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICommandAlternate allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class CPDashboardController extends NSObject {
     @Selector("alloc")
     public static native CPDashboardController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPDashboardController allocWithZone(VoidPtr zone);

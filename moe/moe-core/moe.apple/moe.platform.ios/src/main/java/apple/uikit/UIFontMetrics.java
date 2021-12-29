@@ -46,6 +46,7 @@ public class UIFontMetrics extends NSObject {
     @Selector("alloc")
     public static native UIFontMetrics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFontMetrics allocWithZone(VoidPtr zone);

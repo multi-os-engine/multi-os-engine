@@ -53,6 +53,7 @@ public class CPTravelEstimates extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPTravelEstimates alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTravelEstimates allocWithZone(VoidPtr zone);

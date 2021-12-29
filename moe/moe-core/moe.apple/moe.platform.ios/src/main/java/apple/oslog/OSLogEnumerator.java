@@ -51,6 +51,7 @@ public class OSLogEnumerator extends NSEnumerator {
     @Selector("alloc")
     public static native OSLogEnumerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogEnumerator allocWithZone(VoidPtr zone);

@@ -65,6 +65,7 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UIGravityBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIGravityBehavior allocWithZone(VoidPtr zone);

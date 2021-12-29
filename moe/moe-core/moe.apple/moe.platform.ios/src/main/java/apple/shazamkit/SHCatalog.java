@@ -51,6 +51,7 @@ public class SHCatalog extends NSObject {
     @Selector("alloc")
     public static native SHCatalog alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHCatalog allocWithZone(VoidPtr zone);

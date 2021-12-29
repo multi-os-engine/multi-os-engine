@@ -76,6 +76,7 @@ public class SCNSceneSource extends NSObject {
     @Selector("alloc")
     public static native SCNSceneSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNSceneSource allocWithZone(VoidPtr zone);

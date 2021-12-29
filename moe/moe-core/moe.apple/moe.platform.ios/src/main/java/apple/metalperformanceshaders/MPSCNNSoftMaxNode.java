@@ -48,6 +48,7 @@ public class MPSCNNSoftMaxNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNSoftMaxNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNSoftMaxNode allocWithZone(VoidPtr zone);

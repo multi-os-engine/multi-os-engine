@@ -63,6 +63,7 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @Selector("alloc")
     public static native UICollectionViewTransitionLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewTransitionLayout allocWithZone(VoidPtr zone);

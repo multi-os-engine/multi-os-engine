@@ -63,6 +63,7 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("alloc")
     public static native CIBlendKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIBlendKernel allocWithZone(VoidPtr zone);

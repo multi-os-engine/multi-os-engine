@@ -61,6 +61,7 @@ public class MTLAttributeDescriptorArray extends NSObject {
     @Selector("alloc")
     public static native MTLAttributeDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAttributeDescriptorArray allocWithZone(VoidPtr zone);

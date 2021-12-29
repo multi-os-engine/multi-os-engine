@@ -65,6 +65,7 @@ public class PKPaymentPass extends PKSecureElementPass {
     @Selector("alloc")
     public static native PKPaymentPass alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentPass allocWithZone(VoidPtr zone);

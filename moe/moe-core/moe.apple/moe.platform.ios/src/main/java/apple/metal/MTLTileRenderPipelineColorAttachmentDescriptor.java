@@ -47,6 +47,7 @@ public class MTLTileRenderPipelineColorAttachmentDescriptor extends NSObject imp
     @Selector("alloc")
     public static native MTLTileRenderPipelineColorAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLTileRenderPipelineColorAttachmentDescriptor allocWithZone(VoidPtr zone);

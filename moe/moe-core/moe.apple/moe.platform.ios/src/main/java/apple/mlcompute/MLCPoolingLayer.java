@@ -50,6 +50,7 @@ public class MLCPoolingLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCPoolingLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCPoolingLayer allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class ARAppClipCodeAnchor extends ARAnchor implements ARTrackable {
     @Selector("alloc")
     public static native ARAppClipCodeAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARAppClipCodeAnchor allocWithZone(VoidPtr zone);

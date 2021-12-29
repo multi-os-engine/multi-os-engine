@@ -45,6 +45,7 @@ public class SRWebUsage extends NSObject {
     @Selector("alloc")
     public static native SRWebUsage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRWebUsage allocWithZone(VoidPtr zone);

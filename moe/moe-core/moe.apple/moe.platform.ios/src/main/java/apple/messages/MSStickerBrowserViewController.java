@@ -68,6 +68,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     @Selector("alloc")
     public static native MSStickerBrowserViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSStickerBrowserViewController allocWithZone(VoidPtr zone);

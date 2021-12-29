@@ -67,6 +67,7 @@ public class SKPaymentQueue extends NSObject {
     @Selector("alloc")
     public static native SKPaymentQueue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPaymentQueue allocWithZone(VoidPtr zone);

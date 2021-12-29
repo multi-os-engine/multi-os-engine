@@ -63,6 +63,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNUpsampling alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsampling allocWithZone(VoidPtr zone);

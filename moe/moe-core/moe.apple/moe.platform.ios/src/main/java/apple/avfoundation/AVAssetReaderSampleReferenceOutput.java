@@ -72,6 +72,7 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
     @Selector("alloc")
     public static native AVAssetReaderSampleReferenceOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetReaderSampleReferenceOutput allocWithZone(VoidPtr zone);

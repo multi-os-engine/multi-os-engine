@@ -50,6 +50,7 @@ public class SRDevice extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native SRDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRDevice allocWithZone(VoidPtr zone);

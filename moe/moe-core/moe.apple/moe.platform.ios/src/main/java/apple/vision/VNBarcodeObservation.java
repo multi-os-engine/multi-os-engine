@@ -57,6 +57,7 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     @Selector("alloc")
     public static native VNBarcodeObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNBarcodeObservation allocWithZone(VoidPtr zone);

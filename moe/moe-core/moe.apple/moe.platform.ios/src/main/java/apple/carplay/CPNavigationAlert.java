@@ -52,6 +52,7 @@ public class CPNavigationAlert extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPNavigationAlert alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNavigationAlert allocWithZone(VoidPtr zone);

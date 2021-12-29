@@ -67,6 +67,7 @@ public class NSMappingModel extends NSObject {
     @Selector("alloc")
     public static native NSMappingModel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMappingModel allocWithZone(VoidPtr zone);

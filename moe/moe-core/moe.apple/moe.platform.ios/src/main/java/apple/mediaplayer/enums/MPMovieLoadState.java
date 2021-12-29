@@ -19,18 +19,19 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+@Deprecated
 @Generated
 public final class MPMovieLoadState {
-    @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
-    @Generated @NUInt public static final long Playable = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Playable = 0x0000000000000001L;
     /**
      * Playback will be automatically started in this state when shouldAutoplay is YES
      */
-    @Generated @NUInt public static final long PlaythroughOK = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long PlaythroughOK = 0x0000000000000002L;
     /**
      * Playback will be automatically paused in this state, if started
      */
-    @Generated @NUInt public static final long Stalled = 0x0000000000000004L;
+    @Deprecated @Generated @NUInt public static final long Stalled = 0x0000000000000004L;
 
     @Generated
     private MPMovieLoadState() {

@@ -74,6 +74,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("alloc")
     public static native UIListContentTextProperties alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIListContentTextProperties allocWithZone(VoidPtr zone);

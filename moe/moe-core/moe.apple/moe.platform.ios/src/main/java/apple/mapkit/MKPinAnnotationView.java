@@ -80,6 +80,7 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("alloc")
     public static native MKPinAnnotationView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKPinAnnotationView allocWithZone(VoidPtr zone);

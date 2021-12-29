@@ -68,6 +68,7 @@ public class AVCaptureBracketedStillImageSettings extends NSObject {
     @Selector("alloc")
     public static native AVCaptureBracketedStillImageSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureBracketedStillImageSettings allocWithZone(VoidPtr zone);

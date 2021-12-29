@@ -52,6 +52,7 @@ public class INBusReservation extends INReservation implements NSCopying, NSSecu
     @Selector("alloc")
     public static native INBusReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBusReservation allocWithZone(VoidPtr zone);

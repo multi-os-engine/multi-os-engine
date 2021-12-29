@@ -66,6 +66,7 @@ public class UIMotionEffectGroup extends UIMotionEffect {
     @Selector("alloc")
     public static native UIMotionEffectGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMotionEffectGroup allocWithZone(VoidPtr zone);

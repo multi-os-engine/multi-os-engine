@@ -48,6 +48,7 @@ public class HMMutableDurationEvent extends HMDurationEvent {
     @Selector("alloc")
     public static native HMMutableDurationEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMMutableDurationEvent allocWithZone(VoidPtr zone);

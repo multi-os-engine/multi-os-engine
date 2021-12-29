@@ -132,6 +132,7 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
     @Selector("alloc")
     public static native GLKSkyboxEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKSkyboxEffect allocWithZone(VoidPtr zone);

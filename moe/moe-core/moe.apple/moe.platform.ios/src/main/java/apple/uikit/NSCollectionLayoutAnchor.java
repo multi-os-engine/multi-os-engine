@@ -49,6 +49,7 @@ public class NSCollectionLayoutAnchor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSCollectionLayoutAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutAnchor allocWithZone(VoidPtr zone);

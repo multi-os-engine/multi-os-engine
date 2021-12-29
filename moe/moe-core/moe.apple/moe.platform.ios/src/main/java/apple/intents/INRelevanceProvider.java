@@ -53,6 +53,7 @@ public class INRelevanceProvider extends NSObject implements NSCopying, NSSecure
     @Selector("alloc")
     public static native INRelevanceProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRelevanceProvider allocWithZone(VoidPtr zone);

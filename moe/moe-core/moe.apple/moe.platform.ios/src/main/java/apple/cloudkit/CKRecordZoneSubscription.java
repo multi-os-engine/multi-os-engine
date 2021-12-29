@@ -74,6 +74,7 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @Selector("alloc")
     public static native CKRecordZoneSubscription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKRecordZoneSubscription allocWithZone(VoidPtr zone);

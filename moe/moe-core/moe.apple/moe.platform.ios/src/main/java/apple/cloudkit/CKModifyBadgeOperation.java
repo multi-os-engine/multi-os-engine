@@ -63,6 +63,7 @@ public class CKModifyBadgeOperation extends CKOperation {
     @Selector("alloc")
     public static native CKModifyBadgeOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKModifyBadgeOperation allocWithZone(VoidPtr zone);

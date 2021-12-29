@@ -61,6 +61,7 @@ public class WKSnapshotConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native WKSnapshotConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKSnapshotConfiguration allocWithZone(VoidPtr zone);

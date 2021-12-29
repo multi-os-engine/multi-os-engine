@@ -62,6 +62,7 @@ public class GCControllerButtonInput extends GCControllerElement {
     @Selector("alloc")
     public static native GCControllerButtonInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCControllerButtonInput allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     @Selector("alloc")
     public static native MDLPhysicallyPlausibleScatteringFunction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLPhysicallyPlausibleScatteringFunction allocWithZone(VoidPtr zone);

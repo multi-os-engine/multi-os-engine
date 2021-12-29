@@ -70,6 +70,7 @@ public class HMEventTrigger extends HMTrigger {
     @Selector("alloc")
     public static native HMEventTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMEventTrigger allocWithZone(VoidPtr zone);

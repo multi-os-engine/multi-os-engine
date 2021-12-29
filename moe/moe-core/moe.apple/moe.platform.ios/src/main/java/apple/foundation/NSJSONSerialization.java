@@ -89,6 +89,7 @@ public class NSJSONSerialization extends NSObject {
     @Selector("alloc")
     public static native NSJSONSerialization alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSJSONSerialization allocWithZone(VoidPtr zone);

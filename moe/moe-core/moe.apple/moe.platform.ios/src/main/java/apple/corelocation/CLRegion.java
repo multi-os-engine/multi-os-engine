@@ -74,6 +74,7 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CLRegion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLRegion allocWithZone(VoidPtr zone);

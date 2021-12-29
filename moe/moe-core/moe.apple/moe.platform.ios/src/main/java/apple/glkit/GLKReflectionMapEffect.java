@@ -173,6 +173,7 @@ public class GLKReflectionMapEffect extends GLKBaseEffect implements GLKNamedEff
     @Selector("alloc")
     public static native GLKReflectionMapEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKReflectionMapEffect allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class CXTransaction extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native CXTransaction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXTransaction allocWithZone(VoidPtr zone);

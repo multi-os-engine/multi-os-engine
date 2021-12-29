@@ -63,6 +63,7 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     @Selector("alloc")
     public static native AVAudioUnitSampler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitSampler allocWithZone(VoidPtr zone);

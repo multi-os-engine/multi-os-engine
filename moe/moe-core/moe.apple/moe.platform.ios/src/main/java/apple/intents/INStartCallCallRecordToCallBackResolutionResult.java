@@ -45,6 +45,7 @@ public class INStartCallCallRecordToCallBackResolutionResult extends INCallRecor
     @Selector("alloc")
     public static native INStartCallCallRecordToCallBackResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartCallCallRecordToCallBackResolutionResult allocWithZone(VoidPtr zone);

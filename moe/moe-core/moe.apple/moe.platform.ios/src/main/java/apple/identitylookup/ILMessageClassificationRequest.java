@@ -48,6 +48,7 @@ public class ILMessageClassificationRequest extends ILClassificationRequest impl
     @Selector("alloc")
     public static native ILMessageClassificationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILMessageClassificationRequest allocWithZone(VoidPtr zone);

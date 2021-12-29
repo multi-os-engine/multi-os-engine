@@ -74,6 +74,7 @@ public class AVCaptureOutput extends NSObject {
     @Selector("alloc")
     public static native AVCaptureOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureOutput allocWithZone(VoidPtr zone);

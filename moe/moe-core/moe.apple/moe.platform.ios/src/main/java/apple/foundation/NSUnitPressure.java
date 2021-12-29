@@ -60,6 +60,7 @@ public class NSUnitPressure extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitPressure alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitPressure allocWithZone(VoidPtr zone);

@@ -60,6 +60,7 @@ public class NSUnitEnergy extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitEnergy alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitEnergy allocWithZone(VoidPtr zone);

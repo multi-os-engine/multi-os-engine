@@ -62,6 +62,7 @@ public class MDLMaterialPropertyConnection extends NSObject implements MDLNamed 
     @Selector("alloc")
     public static native MDLMaterialPropertyConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMaterialPropertyConnection allocWithZone(VoidPtr zone);

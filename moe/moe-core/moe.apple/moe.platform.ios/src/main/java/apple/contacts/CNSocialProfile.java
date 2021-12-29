@@ -71,6 +71,7 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native CNSocialProfile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNSocialProfile allocWithZone(VoidPtr zone);

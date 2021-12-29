@@ -59,6 +59,7 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NFCNDEFPayload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCNDEFPayload allocWithZone(VoidPtr zone);

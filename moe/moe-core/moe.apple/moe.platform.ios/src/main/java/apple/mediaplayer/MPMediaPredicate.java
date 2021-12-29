@@ -69,6 +69,7 @@ public class MPMediaPredicate extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MPMediaPredicate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaPredicate allocWithZone(VoidPtr zone);

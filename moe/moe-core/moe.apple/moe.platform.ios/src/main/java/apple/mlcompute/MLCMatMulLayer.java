@@ -50,6 +50,7 @@ public class MLCMatMulLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCMatMulLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCMatMulLayer allocWithZone(VoidPtr zone);

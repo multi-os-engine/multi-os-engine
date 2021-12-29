@@ -65,6 +65,7 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native NSExpression alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSExpression allocWithZone(VoidPtr zone);

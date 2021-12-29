@@ -70,6 +70,7 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("alloc")
     public static native NSPersistentStoreCoordinator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentStoreCoordinator allocWithZone(VoidPtr zone);

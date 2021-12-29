@@ -45,6 +45,7 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INBillTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBillTypeResolutionResult allocWithZone(VoidPtr zone);

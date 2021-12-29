@@ -55,6 +55,7 @@ public class PHPickerViewController extends UIViewController {
     @Selector("alloc")
     public static native PHPickerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHPickerViewController allocWithZone(VoidPtr zone);

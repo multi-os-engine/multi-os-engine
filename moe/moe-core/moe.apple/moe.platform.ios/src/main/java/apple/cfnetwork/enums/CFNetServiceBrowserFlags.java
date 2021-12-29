@@ -42,7 +42,7 @@ public final class CFNetServiceBrowserFlags {
     /**
      * Same as the previous but incorrectly named. Kept for compatibility.
      */
-    @Generated @NUInt public static final long IsRegistrationDomain = 0x0000000000000004L;
+    @Deprecated @Generated @NUInt public static final long IsRegistrationDomain = 0x0000000000000004L;
     /**
      * The result item should be removed and not added.
      */

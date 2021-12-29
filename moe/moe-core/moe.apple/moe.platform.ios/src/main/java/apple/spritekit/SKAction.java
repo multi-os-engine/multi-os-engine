@@ -122,6 +122,7 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKAction allocWithZone(VoidPtr zone);

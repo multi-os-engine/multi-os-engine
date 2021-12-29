@@ -50,6 +50,7 @@ public class PHASEDistanceModelParameters extends NSObject {
     @Selector("alloc")
     public static native PHASEDistanceModelParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEDistanceModelParameters allocWithZone(VoidPtr zone);

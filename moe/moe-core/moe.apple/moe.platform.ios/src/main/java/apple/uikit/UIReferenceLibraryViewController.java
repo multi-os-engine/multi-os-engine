@@ -63,6 +63,7 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Selector("alloc")
     public static native UIReferenceLibraryViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIReferenceLibraryViewController allocWithZone(VoidPtr zone);

@@ -65,6 +65,7 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("alloc")
     public static native MKLocalSearchCompleter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKLocalSearchCompleter allocWithZone(VoidPtr zone);

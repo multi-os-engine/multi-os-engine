@@ -67,6 +67,7 @@ public class GKPolygonObstacle extends GKObstacle implements NSSecureCoding {
     @Selector("alloc")
     public static native GKPolygonObstacle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKPolygonObstacle allocWithZone(VoidPtr zone);

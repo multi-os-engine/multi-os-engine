@@ -63,6 +63,7 @@ public class UIAccessibilityCustomRotor extends NSObject {
     @Selector("alloc")
     public static native UIAccessibilityCustomRotor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAccessibilityCustomRotor allocWithZone(VoidPtr zone);

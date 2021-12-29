@@ -64,6 +64,7 @@ public class SKPaymentTransaction extends NSObject {
     @Selector("alloc")
     public static native SKPaymentTransaction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPaymentTransaction allocWithZone(VoidPtr zone);

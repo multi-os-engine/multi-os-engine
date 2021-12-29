@@ -62,6 +62,7 @@ public class AVPlayerInterstitialEvent extends NSObject {
     @Selector("alloc")
     public static native AVPlayerInterstitialEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerInterstitialEvent allocWithZone(VoidPtr zone);

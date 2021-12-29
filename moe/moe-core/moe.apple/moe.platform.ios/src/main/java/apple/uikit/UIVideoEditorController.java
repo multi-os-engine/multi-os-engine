@@ -64,6 +64,7 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("alloc")
     public static native UIVideoEditorController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIVideoEditorController allocWithZone(VoidPtr zone);

@@ -56,6 +56,7 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
     @Selector("alloc")
     public static native HKVerifiableClinicalRecordSubject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKVerifiableClinicalRecordSubject allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class SCNTransaction extends NSObject {
     @Selector("alloc")
     public static native SCNTransaction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNTransaction allocWithZone(VoidPtr zone);

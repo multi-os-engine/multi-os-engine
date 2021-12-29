@@ -76,6 +76,7 @@ public class NSProgress extends NSObject {
     @Selector("alloc")
     public static native NSProgress alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSProgress allocWithZone(VoidPtr zone);

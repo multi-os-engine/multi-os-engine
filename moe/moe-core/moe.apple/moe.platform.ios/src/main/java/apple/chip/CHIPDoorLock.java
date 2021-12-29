@@ -51,6 +51,7 @@ public class CHIPDoorLock extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPDoorLock alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPDoorLock allocWithZone(VoidPtr zone);
@@ -276,7 +277,7 @@ public class CHIPDoorLock extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPDoorLock initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPDoorLock initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

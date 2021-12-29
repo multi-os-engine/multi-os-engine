@@ -61,6 +61,7 @@ public class UITextRange extends NSObject {
     @Selector("alloc")
     public static native UITextRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextRange allocWithZone(VoidPtr zone);

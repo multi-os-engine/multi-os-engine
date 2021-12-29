@@ -56,6 +56,7 @@ public class AVMIDIPlayer extends NSObject {
     @Selector("alloc")
     public static native AVMIDIPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMIDIPlayer allocWithZone(VoidPtr zone);

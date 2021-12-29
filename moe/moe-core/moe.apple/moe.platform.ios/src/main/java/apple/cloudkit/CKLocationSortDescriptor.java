@@ -67,6 +67,7 @@ public class CKLocationSortDescriptor extends NSSortDescriptor implements NSSecu
     @Selector("alloc")
     public static native CKLocationSortDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKLocationSortDescriptor allocWithZone(VoidPtr zone);

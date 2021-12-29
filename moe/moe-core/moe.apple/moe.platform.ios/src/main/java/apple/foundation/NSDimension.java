@@ -60,6 +60,7 @@ public class NSDimension extends NSUnit implements NSSecureCoding {
     @Selector("alloc")
     public static native NSDimension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDimension allocWithZone(VoidPtr zone);

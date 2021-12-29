@@ -52,6 +52,7 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
     @Selector("alloc")
     public static native ARBodyAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARBodyAnchor allocWithZone(VoidPtr zone);

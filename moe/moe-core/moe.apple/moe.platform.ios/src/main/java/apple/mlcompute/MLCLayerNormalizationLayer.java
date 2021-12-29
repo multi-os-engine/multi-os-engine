@@ -51,6 +51,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCLayerNormalizationLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCLayerNormalizationLayer allocWithZone(VoidPtr zone);

@@ -73,6 +73,7 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Selector("alloc")
     public static native EAWiFiUnconfiguredAccessoryBrowser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EAWiFiUnconfiguredAccessoryBrowser allocWithZone(VoidPtr zone);

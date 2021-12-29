@@ -67,6 +67,7 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPrintFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrintFormatter allocWithZone(VoidPtr zone);

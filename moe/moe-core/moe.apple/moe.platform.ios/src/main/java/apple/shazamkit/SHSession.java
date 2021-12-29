@@ -61,6 +61,7 @@ public class SHSession extends NSObject {
     @Selector("alloc")
     public static native SHSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHSession allocWithZone(VoidPtr zone);

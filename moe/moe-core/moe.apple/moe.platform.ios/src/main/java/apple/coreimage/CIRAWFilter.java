@@ -60,6 +60,7 @@ public class CIRAWFilter extends CIFilter {
     @Selector("alloc")
     public static native CIRAWFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIRAWFilter allocWithZone(VoidPtr zone);

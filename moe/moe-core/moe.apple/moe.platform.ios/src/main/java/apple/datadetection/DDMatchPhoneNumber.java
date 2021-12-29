@@ -45,6 +45,7 @@ public class DDMatchPhoneNumber extends DDMatch {
     @Selector("alloc")
     public static native DDMatchPhoneNumber alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchPhoneNumber allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class NSConstraintConflict extends NSObject {
     @Selector("alloc")
     public static native NSConstraintConflict alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSConstraintConflict allocWithZone(VoidPtr zone);

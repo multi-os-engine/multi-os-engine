@@ -64,6 +64,7 @@ public class WKWebsiteDataRecord extends NSObject {
     @Selector("alloc")
     public static native WKWebsiteDataRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKWebsiteDataRecord allocWithZone(VoidPtr zone);

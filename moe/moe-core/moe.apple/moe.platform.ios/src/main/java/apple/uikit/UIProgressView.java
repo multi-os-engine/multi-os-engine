@@ -78,6 +78,7 @@ public class UIProgressView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native UIProgressView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIProgressView allocWithZone(VoidPtr zone);

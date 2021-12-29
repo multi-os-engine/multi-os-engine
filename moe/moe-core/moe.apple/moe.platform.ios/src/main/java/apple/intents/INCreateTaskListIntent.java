@@ -47,6 +47,7 @@ public class INCreateTaskListIntent extends INIntent {
     @Selector("alloc")
     public static native INCreateTaskListIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCreateTaskListIntent allocWithZone(VoidPtr zone);

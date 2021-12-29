@@ -97,6 +97,7 @@ public class TKSmartCardPINFormat extends NSObject {
     @Selector("alloc")
     public static native TKSmartCardPINFormat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardPINFormat allocWithZone(VoidPtr zone);

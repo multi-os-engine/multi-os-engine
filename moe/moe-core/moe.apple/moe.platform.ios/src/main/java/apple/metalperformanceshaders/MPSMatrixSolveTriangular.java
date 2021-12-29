@@ -67,6 +67,7 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixSolveTriangular alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixSolveTriangular allocWithZone(VoidPtr zone);

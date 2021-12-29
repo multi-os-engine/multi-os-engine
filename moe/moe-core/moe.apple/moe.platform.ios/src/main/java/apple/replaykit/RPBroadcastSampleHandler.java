@@ -69,6 +69,7 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     @Selector("alloc")
     public static native RPBroadcastSampleHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPBroadcastSampleHandler allocWithZone(VoidPtr zone);

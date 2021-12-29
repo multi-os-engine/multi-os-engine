@@ -50,6 +50,7 @@ public class UISceneSession extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native UISceneSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneSession allocWithZone(VoidPtr zone);

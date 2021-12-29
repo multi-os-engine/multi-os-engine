@@ -67,6 +67,7 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Selector("alloc")
     public static native MDLScatteringFunction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLScatteringFunction allocWithZone(VoidPtr zone);

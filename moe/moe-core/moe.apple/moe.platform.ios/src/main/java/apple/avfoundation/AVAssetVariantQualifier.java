@@ -49,6 +49,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVAssetVariantQualifier alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetVariantQualifier allocWithZone(VoidPtr zone);

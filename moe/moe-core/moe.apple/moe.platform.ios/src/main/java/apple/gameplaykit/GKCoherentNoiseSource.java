@@ -66,6 +66,7 @@ public class GKCoherentNoiseSource extends GKNoiseSource {
     @Selector("alloc")
     public static native GKCoherentNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKCoherentNoiseSource allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     @Selector("alloc")
     public static native MPSNDArrayMatrixMultiplication alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayMatrixMultiplication allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native UIPrintInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrintInfo allocWithZone(VoidPtr zone);

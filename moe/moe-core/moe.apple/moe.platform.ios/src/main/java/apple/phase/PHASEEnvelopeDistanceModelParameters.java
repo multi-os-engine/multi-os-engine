@@ -52,6 +52,7 @@ public class PHASEEnvelopeDistanceModelParameters extends PHASEDistanceModelPara
     @Selector("alloc")
     public static native PHASEEnvelopeDistanceModelParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEEnvelopeDistanceModelParameters allocWithZone(VoidPtr zone);

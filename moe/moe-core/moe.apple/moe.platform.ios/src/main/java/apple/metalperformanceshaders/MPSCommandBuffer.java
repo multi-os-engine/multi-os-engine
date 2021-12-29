@@ -98,6 +98,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @Selector("alloc")
     public static native MPSCommandBuffer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCommandBuffer allocWithZone(VoidPtr zone);
@@ -151,6 +152,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
 
     /**
      * Initializes a MPSCommandBuffer object with given MTLCommandBuffer.
+     * Once we create this MPSCommandBuffer, any methods utilizing it could call commitAndContinue and so the users original commandBuffer may have been committed.
+     * Please use the rootCommandBuffer method to get the current alive underlying MTLCommandBuffer.
      *
      * @return A pointer to the newly initialized MPSCommandBuffer object.
      */
@@ -284,6 +287,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
 
     /**
      * Initializes an empty MPSCommandBuffer object with given MTLCommandBuffer.
+     * Once we create this MPSCommandBuffer, any methods utilizing it could call commitAndContinue and so the users original commandBuffer may have been committed.
+     * Please use the rootCommandBuffer method to get the current alive underlying MTLCommandBuffer.
      *
      * @return A pointer to the newly initialized MPSCommandBuffer object.
      */

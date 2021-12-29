@@ -52,6 +52,7 @@ public class AVCaptureSystemPressureState extends NSObject {
     @Selector("alloc")
     public static native AVCaptureSystemPressureState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureSystemPressureState allocWithZone(VoidPtr zone);

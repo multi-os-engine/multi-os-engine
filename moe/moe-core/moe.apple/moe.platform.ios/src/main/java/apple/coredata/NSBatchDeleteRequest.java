@@ -70,6 +70,7 @@ public class NSBatchDeleteRequest extends NSPersistentStoreRequest {
     @Selector("alloc")
     public static native NSBatchDeleteRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBatchDeleteRequest allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class INAppendToNoteIntent extends INIntent {
     @Selector("alloc")
     public static native INAppendToNoteIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INAppendToNoteIntent allocWithZone(VoidPtr zone);

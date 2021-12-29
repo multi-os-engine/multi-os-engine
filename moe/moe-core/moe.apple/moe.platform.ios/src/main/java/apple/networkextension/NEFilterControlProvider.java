@@ -68,6 +68,7 @@ public class NEFilterControlProvider extends NEFilterProvider {
     @Selector("alloc")
     public static native NEFilterControlProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterControlProvider allocWithZone(VoidPtr zone);

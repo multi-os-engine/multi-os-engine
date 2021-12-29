@@ -71,6 +71,7 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @Selector("alloc")
     public static native AVPlayerItemLegibleOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemLegibleOutput allocWithZone(VoidPtr zone);

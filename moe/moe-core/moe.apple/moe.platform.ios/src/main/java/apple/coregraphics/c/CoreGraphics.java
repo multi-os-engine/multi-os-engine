@@ -5220,4 +5220,12 @@ public final class CoreGraphics {
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedRange();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_709_PQ();
+
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_2020_sRGBGamma();
 }

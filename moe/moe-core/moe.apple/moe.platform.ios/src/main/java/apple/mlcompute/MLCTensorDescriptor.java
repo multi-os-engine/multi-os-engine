@@ -53,6 +53,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCTensorDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCTensorDescriptor allocWithZone(VoidPtr zone);

@@ -46,6 +46,7 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @Selector("alloc")
     public static native NSPersistentHistoryChangeRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentHistoryChangeRequest allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class PHContentEditingOutput extends NSObject {
     @Selector("alloc")
     public static native PHContentEditingOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHContentEditingOutput allocWithZone(VoidPtr zone);

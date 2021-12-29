@@ -53,6 +53,7 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MIDICIProfileState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDICIProfileState allocWithZone(VoidPtr zone);

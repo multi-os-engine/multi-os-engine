@@ -50,6 +50,7 @@ public class MLMultiArrayShapeConstraint extends NSObject implements NSSecureCod
     @Selector("alloc")
     public static native MLMultiArrayShapeConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLMultiArrayShapeConstraint allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor
     @Selector("alloc")
     public static native MTLAccelerationStructureMotionTriangleGeometryDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAccelerationStructureMotionTriangleGeometryDescriptor allocWithZone(VoidPtr zone);

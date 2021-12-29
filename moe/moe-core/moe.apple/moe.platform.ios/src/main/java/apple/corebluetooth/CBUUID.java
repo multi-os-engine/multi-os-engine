@@ -110,6 +110,7 @@ public class CBUUID extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CBUUID alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBUUID allocWithZone(VoidPtr zone);

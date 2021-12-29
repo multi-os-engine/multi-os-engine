@@ -75,6 +75,7 @@ public class UIResponder extends NSObject
     @Selector("alloc")
     public static native UIResponder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIResponder allocWithZone(VoidPtr zone);

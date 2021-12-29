@@ -48,6 +48,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("alloc")
     public static native MTLTileRenderPipelineDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLTileRenderPipelineDescriptor allocWithZone(VoidPtr zone);

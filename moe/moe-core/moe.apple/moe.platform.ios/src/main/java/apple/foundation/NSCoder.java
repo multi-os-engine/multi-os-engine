@@ -79,6 +79,7 @@ public class NSCoder extends NSObject {
     @Selector("alloc")
     public static native NSCoder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCoder allocWithZone(VoidPtr zone);

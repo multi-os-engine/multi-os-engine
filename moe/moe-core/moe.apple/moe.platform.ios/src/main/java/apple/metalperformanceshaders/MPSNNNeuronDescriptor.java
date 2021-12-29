@@ -118,6 +118,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native MPSNNNeuronDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNNeuronDescriptor allocWithZone(VoidPtr zone);

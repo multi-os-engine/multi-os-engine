@@ -66,6 +66,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Selector("alloc")
     public static native NSHashTable<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSHashTable<?> allocWithZone(VoidPtr zone);

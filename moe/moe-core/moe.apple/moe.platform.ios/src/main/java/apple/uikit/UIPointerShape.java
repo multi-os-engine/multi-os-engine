@@ -50,6 +50,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPointerShape alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerShape allocWithZone(VoidPtr zone);

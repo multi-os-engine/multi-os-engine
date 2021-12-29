@@ -49,6 +49,7 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
     @Selector("alloc")
     public static native AVCompositionTrackFormatDescriptionReplacement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCompositionTrackFormatDescriptionReplacement allocWithZone(VoidPtr zone);

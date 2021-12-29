@@ -64,6 +64,7 @@ public class GKCylindersNoiseSource extends GKNoiseSource {
     @Selector("alloc")
     public static native GKCylindersNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKCylindersNoiseSource allocWithZone(VoidPtr zone);

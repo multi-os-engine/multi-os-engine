@@ -75,6 +75,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SCNGeometryElement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNGeometryElement allocWithZone(VoidPtr zone);

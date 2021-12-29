@@ -48,6 +48,7 @@ public class DCDevice extends NSObject {
     @Selector("alloc")
     public static native DCDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DCDevice allocWithZone(VoidPtr zone);

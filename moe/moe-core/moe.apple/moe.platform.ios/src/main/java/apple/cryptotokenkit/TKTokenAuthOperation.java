@@ -54,6 +54,7 @@ public class TKTokenAuthOperation extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native TKTokenAuthOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenAuthOperation allocWithZone(VoidPtr zone);

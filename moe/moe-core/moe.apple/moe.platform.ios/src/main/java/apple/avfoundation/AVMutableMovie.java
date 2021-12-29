@@ -96,6 +96,7 @@ public class AVMutableMovie extends AVMovie {
     @Selector("alloc")
     public static native AVMutableMovie alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableMovie allocWithZone(VoidPtr zone);

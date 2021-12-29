@@ -48,6 +48,7 @@ public class UITabBarItemStateAppearance extends NSObject {
     @Selector("alloc")
     public static native UITabBarItemStateAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITabBarItemStateAppearance allocWithZone(VoidPtr zone);

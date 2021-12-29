@@ -45,6 +45,7 @@ public class SRMessagesUsageReport extends NSObject {
     @Selector("alloc")
     public static native SRMessagesUsageReport alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRMessagesUsageReport allocWithZone(VoidPtr zone);

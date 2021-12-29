@@ -69,6 +69,7 @@ public class NSDataAsset extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSDataAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDataAsset allocWithZone(VoidPtr zone);

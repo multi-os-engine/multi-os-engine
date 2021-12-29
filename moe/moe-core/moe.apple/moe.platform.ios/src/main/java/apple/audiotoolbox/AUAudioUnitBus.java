@@ -71,6 +71,7 @@ public class AUAudioUnitBus extends NSObject {
     @Selector("alloc")
     public static native AUAudioUnitBus alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUAudioUnitBus allocWithZone(VoidPtr zone);

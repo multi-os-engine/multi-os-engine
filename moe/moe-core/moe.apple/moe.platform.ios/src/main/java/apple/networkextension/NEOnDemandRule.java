@@ -76,6 +76,7 @@ public class NEOnDemandRule extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native NEOnDemandRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEOnDemandRule allocWithZone(VoidPtr zone);

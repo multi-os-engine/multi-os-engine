@@ -49,6 +49,7 @@ public class SCNTimingFunction extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SCNTimingFunction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNTimingFunction allocWithZone(VoidPtr zone);

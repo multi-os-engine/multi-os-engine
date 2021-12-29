@@ -51,6 +51,7 @@ public class CHIPBridgedDeviceBasic extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPBridgedDeviceBasic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPBridgedDeviceBasic allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPBridgedDeviceBasic extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPBridgedDeviceBasic initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPBridgedDeviceBasic initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -72,6 +72,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Selector("alloc")
     public static native AVSampleBufferDisplayLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSampleBufferDisplayLayer allocWithZone(VoidPtr zone);

@@ -72,6 +72,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLRenderPassDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPassDescriptor allocWithZone(VoidPtr zone);

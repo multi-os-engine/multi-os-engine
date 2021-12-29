@@ -67,6 +67,7 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("alloc")
     public static native GKMatchmakerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKMatchmakerViewController allocWithZone(VoidPtr zone);

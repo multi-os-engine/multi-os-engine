@@ -55,6 +55,7 @@ public class SKRenderer extends NSObject {
     @Selector("alloc")
     public static native SKRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKRenderer allocWithZone(VoidPtr zone);

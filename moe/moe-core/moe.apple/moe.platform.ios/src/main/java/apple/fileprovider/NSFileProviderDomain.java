@@ -65,6 +65,7 @@ public class NSFileProviderDomain extends NSObject {
     @Selector("alloc")
     public static native NSFileProviderDomain alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileProviderDomain allocWithZone(VoidPtr zone);

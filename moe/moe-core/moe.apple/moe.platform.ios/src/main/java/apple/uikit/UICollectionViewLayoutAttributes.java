@@ -73,6 +73,7 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("alloc")
     public static native UICollectionViewLayoutAttributes alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewLayoutAttributes allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class UITextSelectionRect extends NSObject {
     @Selector("alloc")
     public static native UITextSelectionRect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextSelectionRect allocWithZone(VoidPtr zone);

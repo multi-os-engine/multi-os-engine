@@ -45,6 +45,7 @@ public class INStartCallContactResolutionResult extends INPersonResolutionResult
     @Selector("alloc")
     public static native INStartCallContactResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartCallContactResolutionResult allocWithZone(VoidPtr zone);

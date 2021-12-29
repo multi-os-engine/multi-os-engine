@@ -66,6 +66,7 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Selector("alloc")
     public static native CKShareParticipant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKShareParticipant allocWithZone(VoidPtr zone);

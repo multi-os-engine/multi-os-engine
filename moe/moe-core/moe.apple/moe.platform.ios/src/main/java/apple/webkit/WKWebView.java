@@ -91,6 +91,7 @@ public class WKWebView extends UIView {
     @Selector("alloc")
     public static native WKWebView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKWebView allocWithZone(VoidPtr zone);
@@ -1265,7 +1266,7 @@ public class WKWebView extends UIView {
     /**
      * Begins a download in the context of the currently displayed webpage as if the WKNavigationDelegate turned a navigation into a download instead
      * <p>
-     * The download needs its delegate to be set in the completionHandler to receive updates about its progress.
+     * The download needs its delegate to be set in the completionHandler to receive updates about its progress.
      *
      * @param request           The request specifying the URL to download.
      * @param completionHandler A block called when the download has started.

@@ -81,6 +81,7 @@ public class HMCameraView extends UIView {
     @Selector("alloc")
     public static native HMCameraView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCameraView allocWithZone(VoidPtr zone);

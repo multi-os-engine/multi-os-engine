@@ -54,6 +54,7 @@ public class MDLRelativeAssetResolver extends NSObject implements MDLAssetResolv
     @Selector("alloc")
     public static native MDLRelativeAssetResolver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLRelativeAssetResolver allocWithZone(VoidPtr zone);

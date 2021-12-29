@@ -46,6 +46,7 @@ public class INURLResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INURLResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INURLResolutionResult allocWithZone(VoidPtr zone);

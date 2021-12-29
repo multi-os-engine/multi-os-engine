@@ -66,6 +66,7 @@ public class CKUserIdentityLookupInfo extends NSObject implements NSSecureCoding
     @Selector("alloc")
     public static native CKUserIdentityLookupInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKUserIdentityLookupInfo allocWithZone(VoidPtr zone);

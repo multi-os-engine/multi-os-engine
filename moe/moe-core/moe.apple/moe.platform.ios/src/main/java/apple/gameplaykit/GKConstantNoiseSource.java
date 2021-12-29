@@ -64,6 +64,7 @@ public class GKConstantNoiseSource extends GKNoiseSource {
     @Selector("alloc")
     public static native GKConstantNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKConstantNoiseSource allocWithZone(VoidPtr zone);

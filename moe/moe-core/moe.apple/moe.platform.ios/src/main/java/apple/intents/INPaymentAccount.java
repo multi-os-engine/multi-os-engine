@@ -59,6 +59,7 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native INPaymentAccount alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPaymentAccount allocWithZone(VoidPtr zone);

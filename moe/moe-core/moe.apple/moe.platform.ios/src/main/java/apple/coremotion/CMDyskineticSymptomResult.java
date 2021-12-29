@@ -58,6 +58,7 @@ public class CMDyskineticSymptomResult extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native CMDyskineticSymptomResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMDyskineticSymptomResult allocWithZone(VoidPtr zone);

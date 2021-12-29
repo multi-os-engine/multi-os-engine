@@ -69,6 +69,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     @Selector("alloc")
     public static native NSTextContainer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextContainer allocWithZone(VoidPtr zone);

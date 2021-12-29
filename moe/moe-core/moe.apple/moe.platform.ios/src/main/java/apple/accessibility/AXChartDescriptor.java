@@ -63,6 +63,7 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AXChartDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AXChartDescriptor allocWithZone(VoidPtr zone);

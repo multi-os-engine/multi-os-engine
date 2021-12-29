@@ -52,6 +52,7 @@ public class NFCTagCommandConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NFCTagCommandConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCTagCommandConfiguration allocWithZone(VoidPtr zone);

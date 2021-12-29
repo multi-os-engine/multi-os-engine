@@ -63,6 +63,7 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("alloc")
     public static native MKDirectionsRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKDirectionsRequest allocWithZone(VoidPtr zone);

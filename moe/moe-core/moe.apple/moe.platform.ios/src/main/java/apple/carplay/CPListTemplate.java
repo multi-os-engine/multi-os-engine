@@ -52,6 +52,7 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("alloc")
     public static native CPListTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPListTemplate allocWithZone(VoidPtr zone);

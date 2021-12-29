@@ -64,6 +64,7 @@ public class AVPlayerLooper extends NSObject {
     @Selector("alloc")
     public static native AVPlayerLooper alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerLooper allocWithZone(VoidPtr zone);

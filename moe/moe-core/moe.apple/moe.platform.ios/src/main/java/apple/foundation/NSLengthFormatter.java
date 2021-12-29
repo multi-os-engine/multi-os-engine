@@ -62,6 +62,7 @@ public class NSLengthFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSLengthFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLengthFormatter allocWithZone(VoidPtr zone);

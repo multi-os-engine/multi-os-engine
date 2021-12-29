@@ -66,6 +66,7 @@ public class AUViewController extends UIViewController implements NSExtensionReq
     @Selector("alloc")
     public static native AUViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUViewController allocWithZone(VoidPtr zone);

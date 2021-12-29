@@ -65,6 +65,7 @@ public class MPSCNNMultiaryKernel extends MPSKernel {
     @Selector("alloc")
     public static native MPSCNNMultiaryKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNMultiaryKernel allocWithZone(VoidPtr zone);

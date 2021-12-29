@@ -63,6 +63,7 @@ public class MTLVertexAttributeDescriptor extends NSObject implements NSCopying 
     @Selector("alloc")
     public static native MTLVertexAttributeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLVertexAttributeDescriptor allocWithZone(VoidPtr zone);

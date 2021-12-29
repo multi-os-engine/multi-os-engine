@@ -54,6 +54,7 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MIDICIDeviceInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDICIDeviceInfo allocWithZone(VoidPtr zone);

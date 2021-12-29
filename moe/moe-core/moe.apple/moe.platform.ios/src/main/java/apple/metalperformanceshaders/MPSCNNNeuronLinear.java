@@ -70,6 +70,7 @@ public class MPSCNNNeuronLinear extends MPSCNNNeuron {
     @Selector("alloc")
     public static native MPSCNNNeuronLinear alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronLinear allocWithZone(VoidPtr zone);

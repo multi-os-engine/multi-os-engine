@@ -55,6 +55,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCEmbeddingLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCEmbeddingLayer allocWithZone(VoidPtr zone);

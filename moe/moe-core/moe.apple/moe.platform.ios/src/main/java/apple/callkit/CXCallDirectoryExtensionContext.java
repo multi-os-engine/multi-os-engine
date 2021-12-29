@@ -65,6 +65,7 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @Selector("alloc")
     public static native CXCallDirectoryExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXCallDirectoryExtensionContext allocWithZone(VoidPtr zone);

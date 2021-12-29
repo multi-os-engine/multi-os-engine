@@ -69,6 +69,7 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
     @Selector("alloc")
     public static native AVMutableTimedMetadataGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableTimedMetadataGroup allocWithZone(VoidPtr zone);

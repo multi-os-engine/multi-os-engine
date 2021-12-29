@@ -50,6 +50,7 @@ public class PKDisbursementVoucher extends NSObject {
     @Selector("alloc")
     public static native PKDisbursementVoucher alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKDisbursementVoucher allocWithZone(VoidPtr zone);

@@ -169,6 +169,7 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     @Selector("alloc")
     public static native MPSInstanceAccelerationStructure alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSInstanceAccelerationStructure allocWithZone(VoidPtr zone);

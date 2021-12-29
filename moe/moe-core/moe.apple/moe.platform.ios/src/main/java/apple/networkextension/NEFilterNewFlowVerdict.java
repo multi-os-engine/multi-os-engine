@@ -86,6 +86,7 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
     @Selector("alloc")
     public static native NEFilterNewFlowVerdict alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterNewFlowVerdict allocWithZone(VoidPtr zone);

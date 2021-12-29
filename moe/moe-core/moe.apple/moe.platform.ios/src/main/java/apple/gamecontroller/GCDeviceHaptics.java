@@ -46,6 +46,7 @@ public class GCDeviceHaptics extends NSObject {
     @Selector("alloc")
     public static native GCDeviceHaptics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCDeviceHaptics allocWithZone(VoidPtr zone);

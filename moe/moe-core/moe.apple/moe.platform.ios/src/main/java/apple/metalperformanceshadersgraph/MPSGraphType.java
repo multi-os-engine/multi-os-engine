@@ -47,6 +47,7 @@ public class MPSGraphType extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPSGraphType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphType allocWithZone(VoidPtr zone);

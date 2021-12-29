@@ -2,7 +2,6 @@ package apple.chip;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -27,19 +26,19 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Cluster Trusted Root Certificates
+ * Cluster WiFi Network Diagnostics
  */
 @Generated
 @Library("CHIP")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CHIPTrustedRootCertificates extends CHIPCluster {
+public class CHIPWiFiNetworkDiagnostics extends CHIPCluster {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected CHIPTrustedRootCertificates(Pointer peer) {
+    protected CHIPWiFiNetworkDiagnostics(Pointer peer) {
         super(peer);
     }
 
@@ -48,25 +47,14 @@ public class CHIPTrustedRootCertificates extends CHIPCluster {
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
-    @Selector("addTrustedRootCertificate:responseHandler:")
-    public native void addTrustedRootCertificateResponseHandler(NSData rootCertificate,
-            @ObjCBlock(name = "call_addTrustedRootCertificateResponseHandler") Block_addTrustedRootCertificateResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addTrustedRootCertificateResponseHandler {
-        @Generated
-        void call_addTrustedRootCertificateResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
     @Owned
     @Selector("alloc")
-    public static native CHIPTrustedRootCertificates alloc();
+    public static native CHIPWiFiNetworkDiagnostics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
-    public static native CHIPTrustedRootCertificates allocWithZone(VoidPtr zone);
+    public static native CHIPWiFiNetworkDiagnostics allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -105,11 +93,11 @@ public class CHIPTrustedRootCertificates extends CHIPCluster {
 
     @Generated
     @Selector("init")
-    public native CHIPTrustedRootCertificates init();
+    public native CHIPWiFiNetworkDiagnostics init();
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPTrustedRootCertificates initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPWiFiNetworkDiagnostics initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated
@@ -136,7 +124,31 @@ public class CHIPTrustedRootCertificates extends CHIPCluster {
     @Generated
     @Owned
     @Selector("new")
-    public static native CHIPTrustedRootCertificates new_objc();
+    public static native CHIPWiFiNetworkDiagnostics new_objc();
+
+    @Generated
+    @Selector("readAttributeBssidWithResponseHandler:")
+    public native void readAttributeBssidWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeBssidWithResponseHandler") Block_readAttributeBssidWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeBssidWithResponseHandler {
+        @Generated
+        void call_readAttributeBssidWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeChannelNumberWithResponseHandler:")
+    public native void readAttributeChannelNumberWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeChannelNumberWithResponseHandler") Block_readAttributeChannelNumberWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeChannelNumberWithResponseHandler {
+        @Generated
+        void call_readAttributeChannelNumberWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 
     @Generated
     @Selector("readAttributeClusterRevisionWithResponseHandler:")
@@ -151,15 +163,50 @@ public class CHIPTrustedRootCertificates extends CHIPCluster {
     }
 
     @Generated
-    @Selector("removeTrustedRootCertificate:responseHandler:")
-    public native void removeTrustedRootCertificateResponseHandler(NSData trustedRootIdentifier,
-            @ObjCBlock(name = "call_removeTrustedRootCertificateResponseHandler") Block_removeTrustedRootCertificateResponseHandler responseHandler);
+    @Selector("readAttributeRssiWithResponseHandler:")
+    public native void readAttributeRssiWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeRssiWithResponseHandler") Block_readAttributeRssiWithResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_removeTrustedRootCertificateResponseHandler {
+    public interface Block_readAttributeRssiWithResponseHandler {
         @Generated
-        void call_removeTrustedRootCertificateResponseHandler(NSError error, NSDictionary<?, ?> values);
+        void call_readAttributeRssiWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeSecurityTypeWithResponseHandler:")
+    public native void readAttributeSecurityTypeWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeSecurityTypeWithResponseHandler") Block_readAttributeSecurityTypeWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSecurityTypeWithResponseHandler {
+        @Generated
+        void call_readAttributeSecurityTypeWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeWiFiVersionWithResponseHandler:")
+    public native void readAttributeWiFiVersionWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeWiFiVersionWithResponseHandler") Block_readAttributeWiFiVersionWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeWiFiVersionWithResponseHandler {
+        @Generated
+        void call_readAttributeWiFiVersionWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("resetCounts:")
+    public native void resetCounts(@ObjCBlock(name = "call_resetCounts") Block_resetCounts responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_resetCounts {
+        @Generated
+        void call_resetCounts(NSError error, NSDictionary<?, ?> values);
     }
 
     @Generated

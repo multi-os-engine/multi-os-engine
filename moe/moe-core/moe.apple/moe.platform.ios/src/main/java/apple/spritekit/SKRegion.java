@@ -70,6 +70,7 @@ public class SKRegion extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKRegion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKRegion allocWithZone(VoidPtr zone);

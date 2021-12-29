@@ -61,6 +61,7 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INCallRecordTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCallRecordTypeResolutionResult allocWithZone(VoidPtr zone);

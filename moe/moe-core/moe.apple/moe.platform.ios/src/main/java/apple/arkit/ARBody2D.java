@@ -48,6 +48,7 @@ public class ARBody2D extends NSObject {
     @Selector("alloc")
     public static native ARBody2D alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARBody2D allocWithZone(VoidPtr zone);

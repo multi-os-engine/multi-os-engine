@@ -51,6 +51,7 @@ public class CSImportExtension extends NSObject implements NSExtensionRequestHan
     @Selector("alloc")
     public static native CSImportExtension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSImportExtension allocWithZone(VoidPtr zone);

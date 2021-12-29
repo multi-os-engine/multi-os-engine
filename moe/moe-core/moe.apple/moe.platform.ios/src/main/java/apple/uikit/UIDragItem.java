@@ -48,6 +48,7 @@ public class UIDragItem extends NSObject {
     @Selector("alloc")
     public static native UIDragItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDragItem allocWithZone(VoidPtr zone);

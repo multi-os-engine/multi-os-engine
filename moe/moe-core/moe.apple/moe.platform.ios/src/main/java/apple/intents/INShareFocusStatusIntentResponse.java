@@ -48,6 +48,7 @@ public class INShareFocusStatusIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INShareFocusStatusIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INShareFocusStatusIntentResponse allocWithZone(VoidPtr zone);

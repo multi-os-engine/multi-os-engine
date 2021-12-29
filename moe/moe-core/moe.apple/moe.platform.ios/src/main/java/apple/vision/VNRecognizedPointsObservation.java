@@ -58,6 +58,7 @@ public class VNRecognizedPointsObservation extends VNObservation {
     @Selector("alloc")
     public static native VNRecognizedPointsObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRecognizedPointsObservation allocWithZone(VoidPtr zone);

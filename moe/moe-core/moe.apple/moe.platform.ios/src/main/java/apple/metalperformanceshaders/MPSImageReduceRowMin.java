@@ -52,6 +52,7 @@ public class MPSImageReduceRowMin extends MPSImageReduceUnary {
     @Selector("alloc")
     public static native MPSImageReduceRowMin alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageReduceRowMin allocWithZone(VoidPtr zone);

@@ -58,6 +58,7 @@ public class NSPipe extends NSObject {
     @Selector("alloc")
     public static native NSPipe alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPipe allocWithZone(VoidPtr zone);

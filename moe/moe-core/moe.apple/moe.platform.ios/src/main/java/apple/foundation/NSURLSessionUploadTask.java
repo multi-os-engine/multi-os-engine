@@ -64,6 +64,7 @@ public class NSURLSessionUploadTask extends NSURLSessionDataTask {
     @Selector("alloc")
     public static native NSURLSessionUploadTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionUploadTask allocWithZone(VoidPtr zone);

@@ -8653,14 +8653,14 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLFileProtectionNone();
 
     /**
-     * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is locked or booting.
+     * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is locked or booting. Transient data files with this protection type should be excluded from backups using kCFURLIsExcludedFromBackupKey.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileProtectionComplete();
 
     /**
-     * The file is stored in an encrypted format on disk. Files can be created while the device is locked, but once closed, cannot be opened again until the device is unlocked. If the file is opened when unlocked, you may continue to access the file normally, even if the user locks the device. There is a small performance penalty when the file is created and opened, though not when being written to or read from. This can be mitigated by changing the file protection to kCFURLFileProtectionComplete when the device is unlocked.
+     * The file is stored in an encrypted format on disk. Files can be created while the device is locked, but once closed, cannot be opened again until the device is unlocked. If the file is opened when unlocked, you may continue to access the file normally, even if the user locks the device. There is a small performance penalty when the file is created and opened, though not when being written to or read from. This can be mitigated by changing the file protection to kCFURLFileProtectionComplete when the device is unlocked. Transient data files with this protection type should be excluded from backups using kCFURLIsExcludedFromBackupKey.
      */
     @Generated
     @CVariable()
@@ -8951,6 +8951,7 @@ public final class CoreFoundation {
     /**
      * true if this item has conflicts outstanding. (Read-only, value type CFBoolean)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLUbiquitousItemIsDownloadedKey();
@@ -8979,6 +8980,7 @@ public final class CoreFoundation {
     /**
      * true if data is being uploaded for this item. (Read-only, value type CFBoolean)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLUbiquitousItemPercentDownloadedKey();
@@ -8986,6 +8988,7 @@ public final class CoreFoundation {
     /**
      * Use NSMetadataQuery and NSMetadataUbiquitousItemPercentDownloadedKey on NSMetadataItem instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLUbiquitousItemPercentUploadedKey();
@@ -9683,34 +9686,42 @@ public final class CoreFoundation {
     /**
      * Older property keys
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileExists();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileDirectoryContents();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileLength();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileLastModificationTime();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFilePOSIXMode();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileOwnerID();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLHTTPStatusCode();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLHTTPStatusLine();

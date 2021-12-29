@@ -75,6 +75,7 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageThresholdTruncate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageThresholdTruncate allocWithZone(VoidPtr zone);

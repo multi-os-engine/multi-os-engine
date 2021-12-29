@@ -70,6 +70,7 @@ public class PKPushRegistry extends NSObject {
     @Selector("alloc")
     public static native PKPushRegistry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPushRegistry allocWithZone(VoidPtr zone);

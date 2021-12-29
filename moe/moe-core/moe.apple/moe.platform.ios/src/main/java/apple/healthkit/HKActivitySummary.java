@@ -73,6 +73,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     @Selector("alloc")
     public static native HKActivitySummary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKActivitySummary allocWithZone(VoidPtr zone);

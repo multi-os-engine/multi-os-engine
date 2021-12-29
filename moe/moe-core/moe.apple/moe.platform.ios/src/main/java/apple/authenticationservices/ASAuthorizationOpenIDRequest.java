@@ -47,6 +47,7 @@ public class ASAuthorizationOpenIDRequest extends ASAuthorizationRequest {
     @Selector("alloc")
     public static native ASAuthorizationOpenIDRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationOpenIDRequest allocWithZone(VoidPtr zone);

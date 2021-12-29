@@ -67,6 +67,7 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryOutlineDisclosure alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryOutlineDisclosure allocWithZone(VoidPtr zone);

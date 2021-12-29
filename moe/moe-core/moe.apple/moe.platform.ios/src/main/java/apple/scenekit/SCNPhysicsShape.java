@@ -73,6 +73,7 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native SCNPhysicsShape alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsShape allocWithZone(VoidPtr zone);

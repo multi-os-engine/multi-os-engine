@@ -45,6 +45,7 @@ public class SRWristDetection extends NSObject {
     @Selector("alloc")
     public static native SRWristDetection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRWristDetection allocWithZone(VoidPtr zone);

@@ -80,6 +80,7 @@ public class SHCustomCatalog extends SHCatalog {
     @Selector("alloc")
     public static native SHCustomCatalog alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHCustomCatalog allocWithZone(VoidPtr zone);

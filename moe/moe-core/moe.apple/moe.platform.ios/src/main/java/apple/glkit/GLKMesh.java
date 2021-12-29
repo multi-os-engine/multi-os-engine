@@ -67,6 +67,7 @@ public class GLKMesh extends NSObject {
     @Selector("alloc")
     public static native GLKMesh alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKMesh allocWithZone(VoidPtr zone);

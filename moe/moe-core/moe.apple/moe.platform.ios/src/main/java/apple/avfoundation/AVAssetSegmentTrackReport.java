@@ -52,6 +52,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
     @Selector("alloc")
     public static native AVAssetSegmentTrackReport alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetSegmentTrackReport allocWithZone(VoidPtr zone);

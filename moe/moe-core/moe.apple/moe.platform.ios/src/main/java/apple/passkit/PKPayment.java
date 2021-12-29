@@ -68,6 +68,7 @@ public class PKPayment extends NSObject {
     @Selector("alloc")
     public static native PKPayment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPayment allocWithZone(VoidPtr zone);

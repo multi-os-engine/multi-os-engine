@@ -47,6 +47,7 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
     @Selector("alloc")
     public static native MTLVisibleFunctionTableDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLVisibleFunctionTableDescriptor allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INIntent allocWithZone(VoidPtr zone);

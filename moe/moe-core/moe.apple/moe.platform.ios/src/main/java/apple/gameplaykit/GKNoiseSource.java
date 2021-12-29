@@ -75,6 +75,7 @@ public class GKNoiseSource extends NSObject {
     @Selector("alloc")
     public static native GKNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKNoiseSource allocWithZone(VoidPtr zone);

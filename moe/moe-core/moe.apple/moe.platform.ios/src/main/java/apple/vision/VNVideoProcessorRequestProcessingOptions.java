@@ -50,6 +50,7 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
     @Selector("alloc")
     public static native VNVideoProcessorRequestProcessingOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNVideoProcessorRequestProcessingOptions allocWithZone(VoidPtr zone);

@@ -85,6 +85,7 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("alloc")
     public static native UIControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIControl allocWithZone(VoidPtr zone);

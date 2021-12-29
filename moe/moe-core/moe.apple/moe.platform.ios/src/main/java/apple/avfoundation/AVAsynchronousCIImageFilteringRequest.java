@@ -69,6 +69,7 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @Selector("alloc")
     public static native AVAsynchronousCIImageFilteringRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAsynchronousCIImageFilteringRequest allocWithZone(VoidPtr zone);

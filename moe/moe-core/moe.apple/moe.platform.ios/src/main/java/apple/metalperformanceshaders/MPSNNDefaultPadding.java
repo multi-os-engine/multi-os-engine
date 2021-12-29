@@ -55,6 +55,7 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @Selector("alloc")
     public static native MPSNNDefaultPadding alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNDefaultPadding allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class INRelativeSettingResolutionResult extends INIntentResolutionResult 
     @Selector("alloc")
     public static native INRelativeSettingResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRelativeSettingResolutionResult allocWithZone(VoidPtr zone);

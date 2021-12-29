@@ -67,6 +67,7 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Selector("alloc")
     public static native NSAttributeDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAttributeDescription allocWithZone(VoidPtr zone);

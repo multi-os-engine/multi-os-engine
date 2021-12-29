@@ -86,6 +86,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("alloc")
     public static native UISearchBar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISearchBar allocWithZone(VoidPtr zone);

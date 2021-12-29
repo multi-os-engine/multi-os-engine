@@ -84,6 +84,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Selector("alloc")
     public static native MFMessageComposeViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MFMessageComposeViewController allocWithZone(VoidPtr zone);

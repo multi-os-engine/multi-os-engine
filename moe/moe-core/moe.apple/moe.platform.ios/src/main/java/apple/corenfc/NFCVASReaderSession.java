@@ -57,6 +57,7 @@ public class NFCVASReaderSession extends NFCReaderSession {
     @Selector("alloc")
     public static native NFCVASReaderSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCVASReaderSession allocWithZone(VoidPtr zone);

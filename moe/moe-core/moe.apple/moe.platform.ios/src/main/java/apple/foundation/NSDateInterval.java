@@ -62,6 +62,7 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native NSDateInterval alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDateInterval allocWithZone(VoidPtr zone);

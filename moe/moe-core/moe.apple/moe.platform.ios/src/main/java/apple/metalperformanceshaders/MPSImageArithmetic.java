@@ -90,6 +90,7 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     @Selector("alloc")
     public static native MPSImageArithmetic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageArithmetic allocWithZone(VoidPtr zone);

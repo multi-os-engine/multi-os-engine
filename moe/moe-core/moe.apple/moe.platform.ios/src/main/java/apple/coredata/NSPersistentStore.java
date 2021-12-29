@@ -66,6 +66,7 @@ public class NSPersistentStore extends NSObject {
     @Selector("alloc")
     public static native NSPersistentStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentStore allocWithZone(VoidPtr zone);

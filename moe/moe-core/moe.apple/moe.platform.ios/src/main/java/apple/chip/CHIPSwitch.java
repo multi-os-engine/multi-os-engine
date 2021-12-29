@@ -51,6 +51,7 @@ public class CHIPSwitch extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPSwitch alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPSwitch allocWithZone(VoidPtr zone);
@@ -110,7 +111,7 @@ public class CHIPSwitch extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPSwitch initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPSwitch initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

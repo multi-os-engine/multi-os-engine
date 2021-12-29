@@ -62,6 +62,7 @@ public class UITableViewFocusUpdateContext extends UIFocusUpdateContext {
     @Selector("alloc")
     public static native UITableViewFocusUpdateContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewFocusUpdateContext allocWithZone(VoidPtr zone);

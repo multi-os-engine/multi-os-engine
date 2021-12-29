@@ -65,6 +65,7 @@ public class WKWindowFeatures extends NSObject {
     @Selector("alloc")
     public static native WKWindowFeatures alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKWindowFeatures allocWithZone(VoidPtr zone);

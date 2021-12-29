@@ -50,6 +50,7 @@ public class EKVirtualConferenceRoomTypeDescriptor extends NSObject {
     @Selector("alloc")
     public static native EKVirtualConferenceRoomTypeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKVirtualConferenceRoomTypeDescriptor allocWithZone(VoidPtr zone);

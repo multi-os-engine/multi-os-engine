@@ -47,6 +47,7 @@ public class INSearchForBillsIntent extends INIntent {
     @Selector("alloc")
     public static native INSearchForBillsIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSearchForBillsIntent allocWithZone(VoidPtr zone);

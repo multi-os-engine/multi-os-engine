@@ -47,6 +47,7 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Selector("alloc")
     public static native NSOrderedCollectionDifference<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSOrderedCollectionDifference<?> allocWithZone(VoidPtr zone);

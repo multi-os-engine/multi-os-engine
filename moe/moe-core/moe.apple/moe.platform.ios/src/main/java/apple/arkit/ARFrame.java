@@ -59,6 +59,7 @@ public class ARFrame extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native ARFrame alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARFrame allocWithZone(VoidPtr zone);

@@ -58,6 +58,7 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
     @Selector("alloc")
     public static native MTLRasterizationRateMapDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRasterizationRateMapDescriptor allocWithZone(VoidPtr zone);

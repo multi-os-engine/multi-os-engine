@@ -45,6 +45,7 @@ public class DDMatchPostalAddress extends DDMatch {
     @Selector("alloc")
     public static native DDMatchPostalAddress alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchPostalAddress allocWithZone(VoidPtr zone);

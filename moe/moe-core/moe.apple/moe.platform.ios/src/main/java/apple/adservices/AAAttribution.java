@@ -53,6 +53,7 @@ public class AAAttribution extends NSObject {
     @Selector("alloc")
     public static native AAAttribution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AAAttribution allocWithZone(VoidPtr zone);

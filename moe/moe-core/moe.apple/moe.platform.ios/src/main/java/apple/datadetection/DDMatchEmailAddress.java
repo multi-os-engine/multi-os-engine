@@ -45,6 +45,7 @@ public class DDMatchEmailAddress extends DDMatch {
     @Selector("alloc")
     public static native DDMatchEmailAddress alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchEmailAddress allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class SKReferenceNode extends SKNode {
     @Selector("alloc")
     public static native SKReferenceNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKReferenceNode allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("alloc")
     public static native NSURLCredential alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLCredential allocWithZone(VoidPtr zone);

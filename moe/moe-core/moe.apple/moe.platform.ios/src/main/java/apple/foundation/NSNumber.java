@@ -82,6 +82,7 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Selector("alloc")
     public static native NSNumber alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSNumber allocWithZone(VoidPtr zone);

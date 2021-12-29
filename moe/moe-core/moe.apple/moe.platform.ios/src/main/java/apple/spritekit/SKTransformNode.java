@@ -58,6 +58,7 @@ public class SKTransformNode extends SKNode {
     @Selector("alloc")
     public static native SKTransformNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTransformNode allocWithZone(VoidPtr zone);

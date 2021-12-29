@@ -87,6 +87,7 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native EKRecurrenceEnd alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKRecurrenceEnd allocWithZone(VoidPtr zone);

@@ -59,6 +59,7 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @Selector("alloc")
     public static native AVAudioUnitMIDIInstrument alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitMIDIInstrument allocWithZone(VoidPtr zone);

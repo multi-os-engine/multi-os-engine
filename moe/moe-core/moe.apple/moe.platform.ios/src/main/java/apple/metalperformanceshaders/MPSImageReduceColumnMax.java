@@ -52,6 +52,7 @@ public class MPSImageReduceColumnMax extends MPSImageReduceUnary {
     @Selector("alloc")
     public static native MPSImageReduceColumnMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageReduceColumnMax allocWithZone(VoidPtr zone);

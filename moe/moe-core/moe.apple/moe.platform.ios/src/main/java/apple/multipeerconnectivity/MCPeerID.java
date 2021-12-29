@@ -84,6 +84,7 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native MCPeerID alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MCPeerID allocWithZone(VoidPtr zone);

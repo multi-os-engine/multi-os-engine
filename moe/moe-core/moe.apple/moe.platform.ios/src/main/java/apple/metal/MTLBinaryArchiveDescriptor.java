@@ -53,6 +53,7 @@ public class MTLBinaryArchiveDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLBinaryArchiveDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLBinaryArchiveDescriptor allocWithZone(VoidPtr zone);

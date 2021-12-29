@@ -70,6 +70,7 @@ public class SCNPlane extends SCNGeometry {
     @Selector("alloc")
     public static native SCNPlane alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPlane allocWithZone(VoidPtr zone);

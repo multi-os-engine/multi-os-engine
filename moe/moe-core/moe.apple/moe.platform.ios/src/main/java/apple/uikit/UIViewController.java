@@ -89,6 +89,7 @@ public class UIViewController extends UIResponder
     @Selector("alloc")
     public static native UIViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIViewController allocWithZone(VoidPtr zone);

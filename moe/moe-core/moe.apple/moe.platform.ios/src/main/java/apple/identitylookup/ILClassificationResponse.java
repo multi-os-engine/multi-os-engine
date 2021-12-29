@@ -57,6 +57,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     @Selector("alloc")
     public static native ILClassificationResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILClassificationResponse allocWithZone(VoidPtr zone);

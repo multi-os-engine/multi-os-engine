@@ -60,6 +60,7 @@ public class LPMetadataProvider extends NSObject {
     @Selector("alloc")
     public static native LPMetadataProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native LPMetadataProvider allocWithZone(VoidPtr zone);

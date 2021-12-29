@@ -70,6 +70,7 @@ public class CNSaveRequest extends NSObject {
     @Selector("alloc")
     public static native CNSaveRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNSaveRequest allocWithZone(VoidPtr zone);

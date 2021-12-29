@@ -70,6 +70,7 @@ public class MPMediaPickerController extends UIViewController {
     @Selector("alloc")
     public static native MPMediaPickerController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaPickerController allocWithZone(VoidPtr zone);

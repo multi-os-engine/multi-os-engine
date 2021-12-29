@@ -74,6 +74,7 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("alloc")
     public static native NEFilterVerdict alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterVerdict allocWithZone(VoidPtr zone);

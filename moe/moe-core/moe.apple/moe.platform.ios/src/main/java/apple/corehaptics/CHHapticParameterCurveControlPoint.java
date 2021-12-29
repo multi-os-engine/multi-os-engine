@@ -53,6 +53,7 @@ public class CHHapticParameterCurveControlPoint extends NSObject {
     @Selector("alloc")
     public static native CHHapticParameterCurveControlPoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHHapticParameterCurveControlPoint allocWithZone(VoidPtr zone);

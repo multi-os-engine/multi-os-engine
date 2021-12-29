@@ -335,6 +335,7 @@ public final class AddressBook {
     @CFunction
     public static native CFDataRef ABPersonCreateVCardRepresentationWithPeople(CFArrayRef people);
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef ABAddressBookErrorDomain();
@@ -342,6 +343,7 @@ public final class AddressBook {
     /**
      * string
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABSourceNameProperty();
@@ -349,6 +351,7 @@ public final class AddressBook {
     /**
      * CFNumberRef of ABSourceType (int)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABSourceTypeProperty();
@@ -356,14 +359,17 @@ public final class AddressBook {
     /**
      * Generic labels
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABWorkLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABHomeLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABOtherLabel();
@@ -371,6 +377,7 @@ public final class AddressBook {
     /**
      * First name - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonFirstNameProperty();
@@ -378,6 +385,7 @@ public final class AddressBook {
     /**
      * Last name - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonLastNameProperty();
@@ -385,6 +393,7 @@ public final class AddressBook {
     /**
      * Middle name - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonMiddleNameProperty();
@@ -392,6 +401,7 @@ public final class AddressBook {
     /**
      * Prefix ("Sir" "Duke" "General") - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonPrefixProperty();
@@ -399,6 +409,7 @@ public final class AddressBook {
     /**
      * Suffix ("Jr." "Sr." "III") - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonSuffixProperty();
@@ -406,6 +417,7 @@ public final class AddressBook {
     /**
      * Nickname - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonNicknameProperty();
@@ -413,6 +425,7 @@ public final class AddressBook {
     /**
      * First name Phonetic - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonFirstNamePhoneticProperty();
@@ -420,6 +433,7 @@ public final class AddressBook {
     /**
      * Last name Phonetic - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonLastNamePhoneticProperty();
@@ -427,6 +441,7 @@ public final class AddressBook {
     /**
      * Middle name Phonetic - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonMiddleNamePhoneticProperty();
@@ -434,6 +449,7 @@ public final class AddressBook {
     /**
      * Company name - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonOrganizationProperty();
@@ -441,6 +457,7 @@ public final class AddressBook {
     /**
      * Department name - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonDepartmentProperty();
@@ -448,6 +465,7 @@ public final class AddressBook {
     /**
      * Job Title - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonJobTitleProperty();
@@ -455,6 +473,7 @@ public final class AddressBook {
     /**
      * Email(s) - kABMultiStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonEmailProperty();
@@ -462,6 +481,7 @@ public final class AddressBook {
     /**
      * Birthday associated with this person - kABDateTimePropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonBirthdayProperty();
@@ -469,6 +489,7 @@ public final class AddressBook {
     /**
      * Note - kABStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonNoteProperty();
@@ -476,6 +497,7 @@ public final class AddressBook {
     /**
      * Creation Date (when first saved)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonCreationDateProperty();
@@ -483,6 +505,7 @@ public final class AddressBook {
     /**
      * Last saved date
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonModificationDateProperty();
@@ -490,30 +513,37 @@ public final class AddressBook {
     /**
      * Street address - kABMultiDictionaryPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonAddressProperty();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAddressStreetKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAddressCityKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAddressStateKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAddressZIPKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAddressCountryKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAddressCountryCodeKey();
@@ -521,10 +551,12 @@ public final class AddressBook {
     /**
      * Dates associated with this person - kABMultiDatePropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonDateProperty();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAnniversaryLabel();
@@ -532,14 +564,17 @@ public final class AddressBook {
     /**
      * Person/Organization - kABIntegerPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonKindProperty();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFNumberRef kABPersonKindPerson();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFNumberRef kABPersonKindOrganization();
@@ -547,34 +582,42 @@ public final class AddressBook {
     /**
      * Generic phone number - kABMultiStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonPhoneProperty();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPhoneMobileLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPhoneIPhoneLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPhoneMainLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPhoneHomeFAXLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPhoneWorkFAXLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPhoneOtherFAXLabel();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPhonePagerLabel();
@@ -582,6 +625,7 @@ public final class AddressBook {
     /**
      * Instant Messaging - kABMultiDictionaryPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonInstantMessageProperty();
@@ -589,46 +633,57 @@ public final class AddressBook {
     /**
      * Service ("Yahoo", "Jabber", etc.)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceYahoo();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceJabber();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceMSN();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceICQ();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceAIM();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceQQ();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceGoogleTalk();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceSkype();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceFacebook();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageServiceGaduGadu();
@@ -636,6 +691,7 @@ public final class AddressBook {
     /**
      * Username
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonInstantMessageUsernameKey();
@@ -643,6 +699,7 @@ public final class AddressBook {
     /**
      * URL - kABMultiStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonURLProperty();
@@ -650,6 +707,7 @@ public final class AddressBook {
     /**
      * Home Page
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonHomePageLabel();
@@ -657,6 +715,7 @@ public final class AddressBook {
     /**
      * Names - kABMultiStringPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonRelatedNamesProperty();
@@ -664,6 +723,7 @@ public final class AddressBook {
     /**
      * Father
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonFatherLabel();
@@ -671,6 +731,7 @@ public final class AddressBook {
     /**
      * Mother
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonMotherLabel();
@@ -678,6 +739,7 @@ public final class AddressBook {
     /**
      * Parent
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonParentLabel();
@@ -685,6 +747,7 @@ public final class AddressBook {
     /**
      * Brother
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonBrotherLabel();
@@ -692,6 +755,7 @@ public final class AddressBook {
     /**
      * Sister
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSisterLabel();
@@ -699,6 +763,7 @@ public final class AddressBook {
     /**
      * Child
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonChildLabel();
@@ -706,6 +771,7 @@ public final class AddressBook {
     /**
      * Friend
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonFriendLabel();
@@ -713,6 +779,7 @@ public final class AddressBook {
     /**
      * Spouse
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSpouseLabel();
@@ -720,6 +787,7 @@ public final class AddressBook {
     /**
      * Partner
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonPartnerLabel();
@@ -727,6 +795,7 @@ public final class AddressBook {
     /**
      * Assistant
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAssistantLabel();
@@ -734,6 +803,7 @@ public final class AddressBook {
     /**
      * Manager
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonManagerLabel();
@@ -741,6 +811,7 @@ public final class AddressBook {
     /**
      * kABMultiDictionaryPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonSocialProfileProperty();
@@ -748,6 +819,7 @@ public final class AddressBook {
     /**
      * string representation of a url for the social profile
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileURLKey();
@@ -755,6 +827,7 @@ public final class AddressBook {
     /**
      * string representing the name of the service (Twitter, Facebook, LinkedIn, etc.)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceKey();
@@ -762,6 +835,7 @@ public final class AddressBook {
     /**
      * string representing the user visible name
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileUsernameKey();
@@ -769,34 +843,42 @@ public final class AddressBook {
     /**
      * string representing the service specific identifier (optional)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileUserIdentifierKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceTwitter();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceSinaWeibo();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceGameCenter();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceFacebook();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceMyspace();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceLinkedIn();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonSocialProfileServiceFlickr();
@@ -804,6 +886,7 @@ public final class AddressBook {
     /**
      * kABDictionaryPropertyType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABPersonAlternateBirthdayProperty();
@@ -811,6 +894,7 @@ public final class AddressBook {
     /**
      * string representing the calendar identifier for CFCalendarRef
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAlternateBirthdayCalendarIdentifierKey();
@@ -818,6 +902,7 @@ public final class AddressBook {
     /**
      * CFNumberRef - kCFNumberNSIntegerType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAlternateBirthdayEraKey();
@@ -825,6 +910,7 @@ public final class AddressBook {
     /**
      * CFNumberRef - kCFNumberNSIntegerType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAlternateBirthdayYearKey();
@@ -832,6 +918,7 @@ public final class AddressBook {
     /**
      * CFNumberRef - kCFNumberNSIntegerType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAlternateBirthdayMonthKey();
@@ -839,6 +926,7 @@ public final class AddressBook {
     /**
      * CFNumberRef - kCFNumberCharType (aka NSNumber Bool type)
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAlternateBirthdayIsLeapMonthKey();
@@ -846,6 +934,7 @@ public final class AddressBook {
     /**
      * CFNumberRef - kCFNumberNSIntegerType
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kABPersonAlternateBirthdayDayKey();
@@ -1019,6 +1108,7 @@ public final class AddressBook {
     public static native boolean ABMultiValueReplaceLabelAtIndex(ConstVoidPtr multiValue, CFStringRef label,
             @NInt long index);
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native int kABGroupNameProperty();

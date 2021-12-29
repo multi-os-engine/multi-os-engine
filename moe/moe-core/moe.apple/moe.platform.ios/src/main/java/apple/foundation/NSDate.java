@@ -63,6 +63,7 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Selector("alloc")
     public static native NSDate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDate allocWithZone(VoidPtr zone);

@@ -89,6 +89,7 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Selector("alloc")
     public static native NSMutableURLRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableURLRequest allocWithZone(VoidPtr zone);

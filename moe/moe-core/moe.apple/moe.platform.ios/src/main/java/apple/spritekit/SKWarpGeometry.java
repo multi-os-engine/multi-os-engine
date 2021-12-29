@@ -69,6 +69,7 @@ public class SKWarpGeometry extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native SKWarpGeometry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKWarpGeometry allocWithZone(VoidPtr zone);

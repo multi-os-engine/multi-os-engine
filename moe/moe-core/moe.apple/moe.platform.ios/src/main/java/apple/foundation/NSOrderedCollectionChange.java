@@ -43,6 +43,7 @@ public class NSOrderedCollectionChange<_ObjectType> extends NSObject {
     @Selector("alloc")
     public static native NSOrderedCollectionChange<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSOrderedCollectionChange<?> allocWithZone(VoidPtr zone);

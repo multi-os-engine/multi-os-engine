@@ -47,6 +47,7 @@ public class PDFActionResetForm extends PDFAction implements NSCopying {
     @Selector("alloc")
     public static native PDFActionResetForm alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFActionResetForm allocWithZone(VoidPtr zone);

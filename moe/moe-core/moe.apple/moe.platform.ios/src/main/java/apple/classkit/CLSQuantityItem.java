@@ -50,6 +50,7 @@ public class CLSQuantityItem extends CLSActivityItem {
     @Selector("alloc")
     public static native CLSQuantityItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSQuantityItem allocWithZone(VoidPtr zone);

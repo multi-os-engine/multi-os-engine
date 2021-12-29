@@ -51,6 +51,7 @@ public class CHIPKeypadInput extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPKeypadInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPKeypadInput allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPKeypadInput extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPKeypadInput initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPKeypadInput initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

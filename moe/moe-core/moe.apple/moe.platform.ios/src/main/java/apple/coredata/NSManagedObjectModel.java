@@ -76,6 +76,7 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Selector("alloc")
     public static native NSManagedObjectModel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSManagedObjectModel allocWithZone(VoidPtr zone);

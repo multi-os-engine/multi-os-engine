@@ -65,6 +65,7 @@ public class MPSMatrixSolveLU extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixSolveLU alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixSolveLU allocWithZone(VoidPtr zone);

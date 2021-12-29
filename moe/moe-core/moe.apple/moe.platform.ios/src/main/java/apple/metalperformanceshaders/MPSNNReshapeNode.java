@@ -48,6 +48,7 @@ public class MPSNNReshapeNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNReshapeNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReshapeNode allocWithZone(VoidPtr zone);

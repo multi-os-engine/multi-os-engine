@@ -47,6 +47,7 @@ public class ASAuthorizationPasswordRequest extends ASAuthorizationRequest {
     @Selector("alloc")
     public static native ASAuthorizationPasswordRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationPasswordRequest allocWithZone(VoidPtr zone);

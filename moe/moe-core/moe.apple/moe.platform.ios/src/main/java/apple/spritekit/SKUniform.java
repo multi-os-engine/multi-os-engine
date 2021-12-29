@@ -73,6 +73,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKUniform alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKUniform allocWithZone(VoidPtr zone);

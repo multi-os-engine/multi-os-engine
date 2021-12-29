@@ -64,6 +64,7 @@ public class MPSPredicate extends NSObject {
     @Selector("alloc")
     public static native MPSPredicate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSPredicate allocWithZone(VoidPtr zone);

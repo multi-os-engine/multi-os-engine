@@ -67,6 +67,7 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native INIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INIntentResponse allocWithZone(VoidPtr zone);

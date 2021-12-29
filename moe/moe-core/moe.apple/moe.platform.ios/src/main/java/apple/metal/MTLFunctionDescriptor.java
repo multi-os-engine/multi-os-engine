@@ -47,6 +47,7 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLFunctionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLFunctionDescriptor allocWithZone(VoidPtr zone);

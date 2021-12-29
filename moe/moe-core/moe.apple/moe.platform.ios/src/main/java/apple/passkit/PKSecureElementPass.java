@@ -49,6 +49,7 @@ public class PKSecureElementPass extends PKPass {
     @Selector("alloc")
     public static native PKSecureElementPass alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKSecureElementPass allocWithZone(VoidPtr zone);

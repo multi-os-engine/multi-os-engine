@@ -51,6 +51,7 @@ public class CHIPEthernetNetworkDiagnostics extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPEthernetNetworkDiagnostics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPEthernetNetworkDiagnostics allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPEthernetNetworkDiagnostics extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPEthernetNetworkDiagnostics initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPEthernetNetworkDiagnostics initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated

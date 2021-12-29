@@ -71,6 +71,7 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("alloc")
     public static native NSMutableArray<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableArray<?> allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Selector("alloc")
     public static native UIAccessibilityCustomAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAccessibilityCustomAction allocWithZone(VoidPtr zone);

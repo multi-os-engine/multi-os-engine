@@ -66,6 +66,7 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
     @Selector("alloc")
     public static native INBookRestaurantReservationIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBookRestaurantReservationIntent allocWithZone(VoidPtr zone);

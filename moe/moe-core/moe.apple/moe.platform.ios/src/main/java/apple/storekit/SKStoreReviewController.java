@@ -49,6 +49,7 @@ public class SKStoreReviewController extends NSObject {
     @Selector("alloc")
     public static native SKStoreReviewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKStoreReviewController allocWithZone(VoidPtr zone);

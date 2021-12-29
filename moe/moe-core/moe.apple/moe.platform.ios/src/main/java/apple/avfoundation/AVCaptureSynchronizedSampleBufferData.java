@@ -53,6 +53,7 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
     @Selector("alloc")
     public static native AVCaptureSynchronizedSampleBufferData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureSynchronizedSampleBufferData allocWithZone(VoidPtr zone);

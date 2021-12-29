@@ -66,6 +66,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("alloc")
     public static native GKRandomDistribution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKRandomDistribution allocWithZone(VoidPtr zone);

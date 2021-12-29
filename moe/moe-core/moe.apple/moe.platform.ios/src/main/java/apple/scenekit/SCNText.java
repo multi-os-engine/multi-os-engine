@@ -75,6 +75,7 @@ public class SCNText extends SCNGeometry {
     @Selector("alloc")
     public static native SCNText alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNText allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class SKProductsResponse extends NSObject {
     @Selector("alloc")
     public static native SKProductsResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKProductsResponse allocWithZone(VoidPtr zone);

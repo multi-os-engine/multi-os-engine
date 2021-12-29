@@ -81,6 +81,7 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("alloc")
     public static native ARCoachingOverlayView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARCoachingOverlayView allocWithZone(VoidPtr zone);

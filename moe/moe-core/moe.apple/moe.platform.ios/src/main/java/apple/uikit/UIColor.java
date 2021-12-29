@@ -81,6 +81,7 @@ public class UIColor extends NSObject
     @Selector("alloc")
     public static native UIColor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIColor allocWithZone(VoidPtr zone);

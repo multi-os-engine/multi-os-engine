@@ -66,6 +66,7 @@ public class CKRecordZoneID extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native CKRecordZoneID alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKRecordZoneID allocWithZone(VoidPtr zone);

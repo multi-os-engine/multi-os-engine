@@ -71,6 +71,7 @@ public class SCNIKConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNIKConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNIKConstraint allocWithZone(VoidPtr zone);

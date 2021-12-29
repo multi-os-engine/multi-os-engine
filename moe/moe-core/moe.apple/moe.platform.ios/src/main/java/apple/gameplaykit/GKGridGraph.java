@@ -66,6 +66,7 @@ public class GKGridGraph<_NodeType> extends GKGraph {
     @Selector("alloc")
     public static native GKGridGraph<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGridGraph<?> allocWithZone(VoidPtr zone);

@@ -216,7 +216,7 @@ public final class CTParagraphStyleSpecifier {
     @Generated public static final int LineHeightMultiple = 0x00000007;
     @Generated public static final int MaximumLineHeight = 0x00000008;
     @Generated public static final int MinimumLineHeight = 0x00000009;
-    @Generated public static final int LineSpacing = 0x0000000A;
+    @Deprecated @Generated public static final int LineSpacing = 0x0000000A;
     @Generated public static final int ParagraphSpacing = 0x0000000B;
     @Generated public static final int ParagraphSpacingBefore = 0x0000000C;
     @Generated public static final int BaseWritingDirection = 0x0000000D;

@@ -66,6 +66,7 @@ public class HKQuery extends NSObject {
     @Selector("alloc")
     public static native HKQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKQuery allocWithZone(VoidPtr zone);

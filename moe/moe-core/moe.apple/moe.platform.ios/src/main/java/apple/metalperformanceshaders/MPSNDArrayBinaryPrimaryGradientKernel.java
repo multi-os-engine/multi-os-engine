@@ -54,6 +54,7 @@ public class MPSNDArrayBinaryPrimaryGradientKernel extends MPSNDArrayMultiaryGra
     @Selector("alloc")
     public static native MPSNDArrayBinaryPrimaryGradientKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayBinaryPrimaryGradientKernel allocWithZone(VoidPtr zone);

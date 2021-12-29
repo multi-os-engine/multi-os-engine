@@ -48,6 +48,7 @@ public class UIMenuSystem extends NSObject {
     @Selector("alloc")
     public static native UIMenuSystem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMenuSystem allocWithZone(VoidPtr zone);

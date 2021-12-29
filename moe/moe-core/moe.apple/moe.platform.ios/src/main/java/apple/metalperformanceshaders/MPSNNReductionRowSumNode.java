@@ -45,6 +45,7 @@ public class MPSNNReductionRowSumNode extends MPSNNUnaryReductionNode {
     @Selector("alloc")
     public static native MPSNNReductionRowSumNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionRowSumNode allocWithZone(VoidPtr zone);

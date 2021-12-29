@@ -65,6 +65,7 @@ public class GKOctree<_ElementType> extends NSObject {
     @Selector("alloc")
     public static native GKOctree<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKOctree<?> allocWithZone(VoidPtr zone);

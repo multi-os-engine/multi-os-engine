@@ -69,6 +69,7 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("alloc")
     public static native NSMutableOrderedSet<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableOrderedSet<?> allocWithZone(VoidPtr zone);

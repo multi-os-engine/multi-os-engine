@@ -51,6 +51,7 @@ public class INBoatTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INBoatTrip alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBoatTrip allocWithZone(VoidPtr zone);

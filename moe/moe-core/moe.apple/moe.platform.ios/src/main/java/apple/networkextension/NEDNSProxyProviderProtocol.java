@@ -55,6 +55,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
     @Selector("alloc")
     public static native NEDNSProxyProviderProtocol alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEDNSProxyProviderProtocol allocWithZone(VoidPtr zone);

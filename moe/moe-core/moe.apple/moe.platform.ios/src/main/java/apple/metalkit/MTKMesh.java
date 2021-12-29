@@ -73,6 +73,7 @@ public class MTKMesh extends NSObject {
     @Selector("alloc")
     public static native MTKMesh alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTKMesh allocWithZone(VoidPtr zone);

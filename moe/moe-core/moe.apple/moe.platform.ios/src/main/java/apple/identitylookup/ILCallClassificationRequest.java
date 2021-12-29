@@ -48,6 +48,7 @@ public class ILCallClassificationRequest extends ILClassificationRequest impleme
     @Selector("alloc")
     public static native ILCallClassificationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILCallClassificationRequest allocWithZone(VoidPtr zone);

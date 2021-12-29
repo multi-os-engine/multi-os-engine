@@ -71,6 +71,7 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
     @Selector("alloc")
     public static native AVCaptureResolvedPhotoSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureResolvedPhotoSettings allocWithZone(VoidPtr zone);

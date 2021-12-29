@@ -48,6 +48,7 @@ public class AVAudioSessionRouteDescription extends NSObject {
     @Selector("alloc")
     public static native AVAudioSessionRouteDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioSessionRouteDescription allocWithZone(VoidPtr zone);

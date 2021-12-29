@@ -60,6 +60,7 @@ public class NSUnitMass extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitMass alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitMass allocWithZone(VoidPtr zone);

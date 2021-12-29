@@ -45,6 +45,7 @@ public class SFSafariViewControllerPrewarmingToken extends NSObject {
     @Selector("alloc")
     public static native SFSafariViewControllerPrewarmingToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSafariViewControllerPrewarmingToken allocWithZone(VoidPtr zone);

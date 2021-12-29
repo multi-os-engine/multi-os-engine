@@ -53,6 +53,7 @@ public class AVAudioPlayer extends NSObject {
     @Selector("alloc")
     public static native AVAudioPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioPlayer allocWithZone(VoidPtr zone);

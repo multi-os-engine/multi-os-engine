@@ -50,6 +50,7 @@ public class STWebHistory extends NSObject {
     @Selector("alloc")
     public static native STWebHistory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native STWebHistory allocWithZone(VoidPtr zone);

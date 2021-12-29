@@ -63,6 +63,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     @Selector("alloc")
     public static native HKVerifiableClinicalRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKVerifiableClinicalRecord allocWithZone(VoidPtr zone);

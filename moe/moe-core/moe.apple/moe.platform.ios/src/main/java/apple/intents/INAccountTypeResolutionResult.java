@@ -45,6 +45,7 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INAccountTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INAccountTypeResolutionResult allocWithZone(VoidPtr zone);

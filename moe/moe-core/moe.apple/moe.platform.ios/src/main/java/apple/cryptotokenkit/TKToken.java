@@ -50,6 +50,7 @@ public class TKToken extends NSObject {
     @Selector("alloc")
     public static native TKToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKToken allocWithZone(VoidPtr zone);

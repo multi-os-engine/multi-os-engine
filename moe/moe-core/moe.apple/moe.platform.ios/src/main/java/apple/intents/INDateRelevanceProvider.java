@@ -51,6 +51,7 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
     @Selector("alloc")
     public static native INDateRelevanceProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDateRelevanceProvider allocWithZone(VoidPtr zone);

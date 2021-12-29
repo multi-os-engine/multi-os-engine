@@ -70,6 +70,7 @@ public class AVPlayer extends NSObject {
     @Selector("alloc")
     public static native AVPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayer allocWithZone(VoidPtr zone);

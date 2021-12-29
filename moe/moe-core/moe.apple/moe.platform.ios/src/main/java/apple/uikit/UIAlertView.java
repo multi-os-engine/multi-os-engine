@@ -48,6 +48,7 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -77,6 +78,7 @@ public class UIAlertView extends UIView {
     @Selector("alloc")
     public static native UIAlertView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAlertView allocWithZone(VoidPtr zone);

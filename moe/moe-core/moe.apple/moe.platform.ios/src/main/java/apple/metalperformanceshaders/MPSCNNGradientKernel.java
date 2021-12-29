@@ -96,6 +96,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     @Selector("alloc")
     public static native MPSCNNGradientKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNGradientKernel allocWithZone(VoidPtr zone);

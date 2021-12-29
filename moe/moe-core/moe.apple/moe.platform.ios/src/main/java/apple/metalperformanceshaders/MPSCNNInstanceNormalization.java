@@ -62,6 +62,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNInstanceNormalization alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNInstanceNormalization allocWithZone(VoidPtr zone);

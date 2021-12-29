@@ -29,19 +29,19 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A simple home  representation that can be passed back and forth between Partner Ecosystem App extensions and iOS for the purposes of CHIP accessory setup.
+ * A simple room representation that can be passed back and forth between Partner Ecosystem App extensions and iOS for the purposes of CHIP accessory setup.
  */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HMCHIPServiceHome extends NSObject implements NSCopying, NSSecureCoding {
+public class HMMatterRoom extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected HMCHIPServiceHome(Pointer peer) {
+    protected HMMatterRoom(Pointer peer) {
         super(peer);
     }
 
@@ -52,11 +52,12 @@ public class HMCHIPServiceHome extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Owned
     @Selector("alloc")
-    public static native HMCHIPServiceHome alloc();
+    public static native HMMatterRoom alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
-    public static native HMCHIPServiceHome allocWithZone(VoidPtr zone);
+    public static native HMMatterRoom allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -80,10 +81,10 @@ public class HMCHIPServiceHome extends NSObject implements NSCopying, NSSecureCo
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Owned
     @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
@@ -105,18 +106,18 @@ public class HMCHIPServiceHome extends NSObject implements NSCopying, NSSecureCo
 
     @Generated
     @Selector("init")
-    public native HMCHIPServiceHome init();
+    public native HMMatterRoom init();
 
     @Generated
     @Selector("initWithCoder:")
-    public native HMCHIPServiceHome initWithCoder(NSCoder coder);
+    public native HMMatterRoom initWithCoder(NSCoder coder);
 
     /**
      * Initializes a new instance
      */
     @Generated
     @Selector("initWithUUID:name:")
-    public native HMCHIPServiceHome initWithUUIDName(NSUUID uuid, String name);
+    public native HMMatterRoom initWithUUIDName(NSUUID uuid, String name);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -149,7 +150,7 @@ public class HMCHIPServiceHome extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Owned
     @Selector("new")
-    public static native HMCHIPServiceHome new_objc();
+    public static native HMMatterRoom new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

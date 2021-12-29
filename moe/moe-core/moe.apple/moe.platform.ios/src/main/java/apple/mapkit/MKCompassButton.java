@@ -62,6 +62,7 @@ public class MKCompassButton extends UIView {
     @Selector("alloc")
     public static native MKCompassButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKCompassButton allocWithZone(VoidPtr zone);

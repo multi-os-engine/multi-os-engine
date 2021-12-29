@@ -56,6 +56,7 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native PDFBorder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFBorder allocWithZone(VoidPtr zone);

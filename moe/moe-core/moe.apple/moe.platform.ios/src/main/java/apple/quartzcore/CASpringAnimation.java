@@ -69,6 +69,7 @@ public class CASpringAnimation extends CABasicAnimation {
     @Selector("alloc")
     public static native CASpringAnimation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CASpringAnimation allocWithZone(VoidPtr zone);

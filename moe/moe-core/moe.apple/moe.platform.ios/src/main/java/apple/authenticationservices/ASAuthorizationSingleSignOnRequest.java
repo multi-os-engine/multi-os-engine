@@ -48,6 +48,7 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     @Selector("alloc")
     public static native ASAuthorizationSingleSignOnRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationSingleSignOnRequest allocWithZone(VoidPtr zone);

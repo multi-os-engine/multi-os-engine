@@ -55,6 +55,7 @@ public class MPSCNNSubtract extends MPSCNNArithmetic {
     @Selector("alloc")
     public static native MPSCNNSubtract alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNSubtract allocWithZone(VoidPtr zone);

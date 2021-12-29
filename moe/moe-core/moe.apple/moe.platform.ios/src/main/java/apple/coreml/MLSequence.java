@@ -53,6 +53,7 @@ public class MLSequence extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLSequence alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLSequence allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class HMMutableLocationEvent extends HMLocationEvent {
     @Selector("alloc")
     public static native HMMutableLocationEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMMutableLocationEvent allocWithZone(VoidPtr zone);

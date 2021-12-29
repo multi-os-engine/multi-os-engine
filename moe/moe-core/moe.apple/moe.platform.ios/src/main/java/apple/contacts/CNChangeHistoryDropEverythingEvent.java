@@ -50,6 +50,7 @@ public class CNChangeHistoryDropEverythingEvent extends CNChangeHistoryEvent {
     @Selector("alloc")
     public static native CNChangeHistoryDropEverythingEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNChangeHistoryDropEverythingEvent allocWithZone(VoidPtr zone);

@@ -56,6 +56,7 @@ public class MXAppExitMetric extends MXMetric {
     @Selector("alloc")
     public static native MXAppExitMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXAppExitMetric allocWithZone(VoidPtr zone);

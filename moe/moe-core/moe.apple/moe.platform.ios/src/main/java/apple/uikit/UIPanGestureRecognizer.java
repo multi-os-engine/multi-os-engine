@@ -64,6 +64,7 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UIPanGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPanGestureRecognizer allocWithZone(VoidPtr zone);

@@ -77,6 +77,7 @@ public class SKEmitterNode extends SKNode {
     @Selector("alloc")
     public static native SKEmitterNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKEmitterNode allocWithZone(VoidPtr zone);

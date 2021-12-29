@@ -62,6 +62,7 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
     @Selector("alloc")
     public static native MPSNNOptimizerRMSProp alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNOptimizerRMSProp allocWithZone(VoidPtr zone);

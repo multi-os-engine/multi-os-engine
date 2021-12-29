@@ -71,6 +71,7 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     @Selector("alloc")
     public static native NETunnelProviderProtocol alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NETunnelProviderProtocol allocWithZone(VoidPtr zone);

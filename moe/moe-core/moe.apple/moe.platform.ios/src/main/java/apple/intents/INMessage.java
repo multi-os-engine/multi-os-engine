@@ -67,6 +67,7 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INMessage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMessage allocWithZone(VoidPtr zone);

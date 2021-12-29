@@ -70,6 +70,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     @Selector("alloc")
     public static native CNChangeHistoryFetchRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNChangeHistoryFetchRequest allocWithZone(VoidPtr zone);

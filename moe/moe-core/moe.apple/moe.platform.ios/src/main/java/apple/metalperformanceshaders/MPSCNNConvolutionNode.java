@@ -50,6 +50,7 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     @Selector("alloc")
     public static native MPSCNNConvolutionNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionNode allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class MTLAccelerationStructureDescriptor extends NSObject implements NSCo
     @Selector("alloc")
     public static native MTLAccelerationStructureDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAccelerationStructureDescriptor allocWithZone(VoidPtr zone);

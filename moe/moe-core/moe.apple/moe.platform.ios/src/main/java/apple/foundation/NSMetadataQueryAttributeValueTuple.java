@@ -59,6 +59,7 @@ public class NSMetadataQueryAttributeValueTuple extends NSObject {
     @Selector("alloc")
     public static native NSMetadataQueryAttributeValueTuple alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMetadataQueryAttributeValueTuple allocWithZone(VoidPtr zone);

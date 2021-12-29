@@ -52,7 +52,7 @@ public class HMAccessorySetupManager extends NSObject {
      */
     @Generated
     @Selector("addAndSetUpAccessoriesForTopology:completionHandler:")
-    public native void addAndSetUpAccessoriesForTopologyCompletionHandler(HMCHIPServiceTopology topology,
+    public native void addAndSetUpAccessoriesForTopologyCompletionHandler(HMMatterTopology topology,
             @ObjCBlock(name = "call_addAndSetUpAccessoriesForTopologyCompletionHandler") Block_addAndSetUpAccessoriesForTopologyCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
@@ -67,6 +67,7 @@ public class HMAccessorySetupManager extends NSObject {
     @Selector("alloc")
     public static native HMAccessorySetupManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAccessorySetupManager allocWithZone(VoidPtr zone);

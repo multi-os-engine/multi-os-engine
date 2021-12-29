@@ -125,6 +125,7 @@ public class MPSNNPad extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNPad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNPad allocWithZone(VoidPtr zone);

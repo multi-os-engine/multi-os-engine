@@ -53,6 +53,7 @@ public class MLDictionaryConstraint extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLDictionaryConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLDictionaryConstraint allocWithZone(VoidPtr zone);

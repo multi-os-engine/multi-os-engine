@@ -90,6 +90,7 @@ public class MPSMatrixMultiplication extends MPSKernel {
     @Selector("alloc")
     public static native MPSMatrixMultiplication alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixMultiplication allocWithZone(VoidPtr zone);

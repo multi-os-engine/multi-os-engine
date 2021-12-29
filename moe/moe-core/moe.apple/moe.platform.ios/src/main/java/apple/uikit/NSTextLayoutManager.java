@@ -72,6 +72,7 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Selector("alloc")
     public static native NSTextLayoutManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextLayoutManager allocWithZone(VoidPtr zone);

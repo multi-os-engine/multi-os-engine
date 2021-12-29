@@ -8,6 +8,6 @@ public final class Enums {
     private Enums() {
     }
 
-    @Generated public static final int AVAudioSessionInterruptionFlags_ShouldResume = 0x00000001;
-    @Generated public static final int AVAudioSessionSetActiveFlags_NotifyOthersOnDeactivation = 0x00000001;
+    @Deprecated @Generated public static final int AVAudioSessionInterruptionFlags_ShouldResume = 0x00000001;
+    @Deprecated @Generated public static final int AVAudioSessionSetActiveFlags_NotifyOthersOnDeactivation = 0x00000001;
 }

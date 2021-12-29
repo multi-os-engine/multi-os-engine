@@ -71,6 +71,7 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Selector("alloc")
     public static native GKGaussianDistribution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGaussianDistribution allocWithZone(VoidPtr zone);

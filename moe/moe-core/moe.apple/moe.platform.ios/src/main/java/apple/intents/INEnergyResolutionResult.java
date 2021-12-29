@@ -47,6 +47,7 @@ public class INEnergyResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INEnergyResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INEnergyResolutionResult allocWithZone(VoidPtr zone);

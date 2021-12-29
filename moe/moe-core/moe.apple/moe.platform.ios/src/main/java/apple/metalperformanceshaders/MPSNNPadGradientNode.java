@@ -45,6 +45,7 @@ public class MPSNNPadGradientNode extends MPSNNGradientFilterNode {
     @Selector("alloc")
     public static native MPSNNPadGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNPadGradientNode allocWithZone(VoidPtr zone);

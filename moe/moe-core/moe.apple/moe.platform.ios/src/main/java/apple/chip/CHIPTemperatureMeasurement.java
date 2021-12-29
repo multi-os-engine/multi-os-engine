@@ -51,6 +51,7 @@ public class CHIPTemperatureMeasurement extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPTemperatureMeasurement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPTemperatureMeasurement allocWithZone(VoidPtr zone);
@@ -110,7 +111,7 @@ public class CHIPTemperatureMeasurement extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPTemperatureMeasurement initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPTemperatureMeasurement initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated

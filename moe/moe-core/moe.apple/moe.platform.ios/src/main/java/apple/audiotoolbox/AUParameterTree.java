@@ -82,6 +82,7 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
     @Selector("alloc")
     public static native AUParameterTree alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUParameterTree allocWithZone(VoidPtr zone);

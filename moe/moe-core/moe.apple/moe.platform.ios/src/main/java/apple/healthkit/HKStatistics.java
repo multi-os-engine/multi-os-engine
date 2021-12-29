@@ -73,6 +73,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native HKStatistics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKStatistics allocWithZone(VoidPtr zone);

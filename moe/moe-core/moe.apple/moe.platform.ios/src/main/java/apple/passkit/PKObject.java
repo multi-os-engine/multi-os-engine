@@ -61,6 +61,7 @@ public class PKObject extends NSObject {
     @Selector("alloc")
     public static native PKObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKObject allocWithZone(VoidPtr zone);

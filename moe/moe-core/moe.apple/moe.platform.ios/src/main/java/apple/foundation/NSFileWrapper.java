@@ -62,6 +62,7 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSFileWrapper alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileWrapper allocWithZone(VoidPtr zone);

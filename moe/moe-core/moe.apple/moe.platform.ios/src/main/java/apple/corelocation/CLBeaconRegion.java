@@ -82,6 +82,7 @@ public class CLBeaconRegion extends CLRegion {
     @Selector("alloc")
     public static native CLBeaconRegion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLBeaconRegion allocWithZone(VoidPtr zone);

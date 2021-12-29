@@ -65,6 +65,7 @@ public class MPSMatrixSoftMaxGradient extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixSoftMaxGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixSoftMaxGradient allocWithZone(VoidPtr zone);

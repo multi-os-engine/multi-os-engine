@@ -45,6 +45,7 @@ public class PKAddSecureElementPassConfiguration extends NSObject {
     @Selector("alloc")
     public static native PKAddSecureElementPassConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddSecureElementPassConfiguration allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class UIPrintServiceExtension extends NSObject {
     @Selector("alloc")
     public static native UIPrintServiceExtension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrintServiceExtension allocWithZone(VoidPtr zone);

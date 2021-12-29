@@ -46,6 +46,7 @@ public class NSInflectionRule extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native NSInflectionRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSInflectionRule allocWithZone(VoidPtr zone);

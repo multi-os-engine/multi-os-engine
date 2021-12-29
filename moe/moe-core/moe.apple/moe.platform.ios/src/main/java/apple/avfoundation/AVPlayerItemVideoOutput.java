@@ -67,6 +67,7 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     @Selector("alloc")
     public static native AVPlayerItemVideoOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemVideoOutput allocWithZone(VoidPtr zone);

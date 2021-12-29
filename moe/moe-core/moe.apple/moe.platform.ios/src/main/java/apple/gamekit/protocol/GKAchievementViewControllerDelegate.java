@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * Optional delegate
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

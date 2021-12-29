@@ -87,6 +87,7 @@ public class MKOverlayView extends UIView {
     @Selector("alloc")
     public static native MKOverlayView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKOverlayView allocWithZone(VoidPtr zone);

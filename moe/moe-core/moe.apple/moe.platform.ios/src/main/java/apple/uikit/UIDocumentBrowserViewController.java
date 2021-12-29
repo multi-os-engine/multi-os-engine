@@ -72,6 +72,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("alloc")
     public static native UIDocumentBrowserViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDocumentBrowserViewController allocWithZone(VoidPtr zone);

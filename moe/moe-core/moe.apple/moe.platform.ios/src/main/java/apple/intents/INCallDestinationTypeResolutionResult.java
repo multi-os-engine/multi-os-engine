@@ -45,6 +45,7 @@ public class INCallDestinationTypeResolutionResult extends INIntentResolutionRes
     @Selector("alloc")
     public static native INCallDestinationTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCallDestinationTypeResolutionResult allocWithZone(VoidPtr zone);

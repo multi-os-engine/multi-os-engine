@@ -69,6 +69,7 @@ public class SKLightNode extends SKNode {
     @Selector("alloc")
     public static native SKLightNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKLightNode allocWithZone(VoidPtr zone);

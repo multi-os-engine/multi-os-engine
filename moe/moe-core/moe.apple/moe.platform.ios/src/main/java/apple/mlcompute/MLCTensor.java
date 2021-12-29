@@ -54,6 +54,7 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCTensor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCTensor allocWithZone(VoidPtr zone);

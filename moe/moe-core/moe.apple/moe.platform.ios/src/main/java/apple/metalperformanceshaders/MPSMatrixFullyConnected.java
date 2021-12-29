@@ -69,6 +69,7 @@ public class MPSMatrixFullyConnected extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixFullyConnected alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixFullyConnected allocWithZone(VoidPtr zone);

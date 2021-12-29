@@ -73,6 +73,7 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     @Selector("alloc")
     public static native AVTimedMetadataGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVTimedMetadataGroup allocWithZone(VoidPtr zone);

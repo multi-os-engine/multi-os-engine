@@ -48,6 +48,7 @@ public class INStartCallIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INStartCallIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartCallIntentResponse allocWithZone(VoidPtr zone);

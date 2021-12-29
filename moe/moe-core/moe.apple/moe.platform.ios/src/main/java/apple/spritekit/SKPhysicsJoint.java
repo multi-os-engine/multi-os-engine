@@ -67,6 +67,7 @@ public class SKPhysicsJoint extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SKPhysicsJoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsJoint allocWithZone(VoidPtr zone);

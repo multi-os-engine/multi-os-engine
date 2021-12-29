@@ -51,6 +51,7 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Selector("alloc")
     public static native UITableViewDiffableDataSource<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewDiffableDataSource<?, ?> allocWithZone(VoidPtr zone);

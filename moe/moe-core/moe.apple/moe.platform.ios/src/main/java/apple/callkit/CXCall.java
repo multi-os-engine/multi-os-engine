@@ -62,6 +62,7 @@ public class CXCall extends NSObject {
     @Selector("alloc")
     public static native CXCall alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXCall allocWithZone(VoidPtr zone);

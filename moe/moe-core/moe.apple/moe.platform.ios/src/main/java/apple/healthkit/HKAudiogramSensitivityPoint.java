@@ -48,6 +48,7 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     @Selector("alloc")
     public static native HKAudiogramSensitivityPoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKAudiogramSensitivityPoint allocWithZone(VoidPtr zone);

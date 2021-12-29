@@ -54,6 +54,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     @Selector("alloc")
     public static native ARBodyTrackingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARBodyTrackingConfiguration allocWithZone(VoidPtr zone);

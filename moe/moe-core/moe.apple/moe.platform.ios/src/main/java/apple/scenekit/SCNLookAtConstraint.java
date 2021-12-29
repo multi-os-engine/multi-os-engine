@@ -70,6 +70,7 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNLookAtConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNLookAtConstraint allocWithZone(VoidPtr zone);

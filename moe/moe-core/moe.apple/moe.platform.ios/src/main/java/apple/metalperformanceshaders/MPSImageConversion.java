@@ -71,6 +71,7 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageConversion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageConversion allocWithZone(VoidPtr zone);

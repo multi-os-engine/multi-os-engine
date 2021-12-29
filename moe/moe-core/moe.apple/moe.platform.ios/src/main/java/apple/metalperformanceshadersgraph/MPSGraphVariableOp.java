@@ -45,6 +45,7 @@ public class MPSGraphVariableOp extends MPSGraphOperation {
     @Selector("alloc")
     public static native MPSGraphVariableOp alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphVariableOp allocWithZone(VoidPtr zone);

@@ -49,6 +49,7 @@ public class CPSearchTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPSearchTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPSearchTemplate allocWithZone(VoidPtr zone);

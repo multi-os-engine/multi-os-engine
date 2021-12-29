@@ -54,6 +54,7 @@ public class MXDiskIOMetric extends MXMetric {
     @Selector("alloc")
     public static native MXDiskIOMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXDiskIOMetric allocWithZone(VoidPtr zone);

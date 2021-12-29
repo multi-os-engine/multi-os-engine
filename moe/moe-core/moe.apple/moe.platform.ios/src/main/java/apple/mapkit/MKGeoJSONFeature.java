@@ -47,6 +47,7 @@ public class MKGeoJSONFeature extends NSObject implements MKGeoJSONObject {
     @Selector("alloc")
     public static native MKGeoJSONFeature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKGeoJSONFeature allocWithZone(VoidPtr zone);

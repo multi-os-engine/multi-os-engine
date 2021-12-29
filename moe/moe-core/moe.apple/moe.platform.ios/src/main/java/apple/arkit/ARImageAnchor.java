@@ -52,6 +52,7 @@ public class ARImageAnchor extends ARAnchor implements ARTrackable {
     @Selector("alloc")
     public static native ARImageAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARImageAnchor allocWithZone(VoidPtr zone);

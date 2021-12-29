@@ -65,6 +65,7 @@ public class PHASEEngine extends NSObject {
     @Selector("alloc")
     public static native PHASEEngine alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEEngine allocWithZone(VoidPtr zone);

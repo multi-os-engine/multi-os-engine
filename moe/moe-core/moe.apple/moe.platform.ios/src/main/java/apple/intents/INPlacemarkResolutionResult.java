@@ -62,6 +62,7 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INPlacemarkResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPlacemarkResolutionResult allocWithZone(VoidPtr zone);

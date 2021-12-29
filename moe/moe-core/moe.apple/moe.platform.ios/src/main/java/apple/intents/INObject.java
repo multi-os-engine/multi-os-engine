@@ -51,6 +51,7 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("alloc")
     public static native INObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INObject allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class MPSNNReductionSpatialMeanNode extends MPSNNUnaryReductionNode {
     @Selector("alloc")
     public static native MPSNNReductionSpatialMeanNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionSpatialMeanNode allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class MTLPipelineBufferDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLPipelineBufferDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLPipelineBufferDescriptor allocWithZone(VoidPtr zone);

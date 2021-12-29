@@ -51,6 +51,7 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native AXCustomContent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AXCustomContent allocWithZone(VoidPtr zone);

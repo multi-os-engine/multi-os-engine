@@ -50,6 +50,7 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Selector("alloc")
     public static native NSUnitInformationStorage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitInformationStorage allocWithZone(VoidPtr zone);

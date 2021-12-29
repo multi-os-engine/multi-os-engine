@@ -72,6 +72,7 @@ public class HKWorkoutType extends HKSampleType {
     @Selector("alloc")
     public static native HKWorkoutType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWorkoutType allocWithZone(VoidPtr zone);

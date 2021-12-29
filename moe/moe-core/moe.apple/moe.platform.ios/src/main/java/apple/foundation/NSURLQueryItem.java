@@ -65,6 +65,7 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native NSURLQueryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLQueryItem allocWithZone(VoidPtr zone);

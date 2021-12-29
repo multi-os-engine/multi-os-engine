@@ -55,6 +55,7 @@ public class CPActionSheetTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPActionSheetTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPActionSheetTemplate allocWithZone(VoidPtr zone);

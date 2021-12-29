@@ -74,6 +74,7 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     @Selector("alloc")
     public static native AVAudioInputNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioInputNode allocWithZone(VoidPtr zone);

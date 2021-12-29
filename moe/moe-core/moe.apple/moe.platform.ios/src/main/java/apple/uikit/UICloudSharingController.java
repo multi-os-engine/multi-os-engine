@@ -70,6 +70,7 @@ public class UICloudSharingController extends UIViewController {
     @Selector("alloc")
     public static native UICloudSharingController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICloudSharingController allocWithZone(VoidPtr zone);

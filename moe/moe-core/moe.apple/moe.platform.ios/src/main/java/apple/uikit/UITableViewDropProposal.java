@@ -45,6 +45,7 @@ public class UITableViewDropProposal extends UIDropProposal {
     @Selector("alloc")
     public static native UITableViewDropProposal alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewDropProposal allocWithZone(VoidPtr zone);

@@ -74,6 +74,7 @@ public class PHImageManager extends NSObject {
     @Selector("alloc")
     public static native PHImageManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHImageManager allocWithZone(VoidPtr zone);

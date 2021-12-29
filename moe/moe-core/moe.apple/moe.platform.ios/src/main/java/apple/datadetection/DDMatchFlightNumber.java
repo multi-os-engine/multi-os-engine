@@ -49,6 +49,7 @@ public class DDMatchFlightNumber extends DDMatch {
     @Selector("alloc")
     public static native DDMatchFlightNumber alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchFlightNumber allocWithZone(VoidPtr zone);

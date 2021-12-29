@@ -66,6 +66,7 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native NSFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFormatter allocWithZone(VoidPtr zone);

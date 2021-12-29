@@ -65,6 +65,7 @@ public class NSUnit extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSUnit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnit allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class PHASESoundAsset extends PHASEAsset {
     @Selector("alloc")
     public static native PHASESoundAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASESoundAsset allocWithZone(VoidPtr zone);

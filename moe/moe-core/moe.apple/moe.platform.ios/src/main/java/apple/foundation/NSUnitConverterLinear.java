@@ -60,6 +60,7 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
     @Selector("alloc")
     public static native NSUnitConverterLinear alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitConverterLinear allocWithZone(VoidPtr zone);

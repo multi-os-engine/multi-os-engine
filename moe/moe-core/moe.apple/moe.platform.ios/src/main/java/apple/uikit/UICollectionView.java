@@ -87,6 +87,7 @@ public class UICollectionView extends UIScrollView
     @Selector("alloc")
     public static native UICollectionView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionView allocWithZone(VoidPtr zone);

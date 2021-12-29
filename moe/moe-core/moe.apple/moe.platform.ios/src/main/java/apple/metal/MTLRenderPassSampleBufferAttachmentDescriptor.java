@@ -48,6 +48,7 @@ public class MTLRenderPassSampleBufferAttachmentDescriptor extends NSObject impl
     @Selector("alloc")
     public static native MTLRenderPassSampleBufferAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPassSampleBufferAttachmentDescriptor allocWithZone(VoidPtr zone);

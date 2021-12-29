@@ -47,6 +47,7 @@ public class INAddTasksIntent extends INIntent {
     @Selector("alloc")
     public static native INAddTasksIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INAddTasksIntent allocWithZone(VoidPtr zone);

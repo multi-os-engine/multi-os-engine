@@ -72,6 +72,7 @@ public class MPSImageAreaMin extends MPSImageAreaMax {
     @Selector("alloc")
     public static native MPSImageAreaMin alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageAreaMin allocWithZone(VoidPtr zone);

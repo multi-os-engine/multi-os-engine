@@ -45,6 +45,7 @@ public class UITextPlaceholder extends NSObject {
     @Selector("alloc")
     public static native UITextPlaceholder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextPlaceholder allocWithZone(VoidPtr zone);

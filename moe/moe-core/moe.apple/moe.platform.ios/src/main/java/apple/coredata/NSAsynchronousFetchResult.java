@@ -61,6 +61,7 @@ public class NSAsynchronousFetchResult<_ResultType> extends NSPersistentStoreAsy
     @Selector("alloc")
     public static native NSAsynchronousFetchResult<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAsynchronousFetchResult<?> allocWithZone(VoidPtr zone);

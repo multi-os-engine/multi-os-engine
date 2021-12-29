@@ -59,6 +59,7 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native VNObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNObservation allocWithZone(VoidPtr zone);

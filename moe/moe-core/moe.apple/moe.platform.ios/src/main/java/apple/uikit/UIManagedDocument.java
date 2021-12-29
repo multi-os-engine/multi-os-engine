@@ -69,6 +69,7 @@ public class UIManagedDocument extends UIDocument {
     @Selector("alloc")
     public static native UIManagedDocument alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIManagedDocument allocWithZone(VoidPtr zone);

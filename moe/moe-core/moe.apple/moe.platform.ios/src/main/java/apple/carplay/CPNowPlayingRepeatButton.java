@@ -52,6 +52,7 @@ public class CPNowPlayingRepeatButton extends CPNowPlayingButton {
     @Selector("alloc")
     public static native CPNowPlayingRepeatButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNowPlayingRepeatButton allocWithZone(VoidPtr zone);

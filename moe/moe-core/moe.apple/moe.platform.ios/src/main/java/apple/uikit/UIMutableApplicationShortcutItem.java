@@ -63,6 +63,7 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("alloc")
     public static native UIMutableApplicationShortcutItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMutableApplicationShortcutItem allocWithZone(VoidPtr zone);

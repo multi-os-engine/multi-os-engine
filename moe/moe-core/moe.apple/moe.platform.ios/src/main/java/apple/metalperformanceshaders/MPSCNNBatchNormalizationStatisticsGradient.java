@@ -56,6 +56,7 @@ public class MPSCNNBatchNormalizationStatisticsGradient extends MPSCNNGradientKe
     @Selector("alloc")
     public static native MPSCNNBatchNormalizationStatisticsGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBatchNormalizationStatisticsGradient allocWithZone(VoidPtr zone);

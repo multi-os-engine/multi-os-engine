@@ -71,6 +71,7 @@ public class NSFileCoordinator extends NSObject {
     @Selector("alloc")
     public static native NSFileCoordinator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileCoordinator allocWithZone(VoidPtr zone);

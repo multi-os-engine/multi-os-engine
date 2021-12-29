@@ -51,6 +51,7 @@ public class SNClassificationResult extends NSObject implements SNResult {
     @Selector("alloc")
     public static native SNClassificationResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SNClassificationResult allocWithZone(VoidPtr zone);

@@ -95,6 +95,7 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     @Selector("alloc")
     public static native NSTextStorage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextStorage allocWithZone(VoidPtr zone);

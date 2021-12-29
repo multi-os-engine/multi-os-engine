@@ -56,6 +56,7 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     @Selector("alloc")
     public static native VNRecognizeTextRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRecognizeTextRequest allocWithZone(VoidPtr zone);

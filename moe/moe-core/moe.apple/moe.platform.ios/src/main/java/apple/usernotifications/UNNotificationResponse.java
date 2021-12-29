@@ -67,6 +67,7 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native UNNotificationResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationResponse allocWithZone(VoidPtr zone);

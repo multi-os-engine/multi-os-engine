@@ -51,6 +51,7 @@ public class MKMultiPolyline extends MKShape implements MKOverlay, MKGeoJSONObje
     @Selector("alloc")
     public static native MKMultiPolyline alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMultiPolyline allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class CAMediaTimingFunction extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CAMediaTimingFunction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAMediaTimingFunction allocWithZone(VoidPtr zone);

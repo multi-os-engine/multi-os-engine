@@ -64,6 +64,7 @@ public class PKContact extends NSObject {
     @Selector("alloc")
     public static native PKContact alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKContact allocWithZone(VoidPtr zone);

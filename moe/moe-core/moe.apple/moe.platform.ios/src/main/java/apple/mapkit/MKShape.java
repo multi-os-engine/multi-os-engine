@@ -65,6 +65,7 @@ public class MKShape extends NSObject implements MKAnnotation {
     @Selector("alloc")
     public static native MKShape alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKShape allocWithZone(VoidPtr zone);

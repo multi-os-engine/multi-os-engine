@@ -60,6 +60,7 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitFrequency alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitFrequency allocWithZone(VoidPtr zone);

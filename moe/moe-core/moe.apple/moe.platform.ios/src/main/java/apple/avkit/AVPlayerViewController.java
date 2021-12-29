@@ -76,6 +76,7 @@ public class AVPlayerViewController extends UIViewController {
     @Selector("alloc")
     public static native AVPlayerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerViewController allocWithZone(VoidPtr zone);

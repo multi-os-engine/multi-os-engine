@@ -53,6 +53,7 @@ public class MPSNNReduceFeatureChannelsArgumentMin extends MPSNNReduceUnary {
     @Selector("alloc")
     public static native MPSNNReduceFeatureChannelsArgumentMin alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceFeatureChannelsArgumentMin allocWithZone(VoidPtr zone);

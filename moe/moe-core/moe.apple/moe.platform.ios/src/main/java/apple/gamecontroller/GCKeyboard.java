@@ -54,6 +54,7 @@ public class GCKeyboard extends NSObject implements GCDevice {
     @Selector("alloc")
     public static native GCKeyboard alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCKeyboard allocWithZone(VoidPtr zone);

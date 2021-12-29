@@ -19,10 +19,11 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+@Deprecated
 @Generated
 public final class NSTextWritingDirection {
-    @Generated @NInt public static final long Embedding = 0x0000000000000000L;
-    @Generated @NInt public static final long Override = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Embedding = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Override = 0x0000000000000002L;
 
     @Generated
     private NSTextWritingDirection() {

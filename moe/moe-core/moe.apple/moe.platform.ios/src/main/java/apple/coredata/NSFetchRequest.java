@@ -70,6 +70,7 @@ public class NSFetchRequest<_ResultType> extends NSPersistentStoreRequest implem
     @Selector("alloc")
     public static native NSFetchRequest<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFetchRequest<?> allocWithZone(VoidPtr zone);

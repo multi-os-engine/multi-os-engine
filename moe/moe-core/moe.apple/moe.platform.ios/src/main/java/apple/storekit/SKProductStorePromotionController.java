@@ -47,6 +47,7 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("alloc")
     public static native SKProductStorePromotionController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKProductStorePromotionController allocWithZone(VoidPtr zone);

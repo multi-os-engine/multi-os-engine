@@ -50,6 +50,7 @@ public class PHASECardioidDirectivityModelParameters extends PHASEDirectivityMod
     @Selector("alloc")
     public static native PHASECardioidDirectivityModelParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASECardioidDirectivityModelParameters allocWithZone(VoidPtr zone);

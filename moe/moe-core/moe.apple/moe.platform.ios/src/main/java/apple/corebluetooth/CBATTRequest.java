@@ -67,6 +67,7 @@ public class CBATTRequest extends NSObject {
     @Selector("alloc")
     public static native CBATTRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBATTRequest allocWithZone(VoidPtr zone);

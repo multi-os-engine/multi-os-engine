@@ -56,6 +56,7 @@ public class AVFragmentedAssetMinder extends NSObject {
     @Selector("alloc")
     public static native AVFragmentedAssetMinder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVFragmentedAssetMinder allocWithZone(VoidPtr zone);

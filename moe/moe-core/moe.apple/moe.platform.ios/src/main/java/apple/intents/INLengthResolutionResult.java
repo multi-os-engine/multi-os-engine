@@ -47,6 +47,7 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INLengthResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INLengthResolutionResult allocWithZone(VoidPtr zone);

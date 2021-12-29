@@ -60,6 +60,7 @@ public class NSNetServiceBrowser extends NSObject {
     @Selector("alloc")
     public static native NSNetServiceBrowser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSNetServiceBrowser allocWithZone(VoidPtr zone);

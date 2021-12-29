@@ -62,6 +62,7 @@ public class UIPress extends NSObject {
     @Selector("alloc")
     public static native UIPress alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPress allocWithZone(VoidPtr zone);

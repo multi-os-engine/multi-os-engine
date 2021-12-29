@@ -50,6 +50,7 @@ public class PHASEListener extends PHASEObject {
     @Selector("alloc")
     public static native PHASEListener alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEListener allocWithZone(VoidPtr zone);

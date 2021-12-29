@@ -46,6 +46,7 @@ public class UITargetedDragPreview extends UITargetedPreview {
     @Selector("alloc")
     public static native UITargetedDragPreview alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITargetedDragPreview allocWithZone(VoidPtr zone);

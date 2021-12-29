@@ -65,6 +65,7 @@ public class WKBackForwardList extends NSObject {
     @Selector("alloc")
     public static native WKBackForwardList alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKBackForwardList allocWithZone(VoidPtr zone);

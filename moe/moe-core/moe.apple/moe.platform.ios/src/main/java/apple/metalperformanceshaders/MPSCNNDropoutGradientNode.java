@@ -47,6 +47,7 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
     @Selector("alloc")
     public static native MPSCNNDropoutGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDropoutGradientNode allocWithZone(VoidPtr zone);

@@ -241,6 +241,7 @@ public class MPSCNNLoss extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNLoss alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLoss allocWithZone(VoidPtr zone);

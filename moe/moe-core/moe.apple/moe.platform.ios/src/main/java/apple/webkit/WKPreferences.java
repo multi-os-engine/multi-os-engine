@@ -70,6 +70,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native WKPreferences alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKPreferences allocWithZone(VoidPtr zone);

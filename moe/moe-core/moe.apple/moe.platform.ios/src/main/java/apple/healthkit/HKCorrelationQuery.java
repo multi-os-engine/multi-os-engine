@@ -78,6 +78,7 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("alloc")
     public static native HKCorrelationQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKCorrelationQuery allocWithZone(VoidPtr zone);

@@ -95,6 +95,7 @@ public class MCAdvertiserAssistant extends NSObject {
     @Selector("alloc")
     public static native MCAdvertiserAssistant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MCAdvertiserAssistant allocWithZone(VoidPtr zone);

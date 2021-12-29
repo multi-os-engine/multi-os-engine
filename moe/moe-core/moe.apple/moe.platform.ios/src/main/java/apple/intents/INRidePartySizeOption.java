@@ -68,6 +68,7 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native INRidePartySizeOption alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRidePartySizeOption allocWithZone(VoidPtr zone);

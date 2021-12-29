@@ -59,6 +59,7 @@ public class VNTranslationalImageRegistrationRequest extends VNImageRegistration
     @Selector("alloc")
     public static native VNTranslationalImageRegistrationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNTranslationalImageRegistrationRequest allocWithZone(VoidPtr zone);

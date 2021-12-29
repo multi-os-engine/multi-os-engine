@@ -51,6 +51,7 @@ public class NSTextSelectionNavigation extends NSObject {
     @Selector("alloc")
     public static native NSTextSelectionNavigation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextSelectionNavigation allocWithZone(VoidPtr zone);

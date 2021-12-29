@@ -55,6 +55,7 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     @Selector("alloc")
     public static native CIPDF417CodeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIPDF417CodeDescriptor allocWithZone(VoidPtr zone);

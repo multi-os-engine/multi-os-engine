@@ -56,6 +56,7 @@ public class AVAssetDownloadConfiguration extends NSObject {
     @Selector("alloc")
     public static native AVAssetDownloadConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetDownloadConfiguration allocWithZone(VoidPtr zone);

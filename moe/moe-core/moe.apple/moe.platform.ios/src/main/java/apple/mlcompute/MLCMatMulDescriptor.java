@@ -52,6 +52,7 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCMatMulDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCMatMulDescriptor allocWithZone(VoidPtr zone);

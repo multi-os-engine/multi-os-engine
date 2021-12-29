@@ -71,6 +71,7 @@ public class WKProcessPool extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native WKProcessPool alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKProcessPool allocWithZone(VoidPtr zone);

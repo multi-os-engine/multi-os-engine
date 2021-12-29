@@ -55,6 +55,7 @@ public class VNSaliencyImageObservation extends VNPixelBufferObservation {
     @Selector("alloc")
     public static native VNSaliencyImageObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNSaliencyImageObservation allocWithZone(VoidPtr zone);

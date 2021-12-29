@@ -81,6 +81,7 @@ public class NSArray<_ObjectType> extends NSObject
     @Selector("alloc")
     public static native NSArray<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSArray<?> allocWithZone(VoidPtr zone);

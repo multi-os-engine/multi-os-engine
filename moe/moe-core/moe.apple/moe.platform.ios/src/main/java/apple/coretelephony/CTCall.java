@@ -61,6 +61,7 @@ public class CTCall extends NSObject {
     @Selector("alloc")
     public static native CTCall alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTCall allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class GCEventViewController extends UIViewController {
     @Selector("alloc")
     public static native GCEventViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCEventViewController allocWithZone(VoidPtr zone);

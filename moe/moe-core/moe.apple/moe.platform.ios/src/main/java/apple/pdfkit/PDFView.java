@@ -76,6 +76,7 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Selector("alloc")
     public static native PDFView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFView allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class CIRenderTask extends NSObject {
     @Selector("alloc")
     public static native CIRenderTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIRenderTask allocWithZone(VoidPtr zone);

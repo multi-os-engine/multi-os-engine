@@ -59,6 +59,7 @@ public class PHASEDucker extends NSObject {
     @Selector("alloc")
     public static native PHASEDucker alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEDucker allocWithZone(VoidPtr zone);

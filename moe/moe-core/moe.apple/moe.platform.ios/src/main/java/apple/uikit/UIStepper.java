@@ -76,6 +76,7 @@ public class UIStepper extends UIControl {
     @Selector("alloc")
     public static native UIStepper alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIStepper allocWithZone(VoidPtr zone);

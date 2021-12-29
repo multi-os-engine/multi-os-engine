@@ -23,10 +23,11 @@ import org.moe.natj.general.ann.NInt;
  * -----------------------------------------------------------------------------
  * Thumbnails
  */
+@Deprecated
 @Generated
 public final class MPMovieTimeOption {
-    @Generated @NInt public static final long NearestKeyFrame = 0x0000000000000000L;
-    @Generated @NInt public static final long Exact = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long NearestKeyFrame = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Exact = 0x0000000000000001L;
 
     @Generated
     private MPMovieTimeOption() {

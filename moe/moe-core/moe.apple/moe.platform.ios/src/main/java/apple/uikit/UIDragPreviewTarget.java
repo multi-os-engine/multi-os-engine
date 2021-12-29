@@ -48,6 +48,7 @@ public class UIDragPreviewTarget extends UIPreviewTarget {
     @Selector("alloc")
     public static native UIDragPreviewTarget alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDragPreviewTarget allocWithZone(VoidPtr zone);

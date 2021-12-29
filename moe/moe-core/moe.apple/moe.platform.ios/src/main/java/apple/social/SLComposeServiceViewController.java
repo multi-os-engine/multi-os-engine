@@ -76,6 +76,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("alloc")
     public static native SLComposeServiceViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SLComposeServiceViewController allocWithZone(VoidPtr zone);

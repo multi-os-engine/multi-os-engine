@@ -52,6 +52,7 @@ public class CHIPTestCluster extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPTestCluster alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPTestCluster allocWithZone(VoidPtr zone);
@@ -97,7 +98,7 @@ public class CHIPTestCluster extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPTestCluster initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPTestCluster initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -481,7 +482,7 @@ public class CHIPTestCluster extends CHIPCluster {
 
     @Generated
     @Selector("writeAttributeBooleanWithValue:responseHandler:")
-    public native void writeAttributeBooleanWithValueResponseHandler(byte value,
+    public native void writeAttributeBooleanWithValueResponseHandler(boolean value,
             @ObjCBlock(name = "call_writeAttributeBooleanWithValueResponseHandler") Block_writeAttributeBooleanWithValueResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -621,5 +622,113 @@ public class CHIPTestCluster extends CHIPCluster {
     public interface Block_writeAttributeOctetStringWithValueResponseHandler {
         @Generated
         void call_writeAttributeOctetStringWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeCharStringWithResponseHandler:")
+    public native void readAttributeCharStringWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeCharStringWithResponseHandler") Block_readAttributeCharStringWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeCharStringWithResponseHandler {
+        @Generated
+        void call_readAttributeCharStringWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeLongCharStringWithResponseHandler:")
+    public native void readAttributeLongCharStringWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeLongCharStringWithResponseHandler") Block_readAttributeLongCharStringWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeLongCharStringWithResponseHandler {
+        @Generated
+        void call_readAttributeLongCharStringWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeLongOctetStringWithResponseHandler:")
+    public native void readAttributeLongOctetStringWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeLongOctetStringWithResponseHandler") Block_readAttributeLongOctetStringWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeLongOctetStringWithResponseHandler {
+        @Generated
+        void call_readAttributeLongOctetStringWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeUnsupportedWithResponseHandler:")
+    public native void readAttributeUnsupportedWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeUnsupportedWithResponseHandler") Block_readAttributeUnsupportedWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeUnsupportedWithResponseHandler {
+        @Generated
+        void call_readAttributeUnsupportedWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("testAddArguments:arg2:responseHandler:")
+    public native void testAddArgumentsArg2ResponseHandler(byte arg1, byte arg2,
+            @ObjCBlock(name = "call_testAddArgumentsArg2ResponseHandler") Block_testAddArgumentsArg2ResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_testAddArgumentsArg2ResponseHandler {
+        @Generated
+        void call_testAddArgumentsArg2ResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeCharStringWithValue:responseHandler:")
+    public native void writeAttributeCharStringWithValueResponseHandler(String value,
+            @ObjCBlock(name = "call_writeAttributeCharStringWithValueResponseHandler") Block_writeAttributeCharStringWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeCharStringWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeCharStringWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeLongCharStringWithValue:responseHandler:")
+    public native void writeAttributeLongCharStringWithValueResponseHandler(String value,
+            @ObjCBlock(name = "call_writeAttributeLongCharStringWithValueResponseHandler") Block_writeAttributeLongCharStringWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeLongCharStringWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeLongCharStringWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeLongOctetStringWithValue:responseHandler:")
+    public native void writeAttributeLongOctetStringWithValueResponseHandler(NSData value,
+            @ObjCBlock(name = "call_writeAttributeLongOctetStringWithValueResponseHandler") Block_writeAttributeLongOctetStringWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeLongOctetStringWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeLongOctetStringWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeUnsupportedWithValue:responseHandler:")
+    public native void writeAttributeUnsupportedWithValueResponseHandler(boolean value,
+            @ObjCBlock(name = "call_writeAttributeUnsupportedWithValueResponseHandler") Block_writeAttributeUnsupportedWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeUnsupportedWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeUnsupportedWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 }

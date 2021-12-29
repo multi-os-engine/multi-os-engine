@@ -44,6 +44,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -67,6 +68,7 @@ public class GKSession extends NSObject {
     @Selector("alloc")
     public static native GKSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKSession allocWithZone(VoidPtr zone);

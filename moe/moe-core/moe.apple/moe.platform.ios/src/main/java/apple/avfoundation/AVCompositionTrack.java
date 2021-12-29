@@ -63,6 +63,7 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Selector("alloc")
     public static native AVCompositionTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCompositionTrack allocWithZone(VoidPtr zone);

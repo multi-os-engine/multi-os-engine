@@ -56,6 +56,7 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
     @Selector("alloc")
     public static native VNRecognizedTextObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRecognizedTextObservation allocWithZone(VoidPtr zone);

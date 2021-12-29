@@ -49,6 +49,7 @@ public class CIRenderInfo extends NSObject {
     @Selector("alloc")
     public static native CIRenderInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIRenderInfo allocWithZone(VoidPtr zone);

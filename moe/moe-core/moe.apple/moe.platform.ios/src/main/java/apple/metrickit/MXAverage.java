@@ -55,6 +55,7 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXAverage<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXAverage<?> allocWithZone(VoidPtr zone);

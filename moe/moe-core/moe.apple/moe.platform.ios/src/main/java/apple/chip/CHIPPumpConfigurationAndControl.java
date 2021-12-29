@@ -51,6 +51,7 @@ public class CHIPPumpConfigurationAndControl extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPPumpConfigurationAndControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPPumpConfigurationAndControl allocWithZone(VoidPtr zone);
@@ -110,7 +111,7 @@ public class CHIPPumpConfigurationAndControl extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPPumpConfigurationAndControl initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPPumpConfigurationAndControl initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated

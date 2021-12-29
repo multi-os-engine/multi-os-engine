@@ -52,6 +52,7 @@ public class MTLStitchedLibraryDescriptor extends NSObject implements NSCopying 
     @Selector("alloc")
     public static native MTLStitchedLibraryDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLStitchedLibraryDescriptor allocWithZone(VoidPtr zone);

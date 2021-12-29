@@ -73,6 +73,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVPlayerItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItem allocWithZone(VoidPtr zone);

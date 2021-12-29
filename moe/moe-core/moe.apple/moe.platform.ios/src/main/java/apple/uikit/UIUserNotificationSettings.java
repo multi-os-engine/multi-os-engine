@@ -61,6 +61,7 @@ public class UIUserNotificationSettings extends NSObject {
     @Selector("alloc")
     public static native UIUserNotificationSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIUserNotificationSettings allocWithZone(VoidPtr zone);

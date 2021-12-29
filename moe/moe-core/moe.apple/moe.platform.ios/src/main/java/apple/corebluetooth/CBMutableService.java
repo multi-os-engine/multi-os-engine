@@ -68,6 +68,7 @@ public class CBMutableService extends CBService {
     @Selector("alloc")
     public static native CBMutableService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBMutableService allocWithZone(VoidPtr zone);

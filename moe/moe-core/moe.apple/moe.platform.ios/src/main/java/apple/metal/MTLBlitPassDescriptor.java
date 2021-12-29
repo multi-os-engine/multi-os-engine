@@ -52,6 +52,7 @@ public class MTLBlitPassDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLBlitPassDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLBlitPassDescriptor allocWithZone(VoidPtr zone);

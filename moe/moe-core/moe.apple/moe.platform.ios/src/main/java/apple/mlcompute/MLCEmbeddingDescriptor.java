@@ -53,6 +53,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCEmbeddingDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCEmbeddingDescriptor allocWithZone(VoidPtr zone);

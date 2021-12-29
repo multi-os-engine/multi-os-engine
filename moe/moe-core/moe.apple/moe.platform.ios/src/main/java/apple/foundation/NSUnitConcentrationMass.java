@@ -60,6 +60,7 @@ public class NSUnitConcentrationMass extends NSDimension implements NSSecureCodi
     @Selector("alloc")
     public static native NSUnitConcentrationMass alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitConcentrationMass allocWithZone(VoidPtr zone);

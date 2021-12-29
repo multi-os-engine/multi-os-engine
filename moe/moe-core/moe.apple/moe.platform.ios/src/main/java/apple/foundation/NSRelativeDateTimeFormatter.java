@@ -45,6 +45,7 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSRelativeDateTimeFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSRelativeDateTimeFormatter allocWithZone(VoidPtr zone);

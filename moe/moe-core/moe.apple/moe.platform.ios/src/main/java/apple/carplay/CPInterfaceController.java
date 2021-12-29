@@ -50,6 +50,7 @@ public class CPInterfaceController extends NSObject {
     @Selector("alloc")
     public static native CPInterfaceController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPInterfaceController allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class SSReadingList extends NSObject {
     @Selector("alloc")
     public static native SSReadingList alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SSReadingList allocWithZone(VoidPtr zone);

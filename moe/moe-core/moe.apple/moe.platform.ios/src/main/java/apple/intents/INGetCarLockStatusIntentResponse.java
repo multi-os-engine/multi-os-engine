@@ -49,6 +49,7 @@ public class INGetCarLockStatusIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INGetCarLockStatusIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetCarLockStatusIntentResponse allocWithZone(VoidPtr zone);

@@ -81,6 +81,7 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     @Selector("alloc")
     public static native SKSpriteNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKSpriteNode allocWithZone(VoidPtr zone);

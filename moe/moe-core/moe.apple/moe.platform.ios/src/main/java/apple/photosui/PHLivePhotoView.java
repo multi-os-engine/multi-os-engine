@@ -83,6 +83,7 @@ public class PHLivePhotoView extends UIView {
     @Selector("alloc")
     public static native PHLivePhotoView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHLivePhotoView allocWithZone(VoidPtr zone);

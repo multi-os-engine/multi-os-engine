@@ -48,6 +48,7 @@ public class INCreateNoteIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INCreateNoteIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCreateNoteIntentResponse allocWithZone(VoidPtr zone);

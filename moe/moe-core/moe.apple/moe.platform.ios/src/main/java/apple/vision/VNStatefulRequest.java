@@ -55,6 +55,7 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNStatefulRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNStatefulRequest allocWithZone(VoidPtr zone);

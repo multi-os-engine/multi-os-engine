@@ -63,6 +63,7 @@ public class SKCloudServiceController extends NSObject {
     @Selector("alloc")
     public static native SKCloudServiceController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKCloudServiceController allocWithZone(VoidPtr zone);

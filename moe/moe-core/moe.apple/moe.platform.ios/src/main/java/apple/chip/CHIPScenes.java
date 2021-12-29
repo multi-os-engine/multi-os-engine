@@ -49,7 +49,7 @@ public class CHIPScenes extends CHIPCluster {
     @Generated
     @Selector("addScene:sceneId:transitionTime:sceneName:clusterId:length:value:responseHandler:")
     public native void addSceneSceneIdTransitionTimeSceneNameClusterIdLengthValueResponseHandler(char groupId,
-            byte sceneId, char transitionTime, String sceneName, char clusterId, byte length, byte value,
+            byte sceneId, char transitionTime, String sceneName, int clusterId, byte length, byte value,
             @ObjCBlock(name = "call_addSceneSceneIdTransitionTimeSceneNameClusterIdLengthValueResponseHandler") Block_addSceneSceneIdTransitionTimeSceneNameClusterIdLengthValueResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -65,6 +65,7 @@ public class CHIPScenes extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPScenes alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPScenes allocWithZone(VoidPtr zone);
@@ -122,7 +123,7 @@ public class CHIPScenes extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPScenes initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPScenes initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

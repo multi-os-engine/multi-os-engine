@@ -70,6 +70,7 @@ public class AVDepthData extends NSObject {
     @Selector("alloc")
     public static native AVDepthData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVDepthData allocWithZone(VoidPtr zone);

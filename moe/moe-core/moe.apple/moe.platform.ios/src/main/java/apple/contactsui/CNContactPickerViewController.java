@@ -76,6 +76,7 @@ public class CNContactPickerViewController extends UIViewController {
     @Selector("alloc")
     public static native CNContactPickerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactPickerViewController allocWithZone(VoidPtr zone);

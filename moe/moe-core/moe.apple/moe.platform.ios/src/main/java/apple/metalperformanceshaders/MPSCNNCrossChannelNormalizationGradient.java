@@ -75,6 +75,7 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     @Selector("alloc")
     public static native MPSCNNCrossChannelNormalizationGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNCrossChannelNormalizationGradient allocWithZone(VoidPtr zone);

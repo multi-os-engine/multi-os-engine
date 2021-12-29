@@ -47,6 +47,7 @@ public class MPSGraphDevice extends NSObject {
     @Selector("alloc")
     public static native MPSGraphDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphDevice allocWithZone(VoidPtr zone);

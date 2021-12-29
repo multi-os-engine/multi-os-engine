@@ -60,6 +60,7 @@ public class NSUnitElectricCharge extends NSDimension implements NSSecureCoding 
     @Selector("alloc")
     public static native NSUnitElectricCharge alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitElectricCharge allocWithZone(VoidPtr zone);

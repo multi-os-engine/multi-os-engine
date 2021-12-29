@@ -66,6 +66,7 @@ public class MKCircle extends MKShape implements MKOverlay {
     @Selector("alloc")
     public static native MKCircle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKCircle allocWithZone(VoidPtr zone);

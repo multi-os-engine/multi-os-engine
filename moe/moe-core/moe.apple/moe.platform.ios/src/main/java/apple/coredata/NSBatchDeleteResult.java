@@ -65,6 +65,7 @@ public class NSBatchDeleteResult extends NSPersistentStoreResult {
     @Selector("alloc")
     public static native NSBatchDeleteResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBatchDeleteResult allocWithZone(VoidPtr zone);

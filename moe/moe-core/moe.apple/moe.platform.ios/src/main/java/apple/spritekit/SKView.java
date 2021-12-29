@@ -79,6 +79,7 @@ public class SKView extends UIView {
     @Selector("alloc")
     public static native SKView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKView allocWithZone(VoidPtr zone);

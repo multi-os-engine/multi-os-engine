@@ -64,6 +64,7 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Selector("alloc")
     public static native NSKeyedUnarchiver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSKeyedUnarchiver allocWithZone(VoidPtr zone);

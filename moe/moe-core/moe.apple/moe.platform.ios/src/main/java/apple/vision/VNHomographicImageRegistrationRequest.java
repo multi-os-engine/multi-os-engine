@@ -60,6 +60,7 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
     @Selector("alloc")
     public static native VNHomographicImageRegistrationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNHomographicImageRegistrationRequest allocWithZone(VoidPtr zone);

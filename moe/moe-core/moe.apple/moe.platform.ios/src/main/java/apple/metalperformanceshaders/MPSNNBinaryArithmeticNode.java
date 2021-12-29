@@ -48,6 +48,7 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNBinaryArithmeticNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNBinaryArithmeticNode allocWithZone(VoidPtr zone);

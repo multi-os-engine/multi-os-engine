@@ -66,6 +66,7 @@ public class WKUserScript extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native WKUserScript alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKUserScript allocWithZone(VoidPtr zone);

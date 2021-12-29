@@ -48,6 +48,7 @@ public class CHIPDevice extends NSObject {
     @Selector("alloc")
     public static native CHIPDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPDevice allocWithZone(VoidPtr zone);

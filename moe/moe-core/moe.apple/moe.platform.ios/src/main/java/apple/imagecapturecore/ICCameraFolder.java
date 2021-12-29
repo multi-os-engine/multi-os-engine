@@ -52,6 +52,7 @@ public class ICCameraFolder extends ICCameraItem {
     @Selector("alloc")
     public static native ICCameraFolder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ICCameraFolder allocWithZone(VoidPtr zone);

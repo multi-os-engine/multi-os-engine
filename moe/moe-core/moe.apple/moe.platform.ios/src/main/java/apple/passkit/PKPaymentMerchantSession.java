@@ -46,6 +46,7 @@ public class PKPaymentMerchantSession extends NSObject {
     @Selector("alloc")
     public static native PKPaymentMerchantSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentMerchantSession allocWithZone(VoidPtr zone);

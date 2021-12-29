@@ -46,6 +46,7 @@ public class PKBarcodeEventConfigurationRequest extends NSObject {
     @Selector("alloc")
     public static native PKBarcodeEventConfigurationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKBarcodeEventConfigurationRequest allocWithZone(VoidPtr zone);

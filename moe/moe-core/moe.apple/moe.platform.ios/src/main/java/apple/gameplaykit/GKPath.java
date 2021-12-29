@@ -61,6 +61,7 @@ public class GKPath extends NSObject {
     @Selector("alloc")
     public static native GKPath alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKPath allocWithZone(VoidPtr zone);

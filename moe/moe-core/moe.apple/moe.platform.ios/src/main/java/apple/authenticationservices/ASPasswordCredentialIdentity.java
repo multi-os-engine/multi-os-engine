@@ -55,6 +55,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     @Selector("alloc")
     public static native ASPasswordCredentialIdentity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASPasswordCredentialIdentity allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @Selector("alloc")
     public static native NSCachedURLResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCachedURLResponse allocWithZone(VoidPtr zone);

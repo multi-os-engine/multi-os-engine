@@ -64,6 +64,7 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native UIImageAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIImageAsset allocWithZone(VoidPtr zone);

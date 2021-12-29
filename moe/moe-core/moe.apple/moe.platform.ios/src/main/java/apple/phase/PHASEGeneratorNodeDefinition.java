@@ -50,6 +50,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
     @Selector("alloc")
     public static native PHASEGeneratorNodeDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEGeneratorNodeDefinition allocWithZone(VoidPtr zone);

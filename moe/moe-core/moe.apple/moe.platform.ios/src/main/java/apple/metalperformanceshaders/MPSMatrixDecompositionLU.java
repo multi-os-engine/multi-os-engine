@@ -66,6 +66,7 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
     @Selector("alloc")
     public static native MPSMatrixDecompositionLU alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixDecompositionLU allocWithZone(VoidPtr zone);

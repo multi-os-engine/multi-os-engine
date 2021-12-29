@@ -63,6 +63,7 @@ public class PHCachingImageManager extends PHImageManager {
     @Selector("alloc")
     public static native PHCachingImageManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHCachingImageManager allocWithZone(VoidPtr zone);

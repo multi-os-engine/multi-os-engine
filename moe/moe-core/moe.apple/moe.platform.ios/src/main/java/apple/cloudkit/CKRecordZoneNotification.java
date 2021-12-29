@@ -86,6 +86,7 @@ public class CKRecordZoneNotification extends CKNotification {
     @Selector("alloc")
     public static native CKRecordZoneNotification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKRecordZoneNotification allocWithZone(VoidPtr zone);

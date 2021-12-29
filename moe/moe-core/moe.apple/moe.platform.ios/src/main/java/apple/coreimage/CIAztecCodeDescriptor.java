@@ -55,6 +55,7 @@ public class CIAztecCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("alloc")
     public static native CIAztecCodeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIAztecCodeDescriptor allocWithZone(VoidPtr zone);

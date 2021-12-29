@@ -65,6 +65,7 @@ public class INStartPhotoPlaybackIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INStartPhotoPlaybackIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartPhotoPlaybackIntentResponse allocWithZone(VoidPtr zone);

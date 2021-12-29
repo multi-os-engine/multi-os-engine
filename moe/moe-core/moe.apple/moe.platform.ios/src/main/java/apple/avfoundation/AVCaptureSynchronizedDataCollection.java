@@ -56,6 +56,7 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
     @Selector("alloc")
     public static native AVCaptureSynchronizedDataCollection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureSynchronizedDataCollection allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("alloc")
     public static native NSKeyedArchiver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSKeyedArchiver allocWithZone(VoidPtr zone);

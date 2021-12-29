@@ -72,6 +72,7 @@ public class NEOnDemandRuleIgnore extends NEOnDemandRule {
     @Selector("alloc")
     public static native NEOnDemandRuleIgnore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEOnDemandRuleIgnore allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class WKScriptMessage extends NSObject {
     @Selector("alloc")
     public static native WKScriptMessage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKScriptMessage allocWithZone(VoidPtr zone);

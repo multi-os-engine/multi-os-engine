@@ -53,6 +53,7 @@ public class SHSignatureGenerator extends NSObject {
     @Selector("alloc")
     public static native SHSignatureGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHSignatureGenerator allocWithZone(VoidPtr zone);

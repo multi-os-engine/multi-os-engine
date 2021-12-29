@@ -47,6 +47,7 @@ public class HMNetworkConfigurationProfile extends HMAccessoryProfile {
     @Selector("alloc")
     public static native HMNetworkConfigurationProfile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMNetworkConfigurationProfile allocWithZone(VoidPtr zone);

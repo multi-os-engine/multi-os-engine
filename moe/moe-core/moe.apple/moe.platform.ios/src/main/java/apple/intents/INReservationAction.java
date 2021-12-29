@@ -51,6 +51,7 @@ public class INReservationAction extends NSObject implements NSCopying, NSSecure
     @Selector("alloc")
     public static native INReservationAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INReservationAction allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class INTransferMoneyIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INTransferMoneyIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTransferMoneyIntentResponse allocWithZone(VoidPtr zone);

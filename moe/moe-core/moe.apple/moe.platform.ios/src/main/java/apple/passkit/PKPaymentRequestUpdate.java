@@ -45,6 +45,7 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Selector("alloc")
     public static native PKPaymentRequestUpdate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentRequestUpdate allocWithZone(VoidPtr zone);

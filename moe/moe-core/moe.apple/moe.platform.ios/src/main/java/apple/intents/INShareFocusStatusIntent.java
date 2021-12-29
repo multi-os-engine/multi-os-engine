@@ -47,6 +47,7 @@ public class INShareFocusStatusIntent extends INIntent {
     @Selector("alloc")
     public static native INShareFocusStatusIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INShareFocusStatusIntent allocWithZone(VoidPtr zone);

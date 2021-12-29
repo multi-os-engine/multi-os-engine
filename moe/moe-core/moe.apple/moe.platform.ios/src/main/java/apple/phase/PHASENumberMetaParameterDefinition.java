@@ -50,6 +50,7 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
     @Selector("alloc")
     public static native PHASENumberMetaParameterDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASENumberMetaParameterDefinition allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("alloc")
     public static native NSFetchRequestExpression alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFetchRequestExpression allocWithZone(VoidPtr zone);

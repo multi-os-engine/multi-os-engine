@@ -54,6 +54,7 @@ public class MXAnimationMetric extends MXMetric {
     @Selector("alloc")
     public static native MXAnimationMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXAnimationMetric allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class CBL2CAPChannel extends NSObject {
     @Selector("alloc")
     public static native CBL2CAPChannel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBL2CAPChannel allocWithZone(VoidPtr zone);

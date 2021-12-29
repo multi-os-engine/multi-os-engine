@@ -72,6 +72,7 @@ public class CLLocationManager extends NSObject {
     @Selector("alloc")
     public static native CLLocationManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLLocationManager allocWithZone(VoidPtr zone);

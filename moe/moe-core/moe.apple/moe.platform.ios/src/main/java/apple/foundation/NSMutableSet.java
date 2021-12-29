@@ -66,6 +66,7 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Selector("alloc")
     public static native NSMutableSet<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableSet<?> allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class INMediaDestination extends NSObject implements NSCopying, NSSecureC
     @Selector("alloc")
     public static native INMediaDestination alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMediaDestination allocWithZone(VoidPtr zone);

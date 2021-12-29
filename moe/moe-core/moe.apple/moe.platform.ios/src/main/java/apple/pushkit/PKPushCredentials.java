@@ -62,6 +62,7 @@ public class PKPushCredentials extends NSObject {
     @Selector("alloc")
     public static native PKPushCredentials alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPushCredentials allocWithZone(VoidPtr zone);

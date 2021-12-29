@@ -67,6 +67,7 @@ public class MPSNNGramMatrixCalculation extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNGramMatrixCalculation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGramMatrixCalculation allocWithZone(VoidPtr zone);

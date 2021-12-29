@@ -73,6 +73,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Selector("alloc")
     public static native RPBroadcastActivityViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPBroadcastActivityViewController allocWithZone(VoidPtr zone);

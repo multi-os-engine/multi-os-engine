@@ -63,6 +63,7 @@ public class INStartVideoCallIntent extends INIntent {
     @Selector("alloc")
     public static native INStartVideoCallIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartVideoCallIntent allocWithZone(VoidPtr zone);

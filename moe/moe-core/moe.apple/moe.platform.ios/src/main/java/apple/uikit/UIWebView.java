@@ -85,6 +85,7 @@ public class UIWebView extends UIView implements NSCoding, UIScrollViewDelegate 
     @Selector("alloc")
     public static native UIWebView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWebView allocWithZone(VoidPtr zone);

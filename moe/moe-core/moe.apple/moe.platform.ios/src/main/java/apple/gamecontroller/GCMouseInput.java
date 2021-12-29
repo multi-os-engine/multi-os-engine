@@ -53,6 +53,7 @@ public class GCMouseInput extends GCPhysicalInputProfile {
     @Selector("alloc")
     public static native GCMouseInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCMouseInput allocWithZone(VoidPtr zone);

@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Cluster On/off
+ * Cluster On/Off
  */
 @Generated
 @Library("CHIP")
@@ -51,6 +51,7 @@ public class CHIPOnOff extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPOnOff alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPOnOff allocWithZone(VoidPtr zone);
@@ -110,7 +111,7 @@ public class CHIPOnOff extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPOnOff initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPOnOff initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -227,4 +228,136 @@ public class CHIPOnOff extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("offWithEffect:effectVariant:responseHandler:")
+    public native void offWithEffectEffectVariantResponseHandler(byte effectId, byte effectVariant,
+            @ObjCBlock(name = "call_offWithEffectEffectVariantResponseHandler") Block_offWithEffectEffectVariantResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_offWithEffectEffectVariantResponseHandler {
+        @Generated
+        void call_offWithEffectEffectVariantResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("onWithRecallGlobalScene:")
+    public native void onWithRecallGlobalScene(
+            @ObjCBlock(name = "call_onWithRecallGlobalScene") Block_onWithRecallGlobalScene responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_onWithRecallGlobalScene {
+        @Generated
+        void call_onWithRecallGlobalScene(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("onWithTimedOff:onTime:offWaitTime:responseHandler:")
+    public native void onWithTimedOffOnTimeOffWaitTimeResponseHandler(byte onOffControl, char onTime, char offWaitTime,
+            @ObjCBlock(name = "call_onWithTimedOffOnTimeOffWaitTimeResponseHandler") Block_onWithTimedOffOnTimeOffWaitTimeResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_onWithTimedOffOnTimeOffWaitTimeResponseHandler {
+        @Generated
+        void call_onWithTimedOffOnTimeOffWaitTimeResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeFeatureMapWithResponseHandler:")
+    public native void readAttributeFeatureMapWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeFeatureMapWithResponseHandler") Block_readAttributeFeatureMapWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeFeatureMapWithResponseHandler {
+        @Generated
+        void call_readAttributeFeatureMapWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeGlobalSceneControlWithResponseHandler:")
+    public native void readAttributeGlobalSceneControlWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeGlobalSceneControlWithResponseHandler") Block_readAttributeGlobalSceneControlWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeGlobalSceneControlWithResponseHandler {
+        @Generated
+        void call_readAttributeGlobalSceneControlWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeOffWaitTimeWithResponseHandler:")
+    public native void readAttributeOffWaitTimeWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeOffWaitTimeWithResponseHandler") Block_readAttributeOffWaitTimeWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeOffWaitTimeWithResponseHandler {
+        @Generated
+        void call_readAttributeOffWaitTimeWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeOnTimeWithResponseHandler:")
+    public native void readAttributeOnTimeWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeOnTimeWithResponseHandler") Block_readAttributeOnTimeWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeOnTimeWithResponseHandler {
+        @Generated
+        void call_readAttributeOnTimeWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeStartUpOnOffWithResponseHandler:")
+    public native void readAttributeStartUpOnOffWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeStartUpOnOffWithResponseHandler") Block_readAttributeStartUpOnOffWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeStartUpOnOffWithResponseHandler {
+        @Generated
+        void call_readAttributeStartUpOnOffWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeOffWaitTimeWithValue:responseHandler:")
+    public native void writeAttributeOffWaitTimeWithValueResponseHandler(char value,
+            @ObjCBlock(name = "call_writeAttributeOffWaitTimeWithValueResponseHandler") Block_writeAttributeOffWaitTimeWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeOffWaitTimeWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeOffWaitTimeWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeOnTimeWithValue:responseHandler:")
+    public native void writeAttributeOnTimeWithValueResponseHandler(char value,
+            @ObjCBlock(name = "call_writeAttributeOnTimeWithValueResponseHandler") Block_writeAttributeOnTimeWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeOnTimeWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeOnTimeWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeStartUpOnOffWithValue:responseHandler:")
+    public native void writeAttributeStartUpOnOffWithValueResponseHandler(byte value,
+            @ObjCBlock(name = "call_writeAttributeStartUpOnOffWithValueResponseHandler") Block_writeAttributeStartUpOnOffWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeStartUpOnOffWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeStartUpOnOffWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

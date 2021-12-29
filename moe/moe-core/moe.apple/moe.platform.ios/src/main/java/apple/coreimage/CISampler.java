@@ -67,6 +67,7 @@ public class CISampler extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CISampler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CISampler allocWithZone(VoidPtr zone);

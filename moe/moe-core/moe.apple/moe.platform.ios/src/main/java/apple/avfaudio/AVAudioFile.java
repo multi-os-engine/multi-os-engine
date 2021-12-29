@@ -63,6 +63,7 @@ public class AVAudioFile extends NSObject {
     @Selector("alloc")
     public static native AVAudioFile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioFile allocWithZone(VoidPtr zone);

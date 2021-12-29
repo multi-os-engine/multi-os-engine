@@ -50,6 +50,7 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     @Selector("alloc")
     public static native UITextFormattingCoordinator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextFormattingCoordinator allocWithZone(VoidPtr zone);

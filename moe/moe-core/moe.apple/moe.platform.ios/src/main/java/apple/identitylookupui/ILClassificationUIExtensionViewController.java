@@ -53,6 +53,7 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     @Selector("alloc")
     public static native ILClassificationUIExtensionViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILClassificationUIExtensionViewController allocWithZone(VoidPtr zone);

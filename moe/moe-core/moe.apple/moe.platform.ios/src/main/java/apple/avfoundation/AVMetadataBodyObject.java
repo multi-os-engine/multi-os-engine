@@ -54,6 +54,7 @@ public class AVMetadataBodyObject extends AVMetadataObject implements NSCopying 
     @Selector("alloc")
     public static native AVMetadataBodyObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataBodyObject allocWithZone(VoidPtr zone);

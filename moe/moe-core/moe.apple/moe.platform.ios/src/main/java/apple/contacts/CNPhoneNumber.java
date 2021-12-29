@@ -71,6 +71,7 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native CNPhoneNumber alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNPhoneNumber allocWithZone(VoidPtr zone);

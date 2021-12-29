@@ -49,6 +49,7 @@ public class PHPickerResult extends NSObject {
     @Selector("alloc")
     public static native PHPickerResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHPickerResult allocWithZone(VoidPtr zone);

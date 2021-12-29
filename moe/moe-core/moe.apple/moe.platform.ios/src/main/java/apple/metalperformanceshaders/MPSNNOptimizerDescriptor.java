@@ -54,6 +54,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPSNNOptimizerDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNOptimizerDescriptor allocWithZone(VoidPtr zone);

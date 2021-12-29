@@ -61,6 +61,7 @@ public class INCurrencyAmountResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INCurrencyAmountResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCurrencyAmountResolutionResult allocWithZone(VoidPtr zone);

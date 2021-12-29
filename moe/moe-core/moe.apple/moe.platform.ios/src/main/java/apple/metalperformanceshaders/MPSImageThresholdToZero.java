@@ -75,6 +75,7 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageThresholdToZero alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageThresholdToZero allocWithZone(VoidPtr zone);

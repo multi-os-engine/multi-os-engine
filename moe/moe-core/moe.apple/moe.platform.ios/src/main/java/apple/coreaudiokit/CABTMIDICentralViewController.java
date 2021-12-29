@@ -64,6 +64,7 @@ public class CABTMIDICentralViewController extends UITableViewController {
     @Selector("alloc")
     public static native CABTMIDICentralViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CABTMIDICentralViewController allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class GKSpheresNoiseSource extends GKNoiseSource {
     @Selector("alloc")
     public static native GKSpheresNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKSpheresNoiseSource allocWithZone(VoidPtr zone);

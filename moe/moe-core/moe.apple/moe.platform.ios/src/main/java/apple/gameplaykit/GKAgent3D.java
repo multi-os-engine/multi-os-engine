@@ -66,6 +66,7 @@ public class GKAgent3D extends GKAgent {
     @Selector("alloc")
     public static native GKAgent3D alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAgent3D allocWithZone(VoidPtr zone);

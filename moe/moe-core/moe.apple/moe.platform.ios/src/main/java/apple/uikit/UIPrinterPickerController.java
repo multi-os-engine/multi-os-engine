@@ -67,6 +67,7 @@ public class UIPrinterPickerController extends NSObject {
     @Selector("alloc")
     public static native UIPrinterPickerController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrinterPickerController allocWithZone(VoidPtr zone);

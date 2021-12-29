@@ -55,6 +55,7 @@ public class MLCReductionLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCReductionLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCReductionLayer allocWithZone(VoidPtr zone);

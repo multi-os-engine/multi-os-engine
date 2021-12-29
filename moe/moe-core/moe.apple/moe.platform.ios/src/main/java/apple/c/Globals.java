@@ -8719,10 +8719,12 @@ public final class Globals {
      *                  (i.e., com.company.mysubsystem).
      * @param category  The category within the given subsystem that specifies the settings for
      *                  the log object.
-     * @return Returns an os_log_t value to be passed to other os_log API calls.  This
-     * should be called once at log initialization and rely on system to detect
-     * changes to settings.  This object should be released when no longer used
-     * via os_release or -[release] method.
+     * @return Returns an os_log_t value to be passed to other os_log API calls.  The
+     * logging runtime maintains a global collection of all os_log_t objects, one
+     * per subsystem/category pair.  The os_log_t for a given subsystem/category is
+     * created upon the first call to os_log_create and any subsequent calls return
+     * the same object.  These objects are never deallocated, so dynamic creation
+     * (e.g. on a per-operation basis) is generally inappropriate.
      * <p>
      * A value will always be returned to allow for dynamic enablement.
      */

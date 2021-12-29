@@ -65,6 +65,7 @@ public class UIAccessibilityCustomRotorSearchPredicate extends NSObject {
     @Selector("alloc")
     public static native UIAccessibilityCustomRotorSearchPredicate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAccessibilityCustomRotorSearchPredicate allocWithZone(VoidPtr zone);

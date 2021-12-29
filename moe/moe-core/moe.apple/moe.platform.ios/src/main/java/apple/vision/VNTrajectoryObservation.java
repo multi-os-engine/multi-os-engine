@@ -54,6 +54,7 @@ public class VNTrajectoryObservation extends VNObservation {
     @Selector("alloc")
     public static native VNTrajectoryObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNTrajectoryObservation allocWithZone(VoidPtr zone);

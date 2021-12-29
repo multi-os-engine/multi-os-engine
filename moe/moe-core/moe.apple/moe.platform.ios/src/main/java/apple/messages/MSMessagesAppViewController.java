@@ -67,6 +67,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     @Selector("alloc")
     public static native MSMessagesAppViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSMessagesAppViewController allocWithZone(VoidPtr zone);

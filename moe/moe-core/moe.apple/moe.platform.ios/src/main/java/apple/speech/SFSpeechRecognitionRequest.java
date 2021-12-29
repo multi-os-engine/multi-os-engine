@@ -64,6 +64,7 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @Selector("alloc")
     public static native SFSpeechRecognitionRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSpeechRecognitionRequest allocWithZone(VoidPtr zone);

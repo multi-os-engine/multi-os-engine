@@ -45,6 +45,7 @@ public class INDeleteTasksTaskResolutionResult extends INTaskResolutionResult {
     @Selector("alloc")
     public static native INDeleteTasksTaskResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDeleteTasksTaskResolutionResult allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class NSOutputStream extends NSStream {
     @Selector("alloc")
     public static native NSOutputStream alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSOutputStream allocWithZone(VoidPtr zone);

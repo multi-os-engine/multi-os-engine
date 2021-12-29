@@ -78,6 +78,7 @@ public class MPSImageEDLines extends MPSKernel {
     @Selector("alloc")
     public static native MPSImageEDLines alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageEDLines allocWithZone(VoidPtr zone);

@@ -57,6 +57,7 @@ public class MSSetupSession extends NSObject {
     @Selector("alloc")
     public static native MSSetupSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSSetupSession allocWithZone(VoidPtr zone);

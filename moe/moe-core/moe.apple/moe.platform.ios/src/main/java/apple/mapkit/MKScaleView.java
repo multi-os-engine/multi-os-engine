@@ -62,6 +62,7 @@ public class MKScaleView extends UIView {
     @Selector("alloc")
     public static native MKScaleView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKScaleView allocWithZone(VoidPtr zone);

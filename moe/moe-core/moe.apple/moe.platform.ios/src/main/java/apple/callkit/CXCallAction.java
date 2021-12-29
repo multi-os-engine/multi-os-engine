@@ -64,6 +64,7 @@ public class CXCallAction extends CXAction {
     @Selector("alloc")
     public static native CXCallAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXCallAction allocWithZone(VoidPtr zone);

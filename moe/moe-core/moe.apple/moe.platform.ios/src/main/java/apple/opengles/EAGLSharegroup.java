@@ -64,6 +64,7 @@ public class EAGLSharegroup extends NSObject {
     @Selector("alloc")
     public static native EAGLSharegroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EAGLSharegroup allocWithZone(VoidPtr zone);

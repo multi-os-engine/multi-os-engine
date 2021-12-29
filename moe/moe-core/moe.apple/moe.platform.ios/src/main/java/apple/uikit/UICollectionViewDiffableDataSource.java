@@ -51,6 +51,7 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("alloc")
     public static native UICollectionViewDiffableDataSource<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewDiffableDataSource<?, ?> allocWithZone(VoidPtr zone);

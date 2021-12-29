@@ -57,6 +57,7 @@ public class HKVerifiableClinicalRecordQuery extends HKQuery {
     @Selector("alloc")
     public static native HKVerifiableClinicalRecordQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKVerifiableClinicalRecordQuery allocWithZone(VoidPtr zone);

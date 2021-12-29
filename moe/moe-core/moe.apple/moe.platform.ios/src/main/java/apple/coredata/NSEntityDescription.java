@@ -75,6 +75,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("alloc")
     public static native NSEntityDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSEntityDescription allocWithZone(VoidPtr zone);

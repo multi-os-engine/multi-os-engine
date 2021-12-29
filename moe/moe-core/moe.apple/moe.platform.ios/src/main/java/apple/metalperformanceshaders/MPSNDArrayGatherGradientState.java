@@ -58,6 +58,7 @@ public class MPSNDArrayGatherGradientState extends MPSNDArrayGradientState {
     @Selector("alloc")
     public static native MPSNDArrayGatherGradientState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayGatherGradientState allocWithZone(VoidPtr zone);

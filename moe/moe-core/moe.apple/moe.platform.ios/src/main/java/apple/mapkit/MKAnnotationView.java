@@ -82,6 +82,7 @@ public class MKAnnotationView extends UIView {
     @Selector("alloc")
     public static native MKAnnotationView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKAnnotationView allocWithZone(VoidPtr zone);

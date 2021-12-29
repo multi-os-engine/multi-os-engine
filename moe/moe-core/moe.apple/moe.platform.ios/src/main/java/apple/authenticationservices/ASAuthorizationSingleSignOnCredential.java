@@ -58,6 +58,7 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @Selector("alloc")
     public static native ASAuthorizationSingleSignOnCredential alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationSingleSignOnCredential allocWithZone(VoidPtr zone);

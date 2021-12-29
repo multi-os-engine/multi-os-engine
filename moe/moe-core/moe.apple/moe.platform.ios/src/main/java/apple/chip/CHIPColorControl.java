@@ -51,6 +51,7 @@ public class CHIPColorControl extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPColorControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPColorControl allocWithZone(VoidPtr zone);
@@ -166,7 +167,7 @@ public class CHIPColorControl extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPColorControl initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPColorControl initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -1237,5 +1238,100 @@ public class CHIPColorControl extends CHIPCluster {
     public interface Block_writeAttributeWhitePointYWithValueResponseHandler {
         @Generated
         void call_writeAttributeWhitePointYWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("colorLoopSet:action:direction:time:startHue:optionsMask:optionsOverride:responseHandler:")
+    public native void colorLoopSetActionDirectionTimeStartHueOptionsMaskOptionsOverrideResponseHandler(
+            byte updateFlags, byte action, byte direction, char time, char startHue, byte optionsMask,
+            byte optionsOverride,
+            @ObjCBlock(name = "call_colorLoopSetActionDirectionTimeStartHueOptionsMaskOptionsOverrideResponseHandler") Block_colorLoopSetActionDirectionTimeStartHueOptionsMaskOptionsOverrideResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_colorLoopSetActionDirectionTimeStartHueOptionsMaskOptionsOverrideResponseHandler {
+        @Generated
+        void call_colorLoopSetActionDirectionTimeStartHueOptionsMaskOptionsOverrideResponseHandler(NSError error,
+                NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("enhancedMoveHue:rate:optionsMask:optionsOverride:responseHandler:")
+    public native void enhancedMoveHueRateOptionsMaskOptionsOverrideResponseHandler(byte moveMode, char rate,
+            byte optionsMask, byte optionsOverride,
+            @ObjCBlock(name = "call_enhancedMoveHueRateOptionsMaskOptionsOverrideResponseHandler") Block_enhancedMoveHueRateOptionsMaskOptionsOverrideResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enhancedMoveHueRateOptionsMaskOptionsOverrideResponseHandler {
+        @Generated
+        void call_enhancedMoveHueRateOptionsMaskOptionsOverrideResponseHandler(NSError error,
+                NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("enhancedMoveToHue:direction:transitionTime:optionsMask:optionsOverride:responseHandler:")
+    public native void enhancedMoveToHueDirectionTransitionTimeOptionsMaskOptionsOverrideResponseHandler(
+            char enhancedHue, byte direction, char transitionTime, byte optionsMask, byte optionsOverride,
+            @ObjCBlock(name = "call_enhancedMoveToHueDirectionTransitionTimeOptionsMaskOptionsOverrideResponseHandler") Block_enhancedMoveToHueDirectionTransitionTimeOptionsMaskOptionsOverrideResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enhancedMoveToHueDirectionTransitionTimeOptionsMaskOptionsOverrideResponseHandler {
+        @Generated
+        void call_enhancedMoveToHueDirectionTransitionTimeOptionsMaskOptionsOverrideResponseHandler(NSError error,
+                NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("enhancedMoveToHueAndSaturation:saturation:transitionTime:optionsMask:optionsOverride:responseHandler:")
+    public native void enhancedMoveToHueAndSaturationSaturationTransitionTimeOptionsMaskOptionsOverrideResponseHandler(
+            char enhancedHue, byte saturation, char transitionTime, byte optionsMask, byte optionsOverride,
+            @ObjCBlock(name = "call_enhancedMoveToHueAndSaturationSaturationTransitionTimeOptionsMaskOptionsOverrideResponseHandler") Block_enhancedMoveToHueAndSaturationSaturationTransitionTimeOptionsMaskOptionsOverrideResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enhancedMoveToHueAndSaturationSaturationTransitionTimeOptionsMaskOptionsOverrideResponseHandler {
+        @Generated
+        void call_enhancedMoveToHueAndSaturationSaturationTransitionTimeOptionsMaskOptionsOverrideResponseHandler(
+                NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("enhancedStepHue:stepSize:transitionTime:optionsMask:optionsOverride:responseHandler:")
+    public native void enhancedStepHueStepSizeTransitionTimeOptionsMaskOptionsOverrideResponseHandler(byte stepMode,
+            char stepSize, char transitionTime, byte optionsMask, byte optionsOverride,
+            @ObjCBlock(name = "call_enhancedStepHueStepSizeTransitionTimeOptionsMaskOptionsOverrideResponseHandler") Block_enhancedStepHueStepSizeTransitionTimeOptionsMaskOptionsOverrideResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_enhancedStepHueStepSizeTransitionTimeOptionsMaskOptionsOverrideResponseHandler {
+        @Generated
+        void call_enhancedStepHueStepSizeTransitionTimeOptionsMaskOptionsOverrideResponseHandler(NSError error,
+                NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeColorLoopStartEnhancedHueWithResponseHandler:")
+    public native void readAttributeColorLoopStartEnhancedHueWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeColorLoopStartEnhancedHueWithResponseHandler") Block_readAttributeColorLoopStartEnhancedHueWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeColorLoopStartEnhancedHueWithResponseHandler {
+        @Generated
+        void call_readAttributeColorLoopStartEnhancedHueWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeColorLoopStoredEnhancedHueWithResponseHandler:")
+    public native void readAttributeColorLoopStoredEnhancedHueWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeColorLoopStoredEnhancedHueWithResponseHandler") Block_readAttributeColorLoopStoredEnhancedHueWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeColorLoopStoredEnhancedHueWithResponseHandler {
+        @Generated
+        void call_readAttributeColorLoopStoredEnhancedHueWithResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 }

@@ -75,6 +75,7 @@ public class AVCaptureConnection extends NSObject {
     @Selector("alloc")
     public static native AVCaptureConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureConnection allocWithZone(VoidPtr zone);

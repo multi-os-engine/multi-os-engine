@@ -82,6 +82,7 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CIFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIFilter allocWithZone(VoidPtr zone);

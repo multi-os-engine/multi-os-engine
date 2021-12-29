@@ -57,6 +57,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Selector("alloc")
     public static native MPSCNNNormalizationGammaAndBetaState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNormalizationGammaAndBetaState allocWithZone(VoidPtr zone);

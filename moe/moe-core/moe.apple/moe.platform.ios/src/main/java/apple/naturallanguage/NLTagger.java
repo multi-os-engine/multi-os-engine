@@ -57,6 +57,7 @@ public class NLTagger extends NSObject {
     @Selector("alloc")
     public static native NLTagger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NLTagger allocWithZone(VoidPtr zone);

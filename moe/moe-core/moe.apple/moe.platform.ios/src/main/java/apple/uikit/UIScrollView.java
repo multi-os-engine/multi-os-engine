@@ -83,6 +83,7 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Selector("alloc")
     public static native UIScrollView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIScrollView allocWithZone(VoidPtr zone);

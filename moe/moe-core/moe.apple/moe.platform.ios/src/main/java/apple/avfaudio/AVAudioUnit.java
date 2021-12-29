@@ -79,6 +79,7 @@ public class AVAudioUnit extends AVAudioNode {
     @Selector("alloc")
     public static native AVAudioUnit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnit allocWithZone(VoidPtr zone);

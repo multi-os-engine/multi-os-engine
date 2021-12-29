@@ -63,6 +63,7 @@ public class MTLVertexBufferLayoutDescriptor extends NSObject implements NSCopyi
     @Selector("alloc")
     public static native MTLVertexBufferLayoutDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLVertexBufferLayoutDescriptor allocWithZone(VoidPtr zone);

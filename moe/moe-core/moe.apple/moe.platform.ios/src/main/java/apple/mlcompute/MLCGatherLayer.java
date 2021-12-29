@@ -50,6 +50,7 @@ public class MLCGatherLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCGatherLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCGatherLayer allocWithZone(VoidPtr zone);

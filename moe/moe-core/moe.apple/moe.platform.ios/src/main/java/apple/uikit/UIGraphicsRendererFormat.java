@@ -69,6 +69,7 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIGraphicsRendererFormat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIGraphicsRendererFormat allocWithZone(VoidPtr zone);

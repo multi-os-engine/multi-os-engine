@@ -64,6 +64,7 @@ public class PHObjectPlaceholder extends PHObject {
     @Selector("alloc")
     public static native PHObjectPlaceholder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHObjectPlaceholder allocWithZone(VoidPtr zone);

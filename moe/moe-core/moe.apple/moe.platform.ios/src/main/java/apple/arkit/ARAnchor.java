@@ -54,6 +54,7 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
     @Selector("alloc")
     public static native ARAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARAnchor allocWithZone(VoidPtr zone);

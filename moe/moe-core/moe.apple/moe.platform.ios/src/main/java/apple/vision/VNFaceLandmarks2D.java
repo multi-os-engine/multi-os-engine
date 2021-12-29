@@ -59,6 +59,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     @Selector("alloc")
     public static native VNFaceLandmarks2D alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNFaceLandmarks2D allocWithZone(VoidPtr zone);

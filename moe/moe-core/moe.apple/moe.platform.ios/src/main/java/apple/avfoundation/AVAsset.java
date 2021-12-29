@@ -74,6 +74,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     @Selector("alloc")
     public static native AVAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAsset allocWithZone(VoidPtr zone);

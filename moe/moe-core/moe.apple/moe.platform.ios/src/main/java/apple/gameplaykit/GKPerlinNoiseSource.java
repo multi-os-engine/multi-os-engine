@@ -64,6 +64,7 @@ public class GKPerlinNoiseSource extends GKCoherentNoiseSource {
     @Selector("alloc")
     public static native GKPerlinNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKPerlinNoiseSource allocWithZone(VoidPtr zone);

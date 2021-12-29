@@ -56,6 +56,7 @@ public class MPSNNBinaryGradientState extends MPSState {
     @Selector("alloc")
     public static native MPSNNBinaryGradientState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNBinaryGradientState allocWithZone(VoidPtr zone);

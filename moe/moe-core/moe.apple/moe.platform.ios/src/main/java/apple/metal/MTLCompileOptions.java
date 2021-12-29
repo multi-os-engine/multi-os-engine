@@ -64,6 +64,7 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLCompileOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLCompileOptions allocWithZone(VoidPtr zone);

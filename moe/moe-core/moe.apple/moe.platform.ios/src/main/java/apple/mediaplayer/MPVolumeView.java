@@ -80,6 +80,7 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native MPVolumeView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPVolumeView allocWithZone(VoidPtr zone);

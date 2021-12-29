@@ -67,6 +67,7 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native CKUserIdentity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKUserIdentity allocWithZone(VoidPtr zone);

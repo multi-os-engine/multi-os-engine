@@ -58,6 +58,7 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native INMediaSearch alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMediaSearch allocWithZone(VoidPtr zone);

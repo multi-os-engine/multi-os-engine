@@ -71,6 +71,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("alloc")
     public static native UIBarButtonItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBarButtonItem allocWithZone(VoidPtr zone);

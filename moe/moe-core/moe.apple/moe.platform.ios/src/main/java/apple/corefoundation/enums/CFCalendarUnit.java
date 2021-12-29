@@ -28,7 +28,7 @@ public final class CFCalendarUnit {
     @Generated @NUInt public static final long Hour = 0x0000000000000020L;
     @Generated @NUInt public static final long Minute = 0x0000000000000040L;
     @Generated @NUInt public static final long Second = 0x0000000000000080L;
-    @Generated @NUInt public static final long Week = 0x0000000000000100L;
+    @Deprecated @Generated @NUInt public static final long Week = 0x0000000000000100L;
     @Generated @NUInt public static final long Weekday = 0x0000000000000200L;
     @Generated @NUInt public static final long WeekdayOrdinal = 0x0000000000000400L;
     @Generated @NUInt public static final long Quarter = 0x0000000000000800L;

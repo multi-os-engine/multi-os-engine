@@ -64,6 +64,7 @@ public class UISelectionFeedbackGenerator extends UIFeedbackGenerator {
     @Selector("alloc")
     public static native UISelectionFeedbackGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISelectionFeedbackGenerator allocWithZone(VoidPtr zone);

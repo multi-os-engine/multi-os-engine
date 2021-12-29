@@ -51,6 +51,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertion extends NSObjec
     @Selector("alloc")
     public static native ASAuthorizationPlatformPublicKeyCredentialAssertion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationPlatformPublicKeyCredentialAssertion allocWithZone(VoidPtr zone);

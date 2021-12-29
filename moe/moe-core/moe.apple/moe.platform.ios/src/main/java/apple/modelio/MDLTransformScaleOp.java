@@ -50,6 +50,7 @@ public class MDLTransformScaleOp extends NSObject implements MDLTransformOp {
     @Selector("alloc")
     public static native MDLTransformScaleOp alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTransformScaleOp allocWithZone(VoidPtr zone);

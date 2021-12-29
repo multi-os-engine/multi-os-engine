@@ -45,6 +45,7 @@ public class NSXPCInterface extends NSObject {
     @Selector("alloc")
     public static native NSXPCInterface alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSXPCInterface allocWithZone(VoidPtr zone);

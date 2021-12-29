@@ -64,6 +64,7 @@ public class INSetSeatSettingsInCarIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSetSeatSettingsInCarIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetSeatSettingsInCarIntentResponse allocWithZone(VoidPtr zone);

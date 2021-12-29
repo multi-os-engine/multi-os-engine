@@ -59,6 +59,7 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     @Selector("alloc")
     public static native MPSKeyedUnarchiver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSKeyedUnarchiver allocWithZone(VoidPtr zone);

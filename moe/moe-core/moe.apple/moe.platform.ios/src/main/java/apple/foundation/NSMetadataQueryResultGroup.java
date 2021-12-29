@@ -59,6 +59,7 @@ public class NSMetadataQueryResultGroup extends NSObject {
     @Selector("alloc")
     public static native NSMetadataQueryResultGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMetadataQueryResultGroup allocWithZone(VoidPtr zone);

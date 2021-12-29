@@ -67,6 +67,7 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("alloc")
     public static native UIDocumentPickerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDocumentPickerViewController allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class ICDeviceBrowser extends NSObject {
     @Selector("alloc")
     public static native ICDeviceBrowser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ICDeviceBrowser allocWithZone(VoidPtr zone);

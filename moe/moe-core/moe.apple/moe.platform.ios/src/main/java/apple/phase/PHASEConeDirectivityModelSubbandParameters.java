@@ -50,6 +50,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
     @Selector("alloc")
     public static native PHASEConeDirectivityModelSubbandParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEConeDirectivityModelSubbandParameters allocWithZone(VoidPtr zone);

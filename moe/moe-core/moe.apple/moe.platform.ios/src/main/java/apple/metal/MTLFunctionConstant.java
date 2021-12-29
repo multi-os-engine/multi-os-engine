@@ -66,6 +66,7 @@ public class MTLFunctionConstant extends NSObject {
     @Selector("alloc")
     public static native MTLFunctionConstant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLFunctionConstant allocWithZone(VoidPtr zone);

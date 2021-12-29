@@ -75,6 +75,7 @@ public class NEAppRule extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native NEAppRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEAppRule allocWithZone(VoidPtr zone);

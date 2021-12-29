@@ -64,6 +64,7 @@ public class INSetMessageAttributeIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSetMessageAttributeIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetMessageAttributeIntentResponse allocWithZone(VoidPtr zone);

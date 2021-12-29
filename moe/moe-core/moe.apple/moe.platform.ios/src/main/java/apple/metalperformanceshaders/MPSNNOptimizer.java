@@ -56,6 +56,7 @@ public class MPSNNOptimizer extends MPSKernel {
     @Selector("alloc")
     public static native MPSNNOptimizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNOptimizer allocWithZone(VoidPtr zone);

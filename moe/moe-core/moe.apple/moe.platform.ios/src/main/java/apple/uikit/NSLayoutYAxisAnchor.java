@@ -62,6 +62,7 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
     @Selector("alloc")
     public static native NSLayoutYAxisAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLayoutYAxisAnchor allocWithZone(VoidPtr zone);

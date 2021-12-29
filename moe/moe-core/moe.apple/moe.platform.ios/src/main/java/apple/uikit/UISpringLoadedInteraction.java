@@ -50,6 +50,7 @@ public class UISpringLoadedInteraction extends NSObject implements UIInteraction
     @Selector("alloc")
     public static native UISpringLoadedInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISpringLoadedInteraction allocWithZone(VoidPtr zone);

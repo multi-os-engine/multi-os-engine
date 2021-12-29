@@ -55,6 +55,7 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectBarcodesRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectBarcodesRequest allocWithZone(VoidPtr zone);

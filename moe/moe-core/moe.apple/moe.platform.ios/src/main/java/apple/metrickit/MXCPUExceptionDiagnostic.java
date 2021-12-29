@@ -58,6 +58,7 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
     @Selector("alloc")
     public static native MXCPUExceptionDiagnostic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXCPUExceptionDiagnostic allocWithZone(VoidPtr zone);

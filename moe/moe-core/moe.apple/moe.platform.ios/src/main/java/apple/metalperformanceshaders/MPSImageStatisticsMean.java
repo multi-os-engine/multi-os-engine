@@ -54,6 +54,7 @@ public class MPSImageStatisticsMean extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageStatisticsMean alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageStatisticsMean allocWithZone(VoidPtr zone);

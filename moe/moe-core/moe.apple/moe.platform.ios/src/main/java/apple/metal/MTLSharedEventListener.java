@@ -50,6 +50,7 @@ public class MTLSharedEventListener extends NSObject {
     @Selector("alloc")
     public static native MTLSharedEventListener alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLSharedEventListener allocWithZone(VoidPtr zone);

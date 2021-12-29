@@ -45,6 +45,7 @@ public class SKStorefront extends NSObject {
     @Selector("alloc")
     public static native SKStorefront alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKStorefront allocWithZone(VoidPtr zone);

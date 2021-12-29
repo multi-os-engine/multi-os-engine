@@ -74,6 +74,7 @@ public class HKActivityRingView extends UIView {
     @Selector("alloc")
     public static native HKActivityRingView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKActivityRingView allocWithZone(VoidPtr zone);

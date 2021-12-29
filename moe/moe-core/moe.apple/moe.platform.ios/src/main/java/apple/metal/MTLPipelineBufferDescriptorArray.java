@@ -45,6 +45,7 @@ public class MTLPipelineBufferDescriptorArray extends NSObject {
     @Selector("alloc")
     public static native MTLPipelineBufferDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLPipelineBufferDescriptorArray allocWithZone(VoidPtr zone);

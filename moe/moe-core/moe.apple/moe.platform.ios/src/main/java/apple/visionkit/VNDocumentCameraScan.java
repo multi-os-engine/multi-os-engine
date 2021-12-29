@@ -46,6 +46,7 @@ public class VNDocumentCameraScan extends NSObject {
     @Selector("alloc")
     public static native VNDocumentCameraScan alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDocumentCameraScan allocWithZone(VoidPtr zone);

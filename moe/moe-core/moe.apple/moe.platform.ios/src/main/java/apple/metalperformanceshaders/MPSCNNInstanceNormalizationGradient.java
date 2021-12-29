@@ -53,6 +53,7 @@ public class MPSCNNInstanceNormalizationGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSCNNInstanceNormalizationGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNInstanceNormalizationGradient allocWithZone(VoidPtr zone);

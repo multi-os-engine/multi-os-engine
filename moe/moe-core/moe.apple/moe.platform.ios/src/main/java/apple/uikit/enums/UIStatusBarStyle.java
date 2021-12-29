@@ -29,8 +29,8 @@ public final class UIStatusBarStyle {
      * Light content, for use on dark backgrounds
      */
     @Generated @NInt public static final long LightContent = 0x0000000000000001L;
-    @Generated @NInt public static final long BlackTranslucent = 0x0000000000000001L;
-    @Generated @NInt public static final long BlackOpaque = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long BlackTranslucent = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long BlackOpaque = 0x0000000000000002L;
 
     @Generated
     private UIStatusBarStyle() {

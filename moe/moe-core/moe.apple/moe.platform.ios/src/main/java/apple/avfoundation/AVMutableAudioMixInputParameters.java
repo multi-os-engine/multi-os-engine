@@ -65,6 +65,7 @@ public class AVMutableAudioMixInputParameters extends AVAudioMixInputParameters 
     @Selector("alloc")
     public static native AVMutableAudioMixInputParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableAudioMixInputParameters allocWithZone(VoidPtr zone);

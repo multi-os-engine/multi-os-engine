@@ -74,6 +74,7 @@ public class HKHealthStore extends NSObject {
     @Selector("alloc")
     public static native HKHealthStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKHealthStore allocWithZone(VoidPtr zone);

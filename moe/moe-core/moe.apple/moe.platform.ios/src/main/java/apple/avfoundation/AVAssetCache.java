@@ -68,6 +68,7 @@ public class AVAssetCache extends NSObject {
     @Selector("alloc")
     public static native AVAssetCache alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetCache allocWithZone(VoidPtr zone);

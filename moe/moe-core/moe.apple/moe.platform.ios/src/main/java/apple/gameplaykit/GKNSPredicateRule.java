@@ -67,6 +67,7 @@ public class GKNSPredicateRule extends GKRule {
     @Selector("alloc")
     public static native GKNSPredicateRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKNSPredicateRule allocWithZone(VoidPtr zone);

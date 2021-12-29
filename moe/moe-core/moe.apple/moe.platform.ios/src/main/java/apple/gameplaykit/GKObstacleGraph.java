@@ -66,6 +66,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     @Selector("alloc")
     public static native GKObstacleGraph<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKObstacleGraph<?> allocWithZone(VoidPtr zone);

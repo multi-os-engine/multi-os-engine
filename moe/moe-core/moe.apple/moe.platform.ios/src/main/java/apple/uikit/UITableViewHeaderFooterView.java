@@ -78,6 +78,7 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("alloc")
     public static native UITableViewHeaderFooterView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewHeaderFooterView allocWithZone(VoidPtr zone);

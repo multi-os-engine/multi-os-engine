@@ -82,6 +82,7 @@ public class CIKernel extends NSObject {
     @Selector("alloc")
     public static native CIKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIKernel allocWithZone(VoidPtr zone);

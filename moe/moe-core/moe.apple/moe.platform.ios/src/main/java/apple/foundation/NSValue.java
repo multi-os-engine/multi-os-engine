@@ -83,6 +83,7 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSValue allocWithZone(VoidPtr zone);

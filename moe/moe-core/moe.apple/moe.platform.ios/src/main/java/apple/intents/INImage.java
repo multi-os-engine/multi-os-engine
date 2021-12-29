@@ -73,6 +73,7 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INImage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INImage allocWithZone(VoidPtr zone);

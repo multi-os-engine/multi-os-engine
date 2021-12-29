@@ -50,6 +50,7 @@ public class MPSCNNPoolingMaxNode extends MPSCNNPoolingNode {
     @Selector("alloc")
     public static native MPSCNNPoolingMaxNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingMaxNode allocWithZone(VoidPtr zone);

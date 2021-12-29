@@ -67,6 +67,7 @@ public class MDLMeshBufferMap extends NSObject {
     @Selector("alloc")
     public static native MDLMeshBufferMap alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMeshBufferMap allocWithZone(VoidPtr zone);

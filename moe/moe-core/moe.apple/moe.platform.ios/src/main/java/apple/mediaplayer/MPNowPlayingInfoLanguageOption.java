@@ -64,6 +64,7 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @Selector("alloc")
     public static native MPNowPlayingInfoLanguageOption alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPNowPlayingInfoLanguageOption allocWithZone(VoidPtr zone);

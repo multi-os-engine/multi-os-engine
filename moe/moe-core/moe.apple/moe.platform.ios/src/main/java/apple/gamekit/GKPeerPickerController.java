@@ -47,6 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * You must provide a delegate that conforms to the GKPeerPickerControllerDelegate protocol in order to use this class. After the user interface starts, this class notifies your delegate of the user’s actions.
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +71,7 @@ public class GKPeerPickerController extends NSObject {
     @Selector("alloc")
     public static native GKPeerPickerController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKPeerPickerController allocWithZone(VoidPtr zone);

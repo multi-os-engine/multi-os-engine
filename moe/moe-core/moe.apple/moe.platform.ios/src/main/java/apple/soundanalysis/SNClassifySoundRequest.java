@@ -57,6 +57,7 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     @Selector("alloc")
     public static native SNClassifySoundRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SNClassifySoundRequest allocWithZone(VoidPtr zone);

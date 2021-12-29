@@ -62,6 +62,7 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native NSDateComponents alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDateComponents allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class AXDataPointValue extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AXDataPointValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AXDataPointValue allocWithZone(VoidPtr zone);

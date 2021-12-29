@@ -47,6 +47,7 @@ public class UIDropProposal extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIDropProposal alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDropProposal allocWithZone(VoidPtr zone);

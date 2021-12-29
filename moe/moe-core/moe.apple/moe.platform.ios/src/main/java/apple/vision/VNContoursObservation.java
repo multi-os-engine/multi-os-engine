@@ -75,6 +75,7 @@ public class VNContoursObservation extends VNObservation {
     @Selector("alloc")
     public static native VNContoursObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNContoursObservation allocWithZone(VoidPtr zone);

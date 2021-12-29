@@ -52,6 +52,7 @@ public class INDeleteTasksIntent extends INIntent {
     @Selector("alloc")
     public static native INDeleteTasksIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDeleteTasksIntent allocWithZone(VoidPtr zone);

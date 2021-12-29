@@ -46,6 +46,7 @@ public class PKPaymentRequestShippingContactUpdate extends PKPaymentRequestUpdat
     @Selector("alloc")
     public static native PKPaymentRequestShippingContactUpdate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentRequestShippingContactUpdate allocWithZone(VoidPtr zone);

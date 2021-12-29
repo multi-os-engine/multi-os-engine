@@ -70,6 +70,7 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     @Selector("alloc")
     public static native NSBatchUpdateRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBatchUpdateRequest allocWithZone(VoidPtr zone);

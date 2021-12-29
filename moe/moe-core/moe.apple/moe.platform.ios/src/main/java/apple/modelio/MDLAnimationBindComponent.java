@@ -49,6 +49,7 @@ public class MDLAnimationBindComponent extends NSObject implements NSCopying, MD
     @Selector("alloc")
     public static native MDLAnimationBindComponent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLAnimationBindComponent allocWithZone(VoidPtr zone);

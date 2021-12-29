@@ -53,6 +53,7 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("alloc")
     public static native GCMouse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCMouse allocWithZone(VoidPtr zone);

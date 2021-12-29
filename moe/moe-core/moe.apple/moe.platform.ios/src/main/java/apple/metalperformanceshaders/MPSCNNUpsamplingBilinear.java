@@ -54,6 +54,7 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
     @Selector("alloc")
     public static native MPSCNNUpsamplingBilinear alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingBilinear allocWithZone(VoidPtr zone);

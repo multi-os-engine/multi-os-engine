@@ -48,6 +48,7 @@ public class INSearchForMediaIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSearchForMediaIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSearchForMediaIntentResponse allocWithZone(VoidPtr zone);

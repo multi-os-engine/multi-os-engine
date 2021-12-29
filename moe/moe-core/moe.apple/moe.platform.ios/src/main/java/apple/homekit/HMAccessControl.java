@@ -48,6 +48,7 @@ public class HMAccessControl extends NSObject {
     @Selector("alloc")
     public static native HMAccessControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAccessControl allocWithZone(VoidPtr zone);

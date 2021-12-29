@@ -47,6 +47,7 @@ public class PKDeferredPaymentSummaryItem extends PKPaymentSummaryItem {
     @Selector("alloc")
     public static native PKDeferredPaymentSummaryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKDeferredPaymentSummaryItem allocWithZone(VoidPtr zone);

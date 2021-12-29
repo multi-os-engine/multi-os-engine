@@ -75,6 +75,7 @@ public class SKMutableTexture extends SKTexture {
     @Selector("alloc")
     public static native SKMutableTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKMutableTexture allocWithZone(VoidPtr zone);

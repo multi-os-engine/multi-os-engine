@@ -73,6 +73,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("alloc")
     public static native NSManagedObjectContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSManagedObjectContext allocWithZone(VoidPtr zone);

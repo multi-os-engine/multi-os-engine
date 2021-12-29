@@ -47,6 +47,7 @@ public class AVVideoCompositionRenderHint extends NSObject {
     @Selector("alloc")
     public static native AVVideoCompositionRenderHint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVVideoCompositionRenderHint allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class GKAchievementChallenge extends GKChallenge {
     @Selector("alloc")
     public static native GKAchievementChallenge alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAchievementChallenge allocWithZone(VoidPtr zone);

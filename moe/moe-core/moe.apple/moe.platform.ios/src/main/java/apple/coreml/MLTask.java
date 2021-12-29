@@ -49,6 +49,7 @@ public class MLTask extends NSObject {
     @Selector("alloc")
     public static native MLTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLTask allocWithZone(VoidPtr zone);

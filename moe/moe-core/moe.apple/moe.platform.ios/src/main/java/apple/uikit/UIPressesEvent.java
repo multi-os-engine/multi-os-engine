@@ -61,6 +61,7 @@ public class UIPressesEvent extends UIEvent {
     @Selector("alloc")
     public static native UIPressesEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPressesEvent allocWithZone(VoidPtr zone);

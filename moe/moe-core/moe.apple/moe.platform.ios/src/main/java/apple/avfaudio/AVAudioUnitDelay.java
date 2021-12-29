@@ -58,6 +58,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     @Selector("alloc")
     public static native AVAudioUnitDelay alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitDelay allocWithZone(VoidPtr zone);

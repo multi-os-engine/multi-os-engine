@@ -67,6 +67,7 @@ public class MDLMaterialPropertyGraph extends MDLMaterialPropertyNode {
     @Selector("alloc")
     public static native MDLMaterialPropertyGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMaterialPropertyGraph allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
     @Selector("alloc")
     public static native INSetClimateSettingsInCarIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetClimateSettingsInCarIntent allocWithZone(VoidPtr zone);

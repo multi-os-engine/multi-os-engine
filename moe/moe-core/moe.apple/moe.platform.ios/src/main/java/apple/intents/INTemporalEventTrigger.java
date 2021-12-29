@@ -50,6 +50,7 @@ public class INTemporalEventTrigger extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native INTemporalEventTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTemporalEventTrigger allocWithZone(VoidPtr zone);

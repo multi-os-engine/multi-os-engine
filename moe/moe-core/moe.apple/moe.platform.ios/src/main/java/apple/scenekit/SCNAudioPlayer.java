@@ -63,6 +63,7 @@ public class SCNAudioPlayer extends NSObject {
     @Selector("alloc")
     public static native SCNAudioPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAudioPlayer allocWithZone(VoidPtr zone);

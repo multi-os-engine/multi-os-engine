@@ -52,6 +52,7 @@ public class MPSImageReduceColumnMean extends MPSImageReduceUnary {
     @Selector("alloc")
     public static native MPSImageReduceColumnMean alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageReduceColumnMean allocWithZone(VoidPtr zone);

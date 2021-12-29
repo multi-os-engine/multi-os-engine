@@ -46,6 +46,7 @@ public class UIContextualAction extends NSObject {
     @Selector("alloc")
     public static native UIContextualAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIContextualAction allocWithZone(VoidPtr zone);

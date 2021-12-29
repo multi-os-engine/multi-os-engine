@@ -71,6 +71,7 @@ public class CPVoiceControlTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPVoiceControlTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPVoiceControlTemplate allocWithZone(VoidPtr zone);

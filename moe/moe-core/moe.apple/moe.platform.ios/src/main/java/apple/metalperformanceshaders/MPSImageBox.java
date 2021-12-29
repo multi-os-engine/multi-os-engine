@@ -73,6 +73,7 @@ public class MPSImageBox extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageBox alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageBox allocWithZone(VoidPtr zone);

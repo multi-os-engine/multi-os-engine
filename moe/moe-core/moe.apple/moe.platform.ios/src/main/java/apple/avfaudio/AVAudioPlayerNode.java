@@ -125,6 +125,7 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Selector("alloc")
     public static native AVAudioPlayerNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioPlayerNode allocWithZone(VoidPtr zone);

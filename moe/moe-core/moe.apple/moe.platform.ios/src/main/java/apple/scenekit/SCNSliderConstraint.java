@@ -55,6 +55,7 @@ public class SCNSliderConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNSliderConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNSliderConstraint allocWithZone(VoidPtr zone);

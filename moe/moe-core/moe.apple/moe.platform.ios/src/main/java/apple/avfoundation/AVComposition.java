@@ -69,6 +69,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Selector("alloc")
     public static native AVComposition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVComposition allocWithZone(VoidPtr zone);

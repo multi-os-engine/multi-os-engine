@@ -80,6 +80,7 @@ public class NSAttributedString extends NSObject
     @Selector("alloc")
     public static native NSAttributedString alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAttributedString allocWithZone(VoidPtr zone);

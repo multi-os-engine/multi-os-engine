@@ -72,6 +72,7 @@ public class HMTimerTrigger extends HMTrigger {
     @Selector("alloc")
     public static native HMTimerTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMTimerTrigger allocWithZone(VoidPtr zone);

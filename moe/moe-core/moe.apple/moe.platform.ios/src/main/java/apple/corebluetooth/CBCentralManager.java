@@ -70,6 +70,7 @@ public class CBCentralManager extends CBManager {
     @Selector("alloc")
     public static native CBCentralManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBCentralManager allocWithZone(VoidPtr zone);

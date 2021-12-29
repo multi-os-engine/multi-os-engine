@@ -68,6 +68,7 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Selector("alloc")
     public static native MPSNNOptimizerStochasticGradientDescent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNOptimizerStochasticGradientDescent allocWithZone(VoidPtr zone);

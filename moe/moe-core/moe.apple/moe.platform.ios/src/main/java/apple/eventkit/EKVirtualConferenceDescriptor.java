@@ -54,6 +54,7 @@ public class EKVirtualConferenceDescriptor extends NSObject {
     @Selector("alloc")
     public static native EKVirtualConferenceDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKVirtualConferenceDescriptor allocWithZone(VoidPtr zone);

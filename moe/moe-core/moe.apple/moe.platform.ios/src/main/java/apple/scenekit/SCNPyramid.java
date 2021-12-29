@@ -70,6 +70,7 @@ public class SCNPyramid extends SCNGeometry {
     @Selector("alloc")
     public static native SCNPyramid alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPyramid allocWithZone(VoidPtr zone);

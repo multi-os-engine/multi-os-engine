@@ -46,6 +46,7 @@ public class HMAccessorySetupPayload extends NSObject {
     @Selector("alloc")
     public static native HMAccessorySetupPayload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAccessorySetupPayload allocWithZone(VoidPtr zone);

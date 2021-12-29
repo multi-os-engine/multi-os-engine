@@ -76,6 +76,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native NEVPNProtocol alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEVPNProtocol allocWithZone(VoidPtr zone);

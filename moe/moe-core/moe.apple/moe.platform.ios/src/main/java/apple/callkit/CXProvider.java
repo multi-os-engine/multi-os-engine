@@ -67,6 +67,7 @@ public class CXProvider extends NSObject {
     @Selector("alloc")
     public static native CXProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXProvider allocWithZone(VoidPtr zone);

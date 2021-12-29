@@ -47,6 +47,7 @@ public class ASAuthorizationSingleSignOnProvider extends NSObject implements ASA
     @Selector("alloc")
     public static native ASAuthorizationSingleSignOnProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationSingleSignOnProvider allocWithZone(VoidPtr zone);

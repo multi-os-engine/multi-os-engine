@@ -68,6 +68,7 @@ public class QLPreviewController extends UIViewController {
     @Selector("alloc")
     public static native QLPreviewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLPreviewController allocWithZone(VoidPtr zone);

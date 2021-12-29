@@ -61,6 +61,7 @@ public class MPMediaPlaylistCreationMetadata extends NSObject {
     @Selector("alloc")
     public static native MPMediaPlaylistCreationMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaPlaylistCreationMetadata allocWithZone(VoidPtr zone);

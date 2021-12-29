@@ -53,6 +53,7 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("alloc")
     public static native CIQRCodeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIQRCodeDescriptor allocWithZone(VoidPtr zone);

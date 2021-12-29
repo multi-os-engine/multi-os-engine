@@ -53,6 +53,7 @@ public class UIScribbleInteraction extends NSObject implements UIInteraction {
     @Selector("alloc")
     public static native UIScribbleInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIScribbleInteraction allocWithZone(VoidPtr zone);

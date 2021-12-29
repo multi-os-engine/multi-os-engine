@@ -47,6 +47,7 @@ public class SRFetchResult<_SampleType> extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native SRFetchResult<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRFetchResult<?> allocWithZone(VoidPtr zone);

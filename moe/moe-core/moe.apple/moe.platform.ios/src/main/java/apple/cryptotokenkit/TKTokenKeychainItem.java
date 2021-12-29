@@ -53,6 +53,7 @@ public class TKTokenKeychainItem extends NSObject {
     @Selector("alloc")
     public static native TKTokenKeychainItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenKeychainItem allocWithZone(VoidPtr zone);

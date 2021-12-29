@@ -53,6 +53,7 @@ public class MKMapCameraBoundary extends NSObject implements NSSecureCoding, NSC
     @Selector("alloc")
     public static native MKMapCameraBoundary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMapCameraBoundary allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class UIWindowSceneActivationInteraction extends NSObject implements UIIn
     @Selector("alloc")
     public static native UIWindowSceneActivationInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWindowSceneActivationInteraction allocWithZone(VoidPtr zone);

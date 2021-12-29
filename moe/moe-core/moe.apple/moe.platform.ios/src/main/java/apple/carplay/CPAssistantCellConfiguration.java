@@ -53,6 +53,7 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
     @Selector("alloc")
     public static native CPAssistantCellConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPAssistantCellConfiguration allocWithZone(VoidPtr zone);

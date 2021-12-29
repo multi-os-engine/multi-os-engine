@@ -93,6 +93,7 @@ public class MPSImageGaussianPyramid extends MPSImagePyramid {
     @Selector("alloc")
     public static native MPSImageGaussianPyramid alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageGaussianPyramid allocWithZone(VoidPtr zone);

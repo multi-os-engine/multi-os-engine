@@ -45,6 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * -----------------------------------------------------------------------------
  * An MPMovieAccessLogEvent repesents a single access log entry.
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +69,7 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPMovieAccessLogEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMovieAccessLogEvent allocWithZone(VoidPtr zone);

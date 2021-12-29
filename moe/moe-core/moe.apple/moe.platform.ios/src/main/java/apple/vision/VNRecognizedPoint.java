@@ -56,6 +56,7 @@ public class VNRecognizedPoint extends VNDetectedPoint {
     @Selector("alloc")
     public static native VNRecognizedPoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRecognizedPoint allocWithZone(VoidPtr zone);

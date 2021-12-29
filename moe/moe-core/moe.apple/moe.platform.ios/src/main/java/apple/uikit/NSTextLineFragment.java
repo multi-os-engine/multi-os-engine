@@ -59,6 +59,7 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSTextLineFragment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextLineFragment allocWithZone(VoidPtr zone);

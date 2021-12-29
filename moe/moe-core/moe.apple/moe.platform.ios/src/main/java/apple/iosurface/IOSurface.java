@@ -58,6 +58,7 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native IOSurface alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native IOSurface allocWithZone(VoidPtr zone);

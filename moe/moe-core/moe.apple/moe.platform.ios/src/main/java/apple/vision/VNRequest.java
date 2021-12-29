@@ -57,6 +57,7 @@ public class VNRequest extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native VNRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRequest allocWithZone(VoidPtr zone);

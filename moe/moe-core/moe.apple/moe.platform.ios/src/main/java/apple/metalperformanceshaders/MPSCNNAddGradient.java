@@ -68,6 +68,7 @@ public class MPSCNNAddGradient extends MPSCNNArithmeticGradient {
     @Selector("alloc")
     public static native MPSCNNAddGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNAddGradient allocWithZone(VoidPtr zone);

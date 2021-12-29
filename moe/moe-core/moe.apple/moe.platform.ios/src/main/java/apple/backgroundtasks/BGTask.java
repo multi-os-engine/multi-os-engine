@@ -51,6 +51,7 @@ public class BGTask extends NSObject {
     @Selector("alloc")
     public static native BGTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BGTask allocWithZone(VoidPtr zone);

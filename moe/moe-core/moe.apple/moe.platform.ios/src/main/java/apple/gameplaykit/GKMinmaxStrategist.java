@@ -74,6 +74,7 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Selector("alloc")
     public static native GKMinmaxStrategist alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKMinmaxStrategist allocWithZone(VoidPtr zone);

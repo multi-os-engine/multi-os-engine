@@ -50,6 +50,7 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     @Selector("alloc")
     public static native CPTemplateApplicationDashboardScene alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTemplateApplicationDashboardScene allocWithZone(VoidPtr zone);

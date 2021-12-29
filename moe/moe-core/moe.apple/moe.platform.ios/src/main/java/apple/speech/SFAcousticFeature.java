@@ -61,6 +61,7 @@ public class SFAcousticFeature extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native SFAcousticFeature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFAcousticFeature allocWithZone(VoidPtr zone);

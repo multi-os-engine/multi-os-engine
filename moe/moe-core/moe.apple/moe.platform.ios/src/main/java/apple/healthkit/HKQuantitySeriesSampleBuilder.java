@@ -65,6 +65,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     @Selector("alloc")
     public static native HKQuantitySeriesSampleBuilder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKQuantitySeriesSampleBuilder allocWithZone(VoidPtr zone);

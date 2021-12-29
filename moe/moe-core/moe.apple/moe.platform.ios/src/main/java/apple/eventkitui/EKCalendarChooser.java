@@ -68,6 +68,7 @@ public class EKCalendarChooser extends UIViewController {
     @Selector("alloc")
     public static native EKCalendarChooser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKCalendarChooser allocWithZone(VoidPtr zone);

@@ -56,6 +56,7 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
     @Selector("alloc")
     public static native MXDiskWriteExceptionDiagnostic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXDiskWriteExceptionDiagnostic allocWithZone(VoidPtr zone);

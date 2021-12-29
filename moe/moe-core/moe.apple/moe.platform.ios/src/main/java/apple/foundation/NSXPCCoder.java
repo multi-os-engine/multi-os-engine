@@ -46,6 +46,7 @@ public class NSXPCCoder extends NSCoder {
     @Selector("alloc")
     public static native NSXPCCoder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSXPCCoder allocWithZone(VoidPtr zone);

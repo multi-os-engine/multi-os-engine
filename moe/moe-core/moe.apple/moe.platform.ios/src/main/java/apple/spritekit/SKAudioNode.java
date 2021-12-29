@@ -80,6 +80,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
     @Selector("alloc")
     public static native SKAudioNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKAudioNode allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     @Selector("alloc")
     public static native MTLRenderPassStencilAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPassStencilAttachmentDescriptor allocWithZone(VoidPtr zone);

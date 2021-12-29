@@ -96,6 +96,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native PDFAnnotation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFAnnotation allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     @Selector("alloc")
     public static native MXCrashDiagnostic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXCrashDiagnostic allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class MPSRNNMatrixTrainingState extends MPSState {
     @Selector("alloc")
     public static native MPSRNNMatrixTrainingState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNMatrixTrainingState allocWithZone(VoidPtr zone);

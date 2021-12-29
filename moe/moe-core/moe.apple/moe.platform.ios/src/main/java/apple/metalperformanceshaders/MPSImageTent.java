@@ -95,6 +95,7 @@ public class MPSImageTent extends MPSImageBox {
     @Selector("alloc")
     public static native MPSImageTent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageTent allocWithZone(VoidPtr zone);

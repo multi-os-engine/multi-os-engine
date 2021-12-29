@@ -59,6 +59,7 @@ public class MPSNNForwardLoss extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNForwardLoss alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNForwardLoss allocWithZone(VoidPtr zone);

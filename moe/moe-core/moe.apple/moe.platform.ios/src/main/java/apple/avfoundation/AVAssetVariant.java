@@ -51,6 +51,7 @@ public class AVAssetVariant extends NSObject {
     @Selector("alloc")
     public static native AVAssetVariant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetVariant allocWithZone(VoidPtr zone);

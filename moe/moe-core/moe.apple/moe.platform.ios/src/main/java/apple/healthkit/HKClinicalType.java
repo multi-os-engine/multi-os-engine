@@ -51,6 +51,7 @@ public class HKClinicalType extends HKSampleType {
     @Selector("alloc")
     public static native HKClinicalType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKClinicalType allocWithZone(VoidPtr zone);

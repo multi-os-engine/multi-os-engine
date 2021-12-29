@@ -70,6 +70,7 @@ public class AVPlayerItemMetadataOutput extends AVPlayerItemOutput {
     @Selector("alloc")
     public static native AVPlayerItemMetadataOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemMetadataOutput allocWithZone(VoidPtr zone);

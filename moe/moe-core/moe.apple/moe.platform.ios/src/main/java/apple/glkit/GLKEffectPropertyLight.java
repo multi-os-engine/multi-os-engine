@@ -97,6 +97,7 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
     @Selector("alloc")
     public static native GLKEffectPropertyLight alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKEffectPropertyLight allocWithZone(VoidPtr zone);

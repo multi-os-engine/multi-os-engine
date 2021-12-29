@@ -68,6 +68,7 @@ public class UIPinchGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UIPinchGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPinchGestureRecognizer allocWithZone(VoidPtr zone);

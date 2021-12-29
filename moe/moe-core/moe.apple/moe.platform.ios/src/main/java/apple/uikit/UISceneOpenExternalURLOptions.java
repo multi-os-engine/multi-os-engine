@@ -48,6 +48,7 @@ public class UISceneOpenExternalURLOptions extends NSObject {
     @Selector("alloc")
     public static native UISceneOpenExternalURLOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneOpenExternalURLOptions allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class CHIPThermostat extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPThermostat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPThermostat allocWithZone(VoidPtr zone);
@@ -146,7 +147,7 @@ public class CHIPThermostat extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPThermostat initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPThermostat initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -354,5 +355,197 @@ public class CHIPThermostat extends CHIPCluster {
     public interface Block_writeAttributeSystemModeWithValueResponseHandler {
         @Generated
         void call_writeAttributeSystemModeWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeAbsMaxCoolSetpointLimitWithResponseHandler:")
+    public native void readAttributeAbsMaxCoolSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeAbsMaxCoolSetpointLimitWithResponseHandler") Block_readAttributeAbsMaxCoolSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAbsMaxCoolSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeAbsMaxCoolSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeAbsMaxHeatSetpointLimitWithResponseHandler:")
+    public native void readAttributeAbsMaxHeatSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeAbsMaxHeatSetpointLimitWithResponseHandler") Block_readAttributeAbsMaxHeatSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAbsMaxHeatSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeAbsMaxHeatSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeAbsMinCoolSetpointLimitWithResponseHandler:")
+    public native void readAttributeAbsMinCoolSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeAbsMinCoolSetpointLimitWithResponseHandler") Block_readAttributeAbsMinCoolSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAbsMinCoolSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeAbsMinCoolSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeAbsMinHeatSetpointLimitWithResponseHandler:")
+    public native void readAttributeAbsMinHeatSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeAbsMinHeatSetpointLimitWithResponseHandler") Block_readAttributeAbsMinHeatSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeAbsMinHeatSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeAbsMinHeatSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeFeatureMapWithResponseHandler:")
+    public native void readAttributeFeatureMapWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeFeatureMapWithResponseHandler") Block_readAttributeFeatureMapWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeFeatureMapWithResponseHandler {
+        @Generated
+        void call_readAttributeFeatureMapWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeMaxCoolSetpointLimitWithResponseHandler:")
+    public native void readAttributeMaxCoolSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeMaxCoolSetpointLimitWithResponseHandler") Block_readAttributeMaxCoolSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMaxCoolSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeMaxCoolSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeMaxHeatSetpointLimitWithResponseHandler:")
+    public native void readAttributeMaxHeatSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeMaxHeatSetpointLimitWithResponseHandler") Block_readAttributeMaxHeatSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMaxHeatSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeMaxHeatSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeMinCoolSetpointLimitWithResponseHandler:")
+    public native void readAttributeMinCoolSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeMinCoolSetpointLimitWithResponseHandler") Block_readAttributeMinCoolSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMinCoolSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeMinCoolSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeMinHeatSetpointLimitWithResponseHandler:")
+    public native void readAttributeMinHeatSetpointLimitWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeMinHeatSetpointLimitWithResponseHandler") Block_readAttributeMinHeatSetpointLimitWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMinHeatSetpointLimitWithResponseHandler {
+        @Generated
+        void call_readAttributeMinHeatSetpointLimitWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeNumberOfDailyTransitionsWithResponseHandler:")
+    public native void readAttributeNumberOfDailyTransitionsWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeNumberOfDailyTransitionsWithResponseHandler") Block_readAttributeNumberOfDailyTransitionsWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfDailyTransitionsWithResponseHandler {
+        @Generated
+        void call_readAttributeNumberOfDailyTransitionsWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeNumberOfWeeklyTransitionsWithResponseHandler:")
+    public native void readAttributeNumberOfWeeklyTransitionsWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeNumberOfWeeklyTransitionsWithResponseHandler") Block_readAttributeNumberOfWeeklyTransitionsWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeNumberOfWeeklyTransitionsWithResponseHandler {
+        @Generated
+        void call_readAttributeNumberOfWeeklyTransitionsWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeStartOfWeekWithResponseHandler:")
+    public native void readAttributeStartOfWeekWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeStartOfWeekWithResponseHandler") Block_readAttributeStartOfWeekWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeStartOfWeekWithResponseHandler {
+        @Generated
+        void call_readAttributeStartOfWeekWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeMaxCoolSetpointLimitWithValue:responseHandler:")
+    public native void writeAttributeMaxCoolSetpointLimitWithValueResponseHandler(short value,
+            @ObjCBlock(name = "call_writeAttributeMaxCoolSetpointLimitWithValueResponseHandler") Block_writeAttributeMaxCoolSetpointLimitWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeMaxCoolSetpointLimitWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeMaxCoolSetpointLimitWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeMaxHeatSetpointLimitWithValue:responseHandler:")
+    public native void writeAttributeMaxHeatSetpointLimitWithValueResponseHandler(short value,
+            @ObjCBlock(name = "call_writeAttributeMaxHeatSetpointLimitWithValueResponseHandler") Block_writeAttributeMaxHeatSetpointLimitWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeMaxHeatSetpointLimitWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeMaxHeatSetpointLimitWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeMinCoolSetpointLimitWithValue:responseHandler:")
+    public native void writeAttributeMinCoolSetpointLimitWithValueResponseHandler(short value,
+            @ObjCBlock(name = "call_writeAttributeMinCoolSetpointLimitWithValueResponseHandler") Block_writeAttributeMinCoolSetpointLimitWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeMinCoolSetpointLimitWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeMinCoolSetpointLimitWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("writeAttributeMinHeatSetpointLimitWithValue:responseHandler:")
+    public native void writeAttributeMinHeatSetpointLimitWithValueResponseHandler(short value,
+            @ObjCBlock(name = "call_writeAttributeMinHeatSetpointLimitWithValueResponseHandler") Block_writeAttributeMinHeatSetpointLimitWithValueResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeAttributeMinHeatSetpointLimitWithValueResponseHandler {
+        @Generated
+        void call_writeAttributeMinHeatSetpointLimitWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 }

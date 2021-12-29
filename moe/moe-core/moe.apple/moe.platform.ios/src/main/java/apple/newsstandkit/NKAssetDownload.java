@@ -78,6 +78,7 @@ public class NKAssetDownload extends NSObject {
     @Selector("alloc")
     public static native NKAssetDownload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NKAssetDownload allocWithZone(VoidPtr zone);

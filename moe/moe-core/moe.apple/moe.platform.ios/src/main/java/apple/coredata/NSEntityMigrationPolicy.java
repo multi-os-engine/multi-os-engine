@@ -64,6 +64,7 @@ public class NSEntityMigrationPolicy extends NSObject {
     @Selector("alloc")
     public static native NSEntityMigrationPolicy alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSEntityMigrationPolicy allocWithZone(VoidPtr zone);

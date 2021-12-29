@@ -95,6 +95,7 @@ public class NSFileProviderManager extends NSObject {
     @Selector("alloc")
     public static native NSFileProviderManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileProviderManager allocWithZone(VoidPtr zone);

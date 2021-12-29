@@ -63,6 +63,7 @@ public class NSAtomicStoreCacheNode extends NSObject {
     @Selector("alloc")
     public static native NSAtomicStoreCacheNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAtomicStoreCacheNode allocWithZone(VoidPtr zone);

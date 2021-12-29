@@ -51,6 +51,7 @@ public class CHIPTargetNavigator extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPTargetNavigator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPTargetNavigator allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPTargetNavigator extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPTargetNavigator initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPTargetNavigator initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

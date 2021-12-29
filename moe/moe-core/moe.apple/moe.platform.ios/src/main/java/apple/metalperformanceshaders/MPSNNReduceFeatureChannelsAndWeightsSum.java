@@ -48,6 +48,7 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     @Selector("alloc")
     public static native MPSNNReduceFeatureChannelsAndWeightsSum alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceFeatureChannelsAndWeightsSum allocWithZone(VoidPtr zone);

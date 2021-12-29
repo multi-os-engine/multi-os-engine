@@ -45,6 +45,7 @@ public class DDMatch extends NSObject {
     @Selector("alloc")
     public static native DDMatch alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatch allocWithZone(VoidPtr zone);

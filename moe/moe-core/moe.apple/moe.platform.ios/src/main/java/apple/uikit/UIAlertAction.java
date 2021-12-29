@@ -70,6 +70,7 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @Selector("alloc")
     public static native UIAlertAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAlertAction allocWithZone(VoidPtr zone);

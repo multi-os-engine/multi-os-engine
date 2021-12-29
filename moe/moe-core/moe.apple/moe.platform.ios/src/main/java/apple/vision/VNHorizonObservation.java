@@ -58,6 +58,7 @@ public class VNHorizonObservation extends VNObservation {
     @Selector("alloc")
     public static native VNHorizonObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNHorizonObservation allocWithZone(VoidPtr zone);

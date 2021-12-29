@@ -65,6 +65,7 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Selector("alloc")
     public static native SKPayment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPayment allocWithZone(VoidPtr zone);

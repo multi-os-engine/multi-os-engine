@@ -73,6 +73,7 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     @Selector("alloc")
     public static native SCNParticlePropertyController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNParticlePropertyController allocWithZone(VoidPtr zone);

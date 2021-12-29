@@ -45,6 +45,7 @@ public class INTaskPriorityResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INTaskPriorityResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTaskPriorityResolutionResult allocWithZone(VoidPtr zone);

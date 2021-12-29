@@ -70,6 +70,7 @@ public class CMRecordedAccelerometerData extends CMAccelerometerData {
     @Selector("alloc")
     public static native CMRecordedAccelerometerData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMRecordedAccelerometerData allocWithZone(VoidPtr zone);

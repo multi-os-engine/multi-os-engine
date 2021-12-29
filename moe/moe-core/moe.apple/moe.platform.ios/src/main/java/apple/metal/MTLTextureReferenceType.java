@@ -53,6 +53,7 @@ public class MTLTextureReferenceType extends MTLType {
     @Selector("alloc")
     public static native MTLTextureReferenceType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLTextureReferenceType allocWithZone(VoidPtr zone);

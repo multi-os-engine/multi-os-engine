@@ -77,6 +77,7 @@ public class UIWindow extends UIView {
     @Selector("alloc")
     public static native UIWindow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWindow allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class UIScreenshotService extends NSObject {
     @Selector("alloc")
     public static native UIScreenshotService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIScreenshotService allocWithZone(VoidPtr zone);

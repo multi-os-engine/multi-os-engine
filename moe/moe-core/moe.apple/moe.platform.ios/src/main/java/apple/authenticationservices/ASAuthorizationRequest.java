@@ -51,6 +51,7 @@ public class ASAuthorizationRequest extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native ASAuthorizationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationRequest allocWithZone(VoidPtr zone);

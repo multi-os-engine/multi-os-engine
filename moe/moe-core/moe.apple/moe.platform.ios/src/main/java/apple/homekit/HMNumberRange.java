@@ -49,6 +49,7 @@ public class HMNumberRange extends NSObject {
     @Selector("alloc")
     public static native HMNumberRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMNumberRange allocWithZone(VoidPtr zone);

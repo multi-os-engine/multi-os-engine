@@ -32,7 +32,7 @@ public final class CFURLBookmarkCreationOptions {
     /**
      * deprecated
      */
-    @Generated @NUInt public static final long PreferFileIDResolutionMask = 0x0000000000000100L;
+    @Deprecated @Generated @NUInt public static final long PreferFileIDResolutionMask = 0x0000000000000100L;
 
     @Generated
     private CFURLBookmarkCreationOptions() {

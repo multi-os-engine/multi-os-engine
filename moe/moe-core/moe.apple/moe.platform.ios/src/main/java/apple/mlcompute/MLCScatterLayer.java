@@ -50,6 +50,7 @@ public class MLCScatterLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCScatterLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCScatterLayer allocWithZone(VoidPtr zone);

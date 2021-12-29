@@ -88,6 +88,7 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSCNNNeuronGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronGradient allocWithZone(VoidPtr zone);

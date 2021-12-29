@@ -72,6 +72,7 @@ public class MIDINetworkHost extends NSObject {
     @Selector("alloc")
     public static native MIDINetworkHost alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDINetworkHost allocWithZone(VoidPtr zone);

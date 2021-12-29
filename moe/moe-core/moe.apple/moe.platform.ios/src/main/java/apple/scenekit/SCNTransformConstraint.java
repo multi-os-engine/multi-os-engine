@@ -73,6 +73,7 @@ public class SCNTransformConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNTransformConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNTransformConstraint allocWithZone(VoidPtr zone);

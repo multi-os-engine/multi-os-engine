@@ -45,6 +45,7 @@ public class MPMusicPlayerPlayParametersQueueDescriptor extends MPMusicPlayerQue
     @Selector("alloc")
     public static native MPMusicPlayerPlayParametersQueueDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMusicPlayerPlayParametersQueueDescriptor allocWithZone(VoidPtr zone);

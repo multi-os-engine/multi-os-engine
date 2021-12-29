@@ -50,6 +50,7 @@ public class PHASEDirectivityModelParameters extends NSObject {
     @Selector("alloc")
     public static native PHASEDirectivityModelParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEDirectivityModelParameters allocWithZone(VoidPtr zone);

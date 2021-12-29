@@ -45,6 +45,7 @@ public class AVFragmentedAssetTrack extends AVAssetTrack {
     @Selector("alloc")
     public static native AVFragmentedAssetTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVFragmentedAssetTrack allocWithZone(VoidPtr zone);

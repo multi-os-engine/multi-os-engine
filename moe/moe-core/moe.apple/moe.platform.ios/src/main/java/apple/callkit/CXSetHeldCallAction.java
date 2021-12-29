@@ -64,6 +64,7 @@ public class CXSetHeldCallAction extends CXCallAction {
     @Selector("alloc")
     public static native CXSetHeldCallAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXSetHeldCallAction allocWithZone(VoidPtr zone);

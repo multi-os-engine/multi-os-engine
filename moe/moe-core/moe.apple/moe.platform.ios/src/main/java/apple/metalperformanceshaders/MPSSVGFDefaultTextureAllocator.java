@@ -54,6 +54,7 @@ public class MPSSVGFDefaultTextureAllocator extends NSObject implements MPSSVGFT
     @Selector("alloc")
     public static native MPSSVGFDefaultTextureAllocator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSSVGFDefaultTextureAllocator allocWithZone(VoidPtr zone);

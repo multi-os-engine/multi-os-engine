@@ -50,6 +50,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     @Selector("alloc")
     public static native ARPositionalTrackingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARPositionalTrackingConfiguration allocWithZone(VoidPtr zone);

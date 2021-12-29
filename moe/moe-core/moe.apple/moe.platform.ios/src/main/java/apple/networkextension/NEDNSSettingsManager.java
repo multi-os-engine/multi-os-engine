@@ -56,6 +56,7 @@ public class NEDNSSettingsManager extends NSObject {
     @Selector("alloc")
     public static native NEDNSSettingsManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEDNSSettingsManager allocWithZone(VoidPtr zone);

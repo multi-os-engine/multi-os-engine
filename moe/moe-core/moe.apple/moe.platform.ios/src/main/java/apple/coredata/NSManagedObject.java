@@ -68,6 +68,7 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     @Selector("alloc")
     public static native NSManagedObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSManagedObject allocWithZone(VoidPtr zone);

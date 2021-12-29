@@ -54,6 +54,7 @@ public class INBillPayee extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INBillPayee alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBillPayee allocWithZone(VoidPtr zone);

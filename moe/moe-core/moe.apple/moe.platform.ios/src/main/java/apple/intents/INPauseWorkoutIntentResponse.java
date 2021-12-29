@@ -64,6 +64,7 @@ public class INPauseWorkoutIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INPauseWorkoutIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPauseWorkoutIntentResponse allocWithZone(VoidPtr zone);

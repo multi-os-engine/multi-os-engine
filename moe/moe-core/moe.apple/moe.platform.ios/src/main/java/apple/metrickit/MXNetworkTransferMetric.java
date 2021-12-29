@@ -54,6 +54,7 @@ public class MXNetworkTransferMetric extends MXMetric {
     @Selector("alloc")
     public static native MXNetworkTransferMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXNetworkTransferMetric allocWithZone(VoidPtr zone);

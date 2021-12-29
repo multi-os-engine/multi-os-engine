@@ -52,6 +52,7 @@ public class INBoatReservation extends INReservation implements NSCopying, NSSec
     @Selector("alloc")
     public static native INBoatReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBoatReservation allocWithZone(VoidPtr zone);

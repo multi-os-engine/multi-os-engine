@@ -69,6 +69,7 @@ public class UIPreviewActionGroup extends NSObject implements NSCopying, UIPrevi
     @Selector("alloc")
     public static native UIPreviewActionGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPreviewActionGroup allocWithZone(VoidPtr zone);

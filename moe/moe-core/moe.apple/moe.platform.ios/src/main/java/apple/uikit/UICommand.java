@@ -58,6 +58,7 @@ public class UICommand extends UIMenuElement {
     @Selector("alloc")
     public static native UICommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICommand allocWithZone(VoidPtr zone);

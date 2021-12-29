@@ -52,6 +52,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @Selector("alloc")
     public static native ARObjectScanningConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARObjectScanningConfiguration allocWithZone(VoidPtr zone);

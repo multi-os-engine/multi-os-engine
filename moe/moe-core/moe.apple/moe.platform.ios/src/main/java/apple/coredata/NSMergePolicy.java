@@ -64,6 +64,7 @@ public class NSMergePolicy extends NSObject {
     @Selector("alloc")
     public static native NSMergePolicy alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMergePolicy allocWithZone(VoidPtr zone);

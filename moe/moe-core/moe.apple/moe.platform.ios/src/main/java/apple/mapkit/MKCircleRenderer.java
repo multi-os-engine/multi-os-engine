@@ -63,6 +63,7 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @Selector("alloc")
     public static native MKCircleRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKCircleRenderer allocWithZone(VoidPtr zone);

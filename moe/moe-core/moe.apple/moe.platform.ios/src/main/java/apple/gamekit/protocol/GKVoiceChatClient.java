@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * All clients will need to implement this protocol
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

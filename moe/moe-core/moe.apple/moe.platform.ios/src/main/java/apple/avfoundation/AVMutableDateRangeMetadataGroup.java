@@ -67,6 +67,7 @@ public class AVMutableDateRangeMetadataGroup extends AVDateRangeMetadataGroup {
     @Selector("alloc")
     public static native AVMutableDateRangeMetadataGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableDateRangeMetadataGroup allocWithZone(VoidPtr zone);

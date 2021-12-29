@@ -70,6 +70,7 @@ public class GKSavedGame extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native GKSavedGame alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKSavedGame allocWithZone(VoidPtr zone);

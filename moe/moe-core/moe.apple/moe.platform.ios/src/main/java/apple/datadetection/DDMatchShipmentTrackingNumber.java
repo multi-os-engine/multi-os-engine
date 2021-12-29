@@ -45,6 +45,7 @@ public class DDMatchShipmentTrackingNumber extends DDMatch {
     @Selector("alloc")
     public static native DDMatchShipmentTrackingNumber alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchShipmentTrackingNumber allocWithZone(VoidPtr zone);

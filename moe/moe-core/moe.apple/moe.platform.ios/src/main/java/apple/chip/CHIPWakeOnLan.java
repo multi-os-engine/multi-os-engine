@@ -51,6 +51,7 @@ public class CHIPWakeOnLan extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPWakeOnLan alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPWakeOnLan allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPWakeOnLan extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPWakeOnLan initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPWakeOnLan initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

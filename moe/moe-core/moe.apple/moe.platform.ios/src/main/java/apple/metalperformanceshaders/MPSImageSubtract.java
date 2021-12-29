@@ -55,6 +55,7 @@ public class MPSImageSubtract extends MPSImageArithmetic {
     @Selector("alloc")
     public static native MPSImageSubtract alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageSubtract allocWithZone(VoidPtr zone);

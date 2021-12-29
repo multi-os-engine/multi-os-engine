@@ -70,6 +70,7 @@ public class SCNBox extends SCNGeometry {
     @Selector("alloc")
     public static native SCNBox alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNBox allocWithZone(VoidPtr zone);

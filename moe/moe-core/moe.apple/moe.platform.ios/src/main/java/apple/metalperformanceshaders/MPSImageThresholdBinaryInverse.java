@@ -75,6 +75,7 @@ public class MPSImageThresholdBinaryInverse extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageThresholdBinaryInverse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageThresholdBinaryInverse allocWithZone(VoidPtr zone);

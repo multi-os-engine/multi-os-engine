@@ -62,6 +62,7 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("alloc")
     public static native AVQueuePlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVQueuePlayer allocWithZone(VoidPtr zone);

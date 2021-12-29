@@ -58,6 +58,7 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UIHoverGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIHoverGestureRecognizer allocWithZone(VoidPtr zone);

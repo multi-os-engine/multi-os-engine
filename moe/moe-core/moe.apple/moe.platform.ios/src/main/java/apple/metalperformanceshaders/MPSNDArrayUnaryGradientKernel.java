@@ -49,6 +49,7 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
     @Selector("alloc")
     public static native MPSNDArrayUnaryGradientKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayUnaryGradientKernel allocWithZone(VoidPtr zone);

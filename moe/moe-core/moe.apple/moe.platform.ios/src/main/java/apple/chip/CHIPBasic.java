@@ -51,6 +51,7 @@ public class CHIPBasic extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPBasic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPBasic allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPBasic extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPBasic initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPBasic initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -374,7 +375,7 @@ public class CHIPBasic extends CHIPCluster {
 
     @Generated
     @Selector("writeAttributeLocalConfigDisabledWithValue:responseHandler:")
-    public native void writeAttributeLocalConfigDisabledWithValueResponseHandler(byte value,
+    public native void writeAttributeLocalConfigDisabledWithValueResponseHandler(boolean value,
             @ObjCBlock(name = "call_writeAttributeLocalConfigDisabledWithValueResponseHandler") Block_writeAttributeLocalConfigDisabledWithValueResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -406,5 +407,17 @@ public class CHIPBasic extends CHIPCluster {
     public interface Block_writeAttributeUserLabelWithValueResponseHandler {
         @Generated
         void call_writeAttributeUserLabelWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeReachableWithResponseHandler:")
+    public native void readAttributeReachableWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeReachableWithResponseHandler") Block_readAttributeReachableWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeReachableWithResponseHandler {
+        @Generated
+        void call_readAttributeReachableWithResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 }

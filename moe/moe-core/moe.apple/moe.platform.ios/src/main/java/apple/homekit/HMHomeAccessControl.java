@@ -64,6 +64,7 @@ public class HMHomeAccessControl extends HMAccessControl {
     @Selector("alloc")
     public static native HMHomeAccessControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMHomeAccessControl allocWithZone(VoidPtr zone);

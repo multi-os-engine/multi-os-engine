@@ -59,6 +59,7 @@ public class HKHeartbeatSeriesQuery extends HKQuery {
     @Selector("alloc")
     public static native HKHeartbeatSeriesQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKHeartbeatSeriesQuery allocWithZone(VoidPtr zone);

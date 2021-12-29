@@ -67,6 +67,7 @@ public class INCurrencyAmount extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native INCurrencyAmount alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCurrencyAmount allocWithZone(VoidPtr zone);

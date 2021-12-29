@@ -48,6 +48,7 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     @Selector("alloc")
     public static native AVAssetVariantVideoAttributes alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetVariantVideoAttributes allocWithZone(VoidPtr zone);

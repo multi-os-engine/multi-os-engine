@@ -62,6 +62,7 @@ public class SKMutablePayment extends SKPayment {
     @Selector("alloc")
     public static native SKMutablePayment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKMutablePayment allocWithZone(VoidPtr zone);

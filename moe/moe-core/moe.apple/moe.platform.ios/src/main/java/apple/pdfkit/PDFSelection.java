@@ -70,6 +70,7 @@ public class PDFSelection extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PDFSelection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFSelection allocWithZone(VoidPtr zone);

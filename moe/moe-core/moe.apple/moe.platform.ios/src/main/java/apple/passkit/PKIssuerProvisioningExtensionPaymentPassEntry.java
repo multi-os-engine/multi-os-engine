@@ -50,6 +50,7 @@ public class PKIssuerProvisioningExtensionPaymentPassEntry extends PKIssuerProvi
     @Selector("alloc")
     public static native PKIssuerProvisioningExtensionPaymentPassEntry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKIssuerProvisioningExtensionPaymentPassEntry allocWithZone(VoidPtr zone);

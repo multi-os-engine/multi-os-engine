@@ -49,6 +49,7 @@ public class ARVideoFormat extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native ARVideoFormat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARVideoFormat allocWithZone(VoidPtr zone);

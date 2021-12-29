@@ -48,6 +48,7 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     @Selector("alloc")
     public static native UIFontPickerViewControllerConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFontPickerViewControllerConfiguration allocWithZone(VoidPtr zone);

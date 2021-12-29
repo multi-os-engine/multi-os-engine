@@ -74,6 +74,7 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
     @Selector("alloc")
     public static native AVCaptureStillImageOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureStillImageOutput allocWithZone(VoidPtr zone);

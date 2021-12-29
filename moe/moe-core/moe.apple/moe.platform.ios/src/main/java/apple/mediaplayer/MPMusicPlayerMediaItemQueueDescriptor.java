@@ -61,6 +61,7 @@ public class MPMusicPlayerMediaItemQueueDescriptor extends MPMusicPlayerQueueDes
     @Selector("alloc")
     public static native MPMusicPlayerMediaItemQueueDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMusicPlayerMediaItemQueueDescriptor allocWithZone(VoidPtr zone);

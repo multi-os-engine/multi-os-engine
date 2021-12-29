@@ -76,6 +76,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
     @Selector("alloc")
     public static native CLBeaconIdentityConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLBeaconIdentityConstraint allocWithZone(VoidPtr zone);

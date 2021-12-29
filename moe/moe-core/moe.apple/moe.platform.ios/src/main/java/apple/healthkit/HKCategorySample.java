@@ -72,6 +72,7 @@ public class HKCategorySample extends HKSample {
     @Selector("alloc")
     public static native HKCategorySample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKCategorySample allocWithZone(VoidPtr zone);

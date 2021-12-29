@@ -67,6 +67,7 @@ public class NSAtomicStore extends NSPersistentStore {
     @Selector("alloc")
     public static native NSAtomicStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAtomicStore allocWithZone(VoidPtr zone);

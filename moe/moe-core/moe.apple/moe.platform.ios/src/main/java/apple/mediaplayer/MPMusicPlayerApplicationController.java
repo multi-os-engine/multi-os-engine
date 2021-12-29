@@ -47,6 +47,7 @@ public class MPMusicPlayerApplicationController extends MPMusicPlayerController 
     @Selector("alloc")
     public static native MPMusicPlayerApplicationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMusicPlayerApplicationController allocWithZone(VoidPtr zone);

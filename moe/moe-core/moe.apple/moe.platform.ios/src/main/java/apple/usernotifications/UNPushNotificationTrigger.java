@@ -66,6 +66,7 @@ public class UNPushNotificationTrigger extends UNNotificationTrigger {
     @Selector("alloc")
     public static native UNPushNotificationTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNPushNotificationTrigger allocWithZone(VoidPtr zone);

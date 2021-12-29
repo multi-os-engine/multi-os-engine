@@ -59,6 +59,7 @@ public class MDLPathAssetResolver extends NSObject implements MDLAssetResolver {
     @Selector("alloc")
     public static native MDLPathAssetResolver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLPathAssetResolver allocWithZone(VoidPtr zone);

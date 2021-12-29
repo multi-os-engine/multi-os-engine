@@ -51,6 +51,7 @@ public class CHIPAudioOutput extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPAudioOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPAudioOutput allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPAudioOutput extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPAudioOutput initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPAudioOutput initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -192,4 +193,16 @@ public class CHIPAudioOutput extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("readAttributeCurrentAudioOutputWithResponseHandler:")
+    public native void readAttributeCurrentAudioOutputWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeCurrentAudioOutputWithResponseHandler") Block_readAttributeCurrentAudioOutputWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeCurrentAudioOutputWithResponseHandler {
+        @Generated
+        void call_readAttributeCurrentAudioOutputWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

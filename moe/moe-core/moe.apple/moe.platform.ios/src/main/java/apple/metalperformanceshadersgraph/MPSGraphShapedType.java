@@ -45,6 +45,7 @@ public class MPSGraphShapedType extends MPSGraphType {
     @Selector("alloc")
     public static native MPSGraphShapedType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphShapedType allocWithZone(VoidPtr zone);

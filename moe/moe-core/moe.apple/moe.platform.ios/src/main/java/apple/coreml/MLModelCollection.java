@@ -54,6 +54,7 @@ public class MLModelCollection extends NSObject {
     @Selector("alloc")
     public static native MLModelCollection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLModelCollection allocWithZone(VoidPtr zone);

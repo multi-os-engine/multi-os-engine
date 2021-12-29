@@ -53,6 +53,7 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
     @Selector("alloc")
     public static native AVAudioUnitVarispeed alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitVarispeed allocWithZone(VoidPtr zone);

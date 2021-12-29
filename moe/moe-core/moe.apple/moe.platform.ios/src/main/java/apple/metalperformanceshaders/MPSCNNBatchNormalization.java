@@ -65,6 +65,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNBatchNormalization alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBatchNormalization allocWithZone(VoidPtr zone);

@@ -74,6 +74,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native HKWorkoutEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWorkoutEvent allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class MPSCNNUpsamplingNearestGradientNode extends MPSNNGradientFilterNode
     @Selector("alloc")
     public static native MPSCNNUpsamplingNearestGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingNearestGradientNode allocWithZone(VoidPtr zone);

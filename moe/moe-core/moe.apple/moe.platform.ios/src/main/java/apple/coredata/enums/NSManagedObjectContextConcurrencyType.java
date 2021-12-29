@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class NSManagedObjectContextConcurrencyType {
-    @Generated @NUInt public static final long ConfinementConcurrencyType = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long ConfinementConcurrencyType = 0x0000000000000000L;
     @Generated @NUInt public static final long PrivateQueueConcurrencyType = 0x0000000000000001L;
     @Generated @NUInt public static final long MainQueueConcurrencyType = 0x0000000000000002L;
 

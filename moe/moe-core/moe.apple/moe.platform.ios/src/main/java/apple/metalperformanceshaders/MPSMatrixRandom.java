@@ -53,6 +53,7 @@ public class MPSMatrixRandom extends MPSKernel {
     @Selector("alloc")
     public static native MPSMatrixRandom alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixRandom allocWithZone(VoidPtr zone);

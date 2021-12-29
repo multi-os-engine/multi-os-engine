@@ -54,6 +54,7 @@ public class HKHeartbeatSeriesSample extends HKSeriesSample {
     @Selector("alloc")
     public static native HKHeartbeatSeriesSample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKHeartbeatSeriesSample allocWithZone(VoidPtr zone);

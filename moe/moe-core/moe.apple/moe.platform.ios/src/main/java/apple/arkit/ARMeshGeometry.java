@@ -51,6 +51,7 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ARMeshGeometry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARMeshGeometry allocWithZone(VoidPtr zone);

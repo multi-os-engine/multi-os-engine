@@ -51,6 +51,7 @@ public class CHIPDescriptor extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPDescriptor allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPDescriptor extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPDescriptor initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPDescriptor initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

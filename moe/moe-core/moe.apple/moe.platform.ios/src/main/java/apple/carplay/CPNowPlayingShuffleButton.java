@@ -51,6 +51,7 @@ public class CPNowPlayingShuffleButton extends CPNowPlayingButton {
     @Selector("alloc")
     public static native CPNowPlayingShuffleButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNowPlayingShuffleButton allocWithZone(VoidPtr zone);

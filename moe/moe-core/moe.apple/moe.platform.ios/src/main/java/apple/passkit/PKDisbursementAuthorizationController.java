@@ -49,6 +49,7 @@ public class PKDisbursementAuthorizationController extends NSObject {
     @Selector("alloc")
     public static native PKDisbursementAuthorizationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKDisbursementAuthorizationController allocWithZone(VoidPtr zone);

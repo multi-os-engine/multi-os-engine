@@ -53,6 +53,7 @@ public class ARGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ARGeometrySource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARGeometrySource allocWithZone(VoidPtr zone);

@@ -53,7 +53,7 @@ public final class Enums {
     @Generated public static final int shadow = 0x00000010;
     @Generated public static final int condense = 0x00000020;
     @Generated public static final int extend = 0x00000040;
-    @Generated public static final int kVariableLengthArray = 0x00000001;
+    @Deprecated @Generated public static final int kVariableLengthArray = 0x00000001;
 
     @Generated
     private Enums() {

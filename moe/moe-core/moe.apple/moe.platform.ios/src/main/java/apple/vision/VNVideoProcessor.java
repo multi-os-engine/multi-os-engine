@@ -80,6 +80,7 @@ public class VNVideoProcessor extends NSObject {
     @Selector("alloc")
     public static native VNVideoProcessor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNVideoProcessor allocWithZone(VoidPtr zone);

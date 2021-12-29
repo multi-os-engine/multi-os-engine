@@ -55,6 +55,7 @@ public class MPSImageMultiply extends MPSImageArithmetic {
     @Selector("alloc")
     public static native MPSImageMultiply alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageMultiply allocWithZone(VoidPtr zone);

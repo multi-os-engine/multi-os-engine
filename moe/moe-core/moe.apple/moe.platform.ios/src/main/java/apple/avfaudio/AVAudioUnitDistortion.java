@@ -53,6 +53,7 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
     @Selector("alloc")
     public static native AVAudioUnitDistortion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitDistortion allocWithZone(VoidPtr zone);

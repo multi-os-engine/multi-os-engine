@@ -61,6 +61,7 @@ public class MPSeekCommandEvent extends MPRemoteCommandEvent {
     @Selector("alloc")
     public static native MPSeekCommandEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSeekCommandEvent allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class UIDeferredMenuElement extends UIMenuElement {
     @Selector("alloc")
     public static native UIDeferredMenuElement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDeferredMenuElement allocWithZone(VoidPtr zone);

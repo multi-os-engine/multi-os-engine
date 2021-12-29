@@ -49,6 +49,7 @@ public class INPlayMediaIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INPlayMediaIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPlayMediaIntentResponse allocWithZone(VoidPtr zone);

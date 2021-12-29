@@ -56,6 +56,7 @@ public class TKTokenDriverConfiguration extends NSObject {
     @Selector("alloc")
     public static native TKTokenDriverConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenDriverConfiguration allocWithZone(VoidPtr zone);

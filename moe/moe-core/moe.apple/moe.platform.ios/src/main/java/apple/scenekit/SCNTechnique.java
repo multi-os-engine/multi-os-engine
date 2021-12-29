@@ -80,6 +80,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Selector("alloc")
     public static native SCNTechnique alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNTechnique allocWithZone(VoidPtr zone);

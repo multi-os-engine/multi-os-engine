@@ -71,6 +71,7 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native HKQuantity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKQuantity allocWithZone(VoidPtr zone);

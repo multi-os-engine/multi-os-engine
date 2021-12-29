@@ -48,6 +48,7 @@ public class VNVideoProcessorTimeIntervalCadence extends VNVideoProcessorCadence
     @Selector("alloc")
     public static native VNVideoProcessorTimeIntervalCadence alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNVideoProcessorTimeIntervalCadence allocWithZone(VoidPtr zone);

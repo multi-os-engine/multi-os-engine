@@ -66,6 +66,7 @@ public class CXHandle extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CXHandle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXHandle allocWithZone(VoidPtr zone);

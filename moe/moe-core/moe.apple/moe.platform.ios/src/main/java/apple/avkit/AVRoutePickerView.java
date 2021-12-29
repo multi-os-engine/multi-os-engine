@@ -81,6 +81,7 @@ public class AVRoutePickerView extends UIView {
     @Selector("alloc")
     public static native AVRoutePickerView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVRoutePickerView allocWithZone(VoidPtr zone);

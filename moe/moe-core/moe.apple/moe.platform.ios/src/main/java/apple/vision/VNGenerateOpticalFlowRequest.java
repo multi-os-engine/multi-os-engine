@@ -79,6 +79,7 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Selector("alloc")
     public static native VNGenerateOpticalFlowRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNGenerateOpticalFlowRequest allocWithZone(VoidPtr zone);

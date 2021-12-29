@@ -45,6 +45,7 @@ public class INSendPaymentPayeeResolutionResult extends INPersonResolutionResult
     @Selector("alloc")
     public static native INSendPaymentPayeeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendPaymentPayeeResolutionResult allocWithZone(VoidPtr zone);

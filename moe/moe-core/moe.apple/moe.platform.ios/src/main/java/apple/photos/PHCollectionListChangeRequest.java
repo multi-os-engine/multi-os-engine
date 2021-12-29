@@ -66,6 +66,7 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Selector("alloc")
     public static native PHCollectionListChangeRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHCollectionListChangeRequest allocWithZone(VoidPtr zone);

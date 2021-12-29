@@ -71,6 +71,7 @@ public class NWEndpoint extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native NWEndpoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NWEndpoint allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class CHIPAccountLogin extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPAccountLogin alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPAccountLogin allocWithZone(VoidPtr zone);
@@ -108,7 +109,7 @@ public class CHIPAccountLogin extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPAccountLogin initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPAccountLogin initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

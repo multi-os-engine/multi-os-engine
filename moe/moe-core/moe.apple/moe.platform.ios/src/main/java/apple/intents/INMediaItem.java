@@ -50,6 +50,7 @@ public class INMediaItem extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INMediaItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMediaItem allocWithZone(VoidPtr zone);

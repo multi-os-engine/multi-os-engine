@@ -18,7 +18,7 @@ public final class TKErrorCode {
     @Generated @NInt public static final long CodeTokenNotFound = 0xFFFFFFFFFFFFFFF9L;
     @Generated @NInt public static final long CodeBadParameter = 0xFFFFFFFFFFFFFFF8L;
     @Generated @NInt public static final long CodeAuthenticationNeeded = 0xFFFFFFFFFFFFFFF7L;
-    @Generated @NInt public static final long AuthenticationFailed = 0xFFFFFFFFFFFFFFFBL;
-    @Generated @NInt public static final long ObjectNotFound = 0xFFFFFFFFFFFFFFFAL;
-    @Generated @NInt public static final long TokenNotFound = 0xFFFFFFFFFFFFFFF9L;
+    @Deprecated @Generated @NInt public static final long AuthenticationFailed = 0xFFFFFFFFFFFFFFFBL;
+    @Deprecated @Generated @NInt public static final long ObjectNotFound = 0xFFFFFFFFFFFFFFFAL;
+    @Deprecated @Generated @NInt public static final long TokenNotFound = 0xFFFFFFFFFFFFFFF9L;
 }

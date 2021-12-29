@@ -63,6 +63,7 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("alloc")
     public static native NSSortDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSSortDescriptor allocWithZone(VoidPtr zone);

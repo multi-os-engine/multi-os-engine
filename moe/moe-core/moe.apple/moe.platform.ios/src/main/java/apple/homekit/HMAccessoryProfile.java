@@ -65,6 +65,7 @@ public class HMAccessoryProfile extends NSObject {
     @Selector("alloc")
     public static native HMAccessoryProfile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAccessoryProfile allocWithZone(VoidPtr zone);

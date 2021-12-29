@@ -50,6 +50,7 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("alloc")
     public static native MDLPackedJointAnimation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLPackedJointAnimation allocWithZone(VoidPtr zone);

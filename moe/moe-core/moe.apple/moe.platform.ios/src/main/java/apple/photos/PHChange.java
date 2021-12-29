@@ -61,6 +61,7 @@ public class PHChange extends NSObject {
     @Selector("alloc")
     public static native PHChange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHChange allocWithZone(VoidPtr zone);

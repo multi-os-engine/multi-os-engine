@@ -70,6 +70,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("alloc")
     public static native UIScreen alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIScreen allocWithZone(VoidPtr zone);

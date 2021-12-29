@@ -73,6 +73,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     @Selector("alloc")
     public static native GKBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKBehavior allocWithZone(VoidPtr zone);

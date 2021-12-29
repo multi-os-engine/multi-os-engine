@@ -71,6 +71,7 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     @Selector("alloc")
     public static native NWBonjourServiceEndpoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NWBonjourServiceEndpoint allocWithZone(VoidPtr zone);

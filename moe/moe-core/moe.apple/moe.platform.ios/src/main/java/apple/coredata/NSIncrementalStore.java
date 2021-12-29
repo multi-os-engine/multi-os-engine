@@ -72,6 +72,7 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Selector("alloc")
     public static native NSIncrementalStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSIncrementalStore allocWithZone(VoidPtr zone);

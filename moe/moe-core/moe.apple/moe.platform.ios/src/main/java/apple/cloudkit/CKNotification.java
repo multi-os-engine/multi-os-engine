@@ -63,6 +63,7 @@ public class CKNotification extends NSObject {
     @Selector("alloc")
     public static native CKNotification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKNotification allocWithZone(VoidPtr zone);

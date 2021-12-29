@@ -47,6 +47,7 @@ public class MPSNNReduceFeatureChannelsAndWeightsMean extends MPSNNReduceBinary 
     @Selector("alloc")
     public static native MPSNNReduceFeatureChannelsAndWeightsMean alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceFeatureChannelsAndWeightsMean allocWithZone(VoidPtr zone);

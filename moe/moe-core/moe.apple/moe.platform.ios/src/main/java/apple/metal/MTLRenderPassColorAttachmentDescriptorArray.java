@@ -61,6 +61,7 @@ public class MTLRenderPassColorAttachmentDescriptorArray extends NSObject {
     @Selector("alloc")
     public static native MTLRenderPassColorAttachmentDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPassColorAttachmentDescriptorArray allocWithZone(VoidPtr zone);

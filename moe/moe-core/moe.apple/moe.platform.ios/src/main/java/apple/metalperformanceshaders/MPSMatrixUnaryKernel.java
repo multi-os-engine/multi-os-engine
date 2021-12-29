@@ -55,6 +55,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
     @Selector("alloc")
     public static native MPSMatrixUnaryKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixUnaryKernel allocWithZone(VoidPtr zone);

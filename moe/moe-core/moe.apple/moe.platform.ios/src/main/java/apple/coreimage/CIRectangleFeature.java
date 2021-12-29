@@ -68,6 +68,7 @@ public class CIRectangleFeature extends CIFeature {
     @Selector("alloc")
     public static native CIRectangleFeature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIRectangleFeature allocWithZone(VoidPtr zone);

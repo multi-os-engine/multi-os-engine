@@ -73,6 +73,7 @@ public class SKLabelNode extends SKNode {
     @Selector("alloc")
     public static native SKLabelNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKLabelNode allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Selector("alloc")
     public static native INObjectCollection<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INObjectCollection<?> allocWithZone(VoidPtr zone);

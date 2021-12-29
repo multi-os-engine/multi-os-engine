@@ -47,6 +47,7 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNDropoutNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDropoutNode allocWithZone(VoidPtr zone);

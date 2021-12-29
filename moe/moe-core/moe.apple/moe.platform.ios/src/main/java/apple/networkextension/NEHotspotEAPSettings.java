@@ -58,6 +58,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native NEHotspotEAPSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEHotspotEAPSettings allocWithZone(VoidPtr zone);

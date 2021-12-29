@@ -63,6 +63,7 @@ public class INStartAudioCallIntent extends INIntent {
     @Selector("alloc")
     public static native INStartAudioCallIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartAudioCallIntent allocWithZone(VoidPtr zone);

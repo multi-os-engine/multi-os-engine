@@ -72,6 +72,7 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSUUID alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUUID allocWithZone(VoidPtr zone);

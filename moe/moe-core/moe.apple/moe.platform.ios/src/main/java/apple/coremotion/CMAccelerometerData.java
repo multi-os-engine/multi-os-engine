@@ -71,6 +71,7 @@ public class CMAccelerometerData extends CMLogItem {
     @Selector("alloc")
     public static native CMAccelerometerData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMAccelerometerData allocWithZone(VoidPtr zone);

@@ -85,6 +85,7 @@ public class NSDecimalNumber extends NSNumber {
     @Selector("alloc")
     public static native NSDecimalNumber alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDecimalNumber allocWithZone(VoidPtr zone);

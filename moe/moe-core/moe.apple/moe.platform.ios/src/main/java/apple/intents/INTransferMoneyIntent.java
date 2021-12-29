@@ -47,6 +47,7 @@ public class INTransferMoneyIntent extends INIntent {
     @Selector("alloc")
     public static native INTransferMoneyIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTransferMoneyIntent allocWithZone(VoidPtr zone);

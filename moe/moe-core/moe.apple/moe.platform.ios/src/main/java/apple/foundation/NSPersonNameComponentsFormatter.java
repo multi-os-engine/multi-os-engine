@@ -61,6 +61,7 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSPersonNameComponentsFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersonNameComponentsFormatter allocWithZone(VoidPtr zone);

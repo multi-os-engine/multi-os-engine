@@ -85,6 +85,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native SCNParticleSystem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNParticleSystem allocWithZone(VoidPtr zone);

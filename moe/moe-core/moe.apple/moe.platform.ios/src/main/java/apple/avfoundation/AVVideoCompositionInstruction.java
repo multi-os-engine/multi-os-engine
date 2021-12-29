@@ -73,6 +73,7 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @Selector("alloc")
     public static native AVVideoCompositionInstruction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVVideoCompositionInstruction allocWithZone(VoidPtr zone);

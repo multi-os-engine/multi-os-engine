@@ -65,6 +65,7 @@ public class CXStartCallAction extends CXCallAction {
     @Selector("alloc")
     public static native CXStartCallAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXStartCallAction allocWithZone(VoidPtr zone);

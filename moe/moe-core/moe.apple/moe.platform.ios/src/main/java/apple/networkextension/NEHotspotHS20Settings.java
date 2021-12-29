@@ -67,6 +67,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native NEHotspotHS20Settings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEHotspotHS20Settings allocWithZone(VoidPtr zone);

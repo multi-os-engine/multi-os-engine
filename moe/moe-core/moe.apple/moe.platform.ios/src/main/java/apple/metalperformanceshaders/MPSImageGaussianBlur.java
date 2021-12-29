@@ -78,6 +78,7 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageGaussianBlur alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageGaussianBlur allocWithZone(VoidPtr zone);

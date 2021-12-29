@@ -69,6 +69,7 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
     @Selector("alloc")
     public static native GLKEffectPropertyMaterial alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKEffectPropertyMaterial allocWithZone(VoidPtr zone);

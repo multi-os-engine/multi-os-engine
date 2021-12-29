@@ -49,6 +49,7 @@ public class UIColorPickerViewController extends UIViewController {
     @Selector("alloc")
     public static native UIColorPickerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIColorPickerViewController allocWithZone(VoidPtr zone);

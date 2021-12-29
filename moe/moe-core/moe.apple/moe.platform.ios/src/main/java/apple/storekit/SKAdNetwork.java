@@ -47,6 +47,7 @@ public class SKAdNetwork extends NSObject {
     @Selector("alloc")
     public static native SKAdNetwork alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKAdNetwork allocWithZone(VoidPtr zone);

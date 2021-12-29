@@ -55,6 +55,7 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native MLModelConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLModelConfiguration allocWithZone(VoidPtr zone);

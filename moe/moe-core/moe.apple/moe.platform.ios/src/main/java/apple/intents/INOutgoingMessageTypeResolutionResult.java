@@ -45,6 +45,7 @@ public class INOutgoingMessageTypeResolutionResult extends INIntentResolutionRes
     @Selector("alloc")
     public static native INOutgoingMessageTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INOutgoingMessageTypeResolutionResult allocWithZone(VoidPtr zone);

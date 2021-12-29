@@ -72,6 +72,7 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @Selector("alloc")
     public static native AVMetadataMachineReadableCodeObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataMachineReadableCodeObject allocWithZone(VoidPtr zone);

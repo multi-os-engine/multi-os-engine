@@ -50,6 +50,7 @@ public class CNChangeHistoryRemoveMemberFromGroupEvent extends CNChangeHistoryEv
     @Selector("alloc")
     public static native CNChangeHistoryRemoveMemberFromGroupEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNChangeHistoryRemoveMemberFromGroupEvent allocWithZone(VoidPtr zone);

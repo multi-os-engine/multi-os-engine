@@ -74,6 +74,7 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("alloc")
     public static native HKAnchoredObjectQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKAnchoredObjectQuery allocWithZone(VoidPtr zone);

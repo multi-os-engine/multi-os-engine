@@ -63,6 +63,7 @@ public class MPSMatrixLogSoftMax extends MPSMatrixSoftMax {
     @Selector("alloc")
     public static native MPSMatrixLogSoftMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixLogSoftMax allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class HMRoom extends NSObject {
     @Selector("alloc")
     public static native HMRoom alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMRoom allocWithZone(VoidPtr zone);

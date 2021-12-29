@@ -61,6 +61,7 @@ public class CTSubscriberInfo extends NSObject {
     @Selector("alloc")
     public static native CTSubscriberInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTSubscriberInfo allocWithZone(VoidPtr zone);

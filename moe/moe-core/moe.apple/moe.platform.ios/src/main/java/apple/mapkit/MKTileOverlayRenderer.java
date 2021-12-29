@@ -62,6 +62,7 @@ public class MKTileOverlayRenderer extends MKOverlayRenderer {
     @Selector("alloc")
     public static native MKTileOverlayRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKTileOverlayRenderer allocWithZone(VoidPtr zone);

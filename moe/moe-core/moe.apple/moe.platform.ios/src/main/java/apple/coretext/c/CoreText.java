@@ -3742,6 +3742,7 @@ public final class CoreText {
      * with this option set to true, no directional reordering is
      * performed and any directional control characters are ignored.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCTTypesetterOptionDisableBidiProcessing();
@@ -4019,6 +4020,7 @@ public final class CoreText {
      * selector + 1; see SFNTLayoutTypes.h for selectors. For example,
      * an attribute value of 1 corresponds to kTraditionalCharactersSelector.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCTCharacterShapeAttributeName();

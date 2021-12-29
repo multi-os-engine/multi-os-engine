@@ -67,6 +67,7 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Selector("alloc")
     public static native CSSearchableItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSSearchableItem allocWithZone(VoidPtr zone);

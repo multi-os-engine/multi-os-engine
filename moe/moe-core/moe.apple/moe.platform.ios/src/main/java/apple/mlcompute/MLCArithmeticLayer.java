@@ -50,6 +50,7 @@ public class MLCArithmeticLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCArithmeticLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCArithmeticLayer allocWithZone(VoidPtr zone);

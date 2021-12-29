@@ -48,6 +48,7 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Selector("alloc")
     public static native UIPencilInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPencilInteraction allocWithZone(VoidPtr zone);

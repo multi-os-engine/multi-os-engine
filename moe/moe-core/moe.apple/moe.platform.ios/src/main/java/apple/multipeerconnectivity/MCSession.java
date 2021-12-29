@@ -111,6 +111,7 @@ public class MCSession extends NSObject {
     @Selector("alloc")
     public static native MCSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MCSession allocWithZone(VoidPtr zone);

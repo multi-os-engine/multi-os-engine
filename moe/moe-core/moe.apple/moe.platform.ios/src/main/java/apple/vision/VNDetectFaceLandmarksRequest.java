@@ -53,6 +53,7 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Selector("alloc")
     public static native VNDetectFaceLandmarksRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectFaceLandmarksRequest allocWithZone(VoidPtr zone);

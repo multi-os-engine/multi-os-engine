@@ -65,6 +65,7 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     @Selector("alloc")
     public static native NSTextContentStorage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextContentStorage allocWithZone(VoidPtr zone);

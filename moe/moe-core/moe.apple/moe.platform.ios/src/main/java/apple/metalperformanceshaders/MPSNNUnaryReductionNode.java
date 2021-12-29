@@ -54,6 +54,7 @@ public class MPSNNUnaryReductionNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNUnaryReductionNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNUnaryReductionNode allocWithZone(VoidPtr zone);

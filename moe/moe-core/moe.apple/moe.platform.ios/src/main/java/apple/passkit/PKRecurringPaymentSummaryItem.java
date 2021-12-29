@@ -47,6 +47,7 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     @Selector("alloc")
     public static native PKRecurringPaymentSummaryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKRecurringPaymentSummaryItem allocWithZone(VoidPtr zone);

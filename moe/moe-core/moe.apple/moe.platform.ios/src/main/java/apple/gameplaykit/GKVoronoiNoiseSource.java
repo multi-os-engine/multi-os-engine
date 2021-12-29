@@ -65,6 +65,7 @@ public class GKVoronoiNoiseSource extends GKNoiseSource {
     @Selector("alloc")
     public static native GKVoronoiNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKVoronoiNoiseSource allocWithZone(VoidPtr zone);

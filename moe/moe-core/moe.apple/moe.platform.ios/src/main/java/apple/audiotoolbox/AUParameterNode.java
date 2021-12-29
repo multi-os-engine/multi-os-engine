@@ -73,6 +73,7 @@ public class AUParameterNode extends NSObject {
     @Selector("alloc")
     public static native AUParameterNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUParameterNode allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class SKTransition extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native SKTransition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTransition allocWithZone(VoidPtr zone);

@@ -60,6 +60,7 @@ public class NEAppPushManager extends NSObject {
     @Selector("alloc")
     public static native NEAppPushManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEAppPushManager allocWithZone(VoidPtr zone);

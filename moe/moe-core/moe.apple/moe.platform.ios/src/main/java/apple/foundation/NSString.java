@@ -93,6 +93,7 @@ public class NSString extends NSObject
     @Selector("alloc")
     public static native NSString alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSString allocWithZone(VoidPtr zone);

@@ -56,6 +56,7 @@ public class AVMetadataSalientObject extends AVMetadataObject implements NSCopyi
     @Selector("alloc")
     public static native AVMetadataSalientObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataSalientObject allocWithZone(VoidPtr zone);

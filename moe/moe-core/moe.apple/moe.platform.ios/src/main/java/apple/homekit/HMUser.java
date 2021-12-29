@@ -65,6 +65,7 @@ public class HMUser extends NSObject {
     @Selector("alloc")
     public static native HMUser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMUser allocWithZone(VoidPtr zone);

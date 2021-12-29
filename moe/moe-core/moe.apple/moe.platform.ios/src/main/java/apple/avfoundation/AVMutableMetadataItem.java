@@ -68,6 +68,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     @Selector("alloc")
     public static native AVMutableMetadataItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableMetadataItem allocWithZone(VoidPtr zone);

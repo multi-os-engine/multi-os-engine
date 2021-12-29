@@ -58,6 +58,7 @@ public class MTLPointerType extends MTLType {
     @Selector("alloc")
     public static native MTLPointerType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLPointerType allocWithZone(VoidPtr zone);

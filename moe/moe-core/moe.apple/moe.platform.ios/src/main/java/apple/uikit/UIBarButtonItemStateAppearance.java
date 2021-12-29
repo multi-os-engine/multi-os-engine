@@ -48,6 +48,7 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     @Selector("alloc")
     public static native UIBarButtonItemStateAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBarButtonItemStateAppearance allocWithZone(VoidPtr zone);

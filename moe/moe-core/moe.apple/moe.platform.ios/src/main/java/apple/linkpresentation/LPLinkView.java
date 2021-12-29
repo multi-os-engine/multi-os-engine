@@ -63,6 +63,7 @@ public class LPLinkView extends UIView {
     @Selector("alloc")
     public static native LPLinkView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native LPLinkView allocWithZone(VoidPtr zone);

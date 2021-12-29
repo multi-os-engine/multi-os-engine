@@ -71,6 +71,7 @@ public class NEProvider extends NSObject {
     @Selector("alloc")
     public static native NEProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEProvider allocWithZone(VoidPtr zone);

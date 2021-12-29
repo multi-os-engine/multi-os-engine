@@ -75,6 +75,7 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("alloc")
     public static native GCPhysicalInputProfile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCPhysicalInputProfile allocWithZone(VoidPtr zone);

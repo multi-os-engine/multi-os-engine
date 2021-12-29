@@ -70,6 +70,7 @@ public class MDLNoiseTexture extends MDLTexture {
     @Selector("alloc")
     public static native MDLNoiseTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLNoiseTexture allocWithZone(VoidPtr zone);

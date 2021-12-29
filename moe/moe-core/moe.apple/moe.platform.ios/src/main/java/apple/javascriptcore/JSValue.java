@@ -85,6 +85,7 @@ public class JSValue extends NSObject {
     @Selector("alloc")
     public static native JSValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native JSValue allocWithZone(VoidPtr zone);

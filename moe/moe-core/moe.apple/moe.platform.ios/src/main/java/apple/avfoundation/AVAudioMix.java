@@ -64,6 +64,7 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
     @Selector("alloc")
     public static native AVAudioMix alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioMix allocWithZone(VoidPtr zone);

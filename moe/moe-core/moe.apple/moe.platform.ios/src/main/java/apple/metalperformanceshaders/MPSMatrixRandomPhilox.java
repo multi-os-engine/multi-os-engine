@@ -55,6 +55,7 @@ public class MPSMatrixRandomPhilox extends MPSMatrixRandom {
     @Selector("alloc")
     public static native MPSMatrixRandomPhilox alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixRandomPhilox allocWithZone(VoidPtr zone);

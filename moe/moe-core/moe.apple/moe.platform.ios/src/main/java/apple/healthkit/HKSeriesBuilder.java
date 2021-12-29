@@ -51,6 +51,7 @@ public class HKSeriesBuilder extends NSObject {
     @Selector("alloc")
     public static native HKSeriesBuilder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKSeriesBuilder allocWithZone(VoidPtr zone);

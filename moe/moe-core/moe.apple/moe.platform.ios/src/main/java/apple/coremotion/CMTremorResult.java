@@ -57,6 +57,7 @@ public class CMTremorResult extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native CMTremorResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMTremorResult allocWithZone(VoidPtr zone);

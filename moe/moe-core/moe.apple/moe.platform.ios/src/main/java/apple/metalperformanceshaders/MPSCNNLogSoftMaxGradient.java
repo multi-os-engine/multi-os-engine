@@ -63,6 +63,7 @@ public class MPSCNNLogSoftMaxGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSCNNLogSoftMaxGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLogSoftMaxGradient allocWithZone(VoidPtr zone);

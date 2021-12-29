@@ -114,6 +114,7 @@ public class NSURL extends NSObject
     @Selector("alloc")
     public static native NSURL alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURL allocWithZone(VoidPtr zone);

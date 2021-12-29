@@ -67,6 +67,7 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UIFieldBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFieldBehavior allocWithZone(VoidPtr zone);

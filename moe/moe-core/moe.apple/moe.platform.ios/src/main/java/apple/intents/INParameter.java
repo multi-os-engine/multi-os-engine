@@ -50,6 +50,7 @@ public class INParameter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native INParameter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INParameter allocWithZone(VoidPtr zone);

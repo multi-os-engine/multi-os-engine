@@ -52,6 +52,7 @@ public class MLCLSTMLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCLSTMLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCLSTMLayer allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class PKPushPayload extends NSObject {
     @Selector("alloc")
     public static native PKPushPayload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPushPayload allocWithZone(VoidPtr zone);

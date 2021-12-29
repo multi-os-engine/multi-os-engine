@@ -52,6 +52,7 @@ public class MDLAnimatedScalar extends MDLAnimatedValue {
     @Selector("alloc")
     public static native MDLAnimatedScalar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLAnimatedScalar allocWithZone(VoidPtr zone);

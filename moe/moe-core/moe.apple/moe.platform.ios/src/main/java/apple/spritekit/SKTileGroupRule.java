@@ -69,6 +69,7 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native SKTileGroupRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTileGroupRule allocWithZone(VoidPtr zone);

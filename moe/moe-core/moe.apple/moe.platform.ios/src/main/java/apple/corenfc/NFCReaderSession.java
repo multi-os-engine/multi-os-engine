@@ -56,6 +56,7 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     @Selector("alloc")
     public static native NFCReaderSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCReaderSession allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class GKShuffledDistribution extends GKRandomDistribution {
     @Selector("alloc")
     public static native GKShuffledDistribution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKShuffledDistribution allocWithZone(VoidPtr zone);

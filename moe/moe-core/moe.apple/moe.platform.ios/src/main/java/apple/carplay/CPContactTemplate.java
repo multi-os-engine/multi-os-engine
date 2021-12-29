@@ -48,6 +48,7 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
     @Selector("alloc")
     public static native CPContactTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPContactTemplate allocWithZone(VoidPtr zone);

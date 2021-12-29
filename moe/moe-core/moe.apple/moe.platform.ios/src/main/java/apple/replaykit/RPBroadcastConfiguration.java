@@ -66,6 +66,7 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     @Selector("alloc")
     public static native RPBroadcastConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPBroadcastConfiguration allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPBarButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPBarButton allocWithZone(VoidPtr zone);

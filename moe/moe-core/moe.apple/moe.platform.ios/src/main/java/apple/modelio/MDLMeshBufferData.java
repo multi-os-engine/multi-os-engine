@@ -71,6 +71,7 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Selector("alloc")
     public static native MDLMeshBufferData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMeshBufferData allocWithZone(VoidPtr zone);

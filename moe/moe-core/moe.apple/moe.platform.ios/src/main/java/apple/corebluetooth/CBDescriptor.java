@@ -67,6 +67,7 @@ public class CBDescriptor extends CBAttribute {
     @Selector("alloc")
     public static native CBDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBDescriptor allocWithZone(VoidPtr zone);

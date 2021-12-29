@@ -72,6 +72,7 @@ public class HMZone extends NSObject {
     @Selector("alloc")
     public static native HMZone alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMZone allocWithZone(VoidPtr zone);

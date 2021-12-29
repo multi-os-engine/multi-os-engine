@@ -74,6 +74,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
     @Selector("alloc")
     public static native NSURLResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLResponse allocWithZone(VoidPtr zone);

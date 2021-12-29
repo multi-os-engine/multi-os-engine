@@ -65,6 +65,7 @@ public class UIFocusAnimationCoordinator extends NSObject {
     @Selector("alloc")
     public static native UIFocusAnimationCoordinator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusAnimationCoordinator allocWithZone(VoidPtr zone);

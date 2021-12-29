@@ -51,6 +51,7 @@ public class TKSimpleTLVRecord extends TKTLVRecord {
     @Selector("alloc")
     public static native TKSimpleTLVRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSimpleTLVRecord allocWithZone(VoidPtr zone);

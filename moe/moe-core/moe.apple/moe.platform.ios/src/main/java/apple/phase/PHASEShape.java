@@ -53,6 +53,7 @@ public class PHASEShape extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PHASEShape alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEShape allocWithZone(VoidPtr zone);

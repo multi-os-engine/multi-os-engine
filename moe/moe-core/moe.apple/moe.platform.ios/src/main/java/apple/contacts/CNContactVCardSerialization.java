@@ -72,6 +72,7 @@ public class CNContactVCardSerialization extends NSObject {
     @Selector("alloc")
     public static native CNContactVCardSerialization alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactVCardSerialization allocWithZone(VoidPtr zone);

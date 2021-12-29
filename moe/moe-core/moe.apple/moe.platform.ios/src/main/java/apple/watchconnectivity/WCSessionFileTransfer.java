@@ -65,6 +65,7 @@ public class WCSessionFileTransfer extends NSObject {
     @Selector("alloc")
     public static native WCSessionFileTransfer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WCSessionFileTransfer allocWithZone(VoidPtr zone);

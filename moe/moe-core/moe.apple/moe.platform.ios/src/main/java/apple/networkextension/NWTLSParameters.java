@@ -63,6 +63,7 @@ public class NWTLSParameters extends NSObject {
     @Selector("alloc")
     public static native NWTLSParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NWTLSParameters allocWithZone(VoidPtr zone);

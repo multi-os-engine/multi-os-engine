@@ -45,6 +45,7 @@ public class SRApplicationUsage extends NSObject {
     @Selector("alloc")
     public static native SRApplicationUsage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRApplicationUsage allocWithZone(VoidPtr zone);

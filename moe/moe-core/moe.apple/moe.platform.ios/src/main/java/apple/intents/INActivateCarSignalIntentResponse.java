@@ -48,6 +48,7 @@ public class INActivateCarSignalIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INActivateCarSignalIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INActivateCarSignalIntentResponse allocWithZone(VoidPtr zone);

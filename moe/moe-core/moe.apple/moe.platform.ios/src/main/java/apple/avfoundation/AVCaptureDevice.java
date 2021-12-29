@@ -83,6 +83,7 @@ public class AVCaptureDevice extends NSObject {
     @Selector("alloc")
     public static native AVCaptureDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureDevice allocWithZone(VoidPtr zone);
@@ -1858,7 +1859,7 @@ public class AVCaptureDevice extends NSObject {
      * <p>
      * For virtual devices, this property indicates which constituent device is currently the primary constituent device. The primary constituent device may change when zoom, exposure, or focus changes.
      * <p>
-     * This property returns nil for non-virtual devices. This property is key-value observable.
+     * This property returns nil for non-virtual devices. On virtual devices this property returns nil until the device is used in a running AVCaptureSession. This property is key-value observable.
      */
     @Generated
     @Selector("activePrimaryConstituentDevice")

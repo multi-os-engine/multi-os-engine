@@ -48,6 +48,7 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     @Selector("alloc")
     public static native UIFocusHaloEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusHaloEffect allocWithZone(VoidPtr zone);

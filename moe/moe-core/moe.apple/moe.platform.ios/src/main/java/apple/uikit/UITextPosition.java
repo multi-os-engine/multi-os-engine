@@ -67,6 +67,7 @@ public class UITextPosition extends NSObject {
     @Selector("alloc")
     public static native UITextPosition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextPosition allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class PKAddPaymentPassViewController extends UIViewController {
     @Selector("alloc")
     public static native PKAddPaymentPassViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddPaymentPassViewController allocWithZone(VoidPtr zone);

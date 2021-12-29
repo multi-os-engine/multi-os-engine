@@ -65,6 +65,7 @@ public class GKTurnBasedExchange extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedExchange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKTurnBasedExchange allocWithZone(VoidPtr zone);

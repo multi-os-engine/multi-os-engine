@@ -56,6 +56,7 @@ public class MPSNNBilinearScaleNode extends MPSNNScaleNode {
     @Selector("alloc")
     public static native MPSNNBilinearScaleNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNBilinearScaleNode allocWithZone(VoidPtr zone);

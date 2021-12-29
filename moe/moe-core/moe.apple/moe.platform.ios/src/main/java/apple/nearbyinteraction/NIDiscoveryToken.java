@@ -53,6 +53,7 @@ public class NIDiscoveryToken extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native NIDiscoveryToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NIDiscoveryToken allocWithZone(VoidPtr zone);

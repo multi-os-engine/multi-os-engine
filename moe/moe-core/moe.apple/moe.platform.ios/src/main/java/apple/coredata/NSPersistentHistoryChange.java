@@ -48,6 +48,7 @@ public class NSPersistentHistoryChange extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSPersistentHistoryChange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentHistoryChange allocWithZone(VoidPtr zone);

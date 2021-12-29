@@ -69,6 +69,7 @@ public class SKStoreProductViewController extends UIViewController {
     @Selector("alloc")
     public static native SKStoreProductViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKStoreProductViewController allocWithZone(VoidPtr zone);

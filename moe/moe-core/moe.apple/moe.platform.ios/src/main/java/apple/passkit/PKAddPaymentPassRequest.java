@@ -62,6 +62,7 @@ public class PKAddPaymentPassRequest extends NSObject {
     @Selector("alloc")
     public static native PKAddPaymentPassRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddPaymentPassRequest allocWithZone(VoidPtr zone);

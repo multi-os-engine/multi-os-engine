@@ -48,6 +48,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     @Selector("alloc")
     public static native ARQuickLookPreviewItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARQuickLookPreviewItem allocWithZone(VoidPtr zone);

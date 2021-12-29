@@ -95,6 +95,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     @Selector("alloc")
     public static native MPSRNNMatrixTrainingLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNMatrixTrainingLayer allocWithZone(VoidPtr zone);

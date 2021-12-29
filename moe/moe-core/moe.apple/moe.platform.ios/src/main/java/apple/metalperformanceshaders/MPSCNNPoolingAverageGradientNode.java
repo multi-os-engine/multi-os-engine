@@ -46,6 +46,7 @@ public class MPSCNNPoolingAverageGradientNode extends MPSCNNPoolingGradientNode 
     @Selector("alloc")
     public static native MPSCNNPoolingAverageGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingAverageGradientNode allocWithZone(VoidPtr zone);

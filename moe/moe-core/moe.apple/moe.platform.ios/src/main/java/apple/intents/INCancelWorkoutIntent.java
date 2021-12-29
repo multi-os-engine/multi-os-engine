@@ -63,6 +63,7 @@ public class INCancelWorkoutIntent extends INIntent {
     @Selector("alloc")
     public static native INCancelWorkoutIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCancelWorkoutIntent allocWithZone(VoidPtr zone);

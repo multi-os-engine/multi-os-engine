@@ -62,6 +62,7 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNAccelerationConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAccelerationConstraint allocWithZone(VoidPtr zone);

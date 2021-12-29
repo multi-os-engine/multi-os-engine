@@ -66,6 +66,7 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixSolveCholesky alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixSolveCholesky allocWithZone(VoidPtr zone);

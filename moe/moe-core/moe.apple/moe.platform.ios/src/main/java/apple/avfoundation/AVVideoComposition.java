@@ -72,6 +72,7 @@ public class AVVideoComposition extends NSObject implements NSCopying, NSMutable
     @Selector("alloc")
     public static native AVVideoComposition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVVideoComposition allocWithZone(VoidPtr zone);

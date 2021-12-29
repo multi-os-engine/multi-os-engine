@@ -70,6 +70,7 @@ public class CBMutableDescriptor extends CBDescriptor {
     @Selector("alloc")
     public static native CBMutableDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBMutableDescriptor allocWithZone(VoidPtr zone);

@@ -59,6 +59,7 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
     @Selector("alloc")
     public static native HKWorkoutRouteBuilder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWorkoutRouteBuilder allocWithZone(VoidPtr zone);

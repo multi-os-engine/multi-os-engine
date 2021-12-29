@@ -53,6 +53,7 @@ public class HKElectrocardiogram extends HKSample {
     @Selector("alloc")
     public static native HKElectrocardiogram alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKElectrocardiogram allocWithZone(VoidPtr zone);

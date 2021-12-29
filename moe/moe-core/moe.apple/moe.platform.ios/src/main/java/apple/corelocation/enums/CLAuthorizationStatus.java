@@ -67,7 +67,7 @@ public final class CLAuthorizationStatus {
      * This value is deprecated or prohibited on iOS, tvOS and watchOS.
      * It should be used on MacOS.
      */
-    @Generated public static final int Authorized = 0x00000003;
+    @Deprecated @Generated public static final int Authorized = 0x00000003;
 
     @Generated
     private CLAuthorizationStatus() {

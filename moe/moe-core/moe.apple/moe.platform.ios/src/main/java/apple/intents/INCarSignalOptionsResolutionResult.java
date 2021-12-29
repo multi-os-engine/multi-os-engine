@@ -45,6 +45,7 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
     @Selector("alloc")
     public static native INCarSignalOptionsResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCarSignalOptionsResolutionResult allocWithZone(VoidPtr zone);

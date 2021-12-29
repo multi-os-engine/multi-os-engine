@@ -85,6 +85,7 @@ public class SCNGeometry extends NSObject
     @Selector("alloc")
     public static native SCNGeometry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNGeometry allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class AVVideoCompositionRenderContext extends NSObject {
     @Selector("alloc")
     public static native AVVideoCompositionRenderContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVVideoCompositionRenderContext allocWithZone(VoidPtr zone);

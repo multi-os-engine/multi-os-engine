@@ -71,6 +71,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native HKWorkoutConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWorkoutConfiguration allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class MPSCNNPoolingL2NormNode extends MPSCNNPoolingNode {
     @Selector("alloc")
     public static native MPSCNNPoolingL2NormNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingL2NormNode allocWithZone(VoidPtr zone);

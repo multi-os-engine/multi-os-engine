@@ -64,6 +64,7 @@ public class MKDistanceFormatter extends NSFormatter {
     @Selector("alloc")
     public static native MKDistanceFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKDistanceFormatter allocWithZone(VoidPtr zone);

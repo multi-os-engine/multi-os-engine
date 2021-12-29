@@ -62,6 +62,7 @@ public class GCGamepad extends GCPhysicalInputProfile {
     @Selector("alloc")
     public static native GCGamepad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCGamepad allocWithZone(VoidPtr zone);

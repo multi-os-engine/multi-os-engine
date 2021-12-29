@@ -69,6 +69,7 @@ public class MIDINetworkSession extends NSObject {
     @Selector("alloc")
     public static native MIDINetworkSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDINetworkSession allocWithZone(VoidPtr zone);

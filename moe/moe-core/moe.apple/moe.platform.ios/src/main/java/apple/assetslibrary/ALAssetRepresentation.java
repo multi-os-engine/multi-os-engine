@@ -47,6 +47,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("AssetsLibrary")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +71,7 @@ public class ALAssetRepresentation extends NSObject {
     @Selector("alloc")
     public static native ALAssetRepresentation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ALAssetRepresentation allocWithZone(VoidPtr zone);

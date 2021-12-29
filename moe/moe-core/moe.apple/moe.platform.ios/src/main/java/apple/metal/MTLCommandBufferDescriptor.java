@@ -52,6 +52,7 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLCommandBufferDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLCommandBufferDescriptor allocWithZone(VoidPtr zone);

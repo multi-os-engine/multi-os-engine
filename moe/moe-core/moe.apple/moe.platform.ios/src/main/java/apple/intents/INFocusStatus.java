@@ -51,6 +51,7 @@ public class INFocusStatus extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native INFocusStatus alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INFocusStatus allocWithZone(VoidPtr zone);

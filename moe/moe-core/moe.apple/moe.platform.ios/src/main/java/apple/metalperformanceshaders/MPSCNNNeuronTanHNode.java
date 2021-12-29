@@ -53,6 +53,7 @@ public class MPSCNNNeuronTanHNode extends MPSCNNNeuronNode {
     @Selector("alloc")
     public static native MPSCNNNeuronTanHNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronTanHNode allocWithZone(VoidPtr zone);

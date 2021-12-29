@@ -68,6 +68,7 @@ public class EKReminder extends EKCalendarItem {
     @Selector("alloc")
     public static native EKReminder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKReminder allocWithZone(VoidPtr zone);

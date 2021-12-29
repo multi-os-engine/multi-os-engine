@@ -104,6 +104,7 @@ public class UIView extends UIResponder
     @Selector("alloc")
     public static native UIView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIView allocWithZone(VoidPtr zone);

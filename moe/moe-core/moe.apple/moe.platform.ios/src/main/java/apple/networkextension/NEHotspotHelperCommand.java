@@ -70,6 +70,7 @@ public class NEHotspotHelperCommand extends NSObject {
     @Selector("alloc")
     public static native NEHotspotHelperCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEHotspotHelperCommand allocWithZone(VoidPtr zone);

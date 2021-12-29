@@ -61,6 +61,7 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @Selector("alloc")
     public static native NSSaveChangesRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSSaveChangesRequest allocWithZone(VoidPtr zone);

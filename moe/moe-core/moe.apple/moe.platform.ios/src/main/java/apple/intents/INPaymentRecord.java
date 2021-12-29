@@ -66,6 +66,7 @@ public class INPaymentRecord extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native INPaymentRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPaymentRecord allocWithZone(VoidPtr zone);

@@ -59,6 +59,7 @@ public class NSThread extends NSObject {
     @Selector("alloc")
     public static native NSThread alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSThread allocWithZone(VoidPtr zone);

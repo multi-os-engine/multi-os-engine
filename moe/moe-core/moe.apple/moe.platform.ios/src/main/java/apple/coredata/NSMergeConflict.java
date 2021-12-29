@@ -62,6 +62,7 @@ public class NSMergeConflict extends NSObject {
     @Selector("alloc")
     public static native NSMergeConflict alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMergeConflict allocWithZone(VoidPtr zone);

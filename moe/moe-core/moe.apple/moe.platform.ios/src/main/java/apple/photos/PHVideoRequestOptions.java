@@ -65,6 +65,7 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("alloc")
     public static native PHVideoRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHVideoRequestOptions allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MKMapSnapshotOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMapSnapshotOptions allocWithZone(VoidPtr zone);

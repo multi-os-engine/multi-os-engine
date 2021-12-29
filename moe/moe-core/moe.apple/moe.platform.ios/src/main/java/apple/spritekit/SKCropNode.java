@@ -70,6 +70,7 @@ public class SKCropNode extends SKNode {
     @Selector("alloc")
     public static native SKCropNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKCropNode allocWithZone(VoidPtr zone);

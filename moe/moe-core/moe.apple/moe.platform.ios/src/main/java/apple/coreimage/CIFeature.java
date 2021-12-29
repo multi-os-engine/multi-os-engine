@@ -66,6 +66,7 @@ public class CIFeature extends NSObject {
     @Selector("alloc")
     public static native CIFeature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIFeature allocWithZone(VoidPtr zone);
