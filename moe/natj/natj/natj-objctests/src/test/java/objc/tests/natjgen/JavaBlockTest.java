@@ -35,7 +35,9 @@ import static apple.c.Globals.*;
 public class JavaBlockTest {
 
     private NSArray getArray() {
-        NSMutableArray array = NSMutableArray.alloc().init();
+//        NSMutableArray a1 = NSMutableArray.alloc();
+//        NSMutableArray a2 = a1.init();
+        NSMutableArray array = new NSMutableArray();
         array.add("a");
         array.add("b");
         array.add("objc");

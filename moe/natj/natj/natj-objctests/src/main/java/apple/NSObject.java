@@ -17,9 +17,11 @@ limitations under the License.
 package apple;
 
 import org.moe.natj.general.NatJ;
+import org.moe.natj.general.NativeObject;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCObject;
@@ -29,6 +31,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSMethodSignature;
+import org.moe.natj.objc.map.ObjCObjectRawAllocMapper;
 
 @Generated
 @Runtime(ObjCRuntime.class)
@@ -42,6 +45,23 @@ public class NSObject extends ObjCObject {
     protected NSObject(Pointer peer) {
         super(peer);
     }
+
+    public NSObject() {
+        this((Pointer) null);
+        ObjCObjectRawAllocMapper.associateReference(_alloc(),this);
+        ObjCObjectRawAllocMapper.associateReference(_init(),this);
+    }
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    @MappedReturn(ObjCObjectRawAllocMapper.class)
+    private static native Pointer _alloc();
+
+    @Generated
+    @Selector("init")
+    @MappedReturn(ObjCObjectRawAllocMapper.class)
+    private native Pointer _init();
 
     @Generated
     @Owned

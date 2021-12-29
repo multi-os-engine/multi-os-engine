@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.objc.map.ObjCObjectRawAllocMapper;
 
 @Generated
 @Library("Foundation")
@@ -38,6 +39,23 @@ public class NSMutableArray<T> extends NSArray<T> {
     protected NSMutableArray(Pointer peer) {
         super(peer);
     }
+
+    public NSMutableArray() {
+        this((Pointer) null);
+        ObjCObjectRawAllocMapper.associateReference(_alloc(),this);
+        ObjCObjectRawAllocMapper.associateReference(_init(),this);
+    }
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    @MappedReturn(ObjCObjectRawAllocMapper.class)
+    private static native Pointer _alloc();
+
+    @Generated
+    @Selector("init")
+    @MappedReturn(ObjCObjectRawAllocMapper.class)
+    private native Pointer _init();
 
     @Generated
     @Selector("addObject:")

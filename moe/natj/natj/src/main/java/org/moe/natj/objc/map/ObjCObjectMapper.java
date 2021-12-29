@@ -306,6 +306,29 @@ public class ObjCObjectMapper implements Mapper {
         return proxy;
     }
 
+    protected Object pointerToObject(boolean isInherited, boolean isBinding, Class<?> cls, Pointer pointer) {
+        Object instance;
+        try {
+            Constructor<?> constructor = cls.getDeclaredConstructor(Pointer.class);
+            constructor.setAccessible(true);
+            instance = constructor.newInstance(pointer);
+        } catch (Exception ex) {
+            throw new RuntimeException("Java object construction error!", ex);
+        }
+
+        // Association of the peers will happen at Objective-C side for inherited classes
+        boolean isRefSettingNeeded = !isInherited;
+        if (isRefSettingNeeded) {
+            if (isBinding) {
+                ObjCRuntime.setJavaReferenceOfBindingObject(pointer.getPeer(), instance);
+            } else {
+                ObjCRuntime.setJavaReferenceOfCustomObject(pointer.getPeer(), instance);
+            }
+        }
+
+        return instance;
+    }
+
     /**
      * Returns a Java peer for a non proxy object.
      */
@@ -323,9 +346,6 @@ public class ObjCObjectMapper implements Mapper {
 
         // Proxies don't have init methods, so handling init calls is not needed for them
         boolean isInitHandlingNeeded = !isProxy;
-
-        // Association of the peers will happen at Objective-C side for inherited classes
-        boolean isRefSettingNeeded = !isInherited;
 
         Object instance;
         if (isLockNeeded) {
@@ -408,22 +428,8 @@ public class ObjCObjectMapper implements Mapper {
                     pointer = ObjCRuntime.createStrongPointer(peer, info.arg ? false
                             : target != null || info.owned);
                 }
-                try {
-                    Constructor<?> constructor = cls.getDeclaredConstructor(Pointer.class);
-                    constructor.setAccessible(true);
-                    instance = constructor.newInstance(pointer);
-                } catch (Exception ex) {
-                    throw new RuntimeException("Java object construction error!", ex);
-                }
 
-                // Save the Java reference
-                if (isRefSettingNeeded) {
-                    if (isBinding) {
-                        ObjCRuntime.setJavaReferenceOfBindingObject(peer, instance);
-                    } else {
-                        ObjCRuntime.setJavaReferenceOfCustomObject(peer, instance);
-                    }
-                }
+                instance = pointerToObject(isInherited, isBinding, cls, pointer);
 
                 // Replace original opaque object with one of its protocol proxies
                 if (instance.getClass() == ObjCOpaqueObject.class) {

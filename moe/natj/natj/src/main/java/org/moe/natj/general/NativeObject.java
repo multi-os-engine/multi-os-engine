@@ -34,6 +34,10 @@ public class NativeObject {
         return peer;
     }
 
+    public final void setPeer(Pointer peer) {
+        this.peer = peer;
+    }
+
     /**
      * Returns the native pointer's peer or 0.
      *

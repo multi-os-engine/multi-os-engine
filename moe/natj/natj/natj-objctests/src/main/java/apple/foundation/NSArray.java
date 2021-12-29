@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.NSObject;
+import org.moe.natj.objc.map.ObjCObjectRawAllocMapper;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -44,6 +45,23 @@ public class NSArray<T> extends NSObject implements Iterable<T> {
     protected NSArray(Pointer peer) {
         super(peer);
     }
+
+    public NSArray() {
+        this((Pointer) null);
+        ObjCObjectRawAllocMapper.associateReference(_alloc(),this);
+        ObjCObjectRawAllocMapper.associateReference(_init(),this);
+    }
+
+    @Generated
+    @Owned
+    @Selector("alloc")
+    @MappedReturn(ObjCObjectRawAllocMapper.class)
+    private static native Pointer _alloc();
+
+    @Generated
+    @Selector("init")
+    @MappedReturn(ObjCObjectRawAllocMapper.class)
+    private native Pointer _init();
 
     @Generated
     @Owned
