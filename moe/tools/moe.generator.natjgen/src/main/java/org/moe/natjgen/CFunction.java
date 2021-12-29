@@ -48,11 +48,6 @@ public final class CFunction extends AbstractModelElement implements IParameteri
     private boolean dontGenerate = false;
 
     /**
-     * This flag indicated whether the method is @deprecated or not
-     */
-    private boolean isDeprecated = false;
-
-    /**
      * This flag indicated whether the method is inlined or not
      */
     private boolean isInlined = false;
@@ -117,14 +112,6 @@ public final class CFunction extends AbstractModelElement implements IParameteri
 
     public void setDontGenerate() {
         this.dontGenerate = true;
-    }
-
-    public boolean isDeprecated() {
-        return isDeprecated;
-    }
-
-    public void setDeprecated(boolean isDeprecated) {
-        this.isDeprecated = isDeprecated;
     }
 
     public boolean isInline() {

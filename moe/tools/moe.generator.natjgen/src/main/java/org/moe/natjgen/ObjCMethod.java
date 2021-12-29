@@ -79,11 +79,6 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
     private boolean isOptional = false;
 
     /**
-     * This flag indicated whether the method is @deprecated or not
-     */
-    private boolean isDeprecated = false;
-
-    /**
      * This flag indicated whether the method is inherited from a non-template class or not
      */
     private boolean isInheritedFromNonTemplateClass = false;
@@ -169,7 +164,7 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
         copy.unitDisabled = unitDisabled;
         copy.isProtocolMethod = isProtocolMethod;
         copy.isOptional = isOptional;
-        copy.isDeprecated = isDeprecated;
+        copy.setDeprecated(isDeprecated());
         copy.propertyName = propertyName;
         copy.attribute = attribute;
         copy.propertyFlags = propertyFlags;
@@ -325,24 +320,6 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
     }
 
     /**
-     * Tells whether the method is deprecated or not
-     *
-     * @return true if deprecated otherwise false
-     */
-    public boolean isDeprecated() {
-        return isDeprecated;
-    }
-
-    /**
-     * Sets the method's deprecated property
-     *
-     * @param isDeprecated true if deprecated otherwise false
-     */
-    public void setDeprecated(boolean isDeprecated) {
-        this.isDeprecated = isDeprecated;
-    }
-
-    /**
      * Returns the method's @property name if any
      *
      * @return @property name
@@ -492,24 +469,25 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
      */
     public void updateFamily(String ownerClassName) {
         if (family == ObjCMethodFamily.UNDEFINED) {
+            String first_word = clangFirstWord();
             if (isStatic) {
-                String first_word = clangFirstWord();
-                int range = ownerClassName
-                        .indexOf(Character.toUpperCase(first_word.charAt(0)) + first_word.substring(1));
-                if (range != -1) {
-                    int remaining = range + first_word.length();
-                    String remaining_sel = getName().substring(first_word.length());
-                    if (remaining == ownerClassName.length() || remaining_sel
-                            .startsWith(ownerClassName.substring(remaining))) {
-                        family = ObjCMethodFamily.FACTORY;
+                if (first_word.equals("new")) {
+                    family = ObjCMethodFamily.FACTORY;
+                } else {
+                    int range = ownerClassName.indexOf(Character.toUpperCase(first_word.charAt(0)) + first_word.substring(1));
+                    if (range != -1) {
+                        int remaining = range + first_word.length();
+                        String remaining_sel = getName().substring(first_word.length());
+                        if (remaining == ownerClassName.length() || remaining_sel.startsWith(ownerClassName.substring(remaining))) {
+                            family = ObjCMethodFamily.FACTORY;
+                        } else {
+                            family = ObjCMethodFamily.DEFAULT;
+                        }
                     } else {
                         family = ObjCMethodFamily.DEFAULT;
                     }
-                } else {
-                    family = ObjCMethodFamily.DEFAULT;
                 }
             } else {
-                String first_word = clangFirstWord();
                 if (first_word.equals("init")) {
                     family = ObjCMethodFamily.INIT;
                 } else {
@@ -569,14 +547,14 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
      * @return true if is alloc otherwise false
      */
     public boolean isAlloc() {
-        return isStatic == true && getName().equals("alloc");
+        return isStatic && clangFirstWord().equals("alloc");
     }
 
     public boolean isRetainedReturn() {
+        String firstWord = clangFirstWord();
         if (isStatic) {
-            return getName().equals("alloc") || clangFirstWord().equals("new");
+            return firstWord.equals("alloc") || firstWord.equals("new");
         } else {
-            String firstWord = clangFirstWord();
             return firstWord.equals("copy") || (getName().startsWith("mutableCopy") && clangFirstWord(
                     "mutableC".length()).equals("opy"));
         }

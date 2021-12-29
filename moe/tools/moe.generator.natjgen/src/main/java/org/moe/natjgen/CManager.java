@@ -553,6 +553,9 @@ public final class CManager extends AbstractUnitManager {
                 modifiers.setNative();
                 modifiers.setCVariable(variable.getJavaName().equals(variable.getName()) ? null : variable.getName(),
                         true);
+                if (variable.isDeprecated()) {
+                    modifiers.setDeprecated();
+                }
                 modifiers.setGenerated();
 
                 XcodeDocumentation doc = new XcodeDocumentation(variable.getComment(), getEditGroup());
@@ -617,6 +620,9 @@ public final class CManager extends AbstractUnitManager {
                 modifiers.setPublic();
                 modifiers.setStatic();
                 modifiers.setFinal();
+                if (variable.isDeprecated()) {
+                    modifiers.setDeprecated();
+                }
                 modifiers.setGenerated();
 
                 XcodeDocumentation doc = new XcodeDocumentation(variable.getComment(), getEditGroup());

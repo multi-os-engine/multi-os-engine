@@ -111,6 +111,9 @@ public class ObjCProtocolManager extends ObjCClassManager {
                 if (libraryName != null) {
                     modifiers.setLibrary(libraryName);
                 }
+                if (isDeprecated()) {
+                    modifiers.setDeprecated();
+                }
                 modifiers.setGenerated();
 
                 XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());

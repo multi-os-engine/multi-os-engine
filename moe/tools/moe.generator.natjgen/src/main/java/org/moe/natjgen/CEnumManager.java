@@ -266,6 +266,9 @@ public final class CEnumManager extends AbstractUnitManager {
                 ModifierEditor modifiers = editor.getModifiers();
                 modifiers.setPublic();
                 modifiers.setFinal();
+                if (isDeprecated()) {
+                    modifiers.setDeprecated();
+                }
                 modifiers.setGenerated();
 
                 XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
@@ -327,6 +330,9 @@ public final class CEnumManager extends AbstractUnitManager {
                 modifiers.setPublic();
                 modifiers.setStatic();
                 modifiers.setFinal();
+                if (constant.isDeprecated()) {
+                    modifiers.setDeprecated();
+                }
                 modifiers.setGenerated();
 
                 XcodeDocumentation doc = new XcodeDocumentation(constant.getComment(), getEditGroup());

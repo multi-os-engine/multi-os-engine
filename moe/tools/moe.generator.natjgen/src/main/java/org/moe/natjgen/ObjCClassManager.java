@@ -131,29 +131,6 @@ public class ObjCClassManager extends AbstractUnitManager {
     protected final ArrayList<ObjCGenericParamType> genericParamTypes = new ArrayList<ObjCGenericParamType>();
 
     /**
-     * This flag indicated whether the class is @deprecated or not
-     */
-    private boolean isDeprecated = false;
-
-    /**
-     * Tells whether the class is deprecated or not
-     *
-     * @return true if deprecated otherwise false
-     */
-    public boolean isDeprecated() {
-        return isDeprecated;
-    }
-
-    /**
-     * Sets the class' deprecated property
-     *
-     * @param isDeprecated true if deprecated otherwise false
-     */
-    public void setDeprecated(boolean isDeprecated) {
-        this.isDeprecated = isDeprecated;
-    }
-
-    /**
      * This flag indicated whether the class is a hybrid class or not
      */
     private boolean isHybridClass = false;
@@ -900,6 +877,9 @@ public class ObjCClassManager extends AbstractUnitManager {
                 if (libraryName != null) {
                     modifiers.setLibrary(libraryName);
                 }
+                if (isDeprecated()) {
+                    modifiers.setDeprecated();
+                }
                 modifiers.setGenerated();
 
                 XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
@@ -982,6 +962,8 @@ public class ObjCClassManager extends AbstractUnitManager {
                 }
                 if (method.isStatic() && !method.isAlloc() && !method.isInheritedFromNonTemplateClass()) {
                     editor.setTemplates(genericParamTypes);
+                } else {
+                    editor.setTemplates(Collections.emptyList());
                 }
                 editor.setArgumentCount(numArgs);
                 int idx = 0;
