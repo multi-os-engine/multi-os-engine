@@ -49,6 +49,7 @@ public class PHCloudIdentifierMapping extends NSObject {
     @Selector("alloc")
     public static native PHCloudIdentifierMapping alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHCloudIdentifierMapping allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class MLNumericConstraint extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLNumericConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLNumericConstraint allocWithZone(VoidPtr zone);

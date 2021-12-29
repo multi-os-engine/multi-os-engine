@@ -66,6 +66,7 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Selector("alloc")
     public static native NSRelationshipDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSRelationshipDescription allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixFullyConnectedGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixFullyConnectedGradient allocWithZone(VoidPtr zone);

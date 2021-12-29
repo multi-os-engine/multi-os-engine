@@ -74,6 +74,7 @@ public class MPSImageMedian extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageMedian alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageMedian allocWithZone(VoidPtr zone);

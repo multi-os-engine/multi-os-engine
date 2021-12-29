@@ -48,6 +48,7 @@ public class UIPointerInteraction extends NSObject implements UIInteraction {
     @Selector("alloc")
     public static native UIPointerInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerInteraction allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     @Selector("alloc")
     public static native NSURLSessionWebSocketTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionWebSocketTask allocWithZone(VoidPtr zone);

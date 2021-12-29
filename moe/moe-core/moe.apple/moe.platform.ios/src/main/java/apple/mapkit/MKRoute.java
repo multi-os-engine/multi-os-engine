@@ -61,6 +61,7 @@ public class MKRoute extends NSObject {
     @Selector("alloc")
     public static native MKRoute alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKRoute allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class INMediaAffinityTypeResolutionResult extends INIntentResolutionResul
     @Selector("alloc")
     public static native INMediaAffinityTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMediaAffinityTypeResolutionResult allocWithZone(VoidPtr zone);

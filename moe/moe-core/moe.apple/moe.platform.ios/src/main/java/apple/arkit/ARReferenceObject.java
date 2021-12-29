@@ -57,6 +57,7 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ARReferenceObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARReferenceObject allocWithZone(VoidPtr zone);

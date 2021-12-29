@@ -75,6 +75,7 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("alloc")
     public static native MKTileOverlay alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKTileOverlay allocWithZone(VoidPtr zone);

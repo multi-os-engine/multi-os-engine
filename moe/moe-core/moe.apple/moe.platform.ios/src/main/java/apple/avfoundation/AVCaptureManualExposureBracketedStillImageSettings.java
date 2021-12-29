@@ -70,6 +70,7 @@ public class AVCaptureManualExposureBracketedStillImageSettings extends AVCaptur
     @Selector("alloc")
     public static native AVCaptureManualExposureBracketedStillImageSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureManualExposureBracketedStillImageSettings allocWithZone(VoidPtr zone);

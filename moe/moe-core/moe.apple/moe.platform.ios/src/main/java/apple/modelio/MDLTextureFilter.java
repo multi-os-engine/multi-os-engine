@@ -61,6 +61,7 @@ public class MDLTextureFilter extends NSObject {
     @Selector("alloc")
     public static native MDLTextureFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTextureFilter allocWithZone(VoidPtr zone);

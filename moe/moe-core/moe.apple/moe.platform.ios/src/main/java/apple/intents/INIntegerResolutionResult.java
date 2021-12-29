@@ -62,6 +62,7 @@ public class INIntegerResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INIntegerResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INIntegerResolutionResult allocWithZone(VoidPtr zone);

@@ -352,6 +352,7 @@ public final class MediaPlayer {
      * Posted when the prepared state changes of an object conforming to the MPMediaPlayback protocol changes.
      * This supersedes MPMoviePlayerContentPreloadDidFinishNotification.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -360,6 +361,7 @@ public final class MediaPlayer {
     /**
      * Posted when the scaling mode changes.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -368,6 +370,7 @@ public final class MediaPlayer {
     /**
      * Posted when movie playback ends or a user exits playback.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -376,6 +379,7 @@ public final class MediaPlayer {
     /**
      * NSNumber (MPMovieFinishReason)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -384,6 +388,7 @@ public final class MediaPlayer {
     /**
      * Posted when the playback state changes, either programatically or by the user.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -392,6 +397,7 @@ public final class MediaPlayer {
     /**
      * Posted when the network load state changes.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -400,6 +406,7 @@ public final class MediaPlayer {
     /**
      * Posted when the currently playing movie changes.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -408,21 +415,25 @@ public final class MediaPlayer {
     /**
      * Posted when the movie player enters or exits fullscreen mode.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerWillEnterFullscreenNotification();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerDidEnterFullscreenNotification();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMoviePlayerWillExitFullscreenNotification();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -431,6 +442,7 @@ public final class MediaPlayer {
     /**
      * NSNumber of double (NSTimeInterval)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -439,6 +451,7 @@ public final class MediaPlayer {
     /**
      * NSNumber of NSUInteger (UIViewAnimationCurve)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -447,6 +460,7 @@ public final class MediaPlayer {
     /**
      * Posted when the movie player begins or ends playing video via AirPlay.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -455,6 +469,7 @@ public final class MediaPlayer {
     /**
      * Posted when the ready for display state changes.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -464,6 +479,7 @@ public final class MediaPlayer {
      * Calling -prepareToPlay on the movie player will begin determining movie properties asynchronously.
      * These notifications are posted when the associated movie property becomes available.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -472,16 +488,19 @@ public final class MediaPlayer {
     /**
      * Posted if the movieSourceType is MPMovieSourceTypeUnknown when preparing for playback.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMovieSourceTypeAvailableNotification();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MPMovieDurationAvailableNotification();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -490,6 +509,7 @@ public final class MediaPlayer {
     /**
      * Posted when each thumbnail image request is completed.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -498,6 +518,7 @@ public final class MediaPlayer {
     /**
      * UIImage, may be nil if an error occurred.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -506,6 +527,7 @@ public final class MediaPlayer {
     /**
      * NSNumber (double)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -514,6 +536,7 @@ public final class MediaPlayer {
     /**
      * NSError
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -522,6 +545,7 @@ public final class MediaPlayer {
     /**
      * Posted when new timed metadata arrives.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -530,6 +554,7 @@ public final class MediaPlayer {
     /**
      * NSDictionary of the most recent MPTimedMetadata objects.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -538,6 +563,7 @@ public final class MediaPlayer {
     /**
      * NSString
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -546,6 +572,7 @@ public final class MediaPlayer {
     /**
      * NSString
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -554,6 +581,7 @@ public final class MediaPlayer {
     /**
      * NSString
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -562,6 +590,7 @@ public final class MediaPlayer {
     /**
      * NSString
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -570,6 +599,7 @@ public final class MediaPlayer {
     /**
      * NSString (ISO 639-2)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

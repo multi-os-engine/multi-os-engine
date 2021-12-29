@@ -75,6 +75,7 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
     @Selector("alloc")
     public static native NETunnelNetworkSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NETunnelNetworkSettings allocWithZone(VoidPtr zone);

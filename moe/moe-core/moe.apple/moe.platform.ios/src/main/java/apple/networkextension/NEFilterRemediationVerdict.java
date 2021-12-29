@@ -73,6 +73,7 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     @Selector("alloc")
     public static native NEFilterRemediationVerdict alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterRemediationVerdict allocWithZone(VoidPtr zone);

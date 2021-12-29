@@ -65,6 +65,7 @@ public class MKMarkerAnnotationView extends MKAnnotationView {
     @Selector("alloc")
     public static native MKMarkerAnnotationView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMarkerAnnotationView allocWithZone(VoidPtr zone);

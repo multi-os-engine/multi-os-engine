@@ -67,6 +67,7 @@ public class EKCalendar extends EKObject {
     @Selector("alloc")
     public static native EKCalendar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKCalendar allocWithZone(VoidPtr zone);

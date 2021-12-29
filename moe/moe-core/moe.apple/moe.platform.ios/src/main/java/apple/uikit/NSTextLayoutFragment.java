@@ -55,6 +55,7 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSTextLayoutFragment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextLayoutFragment allocWithZone(VoidPtr zone);

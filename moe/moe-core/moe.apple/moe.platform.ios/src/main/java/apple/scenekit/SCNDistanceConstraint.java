@@ -53,6 +53,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNDistanceConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNDistanceConstraint allocWithZone(VoidPtr zone);

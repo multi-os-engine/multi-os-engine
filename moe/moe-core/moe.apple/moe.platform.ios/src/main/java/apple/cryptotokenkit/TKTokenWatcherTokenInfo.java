@@ -45,6 +45,7 @@ public class TKTokenWatcherTokenInfo extends NSObject {
     @Selector("alloc")
     public static native TKTokenWatcherTokenInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenWatcherTokenInfo allocWithZone(VoidPtr zone);

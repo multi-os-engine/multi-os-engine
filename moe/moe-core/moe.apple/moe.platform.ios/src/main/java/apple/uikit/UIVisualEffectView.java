@@ -88,6 +88,7 @@ public class UIVisualEffectView extends UIView implements NSSecureCoding {
     @Selector("alloc")
     public static native UIVisualEffectView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIVisualEffectView allocWithZone(VoidPtr zone);

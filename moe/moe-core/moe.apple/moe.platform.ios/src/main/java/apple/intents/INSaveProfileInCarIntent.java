@@ -64,6 +64,7 @@ public class INSaveProfileInCarIntent extends INIntent {
     @Selector("alloc")
     public static native INSaveProfileInCarIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSaveProfileInCarIntent allocWithZone(VoidPtr zone);

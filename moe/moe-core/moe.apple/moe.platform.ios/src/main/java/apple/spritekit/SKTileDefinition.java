@@ -73,6 +73,7 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native SKTileDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTileDefinition allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class INSearchForBillsIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSearchForBillsIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSearchForBillsIntentResponse allocWithZone(VoidPtr zone);

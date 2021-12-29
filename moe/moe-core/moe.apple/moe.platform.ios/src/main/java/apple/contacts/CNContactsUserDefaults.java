@@ -66,6 +66,7 @@ public class CNContactsUserDefaults extends NSObject {
     @Selector("alloc")
     public static native CNContactsUserDefaults alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactsUserDefaults allocWithZone(VoidPtr zone);

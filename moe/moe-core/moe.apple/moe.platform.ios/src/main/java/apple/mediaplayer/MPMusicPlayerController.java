@@ -68,6 +68,7 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("alloc")
     public static native MPMusicPlayerController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMusicPlayerController allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class CHIPMediaInput extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPMediaInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPMediaInput allocWithZone(VoidPtr zone);
@@ -107,7 +108,7 @@ public class CHIPMediaInput extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPMediaInput initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPMediaInput initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -214,4 +215,16 @@ public class CHIPMediaInput extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("readAttributeCurrentMediaInputWithResponseHandler:")
+    public native void readAttributeCurrentMediaInputWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeCurrentMediaInputWithResponseHandler") Block_readAttributeCurrentMediaInputWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeCurrentMediaInputWithResponseHandler {
+        @Generated
+        void call_readAttributeCurrentMediaInputWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

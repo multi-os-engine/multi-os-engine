@@ -52,6 +52,7 @@ public class ARFaceTrackingConfiguration extends ARConfiguration {
     @Selector("alloc")
     public static native ARFaceTrackingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARFaceTrackingConfiguration allocWithZone(VoidPtr zone);

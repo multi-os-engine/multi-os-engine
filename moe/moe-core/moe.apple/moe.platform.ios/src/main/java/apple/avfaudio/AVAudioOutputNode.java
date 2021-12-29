@@ -64,6 +64,7 @@ public class AVAudioOutputNode extends AVAudioIONode {
     @Selector("alloc")
     public static native AVAudioOutputNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioOutputNode allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native HKBiologicalSexObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKBiologicalSexObject allocWithZone(VoidPtr zone);

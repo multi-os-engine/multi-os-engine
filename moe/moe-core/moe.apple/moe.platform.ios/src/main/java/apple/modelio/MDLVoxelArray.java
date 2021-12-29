@@ -70,6 +70,7 @@ public class MDLVoxelArray extends MDLObject {
     @Selector("alloc")
     public static native MDLVoxelArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLVoxelArray allocWithZone(VoidPtr zone);

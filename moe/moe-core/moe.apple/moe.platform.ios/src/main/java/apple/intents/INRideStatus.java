@@ -69,6 +69,7 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native INRideStatus alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRideStatus allocWithZone(VoidPtr zone);

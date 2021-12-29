@@ -56,6 +56,7 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     @Selector("alloc")
     public static native VNCoreMLFeatureValueObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNCoreMLFeatureValueObservation allocWithZone(VoidPtr zone);

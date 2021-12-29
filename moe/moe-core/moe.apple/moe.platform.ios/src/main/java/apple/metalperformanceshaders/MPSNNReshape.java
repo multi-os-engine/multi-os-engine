@@ -58,6 +58,7 @@ public class MPSNNReshape extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNReshape alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReshape allocWithZone(VoidPtr zone);

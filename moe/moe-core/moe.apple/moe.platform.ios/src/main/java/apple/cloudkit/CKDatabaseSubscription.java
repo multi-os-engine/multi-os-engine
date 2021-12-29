@@ -73,6 +73,7 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
     @Selector("alloc")
     public static native CKDatabaseSubscription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKDatabaseSubscription allocWithZone(VoidPtr zone);

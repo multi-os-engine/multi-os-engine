@@ -74,6 +74,7 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
     @Selector("alloc")
     public static native NEEvaluateConnectionRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEEvaluateConnectionRule allocWithZone(VoidPtr zone);

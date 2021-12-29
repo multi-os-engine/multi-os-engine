@@ -50,6 +50,7 @@ public class AVPersistableContentKeyRequest extends AVContentKeyRequest {
     @Selector("alloc")
     public static native AVPersistableContentKeyRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPersistableContentKeyRequest allocWithZone(VoidPtr zone);

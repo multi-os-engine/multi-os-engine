@@ -73,6 +73,7 @@ public class GCExtendedGamepadSnapshot extends GCExtendedGamepad {
     @Selector("alloc")
     public static native GCExtendedGamepadSnapshot alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCExtendedGamepadSnapshot allocWithZone(VoidPtr zone);

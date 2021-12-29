@@ -49,6 +49,7 @@ public class GKAccessPoint extends NSObject {
     @Selector("alloc")
     public static native GKAccessPoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAccessPoint allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
     @Selector("alloc")
     public static native ASCredentialProviderExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASCredentialProviderExtensionContext allocWithZone(VoidPtr zone);

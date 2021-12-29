@@ -61,6 +61,7 @@ public class NSUnitConverter extends NSObject {
     @Selector("alloc")
     public static native NSUnitConverter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitConverter allocWithZone(VoidPtr zone);

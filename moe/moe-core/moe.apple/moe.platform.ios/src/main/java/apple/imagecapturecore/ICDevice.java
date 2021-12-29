@@ -68,6 +68,7 @@ public class ICDevice extends NSObject {
     @Selector("alloc")
     public static native ICDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ICDevice allocWithZone(VoidPtr zone);

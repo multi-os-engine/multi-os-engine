@@ -55,6 +55,7 @@ public class MLUpdateTask extends MLTask {
     @Selector("alloc")
     public static native MLUpdateTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLUpdateTask allocWithZone(VoidPtr zone);

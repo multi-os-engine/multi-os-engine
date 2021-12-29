@@ -48,6 +48,7 @@ public class SKArcadeService extends NSObject {
     @Selector("alloc")
     public static native SKArcadeService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKArcadeService allocWithZone(VoidPtr zone);

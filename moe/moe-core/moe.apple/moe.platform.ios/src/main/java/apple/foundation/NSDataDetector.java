@@ -61,6 +61,7 @@ public class NSDataDetector extends NSRegularExpression {
     @Selector("alloc")
     public static native NSDataDetector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDataDetector allocWithZone(VoidPtr zone);

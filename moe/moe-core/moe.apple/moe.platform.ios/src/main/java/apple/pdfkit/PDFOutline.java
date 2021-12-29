@@ -55,6 +55,7 @@ public class PDFOutline extends NSObject {
     @Selector("alloc")
     public static native PDFOutline alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFOutline allocWithZone(VoidPtr zone);

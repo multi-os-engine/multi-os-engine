@@ -55,6 +55,7 @@ public class NLEmbedding extends NSObject {
     @Selector("alloc")
     public static native NLEmbedding alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NLEmbedding allocWithZone(VoidPtr zone);

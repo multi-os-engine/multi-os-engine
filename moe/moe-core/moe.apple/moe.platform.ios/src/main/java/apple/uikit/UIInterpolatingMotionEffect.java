@@ -70,6 +70,7 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     @Selector("alloc")
     public static native UIInterpolatingMotionEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIInterpolatingMotionEffect allocWithZone(VoidPtr zone);

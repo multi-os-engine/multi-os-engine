@@ -45,6 +45,7 @@ public class QLPreviewSceneOptions extends NSObject {
     @Selector("alloc")
     public static native QLPreviewSceneOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLPreviewSceneOptions allocWithZone(VoidPtr zone);

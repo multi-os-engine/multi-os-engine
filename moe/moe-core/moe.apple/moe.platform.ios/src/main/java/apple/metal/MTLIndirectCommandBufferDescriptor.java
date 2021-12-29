@@ -50,6 +50,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     @Selector("alloc")
     public static native MTLIndirectCommandBufferDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLIndirectCommandBufferDescriptor allocWithZone(VoidPtr zone);

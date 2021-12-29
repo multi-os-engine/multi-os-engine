@@ -47,6 +47,7 @@ public class HKWorkoutRoute extends HKSeriesSample {
     @Selector("alloc")
     public static native HKWorkoutRoute alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWorkoutRoute allocWithZone(VoidPtr zone);

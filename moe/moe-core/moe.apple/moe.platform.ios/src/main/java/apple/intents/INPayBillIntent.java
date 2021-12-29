@@ -47,6 +47,7 @@ public class INPayBillIntent extends INIntent {
     @Selector("alloc")
     public static native INPayBillIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPayBillIntent allocWithZone(VoidPtr zone);

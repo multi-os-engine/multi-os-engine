@@ -64,6 +64,7 @@ public class CBPeer extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CBPeer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBPeer allocWithZone(VoidPtr zone);

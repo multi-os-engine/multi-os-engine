@@ -70,6 +70,7 @@ public class PKPass extends PKObject {
     @Selector("alloc")
     public static native PKPass alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPass allocWithZone(VoidPtr zone);

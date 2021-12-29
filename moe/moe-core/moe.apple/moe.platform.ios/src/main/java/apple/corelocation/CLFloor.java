@@ -72,6 +72,7 @@ public class CLFloor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CLFloor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLFloor allocWithZone(VoidPtr zone);

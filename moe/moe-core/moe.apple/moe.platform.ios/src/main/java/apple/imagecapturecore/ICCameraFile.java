@@ -58,6 +58,7 @@ public class ICCameraFile extends ICCameraItem {
     @Selector("alloc")
     public static native ICCameraFile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ICCameraFile allocWithZone(VoidPtr zone);

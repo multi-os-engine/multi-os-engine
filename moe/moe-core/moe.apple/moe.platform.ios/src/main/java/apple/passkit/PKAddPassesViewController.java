@@ -66,6 +66,7 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("alloc")
     public static native PKAddPassesViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddPassesViewController allocWithZone(VoidPtr zone);

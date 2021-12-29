@@ -54,6 +54,7 @@ public class MPSCNNUpsamplingNearestGradient extends MPSCNNUpsamplingGradient {
     @Selector("alloc")
     public static native MPSCNNUpsamplingNearestGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingNearestGradient allocWithZone(VoidPtr zone);

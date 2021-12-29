@@ -19,4 +19,5 @@ public final class CHIPErrorCode {
     @Generated @NInt public static final long ErrorCodeWrongAddressType = 0x0000000000000007L;
     @Generated @NInt public static final long ErrorCodeIntegrityCheckFailed = 0x0000000000000008L;
     @Generated @NInt public static final long ErrorCodeDuplicateExists = 0x0000000000000009L;
+    @Generated @NInt public static final long ErrorCodeUnsupportedAttribute = 0x000000000000000AL;
 }

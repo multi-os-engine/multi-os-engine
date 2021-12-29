@@ -70,6 +70,7 @@ public class MPSCNNNeuronSigmoid extends MPSCNNNeuron {
     @Selector("alloc")
     public static native MPSCNNNeuronSigmoid alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronSigmoid allocWithZone(VoidPtr zone);

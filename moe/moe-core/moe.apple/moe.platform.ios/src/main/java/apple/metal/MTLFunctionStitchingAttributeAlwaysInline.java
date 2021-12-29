@@ -51,6 +51,7 @@ public class MTLFunctionStitchingAttributeAlwaysInline extends NSObject implemen
     @Selector("alloc")
     public static native MTLFunctionStitchingAttributeAlwaysInline alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingAttributeAlwaysInline allocWithZone(VoidPtr zone);

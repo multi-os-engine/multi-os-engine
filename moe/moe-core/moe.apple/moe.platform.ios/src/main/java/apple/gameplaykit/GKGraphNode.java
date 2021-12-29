@@ -67,6 +67,7 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native GKGraphNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGraphNode allocWithZone(VoidPtr zone);

@@ -73,6 +73,7 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native NEIPv4Settings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEIPv4Settings allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
     @Selector("alloc")
     public static native NFCISO15693ReadMultipleBlocksConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCISO15693ReadMultipleBlocksConfiguration allocWithZone(VoidPtr zone);

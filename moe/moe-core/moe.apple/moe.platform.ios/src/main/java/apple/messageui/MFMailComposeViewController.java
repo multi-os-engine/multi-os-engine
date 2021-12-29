@@ -79,6 +79,7 @@ public class MFMailComposeViewController extends UINavigationController {
     @Selector("alloc")
     public static native MFMailComposeViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MFMailComposeViewController allocWithZone(VoidPtr zone);

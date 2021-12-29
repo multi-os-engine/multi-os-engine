@@ -67,6 +67,7 @@ public class MIDINetworkConnection extends NSObject {
     @Selector("alloc")
     public static native MIDINetworkConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDINetworkConnection allocWithZone(VoidPtr zone);

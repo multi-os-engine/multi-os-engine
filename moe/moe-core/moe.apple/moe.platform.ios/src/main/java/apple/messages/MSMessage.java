@@ -74,6 +74,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native MSMessage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSMessage allocWithZone(VoidPtr zone);

@@ -49,6 +49,7 @@ public class ARPointCloud extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ARPointCloud alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARPointCloud allocWithZone(VoidPtr zone);

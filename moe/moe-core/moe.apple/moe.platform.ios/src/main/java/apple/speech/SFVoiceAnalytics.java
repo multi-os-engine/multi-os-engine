@@ -53,6 +53,7 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native SFVoiceAnalytics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFVoiceAnalytics allocWithZone(VoidPtr zone);

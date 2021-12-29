@@ -51,6 +51,7 @@ public class MPSCNNNeuronGradientNode extends MPSNNGradientFilterNode {
     @Selector("alloc")
     public static native MPSCNNNeuronGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronGradientNode allocWithZone(VoidPtr zone);

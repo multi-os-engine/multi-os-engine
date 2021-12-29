@@ -3437,6 +3437,7 @@ public final class Security {
     @CVariable()
     public static native CFStringRef kSecUseOperationPrompt();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kSecUseNoAuthenticationUI();

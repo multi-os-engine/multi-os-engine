@@ -66,6 +66,7 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native INPersonHandle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPersonHandle allocWithZone(VoidPtr zone);

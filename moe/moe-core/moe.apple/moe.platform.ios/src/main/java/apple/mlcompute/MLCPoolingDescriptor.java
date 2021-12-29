@@ -53,6 +53,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCPoolingDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCPoolingDescriptor allocWithZone(VoidPtr zone);

@@ -40,6 +40,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -63,6 +64,7 @@ public class MPTimedMetadata extends NSObject {
     @Selector("alloc")
     public static native MPTimedMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPTimedMetadata allocWithZone(VoidPtr zone);

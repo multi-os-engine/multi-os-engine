@@ -48,6 +48,7 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
     @Selector("alloc")
     public static native MPSNNComparisonNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNComparisonNode allocWithZone(VoidPtr zone);

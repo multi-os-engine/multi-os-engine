@@ -68,6 +68,7 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native GKDecisionTree alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKDecisionTree allocWithZone(VoidPtr zone);

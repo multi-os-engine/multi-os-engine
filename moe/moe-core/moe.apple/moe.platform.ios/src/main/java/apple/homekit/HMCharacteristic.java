@@ -69,6 +69,7 @@ public class HMCharacteristic extends NSObject {
     @Selector("alloc")
     public static native HMCharacteristic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCharacteristic allocWithZone(VoidPtr zone);

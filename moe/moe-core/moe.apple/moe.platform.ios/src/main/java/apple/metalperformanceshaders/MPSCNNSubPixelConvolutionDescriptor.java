@@ -73,6 +73,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
     @Selector("alloc")
     public static native MPSCNNSubPixelConvolutionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNSubPixelConvolutionDescriptor allocWithZone(VoidPtr zone);

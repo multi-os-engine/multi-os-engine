@@ -69,6 +69,7 @@ public class SLRequest extends NSObject {
     @Selector("alloc")
     public static native SLRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SLRequest allocWithZone(VoidPtr zone);

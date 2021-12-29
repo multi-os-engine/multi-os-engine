@@ -54,6 +54,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPListSection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPListSection allocWithZone(VoidPtr zone);

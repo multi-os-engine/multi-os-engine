@@ -61,6 +61,7 @@ public class MKRouteStep extends NSObject {
     @Selector("alloc")
     public static native MKRouteStep alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKRouteStep allocWithZone(VoidPtr zone);

@@ -56,6 +56,7 @@ public class MPSNNInitialGradientNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNInitialGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNInitialGradientNode allocWithZone(VoidPtr zone);

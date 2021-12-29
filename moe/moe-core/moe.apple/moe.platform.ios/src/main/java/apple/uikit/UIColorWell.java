@@ -60,6 +60,7 @@ public class UIColorWell extends UIControl {
     @Selector("alloc")
     public static native UIColorWell alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIColorWell allocWithZone(VoidPtr zone);

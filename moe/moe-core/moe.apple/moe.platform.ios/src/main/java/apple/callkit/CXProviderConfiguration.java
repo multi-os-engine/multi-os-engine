@@ -65,6 +65,7 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CXProviderConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXProviderConfiguration allocWithZone(VoidPtr zone);

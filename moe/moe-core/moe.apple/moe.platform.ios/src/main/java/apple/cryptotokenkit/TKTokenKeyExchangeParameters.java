@@ -49,6 +49,7 @@ public class TKTokenKeyExchangeParameters extends NSObject {
     @Selector("alloc")
     public static native TKTokenKeyExchangeParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenKeyExchangeParameters allocWithZone(VoidPtr zone);

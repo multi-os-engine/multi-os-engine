@@ -50,6 +50,7 @@ public class GCXboxGamepad extends GCExtendedGamepad {
     @Selector("alloc")
     public static native GCXboxGamepad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCXboxGamepad allocWithZone(VoidPtr zone);

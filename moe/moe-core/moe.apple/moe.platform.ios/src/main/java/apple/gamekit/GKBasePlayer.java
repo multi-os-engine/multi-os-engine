@@ -61,6 +61,7 @@ public class GKBasePlayer extends NSObject {
     @Selector("alloc")
     public static native GKBasePlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKBasePlayer allocWithZone(VoidPtr zone);

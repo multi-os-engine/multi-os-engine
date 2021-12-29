@@ -55,6 +55,7 @@ public class NEAppPushProvider extends NEProvider {
     @Selector("alloc")
     public static native NEAppPushProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEAppPushProvider allocWithZone(VoidPtr zone);

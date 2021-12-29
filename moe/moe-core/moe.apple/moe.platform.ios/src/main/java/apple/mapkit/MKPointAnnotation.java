@@ -64,6 +64,7 @@ public class MKPointAnnotation extends MKShape implements MKGeoJSONObject {
     @Selector("alloc")
     public static native MKPointAnnotation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKPointAnnotation allocWithZone(VoidPtr zone);

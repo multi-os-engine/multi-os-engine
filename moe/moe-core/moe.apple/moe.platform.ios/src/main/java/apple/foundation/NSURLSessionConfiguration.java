@@ -74,6 +74,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSURLSessionConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionConfiguration allocWithZone(VoidPtr zone);

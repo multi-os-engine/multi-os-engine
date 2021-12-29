@@ -56,6 +56,7 @@ public class CLLocationSourceInformation extends NSObject implements NSCopying, 
     @Selector("alloc")
     public static native CLLocationSourceInformation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLLocationSourceInformation allocWithZone(VoidPtr zone);

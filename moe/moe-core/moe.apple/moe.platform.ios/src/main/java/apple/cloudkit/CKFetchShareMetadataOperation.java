@@ -71,6 +71,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
     @Selector("alloc")
     public static native CKFetchShareMetadataOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchShareMetadataOperation allocWithZone(VoidPtr zone);

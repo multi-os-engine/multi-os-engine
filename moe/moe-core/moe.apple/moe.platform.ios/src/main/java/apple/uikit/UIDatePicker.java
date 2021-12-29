@@ -80,6 +80,7 @@ public class UIDatePicker extends UIControl implements NSCoding {
     @Selector("alloc")
     public static native UIDatePicker alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDatePicker allocWithZone(VoidPtr zone);

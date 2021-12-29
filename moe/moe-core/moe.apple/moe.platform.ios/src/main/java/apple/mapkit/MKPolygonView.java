@@ -82,6 +82,7 @@ public class MKPolygonView extends MKOverlayPathView {
     @Selector("alloc")
     public static native MKPolygonView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKPolygonView allocWithZone(VoidPtr zone);

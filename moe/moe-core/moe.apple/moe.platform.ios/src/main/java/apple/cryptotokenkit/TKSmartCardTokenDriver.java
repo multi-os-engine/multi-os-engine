@@ -48,6 +48,7 @@ public class TKSmartCardTokenDriver extends TKTokenDriver {
     @Selector("alloc")
     public static native TKSmartCardTokenDriver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardTokenDriver allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class PKInkingTool extends PKTool {
     @Selector("alloc")
     public static native PKInkingTool alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKInkingTool allocWithZone(VoidPtr zone);

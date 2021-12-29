@@ -45,6 +45,7 @@ public class GKLeaderboardScore extends NSObject {
     @Selector("alloc")
     public static native GKLeaderboardScore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKLeaderboardScore allocWithZone(VoidPtr zone);

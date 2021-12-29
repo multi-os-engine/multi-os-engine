@@ -49,6 +49,7 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
     @Selector("alloc")
     public static native HMMutableCharacteristicThresholdRangeEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMMutableCharacteristicThresholdRangeEvent allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class PHCollection extends PHObject {
     @Selector("alloc")
     public static native PHCollection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHCollection allocWithZone(VoidPtr zone);

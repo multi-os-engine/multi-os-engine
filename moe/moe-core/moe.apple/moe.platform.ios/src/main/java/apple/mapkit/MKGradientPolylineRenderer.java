@@ -48,6 +48,7 @@ public class MKGradientPolylineRenderer extends MKPolylineRenderer {
     @Selector("alloc")
     public static native MKGradientPolylineRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKGradientPolylineRenderer allocWithZone(VoidPtr zone);

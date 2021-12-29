@@ -70,6 +70,7 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     @Selector("alloc")
     public static native INRestaurantReservationBooking alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRestaurantReservationBooking allocWithZone(VoidPtr zone);

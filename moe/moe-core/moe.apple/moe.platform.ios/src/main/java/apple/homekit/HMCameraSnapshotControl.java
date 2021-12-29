@@ -66,6 +66,7 @@ public class HMCameraSnapshotControl extends HMCameraControl {
     @Selector("alloc")
     public static native HMCameraSnapshotControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCameraSnapshotControl allocWithZone(VoidPtr zone);

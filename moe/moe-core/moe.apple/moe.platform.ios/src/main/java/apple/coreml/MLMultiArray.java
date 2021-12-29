@@ -56,6 +56,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLMultiArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLMultiArray allocWithZone(VoidPtr zone);

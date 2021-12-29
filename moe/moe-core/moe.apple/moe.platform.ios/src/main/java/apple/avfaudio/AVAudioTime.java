@@ -68,6 +68,7 @@ public class AVAudioTime extends NSObject {
     @Selector("alloc")
     public static native AVAudioTime alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioTime allocWithZone(VoidPtr zone);

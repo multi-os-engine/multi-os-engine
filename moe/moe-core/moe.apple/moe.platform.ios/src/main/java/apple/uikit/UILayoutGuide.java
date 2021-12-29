@@ -72,6 +72,7 @@ public class UILayoutGuide extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native UILayoutGuide alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILayoutGuide allocWithZone(VoidPtr zone);

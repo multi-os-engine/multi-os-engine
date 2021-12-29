@@ -74,6 +74,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
     @Selector("alloc")
     public static native CNContactFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactFormatter allocWithZone(VoidPtr zone);

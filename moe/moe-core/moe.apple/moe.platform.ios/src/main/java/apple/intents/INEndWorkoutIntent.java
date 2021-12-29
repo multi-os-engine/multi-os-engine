@@ -63,6 +63,7 @@ public class INEndWorkoutIntent extends INIntent {
     @Selector("alloc")
     public static native INEndWorkoutIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INEndWorkoutIntent allocWithZone(VoidPtr zone);

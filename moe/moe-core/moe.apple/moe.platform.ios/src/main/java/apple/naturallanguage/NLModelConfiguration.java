@@ -54,6 +54,7 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native NLModelConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NLModelConfiguration allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class PHAssetResource extends NSObject {
     @Selector("alloc")
     public static native PHAssetResource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHAssetResource allocWithZone(VoidPtr zone);

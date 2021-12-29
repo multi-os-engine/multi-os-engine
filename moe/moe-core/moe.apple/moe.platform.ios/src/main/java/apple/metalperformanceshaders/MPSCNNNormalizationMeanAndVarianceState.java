@@ -56,6 +56,7 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     @Selector("alloc")
     public static native MPSCNNNormalizationMeanAndVarianceState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNormalizationMeanAndVarianceState allocWithZone(VoidPtr zone);

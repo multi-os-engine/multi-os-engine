@@ -71,6 +71,7 @@ public class UIApplication extends UIResponder {
     @Selector("alloc")
     public static native UIApplication alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIApplication allocWithZone(VoidPtr zone);

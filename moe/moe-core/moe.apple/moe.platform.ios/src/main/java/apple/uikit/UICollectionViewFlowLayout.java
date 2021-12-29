@@ -66,6 +66,7 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Selector("alloc")
     public static native UICollectionViewFlowLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewFlowLayout allocWithZone(VoidPtr zone);

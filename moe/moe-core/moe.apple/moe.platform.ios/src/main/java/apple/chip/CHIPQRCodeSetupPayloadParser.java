@@ -48,6 +48,7 @@ public class CHIPQRCodeSetupPayloadParser extends NSObject {
     @Selector("alloc")
     public static native CHIPQRCodeSetupPayloadParser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPQRCodeSetupPayloadParser allocWithZone(VoidPtr zone);

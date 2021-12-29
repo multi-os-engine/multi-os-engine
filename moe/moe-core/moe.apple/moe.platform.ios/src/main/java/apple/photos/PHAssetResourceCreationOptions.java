@@ -63,6 +63,7 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     @Selector("alloc")
     public static native PHAssetResourceCreationOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHAssetResourceCreationOptions allocWithZone(VoidPtr zone);

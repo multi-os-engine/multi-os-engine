@@ -73,6 +73,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Selector("alloc")
     public static native HKSourceRevision alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKSourceRevision allocWithZone(VoidPtr zone);

@@ -86,6 +86,7 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
     @Selector("alloc")
     public static native MPSCNNPoolingAverageGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingAverageGradient allocWithZone(VoidPtr zone);

@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * callbacks to the GKPeerPickerController delegate
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

@@ -67,6 +67,7 @@ public class EKEvent extends EKCalendarItem {
     @Selector("alloc")
     public static native EKEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKEvent allocWithZone(VoidPtr zone);

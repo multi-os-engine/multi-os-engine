@@ -48,6 +48,7 @@ public class MPSNNDivisionNode extends MPSNNBinaryArithmeticNode {
     @Selector("alloc")
     public static native MPSNNDivisionNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNDivisionNode allocWithZone(VoidPtr zone);

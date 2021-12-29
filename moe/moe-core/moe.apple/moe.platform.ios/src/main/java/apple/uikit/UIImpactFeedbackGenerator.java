@@ -65,6 +65,7 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
     @Selector("alloc")
     public static native UIImpactFeedbackGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIImpactFeedbackGenerator allocWithZone(VoidPtr zone);

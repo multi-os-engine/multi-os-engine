@@ -50,6 +50,7 @@ public class UITabBarItemAppearance extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native UITabBarItemAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITabBarItemAppearance allocWithZone(VoidPtr zone);

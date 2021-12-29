@@ -76,6 +76,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Selector("alloc")
     public static native CLLocation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLLocation allocWithZone(VoidPtr zone);

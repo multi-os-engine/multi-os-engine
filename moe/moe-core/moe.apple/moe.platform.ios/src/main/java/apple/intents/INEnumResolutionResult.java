@@ -45,6 +45,7 @@ public class INEnumResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INEnumResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INEnumResolutionResult allocWithZone(VoidPtr zone);

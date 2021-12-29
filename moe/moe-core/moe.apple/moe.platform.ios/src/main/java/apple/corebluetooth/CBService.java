@@ -66,6 +66,7 @@ public class CBService extends CBAttribute {
     @Selector("alloc")
     public static native CBService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBService allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     @Selector("alloc")
     public static native NSURLSessionTaskTransactionMetrics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionTaskTransactionMetrics allocWithZone(VoidPtr zone);

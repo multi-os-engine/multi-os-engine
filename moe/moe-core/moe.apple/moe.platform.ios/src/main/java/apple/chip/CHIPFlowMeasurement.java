@@ -1,12 +1,11 @@
-package apple.homekit;
+package apple.chip;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
-import apple.foundation.NSExtensionContext;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.protocol.NSExtensionRequestHandling;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -26,17 +25,20 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * Cluster Flow Measurement
+ */
 @Generated
-@Library("HomeKit")
+@Library("CHIP")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HMCHIPServiceRequestHandler extends NSObject implements NSExtensionRequestHandling {
+public class CHIPFlowMeasurement extends CHIPCluster {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected HMCHIPServiceRequestHandler(Pointer peer) {
+    protected CHIPFlowMeasurement(Pointer peer) {
         super(peer);
     }
 
@@ -47,19 +49,16 @@ public class HMCHIPServiceRequestHandler extends NSObject implements NSExtension
     @Generated
     @Owned
     @Selector("alloc")
-    public static native HMCHIPServiceRequestHandler alloc();
+    public static native CHIPFlowMeasurement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
-    public static native HMCHIPServiceRequestHandler allocWithZone(VoidPtr zone);
+    public static native CHIPFlowMeasurement allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("beginRequestWithExtensionContext:")
-    public native void beginRequestWithExtensionContext(NSExtensionContext context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -79,25 +78,6 @@ public class HMCHIPServiceRequestHandler extends NSObject implements NSExtension
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
-    /**
-     * When this method is invoked, configure the accessory with user selected attributes.
-     *
-     * @param accessoryName The user given name for the accessory.
-     * @param accessoryRoom The user selected room for the accessory.
-     * @param completion    Invoke the completion handler with an optional error after configuration.
-     */
-    @Generated
-    @Selector("configureAccessoryWithName:room:completion:")
-    public native void configureAccessoryWithNameRoomCompletion(String accessoryName, HMCHIPServiceRoom accessoryRoom,
-            @ObjCBlock(name = "call_configureAccessoryWithNameRoomCompletion") Block_configureAccessoryWithNameRoomCompletion completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_configureAccessoryWithNameRoomCompletion {
-        @Generated
-        void call_configureAccessoryWithNameRoomCompletion(NSError arg0);
-    }
-
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
@@ -106,24 +86,6 @@ public class HMCHIPServiceRequestHandler extends NSObject implements NSExtension
     @Selector("description")
     public static native String description_static();
 
-    /**
-     * Use this method to vend the rooms that correspond to a given home to accessory setup. iOS will issue this request before presenting the "Select Room" card.
-     *
-     * @param home       The home for which iOS is requesting rooms.
-     * @param completion Invoke the completion block with the requested rooms or an optional error.
-     */
-    @Generated
-    @Selector("fetchRoomsInHome:completion:")
-    public native void fetchRoomsInHomeCompletion(HMCHIPServiceHome home,
-            @ObjCBlock(name = "call_fetchRoomsInHomeCompletion") Block_fetchRoomsInHomeCompletion completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_fetchRoomsInHomeCompletion {
-        @Generated
-        void call_fetchRoomsInHomeCompletion(NSArray<? extends HMCHIPServiceRoom> arg0, NSError arg1);
-    }
-
     @Generated
     @Selector("hash")
     @NUInt
@@ -131,7 +93,11 @@ public class HMCHIPServiceRequestHandler extends NSObject implements NSExtension
 
     @Generated
     @Selector("init")
-    public native HMCHIPServiceRequestHandler init();
+    public native CHIPFlowMeasurement init();
+
+    @Generated
+    @Selector("initWithDevice:endpoint:queue:")
+    public native CHIPFlowMeasurement initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,24 +123,54 @@ public class HMCHIPServiceRequestHandler extends NSObject implements NSExtension
     @Generated
     @Owned
     @Selector("new")
-    public static native HMCHIPServiceRequestHandler new_objc();
+    public static native CHIPFlowMeasurement new_objc();
 
-    /**
-     * When this method is invoked, pair with the given accessory payload.
-     *
-     * @param onboardingPayload The onboarding payload your CHIP stack will use to pair with the accessory.
-     * @param completion        Invoke the completion handler with an optional error after pairing.
-     */
     @Generated
-    @Selector("pairAccessoryInHome:onboardingPayload:completion:")
-    public native void pairAccessoryInHomeOnboardingPayloadCompletion(HMCHIPServiceHome home, String onboardingPayload,
-            @ObjCBlock(name = "call_pairAccessoryInHomeOnboardingPayloadCompletion") Block_pairAccessoryInHomeOnboardingPayloadCompletion completion);
+    @Selector("readAttributeClusterRevisionWithResponseHandler:")
+    public native void readAttributeClusterRevisionWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeClusterRevisionWithResponseHandler") Block_readAttributeClusterRevisionWithResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_pairAccessoryInHomeOnboardingPayloadCompletion {
+    public interface Block_readAttributeClusterRevisionWithResponseHandler {
         @Generated
-        void call_pairAccessoryInHomeOnboardingPayloadCompletion(NSError arg0);
+        void call_readAttributeClusterRevisionWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeMaxMeasuredValueWithResponseHandler:")
+    public native void readAttributeMaxMeasuredValueWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeMaxMeasuredValueWithResponseHandler") Block_readAttributeMaxMeasuredValueWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMaxMeasuredValueWithResponseHandler {
+        @Generated
+        void call_readAttributeMaxMeasuredValueWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeMeasuredValueWithResponseHandler:")
+    public native void readAttributeMeasuredValueWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeMeasuredValueWithResponseHandler") Block_readAttributeMeasuredValueWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMeasuredValueWithResponseHandler {
+        @Generated
+        void call_readAttributeMeasuredValueWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeMinMeasuredValueWithResponseHandler:")
+    public native void readAttributeMinMeasuredValueWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeMinMeasuredValueWithResponseHandler") Block_readAttributeMinMeasuredValueWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeMinMeasuredValueWithResponseHandler {
+        @Generated
+        void call_readAttributeMinMeasuredValueWithResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 
     @Generated

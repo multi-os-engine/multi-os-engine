@@ -49,6 +49,7 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     @Selector("alloc")
     public static native MPSCNNConvolutionTransposeNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionTransposeNode allocWithZone(VoidPtr zone);

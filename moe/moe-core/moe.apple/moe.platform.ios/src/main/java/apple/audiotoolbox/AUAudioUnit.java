@@ -120,6 +120,7 @@ public class AUAudioUnit extends NSObject {
     @Selector("alloc")
     public static native AUAudioUnit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUAudioUnit allocWithZone(VoidPtr zone);

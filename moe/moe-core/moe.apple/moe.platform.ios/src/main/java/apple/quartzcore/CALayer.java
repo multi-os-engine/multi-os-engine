@@ -82,6 +82,7 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     @Selector("alloc")
     public static native CALayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CALayer allocWithZone(VoidPtr zone);

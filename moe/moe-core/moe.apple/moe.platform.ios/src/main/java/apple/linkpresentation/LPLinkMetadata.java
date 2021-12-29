@@ -63,6 +63,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native LPLinkMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native LPLinkMetadata allocWithZone(VoidPtr zone);

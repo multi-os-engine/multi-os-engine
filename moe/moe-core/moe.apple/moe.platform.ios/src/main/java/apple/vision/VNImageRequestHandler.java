@@ -61,6 +61,7 @@ public class VNImageRequestHandler extends NSObject {
     @Selector("alloc")
     public static native VNImageRequestHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNImageRequestHandler allocWithZone(VoidPtr zone);

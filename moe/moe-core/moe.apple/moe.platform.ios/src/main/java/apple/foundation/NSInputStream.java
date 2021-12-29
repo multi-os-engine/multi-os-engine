@@ -66,6 +66,7 @@ public class NSInputStream extends NSStream {
     @Selector("alloc")
     public static native NSInputStream alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSInputStream allocWithZone(VoidPtr zone);

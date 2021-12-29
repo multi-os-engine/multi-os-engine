@@ -61,6 +61,7 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Selector("alloc")
     public static native AVPlayerMediaSelectionCriteria alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerMediaSelectionCriteria allocWithZone(VoidPtr zone);

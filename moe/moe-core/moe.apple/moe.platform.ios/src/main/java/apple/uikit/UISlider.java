@@ -77,6 +77,7 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("alloc")
     public static native UISlider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISlider allocWithZone(VoidPtr zone);

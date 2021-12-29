@@ -74,6 +74,7 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     @Selector("alloc")
     public static native CKNotificationInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKNotificationInfo allocWithZone(VoidPtr zone);

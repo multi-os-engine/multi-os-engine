@@ -51,6 +51,7 @@ public class CHIPGeneralCommissioning extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPGeneralCommissioning alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPGeneralCommissioning allocWithZone(VoidPtr zone);
@@ -121,7 +122,7 @@ public class CHIPGeneralCommissioning extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPGeneralCommissioning initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPGeneralCommissioning initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated
@@ -175,18 +176,6 @@ public class CHIPGeneralCommissioning extends CHIPCluster {
     }
 
     @Generated
-    @Selector("readAttributeFabricIdWithResponseHandler:")
-    public native void readAttributeFabricIdWithResponseHandler(
-            @ObjCBlock(name = "call_readAttributeFabricIdWithResponseHandler") Block_readAttributeFabricIdWithResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_readAttributeFabricIdWithResponseHandler {
-        @Generated
-        void call_readAttributeFabricIdWithResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
@@ -231,5 +220,17 @@ public class CHIPGeneralCommissioning extends CHIPCluster {
     public interface Block_writeAttributeBreadcrumbWithValueResponseHandler {
         @Generated
         void call_writeAttributeBreadcrumbWithValueResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeBasicCommissioningInfoListWithResponseHandler:")
+    public native void readAttributeBasicCommissioningInfoListWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeBasicCommissioningInfoListWithResponseHandler") Block_readAttributeBasicCommissioningInfoListWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeBasicCommissioningInfoListWithResponseHandler {
+        @Generated
+        void call_readAttributeBasicCommissioningInfoListWithResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 }

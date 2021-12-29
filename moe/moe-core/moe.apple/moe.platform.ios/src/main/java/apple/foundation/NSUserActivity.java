@@ -76,6 +76,7 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     @Selector("alloc")
     public static native NSUserActivity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUserActivity allocWithZone(VoidPtr zone);

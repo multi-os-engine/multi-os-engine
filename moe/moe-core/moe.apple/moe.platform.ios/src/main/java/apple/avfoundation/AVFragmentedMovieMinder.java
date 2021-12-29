@@ -63,6 +63,7 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     @Selector("alloc")
     public static native AVFragmentedMovieMinder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVFragmentedMovieMinder allocWithZone(VoidPtr zone);

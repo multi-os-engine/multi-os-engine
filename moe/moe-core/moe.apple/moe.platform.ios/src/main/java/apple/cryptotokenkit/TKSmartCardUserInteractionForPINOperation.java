@@ -71,6 +71,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
     @Selector("alloc")
     public static native TKSmartCardUserInteractionForPINOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardUserInteractionForPINOperation allocWithZone(VoidPtr zone);

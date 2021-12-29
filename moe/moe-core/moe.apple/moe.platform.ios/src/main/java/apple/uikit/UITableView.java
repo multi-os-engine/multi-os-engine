@@ -92,6 +92,7 @@ public class UITableView extends UIScrollView
     @Selector("alloc")
     public static native UITableView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableView allocWithZone(VoidPtr zone);

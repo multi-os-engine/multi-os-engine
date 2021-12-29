@@ -46,6 +46,7 @@ public class NSFileProviderService extends NSObject {
     @Selector("alloc")
     public static native NSFileProviderService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileProviderService allocWithZone(VoidPtr zone);

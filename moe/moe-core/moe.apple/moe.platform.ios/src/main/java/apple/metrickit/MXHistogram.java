@@ -55,6 +55,7 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXHistogram<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXHistogram<?> allocWithZone(VoidPtr zone);

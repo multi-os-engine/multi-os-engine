@@ -45,6 +45,7 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
     @Selector("alloc")
     public static native NSSecureUnarchiveFromDataTransformer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSSecureUnarchiveFromDataTransformer allocWithZone(VoidPtr zone);

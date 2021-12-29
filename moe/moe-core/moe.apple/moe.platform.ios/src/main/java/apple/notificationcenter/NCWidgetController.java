@@ -67,6 +67,7 @@ public class NCWidgetController extends NSObject {
     @Selector("alloc")
     public static native NCWidgetController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NCWidgetController allocWithZone(VoidPtr zone);

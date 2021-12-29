@@ -45,6 +45,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptorArray extends NSObjec
     @Selector("alloc")
     public static native MTLComputePassSampleBufferAttachmentDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLComputePassSampleBufferAttachmentDescriptorArray allocWithZone(VoidPtr zone);

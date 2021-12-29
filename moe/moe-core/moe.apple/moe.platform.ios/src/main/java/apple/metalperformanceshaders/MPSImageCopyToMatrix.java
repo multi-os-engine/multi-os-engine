@@ -63,6 +63,7 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     @Selector("alloc")
     public static native MPSImageCopyToMatrix alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageCopyToMatrix allocWithZone(VoidPtr zone);

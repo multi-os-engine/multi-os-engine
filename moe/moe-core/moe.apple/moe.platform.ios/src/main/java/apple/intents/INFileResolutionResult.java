@@ -45,6 +45,7 @@ public class INFileResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INFileResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INFileResolutionResult allocWithZone(VoidPtr zone);

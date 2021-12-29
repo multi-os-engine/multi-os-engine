@@ -59,6 +59,7 @@ public class ARFaceGeometry extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native ARFaceGeometry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARFaceGeometry allocWithZone(VoidPtr zone);

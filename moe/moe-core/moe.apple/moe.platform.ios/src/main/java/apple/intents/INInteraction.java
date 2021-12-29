@@ -74,6 +74,7 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("alloc")
     public static native INInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INInteraction allocWithZone(VoidPtr zone);

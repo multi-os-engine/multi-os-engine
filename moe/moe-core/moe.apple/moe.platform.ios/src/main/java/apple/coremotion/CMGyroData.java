@@ -71,6 +71,7 @@ public class CMGyroData extends CMLogItem {
     @Selector("alloc")
     public static native CMGyroData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMGyroData allocWithZone(VoidPtr zone);

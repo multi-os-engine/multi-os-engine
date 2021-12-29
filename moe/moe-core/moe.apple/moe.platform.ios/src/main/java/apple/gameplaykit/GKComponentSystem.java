@@ -69,6 +69,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     @Selector("alloc")
     public static native GKComponentSystem<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKComponentSystem<?> allocWithZone(VoidPtr zone);

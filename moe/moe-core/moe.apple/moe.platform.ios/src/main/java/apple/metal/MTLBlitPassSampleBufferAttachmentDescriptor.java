@@ -48,6 +48,7 @@ public class MTLBlitPassSampleBufferAttachmentDescriptor extends NSObject implem
     @Selector("alloc")
     public static native MTLBlitPassSampleBufferAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLBlitPassSampleBufferAttachmentDescriptor allocWithZone(VoidPtr zone);

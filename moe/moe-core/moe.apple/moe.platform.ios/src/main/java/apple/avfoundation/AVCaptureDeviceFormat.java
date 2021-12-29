@@ -74,6 +74,7 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Selector("alloc")
     public static native AVCaptureDeviceFormat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureDeviceFormat allocWithZone(VoidPtr zone);

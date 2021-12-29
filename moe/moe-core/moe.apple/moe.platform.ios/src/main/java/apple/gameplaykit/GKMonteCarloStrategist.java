@@ -73,6 +73,7 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Selector("alloc")
     public static native GKMonteCarloStrategist alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKMonteCarloStrategist allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class NFCNDEFMessage extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NFCNDEFMessage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCNDEFMessage allocWithZone(VoidPtr zone);

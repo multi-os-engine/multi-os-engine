@@ -49,6 +49,7 @@ public class CPTabBarTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPTabBarTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTabBarTemplate allocWithZone(VoidPtr zone);

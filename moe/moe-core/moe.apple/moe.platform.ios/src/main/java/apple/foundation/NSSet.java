@@ -74,6 +74,7 @@ public class NSSet<_ObjectType> extends NSObject
     @Selector("alloc")
     public static native NSSet<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSSet<?> allocWithZone(VoidPtr zone);

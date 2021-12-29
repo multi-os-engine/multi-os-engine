@@ -64,6 +64,7 @@ public class INSendPaymentIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSendPaymentIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendPaymentIntentResponse allocWithZone(VoidPtr zone);

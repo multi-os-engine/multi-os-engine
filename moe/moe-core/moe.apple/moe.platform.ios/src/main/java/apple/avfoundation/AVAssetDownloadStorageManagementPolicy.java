@@ -49,6 +49,7 @@ public class AVAssetDownloadStorageManagementPolicy extends NSObject implements 
     @Selector("alloc")
     public static native AVAssetDownloadStorageManagementPolicy alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetDownloadStorageManagementPolicy allocWithZone(VoidPtr zone);

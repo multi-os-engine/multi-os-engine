@@ -69,6 +69,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKTileGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTileGroup allocWithZone(VoidPtr zone);

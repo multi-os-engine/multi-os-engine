@@ -27,11 +27,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 public final class CFNetDiagnosticStatusValues {
     /**
-     * There is no status, but no error has occured
+     * There is no status, but no error has occurred
      */
     @Generated public static final int NoErr = 0x00000000;
     /**
-     * An error occured that prevented the call from completing
+     * An error occurred that prevented the call from completing
      */
     @Generated public static final int Err = 0xFFFEFC00;
     /**

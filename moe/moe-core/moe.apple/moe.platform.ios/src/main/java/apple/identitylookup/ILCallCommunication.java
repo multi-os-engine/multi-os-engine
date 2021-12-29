@@ -47,6 +47,7 @@ public class ILCallCommunication extends ILCommunication {
     @Selector("alloc")
     public static native ILCallCommunication alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILCallCommunication allocWithZone(VoidPtr zone);

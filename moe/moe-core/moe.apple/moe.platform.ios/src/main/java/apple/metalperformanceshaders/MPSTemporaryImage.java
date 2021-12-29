@@ -167,6 +167,7 @@ public class MPSTemporaryImage extends MPSImage {
     @Selector("alloc")
     public static native MPSTemporaryImage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSTemporaryImage allocWithZone(VoidPtr zone);

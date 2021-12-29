@@ -55,6 +55,7 @@ public class MIDICIResponder extends NSObject {
     @Selector("alloc")
     public static native MIDICIResponder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDICIResponder allocWithZone(VoidPtr zone);

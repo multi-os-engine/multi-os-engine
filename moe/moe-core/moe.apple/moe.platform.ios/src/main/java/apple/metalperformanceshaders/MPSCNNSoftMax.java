@@ -75,6 +75,7 @@ public class MPSCNNSoftMax extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNSoftMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNSoftMax allocWithZone(VoidPtr zone);

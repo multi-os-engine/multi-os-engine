@@ -48,6 +48,7 @@ public class ARSkeleton2D extends ARSkeleton {
     @Selector("alloc")
     public static native ARSkeleton2D alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARSkeleton2D allocWithZone(VoidPtr zone);

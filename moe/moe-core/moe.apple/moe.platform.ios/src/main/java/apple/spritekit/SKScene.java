@@ -80,6 +80,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @Selector("alloc")
     public static native SKScene alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKScene allocWithZone(VoidPtr zone);

@@ -75,6 +75,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SCNProgram alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNProgram allocWithZone(VoidPtr zone);

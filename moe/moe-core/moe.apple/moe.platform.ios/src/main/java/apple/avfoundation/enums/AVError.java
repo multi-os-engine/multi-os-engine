@@ -65,7 +65,7 @@ public final class AVError {
     @Generated @NInt public static final long EncoderNotFound = 0xFFFFFFFFFFFFD1C6L;
     @Generated @NInt public static final long ContentIsNotAuthorized = 0xFFFFFFFFFFFFD1C5L;
     @Generated @NInt public static final long ApplicationIsNotAuthorized = 0xFFFFFFFFFFFFD1C4L;
-    @Generated @NInt public static final long DeviceIsNotAvailableInBackground = 0xFFFFFFFFFFFFD1C3L;
+    @Deprecated @Generated @NInt public static final long DeviceIsNotAvailableInBackground = 0xFFFFFFFFFFFFD1C3L;
     @Generated @NInt public static final long OperationNotSupportedForAsset = 0xFFFFFFFFFFFFD1C2L;
     /**
      * userInfo may contain AVErrorMediaTypeKey & AVErrorMediaSubTypeKey, if available

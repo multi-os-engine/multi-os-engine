@@ -62,6 +62,7 @@ public class UIStoryboardSegue extends NSObject {
     @Selector("alloc")
     public static native UIStoryboardSegue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIStoryboardSegue allocWithZone(VoidPtr zone);

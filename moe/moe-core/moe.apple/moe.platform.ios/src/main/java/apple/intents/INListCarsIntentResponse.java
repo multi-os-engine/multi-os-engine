@@ -48,6 +48,7 @@ public class INListCarsIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INListCarsIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INListCarsIntentResponse allocWithZone(VoidPtr zone);

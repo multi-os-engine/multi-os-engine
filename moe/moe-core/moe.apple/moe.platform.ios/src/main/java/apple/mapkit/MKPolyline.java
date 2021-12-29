@@ -70,6 +70,7 @@ public class MKPolyline extends MKMultiPoint implements MKOverlay, MKGeoJSONObje
     @Selector("alloc")
     public static native MKPolyline alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKPolyline allocWithZone(VoidPtr zone);

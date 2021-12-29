@@ -51,6 +51,7 @@ public class MLCReshapeLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCReshapeLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCReshapeLayer allocWithZone(VoidPtr zone);

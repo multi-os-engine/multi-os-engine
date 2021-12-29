@@ -50,6 +50,7 @@ public class PKAddSecureElementPassViewController extends UIViewController {
     @Selector("alloc")
     public static native PKAddSecureElementPassViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddSecureElementPassViewController allocWithZone(VoidPtr zone);

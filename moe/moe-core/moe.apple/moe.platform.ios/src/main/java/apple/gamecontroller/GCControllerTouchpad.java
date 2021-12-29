@@ -51,6 +51,7 @@ public class GCControllerTouchpad extends GCControllerElement {
     @Selector("alloc")
     public static native GCControllerTouchpad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCControllerTouchpad allocWithZone(VoidPtr zone);

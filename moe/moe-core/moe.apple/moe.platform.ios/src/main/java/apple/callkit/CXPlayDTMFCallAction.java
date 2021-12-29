@@ -64,6 +64,7 @@ public class CXPlayDTMFCallAction extends CXCallAction {
     @Selector("alloc")
     public static native CXPlayDTMFCallAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXPlayDTMFCallAction allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class MPSCNNUpsamplingBilinearGradient extends MPSCNNUpsamplingGradient {
     @Selector("alloc")
     public static native MPSCNNUpsamplingBilinearGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingBilinearGradient allocWithZone(VoidPtr zone);

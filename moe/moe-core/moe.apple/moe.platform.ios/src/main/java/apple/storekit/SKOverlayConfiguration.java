@@ -45,6 +45,7 @@ public class SKOverlayConfiguration extends NSObject {
     @Selector("alloc")
     public static native SKOverlayConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKOverlayConfiguration allocWithZone(VoidPtr zone);

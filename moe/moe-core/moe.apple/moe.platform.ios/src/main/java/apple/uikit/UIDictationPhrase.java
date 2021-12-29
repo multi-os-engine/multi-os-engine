@@ -61,6 +61,7 @@ public class UIDictationPhrase extends NSObject {
     @Selector("alloc")
     public static native UIDictationPhrase alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDictationPhrase allocWithZone(VoidPtr zone);

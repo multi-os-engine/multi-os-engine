@@ -50,6 +50,7 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native UIImageConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIImageConfiguration allocWithZone(VoidPtr zone);

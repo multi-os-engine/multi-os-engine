@@ -50,6 +50,7 @@ public class DDMatchLink extends DDMatch {
     @Selector("alloc")
     public static native DDMatchLink alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchLink allocWithZone(VoidPtr zone);

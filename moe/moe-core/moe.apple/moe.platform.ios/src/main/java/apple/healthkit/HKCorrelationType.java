@@ -72,6 +72,7 @@ public class HKCorrelationType extends HKSampleType {
     @Selector("alloc")
     public static native HKCorrelationType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKCorrelationType allocWithZone(VoidPtr zone);

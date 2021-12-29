@@ -100,6 +100,7 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     @Selector("alloc")
     public static native MPSLSTMDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSLSTMDescriptor allocWithZone(VoidPtr zone);

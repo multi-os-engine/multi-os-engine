@@ -45,6 +45,7 @@ public class AXLiveAudioGraph extends NSObject {
     @Selector("alloc")
     public static native AXLiveAudioGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AXLiveAudioGraph allocWithZone(VoidPtr zone);

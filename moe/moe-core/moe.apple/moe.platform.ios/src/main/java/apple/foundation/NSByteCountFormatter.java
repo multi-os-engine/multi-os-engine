@@ -58,6 +58,7 @@ public class NSByteCountFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSByteCountFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSByteCountFormatter allocWithZone(VoidPtr zone);

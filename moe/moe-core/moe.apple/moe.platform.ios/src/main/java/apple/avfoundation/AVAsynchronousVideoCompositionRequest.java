@@ -70,6 +70,7 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Selector("alloc")
     public static native AVAsynchronousVideoCompositionRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAsynchronousVideoCompositionRequest allocWithZone(VoidPtr zone);

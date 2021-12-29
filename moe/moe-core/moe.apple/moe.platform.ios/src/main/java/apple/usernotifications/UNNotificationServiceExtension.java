@@ -62,6 +62,7 @@ public class UNNotificationServiceExtension extends NSObject {
     @Selector("alloc")
     public static native UNNotificationServiceExtension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationServiceExtension allocWithZone(VoidPtr zone);

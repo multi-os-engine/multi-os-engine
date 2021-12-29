@@ -53,6 +53,7 @@ public class NIConfiguration extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native NIConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NIConfiguration allocWithZone(VoidPtr zone);

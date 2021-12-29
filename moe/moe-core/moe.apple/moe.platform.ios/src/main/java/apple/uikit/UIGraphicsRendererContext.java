@@ -69,6 +69,7 @@ public class UIGraphicsRendererContext extends NSObject {
     @Selector("alloc")
     public static native UIGraphicsRendererContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIGraphicsRendererContext allocWithZone(VoidPtr zone);

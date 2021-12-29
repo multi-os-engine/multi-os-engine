@@ -52,6 +52,7 @@ public class HKSeriesSample extends HKSample {
     @Selector("alloc")
     public static native HKSeriesSample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKSeriesSample allocWithZone(VoidPtr zone);

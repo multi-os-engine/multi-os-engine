@@ -64,6 +64,7 @@ public class VSAccountProviderResponse extends NSObject {
     @Selector("alloc")
     public static native VSAccountProviderResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VSAccountProviderResponse allocWithZone(VoidPtr zone);

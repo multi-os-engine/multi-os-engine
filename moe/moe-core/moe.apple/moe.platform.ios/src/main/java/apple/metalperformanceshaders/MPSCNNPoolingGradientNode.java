@@ -46,6 +46,7 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
     @Selector("alloc")
     public static native MPSCNNPoolingGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingGradientNode allocWithZone(VoidPtr zone);

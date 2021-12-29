@@ -48,6 +48,7 @@ public class PKLassoTool extends PKTool {
     @Selector("alloc")
     public static native PKLassoTool alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKLassoTool allocWithZone(VoidPtr zone);

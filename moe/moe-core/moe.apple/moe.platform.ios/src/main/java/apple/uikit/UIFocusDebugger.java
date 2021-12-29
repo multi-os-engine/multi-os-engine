@@ -52,6 +52,7 @@ public class UIFocusDebugger extends NSObject {
     @Selector("alloc")
     public static native UIFocusDebugger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusDebugger allocWithZone(VoidPtr zone);

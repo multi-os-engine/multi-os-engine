@@ -71,6 +71,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Selector("alloc")
     public static native AVAssetReaderVideoCompositionOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetReaderVideoCompositionOutput allocWithZone(VoidPtr zone);

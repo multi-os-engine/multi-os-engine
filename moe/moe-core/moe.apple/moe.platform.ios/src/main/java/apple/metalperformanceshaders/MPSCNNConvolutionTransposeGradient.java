@@ -57,6 +57,7 @@ public class MPSCNNConvolutionTransposeGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSCNNConvolutionTransposeGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionTransposeGradient allocWithZone(VoidPtr zone);

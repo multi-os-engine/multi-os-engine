@@ -96,6 +96,7 @@ public class MLCTrainingGraph extends MLCGraph {
     @Selector("alloc")
     public static native MLCTrainingGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCTrainingGraph allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
     @Selector("alloc")
     public static native MTLRenderPassAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPassAttachmentDescriptor allocWithZone(VoidPtr zone);

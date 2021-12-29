@@ -48,6 +48,7 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
     @Selector("alloc")
     public static native MPSCNNUpsamplingBilinearGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingBilinearGradientNode allocWithZone(VoidPtr zone);

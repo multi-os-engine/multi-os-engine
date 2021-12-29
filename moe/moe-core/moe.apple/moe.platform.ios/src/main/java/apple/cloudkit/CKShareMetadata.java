@@ -66,6 +66,7 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native CKShareMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKShareMetadata allocWithZone(VoidPtr zone);

@@ -46,6 +46,7 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
     @Selector("alloc")
     public static native MPSCNNFullyConnectedGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNFullyConnectedGradientNode allocWithZone(VoidPtr zone);

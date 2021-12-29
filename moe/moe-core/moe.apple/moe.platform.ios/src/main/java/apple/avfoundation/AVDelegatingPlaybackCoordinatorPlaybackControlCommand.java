@@ -50,6 +50,7 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
     @Selector("alloc")
     public static native AVDelegatingPlaybackCoordinatorPlaybackControlCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVDelegatingPlaybackCoordinatorPlaybackControlCommand allocWithZone(VoidPtr zone);

@@ -46,6 +46,7 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
     @Selector("alloc")
     public static native UIKeyboardLayoutGuide alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIKeyboardLayoutGuide allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class UISheetPresentationControllerDetent extends NSObject {
     @Selector("alloc")
     public static native UISheetPresentationControllerDetent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISheetPresentationControllerDetent allocWithZone(VoidPtr zone);

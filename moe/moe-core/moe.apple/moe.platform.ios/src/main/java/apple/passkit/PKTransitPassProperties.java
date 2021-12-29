@@ -47,6 +47,7 @@ public class PKTransitPassProperties extends PKStoredValuePassProperties {
     @Selector("alloc")
     public static native PKTransitPassProperties alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKTransitPassProperties allocWithZone(VoidPtr zone);

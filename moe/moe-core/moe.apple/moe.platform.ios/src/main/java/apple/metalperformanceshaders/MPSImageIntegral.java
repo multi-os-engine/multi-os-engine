@@ -79,6 +79,7 @@ public class MPSImageIntegral extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageIntegral alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageIntegral allocWithZone(VoidPtr zone);

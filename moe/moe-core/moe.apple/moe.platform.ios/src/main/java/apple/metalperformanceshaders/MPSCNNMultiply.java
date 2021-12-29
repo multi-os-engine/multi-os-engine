@@ -55,6 +55,7 @@ public class MPSCNNMultiply extends MPSCNNArithmetic {
     @Selector("alloc")
     public static native MPSCNNMultiply alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNMultiply allocWithZone(VoidPtr zone);

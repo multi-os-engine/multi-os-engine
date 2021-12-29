@@ -57,6 +57,7 @@ public class MPSNNFilterNode extends NSObject {
     @Selector("alloc")
     public static native MPSNNFilterNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNFilterNode allocWithZone(VoidPtr zone);

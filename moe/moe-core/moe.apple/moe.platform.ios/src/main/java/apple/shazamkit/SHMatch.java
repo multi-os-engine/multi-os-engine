@@ -54,6 +54,7 @@ public class SHMatch extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SHMatch alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHMatch allocWithZone(VoidPtr zone);

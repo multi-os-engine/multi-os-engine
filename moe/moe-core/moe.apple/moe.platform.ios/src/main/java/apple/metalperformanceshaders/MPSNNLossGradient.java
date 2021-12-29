@@ -54,6 +54,7 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Selector("alloc")
     public static native MPSNNLossGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNLossGradient allocWithZone(VoidPtr zone);

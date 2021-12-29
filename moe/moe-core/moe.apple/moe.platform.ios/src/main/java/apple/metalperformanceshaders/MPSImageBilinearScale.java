@@ -55,6 +55,7 @@ public class MPSImageBilinearScale extends MPSImageScale {
     @Selector("alloc")
     public static native MPSImageBilinearScale alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageBilinearScale allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
     @Selector("alloc")
     public static native AVVideoCompositionCoreAnimationTool alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVVideoCompositionCoreAnimationTool allocWithZone(VoidPtr zone);

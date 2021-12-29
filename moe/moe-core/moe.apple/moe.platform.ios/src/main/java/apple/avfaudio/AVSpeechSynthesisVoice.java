@@ -57,6 +57,7 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native AVSpeechSynthesisVoice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSpeechSynthesisVoice allocWithZone(VoidPtr zone);

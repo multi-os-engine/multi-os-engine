@@ -74,6 +74,7 @@ public class HMHome extends NSObject {
     @Selector("alloc")
     public static native HMHome alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMHome allocWithZone(VoidPtr zone);

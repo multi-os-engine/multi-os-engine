@@ -46,6 +46,7 @@ public class MPSCNNInstanceNormalizationGradientNode extends MPSNNGradientFilter
     @Selector("alloc")
     public static native MPSCNNInstanceNormalizationGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNInstanceNormalizationGradientNode allocWithZone(VoidPtr zone);

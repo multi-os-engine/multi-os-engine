@@ -73,6 +73,7 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     @Selector("alloc")
     public static native CNGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNGroup allocWithZone(VoidPtr zone);

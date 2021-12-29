@@ -68,6 +68,7 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native RPSystemBroadcastPickerView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPSystemBroadcastPickerView allocWithZone(VoidPtr zone);

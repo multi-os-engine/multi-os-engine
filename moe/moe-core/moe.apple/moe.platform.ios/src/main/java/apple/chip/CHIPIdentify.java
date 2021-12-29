@@ -51,6 +51,7 @@ public class CHIPIdentify extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPIdentify alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPIdentify allocWithZone(VoidPtr zone);
@@ -119,7 +120,7 @@ public class CHIPIdentify extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPIdentify initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPIdentify initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

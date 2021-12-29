@@ -56,6 +56,7 @@ public class NEDNSProxyManager extends NSObject {
     @Selector("alloc")
     public static native NEDNSProxyManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEDNSProxyManager allocWithZone(VoidPtr zone);

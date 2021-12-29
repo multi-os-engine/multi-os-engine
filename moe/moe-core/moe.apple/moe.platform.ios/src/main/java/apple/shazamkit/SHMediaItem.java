@@ -63,6 +63,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native SHMediaItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHMediaItem allocWithZone(VoidPtr zone);

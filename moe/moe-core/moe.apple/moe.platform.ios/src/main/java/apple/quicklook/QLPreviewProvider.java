@@ -50,6 +50,7 @@ public class QLPreviewProvider extends NSObject implements NSExtensionRequestHan
     @Selector("alloc")
     public static native QLPreviewProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLPreviewProvider allocWithZone(VoidPtr zone);

@@ -73,6 +73,7 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Selector("alloc")
     public static native UIAccessibilityElement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAccessibilityElement allocWithZone(VoidPtr zone);

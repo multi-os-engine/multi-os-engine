@@ -50,6 +50,7 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
     @Selector("alloc")
     public static native AVDelegatingPlaybackCoordinatorPauseCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVDelegatingPlaybackCoordinatorPauseCommand allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CIFilterShape alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIFilterShape allocWithZone(VoidPtr zone);

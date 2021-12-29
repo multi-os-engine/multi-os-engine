@@ -50,6 +50,7 @@ public class NLTokenizer extends NSObject {
     @Selector("alloc")
     public static native NLTokenizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NLTokenizer allocWithZone(VoidPtr zone);

@@ -50,12 +50,12 @@ public final class CTCharacterCollection {
     @Generated public static final char CharacterCollectionAdobeJapan1 = 0x0003;
     @Generated public static final char CharacterCollectionAdobeJapan2 = 0x0004;
     @Generated public static final char CharacterCollectionAdobeKorea1 = 0x0005;
-    @Generated public static final char IdentityMappingCharacterCollection = 0x0000;
-    @Generated public static final char AdobeCNS1CharacterCollection = 0x0001;
-    @Generated public static final char AdobeGB1CharacterCollection = 0x0002;
-    @Generated public static final char AdobeJapan1CharacterCollection = 0x0003;
-    @Generated public static final char AdobeJapan2CharacterCollection = 0x0004;
-    @Generated public static final char AdobeKorea1CharacterCollection = 0x0005;
+    @Deprecated @Generated public static final char IdentityMappingCharacterCollection = 0x0000;
+    @Deprecated @Generated public static final char AdobeCNS1CharacterCollection = 0x0001;
+    @Deprecated @Generated public static final char AdobeGB1CharacterCollection = 0x0002;
+    @Deprecated @Generated public static final char AdobeJapan1CharacterCollection = 0x0003;
+    @Deprecated @Generated public static final char AdobeJapan2CharacterCollection = 0x0004;
+    @Deprecated @Generated public static final char AdobeKorea1CharacterCollection = 0x0005;
 
     @Generated
     private CTCharacterCollection() {

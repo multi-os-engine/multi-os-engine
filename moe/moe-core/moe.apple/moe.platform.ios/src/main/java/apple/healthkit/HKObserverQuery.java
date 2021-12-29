@@ -68,6 +68,7 @@ public class HKObserverQuery extends HKQuery {
     @Selector("alloc")
     public static native HKObserverQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKObserverQuery allocWithZone(VoidPtr zone);

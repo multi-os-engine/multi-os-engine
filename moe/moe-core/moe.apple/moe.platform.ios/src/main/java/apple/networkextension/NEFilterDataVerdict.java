@@ -73,6 +73,7 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     @Selector("alloc")
     public static native NEFilterDataVerdict alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterDataVerdict allocWithZone(VoidPtr zone);

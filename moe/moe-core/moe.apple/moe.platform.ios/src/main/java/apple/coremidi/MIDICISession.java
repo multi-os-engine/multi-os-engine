@@ -61,6 +61,7 @@ public class MIDICISession extends NSObject {
     @Selector("alloc")
     public static native MIDICISession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDICISession allocWithZone(VoidPtr zone);

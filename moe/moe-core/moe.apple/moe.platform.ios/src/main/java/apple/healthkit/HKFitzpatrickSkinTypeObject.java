@@ -71,6 +71,7 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
     @Selector("alloc")
     public static native HKFitzpatrickSkinTypeObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKFitzpatrickSkinTypeObject allocWithZone(VoidPtr zone);

@@ -93,6 +93,7 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("alloc")
     public static native UIActivityItemsConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIActivityItemsConfiguration allocWithZone(VoidPtr zone);

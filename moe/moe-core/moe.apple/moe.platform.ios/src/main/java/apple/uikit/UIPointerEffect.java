@@ -47,6 +47,7 @@ public class UIPointerEffect extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPointerEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerEffect allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class INTemporalEventTriggerTypeOptionsResolutionResult extends INIntentR
     @Selector("alloc")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTemporalEventTriggerTypeOptionsResolutionResult allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native UISceneConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneConfiguration allocWithZone(VoidPtr zone);

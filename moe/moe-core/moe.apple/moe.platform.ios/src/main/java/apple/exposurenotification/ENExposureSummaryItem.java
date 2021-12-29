@@ -50,6 +50,7 @@ public class ENExposureSummaryItem extends NSObject {
     @Selector("alloc")
     public static native ENExposureSummaryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENExposureSummaryItem allocWithZone(VoidPtr zone);

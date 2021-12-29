@@ -50,6 +50,7 @@ public class INRentalCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INRentalCar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRentalCar allocWithZone(VoidPtr zone);

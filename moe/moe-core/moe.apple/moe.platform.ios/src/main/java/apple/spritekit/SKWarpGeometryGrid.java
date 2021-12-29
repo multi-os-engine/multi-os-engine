@@ -64,6 +64,7 @@ public class SKWarpGeometryGrid extends SKWarpGeometry implements NSSecureCoding
     @Selector("alloc")
     public static native SKWarpGeometryGrid alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKWarpGeometryGrid allocWithZone(VoidPtr zone);

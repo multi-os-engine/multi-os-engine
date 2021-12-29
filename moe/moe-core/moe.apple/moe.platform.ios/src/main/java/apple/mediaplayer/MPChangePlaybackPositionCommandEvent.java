@@ -61,6 +61,7 @@ public class MPChangePlaybackPositionCommandEvent extends MPRemoteCommandEvent {
     @Selector("alloc")
     public static native MPChangePlaybackPositionCommandEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPChangePlaybackPositionCommandEvent allocWithZone(VoidPtr zone);

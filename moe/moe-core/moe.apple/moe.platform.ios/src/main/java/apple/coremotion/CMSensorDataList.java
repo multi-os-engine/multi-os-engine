@@ -75,6 +75,7 @@ public class CMSensorDataList extends NSObject implements NSFastEnumeration {
     @Selector("alloc")
     public static native CMSensorDataList alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMSensorDataList allocWithZone(VoidPtr zone);

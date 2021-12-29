@@ -81,6 +81,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("alloc")
     public static native UINavigationBar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UINavigationBar allocWithZone(VoidPtr zone);

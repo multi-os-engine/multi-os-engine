@@ -46,6 +46,7 @@ public class PKShareablePassMetadata extends NSObject {
     @Selector("alloc")
     public static native PKShareablePassMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKShareablePassMetadata allocWithZone(VoidPtr zone);

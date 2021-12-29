@@ -56,6 +56,7 @@ public class AVMetadataHumanBodyObject extends AVMetadataBodyObject implements N
     @Selector("alloc")
     public static native AVMetadataHumanBodyObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataHumanBodyObject allocWithZone(VoidPtr zone);

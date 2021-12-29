@@ -49,6 +49,7 @@ public class SRAmbientLightSample extends NSObject {
     @Selector("alloc")
     public static native SRAmbientLightSample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRAmbientLightSample allocWithZone(VoidPtr zone);

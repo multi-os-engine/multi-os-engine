@@ -66,6 +66,7 @@ public class CLGeocoder extends NSObject {
     @Selector("alloc")
     public static native CLGeocoder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLGeocoder allocWithZone(VoidPtr zone);

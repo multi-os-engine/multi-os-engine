@@ -50,6 +50,7 @@ public class ASCredentialServiceIdentifier extends NSObject implements NSCopying
     @Selector("alloc")
     public static native ASCredentialServiceIdentifier alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASCredentialServiceIdentifier allocWithZone(VoidPtr zone);

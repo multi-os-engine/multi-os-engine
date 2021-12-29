@@ -70,6 +70,7 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("alloc")
     public static native PKCanvasView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKCanvasView allocWithZone(VoidPtr zone);

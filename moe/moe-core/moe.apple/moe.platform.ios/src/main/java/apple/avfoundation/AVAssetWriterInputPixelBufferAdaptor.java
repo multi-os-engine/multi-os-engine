@@ -73,6 +73,7 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     @Selector("alloc")
     public static native AVAssetWriterInputPixelBufferAdaptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetWriterInputPixelBufferAdaptor allocWithZone(VoidPtr zone);

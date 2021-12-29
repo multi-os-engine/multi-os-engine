@@ -50,6 +50,7 @@ public class CPMapButton extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPMapButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPMapButton allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class CATextLayer extends CALayer {
     @Selector("alloc")
     public static native CATextLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CATextLayer allocWithZone(VoidPtr zone);

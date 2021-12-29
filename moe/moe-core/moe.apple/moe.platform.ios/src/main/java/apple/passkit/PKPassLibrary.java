@@ -64,6 +64,7 @@ public class PKPassLibrary extends NSObject {
     @Selector("alloc")
     public static native PKPassLibrary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPassLibrary allocWithZone(VoidPtr zone);

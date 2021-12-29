@@ -71,6 +71,7 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native GKScene alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKScene allocWithZone(VoidPtr zone);

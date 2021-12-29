@@ -58,6 +58,7 @@ public class ASAuthorizationPublicKeyCredentialParameters extends NSObject imple
     @Selector("alloc")
     public static native ASAuthorizationPublicKeyCredentialParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationPublicKeyCredentialParameters allocWithZone(VoidPtr zone);

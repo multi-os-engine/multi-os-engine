@@ -60,6 +60,7 @@ public class NSRunLoop extends NSObject {
     @Selector("alloc")
     public static native NSRunLoop alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSRunLoop allocWithZone(VoidPtr zone);

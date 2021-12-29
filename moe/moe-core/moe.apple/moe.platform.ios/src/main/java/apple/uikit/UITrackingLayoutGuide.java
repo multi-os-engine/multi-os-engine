@@ -46,6 +46,7 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
     @Selector("alloc")
     public static native UITrackingLayoutGuide alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITrackingLayoutGuide allocWithZone(VoidPtr zone);

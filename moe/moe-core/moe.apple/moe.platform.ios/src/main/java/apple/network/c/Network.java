@@ -1970,13 +1970,13 @@ public final class Network {
      * completed. If any of the antecedents fail with an error, this content will
      * fail as well.
      *
-     * @param context             The context object
-     * @param antecendent_context A context associated with content that should precede
-     *                            this content.
+     * @param context            The context object
+     * @param antecedent_context A context associated with content that should precede
+     *                           this content.
      */
     @Generated
     @CFunction
-    public static native void nw_content_context_set_antecedent(NSObject context, NSObject antecendent_context);
+    public static native void nw_content_context_set_antecedent(NSObject context, NSObject antecedent_context);
 
     /**
      * [@function] nw_content_context_copy_antecedent
@@ -2331,7 +2331,7 @@ public final class Network {
      * in which case the send will be enqueued until the connection is ready to send.
      * This is an asynchronous send and the completion block can be used to
      * determine when the send is complete. There is nothing preventing a client
-     * from issuing an excessive number of outstanding sends. To minmize memory
+     * from issuing an excessive number of outstanding sends. To minimize memory
      * footprint and excessive latency as a consequence of buffer bloat, it is
      * advisable to keep a low number of outstanding sends. The completion block
      * can be used to pace subsequent sends.
@@ -2407,7 +2407,7 @@ public final class Network {
      * [@function] nw_connection_batch
      * <p>
      * Batch several send and/or receive operations together, to hint to
-     * the connection that multiple send or recieve operations are expected
+     * the connection that multiple send or receive operations are expected
      * in quick succession.
      *
      * @param connection  The connection object.
@@ -3666,7 +3666,7 @@ public final class Network {
      * <p>
      * Schedule a block asynchronously on the framer instance. This
      * must be used anytime the caller wants to perform any other
-     * action on the framer instance while not directly in the callstack
+     * action on the framer instance while not directly in the call stack
      * of a callback from the framer.
      *
      * @param framer      The framer instance object.
@@ -3892,7 +3892,7 @@ public final class Network {
      * <p>
      * Sets service class on IP metadata. This will not generally
      * translate into TOS or Traffic Class bits unless the network
-     * explictly supports it, but it will impact local queuing of
+     * explicitly supports it, but it will impact local queuing of
      * packets.
      *
      * @param metadata      An IP metadata object.
@@ -6337,7 +6337,7 @@ public final class Network {
     /**
      * [@function] nw_quic_set_local_max_streams_unidirectional
      * <p>
-     * Sets the maximum number of undirectional streams that the peer can create.
+     * Sets the maximum number of unidirectional streams that the peer can create.
      *
      * @param metadata                   A nw_protocol_metadata_t for QUIC.
      * @param max_streams_unidirectional The new number of maximum unidirectional streams.

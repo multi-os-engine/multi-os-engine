@@ -84,6 +84,7 @@ public class CMMotionActivity extends CMLogItem {
     @Selector("alloc")
     public static native CMMotionActivity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMMotionActivity allocWithZone(VoidPtr zone);

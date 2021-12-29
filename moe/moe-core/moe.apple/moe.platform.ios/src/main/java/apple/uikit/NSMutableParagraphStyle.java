@@ -64,6 +64,7 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Selector("alloc")
     public static native NSMutableParagraphStyle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableParagraphStyle allocWithZone(VoidPtr zone);

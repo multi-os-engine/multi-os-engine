@@ -72,6 +72,7 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     @Selector("alloc")
     public static native AVAssetDownloadTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetDownloadTask allocWithZone(VoidPtr zone);

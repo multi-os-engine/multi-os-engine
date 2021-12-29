@@ -61,6 +61,7 @@ public class MPRemoteCommandEvent extends NSObject {
     @Selector("alloc")
     public static native MPRemoteCommandEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPRemoteCommandEvent allocWithZone(VoidPtr zone);

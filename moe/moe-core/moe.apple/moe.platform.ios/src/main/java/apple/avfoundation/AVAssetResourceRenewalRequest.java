@@ -68,6 +68,7 @@ public class AVAssetResourceRenewalRequest extends AVAssetResourceLoadingRequest
     @Selector("alloc")
     public static native AVAssetResourceRenewalRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetResourceRenewalRequest allocWithZone(VoidPtr zone);

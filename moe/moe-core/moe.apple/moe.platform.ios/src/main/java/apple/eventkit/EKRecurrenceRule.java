@@ -77,6 +77,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @Selector("alloc")
     public static native EKRecurrenceRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKRecurrenceRule allocWithZone(VoidPtr zone);

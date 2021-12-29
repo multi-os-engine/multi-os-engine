@@ -48,6 +48,7 @@ public class MPSNNSubtractionNode extends MPSNNBinaryArithmeticNode {
     @Selector("alloc")
     public static native MPSNNSubtractionNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNSubtractionNode allocWithZone(VoidPtr zone);

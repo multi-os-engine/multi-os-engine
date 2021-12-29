@@ -51,6 +51,7 @@ public class PHASEMetaParameterDefinition extends PHASEDefinition {
     @Selector("alloc")
     public static native PHASEMetaParameterDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEMetaParameterDefinition allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class PKLabeledValue extends NSObject {
     @Selector("alloc")
     public static native PKLabeledValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKLabeledValue allocWithZone(VoidPtr zone);

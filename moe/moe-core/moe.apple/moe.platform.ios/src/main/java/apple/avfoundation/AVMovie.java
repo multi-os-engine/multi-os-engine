@@ -64,6 +64,7 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
     @Selector("alloc")
     public static native AVMovie alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMovie allocWithZone(VoidPtr zone);

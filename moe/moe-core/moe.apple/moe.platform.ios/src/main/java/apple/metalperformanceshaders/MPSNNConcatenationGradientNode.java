@@ -55,6 +55,7 @@ public class MPSNNConcatenationGradientNode extends MPSNNGradientFilterNode {
     @Selector("alloc")
     public static native MPSNNConcatenationGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNConcatenationGradientNode allocWithZone(VoidPtr zone);

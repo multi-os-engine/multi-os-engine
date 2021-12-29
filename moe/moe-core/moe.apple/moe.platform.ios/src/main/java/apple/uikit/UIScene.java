@@ -63,6 +63,7 @@ public class UIScene extends UIResponder {
     @Selector("alloc")
     public static native UIScene alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIScene allocWithZone(VoidPtr zone);

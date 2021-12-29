@@ -59,6 +59,7 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     @Selector("alloc")
     public static native AVFragmentedAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVFragmentedAsset allocWithZone(VoidPtr zone);

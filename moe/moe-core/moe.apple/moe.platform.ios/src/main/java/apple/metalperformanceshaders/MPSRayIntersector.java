@@ -441,6 +441,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Selector("alloc")
     public static native MPSRayIntersector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRayIntersector allocWithZone(VoidPtr zone);

@@ -135,6 +135,7 @@ public class HKWorkoutBuilder extends NSObject {
     @Selector("alloc")
     public static native HKWorkoutBuilder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWorkoutBuilder allocWithZone(VoidPtr zone);

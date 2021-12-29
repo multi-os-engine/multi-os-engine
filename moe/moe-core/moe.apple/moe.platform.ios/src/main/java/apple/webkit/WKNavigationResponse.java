@@ -65,6 +65,7 @@ public class WKNavigationResponse extends NSObject {
     @Selector("alloc")
     public static native WKNavigationResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKNavigationResponse allocWithZone(VoidPtr zone);

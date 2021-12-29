@@ -73,6 +73,7 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     @Selector("alloc")
     public static native NEVPNIKEv2SecurityAssociationParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEVPNIKEv2SecurityAssociationParameters allocWithZone(VoidPtr zone);

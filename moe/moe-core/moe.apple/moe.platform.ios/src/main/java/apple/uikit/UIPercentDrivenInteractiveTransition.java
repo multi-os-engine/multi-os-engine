@@ -66,6 +66,7 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @Selector("alloc")
     public static native UIPercentDrivenInteractiveTransition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPercentDrivenInteractiveTransition allocWithZone(VoidPtr zone);

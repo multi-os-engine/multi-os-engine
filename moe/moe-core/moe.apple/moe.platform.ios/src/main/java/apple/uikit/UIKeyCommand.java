@@ -64,6 +64,7 @@ public class UIKeyCommand extends UICommand {
     @Selector("alloc")
     public static native UIKeyCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIKeyCommand allocWithZone(VoidPtr zone);

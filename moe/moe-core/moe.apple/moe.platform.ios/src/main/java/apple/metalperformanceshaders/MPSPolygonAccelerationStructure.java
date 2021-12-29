@@ -54,6 +54,7 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @Selector("alloc")
     public static native MPSPolygonAccelerationStructure alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSPolygonAccelerationStructure allocWithZone(VoidPtr zone);

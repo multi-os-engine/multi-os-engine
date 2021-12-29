@@ -42,6 +42,7 @@ public class OS_os_workgroup_interval extends OS_os_workgroup implements apple.p
     @Selector("alloc")
     public static native OS_os_workgroup_interval alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OS_os_workgroup_interval allocWithZone(VoidPtr zone);

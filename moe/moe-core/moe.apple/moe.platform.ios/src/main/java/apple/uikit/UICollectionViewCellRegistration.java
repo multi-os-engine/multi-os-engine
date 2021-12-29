@@ -50,6 +50,7 @@ public class UICollectionViewCellRegistration extends NSObject {
     @Selector("alloc")
     public static native UICollectionViewCellRegistration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewCellRegistration allocWithZone(VoidPtr zone);

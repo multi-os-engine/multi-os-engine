@@ -63,6 +63,7 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native UINavigationItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UINavigationItem allocWithZone(VoidPtr zone);

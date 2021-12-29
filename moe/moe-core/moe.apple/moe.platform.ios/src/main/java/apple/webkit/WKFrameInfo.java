@@ -71,6 +71,7 @@ public class WKFrameInfo extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native WKFrameInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKFrameInfo allocWithZone(VoidPtr zone);

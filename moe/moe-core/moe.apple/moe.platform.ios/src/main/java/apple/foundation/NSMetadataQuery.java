@@ -62,6 +62,7 @@ public class NSMetadataQuery extends NSObject {
     @Selector("alloc")
     public static native NSMetadataQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMetadataQuery allocWithZone(VoidPtr zone);

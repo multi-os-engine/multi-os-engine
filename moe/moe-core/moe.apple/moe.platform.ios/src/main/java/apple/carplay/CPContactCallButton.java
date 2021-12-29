@@ -47,6 +47,7 @@ public class CPContactCallButton extends CPButton {
     @Selector("alloc")
     public static native CPContactCallButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPContactCallButton allocWithZone(VoidPtr zone);

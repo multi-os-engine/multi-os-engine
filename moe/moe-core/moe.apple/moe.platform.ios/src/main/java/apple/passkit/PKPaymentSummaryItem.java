@@ -65,6 +65,7 @@ public class PKPaymentSummaryItem extends NSObject {
     @Selector("alloc")
     public static native PKPaymentSummaryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentSummaryItem allocWithZone(VoidPtr zone);

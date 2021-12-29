@@ -51,6 +51,7 @@ public class INSpatialEventTrigger extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native INSpatialEventTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSpatialEventTrigger allocWithZone(VoidPtr zone);

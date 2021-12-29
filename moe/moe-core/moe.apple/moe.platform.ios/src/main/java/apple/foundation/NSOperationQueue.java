@@ -60,6 +60,7 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Selector("alloc")
     public static native NSOperationQueue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSOperationQueue allocWithZone(VoidPtr zone);

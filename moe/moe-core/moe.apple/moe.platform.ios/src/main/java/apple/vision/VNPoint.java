@@ -59,6 +59,7 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native VNPoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNPoint allocWithZone(VoidPtr zone);

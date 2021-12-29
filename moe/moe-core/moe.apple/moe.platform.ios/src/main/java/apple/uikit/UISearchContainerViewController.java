@@ -66,6 +66,7 @@ public class UISearchContainerViewController extends UIViewController {
     @Selector("alloc")
     public static native UISearchContainerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISearchContainerViewController allocWithZone(VoidPtr zone);

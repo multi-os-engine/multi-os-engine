@@ -82,6 +82,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("alloc")
     public static native SCNCamera alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNCamera allocWithZone(VoidPtr zone);

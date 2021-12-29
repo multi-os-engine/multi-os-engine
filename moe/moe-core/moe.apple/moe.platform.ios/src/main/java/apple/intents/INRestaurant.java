@@ -67,6 +67,7 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native INRestaurant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRestaurant allocWithZone(VoidPtr zone);

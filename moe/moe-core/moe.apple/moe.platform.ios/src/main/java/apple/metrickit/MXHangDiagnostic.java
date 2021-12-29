@@ -58,6 +58,7 @@ public class MXHangDiagnostic extends MXDiagnostic {
     @Selector("alloc")
     public static native MXHangDiagnostic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXHangDiagnostic allocWithZone(VoidPtr zone);

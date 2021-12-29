@@ -74,6 +74,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("alloc")
     public static native SCNMorpher alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNMorpher allocWithZone(VoidPtr zone);

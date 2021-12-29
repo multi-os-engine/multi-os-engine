@@ -63,6 +63,7 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
     @Selector("alloc")
     public static native INGetAvailableRestaurantReservationBookingDefaultsIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetAvailableRestaurantReservationBookingDefaultsIntent allocWithZone(VoidPtr zone);

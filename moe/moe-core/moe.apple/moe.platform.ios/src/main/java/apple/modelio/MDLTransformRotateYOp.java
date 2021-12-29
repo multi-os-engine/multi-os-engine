@@ -50,6 +50,7 @@ public class MDLTransformRotateYOp extends NSObject implements MDLTransformOp {
     @Selector("alloc")
     public static native MDLTransformRotateYOp alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTransformRotateYOp allocWithZone(VoidPtr zone);

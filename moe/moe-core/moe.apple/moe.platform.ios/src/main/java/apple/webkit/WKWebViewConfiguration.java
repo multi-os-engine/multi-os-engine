@@ -72,6 +72,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Selector("alloc")
     public static native WKWebViewConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKWebViewConfiguration allocWithZone(VoidPtr zone);

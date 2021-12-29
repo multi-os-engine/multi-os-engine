@@ -42,6 +42,7 @@ public class OS_os_workgroup extends OS_object {
     @Selector("alloc")
     public static native OS_os_workgroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OS_os_workgroup allocWithZone(VoidPtr zone);

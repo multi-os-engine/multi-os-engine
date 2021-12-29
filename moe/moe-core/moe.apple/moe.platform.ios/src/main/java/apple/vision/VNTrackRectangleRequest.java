@@ -54,6 +54,7 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
     @Selector("alloc")
     public static native VNTrackRectangleRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNTrackRectangleRequest allocWithZone(VoidPtr zone);

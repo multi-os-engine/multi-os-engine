@@ -56,6 +56,7 @@ public class MPSMatrixCopyDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPSMatrixCopyDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixCopyDescriptor allocWithZone(VoidPtr zone);

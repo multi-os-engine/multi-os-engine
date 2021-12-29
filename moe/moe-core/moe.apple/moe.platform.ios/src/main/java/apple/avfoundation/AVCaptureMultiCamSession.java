@@ -54,6 +54,7 @@ public class AVCaptureMultiCamSession extends AVCaptureSession {
     @Selector("alloc")
     public static native AVCaptureMultiCamSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureMultiCamSession allocWithZone(VoidPtr zone);

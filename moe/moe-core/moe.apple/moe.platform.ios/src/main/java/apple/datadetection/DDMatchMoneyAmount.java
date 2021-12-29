@@ -45,6 +45,7 @@ public class DDMatchMoneyAmount extends DDMatch {
     @Selector("alloc")
     public static native DDMatchMoneyAmount alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchMoneyAmount allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ARPlaneGeometry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARPlaneGeometry allocWithZone(VoidPtr zone);

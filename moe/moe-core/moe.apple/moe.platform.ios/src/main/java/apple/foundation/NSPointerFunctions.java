@@ -62,6 +62,7 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSPointerFunctions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPointerFunctions allocWithZone(VoidPtr zone);

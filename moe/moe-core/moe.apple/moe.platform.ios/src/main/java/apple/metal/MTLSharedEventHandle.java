@@ -52,6 +52,7 @@ public class MTLSharedEventHandle extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MTLSharedEventHandle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLSharedEventHandle allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class VNTrackingRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNTrackingRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNTrackingRequest allocWithZone(VoidPtr zone);

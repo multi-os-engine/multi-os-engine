@@ -47,6 +47,7 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @Selector("alloc")
     public static native PKAddShareablePassConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddShareablePassConfiguration allocWithZone(VoidPtr zone);

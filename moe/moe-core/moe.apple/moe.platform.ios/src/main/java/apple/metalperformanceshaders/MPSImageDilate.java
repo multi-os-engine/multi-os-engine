@@ -85,6 +85,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageDilate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageDilate allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CITextFeature extends CIFeature {
     @Selector("alloc")
     public static native CITextFeature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CITextFeature allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class MDLMatrix4x4Array extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MDLMatrix4x4Array alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMatrix4x4Array allocWithZone(VoidPtr zone);

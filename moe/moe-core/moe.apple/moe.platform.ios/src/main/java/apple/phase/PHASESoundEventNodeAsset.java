@@ -50,6 +50,7 @@ public class PHASESoundEventNodeAsset extends PHASEAsset {
     @Selector("alloc")
     public static native PHASESoundEventNodeAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASESoundEventNodeAsset allocWithZone(VoidPtr zone);

@@ -70,6 +70,7 @@ public class NSQueryGenerationToken extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native NSQueryGenerationToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSQueryGenerationToken allocWithZone(VoidPtr zone);

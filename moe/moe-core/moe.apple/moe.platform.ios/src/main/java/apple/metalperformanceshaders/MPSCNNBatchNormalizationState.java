@@ -61,6 +61,7 @@ public class MPSCNNBatchNormalizationState extends MPSNNGradientState {
     @Selector("alloc")
     public static native MPSCNNBatchNormalizationState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBatchNormalizationState allocWithZone(VoidPtr zone);

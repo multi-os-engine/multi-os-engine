@@ -70,6 +70,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @Selector("alloc")
     public static native CAKeyframeAnimation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAKeyframeAnimation allocWithZone(VoidPtr zone);

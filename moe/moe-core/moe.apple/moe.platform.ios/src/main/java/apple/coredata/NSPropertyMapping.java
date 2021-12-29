@@ -63,6 +63,7 @@ public class NSPropertyMapping extends NSObject {
     @Selector("alloc")
     public static native NSPropertyMapping alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPropertyMapping allocWithZone(VoidPtr zone);

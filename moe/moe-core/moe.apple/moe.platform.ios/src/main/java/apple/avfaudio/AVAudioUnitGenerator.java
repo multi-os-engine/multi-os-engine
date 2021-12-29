@@ -60,6 +60,7 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
     @Selector("alloc")
     public static native AVAudioUnitGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitGenerator allocWithZone(VoidPtr zone);

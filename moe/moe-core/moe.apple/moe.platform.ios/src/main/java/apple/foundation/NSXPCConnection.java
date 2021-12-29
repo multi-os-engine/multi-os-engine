@@ -48,6 +48,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Selector("alloc")
     public static native NSXPCConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSXPCConnection allocWithZone(VoidPtr zone);

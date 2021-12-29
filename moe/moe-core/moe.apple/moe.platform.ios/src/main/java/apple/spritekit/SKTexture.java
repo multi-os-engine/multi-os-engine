@@ -79,6 +79,7 @@ public class SKTexture extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTexture allocWithZone(VoidPtr zone);

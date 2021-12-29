@@ -61,6 +61,7 @@ public class INWorkoutLocationTypeResolutionResult extends INIntentResolutionRes
     @Selector("alloc")
     public static native INWorkoutLocationTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INWorkoutLocationTypeResolutionResult allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class INFlightReservation extends INReservation implements NSCopying, NSS
     @Selector("alloc")
     public static native INFlightReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INFlightReservation allocWithZone(VoidPtr zone);

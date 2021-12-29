@@ -63,6 +63,7 @@ public class MTLBufferLayoutDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLBufferLayoutDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLBufferLayoutDescriptor allocWithZone(VoidPtr zone);

@@ -46,6 +46,7 @@ public class PKStoredValuePassProperties extends NSObject {
     @Selector("alloc")
     public static native PKStoredValuePassProperties alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKStoredValuePassProperties allocWithZone(VoidPtr zone);

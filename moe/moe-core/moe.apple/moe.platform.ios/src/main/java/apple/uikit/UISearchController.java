@@ -73,6 +73,7 @@ public class UISearchController extends UIViewController
     @Selector("alloc")
     public static native UISearchController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISearchController allocWithZone(VoidPtr zone);

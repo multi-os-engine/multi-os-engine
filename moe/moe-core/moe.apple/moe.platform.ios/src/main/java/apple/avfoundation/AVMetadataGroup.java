@@ -66,6 +66,7 @@ public class AVMetadataGroup extends NSObject {
     @Selector("alloc")
     public static native AVMetadataGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataGroup allocWithZone(VoidPtr zone);

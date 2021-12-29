@@ -48,6 +48,7 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INGetReservationDetailsIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetReservationDetailsIntentResponse allocWithZone(VoidPtr zone);

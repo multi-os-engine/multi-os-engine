@@ -59,6 +59,7 @@ public class MLDictionaryFeatureProvider extends NSObject
     @Selector("alloc")
     public static native MLDictionaryFeatureProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLDictionaryFeatureProvider allocWithZone(VoidPtr zone);

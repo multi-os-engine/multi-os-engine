@@ -68,6 +68,7 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UILongPressGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILongPressGestureRecognizer allocWithZone(VoidPtr zone);

@@ -70,6 +70,7 @@ public class AVPlayerLayer extends CALayer {
     @Selector("alloc")
     public static native AVPlayerLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerLayer allocWithZone(VoidPtr zone);

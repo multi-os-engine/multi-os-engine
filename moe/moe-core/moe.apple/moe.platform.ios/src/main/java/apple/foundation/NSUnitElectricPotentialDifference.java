@@ -60,6 +60,7 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     @Selector("alloc")
     public static native NSUnitElectricPotentialDifference alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitElectricPotentialDifference allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native UTType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UTType allocWithZone(VoidPtr zone);

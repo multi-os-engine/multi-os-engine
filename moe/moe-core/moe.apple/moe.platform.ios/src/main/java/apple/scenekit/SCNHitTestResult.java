@@ -70,6 +70,7 @@ public class SCNHitTestResult extends NSObject {
     @Selector("alloc")
     public static native SCNHitTestResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNHitTestResult allocWithZone(VoidPtr zone);

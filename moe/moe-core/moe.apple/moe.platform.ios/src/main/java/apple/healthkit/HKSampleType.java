@@ -72,6 +72,7 @@ public class HKSampleType extends HKObjectType {
     @Selector("alloc")
     public static native HKSampleType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKSampleType allocWithZone(VoidPtr zone);

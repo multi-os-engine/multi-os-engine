@@ -48,6 +48,7 @@ public class INCreateTaskListIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INCreateTaskListIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCreateTaskListIntentResponse allocWithZone(VoidPtr zone);

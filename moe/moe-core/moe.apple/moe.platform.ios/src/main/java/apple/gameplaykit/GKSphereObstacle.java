@@ -65,6 +65,7 @@ public class GKSphereObstacle extends GKObstacle {
     @Selector("alloc")
     public static native GKSphereObstacle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKSphereObstacle allocWithZone(VoidPtr zone);

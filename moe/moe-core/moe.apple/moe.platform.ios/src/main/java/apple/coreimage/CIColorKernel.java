@@ -80,6 +80,7 @@ public class CIColorKernel extends CIKernel {
     @Selector("alloc")
     public static native CIColorKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIColorKernel allocWithZone(VoidPtr zone);

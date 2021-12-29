@@ -62,6 +62,7 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Selector("alloc")
     public static native GCControllerAxisInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCControllerAxisInput allocWithZone(VoidPtr zone);

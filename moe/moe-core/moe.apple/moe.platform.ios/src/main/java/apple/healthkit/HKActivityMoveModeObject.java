@@ -60,6 +60,7 @@ public class HKActivityMoveModeObject extends NSObject implements NSCopying, NSS
     @Selector("alloc")
     public static native HKActivityMoveModeObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKActivityMoveModeObject allocWithZone(VoidPtr zone);

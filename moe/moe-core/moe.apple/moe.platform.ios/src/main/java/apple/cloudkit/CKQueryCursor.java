@@ -66,6 +66,7 @@ public class CKQueryCursor extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native CKQueryCursor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKQueryCursor allocWithZone(VoidPtr zone);

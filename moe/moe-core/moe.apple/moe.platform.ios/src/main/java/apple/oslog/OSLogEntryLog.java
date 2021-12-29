@@ -58,6 +58,7 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
     @Selector("alloc")
     public static native OSLogEntryLog alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogEntryLog allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
     @Selector("alloc")
     public static native UICubicTimingParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICubicTimingParameters allocWithZone(VoidPtr zone);

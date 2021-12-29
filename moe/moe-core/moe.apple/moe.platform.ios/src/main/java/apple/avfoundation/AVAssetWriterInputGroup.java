@@ -71,6 +71,7 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Selector("alloc")
     public static native AVAssetWriterInputGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetWriterInputGroup allocWithZone(VoidPtr zone);

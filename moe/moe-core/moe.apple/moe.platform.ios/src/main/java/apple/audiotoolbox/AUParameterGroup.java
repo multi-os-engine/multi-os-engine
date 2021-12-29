@@ -72,6 +72,7 @@ public class AUParameterGroup extends AUParameterNode implements NSSecureCoding 
     @Selector("alloc")
     public static native AUParameterGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUParameterGroup allocWithZone(VoidPtr zone);

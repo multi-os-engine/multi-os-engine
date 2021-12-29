@@ -73,6 +73,7 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
     @Selector("alloc")
     public static native MPSCNNPoolingL2NormGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingL2NormGradient allocWithZone(VoidPtr zone);

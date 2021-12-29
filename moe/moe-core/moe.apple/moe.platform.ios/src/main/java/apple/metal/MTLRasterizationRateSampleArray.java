@@ -51,6 +51,7 @@ public class MTLRasterizationRateSampleArray extends NSObject {
     @Selector("alloc")
     public static native MTLRasterizationRateSampleArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRasterizationRateSampleArray allocWithZone(VoidPtr zone);

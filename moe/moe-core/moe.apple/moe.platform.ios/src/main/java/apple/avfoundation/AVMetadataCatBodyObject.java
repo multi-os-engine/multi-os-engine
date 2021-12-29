@@ -56,6 +56,7 @@ public class AVMetadataCatBodyObject extends AVMetadataBodyObject implements NSC
     @Selector("alloc")
     public static native AVMetadataCatBodyObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataCatBodyObject allocWithZone(VoidPtr zone);

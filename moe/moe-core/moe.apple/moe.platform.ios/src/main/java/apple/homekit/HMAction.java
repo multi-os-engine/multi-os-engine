@@ -65,6 +65,7 @@ public class HMAction extends NSObject {
     @Selector("alloc")
     public static native HMAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAction allocWithZone(VoidPtr zone);

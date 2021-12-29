@@ -45,6 +45,7 @@ public class SRNotificationUsage extends NSObject {
     @Selector("alloc")
     public static native SRNotificationUsage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRNotificationUsage allocWithZone(VoidPtr zone);

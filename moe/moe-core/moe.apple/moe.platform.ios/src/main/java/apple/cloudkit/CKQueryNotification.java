@@ -88,6 +88,7 @@ public class CKQueryNotification extends CKNotification {
     @Selector("alloc")
     public static native CKQueryNotification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKQueryNotification allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     @Selector("alloc")
     public static native MPSGraphDepthwiseConvolution2DOpDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphDepthwiseConvolution2DOpDescriptor allocWithZone(VoidPtr zone);

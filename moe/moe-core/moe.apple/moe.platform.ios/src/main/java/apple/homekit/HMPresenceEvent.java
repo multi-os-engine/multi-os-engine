@@ -51,6 +51,7 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("alloc")
     public static native HMPresenceEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMPresenceEvent allocWithZone(VoidPtr zone);

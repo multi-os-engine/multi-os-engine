@@ -64,6 +64,7 @@ public class GKCircleObstacle extends GKObstacle {
     @Selector("alloc")
     public static native GKCircleObstacle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKCircleObstacle allocWithZone(VoidPtr zone);

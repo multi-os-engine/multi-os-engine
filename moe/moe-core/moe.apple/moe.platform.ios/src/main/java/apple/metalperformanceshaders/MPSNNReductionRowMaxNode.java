@@ -45,6 +45,7 @@ public class MPSNNReductionRowMaxNode extends MPSNNUnaryReductionNode {
     @Selector("alloc")
     public static native MPSNNReductionRowMaxNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionRowMaxNode allocWithZone(VoidPtr zone);

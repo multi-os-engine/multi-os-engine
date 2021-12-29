@@ -52,6 +52,7 @@ public class INRelevantShortcutStore extends NSObject {
     @Selector("alloc")
     public static native INRelevantShortcutStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRelevantShortcutStore allocWithZone(VoidPtr zone);

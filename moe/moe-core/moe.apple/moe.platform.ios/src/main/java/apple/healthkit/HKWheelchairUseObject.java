@@ -71,6 +71,7 @@ public class HKWheelchairUseObject extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native HKWheelchairUseObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWheelchairUseObject allocWithZone(VoidPtr zone);

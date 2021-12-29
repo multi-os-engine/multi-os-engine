@@ -66,6 +66,7 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("alloc")
     public static native UIPopoverPresentationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPopoverPresentationController allocWithZone(VoidPtr zone);

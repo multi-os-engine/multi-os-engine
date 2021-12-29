@@ -51,6 +51,7 @@ public class HMDurationEvent extends HMTimeEvent implements NSCopying, NSMutable
     @Selector("alloc")
     public static native HMDurationEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMDurationEvent allocWithZone(VoidPtr zone);

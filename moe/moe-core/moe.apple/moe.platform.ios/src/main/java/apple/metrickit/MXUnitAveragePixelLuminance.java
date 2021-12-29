@@ -54,6 +54,7 @@ public class MXUnitAveragePixelLuminance extends NSDimension {
     @Selector("alloc")
     public static native MXUnitAveragePixelLuminance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXUnitAveragePixelLuminance allocWithZone(VoidPtr zone);

@@ -79,6 +79,7 @@ public class MXMetric extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXMetric allocWithZone(VoidPtr zone);

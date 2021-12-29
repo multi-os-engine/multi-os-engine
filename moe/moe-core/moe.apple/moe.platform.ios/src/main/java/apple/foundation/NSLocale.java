@@ -77,6 +77,7 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSLocale alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLocale allocWithZone(VoidPtr zone);

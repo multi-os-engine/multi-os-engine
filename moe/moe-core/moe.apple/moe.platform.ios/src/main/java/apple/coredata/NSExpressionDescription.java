@@ -69,6 +69,7 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @Selector("alloc")
     public static native NSExpressionDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSExpressionDescription allocWithZone(VoidPtr zone);

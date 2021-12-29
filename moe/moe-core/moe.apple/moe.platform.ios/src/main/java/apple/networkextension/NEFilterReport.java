@@ -68,6 +68,7 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native NEFilterReport alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterReport allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class SRVisit extends NSObject {
     @Selector("alloc")
     public static native SRVisit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRVisit allocWithZone(VoidPtr zone);

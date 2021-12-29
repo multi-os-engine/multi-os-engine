@@ -50,6 +50,7 @@ public class MDLTransformOrientOp extends NSObject implements MDLTransformOp {
     @Selector("alloc")
     public static native MDLTransformOrientOp alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTransformOrientOp allocWithZone(VoidPtr zone);

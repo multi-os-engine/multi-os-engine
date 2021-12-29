@@ -50,6 +50,7 @@ public class UNNotificationActionIcon extends NSObject implements NSCopying, NSS
     @Selector("alloc")
     public static native UNNotificationActionIcon alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationActionIcon allocWithZone(VoidPtr zone);

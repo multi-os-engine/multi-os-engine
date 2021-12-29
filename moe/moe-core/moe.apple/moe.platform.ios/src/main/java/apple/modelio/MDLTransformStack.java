@@ -78,6 +78,7 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Selector("alloc")
     public static native MDLTransformStack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTransformStack allocWithZone(VoidPtr zone);

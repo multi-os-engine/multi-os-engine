@@ -69,6 +69,7 @@ public class CAScrollLayer extends CALayer {
     @Selector("alloc")
     public static native CAScrollLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAScrollLayer allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class GKTurnBasedExchangeReply extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedExchangeReply alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKTurnBasedExchangeReply allocWithZone(VoidPtr zone);

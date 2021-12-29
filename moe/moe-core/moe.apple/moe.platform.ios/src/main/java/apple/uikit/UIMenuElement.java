@@ -51,6 +51,7 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native UIMenuElement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMenuElement allocWithZone(VoidPtr zone);

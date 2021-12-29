@@ -65,6 +65,7 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLTextureDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLTextureDescriptor allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class INDailyRoutineRelevanceProvider extends INRelevanceProvider {
     @Selector("alloc")
     public static native INDailyRoutineRelevanceProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDailyRoutineRelevanceProvider allocWithZone(VoidPtr zone);

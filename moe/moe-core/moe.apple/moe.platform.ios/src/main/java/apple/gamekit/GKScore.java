@@ -72,6 +72,7 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("alloc")
     public static native GKScore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKScore allocWithZone(VoidPtr zone);

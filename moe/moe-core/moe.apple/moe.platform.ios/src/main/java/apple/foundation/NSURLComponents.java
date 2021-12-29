@@ -62,6 +62,7 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSURLComponents alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLComponents allocWithZone(VoidPtr zone);

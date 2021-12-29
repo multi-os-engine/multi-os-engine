@@ -73,6 +73,7 @@ public class NEPacketTunnelFlow extends NSObject {
     @Selector("alloc")
     public static native NEPacketTunnelFlow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEPacketTunnelFlow allocWithZone(VoidPtr zone);

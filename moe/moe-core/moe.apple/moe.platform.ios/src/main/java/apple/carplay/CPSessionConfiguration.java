@@ -47,6 +47,7 @@ public class CPSessionConfiguration extends NSObject {
     @Selector("alloc")
     public static native CPSessionConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPSessionConfiguration allocWithZone(VoidPtr zone);

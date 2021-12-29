@@ -76,6 +76,7 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     @Selector("alloc")
     public static native AVMetadataItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataItem allocWithZone(VoidPtr zone);

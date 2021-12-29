@@ -79,6 +79,7 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("alloc")
     public static native UITableViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewController allocWithZone(VoidPtr zone);

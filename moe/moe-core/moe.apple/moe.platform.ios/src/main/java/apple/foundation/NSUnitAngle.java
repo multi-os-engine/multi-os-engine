@@ -60,6 +60,7 @@ public class NSUnitAngle extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitAngle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitAngle allocWithZone(VoidPtr zone);

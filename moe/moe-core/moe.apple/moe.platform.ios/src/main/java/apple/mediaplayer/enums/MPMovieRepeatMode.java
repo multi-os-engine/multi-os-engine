@@ -19,10 +19,11 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+@Deprecated
 @Generated
 public final class MPMovieRepeatMode {
-    @Generated @NInt public static final long None = 0x0000000000000000L;
-    @Generated @NInt public static final long One = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long One = 0x0000000000000001L;
 
     @Generated
     private MPMovieRepeatMode() {

@@ -48,6 +48,7 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native NSMorphology alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMorphology allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
     @Selector("alloc")
     public static native TKBERTLVRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKBERTLVRecord allocWithZone(VoidPtr zone);

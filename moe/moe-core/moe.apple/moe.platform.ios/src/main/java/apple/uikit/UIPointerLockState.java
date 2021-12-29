@@ -45,6 +45,7 @@ public class UIPointerLockState extends NSObject {
     @Selector("alloc")
     public static native UIPointerLockState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerLockState allocWithZone(VoidPtr zone);

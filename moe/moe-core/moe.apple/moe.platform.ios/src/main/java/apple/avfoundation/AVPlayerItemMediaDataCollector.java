@@ -73,6 +73,7 @@ public class AVPlayerItemMediaDataCollector extends NSObject {
     @Selector("alloc")
     public static native AVPlayerItemMediaDataCollector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemMediaDataCollector allocWithZone(VoidPtr zone);

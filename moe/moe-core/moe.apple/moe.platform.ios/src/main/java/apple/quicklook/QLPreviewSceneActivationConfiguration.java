@@ -48,6 +48,7 @@ public class QLPreviewSceneActivationConfiguration extends UIWindowSceneActivati
     @Selector("alloc")
     public static native QLPreviewSceneActivationConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLPreviewSceneActivationConfiguration allocWithZone(VoidPtr zone);

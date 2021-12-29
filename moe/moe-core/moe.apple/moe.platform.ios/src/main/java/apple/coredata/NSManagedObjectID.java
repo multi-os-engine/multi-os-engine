@@ -68,6 +68,7 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
     @Selector("alloc")
     public static native NSManagedObjectID alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSManagedObjectID allocWithZone(VoidPtr zone);

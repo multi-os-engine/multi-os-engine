@@ -67,6 +67,7 @@ public class EKEventViewController extends UIViewController {
     @Selector("alloc")
     public static native EKEventViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKEventViewController allocWithZone(VoidPtr zone);

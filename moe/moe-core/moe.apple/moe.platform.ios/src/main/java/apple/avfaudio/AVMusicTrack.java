@@ -53,6 +53,7 @@ public class AVMusicTrack extends NSObject {
     @Selector("alloc")
     public static native AVMusicTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMusicTrack allocWithZone(VoidPtr zone);

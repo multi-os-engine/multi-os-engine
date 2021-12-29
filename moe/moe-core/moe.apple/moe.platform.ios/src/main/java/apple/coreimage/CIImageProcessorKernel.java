@@ -73,6 +73,7 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("alloc")
     public static native CIImageProcessorKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIImageProcessorKernel allocWithZone(VoidPtr zone);

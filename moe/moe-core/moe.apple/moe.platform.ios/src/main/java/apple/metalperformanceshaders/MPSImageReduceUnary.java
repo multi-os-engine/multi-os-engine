@@ -63,6 +63,7 @@ public class MPSImageReduceUnary extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageReduceUnary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageReduceUnary allocWithZone(VoidPtr zone);

@@ -30,10 +30,9 @@ public interface NSFileProviderChangeObserver {
     void didUpdateItems(NSArray<?> updatedItems);
 
     /**
-     * Call the following method every so often while sending changes, particularly
-     * while enumerating changes to NSFileProviderWorkingSetContainerItemIdentifier.
-     * If the device reboots during an enumeration, it would later resume starting
-     * at the latest known sync anchor.
+     * This method is used to complete a batch of changes. Follow the advice
+     * in -[NSFileProviderChangeObserver suggestedBatchSize] to determine when to
+     * call this method.
      * <p>
      * It is expected that the sync anchor passed here be different than the sync
      * anchor that the enumeration started at, unless the client was already up to

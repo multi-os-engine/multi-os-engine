@@ -50,6 +50,7 @@ public class NSPersistentHistoryToken extends NSObject implements NSCopying, NSS
     @Selector("alloc")
     public static native NSPersistentHistoryToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentHistoryToken allocWithZone(VoidPtr zone);

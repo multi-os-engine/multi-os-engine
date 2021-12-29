@@ -71,6 +71,7 @@ public class CMSensorRecorder extends NSObject {
     @Selector("alloc")
     public static native CMSensorRecorder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMSensorRecorder allocWithZone(VoidPtr zone);

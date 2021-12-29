@@ -68,6 +68,7 @@ public class MTKSubmesh extends NSObject {
     @Selector("alloc")
     public static native MTKSubmesh alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTKSubmesh allocWithZone(VoidPtr zone);

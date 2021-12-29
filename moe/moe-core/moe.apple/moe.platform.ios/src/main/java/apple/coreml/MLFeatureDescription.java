@@ -53,6 +53,7 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native MLFeatureDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLFeatureDescription allocWithZone(VoidPtr zone);

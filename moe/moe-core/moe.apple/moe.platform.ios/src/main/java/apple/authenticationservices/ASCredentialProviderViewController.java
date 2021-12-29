@@ -48,6 +48,7 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("alloc")
     public static native ASCredentialProviderViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASCredentialProviderViewController allocWithZone(VoidPtr zone);

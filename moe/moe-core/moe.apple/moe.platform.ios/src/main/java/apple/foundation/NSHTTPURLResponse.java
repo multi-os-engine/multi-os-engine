@@ -67,6 +67,7 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @Selector("alloc")
     public static native NSHTTPURLResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSHTTPURLResponse allocWithZone(VoidPtr zone);

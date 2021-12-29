@@ -64,6 +64,7 @@ public class UIPasteConfiguration extends NSObject implements NSSecureCoding, NS
     @Selector("alloc")
     public static native UIPasteConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPasteConfiguration allocWithZone(VoidPtr zone);

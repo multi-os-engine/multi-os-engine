@@ -77,6 +77,7 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Selector("alloc")
     public static native UIImageView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIImageView allocWithZone(VoidPtr zone);

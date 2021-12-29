@@ -69,6 +69,7 @@ public class SCNPhysicsBehavior extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SCNPhysicsBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsBehavior allocWithZone(VoidPtr zone);

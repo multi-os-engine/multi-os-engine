@@ -49,6 +49,7 @@ public class NSTextParagraph extends NSTextElement {
     @Selector("alloc")
     public static native NSTextParagraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextParagraph allocWithZone(VoidPtr zone);

@@ -101,6 +101,7 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Selector("alloc")
     public static native MCBrowserViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MCBrowserViewController allocWithZone(VoidPtr zone);

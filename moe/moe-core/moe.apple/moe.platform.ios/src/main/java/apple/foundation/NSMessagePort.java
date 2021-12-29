@@ -62,6 +62,7 @@ public class NSMessagePort extends NSPort {
     @Selector("alloc")
     public static native NSMessagePort alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMessagePort allocWithZone(VoidPtr zone);

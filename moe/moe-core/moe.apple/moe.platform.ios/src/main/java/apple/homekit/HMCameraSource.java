@@ -64,6 +64,7 @@ public class HMCameraSource extends NSObject {
     @Selector("alloc")
     public static native HMCameraSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCameraSource allocWithZone(VoidPtr zone);

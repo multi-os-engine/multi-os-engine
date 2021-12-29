@@ -67,6 +67,7 @@ public class EAWiFiUnconfiguredAccessory extends NSObject {
     @Selector("alloc")
     public static native EAWiFiUnconfiguredAccessory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EAWiFiUnconfiguredAccessory allocWithZone(VoidPtr zone);

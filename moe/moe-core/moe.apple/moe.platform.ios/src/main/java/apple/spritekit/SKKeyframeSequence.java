@@ -68,6 +68,7 @@ public class SKKeyframeSequence extends NSObject implements NSSecureCoding, NSCo
     @Selector("alloc")
     public static native SKKeyframeSequence alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKKeyframeSequence allocWithZone(VoidPtr zone);

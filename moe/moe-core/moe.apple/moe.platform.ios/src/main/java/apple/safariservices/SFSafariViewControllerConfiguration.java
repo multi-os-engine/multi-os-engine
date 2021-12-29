@@ -5,6 +5,7 @@ import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.foundation.protocol.NSCopying;
+import apple.uikit.UIEventAttribution;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -47,6 +48,7 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Selector("alloc")
     public static native SFSafariViewControllerConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSafariViewControllerConfiguration allocWithZone(VoidPtr zone);
@@ -196,4 +198,22 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Generated
     @Selector("setActivityButton:")
     public native void setActivityButton(SFSafariViewControllerActivityButton value);
+
+    /**
+     * An event attribution associated with a click that caused this SFSafariViewController to be opened.
+     * <p>
+     * This attribute is ignored if the SFSafariViewController initialURL has a scheme of 'http'.
+     */
+    @Generated
+    @Selector("eventAttribution")
+    public native UIEventAttribution eventAttribution();
+
+    /**
+     * An event attribution associated with a click that caused this SFSafariViewController to be opened.
+     * <p>
+     * This attribute is ignored if the SFSafariViewController initialURL has a scheme of 'http'.
+     */
+    @Generated
+    @Selector("setEventAttribution:")
+    public native void setEventAttribution(UIEventAttribution value);
 }

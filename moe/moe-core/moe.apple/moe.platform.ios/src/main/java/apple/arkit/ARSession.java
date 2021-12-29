@@ -64,6 +64,7 @@ public class ARSession extends NSObject {
     @Selector("alloc")
     public static native ARSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARSession allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class MXAppResponsivenessMetric extends MXMetric {
     @Selector("alloc")
     public static native MXAppResponsivenessMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXAppResponsivenessMetric allocWithZone(VoidPtr zone);

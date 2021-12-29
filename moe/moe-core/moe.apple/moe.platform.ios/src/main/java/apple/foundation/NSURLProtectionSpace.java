@@ -68,6 +68,7 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     @Selector("alloc")
     public static native NSURLProtectionSpace alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLProtectionSpace allocWithZone(VoidPtr zone);

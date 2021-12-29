@@ -56,6 +56,7 @@ public class AVMetadataDogBodyObject extends AVMetadataBodyObject implements NSC
     @Selector("alloc")
     public static native AVMetadataDogBodyObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataDogBodyObject allocWithZone(VoidPtr zone);

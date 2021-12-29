@@ -73,6 +73,7 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native PDFThumbnailView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFThumbnailView allocWithZone(VoidPtr zone);

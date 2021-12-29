@@ -1153,56 +1153,67 @@ public final class Foundation {
     /**
      * Values for NSCalendar identifiers (not the NSLocaleCalendar property key)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSGregorianCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSBuddhistCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSChineseCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSHebrewCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIslamicCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIslamicCivilCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSJapaneseCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRepublicOfChinaCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersianCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIndianCalendar();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1510,6 +1521,7 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleNotificationFileHandleItem();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1975,7 +1987,7 @@ public final class Foundation {
     public static native String NSURLFileProtectionNone();
 
     /**
-     * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is locked or booting.
+     * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is locked or booting. Transient data files with this protection type should be excluded from backups using NSURLIsExcludedFromBackupKey.
      */
     @Generated
     @CVariable()
@@ -1983,7 +1995,7 @@ public final class Foundation {
     public static native String NSURLFileProtectionComplete();
 
     /**
-     * The file is stored in an encrypted format on disk. Files can be created while the device is locked, but once closed, cannot be opened again until the device is unlocked. If the file is opened when unlocked, you may continue to access the file normally, even if the user locks the device. There is a small performance penalty when the file is created and opened, though not when being written to or read from. This can be mitigated by changing the file protection to NSURLFileProtectionComplete when the device is unlocked.
+     * The file is stored in an encrypted format on disk. Files can be created while the device is locked, but once closed, cannot be opened again until the device is unlocked. If the file is opened when unlocked, you may continue to access the file normally, even if the user locks the device. There is a small performance penalty when the file is created and opened, though not when being written to or read from. This can be mitigated by changing the file protection to NSURLFileProtectionComplete when the device is unlocked. Transient data files with this protection type should be excluded from backups using NSURLIsExcludedFromBackupKey.
      */
     @Generated
     @CVariable()
@@ -2313,6 +2325,7 @@ public final class Foundation {
     /**
      * equivalent to NSURLUbiquitousItemDownloadingStatusKey == NSURLUbiquitousItemDownloadingStatusCurrent. Has never behaved as documented in earlier releases, hence deprecated.  (Read-only, value type boolean NSNumber)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2345,6 +2358,7 @@ public final class Foundation {
     /**
      * Use NSMetadataQuery and NSMetadataUbiquitousItemPercentDownloadedKey on NSMetadataItem instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2353,6 +2367,7 @@ public final class Foundation {
     /**
      * Use NSMetadataQuery and NSMetadataUbiquitousItemPercentUploadedKey on NSMetadataItem instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3352,6 +3367,7 @@ public final class Foundation {
      * <p>
      * This constant is deprecated in Mac OS X 10.6, and is superseded by NSURLErrorFailingURLStringErrorKey.  Both constants refer to the same value for backward-compatibility, but the new symbol name has a better prefix.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3887,6 +3903,7 @@ public final class Foundation {
     /**
      * boolean NSNumber
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4666,6 +4683,7 @@ public final class Foundation {
     @ByValue
     public static native NSMapTableKeyCallBacks NSOwnedPointerMapKeyCallBacks();
 
+    @Deprecated
     @Generated
     @CVariable()
     @ByValue
@@ -4691,6 +4709,7 @@ public final class Foundation {
     @ByValue
     public static native NSMapTableValueCallBacks NSOwnedPointerMapValueCallBacks();
 
+    @Deprecated
     @Generated
     @CVariable()
     @ByValue

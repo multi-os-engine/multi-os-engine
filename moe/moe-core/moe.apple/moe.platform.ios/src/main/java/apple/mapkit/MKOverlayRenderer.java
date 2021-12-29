@@ -70,6 +70,7 @@ public class MKOverlayRenderer extends NSObject {
     @Selector("alloc")
     public static native MKOverlayRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKOverlayRenderer allocWithZone(VoidPtr zone);

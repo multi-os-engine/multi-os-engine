@@ -47,6 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * GKVoiceChatService provides voice chat capabilities depending on your networking situation.
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +71,7 @@ public class GKVoiceChatService extends NSObject {
     @Selector("alloc")
     public static native GKVoiceChatService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKVoiceChatService allocWithZone(VoidPtr zone);

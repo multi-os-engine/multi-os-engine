@@ -67,6 +67,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     @Selector("alloc")
     public static native NSTextContentManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextContentManager allocWithZone(VoidPtr zone);

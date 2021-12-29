@@ -55,6 +55,7 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("alloc")
     public static native VNDetectTrajectoriesRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectTrajectoriesRequest allocWithZone(VoidPtr zone);

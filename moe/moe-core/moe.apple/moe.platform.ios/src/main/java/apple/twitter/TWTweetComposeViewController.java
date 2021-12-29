@@ -53,6 +53,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * content doesn't fit or if the view was already presented to the user and the
  * content can no longer be changed.
  */
+@Deprecated
 @Generated
 @Library("Twitter")
 @Runtime(ObjCRuntime.class)
@@ -76,6 +77,7 @@ public class TWTweetComposeViewController extends UIViewController {
     @Selector("alloc")
     public static native TWTweetComposeViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TWTweetComposeViewController allocWithZone(VoidPtr zone);

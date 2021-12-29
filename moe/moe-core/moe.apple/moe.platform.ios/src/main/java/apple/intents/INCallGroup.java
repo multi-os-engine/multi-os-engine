@@ -50,6 +50,7 @@ public class INCallGroup extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INCallGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCallGroup allocWithZone(VoidPtr zone);

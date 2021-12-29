@@ -53,6 +53,7 @@ public class AVAudioEnvironmentDistanceAttenuationParameters extends NSObject {
     @Selector("alloc")
     public static native AVAudioEnvironmentDistanceAttenuationParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioEnvironmentDistanceAttenuationParameters allocWithZone(VoidPtr zone);

@@ -75,6 +75,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CKShare alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKShare allocWithZone(VoidPtr zone);

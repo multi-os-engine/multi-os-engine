@@ -47,6 +47,7 @@ public class NSXPCListener extends NSObject {
     @Selector("alloc")
     public static native NSXPCListener alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSXPCListener allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
     @Selector("alloc")
     public static native INTermsAndConditions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTermsAndConditions allocWithZone(VoidPtr zone);

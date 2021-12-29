@@ -70,6 +70,7 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     @Selector("alloc")
     public static native AVDateRangeMetadataGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVDateRangeMetadataGroup allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
     @Selector("alloc")
     public static native INCarAirCirculationModeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCarAirCirculationModeResolutionResult allocWithZone(VoidPtr zone);

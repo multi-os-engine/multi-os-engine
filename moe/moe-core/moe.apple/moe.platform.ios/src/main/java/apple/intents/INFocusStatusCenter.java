@@ -46,6 +46,7 @@ public class INFocusStatusCenter extends NSObject {
     @Selector("alloc")
     public static native INFocusStatusCenter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INFocusStatusCenter allocWithZone(VoidPtr zone);

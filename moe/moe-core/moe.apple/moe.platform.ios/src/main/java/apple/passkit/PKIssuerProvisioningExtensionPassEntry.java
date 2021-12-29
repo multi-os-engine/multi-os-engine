@@ -46,6 +46,7 @@ public class PKIssuerProvisioningExtensionPassEntry extends NSObject {
     @Selector("alloc")
     public static native PKIssuerProvisioningExtensionPassEntry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKIssuerProvisioningExtensionPassEntry allocWithZone(VoidPtr zone);

@@ -57,6 +57,7 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native HKFHIRResource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKFHIRResource allocWithZone(VoidPtr zone);

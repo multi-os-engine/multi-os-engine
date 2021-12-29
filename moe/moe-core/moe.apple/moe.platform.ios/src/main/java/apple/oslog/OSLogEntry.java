@@ -54,6 +54,7 @@ public class OSLogEntry extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native OSLogEntry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogEntry allocWithZone(VoidPtr zone);

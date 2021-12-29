@@ -64,6 +64,7 @@ public class INListRideOptionsIntent extends INIntent {
     @Selector("alloc")
     public static native INListRideOptionsIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INListRideOptionsIntent allocWithZone(VoidPtr zone);

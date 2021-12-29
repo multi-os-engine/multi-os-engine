@@ -51,6 +51,7 @@ public class MPSRNNDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPSRNNDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNDescriptor allocWithZone(VoidPtr zone);

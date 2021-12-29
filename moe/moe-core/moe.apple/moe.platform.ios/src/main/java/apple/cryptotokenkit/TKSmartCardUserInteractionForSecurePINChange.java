@@ -58,6 +58,7 @@ public class TKSmartCardUserInteractionForSecurePINChange extends TKSmartCardUse
     @Selector("alloc")
     public static native TKSmartCardUserInteractionForSecurePINChange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardUserInteractionForSecurePINChange allocWithZone(VoidPtr zone);

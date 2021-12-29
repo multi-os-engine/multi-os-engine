@@ -64,6 +64,7 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
     @Selector("alloc")
     public static native PHASESwitchNodeDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASESwitchNodeDefinition allocWithZone(VoidPtr zone);

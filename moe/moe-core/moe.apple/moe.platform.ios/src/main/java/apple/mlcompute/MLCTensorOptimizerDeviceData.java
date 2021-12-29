@@ -47,6 +47,7 @@ public class MLCTensorOptimizerDeviceData extends NSObject implements NSCopying 
     @Selector("alloc")
     public static native MLCTensorOptimizerDeviceData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCTensorOptimizerDeviceData allocWithZone(VoidPtr zone);

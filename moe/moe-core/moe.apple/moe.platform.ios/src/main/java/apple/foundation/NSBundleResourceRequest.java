@@ -69,6 +69,7 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Selector("alloc")
     public static native NSBundleResourceRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBundleResourceRequest allocWithZone(VoidPtr zone);

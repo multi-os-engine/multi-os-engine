@@ -53,6 +53,7 @@ public class NFCVASResponse extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NFCVASResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCVASResponse allocWithZone(VoidPtr zone);

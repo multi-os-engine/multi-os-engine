@@ -49,6 +49,7 @@ public class GCDeviceCursor extends GCControllerDirectionPad {
     @Selector("alloc")
     public static native GCDeviceCursor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCDeviceCursor allocWithZone(VoidPtr zone);

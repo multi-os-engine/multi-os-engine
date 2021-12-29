@@ -69,6 +69,7 @@ public class MKGeodesicPolyline extends MKPolyline {
     @Selector("alloc")
     public static native MKGeodesicPolyline alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKGeodesicPolyline allocWithZone(VoidPtr zone);

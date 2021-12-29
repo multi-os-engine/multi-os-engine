@@ -64,6 +64,7 @@ public class SKAttributeValue extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SKAttributeValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKAttributeValue allocWithZone(VoidPtr zone);

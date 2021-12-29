@@ -65,6 +65,7 @@ public class GKMatchRequest extends NSObject {
     @Selector("alloc")
     public static native GKMatchRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKMatchRequest allocWithZone(VoidPtr zone);

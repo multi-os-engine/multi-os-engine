@@ -69,6 +69,7 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
     @Selector("alloc")
     public static native NSLayoutAnchor<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLayoutAnchor<?> allocWithZone(VoidPtr zone);

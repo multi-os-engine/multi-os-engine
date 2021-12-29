@@ -52,6 +52,7 @@ public class HMCharacteristicThresholdRangeEvent extends HMEvent implements NSCo
     @Selector("alloc")
     public static native HMCharacteristicThresholdRangeEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCharacteristicThresholdRangeEvent allocWithZone(VoidPtr zone);

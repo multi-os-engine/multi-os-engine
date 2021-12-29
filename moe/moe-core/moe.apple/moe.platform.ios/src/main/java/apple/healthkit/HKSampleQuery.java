@@ -74,6 +74,7 @@ public class HKSampleQuery extends HKQuery {
     @Selector("alloc")
     public static native HKSampleQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKSampleQuery allocWithZone(VoidPtr zone);

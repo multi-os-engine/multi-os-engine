@@ -68,6 +68,7 @@ public class NWPath extends NSObject {
     @Selector("alloc")
     public static native NWPath alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NWPath allocWithZone(VoidPtr zone);

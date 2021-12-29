@@ -47,6 +47,7 @@ public class PKStoredValuePassBalance extends NSObject {
     @Selector("alloc")
     public static native PKStoredValuePassBalance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKStoredValuePassBalance allocWithZone(VoidPtr zone);

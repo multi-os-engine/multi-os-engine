@@ -64,6 +64,7 @@ public class INCancelWorkoutIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INCancelWorkoutIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCancelWorkoutIntentResponse allocWithZone(VoidPtr zone);

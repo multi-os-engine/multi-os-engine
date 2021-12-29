@@ -47,6 +47,7 @@ public class QLThumbnailProvider extends NSObject {
     @Selector("alloc")
     public static native QLThumbnailProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLThumbnailProvider allocWithZone(VoidPtr zone);

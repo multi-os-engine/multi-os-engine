@@ -64,6 +64,7 @@ public class UIScreenMode extends NSObject {
     @Selector("alloc")
     public static native UIScreenMode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIScreenMode allocWithZone(VoidPtr zone);

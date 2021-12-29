@@ -53,6 +53,7 @@ public class ARCollaborationData extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ARCollaborationData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARCollaborationData allocWithZone(VoidPtr zone);

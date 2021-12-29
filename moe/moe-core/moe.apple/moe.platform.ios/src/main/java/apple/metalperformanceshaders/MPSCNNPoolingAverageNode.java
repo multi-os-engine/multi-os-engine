@@ -50,6 +50,7 @@ public class MPSCNNPoolingAverageNode extends MPSCNNPoolingNode {
     @Selector("alloc")
     public static native MPSCNNPoolingAverageNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingAverageNode allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     @Selector("alloc")
     public static native UINavigationBarAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UINavigationBarAppearance allocWithZone(VoidPtr zone);

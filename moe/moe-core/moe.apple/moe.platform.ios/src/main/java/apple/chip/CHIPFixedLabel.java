@@ -51,6 +51,7 @@ public class CHIPFixedLabel extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPFixedLabel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPFixedLabel allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPFixedLabel extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPFixedLabel initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPFixedLabel initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

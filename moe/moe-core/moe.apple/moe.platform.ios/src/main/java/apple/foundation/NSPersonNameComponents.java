@@ -62,6 +62,7 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native NSPersonNameComponents alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersonNameComponents allocWithZone(VoidPtr zone);

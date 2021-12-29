@@ -45,6 +45,7 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
     @Selector("alloc")
     public static native AVAssetVariantAudioRenditionSpecificAttributes alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetVariantAudioRenditionSpecificAttributes allocWithZone(VoidPtr zone);

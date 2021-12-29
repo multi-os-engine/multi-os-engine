@@ -50,6 +50,7 @@ public class INSeat extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INSeat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSeat allocWithZone(VoidPtr zone);

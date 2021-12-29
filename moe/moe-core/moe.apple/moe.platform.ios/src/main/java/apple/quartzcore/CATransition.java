@@ -68,6 +68,7 @@ public class CATransition extends CAAnimation {
     @Selector("alloc")
     public static native CATransition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CATransition allocWithZone(VoidPtr zone);

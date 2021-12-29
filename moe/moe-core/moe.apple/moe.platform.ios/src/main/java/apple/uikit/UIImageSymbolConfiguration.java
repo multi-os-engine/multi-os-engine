@@ -48,6 +48,7 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @Selector("alloc")
     public static native UIImageSymbolConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIImageSymbolConfiguration allocWithZone(VoidPtr zone);

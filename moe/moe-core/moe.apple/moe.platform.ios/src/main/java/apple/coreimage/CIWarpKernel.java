@@ -80,6 +80,7 @@ public class CIWarpKernel extends CIKernel {
     @Selector("alloc")
     public static native CIWarpKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIWarpKernel allocWithZone(VoidPtr zone);

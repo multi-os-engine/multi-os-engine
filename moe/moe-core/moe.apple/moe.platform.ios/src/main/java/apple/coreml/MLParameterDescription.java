@@ -52,6 +52,7 @@ public class MLParameterDescription extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLParameterDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLParameterDescription allocWithZone(VoidPtr zone);

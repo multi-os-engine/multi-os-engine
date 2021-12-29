@@ -68,6 +68,7 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
     @Selector("alloc")
     public static native CKFetchWebAuthTokenOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchWebAuthTokenOperation allocWithZone(VoidPtr zone);

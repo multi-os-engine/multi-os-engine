@@ -63,6 +63,7 @@ public class MLCUpsampleLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCUpsampleLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCUpsampleLayer allocWithZone(VoidPtr zone);

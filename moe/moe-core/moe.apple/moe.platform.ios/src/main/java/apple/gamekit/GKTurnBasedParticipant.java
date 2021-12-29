@@ -69,6 +69,7 @@ public class GKTurnBasedParticipant extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedParticipant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKTurnBasedParticipant allocWithZone(VoidPtr zone);

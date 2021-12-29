@@ -65,6 +65,7 @@ public class NSComparisonPredicate extends NSPredicate {
     @Selector("alloc")
     public static native NSComparisonPredicate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSComparisonPredicate allocWithZone(VoidPtr zone);

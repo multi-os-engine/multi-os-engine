@@ -67,6 +67,7 @@ public class CBCharacteristic extends CBAttribute {
     @Selector("alloc")
     public static native CBCharacteristic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBCharacteristic allocWithZone(VoidPtr zone);

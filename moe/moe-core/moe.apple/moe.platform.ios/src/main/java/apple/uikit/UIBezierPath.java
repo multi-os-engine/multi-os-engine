@@ -76,6 +76,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native UIBezierPath alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBezierPath allocWithZone(VoidPtr zone);

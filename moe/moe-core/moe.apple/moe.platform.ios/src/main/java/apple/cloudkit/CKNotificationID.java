@@ -66,6 +66,7 @@ public class CKNotificationID extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native CKNotificationID alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKNotificationID allocWithZone(VoidPtr zone);

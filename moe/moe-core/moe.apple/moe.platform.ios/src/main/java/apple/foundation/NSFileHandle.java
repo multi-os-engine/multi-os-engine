@@ -64,6 +64,7 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSFileHandle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileHandle allocWithZone(VoidPtr zone);

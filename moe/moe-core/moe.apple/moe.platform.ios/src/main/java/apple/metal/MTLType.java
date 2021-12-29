@@ -45,6 +45,7 @@ public class MTLType extends NSObject {
     @Selector("alloc")
     public static native MTLType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLType allocWithZone(VoidPtr zone);

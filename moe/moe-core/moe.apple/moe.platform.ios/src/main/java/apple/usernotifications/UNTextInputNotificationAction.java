@@ -77,6 +77,7 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     @Selector("alloc")
     public static native UNTextInputNotificationAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNTextInputNotificationAction allocWithZone(VoidPtr zone);

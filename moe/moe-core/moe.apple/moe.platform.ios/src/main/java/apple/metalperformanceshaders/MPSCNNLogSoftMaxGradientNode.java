@@ -48,6 +48,7 @@ public class MPSCNNLogSoftMaxGradientNode extends MPSNNGradientFilterNode {
     @Selector("alloc")
     public static native MPSCNNLogSoftMaxGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLogSoftMaxGradientNode allocWithZone(VoidPtr zone);

@@ -75,6 +75,7 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native GKEntity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKEntity allocWithZone(VoidPtr zone);

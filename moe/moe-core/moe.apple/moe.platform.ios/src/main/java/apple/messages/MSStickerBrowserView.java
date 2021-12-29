@@ -92,6 +92,7 @@ public class MSStickerBrowserView extends UIView {
     @Selector("alloc")
     public static native MSStickerBrowserView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSStickerBrowserView allocWithZone(VoidPtr zone);

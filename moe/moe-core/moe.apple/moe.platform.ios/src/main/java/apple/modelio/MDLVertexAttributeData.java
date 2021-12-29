@@ -70,6 +70,7 @@ public class MDLVertexAttributeData extends NSObject {
     @Selector("alloc")
     public static native MDLVertexAttributeData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLVertexAttributeData allocWithZone(VoidPtr zone);

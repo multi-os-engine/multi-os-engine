@@ -45,6 +45,7 @@ public class UISceneActivationRequestOptions extends NSObject {
     @Selector("alloc")
     public static native UISceneActivationRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneActivationRequestOptions allocWithZone(VoidPtr zone);

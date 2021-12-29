@@ -62,6 +62,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Selector("alloc")
     public static native MPSImageNormalizedHistogram alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageNormalizedHistogram allocWithZone(VoidPtr zone);

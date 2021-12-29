@@ -59,6 +59,7 @@ public class HKElectrocardiogramQuery extends HKQuery {
     @Selector("alloc")
     public static native HKElectrocardiogramQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKElectrocardiogramQuery allocWithZone(VoidPtr zone);

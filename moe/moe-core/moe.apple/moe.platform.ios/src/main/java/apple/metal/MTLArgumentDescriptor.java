@@ -62,6 +62,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLArgumentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLArgumentDescriptor allocWithZone(VoidPtr zone);

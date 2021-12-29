@@ -53,6 +53,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     @Selector("alloc")
     public static native MPSGraphPooling4DOpDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphPooling4DOpDescriptor allocWithZone(VoidPtr zone);

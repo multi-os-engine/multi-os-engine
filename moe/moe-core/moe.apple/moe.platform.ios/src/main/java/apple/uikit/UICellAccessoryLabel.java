@@ -57,6 +57,7 @@ public class UICellAccessoryLabel extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryLabel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryLabel allocWithZone(VoidPtr zone);

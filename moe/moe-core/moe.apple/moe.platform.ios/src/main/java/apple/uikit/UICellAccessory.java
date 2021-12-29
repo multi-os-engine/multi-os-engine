@@ -54,6 +54,7 @@ public class UICellAccessory extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native UICellAccessory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessory allocWithZone(VoidPtr zone);

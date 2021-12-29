@@ -70,6 +70,7 @@ public class UIPasteboard extends NSObject {
     @Selector("alloc")
     public static native UIPasteboard alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPasteboard allocWithZone(VoidPtr zone);

@@ -56,6 +56,7 @@ public class TKSmartCard extends NSObject {
     @Selector("alloc")
     public static native TKSmartCard alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCard allocWithZone(VoidPtr zone);

@@ -80,6 +80,7 @@ public class SKShapeNode extends SKNode {
     @Selector("alloc")
     public static native SKShapeNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKShapeNode allocWithZone(VoidPtr zone);

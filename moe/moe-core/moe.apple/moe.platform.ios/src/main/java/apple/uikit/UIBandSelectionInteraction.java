@@ -50,6 +50,7 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     @Selector("alloc")
     public static native UIBandSelectionInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBandSelectionInteraction allocWithZone(VoidPtr zone);

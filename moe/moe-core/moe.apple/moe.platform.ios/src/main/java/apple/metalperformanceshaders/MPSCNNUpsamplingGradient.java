@@ -88,6 +88,7 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSCNNUpsamplingGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingGradient allocWithZone(VoidPtr zone);

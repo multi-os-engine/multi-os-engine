@@ -51,6 +51,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     @Selector("alloc")
     public static native UIContextMenuInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIContextMenuInteraction allocWithZone(VoidPtr zone);

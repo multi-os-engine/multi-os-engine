@@ -66,6 +66,7 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UIPushBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPushBehavior allocWithZone(VoidPtr zone);

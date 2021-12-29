@@ -48,6 +48,7 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("alloc")
     public static native INSearchForNotebookItemsIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSearchForNotebookItemsIntent allocWithZone(VoidPtr zone);

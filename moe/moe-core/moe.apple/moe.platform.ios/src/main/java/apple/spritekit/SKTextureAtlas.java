@@ -67,6 +67,7 @@ public class SKTextureAtlas extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SKTextureAtlas alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTextureAtlas allocWithZone(VoidPtr zone);

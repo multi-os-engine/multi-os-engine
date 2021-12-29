@@ -61,6 +61,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     @Selector("alloc")
     public static native MTLRenderPassDepthAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPassDepthAttachmentDescriptor allocWithZone(VoidPtr zone);

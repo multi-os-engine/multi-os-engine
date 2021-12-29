@@ -50,6 +50,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native ARConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARConfiguration allocWithZone(VoidPtr zone);

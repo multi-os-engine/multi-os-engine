@@ -46,6 +46,7 @@ public class UIDragPreviewParameters extends UIPreviewParameters {
     @Selector("alloc")
     public static native UIDragPreviewParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDragPreviewParameters allocWithZone(VoidPtr zone);

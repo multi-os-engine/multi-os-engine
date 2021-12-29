@@ -45,6 +45,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +69,7 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @Selector("alloc")
     public static native UIPopoverController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPopoverController allocWithZone(VoidPtr zone);

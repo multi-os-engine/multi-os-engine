@@ -45,6 +45,7 @@ public class MPSNNReshapeGradientNode extends MPSNNGradientFilterNode {
     @Selector("alloc")
     public static native MPSNNReshapeGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReshapeGradientNode allocWithZone(VoidPtr zone);

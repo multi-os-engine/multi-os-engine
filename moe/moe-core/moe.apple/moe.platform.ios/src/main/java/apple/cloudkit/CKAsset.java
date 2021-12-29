@@ -63,6 +63,7 @@ public class CKAsset extends NSObject implements CKRecordValue {
     @Selector("alloc")
     public static native CKAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKAsset allocWithZone(VoidPtr zone);

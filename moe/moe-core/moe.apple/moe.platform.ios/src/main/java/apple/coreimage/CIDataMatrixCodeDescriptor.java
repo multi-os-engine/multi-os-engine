@@ -53,6 +53,7 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("alloc")
     public static native CIDataMatrixCodeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIDataMatrixCodeDescriptor allocWithZone(VoidPtr zone);

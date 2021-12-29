@@ -52,6 +52,7 @@ public class QLFileThumbnailRequest extends NSObject {
     @Selector("alloc")
     public static native QLFileThumbnailRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLFileThumbnailRequest allocWithZone(VoidPtr zone);

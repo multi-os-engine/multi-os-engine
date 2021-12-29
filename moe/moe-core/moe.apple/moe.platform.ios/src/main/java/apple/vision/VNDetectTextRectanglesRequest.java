@@ -52,6 +52,7 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectTextRectanglesRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectTextRectanglesRequest allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class NSEntityMapping extends NSObject {
     @Selector("alloc")
     public static native NSEntityMapping alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSEntityMapping allocWithZone(VoidPtr zone);

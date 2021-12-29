@@ -61,6 +61,7 @@ public class HMCameraAudioControl extends HMCameraControl {
     @Selector("alloc")
     public static native HMCameraAudioControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCameraAudioControl allocWithZone(VoidPtr zone);

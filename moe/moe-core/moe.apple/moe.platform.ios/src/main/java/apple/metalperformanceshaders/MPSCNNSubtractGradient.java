@@ -70,6 +70,7 @@ public class MPSCNNSubtractGradient extends MPSCNNArithmeticGradient {
     @Selector("alloc")
     public static native MPSCNNSubtractGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNSubtractGradient allocWithZone(VoidPtr zone);

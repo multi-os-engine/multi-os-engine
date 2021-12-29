@@ -65,6 +65,7 @@ public class MSSticker extends NSObject {
     @Selector("alloc")
     public static native MSSticker alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSSticker allocWithZone(VoidPtr zone);

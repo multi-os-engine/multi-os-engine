@@ -62,6 +62,7 @@ public class CTCellularData extends NSObject {
     @Selector("alloc")
     public static native CTCellularData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTCellularData allocWithZone(VoidPtr zone);

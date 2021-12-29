@@ -66,6 +66,7 @@ public class WCSessionFile extends NSObject {
     @Selector("alloc")
     public static native WCSessionFile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WCSessionFile allocWithZone(VoidPtr zone);

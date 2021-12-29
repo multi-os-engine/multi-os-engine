@@ -48,6 +48,7 @@ public class MPSCNNUpsamplingNearestNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNUpsamplingNearestNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingNearestNode allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class ARRaycastQuery extends NSObject {
     @Selector("alloc")
     public static native ARRaycastQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARRaycastQuery allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Selector("alloc")
     public static native GCControllerDirectionPad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCControllerDirectionPad allocWithZone(VoidPtr zone);

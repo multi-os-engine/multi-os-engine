@@ -51,6 +51,7 @@ public class TKTokenKeyAlgorithm extends NSObject {
     @Selector("alloc")
     public static native TKTokenKeyAlgorithm alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenKeyAlgorithm allocWithZone(VoidPtr zone);

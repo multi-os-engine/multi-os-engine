@@ -67,6 +67,7 @@ public class UNLocationNotificationTrigger extends UNNotificationTrigger {
     @Selector("alloc")
     public static native UNLocationNotificationTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNLocationNotificationTrigger allocWithZone(VoidPtr zone);

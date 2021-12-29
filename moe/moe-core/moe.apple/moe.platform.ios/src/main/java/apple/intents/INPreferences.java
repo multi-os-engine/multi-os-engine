@@ -62,6 +62,7 @@ public class INPreferences extends NSObject {
     @Selector("alloc")
     public static native INPreferences alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPreferences allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class UIMenu extends UIMenuElement {
     @Selector("alloc")
     public static native UIMenu alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMenu allocWithZone(VoidPtr zone);

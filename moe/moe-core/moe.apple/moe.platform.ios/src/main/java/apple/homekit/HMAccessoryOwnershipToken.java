@@ -46,6 +46,7 @@ public class HMAccessoryOwnershipToken extends NSObject {
     @Selector("alloc")
     public static native HMAccessoryOwnershipToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAccessoryOwnershipToken allocWithZone(VoidPtr zone);

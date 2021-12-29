@@ -64,6 +64,7 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     @Selector("alloc")
     public static native MTLRasterizationRateLayerDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRasterizationRateLayerDescriptor allocWithZone(VoidPtr zone);

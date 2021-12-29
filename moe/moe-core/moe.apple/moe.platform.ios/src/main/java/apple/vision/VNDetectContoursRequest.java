@@ -53,6 +53,7 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectContoursRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectContoursRequest allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class PDFActionGoTo extends PDFAction implements NSCopying {
     @Selector("alloc")
     public static native PDFActionGoTo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFActionGoTo allocWithZone(VoidPtr zone);

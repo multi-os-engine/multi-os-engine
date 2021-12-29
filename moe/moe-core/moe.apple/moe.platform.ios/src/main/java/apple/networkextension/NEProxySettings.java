@@ -74,6 +74,7 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("alloc")
     public static native NEProxySettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEProxySettings allocWithZone(VoidPtr zone);

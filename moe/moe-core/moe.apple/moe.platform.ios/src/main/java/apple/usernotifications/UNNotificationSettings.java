@@ -66,6 +66,7 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native UNNotificationSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationSettings allocWithZone(VoidPtr zone);

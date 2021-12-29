@@ -71,6 +71,7 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     @Selector("alloc")
     public static native AVCaptureAudioDataOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureAudioDataOutput allocWithZone(VoidPtr zone);

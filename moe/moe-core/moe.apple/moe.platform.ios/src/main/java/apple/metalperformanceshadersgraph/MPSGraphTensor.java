@@ -55,6 +55,7 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPSGraphTensor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphTensor allocWithZone(VoidPtr zone);

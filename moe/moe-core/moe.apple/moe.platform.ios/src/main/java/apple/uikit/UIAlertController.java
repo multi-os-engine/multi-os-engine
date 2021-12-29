@@ -70,6 +70,7 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("alloc")
     public static native UIAlertController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAlertController allocWithZone(VoidPtr zone);

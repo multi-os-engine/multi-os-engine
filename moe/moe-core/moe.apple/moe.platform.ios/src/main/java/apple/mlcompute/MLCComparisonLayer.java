@@ -53,6 +53,7 @@ public class MLCComparisonLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCComparisonLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCComparisonLayer allocWithZone(VoidPtr zone);

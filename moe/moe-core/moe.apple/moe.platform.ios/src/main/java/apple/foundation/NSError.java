@@ -64,6 +64,7 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSError alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSError allocWithZone(VoidPtr zone);

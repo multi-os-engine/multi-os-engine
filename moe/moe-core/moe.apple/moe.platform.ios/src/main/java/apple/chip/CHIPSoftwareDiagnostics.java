@@ -51,6 +51,7 @@ public class CHIPSoftwareDiagnostics extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPSoftwareDiagnostics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPSoftwareDiagnostics allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPSoftwareDiagnostics extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPSoftwareDiagnostics initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPSoftwareDiagnostics initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

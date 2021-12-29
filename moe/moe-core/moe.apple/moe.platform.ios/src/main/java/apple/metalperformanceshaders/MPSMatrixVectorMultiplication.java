@@ -69,6 +69,7 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixVectorMultiplication alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixVectorMultiplication allocWithZone(VoidPtr zone);

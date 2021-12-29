@@ -66,6 +66,7 @@ public class CXCallUpdate extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native CXCallUpdate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXCallUpdate allocWithZone(VoidPtr zone);

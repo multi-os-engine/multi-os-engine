@@ -73,6 +73,7 @@ public class ACAccountCredential extends NSObject {
     @Selector("alloc")
     public static native ACAccountCredential alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ACAccountCredential allocWithZone(VoidPtr zone);

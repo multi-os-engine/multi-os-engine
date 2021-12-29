@@ -63,6 +63,7 @@ public class GKDecisionNode extends NSObject {
     @Selector("alloc")
     public static native GKDecisionNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKDecisionNode allocWithZone(VoidPtr zone);

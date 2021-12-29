@@ -81,6 +81,7 @@ public class EKEventStore extends NSObject {
     @Selector("alloc")
     public static native EKEventStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKEventStore allocWithZone(VoidPtr zone);

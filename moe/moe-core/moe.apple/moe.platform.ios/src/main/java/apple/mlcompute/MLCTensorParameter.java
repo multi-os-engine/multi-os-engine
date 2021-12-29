@@ -50,6 +50,7 @@ public class MLCTensorParameter extends NSObject {
     @Selector("alloc")
     public static native MLCTensorParameter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCTensorParameter allocWithZone(VoidPtr zone);

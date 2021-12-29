@@ -42,6 +42,7 @@ public class OS_object extends NSObject {
     @Selector("alloc")
     public static native OS_object alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OS_object allocWithZone(VoidPtr zone);

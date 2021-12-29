@@ -71,6 +71,7 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("alloc")
     public static native HMLocationEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMLocationEvent allocWithZone(VoidPtr zone);

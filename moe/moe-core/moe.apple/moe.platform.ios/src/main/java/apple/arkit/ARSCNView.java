@@ -75,6 +75,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("alloc")
     public static native ARSCNView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARSCNView allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native HKBloodTypeObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKBloodTypeObject allocWithZone(VoidPtr zone);

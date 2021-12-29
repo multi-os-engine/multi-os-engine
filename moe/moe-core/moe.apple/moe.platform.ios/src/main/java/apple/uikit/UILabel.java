@@ -80,6 +80,7 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("alloc")
     public static native UILabel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILabel allocWithZone(VoidPtr zone);

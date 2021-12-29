@@ -72,6 +72,7 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
     @Selector("alloc")
     public static native WKUserContentController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKUserContentController allocWithZone(VoidPtr zone);

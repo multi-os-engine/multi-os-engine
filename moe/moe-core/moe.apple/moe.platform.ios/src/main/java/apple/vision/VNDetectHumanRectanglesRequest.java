@@ -52,6 +52,7 @@ public class VNDetectHumanRectanglesRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectHumanRectanglesRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectHumanRectanglesRequest allocWithZone(VoidPtr zone);

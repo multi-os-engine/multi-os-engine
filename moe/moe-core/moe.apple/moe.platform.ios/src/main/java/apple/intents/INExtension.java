@@ -63,6 +63,7 @@ public class INExtension extends NSObject implements INIntentHandlerProviding {
     @Selector("alloc")
     public static native INExtension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INExtension allocWithZone(VoidPtr zone);

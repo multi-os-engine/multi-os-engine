@@ -19,24 +19,25 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+@Deprecated
 @Generated
 public final class UISegmentedControlStyle {
     /**
      * large plain
      */
-    @Generated @NInt public static final long Plain = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Plain = 0x0000000000000000L;
     /**
      * large bordered
      */
-    @Generated @NInt public static final long Bordered = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Bordered = 0x0000000000000001L;
     /**
      * small button/nav bar style. tintable
      */
-    @Generated @NInt public static final long Bar = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Bar = 0x0000000000000002L;
     /**
      * DEPRECATED. Do not use this style.
      */
-    @Generated @NInt public static final long Bezeled = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Bezeled = 0x0000000000000003L;
 
     @Generated
     private UISegmentedControlStyle() {

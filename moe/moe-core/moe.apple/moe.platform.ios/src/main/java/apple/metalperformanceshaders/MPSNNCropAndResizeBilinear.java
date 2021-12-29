@@ -61,6 +61,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNCropAndResizeBilinear alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNCropAndResizeBilinear allocWithZone(VoidPtr zone);

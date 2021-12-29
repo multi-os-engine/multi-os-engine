@@ -50,6 +50,7 @@ public class MLParameterKey extends MLKey {
     @Selector("alloc")
     public static native MLParameterKey alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLParameterKey allocWithZone(VoidPtr zone);

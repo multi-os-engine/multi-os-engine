@@ -49,6 +49,7 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
     @Selector("alloc")
     public static native MPSCNNFullyConnectedNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNFullyConnectedNode allocWithZone(VoidPtr zone);

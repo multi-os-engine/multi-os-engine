@@ -55,6 +55,7 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     @Selector("alloc")
     public static native AVPlayerInterstitialEventController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerInterstitialEventController allocWithZone(VoidPtr zone);

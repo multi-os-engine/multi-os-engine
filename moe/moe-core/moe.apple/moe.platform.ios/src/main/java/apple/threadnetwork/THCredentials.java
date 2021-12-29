@@ -1,10 +1,13 @@
-package apple.chip;
+package apple.threadnetwork;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSError;
+import apple.foundation.NSCoder;
+import apple.foundation.NSData;
+import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -20,39 +23,62 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
-@Library("CHIP")
+@Library("ThreadNetwork")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CHIPError extends NSObject {
+public class THCredentials extends NSObject implements NSSecureCoding {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected CHIPError(Pointer peer) {
+    protected THCredentials(Pointer peer) {
         super(peer);
     }
+
+    /**
+     * PSKc : A 16 byte value. e.g. 0eec92e950c4cbc6966d32613f08efe0
+     */
+    @Generated
+    @Selector("PSKC")
+    public native NSData PSKC();
 
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * Active Operational Data Set in Bytes.
+     */
+    @Generated
+    @Selector("activeOperationalDataSet")
+    public native NSData activeOperationalDataSet();
+
     @Generated
     @Owned
     @Selector("alloc")
-    public static native CHIPError alloc();
+    public static native THCredentials alloc();
 
     @Generated
+    @Owned
     @Selector("allocWithZone:")
-    public static native CHIPError allocWithZone(VoidPtr zone);
+    public static native THCredentials allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
+
+    /**
+     * extendedPANID : Active Thread Network Border Agent Identifier
+     */
+    @Generated
+    @Selector("borderAgentID")
+    public native NSData borderAgentID();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -64,6 +90,13 @@ public class CHIPError extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * channel : Thread network channel
+     */
+    @Generated
+    @Selector("channel")
+    public native byte channel();
+
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
@@ -71,6 +104,13 @@ public class CHIPError extends NSObject {
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
+
+    /**
+     * Metadata
+     */
+    @Generated
+    @Selector("creationDate")
+    public native NSDate creationDate();
 
     @Generated
     @Selector("debugDescription")
@@ -81,12 +121,15 @@ public class CHIPError extends NSObject {
     public static native String description_static();
 
     @Generated
-    @Selector("errorForCHIPErrorCode:")
-    public static native NSError errorForCHIPErrorCode(int errorCode);
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * extendedPANID : Thread Network extended PAN ID
+     */
     @Generated
-    @Selector("errorToCHIPErrorCode:")
-    public static native int errorToCHIPErrorCode(NSError errorCode);
+    @Selector("extendedPANID")
+    public native NSData extendedPANID();
 
     @Generated
     @Selector("hash")
@@ -95,7 +138,11 @@ public class CHIPError extends NSObject {
 
     @Generated
     @Selector("init")
-    public native CHIPError init();
+    public native THCredentials init();
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native THCredentials initWithCoder(NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -119,9 +166,34 @@ public class CHIPError extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
+    @Selector("lastModificationDate")
+    public native NSDate lastModificationDate();
+
+    /**
+     * networkKey : A 16 byte value. e.g. 7dd5b9bffe1285f27e78898658aa88f4
+     */
+    @Generated
+    @Selector("networkKey")
+    public native NSData networkKey();
+
+    /**
+     * networkName : Thread Network name
+     */
+    @Generated
+    @Selector("networkName")
+    public native String networkName();
+
+    @Generated
     @Owned
     @Selector("new")
-    public static native CHIPError new_objc();
+    public static native THCredentials new_objc();
+
+    /**
+     * PANID : A 2 byte value. e.g. 308f
+     */
+    @Generated
+    @Selector("panID")
+    public native NSData panID();
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -131,6 +203,13 @@ public class CHIPError extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * channel : Thread network channel
+     */
+    @Generated
+    @Selector("setChannel:")
+    public native void setChannel(byte value);
+
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
@@ -138,6 +217,16 @@ public class CHIPError extends NSObject {
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
 
     @Generated
     @Selector("version")

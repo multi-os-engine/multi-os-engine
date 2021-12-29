@@ -68,6 +68,7 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
     @Selector("alloc")
     public static native CAEAGLLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAEAGLLayer allocWithZone(VoidPtr zone);

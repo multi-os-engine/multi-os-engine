@@ -52,6 +52,7 @@ public class AVCaptureSynchronizedMetadataObjectData extends AVCaptureSynchroniz
     @Selector("alloc")
     public static native AVCaptureSynchronizedMetadataObjectData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureSynchronizedMetadataObjectData allocWithZone(VoidPtr zone);

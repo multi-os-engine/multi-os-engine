@@ -50,6 +50,7 @@ public class MKPointOfInterestFilter extends NSObject implements NSSecureCoding,
     @Selector("alloc")
     public static native MKPointOfInterestFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKPointOfInterestFilter allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class QLPreviewReplyAttachment extends NSObject {
     @Selector("alloc")
     public static native QLPreviewReplyAttachment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLPreviewReplyAttachment allocWithZone(VoidPtr zone);

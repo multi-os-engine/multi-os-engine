@@ -75,6 +75,7 @@ public class CLBeacon extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CLBeacon alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLBeacon allocWithZone(VoidPtr zone);

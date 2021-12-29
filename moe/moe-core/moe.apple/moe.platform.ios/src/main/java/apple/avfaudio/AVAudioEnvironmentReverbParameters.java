@@ -62,6 +62,7 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
     @Selector("alloc")
     public static native AVAudioEnvironmentReverbParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioEnvironmentReverbParameters allocWithZone(VoidPtr zone);

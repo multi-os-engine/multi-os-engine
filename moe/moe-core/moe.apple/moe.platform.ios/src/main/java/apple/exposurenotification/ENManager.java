@@ -85,6 +85,7 @@ public class ENManager extends NSObject {
     @Selector("alloc")
     public static native ENManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENManager allocWithZone(VoidPtr zone);

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * GKChallengeEventHandler's delegate must implement the following protocol to be notified of challenge-related events. All of these methods are called on the main thread.
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

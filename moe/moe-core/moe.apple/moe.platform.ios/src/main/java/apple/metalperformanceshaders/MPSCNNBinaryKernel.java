@@ -64,6 +64,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
     @Selector("alloc")
     public static native MPSCNNBinaryKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBinaryKernel allocWithZone(VoidPtr zone);

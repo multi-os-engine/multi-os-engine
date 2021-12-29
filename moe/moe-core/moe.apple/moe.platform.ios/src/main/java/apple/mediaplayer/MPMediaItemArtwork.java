@@ -66,6 +66,7 @@ public class MPMediaItemArtwork extends NSObject {
     @Selector("alloc")
     public static native MPMediaItemArtwork alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaItemArtwork allocWithZone(VoidPtr zone);

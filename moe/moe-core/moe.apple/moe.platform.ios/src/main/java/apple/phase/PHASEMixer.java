@@ -50,6 +50,7 @@ public class PHASEMixer extends NSObject {
     @Selector("alloc")
     public static native PHASEMixer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEMixer allocWithZone(VoidPtr zone);

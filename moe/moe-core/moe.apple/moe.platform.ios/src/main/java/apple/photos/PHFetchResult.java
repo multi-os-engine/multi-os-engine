@@ -76,6 +76,7 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Selector("alloc")
     public static native PHFetchResult<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHFetchResult<?> allocWithZone(VoidPtr zone);

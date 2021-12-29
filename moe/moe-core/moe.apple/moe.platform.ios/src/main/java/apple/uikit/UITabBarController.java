@@ -79,6 +79,7 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Selector("alloc")
     public static native UITabBarController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITabBarController allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class EASession extends NSObject {
     @Selector("alloc")
     public static native EASession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EASession allocWithZone(VoidPtr zone);

@@ -46,6 +46,7 @@ public class NSDiffableDataSourceTransaction<_SectionIdentifierType, _ItemIdenti
     @Selector("alloc")
     public static native NSDiffableDataSourceTransaction<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDiffableDataSourceTransaction<?, ?> allocWithZone(VoidPtr zone);

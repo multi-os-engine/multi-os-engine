@@ -58,6 +58,7 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native AVSpeechUtterance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSpeechUtterance allocWithZone(VoidPtr zone);

@@ -430,7 +430,7 @@ public final class MIDIDriverInterface extends StructObject {
     /**
      * [@fn] SendPackets
      * <p>
-     * Only for provisional drivers.
+     * Only for version 3 drivers (new for macOS 12.0).
      * <p>
      * Send a MIDIEventList to the destination endpoint whose refCons are being passed as
      * arguments.
@@ -453,7 +453,7 @@ public final class MIDIDriverInterface extends StructObject {
     /**
      * [@fn] SendPackets
      * <p>
-     * Only for provisional drivers.
+     * Only for version 3 drivers (new for macOS 12.0).
      * <p>
      * Send a MIDIEventList to the destination endpoint whose refCons are being passed as
      * arguments.
@@ -465,7 +465,7 @@ public final class MIDIDriverInterface extends StructObject {
     /**
      * [@fn] MonitorEvents
      * <p>
-     * Only for provisional drivers.
+     * Only for version 3 drivers (new for macOS 12.0).
      * <p>
      * Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.
      */
@@ -486,7 +486,7 @@ public final class MIDIDriverInterface extends StructObject {
     /**
      * [@fn] MonitorEvents
      * <p>
-     * Only for provisional drivers.
+     * Only for version 3 drivers (new for macOS 12.0).
      * <p>
      * Same as Monitor but uses MIDEventList, whose protocol may vary from MIDI 1.0.
      */

@@ -61,6 +61,7 @@ public class CTCarrier extends NSObject {
     @Selector("alloc")
     public static native CTCarrier alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTCarrier allocWithZone(VoidPtr zone);

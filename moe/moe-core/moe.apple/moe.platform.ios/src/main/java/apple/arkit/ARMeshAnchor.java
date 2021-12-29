@@ -50,6 +50,7 @@ public class ARMeshAnchor extends ARAnchor {
     @Selector("alloc")
     public static native ARMeshAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARMeshAnchor allocWithZone(VoidPtr zone);

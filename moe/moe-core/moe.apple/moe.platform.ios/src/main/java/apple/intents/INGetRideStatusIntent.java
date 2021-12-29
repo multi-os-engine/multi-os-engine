@@ -63,6 +63,7 @@ public class INGetRideStatusIntent extends INIntent {
     @Selector("alloc")
     public static native INGetRideStatusIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetRideStatusIntent allocWithZone(VoidPtr zone);

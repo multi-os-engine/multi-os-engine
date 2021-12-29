@@ -65,6 +65,7 @@ public class SKPhysicsJointFixed extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointFixed alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsJointFixed allocWithZone(VoidPtr zone);

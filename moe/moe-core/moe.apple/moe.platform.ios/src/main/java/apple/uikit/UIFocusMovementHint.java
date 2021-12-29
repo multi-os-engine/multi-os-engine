@@ -53,6 +53,7 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIFocusMovementHint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusMovementHint allocWithZone(VoidPtr zone);

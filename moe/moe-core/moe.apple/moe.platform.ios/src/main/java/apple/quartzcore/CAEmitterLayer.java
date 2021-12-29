@@ -69,6 +69,7 @@ public class CAEmitterLayer extends CALayer {
     @Selector("alloc")
     public static native CAEmitterLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAEmitterLayer allocWithZone(VoidPtr zone);

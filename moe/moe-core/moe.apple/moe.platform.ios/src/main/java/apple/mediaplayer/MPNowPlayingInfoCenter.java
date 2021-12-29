@@ -62,6 +62,7 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Selector("alloc")
     public static native MPNowPlayingInfoCenter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPNowPlayingInfoCenter allocWithZone(VoidPtr zone);

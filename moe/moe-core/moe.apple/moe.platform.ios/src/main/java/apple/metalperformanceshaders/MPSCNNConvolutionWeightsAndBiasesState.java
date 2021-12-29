@@ -61,6 +61,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     @Selector("alloc")
     public static native MPSCNNConvolutionWeightsAndBiasesState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionWeightsAndBiasesState allocWithZone(VoidPtr zone);

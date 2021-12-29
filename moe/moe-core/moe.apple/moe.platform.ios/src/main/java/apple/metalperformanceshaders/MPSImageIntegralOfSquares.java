@@ -79,6 +79,7 @@ public class MPSImageIntegralOfSquares extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageIntegralOfSquares alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageIntegralOfSquares allocWithZone(VoidPtr zone);

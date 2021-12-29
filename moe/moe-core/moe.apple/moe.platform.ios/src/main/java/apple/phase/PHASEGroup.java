@@ -51,6 +51,7 @@ public class PHASEGroup extends NSObject {
     @Selector("alloc")
     public static native PHASEGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEGroup allocWithZone(VoidPtr zone);

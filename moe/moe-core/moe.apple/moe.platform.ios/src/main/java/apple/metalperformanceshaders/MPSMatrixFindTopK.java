@@ -61,6 +61,7 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
     @Selector("alloc")
     public static native MPSMatrixFindTopK alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixFindTopK allocWithZone(VoidPtr zone);

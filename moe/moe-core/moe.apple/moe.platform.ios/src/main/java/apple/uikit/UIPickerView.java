@@ -81,6 +81,7 @@ public class UIPickerView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native UIPickerView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPickerView allocWithZone(VoidPtr zone);

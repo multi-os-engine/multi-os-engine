@@ -45,6 +45,7 @@ public class SKProductSubscriptionPeriod extends NSObject {
     @Selector("alloc")
     public static native SKProductSubscriptionPeriod alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKProductSubscriptionPeriod allocWithZone(VoidPtr zone);

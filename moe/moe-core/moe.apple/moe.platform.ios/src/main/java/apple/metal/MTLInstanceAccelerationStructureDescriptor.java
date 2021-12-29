@@ -50,6 +50,7 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Selector("alloc")
     public static native MTLInstanceAccelerationStructureDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLInstanceAccelerationStructureDescriptor allocWithZone(VoidPtr zone);

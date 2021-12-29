@@ -61,6 +61,7 @@ public class EKObject extends NSObject {
     @Selector("alloc")
     public static native EKObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKObject allocWithZone(VoidPtr zone);

@@ -100,6 +100,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Selector("alloc")
     public static native MDLAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLAsset allocWithZone(VoidPtr zone);

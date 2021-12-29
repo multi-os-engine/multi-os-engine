@@ -67,6 +67,7 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("alloc")
     public static native GKTurnBasedMatchmakerViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKTurnBasedMatchmakerViewController allocWithZone(VoidPtr zone);

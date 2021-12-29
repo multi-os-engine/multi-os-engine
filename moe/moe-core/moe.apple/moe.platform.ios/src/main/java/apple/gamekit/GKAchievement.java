@@ -72,6 +72,7 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("alloc")
     public static native GKAchievement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAchievement allocWithZone(VoidPtr zone);

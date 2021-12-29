@@ -48,6 +48,7 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
     @Selector("alloc")
     public static native NEDNSOverHTTPSSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEDNSOverHTTPSSettings allocWithZone(VoidPtr zone);

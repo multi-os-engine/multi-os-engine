@@ -68,6 +68,7 @@ public class UIRotationGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UIRotationGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIRotationGestureRecognizer allocWithZone(VoidPtr zone);

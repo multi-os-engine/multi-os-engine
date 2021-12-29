@@ -70,6 +70,7 @@ public class MLCDevice extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCDevice allocWithZone(VoidPtr zone);

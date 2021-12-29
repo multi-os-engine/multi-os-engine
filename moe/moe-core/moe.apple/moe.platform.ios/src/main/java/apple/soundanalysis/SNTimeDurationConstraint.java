@@ -53,6 +53,7 @@ public class SNTimeDurationConstraint extends NSObject {
     @Selector("alloc")
     public static native SNTimeDurationConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SNTimeDurationConstraint allocWithZone(VoidPtr zone);

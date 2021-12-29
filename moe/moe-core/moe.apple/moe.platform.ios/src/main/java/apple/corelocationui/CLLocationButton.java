@@ -71,6 +71,7 @@ public class CLLocationButton extends UIControl implements NSSecureCoding {
     @Selector("alloc")
     public static native CLLocationButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLLocationButton allocWithZone(VoidPtr zone);

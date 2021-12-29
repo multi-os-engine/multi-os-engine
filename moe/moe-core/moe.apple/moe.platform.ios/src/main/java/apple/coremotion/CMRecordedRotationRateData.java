@@ -54,6 +54,7 @@ public class CMRecordedRotationRateData extends CMRotationRateData {
     @Selector("alloc")
     public static native CMRecordedRotationRateData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMRecordedRotationRateData allocWithZone(VoidPtr zone);

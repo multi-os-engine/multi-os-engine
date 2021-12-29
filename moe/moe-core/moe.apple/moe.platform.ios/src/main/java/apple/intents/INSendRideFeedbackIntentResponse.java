@@ -48,6 +48,7 @@ public class INSendRideFeedbackIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSendRideFeedbackIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendRideFeedbackIntentResponse allocWithZone(VoidPtr zone);

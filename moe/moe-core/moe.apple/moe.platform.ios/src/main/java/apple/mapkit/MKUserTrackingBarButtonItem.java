@@ -72,6 +72,7 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Selector("alloc")
     public static native MKUserTrackingBarButtonItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKUserTrackingBarButtonItem allocWithZone(VoidPtr zone);

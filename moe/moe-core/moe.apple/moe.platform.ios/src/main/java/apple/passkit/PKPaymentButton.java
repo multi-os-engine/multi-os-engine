@@ -82,6 +82,7 @@ public class PKPaymentButton extends UIButton {
     @Selector("alloc")
     public static native PKPaymentButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentButton allocWithZone(VoidPtr zone);

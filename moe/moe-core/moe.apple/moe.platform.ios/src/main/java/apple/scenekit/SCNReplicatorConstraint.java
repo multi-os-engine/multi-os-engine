@@ -55,6 +55,7 @@ public class SCNReplicatorConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNReplicatorConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNReplicatorConstraint allocWithZone(VoidPtr zone);

@@ -138,6 +138,7 @@ public class NSURLConnection extends NSObject {
     @Selector("alloc")
     public static native NSURLConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLConnection allocWithZone(VoidPtr zone);

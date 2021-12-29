@@ -54,6 +54,7 @@ public class VNCoreMLModel extends NSObject {
     @Selector("alloc")
     public static native VNCoreMLModel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNCoreMLModel allocWithZone(VoidPtr zone);

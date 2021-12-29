@@ -52,6 +52,7 @@ public class PHASEDefinition extends NSObject {
     @Selector("alloc")
     public static native PHASEDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEDefinition allocWithZone(VoidPtr zone);

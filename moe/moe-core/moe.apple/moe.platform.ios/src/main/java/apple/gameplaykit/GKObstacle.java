@@ -66,6 +66,7 @@ public class GKObstacle extends NSObject {
     @Selector("alloc")
     public static native GKObstacle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKObstacle allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class MTLIntersectionFunctionDescriptor extends MTLFunctionDescriptor imp
     @Selector("alloc")
     public static native MTLIntersectionFunctionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLIntersectionFunctionDescriptor allocWithZone(VoidPtr zone);

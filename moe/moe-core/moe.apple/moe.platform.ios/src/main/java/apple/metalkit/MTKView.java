@@ -97,6 +97,7 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     @Selector("alloc")
     public static native MTKView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTKView allocWithZone(VoidPtr zone);

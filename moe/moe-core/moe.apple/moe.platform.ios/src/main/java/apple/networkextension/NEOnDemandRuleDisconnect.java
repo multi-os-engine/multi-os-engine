@@ -72,6 +72,7 @@ public class NEOnDemandRuleDisconnect extends NEOnDemandRule {
     @Selector("alloc")
     public static native NEOnDemandRuleDisconnect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEOnDemandRuleDisconnect allocWithZone(VoidPtr zone);

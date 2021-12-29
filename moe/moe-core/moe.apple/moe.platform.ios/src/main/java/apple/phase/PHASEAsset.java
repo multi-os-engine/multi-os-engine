@@ -50,6 +50,7 @@ public class PHASEAsset extends NSObject {
     @Selector("alloc")
     public static native PHASEAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEAsset allocWithZone(VoidPtr zone);

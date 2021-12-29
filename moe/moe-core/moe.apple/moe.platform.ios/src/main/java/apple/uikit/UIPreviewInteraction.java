@@ -66,6 +66,7 @@ public class UIPreviewInteraction extends NSObject {
     @Selector("alloc")
     public static native UIPreviewInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPreviewInteraction allocWithZone(VoidPtr zone);

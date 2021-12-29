@@ -54,6 +54,7 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     @Selector("alloc")
     public static native MPSTemporaryMatrix alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSTemporaryMatrix allocWithZone(VoidPtr zone);

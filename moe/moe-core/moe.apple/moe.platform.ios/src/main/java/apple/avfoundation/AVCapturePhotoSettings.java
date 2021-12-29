@@ -73,6 +73,7 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVCapturePhotoSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCapturePhotoSettings allocWithZone(VoidPtr zone);

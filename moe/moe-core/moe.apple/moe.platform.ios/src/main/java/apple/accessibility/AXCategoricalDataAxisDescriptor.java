@@ -48,6 +48,7 @@ public class AXCategoricalDataAxisDescriptor extends NSObject implements AXDataA
     @Selector("alloc")
     public static native AXCategoricalDataAxisDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AXCategoricalDataAxisDescriptor allocWithZone(VoidPtr zone);

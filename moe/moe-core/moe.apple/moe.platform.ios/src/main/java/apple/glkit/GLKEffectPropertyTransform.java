@@ -79,6 +79,7 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
     @Selector("alloc")
     public static native GLKEffectPropertyTransform alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKEffectPropertyTransform allocWithZone(VoidPtr zone);

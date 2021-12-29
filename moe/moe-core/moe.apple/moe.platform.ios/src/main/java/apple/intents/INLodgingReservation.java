@@ -54,6 +54,7 @@ public class INLodgingReservation extends INReservation implements NSCopying, NS
     @Selector("alloc")
     public static native INLodgingReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INLodgingReservation allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class CHHapticEngine extends NSObject {
     @Selector("alloc")
     public static native CHHapticEngine alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHHapticEngine allocWithZone(VoidPtr zone);

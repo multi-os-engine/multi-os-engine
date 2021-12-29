@@ -69,6 +69,7 @@ public class NWUDPSession extends NSObject {
     @Selector("alloc")
     public static native NWUDPSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NWUDPSession allocWithZone(VoidPtr zone);

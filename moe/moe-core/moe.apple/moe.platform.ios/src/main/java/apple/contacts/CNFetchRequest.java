@@ -45,6 +45,7 @@ public class CNFetchRequest extends NSObject {
     @Selector("alloc")
     public static native CNFetchRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNFetchRequest allocWithZone(VoidPtr zone);

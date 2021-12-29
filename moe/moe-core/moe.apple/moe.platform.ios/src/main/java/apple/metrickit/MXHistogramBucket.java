@@ -59,6 +59,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     @Selector("alloc")
     public static native MXHistogramBucket<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXHistogramBucket<?> allocWithZone(VoidPtr zone);

@@ -81,6 +81,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
     @Selector("alloc")
     public static native MPSBinaryImageKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSBinaryImageKernel allocWithZone(VoidPtr zone);

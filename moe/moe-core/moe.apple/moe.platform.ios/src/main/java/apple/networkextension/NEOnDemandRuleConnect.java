@@ -72,6 +72,7 @@ public class NEOnDemandRuleConnect extends NEOnDemandRule {
     @Selector("alloc")
     public static native NEOnDemandRuleConnect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEOnDemandRuleConnect allocWithZone(VoidPtr zone);

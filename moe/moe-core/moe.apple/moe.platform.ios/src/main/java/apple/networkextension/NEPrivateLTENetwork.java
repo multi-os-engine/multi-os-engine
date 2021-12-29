@@ -55,6 +55,7 @@ public class NEPrivateLTENetwork extends NSObject implements NSCopying, NSSecure
     @Selector("alloc")
     public static native NEPrivateLTENetwork alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEPrivateLTENetwork allocWithZone(VoidPtr zone);

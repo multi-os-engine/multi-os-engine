@@ -48,6 +48,7 @@ public class UITableViewDropPlaceholder extends UITableViewPlaceholder {
     @Selector("alloc")
     public static native UITableViewDropPlaceholder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewDropPlaceholder allocWithZone(VoidPtr zone);

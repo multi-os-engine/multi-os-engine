@@ -49,6 +49,7 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("alloc")
     public static native PKDisbursementRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKDisbursementRequest allocWithZone(VoidPtr zone);

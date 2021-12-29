@@ -70,6 +70,7 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     @Selector("alloc")
     public static native TKSmartCardATRInterfaceGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardATRInterfaceGroup allocWithZone(VoidPtr zone);

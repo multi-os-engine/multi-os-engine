@@ -70,6 +70,7 @@ public class SCNFloor extends SCNGeometry {
     @Selector("alloc")
     public static native SCNFloor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNFloor allocWithZone(VoidPtr zone);

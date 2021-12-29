@@ -71,6 +71,7 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CIColor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIColor allocWithZone(VoidPtr zone);

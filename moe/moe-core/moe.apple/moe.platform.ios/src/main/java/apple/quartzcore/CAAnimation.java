@@ -78,6 +78,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("alloc")
     public static native CAAnimation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAAnimation allocWithZone(VoidPtr zone);

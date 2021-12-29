@@ -48,6 +48,7 @@ public class BGProcessingTask extends BGTask {
     @Selector("alloc")
     public static native BGProcessingTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BGProcessingTask allocWithZone(VoidPtr zone);

@@ -81,6 +81,7 @@ public class CIContext extends NSObject {
     @Selector("alloc")
     public static native CIContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIContext allocWithZone(VoidPtr zone);

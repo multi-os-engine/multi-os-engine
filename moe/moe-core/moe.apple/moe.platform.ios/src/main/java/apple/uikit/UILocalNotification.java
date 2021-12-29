@@ -73,6 +73,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("alloc")
     public static native UILocalNotification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILocalNotification allocWithZone(VoidPtr zone);

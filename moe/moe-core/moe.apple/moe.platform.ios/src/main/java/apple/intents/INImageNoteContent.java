@@ -50,6 +50,7 @@ public class INImageNoteContent extends INNoteContent implements NSSecureCoding,
     @Selector("alloc")
     public static native INImageNoteContent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INImageNoteContent allocWithZone(VoidPtr zone);

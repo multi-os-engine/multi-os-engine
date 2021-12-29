@@ -55,6 +55,7 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     @Selector("alloc")
     public static native UIAccessibilityLocationDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAccessibilityLocationDescriptor allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class INMassResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INMassResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMassResolutionResult allocWithZone(VoidPtr zone);

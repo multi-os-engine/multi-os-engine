@@ -50,6 +50,7 @@ public class MSServiceAccount extends NSObject {
     @Selector("alloc")
     public static native MSServiceAccount alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSServiceAccount allocWithZone(VoidPtr zone);

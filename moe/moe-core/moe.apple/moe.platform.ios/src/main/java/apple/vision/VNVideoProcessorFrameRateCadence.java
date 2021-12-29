@@ -48,6 +48,7 @@ public class VNVideoProcessorFrameRateCadence extends VNVideoProcessorCadence {
     @Selector("alloc")
     public static native VNVideoProcessorFrameRateCadence alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNVideoProcessorFrameRateCadence allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class UISwipeGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UISwipeGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISwipeGestureRecognizer allocWithZone(VoidPtr zone);

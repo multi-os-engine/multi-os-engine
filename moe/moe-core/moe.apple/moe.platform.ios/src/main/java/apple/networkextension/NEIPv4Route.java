@@ -73,6 +73,7 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native NEIPv4Route alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEIPv4Route allocWithZone(VoidPtr zone);

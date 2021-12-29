@@ -50,6 +50,7 @@ public class TKTokenPasswordAuthOperation extends TKTokenAuthOperation {
     @Selector("alloc")
     public static native TKTokenPasswordAuthOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenPasswordAuthOperation allocWithZone(VoidPtr zone);

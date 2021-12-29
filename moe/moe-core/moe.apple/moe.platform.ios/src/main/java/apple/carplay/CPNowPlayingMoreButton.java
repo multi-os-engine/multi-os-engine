@@ -53,6 +53,7 @@ public class CPNowPlayingMoreButton extends CPNowPlayingButton {
     @Selector("alloc")
     public static native CPNowPlayingMoreButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNowPlayingMoreButton allocWithZone(VoidPtr zone);

@@ -79,6 +79,7 @@ public class CMPedometer extends NSObject {
     @Selector("alloc")
     public static native CMPedometer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMPedometer allocWithZone(VoidPtr zone);

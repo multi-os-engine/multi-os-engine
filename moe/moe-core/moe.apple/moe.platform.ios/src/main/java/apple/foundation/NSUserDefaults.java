@@ -89,6 +89,7 @@ public class NSUserDefaults extends NSObject {
     @Selector("alloc")
     public static native NSUserDefaults alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUserDefaults allocWithZone(VoidPtr zone);

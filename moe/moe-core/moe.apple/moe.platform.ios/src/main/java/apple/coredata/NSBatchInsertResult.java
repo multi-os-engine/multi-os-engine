@@ -49,6 +49,7 @@ public class NSBatchInsertResult extends NSPersistentStoreResult {
     @Selector("alloc")
     public static native NSBatchInsertResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBatchInsertResult allocWithZone(VoidPtr zone);

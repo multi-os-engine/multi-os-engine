@@ -50,6 +50,7 @@ public class MTLRasterizationRateLayerArray extends NSObject {
     @Selector("alloc")
     public static native MTLRasterizationRateLayerArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRasterizationRateLayerArray allocWithZone(VoidPtr zone);

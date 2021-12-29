@@ -73,6 +73,7 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Selector("alloc")
     public static native NEAppProxyUDPFlow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEAppProxyUDPFlow allocWithZone(VoidPtr zone);

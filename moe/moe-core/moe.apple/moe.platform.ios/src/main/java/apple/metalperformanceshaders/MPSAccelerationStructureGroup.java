@@ -58,6 +58,7 @@ public class MPSAccelerationStructureGroup extends NSObject {
     @Selector("alloc")
     public static native MPSAccelerationStructureGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSAccelerationStructureGroup allocWithZone(VoidPtr zone);

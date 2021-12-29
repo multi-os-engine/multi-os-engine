@@ -72,6 +72,7 @@ public class MDLURLTexture extends MDLTexture {
     @Selector("alloc")
     public static native MDLURLTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLURLTexture allocWithZone(VoidPtr zone);

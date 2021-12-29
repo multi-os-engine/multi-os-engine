@@ -61,6 +61,7 @@ public class MTLStructMember extends NSObject {
     @Selector("alloc")
     public static native MTLStructMember alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLStructMember allocWithZone(VoidPtr zone);

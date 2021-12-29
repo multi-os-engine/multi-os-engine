@@ -62,6 +62,7 @@ public class CTCallCenter extends NSObject {
     @Selector("alloc")
     public static native CTCallCenter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTCallCenter allocWithZone(VoidPtr zone);

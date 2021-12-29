@@ -49,6 +49,7 @@ public class HKCumulativeQuantitySeriesSample extends HKCumulativeQuantitySample
     @Selector("alloc")
     public static native HKCumulativeQuantitySeriesSample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKCumulativeQuantitySeriesSample allocWithZone(VoidPtr zone);

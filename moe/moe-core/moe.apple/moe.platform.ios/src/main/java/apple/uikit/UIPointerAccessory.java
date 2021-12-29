@@ -60,6 +60,7 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPointerAccessory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerAccessory allocWithZone(VoidPtr zone);

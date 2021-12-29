@@ -51,6 +51,7 @@ public class INTrainTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INTrainTrip alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTrainTrip allocWithZone(VoidPtr zone);

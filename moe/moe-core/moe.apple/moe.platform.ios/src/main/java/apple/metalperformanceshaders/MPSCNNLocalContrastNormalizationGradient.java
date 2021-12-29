@@ -86,6 +86,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     @Selector("alloc")
     public static native MPSCNNLocalContrastNormalizationGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLocalContrastNormalizationGradient allocWithZone(VoidPtr zone);

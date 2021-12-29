@@ -61,6 +61,7 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
     @Selector("alloc")
     public static native AVAudioPCMBuffer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioPCMBuffer allocWithZone(VoidPtr zone);

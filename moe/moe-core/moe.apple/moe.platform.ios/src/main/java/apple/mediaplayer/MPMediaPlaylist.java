@@ -69,6 +69,7 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Selector("alloc")
     public static native MPMediaPlaylist alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaPlaylist allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class GKCheckerboardNoiseSource extends GKNoiseSource {
     @Selector("alloc")
     public static native GKCheckerboardNoiseSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKCheckerboardNoiseSource allocWithZone(VoidPtr zone);

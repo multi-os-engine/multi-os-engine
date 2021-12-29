@@ -68,6 +68,7 @@ public class CAPropertyAnimation extends CAAnimation {
     @Selector("alloc")
     public static native CAPropertyAnimation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAPropertyAnimation allocWithZone(VoidPtr zone);

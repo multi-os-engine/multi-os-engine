@@ -44,26 +44,31 @@ public final class AssetsLibrary {
      * If the userInfo is nil, all ALAssets and ALAssetGroups should be considered invalid and discarded.
      * Modified ALAssets will be identified by the ALAssetLibraryUpdatedAssetsKey, but inserted or deleted ALAssets are identified by invalidating the containing ALAssetGroups.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetsLibraryChangedNotification();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetLibraryUpdatedAssetsKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetLibraryInsertedAssetGroupsKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetLibraryUpdatedAssetGroupsKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -72,11 +77,13 @@ public final class AssetsLibrary {
     /**
      * Constant used by NSError to distinguish errors belonging to the AssetsLibrary domain
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ALAssetsLibraryErrorDomain();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -85,6 +92,7 @@ public final class AssetsLibrary {
     /**
      * An NSString that encodes the type of asset. One of ALAssetTypePhoto, ALAssetTypeVideo or ALAssetTypeUnknown.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -93,6 +101,7 @@ public final class AssetsLibrary {
     /**
      * CLLocation object with the location information of the asset. Only available if location services are enabled for the caller.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -101,6 +110,7 @@ public final class AssetsLibrary {
     /**
      * Play time duration of a video asset expressed as a double wrapped in an NSNumber. For photos, kALErrorInvalidProperty is returned.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -109,6 +119,7 @@ public final class AssetsLibrary {
     /**
      * NSNumber containing an asset's orientation as defined by ALAssetOrientation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -117,6 +128,7 @@ public final class AssetsLibrary {
     /**
      * An NSDate with the asset's creation date.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -125,6 +137,7 @@ public final class AssetsLibrary {
     /**
      * Array with all the representations available for a given asset (e.g. RAW, JPEG). It is expressed as UTIs.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -133,6 +146,7 @@ public final class AssetsLibrary {
     /**
      * Dictionary that maps asset representation UTIs to URLs that uniquely identify the asset.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -141,6 +155,7 @@ public final class AssetsLibrary {
     /**
      * An NSURL that uniquely identifies the asset
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -149,6 +164,7 @@ public final class AssetsLibrary {
     /**
      * The asset is a photo
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -157,6 +173,7 @@ public final class AssetsLibrary {
     /**
      * The asset is a video
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -165,6 +182,7 @@ public final class AssetsLibrary {
     /**
      * The asset's type cannot be determined. It could be a sound file, a video or photo file that we don't know about, or something else. This is possible only for assets imported from a camera onto the device.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -173,6 +191,7 @@ public final class AssetsLibrary {
     /**
      * An NSString with the name of the group
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -181,6 +200,7 @@ public final class AssetsLibrary {
     /**
      * An ALAssetsGroupType wrapped in an NSNumber
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -189,6 +209,7 @@ public final class AssetsLibrary {
     /**
      * An NSString with the group's persistent ID.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -197,6 +218,7 @@ public final class AssetsLibrary {
     /**
      * An NSURL that uniquely identifies the group
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

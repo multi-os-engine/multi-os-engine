@@ -78,6 +78,7 @@ public class SCNMaterialProperty extends NSObject implements SCNAnimatable, NSSe
     @Selector("alloc")
     public static native SCNMaterialProperty alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNMaterialProperty allocWithZone(VoidPtr zone);

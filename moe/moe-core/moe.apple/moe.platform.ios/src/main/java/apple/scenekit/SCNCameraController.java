@@ -52,6 +52,7 @@ public class SCNCameraController extends NSObject {
     @Selector("alloc")
     public static native SCNCameraController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNCameraController allocWithZone(VoidPtr zone);

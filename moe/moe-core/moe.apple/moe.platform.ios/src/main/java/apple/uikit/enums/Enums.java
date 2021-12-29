@@ -28,12 +28,12 @@ public final class Enums {
      * segment index for no selected segment
      */
     @Generated public static final int UISegmentedControlNoSegment = 0xFFFFFFFF;
-    @Generated public static final int NSControlCharacterZeroAdvancementAction = 0x00000001;
-    @Generated public static final int NSControlCharacterWhitespaceAction = 0x00000002;
-    @Generated public static final int NSControlCharacterHorizontalTabAction = 0x00000004;
-    @Generated public static final int NSControlCharacterLineBreakAction = 0x00000008;
-    @Generated public static final int NSControlCharacterParagraphBreakAction = 0x00000010;
-    @Generated public static final int NSControlCharacterContainerBreakAction = 0x00000020;
+    @Deprecated @Generated public static final int NSControlCharacterZeroAdvancementAction = 0x00000001;
+    @Deprecated @Generated public static final int NSControlCharacterWhitespaceAction = 0x00000002;
+    @Deprecated @Generated public static final int NSControlCharacterHorizontalTabAction = 0x00000004;
+    @Deprecated @Generated public static final int NSControlCharacterLineBreakAction = 0x00000008;
+    @Deprecated @Generated public static final int NSControlCharacterParagraphBreakAction = 0x00000010;
+    @Deprecated @Generated public static final int NSControlCharacterContainerBreakAction = 0x00000020;
 
     @Generated
     private Enums() {

@@ -94,6 +94,7 @@ public class SKAdImpression extends NSObject {
     @Selector("alloc")
     public static native SKAdImpression alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKAdImpression allocWithZone(VoidPtr zone);

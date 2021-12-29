@@ -49,6 +49,7 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
     @Selector("alloc")
     public static native MDLSkeleton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLSkeleton allocWithZone(VoidPtr zone);

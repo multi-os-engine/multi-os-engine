@@ -50,6 +50,7 @@ public class MSMessageLiveLayout extends MSMessageLayout {
     @Selector("alloc")
     public static native MSMessageLiveLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSMessageLiveLayout allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class INCarDefrosterResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INCarDefrosterResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCarDefrosterResolutionResult allocWithZone(VoidPtr zone);

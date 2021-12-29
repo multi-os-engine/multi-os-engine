@@ -49,6 +49,7 @@ public class PHLocalIdentifierMapping extends NSObject {
     @Selector("alloc")
     public static native PHLocalIdentifierMapping alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHLocalIdentifierMapping allocWithZone(VoidPtr zone);

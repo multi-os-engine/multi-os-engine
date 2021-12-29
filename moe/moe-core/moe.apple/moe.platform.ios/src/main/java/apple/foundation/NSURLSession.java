@@ -61,6 +61,7 @@ public class NSURLSession extends NSObject {
     @Selector("alloc")
     public static native NSURLSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSession allocWithZone(VoidPtr zone);

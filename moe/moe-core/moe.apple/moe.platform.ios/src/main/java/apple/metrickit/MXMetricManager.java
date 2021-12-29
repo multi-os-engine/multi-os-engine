@@ -70,6 +70,7 @@ public class MXMetricManager extends NSObject {
     @Selector("alloc")
     public static native MXMetricManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXMetricManager allocWithZone(VoidPtr zone);

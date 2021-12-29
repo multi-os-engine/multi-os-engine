@@ -43,6 +43,7 @@ public class NSInflectionRuleExplicit extends NSInflectionRule {
     @Selector("alloc")
     public static native NSInflectionRuleExplicit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSInflectionRuleExplicit allocWithZone(VoidPtr zone);

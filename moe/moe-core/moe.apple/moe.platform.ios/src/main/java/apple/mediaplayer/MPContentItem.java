@@ -67,6 +67,7 @@ public class MPContentItem extends NSObject {
     @Selector("alloc")
     public static native MPContentItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPContentItem allocWithZone(VoidPtr zone);

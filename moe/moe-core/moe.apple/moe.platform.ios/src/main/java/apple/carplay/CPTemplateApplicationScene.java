@@ -49,6 +49,7 @@ public class CPTemplateApplicationScene extends UIScene {
     @Selector("alloc")
     public static native CPTemplateApplicationScene alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTemplateApplicationScene allocWithZone(VoidPtr zone);

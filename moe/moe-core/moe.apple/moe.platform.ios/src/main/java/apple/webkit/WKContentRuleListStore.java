@@ -48,6 +48,7 @@ public class WKContentRuleListStore extends NSObject {
     @Selector("alloc")
     public static native WKContentRuleListStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKContentRuleListStore allocWithZone(VoidPtr zone);

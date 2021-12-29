@@ -69,6 +69,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native GKGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGraph allocWithZone(VoidPtr zone);

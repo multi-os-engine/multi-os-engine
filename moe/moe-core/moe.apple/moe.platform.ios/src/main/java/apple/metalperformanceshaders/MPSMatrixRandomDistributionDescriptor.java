@@ -53,6 +53,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     @Selector("alloc")
     public static native MPSMatrixRandomDistributionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixRandomDistributionDescriptor allocWithZone(VoidPtr zone);

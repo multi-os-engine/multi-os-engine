@@ -74,6 +74,7 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native NEIPv6Route alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEIPv6Route allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class NLGazetteer extends NSObject {
     @Selector("alloc")
     public static native NLGazetteer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NLGazetteer allocWithZone(VoidPtr zone);

@@ -65,6 +65,7 @@ public class UISnapBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UISnapBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISnapBehavior allocWithZone(VoidPtr zone);

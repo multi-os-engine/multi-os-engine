@@ -91,6 +91,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native MPSNNGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGraph allocWithZone(VoidPtr zone);

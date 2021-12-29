@@ -63,6 +63,7 @@ public class CXCallDirectoryProvider extends NSObject implements NSExtensionRequ
     @Selector("alloc")
     public static native CXCallDirectoryProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXCallDirectoryProvider allocWithZone(VoidPtr zone);

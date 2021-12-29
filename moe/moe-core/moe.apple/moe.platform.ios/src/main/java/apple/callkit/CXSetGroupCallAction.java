@@ -64,6 +64,7 @@ public class CXSetGroupCallAction extends CXCallAction {
     @Selector("alloc")
     public static native CXSetGroupCallAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXSetGroupCallAction allocWithZone(VoidPtr zone);

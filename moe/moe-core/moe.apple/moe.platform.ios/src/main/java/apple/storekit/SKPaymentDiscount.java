@@ -47,6 +47,7 @@ public class SKPaymentDiscount extends NSObject {
     @Selector("alloc")
     public static native SKPaymentDiscount alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPaymentDiscount allocWithZone(VoidPtr zone);

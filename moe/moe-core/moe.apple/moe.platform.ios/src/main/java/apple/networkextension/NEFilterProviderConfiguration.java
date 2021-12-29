@@ -73,6 +73,7 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Selector("alloc")
     public static native NEFilterProviderConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterProviderConfiguration allocWithZone(VoidPtr zone);

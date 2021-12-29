@@ -79,6 +79,7 @@ public class CAInterAppAudioSwitcherView extends UIView {
     @Selector("alloc")
     public static native CAInterAppAudioSwitcherView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAInterAppAudioSwitcherView allocWithZone(VoidPtr zone);

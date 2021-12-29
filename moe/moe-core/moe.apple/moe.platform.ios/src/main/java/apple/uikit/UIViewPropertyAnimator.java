@@ -69,6 +69,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Selector("alloc")
     public static native UIViewPropertyAnimator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIViewPropertyAnimator allocWithZone(VoidPtr zone);

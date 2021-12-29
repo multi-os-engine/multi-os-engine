@@ -65,6 +65,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("alloc")
     public static native SCNAnimationPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAnimationPlayer allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Selector("alloc")
     public static native CTTelephonyNetworkInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTTelephonyNetworkInfo allocWithZone(VoidPtr zone);

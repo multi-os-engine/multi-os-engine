@@ -54,6 +54,7 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
     @Selector("alloc")
     public static native INRestaurantReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRestaurantReservation allocWithZone(VoidPtr zone);

@@ -37,24 +37,25 @@ import org.moe.natj.general.ann.NInt;
  * kABAuthorizationStatusAuthorized
  * This application is authorized to access the data class.
  */
+@Deprecated
 @Generated
 public final class ABAuthorizationStatus {
     /**
      * deprecated, use CNAuthorizationStatusNotDetermined
      */
-    @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
      * deprecated, use CNAuthorizationStatusRestricted
      */
-    @Generated @NInt public static final long Restricted = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Restricted = 0x0000000000000001L;
     /**
      * deprecated, use CNAuthorizationStatusDenied
      */
-    @Generated @NInt public static final long Denied = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Denied = 0x0000000000000002L;
     /**
      * deprecated, use CNAuthorizationStatusAuthorized
      */
-    @Generated @NInt public static final long Authorized = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 
     @Generated
     private ABAuthorizationStatus() {

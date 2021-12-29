@@ -61,6 +61,7 @@ public class MPSCNNArithmeticGradientState extends MPSNNBinaryGradientState {
     @Selector("alloc")
     public static native MPSCNNArithmeticGradientState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNArithmeticGradientState allocWithZone(VoidPtr zone);

@@ -57,6 +57,7 @@ public class MPSImageStatisticsMeanAndVariance extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageStatisticsMeanAndVariance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageStatisticsMeanAndVariance allocWithZone(VoidPtr zone);

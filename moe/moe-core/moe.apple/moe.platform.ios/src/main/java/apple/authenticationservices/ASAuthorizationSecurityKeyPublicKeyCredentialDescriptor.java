@@ -54,6 +54,7 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor extends NSO
     @Selector("alloc")
     public static native ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationSecurityKeyPublicKeyCredentialDescriptor allocWithZone(VoidPtr zone);

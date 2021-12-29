@@ -63,6 +63,7 @@ public class AVPlayerItemOutput extends NSObject {
     @Selector("alloc")
     public static native AVPlayerItemOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemOutput allocWithZone(VoidPtr zone);

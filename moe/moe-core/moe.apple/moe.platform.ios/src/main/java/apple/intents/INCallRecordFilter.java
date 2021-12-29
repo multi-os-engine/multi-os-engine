@@ -50,6 +50,7 @@ public class INCallRecordFilter extends NSObject implements NSCopying, NSSecureC
     @Selector("alloc")
     public static native INCallRecordFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCallRecordFilter allocWithZone(VoidPtr zone);

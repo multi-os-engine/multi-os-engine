@@ -50,6 +50,7 @@ public class UITextInputPasswordRules extends NSObject implements NSSecureCoding
     @Selector("alloc")
     public static native UITextInputPasswordRules alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextInputPasswordRules allocWithZone(VoidPtr zone);

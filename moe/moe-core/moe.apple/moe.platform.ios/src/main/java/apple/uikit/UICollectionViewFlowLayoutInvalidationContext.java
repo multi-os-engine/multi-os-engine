@@ -61,6 +61,7 @@ public class UICollectionViewFlowLayoutInvalidationContext extends UICollectionV
     @Selector("alloc")
     public static native UICollectionViewFlowLayoutInvalidationContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewFlowLayoutInvalidationContext allocWithZone(VoidPtr zone);

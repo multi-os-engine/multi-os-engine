@@ -52,6 +52,7 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject {
     @Selector("alloc")
     public static native HKElectrocardiogramVoltageMeasurement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKElectrocardiogramVoltageMeasurement allocWithZone(VoidPtr zone);

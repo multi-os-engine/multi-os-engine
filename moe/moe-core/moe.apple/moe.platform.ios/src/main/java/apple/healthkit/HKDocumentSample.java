@@ -68,6 +68,7 @@ public class HKDocumentSample extends HKSample {
     @Selector("alloc")
     public static native HKDocumentSample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKDocumentSample allocWithZone(VoidPtr zone);

@@ -60,6 +60,7 @@ public class NSUnitDispersion extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitDispersion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitDispersion allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLFunctionStitchingGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingGraph allocWithZone(VoidPtr zone);

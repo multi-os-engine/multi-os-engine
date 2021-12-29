@@ -35,7 +35,7 @@ public final class CFStreamErrorHTTP {
      */
     @Generated public static final int RedirectionLoop = 0xFFFFFFFE;
     /**
-     * Could not retreive url for request/response.
+     * Could not retrieve url for request/response.
      */
     @Generated public static final int BadURL = 0xFFFFFFFD;
 

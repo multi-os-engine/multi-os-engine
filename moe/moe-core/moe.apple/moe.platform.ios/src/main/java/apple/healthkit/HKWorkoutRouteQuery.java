@@ -61,6 +61,7 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Selector("alloc")
     public static native HKWorkoutRouteQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKWorkoutRouteQuery allocWithZone(VoidPtr zone);

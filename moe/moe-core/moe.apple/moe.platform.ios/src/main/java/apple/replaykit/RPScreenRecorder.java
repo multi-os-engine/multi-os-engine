@@ -73,6 +73,7 @@ public class RPScreenRecorder extends NSObject {
     @Selector("alloc")
     public static native RPScreenRecorder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPScreenRecorder allocWithZone(VoidPtr zone);

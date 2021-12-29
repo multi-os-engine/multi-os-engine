@@ -60,6 +60,7 @@ public class WKContentWorld extends NSObject {
     @Selector("alloc")
     public static native WKContentWorld alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKContentWorld allocWithZone(VoidPtr zone);

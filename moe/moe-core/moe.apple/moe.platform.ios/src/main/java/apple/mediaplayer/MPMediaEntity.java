@@ -71,6 +71,7 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MPMediaEntity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaEntity allocWithZone(VoidPtr zone);

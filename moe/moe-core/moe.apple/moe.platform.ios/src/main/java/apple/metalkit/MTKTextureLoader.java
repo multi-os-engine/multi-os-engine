@@ -80,6 +80,7 @@ public class MTKTextureLoader extends NSObject {
     @Selector("alloc")
     public static native MTKTextureLoader alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTKTextureLoader allocWithZone(VoidPtr zone);

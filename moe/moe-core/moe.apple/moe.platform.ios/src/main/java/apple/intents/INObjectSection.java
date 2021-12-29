@@ -50,6 +50,7 @@ public class INObjectSection<_ObjectType> extends NSObject implements NSCopying,
     @Selector("alloc")
     public static native INObjectSection<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INObjectSection<?> allocWithZone(VoidPtr zone);

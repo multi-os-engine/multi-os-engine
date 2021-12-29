@@ -63,6 +63,7 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
     @Selector("alloc")
     public static native MTLRenderPassColorAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPassColorAttachmentDescriptor allocWithZone(VoidPtr zone);

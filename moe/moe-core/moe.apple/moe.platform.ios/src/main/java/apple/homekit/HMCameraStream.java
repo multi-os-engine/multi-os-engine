@@ -66,6 +66,7 @@ public class HMCameraStream extends HMCameraSource {
     @Selector("alloc")
     public static native HMCameraStream alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCameraStream allocWithZone(VoidPtr zone);

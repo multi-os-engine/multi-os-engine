@@ -79,6 +79,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("alloc")
     public static native UIToolbar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIToolbar allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class SKPhysicsJointSpring extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointSpring alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsJointSpring allocWithZone(VoidPtr zone);

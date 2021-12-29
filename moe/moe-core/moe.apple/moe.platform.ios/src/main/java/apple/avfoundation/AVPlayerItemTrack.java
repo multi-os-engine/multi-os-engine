@@ -73,6 +73,7 @@ public class AVPlayerItemTrack extends NSObject {
     @Selector("alloc")
     public static native AVPlayerItemTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemTrack allocWithZone(VoidPtr zone);

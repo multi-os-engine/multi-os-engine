@@ -58,6 +58,7 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Selector("alloc")
     public static native AVAudioSessionPortDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioSessionPortDescription allocWithZone(VoidPtr zone);

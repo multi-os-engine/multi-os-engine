@@ -100,6 +100,7 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     @Selector("alloc")
     public static native SCNView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNView allocWithZone(VoidPtr zone);

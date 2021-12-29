@@ -67,6 +67,7 @@ public class NSFileManager extends NSObject {
     @Selector("alloc")
     public static native NSFileManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileManager allocWithZone(VoidPtr zone);

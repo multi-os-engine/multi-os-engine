@@ -46,6 +46,7 @@ public class NSPersistentCloudKitContainerEventRequest extends NSPersistentStore
     @Selector("alloc")
     public static native NSPersistentCloudKitContainerEventRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentCloudKitContainerEventRequest allocWithZone(VoidPtr zone);

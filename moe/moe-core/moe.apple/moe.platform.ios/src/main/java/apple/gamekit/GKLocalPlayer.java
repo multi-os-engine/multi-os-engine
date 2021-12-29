@@ -71,6 +71,7 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("alloc")
     public static native GKLocalPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKLocalPlayer allocWithZone(VoidPtr zone);

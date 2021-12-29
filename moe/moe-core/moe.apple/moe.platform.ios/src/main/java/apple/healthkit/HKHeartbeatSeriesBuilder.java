@@ -114,6 +114,7 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     @Selector("alloc")
     public static native HKHeartbeatSeriesBuilder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKHeartbeatSeriesBuilder allocWithZone(VoidPtr zone);

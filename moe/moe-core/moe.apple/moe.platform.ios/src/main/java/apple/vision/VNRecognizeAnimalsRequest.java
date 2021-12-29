@@ -55,6 +55,7 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNRecognizeAnimalsRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRecognizeAnimalsRequest allocWithZone(VoidPtr zone);

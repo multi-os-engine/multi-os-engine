@@ -57,6 +57,7 @@ public class QLThumbnailReply extends NSObject {
     @Selector("alloc")
     public static native QLThumbnailReply alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLThumbnailReply allocWithZone(VoidPtr zone);

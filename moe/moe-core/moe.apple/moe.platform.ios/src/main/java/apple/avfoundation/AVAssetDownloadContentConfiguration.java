@@ -52,6 +52,7 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     @Selector("alloc")
     public static native AVAssetDownloadContentConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetDownloadContentConfiguration allocWithZone(VoidPtr zone);

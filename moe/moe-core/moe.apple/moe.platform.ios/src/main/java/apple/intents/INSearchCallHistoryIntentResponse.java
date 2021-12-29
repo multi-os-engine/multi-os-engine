@@ -64,6 +64,7 @@ public class INSearchCallHistoryIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSearchCallHistoryIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSearchCallHistoryIntentResponse allocWithZone(VoidPtr zone);

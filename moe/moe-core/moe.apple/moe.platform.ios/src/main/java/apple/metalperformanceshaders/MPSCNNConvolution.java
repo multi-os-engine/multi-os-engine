@@ -75,6 +75,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNConvolution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolution allocWithZone(VoidPtr zone);

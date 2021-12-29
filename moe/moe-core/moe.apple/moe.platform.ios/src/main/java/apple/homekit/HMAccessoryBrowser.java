@@ -67,6 +67,7 @@ public class HMAccessoryBrowser extends NSObject {
     @Selector("alloc")
     public static native HMAccessoryBrowser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAccessoryBrowser allocWithZone(VoidPtr zone);

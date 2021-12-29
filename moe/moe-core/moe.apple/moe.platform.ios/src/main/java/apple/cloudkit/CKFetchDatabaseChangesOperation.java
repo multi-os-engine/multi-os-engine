@@ -74,6 +74,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Selector("alloc")
     public static native CKFetchDatabaseChangesOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchDatabaseChangesOperation allocWithZone(VoidPtr zone);

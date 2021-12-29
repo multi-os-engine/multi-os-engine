@@ -74,6 +74,7 @@ public class MDLObjectContainer extends NSObject implements MDLObjectContainerCo
     @Selector("alloc")
     public static native MDLObjectContainer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLObjectContainer allocWithZone(VoidPtr zone);

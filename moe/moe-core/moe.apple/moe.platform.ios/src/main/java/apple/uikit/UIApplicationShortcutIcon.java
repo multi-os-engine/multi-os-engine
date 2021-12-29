@@ -64,6 +64,7 @@ public class UIApplicationShortcutIcon extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIApplicationShortcutIcon alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIApplicationShortcutIcon allocWithZone(VoidPtr zone);

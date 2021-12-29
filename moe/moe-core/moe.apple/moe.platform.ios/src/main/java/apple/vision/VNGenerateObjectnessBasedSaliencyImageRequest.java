@@ -51,6 +51,7 @@ public class VNGenerateObjectnessBasedSaliencyImageRequest extends VNImageBasedR
     @Selector("alloc")
     public static native VNGenerateObjectnessBasedSaliencyImageRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNGenerateObjectnessBasedSaliencyImageRequest allocWithZone(VoidPtr zone);

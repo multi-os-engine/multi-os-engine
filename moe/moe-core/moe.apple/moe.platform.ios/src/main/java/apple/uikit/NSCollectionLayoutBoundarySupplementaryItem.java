@@ -55,6 +55,7 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Selector("alloc")
     public static native NSCollectionLayoutBoundarySupplementaryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutBoundarySupplementaryItem allocWithZone(VoidPtr zone);

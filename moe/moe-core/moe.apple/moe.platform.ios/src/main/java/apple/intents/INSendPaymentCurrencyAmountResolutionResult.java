@@ -45,6 +45,7 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Selector("alloc")
     public static native INSendPaymentCurrencyAmountResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendPaymentCurrencyAmountResolutionResult allocWithZone(VoidPtr zone);

@@ -72,6 +72,7 @@ public class HKCharacteristicType extends HKObjectType {
     @Selector("alloc")
     public static native HKCharacteristicType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKCharacteristicType allocWithZone(VoidPtr zone);

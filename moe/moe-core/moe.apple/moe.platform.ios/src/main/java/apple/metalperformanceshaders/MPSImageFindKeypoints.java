@@ -62,6 +62,7 @@ public class MPSImageFindKeypoints extends MPSKernel {
     @Selector("alloc")
     public static native MPSImageFindKeypoints alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageFindKeypoints allocWithZone(VoidPtr zone);

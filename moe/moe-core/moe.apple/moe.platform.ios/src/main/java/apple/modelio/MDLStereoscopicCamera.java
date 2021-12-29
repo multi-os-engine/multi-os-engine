@@ -64,6 +64,7 @@ public class MDLStereoscopicCamera extends MDLCamera {
     @Selector("alloc")
     public static native MDLStereoscopicCamera alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLStereoscopicCamera allocWithZone(VoidPtr zone);

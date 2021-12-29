@@ -52,6 +52,7 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNPoolingNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingNode allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class NSItemProvider extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSItemProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSItemProvider allocWithZone(VoidPtr zone);

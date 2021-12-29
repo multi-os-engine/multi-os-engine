@@ -75,6 +75,7 @@ public class AVAssetTrackGroup extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVAssetTrackGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetTrackGroup allocWithZone(VoidPtr zone);

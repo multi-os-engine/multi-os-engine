@@ -60,6 +60,7 @@ public class ARPlaneAnchor extends ARAnchor {
     @Selector("alloc")
     public static native ARPlaneAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARPlaneAnchor allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class INSetDefrosterSettingsInCarIntent extends INIntent {
     @Selector("alloc")
     public static native INSetDefrosterSettingsInCarIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetDefrosterSettingsInCarIntent allocWithZone(VoidPtr zone);

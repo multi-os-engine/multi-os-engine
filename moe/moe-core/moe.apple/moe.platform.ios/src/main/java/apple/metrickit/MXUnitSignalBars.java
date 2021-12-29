@@ -54,6 +54,7 @@ public class MXUnitSignalBars extends NSDimension {
     @Selector("alloc")
     public static native MXUnitSignalBars alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXUnitSignalBars allocWithZone(VoidPtr zone);

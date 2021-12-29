@@ -71,6 +71,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("alloc")
     public static native UIBarItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBarItem allocWithZone(VoidPtr zone);

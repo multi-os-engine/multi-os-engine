@@ -61,6 +61,7 @@ public class MPChangeLanguageOptionCommandEvent extends MPRemoteCommandEvent {
     @Selector("alloc")
     public static native MPChangeLanguageOptionCommandEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPChangeLanguageOptionCommandEvent allocWithZone(VoidPtr zone);

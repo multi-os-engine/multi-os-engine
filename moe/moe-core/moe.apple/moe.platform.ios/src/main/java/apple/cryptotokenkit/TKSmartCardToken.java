@@ -58,6 +58,7 @@ public class TKSmartCardToken extends TKToken {
     @Selector("alloc")
     public static native TKSmartCardToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardToken allocWithZone(VoidPtr zone);

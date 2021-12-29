@@ -61,6 +61,7 @@ public class NSMutableIndexSet extends NSIndexSet {
     @Selector("alloc")
     public static native NSMutableIndexSet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableIndexSet allocWithZone(VoidPtr zone);

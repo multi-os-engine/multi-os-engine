@@ -57,6 +57,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNAvoidOccluderConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAvoidOccluderConstraint allocWithZone(VoidPtr zone);

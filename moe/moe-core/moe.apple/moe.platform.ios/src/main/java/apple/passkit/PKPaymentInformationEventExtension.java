@@ -45,6 +45,7 @@ public class PKPaymentInformationEventExtension extends NSObject {
     @Selector("alloc")
     public static native PKPaymentInformationEventExtension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentInformationEventExtension allocWithZone(VoidPtr zone);

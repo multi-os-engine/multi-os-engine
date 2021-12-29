@@ -45,6 +45,7 @@ public class INTaskResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INTaskResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTaskResolutionResult allocWithZone(VoidPtr zone);

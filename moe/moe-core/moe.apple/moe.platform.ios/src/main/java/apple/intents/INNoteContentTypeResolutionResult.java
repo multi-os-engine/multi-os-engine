@@ -45,6 +45,7 @@ public class INNoteContentTypeResolutionResult extends INIntentResolutionResult 
     @Selector("alloc")
     public static native INNoteContentTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INNoteContentTypeResolutionResult allocWithZone(VoidPtr zone);

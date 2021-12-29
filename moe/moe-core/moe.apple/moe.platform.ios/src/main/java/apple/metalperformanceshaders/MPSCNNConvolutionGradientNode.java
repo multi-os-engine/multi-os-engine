@@ -47,6 +47,7 @@ public class MPSCNNConvolutionGradientNode extends MPSNNGradientFilterNode imple
     @Selector("alloc")
     public static native MPSCNNConvolutionGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionGradientNode allocWithZone(VoidPtr zone);

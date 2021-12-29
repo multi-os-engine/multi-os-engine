@@ -66,6 +66,7 @@ public class MTLFunctionConstantValues extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLFunctionConstantValues alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLFunctionConstantValues allocWithZone(VoidPtr zone);

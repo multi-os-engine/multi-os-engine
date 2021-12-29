@@ -71,6 +71,7 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     @Selector("alloc")
     public static native NEDNSSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEDNSSettings allocWithZone(VoidPtr zone);

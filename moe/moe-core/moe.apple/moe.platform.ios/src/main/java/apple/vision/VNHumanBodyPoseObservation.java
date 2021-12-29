@@ -51,6 +51,7 @@ public class VNHumanBodyPoseObservation extends VNRecognizedPointsObservation {
     @Selector("alloc")
     public static native VNHumanBodyPoseObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNHumanBodyPoseObservation allocWithZone(VoidPtr zone);

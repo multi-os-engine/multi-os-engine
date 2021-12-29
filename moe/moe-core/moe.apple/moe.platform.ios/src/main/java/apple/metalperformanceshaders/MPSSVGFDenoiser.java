@@ -93,6 +93,7 @@ public class MPSSVGFDenoiser extends NSObject {
     @Selector("alloc")
     public static native MPSSVGFDenoiser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSSVGFDenoiser allocWithZone(VoidPtr zone);

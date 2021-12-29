@@ -71,6 +71,7 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     @Selector("alloc")
     public static native AVCapturePhotoBracketSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCapturePhotoBracketSettings allocWithZone(VoidPtr zone);

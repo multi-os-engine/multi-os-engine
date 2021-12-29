@@ -67,6 +67,7 @@ public class CADisplayLink extends NSObject {
     @Selector("alloc")
     public static native CADisplayLink alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CADisplayLink allocWithZone(VoidPtr zone);

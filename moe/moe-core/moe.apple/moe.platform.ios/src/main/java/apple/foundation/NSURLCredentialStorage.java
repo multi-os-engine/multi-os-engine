@@ -64,6 +64,7 @@ public class NSURLCredentialStorage extends NSObject {
     @Selector("alloc")
     public static native NSURLCredentialStorage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLCredentialStorage allocWithZone(VoidPtr zone);

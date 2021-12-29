@@ -53,6 +53,7 @@ public class ENExposureInfo extends NSObject {
     @Selector("alloc")
     public static native ENExposureInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENExposureInfo allocWithZone(VoidPtr zone);

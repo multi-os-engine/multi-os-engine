@@ -59,6 +59,7 @@ public class NSOperation extends NSObject {
     @Selector("alloc")
     public static native NSOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSOperation allocWithZone(VoidPtr zone);

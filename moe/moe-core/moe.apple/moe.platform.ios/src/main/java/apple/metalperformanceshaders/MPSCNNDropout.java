@@ -61,6 +61,7 @@ public class MPSCNNDropout extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNDropout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDropout allocWithZone(VoidPtr zone);

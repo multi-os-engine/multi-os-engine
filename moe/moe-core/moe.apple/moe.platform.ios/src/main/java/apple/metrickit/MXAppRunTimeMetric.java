@@ -56,6 +56,7 @@ public class MXAppRunTimeMetric extends MXMetric {
     @Selector("alloc")
     public static native MXAppRunTimeMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXAppRunTimeMetric allocWithZone(VoidPtr zone);

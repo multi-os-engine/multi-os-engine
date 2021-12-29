@@ -54,6 +54,7 @@ public class INShortcut extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native INShortcut alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INShortcut allocWithZone(VoidPtr zone);

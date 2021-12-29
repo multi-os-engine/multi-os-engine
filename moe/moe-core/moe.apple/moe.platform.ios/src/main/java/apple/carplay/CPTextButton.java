@@ -46,6 +46,7 @@ public class CPTextButton extends NSObject {
     @Selector("alloc")
     public static native CPTextButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTextButton allocWithZone(VoidPtr zone);

@@ -79,6 +79,7 @@ public class MDLMesh extends MDLObject {
     @Selector("alloc")
     public static native MDLMesh alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMesh allocWithZone(VoidPtr zone);

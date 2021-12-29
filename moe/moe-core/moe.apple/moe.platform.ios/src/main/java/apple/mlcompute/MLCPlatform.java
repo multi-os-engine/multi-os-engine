@@ -51,6 +51,7 @@ public class MLCPlatform extends NSObject {
     @Selector("alloc")
     public static native MLCPlatform alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCPlatform allocWithZone(VoidPtr zone);

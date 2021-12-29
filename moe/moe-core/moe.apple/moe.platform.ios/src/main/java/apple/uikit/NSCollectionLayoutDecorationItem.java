@@ -47,6 +47,7 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @Selector("alloc")
     public static native NSCollectionLayoutDecorationItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutDecorationItem allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
     @Selector("alloc")
     public static native FPUIActionExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native FPUIActionExtensionContext allocWithZone(VoidPtr zone);

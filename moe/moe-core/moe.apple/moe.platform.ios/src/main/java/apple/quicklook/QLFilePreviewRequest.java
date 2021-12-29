@@ -49,6 +49,7 @@ public class QLFilePreviewRequest extends NSObject {
     @Selector("alloc")
     public static native QLFilePreviewRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLFilePreviewRequest allocWithZone(VoidPtr zone);

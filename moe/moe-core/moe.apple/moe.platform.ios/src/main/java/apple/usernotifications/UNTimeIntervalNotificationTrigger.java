@@ -67,6 +67,7 @@ public class UNTimeIntervalNotificationTrigger extends UNNotificationTrigger {
     @Selector("alloc")
     public static native UNTimeIntervalNotificationTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNTimeIntervalNotificationTrigger allocWithZone(VoidPtr zone);

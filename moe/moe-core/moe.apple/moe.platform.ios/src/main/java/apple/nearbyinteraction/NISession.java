@@ -50,6 +50,7 @@ public class NISession extends NSObject {
     @Selector("alloc")
     public static native NISession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NISession allocWithZone(VoidPtr zone);

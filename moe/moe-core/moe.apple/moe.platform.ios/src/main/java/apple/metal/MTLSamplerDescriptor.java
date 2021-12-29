@@ -68,6 +68,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLSamplerDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLSamplerDescriptor allocWithZone(VoidPtr zone);

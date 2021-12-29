@@ -50,6 +50,7 @@ public class PHASEEnvelope extends NSObject {
     @Selector("alloc")
     public static native PHASEEnvelope alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEEnvelope allocWithZone(VoidPtr zone);

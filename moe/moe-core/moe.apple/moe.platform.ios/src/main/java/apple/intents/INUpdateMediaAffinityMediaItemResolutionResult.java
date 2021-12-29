@@ -45,6 +45,7 @@ public class INUpdateMediaAffinityMediaItemResolutionResult extends INMediaItemR
     @Selector("alloc")
     public static native INUpdateMediaAffinityMediaItemResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INUpdateMediaAffinityMediaItemResolutionResult allocWithZone(VoidPtr zone);

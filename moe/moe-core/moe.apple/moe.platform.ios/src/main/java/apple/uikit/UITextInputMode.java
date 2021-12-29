@@ -75,6 +75,7 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native UITextInputMode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextInputMode allocWithZone(VoidPtr zone);

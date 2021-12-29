@@ -49,6 +49,7 @@ public class INCancelRideIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INCancelRideIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCancelRideIntentResponse allocWithZone(VoidPtr zone);

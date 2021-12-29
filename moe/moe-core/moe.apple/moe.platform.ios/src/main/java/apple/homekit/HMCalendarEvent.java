@@ -52,6 +52,7 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
     @Selector("alloc")
     public static native HMCalendarEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCalendarEvent allocWithZone(VoidPtr zone);

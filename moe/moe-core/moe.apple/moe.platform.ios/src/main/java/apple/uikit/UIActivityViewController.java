@@ -66,6 +66,7 @@ public class UIActivityViewController extends UIViewController {
     @Selector("alloc")
     public static native UIActivityViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIActivityViewController allocWithZone(VoidPtr zone);

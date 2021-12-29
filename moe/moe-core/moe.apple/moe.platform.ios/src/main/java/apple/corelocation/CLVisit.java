@@ -76,6 +76,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CLVisit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLVisit allocWithZone(VoidPtr zone);

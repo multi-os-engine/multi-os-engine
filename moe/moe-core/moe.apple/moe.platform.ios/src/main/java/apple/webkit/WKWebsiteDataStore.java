@@ -78,6 +78,7 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native WKWebsiteDataStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKWebsiteDataStore allocWithZone(VoidPtr zone);

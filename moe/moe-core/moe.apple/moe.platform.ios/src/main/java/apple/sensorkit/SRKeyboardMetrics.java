@@ -49,6 +49,7 @@ public class SRKeyboardMetrics extends NSObject {
     @Selector("alloc")
     public static native SRKeyboardMetrics alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRKeyboardMetrics allocWithZone(VoidPtr zone);

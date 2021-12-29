@@ -54,6 +54,7 @@ public class MPSCNNUpsamplingNearest extends MPSCNNUpsampling {
     @Selector("alloc")
     public static native MPSCNNUpsamplingNearest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingNearest allocWithZone(VoidPtr zone);

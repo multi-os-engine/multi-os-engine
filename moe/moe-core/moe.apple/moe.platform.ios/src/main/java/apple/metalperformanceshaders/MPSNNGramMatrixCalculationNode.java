@@ -50,6 +50,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNGramMatrixCalculationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGramMatrixCalculationNode allocWithZone(VoidPtr zone);

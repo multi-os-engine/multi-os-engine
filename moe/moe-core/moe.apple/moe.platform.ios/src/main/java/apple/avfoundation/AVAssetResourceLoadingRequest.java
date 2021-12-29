@@ -68,6 +68,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Selector("alloc")
     public static native AVAssetResourceLoadingRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetResourceLoadingRequest allocWithZone(VoidPtr zone);

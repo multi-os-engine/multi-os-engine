@@ -59,6 +59,7 @@ public class NSTextViewportLayoutController extends NSObject {
     @Selector("alloc")
     public static native NSTextViewportLayoutController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextViewportLayoutController allocWithZone(VoidPtr zone);

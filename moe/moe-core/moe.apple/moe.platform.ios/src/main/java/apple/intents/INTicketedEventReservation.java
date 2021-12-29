@@ -52,6 +52,7 @@ public class INTicketedEventReservation extends INReservation implements NSCopyi
     @Selector("alloc")
     public static native INTicketedEventReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTicketedEventReservation allocWithZone(VoidPtr zone);

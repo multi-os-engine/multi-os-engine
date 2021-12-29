@@ -66,6 +66,7 @@ public class ICCameraItem extends NSObject {
     @Selector("alloc")
     public static native ICCameraItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ICCameraItem allocWithZone(VoidPtr zone);

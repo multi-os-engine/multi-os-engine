@@ -55,6 +55,7 @@ public class TKSmartCardSlot extends NSObject {
     @Selector("alloc")
     public static native TKSmartCardSlot alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardSlot allocWithZone(VoidPtr zone);

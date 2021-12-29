@@ -50,6 +50,7 @@ public class PHASEGlobalMetaParameterAsset extends PHASEAsset {
     @Selector("alloc")
     public static native PHASEGlobalMetaParameterAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEGlobalMetaParameterAsset allocWithZone(VoidPtr zone);

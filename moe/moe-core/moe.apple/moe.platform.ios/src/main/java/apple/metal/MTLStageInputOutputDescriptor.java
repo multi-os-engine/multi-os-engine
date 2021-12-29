@@ -66,6 +66,7 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @Selector("alloc")
     public static native MTLStageInputOutputDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLStageInputOutputDescriptor allocWithZone(VoidPtr zone);

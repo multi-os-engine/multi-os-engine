@@ -53,6 +53,7 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     @Selector("alloc")
     public static native AVMutableAssetDownloadStorageManagementPolicy alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableAssetDownloadStorageManagementPolicy allocWithZone(VoidPtr zone);

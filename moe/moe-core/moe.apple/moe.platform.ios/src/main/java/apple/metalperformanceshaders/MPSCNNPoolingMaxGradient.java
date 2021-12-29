@@ -88,6 +88,7 @@ public class MPSCNNPoolingMaxGradient extends MPSCNNPoolingGradient {
     @Selector("alloc")
     public static native MPSCNNPoolingMaxGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingMaxGradient allocWithZone(VoidPtr zone);

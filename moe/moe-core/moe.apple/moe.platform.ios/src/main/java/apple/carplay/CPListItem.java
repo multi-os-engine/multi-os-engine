@@ -56,6 +56,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     @Selector("alloc")
     public static native CPListItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPListItem allocWithZone(VoidPtr zone);

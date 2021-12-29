@@ -50,6 +50,7 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     @Selector("alloc")
     public static native ARImageTrackingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARImageTrackingConfiguration allocWithZone(VoidPtr zone);

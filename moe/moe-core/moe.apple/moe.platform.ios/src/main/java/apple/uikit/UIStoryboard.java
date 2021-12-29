@@ -64,6 +64,7 @@ public class UIStoryboard extends NSObject {
     @Selector("alloc")
     public static native UIStoryboard alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIStoryboard allocWithZone(VoidPtr zone);

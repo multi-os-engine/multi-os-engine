@@ -45,6 +45,7 @@ public class MPSNNReductionColumnMinNode extends MPSNNUnaryReductionNode {
     @Selector("alloc")
     public static native MPSNNReductionColumnMinNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionColumnMinNode allocWithZone(VoidPtr zone);

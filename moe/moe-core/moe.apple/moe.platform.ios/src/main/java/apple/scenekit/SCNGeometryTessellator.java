@@ -56,6 +56,7 @@ public class SCNGeometryTessellator extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native SCNGeometryTessellator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNGeometryTessellator allocWithZone(VoidPtr zone);

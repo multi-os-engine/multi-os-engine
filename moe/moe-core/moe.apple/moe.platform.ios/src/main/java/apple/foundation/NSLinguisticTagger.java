@@ -65,6 +65,7 @@ public class NSLinguisticTagger extends NSObject {
     @Selector("alloc")
     public static native NSLinguisticTagger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLinguisticTagger allocWithZone(VoidPtr zone);

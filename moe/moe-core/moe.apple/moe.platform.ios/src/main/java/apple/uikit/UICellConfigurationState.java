@@ -47,6 +47,7 @@ public class UICellConfigurationState extends UIViewConfigurationState {
     @Selector("alloc")
     public static native UICellConfigurationState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellConfigurationState allocWithZone(VoidPtr zone);

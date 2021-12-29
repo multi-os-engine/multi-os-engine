@@ -72,6 +72,7 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CIVector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIVector allocWithZone(VoidPtr zone);

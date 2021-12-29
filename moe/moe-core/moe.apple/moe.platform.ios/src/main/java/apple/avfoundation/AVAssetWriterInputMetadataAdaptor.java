@@ -66,6 +66,7 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
     @Selector("alloc")
     public static native AVAssetWriterInputMetadataAdaptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetWriterInputMetadataAdaptor allocWithZone(VoidPtr zone);

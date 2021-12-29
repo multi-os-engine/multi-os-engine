@@ -82,6 +82,7 @@ public class AVAudioNode extends NSObject {
     @Selector("alloc")
     public static native AVAudioNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioNode allocWithZone(VoidPtr zone);

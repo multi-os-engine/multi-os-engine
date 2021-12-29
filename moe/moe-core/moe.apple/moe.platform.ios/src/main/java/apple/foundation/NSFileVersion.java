@@ -66,6 +66,7 @@ public class NSFileVersion extends NSObject {
     @Selector("alloc")
     public static native NSFileVersion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileVersion allocWithZone(VoidPtr zone);

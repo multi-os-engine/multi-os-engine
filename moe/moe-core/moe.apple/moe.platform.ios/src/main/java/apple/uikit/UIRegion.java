@@ -69,6 +69,7 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native UIRegion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIRegion allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class OSLogStore extends NSObject {
     @Selector("alloc")
     public static native OSLogStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogStore allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INTimeIntervalResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTimeIntervalResolutionResult allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class AVFragmentedMovieTrack extends AVMovieTrack {
     @Selector("alloc")
     public static native AVFragmentedMovieTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVFragmentedMovieTrack allocWithZone(VoidPtr zone);

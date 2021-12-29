@@ -64,6 +64,7 @@ public class MDLLight extends MDLObject {
     @Selector("alloc")
     public static native MDLLight alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLLight allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     @Selector("alloc")
     public static native INRestaurantReservationUserBooking alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRestaurantReservationUserBooking allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native NSPort alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPort allocWithZone(VoidPtr zone);

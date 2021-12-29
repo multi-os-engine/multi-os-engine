@@ -55,6 +55,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native VNVector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNVector allocWithZone(VoidPtr zone);

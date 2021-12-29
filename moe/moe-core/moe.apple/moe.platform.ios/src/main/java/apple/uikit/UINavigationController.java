@@ -64,6 +64,7 @@ public class UINavigationController extends UIViewController {
     @Selector("alloc")
     public static native UINavigationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UINavigationController allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class INMediaUserContext extends INUserContext {
     @Selector("alloc")
     public static native INMediaUserContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMediaUserContext allocWithZone(VoidPtr zone);

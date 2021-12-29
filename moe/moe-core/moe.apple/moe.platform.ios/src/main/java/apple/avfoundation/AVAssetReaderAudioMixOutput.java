@@ -69,6 +69,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Selector("alloc")
     public static native AVAssetReaderAudioMixOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetReaderAudioMixOutput allocWithZone(VoidPtr zone);

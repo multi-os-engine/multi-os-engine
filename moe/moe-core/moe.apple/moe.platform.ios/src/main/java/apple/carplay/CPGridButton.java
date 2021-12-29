@@ -50,6 +50,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPGridButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPGridButton allocWithZone(VoidPtr zone);

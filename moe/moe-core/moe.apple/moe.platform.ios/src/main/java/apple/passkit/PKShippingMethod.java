@@ -65,6 +65,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @Selector("alloc")
     public static native PKShippingMethod alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKShippingMethod allocWithZone(VoidPtr zone);

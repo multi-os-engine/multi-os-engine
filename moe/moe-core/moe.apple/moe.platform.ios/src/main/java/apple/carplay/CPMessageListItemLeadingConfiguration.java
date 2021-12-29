@@ -50,6 +50,7 @@ public class CPMessageListItemLeadingConfiguration extends NSObject {
     @Selector("alloc")
     public static native CPMessageListItemLeadingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPMessageListItemLeadingConfiguration allocWithZone(VoidPtr zone);

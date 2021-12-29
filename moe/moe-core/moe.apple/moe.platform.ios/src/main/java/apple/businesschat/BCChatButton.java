@@ -64,6 +64,7 @@ public class BCChatButton extends UIControl {
     @Selector("alloc")
     public static native BCChatButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BCChatButton allocWithZone(VoidPtr zone);

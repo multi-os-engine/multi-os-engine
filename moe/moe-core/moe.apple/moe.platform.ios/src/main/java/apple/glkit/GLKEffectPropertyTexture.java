@@ -66,6 +66,7 @@ public class GLKEffectPropertyTexture extends GLKEffectProperty {
     @Selector("alloc")
     public static native GLKEffectPropertyTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKEffectPropertyTexture allocWithZone(VoidPtr zone);

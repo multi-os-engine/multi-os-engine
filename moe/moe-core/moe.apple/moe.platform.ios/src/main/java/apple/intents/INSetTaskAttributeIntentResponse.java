@@ -48,6 +48,7 @@ public class INSetTaskAttributeIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSetTaskAttributeIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetTaskAttributeIntentResponse allocWithZone(VoidPtr zone);

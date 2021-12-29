@@ -69,6 +69,7 @@ public class UIActivity extends NSObject {
     @Selector("alloc")
     public static native UIActivity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIActivity allocWithZone(VoidPtr zone);

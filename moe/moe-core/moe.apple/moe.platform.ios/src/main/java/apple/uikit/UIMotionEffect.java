@@ -75,6 +75,7 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native UIMotionEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMotionEffect allocWithZone(VoidPtr zone);

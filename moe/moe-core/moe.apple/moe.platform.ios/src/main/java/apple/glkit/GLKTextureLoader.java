@@ -73,6 +73,7 @@ public class GLKTextureLoader extends NSObject {
     @Selector("alloc")
     public static native GLKTextureLoader alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKTextureLoader allocWithZone(VoidPtr zone);

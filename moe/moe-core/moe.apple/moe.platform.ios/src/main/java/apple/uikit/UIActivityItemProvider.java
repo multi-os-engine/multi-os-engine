@@ -68,6 +68,7 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Selector("alloc")
     public static native UIActivityItemProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIActivityItemProvider allocWithZone(VoidPtr zone);

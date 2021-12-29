@@ -50,6 +50,7 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPDashboardButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPDashboardButton allocWithZone(VoidPtr zone);

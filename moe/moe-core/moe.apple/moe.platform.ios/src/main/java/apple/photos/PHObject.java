@@ -63,6 +63,7 @@ public class PHObject extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PHObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHObject allocWithZone(VoidPtr zone);

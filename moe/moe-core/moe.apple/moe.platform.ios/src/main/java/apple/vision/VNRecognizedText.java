@@ -61,6 +61,7 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native VNRecognizedText alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRecognizedText allocWithZone(VoidPtr zone);

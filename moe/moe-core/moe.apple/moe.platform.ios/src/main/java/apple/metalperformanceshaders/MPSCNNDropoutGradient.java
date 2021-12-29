@@ -61,6 +61,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSCNNDropoutGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDropoutGradient allocWithZone(VoidPtr zone);

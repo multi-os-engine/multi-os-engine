@@ -70,6 +70,7 @@ public class CMAltimeter extends NSObject {
     @Selector("alloc")
     public static native CMAltimeter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMAltimeter allocWithZone(VoidPtr zone);

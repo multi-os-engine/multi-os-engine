@@ -46,6 +46,7 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native NSMorphologyCustomPronoun alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMorphologyCustomPronoun allocWithZone(VoidPtr zone);

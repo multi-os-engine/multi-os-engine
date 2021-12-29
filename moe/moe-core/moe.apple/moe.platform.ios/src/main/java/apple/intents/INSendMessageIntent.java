@@ -64,6 +64,7 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
     @Selector("alloc")
     public static native INSendMessageIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendMessageIntent allocWithZone(VoidPtr zone);

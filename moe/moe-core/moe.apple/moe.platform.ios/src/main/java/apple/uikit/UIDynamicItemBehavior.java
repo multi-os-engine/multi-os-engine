@@ -65,6 +65,7 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UIDynamicItemBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDynamicItemBehavior allocWithZone(VoidPtr zone);

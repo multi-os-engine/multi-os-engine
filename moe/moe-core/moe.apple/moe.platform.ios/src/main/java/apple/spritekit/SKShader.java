@@ -66,6 +66,7 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKShader alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKShader allocWithZone(VoidPtr zone);

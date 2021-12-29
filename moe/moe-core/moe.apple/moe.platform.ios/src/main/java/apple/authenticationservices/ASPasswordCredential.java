@@ -49,6 +49,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
     @Selector("alloc")
     public static native ASPasswordCredential alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASPasswordCredential allocWithZone(VoidPtr zone);

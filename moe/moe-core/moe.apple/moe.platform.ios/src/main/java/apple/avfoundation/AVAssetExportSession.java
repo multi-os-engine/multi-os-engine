@@ -111,6 +111,7 @@ public class AVAssetExportSession extends NSObject {
     @Selector("alloc")
     public static native AVAssetExportSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetExportSession allocWithZone(VoidPtr zone);

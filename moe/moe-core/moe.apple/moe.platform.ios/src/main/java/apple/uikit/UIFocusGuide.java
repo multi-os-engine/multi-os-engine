@@ -65,6 +65,7 @@ public class UIFocusGuide extends UILayoutGuide {
     @Selector("alloc")
     public static native UIFocusGuide alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusGuide allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class MPFeedbackCommandEvent extends MPRemoteCommandEvent {
     @Selector("alloc")
     public static native MPFeedbackCommandEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPFeedbackCommandEvent allocWithZone(VoidPtr zone);

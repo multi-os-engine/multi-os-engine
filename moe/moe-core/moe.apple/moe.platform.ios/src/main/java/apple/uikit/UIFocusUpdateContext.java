@@ -66,6 +66,7 @@ public class UIFocusUpdateContext extends NSObject {
     @Selector("alloc")
     public static native UIFocusUpdateContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusUpdateContext allocWithZone(VoidPtr zone);

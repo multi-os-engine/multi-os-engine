@@ -75,6 +75,7 @@ public class CHIPGroups extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPGroups alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPGroups allocWithZone(VoidPtr zone);
@@ -132,7 +133,7 @@ public class CHIPGroups extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPGroups initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPGroups initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

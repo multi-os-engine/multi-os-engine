@@ -48,6 +48,7 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
     @Selector("alloc")
     public static native ASAuthorizationAppleIDProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationAppleIDProvider allocWithZone(VoidPtr zone);

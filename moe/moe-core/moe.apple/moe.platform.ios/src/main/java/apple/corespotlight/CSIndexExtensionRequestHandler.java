@@ -72,6 +72,7 @@ public class CSIndexExtensionRequestHandler extends NSObject
     @Selector("alloc")
     public static native CSIndexExtensionRequestHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSIndexExtensionRequestHandler allocWithZone(VoidPtr zone);

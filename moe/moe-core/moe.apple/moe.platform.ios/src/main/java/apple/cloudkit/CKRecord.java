@@ -69,6 +69,7 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     @Selector("alloc")
     public static native CKRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKRecord allocWithZone(VoidPtr zone);

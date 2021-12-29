@@ -69,6 +69,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNResizeBilinear alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNResizeBilinear allocWithZone(VoidPtr zone);

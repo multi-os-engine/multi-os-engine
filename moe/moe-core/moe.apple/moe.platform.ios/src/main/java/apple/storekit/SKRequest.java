@@ -65,6 +65,7 @@ public class SKRequest extends NSObject {
     @Selector("alloc")
     public static native SKRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKRequest allocWithZone(VoidPtr zone);

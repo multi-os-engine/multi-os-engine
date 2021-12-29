@@ -87,6 +87,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("alloc")
     public static native SCNRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNRenderer allocWithZone(VoidPtr zone);

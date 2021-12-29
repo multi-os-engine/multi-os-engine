@@ -66,6 +66,7 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
     @Selector("alloc")
     public static native UITextInputStringTokenizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextInputStringTokenizer allocWithZone(VoidPtr zone);

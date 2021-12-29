@@ -46,6 +46,7 @@ public class ATTrackingManager extends NSObject {
     @Selector("alloc")
     public static native ATTrackingManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ATTrackingManager allocWithZone(VoidPtr zone);

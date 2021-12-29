@@ -50,6 +50,7 @@ public class UICellAccessoryDisclosureIndicator extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryDisclosureIndicator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryDisclosureIndicator allocWithZone(VoidPtr zone);

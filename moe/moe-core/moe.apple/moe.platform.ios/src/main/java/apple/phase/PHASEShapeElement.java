@@ -50,6 +50,7 @@ public class PHASEShapeElement extends NSObject {
     @Selector("alloc")
     public static native PHASEShapeElement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEShapeElement allocWithZone(VoidPtr zone);

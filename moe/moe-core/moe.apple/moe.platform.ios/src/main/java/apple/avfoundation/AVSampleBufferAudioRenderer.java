@@ -59,6 +59,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     @Selector("alloc")
     public static native AVSampleBufferAudioRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSampleBufferAudioRenderer allocWithZone(VoidPtr zone);

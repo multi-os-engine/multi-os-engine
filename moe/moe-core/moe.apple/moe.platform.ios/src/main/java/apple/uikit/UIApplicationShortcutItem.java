@@ -65,6 +65,7 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native UIApplicationShortcutItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIApplicationShortcutItem allocWithZone(VoidPtr zone);

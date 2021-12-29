@@ -63,6 +63,7 @@ public class NSEnumerator<_ObjectType> extends NSObject implements NSFastEnumera
     @Selector("alloc")
     public static native NSEnumerator<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSEnumerator<?> allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class CNChangeHistoryAddContactEvent extends CNChangeHistoryEvent {
     @Selector("alloc")
     public static native CNChangeHistoryAddContactEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNChangeHistoryAddContactEvent allocWithZone(VoidPtr zone);

@@ -86,6 +86,7 @@ public class SKCameraNode extends SKNode {
     @Selector("alloc")
     public static native SKCameraNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKCameraNode allocWithZone(VoidPtr zone);

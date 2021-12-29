@@ -47,6 +47,7 @@ public class ASCredentialIdentityStore extends NSObject {
     @Selector("alloc")
     public static native ASCredentialIdentityStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASCredentialIdentityStore allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class ARDirectionalLightEstimate extends ARLightEstimate {
     @Selector("alloc")
     public static native ARDirectionalLightEstimate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARDirectionalLightEstimate allocWithZone(VoidPtr zone);

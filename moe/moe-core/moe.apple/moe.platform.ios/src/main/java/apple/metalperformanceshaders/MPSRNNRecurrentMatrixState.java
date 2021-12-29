@@ -55,6 +55,7 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
     @Selector("alloc")
     public static native MPSRNNRecurrentMatrixState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNRecurrentMatrixState allocWithZone(VoidPtr zone);

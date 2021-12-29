@@ -68,6 +68,7 @@ public class NSURLProtocol extends NSObject {
     @Selector("alloc")
     public static native NSURLProtocol alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLProtocol allocWithZone(VoidPtr zone);

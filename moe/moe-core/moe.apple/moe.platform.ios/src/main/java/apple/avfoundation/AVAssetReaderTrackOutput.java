@@ -69,6 +69,7 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
     @Selector("alloc")
     public static native AVAssetReaderTrackOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetReaderTrackOutput allocWithZone(VoidPtr zone);

@@ -72,6 +72,7 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Selector("alloc")
     public static native AVCaptureMetadataOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureMetadataOutput allocWithZone(VoidPtr zone);

@@ -58,6 +58,7 @@ public class AVAudioSession extends NSObject {
     @Selector("alloc")
     public static native AVAudioSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioSession allocWithZone(VoidPtr zone);

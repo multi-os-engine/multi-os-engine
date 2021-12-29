@@ -55,6 +55,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPSCNNLossDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLossDescriptor allocWithZone(VoidPtr zone);

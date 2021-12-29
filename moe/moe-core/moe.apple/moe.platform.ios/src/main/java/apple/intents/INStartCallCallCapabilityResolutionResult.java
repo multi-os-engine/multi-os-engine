@@ -45,6 +45,7 @@ public class INStartCallCallCapabilityResolutionResult extends INCallCapabilityR
     @Selector("alloc")
     public static native INStartCallCallCapabilityResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartCallCallCapabilityResolutionResult allocWithZone(VoidPtr zone);

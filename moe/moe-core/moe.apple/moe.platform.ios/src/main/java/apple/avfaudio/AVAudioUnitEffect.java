@@ -61,6 +61,7 @@ public class AVAudioUnitEffect extends AVAudioUnit {
     @Selector("alloc")
     public static native AVAudioUnitEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitEffect allocWithZone(VoidPtr zone);

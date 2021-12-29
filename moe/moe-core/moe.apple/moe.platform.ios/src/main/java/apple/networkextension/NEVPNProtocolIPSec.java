@@ -71,6 +71,7 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     @Selector("alloc")
     public static native NEVPNProtocolIPSec alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEVPNProtocolIPSec allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class NSPurgeableData extends NSMutableData implements NSDiscardableConte
     @Selector("alloc")
     public static native NSPurgeableData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPurgeableData allocWithZone(VoidPtr zone);

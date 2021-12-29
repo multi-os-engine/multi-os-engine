@@ -73,6 +73,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Selector("alloc")
     public static native AVAssetTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetTrack allocWithZone(VoidPtr zone);

@@ -70,6 +70,7 @@ public class MPSCNNNeuronAbsolute extends MPSCNNNeuron {
     @Selector("alloc")
     public static native MPSCNNNeuronAbsolute alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronAbsolute allocWithZone(VoidPtr zone);

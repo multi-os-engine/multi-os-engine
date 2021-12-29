@@ -70,6 +70,7 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
     @Selector("alloc")
     public static native SCNPhysicsHingeJoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsHingeJoint allocWithZone(VoidPtr zone);

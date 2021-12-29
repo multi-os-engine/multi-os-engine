@@ -97,6 +97,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("alloc")
     public static native MDLTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTexture allocWithZone(VoidPtr zone);

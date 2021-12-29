@@ -58,6 +58,7 @@ public class MPSNNStateNode extends NSObject {
     @Selector("alloc")
     public static native MPSNNStateNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNStateNode allocWithZone(VoidPtr zone);

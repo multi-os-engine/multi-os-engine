@@ -70,6 +70,7 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
     @Selector("alloc")
     public static native RPBroadcastHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPBroadcastHandler allocWithZone(VoidPtr zone);

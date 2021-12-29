@@ -62,6 +62,7 @@ public class NSMassFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSMassFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMassFormatter allocWithZone(VoidPtr zone);

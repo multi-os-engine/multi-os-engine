@@ -86,6 +86,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXMetricPayload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXMetricPayload allocWithZone(VoidPtr zone);

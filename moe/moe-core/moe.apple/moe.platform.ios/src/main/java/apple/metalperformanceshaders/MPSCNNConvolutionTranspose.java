@@ -159,6 +159,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNConvolutionTranspose alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionTranspose allocWithZone(VoidPtr zone);

@@ -60,6 +60,7 @@ public class HMAddAccessoryRequest extends NSObject {
     @Selector("alloc")
     public static native HMAddAccessoryRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAddAccessoryRequest allocWithZone(VoidPtr zone);

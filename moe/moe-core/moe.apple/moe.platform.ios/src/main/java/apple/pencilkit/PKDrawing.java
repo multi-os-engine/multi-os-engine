@@ -62,6 +62,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native PKDrawing alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKDrawing allocWithZone(VoidPtr zone);

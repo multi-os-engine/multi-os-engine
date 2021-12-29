@@ -66,6 +66,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     @Selector("alloc")
     public static native GKMeshGraph<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKMeshGraph<?> allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
     @Selector("alloc")
     public static native NSNull alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSNull allocWithZone(VoidPtr zone);

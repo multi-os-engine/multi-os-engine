@@ -92,6 +92,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
     @Selector("alloc")
     public static native MPSRNNMatrixInferenceLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNMatrixInferenceLayer allocWithZone(VoidPtr zone);

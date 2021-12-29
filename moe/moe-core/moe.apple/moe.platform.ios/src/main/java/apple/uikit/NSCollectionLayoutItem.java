@@ -49,6 +49,7 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSCollectionLayoutItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutItem allocWithZone(VoidPtr zone);

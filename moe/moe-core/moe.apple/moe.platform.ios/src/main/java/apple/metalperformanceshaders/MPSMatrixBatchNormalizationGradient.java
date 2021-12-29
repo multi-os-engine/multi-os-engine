@@ -62,6 +62,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixBatchNormalizationGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixBatchNormalizationGradient allocWithZone(VoidPtr zone);

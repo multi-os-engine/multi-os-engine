@@ -53,6 +53,7 @@ public class MLCLayer extends NSObject {
     @Selector("alloc")
     public static native MLCLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCLayer allocWithZone(VoidPtr zone);

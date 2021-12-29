@@ -77,6 +77,7 @@ public class UIRefreshControl extends UIControl {
     @Selector("alloc")
     public static native UIRefreshControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIRefreshControl allocWithZone(VoidPtr zone);

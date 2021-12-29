@@ -61,6 +61,7 @@ public class EKSource extends EKObject {
     @Selector("alloc")
     public static native EKSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKSource allocWithZone(VoidPtr zone);

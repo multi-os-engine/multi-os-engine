@@ -62,6 +62,7 @@ public class SKOverlayTransitionContext extends NSObject {
     @Selector("alloc")
     public static native SKOverlayTransitionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKOverlayTransitionContext allocWithZone(VoidPtr zone);

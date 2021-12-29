@@ -61,6 +61,7 @@ public class MTLVertexAttributeDescriptorArray extends NSObject {
     @Selector("alloc")
     public static native MTLVertexAttributeDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLVertexAttributeDescriptorArray allocWithZone(VoidPtr zone);

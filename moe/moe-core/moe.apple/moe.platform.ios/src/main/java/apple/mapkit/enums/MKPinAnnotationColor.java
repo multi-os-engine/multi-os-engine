@@ -19,11 +19,12 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+@Deprecated
 @Generated
 public final class MKPinAnnotationColor {
-    @Generated @NUInt public static final long Red = 0x0000000000000000L;
-    @Generated @NUInt public static final long Green = 0x0000000000000001L;
-    @Generated @NUInt public static final long Purple = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long Red = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Green = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Purple = 0x0000000000000002L;
 
     @Generated
     private MKPinAnnotationColor() {

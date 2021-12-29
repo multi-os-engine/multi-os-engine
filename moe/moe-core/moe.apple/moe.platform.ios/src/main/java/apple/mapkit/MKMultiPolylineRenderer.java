@@ -46,6 +46,7 @@ public class MKMultiPolylineRenderer extends MKOverlayPathRenderer {
     @Selector("alloc")
     public static native MKMultiPolylineRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMultiPolylineRenderer allocWithZone(VoidPtr zone);

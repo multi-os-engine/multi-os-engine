@@ -51,6 +51,7 @@ public class CHIPLowPower extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPLowPower alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPLowPower allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPLowPower extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPLowPower initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPLowPower initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -19,13 +19,14 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+@Deprecated
 @Generated
 public final class UIRemoteNotificationType {
-    @Generated @NUInt public static final long None = 0x0000000000000000L;
-    @Generated @NUInt public static final long Badge = 0x0000000000000001L;
-    @Generated @NUInt public static final long Sound = 0x0000000000000002L;
-    @Generated @NUInt public static final long Alert = 0x0000000000000004L;
-    @Generated @NUInt public static final long NewsstandContentAvailability = 0x0000000000000008L;
+    @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Badge = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Sound = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long Alert = 0x0000000000000004L;
+    @Deprecated @Generated @NUInt public static final long NewsstandContentAvailability = 0x0000000000000008L;
 
     @Generated
     private UIRemoteNotificationType() {

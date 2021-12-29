@@ -70,6 +70,7 @@ public class SCNTube extends SCNGeometry {
     @Selector("alloc")
     public static native SCNTube alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNTube allocWithZone(VoidPtr zone);

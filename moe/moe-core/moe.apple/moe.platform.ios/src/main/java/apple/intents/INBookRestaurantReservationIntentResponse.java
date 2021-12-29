@@ -64,6 +64,7 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
     @Selector("alloc")
     public static native INBookRestaurantReservationIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBookRestaurantReservationIntentResponse allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native INCallRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCallRecord allocWithZone(VoidPtr zone);

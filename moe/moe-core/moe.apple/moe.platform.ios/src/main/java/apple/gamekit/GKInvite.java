@@ -64,6 +64,7 @@ public class GKInvite extends NSObject {
     @Selector("alloc")
     public static native GKInvite alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKInvite allocWithZone(VoidPtr zone);

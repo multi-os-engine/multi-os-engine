@@ -45,6 +45,7 @@ public class INVisualCodeTypeResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INVisualCodeTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INVisualCodeTypeResolutionResult allocWithZone(VoidPtr zone);

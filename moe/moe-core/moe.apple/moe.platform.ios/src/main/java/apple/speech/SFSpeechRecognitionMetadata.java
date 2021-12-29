@@ -50,6 +50,7 @@ public class SFSpeechRecognitionMetadata extends NSObject implements NSCopying, 
     @Selector("alloc")
     public static native SFSpeechRecognitionMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSpeechRecognitionMetadata allocWithZone(VoidPtr zone);

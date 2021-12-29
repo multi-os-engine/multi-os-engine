@@ -48,6 +48,7 @@ public class PKEraserTool extends PKTool {
     @Selector("alloc")
     public static native PKEraserTool alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKEraserTool allocWithZone(VoidPtr zone);

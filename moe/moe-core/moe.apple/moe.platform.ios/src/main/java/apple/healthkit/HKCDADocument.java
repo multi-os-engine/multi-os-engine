@@ -62,6 +62,7 @@ public class HKCDADocument extends NSObject {
     @Selector("alloc")
     public static native HKCDADocument alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKCDADocument allocWithZone(VoidPtr zone);

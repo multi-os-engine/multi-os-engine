@@ -70,6 +70,7 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     @Selector("alloc")
     public static native GLKViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKViewController allocWithZone(VoidPtr zone);

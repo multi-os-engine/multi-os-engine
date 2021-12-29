@@ -65,6 +65,7 @@ public class VSAccountMetadataRequest extends NSObject {
     @Selector("alloc")
     public static native VSAccountMetadataRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VSAccountMetadataRequest allocWithZone(VoidPtr zone);

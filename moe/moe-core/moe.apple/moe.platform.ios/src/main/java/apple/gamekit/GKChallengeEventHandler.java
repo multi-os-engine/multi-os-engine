@@ -43,6 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A singleton object responsible for dispatching challenge-related events to its delegate
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -66,6 +67,7 @@ public class GKChallengeEventHandler extends NSObject {
     @Selector("alloc")
     public static native GKChallengeEventHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKChallengeEventHandler allocWithZone(VoidPtr zone);

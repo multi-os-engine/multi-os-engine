@@ -47,6 +47,7 @@ public class UIFocusEffect extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIFocusEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusEffect allocWithZone(VoidPtr zone);

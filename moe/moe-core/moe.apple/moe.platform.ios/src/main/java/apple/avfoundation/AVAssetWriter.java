@@ -83,6 +83,7 @@ public class AVAssetWriter extends NSObject {
     @Selector("alloc")
     public static native AVAssetWriter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetWriter allocWithZone(VoidPtr zone);

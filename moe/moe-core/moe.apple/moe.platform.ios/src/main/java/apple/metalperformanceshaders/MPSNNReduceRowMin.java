@@ -52,6 +52,7 @@ public class MPSNNReduceRowMin extends MPSNNReduceUnary {
     @Selector("alloc")
     public static native MPSNNReduceRowMin alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceRowMin allocWithZone(VoidPtr zone);

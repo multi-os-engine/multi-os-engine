@@ -73,6 +73,7 @@ public class NSShadow extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSShadow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSShadow allocWithZone(VoidPtr zone);

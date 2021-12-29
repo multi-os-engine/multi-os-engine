@@ -60,6 +60,7 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitDuration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitDuration allocWithZone(VoidPtr zone);

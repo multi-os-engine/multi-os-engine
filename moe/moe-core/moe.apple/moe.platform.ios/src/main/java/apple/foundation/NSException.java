@@ -64,6 +64,7 @@ public class NSException extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSException alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSException allocWithZone(VoidPtr zone);

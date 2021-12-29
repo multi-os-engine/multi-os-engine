@@ -65,6 +65,7 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UITableViewRowAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewRowAction allocWithZone(VoidPtr zone);

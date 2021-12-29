@@ -73,6 +73,7 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     @Selector("alloc")
     public static native UNNotificationContent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationContent allocWithZone(VoidPtr zone);

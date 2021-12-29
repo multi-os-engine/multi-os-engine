@@ -57,6 +57,7 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native OSLogMessageComponent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogMessageComponent allocWithZone(VoidPtr zone);

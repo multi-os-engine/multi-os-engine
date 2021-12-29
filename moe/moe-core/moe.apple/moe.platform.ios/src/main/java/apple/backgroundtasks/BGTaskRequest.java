@@ -53,6 +53,7 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native BGTaskRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BGTaskRequest allocWithZone(VoidPtr zone);

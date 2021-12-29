@@ -61,6 +61,7 @@ public class MTLArrayType extends MTLType {
     @Selector("alloc")
     public static native MTLArrayType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLArrayType allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CTCellularPlanProvisioningRequest extends NSObject implements NSSec
     @Selector("alloc")
     public static native CTCellularPlanProvisioningRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTCellularPlanProvisioningRequest allocWithZone(VoidPtr zone);

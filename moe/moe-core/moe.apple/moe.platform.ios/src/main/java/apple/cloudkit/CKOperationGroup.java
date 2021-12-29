@@ -60,6 +60,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CKOperationGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKOperationGroup allocWithZone(VoidPtr zone);

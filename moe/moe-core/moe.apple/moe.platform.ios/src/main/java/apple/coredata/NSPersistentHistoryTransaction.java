@@ -49,6 +49,7 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("alloc")
     public static native NSPersistentHistoryTransaction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentHistoryTransaction allocWithZone(VoidPtr zone);

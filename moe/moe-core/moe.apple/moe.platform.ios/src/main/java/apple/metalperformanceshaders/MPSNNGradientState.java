@@ -56,6 +56,7 @@ public class MPSNNGradientState extends MPSState {
     @Selector("alloc")
     public static native MPSNNGradientState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGradientState allocWithZone(VoidPtr zone);

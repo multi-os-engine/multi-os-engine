@@ -59,6 +59,7 @@ public class NSURLCache extends NSObject {
     @Selector("alloc")
     public static native NSURLCache alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLCache allocWithZone(VoidPtr zone);

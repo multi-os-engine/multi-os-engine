@@ -50,6 +50,7 @@ public class MDLTransformMatrixOp extends NSObject implements MDLTransformOp {
     @Selector("alloc")
     public static native MDLTransformMatrixOp alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTransformMatrixOp allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class INPlayMediaMediaItemResolutionResult extends INMediaItemResolutionR
     @Selector("alloc")
     public static native INPlayMediaMediaItemResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPlayMediaMediaItemResolutionResult allocWithZone(VoidPtr zone);

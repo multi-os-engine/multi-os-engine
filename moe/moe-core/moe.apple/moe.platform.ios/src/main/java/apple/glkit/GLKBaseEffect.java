@@ -64,6 +64,7 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @Selector("alloc")
     public static native GLKBaseEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKBaseEffect allocWithZone(VoidPtr zone);

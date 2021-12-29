@@ -49,6 +49,7 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +79,7 @@ public class UIActionSheet extends UIView {
     @Selector("alloc")
     public static native UIActionSheet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIActionSheet allocWithZone(VoidPtr zone);

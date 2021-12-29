@@ -74,6 +74,7 @@ public class HKDocumentQuery extends HKQuery {
     @Selector("alloc")
     public static native HKDocumentQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKDocumentQuery allocWithZone(VoidPtr zone);

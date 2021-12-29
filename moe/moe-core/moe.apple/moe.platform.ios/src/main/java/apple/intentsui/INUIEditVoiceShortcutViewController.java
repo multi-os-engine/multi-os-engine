@@ -56,6 +56,7 @@ public class INUIEditVoiceShortcutViewController extends UIViewController {
     @Selector("alloc")
     public static native INUIEditVoiceShortcutViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INUIEditVoiceShortcutViewController allocWithZone(VoidPtr zone);

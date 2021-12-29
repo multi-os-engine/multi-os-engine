@@ -55,6 +55,7 @@ public class MPSCNNDivide extends MPSCNNArithmetic {
     @Selector("alloc")
     public static native MPSCNNDivide alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDivide allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class MTLAttribute extends NSObject {
     @Selector("alloc")
     public static native MTLAttribute alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAttribute allocWithZone(VoidPtr zone);

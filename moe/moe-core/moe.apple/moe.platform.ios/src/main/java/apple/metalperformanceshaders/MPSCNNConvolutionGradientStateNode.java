@@ -45,6 +45,7 @@ public class MPSCNNConvolutionGradientStateNode extends MPSNNGradientStateNode {
     @Selector("alloc")
     public static native MPSCNNConvolutionGradientStateNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionGradientStateNode allocWithZone(VoidPtr zone);

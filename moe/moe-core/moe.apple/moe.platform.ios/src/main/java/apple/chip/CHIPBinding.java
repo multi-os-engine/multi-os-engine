@@ -51,6 +51,7 @@ public class CHIPBinding extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPBinding alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPBinding allocWithZone(VoidPtr zone);
@@ -61,8 +62,8 @@ public class CHIPBinding extends CHIPCluster {
 
     @Generated
     @Selector("bind:groupId:endpointId:clusterId:responseHandler:")
-    public native void bindGroupIdEndpointIdClusterIdResponseHandler(long nodeId, char groupId, byte endpointId,
-            char clusterId,
+    public native void bindGroupIdEndpointIdClusterIdResponseHandler(long nodeId, char groupId, char endpointId,
+            int clusterId,
             @ObjCBlock(name = "call_bindGroupIdEndpointIdClusterIdResponseHandler") Block_bindGroupIdEndpointIdClusterIdResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -109,7 +110,7 @@ public class CHIPBinding extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPBinding initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPBinding initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -167,8 +168,8 @@ public class CHIPBinding extends CHIPCluster {
 
     @Generated
     @Selector("unbind:groupId:endpointId:clusterId:responseHandler:")
-    public native void unbindGroupIdEndpointIdClusterIdResponseHandler(long nodeId, char groupId, byte endpointId,
-            char clusterId,
+    public native void unbindGroupIdEndpointIdClusterIdResponseHandler(long nodeId, char groupId, char endpointId,
+            int clusterId,
             @ObjCBlock(name = "call_unbindGroupIdEndpointIdClusterIdResponseHandler") Block_unbindGroupIdEndpointIdClusterIdResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)

@@ -62,6 +62,7 @@ public class INBooleanResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INBooleanResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBooleanResolutionResult allocWithZone(VoidPtr zone);

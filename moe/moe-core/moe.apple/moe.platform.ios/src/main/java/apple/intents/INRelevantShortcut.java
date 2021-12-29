@@ -55,6 +55,7 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @Selector("alloc")
     public static native INRelevantShortcut alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRelevantShortcut allocWithZone(VoidPtr zone);

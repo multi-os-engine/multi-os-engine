@@ -49,6 +49,7 @@ public class ARHitTestResult extends NSObject {
     @Selector("alloc")
     public static native ARHitTestResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARHitTestResult allocWithZone(VoidPtr zone);

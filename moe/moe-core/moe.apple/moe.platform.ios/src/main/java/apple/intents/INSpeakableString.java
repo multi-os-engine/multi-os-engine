@@ -68,6 +68,7 @@ public class INSpeakableString extends NSObject implements INSpeakable, NSCopyin
     @Selector("alloc")
     public static native INSpeakableString alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSpeakableString allocWithZone(VoidPtr zone);

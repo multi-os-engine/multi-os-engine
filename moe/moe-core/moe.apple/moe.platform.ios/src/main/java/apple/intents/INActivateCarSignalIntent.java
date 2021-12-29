@@ -47,6 +47,7 @@ public class INActivateCarSignalIntent extends INIntent {
     @Selector("alloc")
     public static native INActivateCarSignalIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INActivateCarSignalIntent allocWithZone(VoidPtr zone);

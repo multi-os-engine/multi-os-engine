@@ -49,6 +49,7 @@ public class NSPersistentHistoryResult extends NSPersistentStoreResult {
     @Selector("alloc")
     public static native NSPersistentHistoryResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentHistoryResult allocWithZone(VoidPtr zone);

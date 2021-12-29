@@ -69,6 +69,7 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     @Selector("alloc")
     public static native SCNPhysicsVehicle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsVehicle allocWithZone(VoidPtr zone);

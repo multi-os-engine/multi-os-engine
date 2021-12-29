@@ -66,6 +66,7 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Selector("alloc")
     public static native UICollectionViewLayoutInvalidationContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewLayoutInvalidationContext allocWithZone(VoidPtr zone);

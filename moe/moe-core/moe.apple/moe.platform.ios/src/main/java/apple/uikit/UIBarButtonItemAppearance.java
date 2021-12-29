@@ -50,6 +50,7 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native UIBarButtonItemAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBarButtonItemAppearance allocWithZone(VoidPtr zone);

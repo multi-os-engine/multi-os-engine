@@ -46,6 +46,7 @@ public class INPlayMediaPlaybackSpeedResolutionResult extends INDoubleResolution
     @Selector("alloc")
     public static native INPlayMediaPlaybackSpeedResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPlayMediaPlaybackSpeedResolutionResult allocWithZone(VoidPtr zone);

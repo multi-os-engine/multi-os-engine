@@ -52,6 +52,7 @@ public class WKDownload extends NSObject implements NSProgressReporting {
     @Selector("alloc")
     public static native WKDownload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKDownload allocWithZone(VoidPtr zone);

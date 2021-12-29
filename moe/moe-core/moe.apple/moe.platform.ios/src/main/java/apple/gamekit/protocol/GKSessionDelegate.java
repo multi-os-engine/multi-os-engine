@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * Callbacks to the GKSession delegate.
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

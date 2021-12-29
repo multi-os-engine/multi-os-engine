@@ -71,6 +71,7 @@ public class CMMagnetometerData extends CMLogItem {
     @Selector("alloc")
     public static native CMMagnetometerData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMMagnetometerData allocWithZone(VoidPtr zone);

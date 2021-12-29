@@ -83,6 +83,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CIImage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIImage allocWithZone(VoidPtr zone);

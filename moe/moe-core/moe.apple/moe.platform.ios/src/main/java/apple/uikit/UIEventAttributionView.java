@@ -60,6 +60,7 @@ public class UIEventAttributionView extends UIView {
     @Selector("alloc")
     public static native UIEventAttributionView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIEventAttributionView allocWithZone(VoidPtr zone);

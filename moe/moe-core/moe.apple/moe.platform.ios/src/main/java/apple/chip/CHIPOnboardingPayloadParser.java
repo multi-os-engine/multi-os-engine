@@ -48,6 +48,7 @@ public class CHIPOnboardingPayloadParser extends NSObject {
     @Selector("alloc")
     public static native CHIPOnboardingPayloadParser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPOnboardingPayloadParser allocWithZone(VoidPtr zone);

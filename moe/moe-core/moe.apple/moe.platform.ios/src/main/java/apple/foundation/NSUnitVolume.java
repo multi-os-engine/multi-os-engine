@@ -64,6 +64,7 @@ public class NSUnitVolume extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitVolume alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitVolume allocWithZone(VoidPtr zone);

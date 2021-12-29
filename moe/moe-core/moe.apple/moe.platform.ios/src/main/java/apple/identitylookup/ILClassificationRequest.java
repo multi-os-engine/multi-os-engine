@@ -51,6 +51,7 @@ public class ILClassificationRequest extends NSObject implements NSSecureCoding 
     @Selector("alloc")
     public static native ILClassificationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILClassificationRequest allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class MLCSliceLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCSliceLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCSliceLayer allocWithZone(VoidPtr zone);

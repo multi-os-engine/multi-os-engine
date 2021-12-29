@@ -63,6 +63,7 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     @Selector("alloc")
     public static native PHContentEditingInputRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHContentEditingInputRequestOptions allocWithZone(VoidPtr zone);

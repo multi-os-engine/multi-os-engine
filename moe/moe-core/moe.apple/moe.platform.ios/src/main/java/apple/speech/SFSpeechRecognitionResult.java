@@ -69,6 +69,7 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native SFSpeechRecognitionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSpeechRecognitionResult allocWithZone(VoidPtr zone);

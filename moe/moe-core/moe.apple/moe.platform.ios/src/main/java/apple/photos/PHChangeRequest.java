@@ -45,6 +45,7 @@ public class PHChangeRequest extends NSObject {
     @Selector("alloc")
     public static native PHChangeRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHChangeRequest allocWithZone(VoidPtr zone);

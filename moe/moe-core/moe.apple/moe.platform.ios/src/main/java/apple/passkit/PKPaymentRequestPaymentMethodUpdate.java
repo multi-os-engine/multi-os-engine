@@ -46,6 +46,7 @@ public class PKPaymentRequestPaymentMethodUpdate extends PKPaymentRequestUpdate 
     @Selector("alloc")
     public static native PKPaymentRequestPaymentMethodUpdate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentRequestPaymentMethodUpdate allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class SRKeyboardProbabilityMetric<_UnitType> extends NSObject {
     @Selector("alloc")
     public static native SRKeyboardProbabilityMetric<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRKeyboardProbabilityMetric<?> allocWithZone(VoidPtr zone);

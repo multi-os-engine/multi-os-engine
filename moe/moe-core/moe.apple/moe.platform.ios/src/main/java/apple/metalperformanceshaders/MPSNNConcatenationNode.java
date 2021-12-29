@@ -48,6 +48,7 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNConcatenationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNConcatenationNode allocWithZone(VoidPtr zone);

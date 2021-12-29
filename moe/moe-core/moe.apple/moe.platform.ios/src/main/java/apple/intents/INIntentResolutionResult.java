@@ -61,6 +61,7 @@ public class INIntentResolutionResult extends NSObject {
     @Selector("alloc")
     public static native INIntentResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INIntentResolutionResult allocWithZone(VoidPtr zone);

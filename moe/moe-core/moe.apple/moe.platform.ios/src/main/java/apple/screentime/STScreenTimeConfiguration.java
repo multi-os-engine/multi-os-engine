@@ -45,6 +45,7 @@ public class STScreenTimeConfiguration extends NSObject {
     @Selector("alloc")
     public static native STScreenTimeConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native STScreenTimeConfiguration allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class NSStringDrawingContext extends NSObject {
     @Selector("alloc")
     public static native NSStringDrawingContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSStringDrawingContext allocWithZone(VoidPtr zone);

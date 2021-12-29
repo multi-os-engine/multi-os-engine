@@ -58,6 +58,7 @@ public class NSFileAccessIntent extends NSObject {
     @Selector("alloc")
     public static native NSFileAccessIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileAccessIntent allocWithZone(VoidPtr zone);

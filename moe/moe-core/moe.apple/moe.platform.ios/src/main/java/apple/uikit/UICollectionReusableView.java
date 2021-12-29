@@ -76,6 +76,7 @@ public class UICollectionReusableView extends UIView {
     @Selector("alloc")
     public static native UICollectionReusableView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionReusableView allocWithZone(VoidPtr zone);

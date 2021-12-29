@@ -61,6 +61,7 @@ public class MPSNNImageNode extends NSObject {
     @Selector("alloc")
     public static native MPSNNImageNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNImageNode allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UIAttachmentBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAttachmentBehavior allocWithZone(VoidPtr zone);

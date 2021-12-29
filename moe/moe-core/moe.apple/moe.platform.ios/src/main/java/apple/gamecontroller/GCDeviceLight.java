@@ -48,6 +48,7 @@ public class GCDeviceLight extends NSObject {
     @Selector("alloc")
     public static native GCDeviceLight alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCDeviceLight allocWithZone(VoidPtr zone);

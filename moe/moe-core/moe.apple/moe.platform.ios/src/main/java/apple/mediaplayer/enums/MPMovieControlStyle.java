@@ -19,21 +19,22 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+@Deprecated
 @Generated
 public final class MPMovieControlStyle {
     /**
      * No controls
      */
-    @Generated @NInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * Controls for an embedded view
      */
-    @Generated @NInt public static final long Embedded = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Embedded = 0x0000000000000001L;
     /**
      * Controls for fullscreen playback
      */
-    @Generated @NInt public static final long Fullscreen = 0x0000000000000002L;
-    @Generated @NInt public static final long Default = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Fullscreen = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Default = 0x0000000000000001L;
 
     @Generated
     private MPMovieControlStyle() {

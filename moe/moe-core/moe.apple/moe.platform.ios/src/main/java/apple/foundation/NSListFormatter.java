@@ -45,6 +45,7 @@ public class NSListFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSListFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSListFormatter allocWithZone(VoidPtr zone);

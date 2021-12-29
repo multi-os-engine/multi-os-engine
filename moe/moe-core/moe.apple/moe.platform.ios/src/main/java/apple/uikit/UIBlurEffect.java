@@ -66,6 +66,7 @@ public class UIBlurEffect extends UIVisualEffect {
     @Selector("alloc")
     public static native UIBlurEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBlurEffect allocWithZone(VoidPtr zone);

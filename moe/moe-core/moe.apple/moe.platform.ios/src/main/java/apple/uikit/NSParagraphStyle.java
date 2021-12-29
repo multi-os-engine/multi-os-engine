@@ -71,6 +71,7 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Selector("alloc")
     public static native NSParagraphStyle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSParagraphStyle allocWithZone(VoidPtr zone);

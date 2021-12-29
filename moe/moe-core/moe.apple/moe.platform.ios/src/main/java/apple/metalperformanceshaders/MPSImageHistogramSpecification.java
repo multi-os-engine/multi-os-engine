@@ -74,6 +74,7 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageHistogramSpecification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageHistogramSpecification allocWithZone(VoidPtr zone);

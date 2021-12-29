@@ -49,6 +49,7 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
     @Selector("alloc")
     public static native UICollectionViewDiffableDataSourceReorderingHandlers<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewDiffableDataSourceReorderingHandlers<?, ?> allocWithZone(VoidPtr zone);

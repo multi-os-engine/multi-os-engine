@@ -78,6 +78,7 @@ public class CHIPNetworkCommissioning extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPNetworkCommissioning alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPNetworkCommissioning allocWithZone(VoidPtr zone);
@@ -160,7 +161,7 @@ public class CHIPNetworkCommissioning extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPNetworkCommissioning initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPNetworkCommissioning initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated
@@ -272,4 +273,16 @@ public class CHIPNetworkCommissioning extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("readAttributeFeatureMapWithResponseHandler:")
+    public native void readAttributeFeatureMapWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeFeatureMapWithResponseHandler") Block_readAttributeFeatureMapWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeFeatureMapWithResponseHandler {
+        @Generated
+        void call_readAttributeFeatureMapWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

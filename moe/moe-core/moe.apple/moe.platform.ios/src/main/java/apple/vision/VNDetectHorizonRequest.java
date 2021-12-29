@@ -52,6 +52,7 @@ public class VNDetectHorizonRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectHorizonRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectHorizonRequest allocWithZone(VoidPtr zone);

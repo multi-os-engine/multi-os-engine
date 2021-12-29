@@ -62,6 +62,7 @@ public class CXCallObserver extends NSObject {
     @Selector("alloc")
     public static native CXCallObserver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXCallObserver allocWithZone(VoidPtr zone);

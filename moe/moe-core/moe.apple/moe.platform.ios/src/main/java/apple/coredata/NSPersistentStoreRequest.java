@@ -63,6 +63,7 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSPersistentStoreRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentStoreRequest allocWithZone(VoidPtr zone);

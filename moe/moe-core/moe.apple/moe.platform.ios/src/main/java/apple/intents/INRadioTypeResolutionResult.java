@@ -61,6 +61,7 @@ public class INRadioTypeResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INRadioTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRadioTypeResolutionResult allocWithZone(VoidPtr zone);

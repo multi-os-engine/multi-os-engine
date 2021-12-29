@@ -68,6 +68,7 @@ public class WCSessionUserInfoTransfer extends NSObject implements NSSecureCodin
     @Selector("alloc")
     public static native WCSessionUserInfoTransfer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WCSessionUserInfoTransfer allocWithZone(VoidPtr zone);

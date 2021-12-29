@@ -52,6 +52,7 @@ public class AVRouteDetector extends NSObject {
     @Selector("alloc")
     public static native AVRouteDetector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVRouteDetector allocWithZone(VoidPtr zone);

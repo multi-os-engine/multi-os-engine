@@ -61,6 +61,7 @@ public class INCarSeatResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INCarSeatResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCarSeatResolutionResult allocWithZone(VoidPtr zone);

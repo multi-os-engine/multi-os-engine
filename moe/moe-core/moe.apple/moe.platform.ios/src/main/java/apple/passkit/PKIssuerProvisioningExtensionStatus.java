@@ -45,6 +45,7 @@ public class PKIssuerProvisioningExtensionStatus extends NSObject {
     @Selector("alloc")
     public static native PKIssuerProvisioningExtensionStatus alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKIssuerProvisioningExtensionStatus allocWithZone(VoidPtr zone);

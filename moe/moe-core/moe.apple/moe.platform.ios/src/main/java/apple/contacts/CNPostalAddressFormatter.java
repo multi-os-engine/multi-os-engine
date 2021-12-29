@@ -70,6 +70,7 @@ public class CNPostalAddressFormatter extends NSFormatter {
     @Selector("alloc")
     public static native CNPostalAddressFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNPostalAddressFormatter allocWithZone(VoidPtr zone);

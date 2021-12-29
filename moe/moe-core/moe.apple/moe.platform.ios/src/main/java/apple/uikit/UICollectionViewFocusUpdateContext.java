@@ -62,6 +62,7 @@ public class UICollectionViewFocusUpdateContext extends UIFocusUpdateContext {
     @Selector("alloc")
     public static native UICollectionViewFocusUpdateContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewFocusUpdateContext allocWithZone(VoidPtr zone);

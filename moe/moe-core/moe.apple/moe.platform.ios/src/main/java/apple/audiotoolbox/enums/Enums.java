@@ -467,7 +467,7 @@ public final class Enums {
     @Generated public static final int kConverterPrimeMethod_Pre = 0x00000000;
     @Generated public static final int kConverterPrimeMethod_Normal = 0x00000001;
     @Generated public static final int kConverterPrimeMethod_None = 0x00000002;
-    @Generated public static final int kAudioUnitSubType_AU3DMixerEmbedded = 0x3364656D;
+    @Deprecated @Generated public static final int kAudioUnitSubType_AU3DMixerEmbedded = 0x3364656D;
     @Generated public static final int kAudioFileLoopDirection_NoLooping = 0x00000000;
     @Generated public static final int kAudioFileLoopDirection_Forward = 0x00000001;
     @Generated public static final int kAudioFileLoopDirection_ForwardAndBackward = 0x00000002;
@@ -827,7 +827,7 @@ public final class Enums {
     /**
      * Global, dB, -40->40, 0
      */
-    @Generated public static final int kDynamicsProcessorParam_MasterGain = 0x00000006;
+    @Deprecated @Generated public static final int kDynamicsProcessorParam_MasterGain = 0x00000006;
     /**
      * Global, dB, read-only parameter
      */
@@ -904,7 +904,7 @@ public final class Enums {
     @Generated public static final int kAudioToolboxErr_InvalidPlayerState = 0xFFFFD59C;
     @Generated public static final int kAudioToolboxErr_CannotDoInCurrentContext = 0xFFFFD591;
     @Generated public static final int kAudioToolboxError_NoTrackDestination = 0xFFFEFB60;
-    @Generated public static final int kAUVoiceIOProperty_DuckNonVoiceAudio = 0x00000836;
+    @Deprecated @Generated public static final int kAUVoiceIOProperty_DuckNonVoiceAudio = 0x00000836;
     @Generated public static final int kAudioUnitType_Output = 0x61756F75;
     @Generated public static final int kAudioUnitType_MusicDevice = 0x61756D75;
     @Generated public static final int kAudioUnitType_MusicEffect = 0x61756D66;
@@ -969,7 +969,7 @@ public final class Enums {
     @Generated @NInt public static final long kAUNBandEQFilterType_ResonantHighShelf = 0x000000000000000AL;
     @Generated @NInt public static final long kNumAUNBandEQFilterTypes = 0x000000000000000BL;
     @Generated public static final int kAudioConverterPropertyCanResumeFromInterruption = 0x63726669;
-    @Generated public static final int kAUVoiceIOProperty_VoiceProcessingQuality = 0x00000837;
+    @Deprecated @Generated public static final int kAUVoiceIOProperty_VoiceProcessingQuality = 0x00000837;
     @Generated public static final int kAudioUnitProperty_ScheduledFileIDs = 0x00000CEE;
     @Generated public static final int kAudioUnitProperty_ScheduledFileRegion = 0x00000CEF;
     @Generated public static final int kAudioUnitProperty_ScheduledFilePrime = 0x00000CF0;
@@ -1763,18 +1763,18 @@ public final class Enums {
      * Global, dB, -20->40, 0
      */
     @Generated public static final int kHipassParam_Resonance = 0x00000001;
-    @Generated public static final int kAudioUnitProperty_3DMixerDistanceParams = 0x00000BC2;
-    @Generated public static final int kAudioUnitProperty_3DMixerAttenuationCurve = 0x00000BC5;
-    @Generated public static final int kAudioUnitProperty_DopplerShift = 0x00000BBA;
-    @Generated public static final int kAudioUnitProperty_3DMixerRenderingFlags = 0x00000BBB;
-    @Generated public static final int kAudioUnitProperty_3DMixerDistanceAtten = 0x00000BBC;
-    @Generated public static final int kAudioUnitProperty_ReverbPreset = 0x00000BC4;
+    @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerDistanceParams = 0x00000BC2;
+    @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerAttenuationCurve = 0x00000BC5;
+    @Deprecated @Generated public static final int kAudioUnitProperty_DopplerShift = 0x00000BBA;
+    @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerRenderingFlags = 0x00000BBB;
+    @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerDistanceAtten = 0x00000BBC;
+    @Deprecated @Generated public static final int kAudioUnitProperty_ReverbPreset = 0x00000BC4;
     @Generated public static final int kMusicDeviceProperty_InstrumentName = 0x000003E9;
     @Generated public static final int kMusicDeviceProperty_InstrumentNumber = 0x000003EC;
     @Generated public static final int kExtAudioFileError_CodecUnavailableInputConsumed = 0xFFFEFC01;
     @Generated public static final int kExtAudioFileError_CodecUnavailableInputNotConsumed = 0xFFFEFC00;
-    @Generated public static final int kAudioUnitErr_IllegalInstrument = 0xFFFFD587;
-    @Generated public static final int kAudioUnitErr_InstrumentTypeNotFound = 0xFFFFD588;
+    @Deprecated @Generated public static final int kAudioUnitErr_IllegalInstrument = 0xFFFFD587;
+    @Deprecated @Generated public static final int kAudioUnitErr_InstrumentTypeNotFound = 0xFFFFD588;
     @Generated public static final int kAudioQueueErr_InvalidBuffer = 0xFFFEFB81;
     @Generated public static final int kAudioQueueErr_BufferEmpty = 0xFFFEFB82;
     @Generated public static final int kAudioQueueErr_DisposalPending = 0xFFFEFB83;
@@ -1903,7 +1903,7 @@ public final class Enums {
     @Generated public static final int kAudioUnitSubType_MultiChannelMixer = 0x6D636D78;
     @Generated public static final int kAudioUnitSubType_MatrixMixer = 0x6D786D78;
     @Generated public static final int kAudioUnitSubType_SpatialMixer = 0x3364656D;
-    @Generated public static final int kAudioFormatProperty_HardwareCodecCapabilities = 0x68776363;
+    @Deprecated @Generated public static final int kAudioFormatProperty_HardwareCodecCapabilities = 0x68776363;
     /**
      * AudioStreamBasicDescription
      */

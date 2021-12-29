@@ -52,6 +52,7 @@ public class CPNowPlayingPlaybackRateButton extends CPNowPlayingButton {
     @Selector("alloc")
     public static native CPNowPlayingPlaybackRateButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNowPlayingPlaybackRateButton allocWithZone(VoidPtr zone);

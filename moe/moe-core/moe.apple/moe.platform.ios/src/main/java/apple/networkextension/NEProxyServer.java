@@ -73,6 +73,7 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     @Selector("alloc")
     public static native NEProxyServer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEProxyServer allocWithZone(VoidPtr zone);

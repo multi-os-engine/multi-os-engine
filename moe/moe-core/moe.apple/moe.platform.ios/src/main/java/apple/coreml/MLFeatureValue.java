@@ -64,6 +64,7 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native MLFeatureValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLFeatureValue allocWithZone(VoidPtr zone);

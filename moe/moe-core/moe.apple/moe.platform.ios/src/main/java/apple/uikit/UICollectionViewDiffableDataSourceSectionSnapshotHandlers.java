@@ -49,6 +49,7 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
     @Selector("alloc")
     public static native UICollectionViewDiffableDataSourceSectionSnapshotHandlers<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewDiffableDataSourceSectionSnapshotHandlers<?> allocWithZone(VoidPtr zone);

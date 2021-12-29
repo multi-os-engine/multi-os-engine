@@ -50,6 +50,7 @@ public class NSPersistentCloudKitContainerEvent extends NSObject implements NSCo
     @Selector("alloc")
     public static native NSPersistentCloudKitContainerEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentCloudKitContainerEvent allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INCar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCar allocWithZone(VoidPtr zone);

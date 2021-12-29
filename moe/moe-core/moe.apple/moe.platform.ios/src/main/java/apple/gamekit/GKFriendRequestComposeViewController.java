@@ -67,6 +67,7 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("alloc")
     public static native GKFriendRequestComposeViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKFriendRequestComposeViewController allocWithZone(VoidPtr zone);

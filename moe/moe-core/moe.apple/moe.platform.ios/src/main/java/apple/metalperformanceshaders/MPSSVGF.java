@@ -126,6 +126,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native MPSSVGF alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSSVGF allocWithZone(VoidPtr zone);

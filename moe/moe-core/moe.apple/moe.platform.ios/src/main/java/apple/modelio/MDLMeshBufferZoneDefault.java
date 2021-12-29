@@ -67,6 +67,7 @@ public class MDLMeshBufferZoneDefault extends NSObject implements MDLMeshBufferZ
     @Selector("alloc")
     public static native MDLMeshBufferZoneDefault alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMeshBufferZoneDefault allocWithZone(VoidPtr zone);

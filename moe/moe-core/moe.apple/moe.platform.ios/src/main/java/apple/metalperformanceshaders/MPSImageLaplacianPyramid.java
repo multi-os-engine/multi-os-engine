@@ -95,6 +95,7 @@ public class MPSImageLaplacianPyramid extends MPSImagePyramid {
     @Selector("alloc")
     public static native MPSImageLaplacianPyramid alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageLaplacianPyramid allocWithZone(VoidPtr zone);

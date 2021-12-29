@@ -69,6 +69,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CMAttitude alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMAttitude allocWithZone(VoidPtr zone);

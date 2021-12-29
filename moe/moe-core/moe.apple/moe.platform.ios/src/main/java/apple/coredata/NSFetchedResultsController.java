@@ -68,6 +68,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     @Selector("alloc")
     public static native NSFetchedResultsController<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFetchedResultsController<?> allocWithZone(VoidPtr zone);

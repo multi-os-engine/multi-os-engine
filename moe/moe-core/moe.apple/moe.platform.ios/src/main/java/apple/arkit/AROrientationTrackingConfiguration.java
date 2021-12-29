@@ -50,6 +50,7 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
     @Selector("alloc")
     public static native AROrientationTrackingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AROrientationTrackingConfiguration allocWithZone(VoidPtr zone);

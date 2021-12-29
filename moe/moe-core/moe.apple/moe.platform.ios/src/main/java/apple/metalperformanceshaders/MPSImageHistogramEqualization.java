@@ -95,6 +95,7 @@ public class MPSImageHistogramEqualization extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageHistogramEqualization alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageHistogramEqualization allocWithZone(VoidPtr zone);

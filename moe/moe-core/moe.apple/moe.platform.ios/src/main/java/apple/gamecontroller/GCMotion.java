@@ -76,6 +76,7 @@ public class GCMotion extends NSObject {
     @Selector("alloc")
     public static native GCMotion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCMotion allocWithZone(VoidPtr zone);

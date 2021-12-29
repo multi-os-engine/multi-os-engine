@@ -50,6 +50,7 @@ public class MLMetricKey extends MLKey {
     @Selector("alloc")
     public static native MLMetricKey alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLMetricKey allocWithZone(VoidPtr zone);

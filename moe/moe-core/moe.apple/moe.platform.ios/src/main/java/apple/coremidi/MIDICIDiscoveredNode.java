@@ -55,6 +55,7 @@ public class MIDICIDiscoveredNode extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MIDICIDiscoveredNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDICIDiscoveredNode allocWithZone(VoidPtr zone);

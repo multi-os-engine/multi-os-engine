@@ -55,6 +55,7 @@ public class MPSRNNRecurrentImageState extends MPSState {
     @Selector("alloc")
     public static native MPSRNNRecurrentImageState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNRecurrentImageState allocWithZone(VoidPtr zone);

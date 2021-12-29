@@ -53,6 +53,7 @@ public class NINearbyObject extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native NINearbyObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NINearbyObject allocWithZone(VoidPtr zone);

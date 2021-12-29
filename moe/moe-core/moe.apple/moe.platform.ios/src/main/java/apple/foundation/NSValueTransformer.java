@@ -59,6 +59,7 @@ public class NSValueTransformer extends NSObject {
     @Selector("alloc")
     public static native NSValueTransformer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSValueTransformer allocWithZone(VoidPtr zone);

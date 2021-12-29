@@ -47,6 +47,7 @@ public class UICollectionViewSupplementaryRegistration extends NSObject {
     @Selector("alloc")
     public static native UICollectionViewSupplementaryRegistration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewSupplementaryRegistration allocWithZone(VoidPtr zone);

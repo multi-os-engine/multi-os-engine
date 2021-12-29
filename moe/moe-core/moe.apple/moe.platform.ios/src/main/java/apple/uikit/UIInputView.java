@@ -76,6 +76,7 @@ public class UIInputView extends UIView {
     @Selector("alloc")
     public static native UIInputView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIInputView allocWithZone(VoidPtr zone);

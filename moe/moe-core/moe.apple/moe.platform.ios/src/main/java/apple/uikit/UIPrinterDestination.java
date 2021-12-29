@@ -54,6 +54,7 @@ public class UIPrinterDestination extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native UIPrinterDestination alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrinterDestination allocWithZone(VoidPtr zone);

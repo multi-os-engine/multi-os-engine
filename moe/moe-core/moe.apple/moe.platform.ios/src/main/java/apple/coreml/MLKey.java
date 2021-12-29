@@ -53,6 +53,7 @@ public class MLKey extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native MLKey alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLKey allocWithZone(VoidPtr zone);

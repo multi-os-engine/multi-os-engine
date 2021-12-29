@@ -52,6 +52,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCLossDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCLossDescriptor allocWithZone(VoidPtr zone);

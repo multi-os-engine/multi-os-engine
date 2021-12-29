@@ -49,6 +49,7 @@ public class NSCollectionLayoutGroupCustomItem extends NSObject implements NSCop
     @Selector("alloc")
     public static native NSCollectionLayoutGroupCustomItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutGroupCustomItem allocWithZone(VoidPtr zone);

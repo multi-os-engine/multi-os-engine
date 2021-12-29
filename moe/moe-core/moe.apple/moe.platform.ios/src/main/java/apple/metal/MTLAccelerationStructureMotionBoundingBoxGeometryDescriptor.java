@@ -49,6 +49,7 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor
     @Selector("alloc")
     public static native MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor allocWithZone(VoidPtr zone);

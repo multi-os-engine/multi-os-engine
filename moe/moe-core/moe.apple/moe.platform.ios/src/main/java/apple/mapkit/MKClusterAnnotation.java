@@ -49,6 +49,7 @@ public class MKClusterAnnotation extends NSObject implements MKAnnotation {
     @Selector("alloc")
     public static native MKClusterAnnotation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKClusterAnnotation allocWithZone(VoidPtr zone);

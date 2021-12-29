@@ -64,6 +64,7 @@ public class INSendMessageIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSendMessageIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendMessageIntentResponse allocWithZone(VoidPtr zone);

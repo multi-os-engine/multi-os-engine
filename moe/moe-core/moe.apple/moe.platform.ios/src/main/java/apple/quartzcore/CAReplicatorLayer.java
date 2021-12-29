@@ -78,6 +78,7 @@ public class CAReplicatorLayer extends CALayer {
     @Selector("alloc")
     public static native CAReplicatorLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAReplicatorLayer allocWithZone(VoidPtr zone);

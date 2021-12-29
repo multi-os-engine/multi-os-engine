@@ -141,6 +141,7 @@ public class MPSImage extends NSObject {
     @Selector("alloc")
     public static native MPSImage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImage allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLLinkedFunctions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLLinkedFunctions allocWithZone(VoidPtr zone);

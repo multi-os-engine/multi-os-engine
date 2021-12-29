@@ -62,6 +62,7 @@ public class NSCompoundPredicate extends NSPredicate {
     @Selector("alloc")
     public static native NSCompoundPredicate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCompoundPredicate allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class AEAssessmentParticipantConfiguration extends NSObject implements NS
     @Selector("alloc")
     public static native AEAssessmentParticipantConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AEAssessmentParticipantConfiguration allocWithZone(VoidPtr zone);

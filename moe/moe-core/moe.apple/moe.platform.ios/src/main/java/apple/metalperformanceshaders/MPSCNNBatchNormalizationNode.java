@@ -73,6 +73,7 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
     @Selector("alloc")
     public static native MPSCNNBatchNormalizationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBatchNormalizationNode allocWithZone(VoidPtr zone);

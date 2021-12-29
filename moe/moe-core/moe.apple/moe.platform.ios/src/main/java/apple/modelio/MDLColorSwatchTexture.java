@@ -63,6 +63,7 @@ public class MDLColorSwatchTexture extends MDLTexture {
     @Selector("alloc")
     public static native MDLColorSwatchTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLColorSwatchTexture allocWithZone(VoidPtr zone);

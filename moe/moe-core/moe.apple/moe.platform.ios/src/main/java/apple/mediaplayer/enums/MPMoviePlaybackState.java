@@ -19,14 +19,15 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+@Deprecated
 @Generated
 public final class MPMoviePlaybackState {
-    @Generated @NInt public static final long Stopped = 0x0000000000000000L;
-    @Generated @NInt public static final long Playing = 0x0000000000000001L;
-    @Generated @NInt public static final long Paused = 0x0000000000000002L;
-    @Generated @NInt public static final long Interrupted = 0x0000000000000003L;
-    @Generated @NInt public static final long SeekingForward = 0x0000000000000004L;
-    @Generated @NInt public static final long SeekingBackward = 0x0000000000000005L;
+    @Deprecated @Generated @NInt public static final long Stopped = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Playing = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Paused = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Interrupted = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long SeekingForward = 0x0000000000000004L;
+    @Deprecated @Generated @NInt public static final long SeekingBackward = 0x0000000000000005L;
 
     @Generated
     private MPMoviePlaybackState() {

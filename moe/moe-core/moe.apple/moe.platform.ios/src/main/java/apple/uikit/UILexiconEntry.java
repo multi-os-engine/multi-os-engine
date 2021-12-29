@@ -63,6 +63,7 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UILexiconEntry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILexiconEntry allocWithZone(VoidPtr zone);

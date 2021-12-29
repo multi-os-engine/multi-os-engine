@@ -65,6 +65,7 @@ public class SKProductsRequest extends SKRequest {
     @Selector("alloc")
     public static native SKProductsRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKProductsRequest allocWithZone(VoidPtr zone);

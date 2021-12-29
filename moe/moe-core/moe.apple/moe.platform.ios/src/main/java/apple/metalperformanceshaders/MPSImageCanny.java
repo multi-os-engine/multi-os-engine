@@ -85,6 +85,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageCanny alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageCanny allocWithZone(VoidPtr zone);

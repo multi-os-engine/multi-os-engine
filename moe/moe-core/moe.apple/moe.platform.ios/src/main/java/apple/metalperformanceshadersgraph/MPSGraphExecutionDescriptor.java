@@ -50,6 +50,7 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPSGraphExecutionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphExecutionDescriptor allocWithZone(VoidPtr zone);

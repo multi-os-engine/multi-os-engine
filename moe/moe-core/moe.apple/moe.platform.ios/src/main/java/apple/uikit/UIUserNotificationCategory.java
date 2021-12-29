@@ -67,6 +67,7 @@ public class UIUserNotificationCategory extends NSObject implements NSCopying, N
     @Selector("alloc")
     public static native UIUserNotificationCategory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIUserNotificationCategory allocWithZone(VoidPtr zone);

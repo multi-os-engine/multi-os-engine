@@ -66,6 +66,7 @@ public class GLKTextureInfo extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native GLKTextureInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKTextureInfo allocWithZone(VoidPtr zone);

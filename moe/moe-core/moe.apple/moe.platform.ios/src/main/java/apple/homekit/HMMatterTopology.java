@@ -28,19 +28,19 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Wraps the information a CHIP Ecosystem Partner is expected to pass when initiating setup. The number of homes vended to HomeKit by this class dictate whether a home selection step will be presented as part of setup. If so, these homes will be represented in system UI for user selection.
+ * Wraps the information a Matter Ecosystem Partner is expected to pass when initiating setup. The number of homes vended to HomeKit by this class dictate whether a home selection step will be presented as part of setup. If so, these homes will be represented in system UI for user selection.
  */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HMCHIPServiceTopology extends NSObject implements NSCopying, NSSecureCoding {
+public class HMMatterTopology extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected HMCHIPServiceTopology(Pointer peer) {
+    protected HMMatterTopology(Pointer peer) {
         super(peer);
     }
 
@@ -51,11 +51,12 @@ public class HMCHIPServiceTopology extends NSObject implements NSCopying, NSSecu
     @Generated
     @Owned
     @Selector("alloc")
-    public static native HMCHIPServiceTopology alloc();
+    public static native HMMatterTopology alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
-    public static native HMCHIPServiceTopology allocWithZone(VoidPtr zone);
+    public static native HMMatterTopology allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -79,10 +80,10 @@ public class HMCHIPServiceTopology extends NSObject implements NSCopying, NSSecu
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Owned
     @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated
@@ -107,24 +108,24 @@ public class HMCHIPServiceTopology extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("homes")
-    public native NSArray<? extends HMCHIPServiceHome> homes();
+    public native NSArray<? extends HMMatterHome> homes();
 
     @Generated
     @Selector("init")
-    public native HMCHIPServiceTopology init();
+    public native HMMatterTopology init();
 
     @Generated
     @Selector("initWithCoder:")
-    public native HMCHIPServiceTopology initWithCoder(NSCoder coder);
+    public native HMMatterTopology initWithCoder(NSCoder coder);
 
     /**
-     * HMCHIPServiceTopology initializer.
+     * HMMatterTopology initializer.
      *
      * @param homes count must be greater than 0.  If count is greater than 1, setup will present a home selection card.
      */
     @Generated
     @Selector("initWithHomes:")
-    public native HMCHIPServiceTopology initWithHomes(NSArray<? extends HMCHIPServiceHome> homes);
+    public native HMMatterTopology initWithHomes(NSArray<? extends HMMatterHome> homes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,7 +151,7 @@ public class HMCHIPServiceTopology extends NSObject implements NSCopying, NSSecu
     @Generated
     @Owned
     @Selector("new")
-    public static native HMCHIPServiceTopology new_objc();
+    public static native HMMatterTopology new_objc();
 
     @Generated
     @Selector("resolveClassMethod:")

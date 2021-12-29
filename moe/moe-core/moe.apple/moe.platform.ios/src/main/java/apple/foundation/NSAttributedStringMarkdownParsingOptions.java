@@ -44,6 +44,7 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     @Selector("alloc")
     public static native NSAttributedStringMarkdownParsingOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAttributedStringMarkdownParsingOptions allocWithZone(VoidPtr zone);

@@ -59,6 +59,7 @@ public class ILMessageFilterQueryResponse extends NSObject implements NSSecureCo
     @Selector("alloc")
     public static native ILMessageFilterQueryResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILMessageFilterQueryResponse allocWithZone(VoidPtr zone);

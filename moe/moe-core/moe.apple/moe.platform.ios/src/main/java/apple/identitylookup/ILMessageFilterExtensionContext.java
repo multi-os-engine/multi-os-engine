@@ -51,6 +51,7 @@ public class ILMessageFilterExtensionContext extends NSExtensionContext {
     @Selector("alloc")
     public static native ILMessageFilterExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILMessageFilterExtensionContext allocWithZone(VoidPtr zone);

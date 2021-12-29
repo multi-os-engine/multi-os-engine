@@ -71,6 +71,7 @@ public class HMService extends NSObject {
     @Selector("alloc")
     public static native HMService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMService allocWithZone(VoidPtr zone);

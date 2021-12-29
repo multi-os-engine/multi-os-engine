@@ -55,6 +55,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPNowPlayingTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNowPlayingTemplate allocWithZone(VoidPtr zone);

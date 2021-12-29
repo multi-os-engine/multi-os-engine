@@ -73,6 +73,7 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
     @Selector("alloc")
     public static native CMPedometerEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMPedometerEvent allocWithZone(VoidPtr zone);

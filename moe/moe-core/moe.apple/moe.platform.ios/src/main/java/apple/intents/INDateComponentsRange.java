@@ -68,6 +68,7 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native INDateComponentsRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDateComponentsRange allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class AVMovieTrack extends AVAssetTrack {
     @Selector("alloc")
     public static native AVMovieTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMovieTrack allocWithZone(VoidPtr zone);

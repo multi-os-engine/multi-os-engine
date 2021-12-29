@@ -58,6 +58,7 @@ public class CIBarcodeDescriptor extends NSObject implements NSSecureCoding, NSC
     @Selector("alloc")
     public static native CIBarcodeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIBarcodeDescriptor allocWithZone(VoidPtr zone);

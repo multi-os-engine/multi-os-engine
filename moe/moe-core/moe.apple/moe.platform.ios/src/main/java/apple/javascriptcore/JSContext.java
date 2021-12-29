@@ -71,6 +71,7 @@ public class JSContext extends NSObject {
     @Selector("alloc")
     public static native JSContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native JSContext allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class MPSMatrixLogSoftMaxGradient extends MPSMatrixSoftMaxGradient {
     @Selector("alloc")
     public static native MPSMatrixLogSoftMaxGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixLogSoftMaxGradient allocWithZone(VoidPtr zone);

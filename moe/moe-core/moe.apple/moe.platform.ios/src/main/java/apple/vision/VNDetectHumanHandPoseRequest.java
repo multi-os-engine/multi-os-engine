@@ -55,6 +55,7 @@ public class VNDetectHumanHandPoseRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectHumanHandPoseRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectHumanHandPoseRequest allocWithZone(VoidPtr zone);

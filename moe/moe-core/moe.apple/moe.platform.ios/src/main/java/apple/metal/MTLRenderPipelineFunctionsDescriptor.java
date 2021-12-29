@@ -47,6 +47,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     @Selector("alloc")
     public static native MTLRenderPipelineFunctionsDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPipelineFunctionsDescriptor allocWithZone(VoidPtr zone);

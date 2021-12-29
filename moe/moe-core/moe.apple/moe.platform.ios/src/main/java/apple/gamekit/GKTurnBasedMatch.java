@@ -65,6 +65,7 @@ public class GKTurnBasedMatch extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedMatch alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKTurnBasedMatch allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Selector("alloc")
     public static native CPMessageListItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPMessageListItem allocWithZone(VoidPtr zone);

@@ -77,6 +77,7 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("alloc")
     public static native MDLObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLObject allocWithZone(VoidPtr zone);
