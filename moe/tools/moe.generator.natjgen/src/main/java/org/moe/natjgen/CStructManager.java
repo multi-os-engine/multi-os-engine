@@ -368,6 +368,9 @@ public class CStructManager extends AbstractUnitManager {
                 // getUnitName() + "\": " + alignment + " instead of " +
                 // naturalAlignment);
             }
+            if (isDeprecated()) {
+                modifiers.setDeprecated();
+            }
             modifiers.setGenerated();
 
             XcodeDocumentation doc = new XcodeDocumentation(getComment(), getEditGroup());
@@ -472,6 +475,9 @@ public class CStructManager extends AbstractUnitManager {
             modifiers.setPublic();
             modifiers.setNative();
             modifiers.setStructureField(order, isGetter, field.getConstantArraySize());
+            if (field.isDeprecated()) {
+                modifiers.setDeprecated();
+            }
             modifiers.setGenerated();
 
             XcodeDocumentation doc = new XcodeDocumentation(field.getComment(), getEditGroup());

@@ -16,7 +16,7 @@ limitations under the License.
 
 package org.moe.natjgen;
 
-abstract class AbstractModelElement {
+abstract class AbstractModelElement implements Deprecatable {
 
     /**
      * Element's name.
@@ -32,6 +32,11 @@ abstract class AbstractModelElement {
      * Element's comment.
      */
     private String comment;
+
+    /**
+     * This flag indicated whether the element is @deprecated or not
+     */
+    private boolean isDeprecated = false;
 
     /**
      * Creates a new Model Element.
@@ -80,6 +85,16 @@ abstract class AbstractModelElement {
      */
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    @Override
+    public boolean isDeprecated() {
+        return isDeprecated;
+    }
+
+    @Override
+    public void setDeprecated(boolean isDeprecated) {
+        this.isDeprecated = isDeprecated;
     }
 
     /**

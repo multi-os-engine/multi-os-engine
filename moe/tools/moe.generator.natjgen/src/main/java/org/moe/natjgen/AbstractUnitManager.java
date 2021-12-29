@@ -36,7 +36,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public abstract class AbstractUnitManager {
+public abstract class AbstractUnitManager implements Deprecatable {
 
     /**
      * Logger for this class
@@ -586,6 +586,21 @@ public abstract class AbstractUnitManager {
      */
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    /**
+     * This flag indicated whether the unit is @deprecated or not
+     */
+    private boolean isDeprecated = false;
+
+    @Override
+    public boolean isDeprecated() {
+        return isDeprecated;
+    }
+
+    @Override
+    public void setDeprecated(boolean isDeprecated) {
+        this.isDeprecated = isDeprecated;
     }
 
 }

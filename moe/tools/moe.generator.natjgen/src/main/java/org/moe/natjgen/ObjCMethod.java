@@ -79,11 +79,6 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
     private boolean isOptional = false;
 
     /**
-     * This flag indicated whether the method is @deprecated or not
-     */
-    private boolean isDeprecated = false;
-
-    /**
      * This flag indicated whether the method is inherited from a non-template class or not
      */
     private boolean isInheritedFromNonTemplateClass = false;
@@ -169,7 +164,7 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
         copy.unitDisabled = unitDisabled;
         copy.isProtocolMethod = isProtocolMethod;
         copy.isOptional = isOptional;
-        copy.isDeprecated = isDeprecated;
+        copy.setDeprecated(isDeprecated());
         copy.propertyName = propertyName;
         copy.attribute = attribute;
         copy.propertyFlags = propertyFlags;
@@ -322,24 +317,6 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
             throw new RuntimeException("Cannot turn an optional method back to required!");
         }
         this.isOptional = isopt;
-    }
-
-    /**
-     * Tells whether the method is deprecated or not
-     *
-     * @return true if deprecated otherwise false
-     */
-    public boolean isDeprecated() {
-        return isDeprecated;
-    }
-
-    /**
-     * Sets the method's deprecated property
-     *
-     * @param isDeprecated true if deprecated otherwise false
-     */
-    public void setDeprecated(boolean isDeprecated) {
-        this.isDeprecated = isDeprecated;
     }
 
     /**

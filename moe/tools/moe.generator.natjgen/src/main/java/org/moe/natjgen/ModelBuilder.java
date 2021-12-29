@@ -405,6 +405,7 @@ class ModelBuilder extends AbstractModelEditor {
                 decl.entityInfo().USR());
         manager.setExternalUnit(unit.handlingExternal());
         manager.setAlignment(decl.cursor().getCursorType().getAlignOf());
+        manager.setDeprecated(ClangUtil.isDeprecated(decl.cursor()));
         getGenerator().put(decl.entityInfo().USR(), manager);
     }
 
@@ -422,6 +423,7 @@ class ModelBuilder extends AbstractModelEditor {
         if (fieldname != null) {
             final CStructField field = new CStructField(fieldname, new Type(decl.cursor().getCursorType(), memModel),
                     decl.cursor().isBitField());
+            field.setDeprecated(ClangUtil.isDeprecated(decl.cursor()));
             field.setComment(ClangUtil.getComment(decl.cursor()));
             if (field.getConstantArraySize() > 0) {
                 struct.getFields().add(field);
@@ -457,6 +459,7 @@ class ModelBuilder extends AbstractModelEditor {
         if (getGenerator().getEnum(unitKey) == null) {
             CEnumManager manager = new CEnumManager(indexer, unit.getFQName(), unit.getOriginalName(), unit.getPath());
             manager.setExternalUnit(unit.handlingExternal());
+            manager.setDeprecated(ClangUtil.isDeprecated(decl.cursor()));
             manager.setComment(ClangUtil.getComment(decl.cursor()));
             getGenerator().put(unitKey, manager);
         }
@@ -499,7 +502,9 @@ class ModelBuilder extends AbstractModelEditor {
         if (manager != null) {
             ConstantValue constantValue = ConstantValue.fromSignExtendedValue(const_type, const_value);
             CEnumConstant constant = new CEnumConstant(const_name, constantValue);
+            constant.setDeprecated(ClangUtil.isDeprecated(declCursor));
             constant.setComment(ClangUtil.getComment(declCursor));
+
             manager.getConstants().add(constant);
         } else {
             statLog().log(Statistics.SKIPPING, Statistics.C_ENUM_CONST, declCursor.getCursorUSR().toString(),
@@ -635,6 +640,7 @@ class ModelBuilder extends AbstractModelEditor {
             }
             variable.setValue(ConstantValue.fromRawValue(variable.getType(), val.getValue()));
         }
+        variable.setDeprecated(ClangUtil.isDeprecated(declCursor));
         variable.setComment(ClangUtil.getComment(declCursor));
 
         // Add variable to manager
