@@ -1,6 +1,9 @@
 package org.moe;
 
+import apple.foundation.NSLocale;
 import org.moe.natj.objc.ObjCRuntime;
+
+import java.util.Locale;
 
 /**
  * A launcher class that allows us run extra code before running the actual application.
@@ -11,6 +14,10 @@ public class IOSLauncher {
     public static void main(String[] args) throws Throwable {
         // Register the crash hook for main thread
         ObjCRuntime.crashAppWhenExceptionUncaught();
+
+        // Update default locale
+        String localeTag = NSLocale.currentLocale().localeIdentifier().replace('_', '-');
+        Locale.setDefault(Locale.forLanguageTag(localeTag));
 
         // Invoke main method
         MOE.launchMain(args);
