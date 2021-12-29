@@ -60,6 +60,7 @@ class SubstrateExecutor(
                 "-H:DeadlockWatchdogInterval=0",
                 "-H:+ExitAfterRelocatableImageWrite",
                 "--features=org.graalvm.home.HomeFinderFeature",
+                "-H:+IncludeAllLocales", // Make sure all locales are available at runtime
                 *argsIf(config.useLLVM, "-H:CompilerBackend=llvm"),
                 "-Dsvm.targetName=iOS",
                 "-Dsvm.targetArch=${config.target.arch}",
