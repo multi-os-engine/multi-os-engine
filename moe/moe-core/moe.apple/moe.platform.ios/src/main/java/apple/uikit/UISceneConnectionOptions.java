@@ -58,6 +58,7 @@ public class UISceneConnectionOptions extends NSObject {
     @Selector("alloc")
     public static native UISceneConnectionOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneConnectionOptions allocWithZone(VoidPtr zone);

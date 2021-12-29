@@ -50,6 +50,7 @@ public class PHASEGeneratorParameters extends NSObject {
     @Selector("alloc")
     public static native PHASEGeneratorParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEGeneratorParameters allocWithZone(VoidPtr zone);

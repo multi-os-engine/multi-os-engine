@@ -50,6 +50,7 @@ public class CPMessageListItemTrailingConfiguration extends NSObject {
     @Selector("alloc")
     public static native CPMessageListItemTrailingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPMessageListItemTrailingConfiguration allocWithZone(VoidPtr zone);

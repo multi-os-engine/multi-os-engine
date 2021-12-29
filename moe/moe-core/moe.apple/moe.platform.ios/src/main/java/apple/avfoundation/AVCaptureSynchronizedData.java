@@ -54,6 +54,7 @@ public class AVCaptureSynchronizedData extends NSObject {
     @Selector("alloc")
     public static native AVCaptureSynchronizedData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureSynchronizedData allocWithZone(VoidPtr zone);

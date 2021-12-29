@@ -64,6 +64,7 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Selector("alloc")
     public static native AVCompositionTrackSegment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCompositionTrackSegment allocWithZone(VoidPtr zone);

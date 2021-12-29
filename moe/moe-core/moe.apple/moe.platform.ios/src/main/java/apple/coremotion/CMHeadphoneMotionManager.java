@@ -56,6 +56,7 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("alloc")
     public static native CMHeadphoneMotionManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMHeadphoneMotionManager allocWithZone(VoidPtr zone);

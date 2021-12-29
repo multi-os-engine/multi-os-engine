@@ -71,6 +71,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @Selector("alloc")
     public static native MKPlacemark alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKPlacemark allocWithZone(VoidPtr zone);

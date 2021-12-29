@@ -49,6 +49,7 @@ public class MLUpdateProgressHandlers extends NSObject {
     @Selector("alloc")
     public static native MLUpdateProgressHandlers alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLUpdateProgressHandlers allocWithZone(VoidPtr zone);

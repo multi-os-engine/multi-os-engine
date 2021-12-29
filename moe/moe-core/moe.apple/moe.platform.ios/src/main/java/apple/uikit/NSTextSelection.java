@@ -60,6 +60,7 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSTextSelection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextSelection allocWithZone(VoidPtr zone);

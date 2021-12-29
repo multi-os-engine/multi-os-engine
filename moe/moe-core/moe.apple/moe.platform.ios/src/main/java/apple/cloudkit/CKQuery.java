@@ -87,6 +87,7 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CKQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKQuery allocWithZone(VoidPtr zone);

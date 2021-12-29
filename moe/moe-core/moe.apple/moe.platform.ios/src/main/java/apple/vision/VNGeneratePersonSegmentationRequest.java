@@ -53,6 +53,7 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     @Selector("alloc")
     public static native VNGeneratePersonSegmentationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNGeneratePersonSegmentationRequest allocWithZone(VoidPtr zone);

@@ -94,6 +94,7 @@ public class MCNearbyServiceBrowser extends NSObject {
     @Selector("alloc")
     public static native MCNearbyServiceBrowser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MCNearbyServiceBrowser allocWithZone(VoidPtr zone);

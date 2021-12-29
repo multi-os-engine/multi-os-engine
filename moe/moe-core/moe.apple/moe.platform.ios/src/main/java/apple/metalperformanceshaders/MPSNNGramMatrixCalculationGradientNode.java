@@ -48,6 +48,7 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
     @Selector("alloc")
     public static native MPSNNGramMatrixCalculationGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGramMatrixCalculationGradientNode allocWithZone(VoidPtr zone);

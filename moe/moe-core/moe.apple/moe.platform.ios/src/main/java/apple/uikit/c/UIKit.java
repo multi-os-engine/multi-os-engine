@@ -998,6 +998,7 @@ public final class UIKit {
      * in NSAttributedString.h.
      * Key to the font in the text attributes dictionary. A UIFont instance is expected. Use a font with size 0.0 to get the default font size for the situation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1006,6 +1007,7 @@ public final class UIKit {
     /**
      * Key to the text color in the text attributes dictionary. A UIColor instance is expected.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1014,6 +1016,7 @@ public final class UIKit {
     /**
      * Key to the text shadow color in the text attributes dictionary.  A UIColor instance is expected.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1022,6 +1025,7 @@ public final class UIKit {
     /**
      * Key to the offset used for the text shadow in the text attributes dictionary. An NSValue instance wrapping a UIOffset struct is expected.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1145,6 +1149,7 @@ public final class UIKit {
     /**
      * Key to a UIColor
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1153,6 +1158,7 @@ public final class UIKit {
     /**
      * Key to a UIColor
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1161,6 +1167,7 @@ public final class UIKit {
     /**
      * Key to a UIFont
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2147,6 +2154,7 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UINibExternalObjects();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2489,16 +2497,19 @@ public final class UIKit {
     /**
      * These keys are superseded by UIKeyboardFrameBeginUserInfoKey and UIKeyboardFrameEndUserInfoKey.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardCenterBeginUserInfoKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardCenterEndUserInfoKey();
 
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

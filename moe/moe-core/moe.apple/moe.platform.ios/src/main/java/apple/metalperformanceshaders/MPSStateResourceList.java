@@ -47,6 +47,7 @@ public class MPSStateResourceList extends NSObject {
     @Selector("alloc")
     public static native MPSStateResourceList alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSStateResourceList allocWithZone(VoidPtr zone);

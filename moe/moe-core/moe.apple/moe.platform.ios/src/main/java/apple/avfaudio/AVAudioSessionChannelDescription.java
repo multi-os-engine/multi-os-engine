@@ -53,6 +53,7 @@ public class AVAudioSessionChannelDescription extends NSObject {
     @Selector("alloc")
     public static native AVAudioSessionChannelDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioSessionChannelDescription allocWithZone(VoidPtr zone);

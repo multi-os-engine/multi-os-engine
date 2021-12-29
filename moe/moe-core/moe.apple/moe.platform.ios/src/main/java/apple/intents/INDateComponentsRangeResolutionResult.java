@@ -61,6 +61,7 @@ public class INDateComponentsRangeResolutionResult extends INIntentResolutionRes
     @Selector("alloc")
     public static native INDateComponentsRangeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDateComponentsRangeResolutionResult allocWithZone(VoidPtr zone);

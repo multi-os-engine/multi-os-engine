@@ -63,6 +63,7 @@ public class NSURLSessionDataTask extends NSURLSessionTask {
     @Selector("alloc")
     public static native NSURLSessionDataTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionDataTask allocWithZone(VoidPtr zone);

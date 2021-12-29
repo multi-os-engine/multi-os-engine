@@ -73,6 +73,7 @@ public class UIPresentationController extends NSObject
     @Selector("alloc")
     public static native UIPresentationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPresentationController allocWithZone(VoidPtr zone);

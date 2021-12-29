@@ -68,6 +68,7 @@ public class AVAudioSinkNode extends AVAudioNode {
     @Selector("alloc")
     public static native AVAudioSinkNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioSinkNode allocWithZone(VoidPtr zone);

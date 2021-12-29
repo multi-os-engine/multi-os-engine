@@ -70,6 +70,7 @@ public class NETunnelProviderManager extends NEVPNManager {
     @Selector("alloc")
     public static native NETunnelProviderManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NETunnelProviderManager allocWithZone(VoidPtr zone);

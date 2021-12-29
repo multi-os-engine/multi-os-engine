@@ -66,6 +66,7 @@ public class CSPerson extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CSPerson alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSPerson allocWithZone(VoidPtr zone);

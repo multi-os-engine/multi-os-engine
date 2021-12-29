@@ -60,6 +60,7 @@ public class NSMethodSignature extends NSObject {
     @Selector("alloc")
     public static native NSMethodSignature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMethodSignature allocWithZone(VoidPtr zone);

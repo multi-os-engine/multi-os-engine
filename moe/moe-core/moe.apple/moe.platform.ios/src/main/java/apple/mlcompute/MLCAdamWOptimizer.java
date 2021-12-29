@@ -52,6 +52,7 @@ public class MLCAdamWOptimizer extends MLCOptimizer implements NSCopying {
     @Selector("alloc")
     public static native MLCAdamWOptimizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCAdamWOptimizer allocWithZone(VoidPtr zone);

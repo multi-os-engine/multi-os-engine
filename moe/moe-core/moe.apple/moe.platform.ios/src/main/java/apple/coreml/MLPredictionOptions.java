@@ -51,6 +51,7 @@ public class MLPredictionOptions extends NSObject {
     @Selector("alloc")
     public static native MLPredictionOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLPredictionOptions allocWithZone(VoidPtr zone);

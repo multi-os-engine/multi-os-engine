@@ -61,6 +61,7 @@ public class INRestaurantResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INRestaurantResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRestaurantResolutionResult allocWithZone(VoidPtr zone);

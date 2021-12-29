@@ -49,6 +49,7 @@ public class ARDepthData extends NSObject {
     @Selector("alloc")
     public static native ARDepthData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARDepthData allocWithZone(VoidPtr zone);

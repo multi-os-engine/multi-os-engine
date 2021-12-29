@@ -64,6 +64,7 @@ public class UINib extends NSObject {
     @Selector("alloc")
     public static native UINib alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UINib allocWithZone(VoidPtr zone);

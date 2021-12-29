@@ -56,6 +56,7 @@ public class MXLocationActivityMetric extends MXMetric {
     @Selector("alloc")
     public static native MXLocationActivityMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXLocationActivityMetric allocWithZone(VoidPtr zone);

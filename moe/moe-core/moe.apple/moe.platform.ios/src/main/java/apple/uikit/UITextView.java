@@ -97,6 +97,7 @@ public class UITextView extends UIScrollView
     @Selector("alloc")
     public static native UITextView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextView allocWithZone(VoidPtr zone);

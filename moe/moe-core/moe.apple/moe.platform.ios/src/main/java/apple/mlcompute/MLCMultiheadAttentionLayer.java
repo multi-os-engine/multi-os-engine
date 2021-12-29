@@ -58,6 +58,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCMultiheadAttentionLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCMultiheadAttentionLayer allocWithZone(VoidPtr zone);

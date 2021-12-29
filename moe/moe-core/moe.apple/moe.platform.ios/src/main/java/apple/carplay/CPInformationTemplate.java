@@ -58,6 +58,7 @@ public class CPInformationTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPInformationTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPInformationTemplate allocWithZone(VoidPtr zone);

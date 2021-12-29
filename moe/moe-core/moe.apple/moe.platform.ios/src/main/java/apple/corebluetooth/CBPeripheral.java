@@ -70,6 +70,7 @@ public class CBPeripheral extends CBPeer {
     @Selector("alloc")
     public static native CBPeripheral alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBPeripheral allocWithZone(VoidPtr zone);

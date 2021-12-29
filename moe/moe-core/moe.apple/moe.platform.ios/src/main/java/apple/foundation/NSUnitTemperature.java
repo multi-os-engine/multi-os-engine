@@ -60,6 +60,7 @@ public class NSUnitTemperature extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitTemperature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitTemperature allocWithZone(VoidPtr zone);

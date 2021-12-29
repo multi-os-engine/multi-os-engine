@@ -82,6 +82,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("alloc")
     public static native UITableViewCell alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewCell allocWithZone(VoidPtr zone);

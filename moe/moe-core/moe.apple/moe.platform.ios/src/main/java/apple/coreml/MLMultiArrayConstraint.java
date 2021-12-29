@@ -52,6 +52,7 @@ public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLMultiArrayConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLMultiArrayConstraint allocWithZone(VoidPtr zone);

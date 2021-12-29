@@ -45,6 +45,7 @@ public class MPSNNReductionFeatureChannelsMeanNode extends MPSNNUnaryReductionNo
     @Selector("alloc")
     public static native MPSNNReductionFeatureChannelsMeanNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionFeatureChannelsMeanNode allocWithZone(VoidPtr zone);

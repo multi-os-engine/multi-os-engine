@@ -51,6 +51,7 @@ public class PKDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native PKDateComponentsRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKDateComponentsRange allocWithZone(VoidPtr zone);

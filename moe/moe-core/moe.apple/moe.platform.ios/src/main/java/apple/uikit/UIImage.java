@@ -85,6 +85,7 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @Selector("alloc")
     public static native UIImage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIImage allocWithZone(VoidPtr zone);

@@ -79,6 +79,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     @Selector("alloc")
     public static native MPSRNNSingleGateDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNSingleGateDescriptor allocWithZone(VoidPtr zone);

@@ -72,6 +72,7 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     @Selector("alloc")
     public static native CNPostalAddress alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNPostalAddress allocWithZone(VoidPtr zone);

@@ -75,6 +75,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native SCNPhysicsField alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsField allocWithZone(VoidPtr zone);

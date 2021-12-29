@@ -47,6 +47,7 @@ public class CNFetchResult<_ValueType> extends NSObject {
     @Selector("alloc")
     public static native CNFetchResult<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNFetchResult<?> allocWithZone(VoidPtr zone);

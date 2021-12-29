@@ -51,6 +51,7 @@ public class CHIPBarrierControl extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPBarrierControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPBarrierControl allocWithZone(VoidPtr zone);
@@ -120,7 +121,7 @@ public class CHIPBarrierControl extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPBarrierControl initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPBarrierControl initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

@@ -77,6 +77,7 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("alloc")
     public static native MKMapItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMapItem allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXSignpostIntervalData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXSignpostIntervalData allocWithZone(VoidPtr zone);

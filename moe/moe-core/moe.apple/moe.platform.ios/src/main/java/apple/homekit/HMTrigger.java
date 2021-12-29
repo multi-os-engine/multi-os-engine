@@ -71,6 +71,7 @@ public class HMTrigger extends NSObject {
     @Selector("alloc")
     public static native HMTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMTrigger allocWithZone(VoidPtr zone);

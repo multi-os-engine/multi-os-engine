@@ -68,6 +68,7 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CXAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXAction allocWithZone(VoidPtr zone);

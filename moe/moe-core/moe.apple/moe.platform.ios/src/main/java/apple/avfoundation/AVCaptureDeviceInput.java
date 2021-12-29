@@ -73,6 +73,7 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Selector("alloc")
     public static native AVCaptureDeviceInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureDeviceInput allocWithZone(VoidPtr zone);

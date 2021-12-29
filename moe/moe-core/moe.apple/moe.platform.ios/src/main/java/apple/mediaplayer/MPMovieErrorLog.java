@@ -45,6 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * -----------------------------------------------------------------------------
  * An MPMovieErrorLog provides data to identify if, and when, network resource playback failures occured.
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +69,7 @@ public class MPMovieErrorLog extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPMovieErrorLog alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMovieErrorLog allocWithZone(VoidPtr zone);

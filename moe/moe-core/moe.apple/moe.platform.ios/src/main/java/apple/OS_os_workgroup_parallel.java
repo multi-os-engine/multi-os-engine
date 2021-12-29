@@ -42,6 +42,7 @@ public class OS_os_workgroup_parallel extends OS_os_workgroup implements apple.p
     @Selector("alloc")
     public static native OS_os_workgroup_parallel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OS_os_workgroup_parallel allocWithZone(VoidPtr zone);

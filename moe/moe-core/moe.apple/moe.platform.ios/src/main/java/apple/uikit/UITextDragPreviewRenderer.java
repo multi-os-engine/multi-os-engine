@@ -58,6 +58,7 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Selector("alloc")
     public static native UITextDragPreviewRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextDragPreviewRenderer allocWithZone(VoidPtr zone);

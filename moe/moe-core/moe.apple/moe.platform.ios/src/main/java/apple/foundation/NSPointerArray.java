@@ -77,6 +77,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("alloc")
     public static native NSPointerArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPointerArray allocWithZone(VoidPtr zone);

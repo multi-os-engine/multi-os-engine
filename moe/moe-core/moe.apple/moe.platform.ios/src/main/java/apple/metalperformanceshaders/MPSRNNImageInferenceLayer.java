@@ -68,6 +68,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSRNNImageInferenceLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSRNNImageInferenceLayer allocWithZone(VoidPtr zone);

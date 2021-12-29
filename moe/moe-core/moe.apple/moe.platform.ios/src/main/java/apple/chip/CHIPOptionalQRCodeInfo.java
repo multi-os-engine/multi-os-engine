@@ -46,6 +46,7 @@ public class CHIPOptionalQRCodeInfo extends NSObject {
     @Selector("alloc")
     public static native CHIPOptionalQRCodeInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPOptionalQRCodeInfo allocWithZone(VoidPtr zone);

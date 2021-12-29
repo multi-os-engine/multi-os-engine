@@ -47,6 +47,7 @@ public class NSCollectionLayoutEdgeSpacing extends NSObject implements NSCopying
     @Selector("alloc")
     public static native NSCollectionLayoutEdgeSpacing alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutEdgeSpacing allocWithZone(VoidPtr zone);

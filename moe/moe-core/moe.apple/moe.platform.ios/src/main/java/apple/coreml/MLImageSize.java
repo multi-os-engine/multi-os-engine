@@ -48,6 +48,7 @@ public class MLImageSize extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLImageSize alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLImageSize allocWithZone(VoidPtr zone);

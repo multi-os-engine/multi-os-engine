@@ -46,6 +46,7 @@ public class ASAuthorizationPasswordProvider extends NSObject implements ASAutho
     @Selector("alloc")
     public static native ASAuthorizationPasswordProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationPasswordProvider allocWithZone(VoidPtr zone);

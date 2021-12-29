@@ -52,6 +52,7 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
     @Selector("alloc")
     public static native INLocationRelevanceProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INLocationRelevanceProvider allocWithZone(VoidPtr zone);

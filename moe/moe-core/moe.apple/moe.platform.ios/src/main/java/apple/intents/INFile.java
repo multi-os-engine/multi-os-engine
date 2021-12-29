@@ -54,6 +54,7 @@ public class INFile extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native INFile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INFile allocWithZone(VoidPtr zone);
@@ -211,4 +212,18 @@ public class INFile extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false` by default.
+     */
+    @Generated
+    @Selector("removedOnCompletion")
+    public native boolean removedOnCompletion();
+
+    /**
+     * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false` by default.
+     */
+    @Generated
+    @Selector("setRemovedOnCompletion:")
+    public native void setRemovedOnCompletion(boolean value);
 }

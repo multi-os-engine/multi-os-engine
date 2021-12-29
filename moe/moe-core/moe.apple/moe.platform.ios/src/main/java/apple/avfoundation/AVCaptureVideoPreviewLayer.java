@@ -77,6 +77,7 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Selector("alloc")
     public static native AVCaptureVideoPreviewLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureVideoPreviewLayer allocWithZone(VoidPtr zone);

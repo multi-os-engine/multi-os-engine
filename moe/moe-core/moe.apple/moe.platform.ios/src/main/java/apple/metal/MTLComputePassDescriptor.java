@@ -52,6 +52,7 @@ public class MTLComputePassDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLComputePassDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLComputePassDescriptor allocWithZone(VoidPtr zone);

@@ -83,6 +83,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     @Selector("alloc")
     public static native SCNScene alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNScene allocWithZone(VoidPtr zone);

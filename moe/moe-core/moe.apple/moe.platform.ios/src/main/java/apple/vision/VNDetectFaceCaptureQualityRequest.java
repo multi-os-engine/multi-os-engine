@@ -56,6 +56,7 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
     @Selector("alloc")
     public static native VNDetectFaceCaptureQualityRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectFaceCaptureQualityRequest allocWithZone(VoidPtr zone);

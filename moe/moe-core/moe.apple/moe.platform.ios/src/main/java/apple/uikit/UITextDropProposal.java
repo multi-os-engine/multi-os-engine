@@ -47,6 +47,7 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
     @Selector("alloc")
     public static native UITextDropProposal alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextDropProposal allocWithZone(VoidPtr zone);

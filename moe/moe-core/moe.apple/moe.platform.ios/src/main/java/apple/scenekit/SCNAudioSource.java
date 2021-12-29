@@ -72,6 +72,7 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native SCNAudioSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAudioSource allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class MXAppLaunchMetric extends MXMetric {
     @Selector("alloc")
     public static native MXAppLaunchMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXAppLaunchMetric allocWithZone(VoidPtr zone);
@@ -180,4 +181,19 @@ public class MXAppLaunchMetric extends MXMetric {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property]      histogrammedOptimizedTimeToFirstDraw
+     * <p>
+     * Histogrammed optimized application time-to-first-draw data.
+     * <p>
+     * Dimensioned as NSUnitDuration.
+     * <p>
+     * This represents the time when the first CA commit is finished where the application launch has been optimized by the system.
+     * <p>
+     * In iOS 15, the system will opportunistically start applications that are not running in the background to reduce the amount of time a user may have to wait before an application is usable. These launches can occur after a system reboot and periodically as system conditions allow.
+     */
+    @Generated
+    @Selector("histogrammedOptimizedTimeToFirstDraw")
+    public native MXHistogram<NSUnitDuration> histogrammedOptimizedTimeToFirstDraw();
 }

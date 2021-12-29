@@ -46,6 +46,7 @@ public class INUpcomingMediaManager extends NSObject {
     @Selector("alloc")
     public static native INUpcomingMediaManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INUpcomingMediaManager allocWithZone(VoidPtr zone);

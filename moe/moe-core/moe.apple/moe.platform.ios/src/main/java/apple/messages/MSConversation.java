@@ -65,6 +65,7 @@ public class MSConversation extends NSObject {
     @Selector("alloc")
     public static native MSConversation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSConversation allocWithZone(VoidPtr zone);

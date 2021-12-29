@@ -27,7 +27,7 @@ public final class NSURLBookmarkCreationOptions {
     /**
      * This option does nothing and has no effect on bookmark resolution
      */
-    @Generated @NUInt public static final long PreferFileIDResolution = 0x0000000000000100L;
+    @Deprecated @Generated @NUInt public static final long PreferFileIDResolution = 0x0000000000000100L;
     /**
      * creates bookmark data with "less" information, which may be smaller but still be able to resolve in certain ways
      */

@@ -49,6 +49,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPNowPlayingButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNowPlayingButton allocWithZone(VoidPtr zone);

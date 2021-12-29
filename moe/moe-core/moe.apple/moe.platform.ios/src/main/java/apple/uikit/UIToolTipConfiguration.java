@@ -47,6 +47,7 @@ public class UIToolTipConfiguration extends NSObject {
     @Selector("alloc")
     public static native UIToolTipConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIToolTipConfiguration allocWithZone(VoidPtr zone);

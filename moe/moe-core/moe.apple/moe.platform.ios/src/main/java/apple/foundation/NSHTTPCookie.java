@@ -68,6 +68,7 @@ public class NSHTTPCookie extends NSObject {
     @Selector("alloc")
     public static native NSHTTPCookie alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSHTTPCookie allocWithZone(VoidPtr zone);

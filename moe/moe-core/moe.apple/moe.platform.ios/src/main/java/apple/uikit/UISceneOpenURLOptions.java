@@ -49,6 +49,7 @@ public class UISceneOpenURLOptions extends NSObject {
     @Selector("alloc")
     public static native UISceneOpenURLOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneOpenURLOptions allocWithZone(VoidPtr zone);

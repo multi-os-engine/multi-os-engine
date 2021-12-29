@@ -67,6 +67,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native HKFHIRVersion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKFHIRVersion allocWithZone(VoidPtr zone);

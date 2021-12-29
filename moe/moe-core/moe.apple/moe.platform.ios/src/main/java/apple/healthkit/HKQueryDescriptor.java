@@ -51,6 +51,7 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native HKQueryDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKQueryDescriptor allocWithZone(VoidPtr zone);

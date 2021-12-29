@@ -76,6 +76,7 @@ public class SLComposeViewController extends UIViewController {
     @Selector("alloc")
     public static native SLComposeViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SLComposeViewController allocWithZone(VoidPtr zone);

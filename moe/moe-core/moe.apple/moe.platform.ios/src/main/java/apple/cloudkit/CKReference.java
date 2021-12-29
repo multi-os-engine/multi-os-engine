@@ -67,6 +67,7 @@ public class CKReference extends NSObject implements NSSecureCoding, NSCopying, 
     @Selector("alloc")
     public static native CKReference alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKReference allocWithZone(VoidPtr zone);

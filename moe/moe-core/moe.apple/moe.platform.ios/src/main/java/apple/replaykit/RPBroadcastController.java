@@ -72,6 +72,7 @@ public class RPBroadcastController extends NSObject {
     @Selector("alloc")
     public static native RPBroadcastController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPBroadcastController allocWithZone(VoidPtr zone);

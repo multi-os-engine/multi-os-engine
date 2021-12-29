@@ -54,6 +54,7 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Selector("alloc")
     public static native SKOverlayAppClipConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKOverlayAppClipConfiguration allocWithZone(VoidPtr zone);

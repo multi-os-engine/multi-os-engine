@@ -68,6 +68,7 @@ public class NSMutableData extends NSData {
     @Selector("alloc")
     public static native NSMutableData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableData allocWithZone(VoidPtr zone);

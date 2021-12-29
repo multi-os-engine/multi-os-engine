@@ -51,6 +51,7 @@ public class CHIPTvChannel extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPTvChannel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPTvChannel allocWithZone(VoidPtr zone);
@@ -120,7 +121,7 @@ public class CHIPTvChannel extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPTvChannel initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPTvChannel initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

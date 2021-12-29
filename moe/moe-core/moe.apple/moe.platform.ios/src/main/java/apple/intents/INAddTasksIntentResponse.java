@@ -52,6 +52,7 @@ public class INAddTasksIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INAddTasksIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INAddTasksIntentResponse allocWithZone(VoidPtr zone);

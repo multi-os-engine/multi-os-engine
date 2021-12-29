@@ -66,6 +66,7 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
     @Selector("alloc")
     public static native NSCountedSet<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCountedSet<?> allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class AVAudioRecorder extends NSObject {
     @Selector("alloc")
     public static native AVAudioRecorder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioRecorder allocWithZone(VoidPtr zone);

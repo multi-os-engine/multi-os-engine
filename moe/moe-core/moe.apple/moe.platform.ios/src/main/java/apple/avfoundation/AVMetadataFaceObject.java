@@ -73,6 +73,7 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     @Selector("alloc")
     public static native AVMetadataFaceObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataFaceObject allocWithZone(VoidPtr zone);

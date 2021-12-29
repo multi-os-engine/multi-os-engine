@@ -95,6 +95,7 @@ public class MPSGraph extends NSObject {
     @Selector("alloc")
     public static native MPSGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraph allocWithZone(VoidPtr zone);
@@ -1904,4 +1905,134 @@ public class MPSGraph extends NSObject {
         NSArray<? extends MPSGraphTensor> call_whileWithInitialInputsBeforeAfterName_2(
                 NSArray<? extends MPSGraphTensor> bodyBlockArguments);
     }
+
+    /**
+     * Creates an MPSGraphTensor representing state using the Philox algorithm with given counter and key values.
+     * <p>
+     * See randomPhiloxStateTensorWithSeed.
+     *
+     * @param counterLow  The value to initilaize lower 64 bits of counter to. Philox utilizes a 128 bit counter
+     * @param counterHigh The value to initilaize upper 64 bits of counter to. Philox utilizes a 128 bit counter
+     * @param key         The value to initialize the key to in Philox algorithm.
+     * @return An MPSGraphTensor representing a random state, to be passed as an input to a random op.
+     */
+    @Generated
+    @Selector("randomPhiloxStateTensorWithCounterLow:counterHigh:key:name:")
+    public native MPSGraphTensor randomPhiloxStateTensorWithCounterLowCounterHighKeyName(@NUInt long counterLow,
+            @NUInt long counterHigh, @NUInt long key, String name);
+
+    /**
+     * Creates an MPSGraphTensor representing state using the Philox algorithm with given counter and key values.
+     * <p>
+     * Generates random numbers using the Philox counter-based algorithm, for further details see:
+     * John K. Salmon, Mark A. Moraes, Ron O. Dror, and David E. Shaw. Parallel Random Numbers: As Easy as 1, 2, 3.
+     * <p>
+     * A stateTensor generated with this API can be used in MPSGraph Random APIs which accept a stateTensor. The
+     * updated stateTensor is returned alongside the random values, and can be fed to the following random layer. In
+     * most use cases, a stateTensor should only need to be initialized once at the start of the graph. A stateTensor can
+     * be set as a target tensor of an MPSGraph execution to obtain a stateTensor serialized as an NDArray. This can be
+     * used as input to a placeholder in the graph to avoid ever needing to have a state intilization layer in an MPSGraph.
+     * This can allow for a continued stream through multiple executions of a single MPSGraph by having the final
+     * stateTensor as a target tensor passed into the following MPSGraph execution as a placeholder input. This may be
+     * helpful for training graphs in particular.
+     * <p>
+     * [@code]
+     * MPSGraph *graph = [MPSGraph new];
+     * MPSGraphTensor *stateTensor = [graph randomPhiloxStateTensorWithSeed: seed name: nil];
+     * NSArray<MPSGraphTensor*> *resultTensors0 = [graph randomUniformTensorWithShape:@[@10, @10]
+     * stateTensor:stateTensor
+     * name:nil];
+     * NSArray<MPSGraphTensor*> *resultTensors1 = [graph randomUniformTensorWithShape:@[@10, @10]
+     * stateTensor:resultTensors0[1]
+     * name:nil];
+     * <p>
+     * [@endcode]
+     *
+     * @param seed Initial counter and key values will be generated using seed.
+     * @return An MPSGraphTensor representing a random state, to be passed as an input to a random op.
+     */
+    @Generated
+    @Selector("randomPhiloxStateTensorWithSeed:name:")
+    public native MPSGraphTensor randomPhiloxStateTensorWithSeedName(@NUInt long seed, String name);
+
+    @Generated
+    @Selector("randomTensorWithShapeTensor:descriptor:name:")
+    public native MPSGraphTensor randomTensorWithShapeTensorDescriptorName(MPSGraphTensor shapeTensor,
+            MPSGraphRandomOpDescriptor descriptor, String name);
+
+    @Generated
+    @Selector("randomTensorWithShapeTensor:descriptor:seed:name:")
+    public native MPSGraphTensor randomTensorWithShapeTensorDescriptorSeedName(MPSGraphTensor shapeTensor,
+            MPSGraphRandomOpDescriptor descriptor, @NUInt long seed, String name);
+
+    @Generated
+    @Selector("randomTensorWithShapeTensor:descriptor:stateTensor:name:")
+    public native NSArray<? extends MPSGraphTensor> randomTensorWithShapeTensorDescriptorStateTensorName(
+            MPSGraphTensor shapeTensor, MPSGraphRandomOpDescriptor descriptor, MPSGraphTensor state, String name);
+
+    @Generated
+    @Selector("randomUniformTensorWithShapeTensor:name:")
+    public native MPSGraphTensor randomUniformTensorWithShapeTensorName(MPSGraphTensor shapeTensor, String name);
+
+    @Generated
+    @Selector("randomUniformTensorWithShapeTensor:seed:name:")
+    public native MPSGraphTensor randomUniformTensorWithShapeTensorSeedName(MPSGraphTensor shapeTensor,
+            @NUInt long seed, String name);
+
+    @Generated
+    @Selector("randomUniformTensorWithShapeTensor:stateTensor:name:")
+    public native NSArray<? extends MPSGraphTensor> randomUniformTensorWithShapeTensorStateTensorName(
+            MPSGraphTensor shapeTensor, MPSGraphTensor state, String name);
+
+    /**
+     * Create  reduction max propagate NaN op and return the result tensor.
+     *
+     * @param tensor input tensor
+     * @param axes   axes of reduction
+     * @param name   name for the operation
+     * @return A valid MPSGraphTensor object.
+     */
+    @Generated
+    @Selector("reductionMaximumPropagateNaNWithTensor:axes:name:")
+    public native MPSGraphTensor reductionMaximumPropagateNaNWithTensorAxesName(MPSGraphTensor tensor,
+            NSArray<? extends NSNumber> axes, String name);
+
+    /**
+     * Create  reduction max propagate NaN op and return the result tensor.
+     *
+     * @param tensor input tensor
+     * @param axis   axis of reduction
+     * @param name   name for the operation
+     * @return A valid MPSGraphTensor object.
+     */
+    @Generated
+    @Selector("reductionMaximumPropagateNaNWithTensor:axis:name:")
+    public native MPSGraphTensor reductionMaximumPropagateNaNWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
+            String name);
+
+    /**
+     * Create  reduction min propagate NaN  op and return the result tensor.
+     *
+     * @param tensor input tensor
+     * @param axes   axes of reduction
+     * @param name   name for the operation
+     * @return A valid MPSGraphTensor object.
+     */
+    @Generated
+    @Selector("reductionMinimumPropagateNaNWithTensor:axes:name:")
+    public native MPSGraphTensor reductionMinimumPropagateNaNWithTensorAxesName(MPSGraphTensor tensor,
+            NSArray<? extends NSNumber> axes, String name);
+
+    /**
+     * Create  reduction min propagate NaN op and return the result tensor.
+     *
+     * @param tensor input tensor
+     * @param axis   axis of reduction
+     * @param name   name for the operation
+     * @return A valid MPSGraphTensor object.
+     */
+    @Generated
+    @Selector("reductionMinimumPropagateNaNWithTensor:axis:name:")
+    public native MPSGraphTensor reductionMinimumPropagateNaNWithTensorAxisName(MPSGraphTensor tensor, @NInt long axis,
+            String name);
 }

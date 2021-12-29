@@ -48,6 +48,7 @@ public class SNClassification extends NSObject {
     @Selector("alloc")
     public static native SNClassification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SNClassification allocWithZone(VoidPtr zone);

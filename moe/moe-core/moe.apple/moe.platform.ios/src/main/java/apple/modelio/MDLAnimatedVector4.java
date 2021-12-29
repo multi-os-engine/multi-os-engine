@@ -45,6 +45,7 @@ public class MDLAnimatedVector4 extends MDLAnimatedValue {
     @Selector("alloc")
     public static native MDLAnimatedVector4 alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLAnimatedVector4 allocWithZone(VoidPtr zone);

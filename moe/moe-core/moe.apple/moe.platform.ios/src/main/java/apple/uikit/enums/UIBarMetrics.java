@@ -28,8 +28,8 @@ public final class UIBarMetrics {
      */
     @Generated @NInt public static final long DefaultPrompt = 0x0000000000000065L;
     @Generated @NInt public static final long CompactPrompt = 0x0000000000000066L;
-    @Generated @NInt public static final long LandscapePhone = 0x0000000000000001L;
-    @Generated @NInt public static final long LandscapePhonePrompt = 0x0000000000000066L;
+    @Deprecated @Generated @NInt public static final long LandscapePhone = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long LandscapePhonePrompt = 0x0000000000000066L;
 
     @Generated
     private UIBarMetrics() {

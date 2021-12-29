@@ -54,6 +54,7 @@ public class INFlight extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INFlight alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INFlight allocWithZone(VoidPtr zone);

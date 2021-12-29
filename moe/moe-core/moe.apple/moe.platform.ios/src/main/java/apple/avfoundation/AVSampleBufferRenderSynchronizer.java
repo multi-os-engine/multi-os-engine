@@ -128,6 +128,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Selector("alloc")
     public static native AVSampleBufferRenderSynchronizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSampleBufferRenderSynchronizer allocWithZone(VoidPtr zone);

@@ -59,6 +59,7 @@ public class NSConditionLock extends NSObject implements NSLocking {
     @Selector("alloc")
     public static native NSConditionLock alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSConditionLock allocWithZone(VoidPtr zone);

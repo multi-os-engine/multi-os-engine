@@ -56,6 +56,7 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPVoiceControlState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPVoiceControlState allocWithZone(VoidPtr zone);

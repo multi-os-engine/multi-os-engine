@@ -62,6 +62,7 @@ public class INDateComponentsResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INDateComponentsResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDateComponentsResolutionResult allocWithZone(VoidPtr zone);

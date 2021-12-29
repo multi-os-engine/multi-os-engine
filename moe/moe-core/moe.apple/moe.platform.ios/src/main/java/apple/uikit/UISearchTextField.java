@@ -70,6 +70,7 @@ public class UISearchTextField extends UITextField {
     @Selector("alloc")
     public static native UISearchTextField alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISearchTextField allocWithZone(VoidPtr zone);

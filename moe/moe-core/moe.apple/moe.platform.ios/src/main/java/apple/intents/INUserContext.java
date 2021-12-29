@@ -48,6 +48,7 @@ public class INUserContext extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native INUserContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INUserContext allocWithZone(VoidPtr zone);

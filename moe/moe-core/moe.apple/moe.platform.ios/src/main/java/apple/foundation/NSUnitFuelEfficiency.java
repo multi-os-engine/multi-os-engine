@@ -60,6 +60,7 @@ public class NSUnitFuelEfficiency extends NSDimension implements NSSecureCoding 
     @Selector("alloc")
     public static native NSUnitFuelEfficiency alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitFuelEfficiency allocWithZone(VoidPtr zone);

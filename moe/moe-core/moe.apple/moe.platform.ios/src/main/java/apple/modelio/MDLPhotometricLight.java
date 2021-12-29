@@ -78,6 +78,7 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @Selector("alloc")
     public static native MDLPhotometricLight alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLPhotometricLight allocWithZone(VoidPtr zone);

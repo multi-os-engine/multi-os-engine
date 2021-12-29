@@ -66,6 +66,7 @@ public class GKNotificationBanner extends NSObject {
     @Selector("alloc")
     public static native GKNotificationBanner alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKNotificationBanner allocWithZone(VoidPtr zone);

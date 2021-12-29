@@ -55,6 +55,7 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native VNCircle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNCircle allocWithZone(VoidPtr zone);

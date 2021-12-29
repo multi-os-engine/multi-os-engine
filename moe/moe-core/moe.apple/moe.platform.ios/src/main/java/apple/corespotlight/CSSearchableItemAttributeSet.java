@@ -75,6 +75,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Selector("alloc")
     public static native CSSearchableItemAttributeSet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSSearchableItemAttributeSet allocWithZone(VoidPtr zone);

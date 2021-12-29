@@ -49,6 +49,7 @@ public class UISceneActivationConditions extends NSObject implements NSSecureCod
     @Selector("alloc")
     public static native UISceneActivationConditions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneActivationConditions allocWithZone(VoidPtr zone);

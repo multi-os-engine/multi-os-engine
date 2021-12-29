@@ -47,6 +47,7 @@ public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPSGraphStencilOpDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphStencilOpDescriptor allocWithZone(VoidPtr zone);

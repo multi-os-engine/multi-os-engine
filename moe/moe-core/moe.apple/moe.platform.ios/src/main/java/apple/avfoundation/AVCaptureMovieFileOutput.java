@@ -71,6 +71,7 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Selector("alloc")
     public static native AVCaptureMovieFileOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureMovieFileOutput allocWithZone(VoidPtr zone);

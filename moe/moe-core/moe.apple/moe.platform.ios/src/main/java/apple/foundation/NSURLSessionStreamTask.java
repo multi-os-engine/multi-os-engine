@@ -81,6 +81,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("alloc")
     public static native NSURLSessionStreamTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionStreamTask allocWithZone(VoidPtr zone);

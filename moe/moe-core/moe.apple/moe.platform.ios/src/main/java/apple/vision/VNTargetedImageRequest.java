@@ -58,6 +58,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNTargetedImageRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNTargetedImageRequest allocWithZone(VoidPtr zone);

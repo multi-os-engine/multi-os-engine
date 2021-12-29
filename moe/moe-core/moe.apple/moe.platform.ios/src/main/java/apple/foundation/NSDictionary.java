@@ -79,6 +79,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     @Selector("alloc")
     public static native NSDictionary<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDictionary<?, ?> allocWithZone(VoidPtr zone);

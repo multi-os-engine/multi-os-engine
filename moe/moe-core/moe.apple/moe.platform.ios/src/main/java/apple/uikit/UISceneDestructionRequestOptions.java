@@ -48,6 +48,7 @@ public class UISceneDestructionRequestOptions extends NSObject {
     @Selector("alloc")
     public static native UISceneDestructionRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneDestructionRequestOptions allocWithZone(VoidPtr zone);

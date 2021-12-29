@@ -57,6 +57,7 @@ public class MPSNNLanczosScaleNode extends MPSNNScaleNode {
     @Selector("alloc")
     public static native MPSNNLanczosScaleNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNLanczosScaleNode allocWithZone(VoidPtr zone);

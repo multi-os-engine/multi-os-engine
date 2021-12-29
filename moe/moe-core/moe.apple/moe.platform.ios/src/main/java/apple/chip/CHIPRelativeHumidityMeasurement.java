@@ -51,6 +51,7 @@ public class CHIPRelativeHumidityMeasurement extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPRelativeHumidityMeasurement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPRelativeHumidityMeasurement allocWithZone(VoidPtr zone);
@@ -110,7 +111,7 @@ public class CHIPRelativeHumidityMeasurement extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPRelativeHumidityMeasurement initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPRelativeHumidityMeasurement initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated

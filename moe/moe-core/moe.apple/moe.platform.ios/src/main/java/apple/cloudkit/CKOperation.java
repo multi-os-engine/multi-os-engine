@@ -63,6 +63,7 @@ public class CKOperation extends NSOperation {
     @Selector("alloc")
     public static native CKOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKOperation allocWithZone(VoidPtr zone);

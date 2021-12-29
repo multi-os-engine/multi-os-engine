@@ -69,6 +69,7 @@ public class MPMediaItem extends MPMediaEntity {
     @Selector("alloc")
     public static native MPMediaItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaItem allocWithZone(VoidPtr zone);

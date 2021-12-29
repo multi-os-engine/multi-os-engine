@@ -74,6 +74,7 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("alloc")
     public static native NSData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSData allocWithZone(VoidPtr zone);

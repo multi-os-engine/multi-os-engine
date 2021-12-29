@@ -70,6 +70,7 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
     @Selector("alloc")
     public static native AVPlayerItemMetadataCollector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemMetadataCollector allocWithZone(VoidPtr zone);

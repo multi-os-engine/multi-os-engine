@@ -64,6 +64,7 @@ public class ADClient extends NSObject {
     @Selector("alloc")
     public static native ADClient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ADClient allocWithZone(VoidPtr zone);

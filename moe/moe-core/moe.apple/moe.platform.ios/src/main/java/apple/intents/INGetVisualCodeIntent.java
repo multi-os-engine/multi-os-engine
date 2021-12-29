@@ -47,6 +47,7 @@ public class INGetVisualCodeIntent extends INIntent {
     @Selector("alloc")
     public static native INGetVisualCodeIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetVisualCodeIntent allocWithZone(VoidPtr zone);

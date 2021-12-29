@@ -70,6 +70,7 @@ public class HMHomeManager extends NSObject {
     @Selector("alloc")
     public static native HMHomeManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMHomeManager allocWithZone(VoidPtr zone);

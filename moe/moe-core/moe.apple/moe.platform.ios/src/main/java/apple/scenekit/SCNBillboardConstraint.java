@@ -63,6 +63,7 @@ public class SCNBillboardConstraint extends SCNConstraint {
     @Selector("alloc")
     public static native SCNBillboardConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNBillboardConstraint allocWithZone(VoidPtr zone);

@@ -82,6 +82,7 @@ public class MKPolylineView extends MKOverlayPathView {
     @Selector("alloc")
     public static native MKPolylineView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKPolylineView allocWithZone(VoidPtr zone);

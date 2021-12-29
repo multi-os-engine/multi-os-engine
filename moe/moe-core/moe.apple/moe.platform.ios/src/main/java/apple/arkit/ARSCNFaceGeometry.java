@@ -55,6 +55,7 @@ public class ARSCNFaceGeometry extends SCNGeometry {
     @Selector("alloc")
     public static native ARSCNFaceGeometry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARSCNFaceGeometry allocWithZone(VoidPtr zone);

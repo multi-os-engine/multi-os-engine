@@ -50,6 +50,7 @@ public class MTLSharedTextureHandle extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MTLSharedTextureHandle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLSharedTextureHandle allocWithZone(VoidPtr zone);

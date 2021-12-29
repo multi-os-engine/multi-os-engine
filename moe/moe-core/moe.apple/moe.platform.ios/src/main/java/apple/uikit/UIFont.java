@@ -67,6 +67,7 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native UIFont alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFont allocWithZone(VoidPtr zone);

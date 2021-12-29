@@ -52,6 +52,7 @@ public class NLModel extends NSObject {
     @Selector("alloc")
     public static native NLModel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NLModel allocWithZone(VoidPtr zone);

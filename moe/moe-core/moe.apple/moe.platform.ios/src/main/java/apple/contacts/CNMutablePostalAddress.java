@@ -70,6 +70,7 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     @Selector("alloc")
     public static native CNMutablePostalAddress alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNMutablePostalAddress allocWithZone(VoidPtr zone);

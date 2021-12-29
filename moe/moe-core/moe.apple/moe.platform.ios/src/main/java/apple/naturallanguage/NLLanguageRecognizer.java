@@ -50,6 +50,7 @@ public class NLLanguageRecognizer extends NSObject {
     @Selector("alloc")
     public static native NLLanguageRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NLLanguageRecognizer allocWithZone(VoidPtr zone);

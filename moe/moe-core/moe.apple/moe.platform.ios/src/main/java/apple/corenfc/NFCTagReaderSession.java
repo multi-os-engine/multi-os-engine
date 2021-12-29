@@ -64,6 +64,7 @@ public class NFCTagReaderSession extends NFCReaderSession {
     @Selector("alloc")
     public static native NFCTagReaderSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCTagReaderSession allocWithZone(VoidPtr zone);

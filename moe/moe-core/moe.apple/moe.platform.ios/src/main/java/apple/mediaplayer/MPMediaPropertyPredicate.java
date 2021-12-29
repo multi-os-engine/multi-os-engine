@@ -64,6 +64,7 @@ public class MPMediaPropertyPredicate extends MPMediaPredicate {
     @Selector("alloc")
     public static native MPMediaPropertyPredicate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaPropertyPredicate allocWithZone(VoidPtr zone);

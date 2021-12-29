@@ -50,6 +50,7 @@ public class PHASESpatialPipelineEntry extends NSObject {
     @Selector("alloc")
     public static native PHASESpatialPipelineEntry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASESpatialPipelineEntry allocWithZone(VoidPtr zone);

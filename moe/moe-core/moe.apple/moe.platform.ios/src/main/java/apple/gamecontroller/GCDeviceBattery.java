@@ -48,6 +48,7 @@ public class GCDeviceBattery extends NSObject {
     @Selector("alloc")
     public static native GCDeviceBattery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCDeviceBattery allocWithZone(VoidPtr zone);

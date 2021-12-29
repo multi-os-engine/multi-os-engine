@@ -40,6 +40,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -63,6 +64,7 @@ public class UIAccelerometer extends NSObject {
     @Selector("alloc")
     public static native UIAccelerometer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAccelerometer allocWithZone(VoidPtr zone);

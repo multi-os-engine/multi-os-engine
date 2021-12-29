@@ -66,6 +66,7 @@ public class UISplitViewController extends UIViewController {
     @Selector("alloc")
     public static native UISplitViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISplitViewController allocWithZone(VoidPtr zone);

@@ -86,6 +86,7 @@ public class NSBundle extends NSObject {
     @Selector("alloc")
     public static native NSBundle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBundle allocWithZone(VoidPtr zone);

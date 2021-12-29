@@ -55,6 +55,7 @@ public class MXCPUMetric extends MXMetric {
     @Selector("alloc")
     public static native MXCPUMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXCPUMetric allocWithZone(VoidPtr zone);

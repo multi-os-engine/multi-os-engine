@@ -48,6 +48,7 @@ public class INGetVisualCodeIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INGetVisualCodeIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetVisualCodeIntentResponse allocWithZone(VoidPtr zone);

@@ -72,6 +72,7 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native SKConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKConstraint allocWithZone(VoidPtr zone);

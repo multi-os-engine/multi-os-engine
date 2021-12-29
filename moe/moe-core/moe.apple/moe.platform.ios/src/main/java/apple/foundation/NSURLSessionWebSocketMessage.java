@@ -47,6 +47,7 @@ public class NSURLSessionWebSocketMessage extends NSObject {
     @Selector("alloc")
     public static native NSURLSessionWebSocketMessage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionWebSocketMessage allocWithZone(VoidPtr zone);

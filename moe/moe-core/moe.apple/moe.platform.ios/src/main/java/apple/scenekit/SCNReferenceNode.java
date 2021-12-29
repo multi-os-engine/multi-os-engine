@@ -72,6 +72,7 @@ public class SCNReferenceNode extends SCNNode {
     @Selector("alloc")
     public static native SCNReferenceNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNReferenceNode allocWithZone(VoidPtr zone);

@@ -372,6 +372,7 @@ public interface NSFileProviderItem {
      * This will ensure that the system does not display it's warnings when the user is deleting a file.
      * 'ExcludeFromSync' : deleting items(s) because the user chose to exclude those from sync (available in macOS 12.0 and later)
      * 'Rename'  : renaming item(s) (available in macOS 11.3 and later)
+     * The destinationItem has only the `filename` field populated (available in macOS 12.0.1 and later).
      * - `sourceItem` : current item that the predicate is evaluating. Present for Move/MoveOut/Copy/CopyOut/Create/Trash/Delete/ExcludeFromSync/Rename
      * - `sourceItemsCount` :
      * - In userInteraction, represents the count of sourceItems of an action operation
@@ -413,11 +414,16 @@ public interface NSFileProviderItem {
      * matches, then both of the UserInteraction alerts will be shown to the user. However, as soon as the user
      * denies any of the alerts, the remainder will not be shown, and the action will be denied.
      * <p>
+     * If the provider wishes to take full responsibility for showing a custom contextual menu item for Download,
+     * the provider can set NSExtensionFileProviderAllowsContextualMenuDownloadEntry=0 in the provider's Info.plist.
+     * This will ensure that the system does not display the "Download Now" button in the contextual menu.
+     * <p>
      * Here is a sample extension Info.plist:
      * <p>
      * ```
      * <key>NSExtension</key>
-     * ...
+     * <key>NSExtensionFileProviderAllowsContextualMenuDownloadEntry</key>
+     * <false/>
      * <key>NSFileProviderUserInteractions</key>
      * <array>
      * <key>ActivationRule</key>

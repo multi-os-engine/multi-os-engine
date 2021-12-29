@@ -46,6 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * View controller that provides the standard user interface for achievements. Present modally from the top view controller.
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +70,7 @@ public class GKAchievementViewController extends GKGameCenterViewController {
     @Selector("alloc")
     public static native GKAchievementViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAchievementViewController allocWithZone(VoidPtr zone);

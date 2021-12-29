@@ -57,6 +57,7 @@ public class MPSNDArrayDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPSNDArrayDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayDescriptor allocWithZone(VoidPtr zone);

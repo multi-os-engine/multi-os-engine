@@ -55,6 +55,7 @@ public class AVSpeechSynthesizer extends NSObject {
     @Selector("alloc")
     public static native AVSpeechSynthesizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSpeechSynthesizer allocWithZone(VoidPtr zone);

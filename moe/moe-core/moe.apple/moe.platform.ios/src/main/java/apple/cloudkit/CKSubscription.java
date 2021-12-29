@@ -66,6 +66,7 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native CKSubscription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKSubscription allocWithZone(VoidPtr zone);

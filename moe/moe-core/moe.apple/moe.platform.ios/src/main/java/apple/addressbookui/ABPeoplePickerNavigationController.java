@@ -47,6 +47,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("AddressBookUI")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +71,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @Selector("alloc")
     public static native ABPeoplePickerNavigationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ABPeoplePickerNavigationController allocWithZone(VoidPtr zone);

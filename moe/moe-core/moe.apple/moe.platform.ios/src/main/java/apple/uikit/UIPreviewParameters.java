@@ -48,6 +48,7 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPreviewParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPreviewParameters allocWithZone(VoidPtr zone);

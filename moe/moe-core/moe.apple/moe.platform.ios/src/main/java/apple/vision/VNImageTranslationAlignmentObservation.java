@@ -60,6 +60,7 @@ public class VNImageTranslationAlignmentObservation extends VNImageAlignmentObse
     @Selector("alloc")
     public static native VNImageTranslationAlignmentObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNImageTranslationAlignmentObservation allocWithZone(VoidPtr zone);

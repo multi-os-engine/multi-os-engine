@@ -81,6 +81,7 @@ public class CAInterAppAudioTransportView extends UIView {
     @Selector("alloc")
     public static native CAInterAppAudioTransportView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAInterAppAudioTransportView allocWithZone(VoidPtr zone);

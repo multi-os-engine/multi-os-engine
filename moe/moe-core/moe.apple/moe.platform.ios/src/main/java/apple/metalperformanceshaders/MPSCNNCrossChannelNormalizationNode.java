@@ -65,6 +65,7 @@ public class MPSCNNCrossChannelNormalizationNode extends MPSCNNNormalizationNode
     @Selector("alloc")
     public static native MPSCNNCrossChannelNormalizationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNCrossChannelNormalizationNode allocWithZone(VoidPtr zone);

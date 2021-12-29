@@ -51,6 +51,7 @@ public class GCDualShockGamepad extends GCExtendedGamepad {
     @Selector("alloc")
     public static native GCDualShockGamepad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCDualShockGamepad allocWithZone(VoidPtr zone);

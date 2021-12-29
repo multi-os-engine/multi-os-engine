@@ -66,6 +66,7 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native UNNotificationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationRequest allocWithZone(VoidPtr zone);

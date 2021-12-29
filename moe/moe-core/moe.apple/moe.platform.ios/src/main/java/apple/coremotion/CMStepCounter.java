@@ -59,6 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * associated with the latest stepcount determination.  Step count updates can be stopped
  * by either calling stopStepCountingUpdates or upon CMStepCounter deallocation.
  */
+@Deprecated
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +83,7 @@ public class CMStepCounter extends NSObject {
     @Selector("alloc")
     public static native CMStepCounter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMStepCounter allocWithZone(VoidPtr zone);

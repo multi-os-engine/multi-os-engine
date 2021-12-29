@@ -67,6 +67,7 @@ public class SHSignature extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native SHSignature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHSignature allocWithZone(VoidPtr zone);

@@ -49,6 +49,7 @@ public class NSFetchIndexElementDescription extends NSObject implements NSCoding
     @Selector("alloc")
     public static native NSFetchIndexElementDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFetchIndexElementDescription allocWithZone(VoidPtr zone);

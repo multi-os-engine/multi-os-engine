@@ -62,6 +62,7 @@ public class UICollectionViewUpdateItem extends NSObject {
     @Selector("alloc")
     public static native UICollectionViewUpdateItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewUpdateItem allocWithZone(VoidPtr zone);

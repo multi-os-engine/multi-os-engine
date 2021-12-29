@@ -68,6 +68,7 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("alloc")
     public static native MDLMaterial alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMaterial allocWithZone(VoidPtr zone);

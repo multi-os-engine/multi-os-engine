@@ -47,6 +47,7 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("AddressBookUI")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +71,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Selector("alloc")
     public static native ABPersonViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ABPersonViewController allocWithZone(VoidPtr zone);

@@ -60,6 +60,7 @@ public class NSUnitElectricCurrent extends NSDimension implements NSSecureCoding
     @Selector("alloc")
     public static native NSUnitElectricCurrent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitElectricCurrent allocWithZone(VoidPtr zone);

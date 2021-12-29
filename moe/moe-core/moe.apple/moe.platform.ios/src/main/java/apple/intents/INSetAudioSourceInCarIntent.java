@@ -63,6 +63,7 @@ public class INSetAudioSourceInCarIntent extends INIntent {
     @Selector("alloc")
     public static native INSetAudioSourceInCarIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetAudioSourceInCarIntent allocWithZone(VoidPtr zone);

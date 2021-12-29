@@ -38,6 +38,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +62,7 @@ public class GKTurnBasedEventHandler extends NSObject {
     @Selector("alloc")
     public static native GKTurnBasedEventHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKTurnBasedEventHandler allocWithZone(VoidPtr zone);

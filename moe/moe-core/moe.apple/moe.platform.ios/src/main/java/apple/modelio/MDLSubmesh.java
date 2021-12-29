@@ -71,6 +71,7 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Selector("alloc")
     public static native MDLSubmesh alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLSubmesh allocWithZone(VoidPtr zone);

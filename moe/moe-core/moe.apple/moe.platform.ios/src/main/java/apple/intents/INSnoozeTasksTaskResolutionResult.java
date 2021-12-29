@@ -45,6 +45,7 @@ public class INSnoozeTasksTaskResolutionResult extends INTaskResolutionResult {
     @Selector("alloc")
     public static native INSnoozeTasksTaskResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSnoozeTasksTaskResolutionResult allocWithZone(VoidPtr zone);

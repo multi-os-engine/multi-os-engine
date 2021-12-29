@@ -71,6 +71,7 @@ public class SCNShape extends SCNGeometry {
     @Selector("alloc")
     public static native SCNShape alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNShape allocWithZone(VoidPtr zone);

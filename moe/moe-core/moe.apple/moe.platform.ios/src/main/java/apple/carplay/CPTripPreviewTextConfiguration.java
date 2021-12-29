@@ -52,6 +52,7 @@ public class CPTripPreviewTextConfiguration extends NSObject implements NSSecure
     @Selector("alloc")
     public static native CPTripPreviewTextConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTripPreviewTextConfiguration allocWithZone(VoidPtr zone);

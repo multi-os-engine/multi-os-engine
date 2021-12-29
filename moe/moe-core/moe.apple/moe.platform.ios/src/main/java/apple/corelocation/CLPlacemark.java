@@ -76,6 +76,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CLPlacemark alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLPlacemark allocWithZone(VoidPtr zone);

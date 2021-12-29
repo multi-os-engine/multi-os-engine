@@ -48,6 +48,7 @@ public class CHIPSetupPayload extends NSObject {
     @Selector("alloc")
     public static native CHIPSetupPayload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPSetupPayload allocWithZone(VoidPtr zone);

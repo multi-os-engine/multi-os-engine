@@ -46,6 +46,7 @@ public class INNotebookItemTypeResolutionResult extends INIntentResolutionResult
     @Selector("alloc")
     public static native INNotebookItemTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INNotebookItemTypeResolutionResult allocWithZone(VoidPtr zone);

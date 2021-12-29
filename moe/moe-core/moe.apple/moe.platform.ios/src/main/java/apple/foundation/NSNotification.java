@@ -64,6 +64,7 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native NSNotification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSNotification allocWithZone(VoidPtr zone);

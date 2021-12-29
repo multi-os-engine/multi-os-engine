@@ -64,6 +64,7 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Selector("alloc")
     public static native MTLComputePipelineDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLComputePipelineDescriptor allocWithZone(VoidPtr zone);

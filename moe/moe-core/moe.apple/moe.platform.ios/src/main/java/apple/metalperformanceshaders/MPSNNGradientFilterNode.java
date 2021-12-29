@@ -61,6 +61,7 @@ public class MPSNNGradientFilterNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNGradientFilterNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGradientFilterNode allocWithZone(VoidPtr zone);

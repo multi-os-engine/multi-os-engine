@@ -56,6 +56,7 @@ public class AVAudioSequencer extends NSObject {
     @Selector("alloc")
     public static native AVAudioSequencer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioSequencer allocWithZone(VoidPtr zone);

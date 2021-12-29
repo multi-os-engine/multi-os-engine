@@ -73,6 +73,7 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SKPhysicsWorld alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsWorld allocWithZone(VoidPtr zone);

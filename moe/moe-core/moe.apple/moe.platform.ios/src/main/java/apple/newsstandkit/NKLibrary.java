@@ -73,6 +73,7 @@ public class NKLibrary extends NSObject {
     @Selector("alloc")
     public static native NKLibrary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NKLibrary allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class MKLocalSearchResponse extends NSObject {
     @Selector("alloc")
     public static native MKLocalSearchResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKLocalSearchResponse allocWithZone(VoidPtr zone);

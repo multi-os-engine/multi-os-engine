@@ -63,6 +63,7 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @Selector("alloc")
     public static native MTLRenderPipelineColorAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPipelineColorAttachmentDescriptor allocWithZone(VoidPtr zone);

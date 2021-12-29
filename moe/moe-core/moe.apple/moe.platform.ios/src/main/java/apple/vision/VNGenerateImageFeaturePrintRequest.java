@@ -52,6 +52,7 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNGenerateImageFeaturePrintRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNGenerateImageFeaturePrintRequest allocWithZone(VoidPtr zone);

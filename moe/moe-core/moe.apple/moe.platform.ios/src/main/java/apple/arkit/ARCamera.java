@@ -52,6 +52,7 @@ public class ARCamera extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native ARCamera alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARCamera allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class CKFetchRecordZoneChangesOptions extends NSObject implements NSSecur
     @Selector("alloc")
     public static native CKFetchRecordZoneChangesOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchRecordZoneChangesOptions allocWithZone(VoidPtr zone);

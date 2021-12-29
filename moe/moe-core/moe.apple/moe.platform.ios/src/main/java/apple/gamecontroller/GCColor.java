@@ -55,6 +55,7 @@ public class GCColor extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native GCColor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCColor allocWithZone(VoidPtr zone);

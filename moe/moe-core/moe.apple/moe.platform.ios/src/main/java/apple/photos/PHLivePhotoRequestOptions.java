@@ -67,6 +67,7 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PHLivePhotoRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHLivePhotoRequestOptions allocWithZone(VoidPtr zone);

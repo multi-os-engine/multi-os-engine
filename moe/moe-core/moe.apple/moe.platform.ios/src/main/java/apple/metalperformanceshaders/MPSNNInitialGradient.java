@@ -82,6 +82,7 @@ public class MPSNNInitialGradient extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNInitialGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNInitialGradient allocWithZone(VoidPtr zone);

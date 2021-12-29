@@ -63,6 +63,7 @@ public class CSSearchQuery extends NSObject {
     @Selector("alloc")
     public static native CSSearchQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSSearchQuery allocWithZone(VoidPtr zone);

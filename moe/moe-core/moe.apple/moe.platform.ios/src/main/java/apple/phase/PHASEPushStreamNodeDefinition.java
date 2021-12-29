@@ -51,6 +51,7 @@ public class PHASEPushStreamNodeDefinition extends PHASEGeneratorNodeDefinition 
     @Selector("alloc")
     public static native PHASEPushStreamNodeDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEPushStreamNodeDefinition allocWithZone(VoidPtr zone);

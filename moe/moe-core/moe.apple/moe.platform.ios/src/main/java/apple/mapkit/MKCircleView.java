@@ -82,6 +82,7 @@ public class MKCircleView extends MKOverlayPathView {
     @Selector("alloc")
     public static native MKCircleView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKCircleView allocWithZone(VoidPtr zone);

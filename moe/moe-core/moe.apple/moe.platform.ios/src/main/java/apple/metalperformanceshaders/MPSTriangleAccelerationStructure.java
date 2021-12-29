@@ -52,6 +52,7 @@ public class MPSTriangleAccelerationStructure extends MPSPolygonAccelerationStru
     @Selector("alloc")
     public static native MPSTriangleAccelerationStructure alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSTriangleAccelerationStructure allocWithZone(VoidPtr zone);

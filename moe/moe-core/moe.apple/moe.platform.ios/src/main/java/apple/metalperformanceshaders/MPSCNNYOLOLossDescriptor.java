@@ -106,6 +106,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPSCNNYOLOLossDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNYOLOLossDescriptor allocWithZone(VoidPtr zone);

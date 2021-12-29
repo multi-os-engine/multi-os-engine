@@ -71,6 +71,7 @@ public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     @Selector("alloc")
     public static native MKMultiPoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMultiPoint allocWithZone(VoidPtr zone);

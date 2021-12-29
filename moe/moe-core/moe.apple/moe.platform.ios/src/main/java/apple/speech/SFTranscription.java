@@ -69,6 +69,7 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native SFTranscription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFTranscription allocWithZone(VoidPtr zone);

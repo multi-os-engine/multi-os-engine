@@ -75,6 +75,7 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native SCNPhysicsBody alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsBody allocWithZone(VoidPtr zone);

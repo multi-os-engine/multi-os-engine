@@ -66,6 +66,7 @@ public class RPPreviewViewController extends UIViewController {
     @Selector("alloc")
     public static native RPPreviewViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPPreviewViewController allocWithZone(VoidPtr zone);

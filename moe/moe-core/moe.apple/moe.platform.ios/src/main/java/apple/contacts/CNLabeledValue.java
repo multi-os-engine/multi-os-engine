@@ -69,6 +69,7 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Selector("alloc")
     public static native CNLabeledValue<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNLabeledValue<?> allocWithZone(VoidPtr zone);

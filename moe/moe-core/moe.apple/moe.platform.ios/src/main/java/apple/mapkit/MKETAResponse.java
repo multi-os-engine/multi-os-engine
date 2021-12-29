@@ -62,6 +62,7 @@ public class MKETAResponse extends NSObject {
     @Selector("alloc")
     public static native MKETAResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKETAResponse allocWithZone(VoidPtr zone);

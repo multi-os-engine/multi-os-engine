@@ -52,6 +52,7 @@ public class MXCellularConditionMetric extends MXMetric {
     @Selector("alloc")
     public static native MXCellularConditionMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXCellularConditionMetric allocWithZone(VoidPtr zone);

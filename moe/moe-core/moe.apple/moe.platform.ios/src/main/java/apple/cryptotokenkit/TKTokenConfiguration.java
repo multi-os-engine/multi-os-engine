@@ -52,6 +52,7 @@ public class TKTokenConfiguration extends NSObject {
     @Selector("alloc")
     public static native TKTokenConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenConfiguration allocWithZone(VoidPtr zone);

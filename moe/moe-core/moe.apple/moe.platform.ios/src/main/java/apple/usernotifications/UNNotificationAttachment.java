@@ -71,6 +71,7 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     @Selector("alloc")
     public static native UNNotificationAttachment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationAttachment allocWithZone(VoidPtr zone);

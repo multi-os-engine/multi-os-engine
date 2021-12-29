@@ -50,6 +50,7 @@ public class MLCConcatenationLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCConcatenationLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCConcatenationLayer allocWithZone(VoidPtr zone);

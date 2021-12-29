@@ -51,6 +51,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertionRequest extends 
     @Selector("alloc")
     public static native ASAuthorizationPlatformPublicKeyCredentialAssertionRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationPlatformPublicKeyCredentialAssertionRequest allocWithZone(VoidPtr zone);

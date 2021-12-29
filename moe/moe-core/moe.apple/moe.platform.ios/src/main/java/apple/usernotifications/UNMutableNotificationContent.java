@@ -65,6 +65,7 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     @Selector("alloc")
     public static native UNMutableNotificationContent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNMutableNotificationContent allocWithZone(VoidPtr zone);

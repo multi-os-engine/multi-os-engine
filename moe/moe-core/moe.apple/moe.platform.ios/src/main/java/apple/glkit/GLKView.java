@@ -83,6 +83,7 @@ public class GLKView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native GLKView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKView allocWithZone(VoidPtr zone);

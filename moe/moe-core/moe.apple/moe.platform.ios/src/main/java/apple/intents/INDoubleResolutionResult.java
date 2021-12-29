@@ -62,6 +62,7 @@ public class INDoubleResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INDoubleResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDoubleResolutionResult allocWithZone(VoidPtr zone);

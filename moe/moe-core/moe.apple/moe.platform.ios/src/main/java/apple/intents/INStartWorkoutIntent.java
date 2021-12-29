@@ -64,6 +64,7 @@ public class INStartWorkoutIntent extends INIntent {
     @Selector("alloc")
     public static native INStartWorkoutIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartWorkoutIntent allocWithZone(VoidPtr zone);

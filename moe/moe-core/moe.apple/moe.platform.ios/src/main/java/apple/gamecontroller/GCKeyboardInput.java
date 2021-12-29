@@ -51,6 +51,7 @@ public class GCKeyboardInput extends GCPhysicalInputProfile {
     @Selector("alloc")
     public static native GCKeyboardInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCKeyboardInput allocWithZone(VoidPtr zone);

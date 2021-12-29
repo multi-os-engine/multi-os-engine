@@ -53,6 +53,7 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NFCISO7816APDU alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCISO7816APDU allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
     @Selector("alloc")
     public static native AVDelegatingPlaybackCoordinatorSeekCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVDelegatingPlaybackCoordinatorSeekCommand allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class PDFActionURL extends PDFAction implements NSCopying {
     @Selector("alloc")
     public static native PDFActionURL alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFActionURL allocWithZone(VoidPtr zone);

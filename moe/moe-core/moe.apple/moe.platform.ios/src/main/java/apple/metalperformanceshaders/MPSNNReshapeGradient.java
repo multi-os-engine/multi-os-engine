@@ -54,6 +54,7 @@ public class MPSNNReshapeGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSNNReshapeGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReshapeGradient allocWithZone(VoidPtr zone);

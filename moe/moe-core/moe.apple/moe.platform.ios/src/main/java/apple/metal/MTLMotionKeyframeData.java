@@ -50,6 +50,7 @@ public class MTLMotionKeyframeData extends NSObject {
     @Selector("alloc")
     public static native MTLMotionKeyframeData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLMotionKeyframeData allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NFCVASCommandConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCVASCommandConfiguration allocWithZone(VoidPtr zone);

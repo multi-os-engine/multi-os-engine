@@ -45,6 +45,7 @@ public class INBalanceTypeResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INBalanceTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBalanceTypeResolutionResult allocWithZone(VoidPtr zone);

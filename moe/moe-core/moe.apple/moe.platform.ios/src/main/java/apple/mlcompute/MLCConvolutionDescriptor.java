@@ -53,6 +53,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCConvolutionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCConvolutionDescriptor allocWithZone(VoidPtr zone);

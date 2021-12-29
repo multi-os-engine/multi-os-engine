@@ -58,6 +58,7 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPAlertAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPAlertAction allocWithZone(VoidPtr zone);

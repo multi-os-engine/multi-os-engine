@@ -45,6 +45,7 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
     @Selector("alloc")
     public static native INLocationSearchTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INLocationSearchTypeResolutionResult allocWithZone(VoidPtr zone);

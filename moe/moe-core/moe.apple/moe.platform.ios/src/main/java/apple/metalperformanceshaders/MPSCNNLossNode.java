@@ -57,6 +57,7 @@ public class MPSCNNLossNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNLossNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLossNode allocWithZone(VoidPtr zone);

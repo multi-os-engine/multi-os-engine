@@ -67,6 +67,7 @@ public class CIDetector extends NSObject {
     @Selector("alloc")
     public static native CIDetector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIDetector allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class HMMutablePresenceEvent extends HMPresenceEvent {
     @Selector("alloc")
     public static native HMMutablePresenceEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMMutablePresenceEvent allocWithZone(VoidPtr zone);

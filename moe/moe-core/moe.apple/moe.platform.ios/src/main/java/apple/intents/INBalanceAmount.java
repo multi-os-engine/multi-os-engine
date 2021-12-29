@@ -51,6 +51,7 @@ public class INBalanceAmount extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native INBalanceAmount alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBalanceAmount allocWithZone(VoidPtr zone);

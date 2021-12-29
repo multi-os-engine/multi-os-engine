@@ -45,6 +45,7 @@ public class MPSNNReductionFeatureChannelsArgumentMaxNode extends MPSNNUnaryRedu
     @Selector("alloc")
     public static native MPSNNReductionFeatureChannelsArgumentMaxNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionFeatureChannelsArgumentMaxNode allocWithZone(VoidPtr zone);

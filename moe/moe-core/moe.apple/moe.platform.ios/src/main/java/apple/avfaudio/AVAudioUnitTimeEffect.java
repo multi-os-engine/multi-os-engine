@@ -57,6 +57,7 @@ public class AVAudioUnitTimeEffect extends AVAudioUnit {
     @Selector("alloc")
     public static native AVAudioUnitTimeEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitTimeEffect allocWithZone(VoidPtr zone);

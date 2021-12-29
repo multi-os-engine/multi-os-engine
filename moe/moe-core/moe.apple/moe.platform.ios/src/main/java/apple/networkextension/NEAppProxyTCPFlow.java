@@ -73,6 +73,7 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
     @Selector("alloc")
     public static native NEAppProxyTCPFlow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEAppProxyTCPFlow allocWithZone(VoidPtr zone);

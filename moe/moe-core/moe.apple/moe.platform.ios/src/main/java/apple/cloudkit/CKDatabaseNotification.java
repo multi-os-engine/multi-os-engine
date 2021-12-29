@@ -85,6 +85,7 @@ public class CKDatabaseNotification extends CKNotification {
     @Selector("alloc")
     public static native CKDatabaseNotification alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKDatabaseNotification allocWithZone(VoidPtr zone);

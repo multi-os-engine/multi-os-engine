@@ -501,7 +501,7 @@ public final class CFNetwork {
      * dot (e.g. "_ftp._tcp").  The application protocol name should
      * be 14 characters or less, and should only contain lower-case
      * letters, digits, and hyphens.  New service types should be
-     * registered at <htp://www.dns-sd.org/ServiceTypes.html>.  This
+     * registered at <http://www.dns-sd.org/ServiceTypes.html>.  This
      * value must be non-NULL.
      * <p>
      * name:
@@ -691,7 +691,7 @@ public final class CFNetwork {
      * timeout:
      * CFTimeInterval representing the maximum amount of time to take
      * to perform the resolve.  If the resolve can not be performed
-     * within this timeout, the function or callback will recieve a
+     * within this timeout, the function or callback will receive a
      * timeout error.  Values less than or equal to zero indicate an
      * infinite timeout.
      * <p>
@@ -926,7 +926,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * CFDataRef containing the flattened form of the keys and values.
-     * If the dictionary could not be flattend, NULL will be returned.
+     * If the dictionary could not be flattened, NULL will be returned.
      */
     @Generated
     @CFunction
@@ -1271,7 +1271,7 @@ public final class CFNetwork {
      * Starts a search for domains.  The browser will either try to find
      * "Browse" domains or will search for "Registration" domains.  If
      * there is already an outstanding search, it will return FALSE.  In
-     * syncronous mode, this call blocks until the search is stopped.
+     * synchronous mode, this call blocks until the search is stopped.
      * It will return FALSE if there is an error performing the search.
      * It will return TRUE otherwise.  In asynchronous mode, this call
      * will return TRUE or FALSE depending if the underlying network
@@ -1311,7 +1311,7 @@ public final class CFNetwork {
      * Discussion:
      * Starts a search for a service type on the given domain.  If there
      * is already an outstanding search, it will return FALSE.  In
-     * syncronous mode, this call blocks until the search is stopped.
+     * synchronous mode, this call blocks until the search is stopped.
      * It will return FALSE if there is an error performing the search
      * or if there is some other error.  It will return TRUE otherwise.
      * In asynchronous mode, this call will return TRUE or FALSE
@@ -1550,7 +1550,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CF read stream created, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * read stream.
      */
     @Generated
@@ -1589,7 +1589,7 @@ public final class CFNetwork {
      * parsed:
      * A pointer to a CFDictionary pointer.  The dictionary holds the
      * extracted resource information.  When parsing fails, a NULL
-     * pointer will be returned.  It is caller's responsibilty to
+     * pointer will be returned.  It is caller's responsibility to
      * release the memory allocated for the dictionary.
      * <p>
      * Result:
@@ -1633,7 +1633,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CF write stream created, or NULL if failed. It
-     * is caller's responsibilty to release the memory allocated for the
+     * is caller's responsibility to release the memory allocated for the
      * write stream.
      */
     @Generated
@@ -1689,7 +1689,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * message.
      */
     @Generated
@@ -1728,7 +1728,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * message.
      */
     @Generated
@@ -1760,7 +1760,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * message.
      */
     @Generated
@@ -1790,7 +1790,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * message.
      */
     @Generated
@@ -1838,7 +1838,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the string.
+     * responsibility to release the memory allocated for the string.
      */
     @Generated
     @CFunction
@@ -1861,7 +1861,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to a CFData, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the data.
+     * responsibility to release the memory allocated for the data.
      */
     @Generated
     @CFunction
@@ -1911,7 +1911,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the string.
+     * responsibility to release the memory allocated for the string.
      */
     @Generated
     @CFunction
@@ -1935,7 +1935,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to a CFDictionary, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the dictionary.
+     * responsibility to release the memory allocated for the dictionary.
      */
     @Generated
     @CFunction
@@ -2030,7 +2030,7 @@ public final class CFNetwork {
      * <p>
      * Discussion:
      * Creates a self-contained copy of a CFHTTPMessage. This would be
-     * suitable for persistant storage or for transmitting over the
+     * suitable for persistent storage or for transmitting over the
      * network independently.
      * <p>
      * Mac OS X threading:
@@ -2039,11 +2039,11 @@ public final class CFNetwork {
      * Parameters:
      * <p>
      * request:
-     * A pointer to the CFHTTPMessage to be seralized.
+     * A pointer to the CFHTTPMessage to be serialized.
      * <p>
      * Result:
      * A pointer to a CFData, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the data.
+     * responsibility to release the memory allocated for the data.
      */
     @Generated
     @CFunction
@@ -2065,7 +2065,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to a CFURL, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the url.
+     * responsibility to release the memory allocated for the url.
      */
     @Generated
     @CFunction
@@ -2087,7 +2087,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the string.
+     * responsibility to release the memory allocated for the string.
      */
     @Generated
     @CFunction
@@ -2131,7 +2131,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
-     * responsibilty to release the memory allocated for the string.
+     * responsibility to release the memory allocated for the string.
      */
     @Generated
     @CFunction
@@ -2179,7 +2179,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A CFString indicating the status code, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * string.
      */
     @Generated
@@ -2217,7 +2217,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CF read stream created, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * read stream.
      */
     @Generated
@@ -2237,7 +2237,7 @@ public final class CFNetwork {
      * CFReadStreamCreateForHTTPRequest() when the body of the request
      * is larger than you wish to be resident in memory.  Note that
      * because streams cannot be reset, read streams created this way
-     * cannot have autoredirection enabled.  If the Content-Length
+     * cannot have auto-redirection enabled.  If the Content-Length
      * header is set in requestHeaders, it is assumed that the caller
      * got the length right and that requestBody will report
      * end-of-stream after precisely Content-Length bytes have been read
@@ -2264,7 +2264,7 @@ public final class CFNetwork {
      * <p>
      * Result:
      * A pointer to the CF read stream created, or NULL if failed. It is
-     * caller's responsibilty to release the memory allocated for the
+     * caller's responsibility to release the memory allocated for the
      * read stream.
      */
     @Generated
@@ -2443,7 +2443,7 @@ public final class CFNetwork {
      * <p>
      * error:
      * Reference to a CFStreamError which will be populated with the
-     * error information should one occurr during the application of
+     * error information should one occur during the application of
      * the credentials. Pass NULL if not interested in the failure
      * reason.  The error domain will be kCFStreamErrorDomainHTTP, and
      * the error code will be one of those define in CFHTTPStream.h or
@@ -2486,7 +2486,7 @@ public final class CFNetwork {
      * <p>
      * error:
      * Reference to a CFStreamError which will be populated with the
-     * error information should one occurr during the application of
+     * error information should one occur during the application of
      * the credentials. Pass NULL if not interested in the failure
      * reason.  The error domain will be kCFStreamErrorDomainHTTP, and
      * the error code will be one of those define in CFHTTPStream.h or
@@ -2812,7 +2812,7 @@ public final class CFNetwork {
      * CFNetworkCopyProxiesForAutoConfigurationScript()
      * <p>
      * Discussion:
-     * Synchronously executes the given proxy autoconfiguration script
+     * Synchronously executes the given proxy auto-configuration script
      * and returns a valid proxyList and NULL error upon success or a
      * NULL proxyList and valid error on failure.
      * <p>
@@ -2822,7 +2822,7 @@ public final class CFNetwork {
      * A CFString containing the code of the script to be executed.
      * <p>
      * targetURL:
-     * The URL that should be input in to the autoconfiguration script.
+     * The URL that should be input in to the auto-configuration script.
      * <p>
      * error:
      * A return argument that will contain a valid error in case of
@@ -2858,7 +2858,7 @@ public final class CFNetwork {
      * A CFString containing the code of the script to be executed.
      * <p>
      * targetURL:
-     * The URL that should be passed to the autoconfiguration script.
+     * The URL that should be passed to the auto-configuration script.
      * <p>
      * cb:
      * A client callback to notify the caller of completion.
@@ -2995,7 +2995,8 @@ public final class CFNetwork {
      * Discussion:
      * When an error of kCFNetServicesErrorDNSServiceFailure is
      * returned, this key's value is set to a CFNumber containing the
-     * value returned from DNS; interret it using the values dns_sd.h
+     * value returned from DNS; interpret it using the values in
+     * <dns_sd.h>.
      */
     @Generated
     @CVariable()
@@ -3223,6 +3224,7 @@ public final class CFNetwork {
     /**
      * voice over IP control - this service type is deprecated in favor of using PushKit for VoIP control
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeVoIP();
@@ -3233,7 +3235,7 @@ public final class CFNetwork {
      * Discussion:
      * Stream property value, for both set and copy operations.
      * The value is a CFBooleanRef which indicates whether the connection
-     * is allowed to use the built-in celluar radios.  A value of kCFBooleanTrue
+     * is allowed to use the built-in cellular radios.  A value of kCFBooleanTrue
      * disallows use of cellular interfaces.  kCFBooleanFalse (the default)
      * allows use of cellular interfaces.
      */
@@ -3247,7 +3249,7 @@ public final class CFNetwork {
      * Discussion:
      * Stream property key for copy operations.  Returns a CFBooleanRef value
      * of kCFBooleanTrue if the stream has connected using the built in cellular radios.
-     * It returns kCFBooleanFalse if the stream is conneceted over a non-cellular
+     * It returns kCFBooleanFalse if the stream is connected over a non-cellular
      * interface or has not yet established a connection.
      */
     @Generated
@@ -3330,18 +3332,22 @@ public final class CFNetwork {
      * Instead, use the single property kCFStreamSSLValidatesCertificateChain to disable certificate
      * chain checking if the user has decided that it is appropriate to do so.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySSLPeerCertificates();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLAllowsExpiredCertificates();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLAllowsExpiredRoots();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLAllowsAnyRoot();
@@ -3364,6 +3370,7 @@ public final class CFNetwork {
      * type to hold login user name.  Don't set this property if you
      * want anonymous FTP.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPUserName();
@@ -3376,6 +3383,7 @@ public final class CFNetwork {
      * type to hold login password.  Don't set this property if you want
      * anonymous FTP.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPPassword();
@@ -3388,6 +3396,7 @@ public final class CFNetwork {
      * type. kCFBooleanTrue means use passive mode, kCFBooleanFalse
      * otherwise
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPUsePassiveMode();
@@ -3399,6 +3408,7 @@ public final class CFNetwork {
      * Stream property key, for read stream copy operations.  CFNumber
      * of kCFNumberLongLongType to hold resource size in bytes.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPResourceSize();
@@ -3413,6 +3423,7 @@ public final class CFNetwork {
      * resource size/other info is unnecessary.  Initially, only
      * resource size is implemented.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPFetchResourceInfo();
@@ -3424,6 +3435,7 @@ public final class CFNetwork {
      * Stream property key, for both set and copy operations.  CFNumber
      * of kCFNumberLongLongType for the file offset to start transfer at.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPFileTransferOffset();
@@ -3436,6 +3448,7 @@ public final class CFNetwork {
      * type.  TRUE by default, set to FALSE to avoid reusing existing
      * server connections.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPAttemptPersistentConnection();
@@ -3449,6 +3462,7 @@ public final class CFNetwork {
      * The dictionary returned by SystemConfiguration can also be
      * passed directly as the value.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPProxy();
@@ -3463,6 +3477,7 @@ public final class CFNetwork {
      * This property can be set and copied individually or via a
      * CFDictionary.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPProxyHost();
@@ -3477,6 +3492,7 @@ public final class CFNetwork {
      * server port number.  This property can be set and copied
      * individually or via a CFDictionary.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPProxyPort();
@@ -3484,6 +3500,7 @@ public final class CFNetwork {
     /**
      * kCFStreamPropertyFTPProxyUser
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPProxyUser();
@@ -3491,6 +3508,7 @@ public final class CFNetwork {
     /**
      * kCFStreamPropertyFTPProxyPassword
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyFTPProxyPassword();
@@ -3502,6 +3520,7 @@ public final class CFNetwork {
      * CFDictionary key, for get value operation.  CFNumber to hold the
      * resource access permission defined in sys/types.h.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceMode();
@@ -3513,6 +3532,7 @@ public final class CFNetwork {
      * CFDictionary key, for get value operation.  CFString that holds
      * the resource name.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceName();
@@ -3524,6 +3544,7 @@ public final class CFNetwork {
      * CFDictionary key, for get value operation.  CFString that holds
      * the resource owner's name.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceOwner();
@@ -3535,6 +3556,7 @@ public final class CFNetwork {
      * CFDictionary key, for get value operation.  CFString to hold the
      * name of the group that shares the resource.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceGroup();
@@ -3547,6 +3569,7 @@ public final class CFNetwork {
      * symbolic link information.  If the item is a symbolic link the
      * string will contain the path to the item the link references.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceLink();
@@ -3558,6 +3581,7 @@ public final class CFNetwork {
      * CFDictionary key, for get value operation.  CFNumber of
      * kCFNumberLongLongType to hold the resource length in bytes.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceSize();
@@ -3569,6 +3593,7 @@ public final class CFNetwork {
      * CFDictionary key, for get value operation.  CFNumber to hold the
      * resource type as defined in sys/dirent.h.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceType();
@@ -3580,6 +3605,7 @@ public final class CFNetwork {
      * CFDictionary key, for get value operation.  CFDate to hold the
      * last modification date and time information.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPResourceModDate();
@@ -3701,6 +3727,7 @@ public final class CFNetwork {
      * Stream property key, for copy operations. Value is a
      * CFHTTPMessage with 0 bytes data.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPResponseHeader();
@@ -3711,9 +3738,10 @@ public final class CFNetwork {
      * Discussion:
      * Stream property key, for copy operations. The response header
      * value is the CFURL from the final request; will only differ from
-     * the URL in the original request if an autoredirection has
+     * the URL in the original request if an auto-redirection has
      * occurred.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPFinalURL();
@@ -3727,6 +3755,7 @@ public final class CFNetwork {
      * (such as for authentication, connection policy, or redirection)
      * have been made.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPFinalRequest();
@@ -3744,6 +3773,7 @@ public final class CFNetwork {
      * by SystemConfiguration.framework to set the default values for
      * the system. HTTP proxies are not applied automatically.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPProxy();
@@ -3755,6 +3785,7 @@ public final class CFNetwork {
      * Proxy dictionary key. The hostname of an HTTP proxy. The value is
      * a CFString. The key name matches kSCPropNetProxiesHTTPProxy.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPProxyHost();
@@ -3765,6 +3796,7 @@ public final class CFNetwork {
      * Discussion:
      * Proxy dictionary key. Value is a CFNumber.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPProxyPort();
@@ -3775,6 +3807,7 @@ public final class CFNetwork {
      * Discussion:
      * Proxy dictionary key. Value is a CFString.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPSProxyHost();
@@ -3785,6 +3818,7 @@ public final class CFNetwork {
      * Discussion:
      * Proxy dictionary key. Value is a CFNumber.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPSProxyPort();
@@ -3796,6 +3830,7 @@ public final class CFNetwork {
      * Stream property key. Value is a CFBoolean. Redirection is not
      * performed by default.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPShouldAutoredirect();
@@ -3810,6 +3845,7 @@ public final class CFNetwork {
      * none, will try to create one. Persistent connections are not used
      * by default.
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPAttemptPersistentConnection();
@@ -3823,6 +3859,7 @@ public final class CFNetwork {
      * from the body of the request that have been written to the
      * underlying socket
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyHTTPRequestBytesWrittenCount();
@@ -3914,7 +3951,7 @@ public final class CFNetwork {
      * <p>
      * Discussion:
      * Key for the proxy's PAC script
-     * The value is a CFString that contains the full JavaScript soure text for the PAC file.
+     * The value is a CFString that contains the full JavaScript source text for the PAC file.
      */
     @Generated
     @CVariable()
@@ -4155,7 +4192,7 @@ public final class CFNetwork {
      * Discussion:
      * Stream property key for copy operations.  Returns a CFBooleanRef value
      * of kCFBooleanTrue if the stream has connected using an "expensive" interface.
-     * It returns kCFBooleanFalse if the stream is conneceted over an "inexpensive"
+     * It returns kCFBooleanFalse if the stream is connected over an "inexpensive"
      * interface.  If the connection has not been established yet NULL will be returned.
      */
     @Generated

@@ -50,6 +50,7 @@ public class PHASENumericPair extends NSObject {
     @Selector("alloc")
     public static native PHASENumericPair alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASENumericPair allocWithZone(VoidPtr zone);

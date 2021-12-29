@@ -64,6 +64,7 @@ public class PHAssetCollection extends PHCollection {
     @Selector("alloc")
     public static native PHAssetCollection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHAssetCollection allocWithZone(VoidPtr zone);

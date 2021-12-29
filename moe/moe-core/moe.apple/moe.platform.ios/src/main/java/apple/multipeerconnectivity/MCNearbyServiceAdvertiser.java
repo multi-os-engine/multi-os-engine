@@ -100,6 +100,7 @@ public class MCNearbyServiceAdvertiser extends NSObject {
     @Selector("alloc")
     public static native MCNearbyServiceAdvertiser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MCNearbyServiceAdvertiser allocWithZone(VoidPtr zone);

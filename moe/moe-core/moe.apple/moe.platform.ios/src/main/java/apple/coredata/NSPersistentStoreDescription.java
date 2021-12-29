@@ -68,6 +68,7 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Selector("alloc")
     public static native NSPersistentStoreDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentStoreDescription allocWithZone(VoidPtr zone);

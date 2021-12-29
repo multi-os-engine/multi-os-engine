@@ -87,6 +87,7 @@ public class MPSImageErode extends MPSImageDilate {
     @Selector("alloc")
     public static native MPSImageErode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageErode allocWithZone(VoidPtr zone);

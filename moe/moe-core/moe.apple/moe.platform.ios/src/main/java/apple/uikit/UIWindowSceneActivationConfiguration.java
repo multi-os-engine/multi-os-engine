@@ -46,6 +46,7 @@ public class UIWindowSceneActivationConfiguration extends NSObject {
     @Selector("alloc")
     public static native UIWindowSceneActivationConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWindowSceneActivationConfiguration allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class UISceneSizeRestrictions extends NSObject {
     @Selector("alloc")
     public static native UISceneSizeRestrictions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISceneSizeRestrictions allocWithZone(VoidPtr zone);

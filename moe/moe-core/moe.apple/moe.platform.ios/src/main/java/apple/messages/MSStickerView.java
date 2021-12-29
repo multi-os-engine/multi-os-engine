@@ -87,6 +87,7 @@ public class MSStickerView extends UIView {
     @Selector("alloc")
     public static native MSStickerView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSStickerView allocWithZone(VoidPtr zone);

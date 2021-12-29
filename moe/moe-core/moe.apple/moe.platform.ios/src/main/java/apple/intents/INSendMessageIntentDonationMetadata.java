@@ -47,6 +47,7 @@ public class INSendMessageIntentDonationMetadata extends INIntentDonationMetadat
     @Selector("alloc")
     public static native INSendMessageIntentDonationMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendMessageIntentDonationMetadata allocWithZone(VoidPtr zone);

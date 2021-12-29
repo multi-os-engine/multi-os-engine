@@ -72,6 +72,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SCNSkinner alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNSkinner allocWithZone(VoidPtr zone);

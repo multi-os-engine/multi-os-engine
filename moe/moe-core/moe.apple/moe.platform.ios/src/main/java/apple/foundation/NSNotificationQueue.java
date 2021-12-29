@@ -58,6 +58,7 @@ public class NSNotificationQueue extends NSObject {
     @Selector("alloc")
     public static native NSNotificationQueue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSNotificationQueue allocWithZone(VoidPtr zone);

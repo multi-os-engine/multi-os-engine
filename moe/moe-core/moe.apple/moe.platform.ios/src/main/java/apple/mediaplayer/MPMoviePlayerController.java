@@ -50,6 +50,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * See MPMediaPlayback.h for the playback methods.
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +74,7 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("alloc")
     public static native MPMoviePlayerController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMoviePlayerController allocWithZone(VoidPtr zone);

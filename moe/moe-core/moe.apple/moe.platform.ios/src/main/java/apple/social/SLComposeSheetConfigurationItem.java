@@ -66,6 +66,7 @@ public class SLComposeSheetConfigurationItem extends NSObject {
     @Selector("alloc")
     public static native SLComposeSheetConfigurationItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SLComposeSheetConfigurationItem allocWithZone(VoidPtr zone);

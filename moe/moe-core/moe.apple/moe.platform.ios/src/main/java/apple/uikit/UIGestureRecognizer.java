@@ -67,6 +67,7 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("alloc")
     public static native UIGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIGestureRecognizer allocWithZone(VoidPtr zone);

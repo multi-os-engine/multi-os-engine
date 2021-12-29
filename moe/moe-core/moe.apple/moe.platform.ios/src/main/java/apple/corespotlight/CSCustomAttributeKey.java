@@ -69,6 +69,7 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native CSCustomAttributeKey alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSCustomAttributeKey allocWithZone(VoidPtr zone);

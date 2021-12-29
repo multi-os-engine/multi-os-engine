@@ -72,6 +72,7 @@ public class NSSimpleCString extends NSString {
     @Selector("alloc")
     public static native NSSimpleCString alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSSimpleCString allocWithZone(VoidPtr zone);

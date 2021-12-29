@@ -55,6 +55,7 @@ public class VNHumanObservation extends VNDetectedObjectObservation {
     @Selector("alloc")
     public static native VNHumanObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNHumanObservation allocWithZone(VoidPtr zone);

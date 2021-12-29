@@ -69,6 +69,7 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native MKMapCamera alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMapCamera allocWithZone(VoidPtr zone);

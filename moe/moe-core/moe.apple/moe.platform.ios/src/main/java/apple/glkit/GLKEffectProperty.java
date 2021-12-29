@@ -61,6 +61,7 @@ public class GLKEffectProperty extends NSObject {
     @Selector("alloc")
     public static native GLKEffectProperty alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKEffectProperty allocWithZone(VoidPtr zone);

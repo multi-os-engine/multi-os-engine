@@ -73,6 +73,7 @@ public class HKStatisticsQuery extends HKQuery {
     @Selector("alloc")
     public static native HKStatisticsQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKStatisticsQuery allocWithZone(VoidPtr zone);

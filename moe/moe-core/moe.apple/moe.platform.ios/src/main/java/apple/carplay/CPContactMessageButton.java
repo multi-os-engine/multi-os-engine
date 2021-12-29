@@ -47,6 +47,7 @@ public class CPContactMessageButton extends CPButton {
     @Selector("alloc")
     public static native CPContactMessageButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPContactMessageButton allocWithZone(VoidPtr zone);

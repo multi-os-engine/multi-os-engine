@@ -55,6 +55,7 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSCollectionLayoutDimension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutDimension allocWithZone(VoidPtr zone);

@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * The AVAudioSessionDelegate protocol is deprecated. Instead you should register for notifications.
  */
+@Deprecated
 @Generated
 @Library("AVFAudio")
 @Runtime(ObjCRuntime.class)

@@ -48,6 +48,7 @@ public class UIPointerLiftEffect extends UIPointerEffect {
     @Selector("alloc")
     public static native UIPointerLiftEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerLiftEffect allocWithZone(VoidPtr zone);

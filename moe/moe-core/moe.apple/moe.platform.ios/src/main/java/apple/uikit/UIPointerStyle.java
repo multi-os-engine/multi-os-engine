@@ -47,6 +47,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPointerStyle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerStyle allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("alloc")
     public static native CKFetchSubscriptionsOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchSubscriptionsOperation allocWithZone(VoidPtr zone);

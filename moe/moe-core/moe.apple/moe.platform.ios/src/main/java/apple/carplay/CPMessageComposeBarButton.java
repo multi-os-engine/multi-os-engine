@@ -49,6 +49,7 @@ public class CPMessageComposeBarButton extends CPBarButton {
     @Selector("alloc")
     public static native CPMessageComposeBarButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPMessageComposeBarButton allocWithZone(VoidPtr zone);

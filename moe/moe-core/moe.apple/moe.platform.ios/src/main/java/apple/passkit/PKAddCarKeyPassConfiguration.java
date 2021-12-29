@@ -45,6 +45,7 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @Selector("alloc")
     public static native PKAddCarKeyPassConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddCarKeyPassConfiguration allocWithZone(VoidPtr zone);

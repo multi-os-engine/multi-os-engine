@@ -63,6 +63,7 @@ public class CKAcceptSharesOperation extends CKOperation {
     @Selector("alloc")
     public static native CKAcceptSharesOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKAcceptSharesOperation allocWithZone(VoidPtr zone);

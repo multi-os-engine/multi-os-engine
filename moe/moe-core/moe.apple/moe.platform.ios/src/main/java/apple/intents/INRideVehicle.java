@@ -67,6 +67,7 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native INRideVehicle alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRideVehicle allocWithZone(VoidPtr zone);

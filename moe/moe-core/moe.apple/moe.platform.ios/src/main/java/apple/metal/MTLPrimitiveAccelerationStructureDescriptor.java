@@ -48,6 +48,7 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     @Selector("alloc")
     public static native MTLPrimitiveAccelerationStructureDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLPrimitiveAccelerationStructureDescriptor allocWithZone(VoidPtr zone);

@@ -74,6 +74,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     @Selector("alloc")
     public static native MPSNNOptimizerAdam alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNOptimizerAdam allocWithZone(VoidPtr zone);

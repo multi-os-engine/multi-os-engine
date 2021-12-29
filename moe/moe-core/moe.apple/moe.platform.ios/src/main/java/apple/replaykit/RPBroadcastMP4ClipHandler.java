@@ -69,6 +69,7 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
     @Selector("alloc")
     public static native RPBroadcastMP4ClipHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native RPBroadcastMP4ClipHandler allocWithZone(VoidPtr zone);

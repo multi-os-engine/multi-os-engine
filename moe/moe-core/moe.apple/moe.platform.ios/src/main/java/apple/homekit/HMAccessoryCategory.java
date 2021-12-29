@@ -64,6 +64,7 @@ public class HMAccessoryCategory extends NSObject {
     @Selector("alloc")
     public static native HMAccessoryCategory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMAccessoryCategory allocWithZone(VoidPtr zone);

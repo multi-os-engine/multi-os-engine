@@ -57,6 +57,7 @@ public class CHHapticPattern extends NSObject {
     @Selector("alloc")
     public static native CHHapticPattern alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHHapticPattern allocWithZone(VoidPtr zone);

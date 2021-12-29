@@ -55,6 +55,7 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectHumanBodyPoseRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectHumanBodyPoseRequest allocWithZone(VoidPtr zone);

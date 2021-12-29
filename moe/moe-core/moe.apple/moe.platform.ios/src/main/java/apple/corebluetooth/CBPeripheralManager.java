@@ -80,6 +80,7 @@ public class CBPeripheralManager extends CBManager {
     @Selector("alloc")
     public static native CBPeripheralManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBPeripheralManager allocWithZone(VoidPtr zone);

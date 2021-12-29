@@ -66,6 +66,7 @@ public class GKRTree<_ElementType> extends NSObject {
     @Selector("alloc")
     public static native GKRTree<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKRTree<?> allocWithZone(VoidPtr zone);

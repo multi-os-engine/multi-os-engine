@@ -71,6 +71,7 @@ public class SCNPhysicsSliderJoint extends SCNPhysicsBehavior {
     @Selector("alloc")
     public static native SCNPhysicsSliderJoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsSliderJoint allocWithZone(VoidPtr zone);

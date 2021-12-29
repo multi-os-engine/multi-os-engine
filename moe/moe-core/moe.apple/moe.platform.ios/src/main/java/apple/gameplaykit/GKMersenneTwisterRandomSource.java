@@ -71,6 +71,7 @@ public class GKMersenneTwisterRandomSource extends GKRandomSource {
     @Selector("alloc")
     public static native GKMersenneTwisterRandomSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKMersenneTwisterRandomSource allocWithZone(VoidPtr zone);

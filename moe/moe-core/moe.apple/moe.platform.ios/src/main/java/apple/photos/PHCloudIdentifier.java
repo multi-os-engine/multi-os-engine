@@ -50,6 +50,7 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding, NSCop
     @Selector("alloc")
     public static native PHCloudIdentifier alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHCloudIdentifier allocWithZone(VoidPtr zone);

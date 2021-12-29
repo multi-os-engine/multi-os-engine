@@ -50,6 +50,7 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
     @Selector("alloc")
     public static native CKFetchRecordZoneChangesConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchRecordZoneChangesConfiguration allocWithZone(VoidPtr zone);

@@ -57,6 +57,7 @@ public class SHMatchedMediaItem extends SHMediaItem implements NSSecureCoding {
     @Selector("alloc")
     public static native SHMatchedMediaItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHMatchedMediaItem allocWithZone(VoidPtr zone);

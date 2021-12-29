@@ -50,6 +50,7 @@ public class INIntentDonationMetadata extends NSObject implements NSCopying, NSS
     @Selector("alloc")
     public static native INIntentDonationMetadata alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INIntentDonationMetadata allocWithZone(VoidPtr zone);

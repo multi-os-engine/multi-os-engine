@@ -49,6 +49,7 @@ public class MPSNNMultiaryGradientState extends MPSState {
     @Selector("alloc")
     public static native MPSNNMultiaryGradientState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNMultiaryGradientState allocWithZone(VoidPtr zone);

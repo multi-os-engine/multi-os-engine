@@ -55,6 +55,7 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CPManeuver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPManeuver allocWithZone(VoidPtr zone);

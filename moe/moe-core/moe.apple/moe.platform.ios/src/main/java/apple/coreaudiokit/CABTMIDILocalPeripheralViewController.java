@@ -64,6 +64,7 @@ public class CABTMIDILocalPeripheralViewController extends UIViewController {
     @Selector("alloc")
     public static native CABTMIDILocalPeripheralViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CABTMIDILocalPeripheralViewController allocWithZone(VoidPtr zone);

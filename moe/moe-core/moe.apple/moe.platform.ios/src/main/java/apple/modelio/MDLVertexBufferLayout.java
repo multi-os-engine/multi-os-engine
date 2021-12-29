@@ -68,6 +68,7 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MDLVertexBufferLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLVertexBufferLayout allocWithZone(VoidPtr zone);

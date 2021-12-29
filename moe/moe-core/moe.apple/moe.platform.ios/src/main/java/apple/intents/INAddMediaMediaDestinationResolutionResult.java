@@ -45,6 +45,7 @@ public class INAddMediaMediaDestinationResolutionResult extends INMediaDestinati
     @Selector("alloc")
     public static native INAddMediaMediaDestinationResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INAddMediaMediaDestinationResolutionResult allocWithZone(VoidPtr zone);

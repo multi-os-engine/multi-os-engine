@@ -72,6 +72,7 @@ public class NEFlowMetaData extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native NEFlowMetaData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFlowMetaData allocWithZone(VoidPtr zone);

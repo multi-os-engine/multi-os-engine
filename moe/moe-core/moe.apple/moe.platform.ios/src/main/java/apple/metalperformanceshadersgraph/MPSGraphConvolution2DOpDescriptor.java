@@ -47,6 +47,7 @@ public class MPSGraphConvolution2DOpDescriptor extends NSObject implements NSCop
     @Selector("alloc")
     public static native MPSGraphConvolution2DOpDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphConvolution2DOpDescriptor allocWithZone(VoidPtr zone);

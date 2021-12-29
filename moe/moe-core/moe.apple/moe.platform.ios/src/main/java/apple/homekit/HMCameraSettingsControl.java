@@ -64,6 +64,7 @@ public class HMCameraSettingsControl extends HMCameraControl {
     @Selector("alloc")
     public static native HMCameraSettingsControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCameraSettingsControl allocWithZone(VoidPtr zone);

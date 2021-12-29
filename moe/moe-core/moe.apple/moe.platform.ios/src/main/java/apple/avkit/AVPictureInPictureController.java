@@ -71,6 +71,7 @@ public class AVPictureInPictureController extends NSObject {
     @Selector("alloc")
     public static native AVPictureInPictureController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPictureInPictureController allocWithZone(VoidPtr zone);

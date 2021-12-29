@@ -67,6 +67,7 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject
     @Selector("alloc")
     public static native NSMapTable<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMapTable<?, ?> allocWithZone(VoidPtr zone);

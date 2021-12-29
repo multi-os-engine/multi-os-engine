@@ -48,6 +48,7 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     @Selector("alloc")
     public static native NSBatchInsertRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBatchInsertRequest allocWithZone(VoidPtr zone);

@@ -70,6 +70,7 @@ public class CMAltitudeData extends CMLogItem {
     @Selector("alloc")
     public static native CMAltitudeData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMAltitudeData allocWithZone(VoidPtr zone);

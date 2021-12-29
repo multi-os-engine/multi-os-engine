@@ -59,6 +59,7 @@ public class NSMetadataItem extends NSObject {
     @Selector("alloc")
     public static native NSMetadataItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMetadataItem allocWithZone(VoidPtr zone);

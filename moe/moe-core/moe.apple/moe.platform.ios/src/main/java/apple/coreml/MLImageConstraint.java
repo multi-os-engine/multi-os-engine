@@ -53,6 +53,7 @@ public class MLImageConstraint extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLImageConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLImageConstraint allocWithZone(VoidPtr zone);

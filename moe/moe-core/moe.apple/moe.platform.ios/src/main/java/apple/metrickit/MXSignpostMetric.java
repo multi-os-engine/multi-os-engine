@@ -54,6 +54,7 @@ public class MXSignpostMetric extends MXMetric {
     @Selector("alloc")
     public static native MXSignpostMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXSignpostMetric allocWithZone(VoidPtr zone);

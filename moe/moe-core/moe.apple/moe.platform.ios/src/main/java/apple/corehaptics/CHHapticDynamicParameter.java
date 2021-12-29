@@ -53,6 +53,7 @@ public class CHHapticDynamicParameter extends NSObject {
     @Selector("alloc")
     public static native CHHapticDynamicParameter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHHapticDynamicParameter allocWithZone(VoidPtr zone);

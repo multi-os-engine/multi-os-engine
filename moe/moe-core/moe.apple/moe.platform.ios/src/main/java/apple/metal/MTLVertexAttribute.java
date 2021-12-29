@@ -61,6 +61,7 @@ public class MTLVertexAttribute extends NSObject {
     @Selector("alloc")
     public static native MTLVertexAttribute alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLVertexAttribute allocWithZone(VoidPtr zone);

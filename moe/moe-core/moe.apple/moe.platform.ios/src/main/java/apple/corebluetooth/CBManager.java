@@ -61,6 +61,7 @@ public class CBManager extends NSObject {
     @Selector("alloc")
     public static native CBManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBManager allocWithZone(VoidPtr zone);

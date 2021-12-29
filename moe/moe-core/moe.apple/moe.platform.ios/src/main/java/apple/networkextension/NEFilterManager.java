@@ -72,6 +72,7 @@ public class NEFilterManager extends NSObject {
     @Selector("alloc")
     public static native NEFilterManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterManager allocWithZone(VoidPtr zone);

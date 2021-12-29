@@ -62,6 +62,7 @@ public class SKReceiptRefreshRequest extends SKRequest {
     @Selector("alloc")
     public static native SKReceiptRefreshRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKReceiptRefreshRequest allocWithZone(VoidPtr zone);

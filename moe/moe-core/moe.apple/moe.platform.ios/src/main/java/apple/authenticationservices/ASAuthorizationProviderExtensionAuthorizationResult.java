@@ -48,6 +48,7 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     @Selector("alloc")
     public static native ASAuthorizationProviderExtensionAuthorizationResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationProviderExtensionAuthorizationResult allocWithZone(VoidPtr zone);

@@ -79,6 +79,7 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     @Selector("alloc")
     public static native GKRandomSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKRandomSource allocWithZone(VoidPtr zone);

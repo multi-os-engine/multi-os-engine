@@ -51,6 +51,7 @@ public class UIFocusSystem extends NSObject {
     @Selector("alloc")
     public static native UIFocusSystem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFocusSystem allocWithZone(VoidPtr zone);

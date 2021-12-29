@@ -54,6 +54,7 @@ public class ARMatteGenerator extends NSObject {
     @Selector("alloc")
     public static native ARMatteGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARMatteGenerator allocWithZone(VoidPtr zone);

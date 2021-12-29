@@ -51,6 +51,7 @@ public class CHIPApplicationLauncher extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPApplicationLauncher alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPApplicationLauncher allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPApplicationLauncher extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPApplicationLauncher initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPApplicationLauncher initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -181,4 +182,28 @@ public class CHIPApplicationLauncher extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("readAttributeApplicationIdWithResponseHandler:")
+    public native void readAttributeApplicationIdWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeApplicationIdWithResponseHandler") Block_readAttributeApplicationIdWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeApplicationIdWithResponseHandler {
+        @Generated
+        void call_readAttributeApplicationIdWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeCatalogVendorIdWithResponseHandler:")
+    public native void readAttributeCatalogVendorIdWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeCatalogVendorIdWithResponseHandler") Block_readAttributeCatalogVendorIdWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeCatalogVendorIdWithResponseHandler {
+        @Generated
+        void call_readAttributeCatalogVendorIdWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

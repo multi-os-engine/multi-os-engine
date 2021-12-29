@@ -48,6 +48,7 @@ public class CHIPManualSetupPayloadParser extends NSObject {
     @Selector("alloc")
     public static native CHIPManualSetupPayloadParser alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPManualSetupPayloadParser allocWithZone(VoidPtr zone);

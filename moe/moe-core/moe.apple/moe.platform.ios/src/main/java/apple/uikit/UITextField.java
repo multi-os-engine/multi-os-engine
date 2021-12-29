@@ -98,6 +98,7 @@ public class UITextField extends UIControl
     @Selector("alloc")
     public static native UITextField alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextField allocWithZone(VoidPtr zone);

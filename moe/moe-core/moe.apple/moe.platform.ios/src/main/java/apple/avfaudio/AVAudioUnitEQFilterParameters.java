@@ -53,6 +53,7 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
     @Selector("alloc")
     public static native AVAudioUnitEQFilterParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitEQFilterParameters allocWithZone(VoidPtr zone);

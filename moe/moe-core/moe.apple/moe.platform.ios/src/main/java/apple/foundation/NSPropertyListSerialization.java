@@ -62,6 +62,7 @@ public class NSPropertyListSerialization extends NSObject {
     @Selector("alloc")
     public static native NSPropertyListSerialization alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPropertyListSerialization allocWithZone(VoidPtr zone);

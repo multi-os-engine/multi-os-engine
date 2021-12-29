@@ -54,6 +54,7 @@ public class TKSmartCardUserInteraction extends NSObject {
     @Selector("alloc")
     public static native TKSmartCardUserInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardUserInteraction allocWithZone(VoidPtr zone);

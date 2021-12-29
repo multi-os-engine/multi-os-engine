@@ -69,6 +69,7 @@ public class NWTCPConnection extends NSObject {
     @Selector("alloc")
     public static native NWTCPConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NWTCPConnection allocWithZone(VoidPtr zone);

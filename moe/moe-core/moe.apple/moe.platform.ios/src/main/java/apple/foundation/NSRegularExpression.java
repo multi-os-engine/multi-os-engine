@@ -68,6 +68,7 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
     @Selector("alloc")
     public static native NSRegularExpression alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSRegularExpression allocWithZone(VoidPtr zone);

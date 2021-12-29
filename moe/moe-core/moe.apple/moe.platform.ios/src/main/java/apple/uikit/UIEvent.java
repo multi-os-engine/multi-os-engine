@@ -61,6 +61,7 @@ public class UIEvent extends NSObject {
     @Selector("alloc")
     public static native UIEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIEvent allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class AREnvironmentProbeAnchor extends ARAnchor {
     @Selector("alloc")
     public static native AREnvironmentProbeAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AREnvironmentProbeAnchor allocWithZone(VoidPtr zone);

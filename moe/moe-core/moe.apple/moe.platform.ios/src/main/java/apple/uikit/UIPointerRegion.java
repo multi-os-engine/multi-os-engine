@@ -49,6 +49,7 @@ public class UIPointerRegion extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPointerRegion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerRegion allocWithZone(VoidPtr zone);

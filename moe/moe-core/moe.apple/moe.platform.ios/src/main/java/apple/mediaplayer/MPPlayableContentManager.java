@@ -71,6 +71,7 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("alloc")
     public static native MPPlayableContentManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPPlayableContentManager allocWithZone(VoidPtr zone);

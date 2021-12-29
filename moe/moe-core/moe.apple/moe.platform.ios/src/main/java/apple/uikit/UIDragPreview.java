@@ -48,6 +48,7 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIDragPreview alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDragPreview allocWithZone(VoidPtr zone);

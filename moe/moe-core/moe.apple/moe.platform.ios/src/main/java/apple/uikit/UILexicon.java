@@ -63,6 +63,7 @@ public class UILexicon extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UILexicon alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILexicon allocWithZone(VoidPtr zone);

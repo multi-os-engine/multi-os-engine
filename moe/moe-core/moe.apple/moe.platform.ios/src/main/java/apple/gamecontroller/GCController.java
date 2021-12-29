@@ -74,6 +74,7 @@ public class GCController extends NSObject implements GCDevice {
     @Selector("alloc")
     public static native GCController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCController allocWithZone(VoidPtr zone);

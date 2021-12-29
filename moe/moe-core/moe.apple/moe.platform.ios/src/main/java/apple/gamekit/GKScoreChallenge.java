@@ -64,6 +64,7 @@ public class GKScoreChallenge extends GKChallenge {
     @Selector("alloc")
     public static native GKScoreChallenge alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKScoreChallenge allocWithZone(VoidPtr zone);

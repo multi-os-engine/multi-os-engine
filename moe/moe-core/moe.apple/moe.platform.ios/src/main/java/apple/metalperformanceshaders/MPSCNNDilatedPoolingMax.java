@@ -55,6 +55,7 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
     @Selector("alloc")
     public static native MPSCNNDilatedPoolingMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDilatedPoolingMax allocWithZone(VoidPtr zone);

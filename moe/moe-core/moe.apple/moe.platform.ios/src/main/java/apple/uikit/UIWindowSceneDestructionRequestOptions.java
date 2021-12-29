@@ -45,6 +45,7 @@ public class UIWindowSceneDestructionRequestOptions extends UISceneDestructionRe
     @Selector("alloc")
     public static native UIWindowSceneDestructionRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWindowSceneDestructionRequestOptions allocWithZone(VoidPtr zone);

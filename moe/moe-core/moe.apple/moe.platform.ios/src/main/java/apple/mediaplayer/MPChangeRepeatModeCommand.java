@@ -67,6 +67,7 @@ public class MPChangeRepeatModeCommand extends MPRemoteCommand {
     @Selector("alloc")
     public static native MPChangeRepeatModeCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPChangeRepeatModeCommand allocWithZone(VoidPtr zone);

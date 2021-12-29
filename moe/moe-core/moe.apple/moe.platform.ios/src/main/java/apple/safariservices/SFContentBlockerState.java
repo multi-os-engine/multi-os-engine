@@ -61,6 +61,7 @@ public class SFContentBlockerState extends NSObject {
     @Selector("alloc")
     public static native SFContentBlockerState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFContentBlockerState allocWithZone(VoidPtr zone);

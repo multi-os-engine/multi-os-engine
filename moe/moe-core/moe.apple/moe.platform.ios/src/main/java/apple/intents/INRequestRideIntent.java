@@ -65,6 +65,7 @@ public class INRequestRideIntent extends INIntent {
     @Selector("alloc")
     public static native INRequestRideIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRequestRideIntent allocWithZone(VoidPtr zone);

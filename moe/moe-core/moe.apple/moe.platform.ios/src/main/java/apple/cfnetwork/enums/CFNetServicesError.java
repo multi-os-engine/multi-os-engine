@@ -27,7 +27,7 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 public final class CFNetServicesError {
     /**
-     * An error of unknown type has occured.
+     * An error of unknown type has occurred.
      */
     @Generated public static final int Unknown = 0xFFFEE6C0;
     /**

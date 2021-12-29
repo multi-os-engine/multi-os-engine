@@ -48,6 +48,7 @@ public class HMTimeEvent extends HMEvent {
     @Selector("alloc")
     public static native HMTimeEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMTimeEvent allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class UIPointerHoverEffect extends UIPointerEffect {
     @Selector("alloc")
     public static native UIPointerHoverEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerHoverEffect allocWithZone(VoidPtr zone);

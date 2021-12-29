@@ -70,6 +70,7 @@ public class MPSImageGuidedFilter extends MPSKernel {
     @Selector("alloc")
     public static native MPSImageGuidedFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageGuidedFilter allocWithZone(VoidPtr zone);

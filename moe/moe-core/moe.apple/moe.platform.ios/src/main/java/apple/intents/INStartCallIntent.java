@@ -48,6 +48,7 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("alloc")
     public static native INStartCallIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INStartCallIntent allocWithZone(VoidPtr zone);

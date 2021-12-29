@@ -54,6 +54,7 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PKStroke alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKStroke allocWithZone(VoidPtr zone);

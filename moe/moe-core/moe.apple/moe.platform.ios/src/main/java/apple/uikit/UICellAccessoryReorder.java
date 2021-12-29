@@ -51,6 +51,7 @@ public class UICellAccessoryReorder extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryReorder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryReorder allocWithZone(VoidPtr zone);

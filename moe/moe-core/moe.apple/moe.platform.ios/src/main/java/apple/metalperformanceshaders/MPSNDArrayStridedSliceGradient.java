@@ -55,6 +55,7 @@ public class MPSNDArrayStridedSliceGradient extends MPSNDArrayUnaryGradientKerne
     @Selector("alloc")
     public static native MPSNDArrayStridedSliceGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayStridedSliceGradient allocWithZone(VoidPtr zone);

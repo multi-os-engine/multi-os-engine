@@ -51,6 +51,7 @@ public class INBillDetails extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native INBillDetails alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBillDetails allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class NSLayoutConstraint extends NSObject {
     @Selector("alloc")
     public static native NSLayoutConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLayoutConstraint allocWithZone(VoidPtr zone);

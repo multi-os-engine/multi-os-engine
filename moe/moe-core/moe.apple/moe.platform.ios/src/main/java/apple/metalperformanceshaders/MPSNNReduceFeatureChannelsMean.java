@@ -52,6 +52,7 @@ public class MPSNNReduceFeatureChannelsMean extends MPSNNReduceUnary {
     @Selector("alloc")
     public static native MPSNNReduceFeatureChannelsMean alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceFeatureChannelsMean allocWithZone(VoidPtr zone);

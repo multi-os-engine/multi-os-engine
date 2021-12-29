@@ -74,6 +74,7 @@ public class JSVirtualMachine extends NSObject {
     @Selector("alloc")
     public static native JSVirtualMachine alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native JSVirtualMachine allocWithZone(VoidPtr zone);

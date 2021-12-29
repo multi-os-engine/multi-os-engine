@@ -66,6 +66,7 @@ public class UNNotificationTrigger extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native UNNotificationTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationTrigger allocWithZone(VoidPtr zone);

@@ -70,6 +70,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @Selector("alloc")
     public static native AVMutableCompositionTrack alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableCompositionTrack allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class INWorkoutGoalUnitTypeResolutionResult extends INIntentResolutionRes
     @Selector("alloc")
     public static native INWorkoutGoalUnitTypeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INWorkoutGoalUnitTypeResolutionResult allocWithZone(VoidPtr zone);

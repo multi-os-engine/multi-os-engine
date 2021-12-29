@@ -48,6 +48,7 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
     @Selector("alloc")
     public static native VSSubscriptionRegistrationCenter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VSSubscriptionRegistrationCenter allocWithZone(VoidPtr zone);

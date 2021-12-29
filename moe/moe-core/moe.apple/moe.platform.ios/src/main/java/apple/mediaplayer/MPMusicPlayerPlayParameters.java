@@ -46,6 +46,7 @@ public class MPMusicPlayerPlayParameters extends NSObject {
     @Selector("alloc")
     public static native MPMusicPlayerPlayParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMusicPlayerPlayParameters allocWithZone(VoidPtr zone);

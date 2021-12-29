@@ -53,6 +53,7 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCFullyConnectedLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCFullyConnectedLayer allocWithZone(VoidPtr zone);

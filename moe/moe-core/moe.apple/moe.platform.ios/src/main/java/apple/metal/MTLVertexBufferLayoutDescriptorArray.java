@@ -61,6 +61,7 @@ public class MTLVertexBufferLayoutDescriptorArray extends NSObject {
     @Selector("alloc")
     public static native MTLVertexBufferLayoutDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLVertexBufferLayoutDescriptorArray allocWithZone(VoidPtr zone);

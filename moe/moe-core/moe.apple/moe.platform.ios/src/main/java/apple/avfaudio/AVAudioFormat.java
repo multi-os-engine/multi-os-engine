@@ -63,6 +63,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native AVAudioFormat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioFormat allocWithZone(VoidPtr zone);

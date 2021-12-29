@@ -53,6 +53,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCYOLOLossDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCYOLOLossDescriptor allocWithZone(VoidPtr zone);

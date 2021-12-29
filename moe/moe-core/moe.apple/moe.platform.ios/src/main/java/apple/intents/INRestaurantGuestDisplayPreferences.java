@@ -66,6 +66,7 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
     @Selector("alloc")
     public static native INRestaurantGuestDisplayPreferences alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRestaurantGuestDisplayPreferences allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CXSetMutedCallAction extends CXCallAction {
     @Selector("alloc")
     public static native CXSetMutedCallAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXSetMutedCallAction allocWithZone(VoidPtr zone);

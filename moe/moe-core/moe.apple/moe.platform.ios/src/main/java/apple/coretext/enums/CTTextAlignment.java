@@ -46,11 +46,11 @@ public final class CTTextAlignment {
     @Generated public static final byte TextAlignmentCenter = 2;
     @Generated public static final byte TextAlignmentJustified = 3;
     @Generated public static final byte TextAlignmentNatural = 4;
-    @Generated public static final byte LeftTextAlignment = 0;
-    @Generated public static final byte RightTextAlignment = 1;
-    @Generated public static final byte CenterTextAlignment = 2;
-    @Generated public static final byte JustifiedTextAlignment = 3;
-    @Generated public static final byte NaturalTextAlignment = 4;
+    @Deprecated @Generated public static final byte LeftTextAlignment = 0;
+    @Deprecated @Generated public static final byte RightTextAlignment = 1;
+    @Deprecated @Generated public static final byte CenterTextAlignment = 2;
+    @Deprecated @Generated public static final byte JustifiedTextAlignment = 3;
+    @Deprecated @Generated public static final byte NaturalTextAlignment = 4;
 
     @Generated
     private CTTextAlignment() {

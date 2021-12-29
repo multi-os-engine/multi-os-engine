@@ -57,6 +57,7 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
     @Selector("alloc")
     public static native GCVirtualControllerElementConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCVirtualControllerElementConfiguration allocWithZone(VoidPtr zone);

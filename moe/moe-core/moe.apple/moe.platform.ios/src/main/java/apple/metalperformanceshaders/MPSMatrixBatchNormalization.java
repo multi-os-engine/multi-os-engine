@@ -69,6 +69,7 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     @Selector("alloc")
     public static native MPSMatrixBatchNormalization alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixBatchNormalization allocWithZone(VoidPtr zone);

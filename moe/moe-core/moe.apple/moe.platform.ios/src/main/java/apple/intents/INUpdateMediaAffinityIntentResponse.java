@@ -48,6 +48,7 @@ public class INUpdateMediaAffinityIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INUpdateMediaAffinityIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INUpdateMediaAffinityIntentResponse allocWithZone(VoidPtr zone);

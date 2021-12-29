@@ -45,6 +45,7 @@ public class INPlaybackQueueLocationResolutionResult extends INIntentResolutionR
     @Selector("alloc")
     public static native INPlaybackQueueLocationResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPlaybackQueueLocationResolutionResult allocWithZone(VoidPtr zone);

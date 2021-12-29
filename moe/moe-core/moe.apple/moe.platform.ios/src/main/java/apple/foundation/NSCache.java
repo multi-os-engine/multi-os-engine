@@ -60,6 +60,7 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("alloc")
     public static native NSCache<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCache<?, ?> allocWithZone(VoidPtr zone);

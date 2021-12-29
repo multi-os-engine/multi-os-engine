@@ -54,6 +54,7 @@ public class MPSVectorDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPSVectorDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSVectorDescriptor allocWithZone(VoidPtr zone);

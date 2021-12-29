@@ -64,6 +64,7 @@ public class MTLArgument extends NSObject {
     @Selector("alloc")
     public static native MTLArgument alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLArgument allocWithZone(VoidPtr zone);

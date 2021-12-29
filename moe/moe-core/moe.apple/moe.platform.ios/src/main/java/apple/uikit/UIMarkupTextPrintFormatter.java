@@ -64,6 +64,7 @@ public class UIMarkupTextPrintFormatter extends UIPrintFormatter {
     @Selector("alloc")
     public static native UIMarkupTextPrintFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMarkupTextPrintFormatter allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class AVAssetTrackSegment extends NSObject {
     @Selector("alloc")
     public static native AVAssetTrackSegment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetTrackSegment allocWithZone(VoidPtr zone);

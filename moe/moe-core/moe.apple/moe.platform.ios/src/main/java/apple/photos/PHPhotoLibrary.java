@@ -69,6 +69,7 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("alloc")
     public static native PHPhotoLibrary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHPhotoLibrary allocWithZone(VoidPtr zone);

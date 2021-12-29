@@ -55,6 +55,7 @@ public class MPSCNNAdd extends MPSCNNArithmetic {
     @Selector("alloc")
     public static native MPSCNNAdd alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNAdd allocWithZone(VoidPtr zone);

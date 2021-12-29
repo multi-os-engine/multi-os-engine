@@ -74,6 +74,7 @@ public class MPSImageHistogram extends MPSKernel {
     @Selector("alloc")
     public static native MPSImageHistogram alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageHistogram allocWithZone(VoidPtr zone);

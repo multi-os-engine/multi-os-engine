@@ -74,6 +74,7 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native SCNPhysicsVehicleWheel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsVehicleWheel allocWithZone(VoidPtr zone);

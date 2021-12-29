@@ -52,6 +52,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     @Selector("alloc")
     public static native HMSignificantTimeEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMSignificantTimeEvent allocWithZone(VoidPtr zone);

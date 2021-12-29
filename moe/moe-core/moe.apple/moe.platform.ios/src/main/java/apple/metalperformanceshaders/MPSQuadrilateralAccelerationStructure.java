@@ -52,6 +52,7 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     @Selector("alloc")
     public static native MPSQuadrilateralAccelerationStructure alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSQuadrilateralAccelerationStructure allocWithZone(VoidPtr zone);

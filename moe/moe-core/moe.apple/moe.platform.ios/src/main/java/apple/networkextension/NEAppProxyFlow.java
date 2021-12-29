@@ -72,6 +72,7 @@ public class NEAppProxyFlow extends NSObject {
     @Selector("alloc")
     public static native NEAppProxyFlow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEAppProxyFlow allocWithZone(VoidPtr zone);

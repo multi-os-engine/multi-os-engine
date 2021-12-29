@@ -48,6 +48,7 @@ public class CPInformationItem extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPInformationItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPInformationItem allocWithZone(VoidPtr zone);

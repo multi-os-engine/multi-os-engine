@@ -74,6 +74,7 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     @Selector("alloc")
     public static native MPSCNNConvolutionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNConvolutionDescriptor allocWithZone(VoidPtr zone);

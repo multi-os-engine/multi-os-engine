@@ -61,6 +61,7 @@ public class MDLTextureSampler extends NSObject {
     @Selector("alloc")
     public static native MDLTextureSampler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTextureSampler allocWithZone(VoidPtr zone);

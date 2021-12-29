@@ -48,6 +48,7 @@ public class ARTrackedRaycast extends NSObject {
     @Selector("alloc")
     public static native ARTrackedRaycast alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARTrackedRaycast allocWithZone(VoidPtr zone);

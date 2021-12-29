@@ -68,6 +68,7 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNReduceUnary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceUnary allocWithZone(VoidPtr zone);

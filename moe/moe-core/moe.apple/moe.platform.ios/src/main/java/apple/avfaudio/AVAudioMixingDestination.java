@@ -58,6 +58,7 @@ public class AVAudioMixingDestination extends NSObject implements AVAudioMixing 
     @Selector("alloc")
     public static native AVAudioMixingDestination alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioMixingDestination allocWithZone(VoidPtr zone);

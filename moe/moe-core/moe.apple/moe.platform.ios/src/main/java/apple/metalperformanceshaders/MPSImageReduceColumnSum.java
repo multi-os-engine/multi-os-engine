@@ -52,6 +52,7 @@ public class MPSImageReduceColumnSum extends MPSImageReduceUnary {
     @Selector("alloc")
     public static native MPSImageReduceColumnSum alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageReduceColumnSum allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCOptimizerDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCOptimizerDescriptor allocWithZone(VoidPtr zone);

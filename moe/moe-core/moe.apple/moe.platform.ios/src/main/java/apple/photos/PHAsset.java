@@ -66,6 +66,7 @@ public class PHAsset extends PHObject {
     @Selector("alloc")
     public static native PHAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHAsset allocWithZone(VoidPtr zone);

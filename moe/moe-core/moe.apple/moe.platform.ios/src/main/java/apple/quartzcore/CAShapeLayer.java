@@ -93,6 +93,7 @@ public class CAShapeLayer extends CALayer {
     @Selector("alloc")
     public static native CAShapeLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAShapeLayer allocWithZone(VoidPtr zone);

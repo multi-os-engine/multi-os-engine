@@ -69,6 +69,7 @@ public class MPSTemporalAA extends MPSKernel implements NSSecureCoding, NSCopyin
     @Selector("alloc")
     public static native MPSTemporalAA alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSTemporalAA allocWithZone(VoidPtr zone);

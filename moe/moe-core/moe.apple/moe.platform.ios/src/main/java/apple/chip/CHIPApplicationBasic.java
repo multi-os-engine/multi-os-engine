@@ -51,6 +51,7 @@ public class CHIPApplicationBasic extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPApplicationBasic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPApplicationBasic allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPApplicationBasic extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPApplicationBasic initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPApplicationBasic initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,18 +147,6 @@ public class CHIPApplicationBasic extends CHIPCluster {
     public interface Block_readAttributeApplicationNameWithResponseHandler {
         @Generated
         void call_readAttributeApplicationNameWithResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
-    @Selector("readAttributeApplicationSatusWithResponseHandler:")
-    public native void readAttributeApplicationSatusWithResponseHandler(
-            @ObjCBlock(name = "call_readAttributeApplicationSatusWithResponseHandler") Block_readAttributeApplicationSatusWithResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_readAttributeApplicationSatusWithResponseHandler {
-        @Generated
-        void call_readAttributeApplicationSatusWithResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 
     @Generated
@@ -240,4 +229,28 @@ public class CHIPApplicationBasic extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("changeStatus:responseHandler:")
+    public native void changeStatusResponseHandler(byte status,
+            @ObjCBlock(name = "call_changeStatusResponseHandler") Block_changeStatusResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_changeStatusResponseHandler {
+        @Generated
+        void call_changeStatusResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeApplicationStatusWithResponseHandler:")
+    public native void readAttributeApplicationStatusWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeApplicationStatusWithResponseHandler") Block_readAttributeApplicationStatusWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeApplicationStatusWithResponseHandler {
+        @Generated
+        void call_readAttributeApplicationStatusWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

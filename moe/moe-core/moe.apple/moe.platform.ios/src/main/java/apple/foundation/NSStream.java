@@ -66,6 +66,7 @@ public class NSStream extends NSObject {
     @Selector("alloc")
     public static native NSStream alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSStream allocWithZone(VoidPtr zone);

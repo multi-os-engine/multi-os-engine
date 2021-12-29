@@ -51,6 +51,7 @@ public class CHIPBinaryInputBasic extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPBinaryInputBasic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPBinaryInputBasic allocWithZone(VoidPtr zone);
@@ -124,7 +125,7 @@ public class CHIPBinaryInputBasic extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPBinaryInputBasic initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPBinaryInputBasic initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -247,7 +248,7 @@ public class CHIPBinaryInputBasic extends CHIPCluster {
 
     @Generated
     @Selector("writeAttributeOutOfServiceWithValue:responseHandler:")
-    public native void writeAttributeOutOfServiceWithValueResponseHandler(byte value,
+    public native void writeAttributeOutOfServiceWithValueResponseHandler(boolean value,
             @ObjCBlock(name = "call_writeAttributeOutOfServiceWithValueResponseHandler") Block_writeAttributeOutOfServiceWithValueResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -259,7 +260,7 @@ public class CHIPBinaryInputBasic extends CHIPCluster {
 
     @Generated
     @Selector("writeAttributePresentValueWithValue:responseHandler:")
-    public native void writeAttributePresentValueWithValueResponseHandler(byte value,
+    public native void writeAttributePresentValueWithValueResponseHandler(boolean value,
             @ObjCBlock(name = "call_writeAttributePresentValueWithValueResponseHandler") Block_writeAttributePresentValueWithValueResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)

@@ -60,6 +60,7 @@ public class NSUnitElectricResistance extends NSDimension implements NSSecureCod
     @Selector("alloc")
     public static native NSUnitElectricResistance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitElectricResistance allocWithZone(VoidPtr zone);

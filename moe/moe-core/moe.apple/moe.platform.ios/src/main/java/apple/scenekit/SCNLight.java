@@ -82,6 +82,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     @Selector("alloc")
     public static native SCNLight alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNLight allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
     @Selector("alloc")
     public static native AVAudioCompressedBuffer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioCompressedBuffer allocWithZone(VoidPtr zone);

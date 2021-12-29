@@ -69,6 +69,7 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     @Selector("alloc")
     public static native GKSKNodeComponent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKSKNodeComponent allocWithZone(VoidPtr zone);

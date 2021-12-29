@@ -46,6 +46,7 @@ public class BCChatAction extends NSObject {
     @Selector("alloc")
     public static native BCChatAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BCChatAction allocWithZone(VoidPtr zone);

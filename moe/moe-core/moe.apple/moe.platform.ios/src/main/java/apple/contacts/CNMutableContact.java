@@ -80,6 +80,7 @@ public class CNMutableContact extends CNContact {
     @Selector("alloc")
     public static native CNMutableContact alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNMutableContact allocWithZone(VoidPtr zone);

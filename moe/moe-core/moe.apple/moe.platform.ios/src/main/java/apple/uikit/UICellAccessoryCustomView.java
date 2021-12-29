@@ -51,6 +51,7 @@ public class UICellAccessoryCustomView extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryCustomView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryCustomView allocWithZone(VoidPtr zone);

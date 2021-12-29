@@ -54,6 +54,7 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
     @Selector("alloc")
     public static native UIIndirectScribbleInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIIndirectScribbleInteraction allocWithZone(VoidPtr zone);

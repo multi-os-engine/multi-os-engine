@@ -54,6 +54,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("alloc")
     public static native ARGeoTrackingConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARGeoTrackingConfiguration allocWithZone(VoidPtr zone);

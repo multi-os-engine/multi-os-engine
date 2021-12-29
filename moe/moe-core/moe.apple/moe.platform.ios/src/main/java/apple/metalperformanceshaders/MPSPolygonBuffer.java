@@ -54,6 +54,7 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native MPSPolygonBuffer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSPolygonBuffer allocWithZone(VoidPtr zone);

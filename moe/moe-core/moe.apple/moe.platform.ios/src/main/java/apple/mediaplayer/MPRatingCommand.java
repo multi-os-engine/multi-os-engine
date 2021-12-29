@@ -61,6 +61,7 @@ public class MPRatingCommand extends MPRemoteCommand {
     @Selector("alloc")
     public static native MPRatingCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPRatingCommand allocWithZone(VoidPtr zone);

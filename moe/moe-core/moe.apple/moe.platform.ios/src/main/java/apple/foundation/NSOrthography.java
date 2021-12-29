@@ -65,6 +65,7 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native NSOrthography alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSOrthography allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native NSTextCheckingResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextCheckingResult allocWithZone(VoidPtr zone);

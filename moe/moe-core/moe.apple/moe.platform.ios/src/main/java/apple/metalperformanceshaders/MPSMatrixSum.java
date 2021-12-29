@@ -76,6 +76,7 @@ public class MPSMatrixSum extends MPSKernel {
     @Selector("alloc")
     public static native MPSMatrixSum alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixSum allocWithZone(VoidPtr zone);

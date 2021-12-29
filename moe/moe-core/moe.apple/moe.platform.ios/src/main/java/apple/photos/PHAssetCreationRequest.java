@@ -69,6 +69,7 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Selector("alloc")
     public static native PHAssetCreationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHAssetCreationRequest allocWithZone(VoidPtr zone);

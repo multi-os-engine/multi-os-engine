@@ -56,6 +56,7 @@ public class ARReferenceImage extends NSObject {
     @Selector("alloc")
     public static native ARReferenceImage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARReferenceImage allocWithZone(VoidPtr zone);

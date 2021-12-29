@@ -47,6 +47,7 @@ public class INListCarsIntent extends INIntent {
     @Selector("alloc")
     public static native INListCarsIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INListCarsIntent allocWithZone(VoidPtr zone);

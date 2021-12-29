@@ -58,6 +58,7 @@ public class MPSVector extends NSObject {
     @Selector("alloc")
     public static native MPSVector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSVector allocWithZone(VoidPtr zone);

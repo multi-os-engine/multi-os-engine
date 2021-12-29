@@ -71,6 +71,7 @@ public class CNContactRelation extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native CNContactRelation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactRelation allocWithZone(VoidPtr zone);

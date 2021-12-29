@@ -63,6 +63,7 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLStencilDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLStencilDescriptor allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class UIWindowScene extends UIScene {
     @Selector("alloc")
     public static native UIWindowScene alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWindowScene allocWithZone(VoidPtr zone);

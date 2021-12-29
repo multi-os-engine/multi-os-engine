@@ -61,6 +61,7 @@ public class MPRatingCommandEvent extends MPRemoteCommandEvent {
     @Selector("alloc")
     public static native MPRatingCommandEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPRatingCommandEvent allocWithZone(VoidPtr zone);

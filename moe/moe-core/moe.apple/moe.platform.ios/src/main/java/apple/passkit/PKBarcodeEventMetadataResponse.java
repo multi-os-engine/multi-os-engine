@@ -46,6 +46,7 @@ public class PKBarcodeEventMetadataResponse extends NSObject {
     @Selector("alloc")
     public static native PKBarcodeEventMetadataResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKBarcodeEventMetadataResponse allocWithZone(VoidPtr zone);

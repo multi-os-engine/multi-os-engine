@@ -49,6 +49,7 @@ public class ASAccountAuthenticationModificationViewController extends UIViewCon
     @Selector("alloc")
     public static native ASAccountAuthenticationModificationViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAccountAuthenticationModificationViewController allocWithZone(VoidPtr zone);

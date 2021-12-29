@@ -66,6 +66,7 @@ public class UITextChecker extends NSObject {
     @Selector("alloc")
     public static native UITextChecker alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextChecker allocWithZone(VoidPtr zone);

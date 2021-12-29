@@ -63,6 +63,7 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
     @Selector("alloc")
     public static native CKFetchShareParticipantsOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchShareParticipantsOperation allocWithZone(VoidPtr zone);

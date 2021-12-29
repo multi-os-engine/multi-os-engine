@@ -22,17 +22,18 @@ import org.moe.natj.general.ann.NInt;
 /**
  * Common error codes (returned only by the older APIs that predate CFError)
  */
+@Deprecated
 @Generated
 public final class CFURLError {
-    @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFF6L;
-    @Generated @NInt public static final long UnknownSchemeError = 0xFFFFFFFFFFFFFFF5L;
-    @Generated @NInt public static final long ResourceNotFoundError = 0xFFFFFFFFFFFFFFF4L;
-    @Generated @NInt public static final long ResourceAccessViolationError = 0xFFFFFFFFFFFFFFF3L;
-    @Generated @NInt public static final long RemoteHostUnavailableError = 0xFFFFFFFFFFFFFFF2L;
-    @Generated @NInt public static final long ImproperArgumentsError = 0xFFFFFFFFFFFFFFF1L;
-    @Generated @NInt public static final long UnknownPropertyKeyError = 0xFFFFFFFFFFFFFFF0L;
-    @Generated @NInt public static final long PropertyKeyUnavailableError = 0xFFFFFFFFFFFFFFEFL;
-    @Generated @NInt public static final long TimeoutError = 0xFFFFFFFFFFFFFFEEL;
+    @Deprecated @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFF6L;
+    @Deprecated @Generated @NInt public static final long UnknownSchemeError = 0xFFFFFFFFFFFFFFF5L;
+    @Deprecated @Generated @NInt public static final long ResourceNotFoundError = 0xFFFFFFFFFFFFFFF4L;
+    @Deprecated @Generated @NInt public static final long ResourceAccessViolationError = 0xFFFFFFFFFFFFFFF3L;
+    @Deprecated @Generated @NInt public static final long RemoteHostUnavailableError = 0xFFFFFFFFFFFFFFF2L;
+    @Deprecated @Generated @NInt public static final long ImproperArgumentsError = 0xFFFFFFFFFFFFFFF1L;
+    @Deprecated @Generated @NInt public static final long UnknownPropertyKeyError = 0xFFFFFFFFFFFFFFF0L;
+    @Deprecated @Generated @NInt public static final long PropertyKeyUnavailableError = 0xFFFFFFFFFFFFFFEFL;
+    @Deprecated @Generated @NInt public static final long TimeoutError = 0xFFFFFFFFFFFFFFEEL;
 
     @Generated
     private CFURLError() {

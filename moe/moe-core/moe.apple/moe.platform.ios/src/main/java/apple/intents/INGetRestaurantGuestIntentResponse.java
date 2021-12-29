@@ -64,6 +64,7 @@ public class INGetRestaurantGuestIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INGetRestaurantGuestIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetRestaurantGuestIntentResponse allocWithZone(VoidPtr zone);

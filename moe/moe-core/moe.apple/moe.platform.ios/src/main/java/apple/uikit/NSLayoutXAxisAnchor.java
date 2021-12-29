@@ -62,6 +62,7 @@ public class NSLayoutXAxisAnchor extends NSLayoutAnchor<NSLayoutXAxisAnchor> {
     @Selector("alloc")
     public static native NSLayoutXAxisAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLayoutXAxisAnchor allocWithZone(VoidPtr zone);

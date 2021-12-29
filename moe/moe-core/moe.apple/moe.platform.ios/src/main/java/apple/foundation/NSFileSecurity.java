@@ -65,6 +65,7 @@ public class NSFileSecurity extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native NSFileSecurity alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFileSecurity allocWithZone(VoidPtr zone);

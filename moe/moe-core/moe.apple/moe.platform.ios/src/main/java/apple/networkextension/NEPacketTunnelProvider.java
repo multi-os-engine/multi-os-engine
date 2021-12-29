@@ -71,6 +71,7 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
     @Selector("alloc")
     public static native NEPacketTunnelProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEPacketTunnelProvider allocWithZone(VoidPtr zone);

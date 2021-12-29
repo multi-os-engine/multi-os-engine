@@ -49,6 +49,7 @@ public class MDLAnimatedValue extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MDLAnimatedValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLAnimatedValue allocWithZone(VoidPtr zone);

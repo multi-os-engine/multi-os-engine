@@ -71,6 +71,7 @@ public class MPSCNNMultiplyGradient extends MPSCNNArithmeticGradient {
     @Selector("alloc")
     public static native MPSCNNMultiplyGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNMultiplyGradient allocWithZone(VoidPtr zone);

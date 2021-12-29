@@ -77,6 +77,7 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("alloc")
     public static native UISwitch alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISwitch allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class MPSCNNNeuronHardSigmoid extends MPSCNNNeuron {
     @Selector("alloc")
     public static native MPSCNNNeuronHardSigmoid alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronHardSigmoid allocWithZone(VoidPtr zone);

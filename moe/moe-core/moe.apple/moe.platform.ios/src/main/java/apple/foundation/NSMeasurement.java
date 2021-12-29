@@ -62,6 +62,7 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
     @Selector("alloc")
     public static native NSMeasurement<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMeasurement<?> allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class MTLRenderPipelineReflection extends NSObject {
     @Selector("alloc")
     public static native MTLRenderPipelineReflection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLRenderPipelineReflection allocWithZone(VoidPtr zone);

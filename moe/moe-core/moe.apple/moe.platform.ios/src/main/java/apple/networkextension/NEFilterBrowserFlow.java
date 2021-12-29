@@ -76,6 +76,7 @@ public class NEFilterBrowserFlow extends NEFilterFlow implements NSSecureCoding,
     @Selector("alloc")
     public static native NEFilterBrowserFlow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterBrowserFlow allocWithZone(VoidPtr zone);

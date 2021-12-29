@@ -69,6 +69,7 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     @Selector("alloc")
     public static native UITabBarItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITabBarItem allocWithZone(VoidPtr zone);

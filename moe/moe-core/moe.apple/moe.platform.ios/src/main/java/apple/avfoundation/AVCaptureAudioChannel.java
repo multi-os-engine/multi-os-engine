@@ -68,6 +68,7 @@ public class AVCaptureAudioChannel extends NSObject {
     @Selector("alloc")
     public static native AVCaptureAudioChannel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureAudioChannel allocWithZone(VoidPtr zone);

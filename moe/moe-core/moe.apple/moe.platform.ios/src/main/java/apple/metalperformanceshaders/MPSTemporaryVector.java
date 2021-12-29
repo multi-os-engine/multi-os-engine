@@ -54,6 +54,7 @@ public class MPSTemporaryVector extends MPSVector {
     @Selector("alloc")
     public static native MPSTemporaryVector alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSTemporaryVector allocWithZone(VoidPtr zone);

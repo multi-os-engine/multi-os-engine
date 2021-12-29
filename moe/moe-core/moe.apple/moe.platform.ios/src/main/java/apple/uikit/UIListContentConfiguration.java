@@ -69,6 +69,7 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     @Selector("alloc")
     public static native UIListContentConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIListContentConfiguration allocWithZone(VoidPtr zone);

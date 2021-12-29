@@ -50,6 +50,7 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIPreviewTarget alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPreviewTarget allocWithZone(VoidPtr zone);

@@ -2,8 +2,10 @@ package apple.chip;
 
 import apple.NSObject;
 import apple.chip.protocol.CHIPDevicePairingDelegate;
+import apple.chip.protocol.CHIPKeypair;
 import apple.chip.protocol.CHIPPersistentStorageDelegate;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSNumber;
@@ -24,6 +26,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
@@ -51,6 +54,7 @@ public class CHIPDeviceController extends NSObject {
     @Selector("alloc")
     public static native CHIPDeviceController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPDeviceController allocWithZone(VoidPtr zone);
@@ -142,11 +146,6 @@ public class CHIPDeviceController extends NSObject {
             char discriminator, int setupPINCode, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
-    @Selector("pairDevice:discriminator:setupPINCode:error:")
-    public native boolean pairDeviceDiscriminatorSetupPINCodeError(long deviceID, char discriminator, int setupPINCode,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
-
-    @Generated
     @Selector("pairDevice:onboardingPayload:onboardingPayloadType:error:")
     public native boolean pairDeviceOnboardingPayloadOnboardingPayloadTypeError(long deviceID, String onboardingPayload,
             @NUInt long onboardingPayloadType, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
@@ -197,16 +196,6 @@ public class CHIPDeviceController extends NSObject {
     @Selector("shutdown")
     public native boolean shutdown();
 
-    /**
-     * Start the CHIP Stack. Repeated calls to startup without calls to shutdown in between are NO-OPs. Use the isRunning property to
-     * check if the stack needs to be started up.
-     *
-     * @param[in] storageDelegate The delegate for persistent storage
-     */
-    @Generated
-    @Selector("startup:")
-    public native boolean startup(@Mapped(ObjCObjectMapper.class) CHIPPersistentStorageDelegate storageDelegate);
-
     @Generated
     @Selector("stopDevicePairing:error:")
     public native boolean stopDevicePairingError(long deviceID,
@@ -228,4 +217,39 @@ public class CHIPDeviceController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("getConnectedDevice:queue:completionHandler:")
+    public native boolean getConnectedDeviceQueueCompletionHandler(long deviceID, NSObject queue,
+            @ObjCBlock(name = "call_getConnectedDeviceQueueCompletionHandler") Block_getConnectedDeviceQueueCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getConnectedDeviceQueueCompletionHandler {
+        @Generated
+        void call_getConnectedDeviceQueueCompletionHandler(CHIPDevice device, NSError error);
+    }
+
+    @Generated
+    @Selector("isDevicePaired:error:")
+    public native boolean isDevicePairedError(long deviceID, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Selector("pairDevice:discriminator:setupPINCode:csrNonce:error:")
+    public native boolean pairDeviceDiscriminatorSetupPINCodeCsrNonceError(long deviceID, char discriminator,
+            int setupPINCode, NSData csrNonce, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * Start the CHIP Stack. Repeated calls to startup without calls to shutdown in between are NO-OPs. Use the isRunning property to
+     * check if the stack needs to be started up.
+     *
+     * @param[in] storageDelegate The delegate for persistent storage
+     * @param[in] vendorId The vendor ID of the commissioner application
+     * @param[in] nocSigner The CHIPKeypair that is used to generate and sign Node Operational Credentials
+     */
+    @Generated
+    @Selector("startup:vendorId:nocSigner:")
+    public native boolean startupVendorIdNocSigner(
+            @Mapped(ObjCObjectMapper.class) CHIPPersistentStorageDelegate storageDelegate, char vendorId,
+            @Mapped(ObjCObjectMapper.class) CHIPKeypair nocSigner);
 }

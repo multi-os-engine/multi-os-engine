@@ -48,6 +48,7 @@ public class ARRaycastResult extends NSObject {
     @Selector("alloc")
     public static native ARRaycastResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARRaycastResult allocWithZone(VoidPtr zone);

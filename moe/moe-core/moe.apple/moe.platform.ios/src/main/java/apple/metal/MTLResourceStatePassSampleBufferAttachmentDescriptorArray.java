@@ -45,6 +45,7 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptorArray extends N
     @Selector("alloc")
     public static native MTLResourceStatePassSampleBufferAttachmentDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLResourceStatePassSampleBufferAttachmentDescriptorArray allocWithZone(VoidPtr zone);

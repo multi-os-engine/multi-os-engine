@@ -46,6 +46,7 @@ public class MPSCNNDilatedPoolingMaxGradientNode extends MPSCNNPoolingGradientNo
     @Selector("alloc")
     public static native MPSCNNDilatedPoolingMaxGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDilatedPoolingMaxGradientNode allocWithZone(VoidPtr zone);

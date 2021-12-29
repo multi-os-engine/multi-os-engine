@@ -48,6 +48,7 @@ public class UIToolTipInteraction extends NSObject implements UIInteraction {
     @Selector("alloc")
     public static native UIToolTipInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIToolTipInteraction allocWithZone(VoidPtr zone);

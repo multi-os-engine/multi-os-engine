@@ -97,6 +97,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     @Selector("alloc")
     public static native EKAlarm alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKAlarm allocWithZone(VoidPtr zone);

@@ -75,6 +75,7 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageLaplacian alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageLaplacian allocWithZone(VoidPtr zone);

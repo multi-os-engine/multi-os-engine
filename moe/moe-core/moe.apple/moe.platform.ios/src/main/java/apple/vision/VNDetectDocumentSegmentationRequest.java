@@ -50,6 +50,7 @@ public class VNDetectDocumentSegmentationRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNDetectDocumentSegmentationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNDetectDocumentSegmentationRequest allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class MLCDropoutLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCDropoutLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCDropoutLayer allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class SCNAnimationEvent extends NSObject {
     @Selector("alloc")
     public static native SCNAnimationEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAnimationEvent allocWithZone(VoidPtr zone);

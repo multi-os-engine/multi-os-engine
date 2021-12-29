@@ -68,6 +68,7 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native UIButtonConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIButtonConfiguration allocWithZone(VoidPtr zone);

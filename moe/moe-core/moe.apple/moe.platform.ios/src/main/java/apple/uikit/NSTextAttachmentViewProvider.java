@@ -51,6 +51,7 @@ public class NSTextAttachmentViewProvider extends NSObject {
     @Selector("alloc")
     public static native NSTextAttachmentViewProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextAttachmentViewProvider allocWithZone(VoidPtr zone);

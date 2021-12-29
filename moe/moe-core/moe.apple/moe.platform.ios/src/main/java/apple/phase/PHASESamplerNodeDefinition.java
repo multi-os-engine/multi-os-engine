@@ -52,6 +52,7 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
     @Selector("alloc")
     public static native PHASESamplerNodeDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASESamplerNodeDefinition allocWithZone(VoidPtr zone);

@@ -48,24 +48,11 @@ public class CHIPOperationalCredentials extends CHIPCluster {
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
-    @Selector("addOpCert:iCACertificate:iPKValue:caseAdminNode:adminVendorId:responseHandler:")
-    public native void addOpCertICACertificateIPKValueCaseAdminNodeAdminVendorIdResponseHandler(NSData noc,
-            NSData iCACertificate, NSData iPKValue, long caseAdminNode, char adminVendorId,
-            @ObjCBlock(name = "call_addOpCertICACertificateIPKValueCaseAdminNodeAdminVendorIdResponseHandler") Block_addOpCertICACertificateIPKValueCaseAdminNodeAdminVendorIdResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addOpCertICACertificateIPKValueCaseAdminNodeAdminVendorIdResponseHandler {
-        @Generated
-        void call_addOpCertICACertificateIPKValueCaseAdminNodeAdminVendorIdResponseHandler(NSError error,
-                NSDictionary<?, ?> values);
-    }
-
-    @Generated
     @Owned
     @Selector("alloc")
     public static native CHIPOperationalCredentials alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPOperationalCredentials allocWithZone(VoidPtr zone);
@@ -111,7 +98,7 @@ public class CHIPOperationalCredentials extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPOperationalCredentials initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint,
+    public native CHIPOperationalCredentials initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
             NSObject queue);
 
     @Generated
@@ -177,48 +164,12 @@ public class CHIPOperationalCredentials extends CHIPCluster {
     }
 
     @Generated
-    @Selector("removeAllFabrics:")
-    public native void removeAllFabrics(
-            @ObjCBlock(name = "call_removeAllFabrics") Block_removeAllFabrics responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeAllFabrics {
-        @Generated
-        void call_removeAllFabrics(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
-    @Selector("removeFabric:nodeId:vendorId:responseHandler:")
-    public native void removeFabricNodeIdVendorIdResponseHandler(long fabricId, long nodeId, char vendorId,
-            @ObjCBlock(name = "call_removeFabricNodeIdVendorIdResponseHandler") Block_removeFabricNodeIdVendorIdResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_removeFabricNodeIdVendorIdResponseHandler {
-        @Generated
-        void call_removeFabricNodeIdVendorIdResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("setFabric:responseHandler:")
-    public native void setFabricResponseHandler(char vendorId,
-            @ObjCBlock(name = "call_setFabricResponseHandler") Block_setFabricResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setFabricResponseHandler {
-        @Generated
-        void call_setFabricResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
 
     @Generated
     @Selector("setVersion:")
@@ -244,4 +195,89 @@ public class CHIPOperationalCredentials extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("addNOC:iPKValue:caseAdminNode:adminVendorId:responseHandler:")
+    public native void addNOCIPKValueCaseAdminNodeAdminVendorIdResponseHandler(NSData nOCArray, NSData iPKValue,
+            long caseAdminNode, char adminVendorId,
+            @ObjCBlock(name = "call_addNOCIPKValueCaseAdminNodeAdminVendorIdResponseHandler") Block_addNOCIPKValueCaseAdminNodeAdminVendorIdResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addNOCIPKValueCaseAdminNodeAdminVendorIdResponseHandler {
+        @Generated
+        void call_addNOCIPKValueCaseAdminNodeAdminVendorIdResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("addTrustedRootCertificate:responseHandler:")
+    public native void addTrustedRootCertificateResponseHandler(NSData rootCertificate,
+            @ObjCBlock(name = "call_addTrustedRootCertificateResponseHandler") Block_addTrustedRootCertificateResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addTrustedRootCertificateResponseHandler {
+        @Generated
+        void call_addTrustedRootCertificateResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeCommissionedFabricsWithResponseHandler:")
+    public native void readAttributeCommissionedFabricsWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeCommissionedFabricsWithResponseHandler") Block_readAttributeCommissionedFabricsWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeCommissionedFabricsWithResponseHandler {
+        @Generated
+        void call_readAttributeCommissionedFabricsWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeSupportedFabricsWithResponseHandler:")
+    public native void readAttributeSupportedFabricsWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeSupportedFabricsWithResponseHandler") Block_readAttributeSupportedFabricsWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeSupportedFabricsWithResponseHandler {
+        @Generated
+        void call_readAttributeSupportedFabricsWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("removeFabric:responseHandler:")
+    public native void removeFabricResponseHandler(byte fabricIndex,
+            @ObjCBlock(name = "call_removeFabricResponseHandler") Block_removeFabricResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeFabricResponseHandler {
+        @Generated
+        void call_removeFabricResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("removeTrustedRootCertificate:responseHandler:")
+    public native void removeTrustedRootCertificateResponseHandler(NSData trustedRootIdentifier,
+            @ObjCBlock(name = "call_removeTrustedRootCertificateResponseHandler") Block_removeTrustedRootCertificateResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeTrustedRootCertificateResponseHandler {
+        @Generated
+        void call_removeTrustedRootCertificateResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("updateNOC:responseHandler:")
+    public native void updateNOCResponseHandler(NSData nOCArray,
+            @ObjCBlock(name = "call_updateNOCResponseHandler") Block_updateNOCResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateNOCResponseHandler {
+        @Generated
+        void call_updateNOCResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

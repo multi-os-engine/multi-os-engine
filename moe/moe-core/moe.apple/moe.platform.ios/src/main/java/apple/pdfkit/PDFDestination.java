@@ -50,6 +50,7 @@ public class PDFDestination extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PDFDestination alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFDestination allocWithZone(VoidPtr zone);

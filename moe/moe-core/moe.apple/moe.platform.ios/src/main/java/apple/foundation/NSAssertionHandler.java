@@ -59,6 +59,7 @@ public class NSAssertionHandler extends NSObject {
     @Selector("alloc")
     public static native NSAssertionHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAssertionHandler allocWithZone(VoidPtr zone);

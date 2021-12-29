@@ -70,6 +70,7 @@ public class SCNCylinder extends SCNGeometry {
     @Selector("alloc")
     public static native SCNCylinder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNCylinder allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class PHASEDistanceModelFadeOutParameters extends NSObject {
     @Selector("alloc")
     public static native PHASEDistanceModelFadeOutParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEDistanceModelFadeOutParameters allocWithZone(VoidPtr zone);

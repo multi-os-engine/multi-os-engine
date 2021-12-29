@@ -62,6 +62,7 @@ public class NSNetService extends NSObject {
     @Selector("alloc")
     public static native NSNetService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSNetService allocWithZone(VoidPtr zone);

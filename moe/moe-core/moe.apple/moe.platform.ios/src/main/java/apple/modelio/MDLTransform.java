@@ -73,6 +73,7 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @Selector("alloc")
     public static native MDLTransform alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTransform allocWithZone(VoidPtr zone);

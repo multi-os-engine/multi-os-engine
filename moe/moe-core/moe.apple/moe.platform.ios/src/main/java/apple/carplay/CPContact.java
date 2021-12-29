@@ -56,6 +56,7 @@ public class CPContact extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPContact alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPContact allocWithZone(VoidPtr zone);

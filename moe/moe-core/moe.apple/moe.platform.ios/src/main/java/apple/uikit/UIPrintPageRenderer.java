@@ -65,6 +65,7 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("alloc")
     public static native UIPrintPageRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrintPageRenderer allocWithZone(VoidPtr zone);

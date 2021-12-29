@@ -52,6 +52,7 @@ public class TKTLVRecord extends NSObject {
     @Selector("alloc")
     public static native TKTLVRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTLVRecord allocWithZone(VoidPtr zone);

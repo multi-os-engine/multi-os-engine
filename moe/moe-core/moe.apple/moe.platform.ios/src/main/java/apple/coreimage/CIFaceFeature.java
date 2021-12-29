@@ -68,6 +68,7 @@ public class CIFaceFeature extends CIFeature {
     @Selector("alloc")
     public static native CIFaceFeature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIFaceFeature allocWithZone(VoidPtr zone);

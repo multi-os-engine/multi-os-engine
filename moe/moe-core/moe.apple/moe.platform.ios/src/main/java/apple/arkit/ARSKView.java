@@ -71,6 +71,7 @@ public class ARSKView extends SKView implements ARSessionProviding {
     @Selector("alloc")
     public static native ARSKView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARSKView allocWithZone(VoidPtr zone);

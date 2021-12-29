@@ -64,6 +64,7 @@ public class INRestaurantGuest extends INPerson {
     @Selector("alloc")
     public static native INRestaurantGuest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRestaurantGuest allocWithZone(VoidPtr zone);

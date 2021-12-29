@@ -72,6 +72,7 @@ public class SFSafariViewController extends UIViewController {
     @Selector("alloc")
     public static native SFSafariViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSafariViewController allocWithZone(VoidPtr zone);

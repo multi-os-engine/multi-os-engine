@@ -70,6 +70,7 @@ public class GKAgent2D extends GKAgent implements NSSecureCoding {
     @Selector("alloc")
     public static native GKAgent2D alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAgent2D allocWithZone(VoidPtr zone);

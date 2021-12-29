@@ -77,6 +77,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native MPMediaQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaQuery allocWithZone(VoidPtr zone);

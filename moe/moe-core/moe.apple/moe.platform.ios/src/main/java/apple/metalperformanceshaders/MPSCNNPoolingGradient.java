@@ -93,6 +93,7 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSCNNPoolingGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingGradient allocWithZone(VoidPtr zone);

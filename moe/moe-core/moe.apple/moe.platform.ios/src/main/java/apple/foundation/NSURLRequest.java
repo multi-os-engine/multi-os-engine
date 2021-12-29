@@ -94,6 +94,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Selector("alloc")
     public static native NSURLRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLRequest allocWithZone(VoidPtr zone);

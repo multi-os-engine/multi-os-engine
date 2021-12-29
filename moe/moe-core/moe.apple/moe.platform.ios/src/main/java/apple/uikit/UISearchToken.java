@@ -49,6 +49,7 @@ public class UISearchToken extends NSObject {
     @Selector("alloc")
     public static native UISearchToken alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISearchToken allocWithZone(VoidPtr zone);

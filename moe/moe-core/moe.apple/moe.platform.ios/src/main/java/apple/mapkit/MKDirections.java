@@ -63,6 +63,7 @@ public class MKDirections extends NSObject {
     @Selector("alloc")
     public static native MKDirections alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKDirections allocWithZone(VoidPtr zone);

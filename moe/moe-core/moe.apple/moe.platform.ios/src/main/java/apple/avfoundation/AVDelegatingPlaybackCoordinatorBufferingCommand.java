@@ -55,6 +55,7 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand
     @Selector("alloc")
     public static native AVDelegatingPlaybackCoordinatorBufferingCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVDelegatingPlaybackCoordinatorBufferingCommand allocWithZone(VoidPtr zone);

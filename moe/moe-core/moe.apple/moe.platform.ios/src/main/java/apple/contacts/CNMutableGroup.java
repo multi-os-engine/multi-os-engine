@@ -69,6 +69,7 @@ public class CNMutableGroup extends CNGroup {
     @Selector("alloc")
     public static native CNMutableGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNMutableGroup allocWithZone(VoidPtr zone);

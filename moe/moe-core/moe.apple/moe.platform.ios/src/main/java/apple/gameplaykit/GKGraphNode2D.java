@@ -66,6 +66,7 @@ public class GKGraphNode2D extends GKGraphNode {
     @Selector("alloc")
     public static native GKGraphNode2D alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGraphNode2D allocWithZone(VoidPtr zone);

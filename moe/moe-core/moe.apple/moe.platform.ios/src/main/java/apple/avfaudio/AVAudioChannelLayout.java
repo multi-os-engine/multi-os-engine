@@ -57,6 +57,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native AVAudioChannelLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioChannelLayout allocWithZone(VoidPtr zone);

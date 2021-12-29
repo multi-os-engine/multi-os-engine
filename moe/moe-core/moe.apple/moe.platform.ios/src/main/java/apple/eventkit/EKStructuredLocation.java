@@ -65,6 +65,7 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Selector("alloc")
     public static native EKStructuredLocation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKStructuredLocation allocWithZone(VoidPtr zone);

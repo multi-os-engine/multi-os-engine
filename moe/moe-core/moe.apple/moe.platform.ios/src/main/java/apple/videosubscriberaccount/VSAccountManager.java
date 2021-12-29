@@ -69,6 +69,7 @@ public class VSAccountManager extends NSObject {
     @Selector("alloc")
     public static native VSAccountManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VSAccountManager allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
     @Selector("alloc")
     public static native UISpringTimingParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISpringTimingParameters allocWithZone(VoidPtr zone);

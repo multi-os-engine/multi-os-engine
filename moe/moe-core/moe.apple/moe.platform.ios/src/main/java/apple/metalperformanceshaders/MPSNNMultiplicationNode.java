@@ -48,6 +48,7 @@ public class MPSNNMultiplicationNode extends MPSNNBinaryArithmeticNode {
     @Selector("alloc")
     public static native MPSNNMultiplicationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNMultiplicationNode allocWithZone(VoidPtr zone);

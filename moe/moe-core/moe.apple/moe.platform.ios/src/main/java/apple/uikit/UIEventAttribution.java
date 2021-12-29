@@ -48,6 +48,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native UIEventAttribution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIEventAttribution allocWithZone(VoidPtr zone);

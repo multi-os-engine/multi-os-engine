@@ -75,6 +75,7 @@ public class LAContext extends NSObject {
     @Selector("alloc")
     public static native LAContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native LAContext allocWithZone(VoidPtr zone);

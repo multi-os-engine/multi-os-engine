@@ -48,6 +48,7 @@ public class INPlayMediaIntent extends INIntent {
     @Selector("alloc")
     public static native INPlayMediaIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPlayMediaIntent allocWithZone(VoidPtr zone);

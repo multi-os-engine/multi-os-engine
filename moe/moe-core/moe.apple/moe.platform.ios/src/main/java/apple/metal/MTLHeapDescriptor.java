@@ -66,6 +66,7 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLHeapDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLHeapDescriptor allocWithZone(VoidPtr zone);

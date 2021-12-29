@@ -63,6 +63,7 @@ public class EAAccessory extends NSObject {
     @Selector("alloc")
     public static native EAAccessory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EAAccessory allocWithZone(VoidPtr zone);

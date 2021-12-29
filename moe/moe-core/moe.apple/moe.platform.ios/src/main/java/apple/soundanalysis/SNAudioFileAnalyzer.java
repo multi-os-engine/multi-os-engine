@@ -71,6 +71,7 @@ public class SNAudioFileAnalyzer extends NSObject {
     @Selector("alloc")
     public static native SNAudioFileAnalyzer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SNAudioFileAnalyzer allocWithZone(VoidPtr zone);

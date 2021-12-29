@@ -49,6 +49,7 @@ public class MLUpdateContext extends NSObject {
     @Selector("alloc")
     public static native MLUpdateContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLUpdateContext allocWithZone(VoidPtr zone);

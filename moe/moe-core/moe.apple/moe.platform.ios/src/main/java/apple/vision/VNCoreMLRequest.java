@@ -52,6 +52,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @Selector("alloc")
     public static native VNCoreMLRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNCoreMLRequest allocWithZone(VoidPtr zone);

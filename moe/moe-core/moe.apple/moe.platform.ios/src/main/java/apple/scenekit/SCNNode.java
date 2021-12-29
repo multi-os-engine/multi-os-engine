@@ -103,6 +103,7 @@ public class SCNNode extends NSObject
     @Selector("alloc")
     public static native SCNNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNNode allocWithZone(VoidPtr zone);

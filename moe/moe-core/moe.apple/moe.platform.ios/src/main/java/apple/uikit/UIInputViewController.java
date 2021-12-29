@@ -68,6 +68,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("alloc")
     public static native UIInputViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIInputViewController allocWithZone(VoidPtr zone);

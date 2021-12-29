@@ -68,6 +68,7 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Selector("alloc")
     public static native UIUserNotificationAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIUserNotificationAction allocWithZone(VoidPtr zone);

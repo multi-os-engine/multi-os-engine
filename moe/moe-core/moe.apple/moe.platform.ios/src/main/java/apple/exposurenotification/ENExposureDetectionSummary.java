@@ -52,6 +52,7 @@ public class ENExposureDetectionSummary extends NSObject {
     @Selector("alloc")
     public static native ENExposureDetectionSummary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENExposureDetectionSummary allocWithZone(VoidPtr zone);

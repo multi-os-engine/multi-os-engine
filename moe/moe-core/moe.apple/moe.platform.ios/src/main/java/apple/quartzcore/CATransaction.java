@@ -63,6 +63,7 @@ public class CATransaction extends NSObject {
     @Selector("alloc")
     public static native CATransaction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CATransaction allocWithZone(VoidPtr zone);

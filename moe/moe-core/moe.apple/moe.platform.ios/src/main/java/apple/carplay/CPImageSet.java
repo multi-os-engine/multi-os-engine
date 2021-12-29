@@ -49,6 +49,7 @@ public class CPImageSet extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPImageSet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPImageSet allocWithZone(VoidPtr zone);

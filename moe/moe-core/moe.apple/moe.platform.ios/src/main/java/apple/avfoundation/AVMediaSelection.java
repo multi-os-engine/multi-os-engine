@@ -64,6 +64,7 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     @Selector("alloc")
     public static native AVMediaSelection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMediaSelection allocWithZone(VoidPtr zone);

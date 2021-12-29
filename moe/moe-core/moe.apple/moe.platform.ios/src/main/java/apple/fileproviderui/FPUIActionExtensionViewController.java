@@ -49,6 +49,7 @@ public class FPUIActionExtensionViewController extends UIViewController {
     @Selector("alloc")
     public static native FPUIActionExtensionViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native FPUIActionExtensionViewController allocWithZone(VoidPtr zone);

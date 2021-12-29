@@ -56,6 +56,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     @Selector("alloc")
     public static native ARGeoAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARGeoAnchor allocWithZone(VoidPtr zone);

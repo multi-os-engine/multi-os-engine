@@ -56,6 +56,7 @@ public class AVPlaybackCoordinator extends NSObject {
     @Selector("alloc")
     public static native AVPlaybackCoordinator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlaybackCoordinator allocWithZone(VoidPtr zone);

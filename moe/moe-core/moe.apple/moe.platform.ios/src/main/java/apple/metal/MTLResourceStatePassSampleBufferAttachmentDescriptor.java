@@ -48,6 +48,7 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptor extends NSObje
     @Selector("alloc")
     public static native MTLResourceStatePassSampleBufferAttachmentDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLResourceStatePassSampleBufferAttachmentDescriptor allocWithZone(VoidPtr zone);

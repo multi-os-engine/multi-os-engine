@@ -67,6 +67,7 @@ public class SKPhysicsJointSliding extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointSliding alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsJointSliding allocWithZone(VoidPtr zone);

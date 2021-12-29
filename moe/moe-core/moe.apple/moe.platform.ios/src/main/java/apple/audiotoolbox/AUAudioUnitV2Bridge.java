@@ -80,6 +80,7 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     @Selector("alloc")
     public static native AUAudioUnitV2Bridge alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUAudioUnitV2Bridge allocWithZone(VoidPtr zone);

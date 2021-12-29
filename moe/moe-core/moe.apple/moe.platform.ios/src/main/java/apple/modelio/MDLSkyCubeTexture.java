@@ -112,6 +112,7 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("alloc")
     public static native MDLSkyCubeTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLSkyCubeTexture allocWithZone(VoidPtr zone);

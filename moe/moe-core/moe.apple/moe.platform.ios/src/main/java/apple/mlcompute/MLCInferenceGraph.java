@@ -93,6 +93,7 @@ public class MLCInferenceGraph extends MLCGraph {
     @Selector("alloc")
     public static native MLCInferenceGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCInferenceGraph allocWithZone(VoidPtr zone);

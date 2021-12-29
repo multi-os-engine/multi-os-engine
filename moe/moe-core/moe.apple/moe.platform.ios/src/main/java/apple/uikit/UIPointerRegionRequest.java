@@ -47,6 +47,7 @@ public class UIPointerRegionRequest extends NSObject {
     @Selector("alloc")
     public static native UIPointerRegionRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerRegionRequest allocWithZone(VoidPtr zone);

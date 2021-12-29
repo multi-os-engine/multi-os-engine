@@ -48,6 +48,7 @@ public class DCAppAttestService extends NSObject {
     @Selector("alloc")
     public static native DCAppAttestService alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DCAppAttestService allocWithZone(VoidPtr zone);

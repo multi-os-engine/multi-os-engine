@@ -47,6 +47,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
     @Selector("alloc")
     public static native NSCollectionLayoutSupplementaryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutSupplementaryItem allocWithZone(VoidPtr zone);

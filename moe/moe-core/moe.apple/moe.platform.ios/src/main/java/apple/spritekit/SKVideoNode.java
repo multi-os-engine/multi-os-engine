@@ -72,6 +72,7 @@ public class SKVideoNode extends SKNode {
     @Selector("alloc")
     public static native SKVideoNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKVideoNode allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class PKTool extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PKTool alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKTool allocWithZone(VoidPtr zone);

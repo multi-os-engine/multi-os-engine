@@ -49,6 +49,7 @@ public class HMMutableSignificantTimeEvent extends HMSignificantTimeEvent {
     @Selector("alloc")
     public static native HMMutableSignificantTimeEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMMutableSignificantTimeEvent allocWithZone(VoidPtr zone);

@@ -46,6 +46,7 @@ public class PKBarcodeEventSignatureResponse extends NSObject {
     @Selector("alloc")
     public static native PKBarcodeEventSignatureResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKBarcodeEventSignatureResponse allocWithZone(VoidPtr zone);

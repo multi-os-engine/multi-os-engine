@@ -52,6 +52,7 @@ public class CHHapticEvent extends NSObject {
     @Selector("alloc")
     public static native CHHapticEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHHapticEvent allocWithZone(VoidPtr zone);

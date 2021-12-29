@@ -48,6 +48,7 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Selector("alloc")
     public static native NSCollectionLayoutGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCollectionLayoutGroup allocWithZone(VoidPtr zone);

@@ -72,6 +72,7 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
     @Selector("alloc")
     public static native NEOnDemandRuleEvaluateConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEOnDemandRuleEvaluateConnection allocWithZone(VoidPtr zone);

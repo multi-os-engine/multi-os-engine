@@ -54,6 +54,7 @@ public class INAirportGate extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native INAirportGate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INAirportGate allocWithZone(VoidPtr zone);

@@ -72,6 +72,7 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
     @Selector("alloc")
     public static native GKLinearCongruentialRandomSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKLinearCongruentialRandomSource allocWithZone(VoidPtr zone);

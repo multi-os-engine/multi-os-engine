@@ -63,6 +63,7 @@ public class MKMapSnapshotter extends NSObject {
     @Selector("alloc")
     public static native MKMapSnapshotter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMapSnapshotter allocWithZone(VoidPtr zone);

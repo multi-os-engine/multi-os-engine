@@ -69,6 +69,7 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     @Selector("alloc")
     public static native INUIAddVoiceShortcutButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INUIAddVoiceShortcutButton allocWithZone(VoidPtr zone);

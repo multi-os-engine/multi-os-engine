@@ -67,6 +67,7 @@ public class UIDynamicAnimator extends NSObject {
     @Selector("alloc")
     public static native UIDynamicAnimator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDynamicAnimator allocWithZone(VoidPtr zone);

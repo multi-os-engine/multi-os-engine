@@ -69,6 +69,7 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native AVAudioMixInputParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioMixInputParameters allocWithZone(VoidPtr zone);

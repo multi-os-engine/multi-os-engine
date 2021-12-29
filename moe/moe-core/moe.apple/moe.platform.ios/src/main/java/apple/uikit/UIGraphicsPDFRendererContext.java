@@ -66,6 +66,7 @@ public class UIGraphicsPDFRendererContext extends UIGraphicsRendererContext {
     @Selector("alloc")
     public static native UIGraphicsPDFRendererContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIGraphicsPDFRendererContext allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("alloc")
     public static native CKFetchRecordZonesOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchRecordZonesOperation allocWithZone(VoidPtr zone);

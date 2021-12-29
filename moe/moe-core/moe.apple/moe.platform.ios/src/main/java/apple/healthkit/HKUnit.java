@@ -66,6 +66,7 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native HKUnit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKUnit allocWithZone(VoidPtr zone);

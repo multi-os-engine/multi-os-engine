@@ -65,6 +65,7 @@ public class PDFPage extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PDFPage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFPage allocWithZone(VoidPtr zone);

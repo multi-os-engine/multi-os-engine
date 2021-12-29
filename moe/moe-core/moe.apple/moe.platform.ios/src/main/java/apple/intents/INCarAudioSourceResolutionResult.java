@@ -61,6 +61,7 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INCarAudioSourceResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCarAudioSourceResolutionResult allocWithZone(VoidPtr zone);

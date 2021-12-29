@@ -103,6 +103,7 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNBinaryConvolution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBinaryConvolution allocWithZone(VoidPtr zone);

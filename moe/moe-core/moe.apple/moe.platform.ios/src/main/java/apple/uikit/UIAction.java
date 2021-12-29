@@ -70,6 +70,7 @@ public class UIAction extends UIMenuElement {
     @Selector("alloc")
     public static native UIAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIAction allocWithZone(VoidPtr zone);

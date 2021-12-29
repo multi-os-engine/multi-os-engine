@@ -63,6 +63,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     @Selector("alloc")
     public static native MPSMatrixNeuronGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixNeuronGradient allocWithZone(VoidPtr zone);

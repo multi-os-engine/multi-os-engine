@@ -90,6 +90,7 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImagePyramid alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImagePyramid allocWithZone(VoidPtr zone);

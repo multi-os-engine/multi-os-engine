@@ -56,6 +56,7 @@ public class AVCameraCalibrationData extends NSObject {
     @Selector("alloc")
     public static native AVCameraCalibrationData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCameraCalibrationData allocWithZone(VoidPtr zone);

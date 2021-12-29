@@ -55,6 +55,7 @@ public class INDefaultCardTemplate extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native INDefaultCardTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INDefaultCardTemplate allocWithZone(VoidPtr zone);

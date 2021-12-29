@@ -46,6 +46,7 @@ public class WKContextMenuElementInfo extends NSObject {
     @Selector("alloc")
     public static native WKContextMenuElementInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKContextMenuElementInfo allocWithZone(VoidPtr zone);

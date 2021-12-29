@@ -70,6 +70,7 @@ public class SCNCapsule extends SCNGeometry {
     @Selector("alloc")
     public static native SCNCapsule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNCapsule allocWithZone(VoidPtr zone);

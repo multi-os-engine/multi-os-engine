@@ -75,6 +75,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native HKObjectType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKObjectType allocWithZone(VoidPtr zone);

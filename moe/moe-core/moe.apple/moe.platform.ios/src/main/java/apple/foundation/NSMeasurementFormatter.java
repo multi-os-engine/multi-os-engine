@@ -60,6 +60,7 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
     @Selector("alloc")
     public static native NSMeasurementFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMeasurementFormatter allocWithZone(VoidPtr zone);

@@ -65,6 +65,7 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     @Selector("alloc")
     public static native NSFetchedPropertyDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSFetchedPropertyDescription allocWithZone(VoidPtr zone);

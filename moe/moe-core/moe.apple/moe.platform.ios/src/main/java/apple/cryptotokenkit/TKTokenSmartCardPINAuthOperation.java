@@ -81,6 +81,7 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     @Selector("alloc")
     public static native TKTokenSmartCardPINAuthOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenSmartCardPINAuthOperation allocWithZone(VoidPtr zone);

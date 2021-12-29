@@ -73,6 +73,7 @@ public class NEVPNConnection extends NSObject {
     @Selector("alloc")
     public static native NEVPNConnection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEVPNConnection allocWithZone(VoidPtr zone);

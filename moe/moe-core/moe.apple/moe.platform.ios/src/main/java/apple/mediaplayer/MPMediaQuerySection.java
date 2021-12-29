@@ -71,6 +71,7 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
     @Selector("alloc")
     public static native MPMediaQuerySection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMediaQuerySection allocWithZone(VoidPtr zone);

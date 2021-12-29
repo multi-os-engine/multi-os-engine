@@ -67,6 +67,7 @@ public class MKUserLocation extends NSObject implements MKAnnotation {
     @Selector("alloc")
     public static native MKUserLocation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKUserLocation allocWithZone(VoidPtr zone);

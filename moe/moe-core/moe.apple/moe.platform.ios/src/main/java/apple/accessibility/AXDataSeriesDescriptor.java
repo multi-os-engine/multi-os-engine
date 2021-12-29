@@ -51,6 +51,7 @@ public class AXDataSeriesDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AXDataSeriesDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AXDataSeriesDescriptor allocWithZone(VoidPtr zone);

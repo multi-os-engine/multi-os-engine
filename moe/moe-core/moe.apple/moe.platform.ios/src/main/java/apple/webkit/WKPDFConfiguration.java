@@ -49,6 +49,7 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native WKPDFConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKPDFConfiguration allocWithZone(VoidPtr zone);

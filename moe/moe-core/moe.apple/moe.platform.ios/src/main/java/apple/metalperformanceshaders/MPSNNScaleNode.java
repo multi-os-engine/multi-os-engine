@@ -53,6 +53,7 @@ public class MPSNNScaleNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNScaleNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNScaleNode allocWithZone(VoidPtr zone);

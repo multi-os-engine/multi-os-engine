@@ -45,6 +45,7 @@ public class INSendMessageAttachment extends NSObject {
     @Selector("alloc")
     public static native INSendMessageAttachment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendMessageAttachment allocWithZone(VoidPtr zone);

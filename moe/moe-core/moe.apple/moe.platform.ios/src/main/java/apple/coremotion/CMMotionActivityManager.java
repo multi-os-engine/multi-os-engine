@@ -78,6 +78,7 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("alloc")
     public static native CMMotionActivityManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMMotionActivityManager allocWithZone(VoidPtr zone);

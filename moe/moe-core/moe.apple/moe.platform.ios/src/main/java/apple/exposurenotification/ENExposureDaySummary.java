@@ -51,6 +51,7 @@ public class ENExposureDaySummary extends NSObject {
     @Selector("alloc")
     public static native ENExposureDaySummary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENExposureDaySummary allocWithZone(VoidPtr zone);

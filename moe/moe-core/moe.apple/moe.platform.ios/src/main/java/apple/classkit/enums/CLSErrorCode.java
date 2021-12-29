@@ -16,6 +16,7 @@ import org.moe.natj.general.ann.NInt;
  * [@constant]  CLSErrorCodeInvalidCreate                Attempted to save new object that already exists in the data store.
  * [@constant]  CLSErrorCodeInvalidUpdate                Failed to save updated object in the data store.
  * [@constant]  CLSErrorCodePartialFailure               Returned if an operation resulted in a mix of successes and failures.
+ * [@constant]  CLSErrorCodeInvalidAccountCredentials    Returned if an operation failed because the user MAID account credentials are invalid.
  */
 @Generated
 public final class CLSErrorCode {
@@ -33,4 +34,5 @@ public final class CLSErrorCode {
     @Generated @NInt public static final long InvalidCreate = 0x0000000000000007L;
     @Generated @NInt public static final long InvalidUpdate = 0x0000000000000008L;
     @Generated @NInt public static final long PartialFailure = 0x0000000000000009L;
+    @Generated @NInt public static final long InvalidAccountCredentials = 0x000000000000000AL;
 }

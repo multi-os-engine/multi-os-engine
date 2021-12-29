@@ -76,6 +76,7 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
     @Selector("alloc")
     public static native MPSCNNPoolingAverage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPoolingAverage allocWithZone(VoidPtr zone);

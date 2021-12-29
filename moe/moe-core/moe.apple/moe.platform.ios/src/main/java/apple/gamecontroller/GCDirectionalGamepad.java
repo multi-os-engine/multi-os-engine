@@ -69,6 +69,7 @@ public class GCDirectionalGamepad extends GCMicroGamepad {
     @Selector("alloc")
     public static native GCDirectionalGamepad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCDirectionalGamepad allocWithZone(VoidPtr zone);

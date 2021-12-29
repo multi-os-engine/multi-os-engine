@@ -51,6 +51,7 @@ public class WKWebpagePreferences extends NSObject {
     @Selector("alloc")
     public static native WKWebpagePreferences alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKWebpagePreferences allocWithZone(VoidPtr zone);

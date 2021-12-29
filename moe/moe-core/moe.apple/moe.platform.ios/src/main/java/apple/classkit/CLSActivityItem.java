@@ -50,6 +50,7 @@ public class CLSActivityItem extends CLSObject {
     @Selector("alloc")
     public static native CLSActivityItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSActivityItem allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class ENTemporaryExposureKey extends NSObject {
     @Selector("alloc")
     public static native ENTemporaryExposureKey alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENTemporaryExposureKey allocWithZone(VoidPtr zone);

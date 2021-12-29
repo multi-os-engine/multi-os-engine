@@ -66,6 +66,7 @@ public class CBCentral extends CBPeer {
     @Selector("alloc")
     public static native CBCentral alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBCentral allocWithZone(VoidPtr zone);

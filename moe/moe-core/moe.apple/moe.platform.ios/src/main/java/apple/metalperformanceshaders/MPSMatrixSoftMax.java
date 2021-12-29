@@ -65,6 +65,7 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     @Selector("alloc")
     public static native MPSMatrixSoftMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixSoftMax allocWithZone(VoidPtr zone);

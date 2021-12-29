@@ -50,6 +50,7 @@ public class MLCConvolutionLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCConvolutionLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCConvolutionLayer allocWithZone(VoidPtr zone);

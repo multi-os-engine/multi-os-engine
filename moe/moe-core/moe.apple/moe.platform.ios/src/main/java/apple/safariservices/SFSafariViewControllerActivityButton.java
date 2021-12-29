@@ -58,6 +58,7 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
     @Selector("alloc")
     public static native SFSafariViewControllerActivityButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSafariViewControllerActivityButton allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Selector("alloc")
     public static native INSendMessageRecipientResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendMessageRecipientResolutionResult allocWithZone(VoidPtr zone);

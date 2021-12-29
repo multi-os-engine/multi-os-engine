@@ -72,6 +72,7 @@ public class AVAssetImageGenerator extends NSObject {
     @Selector("alloc")
     public static native AVAssetImageGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetImageGenerator allocWithZone(VoidPtr zone);

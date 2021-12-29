@@ -57,6 +57,7 @@ public class OSLogEntryBoundary extends OSLogEntry {
     @Selector("alloc")
     public static native OSLogEntryBoundary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogEntryBoundary allocWithZone(VoidPtr zone);

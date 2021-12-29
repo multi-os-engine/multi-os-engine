@@ -48,6 +48,7 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNUpsamplingBilinearNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNUpsamplingBilinearNode allocWithZone(VoidPtr zone);

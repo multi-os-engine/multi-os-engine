@@ -48,6 +48,7 @@ public class MTLCaptureDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLCaptureDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLCaptureDescriptor allocWithZone(VoidPtr zone);

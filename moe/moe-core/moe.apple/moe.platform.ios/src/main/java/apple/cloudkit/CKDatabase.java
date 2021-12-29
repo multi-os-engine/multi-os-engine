@@ -63,6 +63,7 @@ public class CKDatabase extends NSObject {
     @Selector("alloc")
     public static native CKDatabase alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKDatabase allocWithZone(VoidPtr zone);

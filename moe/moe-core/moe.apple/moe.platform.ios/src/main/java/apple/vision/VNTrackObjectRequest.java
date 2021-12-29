@@ -53,6 +53,7 @@ public class VNTrackObjectRequest extends VNTrackingRequest {
     @Selector("alloc")
     public static native VNTrackObjectRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNTrackObjectRequest allocWithZone(VoidPtr zone);

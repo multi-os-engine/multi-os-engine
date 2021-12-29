@@ -65,6 +65,7 @@ public class MPSCNNLocalContrastNormalizationNode extends MPSCNNNormalizationNod
     @Selector("alloc")
     public static native MPSCNNLocalContrastNormalizationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLocalContrastNormalizationNode allocWithZone(VoidPtr zone);

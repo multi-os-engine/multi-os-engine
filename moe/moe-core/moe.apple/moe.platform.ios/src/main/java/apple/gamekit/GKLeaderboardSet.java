@@ -71,6 +71,7 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     @Selector("alloc")
     public static native GKLeaderboardSet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKLeaderboardSet allocWithZone(VoidPtr zone);

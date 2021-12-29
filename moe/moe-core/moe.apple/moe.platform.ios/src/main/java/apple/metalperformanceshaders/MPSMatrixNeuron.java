@@ -71,6 +71,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     @Selector("alloc")
     public static native MPSMatrixNeuron alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixNeuron allocWithZone(VoidPtr zone);

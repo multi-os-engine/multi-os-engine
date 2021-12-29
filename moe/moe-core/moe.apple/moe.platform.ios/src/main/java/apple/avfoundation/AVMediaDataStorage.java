@@ -56,6 +56,7 @@ public class AVMediaDataStorage extends NSObject {
     @Selector("alloc")
     public static native AVMediaDataStorage alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMediaDataStorage allocWithZone(VoidPtr zone);

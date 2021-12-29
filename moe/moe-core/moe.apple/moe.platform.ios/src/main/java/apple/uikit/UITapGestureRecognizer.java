@@ -67,6 +67,7 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     @Selector("alloc")
     public static native UITapGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITapGestureRecognizer allocWithZone(VoidPtr zone);

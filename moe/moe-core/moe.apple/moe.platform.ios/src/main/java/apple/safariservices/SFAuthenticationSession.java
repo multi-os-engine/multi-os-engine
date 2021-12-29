@@ -70,6 +70,7 @@ public class SFAuthenticationSession extends NSObject {
     @Selector("alloc")
     public static native SFAuthenticationSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFAuthenticationSession allocWithZone(VoidPtr zone);

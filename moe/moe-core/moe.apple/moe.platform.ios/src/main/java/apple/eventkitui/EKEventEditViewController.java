@@ -69,6 +69,7 @@ public class EKEventEditViewController extends UINavigationController {
     @Selector("alloc")
     public static native EKEventEditViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKEventEditViewController allocWithZone(VoidPtr zone);

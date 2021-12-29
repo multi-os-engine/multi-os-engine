@@ -58,6 +58,7 @@ public class CIRenderDestination extends NSObject {
     @Selector("alloc")
     public static native CIRenderDestination alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIRenderDestination allocWithZone(VoidPtr zone);

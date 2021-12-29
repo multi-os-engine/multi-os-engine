@@ -52,6 +52,7 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Selector("alloc")
     public static native UILargeContentViewerInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILargeContentViewerInteraction allocWithZone(VoidPtr zone);

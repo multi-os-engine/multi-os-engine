@@ -50,6 +50,7 @@ public class MKLocalPointsOfInterestRequest extends NSObject implements NSCopyin
     @Selector("alloc")
     public static native MKLocalPointsOfInterestRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKLocalPointsOfInterestRequest allocWithZone(VoidPtr zone);

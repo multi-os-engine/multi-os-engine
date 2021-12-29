@@ -62,6 +62,7 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSNumberFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSNumberFormatter allocWithZone(VoidPtr zone);

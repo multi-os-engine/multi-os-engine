@@ -47,6 +47,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
     @Selector("alloc")
     public static native ASAuthorizationPlatformPublicKeyCredentialProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationPlatformPublicKeyCredentialProvider allocWithZone(VoidPtr zone);

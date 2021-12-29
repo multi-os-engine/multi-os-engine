@@ -63,6 +63,7 @@ public class UIPrinter extends NSObject {
     @Selector("alloc")
     public static native UIPrinter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrinter allocWithZone(VoidPtr zone);

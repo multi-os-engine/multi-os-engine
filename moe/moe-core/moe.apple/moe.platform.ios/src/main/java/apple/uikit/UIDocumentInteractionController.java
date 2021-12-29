@@ -68,6 +68,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Selector("alloc")
     public static native UIDocumentInteractionController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDocumentInteractionController allocWithZone(VoidPtr zone);

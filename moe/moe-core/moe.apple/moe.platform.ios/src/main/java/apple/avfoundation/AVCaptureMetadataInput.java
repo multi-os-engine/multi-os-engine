@@ -73,6 +73,7 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
     @Selector("alloc")
     public static native AVCaptureMetadataInput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureMetadataInput allocWithZone(VoidPtr zone);

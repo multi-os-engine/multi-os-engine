@@ -52,6 +52,7 @@ public class TKTokenKeychainCertificate extends TKTokenKeychainItem {
     @Selector("alloc")
     public static native TKTokenKeychainCertificate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenKeychainCertificate allocWithZone(VoidPtr zone);

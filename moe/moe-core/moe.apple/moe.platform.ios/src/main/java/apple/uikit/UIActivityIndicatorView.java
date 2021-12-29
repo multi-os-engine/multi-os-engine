@@ -77,6 +77,7 @@ public class UIActivityIndicatorView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native UIActivityIndicatorView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIActivityIndicatorView allocWithZone(VoidPtr zone);

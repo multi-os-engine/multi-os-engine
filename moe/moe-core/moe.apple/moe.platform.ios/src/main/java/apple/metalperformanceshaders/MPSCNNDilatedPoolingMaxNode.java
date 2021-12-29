@@ -50,6 +50,7 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNDilatedPoolingMaxNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDilatedPoolingMaxNode allocWithZone(VoidPtr zone);

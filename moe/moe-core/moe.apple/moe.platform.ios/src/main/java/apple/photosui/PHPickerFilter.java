@@ -50,6 +50,7 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PHPickerFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHPickerFilter allocWithZone(VoidPtr zone);

@@ -66,6 +66,7 @@ public class SKPhysicsJointLimit extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointLimit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsJointLimit allocWithZone(VoidPtr zone);

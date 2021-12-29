@@ -45,6 +45,7 @@ public class MPSNNReductionFeatureChannelsSumNode extends MPSNNUnaryReductionNod
     @Selector("alloc")
     public static native MPSNNReductionFeatureChannelsSumNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionFeatureChannelsSumNode allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class MPSImageLaplacianPyramidSubtract extends MPSImageLaplacianPyramid {
     @Selector("alloc")
     public static native MPSImageLaplacianPyramidSubtract alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageLaplacianPyramidSubtract allocWithZone(VoidPtr zone);

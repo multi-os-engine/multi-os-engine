@@ -62,6 +62,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @Selector("alloc")
     public static native GCMicroGamepad alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCMicroGamepad allocWithZone(VoidPtr zone);

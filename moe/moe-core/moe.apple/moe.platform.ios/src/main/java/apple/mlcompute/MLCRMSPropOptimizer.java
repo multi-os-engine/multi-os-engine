@@ -52,6 +52,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     @Selector("alloc")
     public static native MLCRMSPropOptimizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCRMSPropOptimizer allocWithZone(VoidPtr zone);

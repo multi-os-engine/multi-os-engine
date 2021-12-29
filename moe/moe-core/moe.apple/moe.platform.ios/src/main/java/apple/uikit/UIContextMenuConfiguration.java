@@ -47,6 +47,7 @@ public class UIContextMenuConfiguration extends NSObject {
     @Selector("alloc")
     public static native UIContextMenuConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIContextMenuConfiguration allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     @Selector("alloc")
     public static native NSTextTab alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextTab allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class SRPhoneUsageReport extends NSObject {
     @Selector("alloc")
     public static native SRPhoneUsageReport alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRPhoneUsageReport allocWithZone(VoidPtr zone);

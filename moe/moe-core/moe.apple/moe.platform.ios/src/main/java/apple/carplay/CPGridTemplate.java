@@ -48,6 +48,7 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("alloc")
     public static native CPGridTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPGridTemplate allocWithZone(VoidPtr zone);

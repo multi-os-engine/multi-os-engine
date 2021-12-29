@@ -51,6 +51,7 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTask allocWithZone(VoidPtr zone);

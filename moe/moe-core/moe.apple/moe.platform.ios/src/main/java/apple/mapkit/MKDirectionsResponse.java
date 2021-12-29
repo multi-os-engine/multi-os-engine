@@ -61,6 +61,7 @@ public class MKDirectionsResponse extends NSObject {
     @Selector("alloc")
     public static native MKDirectionsResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKDirectionsResponse allocWithZone(VoidPtr zone);

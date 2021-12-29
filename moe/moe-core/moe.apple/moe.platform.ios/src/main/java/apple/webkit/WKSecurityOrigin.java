@@ -68,6 +68,7 @@ public class WKSecurityOrigin extends NSObject {
     @Selector("alloc")
     public static native WKSecurityOrigin alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKSecurityOrigin allocWithZone(VoidPtr zone);

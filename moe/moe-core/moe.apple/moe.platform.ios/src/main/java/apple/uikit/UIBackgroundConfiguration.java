@@ -55,6 +55,7 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Selector("alloc")
     public static native UIBackgroundConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBackgroundConfiguration allocWithZone(VoidPtr zone);

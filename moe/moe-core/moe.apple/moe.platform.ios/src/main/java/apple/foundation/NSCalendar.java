@@ -70,6 +70,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSCalendar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCalendar allocWithZone(VoidPtr zone);

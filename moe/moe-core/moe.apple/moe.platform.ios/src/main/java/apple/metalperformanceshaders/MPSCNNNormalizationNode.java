@@ -48,6 +48,7 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSCNNNormalizationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNormalizationNode allocWithZone(VoidPtr zone);

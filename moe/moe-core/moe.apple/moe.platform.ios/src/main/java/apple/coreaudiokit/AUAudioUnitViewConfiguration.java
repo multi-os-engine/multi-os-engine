@@ -61,6 +61,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     @Selector("alloc")
     public static native AUAudioUnitViewConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUAudioUnitViewConfiguration allocWithZone(VoidPtr zone);

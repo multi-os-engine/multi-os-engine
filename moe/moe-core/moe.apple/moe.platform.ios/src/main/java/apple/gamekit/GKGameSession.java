@@ -70,6 +70,7 @@ public class GKGameSession extends NSObject {
     @Selector("alloc")
     public static native GKGameSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGameSession allocWithZone(VoidPtr zone);

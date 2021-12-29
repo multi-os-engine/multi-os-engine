@@ -52,6 +52,7 @@ public class MPSImageReduceRowMax extends MPSImageReduceUnary {
     @Selector("alloc")
     public static native MPSImageReduceRowMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageReduceRowMax allocWithZone(VoidPtr zone);

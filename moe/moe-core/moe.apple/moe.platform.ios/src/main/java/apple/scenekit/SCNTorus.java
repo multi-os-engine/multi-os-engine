@@ -70,6 +70,7 @@ public class SCNTorus extends SCNGeometry {
     @Selector("alloc")
     public static native SCNTorus alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNTorus allocWithZone(VoidPtr zone);

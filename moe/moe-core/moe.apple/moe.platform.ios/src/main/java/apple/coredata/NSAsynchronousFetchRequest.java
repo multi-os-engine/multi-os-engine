@@ -62,6 +62,7 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
     @Selector("alloc")
     public static native NSAsynchronousFetchRequest<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSAsynchronousFetchRequest<?> allocWithZone(VoidPtr zone);

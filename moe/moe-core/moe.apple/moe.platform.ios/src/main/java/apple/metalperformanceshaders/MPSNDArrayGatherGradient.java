@@ -55,6 +55,7 @@ public class MPSNDArrayGatherGradient extends MPSNDArrayBinaryPrimaryGradientKer
     @Selector("alloc")
     public static native MPSNDArrayGatherGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayGatherGradient allocWithZone(VoidPtr zone);

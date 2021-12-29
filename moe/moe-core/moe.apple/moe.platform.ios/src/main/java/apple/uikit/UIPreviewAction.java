@@ -70,6 +70,7 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
     @Selector("alloc")
     public static native UIPreviewAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPreviewAction allocWithZone(VoidPtr zone);

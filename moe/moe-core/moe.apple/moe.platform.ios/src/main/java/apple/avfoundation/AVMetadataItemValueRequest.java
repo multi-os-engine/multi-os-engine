@@ -62,6 +62,7 @@ public class AVMetadataItemValueRequest extends NSObject {
     @Selector("alloc")
     public static native AVMetadataItemValueRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataItemValueRequest allocWithZone(VoidPtr zone);

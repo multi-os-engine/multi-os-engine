@@ -51,6 +51,7 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     @Selector("alloc")
     public static native AVCoordinatedPlaybackParticipant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCoordinatedPlaybackParticipant allocWithZone(VoidPtr zone);

@@ -76,6 +76,7 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("alloc")
     public static native NEFilterFlow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterFlow allocWithZone(VoidPtr zone);

@@ -67,6 +67,7 @@ public class GKGoal extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native GKGoal alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGoal allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPSImageDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageDescriptor allocWithZone(VoidPtr zone);

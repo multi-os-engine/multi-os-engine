@@ -66,6 +66,7 @@ public class UICellAccessoryInsert extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryInsert alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryInsert allocWithZone(VoidPtr zone);

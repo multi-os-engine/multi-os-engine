@@ -62,6 +62,7 @@ public class MPChangePlaybackRateCommand extends MPRemoteCommand {
     @Selector("alloc")
     public static native MPChangePlaybackRateCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPChangePlaybackRateCommand allocWithZone(VoidPtr zone);

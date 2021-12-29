@@ -53,6 +53,7 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MLModelDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLModelDescription allocWithZone(VoidPtr zone);

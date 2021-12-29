@@ -46,6 +46,7 @@ public class AVAssetDownloadStorageManager extends NSObject {
     @Selector("alloc")
     public static native AVAssetDownloadStorageManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetDownloadStorageManager allocWithZone(VoidPtr zone);

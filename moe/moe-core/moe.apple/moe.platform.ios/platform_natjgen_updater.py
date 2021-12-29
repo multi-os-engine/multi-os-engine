@@ -45,6 +45,7 @@ OVERRIDES: Dict[str, FrameworkOverride] = {
     'CoreAudio': FrameworkOverride('CoreAudio', include_all_headers=True),
     'CoreServices': FrameworkOverride('CoreServices', exclude_default_header=True),
     'CoreTelephony': FrameworkOverride('CoreTelephony', include_all_headers=True),
+    'IOSurface': FrameworkOverride('IOSurface', include_headers=['IOSurfaceObjC.h']),
     'OpenGLES': FrameworkOverride('OpenGLES',
                                   include_headers=['EAGLDrawable.h', 'OpenGLES_ES1_Defines.h', 'OpenGLES_ES2_Defines.h',
                                                    'OpenGLES_ES3_Defines.h']),

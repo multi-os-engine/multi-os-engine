@@ -46,6 +46,7 @@ public class PKPaymentRequestCouponCodeUpdate extends PKPaymentRequestUpdate {
     @Selector("alloc")
     public static native PKPaymentRequestCouponCodeUpdate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKPaymentRequestCouponCodeUpdate allocWithZone(VoidPtr zone);

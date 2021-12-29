@@ -78,6 +78,7 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("alloc")
     public static native UIDocument alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDocument allocWithZone(VoidPtr zone);

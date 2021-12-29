@@ -71,6 +71,7 @@ public class EKParticipant extends EKObject implements NSCopying {
     @Selector("alloc")
     public static native EKParticipant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKParticipant allocWithZone(VoidPtr zone);

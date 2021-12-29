@@ -51,6 +51,7 @@ public class MKMultiPolygon extends MKShape implements MKOverlay, MKGeoJSONObjec
     @Selector("alloc")
     public static native MKMultiPolygon alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMultiPolygon allocWithZone(VoidPtr zone);

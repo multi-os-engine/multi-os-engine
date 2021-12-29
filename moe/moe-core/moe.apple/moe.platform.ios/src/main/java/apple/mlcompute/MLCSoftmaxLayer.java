@@ -50,6 +50,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCSoftmaxLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCSoftmaxLayer allocWithZone(VoidPtr zone);

@@ -58,6 +58,7 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @Selector("alloc")
     public static native NSDirectoryEnumerator<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDirectoryEnumerator<?> allocWithZone(VoidPtr zone);

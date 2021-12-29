@@ -70,6 +70,7 @@ public class SKRange extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native SKRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKRange allocWithZone(VoidPtr zone);

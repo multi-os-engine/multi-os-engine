@@ -48,6 +48,7 @@ public class VSAccountApplicationProvider extends NSObject {
     @Selector("alloc")
     public static native VSAccountApplicationProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VSAccountApplicationProvider allocWithZone(VoidPtr zone);

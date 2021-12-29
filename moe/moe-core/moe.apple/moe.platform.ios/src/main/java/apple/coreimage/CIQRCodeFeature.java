@@ -69,6 +69,7 @@ public class CIQRCodeFeature extends CIFeature implements NSSecureCoding, NSCopy
     @Selector("alloc")
     public static native CIQRCodeFeature alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIQRCodeFeature allocWithZone(VoidPtr zone);

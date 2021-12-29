@@ -97,6 +97,7 @@ public class UIStackView extends UIView {
     @Selector("alloc")
     public static native UIStackView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIStackView allocWithZone(VoidPtr zone);

@@ -631,8 +631,8 @@ public final class Enums {
     @Generated public static final int kAudioFormatFLAC = 0x666C6163;
     @Generated public static final int kAudioFormatOpus = 0x6F707573;
     @Generated public static final int kAudioFormatFlagsNativeEndian = 0x00000000;
-    @Generated public static final int kAudioFormatFlagsCanonical = 0x0000000C;
-    @Generated public static final int kAudioFormatFlagsAudioUnitCanonical = 0x00000C2C;
+    @Deprecated @Generated public static final int kAudioFormatFlagsCanonical = 0x0000000C;
+    @Deprecated @Generated public static final int kAudioFormatFlagsAudioUnitCanonical = 0x00000C2C;
     @Generated public static final int kAudioFormatFlagsNativeFloatPacked = 0x00000009;
     @Generated public static final int kAudio_UnimplementedError = 0xFFFFFFFC;
     @Generated public static final int kAudio_FileNotFoundError = 0xFFFFFFD5;

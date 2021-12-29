@@ -66,6 +66,7 @@ public class NSIncrementalStoreNode extends NSObject {
     @Selector("alloc")
     public static native NSIncrementalStoreNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSIncrementalStoreNode allocWithZone(VoidPtr zone);

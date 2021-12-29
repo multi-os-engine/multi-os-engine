@@ -45,6 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * -----------------------------------------------------------------------------
  * An MPMovieErrorLogEvent repesents a single error log entry.
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +69,7 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPMovieErrorLogEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMovieErrorLogEvent allocWithZone(VoidPtr zone);

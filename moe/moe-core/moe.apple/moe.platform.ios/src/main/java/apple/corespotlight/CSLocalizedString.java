@@ -84,6 +84,7 @@ public class CSLocalizedString extends NSString {
     @Selector("alloc")
     public static native CSLocalizedString alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSLocalizedString allocWithZone(VoidPtr zone);

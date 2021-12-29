@@ -64,6 +64,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSDateComponentsFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDateComponentsFormatter allocWithZone(VoidPtr zone);

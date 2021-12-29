@@ -61,6 +61,7 @@ public class MTLStructType extends MTLType {
     @Selector("alloc")
     public static native MTLStructType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLStructType allocWithZone(VoidPtr zone);

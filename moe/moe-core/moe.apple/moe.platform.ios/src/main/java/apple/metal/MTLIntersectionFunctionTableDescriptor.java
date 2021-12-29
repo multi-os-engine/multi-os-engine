@@ -47,6 +47,7 @@ public class MTLIntersectionFunctionTableDescriptor extends NSObject implements 
     @Selector("alloc")
     public static native MTLIntersectionFunctionTableDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLIntersectionFunctionTableDescriptor allocWithZone(VoidPtr zone);

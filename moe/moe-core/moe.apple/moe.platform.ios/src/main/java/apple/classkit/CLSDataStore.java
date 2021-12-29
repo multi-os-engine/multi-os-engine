@@ -61,6 +61,7 @@ public class CLSDataStore extends NSObject {
     @Selector("alloc")
     public static native CLSDataStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSDataStore allocWithZone(VoidPtr zone);

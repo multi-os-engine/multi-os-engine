@@ -61,6 +61,7 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     @Selector("alloc")
     public static native UIListContentImageProperties alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIListContentImageProperties allocWithZone(VoidPtr zone);

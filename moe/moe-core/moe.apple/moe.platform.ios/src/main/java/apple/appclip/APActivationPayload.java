@@ -63,6 +63,7 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
     @Selector("alloc")
     public static native APActivationPayload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native APActivationPayload allocWithZone(VoidPtr zone);

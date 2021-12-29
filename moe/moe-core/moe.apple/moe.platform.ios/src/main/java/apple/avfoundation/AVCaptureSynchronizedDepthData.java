@@ -52,6 +52,7 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
     @Selector("alloc")
     public static native AVCaptureSynchronizedDepthData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureSynchronizedDepthData allocWithZone(VoidPtr zone);

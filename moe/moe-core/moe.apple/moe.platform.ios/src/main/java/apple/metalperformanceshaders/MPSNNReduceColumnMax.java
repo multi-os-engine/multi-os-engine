@@ -52,6 +52,7 @@ public class MPSNNReduceColumnMax extends MPSNNReduceUnary {
     @Selector("alloc")
     public static native MPSNNReduceColumnMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceColumnMax allocWithZone(VoidPtr zone);

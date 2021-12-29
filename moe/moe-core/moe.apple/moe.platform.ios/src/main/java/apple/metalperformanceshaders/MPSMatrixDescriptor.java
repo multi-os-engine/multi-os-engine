@@ -70,6 +70,7 @@ public class MPSMatrixDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPSMatrixDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixDescriptor allocWithZone(VoidPtr zone);

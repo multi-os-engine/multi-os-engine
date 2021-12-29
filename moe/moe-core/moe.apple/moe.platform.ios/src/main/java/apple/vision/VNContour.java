@@ -60,6 +60,7 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
     @Selector("alloc")
     public static native VNContour alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNContour allocWithZone(VoidPtr zone);

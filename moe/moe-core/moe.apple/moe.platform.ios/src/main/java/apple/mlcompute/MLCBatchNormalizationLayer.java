@@ -50,6 +50,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCBatchNormalizationLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCBatchNormalizationLayer allocWithZone(VoidPtr zone);

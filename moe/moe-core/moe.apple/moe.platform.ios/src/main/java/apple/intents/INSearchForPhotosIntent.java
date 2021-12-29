@@ -64,6 +64,7 @@ public class INSearchForPhotosIntent extends INIntent {
     @Selector("alloc")
     public static native INSearchForPhotosIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSearchForPhotosIntent allocWithZone(VoidPtr zone);

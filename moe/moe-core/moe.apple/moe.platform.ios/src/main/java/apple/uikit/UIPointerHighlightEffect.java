@@ -48,6 +48,7 @@ public class UIPointerHighlightEffect extends UIPointerEffect {
     @Selector("alloc")
     public static native UIPointerHighlightEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPointerHighlightEffect allocWithZone(VoidPtr zone);

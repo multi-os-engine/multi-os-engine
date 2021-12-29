@@ -64,6 +64,7 @@ public class CIImageAccumulator extends NSObject {
     @Selector("alloc")
     public static native CIImageAccumulator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CIImageAccumulator allocWithZone(VoidPtr zone);

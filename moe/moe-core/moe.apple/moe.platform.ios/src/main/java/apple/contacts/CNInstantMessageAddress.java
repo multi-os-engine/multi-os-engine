@@ -71,6 +71,7 @@ public class CNInstantMessageAddress extends NSObject implements NSCopying, NSSe
     @Selector("alloc")
     public static native CNInstantMessageAddress alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNInstantMessageAddress allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
     @Selector("alloc")
     public static native GCDualSenseAdaptiveTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCDualSenseAdaptiveTrigger allocWithZone(VoidPtr zone);

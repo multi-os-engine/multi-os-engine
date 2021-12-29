@@ -61,6 +61,7 @@ public class AVMutableMediaSelection extends AVMediaSelection {
     @Selector("alloc")
     public static native AVMutableMediaSelection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableMediaSelection allocWithZone(VoidPtr zone);

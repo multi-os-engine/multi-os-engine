@@ -70,6 +70,7 @@ public class PHLivePhotoEditingContext extends NSObject {
     @Selector("alloc")
     public static native PHLivePhotoEditingContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHLivePhotoEditingContext allocWithZone(VoidPtr zone);

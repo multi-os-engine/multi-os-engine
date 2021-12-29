@@ -64,6 +64,7 @@ public class MDLAreaLight extends MDLPhysicallyPlausibleLight {
     @Selector("alloc")
     public static native MDLAreaLight alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLAreaLight allocWithZone(VoidPtr zone);

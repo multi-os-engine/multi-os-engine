@@ -53,6 +53,7 @@ public class AVPictureInPictureVideoCallViewController extends UIViewController 
     @Selector("alloc")
     public static native AVPictureInPictureVideoCallViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPictureInPictureVideoCallViewController allocWithZone(VoidPtr zone);

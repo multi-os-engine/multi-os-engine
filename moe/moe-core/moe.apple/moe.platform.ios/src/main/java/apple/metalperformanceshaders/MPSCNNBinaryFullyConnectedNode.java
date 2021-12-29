@@ -50,6 +50,7 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     @Selector("alloc")
     public static native MPSCNNBinaryFullyConnectedNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBinaryFullyConnectedNode allocWithZone(VoidPtr zone);

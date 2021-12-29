@@ -64,6 +64,7 @@ public class MDLCamera extends MDLObject {
     @Selector("alloc")
     public static native MDLCamera alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLCamera allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class PHASEGeometricSpreadingDistanceModelParameters extends PHASEDistanc
     @Selector("alloc")
     public static native PHASEGeometricSpreadingDistanceModelParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEGeometricSpreadingDistanceModelParameters allocWithZone(VoidPtr zone);

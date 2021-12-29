@@ -126,6 +126,7 @@ public class MPSKernel extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native MPSKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSKernel allocWithZone(VoidPtr zone);

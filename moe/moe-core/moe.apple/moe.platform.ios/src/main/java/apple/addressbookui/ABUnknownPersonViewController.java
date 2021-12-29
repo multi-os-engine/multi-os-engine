@@ -44,6 +44,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("AddressBookUI")
 @Runtime(ObjCRuntime.class)
@@ -67,6 +68,7 @@ public class ABUnknownPersonViewController extends UIViewController {
     @Selector("alloc")
     public static native ABUnknownPersonViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ABUnknownPersonViewController allocWithZone(VoidPtr zone);

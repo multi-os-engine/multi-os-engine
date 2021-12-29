@@ -49,6 +49,7 @@ public class SRSensorReader extends NSObject {
     @Selector("alloc")
     public static native SRSensorReader alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRSensorReader allocWithZone(VoidPtr zone);

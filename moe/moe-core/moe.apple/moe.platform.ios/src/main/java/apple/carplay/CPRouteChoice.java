@@ -62,6 +62,7 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native CPRouteChoice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPRouteChoice allocWithZone(VoidPtr zone);

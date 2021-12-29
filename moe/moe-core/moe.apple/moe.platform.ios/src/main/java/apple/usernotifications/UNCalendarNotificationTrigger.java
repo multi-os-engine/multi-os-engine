@@ -68,6 +68,7 @@ public class UNCalendarNotificationTrigger extends UNNotificationTrigger {
     @Selector("alloc")
     public static native UNCalendarNotificationTrigger alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNCalendarNotificationTrigger allocWithZone(VoidPtr zone);

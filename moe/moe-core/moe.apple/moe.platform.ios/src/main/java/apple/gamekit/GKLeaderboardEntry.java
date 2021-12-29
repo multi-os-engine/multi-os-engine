@@ -48,6 +48,7 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("alloc")
     public static native GKLeaderboardEntry alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKLeaderboardEntry allocWithZone(VoidPtr zone);

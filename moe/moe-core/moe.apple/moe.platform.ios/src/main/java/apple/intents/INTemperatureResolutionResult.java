@@ -63,6 +63,7 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INTemperatureResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTemperatureResolutionResult allocWithZone(VoidPtr zone);

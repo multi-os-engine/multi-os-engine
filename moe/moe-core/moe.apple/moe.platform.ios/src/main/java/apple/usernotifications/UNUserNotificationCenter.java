@@ -68,6 +68,7 @@ public class UNUserNotificationCenter extends NSObject {
     @Selector("alloc")
     public static native UNUserNotificationCenter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNUserNotificationCenter allocWithZone(VoidPtr zone);

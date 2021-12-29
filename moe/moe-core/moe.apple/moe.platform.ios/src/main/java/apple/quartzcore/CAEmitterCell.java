@@ -71,6 +71,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @Selector("alloc")
     public static native CAEmitterCell alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAEmitterCell allocWithZone(VoidPtr zone);

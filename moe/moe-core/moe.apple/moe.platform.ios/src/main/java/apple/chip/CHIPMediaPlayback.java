@@ -51,6 +51,7 @@ public class CHIPMediaPlayback extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPMediaPlayback alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPMediaPlayback allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPMediaPlayback extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPMediaPlayback initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPMediaPlayback initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -211,18 +212,6 @@ public class CHIPMediaPlayback extends CHIPCluster {
     }
 
     @Generated
-    @Selector("mediaSkipSeek:responseHandler:")
-    public native void mediaSkipSeekResponseHandler(long position,
-            @ObjCBlock(name = "call_mediaSkipSeekResponseHandler") Block_mediaSkipSeekResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_mediaSkipSeekResponseHandler {
-        @Generated
-        void call_mediaSkipSeekResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
     @Selector("mediaStartOver:")
     public native void mediaStartOver(@ObjCBlock(name = "call_mediaStartOver") Block_mediaStartOver responseHandler);
 
@@ -281,4 +270,16 @@ public class CHIPMediaPlayback extends CHIPCluster {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("mediaSeek:responseHandler:")
+    public native void mediaSeekResponseHandler(long position,
+            @ObjCBlock(name = "call_mediaSeekResponseHandler") Block_mediaSeekResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_mediaSeekResponseHandler {
+        @Generated
+        void call_mediaSeekResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 }

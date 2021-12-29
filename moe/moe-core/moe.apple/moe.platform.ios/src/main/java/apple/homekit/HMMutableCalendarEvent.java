@@ -49,6 +49,7 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
     @Selector("alloc")
     public static native HMMutableCalendarEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMMutableCalendarEvent allocWithZone(VoidPtr zone);

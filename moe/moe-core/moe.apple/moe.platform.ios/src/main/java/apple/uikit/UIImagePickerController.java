@@ -68,6 +68,7 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("alloc")
     public static native UIImagePickerController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIImagePickerController allocWithZone(VoidPtr zone);

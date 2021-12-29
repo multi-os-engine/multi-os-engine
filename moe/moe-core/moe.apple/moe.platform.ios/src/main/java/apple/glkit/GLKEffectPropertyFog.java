@@ -78,6 +78,7 @@ public class GLKEffectPropertyFog extends GLKEffectProperty {
     @Selector("alloc")
     public static native GLKEffectPropertyFog alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKEffectPropertyFog allocWithZone(VoidPtr zone);

@@ -81,6 +81,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKTileMapNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTileMapNode allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class UIFeedbackGenerator extends NSObject {
     @Selector("alloc")
     public static native UIFeedbackGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFeedbackGenerator allocWithZone(VoidPtr zone);

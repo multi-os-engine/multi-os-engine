@@ -45,6 +45,7 @@ public class MPSNNReductionSpatialMeanGradientNode extends MPSNNGradientFilterNo
     @Selector("alloc")
     public static native MPSNNReductionSpatialMeanGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionSpatialMeanGradientNode allocWithZone(VoidPtr zone);

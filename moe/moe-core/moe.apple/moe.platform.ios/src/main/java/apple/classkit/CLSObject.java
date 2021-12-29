@@ -54,6 +54,7 @@ public class CLSObject extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CLSObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSObject allocWithZone(VoidPtr zone);

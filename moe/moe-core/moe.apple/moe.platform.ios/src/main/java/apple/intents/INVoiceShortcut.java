@@ -54,6 +54,7 @@ public class INVoiceShortcut extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("alloc")
     public static native INVoiceShortcut alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INVoiceShortcut allocWithZone(VoidPtr zone);

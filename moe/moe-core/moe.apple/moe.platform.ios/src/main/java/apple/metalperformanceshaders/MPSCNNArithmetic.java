@@ -92,6 +92,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     @Selector("alloc")
     public static native MPSCNNArithmetic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNArithmetic allocWithZone(VoidPtr zone);

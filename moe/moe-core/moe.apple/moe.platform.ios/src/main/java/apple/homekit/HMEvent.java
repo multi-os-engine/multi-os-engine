@@ -65,6 +65,7 @@ public class HMEvent extends NSObject {
     @Selector("alloc")
     public static native HMEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMEvent allocWithZone(VoidPtr zone);

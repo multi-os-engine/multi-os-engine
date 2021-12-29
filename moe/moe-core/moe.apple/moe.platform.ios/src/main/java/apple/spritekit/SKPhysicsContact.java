@@ -65,6 +65,7 @@ public class SKPhysicsContact extends NSObject {
     @Selector("alloc")
     public static native SKPhysicsContact alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsContact allocWithZone(VoidPtr zone);

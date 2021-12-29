@@ -35,13 +35,13 @@ public final class Enums {
      */
     @Generated public static final long NSTextCheckingAllCustomTypes = 0xFFFFFFFF00000000L;
     @Generated public static final long NSTextCheckingAllTypes = 0xFFFFFFFFFFFFFFFFL;
-    @Generated public static final int NSWindowsNTOperatingSystem = 0x00000001;
-    @Generated public static final int NSWindows95OperatingSystem = 0x00000002;
-    @Generated public static final int NSSolarisOperatingSystem = 0x00000003;
-    @Generated public static final int NSHPUXOperatingSystem = 0x00000004;
-    @Generated public static final int NSMACHOperatingSystem = 0x00000005;
-    @Generated public static final int NSSunOSOperatingSystem = 0x00000006;
-    @Generated public static final int NSOSF1OperatingSystem = 0x00000007;
+    @Deprecated @Generated public static final int NSWindowsNTOperatingSystem = 0x00000001;
+    @Deprecated @Generated public static final int NSWindows95OperatingSystem = 0x00000002;
+    @Deprecated @Generated public static final int NSSolarisOperatingSystem = 0x00000003;
+    @Deprecated @Generated public static final int NSHPUXOperatingSystem = 0x00000004;
+    @Deprecated @Generated public static final int NSMACHOperatingSystem = 0x00000005;
+    @Deprecated @Generated public static final int NSSunOSOperatingSystem = 0x00000006;
+    @Deprecated @Generated public static final int NSOSF1OperatingSystem = 0x00000007;
     /**
      * 0..127 only
      */
@@ -113,14 +113,14 @@ public final class Enums {
     @Generated public static final int NSBundleExecutableArchitectureX86_64 = 0x01000007;
     @Generated public static final int NSBundleExecutableArchitecturePPC64 = 0x01000012;
     @Generated public static final int NSOpenStepUnicodeReservedBase = 0x0000F400;
-    @Generated public static final int NSWrapCalendarComponents = 0x00000001;
+    @Deprecated @Generated public static final int NSWrapCalendarComponents = 0x00000001;
     @Generated public static final int NS_UnknownByteOrder = 0x00000000;
     @Generated public static final int NS_LittleEndian = 0x00000001;
     @Generated public static final int NS_BigEndian = 0x00000002;
     @Generated @NInt public static final long NSDateComponentUndefined = org.moe.natj.general.NatJ.is64Bit() ?
             0x7FFFFFFFFFFFFFFFL :
             0x000000007FFFFFFFL;
-    @Generated @NInt public static final long NSUndefinedDateComponent = org.moe.natj.general.NatJ.is64Bit() ?
+    @Deprecated @Generated @NInt public static final long NSUndefinedDateComponent = org.moe.natj.general.NatJ.is64Bit() ?
             0x7FFFFFFFFFFFFFFFL :
             0x000000007FFFFFFFL;
     @Generated @NInt public static final long NSURLErrorCancelledReasonUserForceQuitApplication = 0x0000000000000000L;

@@ -77,6 +77,7 @@ public class MPSImageSobel extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageSobel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageSobel allocWithZone(VoidPtr zone);

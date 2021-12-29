@@ -51,6 +51,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("alloc")
     public static native CPListImageRowItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPListImageRowItem allocWithZone(VoidPtr zone);

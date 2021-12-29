@@ -64,6 +64,7 @@ public class INSetRadioStationIntent extends INIntent {
     @Selector("alloc")
     public static native INSetRadioStationIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetRadioStationIntent allocWithZone(VoidPtr zone);

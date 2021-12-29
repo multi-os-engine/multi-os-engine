@@ -49,6 +49,7 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
     @Selector("alloc")
     public static native ASAccountAuthenticationModificationExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAccountAuthenticationModificationExtensionContext allocWithZone(VoidPtr zone);

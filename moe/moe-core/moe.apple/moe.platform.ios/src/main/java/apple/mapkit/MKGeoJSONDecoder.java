@@ -49,6 +49,7 @@ public class MKGeoJSONDecoder extends NSObject {
     @Selector("alloc")
     public static native MKGeoJSONDecoder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKGeoJSONDecoder allocWithZone(VoidPtr zone);

@@ -65,6 +65,7 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageScale alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageScale allocWithZone(VoidPtr zone);

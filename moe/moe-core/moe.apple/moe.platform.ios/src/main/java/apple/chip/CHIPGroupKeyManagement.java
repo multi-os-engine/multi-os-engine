@@ -51,6 +51,7 @@ public class CHIPGroupKeyManagement extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPGroupKeyManagement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPGroupKeyManagement allocWithZone(VoidPtr zone);
@@ -96,7 +97,7 @@ public class CHIPGroupKeyManagement extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPGroupKeyManagement initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPGroupKeyManagement initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

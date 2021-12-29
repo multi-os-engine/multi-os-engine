@@ -65,6 +65,7 @@ public class SFSpeechURLRecognitionRequest extends SFSpeechRecognitionRequest {
     @Selector("alloc")
     public static native SFSpeechURLRecognitionRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSpeechURLRecognitionRequest allocWithZone(VoidPtr zone);

@@ -65,6 +65,7 @@ public class GKQuadtreeNode extends NSObject {
     @Selector("alloc")
     public static native GKQuadtreeNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKQuadtreeNode allocWithZone(VoidPtr zone);

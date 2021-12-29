@@ -62,6 +62,7 @@ public class NSEnergyFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSEnergyFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSEnergyFormatter allocWithZone(VoidPtr zone);

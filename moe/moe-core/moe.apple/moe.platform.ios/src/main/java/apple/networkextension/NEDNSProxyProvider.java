@@ -55,6 +55,7 @@ public class NEDNSProxyProvider extends NEProvider {
     @Selector("alloc")
     public static native NEDNSProxyProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEDNSProxyProvider allocWithZone(VoidPtr zone);

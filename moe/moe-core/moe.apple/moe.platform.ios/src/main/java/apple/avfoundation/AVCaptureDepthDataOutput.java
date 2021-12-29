@@ -56,6 +56,7 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @Selector("alloc")
     public static native AVCaptureDepthDataOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureDepthDataOutput allocWithZone(VoidPtr zone);

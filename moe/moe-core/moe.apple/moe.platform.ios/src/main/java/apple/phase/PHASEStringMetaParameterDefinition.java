@@ -50,6 +50,7 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
     @Selector("alloc")
     public static native PHASEStringMetaParameterDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEStringMetaParameterDefinition allocWithZone(VoidPtr zone);

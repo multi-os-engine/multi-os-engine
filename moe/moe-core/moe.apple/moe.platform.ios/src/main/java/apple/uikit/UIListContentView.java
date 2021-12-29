@@ -62,6 +62,7 @@ public class UIListContentView extends UIView implements UIContentView {
     @Selector("alloc")
     public static native UIListContentView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIListContentView allocWithZone(VoidPtr zone);

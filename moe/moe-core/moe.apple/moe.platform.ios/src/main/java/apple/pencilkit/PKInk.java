@@ -51,6 +51,7 @@ public class PKInk extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PKInk alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKInk allocWithZone(VoidPtr zone);

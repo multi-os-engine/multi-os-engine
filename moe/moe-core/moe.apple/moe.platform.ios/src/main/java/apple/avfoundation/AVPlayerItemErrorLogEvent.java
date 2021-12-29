@@ -72,6 +72,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVPlayerItemErrorLogEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPlayerItemErrorLogEvent allocWithZone(VoidPtr zone);

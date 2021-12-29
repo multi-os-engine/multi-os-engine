@@ -66,6 +66,7 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     @Selector("alloc")
     public static native NSURLSessionTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLSessionTask allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class ARParticipantAnchor extends ARAnchor {
     @Selector("alloc")
     public static native ARParticipantAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARParticipantAnchor allocWithZone(VoidPtr zone);

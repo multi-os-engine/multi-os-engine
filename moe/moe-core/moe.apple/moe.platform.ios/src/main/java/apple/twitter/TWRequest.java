@@ -46,6 +46,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("Twitter")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +70,7 @@ public class TWRequest extends NSObject {
     @Selector("alloc")
     public static native TWRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TWRequest allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
     @Selector("alloc")
     public static native UIMutableUserNotificationAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMutableUserNotificationAction allocWithZone(VoidPtr zone);

@@ -45,6 +45,7 @@ public class INSetTaskAttributeTemporalEventTriggerResolutionResult extends INTe
     @Selector("alloc")
     public static native INSetTaskAttributeTemporalEventTriggerResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSetTaskAttributeTemporalEventTriggerResolutionResult allocWithZone(VoidPtr zone);

@@ -59,6 +59,7 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
     @Selector("alloc")
     public static native MLCMultiheadAttentionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCMultiheadAttentionDescriptor allocWithZone(VoidPtr zone);

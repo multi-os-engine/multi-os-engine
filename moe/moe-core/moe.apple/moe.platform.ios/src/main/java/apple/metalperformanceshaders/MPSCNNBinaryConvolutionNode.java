@@ -50,6 +50,7 @@ public class MPSCNNBinaryConvolutionNode extends MPSCNNConvolutionNode {
     @Selector("alloc")
     public static native MPSCNNBinaryConvolutionNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNBinaryConvolutionNode allocWithZone(VoidPtr zone);

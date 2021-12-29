@@ -46,6 +46,7 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
     @Selector("alloc")
     public static native MDLAnimatedQuaternionArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLAnimatedQuaternionArray allocWithZone(VoidPtr zone);

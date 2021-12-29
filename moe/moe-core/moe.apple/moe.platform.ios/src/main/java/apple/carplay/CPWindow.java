@@ -68,6 +68,7 @@ public class CPWindow extends UIWindow {
     @Selector("alloc")
     public static native CPWindow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPWindow allocWithZone(VoidPtr zone);

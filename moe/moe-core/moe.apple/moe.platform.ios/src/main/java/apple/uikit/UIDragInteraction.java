@@ -48,6 +48,7 @@ public class UIDragInteraction extends NSObject implements UIInteraction {
     @Selector("alloc")
     public static native UIDragInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDragInteraction allocWithZone(VoidPtr zone);

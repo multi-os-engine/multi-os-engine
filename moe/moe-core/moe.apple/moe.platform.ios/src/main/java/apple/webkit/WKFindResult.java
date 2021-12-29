@@ -47,6 +47,7 @@ public class WKFindResult extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native WKFindResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKFindResult allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     @Selector("alloc")
     public static native GKAchievementDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAchievementDescription allocWithZone(VoidPtr zone);

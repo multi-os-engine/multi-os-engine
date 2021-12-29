@@ -48,6 +48,7 @@ public class CPInformationRatingItem extends CPInformationItem {
     @Selector("alloc")
     public static native CPInformationRatingItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPInformationRatingItem allocWithZone(VoidPtr zone);

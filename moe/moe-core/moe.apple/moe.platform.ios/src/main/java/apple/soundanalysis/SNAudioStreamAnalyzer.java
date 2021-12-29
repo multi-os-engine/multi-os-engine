@@ -73,6 +73,7 @@ public class SNAudioStreamAnalyzer extends NSObject {
     @Selector("alloc")
     public static native SNAudioStreamAnalyzer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SNAudioStreamAnalyzer allocWithZone(VoidPtr zone);

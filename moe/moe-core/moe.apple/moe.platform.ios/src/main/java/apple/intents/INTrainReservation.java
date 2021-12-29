@@ -52,6 +52,7 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
     @Selector("alloc")
     public static native INTrainReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTrainReservation allocWithZone(VoidPtr zone);

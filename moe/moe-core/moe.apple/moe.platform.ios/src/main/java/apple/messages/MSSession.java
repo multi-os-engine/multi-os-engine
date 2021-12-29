@@ -72,6 +72,7 @@ public class MSSession extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MSSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSSession allocWithZone(VoidPtr zone);

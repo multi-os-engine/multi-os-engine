@@ -50,6 +50,7 @@ public class MDLTransformTranslateOp extends NSObject implements MDLTransformOp 
     @Selector("alloc")
     public static native MDLTransformTranslateOp alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLTransformTranslateOp allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class UINotificationFeedbackGenerator extends UIFeedbackGenerator {
     @Selector("alloc")
     public static native UINotificationFeedbackGenerator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UINotificationFeedbackGenerator allocWithZone(VoidPtr zone);

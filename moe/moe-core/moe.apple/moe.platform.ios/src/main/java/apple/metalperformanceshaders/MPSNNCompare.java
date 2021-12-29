@@ -55,6 +55,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     @Selector("alloc")
     public static native MPSNNCompare alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNCompare allocWithZone(VoidPtr zone);

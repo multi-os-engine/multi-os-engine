@@ -64,6 +64,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     @Selector("alloc")
     public static native CKModifyRecordsOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKModifyRecordsOperation allocWithZone(VoidPtr zone);

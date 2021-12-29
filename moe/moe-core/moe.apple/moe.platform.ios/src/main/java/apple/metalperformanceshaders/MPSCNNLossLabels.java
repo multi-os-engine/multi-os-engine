@@ -60,6 +60,7 @@ public class MPSCNNLossLabels extends MPSState {
     @Selector("alloc")
     public static native MPSCNNLossLabels alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNLossLabels allocWithZone(VoidPtr zone);

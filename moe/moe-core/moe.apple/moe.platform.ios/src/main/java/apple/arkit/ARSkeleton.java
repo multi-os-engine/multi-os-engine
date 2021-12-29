@@ -52,6 +52,7 @@ public class ARSkeleton extends NSObject {
     @Selector("alloc")
     public static native ARSkeleton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARSkeleton allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class UIOpenURLContext extends NSObject {
     @Selector("alloc")
     public static native UIOpenURLContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIOpenURLContext allocWithZone(VoidPtr zone);

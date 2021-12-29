@@ -66,6 +66,7 @@ public class UICellAccessoryDelete extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryDelete alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryDelete allocWithZone(VoidPtr zone);

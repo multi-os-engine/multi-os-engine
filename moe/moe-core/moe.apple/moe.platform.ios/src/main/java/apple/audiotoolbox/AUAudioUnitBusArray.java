@@ -86,6 +86,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @Selector("alloc")
     public static native AUAudioUnitBusArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUAudioUnitBusArray allocWithZone(VoidPtr zone);

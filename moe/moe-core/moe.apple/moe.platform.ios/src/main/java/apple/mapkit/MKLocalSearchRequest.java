@@ -65,6 +65,7 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MKLocalSearchRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKLocalSearchRequest allocWithZone(VoidPtr zone);

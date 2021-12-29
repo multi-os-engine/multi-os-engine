@@ -47,6 +47,7 @@ public class ASAccountAuthenticationModificationReplacePasswordWithSignInWithApp
     @Selector("alloc")
     public static native ASAccountAuthenticationModificationReplacePasswordWithSignInWithAppleRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAccountAuthenticationModificationReplacePasswordWithSignInWithAppleRequest allocWithZone(

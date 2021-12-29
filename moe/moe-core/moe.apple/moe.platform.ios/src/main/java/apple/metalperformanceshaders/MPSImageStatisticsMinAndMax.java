@@ -57,6 +57,7 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageStatisticsMinAndMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageStatisticsMinAndMax allocWithZone(VoidPtr zone);

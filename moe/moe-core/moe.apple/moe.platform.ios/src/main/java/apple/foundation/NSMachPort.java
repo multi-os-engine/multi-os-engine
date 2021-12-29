@@ -59,6 +59,7 @@ public class NSMachPort extends NSPort {
     @Selector("alloc")
     public static native NSMachPort alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMachPort allocWithZone(VoidPtr zone);

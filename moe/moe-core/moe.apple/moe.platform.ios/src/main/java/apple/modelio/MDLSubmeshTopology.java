@@ -63,6 +63,7 @@ public class MDLSubmeshTopology extends NSObject {
     @Selector("alloc")
     public static native MDLSubmeshTopology alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLSubmeshTopology allocWithZone(VoidPtr zone);

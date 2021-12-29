@@ -71,6 +71,7 @@ public class MPSImageAreaMax extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageAreaMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageAreaMax allocWithZone(VoidPtr zone);

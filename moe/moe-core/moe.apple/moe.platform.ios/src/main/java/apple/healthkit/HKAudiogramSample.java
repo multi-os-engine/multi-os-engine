@@ -54,6 +54,7 @@ public class HKAudiogramSample extends HKSample {
     @Selector("alloc")
     public static native HKAudiogramSample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKAudiogramSample allocWithZone(VoidPtr zone);

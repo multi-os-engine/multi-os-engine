@@ -61,6 +61,7 @@ public class UILocalizedIndexedCollation extends NSObject {
     @Selector("alloc")
     public static native UILocalizedIndexedCollation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UILocalizedIndexedCollation allocWithZone(VoidPtr zone);

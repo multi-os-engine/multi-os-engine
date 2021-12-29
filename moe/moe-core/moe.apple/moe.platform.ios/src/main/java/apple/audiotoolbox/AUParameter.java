@@ -71,6 +71,7 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     @Selector("alloc")
     public static native AUParameter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUParameter allocWithZone(VoidPtr zone);

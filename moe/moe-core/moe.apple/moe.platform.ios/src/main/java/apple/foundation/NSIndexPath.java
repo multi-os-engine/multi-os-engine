@@ -66,6 +66,7 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSIndexPath alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSIndexPath allocWithZone(VoidPtr zone);

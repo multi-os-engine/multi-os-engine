@@ -56,6 +56,7 @@ public class VNFaceLandmarks extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native VNFaceLandmarks alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNFaceLandmarks allocWithZone(VoidPtr zone);

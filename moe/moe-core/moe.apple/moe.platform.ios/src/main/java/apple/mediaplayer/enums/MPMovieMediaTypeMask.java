@@ -23,11 +23,12 @@ import org.moe.natj.general.ann.NUInt;
  * -----------------------------------------------------------------------------
  * Movie Property Types
  */
+@Deprecated
 @Generated
 public final class MPMovieMediaTypeMask {
-    @Generated @NUInt public static final long None = 0x0000000000000000L;
-    @Generated @NUInt public static final long Video = 0x0000000000000001L;
-    @Generated @NUInt public static final long Audio = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Video = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Audio = 0x0000000000000002L;
 
     @Generated
     private MPMovieMediaTypeMask() {

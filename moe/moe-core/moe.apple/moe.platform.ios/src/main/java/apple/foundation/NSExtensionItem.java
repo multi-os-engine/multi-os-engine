@@ -65,6 +65,7 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native NSExtensionItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSExtensionItem allocWithZone(VoidPtr zone);

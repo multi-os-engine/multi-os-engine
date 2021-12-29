@@ -55,6 +55,7 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     @Selector("alloc")
     public static native QLThumbnailGenerationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native QLThumbnailGenerationRequest allocWithZone(VoidPtr zone);

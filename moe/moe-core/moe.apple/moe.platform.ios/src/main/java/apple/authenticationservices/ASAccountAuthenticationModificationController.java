@@ -48,6 +48,7 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     @Selector("alloc")
     public static native ASAccountAuthenticationModificationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAccountAuthenticationModificationController allocWithZone(VoidPtr zone);

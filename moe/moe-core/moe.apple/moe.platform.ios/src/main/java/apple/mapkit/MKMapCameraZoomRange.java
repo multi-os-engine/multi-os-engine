@@ -50,6 +50,7 @@ public class MKMapCameraZoomRange extends NSObject implements NSSecureCoding, NS
     @Selector("alloc")
     public static native MKMapCameraZoomRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMapCameraZoomRange allocWithZone(VoidPtr zone);

@@ -46,6 +46,7 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native NSPresentationIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPresentationIntent allocWithZone(VoidPtr zone);

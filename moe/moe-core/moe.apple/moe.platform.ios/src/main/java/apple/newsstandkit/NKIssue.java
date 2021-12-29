@@ -80,6 +80,7 @@ public class NKIssue extends NSObject {
     @Selector("alloc")
     public static native NKIssue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NKIssue allocWithZone(VoidPtr zone);

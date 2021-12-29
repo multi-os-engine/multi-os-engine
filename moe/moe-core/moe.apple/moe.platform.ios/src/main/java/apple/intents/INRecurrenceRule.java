@@ -50,6 +50,7 @@ public class INRecurrenceRule extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native INRecurrenceRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRecurrenceRule allocWithZone(VoidPtr zone);

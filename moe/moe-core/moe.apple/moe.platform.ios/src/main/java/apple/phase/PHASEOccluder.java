@@ -50,6 +50,7 @@ public class PHASEOccluder extends PHASEObject {
     @Selector("alloc")
     public static native PHASEOccluder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEOccluder allocWithZone(VoidPtr zone);

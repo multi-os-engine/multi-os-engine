@@ -66,6 +66,7 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native INPaymentMethod alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPaymentMethod allocWithZone(VoidPtr zone);

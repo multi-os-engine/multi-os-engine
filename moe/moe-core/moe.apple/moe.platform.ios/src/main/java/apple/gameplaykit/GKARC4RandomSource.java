@@ -71,6 +71,7 @@ public class GKARC4RandomSource extends GKRandomSource {
     @Selector("alloc")
     public static native GKARC4RandomSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKARC4RandomSource allocWithZone(VoidPtr zone);

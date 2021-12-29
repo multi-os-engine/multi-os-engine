@@ -67,6 +67,7 @@ public class MPSNNSlice extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSNNSlice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNSlice allocWithZone(VoidPtr zone);

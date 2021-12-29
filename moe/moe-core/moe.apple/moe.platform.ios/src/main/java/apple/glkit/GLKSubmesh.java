@@ -61,6 +61,7 @@ public class GLKSubmesh extends NSObject {
     @Selector("alloc")
     public static native GLKSubmesh alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKSubmesh allocWithZone(VoidPtr zone);

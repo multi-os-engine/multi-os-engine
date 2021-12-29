@@ -63,6 +63,7 @@ public class CXCallDirectoryManager extends NSObject {
     @Selector("alloc")
     public static native CXCallDirectoryManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CXCallDirectoryManager allocWithZone(VoidPtr zone);

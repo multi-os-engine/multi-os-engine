@@ -51,6 +51,7 @@ public class ENExposureWindow extends NSObject {
     @Selector("alloc")
     public static native ENExposureWindow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENExposureWindow allocWithZone(VoidPtr zone);
@@ -175,4 +176,11 @@ public class ENExposureWindow extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Type of variant of concern
+     */
+    @Generated
+    @Selector("variantOfConcernType")
+    public native int variantOfConcernType();
 }

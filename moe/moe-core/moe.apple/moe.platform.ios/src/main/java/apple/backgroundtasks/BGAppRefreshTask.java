@@ -48,6 +48,7 @@ public class BGAppRefreshTask extends BGTask {
     @Selector("alloc")
     public static native BGAppRefreshTask alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BGAppRefreshTask allocWithZone(VoidPtr zone);

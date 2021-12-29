@@ -52,6 +52,7 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ILCommunication alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILCommunication allocWithZone(VoidPtr zone);

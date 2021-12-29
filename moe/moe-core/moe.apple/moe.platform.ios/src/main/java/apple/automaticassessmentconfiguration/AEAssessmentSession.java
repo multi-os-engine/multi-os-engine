@@ -47,6 +47,7 @@ public class AEAssessmentSession extends NSObject {
     @Selector("alloc")
     public static native AEAssessmentSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AEAssessmentSession allocWithZone(VoidPtr zone);

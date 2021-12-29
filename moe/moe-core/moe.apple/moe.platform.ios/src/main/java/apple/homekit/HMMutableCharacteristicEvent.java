@@ -50,6 +50,7 @@ public class HMMutableCharacteristicEvent<_TriggerValueType> extends HMCharacter
     @Selector("alloc")
     public static native HMMutableCharacteristicEvent<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMMutableCharacteristicEvent<?> allocWithZone(VoidPtr zone);

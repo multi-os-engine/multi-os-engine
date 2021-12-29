@@ -69,6 +69,7 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
     @Selector("alloc")
     public static native HKClinicalRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKClinicalRecord allocWithZone(VoidPtr zone);

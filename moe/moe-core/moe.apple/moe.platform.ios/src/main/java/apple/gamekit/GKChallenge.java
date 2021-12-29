@@ -68,6 +68,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("alloc")
     public static native GKChallenge alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKChallenge allocWithZone(VoidPtr zone);

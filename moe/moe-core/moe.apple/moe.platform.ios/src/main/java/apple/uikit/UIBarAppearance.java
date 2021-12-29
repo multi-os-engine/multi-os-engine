@@ -50,6 +50,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native UIBarAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBarAppearance allocWithZone(VoidPtr zone);

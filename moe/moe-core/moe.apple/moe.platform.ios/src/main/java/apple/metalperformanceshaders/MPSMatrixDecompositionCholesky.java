@@ -67,6 +67,7 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
     @Selector("alloc")
     public static native MPSMatrixDecompositionCholesky alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixDecompositionCholesky allocWithZone(VoidPtr zone);

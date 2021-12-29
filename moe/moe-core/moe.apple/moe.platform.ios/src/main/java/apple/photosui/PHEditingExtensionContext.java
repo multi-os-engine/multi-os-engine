@@ -46,6 +46,7 @@ public class PHEditingExtensionContext extends NSExtensionContext {
     @Selector("alloc")
     public static native PHEditingExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHEditingExtensionContext allocWithZone(VoidPtr zone);

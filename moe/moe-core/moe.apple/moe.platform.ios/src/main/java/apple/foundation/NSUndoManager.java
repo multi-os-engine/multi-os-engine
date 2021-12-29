@@ -60,6 +60,7 @@ public class NSUndoManager extends NSObject {
     @Selector("alloc")
     public static native NSUndoManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUndoManager allocWithZone(VoidPtr zone);

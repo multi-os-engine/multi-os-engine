@@ -71,6 +71,7 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("alloc")
     public static native NSPropertyDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPropertyDescription allocWithZone(VoidPtr zone);

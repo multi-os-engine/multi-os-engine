@@ -67,6 +67,7 @@ public class UITouch extends NSObject {
     @Selector("alloc")
     public static native UITouch alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITouch allocWithZone(VoidPtr zone);

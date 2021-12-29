@@ -68,6 +68,7 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
     @Selector("alloc")
     public static native AVCaptureDeviceDiscoverySession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureDeviceDiscoverySession allocWithZone(VoidPtr zone);

@@ -70,6 +70,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCActivationDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCActivationDescriptor allocWithZone(VoidPtr zone);

@@ -53,6 +53,7 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("alloc")
     public static native NSCoreDataCoreSpotlightDelegate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSCoreDataCoreSpotlightDelegate allocWithZone(VoidPtr zone);

@@ -57,6 +57,7 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     @Selector("alloc")
     public static native MPSNNReduceBinary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceBinary allocWithZone(VoidPtr zone);

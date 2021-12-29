@@ -53,6 +53,7 @@ public class VNImageAlignmentObservation extends VNObservation {
     @Selector("alloc")
     public static native VNImageAlignmentObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNImageAlignmentObservation allocWithZone(VoidPtr zone);

@@ -76,6 +76,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("alloc")
     public static native CMPedometerData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMPedometerData allocWithZone(VoidPtr zone);

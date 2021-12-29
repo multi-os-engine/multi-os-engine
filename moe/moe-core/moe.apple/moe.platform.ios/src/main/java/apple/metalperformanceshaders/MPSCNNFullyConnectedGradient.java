@@ -55,6 +55,7 @@ public class MPSCNNFullyConnectedGradient extends MPSCNNConvolutionGradient {
     @Selector("alloc")
     public static native MPSCNNFullyConnectedGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNFullyConnectedGradient allocWithZone(VoidPtr zone);

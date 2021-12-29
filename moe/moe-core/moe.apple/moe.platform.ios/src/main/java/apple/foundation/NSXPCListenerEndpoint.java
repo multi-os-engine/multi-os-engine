@@ -47,6 +47,7 @@ public class NSXPCListenerEndpoint extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSXPCListenerEndpoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSXPCListenerEndpoint allocWithZone(VoidPtr zone);

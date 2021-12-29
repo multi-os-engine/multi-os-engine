@@ -52,6 +52,7 @@ public class AVAudioSessionDataSourceDescription extends NSObject {
     @Selector("alloc")
     public static native AVAudioSessionDataSourceDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioSessionDataSourceDescription allocWithZone(VoidPtr zone);

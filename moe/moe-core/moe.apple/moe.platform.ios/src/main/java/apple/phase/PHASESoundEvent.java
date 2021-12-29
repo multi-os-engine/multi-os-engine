@@ -55,6 +55,7 @@ public class PHASESoundEvent extends NSObject {
     @Selector("alloc")
     public static native PHASESoundEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASESoundEvent allocWithZone(VoidPtr zone);

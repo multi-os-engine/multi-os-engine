@@ -65,6 +65,7 @@ public class MPSCNNDepthWiseConvolutionDescriptor extends MPSCNNConvolutionDescr
     @Selector("alloc")
     public static native MPSCNNDepthWiseConvolutionDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNDepthWiseConvolutionDescriptor allocWithZone(VoidPtr zone);

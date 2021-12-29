@@ -61,6 +61,7 @@ public class AVMetadataItemFilter extends NSObject {
     @Selector("alloc")
     public static native AVMetadataItemFilter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMetadataItemFilter allocWithZone(VoidPtr zone);

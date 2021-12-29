@@ -54,6 +54,7 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
     @Selector("alloc")
     public static native AVCoordinatedPlaybackSuspension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCoordinatedPlaybackSuspension allocWithZone(VoidPtr zone);

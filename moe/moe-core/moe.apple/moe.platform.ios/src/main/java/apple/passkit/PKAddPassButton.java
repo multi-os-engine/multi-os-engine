@@ -90,6 +90,7 @@ public class PKAddPassButton extends UIButton {
     @Selector("alloc")
     public static native PKAddPassButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKAddPassButton allocWithZone(VoidPtr zone);

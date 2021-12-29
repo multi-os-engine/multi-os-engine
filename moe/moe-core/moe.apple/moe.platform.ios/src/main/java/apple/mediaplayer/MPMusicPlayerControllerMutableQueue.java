@@ -45,6 +45,7 @@ public class MPMusicPlayerControllerMutableQueue extends MPMusicPlayerController
     @Selector("alloc")
     public static native MPMusicPlayerControllerMutableQueue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMusicPlayerControllerMutableQueue allocWithZone(VoidPtr zone);

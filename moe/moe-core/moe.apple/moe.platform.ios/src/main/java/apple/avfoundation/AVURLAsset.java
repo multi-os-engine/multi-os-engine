@@ -87,6 +87,7 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Selector("alloc")
     public static native AVURLAsset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVURLAsset allocWithZone(VoidPtr zone);

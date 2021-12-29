@@ -50,6 +50,7 @@ public class UIDocumentBrowserAction extends NSObject {
     @Selector("alloc")
     public static native UIDocumentBrowserAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDocumentBrowserAction allocWithZone(VoidPtr zone);

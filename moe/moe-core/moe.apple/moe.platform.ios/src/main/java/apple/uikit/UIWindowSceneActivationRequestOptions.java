@@ -45,6 +45,7 @@ public class UIWindowSceneActivationRequestOptions extends UISceneActivationRequ
     @Selector("alloc")
     public static native UIWindowSceneActivationRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWindowSceneActivationRequestOptions allocWithZone(VoidPtr zone);

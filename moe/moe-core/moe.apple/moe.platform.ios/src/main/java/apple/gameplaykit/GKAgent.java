@@ -76,6 +76,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     @Selector("alloc")
     public static native GKAgent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKAgent allocWithZone(VoidPtr zone);

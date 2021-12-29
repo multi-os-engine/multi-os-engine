@@ -47,6 +47,7 @@ public class INVolumeResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INVolumeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INVolumeResolutionResult allocWithZone(VoidPtr zone);

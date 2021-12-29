@@ -74,6 +74,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     @Selector("alloc")
     public static native CKQuerySubscription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKQuerySubscription allocWithZone(VoidPtr zone);

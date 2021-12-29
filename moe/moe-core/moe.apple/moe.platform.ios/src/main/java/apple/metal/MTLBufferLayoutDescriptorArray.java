@@ -61,6 +61,7 @@ public class MTLBufferLayoutDescriptorArray extends NSObject {
     @Selector("alloc")
     public static native MTLBufferLayoutDescriptorArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLBufferLayoutDescriptorArray allocWithZone(VoidPtr zone);

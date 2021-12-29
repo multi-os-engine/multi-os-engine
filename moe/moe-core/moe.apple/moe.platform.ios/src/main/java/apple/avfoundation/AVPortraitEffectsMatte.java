@@ -58,6 +58,7 @@ public class AVPortraitEffectsMatte extends NSObject {
     @Selector("alloc")
     public static native AVPortraitEffectsMatte alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVPortraitEffectsMatte allocWithZone(VoidPtr zone);

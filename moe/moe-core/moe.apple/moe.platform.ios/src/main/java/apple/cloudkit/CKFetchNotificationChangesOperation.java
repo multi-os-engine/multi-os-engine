@@ -72,6 +72,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
     @Selector("alloc")
     public static native CKFetchNotificationChangesOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKFetchNotificationChangesOperation allocWithZone(VoidPtr zone);

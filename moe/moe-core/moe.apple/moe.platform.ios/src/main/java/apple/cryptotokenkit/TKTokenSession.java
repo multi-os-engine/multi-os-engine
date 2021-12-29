@@ -56,6 +56,7 @@ public class TKTokenSession extends NSObject {
     @Selector("alloc")
     public static native TKTokenSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKTokenSession allocWithZone(VoidPtr zone);

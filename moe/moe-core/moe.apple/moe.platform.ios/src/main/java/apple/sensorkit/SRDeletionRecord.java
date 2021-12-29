@@ -48,6 +48,7 @@ public class SRDeletionRecord extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SRDeletionRecord alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRDeletionRecord allocWithZone(VoidPtr zone);

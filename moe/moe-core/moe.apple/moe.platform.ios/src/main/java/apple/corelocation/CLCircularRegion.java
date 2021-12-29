@@ -71,6 +71,7 @@ public class CLCircularRegion extends CLRegion {
     @Selector("alloc")
     public static native CLCircularRegion alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLCircularRegion allocWithZone(VoidPtr zone);

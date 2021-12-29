@@ -66,6 +66,7 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
     @Selector("alloc")
     public static native PHASERandomNodeDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASERandomNodeDefinition allocWithZone(VoidPtr zone);

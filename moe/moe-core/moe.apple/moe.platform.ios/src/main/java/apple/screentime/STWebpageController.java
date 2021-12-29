@@ -80,6 +80,7 @@ public class STWebpageController extends UIViewController {
     @Selector("alloc")
     public static native STWebpageController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native STWebpageController allocWithZone(VoidPtr zone);

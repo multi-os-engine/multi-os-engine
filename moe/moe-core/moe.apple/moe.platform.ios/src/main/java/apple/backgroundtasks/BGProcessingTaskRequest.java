@@ -50,6 +50,7 @@ public class BGProcessingTaskRequest extends BGTaskRequest {
     @Selector("alloc")
     public static native BGProcessingTaskRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BGProcessingTaskRequest allocWithZone(VoidPtr zone);

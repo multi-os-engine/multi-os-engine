@@ -63,6 +63,7 @@ public class MTLAttributeDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MTLAttributeDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAttributeDescriptor allocWithZone(VoidPtr zone);

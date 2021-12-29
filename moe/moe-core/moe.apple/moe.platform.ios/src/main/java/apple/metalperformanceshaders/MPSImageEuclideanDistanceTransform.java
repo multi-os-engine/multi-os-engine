@@ -52,6 +52,7 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageEuclideanDistanceTransform alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageEuclideanDistanceTransform allocWithZone(VoidPtr zone);

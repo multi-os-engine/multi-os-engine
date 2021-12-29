@@ -45,6 +45,7 @@ public class SRFetchRequest extends NSObject {
     @Selector("alloc")
     public static native SRFetchRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRFetchRequest allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
     @Selector("alloc")
     public static native MPSNNReduceFeatureChannelsSum alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceFeatureChannelsSum allocWithZone(VoidPtr zone);

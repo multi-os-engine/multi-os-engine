@@ -64,6 +64,7 @@ public class HKStatisticsCollection extends NSObject {
     @Selector("alloc")
     public static native HKStatisticsCollection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKStatisticsCollection allocWithZone(VoidPtr zone);

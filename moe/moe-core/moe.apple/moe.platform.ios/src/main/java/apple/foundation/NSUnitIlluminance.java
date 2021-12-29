@@ -60,6 +60,7 @@ public class NSUnitIlluminance extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitIlluminance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitIlluminance allocWithZone(VoidPtr zone);

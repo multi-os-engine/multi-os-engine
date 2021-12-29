@@ -63,6 +63,7 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
     @Selector("alloc")
     public static native CKMarkNotificationsReadOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKMarkNotificationsReadOperation allocWithZone(VoidPtr zone);

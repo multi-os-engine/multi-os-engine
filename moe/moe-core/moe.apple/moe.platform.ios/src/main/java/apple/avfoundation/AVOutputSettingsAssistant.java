@@ -74,6 +74,7 @@ public class AVOutputSettingsAssistant extends NSObject {
     @Selector("alloc")
     public static native AVOutputSettingsAssistant alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVOutputSettingsAssistant allocWithZone(VoidPtr zone);

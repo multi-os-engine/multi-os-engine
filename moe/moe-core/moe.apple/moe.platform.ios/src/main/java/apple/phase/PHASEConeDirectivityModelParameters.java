@@ -50,6 +50,7 @@ public class PHASEConeDirectivityModelParameters extends PHASEDirectivityModelPa
     @Selector("alloc")
     public static native PHASEConeDirectivityModelParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEConeDirectivityModelParameters allocWithZone(VoidPtr zone);

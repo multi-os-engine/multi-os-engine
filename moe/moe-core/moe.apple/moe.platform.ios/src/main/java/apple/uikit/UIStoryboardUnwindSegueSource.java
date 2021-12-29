@@ -66,6 +66,7 @@ public class UIStoryboardUnwindSegueSource extends NSObject {
     @Selector("alloc")
     public static native UIStoryboardUnwindSegueSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIStoryboardUnwindSegueSource allocWithZone(VoidPtr zone);

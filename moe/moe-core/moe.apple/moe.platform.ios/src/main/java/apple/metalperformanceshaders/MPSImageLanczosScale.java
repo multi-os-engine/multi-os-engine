@@ -78,6 +78,7 @@ public class MPSImageLanczosScale extends MPSImageScale {
     @Selector("alloc")
     public static native MPSImageLanczosScale alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageLanczosScale allocWithZone(VoidPtr zone);

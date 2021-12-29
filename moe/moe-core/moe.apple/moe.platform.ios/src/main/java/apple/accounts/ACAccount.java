@@ -66,6 +66,7 @@ public class ACAccount extends NSObject {
     @Selector("alloc")
     public static native ACAccount alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ACAccount allocWithZone(VoidPtr zone);

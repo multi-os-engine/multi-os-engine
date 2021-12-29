@@ -67,6 +67,7 @@ public class AVSynchronizedLayer extends CALayer {
     @Selector("alloc")
     public static native AVSynchronizedLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSynchronizedLayer allocWithZone(VoidPtr zone);

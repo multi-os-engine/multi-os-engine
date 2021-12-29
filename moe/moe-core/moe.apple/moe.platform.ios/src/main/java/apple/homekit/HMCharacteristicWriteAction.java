@@ -68,6 +68,7 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @Selector("alloc")
     public static native HMCharacteristicWriteAction<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCharacteristicWriteAction<?> allocWithZone(VoidPtr zone);

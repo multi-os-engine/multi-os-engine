@@ -71,6 +71,7 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native HKSource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKSource allocWithZone(VoidPtr zone);

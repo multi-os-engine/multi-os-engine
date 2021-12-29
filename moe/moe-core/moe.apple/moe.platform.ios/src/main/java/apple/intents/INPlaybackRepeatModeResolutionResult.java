@@ -45,6 +45,7 @@ public class INPlaybackRepeatModeResolutionResult extends INIntentResolutionResu
     @Selector("alloc")
     public static native INPlaybackRepeatModeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPlaybackRepeatModeResolutionResult allocWithZone(VoidPtr zone);

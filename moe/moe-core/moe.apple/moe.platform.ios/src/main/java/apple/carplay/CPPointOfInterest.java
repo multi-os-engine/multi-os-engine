@@ -51,6 +51,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPPointOfInterest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPPointOfInterest allocWithZone(VoidPtr zone);

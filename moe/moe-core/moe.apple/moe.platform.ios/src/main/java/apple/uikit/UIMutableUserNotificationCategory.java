@@ -63,6 +63,7 @@ public class UIMutableUserNotificationCategory extends UIUserNotificationCategor
     @Selector("alloc")
     public static native UIMutableUserNotificationCategory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIMutableUserNotificationCategory allocWithZone(VoidPtr zone);

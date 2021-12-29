@@ -49,6 +49,7 @@ public class UIKey extends NSObject implements NSCopying, NSCoding {
     @Selector("alloc")
     public static native UIKey alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIKey allocWithZone(VoidPtr zone);

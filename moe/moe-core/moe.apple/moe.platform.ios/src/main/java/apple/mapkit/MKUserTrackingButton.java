@@ -62,6 +62,7 @@ public class MKUserTrackingButton extends UIView {
     @Selector("alloc")
     public static native MKUserTrackingButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKUserTrackingButton allocWithZone(VoidPtr zone);

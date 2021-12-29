@@ -54,6 +54,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("alloc")
     public static native SKOverlayAppConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKOverlayAppConfiguration allocWithZone(VoidPtr zone);

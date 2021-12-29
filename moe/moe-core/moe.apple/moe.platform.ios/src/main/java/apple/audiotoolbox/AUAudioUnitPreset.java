@@ -70,6 +70,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native AUAudioUnitPreset alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AUAudioUnitPreset allocWithZone(VoidPtr zone);

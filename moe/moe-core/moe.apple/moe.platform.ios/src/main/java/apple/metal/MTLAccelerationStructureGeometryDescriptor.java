@@ -51,6 +51,7 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @Selector("alloc")
     public static native MTLAccelerationStructureGeometryDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAccelerationStructureGeometryDescriptor allocWithZone(VoidPtr zone);

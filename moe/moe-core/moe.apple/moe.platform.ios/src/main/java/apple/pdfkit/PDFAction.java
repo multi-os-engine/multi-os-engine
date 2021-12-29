@@ -47,6 +47,7 @@ public class PDFAction extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PDFAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PDFAction allocWithZone(VoidPtr zone);

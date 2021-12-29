@@ -70,6 +70,7 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native UIFontDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIFontDescriptor allocWithZone(VoidPtr zone);

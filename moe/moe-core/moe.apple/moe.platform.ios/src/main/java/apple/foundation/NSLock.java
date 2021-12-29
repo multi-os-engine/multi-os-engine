@@ -59,6 +59,7 @@ public class NSLock extends NSObject implements NSLocking {
     @Selector("alloc")
     public static native NSLock alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLock allocWithZone(VoidPtr zone);

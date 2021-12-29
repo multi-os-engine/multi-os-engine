@@ -50,6 +50,7 @@ public class CLSBinaryItem extends CLSActivityItem {
     @Selector("alloc")
     public static native CLSBinaryItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSBinaryItem allocWithZone(VoidPtr zone);

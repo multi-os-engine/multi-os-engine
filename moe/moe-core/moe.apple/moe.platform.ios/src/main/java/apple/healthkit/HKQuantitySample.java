@@ -70,6 +70,7 @@ public class HKQuantitySample extends HKSample {
     @Selector("alloc")
     public static native HKQuantitySample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKQuantitySample allocWithZone(VoidPtr zone);

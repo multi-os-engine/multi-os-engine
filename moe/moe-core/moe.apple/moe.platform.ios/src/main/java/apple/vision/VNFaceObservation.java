@@ -58,6 +58,7 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     @Selector("alloc")
     public static native VNFaceObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNFaceObservation allocWithZone(VoidPtr zone);

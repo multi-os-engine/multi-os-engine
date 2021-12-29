@@ -68,6 +68,7 @@ public class HKActivitySummaryQuery extends HKQuery {
     @Selector("alloc")
     public static native HKActivitySummaryQuery alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKActivitySummaryQuery allocWithZone(VoidPtr zone);

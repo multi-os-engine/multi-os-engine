@@ -70,6 +70,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     @Selector("alloc")
     public static native CNContactFetchRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactFetchRequest allocWithZone(VoidPtr zone);

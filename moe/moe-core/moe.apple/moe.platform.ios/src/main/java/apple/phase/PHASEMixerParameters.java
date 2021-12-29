@@ -76,6 +76,7 @@ public class PHASEMixerParameters extends NSObject {
     @Selector("alloc")
     public static native PHASEMixerParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEMixerParameters allocWithZone(VoidPtr zone);

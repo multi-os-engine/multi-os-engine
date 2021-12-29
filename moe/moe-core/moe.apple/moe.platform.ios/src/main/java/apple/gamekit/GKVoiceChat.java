@@ -65,6 +65,7 @@ public class GKVoiceChat extends NSObject {
     @Selector("alloc")
     public static native GKVoiceChat alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKVoiceChat allocWithZone(VoidPtr zone);

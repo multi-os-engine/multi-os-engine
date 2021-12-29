@@ -47,6 +47,7 @@ public class UIToolbarAppearance extends UIBarAppearance {
     @Selector("alloc")
     public static native UIToolbarAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIToolbarAppearance allocWithZone(VoidPtr zone);

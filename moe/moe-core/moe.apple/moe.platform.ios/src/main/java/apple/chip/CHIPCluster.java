@@ -49,6 +49,7 @@ public class CHIPCluster extends NSObject {
     @Selector("alloc")
     public static native CHIPCluster alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPCluster allocWithZone(VoidPtr zone);
@@ -94,7 +95,7 @@ public class CHIPCluster extends NSObject {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPCluster initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPCluster initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

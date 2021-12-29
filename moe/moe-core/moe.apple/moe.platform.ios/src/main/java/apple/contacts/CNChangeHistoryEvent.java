@@ -55,6 +55,7 @@ public class CNChangeHistoryEvent extends NSObject implements NSCopying, NSSecur
     @Selector("alloc")
     public static native CNChangeHistoryEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNChangeHistoryEvent allocWithZone(VoidPtr zone);

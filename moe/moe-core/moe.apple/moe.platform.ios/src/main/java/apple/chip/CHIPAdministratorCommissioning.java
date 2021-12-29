@@ -1,20 +1,18 @@
-package apple.homekit;
+package apple.chip;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSCoder;
+import apple.foundation.NSData;
+import apple.foundation.NSDictionary;
+import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
-import apple.foundation.NSUUID;
-import apple.foundation.protocol.NSCopying;
-import apple.foundation.protocol.NSSecureCoding;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
-import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
@@ -23,25 +21,25 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
+import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
-import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A simple room representation that can be passed back and forth between Partner Ecosystem App extensions and iOS for the purposes of CHIP accessory setup.
+ * Cluster AdministratorCommissioning
  */
 @Generated
-@Library("HomeKit")
+@Library("CHIP")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCoding {
+public class CHIPAdministratorCommissioning extends CHIPCluster {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected HMCHIPServiceRoom(Pointer peer) {
+    protected CHIPAdministratorCommissioning(Pointer peer) {
         super(peer);
     }
 
@@ -52,11 +50,12 @@ public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Owned
     @Selector("alloc")
-    public static native HMCHIPServiceRoom alloc();
+    public static native CHIPAdministratorCommissioning alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
-    public static native HMCHIPServiceRoom allocWithZone(VoidPtr zone);
+    public static native CHIPAdministratorCommissioning allocWithZone(VoidPtr zone);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -81,12 +80,6 @@ public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCo
     public static native Class classForKeyedUnarchiver();
 
     @Generated
-    @Owned
-    @Selector("copyWithZone:")
-    @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
-
-    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
@@ -95,28 +88,18 @@ public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCo
     public static native String description_static();
 
     @Generated
-    @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
-
-    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
     @Generated
     @Selector("init")
-    public native HMCHIPServiceRoom init();
+    public native CHIPAdministratorCommissioning init();
 
     @Generated
-    @Selector("initWithCoder:")
-    public native HMCHIPServiceRoom initWithCoder(NSCoder coder);
-
-    /**
-     * Initializes a new instance
-     */
-    @Generated
-    @Selector("initWithUUID:name:")
-    public native HMCHIPServiceRoom initWithUUIDName(NSUUID uuid, String name);
+    @Selector("initWithDevice:endpoint:queue:")
+    public native CHIPAdministratorCommissioning initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
+            NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -139,17 +122,49 @@ public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCo
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-    /**
-     * The name of the receiver
-     */
-    @Generated
-    @Selector("name")
-    public native String name();
-
     @Generated
     @Owned
     @Selector("new")
-    public static native HMCHIPServiceRoom new_objc();
+    public static native CHIPAdministratorCommissioning new_objc();
+
+    @Generated
+    @Selector("openBasicCommissioningWindow:responseHandler:")
+    public native void openBasicCommissioningWindowResponseHandler(char commissioningTimeout,
+            @ObjCBlock(name = "call_openBasicCommissioningWindowResponseHandler") Block_openBasicCommissioningWindowResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openBasicCommissioningWindowResponseHandler {
+        @Generated
+        void call_openBasicCommissioningWindowResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("openCommissioningWindow:pAKEVerifier:discriminator:iterations:salt:passcodeID:responseHandler:")
+    public native void openCommissioningWindowPAKEVerifierDiscriminatorIterationsSaltPasscodeIDResponseHandler(
+            char commissioningTimeout, NSData pAKEVerifier, char discriminator, int iterations, NSData salt,
+            char passcodeID,
+            @ObjCBlock(name = "call_openCommissioningWindowPAKEVerifierDiscriminatorIterationsSaltPasscodeIDResponseHandler") Block_openCommissioningWindowPAKEVerifierDiscriminatorIterationsSaltPasscodeIDResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_openCommissioningWindowPAKEVerifierDiscriminatorIterationsSaltPasscodeIDResponseHandler {
+        @Generated
+        void call_openCommissioningWindowPAKEVerifierDiscriminatorIterationsSaltPasscodeIDResponseHandler(NSError error,
+                NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("readAttributeClusterRevisionWithResponseHandler:")
+    public native void readAttributeClusterRevisionWithResponseHandler(
+            @ObjCBlock(name = "call_readAttributeClusterRevisionWithResponseHandler") Block_readAttributeClusterRevisionWithResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_readAttributeClusterRevisionWithResponseHandler {
+        @Generated
+        void call_readAttributeClusterRevisionWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -160,29 +175,24 @@ public class HMCHIPServiceRoom extends NSObject implements NSCopying, NSSecureCo
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
+    @Selector("revokeCommissioning:")
+    public native void revokeCommissioning(
+            @ObjCBlock(name = "call_revokeCommissioning") Block_revokeCommissioning responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_revokeCommissioning {
+        @Generated
+        void call_revokeCommissioning(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
-
-    @Generated
-    @Selector("supportsSecureCoding")
-    public static native boolean supportsSecureCoding();
-
-    @Generated
-    @ProtocolClassMethod("supportsSecureCoding")
-    public boolean _supportsSecureCoding() {
-        return supportsSecureCoding();
-    }
-
-    /**
-     * The UUID of the receiver
-     */
-    @Generated
-    @Selector("uuid")
-    public native NSUUID uuid();
 
     @Generated
     @Selector("version")

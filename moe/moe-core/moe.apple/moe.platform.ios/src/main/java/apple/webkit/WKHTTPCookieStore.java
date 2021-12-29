@@ -63,6 +63,7 @@ public class WKHTTPCookieStore extends NSObject {
     @Selector("alloc")
     public static native WKHTTPCookieStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKHTTPCookieStore allocWithZone(VoidPtr zone);

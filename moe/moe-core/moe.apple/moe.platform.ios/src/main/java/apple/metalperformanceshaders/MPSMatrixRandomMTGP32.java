@@ -57,6 +57,7 @@ public class MPSMatrixRandomMTGP32 extends MPSMatrixRandom {
     @Selector("alloc")
     public static native MPSMatrixRandomMTGP32 alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixRandomMTGP32 allocWithZone(VoidPtr zone);

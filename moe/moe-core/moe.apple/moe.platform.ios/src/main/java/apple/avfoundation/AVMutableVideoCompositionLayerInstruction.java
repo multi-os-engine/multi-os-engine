@@ -68,6 +68,7 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     @Selector("alloc")
     public static native AVMutableVideoCompositionLayerInstruction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableVideoCompositionLayerInstruction allocWithZone(VoidPtr zone);

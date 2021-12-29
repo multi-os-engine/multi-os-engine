@@ -61,6 +61,7 @@ public class CBAttribute extends NSObject {
     @Selector("alloc")
     public static native CBAttribute alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CBAttribute allocWithZone(VoidPtr zone);

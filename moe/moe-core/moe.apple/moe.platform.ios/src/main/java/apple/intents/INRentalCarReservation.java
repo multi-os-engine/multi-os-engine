@@ -53,6 +53,7 @@ public class INRentalCarReservation extends INReservation implements NSCopying, 
     @Selector("alloc")
     public static native INRentalCarReservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRentalCarReservation allocWithZone(VoidPtr zone);

@@ -79,6 +79,7 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     @Selector("alloc")
     public static native UITabBar alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITabBar allocWithZone(VoidPtr zone);

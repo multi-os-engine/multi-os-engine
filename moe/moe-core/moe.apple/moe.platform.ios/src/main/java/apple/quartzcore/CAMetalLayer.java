@@ -75,6 +75,7 @@ public class CAMetalLayer extends CALayer {
     @Selector("alloc")
     public static native CAMetalLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAMetalLayer allocWithZone(VoidPtr zone);

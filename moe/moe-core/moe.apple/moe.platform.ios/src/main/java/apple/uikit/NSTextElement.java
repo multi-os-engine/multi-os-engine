@@ -48,6 +48,7 @@ public class NSTextElement extends NSObject {
     @Selector("alloc")
     public static native NSTextElement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTextElement allocWithZone(VoidPtr zone);

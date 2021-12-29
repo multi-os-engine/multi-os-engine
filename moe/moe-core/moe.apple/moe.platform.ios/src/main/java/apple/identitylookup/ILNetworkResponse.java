@@ -53,6 +53,7 @@ public class ILNetworkResponse extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native ILNetworkResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILNetworkResponse allocWithZone(VoidPtr zone);

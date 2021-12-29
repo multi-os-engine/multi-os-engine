@@ -61,6 +61,7 @@ public class UIGraphicsImageRendererContext extends UIGraphicsRendererContext {
     @Selector("alloc")
     public static native UIGraphicsImageRendererContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIGraphicsImageRendererContext allocWithZone(VoidPtr zone);

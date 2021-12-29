@@ -98,6 +98,7 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageConvolution alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageConvolution allocWithZone(VoidPtr zone);

@@ -58,6 +58,7 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
     @Selector("alloc")
     public static native OSLogEntrySignpost alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogEntrySignpost allocWithZone(VoidPtr zone);

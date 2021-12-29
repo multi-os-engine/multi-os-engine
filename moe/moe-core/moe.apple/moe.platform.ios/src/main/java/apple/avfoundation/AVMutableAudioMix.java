@@ -61,6 +61,7 @@ public class AVMutableAudioMix extends AVAudioMix {
     @Selector("alloc")
     public static native AVMutableAudioMix alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVMutableAudioMix allocWithZone(VoidPtr zone);

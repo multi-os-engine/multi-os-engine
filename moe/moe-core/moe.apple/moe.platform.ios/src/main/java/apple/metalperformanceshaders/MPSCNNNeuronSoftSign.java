@@ -55,6 +55,7 @@ public class MPSCNNNeuronSoftSign extends MPSCNNNeuron {
     @Selector("alloc")
     public static native MPSCNNNeuronSoftSign alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronSoftSign allocWithZone(VoidPtr zone);

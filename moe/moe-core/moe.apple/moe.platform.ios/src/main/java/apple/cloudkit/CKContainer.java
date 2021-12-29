@@ -73,6 +73,7 @@ public class CKContainer extends NSObject {
     @Selector("alloc")
     public static native CKContainer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKContainer allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class INCarHeadUnit extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native INCarHeadUnit alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INCarHeadUnit allocWithZone(VoidPtr zone);

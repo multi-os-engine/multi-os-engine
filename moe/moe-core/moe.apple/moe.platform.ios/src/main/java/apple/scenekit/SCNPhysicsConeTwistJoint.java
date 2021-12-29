@@ -53,6 +53,7 @@ public class SCNPhysicsConeTwistJoint extends SCNPhysicsBehavior {
     @Selector("alloc")
     public static native SCNPhysicsConeTwistJoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsConeTwistJoint allocWithZone(VoidPtr zone);

@@ -50,6 +50,7 @@ public class VNVideoProcessorCadence extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native VNVideoProcessorCadence alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNVideoProcessorCadence allocWithZone(VoidPtr zone);

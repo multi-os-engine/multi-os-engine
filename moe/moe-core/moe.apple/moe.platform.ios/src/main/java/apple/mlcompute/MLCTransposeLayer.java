@@ -51,6 +51,7 @@ public class MLCTransposeLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCTransposeLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCTransposeLayer allocWithZone(VoidPtr zone);

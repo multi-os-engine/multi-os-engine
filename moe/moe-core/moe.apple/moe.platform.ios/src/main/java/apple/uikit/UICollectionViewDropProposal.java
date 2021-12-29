@@ -45,6 +45,7 @@ public class UICollectionViewDropProposal extends UIDropProposal {
     @Selector("alloc")
     public static native UICollectionViewDropProposal alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewDropProposal allocWithZone(VoidPtr zone);

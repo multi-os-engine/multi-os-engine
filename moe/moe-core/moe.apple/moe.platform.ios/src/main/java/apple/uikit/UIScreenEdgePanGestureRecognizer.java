@@ -66,6 +66,7 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     @Selector("alloc")
     public static native UIScreenEdgePanGestureRecognizer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIScreenEdgePanGestureRecognizer allocWithZone(VoidPtr zone);

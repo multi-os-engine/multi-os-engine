@@ -69,6 +69,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     @Selector("alloc")
     public static native MSMessageTemplateLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSMessageTemplateLayout allocWithZone(VoidPtr zone);

@@ -47,6 +47,7 @@ public class UICollectionViewPlaceholder extends NSObject {
     @Selector("alloc")
     public static native UICollectionViewPlaceholder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewPlaceholder allocWithZone(VoidPtr zone);

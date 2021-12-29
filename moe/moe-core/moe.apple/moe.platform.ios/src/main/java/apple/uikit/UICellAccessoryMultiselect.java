@@ -51,6 +51,7 @@ public class UICellAccessoryMultiselect extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryMultiselect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryMultiselect allocWithZone(VoidPtr zone);

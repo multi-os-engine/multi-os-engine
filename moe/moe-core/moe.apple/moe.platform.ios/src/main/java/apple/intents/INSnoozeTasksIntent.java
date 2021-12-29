@@ -52,6 +52,7 @@ public class INSnoozeTasksIntent extends INIntent {
     @Selector("alloc")
     public static native INSnoozeTasksIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSnoozeTasksIntent allocWithZone(VoidPtr zone);

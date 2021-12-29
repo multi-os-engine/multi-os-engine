@@ -59,6 +59,7 @@ public class AVAudioConverter extends NSObject {
     @Selector("alloc")
     public static native AVAudioConverter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioConverter allocWithZone(VoidPtr zone);

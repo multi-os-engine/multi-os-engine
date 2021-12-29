@@ -74,6 +74,7 @@ public class NETunnelProviderSession extends NEVPNConnection {
     @Selector("alloc")
     public static native NETunnelProviderSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NETunnelProviderSession allocWithZone(VoidPtr zone);

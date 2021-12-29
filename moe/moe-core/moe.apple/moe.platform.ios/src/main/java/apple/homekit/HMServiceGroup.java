@@ -71,6 +71,7 @@ public class HMServiceGroup extends NSObject {
     @Selector("alloc")
     public static native HMServiceGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMServiceGroup allocWithZone(VoidPtr zone);

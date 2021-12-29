@@ -67,6 +67,7 @@ public class INPriceRange extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native INPriceRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPriceRange allocWithZone(VoidPtr zone);

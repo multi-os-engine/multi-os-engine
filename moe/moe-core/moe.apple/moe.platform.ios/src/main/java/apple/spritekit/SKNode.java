@@ -89,6 +89,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Selector("alloc")
     public static native SKNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKNode allocWithZone(VoidPtr zone);

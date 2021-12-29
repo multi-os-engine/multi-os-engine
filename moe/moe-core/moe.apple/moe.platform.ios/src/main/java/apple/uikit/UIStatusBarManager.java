@@ -47,6 +47,7 @@ public class UIStatusBarManager extends NSObject {
     @Selector("alloc")
     public static native UIStatusBarManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIStatusBarManager allocWithZone(VoidPtr zone);

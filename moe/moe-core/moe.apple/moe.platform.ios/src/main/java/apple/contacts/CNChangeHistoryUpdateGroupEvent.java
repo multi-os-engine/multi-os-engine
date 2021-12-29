@@ -50,6 +50,7 @@ public class CNChangeHistoryUpdateGroupEvent extends CNChangeHistoryEvent {
     @Selector("alloc")
     public static native CNChangeHistoryUpdateGroupEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNChangeHistoryUpdateGroupEvent allocWithZone(VoidPtr zone);

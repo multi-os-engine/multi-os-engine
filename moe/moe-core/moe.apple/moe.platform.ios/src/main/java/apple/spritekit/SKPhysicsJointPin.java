@@ -66,6 +66,7 @@ public class SKPhysicsJointPin extends SKPhysicsJoint {
     @Selector("alloc")
     public static native SKPhysicsJointPin alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKPhysicsJointPin allocWithZone(VoidPtr zone);

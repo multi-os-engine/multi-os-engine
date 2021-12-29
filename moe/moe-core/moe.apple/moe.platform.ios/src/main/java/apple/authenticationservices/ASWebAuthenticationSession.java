@@ -73,6 +73,7 @@ public class ASWebAuthenticationSession extends NSObject {
     @Selector("alloc")
     public static native ASWebAuthenticationSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASWebAuthenticationSession allocWithZone(VoidPtr zone);

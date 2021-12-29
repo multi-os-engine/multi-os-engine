@@ -51,6 +51,7 @@ public class INBusTrip extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native INBusTrip alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INBusTrip allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CAValueFunction extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CAValueFunction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAValueFunction allocWithZone(VoidPtr zone);

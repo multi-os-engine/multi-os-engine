@@ -54,6 +54,7 @@ public class OSLogPosition extends NSObject {
     @Selector("alloc")
     public static native OSLogPosition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native OSLogPosition allocWithZone(VoidPtr zone);

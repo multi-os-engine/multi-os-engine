@@ -65,6 +65,7 @@ public class MDLLightProbe extends MDLLight {
     @Selector("alloc")
     public static native MDLLightProbe alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLLightProbe allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native UIBarButtonItemGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIBarButtonItemGroup allocWithZone(VoidPtr zone);

@@ -58,6 +58,7 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
     @Selector("alloc")
     public static native VNRectangleObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNRectangleObservation allocWithZone(VoidPtr zone);

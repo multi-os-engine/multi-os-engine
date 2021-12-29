@@ -62,6 +62,7 @@ public class UIDynamicBehavior extends NSObject {
     @Selector("alloc")
     public static native UIDynamicBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDynamicBehavior allocWithZone(VoidPtr zone);

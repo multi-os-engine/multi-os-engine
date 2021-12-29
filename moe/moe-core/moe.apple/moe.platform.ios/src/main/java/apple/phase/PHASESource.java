@@ -54,6 +54,7 @@ public class PHASESource extends PHASEObject {
     @Selector("alloc")
     public static native PHASESource alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASESource allocWithZone(VoidPtr zone);

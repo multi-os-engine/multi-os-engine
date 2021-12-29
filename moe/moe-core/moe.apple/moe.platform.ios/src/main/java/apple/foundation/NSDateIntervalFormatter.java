@@ -62,6 +62,7 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Selector("alloc")
     public static native NSDateIntervalFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDateIntervalFormatter allocWithZone(VoidPtr zone);

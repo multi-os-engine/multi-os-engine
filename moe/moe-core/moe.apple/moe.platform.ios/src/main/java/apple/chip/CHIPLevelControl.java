@@ -51,6 +51,7 @@ public class CHIPLevelControl extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPLevelControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CHIPLevelControl allocWithZone(VoidPtr zone);
@@ -110,7 +111,7 @@ public class CHIPLevelControl extends CHIPCluster {
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPLevelControl initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPLevelControl initWithDeviceEndpointQueue(CHIPDevice device, char endpoint, NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")

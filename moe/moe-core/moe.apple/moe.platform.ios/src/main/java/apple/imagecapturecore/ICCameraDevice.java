@@ -58,6 +58,7 @@ public class ICCameraDevice extends ICDevice {
     @Selector("alloc")
     public static native ICCameraDevice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ICCameraDevice allocWithZone(VoidPtr zone);

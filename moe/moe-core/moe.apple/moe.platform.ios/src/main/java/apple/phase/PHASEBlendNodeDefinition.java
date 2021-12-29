@@ -113,6 +113,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Selector("alloc")
     public static native PHASEBlendNodeDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEBlendNodeDefinition allocWithZone(VoidPtr zone);

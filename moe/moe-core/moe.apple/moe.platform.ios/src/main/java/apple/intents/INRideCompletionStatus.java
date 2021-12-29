@@ -67,6 +67,7 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native INRideCompletionStatus alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRideCompletionStatus allocWithZone(VoidPtr zone);

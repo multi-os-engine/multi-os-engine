@@ -68,6 +68,7 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXDiagnostic alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXDiagnostic allocWithZone(VoidPtr zone);

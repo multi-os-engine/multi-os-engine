@@ -71,6 +71,7 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native HKDeletedObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKDeletedObject allocWithZone(VoidPtr zone);

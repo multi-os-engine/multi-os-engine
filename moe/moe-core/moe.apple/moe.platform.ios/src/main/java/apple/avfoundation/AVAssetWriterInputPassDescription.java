@@ -67,6 +67,7 @@ public class AVAssetWriterInputPassDescription extends NSObject {
     @Selector("alloc")
     public static native AVAssetWriterInputPassDescription alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetWriterInputPassDescription allocWithZone(VoidPtr zone);

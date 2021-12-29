@@ -67,6 +67,7 @@ public class UICollisionBehavior extends UIDynamicBehavior {
     @Selector("alloc")
     public static native UICollisionBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollisionBehavior allocWithZone(VoidPtr zone);

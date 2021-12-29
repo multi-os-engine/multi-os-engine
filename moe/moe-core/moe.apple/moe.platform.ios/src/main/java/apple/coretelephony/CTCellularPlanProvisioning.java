@@ -58,6 +58,7 @@ public class CTCellularPlanProvisioning extends NSObject {
     @Selector("alloc")
     public static native CTCellularPlanProvisioning alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CTCellularPlanProvisioning allocWithZone(VoidPtr zone);

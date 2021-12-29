@@ -46,6 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MKReverseGeocoder is now deprecated.
  * Use CLGeocoder in CoreLocation instead.
  */
+@Deprecated
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +70,7 @@ public class MKReverseGeocoder extends NSObject {
     @Selector("alloc")
     public static native MKReverseGeocoder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKReverseGeocoder allocWithZone(VoidPtr zone);

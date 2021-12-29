@@ -53,6 +53,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     @Selector("alloc")
     public static native MLCPaddingLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCPaddingLayer allocWithZone(VoidPtr zone);

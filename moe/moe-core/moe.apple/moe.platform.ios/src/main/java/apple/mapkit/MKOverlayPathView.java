@@ -85,6 +85,7 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("alloc")
     public static native MKOverlayPathView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKOverlayPathView allocWithZone(VoidPtr zone);

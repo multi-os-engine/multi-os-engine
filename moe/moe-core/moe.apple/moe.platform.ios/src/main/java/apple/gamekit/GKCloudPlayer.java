@@ -63,6 +63,7 @@ public class GKCloudPlayer extends GKBasePlayer {
     @Selector("alloc")
     public static native GKCloudPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKCloudPlayer allocWithZone(VoidPtr zone);

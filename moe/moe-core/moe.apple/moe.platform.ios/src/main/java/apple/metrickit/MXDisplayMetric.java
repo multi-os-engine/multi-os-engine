@@ -52,6 +52,7 @@ public class MXDisplayMetric extends MXMetric {
     @Selector("alloc")
     public static native MXDisplayMetric alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXDisplayMetric allocWithZone(VoidPtr zone);

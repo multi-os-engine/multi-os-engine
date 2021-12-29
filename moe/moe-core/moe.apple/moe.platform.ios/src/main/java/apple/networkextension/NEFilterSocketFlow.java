@@ -73,6 +73,7 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     @Selector("alloc")
     public static native NEFilterSocketFlow alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEFilterSocketFlow allocWithZone(VoidPtr zone);

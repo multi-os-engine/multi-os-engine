@@ -97,6 +97,7 @@ public class MPSGRUDescriptor extends MPSRNNDescriptor {
     @Selector("alloc")
     public static native MPSGRUDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGRUDescriptor allocWithZone(VoidPtr zone);

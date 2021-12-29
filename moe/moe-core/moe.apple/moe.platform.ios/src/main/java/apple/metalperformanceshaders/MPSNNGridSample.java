@@ -55,6 +55,7 @@ public class MPSNNGridSample extends MPSCNNBinaryKernel {
     @Selector("alloc")
     public static native MPSNNGridSample alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGridSample allocWithZone(VoidPtr zone);

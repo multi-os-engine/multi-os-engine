@@ -47,6 +47,7 @@ public class ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordR
     @Selector("alloc")
     public static native ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAccountAuthenticationModificationUpgradePasswordToStrongPasswordRequest allocWithZone(

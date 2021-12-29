@@ -63,6 +63,7 @@ public class NSPersistentStoreAsynchronousResult extends NSPersistentStoreResult
     @Selector("alloc")
     public static native NSPersistentStoreAsynchronousResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentStoreAsynchronousResult allocWithZone(VoidPtr zone);

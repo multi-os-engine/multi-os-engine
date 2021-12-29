@@ -66,6 +66,7 @@ public class CMLogItem extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("alloc")
     public static native CMLogItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CMLogItem allocWithZone(VoidPtr zone);

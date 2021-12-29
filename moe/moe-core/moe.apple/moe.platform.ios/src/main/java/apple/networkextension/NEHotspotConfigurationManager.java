@@ -53,6 +53,7 @@ public class NEHotspotConfigurationManager extends NSObject {
     @Selector("alloc")
     public static native NEHotspotConfigurationManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEHotspotConfigurationManager allocWithZone(VoidPtr zone);

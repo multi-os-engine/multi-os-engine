@@ -63,6 +63,7 @@ public class INSendPaymentIntent extends INIntent {
     @Selector("alloc")
     public static native INSendPaymentIntent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSendPaymentIntent allocWithZone(VoidPtr zone);

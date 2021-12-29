@@ -83,6 +83,7 @@ public class UIWindowSceneActivationAction extends UIAction {
     @Selector("alloc")
     public static native UIWindowSceneActivationAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIWindowSceneActivationAction allocWithZone(VoidPtr zone);

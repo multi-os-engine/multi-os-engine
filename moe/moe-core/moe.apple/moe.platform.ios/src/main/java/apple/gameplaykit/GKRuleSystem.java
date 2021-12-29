@@ -80,6 +80,7 @@ public class GKRuleSystem extends NSObject {
     @Selector("alloc")
     public static native GKRuleSystem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKRuleSystem allocWithZone(VoidPtr zone);

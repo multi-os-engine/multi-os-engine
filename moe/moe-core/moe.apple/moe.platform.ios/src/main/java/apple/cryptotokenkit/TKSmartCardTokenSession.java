@@ -50,6 +50,7 @@ public class TKSmartCardTokenSession extends TKTokenSession {
     @Selector("alloc")
     public static native TKSmartCardTokenSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native TKSmartCardTokenSession allocWithZone(VoidPtr zone);

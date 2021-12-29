@@ -63,6 +63,7 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
     @Selector("alloc")
     public static native CKDiscoverUserIdentitiesOperation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CKDiscoverUserIdentitiesOperation allocWithZone(VoidPtr zone);

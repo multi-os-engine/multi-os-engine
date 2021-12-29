@@ -47,6 +47,7 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     @Selector("alloc")
     public static native UICollectionViewDropPlaceholder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewDropPlaceholder allocWithZone(VoidPtr zone);

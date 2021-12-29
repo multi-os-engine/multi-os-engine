@@ -55,6 +55,7 @@ public class MPSImageDivide extends MPSImageArithmetic {
     @Selector("alloc")
     public static native MPSImageDivide alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageDivide allocWithZone(VoidPtr zone);

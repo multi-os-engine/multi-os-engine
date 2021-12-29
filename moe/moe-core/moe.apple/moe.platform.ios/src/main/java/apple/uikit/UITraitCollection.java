@@ -71,6 +71,7 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("alloc")
     public static native UITraitCollection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITraitCollection allocWithZone(VoidPtr zone);

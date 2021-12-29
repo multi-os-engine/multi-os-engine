@@ -71,6 +71,7 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native SFTranscriptionSegment alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFTranscriptionSegment allocWithZone(VoidPtr zone);

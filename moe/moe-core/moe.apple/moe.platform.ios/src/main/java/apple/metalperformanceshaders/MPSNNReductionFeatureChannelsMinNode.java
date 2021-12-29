@@ -45,6 +45,7 @@ public class MPSNNReductionFeatureChannelsMinNode extends MPSNNUnaryReductionNod
     @Selector("alloc")
     public static native MPSNNReductionFeatureChannelsMinNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReductionFeatureChannelsMinNode allocWithZone(VoidPtr zone);

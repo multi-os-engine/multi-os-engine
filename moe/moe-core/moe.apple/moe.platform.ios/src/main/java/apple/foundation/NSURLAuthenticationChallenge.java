@@ -69,6 +69,7 @@ public class NSURLAuthenticationChallenge extends NSObject implements NSSecureCo
     @Selector("alloc")
     public static native NSURLAuthenticationChallenge alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSURLAuthenticationChallenge allocWithZone(VoidPtr zone);

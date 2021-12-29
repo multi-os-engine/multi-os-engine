@@ -2,6 +2,7 @@ package apple.chip;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
+import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -26,19 +27,19 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Cluster Content Launch
+ * Cluster OTA Software Update Provider
  */
 @Generated
 @Library("CHIP")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CHIPContentLaunch extends CHIPCluster {
+public class CHIPOtaSoftwareUpdateProvider extends CHIPCluster {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected CHIPContentLaunch(Pointer peer) {
+    protected CHIPOtaSoftwareUpdateProvider(Pointer peer) {
         super(peer);
     }
 
@@ -49,11 +50,24 @@ public class CHIPContentLaunch extends CHIPCluster {
     @Generated
     @Owned
     @Selector("alloc")
-    public static native CHIPContentLaunch alloc();
+    public static native CHIPOtaSoftwareUpdateProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
-    public static native CHIPContentLaunch allocWithZone(VoidPtr zone);
+    public static native CHIPOtaSoftwareUpdateProvider allocWithZone(VoidPtr zone);
+
+    @Generated
+    @Selector("applyUpdateRequest:newVersion:responseHandler:")
+    public native void applyUpdateRequestNewVersionResponseHandler(NSData updateToken, int newVersion,
+            @ObjCBlock(name = "call_applyUpdateRequestNewVersionResponseHandler") Block_applyUpdateRequestNewVersionResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_applyUpdateRequestNewVersionResponseHandler {
+        @Generated
+        void call_applyUpdateRequestNewVersionResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
@@ -92,11 +106,12 @@ public class CHIPContentLaunch extends CHIPCluster {
 
     @Generated
     @Selector("init")
-    public native CHIPContentLaunch init();
+    public native CHIPOtaSoftwareUpdateProvider init();
 
     @Generated
     @Selector("initWithDevice:endpoint:queue:")
-    public native CHIPContentLaunch initWithDeviceEndpointQueue(CHIPDevice device, byte endpoint, NSObject queue);
+    public native CHIPOtaSoftwareUpdateProvider initWithDeviceEndpointQueue(CHIPDevice device, char endpoint,
+            NSObject queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -120,44 +135,35 @@ public class CHIPContentLaunch extends CHIPCluster {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     @Generated
-    @Selector("launchContent:data:responseHandler:")
-    public native void launchContentDataResponseHandler(byte autoPlay, String data,
-            @ObjCBlock(name = "call_launchContentDataResponseHandler") Block_launchContentDataResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_launchContentDataResponseHandler {
-        @Generated
-        void call_launchContentDataResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
-    @Selector("launchURL:displayString:responseHandler:")
-    public native void launchURLDisplayStringResponseHandler(String contentURL, String displayString,
-            @ObjCBlock(name = "call_launchURLDisplayStringResponseHandler") Block_launchURLDisplayStringResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_launchURLDisplayStringResponseHandler {
-        @Generated
-        void call_launchURLDisplayStringResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
     @Owned
     @Selector("new")
-    public static native CHIPContentLaunch new_objc();
+    public static native CHIPOtaSoftwareUpdateProvider new_objc();
 
     @Generated
-    @Selector("readAttributeAcceptsHeaderListWithResponseHandler:")
-    public native void readAttributeAcceptsHeaderListWithResponseHandler(
-            @ObjCBlock(name = "call_readAttributeAcceptsHeaderListWithResponseHandler") Block_readAttributeAcceptsHeaderListWithResponseHandler responseHandler);
+    @Selector("notifyUpdateApplied:currentVersion:responseHandler:")
+    public native void notifyUpdateAppliedCurrentVersionResponseHandler(NSData updateToken, int currentVersion,
+            @ObjCBlock(name = "call_notifyUpdateAppliedCurrentVersionResponseHandler") Block_notifyUpdateAppliedCurrentVersionResponseHandler responseHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
-    public interface Block_readAttributeAcceptsHeaderListWithResponseHandler {
+    public interface Block_notifyUpdateAppliedCurrentVersionResponseHandler {
         @Generated
-        void call_readAttributeAcceptsHeaderListWithResponseHandler(NSError error, NSDictionary<?, ?> values);
+        void call_notifyUpdateAppliedCurrentVersionResponseHandler(NSError error, NSDictionary<?, ?> values);
+    }
+
+    @Generated
+    @Selector("queryImage:productId:imageType:hardwareVersion:currentVersion:protocolsSupported:location:requestorCanConsent:metadataForProvider:responseHandler:")
+    public native void queryImageProductIdImageTypeHardwareVersionCurrentVersionProtocolsSupportedLocationRequestorCanConsentMetadataForProviderResponseHandler(
+            char vendorId, char productId, char imageType, char hardwareVersion, int currentVersion,
+            byte protocolsSupported, String location, boolean requestorCanConsent, NSData metadataForProvider,
+            @ObjCBlock(name = "call_queryImageProductIdImageTypeHardwareVersionCurrentVersionProtocolsSupportedLocationRequestorCanConsentMetadataForProviderResponseHandler") Block_queryImageProductIdImageTypeHardwareVersionCurrentVersionProtocolsSupportedLocationRequestorCanConsentMetadataForProviderResponseHandler responseHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_queryImageProductIdImageTypeHardwareVersionCurrentVersionProtocolsSupportedLocationRequestorCanConsentMetadataForProviderResponseHandler {
+        @Generated
+        void call_queryImageProductIdImageTypeHardwareVersionCurrentVersionProtocolsSupportedLocationRequestorCanConsentMetadataForProviderResponseHandler(
+                NSError error, NSDictionary<?, ?> values);
     }
 
     @Generated
@@ -170,18 +176,6 @@ public class CHIPContentLaunch extends CHIPCluster {
     public interface Block_readAttributeClusterRevisionWithResponseHandler {
         @Generated
         void call_readAttributeClusterRevisionWithResponseHandler(NSError error, NSDictionary<?, ?> values);
-    }
-
-    @Generated
-    @Selector("readAttributeSupportedStreamingTypesWithResponseHandler:")
-    public native void readAttributeSupportedStreamingTypesWithResponseHandler(
-            @ObjCBlock(name = "call_readAttributeSupportedStreamingTypesWithResponseHandler") Block_readAttributeSupportedStreamingTypesWithResponseHandler responseHandler);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_readAttributeSupportedStreamingTypesWithResponseHandler {
-        @Generated
-        void call_readAttributeSupportedStreamingTypesWithResponseHandler(NSError error, NSDictionary<?, ?> values);
     }
 
     @Generated

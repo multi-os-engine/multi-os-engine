@@ -55,6 +55,7 @@ public class AVAudioConnectionPoint extends NSObject {
     @Selector("alloc")
     public static native AVAudioConnectionPoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioConnectionPoint allocWithZone(VoidPtr zone);

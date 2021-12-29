@@ -59,6 +59,7 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Selector("alloc")
     public static native NSUbiquitousKeyValueStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUbiquitousKeyValueStore allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Selector("alloc")
     public static native MPSNDArrayMultiaryKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayMultiaryKernel allocWithZone(VoidPtr zone);

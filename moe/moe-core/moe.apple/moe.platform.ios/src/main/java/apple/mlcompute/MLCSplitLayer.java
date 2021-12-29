@@ -51,6 +51,7 @@ public class MLCSplitLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCSplitLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCSplitLayer allocWithZone(VoidPtr zone);

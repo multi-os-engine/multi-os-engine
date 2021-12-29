@@ -48,6 +48,7 @@ public class UIDropInteraction extends NSObject implements UIInteraction {
     @Selector("alloc")
     public static native UIDropInteraction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDropInteraction allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class CLKWatchFaceLibrary extends NSObject {
     @Selector("alloc")
     public static native CLKWatchFaceLibrary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLKWatchFaceLibrary allocWithZone(VoidPtr zone);

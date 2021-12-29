@@ -67,6 +67,7 @@ public class GKCompositeBehavior extends GKBehavior {
     @Selector("alloc")
     public static native GKCompositeBehavior alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKCompositeBehavior allocWithZone(VoidPtr zone);

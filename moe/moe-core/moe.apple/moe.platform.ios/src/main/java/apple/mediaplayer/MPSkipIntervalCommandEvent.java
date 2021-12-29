@@ -61,6 +61,7 @@ public class MPSkipIntervalCommandEvent extends MPRemoteCommandEvent {
     @Selector("alloc")
     public static native MPSkipIntervalCommandEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSkipIntervalCommandEvent allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class BGTaskScheduler extends NSObject {
     @Selector("alloc")
     public static native BGTaskScheduler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native BGTaskScheduler allocWithZone(VoidPtr zone);

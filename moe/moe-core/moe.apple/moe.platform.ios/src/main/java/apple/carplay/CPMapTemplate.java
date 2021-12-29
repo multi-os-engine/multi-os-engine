@@ -52,6 +52,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("alloc")
     public static native CPMapTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPMapTemplate allocWithZone(VoidPtr zone);

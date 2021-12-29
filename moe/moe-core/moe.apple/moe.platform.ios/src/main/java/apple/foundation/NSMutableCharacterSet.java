@@ -89,6 +89,7 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     @Selector("alloc")
     public static native NSMutableCharacterSet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableCharacterSet allocWithZone(VoidPtr zone);

@@ -85,6 +85,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("alloc")
     public static native NSObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSObject allocWithZone(VoidPtr zone);

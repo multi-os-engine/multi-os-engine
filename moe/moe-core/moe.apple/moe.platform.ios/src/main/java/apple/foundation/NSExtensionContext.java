@@ -68,6 +68,7 @@ public class NSExtensionContext extends NSObject {
     @Selector("alloc")
     public static native NSExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSExtensionContext allocWithZone(VoidPtr zone);

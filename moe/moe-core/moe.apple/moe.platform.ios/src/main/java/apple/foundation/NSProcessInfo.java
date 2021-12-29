@@ -62,6 +62,7 @@ public class NSProcessInfo extends NSObject {
     @Selector("alloc")
     public static native NSProcessInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSProcessInfo allocWithZone(VoidPtr zone);

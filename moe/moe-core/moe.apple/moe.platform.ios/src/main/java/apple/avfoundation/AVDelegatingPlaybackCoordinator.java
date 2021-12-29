@@ -56,6 +56,7 @@ public class AVDelegatingPlaybackCoordinator extends AVPlaybackCoordinator {
     @Selector("alloc")
     public static native AVDelegatingPlaybackCoordinator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVDelegatingPlaybackCoordinator allocWithZone(VoidPtr zone);

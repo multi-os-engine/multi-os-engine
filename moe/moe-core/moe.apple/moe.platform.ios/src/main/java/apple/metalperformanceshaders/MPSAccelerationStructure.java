@@ -291,6 +291,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     @Selector("alloc")
     public static native MPSAccelerationStructure alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSAccelerationStructure allocWithZone(VoidPtr zone);

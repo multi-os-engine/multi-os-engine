@@ -76,6 +76,7 @@ public class JSManagedValue extends NSObject {
     @Selector("alloc")
     public static native JSManagedValue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native JSManagedValue allocWithZone(VoidPtr zone);

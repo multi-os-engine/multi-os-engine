@@ -50,6 +50,7 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @Selector("alloc")
     public static native MLCYOLOLossLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCYOLOLossLayer allocWithZone(VoidPtr zone);

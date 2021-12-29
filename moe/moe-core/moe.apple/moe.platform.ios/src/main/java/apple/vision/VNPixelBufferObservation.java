@@ -56,6 +56,7 @@ public class VNPixelBufferObservation extends VNObservation {
     @Selector("alloc")
     public static native VNPixelBufferObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNPixelBufferObservation allocWithZone(VoidPtr zone);

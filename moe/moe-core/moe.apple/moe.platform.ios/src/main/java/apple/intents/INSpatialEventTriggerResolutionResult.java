@@ -45,6 +45,7 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @Selector("alloc")
     public static native INSpatialEventTriggerResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSpatialEventTriggerResolutionResult allocWithZone(VoidPtr zone);

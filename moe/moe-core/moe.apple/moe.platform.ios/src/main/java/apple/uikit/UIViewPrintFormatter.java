@@ -64,6 +64,7 @@ public class UIViewPrintFormatter extends UIPrintFormatter {
     @Selector("alloc")
     public static native UIViewPrintFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIViewPrintFormatter allocWithZone(VoidPtr zone);

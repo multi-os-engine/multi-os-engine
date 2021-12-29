@@ -70,6 +70,7 @@ public class NEHotspotNetwork extends NSObject {
     @Selector("alloc")
     public static native NEHotspotNetwork alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEHotspotNetwork allocWithZone(VoidPtr zone);

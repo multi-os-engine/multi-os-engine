@@ -50,6 +50,7 @@ public class CLSProgressReportingCapability extends CLSObject {
     @Selector("alloc")
     public static native CLSProgressReportingCapability alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSProgressReportingCapability allocWithZone(VoidPtr zone);

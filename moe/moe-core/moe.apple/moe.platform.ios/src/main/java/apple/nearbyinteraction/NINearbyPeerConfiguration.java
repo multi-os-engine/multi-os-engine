@@ -52,6 +52,7 @@ public class NINearbyPeerConfiguration extends NIConfiguration {
     @Selector("alloc")
     public static native NINearbyPeerConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NINearbyPeerConfiguration allocWithZone(VoidPtr zone);

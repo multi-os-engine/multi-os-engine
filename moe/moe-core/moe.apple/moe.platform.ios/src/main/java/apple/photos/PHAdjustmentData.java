@@ -62,6 +62,7 @@ public class PHAdjustmentData extends NSObject {
     @Selector("alloc")
     public static native PHAdjustmentData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHAdjustmentData allocWithZone(VoidPtr zone);

@@ -62,6 +62,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNPadNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNPadNode allocWithZone(VoidPtr zone);

@@ -61,6 +61,7 @@ public class MTLComputePipelineReflection extends NSObject {
     @Selector("alloc")
     public static native MTLComputePipelineReflection alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLComputePipelineReflection allocWithZone(VoidPtr zone);

@@ -52,6 +52,7 @@ public class MTLResourceStatePassDescriptor extends NSObject implements NSCopyin
     @Selector("alloc")
     public static native MTLResourceStatePassDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLResourceStatePassDescriptor allocWithZone(VoidPtr zone);

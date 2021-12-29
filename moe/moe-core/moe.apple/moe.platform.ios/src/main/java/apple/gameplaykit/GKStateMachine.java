@@ -64,6 +64,7 @@ public class GKStateMachine extends NSObject {
     @Selector("alloc")
     public static native GKStateMachine alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKStateMachine allocWithZone(VoidPtr zone);

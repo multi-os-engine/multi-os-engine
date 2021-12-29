@@ -68,6 +68,7 @@ public class MSMessageLayout extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MSMessageLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MSMessageLayout allocWithZone(VoidPtr zone);

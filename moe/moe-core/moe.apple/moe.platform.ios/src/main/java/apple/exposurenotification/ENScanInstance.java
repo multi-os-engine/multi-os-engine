@@ -50,6 +50,7 @@ public class ENScanInstance extends NSObject {
     @Selector("alloc")
     public static native ENScanInstance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ENScanInstance allocWithZone(VoidPtr zone);

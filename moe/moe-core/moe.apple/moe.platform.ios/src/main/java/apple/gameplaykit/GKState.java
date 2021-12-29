@@ -70,6 +70,7 @@ public class GKState extends NSObject {
     @Selector("alloc")
     public static native GKState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKState allocWithZone(VoidPtr zone);

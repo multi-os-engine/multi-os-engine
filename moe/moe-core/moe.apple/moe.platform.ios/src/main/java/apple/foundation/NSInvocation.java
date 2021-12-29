@@ -59,6 +59,7 @@ public class NSInvocation extends NSObject {
     @Selector("alloc")
     public static native NSInvocation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSInvocation allocWithZone(VoidPtr zone);

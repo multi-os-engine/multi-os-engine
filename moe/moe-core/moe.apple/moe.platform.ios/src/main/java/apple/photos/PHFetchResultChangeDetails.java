@@ -63,6 +63,7 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     @Selector("alloc")
     public static native PHFetchResultChangeDetails<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHFetchResultChangeDetails<?> allocWithZone(VoidPtr zone);

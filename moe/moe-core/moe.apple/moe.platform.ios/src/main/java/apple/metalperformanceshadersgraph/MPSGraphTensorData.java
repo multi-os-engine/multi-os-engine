@@ -55,6 +55,7 @@ public class MPSGraphTensorData extends NSObject {
     @Selector("alloc")
     public static native MPSGraphTensorData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSGraphTensorData allocWithZone(VoidPtr zone);

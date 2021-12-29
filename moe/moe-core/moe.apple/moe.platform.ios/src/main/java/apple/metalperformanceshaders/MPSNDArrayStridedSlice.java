@@ -57,6 +57,7 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
     @Selector("alloc")
     public static native MPSNDArrayStridedSlice alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayStridedSlice allocWithZone(VoidPtr zone);

@@ -51,6 +51,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Selector("alloc")
     public static native ASAuthorizationProviderExtensionAuthorizationRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationProviderExtensionAuthorizationRequest allocWithZone(VoidPtr zone);

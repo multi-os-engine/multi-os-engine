@@ -53,6 +53,7 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTemplate allocWithZone(VoidPtr zone);

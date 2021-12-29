@@ -64,6 +64,7 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AVTextStyleRule alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVTextStyleRule allocWithZone(VoidPtr zone);

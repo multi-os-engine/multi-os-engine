@@ -66,6 +66,7 @@ public class HMCameraProfile extends HMAccessoryProfile {
     @Selector("alloc")
     public static native HMCameraProfile alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCameraProfile allocWithZone(VoidPtr zone);

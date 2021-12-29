@@ -49,6 +49,7 @@ public class CPPointOfInterestTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPPointOfInterestTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPPointOfInterestTemplate allocWithZone(VoidPtr zone);

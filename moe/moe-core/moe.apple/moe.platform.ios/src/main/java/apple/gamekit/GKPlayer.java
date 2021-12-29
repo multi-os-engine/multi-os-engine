@@ -64,6 +64,7 @@ public class GKPlayer extends GKBasePlayer {
     @Selector("alloc")
     public static native GKPlayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKPlayer allocWithZone(VoidPtr zone);

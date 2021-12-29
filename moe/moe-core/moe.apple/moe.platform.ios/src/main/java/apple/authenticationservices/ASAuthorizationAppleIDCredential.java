@@ -51,6 +51,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
     @Selector("alloc")
     public static native ASAuthorizationAppleIDCredential alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationAppleIDCredential allocWithZone(VoidPtr zone);

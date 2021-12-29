@@ -65,7 +65,7 @@ import org.moe.natj.general.ann.Generated;
 public final class SecTrustResultType {
     @Generated public static final int Invalid = 0x00000000;
     @Generated public static final int Proceed = 0x00000001;
-    @Generated public static final int Confirm = 0x00000002;
+    @Deprecated @Generated public static final int Confirm = 0x00000002;
     @Generated public static final int Deny = 0x00000003;
     @Generated public static final int Unspecified = 0x00000004;
     @Generated public static final int RecoverableTrustFailure = 0x00000005;

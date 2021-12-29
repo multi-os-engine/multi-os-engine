@@ -36,7 +36,7 @@ public final class MPSDataType {
     /**
      * signed integers
      */
-    @Generated public static final int IntBit = 0x20000000;
+    @Deprecated @Generated public static final int IntBit = 0x20000000;
     /**
      * signed integers
      */

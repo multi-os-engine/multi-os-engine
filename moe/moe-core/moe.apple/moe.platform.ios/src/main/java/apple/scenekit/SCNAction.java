@@ -71,6 +71,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SCNAction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAction allocWithZone(VoidPtr zone);

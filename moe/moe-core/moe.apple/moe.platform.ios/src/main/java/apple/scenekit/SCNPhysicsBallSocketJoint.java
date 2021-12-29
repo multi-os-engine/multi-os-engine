@@ -70,6 +70,7 @@ public class SCNPhysicsBallSocketJoint extends SCNPhysicsBehavior {
     @Selector("alloc")
     public static native SCNPhysicsBallSocketJoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNPhysicsBallSocketJoint allocWithZone(VoidPtr zone);

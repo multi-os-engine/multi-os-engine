@@ -50,6 +50,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNYOLOLoss alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNYOLOLoss allocWithZone(VoidPtr zone);

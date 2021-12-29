@@ -51,6 +51,7 @@ public class INTicketedEvent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("alloc")
     public static native INTicketedEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INTicketedEvent allocWithZone(VoidPtr zone);

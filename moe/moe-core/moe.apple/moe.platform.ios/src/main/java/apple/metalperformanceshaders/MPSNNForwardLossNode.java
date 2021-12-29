@@ -50,6 +50,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("alloc")
     public static native MPSNNForwardLossNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNForwardLossNode allocWithZone(VoidPtr zone);

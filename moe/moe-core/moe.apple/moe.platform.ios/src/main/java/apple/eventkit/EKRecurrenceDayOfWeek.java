@@ -89,6 +89,7 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     @Selector("alloc")
     public static native EKRecurrenceDayOfWeek alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKRecurrenceDayOfWeek allocWithZone(VoidPtr zone);

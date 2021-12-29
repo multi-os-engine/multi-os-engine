@@ -60,6 +60,7 @@ public class NSUnitSpeed extends NSDimension implements NSSecureCoding {
     @Selector("alloc")
     public static native NSUnitSpeed alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSUnitSpeed allocWithZone(VoidPtr zone);

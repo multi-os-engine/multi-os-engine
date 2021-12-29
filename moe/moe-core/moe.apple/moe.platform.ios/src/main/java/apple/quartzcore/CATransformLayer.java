@@ -89,6 +89,7 @@ public class CATransformLayer extends CALayer {
     @Selector("alloc")
     public static native CATransformLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CATransformLayer allocWithZone(VoidPtr zone);

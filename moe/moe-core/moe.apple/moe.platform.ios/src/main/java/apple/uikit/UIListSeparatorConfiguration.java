@@ -57,6 +57,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     @Selector("alloc")
     public static native UIListSeparatorConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIListSeparatorConfiguration allocWithZone(VoidPtr zone);

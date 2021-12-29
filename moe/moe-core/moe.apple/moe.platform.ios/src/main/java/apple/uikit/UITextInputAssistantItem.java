@@ -61,6 +61,7 @@ public class UITextInputAssistantItem extends NSObject {
     @Selector("alloc")
     public static native UITextInputAssistantItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITextInputAssistantItem allocWithZone(VoidPtr zone);

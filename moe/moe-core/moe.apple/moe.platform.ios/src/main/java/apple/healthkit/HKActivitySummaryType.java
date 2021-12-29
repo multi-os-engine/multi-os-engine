@@ -72,6 +72,7 @@ public class HKActivitySummaryType extends HKObjectType {
     @Selector("alloc")
     public static native HKActivitySummaryType alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HKActivitySummaryType allocWithZone(VoidPtr zone);

@@ -77,6 +77,7 @@ public class CNContactViewController extends UIViewController {
     @Selector("alloc")
     public static native CNContactViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactViewController allocWithZone(VoidPtr zone);

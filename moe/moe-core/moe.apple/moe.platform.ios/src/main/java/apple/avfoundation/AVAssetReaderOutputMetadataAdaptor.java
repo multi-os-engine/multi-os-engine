@@ -66,6 +66,7 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Selector("alloc")
     public static native AVAssetReaderOutputMetadataAdaptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetReaderOutputMetadataAdaptor allocWithZone(VoidPtr zone);

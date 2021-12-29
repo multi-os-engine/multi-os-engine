@@ -59,6 +59,7 @@ public class AVSemanticSegmentationMatte extends NSObject {
     @Selector("alloc")
     public static native AVSemanticSegmentationMatte alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVSemanticSegmentationMatte allocWithZone(VoidPtr zone);

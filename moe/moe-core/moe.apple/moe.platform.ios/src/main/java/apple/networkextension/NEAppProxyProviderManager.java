@@ -70,6 +70,7 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
     @Selector("alloc")
     public static native NEAppProxyProviderManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEAppProxyProviderManager allocWithZone(VoidPtr zone);

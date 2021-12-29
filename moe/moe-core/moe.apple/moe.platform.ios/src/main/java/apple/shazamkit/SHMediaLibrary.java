@@ -78,6 +78,7 @@ public class SHMediaLibrary extends NSObject {
     @Selector("alloc")
     public static native SHMediaLibrary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SHMediaLibrary allocWithZone(VoidPtr zone);

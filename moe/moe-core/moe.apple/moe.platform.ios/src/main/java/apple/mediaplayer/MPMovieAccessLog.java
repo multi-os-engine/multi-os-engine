@@ -46,6 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An MPMovieAccessLog accumulates key metrics about network playback and presents them as a collection of MPMovieAccessLogEvent instances.
  * Each MPMovieAccessLogEvent instance collates the data that relates to each uninterrupted period of playback.
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +70,7 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPMovieAccessLog alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMovieAccessLog allocWithZone(VoidPtr zone);

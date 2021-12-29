@@ -72,6 +72,7 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native SKTileSet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKTileSet allocWithZone(VoidPtr zone);

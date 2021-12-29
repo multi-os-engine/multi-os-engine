@@ -62,6 +62,7 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
     @Selector("alloc")
     public static native MPSNDArrayGather alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNDArrayGather allocWithZone(VoidPtr zone);

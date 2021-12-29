@@ -66,6 +66,7 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     @Selector("alloc")
     public static native UNNotificationCategory alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNNotificationCategory allocWithZone(VoidPtr zone);

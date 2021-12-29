@@ -70,6 +70,7 @@ public class SCNSphere extends SCNGeometry {
     @Selector("alloc")
     public static native SCNSphere alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNSphere allocWithZone(VoidPtr zone);

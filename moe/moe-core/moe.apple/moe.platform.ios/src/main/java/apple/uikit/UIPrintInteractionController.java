@@ -69,6 +69,7 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("alloc")
     public static native UIPrintInteractionController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPrintInteractionController allocWithZone(VoidPtr zone);

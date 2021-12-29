@@ -108,6 +108,7 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSNNPadGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNPadGradient allocWithZone(VoidPtr zone);

@@ -59,6 +59,7 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @Selector("alloc")
     public static native NSPersistentCloudKitContainer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSPersistentCloudKitContainer allocWithZone(VoidPtr zone);

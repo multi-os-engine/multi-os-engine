@@ -68,6 +68,7 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Selector("alloc")
     public static native NSMutableAttributedString alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSMutableAttributedString allocWithZone(VoidPtr zone);

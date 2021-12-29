@@ -53,6 +53,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     @Selector("alloc")
     public static native MTLCounterSampleBufferDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLCounterSampleBufferDescriptor allocWithZone(VoidPtr zone);

@@ -81,6 +81,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("alloc")
     public static native UISegmentedControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISegmentedControl allocWithZone(VoidPtr zone);

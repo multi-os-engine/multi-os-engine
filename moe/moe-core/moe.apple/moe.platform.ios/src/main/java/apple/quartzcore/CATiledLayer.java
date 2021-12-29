@@ -68,6 +68,7 @@ public class CATiledLayer extends CALayer {
     @Selector("alloc")
     public static native CATiledLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CATiledLayer allocWithZone(VoidPtr zone);

@@ -69,6 +69,7 @@ public class SKCloudServiceSetupViewController extends UIViewController {
     @Selector("alloc")
     public static native SKCloudServiceSetupViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKCloudServiceSetupViewController allocWithZone(VoidPtr zone);

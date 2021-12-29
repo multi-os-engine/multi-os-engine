@@ -52,6 +52,7 @@ public class MLCGraph extends NSObject {
     @Selector("alloc")
     public static native MLCGraph alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCGraph allocWithZone(VoidPtr zone);

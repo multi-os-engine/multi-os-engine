@@ -49,6 +49,7 @@ public class VNGeometryUtils extends NSObject {
     @Selector("alloc")
     public static native VNGeometryUtils alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNGeometryUtils allocWithZone(VoidPtr zone);

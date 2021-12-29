@@ -50,6 +50,7 @@ public class UICellAccessoryCheckmark extends UICellAccessory {
     @Selector("alloc")
     public static native UICellAccessoryCheckmark alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICellAccessoryCheckmark allocWithZone(VoidPtr zone);

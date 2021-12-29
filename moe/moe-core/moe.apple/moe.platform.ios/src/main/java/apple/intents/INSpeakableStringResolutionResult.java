@@ -61,6 +61,7 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
     @Selector("alloc")
     public static native INSpeakableStringResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSpeakableStringResolutionResult allocWithZone(VoidPtr zone);

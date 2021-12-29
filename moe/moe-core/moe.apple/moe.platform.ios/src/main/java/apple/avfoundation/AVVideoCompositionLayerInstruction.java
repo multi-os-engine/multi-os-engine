@@ -74,6 +74,7 @@ public class AVVideoCompositionLayerInstruction extends NSObject
     @Selector("alloc")
     public static native AVVideoCompositionLayerInstruction alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVVideoCompositionLayerInstruction allocWithZone(VoidPtr zone);

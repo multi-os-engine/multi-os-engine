@@ -78,6 +78,7 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     @Selector("alloc")
     public static native UIPopoverBackgroundView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPopoverBackgroundView allocWithZone(VoidPtr zone);

@@ -54,6 +54,7 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
     @Selector("alloc")
     public static native MPSNNGramMatrixCalculationGradient alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNGramMatrixCalculationGradient allocWithZone(VoidPtr zone);

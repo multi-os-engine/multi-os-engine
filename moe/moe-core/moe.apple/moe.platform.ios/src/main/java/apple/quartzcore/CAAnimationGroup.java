@@ -68,6 +68,7 @@ public class CAAnimationGroup extends CAAnimation {
     @Selector("alloc")
     public static native CAAnimationGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAAnimationGroup allocWithZone(VoidPtr zone);

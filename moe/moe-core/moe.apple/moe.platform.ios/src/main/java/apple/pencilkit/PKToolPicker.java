@@ -64,6 +64,7 @@ public class PKToolPicker extends NSObject {
     @Selector("alloc")
     public static native PKToolPicker alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKToolPicker allocWithZone(VoidPtr zone);

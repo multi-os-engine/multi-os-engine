@@ -55,6 +55,7 @@ public class CPAlertTemplate extends CPTemplate {
     @Selector("alloc")
     public static native CPAlertTemplate alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPAlertTemplate allocWithZone(VoidPtr zone);

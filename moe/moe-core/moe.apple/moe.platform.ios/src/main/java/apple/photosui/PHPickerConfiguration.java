@@ -51,6 +51,7 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PHPickerConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHPickerConfiguration allocWithZone(VoidPtr zone);

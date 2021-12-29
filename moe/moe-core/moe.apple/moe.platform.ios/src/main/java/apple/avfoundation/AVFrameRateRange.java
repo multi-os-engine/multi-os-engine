@@ -70,6 +70,7 @@ public class AVFrameRateRange extends NSObject {
     @Selector("alloc")
     public static native AVFrameRateRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVFrameRateRange allocWithZone(VoidPtr zone);

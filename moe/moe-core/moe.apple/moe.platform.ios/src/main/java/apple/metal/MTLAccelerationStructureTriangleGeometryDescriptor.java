@@ -50,6 +50,7 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     @Selector("alloc")
     public static native MTLAccelerationStructureTriangleGeometryDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLAccelerationStructureTriangleGeometryDescriptor allocWithZone(VoidPtr zone);

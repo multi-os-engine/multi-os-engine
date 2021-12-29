@@ -50,6 +50,7 @@ public class AXNumericDataAxisDescriptor extends NSObject implements AXDataAxisD
     @Selector("alloc")
     public static native AXNumericDataAxisDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AXNumericDataAxisDescriptor allocWithZone(VoidPtr zone);

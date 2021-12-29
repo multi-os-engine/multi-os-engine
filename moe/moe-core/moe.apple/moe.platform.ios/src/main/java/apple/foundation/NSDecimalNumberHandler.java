@@ -63,6 +63,7 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     @Selector("alloc")
     public static native NSDecimalNumberHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDecimalNumberHandler allocWithZone(VoidPtr zone);

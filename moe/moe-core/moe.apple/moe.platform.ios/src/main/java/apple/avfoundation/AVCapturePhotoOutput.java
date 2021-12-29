@@ -116,6 +116,7 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Selector("alloc")
     public static native AVCapturePhotoOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCapturePhotoOutput allocWithZone(VoidPtr zone);

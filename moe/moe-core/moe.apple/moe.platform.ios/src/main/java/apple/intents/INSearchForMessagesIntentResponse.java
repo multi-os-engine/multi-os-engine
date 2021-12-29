@@ -64,6 +64,7 @@ public class INSearchForMessagesIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSearchForMessagesIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSearchForMessagesIntentResponse allocWithZone(VoidPtr zone);

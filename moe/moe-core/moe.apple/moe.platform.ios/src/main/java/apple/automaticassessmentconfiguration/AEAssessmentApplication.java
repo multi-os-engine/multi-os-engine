@@ -47,6 +47,7 @@ public class AEAssessmentApplication extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native AEAssessmentApplication alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AEAssessmentApplication allocWithZone(VoidPtr zone);

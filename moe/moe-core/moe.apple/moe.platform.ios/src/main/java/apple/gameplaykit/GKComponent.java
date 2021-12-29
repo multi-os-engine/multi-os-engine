@@ -75,6 +75,7 @@ public class GKComponent extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native GKComponent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKComponent allocWithZone(VoidPtr zone);

@@ -63,6 +63,7 @@ public class UNTextInputNotificationResponse extends UNNotificationResponse {
     @Selector("alloc")
     public static native UNTextInputNotificationResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UNTextInputNotificationResponse allocWithZone(VoidPtr zone);

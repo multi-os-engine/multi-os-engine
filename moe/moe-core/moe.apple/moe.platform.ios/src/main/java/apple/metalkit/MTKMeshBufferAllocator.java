@@ -73,6 +73,7 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @Selector("alloc")
     public static native MTKMeshBufferAllocator alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTKMeshBufferAllocator allocWithZone(VoidPtr zone);

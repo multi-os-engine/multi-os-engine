@@ -4952,6 +4952,7 @@ public final class AudioToolbox {
      * CFString version of kAudioSession_AudioRouteChangeKey_Reason.  This is more convenient to use than the raw string version.
      * Available in iOS 5.0 or greater
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_RouteChangeKey_Reason();
@@ -4960,10 +4961,12 @@ public final class AudioToolbox {
      * CFDictionary keys for kAudioSessionProperty_AudioRouteChange
      * Available in iOS 5.0 or greater
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_AudioRouteChangeKey_PreviousRouteDescription();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_AudioRouteChangeKey_CurrentRouteDescription();
@@ -4972,10 +4975,12 @@ public final class AudioToolbox {
      * CFDictionary keys for kAudioSessionProperty_AudioRouteDescription
      * Available in iOS 5.0 or greater
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_AudioRouteKey_Inputs();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_AudioRouteKey_Outputs();
@@ -4985,6 +4990,7 @@ public final class AudioToolbox {
      * and kAudioSession_AudioRouteKey_Outputs.
      * Available in iOS 5.0 or greater
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_AudioRouteKey_Type();
@@ -5006,22 +5012,27 @@ public final class AudioToolbox {
      * [@constant]       kAudioSessionInputRoute_USBAudio
      * A Universal Serial Bus input
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionInputRoute_LineIn();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionInputRoute_BuiltInMic();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionInputRoute_HeadsetMic();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionInputRoute_BluetoothHFP();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionInputRoute_USBAudio();
@@ -5051,38 +5062,47 @@ public final class AudioToolbox {
      * [@constant]       kAudioSessionOutputRoute_AirPlay
      * Output on a remote Air Play device
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_LineOut();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_Headphones();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_BluetoothHFP();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_BluetoothA2DP();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_BuiltInReceiver();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_BuiltInSpeaker();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_USBAudio();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_HDMI();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSessionOutputRoute_AirPlay();
@@ -5090,10 +5110,12 @@ public final class AudioToolbox {
     /**
      * CFDictionary keys for kAudioSessionProperty_InputSources
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_InputSourceKey_ID();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_InputSourceKey_Description();
@@ -5101,10 +5123,12 @@ public final class AudioToolbox {
     /**
      * CFDictionary keys for kAudioSessionProperty_OutputDestinations
      */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_OutputDestinationKey_ID();
 
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kAudioSession_OutputDestinationKey_Description();

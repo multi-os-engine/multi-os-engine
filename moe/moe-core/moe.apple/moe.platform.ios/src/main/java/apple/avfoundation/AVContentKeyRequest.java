@@ -52,6 +52,7 @@ public class AVContentKeyRequest extends NSObject {
     @Selector("alloc")
     public static native AVContentKeyRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVContentKeyRequest allocWithZone(VoidPtr zone);

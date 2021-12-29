@@ -119,6 +119,7 @@ public class MPSState extends NSObject {
     @Selector("alloc")
     public static native MPSState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSState allocWithZone(VoidPtr zone);

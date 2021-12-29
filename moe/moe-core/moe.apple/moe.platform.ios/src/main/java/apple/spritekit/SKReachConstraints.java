@@ -65,6 +65,7 @@ public class SKReachConstraints extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native SKReachConstraints alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKReachConstraints allocWithZone(VoidPtr zone);

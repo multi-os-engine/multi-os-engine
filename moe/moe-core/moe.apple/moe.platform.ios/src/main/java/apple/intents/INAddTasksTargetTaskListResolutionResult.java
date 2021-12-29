@@ -45,6 +45,7 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     @Selector("alloc")
     public static native INAddTasksTargetTaskListResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INAddTasksTargetTaskListResolutionResult allocWithZone(VoidPtr zone);

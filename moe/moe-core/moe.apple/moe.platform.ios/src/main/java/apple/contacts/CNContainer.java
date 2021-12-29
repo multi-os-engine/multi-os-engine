@@ -72,6 +72,7 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CNContainer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContainer allocWithZone(VoidPtr zone);

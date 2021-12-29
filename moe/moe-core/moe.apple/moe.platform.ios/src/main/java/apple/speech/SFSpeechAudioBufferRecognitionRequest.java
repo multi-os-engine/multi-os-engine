@@ -67,6 +67,7 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     @Selector("alloc")
     public static native SFSpeechAudioBufferRecognitionRequest alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SFSpeechAudioBufferRecognitionRequest allocWithZone(VoidPtr zone);

@@ -57,6 +57,7 @@ public class AVAudioUnitReverb extends AVAudioUnitEffect {
     @Selector("alloc")
     public static native AVAudioUnitReverb alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioUnitReverb allocWithZone(VoidPtr zone);

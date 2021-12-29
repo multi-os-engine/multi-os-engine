@@ -77,6 +77,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXMetaData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXMetaData allocWithZone(VoidPtr zone);

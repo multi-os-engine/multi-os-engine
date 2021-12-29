@@ -53,6 +53,7 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
     @Selector("alloc")
     public static native ARFaceAnchor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARFaceAnchor allocWithZone(VoidPtr zone);

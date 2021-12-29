@@ -59,6 +59,7 @@ public class NSRecursiveLock extends NSObject implements NSLocking {
     @Selector("alloc")
     public static native NSRecursiveLock alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSRecursiveLock allocWithZone(VoidPtr zone);

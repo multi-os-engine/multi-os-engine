@@ -80,6 +80,7 @@ public class WCSession extends NSObject {
     @Selector("alloc")
     public static native WCSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WCSession allocWithZone(VoidPtr zone);

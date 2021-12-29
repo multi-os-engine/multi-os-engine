@@ -69,6 +69,7 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native INRideOption alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRideOption allocWithZone(VoidPtr zone);

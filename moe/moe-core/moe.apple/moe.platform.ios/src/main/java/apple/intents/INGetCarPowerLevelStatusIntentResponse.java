@@ -54,6 +54,7 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INGetCarPowerLevelStatusIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INGetCarPowerLevelStatusIntentResponse allocWithZone(VoidPtr zone);

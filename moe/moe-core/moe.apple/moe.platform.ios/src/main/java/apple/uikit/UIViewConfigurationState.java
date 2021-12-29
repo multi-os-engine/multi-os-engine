@@ -49,6 +49,7 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     @Selector("alloc")
     public static native UIViewConfigurationState alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIViewConfigurationState allocWithZone(VoidPtr zone);

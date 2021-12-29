@@ -60,6 +60,7 @@ public class VNSequenceRequestHandler extends NSObject {
     @Selector("alloc")
     public static native VNSequenceRequestHandler alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNSequenceRequestHandler allocWithZone(VoidPtr zone);

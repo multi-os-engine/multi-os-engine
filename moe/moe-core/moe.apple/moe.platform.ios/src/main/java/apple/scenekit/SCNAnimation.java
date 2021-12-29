@@ -57,6 +57,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Selector("alloc")
     public static native SCNAnimation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNAnimation allocWithZone(VoidPtr zone);

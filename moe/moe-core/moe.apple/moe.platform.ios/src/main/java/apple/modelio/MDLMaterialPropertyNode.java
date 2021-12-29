@@ -63,6 +63,7 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
     @Selector("alloc")
     public static native MDLMaterialPropertyNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLMaterialPropertyNode allocWithZone(VoidPtr zone);

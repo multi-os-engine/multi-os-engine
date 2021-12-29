@@ -66,6 +66,7 @@ public class UIVisualEffect extends NSObject implements NSCopying, NSSecureCodin
     @Selector("alloc")
     public static native UIVisualEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIVisualEffect allocWithZone(VoidPtr zone);

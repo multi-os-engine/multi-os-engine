@@ -61,6 +61,7 @@ public class INMessageAttributeResolutionResult extends INIntentResolutionResult
     @Selector("alloc")
     public static native INMessageAttributeResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INMessageAttributeResolutionResult allocWithZone(VoidPtr zone);

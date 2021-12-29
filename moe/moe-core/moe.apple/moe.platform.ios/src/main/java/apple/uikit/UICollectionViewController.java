@@ -74,6 +74,7 @@ public class UICollectionViewController extends UIViewController
     @Selector("alloc")
     public static native UICollectionViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewController allocWithZone(VoidPtr zone);

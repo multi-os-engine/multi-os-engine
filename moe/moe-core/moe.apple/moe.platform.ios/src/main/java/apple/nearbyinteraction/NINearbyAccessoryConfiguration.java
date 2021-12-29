@@ -63,6 +63,7 @@ public class NINearbyAccessoryConfiguration extends NIConfiguration {
     @Selector("alloc")
     public static native NINearbyAccessoryConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NINearbyAccessoryConfiguration allocWithZone(VoidPtr zone);

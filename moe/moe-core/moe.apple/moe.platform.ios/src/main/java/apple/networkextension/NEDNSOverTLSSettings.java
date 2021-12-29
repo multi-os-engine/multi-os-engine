@@ -47,6 +47,7 @@ public class NEDNSOverTLSSettings extends NEDNSSettings {
     @Selector("alloc")
     public static native NEDNSOverTLSSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEDNSOverTLSSettings allocWithZone(VoidPtr zone);

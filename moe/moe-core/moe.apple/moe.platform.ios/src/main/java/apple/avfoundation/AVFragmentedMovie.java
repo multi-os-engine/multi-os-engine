@@ -51,6 +51,7 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
     @Selector("alloc")
     public static native AVFragmentedMovie alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVFragmentedMovie allocWithZone(VoidPtr zone);

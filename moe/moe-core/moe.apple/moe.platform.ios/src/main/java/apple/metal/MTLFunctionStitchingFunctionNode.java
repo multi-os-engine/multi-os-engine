@@ -52,6 +52,7 @@ public class MTLFunctionStitchingFunctionNode extends NSObject implements MTLFun
     @Selector("alloc")
     public static native MTLFunctionStitchingFunctionNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingFunctionNode allocWithZone(VoidPtr zone);

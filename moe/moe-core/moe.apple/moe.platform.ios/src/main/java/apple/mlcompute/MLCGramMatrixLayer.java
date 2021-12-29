@@ -63,6 +63,7 @@ public class MLCGramMatrixLayer extends MLCLayer {
     @Selector("alloc")
     public static native MLCGramMatrixLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCGramMatrixLayer allocWithZone(VoidPtr zone);

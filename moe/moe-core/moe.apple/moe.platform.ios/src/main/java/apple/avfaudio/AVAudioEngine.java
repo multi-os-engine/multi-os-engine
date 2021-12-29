@@ -74,6 +74,7 @@ public class AVAudioEngine extends NSObject {
     @Selector("alloc")
     public static native AVAudioEngine alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioEngine allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class PKFloatRange extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PKFloatRange alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKFloatRange allocWithZone(VoidPtr zone);

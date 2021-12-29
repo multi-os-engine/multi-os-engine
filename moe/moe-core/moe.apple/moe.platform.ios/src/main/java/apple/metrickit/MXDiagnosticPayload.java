@@ -75,6 +75,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXDiagnosticPayload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXDiagnosticPayload allocWithZone(VoidPtr zone);

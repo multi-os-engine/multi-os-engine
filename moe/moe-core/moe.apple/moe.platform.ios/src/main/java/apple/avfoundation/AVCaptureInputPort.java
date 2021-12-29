@@ -70,6 +70,7 @@ public class AVCaptureInputPort extends NSObject {
     @Selector("alloc")
     public static native AVCaptureInputPort alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVCaptureInputPort allocWithZone(VoidPtr zone);

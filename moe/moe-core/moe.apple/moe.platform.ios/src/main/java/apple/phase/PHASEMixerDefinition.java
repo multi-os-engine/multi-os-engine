@@ -52,6 +52,7 @@ public class PHASEMixerDefinition extends PHASEDefinition {
     @Selector("alloc")
     public static native PHASEMixerDefinition alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEMixerDefinition allocWithZone(VoidPtr zone);

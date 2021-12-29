@@ -67,6 +67,7 @@ public class MPChangeShuffleModeCommand extends MPRemoteCommand {
     @Selector("alloc")
     public static native MPChangeShuffleModeCommand alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPChangeShuffleModeCommand allocWithZone(VoidPtr zone);

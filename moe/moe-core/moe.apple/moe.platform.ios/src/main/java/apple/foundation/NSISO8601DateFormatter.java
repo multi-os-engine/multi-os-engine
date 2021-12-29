@@ -60,6 +60,7 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @Selector("alloc")
     public static native NSISO8601DateFormatter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSISO8601DateFormatter allocWithZone(VoidPtr zone);

@@ -64,6 +64,7 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Selector("alloc")
     public static native NSDiffableDataSourceSnapshot<?, ?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSDiffableDataSourceSnapshot<?, ?> allocWithZone(VoidPtr zone);

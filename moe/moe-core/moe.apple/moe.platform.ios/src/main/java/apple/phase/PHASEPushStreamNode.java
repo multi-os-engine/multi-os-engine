@@ -54,6 +54,7 @@ public class PHASEPushStreamNode extends NSObject {
     @Selector("alloc")
     public static native PHASEPushStreamNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEPushStreamNode allocWithZone(VoidPtr zone);

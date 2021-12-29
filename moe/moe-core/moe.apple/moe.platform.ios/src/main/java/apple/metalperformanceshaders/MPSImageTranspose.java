@@ -70,6 +70,7 @@ public class MPSImageTranspose extends MPSUnaryImageKernel {
     @Selector("alloc")
     public static native MPSImageTranspose alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSImageTranspose allocWithZone(VoidPtr zone);

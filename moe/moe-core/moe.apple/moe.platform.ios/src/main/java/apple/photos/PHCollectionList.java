@@ -62,6 +62,7 @@ public class PHCollectionList extends PHCollection {
     @Selector("alloc")
     public static native PHCollectionList alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHCollectionList allocWithZone(VoidPtr zone);

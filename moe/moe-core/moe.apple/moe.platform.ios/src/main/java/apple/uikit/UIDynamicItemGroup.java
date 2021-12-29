@@ -67,6 +67,7 @@ public class UIDynamicItemGroup extends NSObject implements UIDynamicItem {
     @Selector("alloc")
     public static native UIDynamicItemGroup alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDynamicItemGroup allocWithZone(VoidPtr zone);

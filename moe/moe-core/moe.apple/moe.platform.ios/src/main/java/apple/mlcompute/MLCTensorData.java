@@ -52,6 +52,7 @@ public class MLCTensorData extends NSObject {
     @Selector("alloc")
     public static native MLCTensorData alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCTensorData allocWithZone(VoidPtr zone);

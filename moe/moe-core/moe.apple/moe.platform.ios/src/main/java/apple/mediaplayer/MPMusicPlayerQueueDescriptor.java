@@ -61,6 +61,7 @@ public class MPMusicPlayerQueueDescriptor extends NSObject {
     @Selector("alloc")
     public static native MPMusicPlayerQueueDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPMusicPlayerQueueDescriptor allocWithZone(VoidPtr zone);

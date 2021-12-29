@@ -52,6 +52,7 @@ public class MPSNNReduceRowMax extends MPSNNReduceUnary {
     @Selector("alloc")
     public static native MPSNNReduceRowMax alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNReduceRowMax allocWithZone(VoidPtr zone);

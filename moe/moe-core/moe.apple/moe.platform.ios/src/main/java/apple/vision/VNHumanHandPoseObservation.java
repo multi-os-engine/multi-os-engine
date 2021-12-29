@@ -51,6 +51,7 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
     @Selector("alloc")
     public static native VNHumanHandPoseObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNHumanHandPoseObservation allocWithZone(VoidPtr zone);

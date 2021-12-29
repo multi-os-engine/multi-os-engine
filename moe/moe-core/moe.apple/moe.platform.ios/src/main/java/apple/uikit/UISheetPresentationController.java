@@ -48,6 +48,7 @@ public class UISheetPresentationController extends UIPresentationController {
     @Selector("alloc")
     public static native UISheetPresentationController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISheetPresentationController allocWithZone(VoidPtr zone);

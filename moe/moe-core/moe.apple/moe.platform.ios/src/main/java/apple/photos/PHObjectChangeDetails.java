@@ -61,6 +61,7 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
     @Selector("alloc")
     public static native PHObjectChangeDetails<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHObjectChangeDetails<?> allocWithZone(VoidPtr zone);

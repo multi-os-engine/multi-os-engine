@@ -77,6 +77,7 @@ public class UIPageControl extends UIControl {
     @Selector("alloc")
     public static native UIPageControl alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIPageControl allocWithZone(VoidPtr zone);

@@ -68,6 +68,7 @@ public class SKFieldNode extends SKNode {
     @Selector("alloc")
     public static native SKFieldNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKFieldNode allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class UITabBarAppearance extends UIBarAppearance {
     @Selector("alloc")
     public static native UITabBarAppearance alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITabBarAppearance allocWithZone(VoidPtr zone);

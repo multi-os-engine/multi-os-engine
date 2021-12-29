@@ -47,6 +47,7 @@ public class INSpeedResolutionResult extends INIntentResolutionResult {
     @Selector("alloc")
     public static native INSpeedResolutionResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSpeedResolutionResult allocWithZone(VoidPtr zone);

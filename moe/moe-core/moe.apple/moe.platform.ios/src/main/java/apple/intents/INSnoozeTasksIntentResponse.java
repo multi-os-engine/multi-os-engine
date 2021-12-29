@@ -48,6 +48,7 @@ public class INSnoozeTasksIntentResponse extends INIntentResponse {
     @Selector("alloc")
     public static native INSnoozeTasksIntentResponse alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INSnoozeTasksIntentResponse allocWithZone(VoidPtr zone);

@@ -48,6 +48,7 @@ public class UITableViewPlaceholder extends NSObject {
     @Selector("alloc")
     public static native UITableViewPlaceholder alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UITableViewPlaceholder allocWithZone(VoidPtr zone);

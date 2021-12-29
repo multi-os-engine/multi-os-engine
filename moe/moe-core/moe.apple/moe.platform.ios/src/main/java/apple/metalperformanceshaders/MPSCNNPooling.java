@@ -72,6 +72,7 @@ public class MPSCNNPooling extends MPSCNNKernel {
     @Selector("alloc")
     public static native MPSCNNPooling alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNPooling allocWithZone(VoidPtr zone);

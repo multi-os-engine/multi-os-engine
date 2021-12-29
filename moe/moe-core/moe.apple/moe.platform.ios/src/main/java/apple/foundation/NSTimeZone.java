@@ -66,6 +66,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NSTimeZone alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTimeZone allocWithZone(VoidPtr zone);

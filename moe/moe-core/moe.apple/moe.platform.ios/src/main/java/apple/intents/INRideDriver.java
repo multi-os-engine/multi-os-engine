@@ -67,6 +67,7 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native INRideDriver alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INRideDriver allocWithZone(VoidPtr zone);

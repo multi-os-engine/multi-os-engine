@@ -52,6 +52,7 @@ public class PHASEGroupPresetSetting extends NSObject {
     @Selector("alloc")
     public static native PHASEGroupPresetSetting alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEGroupPresetSetting allocWithZone(VoidPtr zone);

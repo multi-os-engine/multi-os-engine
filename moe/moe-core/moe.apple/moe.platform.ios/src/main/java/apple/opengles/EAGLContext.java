@@ -65,6 +65,7 @@ public class EAGLContext extends NSObject {
     @Selector("alloc")
     public static native EAGLContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EAGLContext allocWithZone(VoidPtr zone);

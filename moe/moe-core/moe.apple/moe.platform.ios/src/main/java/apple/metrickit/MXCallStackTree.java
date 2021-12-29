@@ -71,6 +71,7 @@ public class MXCallStackTree extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native MXCallStackTree alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MXCallStackTree allocWithZone(VoidPtr zone);

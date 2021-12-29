@@ -73,6 +73,7 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native CLHeading alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLHeading allocWithZone(VoidPtr zone);

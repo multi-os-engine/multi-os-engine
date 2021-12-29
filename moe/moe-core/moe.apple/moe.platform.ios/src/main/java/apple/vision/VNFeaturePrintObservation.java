@@ -55,6 +55,7 @@ public class VNFeaturePrintObservation extends VNObservation {
     @Selector("alloc")
     public static native VNFeaturePrintObservation alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native VNFeaturePrintObservation allocWithZone(VoidPtr zone);

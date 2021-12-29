@@ -28,9 +28,9 @@ public final class CTFontOrientation {
     @Generated public static final int OrientationDefault = 0x00000000;
     @Generated public static final int OrientationHorizontal = 0x00000001;
     @Generated public static final int OrientationVertical = 0x00000002;
-    @Generated public static final int DefaultOrientation = 0x00000000;
-    @Generated public static final int HorizontalOrientation = 0x00000001;
-    @Generated public static final int VerticalOrientation = 0x00000002;
+    @Deprecated @Generated public static final int DefaultOrientation = 0x00000000;
+    @Deprecated @Generated public static final int HorizontalOrientation = 0x00000001;
+    @Deprecated @Generated public static final int VerticalOrientation = 0x00000002;
 
     @Generated
     private CTFontOrientation() {

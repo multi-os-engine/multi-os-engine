@@ -67,6 +67,7 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Selector("alloc")
     public static native MKOverlayPathRenderer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKOverlayPathRenderer allocWithZone(VoidPtr zone);

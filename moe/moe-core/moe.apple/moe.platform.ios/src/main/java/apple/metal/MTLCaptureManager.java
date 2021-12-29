@@ -52,6 +52,7 @@ public class MTLCaptureManager extends NSObject {
     @Selector("alloc")
     public static native MTLCaptureManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MTLCaptureManager allocWithZone(VoidPtr zone);

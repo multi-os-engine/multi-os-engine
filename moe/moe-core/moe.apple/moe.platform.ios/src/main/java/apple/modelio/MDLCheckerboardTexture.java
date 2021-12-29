@@ -71,6 +71,7 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @Selector("alloc")
     public static native MDLCheckerboardTexture alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MDLCheckerboardTexture allocWithZone(VoidPtr zone);

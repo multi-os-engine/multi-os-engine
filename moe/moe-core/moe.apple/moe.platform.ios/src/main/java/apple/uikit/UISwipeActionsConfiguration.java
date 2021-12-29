@@ -49,6 +49,7 @@ public class UISwipeActionsConfiguration extends NSObject {
     @Selector("alloc")
     public static native UISwipeActionsConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UISwipeActionsConfiguration allocWithZone(VoidPtr zone);

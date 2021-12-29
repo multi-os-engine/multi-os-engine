@@ -83,6 +83,7 @@ public class UIButton extends UIControl
     @Selector("alloc")
     public static native UIButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIButton allocWithZone(VoidPtr zone);

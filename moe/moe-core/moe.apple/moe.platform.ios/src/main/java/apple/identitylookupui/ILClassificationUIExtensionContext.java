@@ -49,6 +49,7 @@ public class ILClassificationUIExtensionContext extends NSExtensionContext {
     @Selector("alloc")
     public static native ILClassificationUIExtensionContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ILClassificationUIExtensionContext allocWithZone(VoidPtr zone);

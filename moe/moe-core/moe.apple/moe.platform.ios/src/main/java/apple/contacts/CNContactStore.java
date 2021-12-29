@@ -80,6 +80,7 @@ public class CNContactStore extends NSObject {
     @Selector("alloc")
     public static native CNContactStore alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CNContactStore allocWithZone(VoidPtr zone);

@@ -65,6 +65,7 @@ public class NSBatchUpdateResult extends NSPersistentStoreResult {
     @Selector("alloc")
     public static native NSBatchUpdateResult alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSBatchUpdateResult allocWithZone(VoidPtr zone);

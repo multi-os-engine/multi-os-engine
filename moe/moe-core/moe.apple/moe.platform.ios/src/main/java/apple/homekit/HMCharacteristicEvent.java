@@ -70,6 +70,7 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Selector("alloc")
     public static native HMCharacteristicEvent<?> alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native HMCharacteristicEvent<?> allocWithZone(VoidPtr zone);

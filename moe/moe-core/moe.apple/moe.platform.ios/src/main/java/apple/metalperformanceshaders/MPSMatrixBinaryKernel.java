@@ -56,6 +56,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
     @Selector("alloc")
     public static native MPSMatrixBinaryKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSMatrixBinaryKernel allocWithZone(VoidPtr zone);

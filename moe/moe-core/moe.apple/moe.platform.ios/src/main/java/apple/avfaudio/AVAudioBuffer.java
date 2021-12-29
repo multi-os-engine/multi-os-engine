@@ -56,6 +56,7 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
     @Selector("alloc")
     public static native AVAudioBuffer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAudioBuffer allocWithZone(VoidPtr zone);

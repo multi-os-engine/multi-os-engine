@@ -49,6 +49,7 @@ public class CPNavigationSession extends NSObject {
     @Selector("alloc")
     public static native CPNavigationSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNavigationSession allocWithZone(VoidPtr zone);

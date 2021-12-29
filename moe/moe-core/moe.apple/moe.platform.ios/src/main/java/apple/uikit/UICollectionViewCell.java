@@ -78,6 +78,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Selector("alloc")
     public static native UICollectionViewCell alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewCell allocWithZone(VoidPtr zone);

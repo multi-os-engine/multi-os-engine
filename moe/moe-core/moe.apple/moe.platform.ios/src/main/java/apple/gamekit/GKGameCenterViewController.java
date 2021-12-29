@@ -67,6 +67,7 @@ public class GKGameCenterViewController extends UINavigationController {
     @Selector("alloc")
     public static native GKGameCenterViewController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GKGameCenterViewController allocWithZone(VoidPtr zone);

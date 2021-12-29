@@ -47,6 +47,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("alloc")
     public static native UICollectionViewCompositionalLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewCompositionalLayout allocWithZone(VoidPtr zone);

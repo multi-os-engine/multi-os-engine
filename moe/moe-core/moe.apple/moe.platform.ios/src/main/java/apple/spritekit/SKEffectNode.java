@@ -73,6 +73,7 @@ public class SKEffectNode extends SKNode implements SKWarpable {
     @Selector("alloc")
     public static native SKEffectNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKEffectNode allocWithZone(VoidPtr zone);

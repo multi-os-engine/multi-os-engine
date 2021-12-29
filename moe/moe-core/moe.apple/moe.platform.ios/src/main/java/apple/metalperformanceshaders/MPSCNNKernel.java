@@ -122,6 +122,7 @@ public class MPSCNNKernel extends MPSKernel {
     @Selector("alloc")
     public static native MPSCNNKernel alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNKernel allocWithZone(VoidPtr zone);

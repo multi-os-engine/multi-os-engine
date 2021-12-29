@@ -77,6 +77,7 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native NEPacket alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEPacket allocWithZone(VoidPtr zone);

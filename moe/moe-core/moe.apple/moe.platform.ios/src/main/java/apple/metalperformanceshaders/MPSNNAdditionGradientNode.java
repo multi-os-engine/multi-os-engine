@@ -50,6 +50,7 @@ public class MPSNNAdditionGradientNode extends MPSNNArithmeticGradientNode {
     @Selector("alloc")
     public static native MPSNNAdditionGradientNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNAdditionGradientNode allocWithZone(VoidPtr zone);

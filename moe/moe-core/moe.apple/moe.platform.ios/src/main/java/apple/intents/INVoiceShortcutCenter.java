@@ -53,6 +53,7 @@ public class INVoiceShortcutCenter extends NSObject {
     @Selector("alloc")
     public static native INVoiceShortcutCenter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INVoiceShortcutCenter allocWithZone(VoidPtr zone);

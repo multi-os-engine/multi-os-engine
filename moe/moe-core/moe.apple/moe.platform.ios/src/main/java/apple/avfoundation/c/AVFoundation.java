@@ -2462,6 +2462,7 @@ public final class AVFoundation {
     /**
      * COMR Commercial frame
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4145,6 +4146,7 @@ public final class AVFoundation {
     /**
      * COMR Commercial frame
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

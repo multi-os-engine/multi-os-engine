@@ -52,6 +52,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MLCLSTMDescriptor alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLCLSTMDescriptor allocWithZone(VoidPtr zone);

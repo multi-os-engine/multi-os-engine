@@ -77,6 +77,7 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     @Selector("alloc")
     public static native PHLivePhoto alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHLivePhoto allocWithZone(VoidPtr zone);

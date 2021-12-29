@@ -45,6 +45,7 @@ public class SRTextInputSession extends NSObject {
     @Selector("alloc")
     public static native SRTextInputSession alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRTextInputSession allocWithZone(VoidPtr zone);

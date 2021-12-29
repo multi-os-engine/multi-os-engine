@@ -50,6 +50,7 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
     @Selector("alloc")
     public static native PHASECardioidDirectivityModelSubbandParameters alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASECardioidDirectivityModelSubbandParameters allocWithZone(VoidPtr zone);

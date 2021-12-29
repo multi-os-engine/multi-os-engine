@@ -60,6 +60,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     @Selector("alloc")
     public static native MPSTemporaryNDArray alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSTemporaryNDArray allocWithZone(VoidPtr zone);

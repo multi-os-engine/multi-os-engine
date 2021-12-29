@@ -62,6 +62,7 @@ public class ASIdentifierManager extends NSObject {
     @Selector("alloc")
     public static native ASIdentifierManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASIdentifierManager allocWithZone(VoidPtr zone);

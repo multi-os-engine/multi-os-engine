@@ -56,6 +56,7 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
     @Selector("alloc")
     public static native EKVirtualConferenceProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native EKVirtualConferenceProvider allocWithZone(VoidPtr zone);

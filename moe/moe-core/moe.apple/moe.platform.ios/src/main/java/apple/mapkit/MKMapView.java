@@ -88,6 +88,7 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("alloc")
     public static native MKMapView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKMapView allocWithZone(VoidPtr zone);

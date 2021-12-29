@@ -72,6 +72,7 @@ public class AVAssetReaderOutput extends NSObject {
     @Selector("alloc")
     public static native AVAssetReaderOutput alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native AVAssetReaderOutput allocWithZone(VoidPtr zone);

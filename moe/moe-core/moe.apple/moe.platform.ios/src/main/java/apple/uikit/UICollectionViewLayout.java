@@ -68,6 +68,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("alloc")
     public static native UICollectionViewLayout alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionViewLayout allocWithZone(VoidPtr zone);

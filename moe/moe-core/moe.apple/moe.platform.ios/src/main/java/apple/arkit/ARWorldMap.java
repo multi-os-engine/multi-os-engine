@@ -57,6 +57,7 @@ public class ARWorldMap extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("alloc")
     public static native ARWorldMap alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ARWorldMap allocWithZone(VoidPtr zone);

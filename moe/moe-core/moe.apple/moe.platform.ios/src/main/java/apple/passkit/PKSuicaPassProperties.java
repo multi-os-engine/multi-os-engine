@@ -62,6 +62,7 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
     @Selector("alloc")
     public static native PKSuicaPassProperties alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKSuicaPassProperties allocWithZone(VoidPtr zone);

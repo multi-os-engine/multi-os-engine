@@ -69,6 +69,7 @@ public class NWHostEndpoint extends NWEndpoint {
     @Selector("alloc")
     public static native NWHostEndpoint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NWHostEndpoint allocWithZone(VoidPtr zone);

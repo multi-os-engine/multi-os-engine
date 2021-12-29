@@ -61,6 +61,7 @@ public class MPSCNNSpatialNormalizationNode extends MPSCNNNormalizationNode {
     @Selector("alloc")
     public static native MPSCNNSpatialNormalizationNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNSpatialNormalizationNode allocWithZone(VoidPtr zone);

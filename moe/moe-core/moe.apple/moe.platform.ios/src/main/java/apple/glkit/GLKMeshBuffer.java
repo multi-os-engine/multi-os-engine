@@ -73,6 +73,7 @@ public class GLKMeshBuffer extends NSObject implements MDLMeshBuffer {
     @Selector("alloc")
     public static native GLKMeshBuffer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GLKMeshBuffer allocWithZone(VoidPtr zone);

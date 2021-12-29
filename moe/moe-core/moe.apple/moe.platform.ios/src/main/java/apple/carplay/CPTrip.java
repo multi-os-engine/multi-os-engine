@@ -53,6 +53,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native CPTrip alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPTrip allocWithZone(VoidPtr zone);

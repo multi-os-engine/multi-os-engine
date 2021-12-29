@@ -55,6 +55,7 @@ public class MPSCNNNeuronPower extends MPSCNNNeuron {
     @Selector("alloc")
     public static native MPSCNNNeuronPower alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSCNNNeuronPower allocWithZone(VoidPtr zone);

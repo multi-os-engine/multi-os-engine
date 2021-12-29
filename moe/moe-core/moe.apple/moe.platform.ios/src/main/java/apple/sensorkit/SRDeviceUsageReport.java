@@ -46,6 +46,7 @@ public class SRDeviceUsageReport extends NSObject {
     @Selector("alloc")
     public static native SRDeviceUsageReport alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SRDeviceUsageReport allocWithZone(VoidPtr zone);

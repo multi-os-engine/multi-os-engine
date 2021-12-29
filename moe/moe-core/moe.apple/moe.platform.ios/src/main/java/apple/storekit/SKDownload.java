@@ -63,6 +63,7 @@ public class SKDownload extends NSObject {
     @Selector("alloc")
     public static native SKDownload alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SKDownload allocWithZone(VoidPtr zone);

@@ -55,6 +55,7 @@ public class MLArrayBatchProvider extends NSObject implements MLBatchProvider {
     @Selector("alloc")
     public static native MLArrayBatchProvider alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MLArrayBatchProvider allocWithZone(VoidPtr zone);

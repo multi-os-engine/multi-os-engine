@@ -68,6 +68,7 @@ public class PHASEObject extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PHASEObject alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEObject allocWithZone(VoidPtr zone);

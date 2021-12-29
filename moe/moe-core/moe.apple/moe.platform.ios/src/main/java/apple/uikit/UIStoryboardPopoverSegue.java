@@ -39,6 +39,7 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -62,6 +63,7 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     @Selector("alloc")
     public static native UIStoryboardPopoverSegue alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIStoryboardPopoverSegue allocWithZone(VoidPtr zone);

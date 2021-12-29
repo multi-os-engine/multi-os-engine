@@ -74,6 +74,7 @@ public class SK3DNode extends SKNode {
     @Selector("alloc")
     public static native SK3DNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SK3DNode allocWithZone(VoidPtr zone);

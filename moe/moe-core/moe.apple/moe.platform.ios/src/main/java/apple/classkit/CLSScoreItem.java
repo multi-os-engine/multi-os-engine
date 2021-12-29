@@ -50,6 +50,7 @@ public class CLSScoreItem extends CLSActivityItem {
     @Selector("alloc")
     public static native CLSScoreItem alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSScoreItem allocWithZone(VoidPtr zone);

@@ -57,6 +57,7 @@ public class UIDocumentBrowserTransitionController extends NSObject implements U
     @Selector("alloc")
     public static native UIDocumentBrowserTransitionController alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIDocumentBrowserTransitionController allocWithZone(VoidPtr zone);

@@ -71,6 +71,7 @@ public class CLSContext extends CLSObject {
     @Selector("alloc")
     public static native CLSContext alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CLSContext allocWithZone(VoidPtr zone);

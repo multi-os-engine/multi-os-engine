@@ -55,6 +55,7 @@ public class MIDICIDiscoveryManager extends NSObject {
     @Selector("alloc")
     public static native MIDICIDiscoveryManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MIDICIDiscoveryManager allocWithZone(VoidPtr zone);

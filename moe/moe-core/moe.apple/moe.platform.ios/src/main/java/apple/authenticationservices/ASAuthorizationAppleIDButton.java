@@ -64,6 +64,7 @@ public class ASAuthorizationAppleIDButton extends UIControl {
     @Selector("alloc")
     public static native ASAuthorizationAppleIDButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native ASAuthorizationAppleIDButton allocWithZone(VoidPtr zone);

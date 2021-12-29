@@ -56,6 +56,7 @@ public class MPSNNLabelsNode extends MPSNNStateNode {
     @Selector("alloc")
     public static native MPSNNLabelsNode alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MPSNNLabelsNode allocWithZone(VoidPtr zone);

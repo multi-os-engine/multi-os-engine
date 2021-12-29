@@ -51,6 +51,7 @@ public class PHASEMetaParameter extends NSObject {
     @Selector("alloc")
     public static native PHASEMetaParameter alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHASEMetaParameter allocWithZone(VoidPtr zone);

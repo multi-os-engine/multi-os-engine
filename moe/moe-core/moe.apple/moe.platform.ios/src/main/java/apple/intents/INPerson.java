@@ -69,6 +69,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("alloc")
     public static native INPerson alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INPerson allocWithZone(VoidPtr zone);

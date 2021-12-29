@@ -60,6 +60,7 @@ public class NSTimer extends NSObject {
     @Selector("alloc")
     public static native NSTimer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSTimer allocWithZone(VoidPtr zone);

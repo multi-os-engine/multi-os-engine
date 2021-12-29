@@ -52,6 +52,7 @@ public class CPNowPlayingAddToLibraryButton extends CPNowPlayingButton {
     @Selector("alloc")
     public static native CPNowPlayingAddToLibraryButton alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CPNowPlayingAddToLibraryButton allocWithZone(VoidPtr zone);

@@ -73,6 +73,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     @Selector("alloc")
     public static native NEPacketTunnelNetworkSettings alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NEPacketTunnelNetworkSettings allocWithZone(VoidPtr zone);

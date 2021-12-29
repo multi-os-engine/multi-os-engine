@@ -66,6 +66,7 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Selector("alloc")
     public static native UIVibrancyEffect alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UIVibrancyEffect allocWithZone(VoidPtr zone);

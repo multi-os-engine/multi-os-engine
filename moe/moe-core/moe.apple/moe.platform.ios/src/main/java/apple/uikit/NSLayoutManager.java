@@ -88,6 +88,7 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     @Selector("alloc")
     public static native NSLayoutManager alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLayoutManager allocWithZone(VoidPtr zone);

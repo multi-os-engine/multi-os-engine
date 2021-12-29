@@ -63,6 +63,7 @@ public class MKUserLocationView extends MKAnnotationView {
     @Selector("alloc")
     public static native MKUserLocationView alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native MKUserLocationView allocWithZone(VoidPtr zone);

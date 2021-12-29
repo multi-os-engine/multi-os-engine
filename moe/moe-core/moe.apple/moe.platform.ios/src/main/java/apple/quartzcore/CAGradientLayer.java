@@ -69,6 +69,7 @@ public class CAGradientLayer extends CALayer {
     @Selector("alloc")
     public static native CAGradientLayer alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CAGradientLayer allocWithZone(VoidPtr zone);

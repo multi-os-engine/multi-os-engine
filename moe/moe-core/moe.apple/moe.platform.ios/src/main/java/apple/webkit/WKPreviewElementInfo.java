@@ -64,6 +64,7 @@ public class WKPreviewElementInfo extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native WKPreviewElementInfo alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native WKPreviewElementInfo allocWithZone(VoidPtr zone);

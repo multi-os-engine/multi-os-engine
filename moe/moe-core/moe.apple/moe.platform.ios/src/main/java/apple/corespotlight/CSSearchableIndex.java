@@ -66,6 +66,7 @@ public class CSSearchableIndex extends NSObject {
     @Selector("alloc")
     public static native CSSearchableIndex alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native CSSearchableIndex allocWithZone(VoidPtr zone);

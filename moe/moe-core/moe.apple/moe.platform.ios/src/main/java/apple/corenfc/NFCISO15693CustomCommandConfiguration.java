@@ -51,6 +51,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     @Selector("alloc")
     public static native NFCISO15693CustomCommandConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NFCISO15693CustomCommandConfiguration allocWithZone(VoidPtr zone);

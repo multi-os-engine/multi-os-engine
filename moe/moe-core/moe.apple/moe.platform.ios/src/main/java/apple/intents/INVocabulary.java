@@ -62,6 +62,7 @@ public class INVocabulary extends NSObject {
     @Selector("alloc")
     public static native INVocabulary alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native INVocabulary allocWithZone(VoidPtr zone);

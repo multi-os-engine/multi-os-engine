@@ -64,6 +64,7 @@ public class PHAssetResourceRequestOptions extends NSObject implements NSCopying
     @Selector("alloc")
     public static native PHAssetResourceRequestOptions alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PHAssetResourceRequestOptions allocWithZone(VoidPtr zone);

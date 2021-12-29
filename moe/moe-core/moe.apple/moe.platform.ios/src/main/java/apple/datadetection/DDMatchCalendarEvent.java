@@ -47,6 +47,7 @@ public class DDMatchCalendarEvent extends DDMatch {
     @Selector("alloc")
     public static native DDMatchCalendarEvent alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native DDMatchCalendarEvent allocWithZone(VoidPtr zone);

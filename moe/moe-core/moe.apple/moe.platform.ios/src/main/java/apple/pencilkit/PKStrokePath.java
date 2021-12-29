@@ -56,6 +56,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native PKStrokePath alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native PKStrokePath allocWithZone(VoidPtr zone);

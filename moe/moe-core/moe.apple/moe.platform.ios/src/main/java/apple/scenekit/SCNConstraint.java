@@ -75,6 +75,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("alloc")
     public static native SCNConstraint alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native SCNConstraint allocWithZone(VoidPtr zone);

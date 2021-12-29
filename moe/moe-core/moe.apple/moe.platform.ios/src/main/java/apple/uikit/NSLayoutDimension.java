@@ -65,6 +65,7 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
     @Selector("alloc")
     public static native NSLayoutDimension alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSLayoutDimension allocWithZone(VoidPtr zone);

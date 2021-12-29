@@ -68,6 +68,7 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Selector("alloc")
     public static native NSIndexSet alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSIndexSet allocWithZone(VoidPtr zone);

@@ -868,7 +868,7 @@ public final class Enums {
     private Enums() {
     }
 
-    @Generated public static final int errSecDskFull = 0xFFFFFFDE;
+    @Deprecated @Generated public static final int errSecDskFull = 0xFFFFFFDE;
     /**
      * Write permissions error.
      */

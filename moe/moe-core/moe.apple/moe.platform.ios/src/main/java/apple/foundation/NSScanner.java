@@ -67,6 +67,7 @@ public class NSScanner extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native NSScanner alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native NSScanner allocWithZone(VoidPtr zone);

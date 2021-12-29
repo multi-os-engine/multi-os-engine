@@ -53,6 +53,7 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Selector("alloc")
     public static native UICollectionLayoutListConfiguration alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native UICollectionLayoutListConfiguration allocWithZone(VoidPtr zone);

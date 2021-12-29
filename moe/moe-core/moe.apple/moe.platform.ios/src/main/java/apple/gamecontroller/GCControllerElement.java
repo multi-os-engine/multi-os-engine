@@ -64,6 +64,7 @@ public class GCControllerElement extends NSObject {
     @Selector("alloc")
     public static native GCControllerElement alloc();
 
+    @Owned
     @Generated
     @Selector("allocWithZone:")
     public static native GCControllerElement allocWithZone(VoidPtr zone);
