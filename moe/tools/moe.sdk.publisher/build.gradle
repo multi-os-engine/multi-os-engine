@@ -72,6 +72,8 @@ def backport_base_cfg = """
 task backportCore(type: JavaExec) {
     dependsOn buildDeps
 
+    file("$buildDir/core.pro").createNewFile()
+
     ext.jarOutput = file("${buildDir}/libs/moe-core-backport.jar")
 
     doFirst {
@@ -95,6 +97,8 @@ ${backport_base_cfg}
 
 task backportiOS(type: JavaExec) {
     dependsOn buildDeps
+
+    file("$buildDir/ios.pro").createNewFile()
 
     ext.jarOutput = file("${buildDir}/libs/moe-ios-backport.jar")
 
@@ -122,6 +126,8 @@ ${backport_base_cfg}
 
 task backportJUnit(type: JavaExec) {
     dependsOn buildDeps
+
+    file("$buildDir/junit.pro").createNewFile()
 
     ext.jarOutput = file("${buildDir}/libs/moe-junit-backport.jar")
 
