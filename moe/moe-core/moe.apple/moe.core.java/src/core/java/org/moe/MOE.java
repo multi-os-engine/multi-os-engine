@@ -18,7 +18,45 @@ package org.moe;
 
 import dalvik.system.VMStack;
 
+import java.util.Objects;
+
 public class MOE {
+    private MOE() {}
+
+    /**
+     * Whether the app is built with DEBUG macro set
+     */
+    public static final boolean DEBUG;
+
+    /**
+     * The platform name.
+     * Possible values are:
+     * - iphoneos
+     * - iphonesimulator
+     */
+    public static final String PLATFORM_NAME;
+
+    /**
+     * Whether it's running inside a simulator
+     */
+    public static final boolean IS_SIMULATOR;
+
+    static {
+        DEBUG = "true".equals(System.getProperty("moe.debug", "false"));
+        PLATFORM_NAME = Objects.requireNonNull(System.getProperty("moe.platform.name"), "moe.platform.name not defined!");
+
+        switch (PLATFORM_NAME) {
+            case "iphoneos":
+                IS_SIMULATOR = false;
+                break;
+            case "iphonesimulator":
+                IS_SIMULATOR = true;
+                break;
+            default:
+                throw new IllegalStateException("Unknown platform " + PLATFORM_NAME);
+        }
+    }
+
     /**
      * Loads staticly linked code.
      *

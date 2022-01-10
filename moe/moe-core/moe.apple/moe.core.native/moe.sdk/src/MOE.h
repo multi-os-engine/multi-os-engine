@@ -21,4 +21,15 @@ limitations under the License.
 #endif
 
 //! Entry point of MOE.
-EXTERN int moevm(const int jargc, char *const *jargv);
+EXTERN int run_moevm(int isDebug, const int jargc, char *const *jargv);
+
+static inline int moevm(const int jargc, char *const *jargv) {
+    return run_moevm(
+#ifdef DEBUG
+                     1
+#else
+                     0
+#endif
+                     , jargc, jargv
+                     );
+}

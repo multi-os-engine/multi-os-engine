@@ -16,6 +16,8 @@ limitations under the License.
 
 #import <UIKit/UIKit.h>
 
+#include <TargetConditionals.h>
+
 #include <pthread.h>
 #include <iostream>
 
@@ -72,7 +74,7 @@ extern "C" double hypot(double a, double b) {
 }
 #endif
 
-extern "C" int moevm(const int jargc, char* const* jargv) {
+extern "C" int run_moevm(int isDebug, const int jargc, char* const* jargv) {
   reserve_tls_key();
 
   @autoreleasepool {
@@ -146,7 +148,11 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
     [args addObject:verStr];
 #if TARGET_OS_MAC
 #if TARGET_OS_IOS
-    [args addObject:@"-Dmoe.platform.name=iOS"];
+#if TARGET_OS_SIMULATOR
+      [args addObject:@"-Dmoe.platform.name=iphonesimulator"];
+#else
+      [args addObject:@"-Dmoe.platform.name=iphoneos"];
+#endif
 #else
 #error Unsupported Mac OS X variant
 #endif
@@ -154,6 +160,10 @@ extern "C" int moevm(const int jargc, char* const* jargv) {
 #error Unsupported OS
 #endif
     [args addObject:@"-Dmoe.version=" xstr(BUILD_VERSION)];
+      
+    if (isDebug) {
+        [args addObject:@"-Dmoe.debug=true"];
+    }
       
     /* Set the properties for locale */
     {
