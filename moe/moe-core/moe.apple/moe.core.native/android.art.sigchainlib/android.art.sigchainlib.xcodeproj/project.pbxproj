@@ -243,7 +243,6 @@
 					"\"$(ANDROID_ROOT)/external/gtest/include\"",
 					"\"$(ANDROID_ROOT)/art/runtime\"",
 					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
-					"\"$(ANDROID_ROOT)/external/llvm/include\"",
 					"\"$(ANDROID_ROOT)/external/valgrind/main/include\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -274,7 +273,6 @@
 					"\"$(ANDROID_ROOT)/external/gtest/include\"",
 					"\"$(ANDROID_ROOT)/art/runtime\"",
 					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
-					"\"$(ANDROID_ROOT)/external/llvm/include\"",
 					"\"$(ANDROID_ROOT)/external/valgrind/main/include\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -346,7 +344,6 @@
 					"\"$(ANDROID_ROOT)/external/gtest/include\"",
 					"\"$(ANDROID_ROOT)/art/runtime\"",
 					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
-					"\"$(ANDROID_ROOT)/external/llvm/include\"",
 					"\"$(ANDROID_ROOT)/external/valgrind/main/include\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -416,7 +413,6 @@
 					"\"$(ANDROID_ROOT)/external/gtest/include\"",
 					"\"$(ANDROID_ROOT)/art/runtime\"",
 					"\"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\"",
-					"\"$(ANDROID_ROOT)/external/llvm/include\"",
 					"\"$(ANDROID_ROOT)/external/valgrind/main/include\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";

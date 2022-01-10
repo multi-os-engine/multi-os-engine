@@ -161,6 +161,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 2353A5EE17CE19B5005CF3CC;
@@ -324,6 +325,21 @@
 					4096,
 					"-llibnativehelper",
 				);
+				"OTHER_LDFLAGS[arch=arm64]" = (
+					"-llibnativebridge",
+					"-llibziparchive",
+					"-lliblog",
+					"-llibbacktrace",
+					"-llibbase",
+					"-llibutils",
+					"-llibcutils",
+					"-lcompiler",
+					"-lopenssl",
+					"-lruntime",
+					"-lsigchainlib",
+					"-lvixl",
+					"-llibnativehelper",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"$(ANDROID_ROOT)/system/core/include\" \"$(ANDROID_ROOT)/libnativehelper/include/nativehelper\" \"$(ANDROID_ROOT)/art/compiler\" \"$(ANDROID_ROOT)/art/runtime\"";
 			};
@@ -386,6 +402,21 @@
 					"-lvixl",
 					"-pagezero_size",
 					4096,
+					"-llibnativehelper",
+				);
+				"OTHER_LDFLAGS[arch=arm64]" = (
+					"-llibnativebridge",
+					"-llibziparchive",
+					"-lliblog",
+					"-llibbacktrace",
+					"-llibbase",
+					"-llibutils",
+					"-llibcutils",
+					"-lcompiler",
+					"-lopenssl",
+					"-lruntime",
+					"-lsigchainlib",
+					"-lvixl",
 					"-llibnativehelper",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

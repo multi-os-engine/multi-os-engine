@@ -16,6 +16,7 @@
 
 package org.moe.javacplugin;
 
+import com.sun.source.tree.CompilationUnitTree;
 import com.sun.source.tree.ExpressionStatementTree;
 import com.sun.source.tree.ExpressionTree;
 import com.sun.source.tree.MethodInvocationTree;
@@ -52,11 +53,16 @@ public class StaticLoad implements Plugin {
       @Override
       public void finished(TaskEvent taskEvent) {
         // Using a TreeScanner might be somewhat simpler, but would not be as precise.
-        taskEvent.getCompilationUnit().getTypeDecls().stream()
-            .filter(decl -> decl instanceof JCTree.JCClassDecl)
-            .forEach(decl -> ((JCTree.JCClassDecl)decl).getMembers().stream()
-                    .filter(member -> member instanceof JCTree.JCMethodDecl || member instanceof JCTree.JCBlock)
-                    .forEach(method -> method.accept(scanner, StaticLoad.this)));
+        CompilationUnitTree compilationUnitTree = taskEvent.getCompilationUnit();
+        if (compilationUnitTree != null) {
+          compilationUnitTree
+              .getTypeDecls()
+              .stream()
+              .filter(decl -> decl instanceof JCTree.JCClassDecl)
+              .forEach(decl -> ((JCTree.JCClassDecl) decl).getMembers().stream()
+                  .filter(member -> member instanceof JCTree.JCMethodDecl || member instanceof JCTree.JCBlock)
+                  .forEach(method -> method.accept(scanner, StaticLoad.this)));
+        }
       }
 
       @Override
