@@ -190,6 +190,7 @@ open class NativeImage : AbstractBaseTask() {
                         vendor = Triplet.VENDOR_APPLE,
                         os = platform.platformName,
                 ),
+                debug = mode == Mode.DEBUG,
                 jniConfigFiles = getJniConfigFiles().toSet(),
                 reflectionConfigFiles = getReflectionConfigFiles().toSet(),
                 proxyConfigFiles = getProxyConfigFiles().toSet(),
