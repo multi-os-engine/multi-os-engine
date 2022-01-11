@@ -23,7 +23,7 @@ def external_java_sources = [
 ]
 
 sourceSets {
-    core {
+    main {
         java {
             srcDirs += external_java_sources
         }
@@ -33,8 +33,8 @@ sourceSets {
     }
 }
 
-tasks.compileCoreJava.sourceCompatibility = "1.8"
-tasks.compileCoreJava.targetCompatibility = "1.8"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
 
 // Don't run tests with the built-in junit
 test { exclude '**' }
@@ -43,51 +43,46 @@ test { exclude '**' }
  * Core Jar Generation
  ******************************************************************************/
 
-task coreJar(type: Jar, dependsOn: compileCoreJava) {
+jar {
     baseName 'moe-core'
 
-    from sourceSets.core.output
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
 
-task coreSourcesJar(type: Jar, dependsOn: compileCoreJava) {
+task sourceJar(type: Jar) {
     baseName 'moe-core'
     classifier 'sources'
 
     from rootProject.file('LICENSE'), rootProject.file('NOTICE')
-    from sourceSets.core.allJava
+    from sourceSets.main.allJava
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
-
-def javaDocTitle = "moe.ios.core API"
 
 /******************************************************************************
  * Core Javadoc Jar Generation
  ******************************************************************************/
 
-task coreJavadoc(type: Javadoc) {
-    title = javaDocTitle
-    source sourceSets.core.allJava
+javadoc {
+    title = "moe.ios.core API"
     destinationDir = file('build/docs/coreJavadoc')
     include "**/*.java"
     options.addStringOption('Xdoclint:none', '-quiet')
 }
 
-task coreJavadocJar(type: Jar, dependsOn: coreJavadoc) {
+task javadocJar(type: Jar, dependsOn: javadoc) {
     baseName 'moe-core'
     classifier 'javadoc'
 
-    from coreJavadoc.destinationDir
+    from javadoc.destinationDir
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
 
 artifacts {
-    archives coreJar
-    archives coreSourcesJar
-    archives coreJavadocJar
+    archives javadocJar
+    archives sourceJar
 }
