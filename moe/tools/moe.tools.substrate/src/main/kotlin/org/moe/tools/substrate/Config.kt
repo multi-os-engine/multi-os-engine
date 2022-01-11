@@ -40,6 +40,9 @@ data class Config(
         // Platform & arch config
         val target: Triplet,
 
+        // Whether it's a debug build
+        val debug: Boolean,
+
         val outputDir: Path,
 
         val logFile: File? = null,

@@ -62,9 +62,15 @@ class SubstrateExecutor(
                 "--features=org.graalvm.home.HomeFinderFeature",
                 "-H:+IncludeAllLocales", // Make sure all locales are available at runtime
                 *argsIf(config.useLLVM, "-H:CompilerBackend=llvm"),
+
+                // Build info
+                "--initialize-at-build-time=org.moe.MOE\$Build",
                 "-Dsvm.targetName=iOS",
                 "-Dsvm.targetArch=${config.target.arch}",
                 "-Dsvm.platform=org.graalvm.nativeimage.Platform\$${config.target.toSVMPlatform()}",
+                "-Dmoe.debug=${config.debug}",
+                "-Dmoe.platform.name=${config.target.os}",
+
                 "-H:TempDirectory=${config.outputDir.toAbsolutePath()}",
                 "-H:+UseCAPCache",
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
