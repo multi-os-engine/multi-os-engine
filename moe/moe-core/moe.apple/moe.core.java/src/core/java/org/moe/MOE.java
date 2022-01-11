@@ -24,36 +24,46 @@ public class MOE {
     private MOE() {}
 
     /**
-     * Whether the app is built with DEBUG macro set
+     * App build info.
+     * This provides build information about not only the MOE framework, but also about
+     * the application.
      */
-    public static final boolean DEBUG;
+    public static class Build {
+        private Build() {
+        }
 
-    /**
-     * The platform name.
-     * Possible values are:
-     * - iphoneos
-     * - iphonesimulator
-     */
-    public static final String PLATFORM_NAME;
+        /**
+         * Whether the app is built with DEBUG macro set
+         */
+        public static final boolean DEBUG;
 
-    /**
-     * Whether it's running inside a simulator
-     */
-    public static final boolean IS_SIMULATOR;
+        /**
+         * The platform name.
+         * Possible values are:
+         * - iphoneos
+         * - iphonesimulator
+         */
+        public static final String PLATFORM_NAME;
 
-    static {
-        DEBUG = "true".equals(System.getProperty("moe.debug", "false"));
-        PLATFORM_NAME = Objects.requireNonNull(System.getProperty("moe.platform.name"), "moe.platform.name not defined!");
+        /**
+         * Whether it's running inside a simulator
+         */
+        public static final boolean IS_SIMULATOR;
 
-        switch (PLATFORM_NAME) {
-            case "iphoneos":
-                IS_SIMULATOR = false;
-                break;
-            case "iphonesimulator":
-                IS_SIMULATOR = true;
-                break;
-            default:
-                throw new IllegalStateException("Unknown platform " + PLATFORM_NAME);
+        static {
+            DEBUG = "true".equals(System.getProperty("moe.debug", "false"));
+            PLATFORM_NAME = Objects.requireNonNull(System.getProperty("moe.platform.name"), "moe.platform.name not defined!");
+
+            switch (PLATFORM_NAME) {
+                case "iphoneos":
+                    IS_SIMULATOR = false;
+                    break;
+                case "iphonesimulator":
+                    IS_SIMULATOR = true;
+                    break;
+                default:
+                    throw new IllegalStateException("Unknown platform " + PLATFORM_NAME);
+            }
         }
     }
 
