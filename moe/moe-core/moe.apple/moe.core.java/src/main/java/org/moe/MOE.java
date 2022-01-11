@@ -18,8 +18,11 @@ package org.moe;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 public class MOE {
+    private MOE() {}
+
     static {
         System.loadLibrary("moe");
 
@@ -30,6 +33,62 @@ public class MOE {
                 Class.forName(c, true, MOE.class.getClassLoader());
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException("Unable to load preregistered class " + c, e);
+            }
+        }
+    }
+
+    /**
+     * App build info.
+     * This provides build information about not only the MOE framework, but also about
+     * the application.
+     *
+     * The values in this class are initialized during the GraalVM Native Image build time, by using the option
+     * `--initialize-at-build-time=org.moe.MOE$Build`.
+     *
+     * So these values will effectively be const values, thus allow the Native Image compiler to optimise the code
+     * that uses these values and remove unnecessary runtime checks. For example, for code like:
+     ** <pre>{@code
+     *     if (MOE.Build.DEBUG) {
+     *         // do some extra stuff
+     *     }
+     * }</pre>
+     * this condition check could be removed by Native Image compiler, thus no runtime overhead.
+     */
+    public static class Build {
+        private Build() {
+        }
+
+        /**
+         * Whether the app is built with DEBUG macro set
+         */
+        public static final boolean DEBUG;
+
+        /**
+         * The platform name.
+         * Possible values are:
+         * - iphoneos
+         * - iphonesimulator
+         */
+        public static final String PLATFORM_NAME;
+
+        /**
+         * Whether it's running inside a simulator
+         */
+        public static final boolean IS_SIMULATOR;
+
+        static {
+            DEBUG = "true".equals(System.getProperty("moe.debug", "false"));
+            PLATFORM_NAME = Objects.requireNonNull(System.getProperty("moe.platform.name"), "moe.platform.name not defined!");
+
+            switch (PLATFORM_NAME) {
+                case "iphoneos":
+                    IS_SIMULATOR = false;
+                    break;
+                case "iphonesimulator":
+                    IS_SIMULATOR = true;
+                    break;
+                default:
+                    throw new IllegalStateException("Unknown platform " + PLATFORM_NAME);
             }
         }
     }
