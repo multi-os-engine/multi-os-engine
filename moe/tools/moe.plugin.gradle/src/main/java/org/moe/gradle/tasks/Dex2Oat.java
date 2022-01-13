@@ -337,7 +337,7 @@ public class Dex2Oat extends AbstractBaseTask {
                 ", arch-family: " + archFamily + ").");
 
         // Add dependencies
-        final Dex dexTask = getMoePlugin().getTaskBy(Dex.class, sourceSet);
+        final Dex dexTask = getMoePlugin().getTaskBy(Dex.class, sourceSet, mode);
         dexTaskDep = dexTask;
         dependsOn(dexTask);
 

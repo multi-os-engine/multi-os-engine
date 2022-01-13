@@ -31,6 +31,7 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.StringUtils;
 
@@ -201,7 +202,7 @@ public class Retrolambda extends AbstractBaseTask {
         return Require.nonNull(proGuardTaskDep);
     }
 
-    protected final void setupMoeTask(@NotNull SourceSet sourceSet) {
+    protected final void setupMoeTask(@NotNull SourceSet sourceSet, final @NotNull Mode mode) {
         Require.nonNull(sourceSet);
 
         setSupportsRemoteBuild(false);
@@ -210,12 +211,12 @@ public class Retrolambda extends AbstractBaseTask {
         final MoeSDK sdk = getMoeSDK();
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "retro");
+        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "retro", mode.name);
 
-        setDescription("Generates retrolambda files (sourceset: " + sourceSet.getName() + ").");
+        setDescription("Generates retrolambda files (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final ProGuard proGuardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet);
+        final ProGuard proGuardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet, mode);
         proGuardTaskDep = proGuardTask;
         dependsOn(proGuardTask);
 

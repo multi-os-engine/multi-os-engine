@@ -42,6 +42,7 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 
 import java.io.BufferedReader;
@@ -335,7 +336,7 @@ public class ProGuard extends AbstractBaseTask {
         return runtimeClasspath;
     }
 
-    protected final void setupMoeTask(final @NotNull SourceSet sourceSet) {
+    protected final void setupMoeTask(final @NotNull SourceSet sourceSet, final @NotNull Mode mode) {
         Require.nonNull(sourceSet);
 
         setSupportsRemoteBuild(false);
@@ -345,9 +346,9 @@ public class ProGuard extends AbstractBaseTask {
         final MoeSDK sdk = getMoeSDK();
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "proguard");
+        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "proguard", mode.name);
 
-        setDescription("Generates ProGuarded jar files (sourceset: " + sourceSet.getName() + ").");
+        setDescription("Generates ProGuarded jar files (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         final boolean usesCustomInJars = project.hasProperty(MOE_PROGUARD_INJARS_PROPERTY);
         if (!usesCustomInJars) {

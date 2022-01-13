@@ -108,18 +108,18 @@ public class MoePlugin extends AbstractMoePlugin {
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(Dex.class, "Creates a Dexed jar.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(Dex2Oat.class, "Creates art and oat files.",
                 asList(SOURCE_SET, MODE, ARCH_FAMILY), MoePlugin.this);
         ResourcePackager.addRule(this);
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(StartupProvider.class, "Creates the preregister.txt file.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(XcodeProvider.class, "Collects the required dependencies.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         addRule(XcodeInternal.class, "Creates all files for Xcode.",
@@ -129,7 +129,7 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(IpaBuild.class, "Creates .ipa files.",
                 emptyList(), MoePlugin.this);
         addRule(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
-                emptyList(), MoePlugin.this);
+                singletonList(MODE), MoePlugin.this);
         addRule(NatJGen.class, "Generate binding",
                 emptyList(), MoePlugin.this);
         addRule(UpdateXcodeSettings.class, "Updates Xcode project settings",

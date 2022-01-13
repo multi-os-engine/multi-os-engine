@@ -30,6 +30,7 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 
 import java.io.File;
@@ -151,7 +152,7 @@ public class Dex extends AbstractBaseTask {
         return Require.nonNull(retrolambdaTaskDep);
     }
 
-    protected final void setupMoeTask(@NotNull SourceSet sourceSet) {
+    protected final void setupMoeTask(@NotNull SourceSet sourceSet, final @NotNull Mode mode) {
         Require.nonNull(sourceSet);
 
         setSupportsRemoteBuild(false);
@@ -159,12 +160,12 @@ public class Dex extends AbstractBaseTask {
         final MoeSDK sdk = getMoeSDK();
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "dex");
+        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "dex", mode.name);
 
-        setDescription("Generates dex files (sourceset: " + sourceSet.getName() + ").");
+        setDescription("Generates dex files (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final Retrolambda retroTask = getMoePlugin().getTaskBy(Retrolambda.class, sourceSet);
+        final Retrolambda retroTask = getMoePlugin().getTaskBy(Retrolambda.class, sourceSet, mode);
         retrolambdaTaskDep = retroTask;
         dependsOn(retroTask);
 

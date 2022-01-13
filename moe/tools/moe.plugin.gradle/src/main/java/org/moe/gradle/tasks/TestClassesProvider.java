@@ -27,6 +27,7 @@ import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassReader;
@@ -378,19 +379,19 @@ public class TestClassesProvider extends AbstractBaseTask {
         return Require.nonNull(proGuardTaskDep);
     }
 
-    protected final void setupMoeTask(@NotNull SourceSet sourceSet) {
+    protected final void setupMoeTask(@NotNull SourceSet sourceSet, final @NotNull Mode mode) {
         Require.nonNull(sourceSet);
 
         setSupportsRemoteBuild(false);
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName());
+        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "test-provider", mode.name);
 
         // Create task
-        setDescription("Generates classlist.txt file (sourceset: " + sourceSet.getName() + ").");
+        setDescription("Generates classlist.txt file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet);
+        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet, mode);
         proGuardTaskDep = proguardTask;
         dependsOn(proguardTask);
 

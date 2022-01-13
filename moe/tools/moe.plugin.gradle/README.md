@@ -302,7 +302,7 @@ moe {
 
 ### ProGuard Task
 
-Task name: `moe<sourceset>ProGuard`
+Task name: `moe<sourceset><mode>ProGuard`
 
 This task collects the dependent jar files and invokes ProGuard with a set of predefined and (optional) custom rules.
 The rules are composed of two parts. The first part comes from the MOE SDK (`<sdk>/tools/proguard.cfg`) which contains
@@ -334,7 +334,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### Retrolambda Task
 
-Task name: `moe<sourceset>Retrolambda`
+Task name: `moe<sourceset><mode>Retrolambda`
 
 This task collects the class files and invokes Retrolambda on them. This will create Java 7 compatible class files from
 Java 8 class files.
@@ -356,7 +356,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### Dex Task
 
-Task name: `moe<sourceset>Dex`
+Task name: `moe<sourceset><mode>Dex`
 
 We need to create a dex file from the proguarded jar which we can later on convert to art and oat files. This task is
 responsible for that. The result of this task is a `classes.jar` file which can be found in the build directory and
@@ -407,7 +407,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### StartupProvider Task
 
-Task name: `moe<sourceset>StartupProvider`
+Task name: `moe<sourceset><mode>StartupProvider`
 
 MOE supports extending Objective-C classes from Java, but there are some special cases where we need to register some
 classes even before the Objective-C runtime initializes. These classes must be collected at build time and this task is
@@ -427,7 +427,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### ResourcePackager Task
 
-Task name: `moe<sourceset>ResourcePackager`
+Task name: `moe<sourceset><mode>ResourcePackager`
 
 This task collects the resource files used by the application. These files can originate from the application's resource
 folder, dependent jars and additional external sources specified in the build script.
@@ -437,7 +437,7 @@ The result of this task is an `application.jar` file which can be found in the b
 
 ### TestClassesProvider Task
 
-Task name: `moe<sourceset>TestClassesProvider`
+Task name: `moe<sourceset><mode>TestClassesProvider`
 
 MOE supports running JUnit tests on iOS devices. This requires a list of classes which contain the JUnit tests. This
 task collects these classes and writes them out in a text file.

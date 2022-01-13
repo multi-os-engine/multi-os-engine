@@ -204,18 +204,18 @@ public class XcodeProvider extends AbstractBaseTask {
         dependsOn(dex2oatTask);
         this.dex2OatTask = dex2oatTask;
 
-        final StartupProvider startupProviderTask = getMoePlugin().getTaskBy(StartupProvider.class, sourceSet);
+        final StartupProvider startupProviderTask = getMoePlugin().getTaskBy(StartupProvider.class, sourceSet, mode);
         startupProviderTaskDep = startupProviderTask;
         dependsOn(startupProviderTask);
 
-        dependsOn(getProject().getTasks().getByName(MoePlugin.getTaskName(ResourcePackager.class, sourceSet)));
+        dependsOn(getProject().getTasks().getByName(MoePlugin.getTaskName(ResourcePackager.class, sourceSet, mode)));
 
         if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-            dependsOn(getMoePlugin().getTaskBy(TestClassesProvider.class, sourceSet));
+            dependsOn(getMoePlugin().getTaskBy(TestClassesProvider.class, sourceSet, mode));
         }
 
         if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-            dependsOn(getMoePlugin().getTaskBy(GenerateUIObjCInterfaces.class));
+            dependsOn(getMoePlugin().getTaskBy(GenerateUIObjCInterfaces.class, mode));
         }
 
         // Update convention mapping

@@ -42,6 +42,7 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.natj.IBActionAndOutletComposer;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TaskUtils;
 
@@ -240,7 +241,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         return Require.nonNull(retrolambdaTaskDep);
     }
 
-    protected final void setupMoeTask() {
+    protected final void setupMoeTask(final @NotNull Mode mode) {
         SourceSet sourceSet = TaskUtils.getSourceSet(getMoePlugin(), SourceSet.MAIN_SOURCE_SET_NAME);
         Require.nonNull(sourceSet);
 
@@ -252,7 +253,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         setDescription("Generates header files for Interface Builder");
 
         // Add dependencies
-        final Retrolambda retroTask = getMoePlugin().getTaskBy(Retrolambda.class, sourceSet);
+        final Retrolambda retroTask = getMoePlugin().getTaskBy(Retrolambda.class, sourceSet, mode);
         retrolambdaTaskDep = retroTask;
         dependsOn(retroTask);
 
