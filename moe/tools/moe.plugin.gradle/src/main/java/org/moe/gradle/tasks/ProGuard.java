@@ -78,6 +78,8 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_OUT_JAR = "outJar";
     private static final String CONVENTION_COMPOSED_CFG_FILE = "composedCfgFile";
     private static final String CONVENTION_MAPPING_FILE = "mappingFile";
+    private static final String CONVENTION_MINIFY_ENABLED = "minifyEnabled";
+    private static final String CONVENTION_OBFUSCATION_ENABLED = "obfuscationEnabled";
 
     private static final String MOE_PROGUARD_INJARS_PROPERTY = "moe.proguard.injars";
 
@@ -195,14 +197,30 @@ public class ProGuard extends AbstractBaseTask {
         this.composedCfgFile = composedCfgFile;
     }
 
+    @Nullable
+    private Boolean minifyEnabled;
+
+    @IgnoreUnused
+    public void setMinifyEnabled(Boolean minifyEnabled) {
+        this.minifyEnabled = minifyEnabled;
+    }
+
     @Input
     public boolean isMinifyEnabled() {
-        return getMoeExtension().proguard.isMinifyEnabled();
+        return getOrConvention(minifyEnabled, CONVENTION_MINIFY_ENABLED);
+    }
+
+    @Nullable
+    private Boolean obfuscationEnabled;
+
+    @IgnoreUnused
+    public void setObfuscationEnabled(Boolean obfuscationEnabled) {
+        this.obfuscationEnabled = obfuscationEnabled;
     }
 
     @Input
     public boolean isObfuscationEnabled() {
-        return getMoeExtension().proguard.isObfuscationEnabled();
+        return getOrConvention(obfuscationEnabled, CONVENTION_OBFUSCATION_ENABLED);
     }
 
     @Nullable
@@ -295,14 +313,13 @@ public class ProGuard extends AbstractBaseTask {
 
         startSection(conf, "Shrinking & obfuscation flags");
         if (!isCustomisedBaseConfig()) {
-            ProGuardOptions proguard = getMoeExtension().proguard;
-            if (proguard.isMinifyEnabled()) {
+            if (isMinifyEnabled()) {
                 conf.append("#-dontshrink\n");
             } else {
                 conf.append("-dontshrink\n");
             }
 
-            if (proguard.isObfuscationEnabled()) {
+            if (isObfuscationEnabled()) {
                 conf.append("#-dontobfuscate\n");
                 // Don't use mixed cases names because MacOS file system is case-insenstive by default
                 conf.append("-dontusemixedcaseclassnames\n");
@@ -533,5 +550,7 @@ public class ProGuard extends AbstractBaseTask {
         addConvention(CONVENTION_COMPOSED_CFG_FILE, () -> resolvePathInBuildDir(out, "configuration.pro"));
         addConvention(CONVENTION_MAPPING_FILE, () -> isCustomisedBaseConfig() || !isObfuscationEnabled() ? null : resolvePathInBuildDir(out, "mapping.txt"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "ProGuard.log"));
+        addConvention(CONVENTION_MINIFY_ENABLED, () -> getMoeExtension().proguard.isMinifyEnabled());
+        addConvention(CONVENTION_OBFUSCATION_ENABLED, () -> getMoeExtension().proguard.isObfuscationEnabled());
     }
 }

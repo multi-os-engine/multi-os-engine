@@ -318,6 +318,9 @@ information about what got stripped can be found in the `proguard.log` file whic
 - `proGuardJar`: path to the `proguard.jar` file.
 - `baseCfgFile`: path to the base configuration file.
 - `appendCfgFile`: null or path to to appended configuration file.
+- `minifyEnabled`: whether code minification is enabled. Ignored when `baseCfgFile` is specified.
+- `obfuscationEnabled`: whether code obfuscation is enabled. Ignored when `baseCfgFile` is specified.
+- `mappingFile`: path to the name mapping output file. Generated only if `obfuscationEnabled` is `true`.
 - `inJars`: collection of paths to files being passed to ProGuard via `-injars`.
 - `libraryJars`: collection of paths to files being passed to ProGuard via `-libraryjars`.
 - `outJar`: path to ProGuard's output jar.
