@@ -41,6 +41,7 @@ import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.options.ProGuardOptions;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
@@ -384,11 +385,11 @@ public class ProGuard extends AbstractBaseTask {
             if (cfg.exists() && cfg.isFile()) {
                 return cfg;
             }
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     return sdk.getProguardCfg();
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     return sdk.getProguardFullCfg();
                 default:
                     throw new IllegalStateException();
@@ -415,20 +416,20 @@ public class ProGuard extends AbstractBaseTask {
                 Arrays.stream(split).forEach(jars::add);
             }
 
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
                     jars.remove(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.remove(ext.getPlatformJar());
                     }
                     break;
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     jars.remove(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
                     }
                     break;
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     jars.add(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
@@ -446,17 +447,17 @@ public class ProGuard extends AbstractBaseTask {
         addConvention(CONVENTION_EXCLUDED_FILES, Collections::emptySet);
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
             final HashSet<Object> jars = new HashSet<>();
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
                     jars.add(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
                     }
                     break;
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     jars.add(sdk.getCoreJar());
                     break;
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     break;
                 default:
                     throw new IllegalStateException();

@@ -30,6 +30,7 @@ import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.options.ProGuardOptions;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Arch;
@@ -363,17 +364,17 @@ public class Dex2Oat extends AbstractBaseTask {
             final Set<File> files = new HashSet<>();
             files.add(dexTask.getDestJar());
 
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
                     files.add(sdk.getCoreDex());
                     if (ext.getPlatformDex() != null) {
                         files.add(ext.getPlatformDex());
                     }
                     break;
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     files.add(sdk.getCoreDex());
                     break;
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     break;
                 default:
                     throw new IllegalStateException();

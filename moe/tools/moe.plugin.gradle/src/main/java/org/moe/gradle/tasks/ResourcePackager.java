@@ -26,6 +26,7 @@ import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.groovy.closures.ConfigurationClosure;
+import org.moe.gradle.options.ProGuardOptions;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.StringUtils;
@@ -103,15 +104,15 @@ public class ResourcePackager {
 
         project.afterEvaluate(_project -> {
             // When using full trim, ProGuard will copy the the resources from the common jar
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
                     resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
                     resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
                     break;
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
                     break;
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     break;
                 default:
                     throw new IllegalStateException();
