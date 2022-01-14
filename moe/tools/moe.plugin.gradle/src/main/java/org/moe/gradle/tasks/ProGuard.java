@@ -77,6 +77,7 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_LIBRARY_JARS = "libraryJars";
     private static final String CONVENTION_OUT_JAR = "outJar";
     private static final String CONVENTION_COMPOSED_CFG_FILE = "composedCfgFile";
+    private static final String CONVENTION_MAPPING_FILE = "mappingFile";
 
     private static final String MOE_PROGUARD_INJARS_PROPERTY = "moe.proguard.injars";
 
@@ -194,10 +195,45 @@ public class ProGuard extends AbstractBaseTask {
         this.composedCfgFile = composedCfgFile;
     }
 
+    @Input
+    public boolean isMinifyEnabled() {
+        return getMoeExtension().proguard.isMinifyEnabled();
+    }
+
+    @Input
+    public boolean isObfuscationEnabled() {
+        return getMoeExtension().proguard.isObfuscationEnabled();
+    }
+
+    @Nullable
+    private Object mappingFile;
+
+    @OutputFile
+    @Optional
+    @Nullable
+    public File getMappingFile() {
+        Object f = nullableGetOrConvention(mappingFile, CONVENTION_MAPPING_FILE);
+        return f == null ? null : getProject().file(f);
+    }
+
+    public void setMappingFile(@Nullable Object mappingFile) {
+        this.mappingFile = mappingFile;
+    }
+
+    private boolean isCustomisedBaseConfig() {
+        @NotNull final File baseCfgFile = getBaseCfgFile();
+        return !getMoeSDK().getProguardCfg().equals(baseCfgFile)
+            && !getMoeSDK().getProguardFullCfg().equals(baseCfgFile);
+    }
+
     @Override
     protected void run() {
         try {
             FileUtils.deleteFileOrFolder(getOutJar());
+            File mapping = getMappingFile();
+            if (mapping != null) {
+                FileUtils.deleteFileOrFolder(mapping);
+            }
         } catch (IOException e) {
             throw new GradleException("an IOException occurred", e);
         }
@@ -256,6 +292,30 @@ public class ProGuard extends AbstractBaseTask {
         @NotNull final File baseCfgFile = getBaseCfgFile();
         startSection(conf, "Appending from " + baseCfgFile);
         conf.append(FileUtils.read(baseCfgFile));
+
+        startSection(conf, "Shrinking & obfuscation flags");
+        if (!isCustomisedBaseConfig()) {
+            ProGuardOptions proguard = getMoeExtension().proguard;
+            if (proguard.isMinifyEnabled()) {
+                conf.append("#-dontshrink\n");
+            } else {
+                conf.append("-dontshrink\n");
+            }
+
+            if (proguard.isObfuscationEnabled()) {
+                conf.append("#-dontobfuscate\n");
+                // Don't use mixed cases names because MacOS file system is case-insenstive by default
+                conf.append("-dontusemixedcaseclassnames\n");
+
+                // Save mapping file
+                conf.append("-printmapping ").append(getMappingFile().getAbsolutePath()).append("\n");
+            } else {
+                conf.append("-dontobfuscate\n");
+            }
+        } else {
+            LOG.info("Customised base proguard config file used, ignore minifyEnabled & obfuscationEnabled settings.");
+            conf.append("# Ignored as customised base proguard config file is used\n");
+        }
 
         // Add external configuration
         PathMatcher externalCfgMatcher = FileSystems.getDefault().getPathMatcher("glob:META-INF/proguard/*.pro");
@@ -471,6 +531,7 @@ public class ProGuard extends AbstractBaseTask {
         });
         addConvention(CONVENTION_OUT_JAR, () -> resolvePathInBuildDir(out, "output.jar"));
         addConvention(CONVENTION_COMPOSED_CFG_FILE, () -> resolvePathInBuildDir(out, "configuration.pro"));
+        addConvention(CONVENTION_MAPPING_FILE, () -> isCustomisedBaseConfig() || !isObfuscationEnabled() ? null : resolvePathInBuildDir(out, "mapping.txt"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "ProGuard.log"));
     }
 }

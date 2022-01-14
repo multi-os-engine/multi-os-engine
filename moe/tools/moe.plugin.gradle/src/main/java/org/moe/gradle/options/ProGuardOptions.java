@@ -15,6 +15,8 @@ public class ProGuardOptions {
     private static final String LEVEL_ALL_STRING = "all";
 
     private int level = LEVEL_APP;
+    private boolean minifyEnabled = true;
+    private boolean obfuscationEnabled = false;
 
     @NotNull
     @IgnoreUnused
@@ -57,5 +59,23 @@ public class ProGuardOptions {
         } else {
             throw new GradleException();
         }
+    }
+
+    public boolean isMinifyEnabled() {
+        return minifyEnabled;
+    }
+
+    @IgnoreUnused
+    public void setMinifyEnabled(boolean minifyEnabled) {
+        this.minifyEnabled = minifyEnabled;
+    }
+
+    public boolean isObfuscationEnabled() {
+        return obfuscationEnabled;
+    }
+
+    @IgnoreUnused
+    public void setObfuscationEnabled(boolean obfuscationEnabled) {
+        this.obfuscationEnabled = obfuscationEnabled;
     }
 }
