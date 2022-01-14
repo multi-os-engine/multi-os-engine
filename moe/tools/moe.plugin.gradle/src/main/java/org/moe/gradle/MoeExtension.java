@@ -30,7 +30,6 @@ import java.io.File;
 
 public class MoeExtension extends AbstractMoeExtension {
 
-    private static final int PROGUARD_LEVEL_INVALID = -1;
     public static final int PROGUARD_LEVEL_APP = 0;
     public static final int PROGUARD_LEVEL_PLATFORM = 1;
     public static final int PROGUARD_LEVEL_ALL = 2;
@@ -38,11 +37,6 @@ public class MoeExtension extends AbstractMoeExtension {
     private static final String PROGUARD_LEVEL_APP_STRING = "app";
     private static final String PROGUARD_LEVEL_PLATFORM_STRING = "platform";
     private static final String PROGUARD_LEVEL_ALL_STRING = "all";
-
-    private static final String MOE_SDK_TRIM_IOS_PROPERTY = "moe.sdk.trim_ios";
-    private static final String MOE_SDK_TRIM_ALL_PROPERTY = "moe.sdk.trim_all";
-    private static final String MOE_PROGUARD_LEVEL_PROPERTY = "moe.proguardLevel";
-    private static final String MOE_PLATFORM_SKIP_PROPERTY = "moe.platform.skip";
 
     @NotNull
     public final PackagingOptions packaging;
@@ -69,7 +63,6 @@ public class MoeExtension extends AbstractMoeExtension {
     private MoePlatform platform = MoePlatform.IOS;
 
     private int proguardLevel = PROGUARD_LEVEL_APP;
-    private int proguardLevelProperty = PROGUARD_LEVEL_INVALID;
 
     public MoeExtension(@NotNull MoePlugin plugin, @NotNull Instantiator instantiator) {
         super(plugin, instantiator);
@@ -82,30 +75,7 @@ public class MoeExtension extends AbstractMoeExtension {
         this.remoteBuildOptions = instantiator.newInstance(RemoteBuildOptions.class);
     }
 
-    void setup() {
-        final Project project = plugin.getProject();
-        if (project.hasProperty(MOE_SDK_TRIM_IOS_PROPERTY)) {
-            proguardLevelProperty = PROGUARD_LEVEL_PLATFORM;
-            project.getLogger().warn("The '" + MOE_SDK_TRIM_IOS_PROPERTY + "' project property will be removed, " +
-                    "please use '" + MOE_PROGUARD_LEVEL_PROPERTY + "=" + PROGUARD_LEVEL_PLATFORM_STRING + "' instead!");
-        }
-        if (project.hasProperty(MOE_SDK_TRIM_ALL_PROPERTY)) {
-            proguardLevelProperty = PROGUARD_LEVEL_ALL;
-            project.getLogger().warn("The '" + MOE_SDK_TRIM_ALL_PROPERTY + "' project property will be removed, " +
-                    "please use '" + MOE_PROGUARD_LEVEL_PROPERTY + "=" + PROGUARD_LEVEL_ALL_STRING + "' instead!");
-        }
-        if (project.hasProperty(MOE_PROGUARD_LEVEL_PROPERTY)) {
-            final String property = (String) project.property(MOE_PROGUARD_LEVEL_PROPERTY);
-            try {
-                proguardLevelProperty = getProguardLevelForString(property);
-            } catch (GradleException ex) {
-                throw new GradleException("'" + MOE_PROGUARD_LEVEL_PROPERTY + "' project property can only be set to " +
-                        "'" + PROGUARD_LEVEL_APP_STRING + "', " +
-                        "'" + PROGUARD_LEVEL_PLATFORM_STRING + "' or " +
-                        "'" + PROGUARD_LEVEL_ALL_STRING + "'");
-            }
-        }
-    }
+    void setup() {}
 
     @IgnoreUnused
     public void packaging(Action<PackagingOptions> action) {
@@ -161,8 +131,7 @@ public class MoeExtension extends AbstractMoeExtension {
     @NotNull
     @IgnoreUnused
     public String getProguardLevel() {
-        final int level = proguardLevelProperty == PROGUARD_LEVEL_INVALID ? proguardLevel : proguardLevelProperty;
-        switch (level) {
+        switch (proguardLevel) {
             case PROGUARD_LEVEL_APP:
                 return PROGUARD_LEVEL_APP_STRING;
             case PROGUARD_LEVEL_PLATFORM:
@@ -175,7 +144,7 @@ public class MoeExtension extends AbstractMoeExtension {
     }
 
     public int getProguardLevelRaw() {
-        return proguardLevelProperty == PROGUARD_LEVEL_INVALID ? proguardLevel : proguardLevelProperty;
+        return proguardLevel;
     }
 
     @IgnoreUnused
@@ -202,23 +171,13 @@ public class MoeExtension extends AbstractMoeExtension {
         }
     }
 
-    public boolean skipPlatformSupport() {
-        return plugin.getProject().hasProperty(MOE_PLATFORM_SKIP_PROPERTY);
-    }
-
     @Nullable
     public File getPlatformJar() {
-        if (skipPlatformSupport()) {
-            return null;
-        }
         return plugin.getSDK().getPlatformJar(platform);
     }
 
     @Nullable
     public File getPlatformDex() {
-        if (skipPlatformSupport()) {
-            return null;
-        }
         return plugin.getSDK().getPlatformDex(platform);
     }
 }

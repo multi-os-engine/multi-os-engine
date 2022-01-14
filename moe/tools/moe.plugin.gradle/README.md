@@ -313,10 +313,6 @@ can overwrite it by creating a `proguard.cfg` file in your project directory. Th
 `proguarded.jar` file which contains the minimized version of the application code which is required to run. Detailed
 information about what got stripped can be found in the `proguard.log` file which is in your build directory.
 
-
-
-Overriding this level on the command-line can be done via the `moe.proguardLevel=<level>` project property.
-
 #### Task Properties
 
 - `proGuardJar`: path to the `proguard.jar` file.

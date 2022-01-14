@@ -233,7 +233,7 @@ public class Retrolambda extends AbstractBaseTask {
             return files;
         });
         addConvention(CONVENTION_DEFAULT_METHODS, () -> Boolean.TRUE);
-        addConvention(CONVENTION_NATJ_SUPPORT, () -> !ext.skipPlatformSupport());
+        addConvention(CONVENTION_NATJ_SUPPORT, () -> Boolean.TRUE);
         addConvention(CONVENTION_EXPANDED_CLASSES_DIR, () -> resolvePathInBuildDir(out, "input"));
         addConvention(CONVENTION_OUTPUT_DIR, () -> resolvePathInBuildDir(out, "output"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "Retrolambda.log"));
