@@ -73,7 +73,7 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_BASE_CFG_FILE = "baseCfgFile";
     private static final String CONVENTION_APPEND_CFG_FILE = "appendCfgFile";
     private static final String CONVENTION_IN_JARS = "inJars";
-    private static final String CONVENTION_EXCLUDED_FILES = "excludedFiles";
+    private static final String CONVENTION_EXCLUDE_FILES = "excludeFiles";
     private static final String CONVENTION_LIBRARY_JARS = "libraryJars";
     private static final String CONVENTION_OUT_JAR = "outJar";
     private static final String CONVENTION_COMPOSED_CFG_FILE = "composedCfgFile";
@@ -142,17 +142,17 @@ public class ProGuard extends AbstractBaseTask {
     }
 
     @Nullable
-    private Set<String> excludedFiles;
+    private Set<String> excludeFiles;
 
     @Input
     @NotNull
-    public Collection<String> getExcludedFiles() {
-        return getOrConvention(excludedFiles, CONVENTION_EXCLUDED_FILES);
+    public Collection<String> getExcludeFiles() {
+        return getOrConvention(excludeFiles, CONVENTION_EXCLUDE_FILES);
     }
 
     @IgnoreUnused
-    public void setExcludedFiles(@Nullable Collection<String> excludedFiles) {
-        this.excludedFiles = excludedFiles == null ? null : new LinkedHashSet<>(excludedFiles);
+    public void setExcludeFiles(@Nullable Collection<String> excludeFiles) {
+        this.excludeFiles = excludeFiles == null ? null : new LinkedHashSet<>(excludeFiles);
     }
 
     @Nullable
@@ -269,8 +269,8 @@ public class ProGuard extends AbstractBaseTask {
         sb.append("(!**.framework/**,!**.bundle/**,!module-info.class");
 
         // Add user specified
-        for (String excludedFile : getExcludedFiles()) {
-            sb.append(",!").append(excludedFile);
+        for (String excludeFile : getExcludeFiles()) {
+            sb.append(",!").append(excludeFile);
         }
 
         sb.append(")");
@@ -458,6 +458,10 @@ public class ProGuard extends AbstractBaseTask {
 
         addConvention(CONVENTION_PROGUARD_JAR, sdk::getProGuardJar);
         addConvention(CONVENTION_BASE_CFG_FILE, () -> {
+            if (ext.proguard.getBaseCfgFile() != null) {
+                return ext.proguard.getBaseCfgFile();
+            }
+
             final File cfg = project.file("proguard.cfg");
             if (cfg.exists() && cfg.isFile()) {
                 return cfg;
@@ -473,6 +477,10 @@ public class ProGuard extends AbstractBaseTask {
             }
         });
         addConvention(CONVENTION_APPEND_CFG_FILE, () -> {
+            if (ext.proguard.getAppendCfgFile() != null) {
+                return ext.proguard.getAppendCfgFile();
+            }
+
             final File cfg = project.file("proguard.append.cfg");
             if (cfg.exists() && cfg.isFile()) {
                 return cfg;
@@ -521,8 +529,8 @@ public class ProGuard extends AbstractBaseTask {
 
             return jars;
         });
-        addConvention(CONVENTION_EXCLUDED_FILES, () -> {
-            Collection<String> exc = ext.proguard.getExcludedFiles();
+        addConvention(CONVENTION_EXCLUDE_FILES, () -> {
+            Collection<String> exc = ext.proguard.getExcludeFiles();
             if (exc == null) {
                 exc = Collections.emptySet();
             }
@@ -557,7 +565,7 @@ public class ProGuard extends AbstractBaseTask {
         addConvention(CONVENTION_COMPOSED_CFG_FILE, () -> resolvePathInBuildDir(out, "configuration.pro"));
         addConvention(CONVENTION_MAPPING_FILE, () -> isCustomisedBaseConfig() || !isObfuscationEnabled() ? null : resolvePathInBuildDir(out, "mapping.txt"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "ProGuard.log"));
-        addConvention(CONVENTION_MINIFY_ENABLED, () -> getMoeExtension().proguard.isMinifyEnabled());
-        addConvention(CONVENTION_OBFUSCATION_ENABLED, () -> getMoeExtension().proguard.isObfuscationEnabled());
+        addConvention(CONVENTION_MINIFY_ENABLED, ext.proguard::isMinifyEnabled);
+        addConvention(CONVENTION_OBFUSCATION_ENABLED, ext.proguard::isObfuscationEnabled);
     }
 }

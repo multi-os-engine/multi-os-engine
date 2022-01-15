@@ -4,7 +4,9 @@ import org.gradle.api.GradleException;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.utils.Require;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -22,7 +24,8 @@ public class ProGuardOptions {
     private int level = LEVEL_APP;
     private boolean minifyEnabled = true;
     private boolean obfuscationEnabled = false;
-    private Set<String> excludedFiles;
+    @Nullable
+    private Set<String> excludeFiles;
 
     @NotNull
     @IgnoreUnused
@@ -86,12 +89,46 @@ public class ProGuardOptions {
     }
 
     @Nullable
-    public Collection<String> getExcludedFiles() {
-        return excludedFiles;
+    public Collection<String> getExcludeFiles() {
+        return excludeFiles;
     }
 
     @IgnoreUnused
-    public void setExcludedFiles(@Nullable Collection<String> excludedFiles) {
-        this.excludedFiles = excludedFiles == null ? null : new LinkedHashSet<>(excludedFiles);
+    public void setExcludeFiles(@Nullable Collection<String> excludedFiles) {
+        this.excludeFiles = excludedFiles == null ? null : new LinkedHashSet<>(excludedFiles);
+    }
+
+    public ProGuardOptions excludeFile(String... names) {
+        if (excludeFiles == null) {
+            excludeFiles = new LinkedHashSet<>();
+        }
+        excludeFiles.addAll(Arrays.asList(Require.nonNull(names)));
+        return this;
+    }
+
+    @Nullable
+    private Object baseCfgFile;
+
+    @Nullable
+    public Object getBaseCfgFile() {
+        return baseCfgFile;
+    }
+
+    @IgnoreUnused
+    public void setBaseCfgFile(@Nullable Object baseCfgFile) {
+        this.baseCfgFile = baseCfgFile;
+    }
+
+    @Nullable
+    private Object appendCfgFile;
+
+    @Nullable
+    public Object getAppendCfgFile() {
+        return appendCfgFile;
+    }
+
+    @IgnoreUnused
+    public void setAppendCfgFile(@Nullable Object appendCfgFile) {
+        this.appendCfgFile = appendCfgFile;
     }
 }

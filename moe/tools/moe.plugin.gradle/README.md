@@ -160,16 +160,38 @@ buildscript {
 
 ### ProGuard
 
-ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`
-
-This level can be set in the buildscript:
+ProGuard can be configured globally here, or per-config in [ProGuard Task](#proguard-task).
 
 ```groovy
 moe {
-    proguardLevel 'platform'
+    proguard {
+        // apply level
+        level = 'platform'
+      
+        // path to the base configuration file, or `null` to use SDK default config
+        baseCfgFile = null
+      
+        // null or path to to appended configuration file
+        appendCfgFile = null
+      
+        // whether code minification is enabled. Ignored when `baseCfgFile` is specified. Default to `true`
+        minifyEnabled = true
+      
+        // whether code obfuscation is enabled. Ignored when `baseCfgFile` is specified. Default to `false`
+        obfuscationEnabled = false
+
+        // exclude files from `-injars` config that will be processed by proguard
+        excludeFiles = [
+                'META-INF/*.SF',
+                'META-INF/*.DSA',
+                'META-INF/*.RSA'
+        ]
+        excludeFile 'org/bouncycastle/jce/provider/*Spi_8.class'
+    }
 }
 ```
 
+ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`:
 - `app` will only process the classes of your application and it's non-MOE dependencies. This is the fastest mode and
 is recommended for development.
 - `platform` will do the same as `app` but will also include the `moe-ios.jar` MOE dependency. This mode is a bit
@@ -322,6 +344,7 @@ information about what got stripped can be found in the `proguard.log` file whic
 - `obfuscationEnabled`: whether code obfuscation is enabled. Ignored when `baseCfgFile` is specified.
 - `mappingFile`: path to the name mapping output file. Generated only if `obfuscationEnabled` is `true`.
 - `inJars`: collection of paths to files being passed to ProGuard via `-injars`.
+- `excludeFiles`: exclude files from `inJars` that will be processed by proguard.
 - `libraryJars`: collection of paths to files being passed to ProGuard via `-libraryjars`.
 - `outJar`: path to ProGuard's output jar.
 - `composedCfgFile`: path to the composed configuration file.
