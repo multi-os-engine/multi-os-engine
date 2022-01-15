@@ -9,12 +9,12 @@ import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.bundling.Jar
-import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlatform
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
 import org.moe.gradle.anns.Nullable
+import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.Arch
 import org.moe.gradle.utils.Mode
 import org.moe.tools.substrate.Config
@@ -247,15 +247,15 @@ open class NativeImage : AbstractBaseTask() {
         this.platform = platform
 
         // Add dependencies
-        val classValidateTask = moePlugin.getTaskBy(ClassValidate::class.java, sourceSet)
+        val classValidateTask = moePlugin.getTaskBy(ClassValidate::class.java, sourceSet, mode)
         classValidateTaskDep = classValidateTask
         dependsOn(classValidateTask)
 
-        val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet))
+        val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet, mode))
         dependsOn(resourceTask)
 
         if (SourceSet.TEST_SOURCE_SET_NAME == sourceSet.name) {
-            val t = moePlugin.getTaskBy(TestClassesProvider::class.java, sourceSet)
+            val t = moePlugin.getTaskBy(TestClassesProvider::class.java, sourceSet, mode)
             dependsOn(t)
             testClassesProviderTaskDep = t
         }
@@ -264,17 +264,17 @@ open class NativeImage : AbstractBaseTask() {
         addConvention(CONVENTION_INPUT_FILES) {
             val files = mutableSetOf(classValidateTask.classesOutputDir)
 
-            when (moeExtension.proguardLevelRaw) {
-                MoeExtension.PROGUARD_LEVEL_APP -> {
+            when (moeExtension.proguard.levelRaw) {
+                ProGuardOptions.LEVEL_APP -> {
                     files.add(moeSDK.coreJar)
                     moeExtension.platformJar?.let {
                         files.add(it)
                     }
                 }
-                MoeExtension.PROGUARD_LEVEL_PLATFORM -> {
+                ProGuardOptions.LEVEL_PLATFORM -> {
                     files.add(moeSDK.coreJar)
                 }
-                MoeExtension.PROGUARD_LEVEL_ALL -> {
+                ProGuardOptions.LEVEL_ALL -> {
                 }
                 else -> throw IllegalStateException()
             }

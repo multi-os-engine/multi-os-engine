@@ -34,13 +34,14 @@ import org.moe.document.pbxproj.PBXProject;
 import org.moe.document.pbxproj.PBXSourcesBuildPhase;
 import org.moe.document.pbxproj.ProjectFile;
 import org.moe.document.pbxproj.Root;
-import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.natj.IBActionAndOutletComposer;
+import org.moe.gradle.options.ProGuardOptions;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TaskUtils;
 
@@ -231,7 +232,7 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         }
     }
 
-    protected final void setupMoeTask() {
+    protected final void setupMoeTask(final @NotNull Mode mode) {
         SourceSet sourceSet = TaskUtils.getSourceSet(getMoePlugin(), SourceSet.MAIN_SOURCE_SET_NAME);
         Require.nonNull(sourceSet);
 
@@ -243,14 +244,14 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         setDescription("Generates header files for Interface Builder");
 
         // Add dependencies
-        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet);
+        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet, mode);
         dependsOn(proguardTask);
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();
             files.add(proguardTask.getOutJar());
-            if (getMoeExtension().getProguardLevelRaw() == MoeExtension.PROGUARD_LEVEL_APP) {
+            if (getMoeExtension().proguard.getLevelRaw() == ProGuardOptions.LEVEL_APP) {
                 files.add(getMoeExtension().getPlatformJar());
             }
             return files;

@@ -17,8 +17,8 @@ limitations under the License.
 package org.moe.gradle;
 
 import org.gradle.api.Action;
-import org.gradle.api.GradleException;
-import org.gradle.api.Project;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
@@ -30,17 +30,7 @@ import java.io.File;
 
 public class MoeExtension extends AbstractMoeExtension {
 
-    private static final int PROGUARD_LEVEL_INVALID = -1;
-    public static final int PROGUARD_LEVEL_APP = 0;
-    public static final int PROGUARD_LEVEL_PLATFORM = 1;
-    public static final int PROGUARD_LEVEL_ALL = 2;
-
-    private static final String PROGUARD_LEVEL_APP_STRING = "app";
-    private static final String PROGUARD_LEVEL_PLATFORM_STRING = "platform";
-    private static final String PROGUARD_LEVEL_ALL_STRING = "all";
-
-    private static final String MOE_PROGUARD_LEVEL_PROPERTY = "moe.proguardLevel";
-    private static final String MOE_PLATFORM_SKIP_PROPERTY = "moe.platform.skip";
+    private static final Logger LOG = Logging.getLogger(MoeExtension.class);
 
     @NotNull
     public final PackagingOptions packaging;
@@ -69,11 +59,11 @@ public class MoeExtension extends AbstractMoeExtension {
     @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
+    @NotNull
+    public final ProGuardOptions proguard;
+
     @Nullable
     private String mainClassName = "org.moe.IOSLauncher";
-
-    private int proguardLevel = PROGUARD_LEVEL_ALL;
-    private int proguardLevelProperty = PROGUARD_LEVEL_INVALID;
 
     public MoeExtension(@NotNull MoePlugin plugin, @NotNull Instantiator instantiator) {
         super(plugin, instantiator);
@@ -84,23 +74,11 @@ public class MoeExtension extends AbstractMoeExtension {
         this.actionsAndOutlets = instantiator.newInstance(UIActionsAndOutletsOptions.class);
         this.ipaExport = instantiator.newInstance(IpaExportOptions.class);
         this.remoteBuildOptions = instantiator.newInstance(RemoteBuildOptions.class);
+        this.proguard = instantiator.newInstance(ProGuardOptions.class);
         this.nativeImage = instantiator.newInstance(NativeImageOptions.class);
     }
 
-    void setup() {
-        final Project project = plugin.getProject();
-        if (project.hasProperty(MOE_PROGUARD_LEVEL_PROPERTY)) {
-            final String property = (String) project.property(MOE_PROGUARD_LEVEL_PROPERTY);
-            try {
-                proguardLevelProperty = getProguardLevelForString(property);
-            } catch (GradleException ex) {
-                throw new GradleException("'" + MOE_PROGUARD_LEVEL_PROPERTY + "' project property can only be set to " +
-                        "'" + PROGUARD_LEVEL_APP_STRING + "', " +
-                        "'" + PROGUARD_LEVEL_PLATFORM_STRING + "' or " +
-                        "'" + PROGUARD_LEVEL_ALL_STRING + "'");
-            }
-        }
-    }
+    void setup() {}
 
     @IgnoreUnused
     public void packaging(Action<PackagingOptions> action) {
@@ -138,6 +116,11 @@ public class MoeExtension extends AbstractMoeExtension {
     }
 
     @IgnoreUnused
+    public void proguard(Action<ProGuardOptions> action) {
+        Require.nonNull(action).execute(proguard);
+    }
+
+    @IgnoreUnused
     public void nativeImage(Action<NativeImageOptions> action) {
         Require.nonNull(action).execute(nativeImage);
     }
@@ -160,57 +143,21 @@ public class MoeExtension extends AbstractMoeExtension {
 
     @NotNull
     @IgnoreUnused
+    @Deprecated
     public String getProguardLevel() {
-        final int level = proguardLevelProperty == PROGUARD_LEVEL_INVALID ? proguardLevel : proguardLevelProperty;
-        switch (level) {
-            case PROGUARD_LEVEL_APP:
-                return PROGUARD_LEVEL_APP_STRING;
-            case PROGUARD_LEVEL_PLATFORM:
-                return PROGUARD_LEVEL_PLATFORM_STRING;
-            case PROGUARD_LEVEL_ALL:
-                return PROGUARD_LEVEL_ALL_STRING;
-            default:
-                throw new IllegalStateException();
-        }
-    }
-
-    public int getProguardLevelRaw() {
-        return proguardLevelProperty == PROGUARD_LEVEL_INVALID ? proguardLevel : proguardLevelProperty;
+        LOG.warn("The 'getProguardLevel' is deprecated, please use 'proguard.level' instead!");
+        return proguard.getLevel();
     }
 
     @IgnoreUnused
+    @Deprecated
     public void setProguardLevel(@NotNull String proguardLevel) {
-        try {
-            this.proguardLevel = getProguardLevelForString(proguardLevel);
-        } catch (GradleException ex) {
-            throw new GradleException("proguardLevel property can only be set to " +
-                    "'" + PROGUARD_LEVEL_APP_STRING + "', " +
-                    "'" + PROGUARD_LEVEL_PLATFORM_STRING + "' or " +
-                    "'" + PROGUARD_LEVEL_ALL_STRING + "'");
-        }
-    }
-
-    private int getProguardLevelForString(@NotNull String proguardLevel) {
-        if (PROGUARD_LEVEL_APP_STRING.equalsIgnoreCase(proguardLevel)) {
-            return PROGUARD_LEVEL_APP;
-        } else if (PROGUARD_LEVEL_PLATFORM_STRING.equalsIgnoreCase(proguardLevel)) {
-            return PROGUARD_LEVEL_PLATFORM;
-        } else if (PROGUARD_LEVEL_ALL_STRING.equalsIgnoreCase(proguardLevel)) {
-            return PROGUARD_LEVEL_ALL;
-        } else {
-            throw new GradleException();
-        }
-    }
-
-    public boolean skipPlatformSupport() {
-        return plugin.getProject().hasProperty(MOE_PLATFORM_SKIP_PROPERTY);
+        LOG.warn("The 'setProguardLevel' is deprecated, please use 'proguard.level' instead!");
+        proguard.setLevel(proguardLevel);
     }
 
     @Nullable
     public File getPlatformJar() {
-        if (skipPlatformSupport()) {
-            return null;
-        }
         return plugin.getSDK().getPlatformJar(platform);
     }
 

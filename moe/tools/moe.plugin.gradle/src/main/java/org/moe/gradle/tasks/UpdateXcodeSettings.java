@@ -17,10 +17,6 @@ limitations under the License.
 package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
-import org.gradle.api.Task;
-import org.gradle.api.logging.Logger;
-import org.gradle.api.logging.Logging;
-import org.gradle.api.specs.Spec;
 import org.gradle.api.tasks.Input;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.generator.project.writer.XcodeEditor;
@@ -34,40 +30,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class UpdateXcodeSettings extends AbstractBaseTask {
-
-    private static final Logger LOG = Logging.getLogger(UpdateXcodeSettings.class);
-
-    private XcodeEditor xcodeEditor;
-
-    public UpdateXcodeSettings() {
-        XcodeOptions xcode = getMoeExtension().xcode;
-        File xcodeFile = getProject().file(xcode.getProject());
-
-        try {
-            xcodeEditor = new XcodeEditor(xcodeFile);
-        } catch (ProjectException e) {
-            throw new GradleException("Could not open Xcode project for updating settings", e);
-        }
-
-        getOutputs().upToDateWhen(new Spec<Task>() {
-            @Override
-            public boolean isSatisfiedBy(Task task) {
-                try {
-                    String actVersion = xcodeEditor.getActVersion();
-                    if (actVersion == null || actVersion.isEmpty()) {
-                        return false;
-                    }
-                    if (getProject().hasProperty("moe.forced.update")) {
-                        return false;
-                    } else {
-                        return xcodeEditor.isUpToDate();
-                    }
-                } catch (IOException e) {
-                    throw new GradleException("Could not determine if the Xcode project up to date", e);
-                }
-            }
-        });
-    }
 
     @Input
     public boolean isUseLLVM() {
@@ -87,8 +49,11 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
         settings.xcodeProject = xcodeFile;
         settings.useLLVM = getMoeExtension().nativeImage.isUseLLVM();
         try {
+            XcodeEditor xcodeEditor = new XcodeEditor(xcodeFile);
             xcodeEditor.update(settings);
             xcodeEditor.getProjectFile().save();
+        } catch (ProjectException e) {
+            throw new GradleException("Could not open Xcode project for updating settings", e);
         } catch (IOException e) {
             throw new GradleException("Could not update Xcode project settings", e);
         }

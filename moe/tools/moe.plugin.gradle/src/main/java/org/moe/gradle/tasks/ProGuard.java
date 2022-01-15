@@ -41,7 +41,9 @@ import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
+import org.moe.gradle.options.ProGuardOptions;
 import org.moe.gradle.utils.FileUtils;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 
 import java.io.BufferedReader;
@@ -71,10 +73,13 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_BASE_CFG_FILE = "baseCfgFile";
     private static final String CONVENTION_APPEND_CFG_FILE = "appendCfgFile";
     private static final String CONVENTION_IN_JARS = "inJars";
-    private static final String CONVENTION_EXCLUDED_FILES = "excludedFiles";
+    private static final String CONVENTION_EXCLUDE_FILES = "excludeFiles";
     private static final String CONVENTION_LIBRARY_JARS = "libraryJars";
     private static final String CONVENTION_OUT_JAR = "outJar";
     private static final String CONVENTION_COMPOSED_CFG_FILE = "composedCfgFile";
+    private static final String CONVENTION_MAPPING_FILE = "mappingFile";
+    private static final String CONVENTION_MINIFY_ENABLED = "minifyEnabled";
+    private static final String CONVENTION_OBFUSCATION_ENABLED = "obfuscationEnabled";
 
     private static final String MOE_PROGUARD_INJARS_PROPERTY = "moe.proguard.injars";
 
@@ -137,17 +142,17 @@ public class ProGuard extends AbstractBaseTask {
     }
 
     @Nullable
-    private Set<String> excludedFiles;
+    private Set<String> excludeFiles;
 
     @Input
     @NotNull
-    public Collection<String> getExcludedFiles() {
-        return getOrConvention(excludedFiles, CONVENTION_EXCLUDED_FILES);
+    public Collection<String> getExcludeFiles() {
+        return getOrConvention(excludeFiles, CONVENTION_EXCLUDE_FILES);
     }
 
     @IgnoreUnused
-    public void setExcludedFiles(@Nullable Collection<String> excludedFiles) {
-        this.excludedFiles = excludedFiles == null ? null : new LinkedHashSet<>(excludedFiles);
+    public void setExcludeFiles(@Nullable Collection<String> excludeFiles) {
+        this.excludeFiles = excludeFiles == null ? null : new LinkedHashSet<>(excludeFiles);
     }
 
     @Nullable
@@ -192,10 +197,61 @@ public class ProGuard extends AbstractBaseTask {
         this.composedCfgFile = composedCfgFile;
     }
 
+    @Nullable
+    private Boolean minifyEnabled;
+
+    @IgnoreUnused
+    public void setMinifyEnabled(Boolean minifyEnabled) {
+        this.minifyEnabled = minifyEnabled;
+    }
+
+    @Input
+    public boolean isMinifyEnabled() {
+        return getOrConvention(minifyEnabled, CONVENTION_MINIFY_ENABLED);
+    }
+
+    @Nullable
+    private Boolean obfuscationEnabled;
+
+    @IgnoreUnused
+    public void setObfuscationEnabled(Boolean obfuscationEnabled) {
+        this.obfuscationEnabled = obfuscationEnabled;
+    }
+
+    @Input
+    public boolean isObfuscationEnabled() {
+        return getOrConvention(obfuscationEnabled, CONVENTION_OBFUSCATION_ENABLED);
+    }
+
+    @Nullable
+    private Object mappingFile;
+
+    @OutputFile
+    @Optional
+    @Nullable
+    public File getMappingFile() {
+        Object f = nullableGetOrConvention(mappingFile, CONVENTION_MAPPING_FILE);
+        return f == null ? null : getProject().file(f);
+    }
+
+    public void setMappingFile(@Nullable Object mappingFile) {
+        this.mappingFile = mappingFile;
+    }
+
+    private boolean isCustomisedBaseConfig() {
+        @NotNull final File baseCfgFile = getBaseCfgFile();
+        return !getMoeSDK().getProguardCfg().equals(baseCfgFile)
+            && !getMoeSDK().getProguardFullCfg().equals(baseCfgFile);
+    }
+
     @Override
     protected void run() {
         try {
             FileUtils.deleteFileOrFolder(getOutJar());
+            File mapping = getMappingFile();
+            if (mapping != null) {
+                FileUtils.deleteFileOrFolder(mapping);
+            }
         } catch (IOException e) {
             throw new GradleException("an IOException occurred", e);
         }
@@ -213,8 +269,8 @@ public class ProGuard extends AbstractBaseTask {
         sb.append("(!**.framework/**,!**.bundle/**,!module-info.class");
 
         // Add user specified
-        for (String excludedFile : getExcludedFiles()) {
-            sb.append(",!").append(excludedFile);
+        for (String excludeFile : getExcludeFiles()) {
+            sb.append(",!").append(excludeFile);
         }
 
         sb.append(")");
@@ -254,6 +310,29 @@ public class ProGuard extends AbstractBaseTask {
         @NotNull final File baseCfgFile = getBaseCfgFile();
         startSection(conf, "Appending from " + baseCfgFile);
         conf.append(FileUtils.read(baseCfgFile));
+
+        startSection(conf, "Shrinking & obfuscation flags");
+        if (!isCustomisedBaseConfig()) {
+            if (isMinifyEnabled()) {
+                conf.append("#-dontshrink\n");
+            } else {
+                conf.append("-dontshrink\n");
+            }
+
+            if (isObfuscationEnabled()) {
+                conf.append("#-dontobfuscate\n");
+                // Don't use mixed cases names because MacOS file system is case-insenstive by default
+                conf.append("-dontusemixedcaseclassnames\n");
+
+                // Save mapping file
+                conf.append("-printmapping ").append(getMappingFile().getAbsolutePath()).append("\n");
+            } else {
+                conf.append("-dontobfuscate\n");
+            }
+        } else {
+            LOG.info("Customised base proguard config file used, ignore minifyEnabled & obfuscationEnabled settings.");
+            conf.append("# Ignored as customised base proguard config file is used\n");
+        }
 
         // Add external configuration
         PathMatcher externalCfgMatcher = FileSystems.getDefault().getPathMatcher("glob:META-INF/proguard/*.pro");
@@ -335,7 +414,7 @@ public class ProGuard extends AbstractBaseTask {
         return runtimeClasspath;
     }
 
-    protected final void setupMoeTask(final @NotNull SourceSet sourceSet) {
+    protected final void setupMoeTask(final @NotNull SourceSet sourceSet, final @NotNull Mode mode) {
         Require.nonNull(sourceSet);
 
         setSupportsRemoteBuild(false);
@@ -345,9 +424,9 @@ public class ProGuard extends AbstractBaseTask {
         final MoeSDK sdk = getMoeSDK();
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "proguard");
+        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "proguard", mode.name);
 
-        setDescription("Generates ProGuarded jar files (sourceset: " + sourceSet.getName() + ").");
+        setDescription("Generates ProGuarded jar files (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         final boolean usesCustomInJars = project.hasProperty(MOE_PROGUARD_INJARS_PROPERTY);
         if (!usesCustomInJars) {
@@ -379,21 +458,29 @@ public class ProGuard extends AbstractBaseTask {
 
         addConvention(CONVENTION_PROGUARD_JAR, sdk::getProGuardJar);
         addConvention(CONVENTION_BASE_CFG_FILE, () -> {
+            if (ext.proguard.getBaseCfgFile() != null) {
+                return ext.proguard.getBaseCfgFile();
+            }
+
             final File cfg = project.file("proguard.cfg");
             if (cfg.exists() && cfg.isFile()) {
                 return cfg;
             }
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     return sdk.getProguardCfg();
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     return sdk.getProguardFullCfg();
                 default:
                     throw new IllegalStateException();
             }
         });
         addConvention(CONVENTION_APPEND_CFG_FILE, () -> {
+            if (ext.proguard.getAppendCfgFile() != null) {
+                return ext.proguard.getAppendCfgFile();
+            }
+
             final File cfg = project.file("proguard.append.cfg");
             if (cfg.exists() && cfg.isFile()) {
                 return cfg;
@@ -414,20 +501,20 @@ public class ProGuard extends AbstractBaseTask {
                 Arrays.stream(split).forEach(jars::add);
             }
 
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
                     jars.remove(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.remove(ext.getPlatformJar());
                     }
                     break;
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     jars.remove(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
                     }
                     break;
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     jars.add(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
@@ -439,24 +526,31 @@ public class ProGuard extends AbstractBaseTask {
 
             return jars;
         });
-        addConvention(CONVENTION_EXCLUDED_FILES, Collections::emptySet);
+        addConvention(CONVENTION_EXCLUDE_FILES, () -> {
+            Collection<String> exc = ext.proguard.getExcludeFiles();
+            if (exc == null) {
+                exc = Collections.emptySet();
+            }
+
+            return exc;
+        });
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
             final HashSet<Object> jars = new LinkedHashSet<>(
                 // Make JDK runtime libraries available for ProGuard
                 // because we no longer have all basic runtime classes in core jar.
                 getMoePlugin().getGraalVM().getRuntimeLibraries()
             );
-            switch (ext.getProguardLevelRaw()) {
-                case MoeExtension.PROGUARD_LEVEL_APP:
+            switch (ext.proguard.getLevelRaw()) {
+                case ProGuardOptions.LEVEL_APP:
                     jars.add(sdk.getCoreJar());
                     if (ext.getPlatformJar() != null) {
                         jars.add(ext.getPlatformJar());
                     }
                     break;
-                case MoeExtension.PROGUARD_LEVEL_PLATFORM:
+                case ProGuardOptions.LEVEL_PLATFORM:
                     jars.add(sdk.getCoreJar());
                     break;
-                case MoeExtension.PROGUARD_LEVEL_ALL:
+                case ProGuardOptions.LEVEL_ALL:
                     break;
                 default:
                     throw new IllegalStateException();
@@ -466,6 +560,9 @@ public class ProGuard extends AbstractBaseTask {
         });
         addConvention(CONVENTION_OUT_JAR, () -> resolvePathInBuildDir(out, "output.jar"));
         addConvention(CONVENTION_COMPOSED_CFG_FILE, () -> resolvePathInBuildDir(out, "configuration.pro"));
+        addConvention(CONVENTION_MAPPING_FILE, () -> isCustomisedBaseConfig() || !isObfuscationEnabled() ? null : resolvePathInBuildDir(out, "mapping.txt"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "ProGuard.log"));
+        addConvention(CONVENTION_MINIFY_ENABLED, ext.proguard::isMinifyEnabled);
+        addConvention(CONVENTION_OBFUSCATION_ENABLED, ext.proguard::isObfuscationEnabled);
     }
 }

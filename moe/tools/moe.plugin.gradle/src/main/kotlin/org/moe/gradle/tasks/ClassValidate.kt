@@ -11,11 +11,11 @@ import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.SourceSet
 import org.moe.generator.project.writer.XcodeEditor
-import org.moe.gradle.MoeExtension
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
 import org.moe.gradle.anns.Nullable
+import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.FileUtils
 import org.moe.gradle.utils.Mode
 import org.moe.tools.classvalidator.ClassValidator
@@ -103,8 +103,8 @@ open class ClassValidate : AbstractBaseTask() {
 //        moeExtension.platformJar?.let {
 //            libraryJars.add(it)
 //        }
-        when (moeExtension.proguardLevelRaw) {
-            MoeExtension.PROGUARD_LEVEL_ALL -> {
+        when (moeExtension.proguard.levelRaw) {
+            ProGuardOptions.LEVEL_ALL -> {
                 // Nothing to be done here, should be handled by [ClassValidator] above
             }
             else -> {
@@ -135,16 +135,17 @@ open class ClassValidate : AbstractBaseTask() {
 
     protected fun setupMoeTask(
         @NotNull sourceSet: SourceSet,
+        @NotNull mode: Mode,
     ) {
         setSupportsRemoteBuild(false)
 
         // Construct default output path
-        val out = Paths.get(MoePlugin.MOE, sourceSet.name, "validate")
+        val out = Paths.get(MoePlugin.MOE, sourceSet.name, "validate", mode.name)
 
-        description = "Validate classes (sourceset: ${sourceSet.name})."
+        description = "Validate classes (sourceset: ${sourceSet.name}, mode: ${mode.name})."
 
         // Add dependencies
-        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet)
+        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet, mode)
         proGuardTaskDep = proGuardTask
         dependsOn(proGuardTask)
 
@@ -164,8 +165,7 @@ open class ClassValidate : AbstractBaseTask() {
                 target?.let {
                     val xcodeFile = project.file(xcode.project)
                     val xcodeEditor = XcodeEditor(xcodeFile)
-                    // TODO: support different mode?
-                    val infoPlistFile = xcodeEditor.getInfoPlist(target, Mode.RELEASE.xcodeCompatibleName)
+                    val infoPlistFile = xcodeEditor.getInfoPlist(target, mode.xcodeCompatibleName)
 
                     val rootDict = PropertyListParser.parse(infoPlistFile.readBytes()) as NSDictionary
                     val mainClass = rootDict["MOE.Main.Class"] as NSString

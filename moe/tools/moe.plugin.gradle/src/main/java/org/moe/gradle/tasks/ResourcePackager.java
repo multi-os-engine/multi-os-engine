@@ -25,6 +25,7 @@ import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.groovy.closures.ConfigurationClosure;
+import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.StringUtils;
 import org.moe.gradle.utils.TaskUtils;
@@ -47,7 +48,7 @@ public class ResourcePackager {
 
         // Prepare constants
         final String TASK_NAME = ResourcePackager.class.getSimpleName();
-        final String ELEMENTS_DESC = "<SourceSet>";
+        final String ELEMENTS_DESC = "<SourceSet><Mode>";
         final String PATTERN = MoePlugin.MOE + ELEMENTS_DESC + TASK_NAME;
 
         // Add rule
@@ -62,16 +63,17 @@ public class ResourcePackager {
             }
 
             // Check number of elements
-            TaskUtils.assertSize(elements, 1, ELEMENTS_DESC);
+            TaskUtils.assertSize(elements, 2, ELEMENTS_DESC);
 
             // Check element values & configure task on success
             final SourceSet sourceSet = TaskUtils.getSourceSet(plugin, elements.get(0));
-            return create(plugin, sourceSet);
+            final Mode mode = Mode.getForName(elements.get(1));
+            return create(plugin, sourceSet, mode);
         });
     }
 
     @NotNull
-    private static Jar create(@NotNull MoePlugin plugin, @NotNull SourceSet sourceSet) {
+    private static Jar create(@NotNull MoePlugin plugin, @NotNull SourceSet sourceSet, final @NotNull Mode mode) {
         Require.nonNull(plugin);
         Require.nonNull(sourceSet);
 
@@ -79,16 +81,16 @@ public class ResourcePackager {
         final MoeExtension ext = plugin.getExtension();
 
         // Construct default output path
-        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName());
+        final Path out = Paths.get(MoePlugin.MOE, sourceSet.getName(), "resources", mode.name);
 
         // Create task
-        final String taskName = MoePlugin.getTaskName(ResourcePackager.class, sourceSet);
+        final String taskName = MoePlugin.getTaskName(ResourcePackager.class, sourceSet, mode);
         final Jar resourcePackagerTask = project.getTasks().create(taskName, Jar.class);
         resourcePackagerTask.setGroup(MoePlugin.MOE);
-        resourcePackagerTask.setDescription("Generates application file (sourceset: " + sourceSet.getName() + ").");
+        resourcePackagerTask.setDescription("Generates application file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final ProGuard proguardTask = plugin.getTaskBy(ProGuard.class, sourceSet);
+        final ProGuard proguardTask = plugin.getTaskBy(ProGuard.class, sourceSet, mode);
         resourcePackagerTask.dependsOn(proguardTask);
 
         // Update settings

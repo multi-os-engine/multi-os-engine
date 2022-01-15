@@ -160,16 +160,38 @@ buildscript {
 
 ### ProGuard
 
-ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`
-
-This level can be set in the buildscript:
+ProGuard can be configured globally here, or per-config in [ProGuard Task](#proguard-task).
 
 ```groovy
 moe {
-    proguardLevel 'platform'
+    proguard {
+        // apply level
+        level = 'platform'
+      
+        // path to the base configuration file, or `null` to use SDK default config
+        baseCfgFile = null
+      
+        // null or path to to appended configuration file
+        appendCfgFile = null
+      
+        // whether code minification is enabled. Ignored when `baseCfgFile` is specified. Default to `true`
+        minifyEnabled = true
+      
+        // whether code obfuscation is enabled. Ignored when `baseCfgFile` is specified. Default to `false`
+        obfuscationEnabled = false
+
+        // exclude files from `-injars` config that will be processed by proguard
+        excludeFiles = [
+                'META-INF/*.SF',
+                'META-INF/*.DSA',
+                'META-INF/*.RSA'
+        ]
+        excludeFile 'org/bouncycastle/jce/provider/*Spi_8.class'
+    }
 }
 ```
 
+ProGuard has three supported levels of trimming: `app` (default), `platform`, `all`:
 - `app` will only process the classes of your application and it's non-MOE dependencies. This is the fastest mode and
 is recommended for development.
 - `platform` will do the same as `app` but will also include the `moe-ios.jar` MOE dependency. This mode is a bit
@@ -302,7 +324,7 @@ moe {
 
 ### ProGuard Task
 
-Task name: `moe<sourceset>ProGuard`
+Task name: `moe<sourceset><mode>ProGuard`
 
 This task collects the dependent jar files and invokes ProGuard with a set of predefined and (optional) custom rules.
 The rules are composed of two parts. The first part comes from the MOE SDK (`<sdk>/tools/proguard.cfg`) which contains
@@ -313,16 +335,16 @@ can overwrite it by creating a `proguard.cfg` file in your project directory. Th
 `proguarded.jar` file which contains the minimized version of the application code which is required to run. Detailed
 information about what got stripped can be found in the `proguard.log` file which is in your build directory.
 
-
-
-Overriding this level on the command-line can be done via the `moe.proguardLevel=<level>` project property.
-
 #### Task Properties
 
 - `proGuardJar`: path to the `proguard.jar` file.
 - `baseCfgFile`: path to the base configuration file.
 - `appendCfgFile`: null or path to to appended configuration file.
+- `minifyEnabled`: whether code minification is enabled. Ignored when `baseCfgFile` is specified.
+- `obfuscationEnabled`: whether code obfuscation is enabled. Ignored when `baseCfgFile` is specified.
+- `mappingFile`: path to the name mapping output file. Generated only if `obfuscationEnabled` is `true`.
 - `inJars`: collection of paths to files being passed to ProGuard via `-injars`.
+- `excludeFiles`: exclude files from `inJars` that will be processed by proguard.
 - `libraryJars`: collection of paths to files being passed to ProGuard via `-libraryjars`.
 - `outJar`: path to ProGuard's output jar.
 - `composedCfgFile`: path to the composed configuration file.
@@ -334,7 +356,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### Retrolambda Task
 
-Task name: `moe<sourceset>Retrolambda`
+Task name: `moe<sourceset><mode>Retrolambda`
 
 This task collects the class files and invokes Retrolambda on them. This will create Java 7 compatible class files from
 Java 8 class files.
@@ -356,7 +378,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### Dex Task
 
-Task name: `moe<sourceset>Dex`
+Task name: `moe<sourceset><mode>Dex`
 
 We need to create a dex file from the proguarded jar which we can later on convert to art and oat files. This task is
 responsible for that. The result of this task is a `classes.jar` file which can be found in the build directory and
@@ -407,7 +429,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### StartupProvider Task
 
-Task name: `moe<sourceset>StartupProvider`
+Task name: `moe<sourceset><mode>StartupProvider`
 
 MOE supports extending Objective-C classes from Java, but there are some special cases where we need to register some
 classes even before the Objective-C runtime initializes. These classes must be collected at build time and this task is
@@ -427,7 +449,7 @@ Setting any of these properties to null will reset them to their default values.
 
 ### ResourcePackager Task
 
-Task name: `moe<sourceset>ResourcePackager`
+Task name: `moe<sourceset><mode>ResourcePackager`
 
 This task collects the resource files used by the application. These files can originate from the application's resource
 folder, dependent jars and additional external sources specified in the build script.
@@ -437,7 +459,7 @@ The result of this task is an `application.jar` file which can be found in the b
 
 ### TestClassesProvider Task
 
-Task name: `moe<sourceset>TestClassesProvider`
+Task name: `moe<sourceset><mode>TestClassesProvider`
 
 MOE supports running JUnit tests on iOS devices. This requires a list of classes which contain the JUnit tests. This
 task collects these classes and writes them out in a text file.
@@ -757,5 +779,5 @@ moe {
 
 Task name: `moeUpdateXcodeSettings`
 
-This task adjusts Xcode project settings for the current Moe version. This should be ran after you change the Moe version
-in Gradle. Use `-Pmoe.forced.update` to force updating of Xcode project even if it is already determinable as up to date.
+This task adjusts Xcode project settings for the current Moe configuration/version. This should be ran after you
+change the Moe plugin settings, or update Moe plugin version in Gradle.

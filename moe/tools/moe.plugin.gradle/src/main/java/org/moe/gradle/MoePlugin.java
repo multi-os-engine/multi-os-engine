@@ -128,16 +128,16 @@ public class MoePlugin extends AbstractMoePlugin {
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(ClassValidate.class, "Validate classes.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         ResourcePackager.addRule(this);
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(StartupProvider.class, "Creates the preregister.txt file.",
-                singletonList(SOURCE_SET), MoePlugin.this);
+                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(XcodeProvider.class, "Collects the required dependencies.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         addRule(XcodeInternal.class, "Creates all files for Xcode.",
@@ -147,7 +147,7 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(IpaBuild.class, "Creates .ipa files.",
                 emptyList(), MoePlugin.this);
         addRule(GenerateUIObjCInterfaces.class, "Creates a source file for Interface Builder",
-                emptyList(), MoePlugin.this);
+                singletonList(MODE), MoePlugin.this);
         addRule(NatJGen.class, "Generate binding",
                 emptyList(), MoePlugin.this);
         addRule(UpdateXcodeSettings.class, "Updates Xcode project settings",
