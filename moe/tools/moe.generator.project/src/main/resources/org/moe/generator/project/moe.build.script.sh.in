@@ -1,6 +1,7 @@
 set -e
 
 export MOE_BUILD_SOURCE_SET="${_PLACEHOLDER_MOE_TARGET_SOURCESET_NAME}"
+export MOE_BUILD_MODE="$(echo $CONFIGURATION | tr '[:upper:]' '[:lower:]')"
 
 # Check project directory
 if [ ! -d "$MOE_PROJECT_DIR" ]; then
@@ -53,9 +54,9 @@ fi
 # Copy some resources
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 #cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
-cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
+cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/startup-provider/${MOE_BUILD_MODE}/preregister.txt" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
 if [ "${MOE_BUILD_SOURCE_SET}" == "test" ]; then
-    cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/test_provider/classlist.txt" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
+    cp "${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/test_provider/${MOE_BUILD_MODE}/classlist.txt" "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
 fi
 
 ## Copy android CA certificates on demand
