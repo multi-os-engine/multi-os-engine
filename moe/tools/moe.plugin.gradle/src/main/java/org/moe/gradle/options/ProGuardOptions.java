@@ -3,6 +3,11 @@ package org.moe.gradle.options;
 import org.gradle.api.GradleException;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
+import org.moe.gradle.anns.Nullable;
+
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class ProGuardOptions {
 
@@ -17,6 +22,7 @@ public class ProGuardOptions {
     private int level = LEVEL_APP;
     private boolean minifyEnabled = true;
     private boolean obfuscationEnabled = false;
+    private Set<String> excludedFiles;
 
     @NotNull
     @IgnoreUnused
@@ -77,5 +83,15 @@ public class ProGuardOptions {
     @IgnoreUnused
     public void setObfuscationEnabled(boolean obfuscationEnabled) {
         this.obfuscationEnabled = obfuscationEnabled;
+    }
+
+    @Nullable
+    public Collection<String> getExcludedFiles() {
+        return excludedFiles;
+    }
+
+    @IgnoreUnused
+    public void setExcludedFiles(@Nullable Collection<String> excludedFiles) {
+        this.excludedFiles = excludedFiles == null ? null : new LinkedHashSet<>(excludedFiles);
     }
 }

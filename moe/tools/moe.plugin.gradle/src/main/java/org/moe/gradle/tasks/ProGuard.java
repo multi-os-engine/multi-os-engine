@@ -521,7 +521,14 @@ public class ProGuard extends AbstractBaseTask {
 
             return jars;
         });
-        addConvention(CONVENTION_EXCLUDED_FILES, Collections::emptySet);
+        addConvention(CONVENTION_EXCLUDED_FILES, () -> {
+            Collection<String> exc = ext.proguard.getExcludedFiles();
+            if (exc == null) {
+                exc = Collections.emptySet();
+            }
+
+            return exc;
+        });
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
             final HashSet<Object> jars = new HashSet<>();
             switch (ext.proguard.getLevelRaw()) {
