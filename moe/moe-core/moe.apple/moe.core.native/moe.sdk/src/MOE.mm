@@ -273,8 +273,12 @@ JNIEXPORT jstring JNICALL Java_org_moe_MOE_getUserMainClassName(JNIEnv* env,
     }
 }
     
-JNIEXPORT jobjectArray JNICALL Java_org_moe_MOE_getPreregisterClasses(JNIEnv* env,
-                                                                      jclass clazz) {
+/*
+ * Defined in NatJ
+ */
+extern "C" void handleStartup(JNIEnv* env, const char* name);
+
+JNIEXPORT void JNICALL Java_org_moe_MOE_handleStartup(JNIEnv* env, jclass clazz) {
     @autoreleasepool {
         // Build up class preregister list
         NSBundle* mainBundle = [NSBundle mainBundle];
@@ -294,16 +298,10 @@ JNIEXPORT jobjectArray JNICALL Java_org_moe_MOE_getPreregisterClasses(JNIEnv* en
                     return [line length] > 0;
                 }]];
         
-        NSUInteger prec = [lines count];
-        jclass stringClass = env->FindClass("java/lang/String");
-        jobjectArray result = env->NewObjectArray(prec, stringClass, NULL);
-        for (NSUInteger i = 0; i < prec; i++) {
-            const char* cStr = [[lines objectAtIndex:i] UTF8String];
-            jstring str = env->NewStringUTF(cStr);
-            env->SetObjectArrayElement(result, i, str);
+        // Handle startup initialization
+        for (NSString* clazz in lines) {
+            handleStartup(env, [clazz UTF8String]);
         }
-        
-        return result;
     }
 }
 

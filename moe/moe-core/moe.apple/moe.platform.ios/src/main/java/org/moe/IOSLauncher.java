@@ -15,6 +15,8 @@ public class IOSLauncher {
         // Register the crash hook for main thread
         ObjCRuntime.crashAppWhenExceptionUncaught();
 
+        MOE.init();
+
         // Update default locale
         String localeTag = NSLocale.currentLocale().localeIdentifier().replace('_', '-');
         Locale.setDefault(Locale.forLanguageTag(localeTag));

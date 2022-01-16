@@ -25,16 +25,6 @@ public class MOE {
 
     static {
         System.loadLibrary("moe");
-
-        // Register classes
-        for (String c : getPreregisterClasses()) {
-            System.out.println("Load preregistered class " + c);
-            try {
-                Class.forName(c, true, MOE.class.getClassLoader());
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException("Unable to load preregistered class " + c, e);
-            }
-        }
     }
 
     /**
@@ -93,6 +83,11 @@ public class MOE {
         }
     }
 
+    public static void init() {
+        // Run some native startup code, including class preregister
+        handleStartup();
+    }
+
     /**
      * The MOE main entrance
      */
@@ -119,7 +114,7 @@ public class MOE {
         }
     }
 
-    private native static String[] getPreregisterClasses();
+    private native static void handleStartup();
 
     private native static String getUserMainClassName();
 }
