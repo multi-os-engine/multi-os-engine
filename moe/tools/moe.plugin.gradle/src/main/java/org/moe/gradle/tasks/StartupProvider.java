@@ -26,7 +26,7 @@ import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.internal.AnnotationChecker;
+import org.moe.gradle.internal.RegisterOnStartupChecker;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
@@ -37,7 +37,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.jar.JarFile;
 
@@ -79,6 +81,7 @@ public class StartupProvider extends AbstractBaseTask {
         try {
             FileUtils.deleteFileOrFolder(getPreregisterFile());
 
+            HashMap<String, LinkedHashSet<String>> nativeClassNames = new HashMap<>();
             try (FileWriter log = new FileWriter(getLogFile(), true);
                  FileWriter txt = new FileWriter(getPreregisterFile())) {
                 getInputFiles().forEach(it -> {
@@ -95,16 +98,38 @@ public class StartupProvider extends AbstractBaseTask {
                                 return;
                             }
 
-                            AnnotationChecker checker = AnnotationChecker.getRegisterOnStartupChecker(file.getInputStream(entry));
-                            if (checker.hasAnnotation()) {
-                                log.append("Found: ").append(checker.getName()).append("\n");
-                                txt.append(checker.getName()).append("\n");
+                            RegisterOnStartupChecker checker = RegisterOnStartupChecker.getRegisterOnStartupChecker(file.getInputStream(entry));
+                            if (checker.isRegisterOnStartup()) {
+                                log.append("Found: ").append(checker.getJavaClassName()).append("\n");
+                                txt.append(checker.getJavaClassName()).append("\n");
+
+                                if (checker.getObjCClassName() != null) {
+                                    nativeClassNames
+                                        .computeIfAbsent(checker.getObjCClassName(), k -> new LinkedHashSet<>())
+                                        .add(checker.getJavaClassName());
+                                }
                             }
                         } catch (IOException e) {
                             throw new GradleException("An IOException occurred", e);
                         }
                     });
                 });
+
+                nativeClassNames
+                    .entrySet()
+                    .stream()
+                    .filter(entry -> entry.getValue().size() > 1)
+                    .forEach(entry -> {
+                        String warn = "ObjC class \"" + entry.getKey()
+                            + "\" is preregistered with multiple hybrid Java classes: ["
+                            + String.join(", ", entry.getValue()) + "], this might cause crash at runtime!";
+                        getLogger().warn(warn);
+                        try {
+                            log.append("WARN: ").append(warn);
+                        } catch (IOException e) {
+                            throw new GradleException("An IOException occurred", e);
+                        }
+                    });
             }
         } catch (IOException e) {
             throw new GradleException("An IOException occurred", e);
