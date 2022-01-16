@@ -238,20 +238,38 @@ bool handleObjCStartup(JNIEnv* env, jclass clazz) {
 
   if (objcClass != nil) {
     Class objcMetaClass = object_getClass(objcClass);
+    
+    jstring javaName =
+        (jstring)env->CallObjectMethod(clazz, gGetClassNameMethod);
+    const char* javaCName = env->GetStringUTFChars(javaName, NULL);
 
     // Swizzle the initializer
     IMP original = class_replaceMethod(objcMetaClass, @selector(initialize),
                                        (IMP)initialize_hybrid, "v@:");
     if (original) {
+      if (original == (IMP)initialize_hybrid) {
+        // Same class get bind twice!
+        
+        NSString* existingClassName;
+        @synchronized(gObjCHybridMap) {
+          existingClassName = [gObjCHybridMap objectForKey:[NSValue valueWithPointer:objcClass]];
+        }
+        
+        @throw [NSException
+            exceptionWithName:@"IllegalArgumentException"
+            reason:[NSString stringWithFormat:@"Attempt to preregister ObJC class \"%@\" with Java class \"%@\", which has already been preregistered with Java class \"%@\"",
+                    [NSString stringWithUTF8String:nativeCName],
+                    [[NSString stringWithUTF8String:javaCName] stringByReplacingOccurrencesOfString:@"." withString:@"/"],
+                    existingClassName]
+            userInfo:nil];
+      }
+      
       class_addMethod(objcMetaClass, gObjCOriginalInitializeSelector, original,
                       "v@:");
     }
 
     // Store Java name
     @synchronized(gObjCHybridMap) {
-      jstring javaName =
-          (jstring)env->CallObjectMethod(clazz, gGetClassNameMethod);
-      const char* javaCName = env->GetStringUTFChars(javaName, NULL);
       @autoreleasepool {
         // We use NSValue to avoid invokation of +initialize
         [gObjCHybridMap setObject:[[NSString stringWithUTF8String:javaCName]
@@ -259,9 +277,9 @@ bool handleObjCStartup(JNIEnv* env, jclass clazz) {
                                                                 withString:@"/"]
                            forKey:[NSValue valueWithPointer:objcClass]];
       }
-      env->ReleaseStringUTFChars(javaName, javaCName);
-      env->DeleteLocalRef(javaName);
     }
+    env->ReleaseStringUTFChars(javaName, javaCName);
+    env->DeleteLocalRef(javaName);
   }
 
   env->ReleaseStringUTFChars(nativeName, nativeCName);
