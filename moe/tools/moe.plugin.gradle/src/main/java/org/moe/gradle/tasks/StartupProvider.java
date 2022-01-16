@@ -98,7 +98,7 @@ public class StartupProvider extends AbstractBaseTask {
                             AnnotationChecker checker = AnnotationChecker.getRegisterOnStartupChecker(file.getInputStream(entry));
                             if (checker.hasAnnotation()) {
                                 log.append("Found: ").append(checker.getName()).append("\n");
-                                txt.append(checker.getName().replace('/', '.')).append("\n");
+                                txt.append(checker.getName()).append("\n");
                             }
                         } catch (IOException e) {
                             throw new GradleException("An IOException occurred", e);
