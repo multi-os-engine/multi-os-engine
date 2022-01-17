@@ -1612,7 +1612,8 @@ void handleStartup(JNIEnv* env, const char* name) {
     env->ExceptionClear();
     return;
   }
-
+  
+HANDLE_NATIVE_EXCEPTION_ENTER(env);
   if (!(handleCStartup(env, clazz)
 #ifdef __APPLE__
         || handleObjCStartup(env, clazz)
@@ -1622,8 +1623,11 @@ void handleStartup(JNIEnv* env, const char* name) {
     // then fallback to a simple static initialization.
     forceInitClass(env, clazz);
   }
+  HANDLE_NATIVE_EXCEPTION_EXIT(env);
 
   env->DeleteLocalRef(clazz);
+  
+  THROW_NATIVE_EXCEPTION_TO_JAVA(env);
 }
 
 void forceInitClass(JNIEnv* env, jclass clazz) {
