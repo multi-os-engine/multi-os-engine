@@ -43,12 +43,15 @@ import org.moe.gradle.tasks.UpdateXcodeSettings;
 import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProvider;
+import org.moe.gradle.utils.Arch;
+import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
 
 import javax.inject.Inject;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
@@ -67,6 +70,8 @@ public class MoePlugin extends AbstractMoePlugin {
 
     private static final Logger LOG = Logging.getLogger(MoePlugin.class);
 
+    private static final String MOE_ARCHS_PROPERTY = "moe.archs";
+
     @NotNull
     private MoeExtension extension;
 
@@ -84,6 +89,14 @@ public class MoePlugin extends AbstractMoePlugin {
         return remoteServer;
     }
 
+    @Nullable
+    private Set<Arch> archs = null;
+
+    @Nullable
+    public Set<Arch> getArchs() {
+        return archs;
+    }
+
     @Inject
     public MoePlugin(Instantiator instantiator, ToolingModelBuilderRegistry registry) {
         super(instantiator, registry, false);
@@ -92,6 +105,21 @@ public class MoePlugin extends AbstractMoePlugin {
     @Override
     public void apply(Project project) {
         super.apply(project);
+
+        // Setup explicit archs
+        String archsProp = PropertiesUtil.tryGetProperty(project, MOE_ARCHS_PROPERTY);
+        if (archsProp != null) {
+            archsProp = archsProp.trim();
+            archs = Arrays.stream(archsProp.split(","))
+                .map(String::trim)
+                .filter(it -> !it.isEmpty())
+                .map(Arch::getForName)
+                .collect(Collectors.toSet());
+
+            if (archs.isEmpty()) {
+                archs = null;
+            }
+        }
 
         // Setup remote build
         remoteServer = Server.setup(this);

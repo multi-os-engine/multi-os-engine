@@ -50,6 +50,7 @@ import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.remote.ServerChannelException;
 import org.moe.gradle.remote.file.FileList;
+import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
 
@@ -120,6 +121,16 @@ public class XcodeBuild extends AbstractBaseTask {
     @Internal
     public MoePlatform getPlatform() {
         return Require.nonNull(platform);
+    }
+
+    @Nullable
+    private Set<Arch> archs;
+
+    @Nullable
+    @Internal
+    @IgnoreUnused
+    public Set<Arch> getArchs() {
+        return archs;
     }
 
     @NotNull
@@ -668,6 +679,11 @@ public class XcodeBuild extends AbstractBaseTask {
 
         args.addAll(getAdditionalParameters());
 
+        Set<Arch> archs = getArchs();
+        if (archs != null) {
+            args.add("ARCHS=" + archs.stream().map(it -> it.name).collect(Collectors.joining(" ")));
+        }
+
         // DO NOT set CONFIGURATION_BUILD_DIR here! This is conflicted with CocoaPods!
         // Instead, set SYMROOT to the build root, since the BUILD_DIR is equals to SYMROOT
         // and CONFIGURATION_BUILD_DIR is derived from it.
@@ -722,7 +738,12 @@ public class XcodeBuild extends AbstractBaseTask {
 
         // Add dependencies
         final ArrayList<XcodeProvider> xcodeProviderTasks = new ArrayList<>();
-        platform.archs.forEach(arch -> {
+        Set<Arch> buildArchs = new HashSet<>(platform.archs);
+        if (getMoePlugin().getArchs() != null) {
+            buildArchs.retainAll(getMoePlugin().getArchs());
+            archs = buildArchs;
+        }
+        buildArchs.forEach(arch -> {
             final XcodeProvider xcodeProvider = getMoePlugin().getTaskBy(XcodeProvider.class, sourceSet, mode, arch, platform);
             xcodeProviderTasks.add(xcodeProvider);
             dependsOn(xcodeProvider);
