@@ -36,6 +36,7 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.remote.file.FileList;
+import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.ExportOptionsPlistManager;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
@@ -750,6 +751,11 @@ public class IpaBuild extends AbstractBaseTask {
         }
 
         args.addAll(getAdditionalParameters());
+
+        Set<Arch> archs = getXcodeBuildTaskDep().getArchs();
+        if (archs != null) {
+            args.add("ARCHS=" + archs.stream().map(it -> it.name).collect(Collectors.joining(" ")));
+        }
 
         args.add("DEVELOPMENT_TEAM=" + getDevelopmentTeam());
 

@@ -123,6 +123,16 @@ public class XcodeBuild extends AbstractBaseTask {
         return Require.nonNull(platform);
     }
 
+    @Nullable
+    private Set<Arch> archs;
+
+    @Nullable
+    @Internal
+    @IgnoreUnused
+    public Set<Arch> getArchs() {
+        return archs;
+    }
+
     @NotNull
     private final String xcodeBuildTaskDate = new Date().toString();
 
@@ -665,6 +675,11 @@ public class XcodeBuild extends AbstractBaseTask {
 
         args.addAll(getAdditionalParameters());
 
+        Set<Arch> archs = getArchs();
+        if (archs != null) {
+            args.add("ARCHS=" + archs.stream().map(it -> it.name).collect(Collectors.joining(" ")));
+        }
+
         // DO NOT set CONFIGURATION_BUILD_DIR here! This is conflicted with CocoaPods!
         // Instead, set SYMROOT to the build root, since the BUILD_DIR is equals to SYMROOT
         // and CONFIGURATION_BUILD_DIR is derived from it.
@@ -719,12 +734,15 @@ public class XcodeBuild extends AbstractBaseTask {
 
         // Add dependencies
         final ArrayList<XcodeProvider> xcodeProviderTasks = new ArrayList<>();
-        platform.archs.forEach(arch -> {
-            if (arch != Arch.X86_64 || getMoePlugin().isX86_64Supported()) {
-                final XcodeProvider xcodeProvider = getMoePlugin().getTaskBy(XcodeProvider.class, sourceSet, mode, arch, platform);
-                xcodeProviderTasks.add(xcodeProvider);
-                dependsOn(xcodeProvider);
-            }
+        Set<Arch> buildArchs = new HashSet<>(platform.archs);
+        if (getMoePlugin().getArchs() != null) {
+            buildArchs.retainAll(getMoePlugin().getArchs());
+            archs = buildArchs;
+        }
+        buildArchs.forEach(arch -> {
+            final XcodeProvider xcodeProvider = getMoePlugin().getTaskBy(XcodeProvider.class, sourceSet, mode, arch, platform);
+            xcodeProviderTasks.add(xcodeProvider);
+            dependsOn(xcodeProvider);
         });
         xcodeProviderTaskDeps = xcodeProviderTasks;
 

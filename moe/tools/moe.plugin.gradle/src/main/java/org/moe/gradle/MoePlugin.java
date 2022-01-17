@@ -42,6 +42,7 @@ import org.moe.gradle.tasks.UpdateXcodeSettings;
 import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProvider;
+import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
 import org.moe.tools.substrate.GraalVM;
@@ -51,6 +52,7 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
@@ -69,7 +71,7 @@ public class MoePlugin extends AbstractMoePlugin {
     private static final Logger LOG = Logging.getLogger(MoePlugin.class);
 
     private static final String MOE_GRAALVM_HOME_PROPERTY = "moe.graalvm.home";
-    public static final String MOE_GRAALVM_X86_64_SUPPORTED_PROPERTY = "moe.graalvm.x86_64supported";
+    private static final String MOE_ARCHS_PROPERTY = "moe.archs";
 
     @NotNull
     private GraalVM graalVM;
@@ -96,9 +98,12 @@ public class MoePlugin extends AbstractMoePlugin {
         return remoteServer;
     }
 
-    public boolean isX86_64Supported() {
-        String supported = PropertiesUtil.tryGetProperty(getProject(), MOE_GRAALVM_X86_64_SUPPORTED_PROPERTY);
-        return "true".equals(supported);
+    @Nullable
+    private Set<Arch> archs = null;
+
+    @Nullable
+    public Set<Arch> getArchs() {
+        return archs;
     }
 
     @Inject
@@ -112,6 +117,21 @@ public class MoePlugin extends AbstractMoePlugin {
 
         // Setup GraalVM
         graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
+
+        // Setup explicit archs
+        String archsProp = PropertiesUtil.tryGetProperty(project, MOE_ARCHS_PROPERTY);
+        if (archsProp != null) {
+            archsProp = archsProp.trim();
+            archs = Arrays.stream(archsProp.split(","))
+                .map(String::trim)
+                .filter(it -> !it.isEmpty())
+                .map(Arch::getForName)
+                .collect(Collectors.toSet());
+
+            if (archs.isEmpty()) {
+                archs = null;
+            }
+        }
 
         // Setup remote build
         remoteServer = Server.setup(this);
