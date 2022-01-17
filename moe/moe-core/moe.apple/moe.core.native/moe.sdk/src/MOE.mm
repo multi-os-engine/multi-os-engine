@@ -301,6 +301,10 @@ JNIEXPORT void JNICALL Java_org_moe_MOE_handleStartup(JNIEnv* env, jclass clazz)
         // Handle startup initialization
         for (NSString* clazz in lines) {
             handleStartup(env, [clazz UTF8String]);
+            
+            if (env->ExceptionOccurred()) {
+                return;
+            }
         }
     }
 }
