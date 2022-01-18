@@ -16,6 +16,8 @@ limitations under the License.
 
 package org.moe.common.utils;
 
+import org.moe.common.exec.ExecOutputCollector;
+import org.moe.common.exec.SimpleExec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -198,6 +200,43 @@ public class NativeUtil {
         }
 
         return os_arch;
+    }
+
+    public static boolean isHostAARCH64() {
+        String arch = getUnifiedArchitecture();
+        return (arch != null && arch.toLowerCase().contains("aarch64")) || isRunningInRosetta();
+    }
+
+    private static Boolean runningInRosetta = null;
+
+    /**
+     * Check if the process is running in rosetta
+     *
+     * https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment
+     */
+    private synchronized static boolean isRunningInRosetta() {
+        if (runningInRosetta != null) {
+            return runningInRosetta;
+        }
+
+        if (OsUtils.isMac()) {
+            SimpleExec exec = SimpleExec.getExec("sysctl");
+            List<String> execArgs = exec.getArguments();
+
+            execArgs.add("-in");
+            execArgs.add("sysctl.proc_translated");
+
+            try {
+                String out = ExecOutputCollector.collect(exec);
+                runningInRosetta = "1".equals(out);
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        } else {
+            runningInRosetta = false;
+        }
+
+        return runningInRosetta != null && runningInRosetta;
     }
 
     /**
