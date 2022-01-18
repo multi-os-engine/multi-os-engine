@@ -48,8 +48,16 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
     private static final Logger LOG = LoggerFactory.getLogger(MOERunConfigurationBase.class);
 
     public static final String DEFAULT_CONFIGURATION = "Debug";
+    public static final String ARCH_TYPE_AUTO = "Auto";
+    public static final String ARCH_TYPE_ALL = "All";
+    public static final String ARCH_TYPE_MANUAL = "Manual";
+    public static final String ARCH_ARMV7 = "armv7";
+    public static final String ARCH_ARM64 = "arm64";
+    public static final String ARCH_X86_64 = "x86_64";
+
     protected static PasswordSafe safeStorage = PasswordSafe.getInstance();
-    protected String architecture;
+    protected String archType = ARCH_TYPE_AUTO;
+    protected String architectures = "";
     protected String configuration;
     protected String deviceUdid;
     protected boolean debug;
@@ -139,12 +147,20 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         this.debugRemotePort = debugRemotePort;
     }
 
-    public String architecture() {
-        return architecture;
+    public String archType() {
+        return archType;
     }
 
-    protected void architecture(String architecture) {
-        this.architecture = architecture;
+    public void archType(String archType) {
+        this.archType = archType;
+    }
+
+    public String architectures() {
+        return architectures;
+    }
+
+    protected void architectures(String architectures) {
+        this.architectures = architectures;
     }
 
     public String configuration() {
@@ -259,7 +275,8 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
             return;
         }
 
-        architecture(JDOMExternalizerUtil.readField(element, "architecture"));
+        archType(JDOMHelper.readString(element, "archType", ARCH_TYPE_AUTO));
+        architectures(JDOMHelper.readString(element, "architectures", ""));
         configuration(JDOMHelper.readString(element, "configuration", "Debug"));
         deviceUdid(JDOMExternalizerUtil.readField(element, "deviceUdid"));
         debugPort(JDOMHelper.readInteger(element, "debugPort", 8000));
@@ -282,7 +299,8 @@ public abstract class MOERunConfigurationBase extends LocatableConfigurationBase
         super.writeExternal(element);
 
         JDOMExternalizerUtil.writeField(element, "moduleName", moduleName());
-        JDOMExternalizerUtil.writeField(element, "architecture", architecture());
+        JDOMExternalizerUtil.writeField(element, "archType", archType());
+        JDOMExternalizerUtil.writeField(element, "architectures", architectures());
         JDOMExternalizerUtil.writeField(element, "configuration", configuration());
         JDOMExternalizerUtil.writeField(element, "deviceUdid", deviceUdid());
         JDOMExternalizerUtil.writeField(element, "debugPort", Integer.toString(debugPort()));

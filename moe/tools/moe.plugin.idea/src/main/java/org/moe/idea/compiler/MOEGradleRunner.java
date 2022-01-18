@@ -18,13 +18,16 @@ package org.moe.idea.compiler;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.util.text.StringUtil;
 import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.GradleExec;
+import org.moe.common.utils.NativeUtil;
 import org.moe.idea.MOEGlobalSettings;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.utils.ModuleUtils;
+import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,6 +36,8 @@ import java.util.Map;
 import java.util.Properties;
 
 public class MOEGradleRunner {
+
+    private static final Logger LOG = LoggerFactory.getLogger(MOEGradleRunner.class);
 
     private final MOERunConfiguration runConfig;
 
@@ -168,6 +173,34 @@ public class MOEGradleRunner {
             if (!StringUtil.isEmptyOrSpaces(runConfig.deviceUdid())) {
                 args.add("-Pmoe.launcher.devices=" + runConfig.deviceUdid());
             }
+        }
+
+        // Pass arch
+        switch (runConfig.archType()) {
+            case MOERunConfiguration.ARCH_TYPE_ALL:
+                // No extra arg needed
+                break;
+            case MOERunConfiguration.ARCH_TYPE_AUTO:
+                if (runConfig.runOnSimulator()) {
+                    // Detect arch
+                    if (NativeUtil.isHostAARCH64()) {
+                        args.add("-Pmoe.archs=" + MOERunConfiguration.ARCH_ARM64);
+                    } else {
+                        args.add("-Pmoe.archs=" + MOERunConfiguration.ARCH_X86_64);
+                    }
+                } else {
+                    // Fallback to ALL
+                    LOG.warn("Unable to use auto architecture detection when running on real device, build all architectures instead");
+                }
+                break;
+            case MOERunConfiguration.ARCH_TYPE_MANUAL:
+                if (StringUtil.isEmpty(runConfig.architectures())) {
+                    throw new ExecutionException("Invalid architectures " + runConfig.architectures());
+                }
+                args.add("-Pmoe.archs=" + runConfig.architectures());
+                break;
+            default:
+                throw new ExecutionException("Unknown arch type " + runConfig.archType());
         }
 
         return new GeneralCommandLine(args).withWorkDirectory(workingDir);

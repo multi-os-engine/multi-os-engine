@@ -182,12 +182,6 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
     }
 
     public void runOnSimulator(boolean runOnSimulator) {
-        if (runOnSimulator) {
-            architecture = "i386";
-        } else {
-            architecture = "armv7,arm64";
-        }
-
         this.runOnSimulator = runOnSimulator;
     }
 

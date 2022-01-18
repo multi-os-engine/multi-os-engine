@@ -85,8 +85,6 @@ public class MOERunProfileState extends CommandLineState {
     private OSProcessHandler createProcessHandler() throws ExecutionException {
         if (runConfiguration.configuration() == null) {
             throw new ExecutionException("Invalid build configuration for " + runConfiguration.getClass().getName());
-        } else if (runConfiguration.architecture() == null) {
-            throw new ExecutionException("Invalid architecture for " + runConfiguration.getClass().getName());
         }
 
         final MOEGradleRunner gradleRunner = new MOEGradleRunner(runConfiguration);

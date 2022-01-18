@@ -33,6 +33,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.ComponentWithBrowseButton;
 import com.intellij.openapi.ui.LabeledComponent;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiPackage;
@@ -45,7 +46,6 @@ import org.moe.common.exec.ExecRunnerBase;
 import org.moe.common.ios.Device;
 import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
-import org.moe.common.utils.SimCtl;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestClassBrowser;
@@ -65,6 +65,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
 
 public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguration> {
@@ -109,12 +114,19 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
     private JButton exportButton;
     private JTextField keychainNameTextField;
     private JCheckBox openSelectDeploymentTargetCheckBox;
+    private JRadioButton archAllRadio;
+    private JRadioButton archAutoRadio;
+    private JRadioButton archManualRadio;
+    private JCheckBox armv7CheckBox;
+    private JCheckBox arm64CheckBox;
+    private JCheckBox x86_64CheckBox;
     private Project myProject;
     private final JRadioButton[] myTestingType2RadioButton = new JRadioButton[3];
     private JComponent anchor;
     private MOERunConfigurationEditor.MyPackageBrowser packageBrowser;
     private MOETestClassVisibilityChecker visibilityChecker;
     private MOETestClassBrowser classBrowser;
+    private final List<Pair<String, JCheckBox>> archSelectors = new ArrayList<>();
 
     public MOERunConfigurationEditor(Project project) {
         this.myProject = project;
@@ -137,6 +149,30 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
 
         if (configurationCombo.getSelectedItem() != null) {
             configuration.configuration(configurationCombo.getSelectedItem().toString());
+        }
+
+        if (archAutoRadio.isSelected()) {
+            configuration.archType(MOERunConfigurationBase.ARCH_TYPE_AUTO);
+        } else if (archManualRadio.isSelected()) {
+            configuration.archType(MOERunConfigurationBase.ARCH_TYPE_MANUAL);
+        } else {
+            configuration.archType(MOERunConfigurationBase.ARCH_TYPE_ALL);
+        }
+
+        {
+            HashSet<String> archs = new HashSet<>();
+            archSelectors.forEach(it -> {
+                if (it.second.isSelected()) {
+                    archs.add(it.first);
+                }
+            });
+            String archsValue = String.join(",", archs);
+
+            if (MOERunConfigurationBase.ARCH_TYPE_MANUAL.equals(configuration.archType()) && archsValue.isEmpty()) {
+                throw new ConfigurationException("Please select at least one architecture");
+            }
+
+            configuration.architectures(archsValue);
         }
 
         if (simulatorCombo.getSelectedItem() != null) {
@@ -261,6 +297,44 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
             }
         });
 
+        archSelectors.add(new Pair<>(MOERunConfiguration.ARCH_ARMV7, armv7CheckBox));
+        archSelectors.add(new Pair<>(MOERunConfiguration.ARCH_ARM64, arm64CheckBox));
+        archSelectors.add(new Pair<>(MOERunConfiguration.ARCH_X86_64, x86_64CheckBox));
+        archAutoRadio.setEnabled(OsUtils.isMac());
+        archAutoRadio.addActionListener(e -> updateArch());
+        archManualRadio.addActionListener(e -> updateArch());
+        archAllRadio.addActionListener(e -> updateArch());
+        switch (configuration.archType()) {
+            case MOERunConfiguration.ARCH_TYPE_AUTO:
+                if (OsUtils.isMac()) {
+                    archAutoRadio.setSelected(true);
+                } else {
+                    LOG.warn("Architecture auto detection only supported on macOS.");
+                    archAllRadio.setSelected(true);
+                }
+                break;
+            case MOERunConfiguration.ARCH_TYPE_MANUAL:
+                archManualRadio.setSelected(true);
+                break;
+            default:
+                archAllRadio.setSelected(true);
+                break;
+        }
+        updateArch();
+        Arrays.stream(configuration.architectures.split(","))
+            .map(String::trim)
+            .filter(it -> !it.isEmpty())
+            .forEach(arch -> {
+                Optional<Pair<String, JCheckBox>> matchedArch = archSelectors.stream()
+                    .filter(it -> it.first.equals(arch)).findFirst();
+
+                if (matchedArch.isPresent()) {
+                    matchedArch.get().second.setSelected(true);
+                } else {
+                    LOG.warn("Unknown arch " + arch);
+                }
+            });
+
         populateSimulators(configuration.simulatorUdid());
 
         if(OsUtils.isMac()) {
@@ -366,6 +440,11 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         }
 
         deviceCombo.setSelectedItem(MOEText.get("First.Device.Available"));
+    }
+
+    private void updateArch() {
+        boolean isManualArch = archManualRadio.isSelected();
+        archSelectors.forEach(it -> it.second.setEnabled(isManualArch));
     }
 
     private void updateRunOn() {
