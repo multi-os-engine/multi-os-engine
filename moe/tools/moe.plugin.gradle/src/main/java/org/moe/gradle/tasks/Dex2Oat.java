@@ -24,6 +24,7 @@ import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
+import org.moe.common.utils.NativeUtil;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
@@ -36,7 +37,6 @@ import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.Mode;
 import org.moe.gradle.utils.Require;
-import org.moe.gradle.utils.TaskUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -268,7 +268,7 @@ public class Dex2Oat extends AbstractBaseTask {
         } else {
             exec(spec -> {
                 // Set executable
-                if (TaskUtils.isHostAARCH64() && !Arch.FAMILY_ARM64.equalsIgnoreCase(getArchFamily())) {
+                if (NativeUtil.isHostAARCH64() && !Arch.FAMILY_ARM64.equalsIgnoreCase(getArchFamily())) {
                     // Run dex2oat using rosetta 2 when compiling non-arm64 target on Apple silicon
                     // because currently the arm64 version of dex2oat does not work reliably due to
                     // the issue of word size & alignment mismatch.
