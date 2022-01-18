@@ -28,7 +28,6 @@ import org.gradle.process.ExecResult;
 import org.gradle.process.ExecSpec;
 import org.gradle.process.JavaExecSpec;
 import org.moe.gradle.AbstractMoePlugin;
-import org.moe.gradle.MoePlugin;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.groovy.closures.TaskClosure;
@@ -45,11 +44,6 @@ public class TaskUtils {
     private static final Logger LOG = Logging.getLogger(TaskUtils.class);
 
     private TaskUtils() {
-    }
-
-    public static boolean isHostAARCH64() {
-        String arch = System.getProperty("os.arch");
-        return arch != null && arch.toLowerCase().contains("aarch64");
     }
 
     public static void assertSize(@NotNull List<String> elements, int count, @NotNull String desc) {
