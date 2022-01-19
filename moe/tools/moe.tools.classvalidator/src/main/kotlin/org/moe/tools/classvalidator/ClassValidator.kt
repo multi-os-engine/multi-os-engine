@@ -13,7 +13,6 @@ import java.nio.file.Path
 
 object ClassValidator {
     fun process(
-        mainClassName: String?,
         inputFiles: Set<File>,
         outputDir: Path,
         classpath: Set<File>,
@@ -22,27 +21,18 @@ object ClassValidator {
             ChildFirstClassLoader(classpath.map { it.toURI().toURL() }.toTypedArray())
         ).use {
             val classSaver = ClassSaver(outputDir.resolve(OUTPUT_CLASSES))
-            val reflectionConfig = ReflectionConfig()
 
             inputFiles.classAndJarInputIterator { _, inputStream ->
                 val cr = ClassReader(inputStream)
 
                 val byteCode = processClass(cr) { next ->
                     next
-                        .let { CollectReflectionConfig(config = reflectionConfig, next = it) }
                         .let(::AddMissingAnnotations)
                         .let(::AddMissingNatJRegister)
                 }
 
                 classSaver.save(byteCode)
             }
-
-            // Add main class if necessary
-            mainClassName?.let {
-                reflectionConfig.addMethod(it.replace('.', '/'), METHOD_MAIN, METHOD_MAIN_DESC)
-            }
-
-            reflectionConfig.save(outputDir.resolve(OUTPUT_REFLECTION).toFile())
         }
     }
 
@@ -56,8 +46,4 @@ object ClassValidator {
     }
 
     const val OUTPUT_CLASSES = "classes"
-    const val OUTPUT_REFLECTION = "reflection-config.json"
-
-    private const val METHOD_MAIN = "main"
-    private const val METHOD_MAIN_DESC = "([Ljava/lang/String;)V"
 }
