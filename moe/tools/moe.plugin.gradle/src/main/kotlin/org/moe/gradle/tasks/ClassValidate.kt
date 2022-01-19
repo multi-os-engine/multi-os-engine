@@ -19,6 +19,7 @@ import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.FileUtils
 import org.moe.gradle.utils.Mode
 import org.moe.tools.classvalidator.ClassValidator
+import org.moe.tools.classvalidator.ReflectionCollector
 import java.io.File
 import java.nio.file.Paths
 
@@ -82,7 +83,7 @@ open class ClassValidate : AbstractBaseTask() {
 
     val reflectionConfigFile: File
         @Internal
-        get() = getOutputDir().resolve(ClassValidator.OUTPUT_REFLECTION)
+        get() = getOutputDir().resolve(ReflectionCollector.OUTPUT_REFLECTION)
 
     override fun run() {
         // Clean output dir
@@ -90,7 +91,6 @@ open class ClassValidate : AbstractBaseTask() {
 
         // Run class validator
         ClassValidator.process(
-            mainClassName = getAppMainClassName(),
             inputFiles = getInputFiles().toSet(),
             classpath = getClasspathFiles().toSet()
                 // Add input to classpath
@@ -99,6 +99,7 @@ open class ClassValidate : AbstractBaseTask() {
         )
 
         // Collect platform reflection settings
+        // TODO: Move this to a separate task
 //        val libraryJars: MutableSet<File> = linkedSetOf(moeSDK.coreJar)
 //        moeExtension.platformJar?.let {
 //            libraryJars.add(it)
@@ -122,11 +123,14 @@ open class ClassValidate : AbstractBaseTask() {
 ////                libraryJars.add(moeSDK.coreJar)
 //            }
 //        }
-//        ReflectionCollector.process(
-//            inputFiles = libraryJars,
-//            outputFile = libraryReflectionConfigFile.toPath(),
-//            classpath = emptySet()
-//        )
+        ReflectionCollector.process(
+            mainClassName = getAppMainClassName(),
+            inputFiles = setOf(classesOutputDir), // Use the output of the validator as input
+            outputDir = getOutputDir().absoluteFile.toPath(),
+            classpath = getClasspathFiles().toSet()
+                // Add input to classpath
+                + setOf(classesOutputDir)
+        )
     }
 
     @get:Internal
