@@ -6,6 +6,7 @@ import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.tree.MethodInsnNode
 import org.objectweb.asm.tree.MethodNode
+import java.lang.reflect.Modifier
 
 /**
  * Make sure all classes that extends [org.moe.natj.general.NativeObject] call
@@ -25,7 +26,7 @@ class AddMissingNatJRegister(
     override fun visit(version: Int, access: Int, name: String, signature: String?,
                        superName: String?, interfaces: Array<out String>?) {
         this.name = name
-        skip = ((access and Opcodes.ACC_INTERFACE) != 0) || name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
+        skip = Modifier.isInterface(access) || name.startsWith(NatJRuntime.NATJ_CLASS_PREFIX)
         if (!skip) {
             visit = NatJRuntime.isNativeObjectDescendant(superName)
         }

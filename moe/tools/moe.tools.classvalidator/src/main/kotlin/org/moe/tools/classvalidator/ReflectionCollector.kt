@@ -9,11 +9,11 @@ import java.nio.file.Path
 
 object ReflectionCollector {
     fun process(
+        mainClassName: String?,
         inputFiles: Set<File>,
-        outputFile: Path,
+        outputDir: Path,
         classpath: Set<File>,
     ) {
-
         ContextClassLoaderHolder(
             ChildFirstClassLoader(classpath.map { it.toURI().toURL() }.toTypedArray())
         ).use {
@@ -21,14 +21,22 @@ object ReflectionCollector {
 
             inputFiles.classAndJarInputIterator { _, inputStream ->
                 val cr = ClassReader(inputStream)
-                cr.accept(CollectReflectionConfig(
-                    config = reflectionConfig,
-                    collectAll = true,
-                ), 0)
+
+                cr.accept(CollectReflectionConfig(config = reflectionConfig), 0)
             }
 
-            reflectionConfig.save(outputFile.toFile())
+            // Add main class if necessary
+            mainClassName?.let {
+                reflectionConfig.addMethod(it.replace('.', '/'), METHOD_MAIN, METHOD_MAIN_DESC)
+            }
+
+            reflectionConfig.save(outputDir.resolve(OUTPUT_REFLECTION).toFile())
         }
 
     }
+
+    const val OUTPUT_REFLECTION = "reflection-config.json"
+
+    private const val METHOD_MAIN = "main"
+    private const val METHOD_MAIN_DESC = "([Ljava/lang/String;)V"
 }
