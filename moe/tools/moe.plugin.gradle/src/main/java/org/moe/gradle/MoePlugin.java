@@ -30,13 +30,13 @@ import org.moe.gradle.remote.Server;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.Dex;
 import org.moe.gradle.tasks.Dex2Oat;
+import org.moe.gradle.tasks.ClassValidate;
 import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
 import org.moe.gradle.tasks.NatJGen;
 import org.moe.gradle.tasks.ProGuard;
 import org.moe.gradle.tasks.ResourcePackager;
-import org.moe.gradle.tasks.Retrolambda;
 import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
 import org.moe.gradle.tasks.UpdateXcodeSettings;
@@ -137,7 +137,7 @@ public class MoePlugin extends AbstractMoePlugin {
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(Retrolambda.class, "Creates a Retrolambda-d jar.",
+        addRule(ClassValidate.class, "Validate classes.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(Dex.class, "Creates a Dexed jar.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);

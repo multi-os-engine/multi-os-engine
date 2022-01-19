@@ -144,12 +144,12 @@ public class Dex extends AbstractBaseTask {
         return args;
     }
 
-    private Retrolambda retrolambdaTaskDep;
+    private ClassValidate classValidateTaskDep;
 
     @NotNull
     @Internal
-    public Retrolambda getRetrolambdaTaskDep() {
-        return Require.nonNull(retrolambdaTaskDep);
+    public ClassValidate getClassValidateTaskDep() {
+        return Require.nonNull(classValidateTaskDep);
     }
 
     protected final void setupMoeTask(@NotNull SourceSet sourceSet, final @NotNull Mode mode) {
@@ -165,15 +165,15 @@ public class Dex extends AbstractBaseTask {
         setDescription("Generates dex files (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final Retrolambda retroTask = getMoePlugin().getTaskBy(Retrolambda.class, sourceSet, mode);
-        retrolambdaTaskDep = retroTask;
-        dependsOn(retroTask);
+        final ClassValidate classValidate = getMoePlugin().getTaskBy(ClassValidate.class, sourceSet, mode);
+        classValidateTaskDep = classValidate;
+        dependsOn(classValidate);
 
         // Update convention mapping
         addConvention(CONVENTION_DX_JAR, sdk::getDxJar);
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();
-            files.add(retroTask.getOutputDir());
+            files.add(classValidate.getClassesOutputDir());
             return files;
 
         });

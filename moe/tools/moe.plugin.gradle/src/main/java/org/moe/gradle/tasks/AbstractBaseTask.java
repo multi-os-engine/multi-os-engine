@@ -26,6 +26,7 @@ import org.gradle.api.tasks.TaskAction;
 import org.gradle.process.ExecResult;
 import org.gradle.process.ExecSpec;
 import org.gradle.process.JavaExecSpec;
+import org.moe.common.utils.FileUtilsKt;
 import org.moe.gradle.*;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
@@ -188,7 +189,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
     protected void exec(@NotNull Action<ExecSpec> spec) {
         Require.nonNull(spec);
 
-        FileUtils.createEmpty(getLogFile());
+        FileUtilsKt.touch(getLogFile());
 
         final ExecResult result = getProject().exec(execSpec -> {
             // Pre-configure
@@ -222,7 +223,7 @@ public abstract class AbstractBaseTask extends DefaultTask {
     protected void javaexec(@NotNull Action<JavaExecSpec> spec) {
         Require.nonNull(spec);
 
-        FileUtils.createEmpty(getLogFile());
+        FileUtilsKt.touch(getLogFile());
 
         final ExecResult result = getProject().javaexec(execSpec -> {
             execSpec.jvmArgs(getExtension().javaProcess.getJvmArgs());

@@ -233,14 +233,6 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         }
     }
 
-    private Retrolambda retrolambdaTaskDep;
-
-    @NotNull
-    @Internal
-    public Retrolambda getRetrolambdaTaskDep() {
-        return Require.nonNull(retrolambdaTaskDep);
-    }
-
     protected final void setupMoeTask(final @NotNull Mode mode) {
         SourceSet sourceSet = TaskUtils.getSourceSet(getMoePlugin(), SourceSet.MAIN_SOURCE_SET_NAME);
         Require.nonNull(sourceSet);
@@ -253,14 +245,13 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         setDescription("Generates header files for Interface Builder");
 
         // Add dependencies
-        final Retrolambda retroTask = getMoePlugin().getTaskBy(Retrolambda.class, sourceSet, mode);
-        retrolambdaTaskDep = retroTask;
-        dependsOn(retroTask);
+        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet, mode);
+        dependsOn(proguardTask);
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();
-            files.add(retroTask.getOutputDir());
+            files.add(proguardTask.getOutJar());
             if (getMoeExtension().proguard.getLevelRaw() == ProGuardOptions.LEVEL_APP) {
                 files.add(getMoeExtension().getPlatformJar());
             }

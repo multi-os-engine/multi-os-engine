@@ -94,30 +94,6 @@ public class FileUtils {
         }
     }
 
-    public static void createEmpty(@NotNull File file) {
-        Require.nonNull(file);
-
-        try {
-            Files.write(Paths.get(file.toURI()), "".getBytes(),
-                    StandardOpenOption.CREATE,
-                    StandardOpenOption.WRITE,
-                    StandardOpenOption.APPEND);
-        } catch (IOException e) {
-            throw new GradleException("Failed to write " + file, e);
-        }
-    }
-
-    public static boolean prepareDir(@NotNull File file) {
-        if (file.exists()) {
-            if (file.isDirectory()) {
-                return true;
-            } else {
-                throw new GradleException("Expected directory at path " + file.getAbsolutePath());
-            }
-        }
-        return file.mkdirs();
-    }
-
     @NotNull
     public static File getRelativeTo(@NotNull File base, @NotNull File other) {
         Require.nonNull(base);
