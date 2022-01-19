@@ -29,12 +29,15 @@ class CollectReflectionConfig(
     private lateinit var name: String
     private var superName: String? = null
     private var interfaces: Array<out String>? = null
+    private var isInterface: Boolean = false
+    private var isObjCProtocolBindingClass: Boolean = false
 
     override fun visit(version: Int, access: Int, name: String, signature: String?,
                        superName: String?, interfaces: Array<out String>?) {
         this.name = name
         this.superName = superName
         this.interfaces = interfaces
+        this.isInterface = Modifier.isInterface(access)
 
         collectAll = collectAll
             // Make sure everything from NatJ are available.
@@ -59,6 +62,10 @@ class CollectReflectionConfig(
     }
 
     override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
+        if (NatJRuntime.Annotations.OBJC_PROTOCOL_NAME_DESC == descriptor) {
+            isObjCProtocolBindingClass = true
+        }
+
         if (!collectAll) {
             if (!skip && !isNatJBindingClass) {
                 isNatJBindingClass = descriptor in NATJ_EXPORTED_ANNOTATION_DESC
@@ -143,6 +150,8 @@ class CollectReflectionConfig(
                 name = name,
                 methodDescriptor = descriptor,
                 isNatJBindingClass = isNatJBindingClass,
+                isProtocolClass = isNatJBindingClass && isInterface && isObjCProtocolBindingClass,
+                isInterfaceDefaultMethod = isInterface && !Modifier.isStatic(access) && !Modifier.isAbstract(access),
                 next = mv
             )
         }
@@ -180,11 +189,19 @@ class CollectReflectionConfig(
         private val name: String,
         private val methodDescriptor: String,
         private val isNatJBindingClass: Boolean,
+        private val isProtocolClass: Boolean,
+        private val isInterfaceDefaultMethod: Boolean,
         next: MethodVisitor?,
     ) : MethodVisitor(Opcodes.ASM5, next) {
         private var visit: Boolean = false
 
+        private var isOptional: Boolean = false
+
         override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
+            if (NatJRuntime.Annotations.OBJC_IS_OPTIONAL_DESC == descriptor) {
+                isOptional = true
+            }
+
             if (!visit) {
                 visit = descriptor in SVM_EXPORTED_ANNOTATION_DESC
 
@@ -262,6 +279,10 @@ class CollectReflectionConfig(
         }
 
         override fun visitEnd() {
+            if (isProtocolClass && isInterfaceDefaultMethod) {
+                // Skip protocol optional default methods
+                visit = false
+            }
             if (visit) {
                 declaringClass.config.addMethod(declaringClass.name, name, methodDescriptor)
 

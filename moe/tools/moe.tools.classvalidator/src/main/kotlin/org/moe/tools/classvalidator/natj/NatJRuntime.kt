@@ -28,6 +28,7 @@ object NatJRuntime {
 
         const val RUNTIME_DESC = "Lorg/moe/natj/general/ann/Runtime;"
         const val OBJC_PROTOCOL_NAME_DESC = "Lorg/moe/natj/objc/ann/ObjCProtocolName;"
+        const val OBJC_IS_OPTIONAL_DESC = "Lorg/moe/natj/objc/ann/IsOptional;"
 
         val OPTIONALS_DESC: List<String> = listOf(
             BY_VALUE_DESC,
