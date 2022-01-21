@@ -214,6 +214,10 @@ open class NativeImage : AbstractBaseTask() {
     lateinit var classValidateTaskDep: ClassValidate
         private set
 
+    @get:Internal
+    lateinit var reflectionCollectTaskDep: ReflectionCollect
+        private set
+
     private lateinit var mode: Mode
     private lateinit var arch: Arch
     private lateinit var platform: MoePlatform
@@ -245,6 +249,9 @@ open class NativeImage : AbstractBaseTask() {
         val classValidateTask = moePlugin.getTaskBy(ClassValidate::class.java, sourceSet, mode)
         classValidateTaskDep = classValidateTask
         dependsOn(classValidateTask)
+        val reflectionCollectTask = moePlugin.getTaskBy(ReflectionCollect::class.java, sourceSet, mode)
+        reflectionCollectTaskDep = reflectionCollectTask
+        dependsOn(reflectionCollectTask)
 
         val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet, mode))
         dependsOn(resourceTask)
@@ -285,14 +292,14 @@ open class NativeImage : AbstractBaseTask() {
         addConvention(CONVENTION_JNI_CONFIG_FILES) {
             listOfNotNull(
                 moeSDK.jniConfigBaseFile,
-                classValidateTaskDep.reflectionConfigFile,
+                reflectionCollectTaskDep.reflectionConfigFile,
                 project.file("jni-config.json").takeIf { it.exists() && it.isFile },
             ).toSet()
         }
         addConvention(CONVENTION_REFLECTION_CONFIG_FILES) {
             listOfNotNull(
                 moeSDK.reflectionConfigBaseFile,
-                classValidateTaskDep.reflectionConfigFile,
+                reflectionCollectTaskDep.reflectionConfigFile,
                 project.file("reflection-config.json").takeIf { it.exists() && it.isFile },
                 testClassesProviderTaskDep?.reflectionConfigFile,
             ).toSet()

@@ -428,6 +428,10 @@ public class XcodeBuild extends AbstractBaseTask {
                 excludes.add(classValidateTask.getOutputDir());
                 excludes.add(classValidateTask.getLogFile());
 
+                final ReflectionCollect reflectionCollectTask = nativeImageTask.getReflectionCollectTaskDep();
+                excludes.add(reflectionCollectTask.getOutputDir());
+                excludes.add(reflectionCollectTask.getLogFile());
+
                 final ProGuard proGuardTask = classValidateTask.getProGuardTaskDep();
                 excludes.add(proGuardTask.getOutJar());
                 excludes.add(proGuardTask.getComposedCfgFile());

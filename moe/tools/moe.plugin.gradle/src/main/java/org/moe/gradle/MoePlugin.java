@@ -35,6 +35,7 @@ import org.moe.gradle.tasks.Launchers;
 import org.moe.gradle.tasks.NatJGen;
 import org.moe.gradle.tasks.NativeImage;
 import org.moe.gradle.tasks.ProGuard;
+import org.moe.gradle.tasks.ReflectionCollect;
 import org.moe.gradle.tasks.ResourcePackager;
 import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
@@ -150,6 +151,8 @@ public class MoePlugin extends AbstractMoePlugin {
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(ClassValidate.class, "Validate classes.",
+                asList(SOURCE_SET, MODE), MoePlugin.this);
+        addRule(ReflectionCollect.class, "Collect reflection config.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
                 asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
