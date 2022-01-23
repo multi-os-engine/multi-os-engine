@@ -27,7 +27,13 @@ class AnnotationHelper(
     }
 
     fun getInjectList(): List<String> {
-        return (getNewCompleteList().intersect(parentAnnotations) - annotations).toList()
+        val parentAnns = getNewCompleteList().intersect(parentAnnotations).toMutableSet()
+        // Protocol class method does not require @Selector annotation
+        if (NatJRuntime.Annotations.PROTOCOL_CLASS_METHOD_DESC in parentAnns) {
+            parentAnns.remove(NatJRuntime.Annotations.SELECTOR_DESC)
+        }
+
+        return (parentAnns - annotations).toList()
     }
 
     fun validate(method: String, index: Int) {
