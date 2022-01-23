@@ -927,10 +927,10 @@ public class ObjCClassManager extends AbstractUnitManager {
         }
 
         boolean isUnsafeProperty = method.isUnsafePropertySetter();
-        boolean canUpdateUnsafe = false;
         if (isUnsafeProperty) {
             isUnsafeProperty = method.getArguments().get(0).getType().isObjCObject();
         }
+        boolean canUpdateUnsafe = false;
 
         try {
             if (cme == null) {
