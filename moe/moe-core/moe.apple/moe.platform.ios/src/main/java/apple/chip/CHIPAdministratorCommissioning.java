@@ -52,8 +52,8 @@ public class CHIPAdministratorCommissioning extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPAdministratorCommissioning alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPAdministratorCommissioning allocWithZone(VoidPtr zone);
 

@@ -291,7 +291,7 @@ public interface UITextInput extends UIKeyInput {
      */
     @Generated
     @Selector("setInputDelegate:")
-    void setInputDelegate(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
+    void setInputDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextInputDelegate value);
 
     /**
      * selectedRange is a range within the markedText

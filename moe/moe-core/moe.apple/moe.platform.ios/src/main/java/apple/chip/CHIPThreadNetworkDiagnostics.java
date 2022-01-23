@@ -51,8 +51,8 @@ public class CHIPThreadNetworkDiagnostics extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPThreadNetworkDiagnostics alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPThreadNetworkDiagnostics allocWithZone(VoidPtr zone);
 

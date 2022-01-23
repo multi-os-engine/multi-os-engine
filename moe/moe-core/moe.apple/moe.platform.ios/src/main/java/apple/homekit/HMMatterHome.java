@@ -54,8 +54,8 @@ public class HMMatterHome extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("alloc")
     public static native HMMatterHome alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native HMMatterHome allocWithZone(VoidPtr zone);
 
@@ -81,10 +81,10 @@ public class HMMatterHome extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Owned
     @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated

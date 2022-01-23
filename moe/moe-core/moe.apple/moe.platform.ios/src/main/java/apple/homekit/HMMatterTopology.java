@@ -53,8 +53,8 @@ public class HMMatterTopology extends NSObject implements NSCopying, NSSecureCod
     @Selector("alloc")
     public static native HMMatterTopology alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native HMMatterTopology allocWithZone(VoidPtr zone);
 
@@ -80,10 +80,10 @@ public class HMMatterTopology extends NSObject implements NSCopying, NSSecureCod
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Owned
     @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
     @Generated

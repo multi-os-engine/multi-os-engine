@@ -49,8 +49,8 @@ public class HMMatterRequestHandler extends NSObject implements NSExtensionReque
     @Selector("alloc")
     public static native HMMatterRequestHandler alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native HMMatterRequestHandler allocWithZone(VoidPtr zone);
 

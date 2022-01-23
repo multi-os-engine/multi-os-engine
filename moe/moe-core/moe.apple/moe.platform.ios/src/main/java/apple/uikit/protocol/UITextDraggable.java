@@ -29,7 +29,7 @@ public interface UITextDraggable extends UITextInput {
 
     @Generated
     @Selector("setTextDragDelegate:")
-    void setTextDragDelegate(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
+    void setTextDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextDragDelegate value);
 
     @Generated
     @Selector("setTextDragOptions:")

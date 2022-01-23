@@ -51,8 +51,8 @@ public class CHIPPressureMeasurement extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPPressureMeasurement alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPPressureMeasurement allocWithZone(VoidPtr zone);
 

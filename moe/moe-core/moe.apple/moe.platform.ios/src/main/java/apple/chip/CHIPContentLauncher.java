@@ -51,8 +51,8 @@ public class CHIPContentLauncher extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPContentLauncher alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPContentLauncher allocWithZone(VoidPtr zone);
 

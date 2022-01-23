@@ -52,8 +52,8 @@ public class CHIPDiagnosticLogs extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPDiagnosticLogs alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPDiagnosticLogs allocWithZone(VoidPtr zone);
 

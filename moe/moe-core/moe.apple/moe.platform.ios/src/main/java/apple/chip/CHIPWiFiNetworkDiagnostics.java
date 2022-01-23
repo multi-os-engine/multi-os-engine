@@ -51,8 +51,8 @@ public class CHIPWiFiNetworkDiagnostics extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPWiFiNetworkDiagnostics alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPWiFiNetworkDiagnostics allocWithZone(VoidPtr zone);
 

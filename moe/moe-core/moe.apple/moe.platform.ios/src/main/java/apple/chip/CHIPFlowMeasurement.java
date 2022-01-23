@@ -51,8 +51,8 @@ public class CHIPFlowMeasurement extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPFlowMeasurement alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPFlowMeasurement allocWithZone(VoidPtr zone);
 

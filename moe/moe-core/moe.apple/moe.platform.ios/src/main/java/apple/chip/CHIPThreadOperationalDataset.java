@@ -53,8 +53,8 @@ public class CHIPThreadOperationalDataset extends NSObject {
     @Selector("alloc")
     public static native CHIPThreadOperationalDataset alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPThreadOperationalDataset allocWithZone(VoidPtr zone);
 
