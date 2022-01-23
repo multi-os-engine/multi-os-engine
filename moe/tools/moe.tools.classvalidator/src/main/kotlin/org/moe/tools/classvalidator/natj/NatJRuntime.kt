@@ -25,6 +25,7 @@ object NatJRuntime {
         const val NOT_IMPLEMENTED_DESC = "Lorg/moe/natj/objc/ann/NotImplemented;"
         const val OBJC_BLOCK_DESC = "Lorg/moe/natj/objc/ann/ObjCBlock;"
         const val SELECTOR_DESC = "Lorg/moe/natj/objc/ann/Selector;"
+        const val PROTOCOL_CLASS_METHOD_DESC = "Lorg/moe/natj/objc/ann/ProtocolClassMethod;"
 
         const val RUNTIME_DESC = "Lorg/moe/natj/general/ann/Runtime;"
         const val OBJC_PROTOCOL_NAME_DESC = "Lorg/moe/natj/objc/ann/ObjCProtocolName;"
@@ -35,14 +36,14 @@ object NatJRuntime {
             MAPPED_DESC, MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
             REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
             IBOUTLET_COLLECTION_DESC, NOT_IMPLEMENTED_DESC, OBJC_BLOCK_DESC,
-            SELECTOR_DESC,
+            SELECTOR_DESC, PROTOCOL_CLASS_METHOD_DESC,
         )
 
         val NON_OPTIONALS_DESC: List<String> = listOf(
             BY_VALUE_DESC,
             MAPPED_DESC, MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
             REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
-            IBOUTLET_COLLECTION_DESC, OBJC_BLOCK_DESC, SELECTOR_DESC,
+            IBOUTLET_COLLECTION_DESC, OBJC_BLOCK_DESC, SELECTOR_DESC, PROTOCOL_CLASS_METHOD_DESC,
         )
 
         val COLLIDING_ANNS_DESC: List<List<String>> = listOf(
@@ -57,7 +58,7 @@ object NatJRuntime {
             MAPPED_DESC, MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
             REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
             IBOUTLET_COLLECTION_DESC, NOT_IMPLEMENTED_DESC, OBJC_BLOCK_DESC,
-            SELECTOR_DESC,
+            SELECTOR_DESC, PROTOCOL_CLASS_METHOD_DESC,
         )
 
         val RETURN_ANNS_DESC: List<String> = listOf(
@@ -65,7 +66,7 @@ object NatJRuntime {
             MAPPED_RETURN_DESC, NFLOAT_DESC, NINT_DESC, NUINT_DESC, OWNED_DESC,
             REFERENCE_INFO_DESC, FUNCTION_PTR_DESC, IBACTION_DESC, IBOUTLET_DESC,
             IBOUTLET_COLLECTION_DESC, NOT_IMPLEMENTED_DESC, OBJC_BLOCK_DESC,
-            SELECTOR_DESC,
+            SELECTOR_DESC, PROTOCOL_CLASS_METHOD_DESC,
         )
 
         val PARAM_ANNS_DESC: List<String> = listOf(
