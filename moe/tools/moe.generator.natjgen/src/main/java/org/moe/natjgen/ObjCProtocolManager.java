@@ -148,6 +148,14 @@ public class ObjCProtocolManager extends ObjCClassManager {
                 editor = cme.getObjCMethodBinder(method.getSelector(), false);
             }
 
+            boolean isUnsafeProperty = method.isUnsafePropertySetter();
+            if (isUnsafeProperty) {
+                isUnsafeProperty = method.getArguments().get(0).getType().isObjCObject();
+            }
+            if (isUnsafeProperty) {
+                javaName +=  "_unsafe";
+            }
+
             final int numArgs = method.getArguments().size() + (method.isVariadic() ? 1 : 0);
             if (editor == null) {
                 if (cme.hasMethod(javaName, false, numArgs)) {
