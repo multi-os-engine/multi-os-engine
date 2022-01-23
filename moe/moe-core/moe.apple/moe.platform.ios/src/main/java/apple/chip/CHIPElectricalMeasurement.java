@@ -51,8 +51,8 @@ public class CHIPElectricalMeasurement extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPElectricalMeasurement alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPElectricalMeasurement allocWithZone(VoidPtr zone);
 

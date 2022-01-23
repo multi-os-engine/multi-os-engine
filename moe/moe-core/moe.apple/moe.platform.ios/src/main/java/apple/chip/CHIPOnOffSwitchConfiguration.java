@@ -51,8 +51,8 @@ public class CHIPOnOffSwitchConfiguration extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPOnOffSwitchConfiguration alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPOnOffSwitchConfiguration allocWithZone(VoidPtr zone);
 

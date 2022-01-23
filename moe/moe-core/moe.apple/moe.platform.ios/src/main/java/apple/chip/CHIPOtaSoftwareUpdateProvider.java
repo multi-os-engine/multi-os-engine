@@ -52,8 +52,8 @@ public class CHIPOtaSoftwareUpdateProvider extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPOtaSoftwareUpdateProvider alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPOtaSoftwareUpdateProvider allocWithZone(VoidPtr zone);
 

@@ -51,8 +51,8 @@ public class CHIPThermostatUserInterfaceConfiguration extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPThermostatUserInterfaceConfiguration alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPThermostatUserInterfaceConfiguration allocWithZone(VoidPtr zone);
 

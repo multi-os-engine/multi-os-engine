@@ -51,8 +51,8 @@ public class CHIPOccupancySensing extends CHIPCluster {
     @Selector("alloc")
     public static native CHIPOccupancySensing alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native CHIPOccupancySensing allocWithZone(VoidPtr zone);
 

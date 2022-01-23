@@ -413,7 +413,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("setDelegate:")
-    void setDelegate(@Mapped(ObjCObjectMapper.class) Object value);
+    void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] loops

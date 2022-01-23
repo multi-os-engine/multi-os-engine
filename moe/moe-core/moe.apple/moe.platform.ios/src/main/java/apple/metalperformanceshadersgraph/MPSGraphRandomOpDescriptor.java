@@ -47,8 +47,8 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
     @Selector("alloc")
     public static native MPSGraphRandomOpDescriptor alloc();
 
-    @Owned
     @Generated
+    @Owned
     @Selector("allocWithZone:")
     public static native MPSGraphRandomOpDescriptor allocWithZone(VoidPtr zone);
 
@@ -74,10 +74,10 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
-    @MappedReturn(ObjCObjectMapper.class)
     @Generated
     @Owned
     @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
     /**
