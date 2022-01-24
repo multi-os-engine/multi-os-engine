@@ -19,13 +19,9 @@ package org.moe.gradle.tasks;
 import kotlin.Unit;
 import org.gradle.api.GradleException;
 import org.gradle.api.Project;
-import org.gradle.api.Task;
 import org.gradle.api.file.ConfigurableFileCollection;
-import org.gradle.api.file.FileCollection;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
-import org.gradle.api.plugins.JavaPlugin;
-import org.gradle.api.tasks.Classpath;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
@@ -33,7 +29,6 @@ import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
-import org.gradle.api.tasks.compile.JavaCompile;
 import org.moe.common.utils.FileUtilsKt;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
@@ -55,15 +50,10 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 public class ProGuard extends AbstractBaseTask {
 
@@ -80,8 +70,6 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_MAPPING_FILE = "mappingFile";
     private static final String CONVENTION_MINIFY_ENABLED = "minifyEnabled";
     private static final String CONVENTION_OBFUSCATION_ENABLED = "obfuscationEnabled";
-
-    private static final String MOE_PROGUARD_INJARS_PROPERTY = "moe.proguard.injars";
 
     @Nullable
     private Object proGuardJar;
@@ -153,6 +141,21 @@ public class ProGuard extends AbstractBaseTask {
     @IgnoreUnused
     public void setExcludeFiles(@Nullable Collection<String> excludeFiles) {
         this.excludeFiles = excludeFiles == null ? null : new LinkedHashSet<>(excludeFiles);
+    }
+
+    @NotNull
+    @Input
+    @Internal
+    public Collection<String> getComposedExcludeFiles() {
+        HashSet<String> result = new LinkedHashSet<>();
+
+        // Add user specified proguard exclusion
+        result.addAll(getExcludeFiles());
+
+        // Also combine resource exclusions
+        result.addAll(getMoeExtension().packaging.getExcludes());
+
+        return result;
     }
 
     @Nullable
@@ -269,7 +272,7 @@ public class ProGuard extends AbstractBaseTask {
         sb.append("(!**.framework/**,!**.bundle/**,!module-info.class");
 
         // Add user specified
-        for (String excludeFile : getExcludeFiles()) {
+        for (String excludeFile : getComposedExcludeFiles()) {
             sb.append(",!").append(excludeFile);
         }
 
@@ -385,33 +388,13 @@ public class ProGuard extends AbstractBaseTask {
         b.append("\n\n");
     }
 
-    private Task classesTaskDep;
+    private ClassValidate classValidateTaskDep;
 
     @Nullable
     @IgnoreUnused
     @Internal
-    public Task getClassesTaskDep() {
-        return classesTaskDep;
-    }
-
-    private JavaCompile javaCompileTaskDep;
-
-    @Nullable
-    @Internal
-    public JavaCompile getJavaCompileTaskDep() {
-        return javaCompileTaskDep;
-    }
-
-    private List<FileCollection> runtimeClasspath = new ArrayList<>();
-
-    /**
-     * Declare as task runtime classpath so jar files will be generated.
-     *
-     * A hack that forces gradle to generate jars of dependency projects
-     */
-    @Classpath @Optional
-    public List<FileCollection> getRuntimeClasspath() {
-        return runtimeClasspath;
+    public ClassValidate getClassValidateTaskDep() {
+        return classValidateTaskDep;
     }
 
     protected final void setupMoeTask(final @NotNull SourceSet sourceSet, final @NotNull Mode mode) {
@@ -428,33 +411,10 @@ public class ProGuard extends AbstractBaseTask {
 
         setDescription("Generates ProGuarded jar files (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
-        final boolean usesCustomInJars = project.hasProperty(MOE_PROGUARD_INJARS_PROPERTY);
-        if (!usesCustomInJars) {
-            // Add dependencies
-            final String classesTaskName;
-            final String compileJavaTaskName;
-            if (SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-                classesTaskName = JavaPlugin.CLASSES_TASK_NAME;
-                compileJavaTaskName = JavaPlugin.COMPILE_JAVA_TASK_NAME;
-            } else if (SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
-                classesTaskName = JavaPlugin.TEST_CLASSES_TASK_NAME;
-                compileJavaTaskName = JavaPlugin.COMPILE_TEST_JAVA_TASK_NAME;
-            } else {
-                throw new GradleException("Unsupported SourceSet " + sourceSet.getName());
-            }
-            final Task classesTask = project.getTasks().getByName(classesTaskName);
-            classesTaskDep = classesTask;
-            dependsOn(classesTask);
-
-            final JavaCompile javaCompileTask = getMoePlugin().getTaskByName(compileJavaTaskName);
-            javaCompileTaskDep = javaCompileTask;
-            javaCompileTask.setSourceCompatibility("1.8");
-            javaCompileTask.setTargetCompatibility("1.8");
-
-            // A hack that forces gradle to generate jars of dependency projects
-            runtimeClasspath.clear();
-            runtimeClasspath.add(sourceSet.getRuntimeClasspath());
-        }
+        // Add dependencies
+        final ClassValidate classValidateTask = getMoePlugin().getTaskBy(ClassValidate.class, sourceSet, mode);
+        classValidateTaskDep = classValidateTask;
+        dependsOn(classValidateTask);
 
         addConvention(CONVENTION_PROGUARD_JAR, sdk::getProGuardJar);
         addConvention(CONVENTION_BASE_CFG_FILE, () -> {
@@ -488,73 +448,20 @@ public class ProGuard extends AbstractBaseTask {
             return null; // This is an optional convention.
         });
         addConvention(CONVENTION_IN_JARS, () -> {
-            final HashSet<Object> jars = new HashSet<>();
-
-            if (!usesCustomInJars) {
-                jars.addAll(sourceSet.getRuntimeClasspath().getFiles());
-                jars.remove(sdk.getCoreJar());
-                jars.remove(ext.getPlatformJar());
-
-            } else {
-                final String injars = (String) project.property(MOE_PROGUARD_INJARS_PROPERTY);
-                final String[] split = injars.split(Pattern.quote(File.pathSeparator));
-                Arrays.stream(split).forEach(jars::add);
-            }
-
-            switch (ext.proguard.getLevelRaw()) {
-                case ProGuardOptions.LEVEL_APP:
-                    jars.remove(sdk.getCoreJar());
-                    if (ext.getPlatformJar() != null) {
-                        jars.remove(ext.getPlatformJar());
-                    }
-                    break;
-                case ProGuardOptions.LEVEL_PLATFORM:
-                    jars.remove(sdk.getCoreJar());
-                    if (ext.getPlatformJar() != null) {
-                        jars.add(ext.getPlatformJar());
-                    }
-                    break;
-                case ProGuardOptions.LEVEL_ALL:
-                    jars.add(sdk.getCoreJar());
-                    if (ext.getPlatformJar() != null) {
-                        jars.add(ext.getPlatformJar());
-                    }
-                    break;
-                default:
-                    throw new IllegalStateException();
-            }
+            final HashSet<Object> jars = new LinkedHashSet<>();
+            jars.add(classValidateTask.getClassesOutputDir());
+            jars.addAll(classValidateTask.getInputFiles().getFiles());
 
             return jars;
         });
-        addConvention(CONVENTION_EXCLUDE_FILES, () -> {
-            Collection<String> exc = ext.proguard.getExcludeFiles();
-            if (exc == null) {
-                exc = Collections.emptySet();
-            }
-
-            return exc;
-        });
+        addConvention(CONVENTION_EXCLUDE_FILES, ext.proguard::getExcludeFiles);
         addConvention(CONVENTION_LIBRARY_JARS, () -> {
             final HashSet<Object> jars = new LinkedHashSet<>(
                 // Make JDK runtime libraries available for ProGuard
                 // because we no longer have all basic runtime classes in core jar.
                 getMoePlugin().getGraalVM().getRuntimeLibraries()
             );
-            switch (ext.proguard.getLevelRaw()) {
-                case ProGuardOptions.LEVEL_APP:
-                    jars.add(sdk.getCoreJar());
-                    if (ext.getPlatformJar() != null) {
-                        jars.add(ext.getPlatformJar());
-                    }
-                    break;
-                case ProGuardOptions.LEVEL_PLATFORM:
-                    jars.add(sdk.getCoreJar());
-                    break;
-                case ProGuardOptions.LEVEL_ALL:
-                    break;
-                default:
-                    throw new IllegalStateException();
-            }
+            jars.addAll(classValidateTask.getClasspathFiles().getFiles());
 
             return jars;
         });

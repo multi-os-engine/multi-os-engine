@@ -49,7 +49,7 @@ open class NativeImage : AbstractBaseTask() {
     @InputFile
     @NotNull
     fun getResourceJar(): File {
-        return project.file(getOrConvention(resourceJar, CONVENTION_RESOURCE_JAR)!!)
+        return project.file(getOrConvention(resourceJar, CONVENTION_RESOURCE_JAR))
     }
 
     fun setResourceJar(@NotNull resourceJar: Any?) {
@@ -61,7 +61,7 @@ open class NativeImage : AbstractBaseTask() {
     @Input
     @NotNull
     fun getMainClassName(): String {
-        return getOrConvention(mainClassName, CONVENTION_MAIN_CLASS_NAME)!!
+        return getOrConvention(mainClassName, CONVENTION_MAIN_CLASS_NAME)
     }
 
     @IgnoreUnused
@@ -74,7 +74,7 @@ open class NativeImage : AbstractBaseTask() {
     @NotNull
     @Internal
     fun getSvmTmpDir(): File {
-        return project.file(getOrConvention(svmTmpDir, CONVENTION_SVM_TMP_DIR)!!)
+        return project.file(getOrConvention(svmTmpDir, CONVENTION_SVM_TMP_DIR))
     }
 
     @IgnoreUnused
@@ -87,7 +87,7 @@ open class NativeImage : AbstractBaseTask() {
     @OutputFile
     @NotNull
     fun getMainObjFile(): File {
-        return project.file(getOrConvention(mainObjFile, CONVENTION_MAIN_OBJ_FILE)!!)
+        return project.file(getOrConvention(mainObjFile, CONVENTION_MAIN_OBJ_FILE))
     }
 
     fun setMainObjFile(mainObjFile: Any?) {
@@ -99,7 +99,7 @@ open class NativeImage : AbstractBaseTask() {
     @OutputFile
     @NotNull
     fun getLlvmObjFile(): File {
-        return project.file(getOrConvention(llvmObjFile, CONVENTION_LLVM_OBJ_FILE)!!)
+        return project.file(getOrConvention(llvmObjFile, CONVENTION_LLVM_OBJ_FILE))
     }
 
     fun setLlvmObjFile(llvmObjFile: Any?) {
@@ -163,7 +163,7 @@ open class NativeImage : AbstractBaseTask() {
     @Input
     @NotNull
     fun getCustomOptions(): List<String> {
-        return getOrConvention(customOptions, CONVENTION_CUSTOM_OPTIONS) ?: emptyList()
+        return getOrConvention(customOptions, CONVENTION_CUSTOM_OPTIONS)
     }
 
     @IgnoreUnused
@@ -211,7 +211,7 @@ open class NativeImage : AbstractBaseTask() {
     }
 
     @get:Internal
-    lateinit var classValidateTaskDep: ClassValidate
+    lateinit var proGuardTaskDep: ProGuard
         private set
 
     @get:Internal
@@ -246,9 +246,9 @@ open class NativeImage : AbstractBaseTask() {
         this.platform = platform
 
         // Add dependencies
-        val classValidateTask = moePlugin.getTaskBy(ClassValidate::class.java, sourceSet, mode)
-        classValidateTaskDep = classValidateTask
-        dependsOn(classValidateTask)
+        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet, mode)
+        proGuardTaskDep = proGuardTask
+        dependsOn(proGuardTask)
         val reflectionCollectTask = moePlugin.getTaskBy(ReflectionCollect::class.java, sourceSet, mode)
         reflectionCollectTaskDep = reflectionCollectTask
         dependsOn(reflectionCollectTask)
@@ -264,7 +264,7 @@ open class NativeImage : AbstractBaseTask() {
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES) {
-            val files = mutableSetOf(classValidateTask.classesOutputDir)
+            val files = mutableSetOf(proGuardTask.outJar)
 
             when (moeExtension.proguard.levelRaw) {
                 ProGuardOptions.LEVEL_APP -> {

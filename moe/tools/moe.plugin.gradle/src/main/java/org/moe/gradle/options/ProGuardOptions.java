@@ -8,6 +8,7 @@ import org.moe.gradle.utils.Require;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -24,8 +25,9 @@ public class ProGuardOptions {
     private int level = LEVEL_ALL;
     private boolean minifyEnabled = true;
     private boolean obfuscationEnabled = false;
-    @Nullable
-    private Set<String> excludeFiles;
+    @NotNull
+    @org.jetbrains.annotations.NotNull
+    private Set<String> excludeFiles = new LinkedHashSet<>();
 
     @NotNull
     @IgnoreUnused
@@ -88,20 +90,21 @@ public class ProGuardOptions {
         this.obfuscationEnabled = obfuscationEnabled;
     }
 
-    @Nullable
+    @NotNull
+    @org.jetbrains.annotations.NotNull
     public Collection<String> getExcludeFiles() {
-        return excludeFiles;
+        return Require.nonNull(excludeFiles);
     }
 
     @IgnoreUnused
-    public void setExcludeFiles(@Nullable Collection<String> excludedFiles) {
-        this.excludeFiles = excludedFiles == null ? null : new LinkedHashSet<>(excludedFiles);
+    public void setExcludeFiles(@NotNull @org.jetbrains.annotations.NotNull Collection<String> excludedFiles) {
+        this.excludeFiles = new LinkedHashSet<>(Require.nonNull(excludedFiles));
     }
 
+    @NotNull
+    @org.jetbrains.annotations.NotNull
+    @IgnoreUnused
     public ProGuardOptions excludeFile(String... names) {
-        if (excludeFiles == null) {
-            excludeFiles = new LinkedHashSet<>();
-        }
         excludeFiles.addAll(Arrays.asList(Require.nonNull(names)));
         return this;
     }

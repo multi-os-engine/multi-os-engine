@@ -89,17 +89,9 @@ public class ResourcePackager {
         resourcePackagerTask.setGroup(MoePlugin.MOE);
         resourcePackagerTask.setDescription("Generates application file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
-        // Add dependencies
-        final ProGuard proguardTask = plugin.getTaskBy(ProGuard.class, sourceSet, mode);
-        resourcePackagerTask.dependsOn(proguardTask);
-
         // Update settings
         resourcePackagerTask.setDestinationDir(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
         resourcePackagerTask.setArchiveName("resource.jar");
-        // For SubstrateVM, the resources are directly picked up from the classpath,
-        // so there is no need to gather them into a single jar. We only need to gather those
-        // picked up by proguard.
-        resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
         resourcePackagerTask.exclude("**/*.class");
 
         project.afterEvaluate(_project -> {

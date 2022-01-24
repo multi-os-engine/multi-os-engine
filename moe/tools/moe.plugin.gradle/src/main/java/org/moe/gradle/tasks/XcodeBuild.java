@@ -424,20 +424,20 @@ public class XcodeBuild extends AbstractBaseTask {
                 excludes.add(nativeImageTask.getLogFile());
                 excludes.add(resolvePathInBuildDir(nativeImageTask.getSvmTmpDir()));
 
-                final ClassValidate classValidateTask = nativeImageTask.getClassValidateTaskDep();
-                excludes.add(classValidateTask.getOutputDir());
-                excludes.add(classValidateTask.getLogFile());
-
                 final ReflectionCollect reflectionCollectTask = nativeImageTask.getReflectionCollectTaskDep();
                 excludes.add(reflectionCollectTask.getOutputDir());
                 excludes.add(reflectionCollectTask.getLogFile());
 
-                final ProGuard proGuardTask = classValidateTask.getProGuardTaskDep();
+                final ProGuard proGuardTask = reflectionCollectTask.getProGuardTaskDep();
                 excludes.add(proGuardTask.getOutJar());
                 excludes.add(proGuardTask.getComposedCfgFile());
                 excludes.add(proGuardTask.getLogFile());
 
-                final JavaCompile classesTask = proGuardTask.getJavaCompileTaskDep();
+                final ClassValidate classValidateTask = proGuardTask.getClassValidateTaskDep();
+                excludes.add(classValidateTask.getOutputDir());
+                excludes.add(classValidateTask.getLogFile());
+
+                final JavaCompile classesTask = classValidateTask.getJavaCompileTaskDep();
                 if (classesTask != null) {
                     excludes.add(classesTask.getDestinationDir());
                 }

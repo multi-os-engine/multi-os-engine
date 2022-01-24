@@ -1,13 +1,21 @@
 package org.moe.gradle.tasks
 
+import org.gradle.api.GradleException
+import org.gradle.api.Task
 import org.gradle.api.file.ConfigurableFileCollection
+import org.gradle.api.file.FileCollection
+import org.gradle.api.plugins.JavaPlugin
+import org.gradle.api.tasks.Classpath
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.Internal
+import org.gradle.api.tasks.Optional
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.SourceSet
+import org.gradle.api.tasks.compile.JavaCompile
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
+import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.FileUtils
 import org.moe.gradle.utils.Mode
 import org.moe.tools.classvalidator.ClassValidator
@@ -74,8 +82,25 @@ open class ClassValidate : AbstractBaseTask() {
     }
 
     @get:Internal
-    lateinit var proGuardTaskDep: ProGuard
+    lateinit var classesTaskDep: Task
         private set
+
+    @get:Internal
+    lateinit var javaCompileTaskDep: JavaCompile
+        private set
+
+    private val runtimeClasspath: MutableList<FileCollection> = ArrayList()
+
+    /**
+     * Declare as task runtime classpath so jar files will be generated.
+     *
+     * A hack that forces gradle to generate jars of dependency projects
+     */
+    @Classpath
+    @Optional
+    open fun getRuntimeClasspath(): List<FileCollection>? {
+        return runtimeClasspath
+    }
 
     protected fun setupMoeTask(
         @NotNull sourceSet: SourceSet,
@@ -89,13 +114,68 @@ open class ClassValidate : AbstractBaseTask() {
         description = "Validate classes (sourceset: ${sourceSet.name}, mode: ${mode.name})."
 
         // Add dependencies
-        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet, mode)
-        proGuardTaskDep = proGuardTask
-        dependsOn(proGuardTask)
+        val classesTaskName: String
+        val compileJavaTaskName: String
+        if (SourceSet.MAIN_SOURCE_SET_NAME == sourceSet.name) {
+            classesTaskName = JavaPlugin.CLASSES_TASK_NAME
+            compileJavaTaskName = JavaPlugin.COMPILE_JAVA_TASK_NAME
+        } else if (SourceSet.TEST_SOURCE_SET_NAME == sourceSet.name) {
+            classesTaskName = JavaPlugin.TEST_CLASSES_TASK_NAME
+            compileJavaTaskName = JavaPlugin.COMPILE_TEST_JAVA_TASK_NAME
+        } else {
+            throw GradleException("Unsupported SourceSet ${sourceSet.name}")
+        }
+        classesTaskDep = project.tasks.getByName(classesTaskName)
+        dependsOn(classesTaskDep)
+
+        javaCompileTaskDep = moePlugin.getTaskByName(compileJavaTaskName)
+        // TODO: allow higher than 1.8
+        javaCompileTaskDep.sourceCompatibility = "1.8"
+        javaCompileTaskDep.targetCompatibility = "1.8"
+
+        // A hack that forces gradle to generate jars of dependency projects
+        runtimeClasspath.clear()
+        runtimeClasspath.add(sourceSet.runtimeClasspath)
 
         // Update convention mapping
-        addConvention(CONVENTION_INPUT_FILES) { setOf(proGuardTask.outJar) }
-        addConvention(CONVENTION_CLASSPATH_FILES) { setOf(proGuardTask.libraryJars) }
+        addConvention(CONVENTION_INPUT_FILES) {
+            sourceSet.runtimeClasspath.files.toMutableSet().also { jars ->
+
+                jars.remove(moeSDK.coreJar)
+                jars.remove(moeExtension.platformJar)
+
+                when (moeExtension.proguard.levelRaw) {
+                    ProGuardOptions.LEVEL_APP -> {
+                        jars.remove(moeSDK.coreJar)
+                        moeExtension.platformJar?.let(jars::remove)
+                    }
+                    ProGuardOptions.LEVEL_PLATFORM -> {
+                        jars.remove(moeSDK.coreJar)
+                        moeExtension.platformJar?.let(jars::add)
+                    }
+                    ProGuardOptions.LEVEL_ALL -> {
+                        jars.add(moeSDK.coreJar)
+                        moeExtension.platformJar?.let(jars::add)
+                    }
+                    else -> throw IllegalStateException()
+                }
+            }
+        }
+        addConvention(CONVENTION_CLASSPATH_FILES) {
+            mutableSetOf<Any>().also { jars ->
+                when (moeExtension.proguard.levelRaw) {
+                    ProGuardOptions.LEVEL_APP -> {
+                        jars.add(moeSDK.coreJar)
+                        moeExtension.platformJar?.let(jars::add)
+                    }
+                    ProGuardOptions.LEVEL_PLATFORM -> {
+                        jars.add(moeSDK.coreJar)
+                    }
+                    ProGuardOptions.LEVEL_ALL -> {}
+                    else -> throw IllegalStateException()
+                }
+            }
+        }
         addConvention(CONVENTION_OUTPUT_DIR) { resolvePathInBuildDir(out, "output") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "ClassValidate.log") }
     }
