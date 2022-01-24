@@ -33,7 +33,7 @@ fun File.classpathIterator(consumer: (path: String, inputStream: InputStream) ->
         val file = JarFile(this)
 
         file.stream().forEach jar@{ entry ->
-            if (!filter(entry.name)) {
+            if (entry.isDirectory || !filter(entry.name)) {
                 return@jar
             }
 
