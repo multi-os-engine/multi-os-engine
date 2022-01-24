@@ -1,5 +1,6 @@
 package org.moe.tools.classvalidator.natj
 
+import org.moe.tools.classvalidator.ClassModifier
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.MethodVisitor
@@ -14,7 +15,7 @@ import java.lang.reflect.Modifier
  */
 class AddMissingNatJRegister(
     next: ClassVisitor?
-) : ClassVisitor(Opcodes.ASM5, next) {
+) : ClassModifier(Opcodes.ASM5, next) {
 
     private var skip: Boolean = false
     private var visit: Boolean = false
@@ -90,6 +91,7 @@ class AddMissingNatJRegister(
                         NatJRuntime.NATJ_OWNER, NatJRuntime.NATJ_REGISTER_NAME,
                         NatJRuntime.NATJ_REGISTER_DESC, false)
                     CLI.accept(mv)
+                    markAsModified()
                     println("Injected NatJ.register() into $name")
                 }
                 NATJREG_LEAVE_ALONE -> {
@@ -108,6 +110,7 @@ class AddMissingNatJRegister(
             mv.visitInsn(Opcodes.RETURN)
             mv.visitMaxs(-1, -1)
             mv.visitEnd()
+            markAsModified()
             println("Injected NatJ.register() into $name")
         }
 

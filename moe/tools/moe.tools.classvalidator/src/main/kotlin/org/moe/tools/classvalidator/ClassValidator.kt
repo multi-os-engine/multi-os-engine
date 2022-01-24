@@ -3,8 +3,6 @@ package org.moe.tools.classvalidator
 import org.moe.common.utils.classAndJarInputIterator
 import org.moe.tools.classvalidator.natj.AddMissingAnnotations
 import org.moe.tools.classvalidator.natj.AddMissingNatJRegister
-import org.moe.tools.classvalidator.substrate.CollectReflectionConfig
-import org.moe.tools.classvalidator.substrate.ReflectionConfig
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
@@ -25,13 +23,23 @@ object ClassValidator {
             inputFiles.classAndJarInputIterator { _, inputStream ->
                 val cr = ClassReader(inputStream)
 
-                val byteCode = processClass(cr) { next ->
-                    next
-                        .let(::AddMissingAnnotations)
-                        .let(::AddMissingNatJRegister)
+                val chain = mutableListOf<ClassVisitor>()
+                fun ClassVisitor.chain(nextBuilder: (ClassVisitor) -> ClassVisitor): ClassVisitor {
+                    val next = nextBuilder(this)
+                    chain.add(next)
+                    return next
                 }
 
-                classSaver.save(byteCode)
+                val byteCode = processClass(cr) { next ->
+                    next
+                        .chain(::AddMissingAnnotations)
+                        .chain(::AddMissingNatJRegister)
+                }
+
+                // Only save modified class
+                if (chain.any { it is ClassModifier && it.modified }) {
+                    classSaver.save(byteCode)
+                }
             }
         }
     }
