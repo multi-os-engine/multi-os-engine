@@ -40,26 +40,32 @@ public class ProjectUtil {
     /**
      * Key: moe.xcode.project.
      */
+    @Deprecated
     public static final String XCODE_PROJECT_KEY = "moe.xcode.project";
     /**
      * Key: moe.xcode.workspace.
      */
+    @Deprecated
     public static final String XCODE_WORKSPACE_KEY = "moe.xcode.workspace";
     /**
      * Key: moe.xcode.mainTarget.
      */
+    @Deprecated
     public static final String XCODE_MAIN_TARGET_KEY = "moe.xcode.mainTarget";
     /**
      * Key: moe.xcode.testTarget.
      */
+    @Deprecated
     public static final String XCODE_TEST_TARGET_KEY = "moe.xcode.testTarget";
     /**
      * Key: moe.xcode.mainScheme.
      */
+    @Deprecated
     public static final String XCODE_MAIN_SCHEME_KEY = "moe.xcode.mainScheme";
     /**
      * Key: moe.xcode.testScheme.
      */
+    @Deprecated
     public static final String XCODE_TEST_SCHEME_KEY = "moe.xcode.testScheme";
     /**
      * Key: moe.sdk.home.

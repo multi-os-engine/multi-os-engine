@@ -11,4 +11,9 @@ interface GradlePluginModel {
      * Returns SDK properties
      */
     val sdkProperties: MOESdkProperties?
+
+    /**
+     * Returns Xcode properties
+     */
+    val xcodeProperties: MOEXcodeProperties?
 }
