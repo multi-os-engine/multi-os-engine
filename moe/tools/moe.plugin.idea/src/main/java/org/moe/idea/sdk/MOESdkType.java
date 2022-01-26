@@ -42,6 +42,8 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.common.utils.ProjectUtil;
+import org.moe.gradle.model.MOESdkProperties;
+import org.moe.idea.model.GradleModuleModel;
 import org.moe.idea.utils.ModuleUtils;
 import res.MOEIcons;
 import res.MOEText;
@@ -181,15 +183,24 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         if (module == null) {
             return null;
         }
-        String modulePath = ModuleUtils.getModulePath(module);
-        if (modulePath == null) {
-            return null;
-        }
 
-        final Properties properties = ProjectUtil
+        String moeRootPath;
+
+        MOESdkProperties sdkProperties = GradleModuleModel.getSdkProperties(module);
+        if (sdkProperties != null) {
+            moeRootPath = sdkProperties.getHome();
+        } else {
+            String modulePath = ModuleUtils.getModulePath(module);
+            if (modulePath == null) {
+                return null;
+            }
+
+            final Properties properties = ProjectUtil
                 .retrievePropertiesFromGradle(new File(modulePath), ProjectUtil.SDK_PROPERTIES_TASK);
 
-        String moeRootPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
+            moeRootPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
+        }
+
         if (moeRootPath == null) {
             return null;
         }

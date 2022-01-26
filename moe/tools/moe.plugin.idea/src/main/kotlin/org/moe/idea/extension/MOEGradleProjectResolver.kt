@@ -3,12 +3,15 @@ package org.moe.idea.extension
 import com.intellij.openapi.externalSystem.model.DataNode
 import com.intellij.openapi.externalSystem.model.project.ModuleData
 import com.intellij.openapi.externalSystem.model.project.ProjectData
+import org.gradle.tooling.model.UnsupportedMethodException
 import org.gradle.tooling.model.idea.IdeaModule
 import org.jetbrains.plugins.gradle.model.GradleExtensions
 import org.jetbrains.plugins.gradle.service.project.AbstractProjectResolverExtension
 import org.moe.gradle.model.GradlePluginModel
+import org.moe.gradle.model.MOESdkProperties
 import org.moe.idea.MOESdkPlugin
 import org.moe.idea.model.GradleModuleModel
+import org.moe.idea.model.impl.MOESdkPropertiesImpl
 
 class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
     override fun createModule(gradleModule: IdeaModule, projectDataNode: DataNode<ProjectData>): DataNode<ModuleData>? {
@@ -23,7 +26,7 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
         var gradlePluginModel = resolverCtx.getExtraProject(gradleModule, GradlePluginModel::class.java)
         if (moeExt != null || gradlePluginModel != null) {
 
-            if(gradlePluginModel == null) {
+            if (gradlePluginModel == null) {
                 // Fake a plugin model to support old gradle plugin
                 gradlePluginModel = when (moeExt!!.typeFqn) {
                     "org.moe.gradle.MoeSDKExtension" -> DummyGradlePluginModel(false)
@@ -37,7 +40,8 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
                 GradleModuleModel(
                     moduleName = moduleDataNode.data.internalName,
                     gradlePlugins = gradlePluginModel?.gradlePluginList?.toList() ?: emptyList(),
-                    taskNames = gradleModule.getTaskNames()
+                    taskNames = gradleModule.getTaskNames(),
+                    sdkProperties = gradlePluginModel?.readOptional { sdkProperties }?.let(::MOESdkPropertiesImpl)
                 )
             )
         }
@@ -52,13 +56,14 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
     }
 
     private class DummyGradlePluginModel(
-        private val isMOEApp: Boolean
-    ): GradlePluginModel{
-        override fun getGradlePluginList(): MutableCollection<String> = if(isMOEApp) {
+        isMOEApp: Boolean
+    ) : GradlePluginModel {
+        override val gradlePluginList: Collection<String> = if (isMOEApp) {
             mutableListOf(MOESdkPlugin.GRADLE_PLUGIN_MOE)
         } else {
             mutableListOf(MOESdkPlugin.GRADLE_PLUGIN_MOE_SDK)
         }
+        override val sdkProperties: MOESdkProperties? = null
     }
 
     companion object {
@@ -66,6 +71,12 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
             return gradleProject.tasks.mapNotNull { task ->
                 task.name.takeIf { it.isNotBlank() }
             }
+        }
+
+        private inline fun <T> GradlePluginModel.readOptional(selector: GradlePluginModel.() -> T): T? = try {
+            this.selector()
+        } catch (_: UnsupportedMethodException) {
+            null
         }
     }
 }

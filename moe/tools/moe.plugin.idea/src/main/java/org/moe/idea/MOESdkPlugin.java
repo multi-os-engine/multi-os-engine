@@ -28,7 +28,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.moe.common.utils.ProjectUtil;
-import org.moe.idea.facet.gradle.GradleFacet;
+import org.moe.gradle.model.MOESdkProperties;
 import org.moe.idea.model.GradleModuleModel;
 import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
@@ -51,6 +51,13 @@ public class MOESdkPlugin {
     }
 
     public static String getSdkRootPath(Module module) {
+        // Read sdk property using facet
+        MOESdkProperties sdkProperties = GradleModuleModel.getSdkProperties(module);
+        if (sdkProperties != null) {
+            return sdkProperties.getHome();
+        }
+
+        // For compatible with old Gradle plugin
         final Properties properties = ProjectUtil
                 .retrievePropertiesFromGradle(new File(ModuleUtils.getModulePath(module)), ProjectUtil.SDK_PROPERTIES_TASK);
 
@@ -150,20 +157,17 @@ public class MOESdkPlugin {
             return false;
         }
 
-        GradleFacet facet = GradleFacet.getInstance(module);
-        if (facet != null) {
-            GradleModuleModel gradleModuleModel = facet.getGradleModuleModel();
-            if (gradleModuleModel != null) {
-                if (gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE)) {
-                    return true;
-                }
-                if (!isMOEApp && gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE_SDK)) {
-                    return true;
-                }
-
-                String taskName = isMOEApp ? "moeLaunch" : "moeSDKProperties";
-                return gradleModuleModel.getTaskNames().contains(taskName);
+        GradleModuleModel gradleModuleModel = GradleModuleModel.getInstance(module);
+        if (gradleModuleModel != null) {
+            if (gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE)) {
+                return true;
             }
+            if (!isMOEApp && gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE_SDK)) {
+                return true;
+            }
+
+            String taskName = isMOEApp ? "moeLaunch" : "moeSDKProperties";
+            return gradleModuleModel.getTaskNames().contains(taskName);
         }
 
         return false;
