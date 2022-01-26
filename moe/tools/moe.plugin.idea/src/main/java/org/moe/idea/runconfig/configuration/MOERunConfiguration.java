@@ -76,6 +76,10 @@ public class MOERunConfiguration extends MOERunConfigurationBase {
 
         configuration.moduleName(module.getName());
 
+        if (module.getName().endsWith(".test")) {
+            configuration.runJUnitTests(true);
+        }
+
         final Device defaultSimulator = RunTargetUtil.getDefaultSimulatorQuiet();
         if (defaultSimulator != null) {
             configuration.runOnSimulator(true);
