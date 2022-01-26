@@ -28,6 +28,7 @@ import com.intellij.openapi.module.Module
 import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.StartupActivity
+import org.jetbrains.plugins.gradle.model.data.GradleSourceSetData
 import org.jetbrains.plugins.gradle.settings.GradleSettings
 import org.jetbrains.plugins.gradle.util.GradleConstants
 import org.moe.idea.facet.gradle.GradleFacet
@@ -92,10 +93,19 @@ class Startup : StartupActivity {
             .flatMap { projectData ->
                 ExternalSystemApiUtil
                     .findAllRecursively(projectData, ProjectKeys.MODULE)
-                    .map { node ->
+                    .flatMap { node ->
                         val externalId = node.data.id
-                        val module = modulesById[externalId] ?: return
-                        module to node
+                        // Get ids for different source sets
+                        val sourceSetModuleIds = node
+                            .children
+                            .filter { it.key == GradleSourceSetData.KEY }
+                            .map { (it.data as GradleSourceSetData).id }
+
+                        val allModuleIds = sourceSetModuleIds + externalId
+
+                        allModuleIds
+                            .mapNotNull { modulesById[it] }
+                            .map { it to node }
                     }
             }
 
