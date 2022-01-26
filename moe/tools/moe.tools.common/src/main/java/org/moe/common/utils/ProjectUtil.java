@@ -29,10 +29,12 @@ public class ProjectUtil {
     /**
      * moeXcodeProperties task name.
      */
+    @Deprecated
     public static final String XCODE_PROPERTIES_TASK = "moeXcodeProperties";
     /**
      * moeSDKProperties task name.
      */
+    @Deprecated
     public static final String SDK_PROPERTIES_TASK = "moeSDKProperties";
 
     /**
@@ -62,6 +64,7 @@ public class ProjectUtil {
     /**
      * Key: moe.sdk.home.
      */
+    @Deprecated
     public static final String SDK_PATH_KEY = "moe.sdk.home";
 
     /**
@@ -71,6 +74,7 @@ public class ProjectUtil {
      * @param taskName    Task to run
      * @return Parsed properties
      */
+    @Deprecated
     public static Properties retrievePropertiesFromGradle(File projectFile, String taskName) {
         GradleExec exec = new GradleExec(projectFile, null, projectFile);
         exec.getArguments().add(taskName);
