@@ -28,8 +28,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.Nullable;
 import org.moe.common.utils.ProjectUtil;
+import org.moe.gradle.model.MOEXcodeProperties;
 import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.model.GradleModuleModel;
 import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
@@ -44,14 +47,24 @@ public class MOEOpenXcodeEditorAction extends AnAction {
             return;
         }
 
-        final File modulePath = new File(ModuleUtils.getModulePath(module));
-        final Properties properties = ProjectUtil
+        @Nullable String projectPath;
+
+        // Read xcode property using facet
+        MOEXcodeProperties xcodeProperties = GradleModuleModel.getXcodeProperties(module);
+        if (xcodeProperties != null) {
+            projectPath = xcodeProperties.getProject();
+        } else {
+            // For compatible with old Gradle plugin
+            final File modulePath = new File(ModuleUtils.getModulePath(module));
+            final Properties properties = ProjectUtil
                 .retrievePropertiesFromGradle(modulePath, ProjectUtil.XCODE_PROPERTIES_TASK);
 
+            projectPath = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+        }
+
         // Try to open project
-        final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
-        if (pr != null) {
-            final File file = new File(pr, "project.pbxproj");
+        if (projectPath != null) {
+            final File file = new File(projectPath, "project.pbxproj");
             if (!file.exists()) {
                 Messages.showErrorDialog("Xcode project does not exist", "Open Xcode Project");
             }

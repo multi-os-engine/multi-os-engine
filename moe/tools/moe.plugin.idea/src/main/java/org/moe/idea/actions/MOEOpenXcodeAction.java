@@ -25,10 +25,13 @@ import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.Nullable;
 import org.moe.common.developer.NativeSDKUtil;
 import org.moe.common.utils.OsUtils;
 import org.moe.common.utils.ProjectUtil;
+import org.moe.gradle.model.MOEXcodeProperties;
 import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.model.GradleModuleModel;
 import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
@@ -44,14 +47,27 @@ public class MOEOpenXcodeAction extends AnAction {
             return;
         }
 
-        final File modulePath = new File(ModuleUtils.getModulePath(module));
-        final Properties properties = ProjectUtil
+        @Nullable String workspacePath;
+        @Nullable String projectPath;
+
+        // Read xcode property using facet
+        MOEXcodeProperties xcodeProperties = GradleModuleModel.getXcodeProperties(module);
+        if (xcodeProperties != null) {
+            workspacePath = xcodeProperties.getWorkspace();
+            projectPath = xcodeProperties.getProject();
+        } else {
+            // For compatible with old Gradle plugin
+            final File modulePath = new File(ModuleUtils.getModulePath(module));
+            final Properties properties = ProjectUtil
                 .retrievePropertiesFromGradle(modulePath, ProjectUtil.XCODE_PROPERTIES_TASK);
 
+            workspacePath = properties.getProperty(ProjectUtil.XCODE_WORKSPACE_KEY);
+            projectPath = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
+        }
+
         // Try to open workspace
-        final String ws = properties.getProperty(ProjectUtil.XCODE_WORKSPACE_KEY);
-        if (ws != null) {
-            final File file = new File(ws);
+        if (workspacePath != null) {
+            final File file = new File(workspacePath);
             if (!file.exists()) {
                 Messages.showErrorDialog("Xcode workspace does not exist", "Open Xcode Project");
             }
@@ -64,9 +80,8 @@ public class MOEOpenXcodeAction extends AnAction {
         }
 
         // Try to open project
-        final String pr = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);
-        if (pr != null) {
-            final File file = new File(pr);
+        if (projectPath != null) {
+            final File file = new File(projectPath);
             if (!file.exists()) {
                 Messages.showErrorDialog("Xcode project does not exist", "Open Xcode Project");
             }
@@ -79,7 +94,7 @@ public class MOEOpenXcodeAction extends AnAction {
         }
 
         Messages.showErrorDialog("Neither the Xcode project nor the workspace is set in the Gradle plugin",
-                "Open Xcode Project");
+            "Open Xcode Project");
     }
 
     @Override

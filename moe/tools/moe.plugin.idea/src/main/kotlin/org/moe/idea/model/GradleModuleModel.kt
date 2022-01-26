@@ -4,6 +4,7 @@ import com.intellij.openapi.externalSystem.model.Key
 import com.intellij.openapi.externalSystem.model.ProjectKeys.LIBRARY_DEPENDENCY
 import com.intellij.openapi.module.Module
 import org.moe.gradle.model.MOESdkProperties
+import org.moe.gradle.model.MOEXcodeProperties
 import org.moe.idea.facet.gradle.GradleFacet
 import java.io.Serializable
 
@@ -15,6 +16,7 @@ data class GradleModuleModel(
     val gradlePlugins: List<String>,
     val taskNames: List<String>,
     val sdkProperties: MOESdkProperties?,
+    val xcodeProperties: MOEXcodeProperties?,
 ) : ModuleModel, Serializable {
     companion object {
         private const val serialVersionUID = 1L
@@ -26,5 +28,8 @@ data class GradleModuleModel(
 
         @JvmStatic
         fun getSdkProperties(module: Module): MOESdkProperties? = getInstance(module)?.sdkProperties
+
+        @JvmStatic
+        fun getXcodeProperties(module: Module): MOEXcodeProperties? = getInstance(module)?.xcodeProperties
     }
 }

@@ -9,9 +9,11 @@ import org.jetbrains.plugins.gradle.model.GradleExtensions
 import org.jetbrains.plugins.gradle.service.project.AbstractProjectResolverExtension
 import org.moe.gradle.model.GradlePluginModel
 import org.moe.gradle.model.MOESdkProperties
+import org.moe.gradle.model.MOEXcodeProperties
 import org.moe.idea.MOESdkPlugin
 import org.moe.idea.model.GradleModuleModel
 import org.moe.idea.model.impl.MOESdkPropertiesImpl
+import org.moe.idea.model.impl.MOEXcodePropertiesImpl
 
 class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
     override fun createModule(gradleModule: IdeaModule, projectDataNode: DataNode<ProjectData>): DataNode<ModuleData>? {
@@ -41,7 +43,10 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
                     moduleName = moduleDataNode.data.internalName,
                     gradlePlugins = gradlePluginModel?.gradlePluginList?.toList() ?: emptyList(),
                     taskNames = gradleModule.getTaskNames(),
-                    sdkProperties = gradlePluginModel?.readOptional { sdkProperties }?.let(::MOESdkPropertiesImpl)
+                    sdkProperties = gradlePluginModel?.readGradleModelOptionalProperty { sdkProperties }
+                        ?.let(::MOESdkPropertiesImpl),
+                    xcodeProperties = gradlePluginModel?.readGradleModelOptionalProperty { xcodeProperties }
+                        ?.let(::MOEXcodePropertiesImpl),
                 )
             )
         }
@@ -64,6 +69,7 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
             mutableListOf(MOESdkPlugin.GRADLE_PLUGIN_MOE_SDK)
         }
         override val sdkProperties: MOESdkProperties? = null
+        override val xcodeProperties: MOEXcodeProperties? = null
     }
 
     companion object {
@@ -73,7 +79,7 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
             }
         }
 
-        private inline fun <T> GradlePluginModel.readOptional(selector: GradlePluginModel.() -> T): T? = try {
+        inline fun <T, R> T.readGradleModelOptionalProperty(selector: T.() -> R): R? = try {
             this.selector()
         } catch (_: UnsupportedMethodException) {
             null

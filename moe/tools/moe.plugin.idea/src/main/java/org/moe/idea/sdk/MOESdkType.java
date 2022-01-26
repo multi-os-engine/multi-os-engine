@@ -186,10 +186,12 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
         String moeRootPath;
 
+        // Read sdk property using facet
         MOESdkProperties sdkProperties = GradleModuleModel.getSdkProperties(module);
         if (sdkProperties != null) {
             moeRootPath = sdkProperties.getHome();
         } else {
+            // For compatible with old Gradle plugin
             String modulePath = ModuleUtils.getModulePath(module);
             if (modulePath == null) {
                 return null;
