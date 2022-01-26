@@ -147,6 +147,7 @@
 
     </actions>
 
+    <depends>com.intellij.gradle</depends>
     <depends>org.jetbrains.plugins.gradle</depends>
     <depends>com.intellij.modules.java</depends>
 

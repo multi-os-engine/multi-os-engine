@@ -3,14 +3,18 @@ package org.moe.idea.service
 import com.intellij.openapi.externalSystem.model.DataNode
 import com.intellij.openapi.externalSystem.model.Key
 import com.intellij.openapi.externalSystem.model.project.ProjectData
+import com.intellij.openapi.externalSystem.service.project.IdeModelsProvider
 import com.intellij.openapi.externalSystem.service.project.IdeModifiableModelsProvider
 import com.intellij.openapi.externalSystem.util.ExternalSystemApiUtil
 import com.intellij.openapi.module.Module
+import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Computable
 import org.jetbrains.plugins.gradle.util.GradleConstants
+import org.moe.idea.MOESdkPlugin
 import org.moe.idea.facet.gradle.GradleFacet
 import org.moe.idea.model.GradleModuleModel
+import org.moe.idea.utils.ModuleObserver
 
 class GradleModuleModelDataService : ModuleModelDataService<GradleModuleModel>() {
     override fun getTargetDataKey(): Key<GradleModuleModel> = GradleModuleModel.KEY
@@ -35,6 +39,7 @@ class GradleModuleModelDataService : ModuleModelDataService<GradleModuleModel>()
                         null
                     )
                     facetModel.addFacet(facet, ExternalSystemApiUtil.toExternalSource(GradleConstants.SYSTEM_ID))
+                    facetModel.commit()
                 }
 
                 facet.gradleModuleModel = gradleModuleModel
@@ -53,6 +58,20 @@ class GradleModuleModelDataService : ModuleModelDataService<GradleModuleModel>()
             val facetModel = modelsProvider.getModifiableFacetModel(module)
             val facets = facetModel.getFacetsByType(GradleFacet.TYPE_ID)
             facets.forEach(facetModel::removeFacet)
+        }
+    }
+
+    override fun onSuccessImport(
+        imported: MutableCollection<DataNode<GradleModuleModel>>,
+        projectData: ProjectData?,
+        project: Project,
+        modelsProvider: IdeModelsProvider
+    ) {
+        ModuleManager.getInstance(project).modules.forEach { module ->
+            if (MOESdkPlugin.isValidMoeModule(module)) {
+                ModuleObserver.checkRunConfiguration(project, module)
+                ModuleObserver.checkMoeSDK(module)
+            }
         }
     }
 }

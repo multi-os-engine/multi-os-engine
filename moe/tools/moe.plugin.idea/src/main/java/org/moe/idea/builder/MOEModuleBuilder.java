@@ -329,16 +329,14 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
 
         Module module = rootModel.getModule();
 
-        RunnerAndConfigurationSettings settings = null;
-
         try {
-            settings = MOERunConfiguration.createRunConfiguration(project, module);
+            RunnerAndConfigurationSettings settings = MOERunConfiguration.createRunConfiguration(project, module);
+
+            runManager.addConfiguration(settings);
+            runManager.setSelectedConfiguration(settings);
         }
         catch (Exception e) {
             MOEToolWindow.getInstance(project).log("Failed create run configuration: " + e.getMessage());
         }
-
-        runManager.addConfiguration(settings, false);
-        runManager.setSelectedConfiguration(settings);
     }
 }

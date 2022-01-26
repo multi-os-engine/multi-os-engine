@@ -70,7 +70,7 @@ public class ModuleObserver implements ModuleListener {
         });
     }
 
-    private void checkMoeSDK(@NotNull Module module) {
+    public static void checkMoeSDK(@NotNull Module module) {
         final ModuleRootManager manager = ModuleRootManager.getInstance(module);
         final ModifiableRootModel rootModel = manager.getModifiableModel();
         ApplicationManager.getApplication().runWriteAction(new DumbAwareRunnable() {
@@ -108,7 +108,7 @@ public class ModuleObserver implements ModuleListener {
 
     }
 
-    private void checkRunConfiguration(@NotNull Project project, @NotNull Module module) {
+    public static void checkRunConfiguration(@NotNull Project project, @NotNull Module module) {
         LOG.debug("Check run configuration for the module " + module.getName()
                 + " in the project " + project.getName());
         // Find run config for the module
@@ -125,7 +125,7 @@ public class ModuleObserver implements ModuleListener {
         try {
             LOG.debug("Create run configuration " + module.getName());
             settings = MOERunConfiguration.createRunConfiguration(project, module);
-            runManager.addConfiguration(settings, false);
+            runManager.addConfiguration(settings);
             runManager.setSelectedConfiguration(settings);
         } catch (Exception ee) {
             LOG.error("Unable to create run configuration", ee);
