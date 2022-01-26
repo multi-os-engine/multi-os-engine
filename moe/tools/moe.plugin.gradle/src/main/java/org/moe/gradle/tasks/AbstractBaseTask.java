@@ -114,12 +114,12 @@ public abstract class AbstractBaseTask extends DefaultTask {
 
     @Internal
     protected @NotNull MoeExtension getMoeExtension() {
-        return Require.nonNull((MoeExtension) getProject().getExtensions().findByName(MoePlugin.MOE));
+        return (MoeExtension) getExtension();
     }
 
     @Internal
     public @NotNull AbstractMoeExtension getExtension() {
-        return Require.nonNull((AbstractMoeExtension) getProject().getExtensions().findByName(AbstractMoePlugin.MOE));
+        return AbstractMoeExtension.getInstance(getProject());
     }
 
     @NotNull

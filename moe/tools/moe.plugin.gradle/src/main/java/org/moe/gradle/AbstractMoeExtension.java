@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.gradle;
 
 import org.gradle.api.Action;
+import org.gradle.api.Project;
 import org.gradle.internal.reflect.Instantiator;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
@@ -70,4 +71,9 @@ public abstract class AbstractMoeExtension {
 
     @Nullable
     public abstract File getPlatformJar();
+
+    @NotNull
+    public static AbstractMoeExtension getInstance(@NotNull Project project) {
+        return Require.nonNull((AbstractMoeExtension) project.getExtensions().findByName(AbstractMoePlugin.MOE));
+    }
 }

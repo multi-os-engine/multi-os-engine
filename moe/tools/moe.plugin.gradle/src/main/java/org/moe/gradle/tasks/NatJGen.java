@@ -18,17 +18,13 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.Task;
-import org.gradle.api.logging.Logger;
-import org.gradle.api.logging.Logging;
 import org.gradle.api.specs.Spec;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.Optional;
 import org.moe.gradle.AbstractMoeExtension;
 import org.moe.gradle.anns.IgnoreUnused;
-import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.utils.Require;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -156,7 +152,4 @@ public class NatJGen extends AbstractBaseTask {
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "NatJGen.log"));
     }
 
-    public @NotNull AbstractMoeExtension getExtension() {
-        return Require.nonNull((AbstractMoeExtension) getProject().getExtensions().findByName(MOE));
-    }
 }
