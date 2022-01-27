@@ -1,14 +1,12 @@
 package org.moe.gradle.model.impl
 
 import org.moe.gradle.model.GradlePluginModel
+import org.moe.gradle.model.MOESdkProperties
+import org.moe.gradle.model.MOEXcodeProperties
 import java.io.Serializable
 
 data class GradlePluginModelImpl(
-    private val myGradlePluginList: Collection<String>
-): GradlePluginModel, Serializable {
-    override fun getGradlePluginList(): Collection<String> = myGradlePluginList
-
-    companion object {
-        private const val serialVersionUID = 1L
-    }
-}
+    override val gradlePluginList: Collection<String>,
+    override val sdkProperties: MOESdkProperties,
+    override val xcodeProperties: MOEXcodeProperties?,
+) : GradlePluginModel, Serializable
