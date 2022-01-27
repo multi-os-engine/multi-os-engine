@@ -50,6 +50,7 @@ import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestClassBrowser;
 import org.moe.idea.runconfig.configuration.test.MOETestClassVisibilityChecker;
+import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.InputValidationHelper;
@@ -432,7 +433,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         File projectFile = new File(ModuleUtils.getModulePath(module));
 
         try {
-            for (DeviceInfo device : Device.getDevices(projectFile)) {
+            for (DeviceInfo device : Device.getDevices(projectFile, MOESdkType.requireJavaHome(module))) {
                 deviceCombo.addItem(device.udid());
             }
         } catch (Exception e) {
@@ -687,7 +688,14 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         final MOEToolWindow toolWindow =  MOEToolWindow.getInstance(module.getProject());
         toolWindow.show();
         final StringBuffer runError = new StringBuffer();
-        String errorMessage = RemoteSettings.test(f, properties,
+        File javaHome;
+        try {
+            javaHome = MOESdkType.requireJavaHome(module);
+        } catch (IOException e) {
+            showMessage(e.getMessage());
+            return;
+        }
+        String errorMessage = RemoteSettings.test(f, properties, javaHome,
                 new ExecRunnerBase.ExecRunnerListener() {
                     @Override
                     public void stdout(String s) {

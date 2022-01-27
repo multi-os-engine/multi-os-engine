@@ -33,6 +33,7 @@ import com.intellij.openapi.projectRoots.impl.JavaDependentSdkType;
 import com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil;
 import com.intellij.openapi.roots.AnnotationOrderRootType;
 import com.intellij.openapi.roots.JavadocOrderRootType;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -50,6 +51,7 @@ import res.MOEText;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
@@ -198,7 +200,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             }
 
             final Properties properties = ProjectUtil
-                .retrievePropertiesFromGradle(new File(modulePath), ProjectUtil.SDK_PROPERTIES_TASK);
+                .retrievePropertiesFromGradle(new File(modulePath), ProjectUtil.SDK_PROPERTIES_TASK, MOESdkType.getJavaHome(module));
 
             moeRootPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
         }
@@ -333,5 +335,40 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         }
 
         return javaHomePaths;
+    }
+
+    @Nullable
+    public static Sdk getJDK(@NotNull Module module) {
+        Sdk currentSdk = ModuleRootManager.getInstance(module).getSdk();
+
+        if (currentSdk != null && currentSdk.getSdkType() instanceof MOESdkType) {
+            MOESdkType t = (MOESdkType) currentSdk.getSdkType();
+            currentSdk = t.javaSdk;
+        }
+
+        if (currentSdk != null && isApplicableJdk(currentSdk)) {
+            return currentSdk;
+        }
+
+        return null;
+    }
+
+    @Nullable
+    public static File getJavaHome(@NotNull Module module) {
+        Sdk jdk = getJDK(module);
+
+        String homePath = jdk == null ? null : jdk.getHomePath();
+
+        return homePath == null ? null : new File(homePath);
+    }
+
+    @NotNull
+    public static File requireJavaHome(@NotNull Module module) throws IOException {
+        File javaHome = getJavaHome(module);
+        if (javaHome == null) {
+            throw new IOException("Module SDK not configured or it's not a valid JDK");
+        }
+
+        return javaHome;
     }
 }

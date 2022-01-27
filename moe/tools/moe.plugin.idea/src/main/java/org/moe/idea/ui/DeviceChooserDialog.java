@@ -27,6 +27,7 @@ import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
 import org.moe.idea.runconfig.configuration.MOERunConfigurationEditor;
+import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.RunTargetUtil;
 import org.moe.idea.utils.RunTargetUtil.SimulatorComboItem;
@@ -111,7 +112,7 @@ public class DeviceChooserDialog extends DialogWrapper {
         File projectFile = new File(ModuleUtils.getModulePath(module));
 
         try {
-            for (DeviceInfo device : Device.getDevices(projectFile)) {
+            for (DeviceInfo device : Device.getDevices(projectFile, MOESdkType.requireJavaHome(module))) {
                 deviceCombo.addItem(device.udid());
             }
         } catch (Exception e) {

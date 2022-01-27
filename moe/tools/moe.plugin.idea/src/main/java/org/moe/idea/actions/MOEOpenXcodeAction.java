@@ -32,6 +32,7 @@ import org.moe.common.utils.ProjectUtil;
 import org.moe.gradle.model.MOEXcodeProperties;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.model.GradleModuleModel;
+import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
@@ -58,8 +59,15 @@ public class MOEOpenXcodeAction extends AnAction {
         } else {
             // For compatible with old Gradle plugin
             final File modulePath = new File(ModuleUtils.getModulePath(module));
+            File javaHome;
+            try {
+                javaHome = MOESdkType.requireJavaHome(module);
+            } catch (IOException e) {
+                Messages.showErrorDialog(e.getMessage(), "Open Xcode Project");
+                return;
+            }
             final Properties properties = ProjectUtil
-                .retrievePropertiesFromGradle(modulePath, ProjectUtil.XCODE_PROPERTIES_TASK);
+                .retrievePropertiesFromGradle(modulePath, ProjectUtil.XCODE_PROPERTIES_TASK, javaHome);
 
             workspacePath = properties.getProperty(ProjectUtil.XCODE_WORKSPACE_KEY);
             projectPath = properties.getProperty(ProjectUtil.XCODE_PROJECT_KEY);

@@ -24,12 +24,12 @@ import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.util.ui.UIUtil;
-
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase;
 import org.moe.common.exec.GradleExec;
 import org.moe.common.exec.IKillListener;
 import org.moe.document.pbxproj.ProjectException;
+import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.ModuleUtils;
 
@@ -41,7 +41,7 @@ public class GeneratorRunner {
     public static final String ACTION_TITLE = "Generate Binding";
     public static final String ACTION_PROGRESS_LABEL = "Generate Binding";
 
-    private Module module;
+    private final Module module;
     private File coonfigurationFile;
     private boolean test;
     private boolean keep;
@@ -102,7 +102,7 @@ public class GeneratorRunner {
 
                 progress.setFraction(0.2);
 
-                GradleExec exec = new GradleExec(moduleFile);
+                GradleExec exec = new GradleExec(moduleFile, MOESdkType.requireJavaHome(module));
 
                 exec.getArguments().add("moeNatJGen");
                 exec.getArguments().add("-Draw-binding-output");

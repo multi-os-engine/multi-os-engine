@@ -59,7 +59,7 @@ public class MOESdkPlugin {
 
         // For compatible with old Gradle plugin
         final Properties properties = ProjectUtil
-                .retrievePropertiesFromGradle(new File(ModuleUtils.getModulePath(module)), ProjectUtil.SDK_PROPERTIES_TASK);
+            .retrievePropertiesFromGradle(new File(ModuleUtils.getModulePath(module)), ProjectUtil.SDK_PROPERTIES_TASK, MOESdkType.getJavaHome(module));
 
         String sdkPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
 

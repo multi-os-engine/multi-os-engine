@@ -26,10 +26,12 @@ import org.moe.common.exec.GradleExec;
 import org.moe.common.utils.NativeUtil;
 import org.moe.idea.MOEGlobalSettings;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
+import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -48,28 +50,28 @@ public class MOEGradleRunner {
         this.runConfig = runConfig;
     }
 
-    public static GeneralCommandLine construct(Module module, String... args) {
+    public static GeneralCommandLine construct(Module module, String... args) throws IOException {
         final List<String> cmdargs = new ArrayList<String>();
 
         // Get Gradle
         File workingDir = new File(ModuleUtils.getModulePath(module));
-        GradleExec exec = new GradleExec(workingDir);
+        GradleExec exec = new GradleExec(workingDir, null);
         cmdargs.add(exec.getExecPath());
 
         for (String arg : args) {
             cmdargs.add(arg);
         }
 
-        return new GeneralCommandLine(cmdargs).withWorkDirectory(workingDir);
+        return new GeneralCommandLine(cmdargs).withWorkDirectory(workingDir).withEnvironment("JAVA_HOME", MOESdkType.requireJavaHome(module).getAbsolutePath());
     }
 
-    public GeneralCommandLine construct(boolean isDebug, boolean isLaunch) throws ExecutionException {
+    public GeneralCommandLine construct(boolean isDebug, boolean isLaunch) throws ExecutionException, IOException {
         final List<String> args = new ArrayList<String>();
 
         // Get Gradle
         Module module = runConfig.module();
         File workingDir = new File(ModuleUtils.getModulePath(module));
-        GradleExec exec = new GradleExec(workingDir);
+        GradleExec exec = new GradleExec(workingDir, null);
         args.add(exec.getExecPath());
 
         // Pass moe task
@@ -203,7 +205,7 @@ public class MOEGradleRunner {
                 throw new ExecutionException("Unknown arch type " + runConfig.archType());
         }
 
-        return new GeneralCommandLine(args).withWorkDirectory(workingDir);
+        return new GeneralCommandLine(args).withWorkDirectory(workingDir).withEnvironment("JAVA_HOME", MOESdkType.requireJavaHome(module).getAbsolutePath());
     }
 
     private static class OptionsBuilder {
