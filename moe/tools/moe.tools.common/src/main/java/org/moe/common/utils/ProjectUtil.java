@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.common.utils;
 
+import org.jetbrains.annotations.Nullable;
 import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.GradleExec;
 
@@ -29,39 +30,48 @@ public class ProjectUtil {
     /**
      * moeXcodeProperties task name.
      */
+    @Deprecated
     public static final String XCODE_PROPERTIES_TASK = "moeXcodeProperties";
     /**
      * moeSDKProperties task name.
      */
+    @Deprecated
     public static final String SDK_PROPERTIES_TASK = "moeSDKProperties";
 
     /**
      * Key: moe.xcode.project.
      */
+    @Deprecated
     public static final String XCODE_PROJECT_KEY = "moe.xcode.project";
     /**
      * Key: moe.xcode.workspace.
      */
+    @Deprecated
     public static final String XCODE_WORKSPACE_KEY = "moe.xcode.workspace";
     /**
      * Key: moe.xcode.mainTarget.
      */
+    @Deprecated
     public static final String XCODE_MAIN_TARGET_KEY = "moe.xcode.mainTarget";
     /**
      * Key: moe.xcode.testTarget.
      */
+    @Deprecated
     public static final String XCODE_TEST_TARGET_KEY = "moe.xcode.testTarget";
     /**
      * Key: moe.xcode.mainScheme.
      */
+    @Deprecated
     public static final String XCODE_MAIN_SCHEME_KEY = "moe.xcode.mainScheme";
     /**
      * Key: moe.xcode.testScheme.
      */
+    @Deprecated
     public static final String XCODE_TEST_SCHEME_KEY = "moe.xcode.testScheme";
     /**
      * Key: moe.sdk.home.
      */
+    @Deprecated
     public static final String SDK_PATH_KEY = "moe.sdk.home";
 
     /**
@@ -71,8 +81,9 @@ public class ProjectUtil {
      * @param taskName    Task to run
      * @return Parsed properties
      */
-    public static Properties retrievePropertiesFromGradle(File projectFile, String taskName) {
-        GradleExec exec = new GradleExec(projectFile, null, projectFile);
+    @Deprecated
+    public static Properties retrievePropertiesFromGradle(File projectFile, String taskName, @Nullable File javaHome) {
+        GradleExec exec = new GradleExec(projectFile, null, projectFile, javaHome);
         exec.getArguments().add(taskName);
 
         final Properties properties = new Properties();

@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.common.ios;
 
+import org.jetbrains.annotations.Nullable;
 import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.GradleExec;
 
@@ -38,14 +39,14 @@ public class Device {
      * @return List of connected iOS devices.
      * @throws IOException if an I/O error occurs
      */
-    public static List<DeviceInfo> getDevices(File projectFile) throws IOException {
+    public static List<DeviceInfo> getDevices(File projectFile, @Nullable File javaHome) throws IOException {
         List<DeviceInfo> result = new ArrayList<DeviceInfo>();
 
         if (projectFile == null) {
             return result;
         }
 
-        GradleExec exec = new GradleExec(projectFile, null, projectFile);
+        GradleExec exec = new GradleExec(projectFile, null, projectFile, javaHome);
         exec.getArguments().add("moeListDevices");
         exec.getArguments().add("-Dorg.gradle.daemon=true");
         exec.getArguments().add("-Dorg.gradle.configureondemand=true");
