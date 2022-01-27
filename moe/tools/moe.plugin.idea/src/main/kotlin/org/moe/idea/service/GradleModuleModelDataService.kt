@@ -39,7 +39,6 @@ class GradleModuleModelDataService : ModuleModelDataService<GradleModuleModel>()
                         null
                     )
                     facetModel.addFacet(facet, ExternalSystemApiUtil.toExternalSource(GradleConstants.SYSTEM_ID))
-                    facetModel.commit()
                 }
 
                 facet.gradleModuleModel = gradleModuleModel
