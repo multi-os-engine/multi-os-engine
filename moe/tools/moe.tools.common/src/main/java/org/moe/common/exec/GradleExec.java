@@ -16,10 +16,13 @@ limitations under the License.
 
 package org.moe.common.exec;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.moe.common.utils.OsUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Gradle exec.
@@ -42,18 +45,20 @@ public class GradleExec extends AbstractExec {
     /**
      * Project file.
      */
+    @NotNull
     private final File project;
+
+    @Nullable
+    private final File javaHome;
 
     /**
      * Creates a new GradleExec instance.
      *
      * @param project Project file
      */
-    public GradleExec(File project) {
-        if (project == null) {
-            throw new NullPointerException();
-        }
-        this.project = project;
+    public GradleExec(@NotNull File project, @Nullable File javaHome) {
+        this.project = Objects.requireNonNull(project);
+        this.javaHome = javaHome;
     }
 
     /**
@@ -63,12 +68,10 @@ public class GradleExec extends AbstractExec {
      * @param name       Exec name
      * @param workingDir Working directory
      */
-    public GradleExec(File project, String name, File workingDir) {
+    public GradleExec(@NotNull File project, String name, File workingDir, @Nullable File javaHome) {
         super(name, workingDir);
-        if (project == null) {
-            throw new NullPointerException();
-        }
-        this.project = project;
+        this.project = Objects.requireNonNull(project);
+        this.javaHome = javaHome;
     }
 
     @Override
@@ -87,6 +90,17 @@ public class GradleExec extends AbstractExec {
             return out;
         }
         throw new RuntimeException("Failed to locate 'gradle' executable!");
+    }
+
+    @Override
+    public ExecRunner getRunner() throws IOException {
+        ExecRunner runner = super.getRunner();
+
+        if (javaHome != null) {
+            runner.getBuilder().environment().put("JAVA_HOME", javaHome.getAbsolutePath());
+        }
+
+        return runner;
     }
 
     /**

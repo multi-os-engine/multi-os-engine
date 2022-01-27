@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.common.utils;
 
+import org.jetbrains.annotations.Nullable;
 import org.moe.common.exec.ExecOutputCollector;
 import org.moe.common.exec.GradleExec;
 
@@ -81,8 +82,8 @@ public class ProjectUtil {
      * @return Parsed properties
      */
     @Deprecated
-    public static Properties retrievePropertiesFromGradle(File projectFile, String taskName) {
-        GradleExec exec = new GradleExec(projectFile, null, projectFile);
+    public static Properties retrievePropertiesFromGradle(File projectFile, String taskName, @Nullable File javaHome) {
+        GradleExec exec = new GradleExec(projectFile, null, projectFile, javaHome);
         exec.getArguments().add(taskName);
 
         final Properties properties = new Properties();

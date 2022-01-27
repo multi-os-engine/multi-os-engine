@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.common.configuration;
 
+import org.jetbrains.annotations.Nullable;
 import org.moe.common.exec.ExecRunner;
 import org.moe.common.exec.ExecRunnerBase;
 import org.moe.common.exec.GradleExec;
@@ -117,7 +118,7 @@ public class RemoteSettings {
      * @param listener    ExecRunnerBase.ExecRunnerListener object
      * @return error message
      */
-    public static String test(File projectFile, Properties properties, ExecRunnerBase.ExecRunnerListener listener) {
+    public static String test(File projectFile, Properties properties, @Nullable File javaHome, ExecRunnerBase.ExecRunnerListener listener) {
         List<String> args = new ArrayList<String>();
 
         args.add("moeTestRemote");
@@ -125,7 +126,7 @@ public class RemoteSettings {
         getArguments("-P", properties, args);
         args.add("-s");
 
-        GradleExec exec = new GradleExec(projectFile);
+        GradleExec exec = new GradleExec(projectFile, javaHome);
         exec.getArguments().addAll(args);
         ExecRunner runner = null;
 
