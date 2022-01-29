@@ -67,6 +67,9 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
 
         setSupportsRemoteBuild(false);
 
+        // Never up-to-date as this is manual task
+        getOutputs().upToDateWhen(task -> false);
+
         final Path out = Paths.get(MoePlugin.MOE);
 
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "XcodeUpdate.log"));
