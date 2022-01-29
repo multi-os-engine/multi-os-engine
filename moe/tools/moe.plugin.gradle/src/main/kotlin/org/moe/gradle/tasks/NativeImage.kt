@@ -306,7 +306,7 @@ open class NativeImage : AbstractBaseTask() {
         }
         addConvention(CONVENTION_PROXY_CONFIG_FILES) {
             listOfNotNull(
-                    moeSDK.proxyConfigBaseFile,
+                    reflectionCollectTaskDep.proxyConfigFile,
                     project.file("dynamic-proxies.json").takeIf { it.exists() && it.isFile }
             ).toSet()
         }

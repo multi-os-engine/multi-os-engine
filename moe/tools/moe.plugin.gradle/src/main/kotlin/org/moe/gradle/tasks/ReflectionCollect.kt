@@ -80,9 +80,14 @@ open class ReflectionCollect : AbstractBaseTask() {
         @OutputFile
         get() = getOutputDir().resolve(ReflectionCollector.OUTPUT_REFLECTION)
 
+    val proxyConfigFile: File
+        @OutputFile
+        get() = getOutputDir().resolve(ReflectionCollector.OUTPUT_PROXY)
+
     override fun run() {
         // Delete output file
         FileUtils.deleteFileOrFolder(reflectionConfigFile)
+        FileUtils.deleteFileOrFolder(proxyConfigFile)
 
         // Collect platform reflection settings
         // TODO: Move this to a separate task
