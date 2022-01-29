@@ -1,7 +1,6 @@
 package org.moe.tools.classvalidator.natj
 
-import org.moe.tools.classvalidator.natj.NatJRuntime.getDescriptor
-
+import org.moe.tools.classvalidator.getDescriptor
 
 class AnnotationHelper(
     parentAnnotations: Array<out Annotation>,

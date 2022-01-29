@@ -1,7 +1,8 @@
 package org.moe.tools.classvalidator.natj
 
 import org.moe.tools.classvalidator.ClassModifier
-import org.moe.tools.classvalidator.natj.NatJRuntime.toClass
+import org.moe.tools.classvalidator.getParentImplementation
+import org.moe.tools.classvalidator.toClass
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.MethodVisitor
@@ -34,7 +35,7 @@ class AddMissingAnnotations(
             return visitor
         }
 
-        val parent = NatJRuntime.getParentImplementation(
+        val parent = getParentImplementation(
             superName, interfaces,
             className, access, name, descriptor,
             setOf(NatJRuntime.Annotations.SELECTOR_DESC),
