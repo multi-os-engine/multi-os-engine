@@ -3,7 +3,8 @@ package org.moe.tools.classvalidator.natj
 import org.moe.common.utils.classAndJarInputIterator
 import org.moe.tools.classvalidator.ChildFirstClassLoader
 import org.moe.tools.classvalidator.ContextClassLoaderHolder
-import org.moe.tools.classvalidator.natj.NatJRuntime.getDescriptor
+import org.moe.tools.classvalidator.getDescriptor
+import org.moe.tools.classvalidator.getParentImplementations
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.MethodVisitor
@@ -64,7 +65,7 @@ object ProtocolCollector {
                             return super.visitMethod(access, name, descriptor, signature, exceptions)
                         }
 
-                        val superMethods = NatJRuntime.getParentImplementations(
+                        val superMethods = getParentImplementations(
                             superName, interfaces,
                             className, access, name, descriptor,
                             setOf(NatJRuntime.Annotations.SELECTOR_DESC),

@@ -4,6 +4,7 @@ import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.internal.Streams
 import com.google.gson.stream.JsonWriter
+import org.moe.tools.classvalidator.getBinaryClassName
 import org.objectweb.asm.Type
 import java.io.File
 
@@ -183,8 +184,4 @@ class ReflectionConfig {
         val name: String,
         val parameterTypes: List<String>,
     )
-
-    companion object {
-        private fun getBinaryClassName(internalName: String): String = Type.getObjectType(internalName).className
-    }
 }

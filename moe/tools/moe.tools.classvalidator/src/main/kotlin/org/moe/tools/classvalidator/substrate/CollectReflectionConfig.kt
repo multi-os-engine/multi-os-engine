@@ -1,8 +1,9 @@
 package org.moe.tools.classvalidator.substrate
 
+import org.moe.tools.classvalidator.getDescriptor
+import org.moe.tools.classvalidator.getParentImplementations
 import org.moe.tools.classvalidator.natj.NatJRuntime
-import org.moe.tools.classvalidator.natj.NatJRuntime.getDescriptor
-import org.moe.tools.classvalidator.natj.NatJRuntime.toClass
+import org.moe.tools.classvalidator.toClass
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ConstantDynamic
@@ -130,7 +131,7 @@ class CollectReflectionConfig(
                 && !Modifier.isStatic(access)
                 && name.startsWith("call_")) {
                 // Check if this method is a Block/Function callback
-                val supers = NatJRuntime.getParentImplementations(
+                val supers = getParentImplementations(
                     superName, interfaces, this.name,
                     access, name, descriptor
                 )
