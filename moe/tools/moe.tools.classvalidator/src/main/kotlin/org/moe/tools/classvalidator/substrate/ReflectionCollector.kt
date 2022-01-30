@@ -1,10 +1,8 @@
-package org.moe.tools.classvalidator
+package org.moe.tools.classvalidator.substrate
 
 import org.moe.common.utils.classAndJarInputIterator
-import org.moe.tools.classvalidator.substrate.CollectProxyConfig
-import org.moe.tools.classvalidator.substrate.CollectReflectionConfig
-import org.moe.tools.classvalidator.substrate.ProxyConfig
-import org.moe.tools.classvalidator.substrate.ReflectionConfig
+import org.moe.tools.classvalidator.ChildFirstClassLoader
+import org.moe.tools.classvalidator.ContextClassLoaderHolder
 import org.objectweb.asm.ClassReader
 import java.io.File
 import java.nio.file.Path
