@@ -18,7 +18,7 @@ import org.moe.gradle.anns.Nullable
 import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.FileUtils
 import org.moe.gradle.utils.Mode
-import org.moe.tools.classvalidator.ReflectionCollector
+import org.moe.tools.classvalidator.substrate.ReflectionCollector
 import java.io.File
 import java.nio.file.Paths
 
