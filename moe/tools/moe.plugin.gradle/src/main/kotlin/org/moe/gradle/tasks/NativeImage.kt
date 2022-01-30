@@ -218,6 +218,10 @@ open class NativeImage : AbstractBaseTask() {
     lateinit var reflectionCollectTaskDep: ReflectionCollect
         private set
 
+    @get:Internal
+    lateinit var resourceCollectTaskDep: ResourceCollect
+        private set
+
     private lateinit var mode: Mode
     private lateinit var arch: Arch
     private lateinit var platform: MoePlatform
@@ -252,6 +256,9 @@ open class NativeImage : AbstractBaseTask() {
         val reflectionCollectTask = moePlugin.getTaskBy(ReflectionCollect::class.java, sourceSet, mode)
         reflectionCollectTaskDep = reflectionCollectTask
         dependsOn(reflectionCollectTask)
+        val resourceCollectTask = moePlugin.getTaskBy(ResourceCollect::class.java, sourceSet, mode)
+        resourceCollectTaskDep = resourceCollectTask
+        dependsOn(resourceCollectTask)
 
         val resourceTask = moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet, mode))
         dependsOn(resourceTask)
@@ -312,8 +319,9 @@ open class NativeImage : AbstractBaseTask() {
         }
         addConvention(CONVENTION_RESOURCE_CONFIG_FILES) {
             listOfNotNull(
+                resourceCollectTaskDep.getOutputFile(),
                 project.file("resource-config.json").takeIf { it.exists() && it.isFile }
-            )
+            ).toSet()
         }
         addConvention(CONVENTION_CUSTOM_OPTIONS) {
             listOfNotNull(

@@ -36,6 +36,7 @@ import org.moe.gradle.tasks.NatJGen;
 import org.moe.gradle.tasks.NativeImage;
 import org.moe.gradle.tasks.ProGuard;
 import org.moe.gradle.tasks.ReflectionCollect;
+import org.moe.gradle.tasks.ResourceCollect;
 import org.moe.gradle.tasks.ResourcePackager;
 import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
@@ -154,9 +155,11 @@ public class MoePlugin extends AbstractMoePlugin {
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(ReflectionCollect.class, "Collect reflection config.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
-                asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         ResourcePackager.addRule(this);
+        addRule(ResourceCollect.class, "Collect resource config.",
+                asList(SOURCE_SET, MODE), MoePlugin.this);
+        addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
+            asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(StartupProvider.class, "Creates the preregister.txt file.",

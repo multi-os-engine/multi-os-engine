@@ -68,7 +68,7 @@ open class ReflectionCollect : AbstractBaseTask() {
     @Input
     @Nullable
     fun getAppMainClassName(): String? {
-        return getOrConvention(appMainClassName, CONVENTION_APP_MAIN_CLASS_NAME)
+        return nullableGetOrConvention(appMainClassName, CONVENTION_APP_MAIN_CLASS_NAME)
     }
 
     @IgnoreUnused
