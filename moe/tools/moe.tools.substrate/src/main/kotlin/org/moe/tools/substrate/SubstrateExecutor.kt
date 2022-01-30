@@ -35,14 +35,6 @@ class SubstrateExecutor(
             graalVM.ensureLLVM()
         }
 
-        //If there are no resource-config files defined, the old regex search pattern is used.
-        //If there are resource-config files, only the config files are used.
-        val resourceArguments = if (config.resourceConfigFile.isEmpty()) {
-            setOf("-H:IncludeResources=.*", "-H:ExcludeResources=.*\\.class$")
-        } else{
-            config.resourceConfigFile.map { "-H:ResourceConfigurationFiles=${it.absolutePath}" }.toSet()
-        }
-
         // Run the native-image command
         SimpleExec.getExec(
                 graalVM.nativeImage,
@@ -76,8 +68,14 @@ class SubstrateExecutor(
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
                 "--no-server",
                 *config.customOptions.toTypedArray(),
+
+                // Resource configs
                 "-H:Log=registerResource:verbose",
-                *resourceArguments.toTypedArray(),
+                *config.resourceConfigFile.map {
+                    "-H:ResourceConfigurationFiles=${it.absolutePath}"
+                }.toTypedArray(),
+
+                // Reflection & JNI configs
                 *config.jniConfigFiles.map {
                     "-H:JNIConfigurationFiles=${it.absolutePath}"
                 }.toTypedArray(),
@@ -88,6 +86,7 @@ class SubstrateExecutor(
                     "-H:DynamicProxyConfigurationFiles=${it.absolutePath}"
                 }.toTypedArray(),
                 "-H:+AllowIncompleteClasspath",
+
                 "-cp",
                 config.classpath.joinToString(File.pathSeparator),
                 config.mainClassName,
