@@ -145,7 +145,6 @@ public class ProGuard extends AbstractBaseTask {
 
     @NotNull
     @Input
-    @Internal
     public Collection<String> getComposedExcludeFiles() {
         HashSet<String> result = new LinkedHashSet<>();
 
