@@ -7,16 +7,24 @@ object ResourceCollector {
 
     fun collect(
         inputFiles: Set<File>,
+        excludePatterns: Set<String>,
     ): ResourceConfig {
         val resourceConfig = ResourceConfig()
 
+        val excludes: Regex? = if (excludePatterns.isEmpty()) {
+            null
+        } else {
+            excludePatterns.joinToString("|") { "($it)" }.toRegex()
+        }
+
         inputFiles.classpathIterator { entry ->
             if (!entry.isDirectory && !entry.path.endsWith(".class")) {
-                resourceConfig.includeResource(entry.path)
+                if (excludes == null || !excludes.containsMatchIn(entry.path)) {
+                    resourceConfig.includeResource(entry.path)
+                }
             }
         }
 
         return resourceConfig
     }
-
 }
