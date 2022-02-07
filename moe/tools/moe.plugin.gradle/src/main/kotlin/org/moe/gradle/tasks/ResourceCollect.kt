@@ -60,12 +60,28 @@ open class ResourceCollect : AbstractBaseTask() {
         this.autoDetectionEnabled = enabled
     }
 
+    private var autoDetectionExcludePatterns: Set<String>? = null
+
+    @Input
+    @NotNull
+    fun getAutoDetectionExcludePatterns(): Collection<String> {
+        return getOrConvention<Set<String>>(autoDetectionExcludePatterns, CONVENTION_AUTO_DETECTION_EXCLUDE_PATTERNS)
+    }
+
+    @IgnoreUnused
+    fun setAutoDetectionExcludePatterns(excludePatterns: Collection<String>?) {
+        this.autoDetectionExcludePatterns = excludePatterns?.let { LinkedHashSet(it) }
+    }
+
     override fun run() {
         // Delete output file
         FileUtils.deleteFileOrFolder(getOutputFile())
 
         val baseCfg = if (getAutoDetectionEnabled()) {
-            ResourceCollector.collect(inputFiles = getInputFiles().toSet())
+            ResourceCollector.collect(
+                inputFiles = getInputFiles().toSet(),
+                excludePatterns = getAutoDetectionExcludePatterns().toSet(),
+            )
         } else {
             ResourceConfig()
         }
@@ -98,6 +114,7 @@ open class ResourceCollect : AbstractBaseTask() {
             ).toSet()
         }
         addConvention(CONVENTION_AUTO_DETECTION_ENABLED) { moeExtension.resources.detectionOptions.isEnabled }
+        addConvention(CONVENTION_AUTO_DETECTION_EXCLUDE_PATTERNS) { moeExtension.resources.detectionOptions.excludePatterns }
         addConvention(CONVENTION_OUTPUT_FILE) { resolvePathInBuildDir(out, "resource-config.json") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "ResourceCollect.log") }
     }
@@ -105,6 +122,7 @@ open class ResourceCollect : AbstractBaseTask() {
     companion object {
         private const val CONVENTION_INPUT_FILES = "inputFiles"
         private const val CONVENTION_AUTO_DETECTION_ENABLED = "autoDetectionEnabled"
+        private const val CONVENTION_AUTO_DETECTION_EXCLUDE_PATTERNS = "autoDetectionExcludePatterns"
         private const val CONVENTION_OUTPUT_FILE = "outputFile"
     }
 }
