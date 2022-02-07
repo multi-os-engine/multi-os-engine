@@ -2,13 +2,12 @@ package org.moe.tools.classvalidator.substrate
 
 import org.moe.common.utils.classpathIterator
 import java.io.File
-import java.nio.file.Path
 
 object ResourceCollector {
-    fun process(
+
+    fun collect(
         inputFiles: Set<File>,
-        outputFile: File,
-    ) {
+    ): ResourceConfig {
         val resourceConfig = ResourceConfig()
 
         inputFiles.classpathIterator { entry ->
@@ -17,6 +16,7 @@ object ResourceCollector {
             }
         }
 
-        resourceConfig.save(outputFile)
+        return resourceConfig
     }
+
 }
