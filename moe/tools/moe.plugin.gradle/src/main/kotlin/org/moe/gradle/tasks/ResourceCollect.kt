@@ -1,6 +1,7 @@
 package org.moe.gradle.tasks
 
 import org.gradle.api.file.ConfigurableFileCollection
+import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
@@ -11,6 +12,7 @@ import org.moe.gradle.anns.NotNull
 import org.moe.gradle.utils.FileUtils
 import org.moe.gradle.utils.Mode
 import org.moe.tools.classvalidator.substrate.ResourceCollector
+import org.moe.tools.classvalidator.substrate.ResourceConfig
 import java.io.File
 import java.nio.file.Paths
 
@@ -45,14 +47,30 @@ open class ResourceCollect : AbstractBaseTask() {
         this.outputFile = outputFile
     }
 
+    private var autoDetectionEnabled: Boolean? = null
+
+    @Input
+    @NotNull
+    fun getAutoDetectionEnabled(): Boolean {
+        return getOrConvention(autoDetectionEnabled, CONVENTION_AUTO_DETECTION_ENABLED)
+    }
+
+    @IgnoreUnused
+    fun setAutoDetectionEnabled(enabled: Boolean?) {
+        this.autoDetectionEnabled = enabled
+    }
+
     override fun run() {
         // Delete output file
         FileUtils.deleteFileOrFolder(getOutputFile())
 
-        ResourceCollector.process(
-            inputFiles = getInputFiles().toSet(),
-            outputFile = getOutputFile(),
-        )
+        val baseCfg = if (getAutoDetectionEnabled()) {
+            ResourceCollector.collect(inputFiles = getInputFiles().toSet())
+        } else {
+            ResourceConfig()
+        }
+
+        baseCfg.save(getOutputFile())
     }
 
     protected fun setupMoeTask(
@@ -79,12 +97,14 @@ open class ResourceCollect : AbstractBaseTask() {
                 resourceTask.archiveFile.get(),
             ).toSet()
         }
+        addConvention(CONVENTION_AUTO_DETECTION_ENABLED) { moeExtension.resources.detectionOptions.isEnabled }
         addConvention(CONVENTION_OUTPUT_FILE) { resolvePathInBuildDir(out, "resource-config.json") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "ResourceCollect.log") }
     }
 
     companion object {
         private const val CONVENTION_INPUT_FILES = "inputFiles"
+        private const val CONVENTION_AUTO_DETECTION_ENABLED = "autoDetectionEnabled"
         private const val CONVENTION_OUTPUT_FILE = "outputFile"
     }
 }
