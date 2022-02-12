@@ -372,7 +372,6 @@ public class MoeSDK {
             validate(DIR, path, "tools/macosx");
             validate(FIL, path, "tools/jni-config-base.json");
             validate(FIL, path, "tools/reflection-config-base.json");
-            validate(FIL, path, "tools/proxy-config-base.json");
             validate(FIL, path, "tools/proguard-full.cfg");
             validate(FIL, path, "tools/proguard.cfg");
             validate(FIL, path, "tools/proguard.jar");
@@ -421,7 +420,6 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_MACOS_SUPPORT;
     private @Nullable File MOE_SDK_JNICONFIGBASE_FILE;
     private @Nullable File MOE_SDK_REFLECTIONCONFIGBASE_FILE;
-    private @Nullable File MOE_SDK_PROXYCONFIGBASE_FILE;
     private @Nullable File MOE_SDK_PROGUARDFULL_CFG;
     private @Nullable File MOE_SDK_PROGUARD_CFG;
     private @Nullable File MOE_SDK_PROGUARD_JAR;
@@ -446,7 +444,6 @@ public class MoeSDK {
         MOE_SDK_MACOS_SUPPORT = path.resolve("tools/macosx").toFile();
         MOE_SDK_JNICONFIGBASE_FILE = path.resolve("tools/jni-config-base.json").toFile();
         MOE_SDK_REFLECTIONCONFIGBASE_FILE = path.resolve("tools/reflection-config-base.json").toFile();
-        MOE_SDK_PROXYCONFIGBASE_FILE = path.resolve("tools/proxy-config-base.json").toFile();
         MOE_SDK_PROGUARDFULL_CFG = path.resolve("tools/proguard-full.cfg").toFile();
         MOE_SDK_PROGUARD_CFG = path.resolve("tools/proguard.cfg").toFile();
         MOE_SDK_PROGUARD_JAR = path.resolve("tools/proguard.jar").toFile();
@@ -543,10 +540,6 @@ public class MoeSDK {
         return safeVariable(MOE_SDK_REFLECTIONCONFIGBASE_FILE, "MOE_SDK_REFLECTIONCONFIGBASE_FILE");
     }
 
-    @NotNull
-    public File getProxyConfigBaseFile() {
-        return safeVariable(MOE_SDK_PROXYCONFIGBASE_FILE, "MOE_SDK_PROXYCONFIGBASE_FILE");
-    }
     @NotNull
     public File getProguardFullCfg() {
         return safeVariable(MOE_SDK_PROGUARDFULL_CFG, "MOE_SDK_PROGUARDFULL_CFG");
