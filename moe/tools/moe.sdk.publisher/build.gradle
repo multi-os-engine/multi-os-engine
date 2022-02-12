@@ -135,7 +135,6 @@ def getSDKCopySpec() {
             from files(rootProject.external.moe_core.out.proguard_cfg.parentFile) {
                 include rootProject.external.moe_core.out.jni_config_base_json.name
                 include rootProject.external.moe_core.out.reflection_config_base_json.name
-                include rootProject.external.moe_core.out.proxy_config_base_json.name
                 include rootProject.external.moe_core.out.proguard_full_cfg.name
                 include rootProject.external.moe_core.out.proguard_cfg.name
             }
