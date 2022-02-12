@@ -90,7 +90,6 @@ open class ReflectionCollect : AbstractBaseTask() {
         FileUtils.deleteFileOrFolder(proxyConfigFile)
 
         // Collect platform reflection settings
-        // TODO: Move this to a separate task
 //        val libraryJars: MutableSet<File> = linkedSetOf(moeSDK.coreJar)
 //        moeExtension.platformJar?.let {
 //            libraryJars.add(it)
