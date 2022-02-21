@@ -9,6 +9,14 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.5.0<br>
+      - Allow specifying architecture(s) to build when launching the app<br>
+      - Improve performance when using MOE Gradle plugin 1.9+<br>
+      - Add support of module per source set<br>
+      - Improve support when multiple JDKs are installed<br>
+      - Update MOE plugin to 1.9.+ when creating new MOE project<br>
+      - Improve run configuration management<br>
+      <br>
       1.4.12<br>
       - Fix NPE in Xcode project editor<br>
       - Improvements to the Xcode project editor<br>

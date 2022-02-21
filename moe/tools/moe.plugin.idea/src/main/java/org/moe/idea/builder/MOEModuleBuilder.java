@@ -265,7 +265,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         String packageName = moduleProperties.getPackageName();
 
         projectComposer.setTargetDirectory(new File(moduleProperties.getProjectRoot()))
-        .setMoeVersion("1.7.+")
+        .setMoeVersion("1.9.+")
         .setProjectName(moduleProperties.getProjectName())
         .setOrganizationName(moduleProperties.getOrganizationName())
         .setOrganizationID(moduleProperties.getCompanyIdentifier())
