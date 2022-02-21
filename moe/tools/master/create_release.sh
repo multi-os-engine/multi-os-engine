@@ -49,6 +49,7 @@ git --git-dir "$MANIFESTS_DIR/.git" --work-tree="$MANIFESTS_DIR" checkout "$BRAN
 sed -E -i '' "s/(<default .*revision=\").*(\" +\\/>)/\\1refs\\/tags\\/$TAG_NAME\\2/" "$MANIFESTS_DIR/default.xml"
 git --git-dir "$MANIFESTS_DIR/.git" --work-tree="$MANIFESTS_DIR" add default.xml
 git --git-dir "$MANIFESTS_DIR/.git" --work-tree="$MANIFESTS_DIR" commit -m "Create release $VERSION"
+git --git-dir "$MANIFESTS_DIR/.git" --work-tree="$MANIFESTS_DIR" tag -a "$TAG_NAME" -m "Release $TAG_NAME"
 
 echo ""
 echo "Release created! Push the release to remote with the following command:"
