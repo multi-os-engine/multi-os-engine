@@ -21,7 +21,7 @@ buildscript {
 }
 
 group 'org.multi-os-engine'
-version '1.9.0'
+version '1.10.0-SNAPSHOT'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
