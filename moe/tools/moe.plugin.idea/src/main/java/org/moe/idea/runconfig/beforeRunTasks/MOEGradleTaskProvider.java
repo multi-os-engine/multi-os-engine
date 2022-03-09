@@ -38,7 +38,7 @@ import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.logger.LoggerFactory;
 import res.MOEIcons;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -125,7 +125,7 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
 
             gradleRunner.addAfterTask(afterTask);
 
-            SwingUtilities.invokeAndWait(new Runnable() {
+            ApplicationManager.getApplication().invokeAndWait(new Runnable() {
                 @Override
                 public void run() {
                     if (ApplicationManager.getApplication().isDispatchThread()) {
