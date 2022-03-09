@@ -24,6 +24,7 @@ import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Key;
 import com.intellij.util.concurrency.Semaphore;
@@ -129,12 +130,14 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
                 public void run() {
                     if (ApplicationManager.getApplication().isDispatchThread()) {
                         showDialog(runConfig);
+                        FileDocumentManager.getInstance().saveAllDocuments();
                         gradleRunner.queue();
                     } else {
                         UIUtil.invokeAndWaitIfNeeded(new Runnable() {
                             @Override
                             public void run() {
                                 showDialog(runConfig);
+                                FileDocumentManager.getInstance().saveAllDocuments();
                                 gradleRunner.queue();
                             }
                         });
