@@ -9,6 +9,8 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.5.1<br>
+      - Fix issue that modified files are not saved before building the project<br>
       1.5.0<br>
       - Allow specifying architecture(s) to build when launching the app<br>
       - Improve performance when using MOE Gradle plugin 1.9+<br>
