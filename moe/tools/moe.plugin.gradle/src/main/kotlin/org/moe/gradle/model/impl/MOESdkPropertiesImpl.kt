@@ -8,4 +8,5 @@ data class MOESdkPropertiesImpl(
     override val coreJar: String,
     override val platformJar: String?,
     override val junitJar: String,
+    override val graalHome: String?,
 ) : MOESdkProperties, Serializable

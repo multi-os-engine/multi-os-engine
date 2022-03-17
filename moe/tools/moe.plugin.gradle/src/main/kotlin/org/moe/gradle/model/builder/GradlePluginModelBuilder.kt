@@ -4,6 +4,7 @@ import org.gradle.api.Project
 import org.gradle.tooling.provider.model.ToolingModelBuilder
 import org.moe.gradle.AbstractMoeExtension
 import org.moe.gradle.MoeExtension
+import org.moe.gradle.MoePlugin
 import org.moe.gradle.model.GradlePluginModel
 import org.moe.gradle.model.impl.GradlePluginModelImpl
 import org.moe.gradle.model.impl.MOESdkPropertiesImpl
@@ -25,6 +26,11 @@ class GradlePluginModelBuilder : ToolingModelBuilder {
                 coreJar = sdk.coreJar.absolutePath,
                 platformJar = ext.platformJar?.absolutePath,
                 junitJar = sdk.getiOSJUnitJar().absolutePath,
+                graalHome = if (ext.plugin is MoePlugin) {
+                    ext.plugin.graalVM.home.toAbsolutePath().toString()
+                } else {
+                    null
+                }
             ),
             xcodeProperties = if (ext is MoeExtension) {
                 val xcode = ext.xcode
