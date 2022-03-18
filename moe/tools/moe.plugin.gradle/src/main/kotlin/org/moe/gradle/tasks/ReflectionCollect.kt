@@ -18,7 +18,9 @@ import org.moe.gradle.anns.Nullable
 import org.moe.gradle.options.ProGuardOptions
 import org.moe.gradle.utils.FileUtils
 import org.moe.gradle.utils.Mode
+import org.moe.tools.classvalidator.substrate.ProxyConfig
 import org.moe.tools.classvalidator.substrate.ReflectionCollector
+import org.moe.tools.substrate.GraalVM
 import java.io.File
 import java.nio.file.Paths
 
@@ -84,6 +86,10 @@ open class ReflectionCollect : AbstractBaseTask() {
         @OutputFile
         get() = getOutputDir().resolve(ReflectionCollector.OUTPUT_PROXY)
 
+    val graalVMVersion: GraalVM.GraalVMVersion
+        @Input
+        get() = moePlugin.graalVM.version.vmVersion
+
     override fun run() {
         // Delete output file
         FileUtils.deleteFileOrFolder(reflectionConfigFile)
@@ -120,6 +126,11 @@ open class ReflectionCollect : AbstractBaseTask() {
             classpath = getClasspathFiles().toSet()
                 // Add input to classpath
                 + getInputFiles().toSet(),
+            proxyConfigVersion = if (graalVMVersion < GraalVM.GraalVMVersion(22)) {
+                ProxyConfig.FileVersion.Pre22
+            } else {
+                ProxyConfig.FileVersion._22
+            }
         )
     }
 
