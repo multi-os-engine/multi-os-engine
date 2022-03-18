@@ -297,6 +297,6 @@ class GraalVM(
         private val MIN_GRAALVM_VERSION = GraalVMVersion(21, 3, 0, 0)
 
         /** Latest GraalVM version that has been tested with */
-        private val MAX_GRAALVM_VERSION = GraalVMVersion(21, 3, 0, 0)
+        private val MAX_GRAALVM_VERSION = GraalVMVersion(22, 0, 0, 2)
     }
 }
