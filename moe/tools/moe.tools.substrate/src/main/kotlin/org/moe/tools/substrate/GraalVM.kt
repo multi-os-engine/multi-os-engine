@@ -159,14 +159,14 @@ class GraalVM(
     data class Version(
             val jdkVersion: JDKVersion,
             val vmVersion: GraalVMVersion,
-    )
+    ): java.io.Serializable
 
     data class JDKVersion(
             val feature: Int,
             val interim: Int,
             val update: Int,
             val patch: Int
-    ): Comparable<JDKVersion> {
+    ): Comparable<JDKVersion>, java.io.Serializable {
 
         override fun compareTo(other: JDKVersion): Int = compareValuesBy(this, other,
             { it.feature },
@@ -248,10 +248,11 @@ class GraalVM(
 
     data class GraalVMVersion(
             val year: Int,
-            val feature: Int,
-            val patch: Int,
-            val bugfix: Int,
-    ): Comparable<GraalVMVersion> {
+            val feature: Int = 0,
+            val patch: Int = 0,
+            val bugfix: Int = 0,
+    ): Comparable<GraalVMVersion>, java.io.Serializable {
+
         override fun compareTo(other: GraalVMVersion): Int = compareValuesBy(this, other,
             { it.year },
             { it.feature },
