@@ -1,6 +1,8 @@
 package org.moe.tools.classvalidator.substrate
 
 import com.google.gson.JsonArray
+import com.google.gson.JsonElement
+import com.google.gson.JsonObject
 import com.google.gson.internal.Streams
 import com.google.gson.stream.JsonWriter
 import org.moe.tools.classvalidator.getBinaryClassName
@@ -17,21 +19,17 @@ class ProxyConfig {
         }
     }
 
-    fun save(filePath: File) {
-        val arr = JsonArray()
+    fun save(
+        filePath: File,
+        version: FileVersion
+    ) {
 
-        proxies.values.forEach { proxy ->
-            val p = JsonArray()
-
-            proxy.interfaces.forEach { p.add(it) }
-
-            arr.add(p)
-        }
+        val v = version.toJson(this)
 
         filePath.printWriter().use {
             val jsonWriter = JsonWriter(it)
             jsonWriter.setIndent("    ")
-            Streams.write(arr, jsonWriter)
+            Streams.write(v, jsonWriter)
         }
     }
 
@@ -42,4 +40,66 @@ class ProxyConfig {
         //   the order of the proxy class's interfaces becomes significant.
         val interfaces: List<String>,
     )
+
+    /**
+     * GraalVM changed proxy config file format.
+     * https://github.com/multi-os-engine/multi-os-engine/issues/163
+     */
+    sealed class FileVersion {
+        abstract fun toJson(f: ProxyConfig): JsonElement
+
+        object Pre22 : FileVersion() {
+            /**
+             * ```json
+             * [
+             *     ["java.lang.AutoCloseable", "java.util.Comparator"],
+             *     ["java.util.Comparator"],
+             *     ["java.util.List"]
+             * ]
+             * ```
+             */
+            override fun toJson(f: ProxyConfig): JsonElement {
+                val arr = JsonArray()
+
+                f.proxies.values.forEach { proxy ->
+                    val p = JsonArray()
+
+                    proxy.interfaces.forEach { p.add(it) }
+
+                    arr.add(p)
+                }
+
+                return arr
+            }
+        }
+
+        object _22 : FileVersion() {
+
+            /**
+             * ```json
+             * [
+             *  { "interfaces": [ "java.lang.AutoCloseable", "java.util.Comparator" ] },
+             *  { "interfaces": [ "java.util.Comparator" ] },
+             *  { "interfaces": [ "java.util.List" ] }
+             * ]
+             * ```
+             */
+            override fun toJson(f: ProxyConfig): JsonElement {
+                val arr = JsonArray()
+
+                f.proxies.values.forEach { proxy ->
+                    val p = JsonArray()
+
+                    proxy.interfaces.forEach { p.add(it) }
+
+                    val o = JsonObject()
+                    o.add("interfaces", p)
+
+                    arr.add(o)
+                }
+
+                return arr
+            }
+        }
+    }
 }

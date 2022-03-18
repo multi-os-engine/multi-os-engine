@@ -13,6 +13,7 @@ object ReflectionCollector {
         inputFiles: Set<File>,
         outputDir: Path,
         classpath: Set<File>,
+        proxyConfigVersion: ProxyConfig.FileVersion
     ) {
         ContextClassLoaderHolder(
             ChildFirstClassLoader(classpath.map { it.toURI().toURL() }.toTypedArray())
@@ -36,7 +37,7 @@ object ReflectionCollector {
             }
 
             reflectionConfig.save(outputDir.resolve(OUTPUT_REFLECTION).toFile())
-            proxyConfig.save(outputDir.resolve(OUTPUT_PROXY).toFile())
+            proxyConfig.save(filePath = outputDir.resolve(OUTPUT_PROXY).toFile(), version = proxyConfigVersion)
         }
 
     }
