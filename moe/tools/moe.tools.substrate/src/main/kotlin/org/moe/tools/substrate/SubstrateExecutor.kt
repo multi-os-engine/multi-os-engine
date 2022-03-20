@@ -70,7 +70,7 @@ class SubstrateExecutor(
                 *config.customOptions.toTypedArray(),
 
                 // Resource configs
-                "-H:Log=registerResource:verbose",
+                // "-H:Log=registerResource:verbose",
                 *config.resourceConfigFile.map {
                     "-H:ResourceConfigurationFiles=${it.absolutePath}"
                 }.toTypedArray(),
