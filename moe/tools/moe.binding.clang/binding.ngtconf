@@ -459,7 +459,8 @@
                     "options": [
                       "reference",
                       "array"
-                    ]
+                    ],
+                      "use": "array"
                   }
                 }
               }
@@ -588,7 +589,8 @@
                     "options": [
                       "reference",
                       "array"
-                    ]
+                    ],
+                       "use": "array"
                   }
                 }
               }
