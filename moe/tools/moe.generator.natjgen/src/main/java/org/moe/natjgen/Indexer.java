@@ -555,7 +555,7 @@ public class Indexer {
                 if (cat_manager == null) {
                     cat_manager = new ObjCExternalCategoryManager(this, name_fq, cls_manager);
                     cat_manager.setLibraryName(unit.getFramework());
-                    cat_manager.setComment(ClangUtil.getComment(container));
+                    cat_manager.setComment(ClangUtil.getComment(container, configuration.getPlatform()));
                     generator.put(name_fq, cat_manager);
                 }
                 return cat_manager;
