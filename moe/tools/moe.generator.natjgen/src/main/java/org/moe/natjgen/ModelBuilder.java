@@ -333,9 +333,6 @@ class ModelBuilder extends AbstractModelEditor {
         final ObjCMethod getter = new ObjCMethod(getter_info.cursor().toString(), isStatic, new Type(type, memModel), 0,
                 ObjCMethodKind.PROPERTY_GETTER, false, manager);
         getter.close();
-        if (getter.getJavaName().equals("prop_1")) {
-            System.out.println("jaa");
-        }
         getter.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
         getter.setPropertyName(name);
         getter.setAttribute(attrInfo);
