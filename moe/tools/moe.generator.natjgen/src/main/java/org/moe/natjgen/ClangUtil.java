@@ -388,21 +388,18 @@ public final class ClangUtil {
         String since = getSinceVersion(decl, platform);
         String sinceDeprecated = getDeprecatedVersion(decl, platform);
         String deprecatedMessage = getDeprecatedMessage(decl, platform);
+        String returnString = "";
         try {
             CXString s = clang_Cursor_getRawCommentText(decl);
             String rawComment = s == null ? null : s.getCString();
             if (rawComment != null) {
-//                System.out.println(rawComment);
+                // Add a extra newline if a comment is available
                 if (since != null || sinceDeprecated != null || deprecatedMessage != null) rawComment += "\n";
-                if (since != null) rawComment += "\nAPI-Since: " + since;
-                if (sinceDeprecated != null) rawComment += "\nDeprecated-Since: " + sinceDeprecated;
-                if (deprecatedMessage != null) rawComment += "\nDeprecated-Message: " + deprecatedMessage;
-                return rawComment;
+                returnString = rawComment;
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        String returnString = "";
         if (since != null) returnString += "\nAPI-Since: " + since;
         if (sinceDeprecated != null) returnString += "\nDeprecated-Since: " + sinceDeprecated;
         if (deprecatedMessage != null) returnString += "\nDeprecated-Message: " + deprecatedMessage;
