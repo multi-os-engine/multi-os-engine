@@ -82,9 +82,9 @@ class ModelBuilder extends AbstractModelEditor {
                 supername, clang_Cursor_getObjCRuntimeName(declCursor).toString());
         manager.setExternalUnit(unit.handlingExternal());
         manager.setLibraryName(unit.getFramework());
-        manager.setDeprecated(ClangUtil.isDeprecated(declCursor));
+        manager.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
         manager.setHybridClass(unit.generateHybridClass());
-        manager.setComment(ClangUtil.getComment(declCursor));
+        manager.setComment(ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform()));
 
         boolean typeParamsFailed = false;
         int numOLG = clang.clang_Cursor_getNumObjCGenericParams(declCursor);
@@ -206,8 +206,8 @@ class ModelBuilder extends AbstractModelEditor {
                 clang_Cursor_getObjCRuntimeName(declCursor).toString());
         manager.setExternalUnit(unit.handlingExternal());
         manager.setLibraryName(unit.getFramework());
-        manager.setDeprecated(ClangUtil.isDeprecated(declCursor));
-        manager.setComment(ClangUtil.getComment(declCursor));
+        manager.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
+        manager.setComment(ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform()));
 
         // Add protocols
         final CXIdxObjCProtocolRefListInfo info = decl.getObjCProtocolRefListInfo();
@@ -272,9 +272,9 @@ class ModelBuilder extends AbstractModelEditor {
             method.getArguments().add(new CalleeArgument(name, new Type(type, memModel, argCursor)));
         }
         method.close();
-        method.setDeprecated(ClangUtil.isDeprecated(declCursor));
+        method.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
         method.setAttribute(attrInfo);
-        method.setComment(ClangUtil.getComment(declCursor));
+        method.setComment(ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform()));
 
         // Skip if needed
         if (unit.handlingExternal()) {
@@ -327,13 +327,13 @@ class ModelBuilder extends AbstractModelEditor {
         final int propertyFlags = clang_Cursor_getObjCPropertyAttributes(declCursor, 0);
         final boolean isStatic = (propertyFlags & CXObjCPropertyAttrKind.CXObjCPropertyAttr_class) > 0;
 
-        final String comment = ClangUtil.getComment(declCursor);
+        final String comment = ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform());
 
         // Create getter
         final ObjCMethod getter = new ObjCMethod(getter_info.cursor().toString(), isStatic, new Type(type, memModel), 0,
                 ObjCMethodKind.PROPERTY_GETTER, false, manager);
         getter.close();
-        getter.setDeprecated(ClangUtil.isDeprecated(declCursor));
+        getter.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
         getter.setPropertyName(name);
         getter.setAttribute(attrInfo);
         getter.setPropertyFlags(propertyFlags);
@@ -353,7 +353,7 @@ class ModelBuilder extends AbstractModelEditor {
                     ObjCMethodKind.PROPERTY_SETTER, false, manager);
             setter.getArguments().add(new CalleeArgument("value", new Type(type, memModel)));
             setter.close();
-            setter.setDeprecated(ClangUtil.isDeprecated(declCursor));
+            setter.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
             setter.setPropertyName(name);
             setter.setAttribute(attrInfo);
             setter.setPropertyFlags(propertyFlags);
@@ -405,7 +405,7 @@ class ModelBuilder extends AbstractModelEditor {
                 decl.entityInfo().USR());
         manager.setExternalUnit(unit.handlingExternal());
         manager.setAlignment(decl.cursor().getCursorType().getAlignOf());
-        manager.setDeprecated(ClangUtil.isDeprecated(decl.cursor()));
+        manager.setDeprecated(ClangUtil.isDeprecated(decl.cursor(), indexer.getConfiguration().getPlatform()));
         getGenerator().put(decl.entityInfo().USR(), manager);
     }
 
@@ -423,8 +423,8 @@ class ModelBuilder extends AbstractModelEditor {
         if (fieldname != null) {
             final CStructField field = new CStructField(fieldname, new Type(decl.cursor().getCursorType(), memModel),
                     decl.cursor().isBitField());
-            field.setDeprecated(ClangUtil.isDeprecated(decl.cursor()));
-            field.setComment(ClangUtil.getComment(decl.cursor()));
+            field.setDeprecated(ClangUtil.isDeprecated(decl.cursor(), indexer.getConfiguration().getPlatform()));
+            field.setComment(ClangUtil.getComment(decl.cursor(), indexer.getConfiguration().getPlatform()));
             if (field.getConstantArraySize() > 0) {
                 struct.getFields().add(field);
             }
@@ -459,8 +459,8 @@ class ModelBuilder extends AbstractModelEditor {
         if (getGenerator().getEnum(unitKey) == null) {
             CEnumManager manager = new CEnumManager(indexer, unit.getFQName(), unit.getOriginalName(), unit.getPath());
             manager.setExternalUnit(unit.handlingExternal());
-            manager.setDeprecated(ClangUtil.isDeprecated(decl.cursor()));
-            manager.setComment(ClangUtil.getComment(decl.cursor()));
+            manager.setDeprecated(ClangUtil.isDeprecated(decl.cursor(), indexer.getConfiguration().getPlatform()));
+            manager.setComment(ClangUtil.getComment(decl.cursor(), indexer.getConfiguration().getPlatform()));
             getGenerator().put(unitKey, manager);
         }
     }
@@ -502,8 +502,8 @@ class ModelBuilder extends AbstractModelEditor {
         if (manager != null) {
             ConstantValue constantValue = ConstantValue.fromSignExtendedValue(const_type, const_value);
             CEnumConstant constant = new CEnumConstant(const_name, constantValue);
-            constant.setDeprecated(ClangUtil.isDeprecated(declCursor));
-            constant.setComment(ClangUtil.getComment(declCursor));
+            constant.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
+            constant.setComment(ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform()));
 
             manager.getConstants().add(constant);
         } else {
@@ -578,8 +578,8 @@ class ModelBuilder extends AbstractModelEditor {
             function.getArguments().add(new CalleeArgument(name, new Type(type, memModel, argCursor)));
         }
         function.close();
-        function.setDeprecated(ClangUtil.isDeprecated(declCursor));
-        function.setComment(ClangUtil.getComment(declCursor));
+        function.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
+        function.setComment(ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform()));
 
         // Add function to manager
         final CManager manager = getGenerator().getCManager(indexer, unit);
@@ -640,8 +640,8 @@ class ModelBuilder extends AbstractModelEditor {
             }
             variable.setValue(ConstantValue.fromRawValue(variable.getType(), val.getValue()));
         }
-        variable.setDeprecated(ClangUtil.isDeprecated(declCursor));
-        variable.setComment(ClangUtil.getComment(declCursor));
+        variable.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
+        variable.setComment(ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform()));
 
         // Add variable to manager
         final CManager manager = getGenerator().getCManager(indexer, unit);
