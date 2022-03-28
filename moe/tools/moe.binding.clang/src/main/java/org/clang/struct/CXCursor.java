@@ -91,12 +91,13 @@ public final class CXCursor extends StructObject {
     }
 
     public CXPlatformAvailability[] getCursorPlatformAvailabilities() {
-        // I identified 5 different platforms, just for safety we fetch a maximum of 6
-        int size = 6;
+        // Identify the number of platforms
+        int size = clang.clang_getCursorPlatformAvailability(this, null, null, null, null, null, 0);
+
         Ptr<CXPlatformAvailability> availabilityPtr = PtrFactory.newStructArray(CXPlatformAvailability.class, size);
-        int i = clang.clang_getCursorPlatformAvailability(this, null, null, null, null, availabilityPtr, size);
-        CXPlatformAvailability[] availabilities = new CXPlatformAvailability[i];
-        availabilityPtr.copyTo(availabilities, i);
+        clang.clang_getCursorPlatformAvailability(this, null, null, null, null, availabilityPtr, size);
+        CXPlatformAvailability[] availabilities = new CXPlatformAvailability[size];
+        availabilityPtr.copyTo(availabilities, size);
         return availabilities;
     }
 
