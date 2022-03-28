@@ -24,6 +24,8 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.moe.natj.general.ptr.Ptr;
+import org.moe.natj.general.ptr.impl.PtrFactory;
 
 @Generated
 @Structure()
@@ -86,6 +88,17 @@ public final class CXCursor extends StructObject {
     /* Comfort java methods */
     public CXSourceLocation getCursorLocation() {
         return clang.clang_getCursorLocation(this);
+    }
+
+    public CXPlatformAvailability[] getCursorPlatformAvailabilities() {
+        // Identify the number of platforms
+        int size = clang.clang_getCursorPlatformAvailability(this, null, null, null, null, null, 0);
+
+        Ptr<CXPlatformAvailability> availabilityPtr = PtrFactory.newStructArray(CXPlatformAvailability.class, size);
+        clang.clang_getCursorPlatformAvailability(this, null, null, null, null, availabilityPtr, size);
+        CXPlatformAvailability[] availabilities = new CXPlatformAvailability[size];
+        availabilityPtr.copyTo(availabilities, size);
+        return availabilities;
     }
 
     public int getCursorAvailability() {
