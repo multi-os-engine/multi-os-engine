@@ -28,6 +28,7 @@ import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.tasks.AbstractBaseTask;
+import org.moe.gradle.tasks.Desugar;
 import org.moe.gradle.tasks.Dex;
 import org.moe.gradle.tasks.Dex2Oat;
 import org.moe.gradle.tasks.ClassValidate;
@@ -136,6 +137,8 @@ public class MoePlugin extends AbstractMoePlugin {
 
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
+                asList(SOURCE_SET, MODE), MoePlugin.this);
+        addRule(Desugar.class, "Creates a desugared jar.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(ClassValidate.class, "Validate classes.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);

@@ -74,7 +74,7 @@ open class ClassValidate : AbstractBaseTask() {
     }
 
     @get:Internal
-    lateinit var proGuardTaskDep: ProGuard
+    lateinit var desugarTaskDep: Desugar
         private set
 
     protected fun setupMoeTask(
@@ -89,13 +89,13 @@ open class ClassValidate : AbstractBaseTask() {
         description = "Validate classes (sourceset: ${sourceSet.name}, mode: ${mode.name})."
 
         // Add dependencies
-        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet, mode)
-        proGuardTaskDep = proGuardTask
-        dependsOn(proGuardTask)
+        val desugarTask = moePlugin.getTaskBy(Desugar::class.java, sourceSet, mode)
+        desugarTaskDep = desugarTask
+        dependsOn(desugarTask)
 
         // Update convention mapping
-        addConvention(CONVENTION_INPUT_FILES) { setOf(proGuardTask.outJar) }
-        addConvention(CONVENTION_CLASSPATH_FILES) { setOf(proGuardTask.libraryJars) }
+        addConvention(CONVENTION_INPUT_FILES) { setOf(desugarTask.getOutJar()) }
+        addConvention(CONVENTION_CLASSPATH_FILES) { setOf(desugarTask.getLibraryJars()) }
         addConvention(CONVENTION_OUTPUT_DIR) { resolvePathInBuildDir(out, "output") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "ClassValidate.log") }
     }

@@ -107,7 +107,9 @@ public class ResourcePackager {
             switch (ext.proguard.getLevelRaw()) {
                 case ProGuardOptions.LEVEL_APP:
                     resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
-                    resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
+                    if (ext.getPlatformJar() != null){
+                        resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
+                    }
                     break;
                 case ProGuardOptions.LEVEL_PLATFORM:
                     resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
