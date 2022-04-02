@@ -3,8 +3,6 @@ package org.moe.tools.classvalidator
 import org.moe.common.utils.classAndJarInputIterator
 import org.moe.tools.classvalidator.natj.AddMissingAnnotations
 import org.moe.tools.classvalidator.natj.AddMissingNatJRegister
-import org.moe.tools.classvalidator.substrate.CollectReflectionConfig
-import org.moe.tools.classvalidator.substrate.ReflectionConfig
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
@@ -39,8 +37,13 @@ object ClassValidator {
     private inline fun processClass(reader: ClassReader, chain: (ClassVisitor) -> ClassVisitor): ByteArray {
         val writer = ClassWriter(ClassWriter.COMPUTE_MAXS)
 
-        val header = chain(writer)
-        reader.accept(header, 0)
+        if (reader.className.startsWith("java/")) {
+            // We don't want to process classes from java.*
+            reader.accept(writer, 0)
+        } else {
+            val header = chain(writer)
+            reader.accept(header, 0)
+        }
 
         return writer.toByteArray()
     }
