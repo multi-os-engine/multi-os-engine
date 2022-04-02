@@ -225,6 +225,7 @@ task coreJar(type: Jar, dependsOn: jarjaredCoreBaseJar) {
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
+    includeEmptyDirs false
 }
 
 task coreSourcesJar(type: Jar, dependsOn: compileCoreJava) {
@@ -235,6 +236,7 @@ task coreSourcesJar(type: Jar, dependsOn: compileCoreJava) {
     from sourceSets.core.allJava
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
+    includeEmptyDirs false
 }
 
 def javaDocTitle = "moe.ios.core API"
