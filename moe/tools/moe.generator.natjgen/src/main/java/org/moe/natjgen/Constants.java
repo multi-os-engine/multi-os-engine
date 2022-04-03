@@ -19,6 +19,7 @@ package org.moe.natjgen;
 public final class Constants {
 
     private static final String NatJPackage = "org.moe.natj";
+    private static final String JetbrainsPackage = "org.jetbrains.annotations";
 
     private static final String GeneralPackage = NatJPackage + ".general";
     private static final String CPackage = NatJPackage + ".c";
@@ -228,6 +229,8 @@ public final class Constants {
     public static final String ObjCProtocolSourceNameAnnotation = "ObjCProtocolSourceName";
     public static final String ProtocolClassMethodAnnotation = "ProtocolClassMethod";
     public static final String SelectorAnnotation = "Selector";
+    public static final String NotNullAnnotation = "NotNull";
+    public static final String NullableAnnotation = "Nullable";
     public static final String XIBAnnotation = "XIB";
 
     public static final String CategoryClassMethodAnnotationFQ =
@@ -253,6 +256,8 @@ public final class Constants {
     public static final String ProtocolClassMethodAnnotationFQ =
             ObjCAnnotationPackage + "." + ProtocolClassMethodAnnotation;
     public static final String SelectorAnnotationFQ = ObjCAnnotationPackage + "." + SelectorAnnotation;
+    public static final String NotNullFQ = JetbrainsPackage + "." + NotNullAnnotation;
+    public static final String NullableFQ = JetbrainsPackage + "." + NullableAnnotation;
     public static final String XIBAnnotationFQ = ObjCAnnotationPackage + "." + XIBAnnotation;
 
     public static final String ObjCCallbackMapper = "ObjCCallbackMapper";

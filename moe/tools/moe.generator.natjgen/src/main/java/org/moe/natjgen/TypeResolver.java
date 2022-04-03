@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.natjgen;
 
+import org.clang.enums.CXTypeNullabilityKind;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ChildPropertyDescriptor;
@@ -199,6 +200,16 @@ public class TypeResolver extends AbstractASTBase {
     }
 
     private void _R() throws GeneratorException {
+        if (type.getNullableKind() == CXTypeNullabilityKind.Nullable || type.getNullableKind() == CXTypeNullabilityKind.NullableResult) {
+            if (modifiers != null) {
+                modifiers.setNullable();
+            }
+        }
+        if (type.getNullableKind() == CXTypeNullabilityKind.NonNull) {
+            if (modifiers != null) {
+                modifiers.setNotNull();
+            }
+        }
         Type root = type.getPonierRootType();
         if (root.getKind() == Type.FullyQualified) {
             _R_FullyQualified();
