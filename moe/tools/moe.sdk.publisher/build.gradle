@@ -159,11 +159,11 @@ def getSDKCopySpec() {
     }
 }
 
-task sdk(type: Zip) {
+task sdk(type: Zip, dependsOn: buildDeps) {
     with getSDKCopySpec()
 }
 
-task devsdk(type: Copy) {
+task devsdk(type: Copy, dependsOn: buildDeps) {
     destinationDir = file("$buildDir/dev-sdk")
     with getSDKCopySpec()
 }
