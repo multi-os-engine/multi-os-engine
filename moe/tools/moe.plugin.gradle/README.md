@@ -180,6 +180,9 @@ moe {
         // whether code obfuscation is enabled. Ignored when `baseCfgFile` is specified. Default to `false`
         obfuscationEnabled = false
 
+        // whether serialization support is enabled. Ignored when `baseCfgFile` is specified. Default to `false`
+        serializationSupport = false
+      
         // exclude files from `-injars` config that will be processed by proguard
         excludeFiles = [
                 'META-INF/*.SF',
