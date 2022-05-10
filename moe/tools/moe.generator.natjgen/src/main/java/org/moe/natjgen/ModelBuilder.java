@@ -23,6 +23,7 @@ import org.clang.enums.CXIdxObjCContainerKind;
 import org.clang.enums.CXLinkageKind;
 import org.clang.enums.CXObjCPropertyAttrKind;
 import org.clang.enums.CXTypeKind;
+import org.clang.opaque.CXTranslationUnit;
 import org.clang.struct.CXCursor;
 import org.clang.struct.CXIdxDeclInfo;
 import org.clang.struct.CXIdxEntityInfo;
@@ -30,17 +31,22 @@ import org.clang.struct.CXIdxObjCCategoryDeclInfo;
 import org.clang.struct.CXIdxObjCInterfaceDeclInfo;
 import org.clang.struct.CXIdxObjCPropertyDeclInfo;
 import org.clang.struct.CXIdxObjCProtocolRefListInfo;
+import org.clang.struct.CXSourceRange;
+import org.clang.struct.CXString;
+import org.clang.struct.CXToken;
 import org.clang.struct.CXType;
+import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.LongPtr;
+import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.moe.natjgen.Configuration.Unit;
 
+import javax.lang.model.SourceVersion;
 import java.util.ArrayList;
 
-import static org.clang.c.clang.clang_Cursor_getObjCPropertyAttributes;
-import static org.clang.c.clang.clang_Cursor_getObjCRuntimeName;
-import static org.clang.c.clang.clang_getFileName;
+import static org.clang.c.clang.*;
+import static org.clang.c.clang.clang_getTokenSpelling;
 
 class ModelBuilder extends AbstractModelEditor {
 
@@ -705,5 +711,89 @@ class ModelBuilder extends AbstractModelEditor {
             manager.setExternalUnit(unit.handlingExternal());
             getGenerator().put(unit.getOriginalName(), manager);
         }
+    }
+
+    @Override
+    public void processMacro(final CXIdxDeclInfo decl) {
+        Unit unit;
+        try {
+            // Get unit
+            unit = configuration.getUnit(decl);
+        }catch (IllegalStateException e) {
+            return;
+        }
+        if (unit.handlingDisabled()) {
+            return;
+        }
+
+        // Skip generation if needed
+        if (unit.handlingExternal()) {
+            return;
+        }
+
+        // Check availability
+        final CXCursor declCursor = decl.cursor();
+        if (!ClangUtil.isAvailable(declCursor)) {
+            statLog().log(Statistics.UNAVAILABLE, Statistics.C_VARIABLE, declCursor.toString());
+            return;
+        }
+        CXSourceRange range = clang_getCursorExtent(declCursor);
+        CXTranslationUnit tu = clang_Cursor_getTranslationUnit(declCursor);
+        Ptr<Ptr<CXToken>> tokens = (Ptr<Ptr<CXToken>>)PtrFactory.newPointerPtr(CXToken.class, 2, 2, true, false);
+        IntPtr nTokens = PtrFactory.newIntReference();
+        clang_tokenize(tu, range, tokens, nTokens);
+
+        // Get name & type
+        CXString name = clang_getTokenSpelling(tu, tokens.get(0).get(0));
+        final String variable_name = name.toString();
+        clang_disposeString(name);
+
+        String macroValue = "";
+        // We are just smashing all tokens together to check, whether the resulting string is a number
+        // This is mainly done because signs are independent tokens. With that approach we avoid dealing with edge cases.
+        for (int i = 1; i < nTokens.get(); i++) {
+            CXString sign = clang_getTokenSpelling(tu, tokens.get(0).get(i));
+            macroValue += sign.toString();
+            clang_disposeString(sign);
+        }
+        if (macroValue.isEmpty()) return;
+
+
+        //final Type variable_type = new Type(declCursor.getCursorType(), memModel);
+        if (SourceVersion.isKeyword(variable_name)) {
+            statLog().log(Statistics.FAILED, Statistics.C_VARIABLE, declCursor.toString());
+            return;
+        }
+        Type type = new Type(Type.LONG_SIZE);
+        type.setKind(Type.Double);
+        final CVariable variable = new CVariable(variable_name, type);
+
+        try {
+            double valueDouble;
+            try {
+                valueDouble = Double.parseDouble(macroValue);
+            } catch (NumberFormatException ignored) {
+                // Maybe it is a 0x hex int
+                if (macroValue.contains("0x")) {
+                    valueDouble = Integer.decode(macroValue);
+                } else {
+                    return;
+                }
+            }
+
+            variable.setValue(ConstantValue.fromRawValue(type, Double.doubleToLongBits(valueDouble)));
+        }catch (NumberFormatException ignored) {
+            // This is expected since we don't know whether this would be a valid macro
+            return;
+        }
+
+        variable.setDeprecated(ClangUtil.isDeprecated(declCursor, indexer.getConfiguration().getPlatform()));
+        variable.setComment(ClangUtil.getComment(declCursor, indexer.getConfiguration().getPlatform()));
+
+        // Add variable to manager
+        final CManager manager = getGenerator().getCManager(indexer, unit);
+
+        assert manager != null;
+        manager.addVariable(variable);
     }
 }

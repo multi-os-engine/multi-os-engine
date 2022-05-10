@@ -1843,6 +1843,7 @@ public class Configuration implements IConfigurationElement {
                 this.pkg = packageName(packageBase, lowercased(framework), "c");
             }
             break;
+            case CXIdxEntityKind.CXIdxEntity_Macro:
             case CXIdxEntityKind.CXIdxEntity_Variable: {
                 this.originalName = this.name = decl.cursor().toString();
                 this.type = C_VARIABLE_TYPE;

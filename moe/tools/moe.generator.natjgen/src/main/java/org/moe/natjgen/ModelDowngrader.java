@@ -446,6 +446,11 @@ class ModelDowngrader extends AbstractModelEditor {
     }
 
     @Override
+    public void processMacro (CXIdxDeclInfo decl) {
+        // TODO Do we need to do something here?
+    }
+
+    @Override
     public void postProcess() {
         super.postProcess();
 

@@ -1,0 +1,12 @@
+#ifndef NATJGEN_TEST_MACROS__H
+#define NATJGEN_TEST_MACROS__H
+
+#define UNSIGNED_INT 10
+#define SIGNED_INT -10
+#define UNSIGNED_DOUBLE 10.5
+#define SIGNED_DOUBLE -10.5
+#define UNSIGNED_HEX_INT 0x5B
+#define SIGNED_HEX_INT -0x5B
+#define boolean 10
+
+#endif /* NATJGEN_TEST_MACROS__H */
