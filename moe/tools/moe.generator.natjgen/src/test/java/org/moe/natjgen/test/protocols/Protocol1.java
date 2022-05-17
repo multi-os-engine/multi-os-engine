@@ -12,6 +12,7 @@ public class Protocol1 extends AbstractProtocolTest {
 
         MethodDeclaration[] methods = decl.getMethods();
         assertEquals(2, methods.length);
+        assertHasMarkerAnnotation(methods[0], "org.jetbrains.annotations.Nullable");
 
         assertEquals("prop_1", methods[0].getName().toString());
         assertEquals("TypeProtocol1", methods[0].getReturnType2().toString());
@@ -20,6 +21,7 @@ public class Protocol1 extends AbstractProtocolTest {
         assertEquals("setProp_1", methods[1].getName().toString());
         assertEquals("void", methods[1].getReturnType2().toString());
         assertEquals(1, methods[1].parameters().size());
+        assertHasMarkerAnnotation(((SingleVariableDeclaration)methods[1].parameters().get(0)), "org.jetbrains.annotations.Nullable");
         assertEquals("TypeProtocol1", ((SingleVariableDeclaration)methods[1].parameters().get(0)).getType().toString());
     }
 
