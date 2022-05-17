@@ -12,8 +12,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ObjCRuntime;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 @Library("TestClasses")
 @Runtime(CRuntime.class)
@@ -27,14 +26,14 @@ public class CStructCallbackTest {
 	public void testStructCallback() {
 		TestStruct testStruct = new TestStruct();
 		testStruct.setKind(5);
-		long peer = testStruct.getPeerPointer();
 		// Workaround for https://github.com/multi-os-engine/multi-os-engine/issues/172
 		ObjCRuntime.autoreleasepool(() -> {});
 		initiateCallback(testStruct, new Function_structCallback() {
 			@Override
+			// The ByValue annotation of the overriden method is ignored
 			public void call_structCallback (TestStruct arg0) {
 				// For some reason the peer is 5 here
-				assertEquals(peer, arg0.getPeerPointer());
+				assertNotEquals(5, arg0.getPeerPointer());
 			}
 		});
 	}
@@ -48,6 +47,6 @@ public class CStructCallbackTest {
 	@Generated
 	public interface Function_structCallback {
 		@Generated
-		void call_structCallback(TestStruct arg0);
+		void call_structCallback(@ByValue TestStruct arg0);
 	}
 }
