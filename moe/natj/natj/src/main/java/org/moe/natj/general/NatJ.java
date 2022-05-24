@@ -1234,6 +1234,15 @@ public class NatJ {
     public static native boolean loadFramework(String path);
 
     /**
+     * On macos symbols are by default loaded with "RTLD_GLOBAL", on linux with "RTLD_LOCAL".
+     * This leads to the error, that NatJ can't find the symbols of librarys loaded with "System.load".
+     * This is the workaround.
+     *
+     * @param path path to library to load
+     * */
+    public static native boolean loadGlobalLinux(String path);
+
+    /**
      * Get the runtime system framework path on simulator.
      *
      * @return The path to the CoreFoundation.framework if running on simulator, or NULL on read device.
