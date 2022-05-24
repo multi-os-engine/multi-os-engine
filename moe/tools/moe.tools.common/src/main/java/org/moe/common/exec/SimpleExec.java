@@ -30,7 +30,7 @@ public class SimpleExec extends AbstractExec {
     static private String lookupCommand;
 
     static {
-        if (OsUtils.isMac()) {
+        if (OsUtils.isMac() || OsUtils.isLinux()) {
             lookupCommand = "which";
         } else if (OsUtils.isWindows()) {
             lookupCommand = "where";
