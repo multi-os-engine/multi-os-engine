@@ -20,6 +20,7 @@ import org.libimobiledevice.opaque.idevice_t;
 import org.moe.common.ShutdownManager;
 import org.moe.common.configuration.ConfigurationValidationException;
 import org.moe.common.utils.NativeUtil;
+import org.moe.natj.general.NatJ;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,6 +53,11 @@ public class Main {
         } else if (osName.equals(NativeUtil.OS_NAME_WINDOWS)) {
             System.load(current + "/windows/x86_64/natj.dll");
             System.load(current + "/windows/x86_64/libimobiledevice.dll");
+        } else if (osName.equals(NativeUtil.OS_NAME_LINUX)){
+            System.load(current + "/linux/libnatj.so");
+            if (!NatJ.loadGlobalLinux(current + "/linux/libimobiledevice.so")) {
+                throw new RuntimeException("Couldn't load " + current + "/linux/libimobiledevice.so");
+            }
         } else {
             throw new RuntimeException("Unsupported OS");
         }
