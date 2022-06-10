@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
+import org.gradle.api.Action;
 import org.gradle.api.Project;
 import org.gradle.api.Rule;
 import org.gradle.api.file.CopySpec;
@@ -96,28 +97,28 @@ public class ResourcePackager {
         final ProGuard proguardTask = plugin.getTaskBy(ProGuard.class, sourceSet, mode);
         resourcePackagerTask.dependsOn(proguardTask);
 
-        // Update settings
-        resourcePackagerTask.setDestinationDir(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-        resourcePackagerTask.setArchiveName("application.jar");
-        resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
-        resourcePackagerTask.exclude("**/*.class");
+        Action<Project> configureTask = _project -> {
+            // Update settings
+            resourcePackagerTask.setDestinationDir(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+            resourcePackagerTask.setArchiveName("application.jar");
+            resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
+            resourcePackagerTask.exclude("**/*.class");
 
-        project.afterEvaluate(_project -> {
             // When using full trim, ProGuard will copy the the resources from the common jar
             switch (ext.proguard.getLevelRaw()) {
-                case ProGuardOptions.LEVEL_APP:
-                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
-                    if (ext.getPlatformJar() != null){
-                        resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
-                    }
-                    break;
-                case ProGuardOptions.LEVEL_PLATFORM:
-                    resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
-                    break;
-                case ProGuardOptions.LEVEL_ALL:
-                    break;
-                default:
-                    throw new IllegalStateException();
+            case ProGuardOptions.LEVEL_APP:
+                resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+                if (ext.getPlatformJar() != null) {
+                    resourcePackagerTask.from(_project.zipTree(ext.getPlatformJar()));
+                }
+                break;
+            case ProGuardOptions.LEVEL_PLATFORM:
+                resourcePackagerTask.from(_project.zipTree(sdk.getCoreJar()));
+                break;
+            case ProGuardOptions.LEVEL_ALL:
+                break;
+            default:
+                throw new IllegalStateException();
             }
 
             ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
@@ -128,7 +129,14 @@ public class ResourcePackager {
                 SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
                 addResourceFromSources(ext, resourcePackagerTask, main);
             }
-        });
+        };
+
+        // Make sure the project is configured after project is evaluated
+        if (project.getState().getExecuted()) {
+            configureTask.execute(project);
+        } else {
+            project.afterEvaluate(configureTask);
+        }
 
         return resourcePackagerTask;
     }
