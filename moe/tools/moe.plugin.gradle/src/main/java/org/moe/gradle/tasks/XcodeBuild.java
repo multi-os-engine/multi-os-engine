@@ -424,7 +424,7 @@ public class XcodeBuild extends AbstractBaseTask {
                 excludes.add(dex2OatTask.getLogFile());
 
                 final Dex dexTask = dex2OatTask.getDexTaskDep();
-                excludes.add(dexTask.getDestJar());
+                excludes.add(dexTask.getDestDir());
                 excludes.add(dexTask.getLogFile());
 
                 final ClassValidate classValidateTask = dexTask.getClassValidateTaskDep();

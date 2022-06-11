@@ -359,7 +359,7 @@ public class Dex2Oat extends AbstractBaseTask {
         addConvention(CONVENTION_EMIT_DEBUG_INFO, () -> mode == Mode.DEBUG);
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final Set<File> files = new HashSet<>();
-            files.add(dexTask.getDestJar());
+            files.addAll(dexTask.getDestJars());
             return files;
         });
         addConvention(CONVENTION_COMPILER_BACKEND, () -> BACKEND_QUICK);
