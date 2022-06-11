@@ -94,8 +94,10 @@ open class ClassValidate : AbstractBaseTask() {
         dependsOn(desugarTask)
 
         // Update convention mapping
-        addConvention(CONVENTION_INPUT_FILES) { setOf(desugarTask.getOutJar()) }
-        addConvention(CONVENTION_CLASSPATH_FILES) { setOf(desugarTask.getLibraryJars()) }
+        addConvention(CONVENTION_INPUT_FILES) { setOf(desugarTask.getAppOutJar()) }
+        addConvention(CONVENTION_CLASSPATH_FILES) {
+            (desugarTask.getLibraryJars() + desugarTask.getRuntimeOutJar()).toSet()
+        }
         addConvention(CONVENTION_OUTPUT_DIR) { resolvePathInBuildDir(out, "output") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "ClassValidate.log") }
     }

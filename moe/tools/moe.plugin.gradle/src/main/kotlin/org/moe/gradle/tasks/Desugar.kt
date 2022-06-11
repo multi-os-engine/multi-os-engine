@@ -29,12 +29,25 @@ open class Desugar : AbstractBaseTask() {
     @InputFiles
     @NotNull
     fun getInJars(): ConfigurableFileCollection {
-        return project.files(getOrConvention(inJars, CONVENTION_IN_JARS))
+        return project.files(getOrConvention(inJars, CONVENTION_APP_IN_JARS))
     }
 
     @IgnoreUnused
     fun setInJars(inJars: Collection<Any>?) {
         this.inJars = inJars?.toSet()
+    }
+
+    private var rtInJars: Set<Any>? = null
+
+    @InputFiles
+    @NotNull
+    fun getRuntimeInJars(): ConfigurableFileCollection {
+        return project.files(getOrConvention(rtInJars, CONVENTION_RUNTIME_IN_JARS))
+    }
+
+    @IgnoreUnused
+    fun setRuntimeInJars(inJars: Collection<Any>?) {
+        this.rtInJars = inJars?.toSet()
     }
 
     private var libraryJars: Set<Any>? = null
@@ -50,17 +63,30 @@ open class Desugar : AbstractBaseTask() {
         this.libraryJars = libraryJars?.toSet()
     }
 
-    private var outJar: Any? = null
+    private var appOutJar: Any? = null
 
     @OutputFile
     @NotNull
-    fun getOutJar(): File {
-        return project.file(getOrConvention(outJar, CONVENTION_OUT_JAR))
+    fun getAppOutJar(): File {
+        return project.file(getOrConvention(appOutJar, CONVENTION_APP_OUT_JAR))
     }
 
     @IgnoreUnused
-    fun setOutJar(outJar: Any?) {
-        this.outJar = outJar
+    fun setAppOutJar(outJar: Any?) {
+        this.appOutJar = outJar
+    }
+
+    private var rtOutJar: Any? = null
+
+    @OutputFile
+    @NotNull
+    fun getRuntimeOutJar(): File {
+        return project.file(getOrConvention(rtOutJar, CONVENTION_RUNTIME_OUT_JAR))
+    }
+
+    @IgnoreUnused
+    fun setRuntimeOutJar(outJar: Any?) {
+        this.rtOutJar = outJar
     }
 
     private var composedCfgFile: Any? = null
@@ -77,7 +103,8 @@ open class Desugar : AbstractBaseTask() {
     }
 
     override fun run() {
-        FileUtils.deleteFileOrFolder(getOutJar())
+        FileUtils.deleteFileOrFolder(getAppOutJar())
+        FileUtils.deleteFileOrFolder(getRuntimeOutJar())
 
         composeConfigurationFile()
         javaexec { spec ->
@@ -89,8 +116,8 @@ open class Desugar : AbstractBaseTask() {
     private fun composeConfigurationFile() {
         val conf = StringBuilder()
 
-        // Add injars
-        ProGuard.startSection(conf, "Generating -injars")
+        // Backport App codes
+        ProGuard.startSection(conf, "Processing app code & libraries")
         getInJars().forEach {
             if (it.exists()) {
                 conf.append("-injars ").append(it.absolutePath).append("\n")
@@ -98,10 +125,21 @@ open class Desugar : AbstractBaseTask() {
                 LOG.debug("inJars file doesn't exist: " + it.absolutePath)
             }
         }
+        conf.append("-outjars \"").append(getAppOutJar().absolutePath).append("\"\n")
 
-        // Add outjar
-        ProGuard.startSection(conf, "Generating -outjars")
-        conf.append("-outjars \"").append(getOutJar().absolutePath).append("\"\n")
+        // Then process Runtime libs
+        ProGuard.startSection(conf, "Processing MOE runtimes")
+        val rtInJars = getRuntimeInJars()
+        if (!rtInJars.isEmpty) {
+            rtInJars.forEach {
+                if (it.exists()) {
+                    conf.append("-injars ").append(it.absolutePath).append("\n")
+                } else {
+                    LOG.debug("inJars file doesn't exist: " + it.absolutePath)
+                }
+            }
+            conf.append("-outjars \"").append(getRuntimeOutJar().absolutePath).append("\"\n")
+        }
 
         // Add libraryjars
         ProGuard.startSection(conf, "Generating -libraryjars")
@@ -154,10 +192,9 @@ open class Desugar : AbstractBaseTask() {
         dependsOn(proGuardTask)
 
         // Update convention mapping
-        addConvention(CONVENTION_IN_JARS) {
+        addConvention(CONVENTION_APP_IN_JARS) { setOf(proGuardTask.outJar) }
+        addConvention(CONVENTION_RUNTIME_IN_JARS) {
             mutableSetOf<File>().apply {
-                add(proGuardTask.outJar)
-
                 when (moeExtension.proguard.levelRaw) {
                     ProGuardOptions.LEVEL_APP -> {
                         add(moeSDK.coreJar)
@@ -185,7 +222,8 @@ open class Desugar : AbstractBaseTask() {
                 remove(moeSDK.java8SupportJar)
             }
         }
-        addConvention(CONVENTION_OUT_JAR) { resolvePathInBuildDir(out, "output.jar") }
+        addConvention(CONVENTION_APP_OUT_JAR) { resolvePathInBuildDir(out, "output-app.jar") }
+        addConvention(CONVENTION_RUNTIME_OUT_JAR) { resolvePathInBuildDir(out, "output-rt.jar") }
         addConvention(CONVENTION_COMPOSED_CFG_FILE) { resolvePathInBuildDir(out, "configuration.pro") }
         addConvention(CONVENTION_LOG_FILE) { resolvePathInBuildDir(out, "Desugar.log") }
     }
@@ -193,9 +231,11 @@ open class Desugar : AbstractBaseTask() {
     companion object {
         private val LOG = Logging.getLogger(Desugar::class.java)
 
-        private const val CONVENTION_IN_JARS = "inJars"
+        private const val CONVENTION_APP_IN_JARS = "appInJars"
+        private const val CONVENTION_RUNTIME_IN_JARS = "runtimeInJars"
         private const val CONVENTION_LIBRARY_JARS = "libraryJars"
-        private const val CONVENTION_OUT_JAR = "outJar"
+        private const val CONVENTION_APP_OUT_JAR = "appOutJar"
+        private const val CONVENTION_RUNTIME_OUT_JAR = "runtimeOutJar"
         private const val CONVENTION_COMPOSED_CFG_FILE = "composedCfgFile"
     }
 }

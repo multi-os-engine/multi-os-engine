@@ -174,6 +174,10 @@ public class Dex extends AbstractBaseTask {
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();
             files.add(classValidate.getClassesOutputDir());
+            File rtOut = classValidate.getDesugarTaskDep().getRuntimeOutJar();
+            if (rtOut.exists()) {
+                files.add(rtOut);
+            }
             return files;
 
         });

@@ -432,7 +432,8 @@ public class XcodeBuild extends AbstractBaseTask {
                 excludes.add(classValidateTask.getLogFile());
 
                 final Desugar desugarTask = classValidateTask.getDesugarTaskDep();
-                excludes.add(desugarTask.getOutJar());
+                excludes.add(desugarTask.getAppOutJar());
+                excludes.add(desugarTask.getRuntimeOutJar());
                 excludes.add(desugarTask.getComposedCfgFile());
                 excludes.add(desugarTask.getLogFile());
 
