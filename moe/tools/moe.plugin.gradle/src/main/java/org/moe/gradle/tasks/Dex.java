@@ -111,12 +111,10 @@ public class Dex extends AbstractBaseTask {
         this.destDir = destDir;
     }
 
-    private HashSet<File> destJars = new HashSet<>();
-
     @Internal
     @NotNull
-    public HashSet<File> getDestJars() {
-        return new HashSet<>(destJars);
+    public Set<File> getDestJars() {
+        return getProject().fileTree(getDestDir()).filter(it->it.isFile() && it.getName().endsWith(".jar")).getFiles();
     }
 
     @Override
@@ -127,13 +125,10 @@ public class Dex extends AbstractBaseTask {
             throw new GradleException("an IOException occurred", e);
         }
         getDestDir().mkdirs();
-        destJars.clear();
 
         int index = 0;
         for (File f : getInputFiles()) {
             File out = new File(getDestDir(), "classes-" + index + ".jar");
-            destJars.add(out);
-
             LOG.info("Dxing {} to {}...", f, out);
 
             javaexec(spec -> {
