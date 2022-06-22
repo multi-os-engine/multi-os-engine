@@ -16,9 +16,7 @@ limitations under the License.
 
 package org.moe.gradle.remote;
 
-import com.jcraft.jsch.ChannelExec;
-import org.apache.tools.ant.taskdefs.condition.Os;
-import org.gradle.api.GradleException;
+import com.jcraft.jsch.ChannelSftp;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
 import org.moe.gradle.anns.NotNull;
@@ -26,14 +24,15 @@ import org.moe.gradle.utils.Require;
 import org.moe.gradle.utils.TermColor;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
-import static org.moe.gradle.remote.ServerFileDownloader.Type.*;
-
-class ServerFileDownloader extends AbstractServerSCPTask {
+class ServerFileDownloader extends AbstractServerTask {
 
     private static final Logger LOG = Logging.getLogger(ServerFileDownloader.class);
 
@@ -67,76 +66,6 @@ class ServerFileDownloader extends AbstractServerSCPTask {
         FILE, DIRECTORY_ENTER, DIRECTORY_EXIT
     }
 
-    /*
-     * MSG: <mode:mmmm> ' ' <filesize> ' ' <filename> '\n'
-     */
-    private class FEntry {
-
-        final int mode;
-
-        final long size;
-
-        @NotNull
-        final String name;
-
-        FEntry(@NotNull InputStream in, @NotNull OutputStream out) throws IOException {
-            Require.nonNull(in);
-            Require.nonNull(out);
-
-            // <mode:mmmm>
-            byte filemodeBytes[] = new byte[4];
-            Require.EQ(in.read(filemodeBytes, 0, 4), 4, "not enough bytes read");
-            Require.EQ(filemodeBytes[0], '0', "expected first mode byte to be '0'");
-            int filemode = 0;
-            for (int i = 0; i < 4; ++i) {
-                final byte actual = filemodeBytes[i];
-                if (actual < '0' || actual > '7') {
-                    screwup(out, "bad mode");
-                }
-                filemode = (filemode << 3) | (actual - '0');
-            }
-            mode = filemode;
-
-            // ' '
-            int c = in.read();
-            Require.NE(c, -1, "unexpected end of stream");
-            if (c != ' ') {
-                screwup(out, "mode not delimited");
-            }
-
-            // <filesize>
-            long filesize = 0;
-            while (true) {
-                c = in.read();
-                Require.NE(c, -1, "unexpected end of stream");
-                if (c < '0' || c > '9') {
-                    break;
-                }
-                filesize = (filesize * 10) + (c - '0');
-            }
-            this.size = filesize;
-
-            // ' '
-            if (c != ' ') {
-                screwup(out, "size not delimited");
-            }
-
-            // <filename> '\n'
-            final StringBuilder filename = new StringBuilder(256);
-            while ((c = in.read()) != '\n') {
-                Require.NE(c, -1, "unexpected end of stream");
-                filename.append((char) c);
-            }
-            this.name = filename.toString();
-            if (name.indexOf('/') != -1 || name.compareTo("..") == 0) {
-                screwup(out, "error: unexpected filename: " + name);
-            }
-
-            // OK
-            writeResponse(out, RESP_OK);
-        }
-    }
-
     @Override
     protected void main() throws Exception {
         if (!localOutputDir.exists() && !localOutputDir.mkdirs()) {
@@ -148,165 +77,36 @@ class ServerFileDownloader extends AbstractServerSCPTask {
         outlog.println(TermColor.FG_SET_YELLOW + " Recursive: " + TermColor.FG_SET_DEFAULT + (recursive ? "Yes" : "No"));
         outlog.println();
 
-        // exec 'scp -f rfile' remotely
-        String command = "scp -f " + (recursive ? "-r " : "") + remoteFile;
-        ChannelExec channel = (ChannelExec) server.session.openChannel("exec");
-        channel.setCommand(command);
-
-        // get I/O streams for remote scp
-        OutputStream out = channel.getOutputStream();
-        InputStream in = channel.getInputStream();
-
-        channel.connect();
-
-        try {
-            writeResponse(out, RESP_OK);
-
-            Type code;
-            int depth = 0;
-            File targetDir = localOutputDir;
-            final StringBuilder structure = new StringBuilder(1024);
-            while (true) {
-                code = getNextType(in);
-                switch (code) {
-                    case FILE: {
-                        final FEntry entry = new FEntry(in, out);
-                        outlog.print(structure + "+-- " +
-                                TermColor.FG_SET_RED + "[" + Integer.toOctalString(entry.mode) + "] " + TermColor.FG_SET_DEFAULT +
-                                entry.name);
-
-                        try {
-                            final File file = new File(targetDir, entry.name);
-                            if (file.exists() && !file.delete()) {
-                                throw new IOException("Failed to delete file " + file);
-                            }
-
-                            final long start = System.nanoTime();
-                            try (FileOutputStream fos = new FileOutputStream(file)) {
-                                long rem = entry.size;
-                                byte buff[] = new byte[4096];
-                                while (rem > 0) {
-                                    int chunk = (int) Math.min(4096, rem);
-                                    final int read = in.read(buff, 0, chunk);
-                                    Require.NE(read, -1, "unexpected end of stream");
-                                    rem -= read;
-                                    fos.write(buff, 0, read);
-                                }
-                                checkAck(in);
-                                writeResponse(out, RESP_OK);
-                            }
-                            setPrivileges(file, entry.mode);
-                            final long stop = System.nanoTime();
-                            final double elapsed = stop - start;
-                            final double size = entry.size;
-                            double speed = (size / 1024.0) / (elapsed / 1000000000.0);
-                            String sizeM = "kB";
-                            if (speed > 1024.0) {
-                                speed /= 1024.0;
-                                sizeM = "MB";
-                            }
-                            outlog.printf(" %s(%.2f %s/s)%s\n", TermColor.FG_SET_YELLOW, speed, sizeM, TermColor.FG_SET_DEFAULT);
-                        } catch (Exception e) {
-                            outlog.println();
-                            throw e;
+        if (recursive) {
+            ServerCommandRunner commandRunner = new ServerCommandRunner(server, "test", "mktemp -d");
+            commandRunner.run();
+            String remoteZip = commandRunner.getOutput().trim() + "/zip.zip";
+            server.exec("zip directory", "cd " + remoteFile + "/../ && zip -r -X " + remoteZip + " " + Paths.get(remoteFile).getFileName());
+            Path tmp = Files.createTempFile("zip", ".zip");
+            ChannelSftp sftp = (ChannelSftp) server.session.openChannel("sftp");
+            sftp.connect();
+            sftp.get(remoteZip, tmp.toString());
+            try (FileSystem fileSystem = FileSystems.newFileSystem(tmp, null)) {
+                Files.walk(fileSystem.getPath("/")).skip(1).forEach(e -> {
+                    Path target = localOutputDir.toPath().resolve(fileSystem.getPath("/").relativize(e).toString());
+                    try {
+                        if (target.getParent() != null) {
+                            Files.createDirectories(target.getParent());
                         }
-
-                        break;
+                        if (target.toFile().isDirectory()) return;
+                        Files.copy(e, target, StandardCopyOption.REPLACE_EXISTING);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
                     }
-                    case DIRECTORY_ENTER: {
-                        final FEntry entry = new FEntry(in, out);
-
-                        if (depth != 0 || !remoteFile.endsWith("/")) {
-                            outlog.println(structure + "+-- " +
-                                    TermColor.FG_SET_RED + "[" + Integer.toOctalString(entry.mode) + "] " +
-                                    TermColor.FG_SET_BLUE + entry.name + TermColor.FG_SET_DEFAULT);
-                            structure.append("|   ");
-
-                            targetDir = new File(targetDir, entry.name);
-                            if (targetDir.exists() && !targetDir.isDirectory() && !targetDir.delete()) {
-                                throw new IOException("Failed to delete non-directory " + targetDir);
-                            }
-                            if (!targetDir.exists() && !targetDir.mkdirs()) {
-                                throw new IOException("Failed to create directory " + targetDir);
-                            }
-                            setPrivileges(targetDir, entry.mode);
-                        }
-                        ++depth;
-
-                        break;
-                    }
-                    case DIRECTORY_EXIT: {
-                        --depth;
-                        if (depth != 0 || !remoteFile.endsWith("/")) {
-                            structure.replace(structure.length() - 4, structure.length(), "");
-                        }
-
-                        int c = in.read();
-                        Require.NE(c, -1, "unexpected end of stream");
-                        if (c != '\n') {
-                            screwup(out, "mode not delimited");
-                        }
-                        writeResponse(out, RESP_OK);
-                        targetDir = targetDir.getParentFile();
-                        break;
-                    }
-                }
-                if (depth == 0) {
-                    break;
-                }
+                });
             }
-        } finally {
-            try {
-                out.close();
-            } catch (IOException ex) {
-                ex.printStackTrace(errlog);
-            }
-            channel.disconnect();
+        } else {
+            ChannelSftp sftp = (ChannelSftp) server.session.openChannel("sftp");
+            sftp.connect();
+            sftp.get(remoteFile, localOutputDir.toPath().resolve(Paths.get(remoteFile).getFileName()).toString());
+            sftp.disconnect();
         }
+
     }
 
-    private void setPrivileges(File file, int mode) {
-        final int usermode = (mode >> 6) & 0x7;
-        final boolean r = (usermode & 0x4) > 0;
-        final boolean w = (usermode & 0x2) > 0;
-        final boolean x = (usermode & 0x1) > 0;
-        if (file.canRead() != r && !file.setReadable(r)) {
-            LOG.warn("Failed to set '" + file + "' readable");
-        }
-        if (file.canWrite() != w && !file.setWritable(w)) {
-            LOG.warn("Failed to set '" + file + "' writable");
-        }
-        if (file.canExecute() != x && !file.setExecutable(x)) {
-            if (!Os.isFamily(Os.FAMILY_WINDOWS) || x) {
-                LOG.warn("Failed to set '" + file + "' executable");
-            }
-        }
-    }
-
-    private Type getNextType(InputStream in) throws IOException {
-        final int next = in.read();
-        switch (next) {
-            case 'C':
-                return FILE;
-            case 'D':
-                return DIRECTORY_ENTER;
-            case 'E':
-                return DIRECTORY_EXIT;
-            case -1:
-                throw new GradleException("End of stream");
-            case 1:
-            case 2: {
-                StringBuilder sb = new StringBuilder();
-                int c;
-                do {
-                    c = in.read();
-                    sb.append((char) c);
-                }
-                while (c != '\n');
-                throw new IOException("ERROR(" + next + "): " + sb);
-            }
-            default:
-                throw new IOException("Unknown type (" + next + ")");
-        }
-    }
 }
