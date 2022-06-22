@@ -450,6 +450,11 @@ public class XcodeBuild extends AbstractBaseTask {
             excludes.add(new File(getXcodeBuildRoot()));
             excludes.add(getLocalSDKLink().toFile());
 
+            List<File> excluded = ext.remoteBuildOptions.getExcludes();
+            if (excluded != null) {
+                excludes.addAll(excluded);
+            }
+
             // TODO: exclude IPA
 
             list.add(getProject().getProjectDir(), excludes);

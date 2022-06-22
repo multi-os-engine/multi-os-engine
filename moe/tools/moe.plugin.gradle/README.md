@@ -548,12 +548,14 @@ This task invokes `xcodebuild` and creates the application.
 
 ### Remote Build Properties
 
-- `remoteBuild` resources directories
+- `resources` resources directories
+- `excludes` directories and files to exclude on upload (does not apply to the resources)
 
 ```groovy
 moe {
     remoteBuild {
         resources = [ file("../android/assets") ]
+        excludes = [ file(".gitignore") ]
      }
 }
 ```
