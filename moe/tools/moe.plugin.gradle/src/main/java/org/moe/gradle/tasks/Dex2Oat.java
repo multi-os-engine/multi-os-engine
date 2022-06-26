@@ -251,7 +251,12 @@ public class Dex2Oat extends AbstractBaseTask {
                     "mkdir -p `dirname " + remoteDestArt + "` && " +
                     "mkdir -p `dirname " + remoteDestOat + "`");
 
-            remoteServer.exec("dex2oat", dex2oatExec + " " +
+            String optionalRosetta = "";
+            if (remoteServer.isRemoteAARCH64() && !Arch.FAMILY_ARM64.equalsIgnoreCase(getArchFamily())) {
+                optionalRosetta = "arch --x86_64 ";
+            }
+
+            remoteServer.exec("dex2oat", optionalRosetta + dex2oatExec + " " +
                     "--instruction-set=" + Arch.validateArchFamily(getArchFamily()) + " " +
                     "--base=0x" + Long.toHexString(getBase()) + " " +
                     "--compiler-backend=" + validateBackend(getCompilerBackend()) + " " +

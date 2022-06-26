@@ -100,6 +100,14 @@ public class Server {
     }
 
     @Nullable
+    private Boolean remoteAARCH64;
+
+    @NotNull
+    public boolean isRemoteAARCH64() {
+        return Require.nonNull(remoteAARCH64);
+    }
+
+    @Nullable
     private Task moeRemoteServerSetupTask;
 
     @NotNull
@@ -202,11 +210,17 @@ public class Server {
                     throw new GradleException(e.getMessage(), e);
                 }
 
+                fetchArchitecture();
                 setupUserHome();
                 setupBuildDir();
                 prepareServerMOE();
             });
         });
+    }
+
+    private void fetchArchitecture() {
+        String arch = exec("get arch", "arch");
+        remoteAARCH64 = arch.equals("arm64");
     }
 
     private void prepareServerMOE() {
