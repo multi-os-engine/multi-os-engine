@@ -69,6 +69,7 @@ class ServerFileUploader extends AbstractServerTask {
             env.put("create", "true");
             try (FileSystem zipFile = FileSystems.newFileSystem(URI.create(zipPath.toUri().toString().replace("file://", "jar:file:")), env)) {
                 list.walk(new Zipper(zipFile));
+                Files.createFile(zipFile.getPath("/.placeholder"));
             }
 
             String serverPath = Server.getRemotePath(server.getTempDir(), zipPath.getFileName());
