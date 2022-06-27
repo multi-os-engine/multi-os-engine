@@ -49,6 +49,28 @@ task prebuild_macos(type: Script, dependsOn: prebuild_macos_static) {
 }
 prebuild.dependsOn prebuild_macos
 
+task prebuild_linux_static(type: Prebuild) {
+    sourcePath 'external/libimobiledevice/libimobiledevice'
+    buildScript 'moe-prebuild-linux.sh'
+    targetName 'linux'
+    preBuildCopySpec project.copySpec {
+        from('.') {
+            include 'moe-prebuild-linux.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
+        }
+    }
+}
+prebuild_linux_static.dependsOn ':linuxCrosscompiler'
+prebuild_linux_static.dependsOn ':external:libimobiledevice:libusbmuxd:prebuild_linux'
+prebuild_linux_static.dependsOn ':external:libimobiledevice:openssl:prebuild_linux'
+
+task prebuild_linux(type: Script, dependsOn: prebuild_linux_static) {
+    workDir 'linux'
+    env 'CROSSCOMPILER', file("../../../build/linux-crosscompiler/").absolutePath
+    exec 'sh', '../../moe-dybuild-linux.sh'
+}
+prebuild.dependsOn prebuild_linux
+
 task prebuild_windows_static(type: Prebuild) {
     sourcePath 'external/libimobiledevice/libimobiledevice'
     buildScript 'moe-prebuild-windows.sh'

@@ -32,6 +32,20 @@ task prebuild_macos(type: Prebuild) {
 }
 prebuild.dependsOn prebuild_macos
 
+task prebuild_linux(type: Prebuild) {
+    sourcePath 'external/libimobiledevice/openssl'
+    buildScript 'moe-prebuild-linux.sh'
+    targetName 'linux'
+    preBuildCopySpec project.copySpec {
+        from('.') {
+            include 'openssl-enable-deprecated.patch'
+            include 'moe-prebuild-linux.sh'
+        }
+    }
+}
+prebuild_linux.dependsOn ':linuxCrosscompiler'
+prebuild.dependsOn prebuild_linux
+
 task prebuild_windows(type: Prebuild) {
     sourcePath 'external/libimobiledevice/openssl'
     buildScript 'moe-prebuild-windows.sh'
