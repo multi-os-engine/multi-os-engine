@@ -54,9 +54,9 @@ public class Main {
             System.load(current + "/windows/x86_64/natj.dll");
             System.load(current + "/windows/x86_64/libimobiledevice.dll");
         } else if (osName.equals(NativeUtil.OS_NAME_LINUX)){
-            System.load(current + "/linux/libnatj.so");
-            if (!NatJ.loadGlobalLinux(current + "/linux/libimobiledevice.so")) {
-                throw new RuntimeException("Couldn't load " + current + "/linux/libimobiledevice.so");
+            System.load(current + "/linux/x86_64/libnatj.so");
+            if (!NatJ.loadGlobalLinux(current + "/linux/x86_64/libimobiledevice.so")) {
+                throw new RuntimeException("Couldn't load " + current + "/linux/x86_64/libimobiledevice.so");
             }
         } else {
             throw new RuntimeException("Unsupported OS");
