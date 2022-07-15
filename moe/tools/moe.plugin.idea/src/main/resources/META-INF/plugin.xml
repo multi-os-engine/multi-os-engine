@@ -98,6 +98,8 @@
 
         <externalProjectDataService implementation="org.moe.idea.service.GradleModuleModelDataService"/>
         <facetType implementation="org.moe.idea.facet.gradle.GradleFacetType"/>
+
+        <sdkType implementation="org.moe.idea.sdk.MOESdkType"/>
     </extensions>
 
     <extensions defaultExtensionNs="org.jetbrains.plugins.gradle">
