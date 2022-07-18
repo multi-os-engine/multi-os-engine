@@ -224,8 +224,10 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
         // Read sdk property using facet
         MOESdkProperties sdkProperties = GradleModuleModel.getSdkProperties(module);
+        String graalPath = null;
         if (sdkProperties != null) {
             moeRootPath = sdkProperties.getHome();
+            graalPath = sdkProperties.getGraalHome();
         } else {
             // For compatible with old Gradle plugin
             String modulePath = ModuleUtils.getModulePath(module);
@@ -243,16 +245,25 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             return null;
         }
 
-        String name = new File(moeRootPath).getName();
 
         ProjectJdkTable jdkTable = ProjectJdkTable.getInstance();
 
         for(Sdk sdk: jdkTable.getAllJdks()) {
-            if(sdk != null && sdk.getHomePath() != null && sdk.getHomePath().equals(moeRootPath)) {
-                return  sdk;
+            if(sdk != null && sdk.getHomePath() != null) {
+                if (sdk.getHomePath().equals(moeRootPath) && graalPath == null) {
+                    return sdk;
+                } else if (sdk.getHomePath().equals(graalPath)) {
+                    return sdk;
+                }
             }
         }
 
+        if (graalPath != null) {
+            String name = new File(graalPath).getParentFile().getParentFile().getName();
+            Sdk jdk = JavaSdk.getInstance().createJdk(name, graalPath);
+            ApplicationManager.getApplication().runWriteAction(() -> ProjectJdkTable.getInstance().addJdk(jdk));
+            return jdk;
+        }
 
         Sdk jdk = getJDK();
 
@@ -265,19 +276,14 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             return null;
         }
 
+        String name = new File(moeRootPath).getName();
         final Sdk sdk = ProjectJdkTable.getInstance().createSdk(name, MOESdkType.getInstance());
 
         final SdkModificator sdkModificator = getAndInitialiseSdkModificator(sdk, jdk);
         sdkModificator.setHomePath(moeRootPath);
         sdkModificator.commitChanges();
 
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                ProjectJdkTable.getInstance().addJdk(sdk);
-            }
-        });
-
+        ApplicationManager.getApplication().runWriteAction(() -> ProjectJdkTable.getInstance().addJdk(sdk));
         return sdk;
     }
 
