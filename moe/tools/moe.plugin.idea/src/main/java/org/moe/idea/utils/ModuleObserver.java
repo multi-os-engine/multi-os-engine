@@ -59,15 +59,18 @@ public class ModuleObserver implements ModuleListener {
     public static void checkMoeSDK(@NotNull Module module) {
         final ModuleRootManager manager = ModuleRootManager.getInstance(module);
         final ModifiableRootModel rootModel = manager.getModifiableModel();
-        ApplicationManager.getApplication().runWriteAction(new DumbAwareRunnable() {
-            @Override
-            public void run() {
-                Sdk sdk = MOESdkType.getMOESdk(rootModel.getModule());
-                if (sdk != null) {
-                    rootModel.setSdk(sdk);
-                    rootModel.commit();
+
+        ApplicationManager.getApplication().invokeAndWait(() -> {
+            ApplicationManager.getApplication().runWriteAction(new DumbAwareRunnable() {
+                @Override
+                public void run() {
+                    Sdk sdk = MOESdkType.getMOESdk(rootModel.getModule());
+                    if (sdk != null) {
+                        rootModel.setSdk(sdk);
+                        rootModel.commit();
+                    }
                 }
-            }
+            });
         });
     }
 
