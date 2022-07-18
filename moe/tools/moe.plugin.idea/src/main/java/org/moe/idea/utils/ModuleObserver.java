@@ -27,17 +27,8 @@ import com.intellij.openapi.project.DumbAwareRunnable;
 import com.intellij.openapi.project.ModuleListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.Sdk;
-import com.intellij.openapi.roots.DependencyScope;
-import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.OrderRootType;
-import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.roots.libraries.LibraryTable;
-import com.intellij.openapi.vfs.JarFileSystem;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.Function;
 import org.jetbrains.annotations.NotNull;
 import org.moe.idea.MOESdkPlugin;
@@ -46,16 +37,11 @@ import org.moe.idea.runconfig.configuration.MOERunConfigurationType;
 import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.logger.LoggerFactory;
 
-import java.io.File;
-import java.util.Arrays;
 import java.util.List;
 
 public class ModuleObserver implements ModuleListener {
 
     private static final Logger LOG = LoggerFactory.getLogger(ModuleObserver.class);
-
-    static final String MOE_JARS_PATH = "sdk";
-    static final List<String> MOE_JARS = Arrays.asList("moe-core.jar", "moe-ios.jar", "moe-ios-junit.jar");
 
     @Override
     public void moduleAdded(@NotNull final Project project, @NotNull final Module module) {
@@ -130,85 +116,6 @@ public class ModuleObserver implements ModuleListener {
         } catch (Exception ee) {
             LOG.error("Unable to create run configuration", ee);
         }
-    }
-
-    private void checkMavenDependencies(@NotNull Module module) {
-        if (!MOESdkPlugin.isMoeJarsInModule(module)) {
-            addMOEDependencies(module);
-        } else {
-            checkMOEDependencies(module);
-            checkRunConfiguration(module.getProject(), module);
-        }
-    }
-
-    private void addMOEDependencies(@NotNull final Module module) {
-        final String home = MOESdkPlugin.getSdkRootPath(module);
-        if (home == null || home.isEmpty()) {
-            LOG.debug("Unable to find MOE home");
-            return;
-        }
-
-        ApplicationManager.getApplication().runWriteAction(new DumbAwareRunnable() {
-            @Override
-            public void run() {
-                for (String jar : MOE_JARS) {
-                    String jarPath = home + File.separator + MOE_JARS_PATH + File.separator + jar;
-                    VirtualFile file = LocalFileSystem.getInstance().findFileByPath(jarPath);
-                    if (file == null) {
-                        return;
-                    }
-                    final ModuleRootManager manager = ModuleRootManager.getInstance(module);
-                    final ModifiableRootModel rootModel = manager.getModifiableModel();
-                    final Library jarLibrary = rootModel.getModuleLibraryTable().createLibrary();
-                    final Library.ModifiableModel libraryModel = jarLibrary.getModifiableModel();
-                    libraryModel.setName("Maven: " + jar);
-                    String url = VirtualFileManager.constructUrl(JarFileSystem.PROTOCOL, jarPath) + JarFileSystem.JAR_SEPARATOR;
-                    libraryModel.addRoot(url, OrderRootType.CLASSES);
-                    libraryModel.commit();
-
-                    final LibraryOrderEntry orderEntry = rootModel.findLibraryOrderEntry(jarLibrary);
-                    orderEntry.setScope(DependencyScope.COMPILE);
-
-                    rootModel.commit();
-                }
-
-                checkRunConfiguration(module.getProject(), module);
-            }
-        });
-    }
-
-    private void checkMOEDependencies(@NotNull final Module module) {
-        final String home = MOESdkPlugin.getSdkRootPath(module);
-        if (home == null || home.isEmpty()) {
-            LOG.debug("Unable to find MOE home");
-            return;
-        }
-        ModuleRootManager manager = ModuleRootManager.getInstance(module);
-        final ModifiableRootModel rootModel = manager.getModifiableModel();
-        final LibraryTable libraryTable = rootModel.getModuleLibraryTable();
-        ApplicationManager.getApplication().runWriteAction(new DumbAwareRunnable() {
-            @Override
-            public void run() {
-                for (String jar : MOE_JARS) {
-                    Library library = libraryTable.getLibraryByName("Maven: " + jar);
-                    if (library != null) {
-                        String jarPath = home + File.separator + MOE_JARS_PATH + File.separator + jar;
-                        String[] urls = library.getUrls(OrderRootType.CLASSES);
-                        if (urls.length > 0) {
-                            String url = urls[0];
-                            String newUrl = VirtualFileManager.constructUrl(JarFileSystem.PROTOCOL, jarPath) + JarFileSystem.JAR_SEPARATOR;
-                            if (!url.equals(newUrl)) {
-                                final Library.ModifiableModel libraryModel = library.getModifiableModel();
-                                libraryModel.removeRoot(url, OrderRootType.CLASSES);
-                                libraryModel.addRoot(newUrl, OrderRootType.CLASSES);
-                                libraryModel.commit();
-                            }
-                        }
-                    }
-                }
-                rootModel.commit();
-            }
-        });
     }
 
 }
