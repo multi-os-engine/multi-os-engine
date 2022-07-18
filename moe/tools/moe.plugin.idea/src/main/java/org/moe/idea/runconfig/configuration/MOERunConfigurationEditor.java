@@ -47,10 +47,10 @@ import org.moe.common.ios.Device;
 import org.moe.common.ios.DeviceInfo;
 import org.moe.common.utils.OsUtils;
 import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.runconfig.configuration.test.MOEJUnitUtil;
 import org.moe.idea.runconfig.configuration.test.MOETestClassBrowser;
 import org.moe.idea.runconfig.configuration.test.MOETestClassVisibilityChecker;
-import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.Configuration;
 import org.moe.idea.utils.InputValidationHelper;
@@ -433,7 +433,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         File projectFile = new File(ModuleUtils.getModulePath(module));
 
         try {
-            for (DeviceInfo device : Device.getDevices(projectFile, MOESdkType.requireJavaHome(module))) {
+            for (DeviceInfo device : Device.getDevices(projectFile, MOEGradleRunner.requireGradleJavaHome(module))) {
                 deviceCombo.addItem(device.udid());
             }
         } catch (Exception e) {
@@ -690,7 +690,7 @@ public class MOERunConfigurationEditor extends SettingsEditor<MOERunConfiguratio
         final StringBuffer runError = new StringBuffer();
         File javaHome;
         try {
-            javaHome = MOESdkType.requireJavaHome(module);
+            javaHome = MOEGradleRunner.requireGradleJavaHome(module);
         } catch (IOException e) {
             showMessage(e.getMessage());
             return;

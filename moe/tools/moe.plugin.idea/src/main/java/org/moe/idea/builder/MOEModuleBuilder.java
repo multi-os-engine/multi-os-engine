@@ -208,15 +208,6 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
             contentRoot.refresh(false, true);
         }
 
-        Sdk sdk = MOESdkType.getMOESdk(rootModel.getModule());
-        if (sdk != null) {
-            rootModel.setSdk(sdk);
-        } else {
-            MOEToolWindow.getInstance(project).error("Error, unable set Sdk.");
-        }
-        rootModel.getModuleExtension(LanguageLevelModuleExtension.class).setLanguageLevel(MOESdkType.REQUIRED_JAVA_LANGUAGE_LEVEL);
-
-
         StartupManager.getInstance(project).runWhenProjectIsInitialized(new Runnable() {
             @Override
             public void run() {

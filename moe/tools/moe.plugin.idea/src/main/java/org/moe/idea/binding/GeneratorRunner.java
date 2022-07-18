@@ -29,7 +29,7 @@ import org.moe.common.exec.ExecRunnerBase;
 import org.moe.common.exec.GradleExec;
 import org.moe.common.exec.IKillListener;
 import org.moe.document.pbxproj.ProjectException;
-import org.moe.idea.sdk.MOESdkType;
+import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.ui.MOEToolWindow;
 import org.moe.idea.utils.ModuleUtils;
 
@@ -102,7 +102,7 @@ public class GeneratorRunner {
 
                 progress.setFraction(0.2);
 
-                GradleExec exec = new GradleExec(moduleFile, MOESdkType.requireJavaHome(module));
+                GradleExec exec = new GradleExec(moduleFile, MOEGradleRunner.requireGradleJavaHome(module));
 
                 exec.getArguments().add("moeNatJGen");
                 exec.getArguments().add("-Draw-binding-output");
