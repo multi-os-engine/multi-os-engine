@@ -35,6 +35,9 @@ import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.module.StdModuleTypes;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.projectRoots.JavaSdk;
+import com.intellij.openapi.projectRoots.JavaSdkVersion;
+import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.LanguageLevelModuleExtension;
@@ -110,7 +113,7 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         Project project = rootModel.getProject();
         Module module = rootModel.getModule();
 
-        myJdk = MOESdkType.getJDK();
+        myJdk = getLatestJDK();
 
         ProjectRootManager.getInstance(project).setProjectSdk(myJdk);
 
@@ -329,5 +332,28 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         catch (Exception e) {
             MOEToolWindow.getInstance(project).log("Failed create run configuration: " + e.getMessage());
         }
+    }
+
+    private static Sdk getLatestJDK() {
+        Sdk sdk = null;
+
+        for(Sdk jdk: ProjectJdkTable.getInstance().getAllJdks()) {
+            if(jdk != null && jdk.getSdkType() instanceof JavaSdk) {
+
+                if(sdk == null) {
+                    sdk = jdk;
+                }
+                else {
+                    JavaSdkVersion version = ((JavaSdk) jdk.getSdkType()).getVersion(jdk);
+                    JavaSdkVersion desiredVersion = ((JavaSdk)sdk.getSdkType()).getVersion(sdk);
+
+                    if(version != null && desiredVersion != null && version.isAtLeast(desiredVersion)) {
+                        sdk = jdk;
+                    }
+                }
+            }
+        }
+
+        return sdk;
     }
 }
