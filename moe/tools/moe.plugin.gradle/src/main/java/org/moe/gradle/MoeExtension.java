@@ -157,6 +157,7 @@ public class MoeExtension extends AbstractMoeExtension {
     }
 
     @Nullable
+    @org.jetbrains.annotations.Nullable
     public File getPlatformJar() {
         return plugin.getSDK().getPlatformJar(platform);
     }

@@ -56,4 +56,9 @@ public class Mode {
         }
         throw new GradleException("Unknown configuration '" + name + "'");
     }
+
+    @Override
+    public String toString() {
+        return getXcodeCompatibleName();
+    }
 }

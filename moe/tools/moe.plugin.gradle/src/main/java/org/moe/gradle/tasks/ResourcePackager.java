@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.gradle.tasks;
 
+import org.gradle.api.Action;
 import org.gradle.api.Project;
 import org.gradle.api.Rule;
 import org.gradle.api.file.CopySpec;
@@ -94,7 +95,7 @@ public class ResourcePackager {
         resourcePackagerTask.setArchiveName("resource.jar");
         resourcePackagerTask.exclude("**/*.class");
 
-        project.afterEvaluate(_project -> {
+        Action<Project> configureTask = _project -> {
             ext.packaging.getExcludes().forEach(resourcePackagerTask::exclude);
 
             // Add support for copying resources from the source directory
@@ -103,7 +104,14 @@ public class ResourcePackager {
                 SourceSet main = plugin.getJavaConvention().getSourceSets().getByName(SourceSet.MAIN_SOURCE_SET_NAME);
                 addResourceFromSources(ext, resourcePackagerTask, main);
             }
-        });
+        };
+
+        // Make sure the project is configured after project is evaluated
+        if (project.getState().getExecuted()) {
+            configureTask.execute(project);
+        } else {
+            project.afterEvaluate(configureTask);
+        }
 
         return resourcePackagerTask;
     }
