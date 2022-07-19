@@ -372,7 +372,7 @@ public class ProGuard extends AbstractBaseTask {
         FileUtils.write(getComposedCfgFile(), conf.toString());
     }
 
-    private static void startSection(@NotNull final StringBuilder b, @NotNull final String comment) {
+    static void startSection(@NotNull final StringBuilder b, @NotNull final String comment) {
         int l = comment.length();
         b.append("\n##");
         for (int i = 0; i < l; ++i)

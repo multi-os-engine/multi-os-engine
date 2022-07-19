@@ -18,11 +18,13 @@ package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
 import org.gradle.api.file.ConfigurableFileCollection;
+import org.gradle.api.logging.Logger;
+import org.gradle.api.logging.Logging;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputFile;
 import org.gradle.api.tasks.InputFiles;
 import org.gradle.api.tasks.Internal;
-import org.gradle.api.tasks.OutputFile;
+import org.gradle.api.tasks.OutputDirectory;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
@@ -46,10 +48,12 @@ import java.util.stream.Collectors;
 
 public class Dex extends AbstractBaseTask {
 
+    private static final Logger LOG = Logging.getLogger(ProGuard.class);
+
     private static final String CONVENTION_DX_JAR = "dxJar";
     private static final String CONVENTION_INPUT_FILES = "inputFiles";
     private static final String CONVENTION_EXTRA_ARGS = "extraArgs";
-    private static final String CONVENTION_DEST_JAR = "destJar";
+    private static final String CONVENTION_DEST_DIR = "destDir";
 
     @Nullable
     private Object dxJar;
@@ -94,36 +98,51 @@ public class Dex extends AbstractBaseTask {
     }
 
     @Nullable
-    private Object destJar;
+    private Object destDir;
 
-    @OutputFile
+    @OutputDirectory
     @NotNull
-    public File getDestJar() {
-        return getProject().file(getOrConvention(destJar, CONVENTION_DEST_JAR));
+    public File getDestDir() {
+        return getProject().file(getOrConvention(destDir, CONVENTION_DEST_DIR));
     }
 
     @IgnoreUnused
-    public void setDestJar(@Nullable Object destJar) {
-        this.destJar = destJar;
+    public void setDestDir(@Nullable Object destDir) {
+        this.destDir = destDir;
+    }
+
+    @Internal
+    @NotNull
+    public Set<File> getDestJars() {
+        return getProject().fileTree(getDestDir()).filter(it->it.isFile() && it.getName().endsWith(".jar")).getFiles();
     }
 
     @Override
     protected void run() {
         try {
-            FileUtils.deleteFileOrFolder(getDestJar());
+            FileUtils.deleteFileOrFolder(getDestDir());
         } catch (IOException e) {
             throw new GradleException("an IOException occurred", e);
         }
+        getDestDir().mkdirs();
 
-        javaexec(spec -> {
-            spec.setMain("-jar");
-            spec.args(getDxJar().getAbsolutePath());
-            prepareArgumentsList().forEach(spec::args);
-        });
+        int index = 0;
+        for (File f : getInputFiles()) {
+            File out = new File(getDestDir(), "classes-" + index + ".jar");
+            LOG.info("Dxing {} to {}...", f, out);
+
+            javaexec(spec -> {
+                spec.setMain("-jar");
+                spec.args(getDxJar().getAbsolutePath());
+                prepareArgumentsList(f, out).forEach(spec::args);
+            });
+
+            index++;
+        }
     }
 
     @NotNull
-    private List<String> prepareArgumentsList() {
+    private List<String> prepareArgumentsList(File input, File output) {
         List<String> args = new ArrayList<>();
 
         // Set mode
@@ -137,10 +156,10 @@ public class Dex extends AbstractBaseTask {
         args.addAll(getExtraArgs().stream().map(Object::toString).collect(Collectors.toList()));
 
         // Set output
-        args.add("--output=" + getDestJar().getAbsolutePath());
+        args.add("--output=" + output.getAbsolutePath());
 
-        // Set inputs
-        getInputFiles().forEach(it -> args.add(it.getAbsolutePath()));
+        // Set input
+        args.add(input.getAbsolutePath());
         return args;
     }
 
@@ -174,11 +193,15 @@ public class Dex extends AbstractBaseTask {
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();
             files.add(classValidate.getClassesOutputDir());
+            File rtOut = classValidate.getDesugarTaskDep().getRuntimeOutJar();
+            if (rtOut.exists()) {
+                files.add(rtOut);
+            }
             return files;
 
         });
         addConvention(CONVENTION_EXTRA_ARGS, ArrayList::new);
-        addConvention(CONVENTION_DEST_JAR, () -> resolvePathInBuildDir(out, "classes.jar"));
+        addConvention(CONVENTION_DEST_DIR, () -> resolvePathInBuildDir(out, "classes"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "Dex.log"));
     }
 }

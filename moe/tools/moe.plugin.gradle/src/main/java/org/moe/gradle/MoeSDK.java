@@ -349,17 +349,14 @@ public class MoeSDK {
 
         try {
             validate(DIR, path, "");
-            validate(FIL, path, "sdk/moe-core.dex");
             validate(FIL, path, "sdk/moe-core.jar");
             validate(FIL, path, "sdk/moe-core-javadoc.jar");
             validate(FIL, path, "sdk/moe-core-sources.jar");
 
-            validate(FIL, path, "sdk/moe-ios-junit.dex");
             validate(FIL, path, "sdk/moe-ios-junit.jar");
             validate(FIL, path, "sdk/moe-ios-junit-javadoc.jar");
             validate(FIL, path, "sdk/moe-ios-junit-sources.jar");
 
-            validate(FIL, path, "sdk/moe-ios-dex.jar");
             validate(FIL, path, "sdk/moe-ios.jar");
             validate(FIL, path, "sdk/moe-ios-javadoc.jar");
             validate(FIL, path, "sdk/moe-ios-sources.jar");
@@ -413,15 +410,12 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_CORE_JAR;
     private @Nullable File MOE_SDK_CORE_SOURCES_JAR;
     private @Nullable File MOE_SDK_CORE_JAVADOC_JAR;
-    private @Nullable File MOE_SDK_CORE_DEX;
     private @Nullable File MOE_SDK_IOS_JAVADOC_JAR;
     private @Nullable File MOE_SDK_IOS_JUNIT_JAR;
     private @Nullable File MOE_SDK_IOS_JUNIT_SOURCES_JAR;
     private @Nullable File MOE_SDK_IOS_JUNIT_JAVADOC_JAR;
-    private @Nullable File MOE_SDK_IOS_JUNIT_DEX;
     private @Nullable File MOE_SDK_IOS_JAR;
     private @Nullable File MOE_SDK_IOS_SOURCES_JAR;
-    private @Nullable File MOE_SDK_IOS_DEX;
     private @Nullable File MOE_SDK_DEX2OAT_EXEC;
     private @Nullable File MOE_SDK_DX_JAR;
     private @Nullable File MOE_SDK_IOS_DEVICE_JAR;
@@ -440,15 +434,12 @@ public class MoeSDK {
         MOE_SDK_SDK_DIR = path.resolve("sdk").toFile();
         MOE_SDK_TOOLS_DIR = path.resolve("tools").toFile();
         MOE_SDK_CORE_JAR = path.resolve("sdk/moe-core.jar").toFile();
-        MOE_SDK_CORE_DEX = path.resolve("sdk/moe-core.dex").toFile();
         MOE_SDK_CORE_SOURCES_JAR = path.resolve("sdk/moe-core-sources.jar").toFile();
         MOE_SDK_CORE_JAVADOC_JAR = path.resolve("sdk/moe-core-javadoc.jar").toFile();
-        MOE_SDK_IOS_DEX = path.resolve("sdk/moe-ios-dex.jar").toFile();
         MOE_SDK_IOS_JAR = path.resolve("sdk/moe-ios.jar").toFile();
         MOE_SDK_IOS_SOURCES_JAR = path.resolve("sdk/moe-ios-sources.jar").toFile();
         MOE_SDK_IOS_JAVADOC_JAR = path.resolve("sdk/moe-ios-javadoc.jar").toFile();
         MOE_SDK_IOS_JUNIT_JAR = path.resolve("sdk/moe-ios-junit.jar").toFile();
-        MOE_SDK_IOS_JUNIT_DEX = path.resolve("sdk/moe-ios-junit.dex").toFile();
         MOE_SDK_IOS_JUNIT_SOURCES_JAR = path.resolve("sdk/moe-ios-junit-sources.jar").toFile();
         MOE_SDK_IOS_JUNIT_JAVADOC_JAR = path.resolve("sdk/moe-ios-junit-javadoc.jar").toFile();
         MOE_SDK_DEX2OAT_EXEC = path.resolve("tools/dex2oat").toFile();
@@ -499,11 +490,6 @@ public class MoeSDK {
     }
 
     @NotNull
-    public File getCoreDex() {
-        return safeVariable(MOE_SDK_CORE_DEX, "MOE_SDK_CORE_DEX");
-    }
-
-    @NotNull
     @IgnoreUnused
     public File getiOSJavadocJar() {
         return safeVariable(MOE_SDK_IOS_JAVADOC_JAR, "MOE_SDK_IOS_JAVADOC_JAR");
@@ -533,19 +519,8 @@ public class MoeSDK {
     }
 
     @NotNull
-    @IgnoreUnused
-    public File getiOSJUnitDex() {
-        return safeVariable(MOE_SDK_IOS_JUNIT_DEX, "MOE_SDK_IOS_JUNIT_DEX");
-    }
-
-    @NotNull
     private File getiOSJar() {
         return safeVariable(MOE_SDK_IOS_JAR, "MOE_SDK_IOS_JAR");
-    }
-
-    @NotNull
-    private File getiOSDex() {
-        return safeVariable(MOE_SDK_IOS_DEX, "MOE_SDK_IOS_DEX");
     }
 
     @NotNull
@@ -617,14 +592,6 @@ public class MoeSDK {
             return getiOSJar();
         }
         throw new GradleException("platform jar is unsupported for " + platform.displayName);
-    }
-
-    @NotNull
-    public File getPlatformDex(final @NotNull MoePlatform platform) {
-        if (platform == MoePlatform.IOS) {
-            return getiOSDex();
-        }
-        throw new GradleException("platform dex is unsupported for " + platform.displayName);
     }
 
     @NotNull

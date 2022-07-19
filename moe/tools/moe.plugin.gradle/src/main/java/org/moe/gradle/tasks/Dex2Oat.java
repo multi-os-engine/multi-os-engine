@@ -25,13 +25,11 @@ import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.common.utils.NativeUtil;
-import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
-import org.moe.gradle.options.ProGuardOptions;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Arch;
@@ -328,7 +326,6 @@ public class Dex2Oat extends AbstractBaseTask {
 
         setSupportsRemoteBuild(true);
 
-        final MoeExtension ext = getMoeExtension();
         final MoeSDK sdk = getMoeSDK();
 
         // Construct default output path
@@ -362,24 +359,7 @@ public class Dex2Oat extends AbstractBaseTask {
         addConvention(CONVENTION_EMIT_DEBUG_INFO, () -> mode == Mode.DEBUG);
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final Set<File> files = new HashSet<>();
-            files.add(dexTask.getDestJar());
-
-            switch (ext.proguard.getLevelRaw()) {
-                case ProGuardOptions.LEVEL_APP:
-                    files.add(sdk.getCoreDex());
-                    if (ext.getPlatformDex() != null) {
-                        files.add(ext.getPlatformDex());
-                    }
-                    break;
-                case ProGuardOptions.LEVEL_PLATFORM:
-                    files.add(sdk.getCoreDex());
-                    break;
-                case ProGuardOptions.LEVEL_ALL:
-                    break;
-                default:
-                    throw new IllegalStateException();
-            }
-
+            files.addAll(dexTask.getDestJars());
             return files;
         });
         addConvention(CONVENTION_COMPILER_BACKEND, () -> BACKEND_QUICK);
