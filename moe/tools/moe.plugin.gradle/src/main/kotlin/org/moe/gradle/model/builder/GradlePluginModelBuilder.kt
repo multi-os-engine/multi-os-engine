@@ -19,9 +19,11 @@ class GradlePluginModelBuilder : ToolingModelBuilder {
         val sdk = ext.getSDK()
 
         return GradlePluginModelImpl(
+            version = sdk.pluginVersion,
             gradlePluginList = project.plugins.map { it.javaClass.name },
             sdkProperties = MOESdkPropertiesImpl(
                 home = sdk.root.absolutePath,
+                version = sdk.sdkVersion,
                 coreJar = sdk.coreJar.absolutePath,
                 platformJar = ext.platformJar?.absolutePath,
                 junitJar = sdk.getiOSJUnitJar().absolutePath,
