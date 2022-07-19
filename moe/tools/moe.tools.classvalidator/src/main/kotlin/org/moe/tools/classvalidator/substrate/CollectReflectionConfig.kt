@@ -242,7 +242,7 @@ class CollectReflectionConfig(
         override fun visitMethodInsn(opcode: Int, owner: String, name: String, descriptor: String, isInterface: Boolean) {
             // We are calling a method, check if the return type is an opaque ptr. If so, we need to export it to reflection
             // because the value might be returned from native via reflection.
-            Type.getMethodType(methodDescriptor).returnType.let { type ->
+            Type.getMethodType(descriptor).returnType.let { type ->
                 if (type.sort == Type.OBJECT && NatJRuntime.isOpaquePtrDescendant(type.internalName)) {
                     declaringClass.config.addOpaquePtrClass(type.internalName)
                 }
