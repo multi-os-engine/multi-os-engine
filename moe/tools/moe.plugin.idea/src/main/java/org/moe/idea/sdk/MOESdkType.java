@@ -29,7 +29,6 @@ import com.intellij.openapi.projectRoots.SdkType;
 import com.intellij.openapi.projectRoots.impl.JavaDependentSdkType;
 import com.intellij.openapi.roots.AnnotationOrderRootType;
 import com.intellij.openapi.roots.JavadocOrderRootType;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.pom.java.LanguageLevel;
@@ -150,11 +149,6 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
     public static Sdk getMOESdk(Module module) {
         if (module == null) {
             return null;
-        }
-
-        Sdk currentSdk = ModuleRootManager.getInstance(module).getSdk();
-        if (currentSdk != null && isMOESdk(currentSdk) && currentSdk.getHomePath() != null) {
-            return currentSdk;
         }
 
         String moeRootPath;
