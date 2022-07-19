@@ -351,8 +351,8 @@
 		<setting id="org.eclipse.jdt.core.formatter.alignment_for_arguments_in_annotation" value="0"/>
 		<setting id="org.eclipse.jdt.core.formatter.alignment_for_module_statements" value="0"/>
 		<setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="120"/>
-		<setting id="org.eclipse.jdt.core.formatter.comment.count_line_length_from_starting_position" value="true"/>
-		<setting id="org.eclipse.jdt.core.formatter.comment.format_javadoc_comments" value="false"/>
+		<setting id="org.eclipse.jdt.core.formatter.comment.count_line_length_from_starting_position" value="false"/>
+		<setting id="org.eclipse.jdt.core.formatter.comment.format_javadoc_comments" value="true"/>
 		<setting id="org.eclipse.jdt.core.formatter.comment.format_block_comments" value="false"/>
 		<setting id="org.eclipse.jdt.core.formatter.comment.format_line_comments" value="false"/>
 		<setting id="org.eclipse.jdt.core.formatter.format_line_comment_starting_on_first_column" value="false"/>
