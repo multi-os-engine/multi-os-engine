@@ -50,7 +50,6 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
-
 import org.apache.commons.codec.Charsets;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -73,6 +72,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class MOEModuleBuilder extends JavaModuleBuilder {
     private MOEModuleProperties moduleProperties;
@@ -334,26 +334,33 @@ public class MOEModuleBuilder extends JavaModuleBuilder {
         }
     }
 
+    /**
+     * Find the latest JDK that's between [MOESdkType.MIN_JDK_VERSION] and [MOESdkType.MAX_JDK_VERSION].
+     */
+    @Nullable
     private static Sdk getLatestJDK() {
-        Sdk sdk = null;
+        Sdk selectedJdk = null;
 
-        for(Sdk jdk: ProjectJdkTable.getInstance().getAllJdks()) {
-            if(jdk != null && jdk.getSdkType() instanceof JavaSdk) {
+        for (Sdk jdk : ProjectJdkTable.getInstance().getAllJdks()) {
+            if (jdk != null && jdk.getSdkType() instanceof JavaSdk) {
 
-                if(sdk == null) {
-                    sdk = jdk;
-                }
-                else {
-                    JavaSdkVersion version = ((JavaSdk) jdk.getSdkType()).getVersion(jdk);
-                    JavaSdkVersion desiredVersion = ((JavaSdk)sdk.getSdkType()).getVersion(sdk);
-
-                    if(version != null && desiredVersion != null && version.isAtLeast(desiredVersion)) {
-                        sdk = jdk;
+                JavaSdkVersion version = ((JavaSdk) jdk.getSdkType()).getVersion(jdk);
+                if (version != null
+                    && version.isAtLeast(MOESdkType.MIN_JDK_VERSION)
+                    && MOESdkType.MAX_JDK_VERSION.isAtLeast(version)
+                ) {
+                    if (selectedJdk == null) {
+                        selectedJdk = jdk;
+                    } else {
+                        JavaSdkVersion selectedVersion = Objects.requireNonNull(((JavaSdk) selectedJdk.getSdkType()).getVersion(selectedJdk));
+                        if (version.isAtLeast(selectedVersion)) {
+                            selectedJdk = jdk;
+                        }
                     }
                 }
             }
         }
 
-        return sdk;
+        return selectedJdk;
     }
 }

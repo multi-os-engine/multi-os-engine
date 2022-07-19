@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.projectRoots.AdditionalDataConfigurable;
 import com.intellij.openapi.projectRoots.JavaSdkType;
+import com.intellij.openapi.projectRoots.JavaSdkVersion;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkAdditionalData;
@@ -58,6 +59,16 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
     }
 
     public static final LanguageLevel REQUIRED_JAVA_LANGUAGE_LEVEL = LanguageLevel.JDK_1_8;
+
+    /** The minimum JDK version that's required to run MOE */
+    public static final JavaSdkVersion MIN_JDK_VERSION = JavaSdkVersion.JDK_1_8;
+
+    /**
+     * The max JDK version that's known to be working with MOE.
+     * JDKs later than this version might work but haven't been tested.
+     */
+    public static final JavaSdkVersion MAX_JDK_VERSION = JavaSdkVersion.JDK_11;
+
     public static final String SDK_NAME = "MOE SDK";
 
     public MOESdkType() {
