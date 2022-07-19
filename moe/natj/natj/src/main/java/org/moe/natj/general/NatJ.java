@@ -259,9 +259,7 @@ public class NatJ {
             }
 
             Library lann = type.getAnnotation(Library.class);
-            if (lann != null) {
-                lookUpLibrary(lann.value(), true);
-            }
+            lookUpLibrary(lann, true);
 
             NativeRuntime runtime = getRuntime(type, true);
             if (runtime != null) runtime.doRegistration(type);
@@ -425,6 +423,14 @@ public class NatJ {
         return darwinSystemFrameworkRootDir;
     }
 
+    protected static String lookUpLibrary(Library lann, boolean load) {
+        if (lann != null) {
+            return lookUpLibrary(lann.value(), load);
+        }
+
+        return null;
+    }
+
     /**
      * Looks up a library by its name in the file system.
      *
@@ -437,7 +443,7 @@ public class NatJ {
      *     library
      * @return The resolved path of the library
      */
-    protected static String lookUpLibrary(String name, boolean load) {
+    private static String lookUpLibrary(String name, boolean load) {
 
         synchronized (resolvedLibraries) {
             {
