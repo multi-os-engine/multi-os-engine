@@ -11,4 +11,5 @@ interface MOESdkProperties {
     val coreJar: String
     val platformJar: String?
     val junitJar: String
+    val graalHome: String?
 }
