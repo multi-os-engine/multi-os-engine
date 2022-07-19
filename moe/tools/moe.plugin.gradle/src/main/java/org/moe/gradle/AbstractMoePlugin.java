@@ -380,15 +380,6 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         }
         project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
             FileUtils.getNameAsArtifact(getSDK().getiOSJUnitJar(), getSDK().sdkVersion));
-
-        // Install java 8 support jars to fix lambda compilation
-        project.getDependencies().add(
-            isLibrary ? JavaPlugin.API_CONFIGURATION_NAME : JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion)
-        );
-
-        project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
     }
 
     abstract protected void checkRemoteServer(AbstractBaseTask task);
