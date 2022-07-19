@@ -34,13 +34,7 @@
     ```
 
 * Run the `remove_deprecated_files.py` to remove deprecated files
-* After the generator completed successfully, open the project in IDEA
-* Import the `Eclipse Adjusted NatJGen.xml` code style into IDEA and select it as scheme
-* In the Project navigator, select `moe.apple > moe.platform.ios > src > main > java > apple`
-* Right-click and select `Reformat code`
-    * Check `Include subdirectories`
-    * Check `Optimize imports`
-    * Run and repeat 1-2 times (in some versions of IDEA running only once will not do a sufficient job)
+* After the generator completed successfully, run the "spotlessApply" gradle task
 * Review your git diff and revert any changes that are whitespace only, meaning indentation changes and line-breaks
     * NatJGen has a known issue where it will generate the same code but with different indentation
     * Do not commit `moe.apple/moe.platform.ios/typeconfig.out.ngtconf` it is only generated so `moe.apple/moe.platform.ios/typeconfig.ngtconf` can be updated
