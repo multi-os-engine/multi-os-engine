@@ -37,80 +37,6 @@ public class MOESdkPlugin {
         return "resources";
     }
 
-//    public static String getSdkRootPath(Module module) {
-//        // Read sdk property using facet
-//        MOESdkProperties sdkProperties = GradleModuleModel.getSdkProperties(module);
-//        if (sdkProperties != null) {
-//            return sdkProperties.getHome();
-//        }
-//
-//        // For compatible with old Gradle plugin
-//        final Properties properties = ProjectUtil
-//            .retrievePropertiesFromGradle(new File(ModuleUtils.getModulePath(module)), ProjectUtil.SDK_PROPERTIES_TASK, MOESdkType.getJavaHome(module));
-//
-//        String sdkPath = properties.getProperty(ProjectUtil.SDK_PATH_KEY);
-//
-//        if (sdkPath == null || sdkPath.isEmpty()) {
-//            Messages.showMessageDialog(MOEText.get("Invalid.SDK.Path"), "Error", MOEIcons.MOELogo);
-//        }
-//
-//        return sdkPath;
-//    }
-//
-//    public static void getMOESdk(Module module) {
-//        MOESdkType.getMOESdk(module);
-//    }
-//
-//    public static List<File> getSdkJavaLibraries(String sdkPath) {
-//        List<File> jars = new ArrayList<File>();
-//
-//        List<File> files = getSdkJars(sdkPath);
-//
-//        for (File file : files) {
-//            if (!file.getName().endsWith("-dex.jar") &&
-//                    !file.getName().endsWith("-javadoc.jar")) {
-//                jars.add(file);
-//            }
-//        }
-//
-//        return jars;
-//    }
-//
-//    public static List<File> getSdkJavaDocs(String sdkPath) {
-//        List<File> jars = new ArrayList<File>();
-//
-//        List<File> files = getSdkJars(sdkPath);
-//
-//        for (File file : files) {
-//            if (file.getName().endsWith("-javadoc.jar")) {
-//                jars.add(file);
-//            }
-//        }
-//
-//        return jars;
-//    }
-//
-//    private static List<File> getSdkJars(String sdkPath) {
-//        List<File> jars = new ArrayList<File>();
-//
-//        File libsDir = new File(sdkPath, "sdk");
-//
-//        File[] files = libsDir.listFiles();
-//
-//        if(files == null) {
-//            return jars;
-//        }
-//
-//        for (File file : files) {
-//            if (file.getName().endsWith(".jar")) {
-//                jars.add(file);
-//            }
-//        }
-//
-//        return jars;
-//    }
-
-
     public static Collection<Module> getMoeModules(Project project) {
         List<Module> modules = new ArrayList<Module>();
 
@@ -160,32 +86,6 @@ public class MOESdkPlugin {
         return false;
     }
 
-//    public static boolean isMoeJarsInModule(Module module) {
-//        if (module == null) {
-//            return false;
-//        }
-//        if (module.isDisposed()) {
-//            LOG.info("Invalid MOE module, already disposed (" + module.getName() + ")");
-//            return false;
-//        }
-//
-//        ModuleWithDependenciesScope libraries = (ModuleWithDependenciesScope) module.getModuleWithLibrariesScope();
-//        Collection<VirtualFile> roots = libraries.getRoots();
-//
-//        boolean coreFound = false;
-//        boolean iosFound = false;
-//        for (VirtualFile vf : roots) {
-//            String name = vf.getName();
-//            coreFound = coreFound ? coreFound : name.equals("moe-core.jar");
-//            iosFound = iosFound ? iosFound : name.equals("moe-ios.jar");
-//            if (coreFound & iosFound) {
-//                return true;
-//            }
-//        }
-//
-//        return false;
-//    }
-
     public static Module findModuleForFile(Project project, VirtualFile file) {
 
         if (project == null || project.getBasePath() == null) {
@@ -209,24 +109,4 @@ public class MOESdkPlugin {
         return module;
     }
 
-//    public static String getXcodeBuildSymPath(String modulePath) {
-//        String symPath = modulePath + File.separator + "build" + File.separator + "moe" + File.separator + "xcodebuild" + File.separator +"sym";
-//        return symPath;
-//    }
-//
-//    public static String getPluginVersion() {
-//        String version = "0.0.0.0";
-//
-//        PluginId pluginId = PluginManager.getPluginByClassName(MOESdkPlugin.class.getCanonicalName());
-//
-//        if(pluginId != null) {
-//            IdeaPluginDescriptor plugin = PluginManager.getPlugin(pluginId);
-//
-//            if(plugin != null) {
-//                version = plugin.getVersion();
-//            }
-//        }
-//
-//        return version;
-//    }
 }
