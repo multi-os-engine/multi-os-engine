@@ -16,8 +16,9 @@ limitations under the License.
 
 package org.moe.gradle.remote;
 
-import com.jcraft.jsch.Channel;
-import com.jcraft.jsch.ChannelExec;
+import com.jcraft.jsch.ChannelSftp;
+import com.jcraft.jsch.JSchException;
+import com.jcraft.jsch.SftpException;
 import org.gradle.api.GradleException;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.remote.file.DirectoryEntry;
@@ -27,24 +28,22 @@ import org.moe.gradle.remote.file.Walker;
 import org.moe.gradle.utils.Require;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.net.URI;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.moe.gradle.utils.TermColor.*;
 
-class ServerFileUploader extends AbstractServerSCPTask {
+class ServerFileUploader extends AbstractServerTask {
 
-    @NotNull
-    private final String name;
+    @NotNull private final String name;
 
-    @NotNull
-    private final FileList list;
-
-    private boolean ptimestamp = true;
+    @NotNull private final FileList list;
 
     protected ServerFileUploader(@NotNull Server server, @NotNull String name, @NotNull FileList list) {
         super(server);
@@ -58,235 +57,96 @@ class ServerFileUploader extends AbstractServerSCPTask {
     }
 
     @Override
-    protected void main() throws Exception {
+    protected void main() {
         outlog.println(FG_SET_YELLOW + "Local Root: " + FG_SET_DEFAULT + list.getLocalRoot().toFile().getAbsolutePath());
         outlog.println(FG_SET_YELLOW + "    Remote: " + FG_SET_DEFAULT + list.getTarget().getPath());
         outlog.println();
 
-        list.walk(new Uploader());
+        try {
+            Path zipPath = Files.createTempFile("MOE-Remote", ".zip");
+            Files.deleteIfExists(zipPath);
+            Map<String, String> env = new HashMap<>();
+            env.put("create", "true");
+            try (FileSystem zipFile = FileSystems.newFileSystem(URI.create(zipPath.toUri().toString().replace("file://", "jar:file:")), env)) {
+                list.walk(new Zipper(zipFile));
+                Files.createFile(zipFile.getPath("/.placeholder"));
+            }
+
+            String serverPath = Server.getRemotePath(server.getTempDir(), zipPath.getFileName());
+            final long start = System.nanoTime();
+            uploadFile(zipPath.toString(), serverPath);
+            final long stop = System.nanoTime();
+            final double elapsed = stop - start;
+            final double size = zipPath.toFile().length();
+            double speed = (size / 1024.0) / (elapsed / 1000000000.0);
+            String sizeM = "kB";
+            if (speed > 1024.0) {
+                speed /= 1024.0;
+                sizeM = "MB";
+            }
+            outlog.printf(" %s(%.2f %s/s)%s\n", FG_SET_YELLOW, speed, sizeM, FG_SET_DEFAULT);
+            outlog.flush();
+
+            server.exec("unzip files", "unzip -o -d " + list.getTarget().getPath() + " " + serverPath);
+        } catch (IOException e) {
+            throw new GradleException("Unable to create temporary zip file: " + e.getMessage());
+        }
     }
 
-    private class Uploader implements Walker {
-        ChannelExec channel;
-        OutputStream out;
-        InputStream in;
-        int depth = 0;
+    private void uploadFile(String localPath, String remotePath) {
+        try {
+            ChannelSftp sftp = (ChannelSftp) server.session.openChannel("sftp");
+            sftp.connect();
+            sftp.put(localPath, remotePath);
+            sftp.disconnect();
+        } catch (JSchException | SftpException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private class Zipper implements Walker {
         private final StringBuilder structure = new StringBuilder(1024);
+
+        private final FileSystem zipFile;
+
+
+        public Zipper(FileSystem zipFile) {
+            this.zipFile = zipFile;
+        }
 
         @Override
         public void visitFile(FileEntry entry, boolean isLast) throws IOException {
             outlog.print(structure + (isLast ? "\\-- " : "+-- ") + entry.getName());
             try {
                 @NotNull final File localFile = entry.getLocalFile();
-                if (localFile.length() > /* only check md5 when file if larger than */ 256 * 1024 &&
-                        server.checkFileMD5(Server.getRemotePath(list.getTarget(), entry.getRemotePath()), localFile)) {
+                if (localFile.length() > /* only check md5 when file if larger than */ 256 * 1024 && server.checkFileMD5(Server.getRemotePath(list.getTarget(), entry.getRemotePath()),
+                        localFile)) {
                     outlog.printf(" %s(up-to-date)%s\n", FG_SET_YELLOW, FG_SET_DEFAULT);
                     return;
                 }
 
-                final long start = System.nanoTime();
-                if (channel == null) {
-                    uploadSingleFile(entry.getRemotePath(), localFile);
-                } else {
-                    Require.nonNull(in);
-                    Require.nonNull(out);
-                    writeFile(localFile, in, out);
+                if (entry.getRemotePath().getParent() != null) {
+                    Files.createDirectories(zipFile.getPath(entry.getRemotePath().getParent().toString()));
                 }
-                final long stop = System.nanoTime();
-                final double elapsed = stop - start;
-                final double size = localFile.length();
-                double speed = (size / 1024.0) / (elapsed / 1000000000.0);
-                String sizeM = "kB";
-                if (speed > 1024.0) {
-                    speed /= 1024.0;
-                    sizeM = "MB";
-                }
-                outlog.printf(" %s(%.2f %s/s)%s\n", FG_SET_YELLOW, speed, sizeM, FG_SET_DEFAULT);
+
+                Files.copy(entry.getLocalFile().toPath(), zipFile.getPath(entry.getRemotePath().toString()));
+                outlog.println();
             } catch (Exception e) {
                 outlog.println();
                 throw e;
             }
         }
 
-        private void uploadSingleFile(@NotNull Path remotePath, @NotNull File localFile) throws IOException {
-            Require.nonNull(remotePath);
-            Require.nonNull(localFile);
-            String remoteFile = server.getRemotePath(remotePath);
-
-            try {
-                // exec 'scp -t remoteFile' remotely
-                String command = "scp " + (ptimestamp ? "-p" : "") + " -t " + remoteFile;
-                Channel channel = server.session.openChannel("exec");
-                ((ChannelExec) channel).setCommand(command);
-
-                // Get I/O streams for remote scp
-                OutputStream out = channel.getOutputStream();
-                InputStream in = channel.getInputStream();
-
-                // Connect
-                channel.connect();
-                try {
-                    checkAck(in);
-                    writeFile(localFile, in, out);
-                } finally {
-                    try {
-                        out.close();
-                    } catch (IOException ex) {
-                        ex.printStackTrace(errlog);
-                    }
-                    channel.disconnect();
-                }
-            } catch (Exception ex) {
-                throw new IOException(ex.getMessage(), ex);
-            }
-        }
 
         @Override
-        public void preVisitDirectory(DirectoryEntry entry, boolean isLast) throws IOException {
+        public void preVisitDirectory(DirectoryEntry entry, boolean isLast) {
             outlog.println(structure + (isLast ? "\\-- " : "+-- ") + FG_SET_BLUE + entry.getName() + FG_SET_DEFAULT);
             structure.append(isLast ? "    " : "|   ");
-
-            if (depth++ == 0) {
-                String remoteFile = server.getRemotePath(Paths.get("."));
-                channelSetup(remoteFile);
-            }
-
-            writeDirectoryEnter(entry.getName(), in, out);
-        }
-
-        private void channelSetup(String remoteFile) throws IOException {
-            Require.nullObject(channel);
-            Require.nullObject(in);
-            Require.nullObject(out);
-
-            try {
-                // exec 'scp -t remoteFile' remotely
-                String command = "scp " + (ptimestamp ? "-p" : "") + " -r -t " + remoteFile;
-                channel = (ChannelExec) server.session.openChannel("exec");
-                channel.setCommand(command);
-
-                // Get I/O streams for remote scp
-                out = channel.getOutputStream();
-                in = channel.getInputStream();
-
-                // Connect
-                channel.connect();
-            } catch (Exception ex) {
-                throw new IOException(ex.getMessage(), ex);
-            }
         }
 
         @Override
-        public void postVisitDirectory(DirectoryEntry entry, boolean isLast) throws IOException {
-            Require.nonNull(channel);
-            Require.nonNull(in);
-            Require.nonNull(out);
-
+        public void postVisitDirectory(DirectoryEntry entry, boolean isLast) {
             structure.replace(structure.length() - 4, structure.length(), "");
-
-            writeDirectoryExit(in, out);
-
-            if (--depth == 0) {
-                channelTeardown();
-            }
         }
-
-        private void channelTeardown() {
-            try {
-                out.close();
-            } catch (IOException ex) {
-                ex.printStackTrace(errlog);
-            } finally {
-                out = null;
-            }
-            try {
-                in.close();
-            } catch (IOException ex) {
-                ex.printStackTrace(errlog);
-            } finally {
-                in = null;
-            }
-            channel.disconnect();
-            channel = null;
-        }
-    }
-
-    private void writeFile(@NotNull File file, @NotNull InputStream in, @NotNull OutputStream out) throws IOException {
-        writeTimes(file, in, out);
-        writeFileEntry(file, in, out);
-    }
-
-    private void writeTimes(@NotNull File file, @NotNull InputStream in, @NotNull OutputStream out) throws IOException {
-        Require.nonNull(file);
-        Require.nonNull(in);
-        Require.nonNull(out);
-
-        if (ptimestamp) {
-            // MSG: 'T' <modification> ' 0 ' <access> ' 0\n'
-            final long mod = file.lastModified() / 1000;
-            out.write(("T" + mod + " 0 " + mod + " 0\n").getBytes());
-            out.flush();
-            checkAck(in);
-        }
-    }
-
-    private void writeFileEntry(@NotNull File file, @NotNull InputStream in, @NotNull OutputStream out)
-            throws IOException {
-        Require.nonNull(file);
-        Require.nonNull(in);
-        Require.nonNull(out);
-
-        if (!file.isFile()) {
-            throw new GradleException("Expected file");
-        }
-
-        // MSG: 'C' <mode:mmmm> ' ' <filesize> ' ' <filename>
-        out.write(("C" + getPrivileges(file) + " " + file.length() + " " + file.getName() + "\n").getBytes());
-        out.flush();
-        checkAck(in);
-
-        // MSG: <data>+ '\0'
-        try (FileInputStream fis = new FileInputStream(file)) {
-            byte[] buf = new byte[4096];
-            while (true) {
-                int len = fis.read(buf, 0, buf.length);
-                if (len <= 0) break;
-                out.write(buf, 0, len);
-            }
-            // send '\0'
-            buf[0] = 0;
-            out.write(buf, 0, 1);
-            out.flush();
-            checkAck(in);
-        }
-    }
-
-    private void writeDirectoryEnter(@NotNull String name, @NotNull InputStream in, @NotNull OutputStream out)
-            throws IOException {
-        Require.nonNull(name);
-        Require.nonNull(in);
-        Require.nonNull(out);
-
-        // MSG: 'D' <mode:mmmm> ' 0 ' <filename>
-        out.write(("D0700 0 " + name + "\n").getBytes());
-        out.flush();
-        checkAck(in);
-    }
-
-    private String getPrivileges(@NotNull File file) {
-        final boolean r = file.canRead();
-        final boolean w = file.canWrite();
-        final boolean x = file.canExecute();
-        return "0" + ((r ? 4 : 0) + (w ? 2 : 0) + (x ? 1 : 0)) + "00";
-    }
-
-    private void writeDirectoryExit(@NotNull InputStream in, @NotNull OutputStream out) throws IOException {
-        Require.nonNull(in);
-        Require.nonNull(out);
-
-        // MSG: 'E'
-        out.write(("E\n").getBytes());
-        out.flush();
-        checkAck(in);
     }
 }

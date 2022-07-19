@@ -16,7 +16,6 @@ limitations under the License.
 
 package org.moe.gradle.remote;
 
-import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
@@ -35,7 +34,6 @@ import org.moe.gradle.groovy.closures.ConfigurationClosure;
 import org.moe.gradle.remote.file.FileList;
 import org.moe.gradle.utils.Require;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -225,45 +223,14 @@ public class Server {
 
     private void prepareServerMOE() {
         final MoeSDK sdk = plugin.getSDK();
-
-        final File gradlewZip = sdk.getGradlewZip();
-        final FileList list = new FileList(gradlewZip.getParentFile(), getBuildDir());
-        final String remoteGradlewZip = list.add(gradlewZip);
-        upload("prepare - gradlew", list);
-
-        final String output = exec("install MOE SDK", "" +
-                "cd " + getBuildDir().getPath() + " && " +
-
-                "unzip " + remoteGradlewZip + " && " +
-
-                "cd gradlew && " +
-
-                "echo 'distributionBase=GRADLE_USER_HOME' >> gradle/wrapper/gradle-wrapper.properties && " +
-                "echo 'distributionPath=wrapper/dists' >> gradle/wrapper/gradle-wrapper.properties && " +
-                "echo 'zipStoreBase=GRADLE_USER_HOME' >> gradle/wrapper/gradle-wrapper.properties && " +
-                "echo 'zipStorePath=wrapper/dists' >> gradle/wrapper/gradle-wrapper.properties && " +
-                "echo 'distributionUrl=https\\://services.gradle.org/distributions/gradle-" + plugin.getRequiredGradleVersion() + "-bin.zip' >> gradle/wrapper/gradle-wrapper.properties && " +
-
-                "echo 'buildscript {' >> build.gradle && " +
-                "echo '    repositories {' >> build.gradle && " +
-                "echo '        " + settings.getGradleRepositories() + "' >> build.gradle && " +
-                "echo '    }' >> build.gradle && " +
-                "echo '    dependencies {' >> build.gradle && " +
-                "echo '        classpath group: \"org.multi-os-engine\", name: \"moe-gradle\", version: \"" + sdk.pluginVersion + "\"' >> build.gradle && " +
-                "echo '    }' >> build.gradle && " +
-                "echo '}' >> build.gradle && " +
-                "echo '' >> build.gradle && " +
-                "echo 'apply plugin: \"moe-sdk\"' >> build.gradle && " +
-                "echo 'task printSDKRoot << { print \"" + SDK_ROOT_MARK + ":${moe.sdk.root}\" }' >> build.gradle && " +
-
-                "./gradlew printSDKRoot -s && " +
-                "cd .. && rm -rf gradlew && rm -f gradlew.zip"
-        );
-        final int start = output.indexOf(SDK_ROOT_MARK);
-        Require.NE(start, -1, "SDK_ROOT_MARK not found");
-        final int start2 = start + SDK_ROOT_MARK.length() + 1;
         try {
-            sdkDir = new URI("file://" + output.substring(start2, output.indexOf('\n', start2)));
+            final FileList list = new FileList(sdk.getRoot().getParentFile(), new URI("file://" + getUserHome() + "/").resolve(".moe-remote"));
+            final String remoteGradlewZip = list.add(sdk.getRoot());
+            upload("upload sdk", list);
+            // Since zip's can't hold executable info, we need to apply it afterwards. Maybe we can be more selective if we want
+            // Or do it in ServerFileUploader, just making the files executable that also are locally
+            exec("make executable", "chmod -R +x " + list.getTarget().getPath());
+            sdkDir = new URI("file://" + remoteGradlewZip);
         } catch (URISyntaxException e) {
             throw new GradleException(e.getMessage(), e);
         }
@@ -272,77 +239,25 @@ public class Server {
     }
 
     private void setupUserHome() {
-        final ChannelExec channel;
-        try {
-            channel = (ChannelExec) session.openChannel("exec");
-        } catch (JSchException e) {
-            throw new GradleException(e.getMessage(), e);
-        }
-
-        channel.setCommand("echo $HOME");
-
-        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        channel.setOutputStream(baos);
-
-        try {
-            channel.connect();
-        } catch (JSchException e) {
-            throw new GradleException(e.getMessage(), e);
-        }
-
-        while (!channel.isClosed()) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new GradleException(e.getMessage(), e);
-            }
-        }
-
-        channel.disconnect();
-        if (channel.getExitStatus() != 0) {
-            throw new GradleException("Failed to initialize connection with server");
-        }
-        userHome = baos.toString().trim();
+        ServerCommandRunner runner = new ServerCommandRunner(this, "get home", "echo $HOME");
+        runner.run();
+        userHome = runner.getOutput().trim();
         LOG.quiet("MOE Remote Build - REMOTE_HOME=" + getUserHome());
     }
 
     private void setupBuildDir() {
-        final ChannelExec channel;
+        buildDir = getTempDir();
+        LOG.quiet("MOE Remote Build - REMOTE_BUILD_DIR=" + buildDir.getPath());
+    }
+
+    public URI getTempDir() {
+        ServerCommandRunner runner = new ServerCommandRunner(this, "temp dir", "mktemp -d");
+        runner.run();
         try {
-            channel = (ChannelExec) session.openChannel("exec");
-        } catch (JSchException e) {
-            throw new GradleException(e.getMessage(), e);
-        }
-
-        channel.setCommand("mktemp -d");
-
-        final ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        channel.setOutputStream(baos);
-
-        try {
-            channel.connect();
-        } catch (JSchException e) {
-            throw new GradleException(e.getMessage(), e);
-        }
-
-        while (!channel.isClosed()) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new GradleException(e.getMessage(), e);
-            }
-        }
-
-        channel.disconnect();
-        if (channel.getExitStatus() != 0) {
-            throw new GradleException("Failed to initialize connection with server");
-        }
-        try {
-            buildDir = new URI("file://" + baos.toString().trim());
+            return new URI("file://" + runner.getOutput().trim());
         } catch (URISyntaxException e) {
             throw new GradleException(e.getMessage(), e);
         }
-        LOG.quiet("MOE Remote Build - REMOTE_BUILD_DIR=" + buildDir.getPath());
     }
 
     private void disconnect() {
