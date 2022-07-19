@@ -41,6 +41,7 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
                 GradleModuleModel.KEY,
                 GradleModuleModel(
                     moduleName = moduleDataNode.data.internalName,
+                    version = gradlePluginModel?.readGradleModelOptionalProperty { version },
                     gradlePlugins = gradlePluginModel?.gradlePluginList?.toList() ?: emptyList(),
                     taskNames = gradleModule.getTaskNames(),
                     sdkProperties = gradlePluginModel?.readGradleModelOptionalProperty { sdkProperties }
@@ -68,6 +69,7 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
         } else {
             mutableListOf(MOESdkPlugin.GRADLE_PLUGIN_MOE_SDK)
         }
+        override val version: String? = null
         override val sdkProperties: MOESdkProperties? = null
         override val xcodeProperties: MOEXcodeProperties? = null
     }

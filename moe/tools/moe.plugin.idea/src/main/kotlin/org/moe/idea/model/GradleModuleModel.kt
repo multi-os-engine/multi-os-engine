@@ -13,6 +13,7 @@ import java.io.Serializable
  */
 data class GradleModuleModel(
     override val moduleName: String,
+    val version: String?,
     val gradlePlugins: List<String>,
     val taskNames: List<String>,
     val sdkProperties: MOESdkProperties?,
