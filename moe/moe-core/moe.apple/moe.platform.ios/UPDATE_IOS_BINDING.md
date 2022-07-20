@@ -6,6 +6,7 @@
 * Make sure your NatJGen version is bleeding edge!
 * Do NOT skip steps in this guide, this guide is made specially so that the git diff can (and must) be minimal!
 * Do NOT commit back any changes which are whitespace only into moe-core repository!
+* For consistent formating [spotless](https://github.com/diffplug/spotless) is used. The format specification (Eclipse_Adjusted_NatJGen.xml) is exported by IntelliJ in the eclipse format.
 
 ### Setup & Generation
 
