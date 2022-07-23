@@ -53,7 +53,7 @@ public class ObjCAutoreleasePool implements AutoCloseable {
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
         release();
     }
 }

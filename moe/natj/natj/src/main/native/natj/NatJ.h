@@ -94,6 +94,8 @@ limitations under the License.
 /** @} */
 
 #ifdef __APPLE__
+#import <CoreFoundation/CoreFoundation.h>
+
 #import <TargetConditionals.h>
 #if TARGET_OS_IOS
 #define NATJ_PLATFORM "ios"
@@ -377,6 +379,17 @@ JNIEXPORT void JNICALL
 JNIEXPORT jstring JNICALL
     Java_org_moe_natj_general_NatJ_getPlatformName(JNIEnv* env,
                                                        jclass clazz);
+
+/**
+ * Get the runtime system framework path on simulator.
+ *
+ * @param env JNIEnv pointer for the current thread
+ * @param clazz Java class of NatJ, used for nothing
+ * @return The path to the CoreFoundation.framework if running on simulator, or NULL on read device.
+ */
+JNIEXPORT jstring JNICALL
+    Java_org_moe_natj_general_NatJ_getSimulatorFrameworkPath(JNIEnv* env,
+                                                             jclass clazz);
 
 /**
  * Try to load framework.
