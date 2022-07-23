@@ -162,11 +162,11 @@ class GraalVM(
     ): java.io.Serializable
 
     data class JDKVersion(
-            val feature: Int,
-            val interim: Int,
-            val update: Int,
-            val patch: Int
-    ): Comparable<JDKVersion>, java.io.Serializable {
+        override val feature: Int,
+        override val interim: Int,
+        override val update: Int,
+        override val patch: Int
+    ): org.moe.gradle.model.JDKVersion, Comparable<JDKVersion>, java.io.Serializable {
 
         override fun compareTo(other: JDKVersion): Int = compareValuesBy(this, other,
             { it.feature },
@@ -247,11 +247,11 @@ class GraalVM(
     }
 
     data class GraalVMVersion(
-            val year: Int,
-            val feature: Int = 0,
-            val patch: Int = 0,
-            val bugfix: Int = 0,
-    ): Comparable<GraalVMVersion>, java.io.Serializable {
+        override val year: Int,
+        override val feature: Int = 0,
+        override val patch: Int = 0,
+        override val bugfix: Int = 0,
+    ): org.moe.gradle.model.GraalVMVersion, Comparable<GraalVMVersion>, java.io.Serializable {
 
         override fun compareTo(other: GraalVMVersion): Int = compareValuesBy(this, other,
             { it.year },
