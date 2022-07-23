@@ -23,7 +23,7 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 group 'org.multi-os-engine'
-version '1.5.1'
+version '1.5.2'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

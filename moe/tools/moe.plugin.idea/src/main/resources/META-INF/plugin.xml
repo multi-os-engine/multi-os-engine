@@ -9,6 +9,12 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.5.2<br>
+      - Improve SDK management<br>
+      - Fix "Module SDK not configured or it's not a valid JDK" issue<br>
+      - Run MOE build using the same JDK as the Gradle JVM<br>
+      - Improve support of MOE 2.x<br>
+      <br>
       1.5.1<br>
       - Fix issue that modified files are not saved before building the project<br>
       <br>
@@ -55,7 +61,7 @@
       - Use MOE gradle plugin community edition for new project<br>
     ]]></change-notes>
 
-    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
     <idea-version since-build="201"/>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
