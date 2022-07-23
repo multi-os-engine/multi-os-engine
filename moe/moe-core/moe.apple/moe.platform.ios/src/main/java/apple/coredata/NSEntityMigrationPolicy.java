@@ -152,7 +152,8 @@ public class NSEntityMigrationPolicy extends NSObject {
     public static native long version_static();
 
     /**
-     * Invoked by the migration manager at the start of a given entity mapping.  This is also the precursor to the creation step.
+     * Invoked by the migration manager at the start of a given entity mapping. This is also the precursor to the
+     * creation step.
      */
     @Generated
     @Selector("beginEntityMapping:manager:error:")
@@ -160,9 +161,13 @@ public class NSEntityMigrationPolicy extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Invoked by the migration manager on each source instance (as specified by the sourceExpression in the mapping) to create the corresponding destination instance.  The method also associates the source and destination instances by calling NSMigrationManager's
-     * associateSourceInstance:withDestinationInstance:forEntityMapping: method.  Subclass implementations of this method must be careful to
-     * associate the source and destination instances as required if super is not called. A return value of NO indicates an error.
+     * Invoked by the migration manager on each source instance (as specified by the sourceExpression in the mapping) to
+     * create the corresponding destination instance. The method also associates the source and destination instances by
+     * calling NSMigrationManager's
+     * associateSourceInstance:withDestinationInstance:forEntityMapping: method. Subclass implementations of this method
+     * must be careful to
+     * associate the source and destination instances as required if super is not called. A return value of NO indicates
+     * an error.
      */
     @Generated
     @Selector("createDestinationInstancesForSourceInstance:entityMapping:manager:error:")
@@ -171,7 +176,9 @@ public class NSEntityMigrationPolicy extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Constructs the relationships between the newly-created destination instances.  The association lookup methods on the NSMigrationManager can be used to determine the appropriate relationship targets.  A return value of NO indicates an error.
+     * Constructs the relationships between the newly-created destination instances. The association lookup methods on
+     * the NSMigrationManager can be used to determine the appropriate relationship targets. A return value of NO
+     * indicates an error.
      */
     @Generated
     @Selector("createRelationshipsForDestinationInstance:entityMapping:manager:error:")
@@ -180,7 +187,8 @@ public class NSEntityMigrationPolicy extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Invoked by the migration manager at the end of a given entity mapping.  This is also the end to the validation step, which is the last step for migration.
+     * Invoked by the migration manager at the end of a given entity mapping. This is also the end to the validation
+     * step, which is the last step for migration.
      */
     @Generated
     @Selector("endEntityMapping:manager:error:")
@@ -188,7 +196,8 @@ public class NSEntityMigrationPolicy extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Indicates the end of the creation step for the specified entity mapping, and the precursor to the next migration step.  Developers can override this method to set up or clean up information for further migration steps.
+     * Indicates the end of the creation step for the specified entity mapping, and the precursor to the next migration
+     * step. Developers can override this method to set up or clean up information for further migration steps.
      */
     @Generated
     @Selector("endInstanceCreationForEntityMapping:manager:error:")
@@ -196,7 +205,9 @@ public class NSEntityMigrationPolicy extends NSObject {
             NSMigrationManager manager, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Indicates the end of the relationship creation step for the specified entity mapping.  This method is invoked after the createRelationshipsForDestinationInstance:entityMapping:manager:error: method, and can be used to clean up state from the creation of relationships, or prepare state for the performance of custom validation.
+     * Indicates the end of the relationship creation step for the specified entity mapping. This method is invoked
+     * after the createRelationshipsForDestinationInstance:entityMapping:manager:error: method, and can be used to clean
+     * up state from the creation of relationships, or prepare state for the performance of custom validation.
      */
     @Generated
     @Selector("endRelationshipCreationForEntityMapping:manager:error:")
@@ -208,7 +219,9 @@ public class NSEntityMigrationPolicy extends NSObject {
     public native NSEntityMigrationPolicy init();
 
     /**
-     * Invoked during the validation step of the entity migration policy, providing the option of performing custom validation on migrated objects.  (Implementors must manually obtain the collection of objects they are interested in validating.)
+     * Invoked during the validation step of the entity migration policy, providing the option of performing custom
+     * validation on migrated objects. (Implementors must manually obtain the collection of objects they are interested
+     * in validating.)
      */
     @Generated
     @Selector("performCustomValidationForEntityMapping:manager:error:")

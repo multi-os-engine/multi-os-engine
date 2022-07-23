@@ -314,7 +314,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     /**
      * Return whether this trait collection, compared to a different trait collection, could show a different appearance
      * for dynamic colors that are provided by UIKit or are in an asset catalog.
-     * If you need to be aware of when dynamic colors might change, override `traitCollectionDidChange` in your view or view controller,
+     * If you need to be aware of when dynamic colors might change, override `traitCollectionDidChange` in your view or
+     * view controller,
      * and use this method to compare `self.traitCollection` with `previousTraitCollection`.
      * <p>
      * Currently, a change in any of these traits could affect dynamic colors:

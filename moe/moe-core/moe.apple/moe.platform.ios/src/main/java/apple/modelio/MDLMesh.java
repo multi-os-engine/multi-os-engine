@@ -268,7 +268,7 @@ public class MDLMesh extends MDLObject {
      * be overwritten with vertex normal data. 'vertexDescriptor' will be
      * updated to reflect the new attribute.
      *
-     * @param attributeName   Name is the attribute name of vertex normal attribute.  If nil, vertex normals
+     * @param attributeName   Name is the attribute name of vertex normal attribute. If nil, vertex normals
      *                        will be added with the MDLVertexAttributeNormal name string
      * @param creaseThreshold Threshold of the dot product between the 2 triangles after which
      *                        their face normal will be smoothed out. Therefore, a threshold of 0 will
@@ -414,7 +414,7 @@ public class MDLMesh extends MDLObject {
      *                          generate a subdivided mesh
      * @param subdivisionLevels The number of levels to subdivide mesh
      * @return Returns a mesh subdivided to index level, unless subdivision is
-     * impossible.
+     *         impossible.
      */
     @Generated
     @Selector("initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:")
@@ -444,7 +444,7 @@ public class MDLMesh extends MDLObject {
      * @param submeshes    Array of submeshes with index buffers referencing vertex data
      *                     and/or materials to be applied to mesh
      * @return Initialized mesh or nil if descriptor's layout array does not describe
-     * a single buffer
+     *         a single buffer
      */
     @Generated
     @Selector("initWithVertexBuffer:vertexCount:descriptor:submeshes:")
@@ -466,7 +466,7 @@ public class MDLMesh extends MDLObject {
      * @param submeshes   Array of submeshes with index buffers referencing vertex data
      *                    and/or materials to be applied to mesh
      * @return Initialized mesh or nil if descriptor's layout array is incompatible
-     * with vertexBuffers array
+     *         with vertexBuffers array
      */
     @Generated
     @Selector("initWithVertexBuffers:vertexCount:descriptor:submeshes:")
@@ -551,9 +551,9 @@ public class MDLMesh extends MDLObject {
      * <p>
      * Setting this applies the new layout in 'vertexBuffers' thus is a
      * heavyweight operation as structured copies of almost all vertex
-     * buffer data could be made.  Additionally, if the new vertexDescriptor
+     * buffer data could be made. Additionally, if the new vertexDescriptor
      * does not have an attribute in the original vertexDescriptor, that
-     * attribute will be deleted.  If the original vertexDescriptor does
+     * attribute will be deleted. If the original vertexDescriptor does
      * not have an attribute in the new vertexDescriptor, the data for the
      * added attribute set as the added attribute's initializationValue
      * property.
@@ -649,9 +649,9 @@ public class MDLMesh extends MDLObject {
      * <p>
      * Setting this applies the new layout in 'vertexBuffers' thus is a
      * heavyweight operation as structured copies of almost all vertex
-     * buffer data could be made.  Additionally, if the new vertexDescriptor
+     * buffer data could be made. Additionally, if the new vertexDescriptor
      * does not have an attribute in the original vertexDescriptor, that
-     * attribute will be deleted.  If the original vertexDescriptor does
+     * attribute will be deleted. If the original vertexDescriptor does
      * not have an attribute in the new vertexDescriptor, the data for the
      * added attribute set as the added attribute's initializationValue
      * property.

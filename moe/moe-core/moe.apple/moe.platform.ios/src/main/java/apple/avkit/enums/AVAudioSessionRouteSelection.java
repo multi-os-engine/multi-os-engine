@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@constant]	AVAudioSessionRouteSelectionNone
+ * [@constant] AVAudioSessionRouteSelectionNone
  * Indicates no route was selected.
- * [@constant]	AVAudioSessionRouteSelectionLocal
+ * [@constant] AVAudioSessionRouteSelectionLocal
  * Indicates that the local device was selected.
- * [@constant]	AVAudioSessionRouteSelectionExternal
+ * [@constant] AVAudioSessionRouteSelectionExternal
  * Indicates that an external device was selected.
  */
 @Generated

@@ -37,7 +37,7 @@ public interface CNContactViewControllerDelegate {
      * <p>
      * If creating a new contact, the new contact added to the contacts list will be passed.
      * If adding to an existing contact, the existing contact will be passed.
-     * [@note]        It is up to the delegate to dismiss the view controller.
+     * [@note] It is up to the delegate to dismiss the view controller.
      */
     @Generated
     @IsOptional

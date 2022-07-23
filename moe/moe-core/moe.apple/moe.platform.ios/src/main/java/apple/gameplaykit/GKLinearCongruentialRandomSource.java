@@ -168,7 +168,8 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
     public static native long version_static();
 
     /**
-     * Initializes a linear congruential random source with bits from high entropy system resource like SecRandomCopyBytes.
+     * Initializes a linear congruential random source with bits from high entropy system resource like
+     * SecRandomCopyBytes.
      */
     @Generated
     @Selector("init")

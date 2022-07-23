@@ -79,7 +79,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A byte stream can be sent to a connected peer with the
  * -startStreamWithName:toPeer:error: method. On success, an
- * NSOutputStream  object is returned, and can be used to send bytes to
+ * NSOutputStream object is returned, and can be used to send bytes to
  * the remote peer once the stream is properly set up. The receiver of the
  * byte stream will receive a delegate callback -session:didReceiveStream:
  * withName:fromPeer:

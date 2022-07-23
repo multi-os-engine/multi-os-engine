@@ -172,7 +172,8 @@ public class GKFriendRequestComposeViewController extends UINavigationController
 
     /**
      * Add recipients to the request.
-     * If you don't specify at least one recipient before presenting the view, the recipients field will be made firstResponder, to encourage the user to add some.
+     * If you don't specify at least one recipient before presenting the view, the recipients field will be made
+     * firstResponder, to encourage the user to add some.
      * If you add more than maxNumberOfRecipients recipients, these methods will throw an exception.
      */
     @Generated

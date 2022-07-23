@@ -55,7 +55,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * UISearchBar officially conformed to UITextInputTraits in iOS 8.0 and privately conformed in iOS 7.0. Prior to 7.0, UISearchBar only implemented these four traits: autocapitalizationType, autocorrectionType, spellCheckingType and keyboardType. If your deployment target is <7.0 and you are using any trait other than one of the four mentioned, you must check its availability with respondsToSelector:
+ * UISearchBar officially conformed to UITextInputTraits in iOS 8.0 and privately conformed in iOS 7.0. Prior to 7.0,
+ * UISearchBar only implemented these four traits: autocapitalizationType, autocorrectionType, spellCheckingType and
+ * keyboardType. If your deployment target is <7.0 and you are using any trait other than one of the four mentioned, you
+ * must check its availability with respondsToSelector:
  */
 @Generated
 @Library("UIKit")
@@ -402,7 +405,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     public native long autocorrectionType();
 
     /**
-     * 1pt wide images and resizable images will be scaled or tiled according to the resizable area, otherwise the image will be tiled
+     * 1pt wide images and resizable images will be scaled or tiled according to the resizable area, otherwise the image
+     * will be tiled
      */
     @Generated
     @Selector("backgroundImage")
@@ -469,7 +473,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     public native UIView inputAccessoryView();
 
     /**
-     * Use this method to modify the contents of the Unified Content Bar, shown on top of the keyboard when search is engaged.
+     * Use this method to modify the contents of the Unified Content Bar, shown on top of the keyboard when search is
+     * engaged.
      * You may modify the returned inputAssistantItem to add to or replace the existing items on the bar.
      * Modifications made to the returned UITextInputAssistantItem are reflected automatically.
      */
@@ -620,7 +625,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     public native void setAutocorrectionType(@NInt long value);
 
     /**
-     * 1pt wide images and resizable images will be scaled or tiled according to the resizable area, otherwise the image will be tiled
+     * 1pt wide images and resizable images will be scaled or tiled according to the resizable area, otherwise the image
+     * will be tiled
      */
     @Generated
     @Selector("setBackgroundImage:")
@@ -727,14 +733,21 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     public native void setScopeBarBackgroundImage(UIImage value);
 
     /**
-     * If backgroundImage is an image returned from -[UIImage resizableImageWithCapInsets:] the cap widths will be calculated from the edge insets, otherwise, the cap width will be calculated by subtracting one from the image's width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the margin use the margin adjustment methods.
+     * If backgroundImage is an image returned from -[UIImage resizableImageWithCapInsets:] the cap widths will be
+     * calculated from the edge insets, otherwise, the cap width will be calculated by subtracting one from the image's
+     * width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the
+     * margin use the margin adjustment methods.
      */
     @Generated
     @Selector("setScopeBarButtonBackgroundImage:forState:")
     public native void setScopeBarButtonBackgroundImageForState(UIImage backgroundImage, @NUInt long state);
 
     /**
-     * To customize the segmented control appearance you will need to provide divider images to go between two unselected segments (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal), selected on the left and unselected on the right (leftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
+     * To customize the segmented control appearance you will need to provide divider images to go between two
+     * unselected segments (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal), selected on
+     * the left and unselected on the right (leftSegmentState:UIControlStateSelected
+     * rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right
+     * (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
      */
     @Generated
     @Selector("setScopeBarButtonDividerImage:forLeftSegmentState:rightSegmentState:")
@@ -742,7 +755,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
             @NUInt long leftState, @NUInt long rightState);
 
     /**
-     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
+     * using the keys found in NSAttributedString.h.
      */
     @Generated
     @Selector("setScopeBarButtonTitleTextAttributes:forState:")

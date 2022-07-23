@@ -162,8 +162,10 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     /**
      * The preconditions for the URL passed to dismissGrantingAccessToURL: vary depending on the document picker mode.
      * In Import mode, any URL that the extension has access to is valid.
-     * In Open mode, the URL needs to be on a level below the documentStorageURL returned by the corresponding non-UI extension.
-     * In Export mode, the URL needs to be below the documentStorageURL and should point to a duplicate of the object at originalURL.
+     * In Open mode, the URL needs to be on a level below the documentStorageURL returned by the corresponding non-UI
+     * extension.
+     * In Export mode, the URL needs to be below the documentStorageURL and should point to a duplicate of the object at
+     * originalURL.
      */
     @Generated
     @Selector("dismissGrantingAccessToURL:")
@@ -206,15 +208,18 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     public native void prepareForPresentationInMode(@NUInt long mode);
 
     /**
-     * if a corresponding non-UI picker component is found, these return the values returned by the corresponding methods
-     * in the non-UI component. Otherwise, they will return the values corresponding to the default implementation of a non-UI picker.
+     * if a corresponding non-UI picker component is found, these return the values returned by the corresponding
+     * methods
+     * in the non-UI component. Otherwise, they will return the values corresponding to the default implementation of a
+     * non-UI picker.
      */
     @Generated
     @Selector("providerIdentifier")
     public native String providerIdentifier();
 
     /**
-     * Contains the list of valid types if in mode UIDocumentPickerModeImport or UIDocumentPickerModeOpen. nil otherwise.
+     * Contains the list of valid types if in mode UIDocumentPickerModeImport or UIDocumentPickerModeOpen. nil
+     * otherwise.
      */
     @Generated
     @Selector("validTypes")

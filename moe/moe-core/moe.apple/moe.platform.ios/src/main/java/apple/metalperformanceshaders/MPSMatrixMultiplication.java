@@ -57,7 +57,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A, B, and C are matrices which are represented by MPSMatrix
  * objects. alpha and beta are scalar values (of the same data type
- * as values of C) which are applied as shown above.  A and B may
+ * as values of C) which are applied as shown above. A and B may
  * each have an optional transposition operation applied.
  * <p>
  * A, B, and C (also referred to in later discussions as the left input
@@ -223,21 +223,21 @@ public class MPSMatrixMultiplication extends MPSKernel {
      *
      * @param device          The device on which the kernel will execute.
      * @param transposeLeft   A boolean value which indicates if the left input matrix should be
-     *                        used in transposed form.  If 'YES' then op(A) = A**T, otherwise
+     *                        used in transposed form. If 'YES' then op(A) = A**T, otherwise
      *                        op(A) = A.
      * @param transposeRight  A boolean value which indicates if the right input matrix should be
-     *                        used in transposed form.  If 'YES' then op(B) = B**T, otherwise
+     *                        used in transposed form. If 'YES' then op(B) = B**T, otherwise
      *                        op(B) = B.
      * @param resultRows      The number of rows in the result matrix, M in BLAS GEMM description.
      * @param resultColumns   The number of columns in the result matrix, N in BLAS GEMM description.
      * @param interiorColumns The number of columns of the left input matrix after the
      *                        appropriate transpose operation has been applied. K in BLAS
      *                        GEMM description.
-     * @param alpha           The scale factor to apply to the product.  Specified in double
-     *                        precision.  Will be converted to the appropriate precision in the
+     * @param alpha           The scale factor to apply to the product. Specified in double
+     *                        precision. Will be converted to the appropriate precision in the
      *                        implementation subject to rounding and/or clamping as necessary.
-     * @param beta            The scale factor to apply to the initial values of C.  Specified
-     *                        in double precision.  Will be converted to the appropriate precision in the
+     * @param beta            The scale factor to apply to the initial values of C. Specified
+     *                        in double precision. Will be converted to the appropriate precision in the
      *                        implementation subject to rounding and/or clamping as necessary.
      * @return A valid MPSMatrixMultiplication object or nil, if failure.
      */
@@ -248,12 +248,12 @@ public class MPSMatrixMultiplication extends MPSKernel {
             @NUInt long resultRows, @NUInt long resultColumns, @NUInt long interiorColumns, double alpha, double beta);
 
     /**
-     * [@property]   leftMatrixOrigin
+     * [@property] leftMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the left input matrix, at which to
-     * start reading values.  This property is modifiable and defaults to
-     * [0, 0] at initialization time.  If a different origin is desired then
-     * this should be modified prior to encoding the kernel.  The z value
+     * start reading values. This property is modifiable and defaults to
+     * [0, 0] at initialization time. If a different origin is desired then
+     * this should be modified prior to encoding the kernel. The z value
      * must be 0.
      */
     @Generated
@@ -262,13 +262,13 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MTLOrigin leftMatrixOrigin();
 
     /**
-     * [@property]   resultMatrixOrigin
+     * [@property] resultMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the result matrix, at which to
-     * start writing (and reading if necessary) results.  This property is
-     * modifiable and defaults to [0, 0] at initialization time.  If a
+     * start writing (and reading if necessary) results. This property is
+     * modifiable and defaults to [0, 0] at initialization time. If a
      * different origin is desired then this should be modified prior to
-     * encoding the kernel.  The z value must be 0.
+     * encoding the kernel. The z value must be 0.
      */
     @Generated
     @Selector("resultMatrixOrigin")
@@ -276,12 +276,12 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MTLOrigin resultMatrixOrigin();
 
     /**
-     * [@property]   rightMatrixOrigin
+     * [@property] rightMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the right input matrix, at which to
-     * start reading values.  This property is modifiable and defaults to
-     * [0, 0] at initialization time.  If a different origin is desired then
-     * this should be modified prior to encoding the kernel.  The z value
+     * start reading values. This property is modifiable and defaults to
+     * [0, 0] at initialization time. If a different origin is desired then
+     * this should be modified prior to encoding the kernel. The z value
      * must be 0.
      */
     @Generated
@@ -290,12 +290,12 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native MTLOrigin rightMatrixOrigin();
 
     /**
-     * [@property]   leftMatrixOrigin
+     * [@property] leftMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the left input matrix, at which to
-     * start reading values.  This property is modifiable and defaults to
-     * [0, 0] at initialization time.  If a different origin is desired then
-     * this should be modified prior to encoding the kernel.  The z value
+     * start reading values. This property is modifiable and defaults to
+     * [0, 0] at initialization time. If a different origin is desired then
+     * this should be modified prior to encoding the kernel. The z value
      * must be 0.
      */
     @Generated
@@ -303,25 +303,25 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native void setLeftMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * [@property]   resultMatrixOrigin
+     * [@property] resultMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the result matrix, at which to
-     * start writing (and reading if necessary) results.  This property is
-     * modifiable and defaults to [0, 0] at initialization time.  If a
+     * start writing (and reading if necessary) results. This property is
+     * modifiable and defaults to [0, 0] at initialization time. If a
      * different origin is desired then this should be modified prior to
-     * encoding the kernel.  The z value must be 0.
+     * encoding the kernel. The z value must be 0.
      */
     @Generated
     @Selector("setResultMatrixOrigin:")
     public native void setResultMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * [@property]   rightMatrixOrigin
+     * [@property] rightMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the right input matrix, at which to
-     * start reading values.  This property is modifiable and defaults to
-     * [0, 0] at initialization time.  If a different origin is desired then
-     * this should be modified prior to encoding the kernel.  The z value
+     * start reading values. This property is modifiable and defaults to
+     * [0, 0] at initialization time. If a different origin is desired then
+     * this should be modified prior to encoding the kernel. The z value
      * must be 0.
      */
     @Generated
@@ -329,9 +329,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native void setRightMatrixOrigin(@ByValue MTLOrigin value);
 
     /**
-     * [@property]   batchSize
+     * [@property] batchSize
      * <p>
-     * The number of matrices in the batch to process.  This property
+     * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed.
      */
@@ -341,10 +341,10 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native long batchSize();
 
     /**
-     * [@property]   batchStart
+     * [@property] batchStart
      * <p>
-     * The index of the first matrix in the batch.  This property is
-     * modifiable and defaults to 0 at initialization time.  If
+     * The index of the first matrix in the batch. This property is
+     * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
      * should be modified prior to encoding the kernel.
      */
@@ -365,7 +365,7 @@ public class MPSMatrixMultiplication extends MPSKernel {
     /**
      * Convenience initialization for a matrix-matrix multiplication
      * with no transpositions, unit scaling of the product, and no
-     * accumulation of the result.  The scaling factors alpha and beta
+     * accumulation of the result. The scaling factors alpha and beta
      * are taken to be 1.0 and 0.0 respectively.
      *
      * @param device          The device on which the kernel will execute.
@@ -382,9 +382,9 @@ public class MPSMatrixMultiplication extends MPSKernel {
             @NUInt long interiorColumns);
 
     /**
-     * [@property]   batchSize
+     * [@property] batchSize
      * <p>
-     * The number of matrices in the batch to process.  This property
+     * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed.
      */
@@ -393,10 +393,10 @@ public class MPSMatrixMultiplication extends MPSKernel {
     public native void setBatchSize(@NUInt long value);
 
     /**
-     * [@property]   batchStart
+     * [@property] batchStart
      * <p>
-     * The index of the first matrix in the batch.  This property is
-     * modifiable and defaults to 0 at initialization time.  If
+     * The index of the first matrix in the batch. This property is
+     * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
      * should be modified prior to encoding the kernel.
      */

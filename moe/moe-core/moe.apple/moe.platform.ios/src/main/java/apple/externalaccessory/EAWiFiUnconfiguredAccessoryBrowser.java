@@ -163,9 +163,12 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     /**
      * Begin the configuration process for the chosen accessory
      * <p>
-     * Stop the search for unconfigured accessories and begins the configuration process of the specified EAWiFiUnconfiguredAccessory.
-     * The user is guided through the configuration process via Apple UI. This process can take up to a few minutes to complete.
-     * The host application delegate will receive the didFinishConfiguringAccessory callback with an error that should be
+     * Stop the search for unconfigured accessories and begins the configuration process of the specified
+     * EAWiFiUnconfiguredAccessory.
+     * The user is guided through the configuration process via Apple UI. This process can take up to a few minutes to
+     * complete.
+     * The host application delegate will receive the didFinishConfiguringAccessory callback with an error that should
+     * be
      * checked upon completion.
      *
      * @param accessory      The accessory the application wishes to configure
@@ -197,7 +200,8 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
      * which can be further configured based on the application's interests.
      *
      * @param delegate The delegate that will receive the EAWiFiUnconfiguredAccessoryBrowserDelegate events.
-     * @param queue    The dispatch queue the delegate would like to receive events on. If nil the events will be on the main queue.
+     * @param queue    The dispatch queue the delegate would like to receive events on. If nil the events will be on the
+     *                 main queue.
      * @return Instance object
      */
     @Generated
@@ -239,7 +243,8 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
      * only be used when actively searching for accessories. Scans should be stopped immediately when the
      * desired accessories have been located.
      *
-     * @param predicate The desired filter for unconfigured accessory results conforming to the EAWiFiUnconfiguredAccessory protocol.
+     * @param predicate The desired filter for unconfigured accessory results conforming to the
+     *                  EAWiFiUnconfiguredAccessory protocol.
      */
     @Generated
     @Selector("startSearchingForUnconfiguredAccessoriesMatchingPredicate:")

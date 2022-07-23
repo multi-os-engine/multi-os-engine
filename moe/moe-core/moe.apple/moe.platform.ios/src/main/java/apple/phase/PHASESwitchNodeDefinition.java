@@ -113,7 +113,8 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a switch node definition
      *
-     * @param switchMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the switch node at runtime.
+     * @param switchMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     *                                      switch node at runtime.
      * @return A new PHASESwitchNodeDefinition object
      */
     @Generated
@@ -126,7 +127,8 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a switch node definition
      *
-     * @param switchMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the switch node at runtime.
+     * @param switchMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     *                                      switch node at runtime.
      * @param identifier                    An optional custom identifier to give to this object
      * @return A new PHASESwitchNodeDefinition object
      */

@@ -19,7 +19,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@protocol]   MPSCNNInstanceNormalizationDataSource
+ * [@protocol] MPSCNNInstanceNormalizationDataSource
  * <p>
  * The MPSCNNInstanceNormalizationDataSource protocol declares the methods that an
  * instance of MPSCNNInstanceNormalization uses to initialize the
@@ -105,8 +105,8 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
     /**
      * Alerts the data source that the data will be needed soon
      *
-     * @return Returns YES on success.  If NO is returned, expect MPS
-     * object construction to fail.
+     * @return Returns YES on success. If NO is returned, expect MPS
+     *         object construction to fail.
      */
     @Generated
     @IsOptional
@@ -116,7 +116,7 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
     }
 
     /**
-     * [@property]   The number of feature channels over which to normalize.
+     * [@property] The number of feature channels over which to normalize.
      */
     @Generated
     @Selector("numberOfFeatureChannels")

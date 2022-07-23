@@ -95,7 +95,8 @@ public class CBUUID extends NSObject implements NSCopying {
      * UUIDWithString:
      * <p>
      * Creates a CBUUID with a 16-bit, 32-bit, or 128-bit UUID string representation.
-     * The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example 68753A44-4D6F-1226-9C60-0050E4C00067.
+     * The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example
+     * 68753A44-4D6F-1226-9C60-0050E4C00067.
      */
     @Generated
     @Selector("UUIDWithString:")

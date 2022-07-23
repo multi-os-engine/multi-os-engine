@@ -176,7 +176,7 @@ public final class Enums {
     @Generated public static final int kDNSServiceFlagsKnownUnique = 0x00000800;
     /**
      * Client guarantees that record names are unique, so we can skip sending out initial
-     * probe messages.  Standard name conflict resolution is still done if a conflict is discovered.
+     * probe messages. Standard name conflict resolution is still done if a conflict is discovered.
      */
     @Generated public static final int kDNSServiceFlagsReturnIntermediates = 0x00001000;
     /**
@@ -209,7 +209,7 @@ public final class Enums {
      * DNSServiceRef SharedRef;
      * error = DNSServiceCreateConnection(&SharedRef);
      * if (error) ...
-     * DNSServiceRef BrowseRef = SharedRef;  // Important: COPY the primary DNSServiceRef first...
+     * DNSServiceRef BrowseRef = SharedRef; // Important: COPY the primary DNSServiceRef first...
      * error = DNSServiceBrowse(&BrowseRef, kDNSServiceFlagsShareConnection, ...); // then use the copy
      * if (error) ...
      * ...
@@ -327,20 +327,23 @@ public final class Enums {
      * as an input to the APIs and also an output through the callbacks in the APIs.
      * <p>
      * When this flag is passed to DNSServiceQueryRecord and DNSServiceGetAddrInfo to resolve unicast names,
-     * the response  will be validated using DNSSEC. The validation results are delivered using the flags field in
-     * the callback and kDNSServiceFlagsValidate is marked in the flags to indicate that DNSSEC status is also available.
+     * the response will be validated using DNSSEC. The validation results are delivered using the flags field in
+     * the callback and kDNSServiceFlagsValidate is marked in the flags to indicate that DNSSEC status is also
+     * available.
      * When the callback is called to deliver the query results, the validation results may or may not be available.
      * If it is not delivered along with the results, the validation status is delivered when the validation completes.
      * <p>
      * When the validation results are delivered in the callback, it is indicated by marking the flags with
      * kDNSServiceFlagsValidate and kDNSServiceFlagsAdd along with the DNSSEC status flags (described below) and a NULL
-     * sockaddr will be returned for DNSServiceGetAddrInfo and zero length rdata will be returned for DNSServiceQueryRecord.
+     * sockaddr will be returned for DNSServiceGetAddrInfo and zero length rdata will be returned for
+     * DNSServiceQueryRecord.
      * DNSSEC validation results are for the whole RRSet and not just individual records delivered in the callback. When
      * kDNSServiceFlagsAdd is not set in the flags, applications should implicitly assume that the DNSSEC status of the
      * RRSet that has been delivered up until that point is not valid anymore, till another callback is called with
      * kDNSServiceFlagsAdd and kDNSServiceFlagsValidate.
      * <p>
-     * The following four flags indicate the status of the DNSSEC validation and marked in the flags field of the callback.
+     * The following four flags indicate the status of the DNSSEC validation and marked in the flags field of the
+     * callback.
      * When any of the four flags is set, kDNSServiceFlagsValidate will also be set. To check the validation status, the
      * other applicable output flags should be masked.
      */
@@ -422,13 +425,13 @@ public final class Enums {
      * When kDNSServiceFlagsThresholdReached is set in the client callback add or remove event,
      * it indicates that the browse answer threshold has been reached and no
      * browse requests will be generated on the network until the number of answers falls
-     * below the threshold value.  Add and remove events can still occur based
+     * below the threshold value. Add and remove events can still occur based
      * on incoming Bonjour traffic observed by the system.
      * The set of services return to the client is not guaranteed to represent the
      * entire set of services present on the network once the threshold has been reached.
      * <p>
      * Note, while kDNSServiceFlagsThresholdReached and kDNSServiceFlagsThresholdOne
-     * have the same value, there  isn't a conflict because kDNSServiceFlagsThresholdReached
+     * have the same value, there isn't a conflict because kDNSServiceFlagsThresholdReached
      * is only set in the callbacks and kDNSServiceFlagsThresholdOne is only set on
      * input to a DNSServiceBrowse call.
      */
@@ -454,7 +457,8 @@ public final class Enums {
      */
     @Generated public static final int kDNSServiceFlagAnsweredFromCache = 0x40000000;
     /**
-     * When kDNSServiceFlagAnsweredFromCache is passed back in the flags parameter of DNSServiceQueryRecordReply or DNSServiceGetAddrInfoReply,
+     * When kDNSServiceFlagAnsweredFromCache is passed back in the flags parameter of DNSServiceQueryRecordReply or
+     * DNSServiceGetAddrInfoReply,
      * an answer will have this flag set if it was answered from the cache.
      */
     @Generated public static final int kDNSServiceFlagsAllowExpiredAnswers = 0x80000000;

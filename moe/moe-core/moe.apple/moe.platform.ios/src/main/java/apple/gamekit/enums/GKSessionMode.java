@@ -30,7 +30,8 @@ public final class GKSessionMode {
      */
     @Deprecated @Generated public static final int Client = 0x00000001;
     /**
-     * delegate will get -session:peer:didChangeState: callback with GKPeerStateAvailable, or GKPeerStateUnavailable for discovered servers
+     * delegate will get -session:peer:didChangeState: callback with GKPeerStateAvailable, or GKPeerStateUnavailable for
+     * discovered servers
      */
     @Deprecated @Generated public static final int Peer = 0x00000002;
 

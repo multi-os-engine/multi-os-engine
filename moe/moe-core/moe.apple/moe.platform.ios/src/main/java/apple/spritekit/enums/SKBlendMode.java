@@ -45,7 +45,8 @@ public final class SKBlendMode {
      */
     @Generated @NInt public static final long MultiplyX2 = 0x0000000000000004L;
     /**
-     * Blends the source and destination colors by multiplying one minus the source with the destination and adding the source.
+     * Blends the source and destination colors by multiplying one minus the source with the destination and adding the
+     * source.
      */
     @Generated @NInt public static final long Screen = 0x0000000000000005L;
     /**

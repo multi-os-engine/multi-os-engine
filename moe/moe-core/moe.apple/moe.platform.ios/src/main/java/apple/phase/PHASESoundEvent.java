@@ -107,7 +107,8 @@ public class PHASESoundEvent extends NSObject {
      * This will look up the asset in the asset registry and create the necessary objects to play the sound event
      *
      * @param engine          The PHASEEngine object that the sound event will be played by.
-     * @param assetIdentifier The identifier registered with the Asset Registry for the particular PHASESoundEventNodeAsset that this sound event will play.
+     * @param assetIdentifier The identifier registered with the Asset Registry for the particular
+     *                        PHASESoundEventNodeAsset that this sound event will play.
      *                        If the asset identifier is not registered, this function will fail.
      */
     @Generated
@@ -123,9 +124,11 @@ public class PHASESoundEvent extends NSObject {
      * This will look up the asset in the asset registry and create the necessary objects to play the sound event
      *
      * @param engine          The PHASEEngine object that the sound event will be played by.
-     * @param assetIdentifier The identifier registered with the Asset Registry for the particular PHASESoundEventNodeAsset that this sound instance will play.
+     * @param assetIdentifier The identifier registered with the Asset Registry for the particular
+     *                        PHASESoundEventNodeAsset that this sound instance will play.
      *                        If the asset identifier is not registered, this function will fail.
-     * @param mixerParameters A dictionary of PHASEMixerParameters objects with keys that match the identifiers of the spatial mixers in the sound event
+     * @param mixerParameters A dictionary of PHASEMixerParameters objects with keys that match the identifiers of the
+     *                        spatial mixers in the sound event
      */
     @Generated
     @Selector("initWithEngine:assetIdentifier:mixerParameters:error:")
@@ -212,9 +215,11 @@ public class PHASESoundEvent extends NSObject {
      * <p>
      * This function notifies the engine to begin preparing a sound event, then returns immediately.
      * Once the sound event is prepared (or has failed to prepare), you will receive a callback via the completion.
-     * If you call startWithCompletion() before receiving the callback, the sound event will start as soon as it's prepared.
+     * If you call startWithCompletion() before receiving the callback, the sound event will start as soon as it's
+     * prepared.
      *
-     * @param handler The block that will be called when the PHASESoundEvent has finished preparing and is ready to start. Pass in nil for no handler.
+     * @param handler The block that will be called when the PHASESoundEvent has finished preparing and is ready to
+     *                start. Pass in nil for no handler.
      */
     @Generated
     @Selector("prepareWithCompletion:")
@@ -270,7 +275,8 @@ public class PHASESoundEvent extends NSObject {
      * Seeks all leaf nodes in a PHASESoundEvent to a specified time relative to the start of the sound event.
      * <p>
      * This function notifies the engine to seek the sound event, then returns immediately.
-     * Once the sound event has seeked to the new offset (or has failed to seek), you will receive a callback via the completion.
+     * Once the sound event has seeked to the new offset (or has failed to seek), you will receive a callback via the
+     * completion.
      * If any leaf nodes do not support seeking, those nodes will ignore this command.
      * Nodes that have finished playing or have stopped will not seek.
      * Nodes that are sleeping will seek, and will resume at the correct time when they wake up.
@@ -300,7 +306,8 @@ public class PHASESoundEvent extends NSObject {
      * <p>
      * This function notifies the engine to start the sound event, then returns immediately.
      * Once the sound event is playing (or has failed to start), you will receive a callback via the completion.
-     * Playback will begin immediately if the sound event has been prepared; otherwise, it will start as soon as it is finished preparing.
+     * Playback will begin immediately if the sound event has been prepared; otherwise, it will start as soon as it is
+     * finished preparing.
      *
      * @param handler The block that will be called when the sound event has stopped.
      */

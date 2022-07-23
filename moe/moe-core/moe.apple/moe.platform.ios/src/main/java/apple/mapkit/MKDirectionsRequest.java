@@ -178,7 +178,8 @@ public class MKDirectionsRequest extends NSObject {
     public native MKDirectionsRequest initWithContentsOfURL(NSURL url);
 
     /**
-     * if YES and there is more than one reasonable way to route from source to destination, allow the route server to return multiple routes. Default is NO.
+     * if YES and there is more than one reasonable way to route from source to destination, allow the route server to
+     * return multiple routes. Default is NO.
      */
     @Generated
     @Selector("requestsAlternateRoutes")
@@ -200,7 +201,8 @@ public class MKDirectionsRequest extends NSObject {
     public native void setDestination(MKMapItem destination);
 
     /**
-     * if YES and there is more than one reasonable way to route from source to destination, allow the route server to return multiple routes. Default is NO.
+     * if YES and there is more than one reasonable way to route from source to destination, allow the route server to
+     * return multiple routes. Default is NO.
      */
     @Generated
     @Selector("setRequestsAlternateRoutes:")

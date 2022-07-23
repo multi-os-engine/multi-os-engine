@@ -41,7 +41,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * PHAssetCollectionChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ * PHAssetCollectionChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or
+ * -[PHPhotoLibrary performChangesAndWait:] block.
  */
 @Generated
 @Library("Photos")
@@ -86,7 +87,8 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * if the asset collection does not allow the type of change requested, these methods will raise an exception, call canPerformEditOperation: on the asset collection to determine if the type of edit operation is allowed.
+     * if the asset collection does not allow the type of change requested, these methods will raise an exception, call
+     * canPerformEditOperation: on the asset collection to determine if the type of edit operation is allowed.
      */
     @Generated
     @Selector("changeRequestForAssetCollection:")
@@ -94,7 +96,9 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
             PHAssetCollection assetCollection);
 
     /**
-     * to add, remove or rearrange assets in a collection, passing in the fetched assets in that collection will ensure that the asset positions are tracked correctly in the case that the collection has been externally edited after the fetch, but before this change is applied
+     * to add, remove or rearrange assets in a collection, passing in the fetched assets in that collection will ensure
+     * that the asset positions are tracked correctly in the case that the collection has been externally edited after
+     * the fetch, but before this change is applied
      */
     @Generated
     @Selector("changeRequestForAssetCollection:assets:")
@@ -195,14 +199,16 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
             NSIndexSet indexes);
 
     /**
-     * The move removes the assets at fromIndexes first then inserts those assets at the toIndex, so toIndex should point to a location based on the updated indexes after having removed the assets at fromIndexes
+     * The move removes the assets at fromIndexes first then inserts those assets at the toIndex, so toIndex should
+     * point to a location based on the updated indexes after having removed the assets at fromIndexes
      */
     @Generated
     @Selector("moveAssetsAtIndexes:toIndex:")
     public native void moveAssetsAtIndexesToIndex(NSIndexSet fromIndexes, @NUInt long toIndex);
 
     /**
-     * This can be used to fetch the newly created asset collection after the change block has completed by using -localIdentifier
+     * This can be used to fetch the newly created asset collection after the change block has completed by using
+     * -localIdentifier
      * It can also be added directly to collection lists within the current change block
      */
     @Generated

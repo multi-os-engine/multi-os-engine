@@ -90,7 +90,8 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
     /**
      * The factor between estimated physical size and default size of the skeleton.
      * <p>
-     * This value will be estimated if automaticSkeletonScaleEstimationEnabled is set to true on the ARBodyTrackingConfiguration.
+     * This value will be estimated if automaticSkeletonScaleEstimationEnabled is set to true on the
+     * ARBodyTrackingConfiguration.
      * It is used to correct the transform's translation. Default value is 1.0.
      *
      * @see -[ARSkeletonDefinition neutralBodySkeleton3D]
@@ -161,7 +162,8 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The tracked skeleton in 3D.
-     * [@note] The default height of this skeleton, measured from lowest to highest joint in standing position, is defined to be 1.71 meters.
+     * [@note] The default height of this skeleton, measured from lowest to highest joint in standing position, is
+     * defined to be 1.71 meters.
      */
     @Generated
     @Selector("skeleton")

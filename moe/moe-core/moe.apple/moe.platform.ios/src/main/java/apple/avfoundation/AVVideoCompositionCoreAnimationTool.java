@@ -162,7 +162,8 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
      * For best performance, no transform should be set in the AVVideoCompositionLayerInstruction for this trackID.
      * Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
      * -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
-     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a
+     * AVVideoCompositionCoreAnimationTool
      * as when using it to back a UIView.
      */
     @Generated
@@ -180,7 +181,8 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
      * The animationLayer should not come from, or be added to, another layer tree.
      * Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
      * -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
-     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a
+     * AVVideoCompositionCoreAnimationTool
      * as when using it to back a UIView.
      */
     @Generated
@@ -198,7 +200,8 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
      * The animationLayer should not come from, or be added to, another layer tree.
      * Be aware that on iOS, CALayers backing a UIView usually have their content flipped (as defined by the
      * -contentsAreFlipped method). It may be required to insert a CALayer with its geometryFlipped property set
-     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a AVVideoCompositionCoreAnimationTool
+     * to YES in the layer hierarchy to get the same result when attaching a CALayer to a
+     * AVVideoCompositionCoreAnimationTool
      * as when using it to back a UIView.
      */
     @Generated

@@ -28,7 +28,7 @@ public interface WKDownloadDelegate {
      * Invoked when the download needs a location to write the downloaded bytes.
      * <p>
      * suggestedFilename will often be the same as response.suggestedFilename,
-     * but web content can specify the suggested download filename.  If the destination file
+     * but web content can specify the suggested download filename. If the destination file
      * URL is non-null, it must be a file that does not exist in a directory that does exist
      * and can be written to.
      *
@@ -57,7 +57,8 @@ public interface WKDownloadDelegate {
      *
      * @param download   The download that has failed.
      * @param error      The error indicating the failure reason.
-     * @param resumeData This data can be passed to WKWebView resumeDownloadFromResumeData: to attempt to resume this download.
+     * @param resumeData This data can be passed to WKWebView resumeDownloadFromResumeData: to attempt to resume this
+     *                   download.
      */
     @Generated
     @IsOptional
@@ -69,14 +70,17 @@ public interface WKDownloadDelegate {
     /**
      * Invoked when the download needs to respond to an authentication challenge.
      * <p>
-     * If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
+     * If you do not implement this method, the web view will respond to the authentication challenge with the
+     * NSURLSessionAuthChallengeRejectProtectionSpace disposition.
      *
      * @param download          The download that received the authentication challenge.
      * @param challenge         The authentication challenge.
      * @param completionHandler The completion handler you must invoke to respond to the challenge. The
      *                          disposition argument is one of the constants of the enumerated type
-     *                          NSURLSessionAuthChallengeDisposition. When disposition is NSURLSessionAuthChallengeUseCredential,
-     *                          the credential argument is the credential to use, or nil to indicate continuing without a
+     *                          NSURLSessionAuthChallengeDisposition. When disposition is
+     *                          NSURLSessionAuthChallengeUseCredential,
+     *                          the credential argument is the credential to use, or nil to indicate continuing without
+     *                          a
      *                          credential.
      */
     @Generated

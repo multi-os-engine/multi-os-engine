@@ -145,7 +145,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
 
     /**
      * This method provides compatibility with the old style [UIView
-     * animationWithDuration:...]  method. It is also useful for controlling
+     * animationWithDuration:...] method. It is also useful for controlling
      * how animations options are inherited.
      * <p>
      * Creates a UIViewPropertyAnimator, sets the duration, options, etc. And starts the
@@ -374,28 +374,32 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     }
 
     /**
-     * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the .inactive state.
+     * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the
+     * .inactive state.
      */
     @Generated
     @Selector("pausesOnCompletion")
     public native boolean pausesOnCompletion();
 
     /**
-     * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s current timing.
+     * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s
+     * current timing.
      */
     @Generated
     @Selector("scrubsLinearly")
     public native boolean scrubsLinearly();
 
     /**
-     * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the .inactive state.
+     * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the
+     * .inactive state.
      */
     @Generated
     @Selector("setPausesOnCompletion:")
     public native void setPausesOnCompletion(boolean value);
 
     /**
-     * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s current timing.
+     * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s
+     * current timing.
      */
     @Generated
     @Selector("setScrubsLinearly:")

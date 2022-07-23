@@ -40,10 +40,13 @@ public final class AddressBookUI {
     }
 
     /**
-     * address: an address dictionary obtained representing the address (kABPersonAddressProperty) of a person (ABRecordRef)
-     * addCountryName: whether to always include the country name in the address string, regardless of whether it is specified
+     * address: an address dictionary obtained representing the address (kABPersonAddressProperty) of a person
+     * (ABRecordRef)
+     * addCountryName: whether to always include the country name in the address string, regardless of whether it is
+     * specified
      * in the dictionary. If not specified by the user a localized country name will be added.
-     * returns a formatted multi line string that contains the full address. The string is likely to contain line endings.
+     * returns a formatted multi line string that contains the full address. The string is likely to contain line
+     * endings.
      */
     @Generated
     @Deprecated
@@ -52,7 +55,7 @@ public final class AddressBookUI {
     public static native String ABCreateStringWithAddressDictionary(NSDictionary<?, ?> address, boolean addCountryName);
 
     /**
-     * "namePrefix"                 NSString
+     * "namePrefix" NSString
      */
     @Generated
     @CVariable()
@@ -60,7 +63,7 @@ public final class AddressBookUI {
     public static native String ABPersonNamePrefixProperty();
 
     /**
-     * "givenName"                  NSString
+     * "givenName" NSString
      */
     @Generated
     @CVariable()
@@ -68,7 +71,7 @@ public final class AddressBookUI {
     public static native String ABPersonGivenNameProperty();
 
     /**
-     * "middleName"                 NSString
+     * "middleName" NSString
      */
     @Generated
     @CVariable()
@@ -76,7 +79,7 @@ public final class AddressBookUI {
     public static native String ABPersonMiddleNameProperty();
 
     /**
-     * "familyName"                 NSString
+     * "familyName" NSString
      */
     @Generated
     @CVariable()
@@ -84,7 +87,7 @@ public final class AddressBookUI {
     public static native String ABPersonFamilyNameProperty();
 
     /**
-     * "nameSuffix"                 NSString
+     * "nameSuffix" NSString
      */
     @Generated
     @CVariable()
@@ -92,7 +95,7 @@ public final class AddressBookUI {
     public static native String ABPersonNameSuffixProperty();
 
     /**
-     * "previousFamilyName"         NSString
+     * "previousFamilyName" NSString
      */
     @Generated
     @CVariable()
@@ -100,7 +103,7 @@ public final class AddressBookUI {
     public static native String ABPersonPreviousFamilyNameProperty();
 
     /**
-     * "nickname"                   NSString
+     * "nickname" NSString
      */
     @Generated
     @CVariable()
@@ -108,7 +111,7 @@ public final class AddressBookUI {
     public static native String ABPersonNicknameProperty();
 
     /**
-     * "phoneticGivenName"          NSString
+     * "phoneticGivenName" NSString
      */
     @Generated
     @CVariable()
@@ -116,7 +119,7 @@ public final class AddressBookUI {
     public static native String ABPersonPhoneticGivenNameProperty();
 
     /**
-     * "phoneticMiddleName"         NSString
+     * "phoneticMiddleName" NSString
      */
     @Generated
     @CVariable()
@@ -124,7 +127,7 @@ public final class AddressBookUI {
     public static native String ABPersonPhoneticMiddleNameProperty();
 
     /**
-     * "phoneticFamilyName"         NSString
+     * "phoneticFamilyName" NSString
      */
     @Generated
     @CVariable()
@@ -132,7 +135,7 @@ public final class AddressBookUI {
     public static native String ABPersonPhoneticFamilyNameProperty();
 
     /**
-     * "organizationName"           NSString
+     * "organizationName" NSString
      */
     @Generated
     @CVariable()
@@ -140,7 +143,7 @@ public final class AddressBookUI {
     public static native String ABPersonOrganizationNameProperty();
 
     /**
-     * "departmentName"             NSString
+     * "departmentName" NSString
      */
     @Generated
     @CVariable()
@@ -148,7 +151,7 @@ public final class AddressBookUI {
     public static native String ABPersonDepartmentNameProperty();
 
     /**
-     * "jobTitle"                   NSString
+     * "jobTitle" NSString
      */
     @Generated
     @CVariable()
@@ -156,7 +159,7 @@ public final class AddressBookUI {
     public static native String ABPersonJobTitleProperty();
 
     /**
-     * "birthday"                   NSDateComponents
+     * "birthday" NSDateComponents
      */
     @Generated
     @CVariable()
@@ -164,7 +167,7 @@ public final class AddressBookUI {
     public static native String ABPersonBirthdayProperty();
 
     /**
-     * "note"                       NSString
+     * "note" NSString
      */
     @Generated
     @CVariable()
@@ -172,7 +175,7 @@ public final class AddressBookUI {
     public static native String ABPersonNoteProperty();
 
     /**
-     * "phoneNumbers"               array of LabeledValue with PhoneNumber values
+     * "phoneNumbers" array of LabeledValue with PhoneNumber values
      */
     @Generated
     @CVariable()
@@ -180,7 +183,7 @@ public final class AddressBookUI {
     public static native String ABPersonPhoneNumbersProperty();
 
     /**
-     * "emailAddresses"             array of LabeledValue with NSString values
+     * "emailAddresses" array of LabeledValue with NSString values
      */
     @Generated
     @CVariable()
@@ -188,7 +191,7 @@ public final class AddressBookUI {
     public static native String ABPersonEmailAddressesProperty();
 
     /**
-     * "urlAddresses"               array of LabeledValue with NSString values
+     * "urlAddresses" array of LabeledValue with NSString values
      */
     @Generated
     @CVariable()
@@ -196,7 +199,7 @@ public final class AddressBookUI {
     public static native String ABPersonUrlAddressesProperty();
 
     /**
-     * "dates"                      array of LabeledValue with NSDateComponents values
+     * "dates" array of LabeledValue with NSDateComponents values
      */
     @Generated
     @CVariable()
@@ -204,7 +207,7 @@ public final class AddressBookUI {
     public static native String ABPersonDatesProperty();
 
     /**
-     * "instantMessageAddresses"    array of LabeledValue with InstantMessageAddress values
+     * "instantMessageAddresses" array of LabeledValue with InstantMessageAddress values
      */
     @Generated
     @CVariable()
@@ -212,7 +215,7 @@ public final class AddressBookUI {
     public static native String ABPersonInstantMessageAddressesProperty();
 
     /**
-     * "relatedNames"               array of LabeledValue with NSString values
+     * "relatedNames" array of LabeledValue with NSString values
      */
     @Generated
     @CVariable()
@@ -220,7 +223,7 @@ public final class AddressBookUI {
     public static native String ABPersonRelatedNamesProperty();
 
     /**
-     * "socialProfiles"             array of LabeledValue with SocialProfile values
+     * "socialProfiles" array of LabeledValue with SocialProfile values
      */
     @Generated
     @CVariable()
@@ -228,7 +231,7 @@ public final class AddressBookUI {
     public static native String ABPersonSocialProfilesProperty();
 
     /**
-     * "postalAddresses"            array of LabeledValue with PostalAddress values
+     * "postalAddresses" array of LabeledValue with PostalAddress values
      */
     @Generated
     @CVariable()

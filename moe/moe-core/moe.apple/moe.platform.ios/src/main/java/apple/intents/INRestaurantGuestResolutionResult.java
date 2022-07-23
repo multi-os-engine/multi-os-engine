@@ -164,7 +164,9 @@ public class INRestaurantGuestResolutionResult extends INIntentResolutionResult 
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to proceed, with a given restaurant guest. The resolvedRestaurantGuest can be different than the original restaurant guest. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to proceed, with a given restaurant guest. The
+     * resolvedRestaurantGuest can be different than the original restaurant guest. This allows app extensions to apply
+     * business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

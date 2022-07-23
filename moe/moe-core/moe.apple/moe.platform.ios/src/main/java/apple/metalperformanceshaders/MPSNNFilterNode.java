@@ -144,10 +144,10 @@ public class MPSNNFilterNode extends NSObject {
      * is responsible for setting the MPSCNNKernel.offset and
      * the size of the image produced, and sometimes will also
      * configure .sourceFeatureChannelOffset, .sourceFeatureChannelMaxCount,
-     * and .edgeMode.  It is permitted to set any other filter properties
+     * and .edgeMode. It is permitted to set any other filter properties
      * as needed using a custom padding policy. The default padding
      * policy varies per filter to conform to consensus expectation for
-     * the behavior of that filter.  In some cases, pre-made padding
+     * the behavior of that filter. In some cases, pre-made padding
      * policies are provided to match the behavior of common neural
      * networking frameworks with particularly complex or unexpected
      * behavior for specific nodes. See MPSNNDefaultPadding class methods
@@ -228,10 +228,10 @@ public class MPSNNFilterNode extends NSObject {
      * is responsible for setting the MPSCNNKernel.offset and
      * the size of the image produced, and sometimes will also
      * configure .sourceFeatureChannelOffset, .sourceFeatureChannelMaxCount,
-     * and .edgeMode.  It is permitted to set any other filter properties
+     * and .edgeMode. It is permitted to set any other filter properties
      * as needed using a custom padding policy. The default padding
      * policy varies per filter to conform to consensus expectation for
-     * the behavior of that filter.  In some cases, pre-made padding
+     * the behavior of that filter. In some cases, pre-made padding
      * policies are provided to match the behavior of common neural
      * networking frameworks with particularly complex or unexpected
      * behavior for specific nodes. See MPSNNDefaultPadding class methods
@@ -359,8 +359,8 @@ public class MPSNNFilterNode extends NSObject {
      *                      the full graph, and assigns any inferenceNodeSources[i].handle
      *                      to their gradient counterparts.
      * @return The list of new MPSNNFilterNode training graph termini. These MPSNNFilterNodes
-     * are not necessarily all MPSNNGradientFilterNodes. To build a full list of nodes
-     * created, use a custom nodeHandler. If no nodes are created nil is returned.
+     *         are not necessarily all MPSNNGradientFilterNodes. To build a full list of nodes
+     *         created, use a custom nodeHandler. If no nodes are created nil is returned.
      */
     @Generated
     @Selector("trainingGraphWithSourceGradient:nodeHandler:")

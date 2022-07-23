@@ -30,7 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Main class for setting up and controlling a model update. It provides some utility class methods for performing an update synchronously as well as class constructors for configuring an update and give developers control for the execution of that update.
+ * Main class for setting up and controlling a model update. It provides some utility class methods for performing an
+ * update synchronously as well as class constructors for configuring an update and give developers control for the
+ * execution of that update.
  */
 @Generated
 @Library("CoreML")

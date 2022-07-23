@@ -160,11 +160,12 @@ public class AVAssetCache extends NSObject {
     public native AVAssetCache init();
 
     /**
-     * [@property]	playableOffline
+     * [@property] playableOffline
      * <p>
      * Returns YES if a complete rendition of an AVAsset is available to be played without a network connection.
      * <p>
-     * An answer of YES does not indicate that any given media selection is available for offline playback. To determine if a specific media selection is available offline, see mediaSelectionOptionsInMediaSelectionGroup:.
+     * An answer of YES does not indicate that any given media selection is available for offline playback. To determine
+     * if a specific media selection is available offline, see mediaSelectionOptionsInMediaSelectionGroup:.
      */
     @Generated
     @Selector("isPlayableOffline")
@@ -173,7 +174,8 @@ public class AVAssetCache extends NSObject {
     /**
      * mediaSelectionOptionsInMediaSelectionGroup:
      * <p>
-     * Returns an array of AVMediaSelectionOptions in an AVMediaSelectionGroup that are available for offline operations, e.g. playback.
+     * Returns an array of AVMediaSelectionOptions in an AVMediaSelectionGroup that are available for offline
+     * operations, e.g. playback.
      */
     @Generated
     @Selector("mediaSelectionOptionsInMediaSelectionGroup:")

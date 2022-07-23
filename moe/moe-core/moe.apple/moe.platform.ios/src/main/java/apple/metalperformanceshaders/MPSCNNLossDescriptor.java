@@ -105,7 +105,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public static native String debugDescription_static();
 
     /**
-     * [@property]    delta
+     * [@property] delta
      * <p>
      * The delta parameter. The default value is 1.0f.
      * <p>
@@ -114,7 +114,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * <p>
      * Given predictions and labels (ground truth), it is applied in the following way:
      * if (|predictions - labels| <= delta, loss = 0.5f * predictions^2
-     * if (|predictions - labels| >  delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
+     * if (|predictions - labels| > delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
      */
     @Generated
     @Selector("delta")
@@ -125,7 +125,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property]    epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon parameter. The default value is 1e-7.
      * <p>
@@ -170,7 +170,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]    labelSmoothing
+     * [@property] labelSmoothing
      * <p>
      * The label smoothing parameter. The default value is 0.0f.
      * <p>
@@ -188,7 +188,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native float labelSmoothing();
 
     /**
-     * [@property]   lossType
+     * [@property] lossType
      * <p>
      * The type of a loss filter.
      * <p>
@@ -204,7 +204,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public static native MPSCNNLossDescriptor new_objc();
 
     /**
-     * [@property]    numberOfClasses
+     * [@property] numberOfClasses
      * <p>
      * The number of classes parameter. The default value is 1.
      * <p>
@@ -220,7 +220,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native long numberOfClasses();
 
     /**
-     * [@property]   reductionType
+     * [@property] reductionType
      * <p>
      * The type of a reduction operation performed in the loss filter.
      * <p>
@@ -240,7 +240,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]    delta
+     * [@property] delta
      * <p>
      * The delta parameter. The default value is 1.0f.
      * <p>
@@ -249,14 +249,14 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
      * <p>
      * Given predictions and labels (ground truth), it is applied in the following way:
      * if (|predictions - labels| <= delta, loss = 0.5f * predictions^2
-     * if (|predictions - labels| >  delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
+     * if (|predictions - labels| > delta, loss = 0.5 * delta^2 + delta * (|predictions - labels| - delta)
      */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
     /**
-     * [@property]    epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon parameter. The default value is 1e-7.
      * <p>
@@ -271,7 +271,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native void setEpsilon(float value);
 
     /**
-     * [@property]    labelSmoothing
+     * [@property] labelSmoothing
      * <p>
      * The label smoothing parameter. The default value is 0.0f.
      * <p>
@@ -289,7 +289,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native void setLabelSmoothing(float value);
 
     /**
-     * [@property]   lossType
+     * [@property] lossType
      * <p>
      * The type of a loss filter.
      * <p>
@@ -300,7 +300,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native void setLossType(int value);
 
     /**
-     * [@property]    numberOfClasses
+     * [@property] numberOfClasses
      * <p>
      * The number of classes parameter. The default value is 1.
      * <p>
@@ -315,7 +315,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native void setNumberOfClasses(@NUInt long value);
 
     /**
-     * [@property]   reductionType
+     * [@property] reductionType
      * <p>
      * The type of a reduction operation performed in the loss filter.
      * <p>
@@ -331,7 +331,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   weight
+     * [@property] weight
      * <p>
      * The scale factor to apply to each element of a result.
      * <p>
@@ -352,7 +352,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]   weight
+     * [@property] weight
      * <p>
      * The scale factor to apply to each element of a result.
      * <p>
@@ -364,7 +364,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native float weight();
 
     /**
-     * [@property]   reduceAcrossBatch
+     * [@property] reduceAcrossBatch
      * <p>
      * If set to YES then the reduction operation is applied also across the batch-index dimension,
      * ie. the loss value is summed over images in the batch and the result of the reduction is written
@@ -383,7 +383,7 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     public native boolean reduceAcrossBatch();
 
     /**
-     * [@property]   reduceAcrossBatch
+     * [@property] reduceAcrossBatch
      * <p>
      * If set to YES then the reduction operation is applied also across the batch-index dimension,
      * ie. the loss value is summed over images in the batch and the result of the reduction is written

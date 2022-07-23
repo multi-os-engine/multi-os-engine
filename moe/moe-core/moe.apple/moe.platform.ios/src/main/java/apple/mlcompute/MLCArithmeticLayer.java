@@ -131,7 +131,7 @@ public class MLCArithmeticLayer extends MLCLayer {
     public static native MLCArithmeticLayer new_objc();
 
     /**
-     * [@property]   operation
+     * [@property] operation
      * <p>
      * The arithmetic operation.
      */

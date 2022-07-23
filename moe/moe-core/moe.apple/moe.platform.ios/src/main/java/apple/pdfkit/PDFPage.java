@@ -93,9 +93,12 @@ public class PDFPage extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * The bounds for the specified box (see defines above). Only the media box is required for a PDF. If the crop box is
-     * requested and not present in the PDF, the media box is returned. If other boxes are requested and not present, the
-     * value for the crop box is returned. Throws a range exception if box is not in range. Coordinates for the box are in
+     * The bounds for the specified box (see defines above). Only the media box is required for a PDF. If the crop box
+     * is
+     * requested and not present in the PDF, the media box is returned. If other boxes are requested and not present,
+     * the
+     * value for the crop box is returned. Throws a range exception if box is not in range. Coordinates for the box are
+     * in
      * page space - you may need to transform the points if the page has a rotation on it. Also, note that the bounds
      * returned are intersected with the page's media box.
      */
@@ -123,8 +126,10 @@ public class PDFPage extends NSObject implements NSCopying {
     public native CGRect characterBoundsAtIndex(@NInt long index);
 
     /**
-     * Returns the index of the character at point (in page space). Returns the index of the first character if multiple characters are at this point.
-     * Returns NSNotFound if no character at point. Earlier version of PDFKit (prior to Lion) returned -1 if no character at point.
+     * Returns the index of the character at point (in page space). Returns the index of the first character if multiple
+     * characters are at this point.
+     * Returns NSNotFound if no character at point. Earlier version of PDFKit (prior to Lion) returned -1 if no
+     * character at point.
      */
     @Generated
     @Selector("characterIndexAtPoint:")
@@ -178,7 +183,8 @@ public class PDFPage extends NSObject implements NSCopying {
     public native PDFDocument document();
 
     /**
-     * Drawing method takes into account page rotation, draws in page space relative to and clipped to the box bounds. If
+     * Drawing method takes into account page rotation, draws in page space relative to and clipped to the box bounds.
+     * If
      * -[displaysAnnotations] is true, also draws any page annotations. Does not clear the background (page white).
      */
     @Generated
@@ -247,8 +253,10 @@ public class PDFPage extends NSObject implements NSCopying {
     public native long numberOfCharacters();
 
     /**
-     * This is the CGPDFPage associated with the PDFPage object. With this object you can call many CoreGraphics API methods.
-     * May return NULL if the owning document was not created from an existing PDF file or data or if the page itself was
+     * This is the CGPDFPage associated with the PDFPage object. With this object you can call many CoreGraphics API
+     * methods.
+     * May return NULL if the owning document was not created from an existing PDF file or data or if the page itself
+     * was
      * created independently.
      */
     @Generated
@@ -268,7 +276,8 @@ public class PDFPage extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Rotation on a page. Must be 0, 90, 180 or 270 (negative rotations will be "normalized" to one of 0, 90, 180 or 270).
+     * Rotation on a page. Must be 0, 90, 180 or 270 (negative rotations will be "normalized" to one of 0, 90, 180 or
+     * 270).
      * Some PDF's have an inherent rotation and so -[rotation] may be non-zero when a PDF is first opened.
      */
     @Generated
@@ -285,7 +294,8 @@ public class PDFPage extends NSObject implements NSCopying {
     public native PDFSelection selectionForLineAtPoint(@ByValue CGPoint point);
 
     /**
-     * Given a range, returns a selection representing text within that range. Will clamp any range that goes out of bounds.
+     * Given a range, returns a selection representing text within that range. Will clamp any range that goes out of
+     * bounds.
      * Will return NULL for an empty selection.
      */
     @Generated
@@ -309,15 +319,18 @@ public class PDFPage extends NSObject implements NSCopying {
     public native PDFSelection selectionForWordAtPoint(@ByValue CGPoint point);
 
     /**
-     * Returns a selection representing text between startPt and endPt. Points are sorted first top to bottom, left to right.
+     * Returns a selection representing text between startPt and endPt. Points are sorted first top to bottom, left to
+     * right.
      */
     @Generated
     @Selector("selectionFromPoint:toPoint:")
     public native PDFSelection selectionFromPointToPoint(@ByValue CGPoint startPoint, @ByValue CGPoint endPoint);
 
     /**
-     * Set bounds for the specified box. If the specified box did not previously exist, it will now. To remove a box pass
-     * NSZeroRect for the bounds (you cannot however remove the media box). Throws a range exception if box is not in range.
+     * Set bounds for the specified box. If the specified box did not previously exist, it will now. To remove a box
+     * pass
+     * NSZeroRect for the bounds (you cannot however remove the media box). Throws a range exception if box is not in
+     * range.
      */
     @Generated
     @Selector("setBounds:forBox:")
@@ -331,7 +344,8 @@ public class PDFPage extends NSObject implements NSCopying {
     public native void setDisplaysAnnotations(boolean value);
 
     /**
-     * Rotation on a page. Must be 0, 90, 180 or 270 (negative rotations will be "normalized" to one of 0, 90, 180 or 270).
+     * Rotation on a page. Must be 0, 90, 180 or 270 (negative rotations will be "normalized" to one of 0, 90, 180 or
+     * 270).
      * Some PDF's have an inherent rotation and so -[rotation] may be non-zero when a PDF is first opened.
      */
     @Generated
@@ -372,7 +386,8 @@ public class PDFPage extends NSObject implements NSCopying {
     public native void transformContextForBox(CGContextRef context, @NInt long box);
 
     /**
-     * This transform correctly rotates and offsets based on the given page's rotation property and the display box type.
+     * This transform correctly rotates and offsets based on the given page's rotation property and the display box
+     * type.
      */
     @Generated
     @Selector("transformForBox:")

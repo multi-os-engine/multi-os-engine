@@ -38,7 +38,7 @@ public final class EventKit {
     }
 
     /**
-     * [@constant]   EKEventStoreChangedNotification
+     * [@constant] EKEventStoreChangedNotification
      * <p>
      * Notification name sent out when the database is changed by either an external process,
      * another event store in the same process, or by calling saveEvent: or removeEvent: on a
@@ -58,7 +58,7 @@ public final class EventKit {
     public static native String EKEventStoreChangedNotification();
 
     /**
-     * [@const]      EKErrorDomain
+     * [@const] EKErrorDomain
      * <p>
      * Error domain for NSError values stemming from the EventKit Framework API.
      * <p>

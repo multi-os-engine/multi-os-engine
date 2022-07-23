@@ -58,11 +58,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A MPSCNNKernel consumes one MPSImage and produces one MPSImage.
  * <p>
  * The region overwritten in the destination MPSImage is described
- * by the clipRect.  The top left corner of the region consumed (ignoring
+ * by the clipRect. The top left corner of the region consumed (ignoring
  * adjustments for filter size -- e.g. convolution filter size) is given
  * by the offset. The size of the region consumed is a function of the
  * clipRect size and any subsampling caused by pixel strides at work,
- * e.g. MPSCNNPooling.strideInPixelsX/Y.  Where the offset + clipRect
+ * e.g. MPSCNNPooling.strideInPixelsX/Y. Where the offset + clipRect
  * would cause a {x,y} pixel address not in the image to be read, the
  * edgeMode is used to determine what value to read there.
  * <p>
@@ -96,7 +96,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A MPSCNNKernel can be saved to disk / network using NSCoders such as NSKeyedArchiver.
  * When decoding, the system default MTLDevice will be chosen unless the NSCoder adopts
- * the <MPSDeviceProvider> protocol.  To accomplish this you will likely need to subclass your
+ * the <MPSDeviceProvider> protocol. To accomplish this you will likely need to subclass your
  * unarchiver to add this method.
  */
 @Generated
@@ -210,13 +210,13 @@ public class MPSCNNKernel extends MPSKernel {
     public static native long version_static();
 
     /**
-     * [@property]   clipRect
+     * [@property] clipRect
      * <p>
      * An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.
      * <p>
      * A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
      * completely within the destination image, the intersection between clip rectangle and destination bounds is
-     * used.   Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
+     * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * clipRect.origin.z is the index of starting destination image in batch processing mode. clipRect.size.depth
      * is the number of images to process in batch processing mode.
      * <p>
@@ -228,7 +228,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native MTLRegion clipRect();
 
     /**
-     * [@property]   destinationFeatureChannelOffset
+     * [@property] destinationFeatureChannelOffset
      * <p>
      * The number of channels in the destination MPSImage to skip before writing output.
      * <p>
@@ -242,7 +242,8 @@ public class MPSCNNKernel extends MPSKernel {
      * The default value is 0 and any value specifed shall be a multiple of 4. If MPSKernel outputs N channels,
      * the destination image MUST have at least destinationFeatureChannelOffset + N channels. Using a destination
      * image with insufficient number of feature channels will result in an error.
-     * E.g. if the MPSCNNConvolution outputs 32 channels, and the destination has 64 channels, then it is an error to set
+     * E.g. if the MPSCNNConvolution outputs 32 channels, and the destination has 64 channels, then it is an error to
+     * set
      * destinationFeatureChannelOffset > 32.
      */
     @Generated
@@ -251,14 +252,14 @@ public class MPSCNNKernel extends MPSKernel {
     public native long destinationFeatureChannelOffset();
 
     /**
-     * [@property]   edgeMode
+     * [@property] edgeMode
      * <p>
      * The MPSImageEdgeMode to use when texture reads stray off the edge of an image
      * <p>
      * Most MPSKernel objects can read off the edge of the source image. This can happen
      * because of a negative offset property, because the offset + clipRect.size is larger
      * than the source image or because the filter looks at neighboring pixels, such as a
-     * Convolution filter.   Default:  MPSImageEdgeModeZero.
+     * Convolution filter. Default: MPSImageEdgeModeZero.
      * <p>
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
      * Note: For @ref MPSCNNPoolingAverage specifying edge mode @ref MPSImageEdgeModeClamp
@@ -271,14 +272,15 @@ public class MPSCNNKernel extends MPSKernel {
     public native long edgeMode();
 
     /**
-     * Encode a MPSCNNKernel into a command Buffer.  The operation shall proceed out-of-place.
+     * Encode a MPSCNNKernel into a command Buffer. The operation shall proceed out-of-place.
      * <p>
      * This is the older style of encode which reads the offset, doesn't change it,
      * and ignores the padding method.
      *
      * @param commandBuffer    A valid MTLCommandBuffer to receive the encoded filter
      * @param sourceImage      A valid MPSImage object containing the source image.
-     * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias sourceImage.
+     * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias
+     *                         sourceImage.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationImage:")
@@ -295,15 +297,15 @@ public class MPSCNNKernel extends MPSKernel {
      *
      * @param device The device that the filter will be used on. May not be NULL.
      * @return A pointer to the newly initialized object. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Selector("initWithDevice:")
     public native MPSCNNKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * [@property]   offset
+     * [@property] offset
      * <p>
      * The position of the destination clip rectangle origin relative to the source buffer.
      * <p>
@@ -319,13 +321,13 @@ public class MPSCNNKernel extends MPSKernel {
     public native MPSOffset offset();
 
     /**
-     * [@property]   clipRect
+     * [@property] clipRect
      * <p>
      * An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.
      * <p>
      * A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
      * completely within the destination image, the intersection between clip rectangle and destination bounds is
-     * used.   Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
+     * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * clipRect.origin.z is the index of starting destination image in batch processing mode. clipRect.size.depth
      * is the number of images to process in batch processing mode.
      * <p>
@@ -336,7 +338,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native void setClipRect(@ByValue MTLRegion value);
 
     /**
-     * [@property]   destinationFeatureChannelOffset
+     * [@property] destinationFeatureChannelOffset
      * <p>
      * The number of channels in the destination MPSImage to skip before writing output.
      * <p>
@@ -350,7 +352,8 @@ public class MPSCNNKernel extends MPSKernel {
      * The default value is 0 and any value specifed shall be a multiple of 4. If MPSKernel outputs N channels,
      * the destination image MUST have at least destinationFeatureChannelOffset + N channels. Using a destination
      * image with insufficient number of feature channels will result in an error.
-     * E.g. if the MPSCNNConvolution outputs 32 channels, and the destination has 64 channels, then it is an error to set
+     * E.g. if the MPSCNNConvolution outputs 32 channels, and the destination has 64 channels, then it is an error to
+     * set
      * destinationFeatureChannelOffset > 32.
      */
     @Generated
@@ -358,14 +361,14 @@ public class MPSCNNKernel extends MPSKernel {
     public native void setDestinationFeatureChannelOffset(@NUInt long value);
 
     /**
-     * [@property]   edgeMode
+     * [@property] edgeMode
      * <p>
      * The MPSImageEdgeMode to use when texture reads stray off the edge of an image
      * <p>
      * Most MPSKernel objects can read off the edge of the source image. This can happen
      * because of a negative offset property, because the offset + clipRect.size is larger
      * than the source image or because the filter looks at neighboring pixels, such as a
-     * Convolution filter.   Default:  MPSImageEdgeModeZero.
+     * Convolution filter. Default: MPSImageEdgeModeZero.
      * <p>
      * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
      * Note: For @ref MPSCNNPoolingAverage specifying edge mode @ref MPSImageEdgeModeClamp
@@ -377,7 +380,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native void setEdgeMode(@NUInt long value);
 
     /**
-     * [@property]   offset
+     * [@property] offset
      * <p>
      * The position of the destination clip rectangle origin relative to the source buffer.
      * <p>
@@ -417,10 +420,11 @@ public class MPSCNNKernel extends MPSKernel {
      *
      * @param commandBuffer The command buffer
      * @param sourceImage   A MPSImage to use as the source images for the filter.
-     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
-     * The offset property will be adjusted to reflect the offset used during the encode.
-     * The returned image will be automatically released when the command buffer completes. If you want to
-     * keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
+     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the
+     *         graph.
+     *         The offset property will be adjusted to reflect the offset used during the encode.
+     *         The returned image will be automatically released when the command buffer completes. If you want to
+     *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:")
@@ -437,7 +441,7 @@ public class MPSCNNKernel extends MPSKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -449,14 +453,14 @@ public class MPSCNNKernel extends MPSKernel {
     public native MPSCNNKernel initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * [@property]   isBackwards
+     * [@property] isBackwards
      * <p>
      * YES if the filter operates backwards.
      * <p>
      * This influences how strideInPixelsX/Y should be interpreted.
      * Most filters either have stride 1 or are reducing, meaning that
      * the result image is smaller than the original by roughly a factor
-     * of the stride.  A few "backward" filters (e.g convolution transpose) are intended
+     * of the stride. A few "backward" filters (e.g convolution transpose) are intended
      * to "undo" the effects of an earlier forward filter, and so
      * enlarge the image. The stride is in the destination coordinate frame
      * rather than the source coordinate frame.
@@ -466,7 +470,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native boolean isBackwards();
 
     /**
-     * [@property]   kernelHeight
+     * [@property] kernelHeight
      * <p>
      * The height of the MPSCNNKernel filter window
      * <p>
@@ -484,7 +488,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native long kernelHeight();
 
     /**
-     * [@property]   kernelWidth
+     * [@property] kernelWidth
      * <p>
      * The width of the MPSCNNKernel filter window
      * <p>
@@ -502,12 +506,12 @@ public class MPSCNNKernel extends MPSKernel {
     public native long kernelWidth();
 
     /**
-     * [@property]   padding
+     * [@property] padding
      * <p>
      * The padding method used by the filter
      * <p>
      * This influences how the destination image is sized and how
-     * the offset into the source image is set.  It is used by the
+     * the offset into the source image is set. It is used by the
      * -encode methods that return a MPSImage from the left hand side.
      */
     @Generated
@@ -525,12 +529,12 @@ public class MPSCNNKernel extends MPSKernel {
     public native void setDestinationImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
 
     /**
-     * [@property]   padding
+     * [@property] padding
      * <p>
      * The padding method used by the filter
      * <p>
      * This influences how the destination image is sized and how
-     * the offset into the source image is set.  It is used by the
+     * the offset into the source image is set. It is used by the
      * -encode methods that return a MPSImage from the left hand side.
      */
     @Generated
@@ -538,7 +542,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native void setPadding(@Mapped(ObjCObjectMapper.class) MPSNNPadding value);
 
     /**
-     * [@property]   strideInPixelsX
+     * [@property] strideInPixelsX
      * <p>
      * The downsampling (or upsampling if a backwards filter) factor in the horizontal dimension
      * <p>
@@ -554,7 +558,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native long strideInPixelsX();
 
     /**
-     * [@property]   strideInPixelsY
+     * [@property] strideInPixelsY
      * <p>
      * The downsampling (or upsampling if a backwards filter) factor in the vertical dimension
      * <p>
@@ -606,7 +610,7 @@ public class MPSCNNKernel extends MPSKernel {
      * intermediate images in cases where strip-mining can not occur because
      * -appendBatchBarrier returns YES. A single batch barrier can commonly
      * cause a memory size increase and/or performance reduction by many fold
-     * over the entire graph.  Filters of this variety should be avoided.
+     * over the entire graph. Filters of this variety should be avoided.
      * <p>
      * Default: NO
      */
@@ -645,7 +649,7 @@ public class MPSCNNKernel extends MPSKernel {
      * c) Source states are then applied in order. These may modify the
      * descriptor and may update other object properties. See:
      * -destinationImageDescriptorForSourceImages:sourceStates:
-     * forKernel:suggestedDescriptor:  This is the typical way
+     * forKernel:suggestedDescriptor: This is the typical way
      * in which MPS may attempt to influence the operation of
      * its kernels.
      * <p>
@@ -697,7 +701,7 @@ public class MPSCNNKernel extends MPSKernel {
             NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates);
 
     /**
-     * [@property]   dilationRateX
+     * [@property] dilationRateX
      * <p>
      * Stride in source coordinates from one kernel tap to the next in the X dimension.
      */
@@ -707,7 +711,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native long dilationRateX();
 
     /**
-     * [@property]   dilationRate
+     * [@property] dilationRate
      * <p>
      * Stride in source coordinates from one kernel tap to the next in the Y dimension.
      */
@@ -725,7 +729,8 @@ public class MPSCNNKernel extends MPSKernel {
      * @param commandBuffer    A valid MTLCommandBuffer to receive the encoded filter
      * @param sourceImage      A valid MPSImage object containing the source image.
      * @param destinationState A state to be overwritten by additional state information.
-     * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias sourceImage.
+     * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias
+     *                         sourceImage.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationImage:")
@@ -750,10 +755,11 @@ public class MPSCNNKernel extends MPSKernel {
      * @param commandBuffer The command buffer
      * @param sourceImage   A MPSImage to use as the source images for the filter.
      * @param outState      A new state object is returned here.
-     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
-     * The offset property will be adjusted to reflect the offset used during the encode.
-     * The returned image will be automatically released when the command buffer completes. If you want to
-     * keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
+     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the
+     *         graph.
+     *         The offset property will be adjusted to reflect the offset used during the encode.
+     *         The returned image will be automatically released when the command buffer completes. If you want to
+     *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationStateIsTemporary:")
@@ -765,7 +771,7 @@ public class MPSCNNKernel extends MPSKernel {
      * The size of extra MPS heap storage allocated while the kernel is encoding
      * <p>
      * This is best effort and just describes things that are likely to end up on the MPS heap. It does not
-     * describe all allocation done by the -encode call.  It is intended for use with high water calculations
+     * describe all allocation done by the -encode call. It is intended for use with high water calculations
      * for MTLHeap sizing. Allocations are typically for temporary storage needed for multipass algorithms.
      * This interface should not be used to detect multipass algorithms.
      */
@@ -797,8 +803,8 @@ public class MPSCNNKernel extends MPSKernel {
     /**
      * Allocate a MPSState (subclass) to hold the results from a -encodeBatchToCommandBuffer... operation
      * <p>
-     * A graph may need to allocate storage up front before executing.  This may be
-     * necessary to avoid using too much memory and to manage large batches.  The function
+     * A graph may need to allocate storage up front before executing. This may be
+     * necessary to avoid using too much memory and to manage large batches. The function
      * should allocate any MPSState objects that will be produced by an -encode call
      * with the indicated sourceImages and sourceStates inputs. Though the states
      * can be further adjusted in the ensuing -encode call, the states should
@@ -853,10 +859,10 @@ public class MPSCNNKernel extends MPSKernel {
      *                         for a batch size of 1.
      * @param destinationImage The destination image for the encode call
      * @return The list of states produced by the -encode call for batch size of 1.
-     * When the batch size is not 1, this function will be called repeatedly unless
-     * -isResultStateReusedAcrossBatch returns YES. If  -isResultStateReusedAcrossBatch
-     * returns YES, then it will be called once per batch and the MPSStateBatch array will
-     * contain MPSStateBatch.length references to the same object.
+     *         When the batch size is not 1, this function will be called repeatedly unless
+     *         -isResultStateReusedAcrossBatch returns YES. If -isResultStateReusedAcrossBatch
+     *         returns YES, then it will be called once per batch and the MPSStateBatch array will
+     *         contain MPSStateBatch.length references to the same object.
      */
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
@@ -864,7 +870,7 @@ public class MPSCNNKernel extends MPSKernel {
             NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 
     /**
-     * [@property]   sourceFeatureChannelMaxCount
+     * [@property] sourceFeatureChannelMaxCount
      * <p>
      * The maximum number of channels in the source MPSImage to use
      * <p>
@@ -872,14 +878,14 @@ public class MPSCNNKernel extends MPSKernel {
      * Use this to limit the size of the feature channel slice taken from
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
-     * is taken into account.  Default: ULONG_MAX
+     * is taken into account. Default: ULONG_MAX
      */
     @Generated
     @Selector("setSourceFeatureChannelMaxCount:")
     public native void setSourceFeatureChannelMaxCount(@NUInt long value);
 
     /**
-     * [@property]   sourceFeatureChannelOffset
+     * [@property] sourceFeatureChannelOffset
      * <p>
      * The number of channels in the source MPSImage to skip before reading the input.
      * <p>
@@ -901,7 +907,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native void setSourceFeatureChannelOffset(@NUInt long value);
 
     /**
-     * [@property]   sourceFeatureChannelMaxCount
+     * [@property] sourceFeatureChannelMaxCount
      * <p>
      * The maximum number of channels in the source MPSImage to use
      * <p>
@@ -909,7 +915,7 @@ public class MPSCNNKernel extends MPSKernel {
      * Use this to limit the size of the feature channel slice taken from
      * the input image. If the value is too large, it is truncated to be
      * the remaining size in the image after the sourceFeatureChannelOffset
-     * is taken into account.  Default: ULONG_MAX
+     * is taken into account. Default: ULONG_MAX
      */
     @Generated
     @Selector("sourceFeatureChannelMaxCount")
@@ -917,7 +923,7 @@ public class MPSCNNKernel extends MPSKernel {
     public native long sourceFeatureChannelMaxCount();
 
     /**
-     * [@property]   sourceFeatureChannelOffset
+     * [@property] sourceFeatureChannelOffset
      * <p>
      * The number of channels in the source MPSImage to skip before reading the input.
      * <p>
@@ -942,8 +948,8 @@ public class MPSCNNKernel extends MPSKernel {
     /**
      * Allocate a temporary MPSState (subclass) to hold the results from a -encodeBatchToCommandBuffer... operation
      * <p>
-     * A graph may need to allocate storage up front before executing.  This may be
-     * necessary to avoid using too much memory and to manage large batches.  The function
+     * A graph may need to allocate storage up front before executing. This may be
+     * necessary to avoid using too much memory and to manage large batches. The function
      * should allocate any MPSState objects that will be produced by an -encode call
      * with the indicated sourceImages and sourceStates inputs. Though the states
      * can be further adjusted in the ensuing -encode call, the states should
@@ -962,7 +968,7 @@ public class MPSCNNKernel extends MPSKernel {
      * Please note that -destinationImageDescriptorForSourceImages:sourceStates:destinationImage:
      * will alter some of these properties automatically based on the padding policy.
      * If you intend to call that to make the destination image, then you should
-     * call that before -resultStateForSourceImages:sourceStates:destinationImage:.  This will ensure the
+     * call that before -resultStateForSourceImages:sourceStates:destinationImage:. This will ensure the
      * properties used in the encode call and in the destination image creation
      * match those used to configure the state.
      * <p>
@@ -1000,10 +1006,10 @@ public class MPSCNNKernel extends MPSKernel {
      *                         for a batch size of 1.
      * @param destinationImage The destination image for the encode call
      * @return The list of states produced by the -encode call for batch size of 1.
-     * When the batch size is not 1, this function will be called repeatedly unless
-     * -isResultStateReusedAcrossBatch returns YES. If  -isResultStateReusedAcrossBatch
-     * returns YES, then it will be called once per batch and the MPSStateBatch array will
-     * contain MPSStateBatch.length references to the same object.
+     *         When the batch size is not 1, this function will be called repeatedly unless
+     *         -isResultStateReusedAcrossBatch returns YES. If -isResultStateReusedAcrossBatch
+     *         returns YES, then it will be called once per batch and the MPSStateBatch array will
+     *         contain MPSStateBatch.length references to the same object.
      */
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")

@@ -48,7 +48,7 @@ import org.moe.natj.objc.ann.Selector;
  * controller likewise has been augmented with a couple of new delegate methods.
  * <p>
  * The UIViewControllerContextTransitioning protocol can be adopted by custom
- * container controllers.  It is purposely general to cover more complex
+ * container controllers. It is purposely general to cover more complex
  * transitions than the system currently supports. For now, navigation push/pops
  * and UIViewController present/dismiss transitions can be
  * customized. Information about the transition is obtained by using the
@@ -58,7 +58,7 @@ import org.moe.natj.objc.ann.Selector;
  * navigation push/pop and view controller present/dismiss transitions.
  * <p>
  * All custom animations must invoke the context's completeTransition: method
- * when the transition completes.  Furthermore the animation should take place
+ * when the transition completes. Furthermore the animation should take place
  * within the containerView specified by the context. For interactive
  * transitions the context's updateInteractiveTransition:,
  * finishInteractiveTransition or cancelInteractiveTransition should be called
@@ -80,7 +80,7 @@ public interface UIViewControllerContextTransitioning {
      * This must be called whenever a transition completes (or is cancelled.)
      * Typically this is called by the object conforming to the
      * UIViewControllerAnimatedTransitioning protocol that was vended by the transitioning
-     * delegate.  For purely interactive transitions it should be called by the
+     * delegate. For purely interactive transitions it should be called by the
      * interaction controller. This method effectively updates internal view
      * controller state at the end of the transition.
      */
@@ -106,7 +106,7 @@ public interface UIViewControllerContextTransitioning {
 
     /**
      * The frame's are set to CGRectZero when they are not known or
-     * otherwise undefined.  For example the finalFrame of the
+     * otherwise undefined. For example the finalFrame of the
      * fromViewController will be CGRectZero if and only if the fromView will be
      * removed from the window at the end of the transition. On the other
      * hand, if the finalFrame is not CGRectZero then it must be respected

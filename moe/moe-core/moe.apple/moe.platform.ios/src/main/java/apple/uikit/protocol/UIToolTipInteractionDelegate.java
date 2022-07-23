@@ -21,7 +21,8 @@ public interface UIToolTipInteractionDelegate {
      * Called when the interaction is about to begin.
      *
      * @param interaction This UIToolTipInteraction.
-     * @return The tool tip configuration containing the string and rectangle for this interaction. Return nil if the interaction is inactive or the hit test fails.
+     * @return The tool tip configuration containing the string and rectangle for this interaction. Return nil if the
+     *         interaction is inactive or the hit test fails.
      */
     @Generated
     @IsOptional

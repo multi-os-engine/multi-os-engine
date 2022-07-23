@@ -211,8 +211,10 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native long areaOfInterestForPoint(@ByValue CGPoint cursorLocation);
 
     /**
-     * Toggles mode whereby the scale factor is automatically changed as the view is resized, or rotated, to maximize the
-     * PDF displayed. For continuous modes this is a "fit width" behavior, for non-continuous modes it is a "best fit" behavior.
+     * Toggles mode whereby the scale factor is automatically changed as the view is resized, or rotated, to maximize
+     * the
+     * PDF displayed. For continuous modes this is a "fit width" behavior, for non-continuous modes it is a "best fit"
+     * behavior.
      */
     @Generated
     @Selector("autoScales")
@@ -234,7 +236,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
 
     /**
-     * Page visitations done via goToFirstPage:, goToLastPage:, goToPage:, etc. methods are recorded with visitation history
+     * Page visitations done via goToFirstPage:, goToLastPage:, goToPage:, etc. methods are recorded with visitation
+     * history
      * and can be revisited by executing goBack: or goForward:, much like a web browser. Note that visitiation history
      * also includes all rect, destination, and selection goTo*: methods.
      */
@@ -346,14 +349,16 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native void copy(@Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
-     * Returns a PDFDestination representing the current page and point displayed (see -[currentPage] for more comments).
+     * Returns a PDFDestination representing the current page and point displayed (see -[currentPage] for more
+     * comments).
      */
     @Generated
     @Selector("currentDestination")
     public native PDFDestination currentDestination();
 
     /**
-     * Returns the current page you are on. For two-up modes, it is the left page (if there are two). For continuous modes,
+     * Returns the current page you are on. For two-up modes, it is the left page (if there are two). For continuous
+     * modes,
      * it finds the page crossing a horizontal line halfway between the views top and bottom bounds.
      */
     @Generated
@@ -361,7 +366,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native PDFPage currentPage();
 
     /**
-     * Getter: Returns actual instance of the current PDFSelection object. If you wish to modify this, you should make a copy of
+     * Getter: Returns actual instance of the current PDFSelection object. If you wish to modify this, you should make a
+     * copy of
      * the selection returned and modify that instead. Method may return nil if there is no selection.
      * Setter: Set current selection to selection. The view will redraw as necessary. The view will not scroll.
      * Call -[scrollSelectionToVisible:] to scroll to the current selection.
@@ -449,7 +455,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native UIView documentView();
 
     /**
-     * For subclasses. This method is called for each visible page requiring rendering. By subclassing you can draw on top
+     * For subclasses. This method is called for each visible page requiring rendering. By subclassing you can draw on
+     * top
      * of the PDF page or draw the page entirely yourself. Default implementation erases page to white and calls:
      * [page drawWithBox: [self displayBox] toContext: context]. Note that this may be called multiple times for
      * the same page due to tiling of renderable content.
@@ -459,7 +466,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native void drawPageToContext(PDFPage page, CGContextRef context);
 
     /**
-     * Also a handy method for sub-classing. Called for post-page rendering. In this method however no scaling/rotating is
+     * Also a handy method for sub-classing. Called for post-page rendering. In this method however no scaling/rotating
+     * is
      * applied to the current context to map to page-space. The context is in "view-space" coordinates.
      */
     @Generated
@@ -467,8 +475,10 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native void drawPagePostToContext(PDFPage page, CGContextRef context);
 
     /**
-     * Turns on or off data detection. If enabled, page text will be scanned for results such as URL's, addresses, phone numbers,
-     * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place. These are
+     * Turns on or off data detection. If enabled, page text will be scanned for results such as URL's, addresses, phone
+     * numbers,
+     * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place.
+     * These are
      * temporary annotations and are not saved.
      */
     @Generated
@@ -554,9 +564,11 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native void goToPreviousPage(@Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
-     * Goes to the specified rectangle on the specified page. If already visible, does nothing. This allows you to scroll
+     * Goes to the specified rectangle on the specified page. If already visible, does nothing. This allows you to
+     * scroll
      * the PDFView to a specific PDFAnnotation or PDFSelection (since both object have bounds methods).
-     * Note: rect is specified in page coordinates. Example: You might use this function when tabbing through a form to keep
+     * Note: rect is specified in page coordinates. Example: You might use this function when tabbing through a form to
+     * keep
      * focus on the active element.
      */
     @Generated
@@ -577,7 +589,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * The following calls allow you to associate an array of PDFSelections with a PDFView. Unlike the user selection
-     * (above), these selections do not go away when the user clicks in the PDFView, etc. You must explicitly remove them
+     * (above), these selections do not go away when the user clicks in the PDFView, etc. You must explicitly remove
+     * them
      * by passing nil to -[setHighlightedSelections:]. These methods allow you to highlight text perhaps to indicate
      * matches from a text search. To avoid confusion you should probably make sure the PDFSelections passed in are a
      * different color from the user's default text selection color. Commonly used for highlighting search results.
@@ -640,7 +653,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public static native Class layerClass();
 
     /**
-     * Tells PDFView to calculate (layout) the inner views. Called automatically when -[setDocument] and -[setDisplayBox]
+     * Tells PDFView to calculate (layout) the inner views. Called automatically when -[setDocument] and
+     * -[setDisplayBox]
      * are called. You'll need to call this if you add or remove a page on the document, rotate a page etc.
      */
     @Generated
@@ -684,7 +698,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native UIEdgeInsets pageBreakMargins();
 
     /**
-     * Given a point in view coordinates, returns the page at that point. May return nil if no page at point and nearest is NO.
+     * Given a point in view coordinates, returns the page at that point. May return nil if no page at point and nearest
+     * is NO.
      */
     @Generated
     @Selector("pageForPoint:nearest:")
@@ -823,8 +838,10 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public static native void setAnimationsEnabled(boolean enabled);
 
     /**
-     * Toggles mode whereby the scale factor is automatically changed as the view is resized, or rotated, to maximize the
-     * PDF displayed. For continuous modes this is a "fit width" behavior, for non-continuous modes it is a "best fit" behavior.
+     * Toggles mode whereby the scale factor is automatically changed as the view is resized, or rotated, to maximize
+     * the
+     * PDF displayed. For continuous modes this is a "fit width" behavior, for non-continuous modes it is a "best fit"
+     * behavior.
      */
     @Generated
     @Selector("setAutoScales:")
@@ -838,7 +855,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native void setBackgroundColor(UIColor value);
 
     /**
-     * Getter: Returns actual instance of the current PDFSelection object. If you wish to modify this, you should make a copy of
+     * Getter: Returns actual instance of the current PDFSelection object. If you wish to modify this, you should make a
+     * copy of
      * the selection returned and modify that instead. Method may return nil if there is no selection.
      * Setter: Set current selection to selection. The view will redraw as necessary. The view will not scroll.
      * Call -[scrollSelectionToVisible:] to scroll to the current selection.
@@ -930,8 +948,10 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public native void setDocument(PDFDocument value);
 
     /**
-     * Turns on or off data detection. If enabled, page text will be scanned for results such as URL's, addresses, phone numbers,
-     * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place. These are
+     * Turns on or off data detection. If enabled, page text will be scanned for results such as URL's, addresses, phone
+     * numbers,
+     * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place.
+     * These are
      * temporary annotations and are not saved.
      */
     @Generated
@@ -940,7 +960,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * The following calls allow you to associate an array of PDFSelections with a PDFView. Unlike the user selection
-     * (above), these selections do not go away when the user clicks in the PDFView, etc. You must explicitly remove them
+     * (above), these selections do not go away when the user clicks in the PDFView, etc. You must explicitly remove
+     * them
      * by passing nil to -[setHighlightedSelections:]. These methods allow you to highlight text perhaps to indicate
      * matches from a text search. To avoid confusion you should probably make sure the PDFSelections passed in are a
      * different color from the user's default text selection color. Commonly used for highlighting search results.
@@ -1037,7 +1058,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     public static native long version_static();
 
     /**
-     * Returns an array of PDFPage objects representing the currently visible pages. May return empty array if no document is assigned.
+     * Returns an array of PDFPage objects representing the currently visible pages. May return empty array if no
+     * document is assigned.
      */
     @Generated
     @Selector("visiblePages")

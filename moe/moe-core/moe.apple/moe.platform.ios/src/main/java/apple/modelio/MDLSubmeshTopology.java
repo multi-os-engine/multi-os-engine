@@ -167,7 +167,7 @@ public class MDLSubmeshTopology extends NSObject {
      * Accordingly, there will be two index entries for each edge sharpness entry,
      * and the sharpness entry corresponds to the edge itself.
      * The corresponding values in the edge sharpness attribute indicate the
-     * edge sharpness of those edges.  The index buffer is sparse. If a mesh
+     * edge sharpness of those edges. The index buffer is sparse. If a mesh
      * has three sharp edges, then the index buffer will have six entries.
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be
@@ -267,7 +267,7 @@ public class MDLSubmeshTopology extends NSObject {
      * Accordingly, there will be two index entries for each edge sharpness entry,
      * and the sharpness entry corresponds to the edge itself.
      * The corresponding values in the edge sharpness attribute indicate the
-     * edge sharpness of those edges.  The index buffer is sparse. If a mesh
+     * edge sharpness of those edges. The index buffer is sparse. If a mesh
      * has three sharp edges, then the index buffer will have six entries.
      * Since the number of entries in this vertex buffer is likely to be different
      * than the number of entries in any other vertex buffer, it shouldn't be

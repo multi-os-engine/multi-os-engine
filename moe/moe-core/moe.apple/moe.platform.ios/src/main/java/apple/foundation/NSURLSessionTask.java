@@ -156,9 +156,9 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     /**
      * -cancel returns immediately, but marks a task as being canceled.
      * The task will signal -URLSession:task:didCompleteWithError: with an
-     * error value of { NSURLErrorDomain, NSURLErrorCancelled }.  In some
+     * error value of { NSURLErrorDomain, NSURLErrorCancelled }. In some
      * cases, the task may signal other work before it acknowledges the
-     * cancelation.  -cancel may be sent to a task that has been suspended.
+     * cancelation. -cancel may be sent to a task that has been suspended.
      */
     @Generated
     @Selector("cancel")
@@ -291,10 +291,10 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
 
     /**
      * Suspending a task will prevent the NSURLSession from continuing to
-     * load data.  There may still be delegate calls made on behalf of
+     * load data. There may still be delegate calls made on behalf of
      * this task (for instance, to report data received while suspending)
      * but no further transmissions will be made on behalf of the task
-     * until -resume is sent.  The timeout timer associated with the task
+     * until -resume is sent. The timeout timer associated with the task
      * will be disabled while a task is suspended. -suspend and -resume are
      * nestable.
      */

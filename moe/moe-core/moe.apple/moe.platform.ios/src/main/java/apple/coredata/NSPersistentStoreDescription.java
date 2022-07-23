@@ -178,7 +178,8 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     public native NSPersistentStoreDescription init();
 
     /**
-     * Returns a store description instance with default values for the store located at `URL` that can be used immediately with `addPersistentStoreWithDescription:completionHandler:`.
+     * Returns a store description instance with default values for the store located at `URL` that can be used
+     * immediately with `addPersistentStoreWithDescription:completionHandler:`.
      */
     @Generated
     @Selector("initWithURL:")

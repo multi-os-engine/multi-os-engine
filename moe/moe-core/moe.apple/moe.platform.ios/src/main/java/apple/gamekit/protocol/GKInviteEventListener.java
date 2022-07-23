@@ -28,7 +28,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * GKInviteEventListener uses the GKLocalPlayerListener mechanism on GKLocalPlayer to listen to the two kinds of invite events that a game must respond to
+ * GKInviteEventListener uses the GKLocalPlayerListener mechanism on GKLocalPlayer to listen to the two kinds of invite
+ * events that a game must respond to
  */
 @Generated
 @Library("GameKit")
@@ -57,7 +58,8 @@ public interface GKInviteEventListener {
     }
 
     /**
-     * didRequestMatchWithRecipients: gets called when the player chooses to play with another player from Game Center and it launches the game to start matchmaking
+     * didRequestMatchWithRecipients: gets called when the player chooses to play with another player from Game Center
+     * and it launches the game to start matchmaking
      */
     @Generated
     @IsOptional

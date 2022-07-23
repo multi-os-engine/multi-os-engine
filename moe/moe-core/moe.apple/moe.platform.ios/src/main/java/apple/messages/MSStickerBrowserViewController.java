@@ -178,7 +178,8 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     /**
      * initWithStickerSize:
      * <p>
-     * Initializes a MSStickerBrowserViewController and configures it's MSStickerBrowserView with the provided sticker size class.
+     * Initializes a MSStickerBrowserViewController and configures it's MSStickerBrowserView with the provided sticker
+     * size class.
      */
     @Generated
     @Selector("initWithStickerSize:")
@@ -190,7 +191,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     public native long numberOfStickersInStickerBrowserView(MSStickerBrowserView stickerBrowserView);
 
     /**
-     * [@property]   stickerBrowserView
+     * [@property] stickerBrowserView
      * <p>
      * Returns the sticker browser view managed by the controller object.
      */

@@ -176,7 +176,8 @@ public class NSPropertyMapping extends NSObject {
     public native void setUserInfo(NSDictionary<?, ?> value);
 
     /**
-     * Returns/sets the value expression for the property mapping.  The expression is used to create the value for the destination property.
+     * Returns/sets the value expression for the property mapping. The expression is used to create the value for the
+     * destination property.
      */
     @Generated
     @Selector("setValueExpression:")
@@ -190,7 +191,8 @@ public class NSPropertyMapping extends NSObject {
     public native NSDictionary<?, ?> userInfo();
 
     /**
-     * Returns/sets the value expression for the property mapping.  The expression is used to create the value for the destination property.
+     * Returns/sets the value expression for the property mapping. The expression is used to create the value for the
+     * destination property.
      */
     @Generated
     @Selector("valueExpression")

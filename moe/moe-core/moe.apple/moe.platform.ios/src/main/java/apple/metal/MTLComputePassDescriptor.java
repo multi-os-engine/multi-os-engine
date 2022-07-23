@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MTLComputePassDescriptor
  * <p>
- * MTLComputePassDescriptor represents a collection of attachments to be used to create a concrete compute command encoder
+ * MTLComputePassDescriptor represents a collection of attachments to be used to create a concrete compute command
+ * encoder
  */
 @Generated
 @Library("Metal")

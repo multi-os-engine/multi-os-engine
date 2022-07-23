@@ -23,9 +23,9 @@ public interface MTLCounterSet {
      * [@property] counters The set of counters captured by the counter set.
      * <p>
      * The counters array contains all the counters that will be written
-     * when a counter sample is collected.  Counters that do not appear in this array
+     * when a counter sample is collected. Counters that do not appear in this array
      * will not be written to the resolved buffer when the samples are resolved, even if
-     * they appear in the corresponding resolved counter structure.  Instead
+     * they appear in the corresponding resolved counter structure. Instead
      * MTLCounterErrorValue will be written in the resolved buffer.
      */
     @Generated

@@ -65,7 +65,8 @@ public interface UIActionSheetDelegate {
     }
 
     /**
-     * Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the cancel button.
+     * Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the
+     * cancel button.
      * If not defined in the delegate, we simulate a click in the cancel button
      */
     @Generated

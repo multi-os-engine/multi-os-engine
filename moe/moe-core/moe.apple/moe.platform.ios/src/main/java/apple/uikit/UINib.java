@@ -139,7 +139,8 @@ public class UINib extends NSObject {
 
     /**
      * If the bundle parameter is nil, the main bundle is used.
-     * Releases resources in response to memory pressure (e.g. memory warning), reloading from the bundle when necessary.
+     * Releases resources in response to memory pressure (e.g. memory warning), reloading from the bundle when
+     * necessary.
      */
     @Generated
     @Selector("nibWithNibName:bundle:")

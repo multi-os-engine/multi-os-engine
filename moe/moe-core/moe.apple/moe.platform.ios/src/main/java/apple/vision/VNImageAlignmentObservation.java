@@ -28,7 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * VNImageAlignmentObservation
  * [@superclass] VNObservation
  * <p>
- * VNImageAlignmentObservation is generated from an image registration. This is an abstract base class. The type of registration request used defines which subclass describes the result.
+ * VNImageAlignmentObservation is generated from an image registration. This is an abstract base class. The type of
+ * registration request used defines which subclass describes the result.
  */
 @Generated
 @Library("Vision")

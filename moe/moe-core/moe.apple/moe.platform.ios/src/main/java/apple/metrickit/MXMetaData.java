@@ -83,7 +83,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public static native MXMetaData allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]      applicationBuildVersion
+     * [@property] applicationBuildVersion
      * <p>
      * An NSString designating the app build version.
      */
@@ -122,7 +122,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public static native String description_static();
 
     /**
-     * [@property]      deviceType
+     * [@property] deviceType
      * <p>
      * An NSString designating the device type associated with this device.
      */
@@ -174,7 +174,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public static native MXMetaData new_objc();
 
     /**
-     * [@property]      osVersion
+     * [@property] osVersion
      * <p>
      * An NSString designating the OS version associated with the device.
      */
@@ -183,7 +183,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public native String osVersion();
 
     /**
-     * [@property]      regionFormat
+     * [@property] regionFormat
      * <p>
      * An NSString designating the region format associated with the application.
      */
@@ -234,7 +234,7 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     public native NSDictionary<?, ?> dictionaryRepresentation();
 
     /**
-     * [@property]      platformArchitecture
+     * [@property] platformArchitecture
      * <p>
      * An NSString designating the current architecture.
      */

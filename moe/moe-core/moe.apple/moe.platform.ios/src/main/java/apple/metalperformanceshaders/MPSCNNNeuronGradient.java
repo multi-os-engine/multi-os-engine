@@ -33,30 +33,30 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This filter is a backward filter for the neuron activation function filter.
  * <p>
  * The following filter types are supported:
- * MPSCNNNeuronTypeNone            ///< df/dx = 1
- * MPSCNNNeuronTypeLinear          ///< df/dx = a
- * MPSCNNNeuronTypeReLU            ///< df/dx = [ 1, if x >= 0
- * [ a, if x <  0
- * MPSCNNNeuronTypeSigmoid         ///< df/dx = e^x / (e^x + 1)^2
- * MPSCNNNeuronTypeHardSigmoid     ///< df/dx = [ a, if ((x * a) + b >= 0) and ((x * a) + b <= 1)
+ * MPSCNNNeuronTypeNone ///< df/dx = 1
+ * MPSCNNNeuronTypeLinear ///< df/dx = a
+ * MPSCNNNeuronTypeReLU ///< df/dx = [ 1, if x >= 0
+ * [ a, if x < 0
+ * MPSCNNNeuronTypeSigmoid ///< df/dx = e^x / (e^x + 1)^2
+ * MPSCNNNeuronTypeHardSigmoid ///< df/dx = [ a, if ((x * a) + b >= 0) and ((x * a) + b <= 1)
  * [ 0, otherwise
- * MPSCNNNeuronTypeTanH            ///< df/dx = a * b * (1 - tanh^2(b * x))
- * MPSCNNNeuronTypeAbsolute        ///< df/dx = sign(x)
- * MPSCNNNeuronTypeSoftPlus        ///< df/dx = (a * b * exp(b * x)) / (exp(b * x) + 1)
- * MPSCNNNeuronTypeSoftSign        ///< df/dx = 1 / (|x| + 1)^2
- * MPSCNNNeuronTypeELU             ///< df/dx = [ a * exp(x), x <  0
- * [          1, x >= 0
- * MPSCNNNeuronTypePReLU           ///< df/dx = [  1, if x >= 0
- * [ aV, if x <  0
- * MPSCNNNeuronTypeReLUN           ///< df/dx = [ 1, if x >= 0
- * [ a, if x <  0
+ * MPSCNNNeuronTypeTanH ///< df/dx = a * b * (1 - tanh^2(b * x))
+ * MPSCNNNeuronTypeAbsolute ///< df/dx = sign(x)
+ * MPSCNNNeuronTypeSoftPlus ///< df/dx = (a * b * exp(b * x)) / (exp(b * x) + 1)
+ * MPSCNNNeuronTypeSoftSign ///< df/dx = 1 / (|x| + 1)^2
+ * MPSCNNNeuronTypeELU ///< df/dx = [ a * exp(x), x < 0
+ * [ 1, x >= 0
+ * MPSCNNNeuronTypePReLU ///< df/dx = [ 1, if x >= 0
+ * [ aV, if x < 0
+ * MPSCNNNeuronTypeReLUN ///< df/dx = [ 1, if x >= 0
+ * [ a, if x < 0
  * [ b, if x >= b
- * MPSCNNNeuronTypePower           ///< df/dx = a * c * (a * x + b)^(c - 1)
- * MPSCNNNeuronTypeExponential     ///< df/dx = [         a * exp(a * x + b), if c == -1
+ * MPSCNNNeuronTypePower ///< df/dx = a * c * (a * x + b)^(c - 1)
+ * MPSCNNNeuronTypeExponential ///< df/dx = [ a * exp(a * x + b), if c == -1
  * [ a * log(c) * c^(a * x + b), if c != -1
- * MPSCNNNeuronTypeLogarithm       ///< df/dx = [            a / (a * in + b), if c == -1
+ * MPSCNNNeuronTypeLogarithm ///< df/dx = [ a / (a * in + b), if c == -1
  * [ a / (log(c) * (a * in + b)), if c != -1
- * MPSCNNNeuronTypeGeLU            ///< df/dx = 0.5 * (1.0 + erf(x * sqrt(0.5))) + (sqrt(0.5) * M_2_SQRTPI * exp(-x*x * 0.5) * x) )
+ * MPSCNNNeuronTypeGeLU ///< df/dx = 0.5 * (1.0 + erf(x * sqrt(0.5))) + (sqrt(0.5) * M_2_SQRTPI * exp(-x*x * 0.5) * x) )
  * <p>
  * The result of the above operation is multiplied with the gradient, computed
  * by the preceeding filter (going backwards).
@@ -154,7 +154,7 @@ public class MPSCNNNeuronGradient extends MPSCNNGradientKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

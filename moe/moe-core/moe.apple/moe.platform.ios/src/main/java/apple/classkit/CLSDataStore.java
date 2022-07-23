@@ -101,9 +101,11 @@ public class CLSDataStore extends NSObject {
      * Returns contexts matching a set of identifiers where each identifier is the parent of the following identifier.
      * <p>
      * For example: @c@["math-game", @c"level1"] returns two contexts where @em math-game is the parent of @em level1.
-     * If there are any missing contexts, they will be filled in by calling the following method on the data store's delegate:
+     * If there are any missing contexts, they will be filled in by calling the following method on the data store's
+     * delegate:
      * [@code] -[CLSDataStoreDelegate createContextForIdentifier:parentContext:parentIdentifierPath:] @endcode
-     * If the dataStore does not have a delegate and there are missing contexts then an incomplete list of contexts will be passed to the completion handler.  Completion block may be called on a background thread.
+     * If the dataStore does not have a delegate and there are missing contexts then an incomplete list of contexts will
+     * be passed to the completion handler. Completion block may be called on a background thread.
      */
     @Generated
     @Selector("contextsMatchingIdentifierPath:completion:")
@@ -120,7 +122,8 @@ public class CLSDataStore extends NSObject {
     /**
      * Fetch contexts matching a predicate.
      * <p>
-     * For example: NSPredicate<topic == kCLSContextTopicPhysics AND parent == someContext>.  Completion block may be called on a background thread.
+     * For example: NSPredicate<topic == kCLSContextTopicPhysics AND parent == someContext>. Completion block may be
+     * called on a background thread.
      */
     @Generated
     @Selector("contextsMatchingPredicate:completion:")
@@ -221,7 +224,8 @@ public class CLSDataStore extends NSObject {
     /**
      * Save changes made in the data store.
      * <p>
-     * Save new/modified/removed contexts, activities, etc. to the local store. In case of an error -[NSError userInfo] will contain the object that caused the error under the CLSErrorObjectKey..
+     * Save new/modified/removed contexts, activities, etc. to the local store. In case of an error -[NSError userInfo]
+     * will contain the object that caused the error under the CLSErrorObjectKey..
      */
     @Generated
     @Selector("saveWithCompletion:")

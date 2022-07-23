@@ -185,7 +185,7 @@ public class SKStoreProductViewController extends UIViewController {
     public native SKStoreProductViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * Load product view for the product with the given parameters.  See below for parameters (SKStoreProductParameter*).
+     * Load product view for the product with the given parameters. See below for parameters (SKStoreProductParameter*).
      * Block is invoked when the load finishes.
      */
     @Generated

@@ -196,7 +196,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     public native long numberOfClasses();
 
     /**
-     * [@property]   propertyCallBack
+     * [@property] propertyCallBack
      * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
@@ -219,7 +219,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   propertyCallBack
+     * [@property] propertyCallBack
      * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.

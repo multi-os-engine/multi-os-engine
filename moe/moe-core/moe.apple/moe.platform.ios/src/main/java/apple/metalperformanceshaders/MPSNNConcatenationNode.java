@@ -99,7 +99,7 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * from one neural network filter to the results of another. If we have three
      * image nodes with M, N and O feature channels in them, passed to -initWithSources:
      * as @[imageM, imageN, imageO], then feature channels [0,M-1] will be drawn from
-     * image M,  feature channels [M, M+N-1] will be drawn from image N and feature channels
+     * image M, feature channels [M, M+N-1] will be drawn from image N and feature channels
      * [M+N, M+N+O-1] will be drawn from image O.
      * <p>
      * As all images are padded out to a multiple of four feature channels,
@@ -108,9 +108,9 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * of padding, it takes up 24 feature channels worth of space in the
      * concatenated result.
      * <p>
-     * Performance Note:  Generally, concatenation is free as long as all
+     * Performance Note: Generally, concatenation is free as long as all
      * of the sourceNodes are produced by filters in the same MPSNNGraph.
-     * Most MPSCNNKernels have the ability to write their results  at a
+     * Most MPSCNNKernels have the ability to write their results at a
      * feature channel offset within a target MPSImage. However, if the
      * MPSNNImageNode source nodes come from images external to the MPSNNGraph,
      * then we have to do a copy operation to assemble the concatenated node.
@@ -160,7 +160,7 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * from one neural network filter to the results of another. If we have three
      * image nodes with M, N and O feature channels in them, passed to -initWithSources:
      * as @[imageM, imageN, imageO], then feature channels [0,M-1] will be drawn from
-     * image M,  feature channels [M, M+N-1] will be drawn from image N and feature channels
+     * image M, feature channels [M, M+N-1] will be drawn from image N and feature channels
      * [M+N, M+N+O-1] will be drawn from image O.
      * <p>
      * As all images are padded out to a multiple of four feature channels,
@@ -169,9 +169,9 @@ public class MPSNNConcatenationNode extends MPSNNFilterNode {
      * of padding, it takes up 24 feature channels worth of space in the
      * concatenated result.
      * <p>
-     * Performance Note:  Generally, concatenation is free as long as all
+     * Performance Note: Generally, concatenation is free as long as all
      * of the sourceNodes are produced by filters in the same MPSNNGraph.
-     * Most MPSCNNKernels have the ability to write their results  at a
+     * Most MPSCNNKernels have the ability to write their results at a
      * feature channel offset within a target MPSImage. However, if the
      * MPSNNImageNode source nodes come from images external to the MPSNNGraph,
      * then we have to do a copy operation to assemble the concatenated node.

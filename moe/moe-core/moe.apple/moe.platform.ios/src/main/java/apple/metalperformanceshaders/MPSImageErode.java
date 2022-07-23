@@ -51,7 +51,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * morphological probes.
  * [@code]
  * for each pixel in the filter window:
- * value =  pixel[filterY][filterX] + filter[filterY*filter_width+filterX]
+ * value = pixel[filterY][filterX] + filter[filterY*filter_width+filterX]
  * if( value < bestValue ){
  * result = value
  * bestValue = value;
@@ -60,7 +60,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A filter that contains all zeros is identical to a MPSImageAreaMin filter. The center filter element
  * is assumed to be 0, to avoid causing a general lightening of the image.
  * <p>
- * The definition of the filter for MPSImageErode is different from vImage. (MPSErode_filter_value = 1.0f-vImageErode_filter_value.)
+ * The definition of the filter for MPSImageErode is different from vImage. (MPSErode_filter_value =
+ * 1.0f-vImageErode_filter_value.)
  * This allows MPSImageDilate and MPSImageErode to use the same filter, making open and close operators easier to write.
  * The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
  */

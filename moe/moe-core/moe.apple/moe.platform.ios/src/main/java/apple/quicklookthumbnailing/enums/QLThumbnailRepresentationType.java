@@ -10,11 +10,13 @@ public final class QLThumbnailRepresentationType {
     }
 
     /**
-     * Icon of the file type of the thumbnail request, provided by the system, that may not satisfy the parameters of the request.
+     * Icon of the file type of the thumbnail request, provided by the system, that may not satisfy the parameters of
+     * the request.
      */
     @Generated @NInt public static final long Icon = 0x0000000000000000L;
     /**
-     * A version of the thumbnail that was retrieved from a cache or low quality generation but not satisfying the parameters of the request.
+     * A version of the thumbnail that was retrieved from a cache or low quality generation but not satisfying the
+     * parameters of the request.
      */
     @Generated @NInt public static final long LowQualityThumbnail = 0x0000000000000001L;
     /**

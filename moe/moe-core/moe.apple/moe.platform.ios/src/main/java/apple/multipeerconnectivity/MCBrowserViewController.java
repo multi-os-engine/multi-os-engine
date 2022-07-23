@@ -72,7 +72,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * When presented, the browser view controller looks for nearby peers,
  * and allows the user to connect up to the specified maximum number of
- * peers.  When the user taps on a nearby peer, the browser view
+ * peers. When the user taps on a nearby peer, the browser view
  * controller will send an invitation to it.
  * <p>
  * When the browser view controller is dismissed, it will stop looking

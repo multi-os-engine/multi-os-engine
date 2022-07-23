@@ -156,7 +156,8 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     public static native long version_static();
 
     /**
-     * activity type available when -item is called. nil at other times. use this in your -item method to customize the data to return
+     * activity type available when -item is called. nil at other times. use this in your -item method to customize the
+     * data to return
      */
     @Generated
     @Selector("activityType")
@@ -204,7 +205,8 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
             @Mapped(ObjCObjectMapper.class) Object placeholderItem);
 
     /**
-     * called on secondary thread when user selects an activity. you must subclass and return a non-nil value. The item can use the UIActivityItemSource protocol to return extra information
+     * called on secondary thread when user selects an activity. you must subclass and return a non-nil value. The item
+     * can use the UIActivityItemSource protocol to return extra information
      */
     @Generated
     @Selector("item")

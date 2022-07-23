@@ -220,7 +220,8 @@ public class EAGLContext extends NSObject {
     public native EAGLSharegroup sharegroup();
 
     /**
-     * Request the native window system display the OpenGL ES renderbuffer bound to <target> after the previous frame is presented for at least duration time
+     * Request the native window system display the OpenGL ES renderbuffer bound to <target> after the previous frame is
+     * presented for at least duration time
      */
     @Generated
     @Selector("presentRenderbuffer:afterMinimumDuration:")

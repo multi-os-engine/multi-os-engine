@@ -184,7 +184,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public native void setSampleCount(@NUInt long value);
 
     /**
-     * [@property] storageMode The storage mode for the sample buffer.  Only
+     * [@property] storageMode The storage mode for the sample buffer. Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
      */
     @Generated
@@ -196,7 +196,7 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] storageMode The storage mode for the sample buffer.  Only
+     * [@property] storageMode The storage mode for the sample buffer. Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
      */
     @Generated

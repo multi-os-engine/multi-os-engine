@@ -59,7 +59,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * <p>
      * Returns a qualifer for a predicate.
      *
-     * @param            predicate The variant predicate.
+     * @param predicate The variant predicate.
      */
     @Generated
     @Selector("assetVariantQualifierWithPredicate:")
@@ -70,7 +70,8 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
      * <p>
      * Returns a qualifer for a particular asset variant.
      *
-     * @param            variant A variant obtained from the -[AVAsset variants] or -[AVAssetDownloadConfiguration playableVariants].
+     * @param variant A variant obtained from the -[AVAsset variants] or -[AVAssetDownloadConfiguration
+     *                playableVariants].
      */
     @Generated
     @Selector("assetVariantQualifierWithVariant:")
@@ -150,11 +151,15 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     /**
      * predicateForChannelCount:mediaSelectionOption:operatorType:
      * <p>
-     * Creates a NSPredicate for audio channel count which can be used with other NSPredicates' to express variant preferences.
+     * Creates a NSPredicate for audio channel count which can be used with other NSPredicates' to express variant
+     * preferences.
      *
-     * @param            channelCount The RHS value for the channel count in the predicate equation.
-     * @param            mediaSelectionOption The audio media selection option under consideration.
-     * @param            operatorType The valid values are NSLessThanPredicateOperatorType, NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType, NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and NSNotEqualToPredicateOperatorType.
+     * @param channelCount         The RHS value for the channel count in the predicate equation.
+     * @param mediaSelectionOption The audio media selection option under consideration.
+     * @param operatorType         The valid values are NSLessThanPredicateOperatorType,
+     *                             NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     *                             NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     *                             NSNotEqualToPredicateOperatorType.
      */
     @Generated
     @Selector("predicateForChannelCount:mediaSelectionOption:operatorType:")
@@ -164,10 +169,14 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     /**
      * predicateForPresentationHeight:operatorType:
      * <p>
-     * Creates a NSPredicate for presentation size height which can be used with other NSPredicates to express variant preferences.
+     * Creates a NSPredicate for presentation size height which can be used with other NSPredicates to express variant
+     * preferences.
      *
-     * @param            height The RHS value for the presentation size height in the predicate equation.
-     * @param            operatorType The valid values are NSLessThanPredicateOperatorType, NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType, NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and NSNotEqualToPredicateOperatorType.
+     * @param height       The RHS value for the presentation size height in the predicate equation.
+     * @param operatorType The valid values are NSLessThanPredicateOperatorType,
+     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     *                     NSNotEqualToPredicateOperatorType.
      */
     @Generated
     @Selector("predicateForPresentationHeight:operatorType:")
@@ -177,10 +186,14 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     /**
      * predicateForPresentationWidth:operatorType:
      * <p>
-     * Creates a NSPredicate for presentation size width which can be used with other NSPredicates to express variant preferences.
+     * Creates a NSPredicate for presentation size width which can be used with other NSPredicates to express variant
+     * preferences.
      *
-     * @param            width The RHS value for the presentation size width in the predicate equation.
-     * @param            operatorType The valid values are NSLessThanPredicateOperatorType, NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType, NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and NSNotEqualToPredicateOperatorType.
+     * @param width        The RHS value for the presentation size width in the predicate equation.
+     * @param operatorType The valid values are NSLessThanPredicateOperatorType,
+     *                     NSLessThanOrEqualToPredicateOperatorType, NSGreaterThanPredicateOperatorType,
+     *                     NSGreaterThanOrEqualToPredicateOperatorType, NSEqualToPredicateOperatorType and
+     *                     NSNotEqualToPredicateOperatorType.
      */
     @Generated
     @Selector("predicateForPresentationWidth:operatorType:")

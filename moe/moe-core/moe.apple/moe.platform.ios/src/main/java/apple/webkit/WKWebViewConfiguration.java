@@ -206,8 +206,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * <p>
      * The default value is WKDataDetectorTypeNone.
      * An example of how this property may affect the content loaded in the WKWebView is that content like
-     * 'Visit apple.com on July 4th or call 1 800 555-5545' will be transformed to add links around 'apple.com', 'July 4th' and '1 800 555-5545'
-     * if the dataDetectorTypes property is set to WKDataDetectorTypePhoneNumber | WKDataDetectorTypeLink | WKDataDetectorTypeCalendarEvent.
+     * 'Visit apple.com on July 4th or call 1 800 555-5545' will be transformed to add links around 'apple.com', 'July
+     * 4th' and '1 800 555-5545'
+     * if the dataDetectorTypes property is set to WKDataDetectorTypePhoneNumber | WKDataDetectorTypeLink |
+     * WKDataDetectorTypeCalendarEvent.
      */
     @Generated
     @Selector("dataDetectorTypes")
@@ -219,7 +221,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * A Boolean value indicating whether the WKWebView should always allow scaling of the web page, regardless of author intent.
+     * A Boolean value indicating whether the WKWebView should always allow scaling of the web page, regardless of
+     * author intent.
      * <p>
      * This will override the user-scalable property.
      * The default value is NO.
@@ -327,15 +330,18 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * <p>
      * The default value is WKDataDetectorTypeNone.
      * An example of how this property may affect the content loaded in the WKWebView is that content like
-     * 'Visit apple.com on July 4th or call 1 800 555-5545' will be transformed to add links around 'apple.com', 'July 4th' and '1 800 555-5545'
-     * if the dataDetectorTypes property is set to WKDataDetectorTypePhoneNumber | WKDataDetectorTypeLink | WKDataDetectorTypeCalendarEvent.
+     * 'Visit apple.com on July 4th or call 1 800 555-5545' will be transformed to add links around 'apple.com', 'July
+     * 4th' and '1 800 555-5545'
+     * if the dataDetectorTypes property is set to WKDataDetectorTypePhoneNumber | WKDataDetectorTypeLink |
+     * WKDataDetectorTypeCalendarEvent.
      */
     @Generated
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
 
     /**
-     * A Boolean value indicating whether the WKWebView should always allow scaling of the web page, regardless of author intent.
+     * A Boolean value indicating whether the WKWebView should always allow scaling of the web page, regardless of
+     * author intent.
      * <p>
      * This will override the user-scalable property.
      * The default value is NO.
@@ -449,7 +455,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * Valid URL schemes must start with an ASCII letter and can only contain ASCII letters, numbers, the '+' character,
      * the '-' character, and the '.' character.
      * An exception will be thrown if you try to register a URL scheme handler for an invalid URL scheme.
-     * An exception will be thrown if you try to register a URL scheme handler for a URL scheme that WebKit handles internally.
+     * An exception will be thrown if you try to register a URL scheme handler for a URL scheme that WebKit handles
+     * internally.
      * You can use +[WKWebView handlesURLScheme:] to check the availability of a given URL scheme.
      *
      * @param urlSchemeHandler The object to register.
@@ -509,7 +516,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     public native void setLimitsNavigationsToAppBoundDomains(boolean value);
 
     /**
-     * A Boolean value indicating whether HTTP requests to servers known to support HTTPS should be automatically upgraded to HTTPS requests.
+     * A Boolean value indicating whether HTTP requests to servers known to support HTTPS should be automatically
+     * upgraded to HTTPS requests.
      * <p>
      * The default value is YES.
      */
@@ -518,7 +526,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     public native void setUpgradeKnownHostsToHTTPS(boolean value);
 
     /**
-     * A Boolean value indicating whether HTTP requests to servers known to support HTTPS should be automatically upgraded to HTTPS requests.
+     * A Boolean value indicating whether HTTP requests to servers known to support HTTPS should be automatically
+     * upgraded to HTTPS requests.
      * <p>
      * The default value is YES.
      */

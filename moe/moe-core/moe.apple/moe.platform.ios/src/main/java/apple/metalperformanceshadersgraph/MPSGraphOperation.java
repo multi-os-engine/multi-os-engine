@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Symbolic representation of a compute operation, all tensors are created, owned and destroyed by the MPSGraph
  * <p>
  * NSCopy will cause a refrence to be taken, this is so NSDictionary can work with the tensor.
- * All operations  are created, owned and destroyed by the MPSGraph
+ * All operations are created, owned and destroyed by the MPSGraph
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -83,7 +83,7 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   controlDependencies
+     * [@property] controlDependencies
      * <p>
      * operations guaranteed to execute before this operation
      */
@@ -106,7 +106,7 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property]   graph
+     * [@property] graph
      * <p>
      * graph on which the operation is defined
      */
@@ -124,7 +124,7 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public native MPSGraphOperation init();
 
     /**
-     * [@property]   inputTensors
+     * [@property] inputTensors
      * <p>
      * inputTensors of the operation
      */
@@ -154,7 +154,7 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   name
+     * [@property] name
      * <p>
      * name of the operation
      */
@@ -168,7 +168,7 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native MPSGraphOperation new_objc();
 
     /**
-     * [@property]   outputTensors
+     * [@property] outputTensors
      * <p>
      * outputTensors of the operation
      */

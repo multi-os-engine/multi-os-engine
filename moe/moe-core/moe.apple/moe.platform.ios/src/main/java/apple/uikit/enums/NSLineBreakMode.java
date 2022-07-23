@@ -42,7 +42,7 @@ public final class NSLineBreakMode {
      */
     @Generated @NInt public static final long TruncatingTail = 0x0000000000000004L;
     /**
-     * Truncate middle of line:  "ab...yz"
+     * Truncate middle of line: "ab...yz"
      */
     @Generated @NInt public static final long TruncatingMiddle = 0x0000000000000005L;
 

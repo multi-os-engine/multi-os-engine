@@ -161,7 +161,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * Default value : empty array  An array of UIBezierPath representing the exclusion paths inside the receiver's bounding rect.
+     * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
+     * bounding rect.
      */
     @Generated
     @Selector("exclusionPaths")
@@ -187,7 +188,12 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public native NSTextContainer initWithSize(@ByValue CGSize size);
 
     /**
-     * Returns YES if the receiver is a rectangular shape defined simply by -size. TextKit utilizes this information for enabling various layout optimizations. NSLayoutManager disables non-contiguous layout when this property is NO. The default implementation returns NO when -exclusionPaths has 1 or more items, -maximumNumberOfLines is not 0, or -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is overridden. It's recommended to override this property when -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is overridden.
+     * Returns YES if the receiver is a rectangular shape defined simply by -size. TextKit utilizes this information for
+     * enabling various layout optimizations. NSLayoutManager disables non-contiguous layout when this property is NO.
+     * The default implementation returns NO when -exclusionPaths has 1 or more items, -maximumNumberOfLines is not 0,
+     * or -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is overridden. It's recommended to
+     * override this property when -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is
+     * overridden.
      */
     @Generated
     @Selector("isSimpleRectangularTextContainer")
@@ -195,7 +201,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Accessor for the NSLayoutManager object owning the receiver.
-     * Avoid assigning a layout manager directly through this property.  Adding a text container to a layout manager through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
+     * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
+     * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
      */
     @Generated
     @Selector("layoutManager")
@@ -207,7 +214,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public native long layoutOrientation();
 
     /**
-     * Default value: NSLineBreakByWordWrapping  The line break mode defines the behavior of the last line inside the text container.
+     * Default value: NSLineBreakByWordWrapping The line break mode defines the behavior of the last line inside the
+     * text container.
      */
     @Generated
     @Selector("lineBreakMode")
@@ -215,7 +223,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public native long lineBreakMode();
 
     /**
-     * Default value: 5.0  The layout padding at the beginning and end of the line fragment rects insetting the layout width available for the contents.  This value is utilized by NSLayoutManager for determining the layout width.
+     * Default value: 5.0 The layout padding at the beginning and end of the line fragment rects insetting the layout
+     * width available for the contents. This value is utilized by NSLayoutManager for determining the layout width.
      */
     @Generated
     @Selector("lineFragmentPadding")
@@ -223,7 +232,15 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public native double lineFragmentPadding();
 
     /**
-     * Returns the bounds of a line fragment rect inside the receiver for proposedRect.  This is the intersection of proposedRect and the receiver's bounding rect defined by -size property.  The regions defined by -exclusionPaths property are excluded from the return value.  charIndex is the character location inside the text storage for the line fragment being processed.  It is possible that proposedRect can be divided into multiple line fragments due to exclusion paths.  In that case, remainingRect returns the remainder that can be passed in as the proposed rect for the next iteration.  baseWritingDirection determines the direction of advancement for line fragments inside a visual horizontal line.  The values passed into the method are either NSWritingDirectionLeftToRight or NSWritingDirectionRightToLeft.  This method can be overridden by subclasses for further text container region customization.
+     * Returns the bounds of a line fragment rect inside the receiver for proposedRect. This is the intersection of
+     * proposedRect and the receiver's bounding rect defined by -size property. The regions defined by -exclusionPaths
+     * property are excluded from the return value. charIndex is the character location inside the text storage for the
+     * line fragment being processed. It is possible that proposedRect can be divided into multiple line fragments due
+     * to exclusion paths. In that case, remainingRect returns the remainder that can be passed in as the proposed rect
+     * for the next iteration. baseWritingDirection determines the direction of advancement for line fragments inside a
+     * visual horizontal line. The values passed into the method are either NSWritingDirectionLeftToRight or
+     * NSWritingDirectionRightToLeft. This method can be overridden by subclasses for further text container region
+     * customization.
      */
     @Generated
     @Selector("lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect:")
@@ -233,7 +250,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
             CGRect remainingRect);
 
     /**
-     * Default value: 0 (no limit)  The maximum number of lines that can be stored in the receiver.  This value is utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
+     * Default value: 0 (no limit) The maximum number of lines that can be stored in the receiver. This value is
+     * utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
      */
     @Generated
     @Selector("maximumNumberOfLines")
@@ -241,14 +259,18 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public native long maximumNumberOfLines();
 
     /**
-     * This method should be used instead of the primitive -setLayoutManager: if you need to replace a container's layoutManager with a new one leaving the rest of the web intact.  All the NSTextContainers on the old NSLayoutManager get transferred to the new one.  This method deals with all the work of making sure the containers don't get deallocated and removing the old layoutManager from the text storage and replacing it with the new one.
+     * This method should be used instead of the primitive -setLayoutManager: if you need to replace a container's
+     * layoutManager with a new one leaving the rest of the web intact. All the NSTextContainers on the old
+     * NSLayoutManager get transferred to the new one. This method deals with all the work of making sure the containers
+     * don't get deallocated and removing the old layoutManager from the text storage and replacing it with the new one.
      */
     @Generated
     @Selector("replaceLayoutManager:")
     public native void replaceLayoutManager(NSLayoutManager newLayoutManager);
 
     /**
-     * Default value : empty array  An array of UIBezierPath representing the exclusion paths inside the receiver's bounding rect.
+     * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
+     * bounding rect.
      */
     @Generated
     @Selector("setExclusionPaths:")
@@ -260,7 +282,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Accessor for the NSLayoutManager object owning the receiver.
-     * Avoid assigning a layout manager directly through this property.  Adding a text container to a layout manager through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
+     * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
+     * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
      */
     @Generated
     @Selector("setLayoutManager:")
@@ -268,7 +291,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Accessor for the NSLayoutManager object owning the receiver.
-     * Avoid assigning a layout manager directly through this property.  Adding a text container to a layout manager through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
+     * Avoid assigning a layout manager directly through this property. Adding a text container to a layout manager
+     * through -[NSLayoutManager addTextContainer:] will use the property for assigning the new layout manager.
      */
     @Generated
     public void setLayoutManager(NSLayoutManager value) {
@@ -283,42 +307,47 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     }
 
     /**
-     * Default value: NSLineBreakByWordWrapping  The line break mode defines the behavior of the last line inside the text container.
+     * Default value: NSLineBreakByWordWrapping The line break mode defines the behavior of the last line inside the
+     * text container.
      */
     @Generated
     @Selector("setLineBreakMode:")
     public native void setLineBreakMode(@NInt long value);
 
     /**
-     * Default value: 5.0  The layout padding at the beginning and end of the line fragment rects insetting the layout width available for the contents.  This value is utilized by NSLayoutManager for determining the layout width.
+     * Default value: 5.0 The layout padding at the beginning and end of the line fragment rects insetting the layout
+     * width available for the contents. This value is utilized by NSLayoutManager for determining the layout width.
      */
     @Generated
     @Selector("setLineFragmentPadding:")
     public native void setLineFragmentPadding(@NFloat double value);
 
     /**
-     * Default value: 0 (no limit)  The maximum number of lines that can be stored in the receiver.  This value is utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
+     * Default value: 0 (no limit) The maximum number of lines that can be stored in the receiver. This value is
+     * utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
      */
     @Generated
     @Selector("setMaximumNumberOfLines:")
     public native void setMaximumNumberOfLines(@NUInt long value);
 
     /**
-     * Default value: CGSizeZero  Defines the maximum size for the layout area returned from -lineFragmentRectForProposedRect:writingDirection:remainingRect:.  0.0 and less means no limitation.
+     * Default value: CGSizeZero Defines the maximum size for the layout area returned from
+     * -lineFragmentRectForProposedRect:writingDirection:remainingRect:. 0.0 and less means no limitation.
      */
     @Generated
     @Selector("setSize:")
     public native void setSize(@ByValue CGSize value);
 
     /**
-     * Default value: NO  Define whether the text container view bounds changes can affect the text container size.
+     * Default value: NO Define whether the text container view bounds changes can affect the text container size.
      */
     @Generated
     @Selector("setWidthTracksTextView:")
     public native void setWidthTracksTextView(boolean value);
 
     /**
-     * Default value: CGSizeZero  Defines the maximum size for the layout area returned from -lineFragmentRectForProposedRect:writingDirection:remainingRect:.  0.0 and less means no limitation.
+     * Default value: CGSizeZero Defines the maximum size for the layout area returned from
+     * -lineFragmentRectForProposedRect:writingDirection:remainingRect:. 0.0 and less means no limitation.
      */
     @Generated
     @Selector("size")
@@ -326,7 +355,7 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     public native CGSize size();
 
     /**
-     * Default value: NO  Define whether the text container view bounds changes can affect the text container size.
+     * Default value: NO Define whether the text container view bounds changes can affect the text container size.
      */
     @Generated
     @Selector("widthTracksTextView")

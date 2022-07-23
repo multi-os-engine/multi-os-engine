@@ -79,7 +79,7 @@ public final class GSS {
      * There is also special form of the Internal Name (IN), and that is
      * the Mechanism Name (MN). In the mechanism name all the generic
      * information is stripped of and only contain the information for
-     * one mechanism.  In GSS-API some function return MN and some
+     * one mechanism. In GSS-API some function return MN and some
      * require MN as input. Each of these function is marked up as such.
      * <p>
      * <p>
@@ -210,7 +210,8 @@ public final class GSS {
     /**
      * Destroy a credential
      * <p>
-     * gss_release_cred() frees the memory, gss_destroy_cred() removes the credentials from memory/disk and then call gss_release_cred() on the credential.
+     * gss_release_cred() frees the memory, gss_destroy_cred() removes the credentials from memory/disk and then call
+     * gss_release_cred() on the credential.
      * <p>
      * [@returns] a gss_error code, see gss_display_status() about printing
      * the error code.
@@ -380,7 +381,7 @@ public final class GSS {
      * <p>
      * Returns in the major
      * - GSS_S_COMPLETE - if the context if build
-     * - GSS_S_CONTINUE_NEEDED -  if the caller needs  to continue another
+     * - GSS_S_CONTINUE_NEEDED - if the caller needs to continue another
      * round of gss_i nit_sec_context
      * - error code - any other error code
      * <p>
@@ -544,9 +545,11 @@ public final class GSS {
      *
      * @param min_stat set to minor status in case of an error
      * @param flags    flags argument, no flags currently defined, pass in 0 (zero)
-     * @param mech     the mechanism type of credentials to iterate over, by passing in GSS_C_NO_OID, the function will iterate over all credentails
+     * @param mech     the mechanism type of credentials to iterate over, by passing in GSS_C_NO_OID, the function will
+     *                 iterate over all credentails
      * @param userctx  user context passed to the useriter funcion
-     * @param useriter function that will be called on each gss_cred_id_t, when NULL is passed the list is completed. Must free the credential with gss_release_cred().
+     * @param useriter function that will be called on each gss_cred_id_t, when NULL is passed the list is completed.
+     *                 Must free the credential with gss_release_cred().
      */
     @Generated
     @CFunction
@@ -589,7 +592,7 @@ public final class GSS {
      * @param a first oid to compare
      * @param b second oid to compare
      * @return non-zero when both oid are the same OID, zero when they are
-     * not the same.
+     *         not the same.
      */
     @Generated
     @CFunction
@@ -696,7 +699,7 @@ public final class GSS {
      * trying to free them.
      * <p>
      * One could guess that gss_name_to_oid() might return an allocated
-     * OID.  In this implementation it wont, so there is no need to call
+     * OID. In this implementation it wont, so there is no need to call
      * gss_release_oid().
      * <p>
      * [@returns] GSS major status code
@@ -849,7 +852,8 @@ public final class GSS {
     /**
      * Create a GSS name from a buffer and type.
      * <p>
-     * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows CoreFoundation Create/Copy rule.
+     * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows
+     * CoreFoundation Create/Copy rule.
      * <p>
      * [@ingroup] gssapi
      *
@@ -866,7 +870,8 @@ public final class GSS {
     /**
      * Copy the name describing the credential
      * <p>
-     * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows CoreFoundation Create/Copy rule.
+     * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows
+     * CoreFoundation Create/Copy rule.
      * <p>
      * [@ingroup] gssapi
      *
@@ -928,7 +933,8 @@ public final class GSS {
      *
      * @param name       name to change password for
      * @param mech       mechanism to use
-     * @param attributes old and new password (kGSSChangePasswordOldPassword and kGSSChangePasswordNewPassword) and other attributes.
+     * @param attributes old and new password (kGSSChangePasswordOldPassword and kGSSChangePasswordNewPassword) and
+     *                   other attributes.
      * @param error      if not NULL, error might be set case function doesn't
      *                   return GSS_S_COMPLETE, in that case is must be released with
      *                   CFRelease().
@@ -956,17 +962,22 @@ public final class GSS {
      * <p>
      * attributes must contains one of the following keys
      * * kGSSICPassword - CFStringRef password
-     * * kGSSICCertificate - SecIdentityRef, SecCertificate, or CFDataRef[data of a Keychain Persistent Reference] to the certificate to use with PKINIT/PKU2U
+     * * kGSSICCertificate - SecIdentityRef, SecCertificate, or CFDataRef[data of a Keychain Persistent Reference] to
+     * the certificate to use with PKINIT/PKU2U
      * <p>
      * optional keys
-     * * kGSSCredentialUsage - one of kGSS_C_INITIATE, kGSS_C_ACCEPT, kGSS_C_BOTH, default if not given is kGSS_C_INITIATE
+     * * kGSSCredentialUsage - one of kGSS_C_INITIATE, kGSS_C_ACCEPT, kGSS_C_BOTH, default if not given is
+     * kGSS_C_INITIATE
      * * kGSSICVerifyCredential - validate the credential with a trusted source that there was no MITM
      * * kGSSICLKDCHostname - CFStringRef hostname of LKDC hostname
      * * kGSSICKerberosCacheName - CFStringRef name of cache that will be created (including type)
-     * * kGSSICSiteName - CFStringRef name of site (you are authenticating too) used for load balancing in DNS in Kerberos)
+     * * kGSSICSiteName - CFStringRef name of site (you are authenticating too) used for load balancing in DNS in
+     * Kerberos)
      * * kGSSICAppIdentifierACL - CFArrayRef[CFStringRef] prefix of bundle ID allowed to access this credential
-     * * kGSSICCreateNewCredential - CFBooleanRef if set caller wants to create a new credential and not overwrite a credential with the same name
-     * * kGSSICAuthenticationContext - CFBooleanRef/YES to allow authentication UI, or LAContext to pass a pre-evaluated authentication context
+     * * kGSSICCreateNewCredential - CFBooleanRef if set caller wants to create a new credential and not overwrite a
+     * credential with the same name
+     * * kGSSICAuthenticationContext - CFBooleanRef/YES to allow authentication UI, or LAContext to pass a pre-evaluated
+     * authentication context
      * <p>
      * * kGSSICAppleSourceApp - CFDictionaryRef application we are performing this on behalf of (only applies to AppVPN)
      * <p>
@@ -983,11 +994,15 @@ public final class GSS {
      * <p>
      * [@ingroup] gssapi
      *
-     * @param desired_name       name to use to acquire credential. Import the name using gss_import_name(). The type of the name has to be supported by the desired_mech used.
-     * @param desired_mech       mechanism to use to acquire credential. GSS_C_NO_OID is not valid input and a mechanism must be selected. For example GSS_KRB5_MECHANISM, GSS_NTLM_MECHNISM or any other mechanisms supported by the implementation. See gss_indicate_mechs().
+     * @param desired_name       name to use to acquire credential. Import the name using gss_import_name(). The type of
+     *                           the name has to be supported by the desired_mech used.
+     * @param desired_mech       mechanism to use to acquire credential. GSS_C_NO_OID is not valid input and a mechanism
+     *                           must be selected. For example GSS_KRB5_MECHANISM, GSS_NTLM_MECHNISM or any other
+     *                           mechanisms supported by the implementation. See gss_indicate_mechs().
      * @param attributes         CFDictionary that contains how to acquire the credential, see below for examples
      * @param output_cred_handle the resulting credential handle, value is set to GSS_C_NO_CREDENTIAL on failure.
-     * @param error              an CFErrorRef returned in case of an error, that needs to be released with CFRelease() by the caller, input can be NULL.
+     * @param error              an CFErrorRef returned in case of an error, that needs to be released with CFRelease()
+     *                           by the caller, input can be NULL.
      */
     @Generated
     @CFunction

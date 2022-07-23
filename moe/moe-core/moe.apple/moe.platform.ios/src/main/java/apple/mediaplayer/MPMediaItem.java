@@ -141,7 +141,8 @@ public class MPMediaItem extends MPMediaEntity {
 
     /**
      * Returns the item property for a given grouping type.
-     * For example, [MPMediaItem persistentIDPropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumPersistentID.
+     * For example, [MPMediaItem persistentIDPropertyForGroupingType:MPMediaGroupingAlbum] returns
+     * MPMediaItemPropertyAlbumPersistentID.
      */
     @Generated
     @Selector("persistentIDPropertyForGroupingType:")
@@ -169,8 +170,10 @@ public class MPMediaItem extends MPMediaEntity {
 
     /**
      * Returns the item property to determine a title for a given grouping type.
-     * For example, [MPMediaItem titlePropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumTitle.
-     * Note that distinct collections will not necessarily have unique titles, e.g. an album may exist with the title "Greatest Hits" for multiple artists.
+     * For example, [MPMediaItem titlePropertyForGroupingType:MPMediaGroupingAlbum] returns
+     * MPMediaItemPropertyAlbumTitle.
+     * Note that distinct collections will not necessarily have unique titles, e.g. an album may exist with the title
+     * "Greatest Hits" for multiple artists.
      */
     @Generated
     @Selector("titlePropertyForGroupingType:")

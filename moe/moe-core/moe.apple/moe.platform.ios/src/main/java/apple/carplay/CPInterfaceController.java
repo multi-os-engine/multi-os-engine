@@ -161,8 +161,10 @@ public class CPInterfaceController extends NSObject {
     public native void popToTemplateAnimated(CPTemplate targetTemplate, boolean animated);
 
     /**
-     * Set the preferred interface style to UIUserInterfaceStyleDark for all templates. Set this value to YES prior to setting a root template
-     * or pushing any templates for first appearance to have style UIUserInterfaceStyleDark. The default value is NO which will allow templates to change between light and dark styles.
+     * Set the preferred interface style to UIUserInterfaceStyleDark for all templates. Set this value to YES prior to
+     * setting a root template
+     * or pushing any templates for first appearance to have style UIUserInterfaceStyleDark. The default value is NO
+     * which will allow templates to change between light and dark styles.
      */
     @Generated
     @Selector("prefersDarkUserInterfaceStyle")
@@ -180,7 +182,8 @@ public class CPInterfaceController extends NSObject {
     /**
      * The current modally-presented template.
      * <p>
-     * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current presented template.
+     * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current presented
+     * template.
      */
     @Generated
     @Selector("presentedTemplate")
@@ -231,16 +234,20 @@ public class CPInterfaceController extends NSObject {
     }
 
     /**
-     * Set the preferred interface style to UIUserInterfaceStyleDark for all templates. Set this value to YES prior to setting a root template
-     * or pushing any templates for first appearance to have style UIUserInterfaceStyleDark. The default value is NO which will allow templates to change between light and dark styles.
+     * Set the preferred interface style to UIUserInterfaceStyleDark for all templates. Set this value to YES prior to
+     * setting a root template
+     * or pushing any templates for first appearance to have style UIUserInterfaceStyleDark. The default value is NO
+     * which will allow templates to change between light and dark styles.
      */
     @Generated
     @Selector("setPrefersDarkUserInterfaceStyle:")
     public native void setPrefersDarkUserInterfaceStyle(boolean value);
 
     /**
-     * Set the root template. If no existing templates exist in the template navigation hierarchy, the animated flag will be ignored.
-     * If there is an existing template navigation hierarchy, the existing stack will be replaced by the new root template.
+     * Set the root template. If no existing templates exist in the template navigation hierarchy, the animated flag
+     * will be ignored.
+     * If there is an existing template navigation hierarchy, the existing stack will be replaced by the new root
+     * template.
      */
     @Generated
     @Selector("setRootTemplate:animated:")
@@ -257,7 +264,8 @@ public class CPInterfaceController extends NSObject {
     /**
      * The current stack of templates in the navigation hierarchy.
      * <p>
-     * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current stack of templates.
+     * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current stack of
+     * templates.
      */
     @Generated
     @Selector("templates")
@@ -294,8 +302,10 @@ public class CPInterfaceController extends NSObject {
      * <p>
      * [@note] If there is no current modally-presented template, this method will have no effect.
      * <p>
-     * The completion block will be called after the template has been dismissed. If the template was dismissed successfully,
-     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
+     * The completion block will be called after the template has been dismissed. If the template was dismissed
+     * successfully,
+     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
+     * describing the failure.
      */
     @Generated
     @Selector("dismissTemplateAnimated:completion:")
@@ -369,10 +379,13 @@ public class CPInterfaceController extends NSObject {
      * <p>
      * [@note] Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
      * <p>
-     * The completion block will be called after the template has been presented. If the template was presented successfully,
-     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
+     * The completion block will be called after the template has been presented. If the template was presented
+     * successfully,
+     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
+     * describing the failure.
      * <p>
-     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
+     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be
+     * thrown.
      */
     @Generated
     @Selector("presentTemplate:animated:completion:")
@@ -389,10 +402,13 @@ public class CPInterfaceController extends NSObject {
     /**
      * Push a new template onto the template navigation hierarchy, showing it immediately.
      * <p>
-     * The completion block will be called after the template has been presented. If the template was presented successfully,
-     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
+     * The completion block will be called after the template has been presented. If the template was presented
+     * successfully,
+     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
+     * describing the failure.
      * <p>
-     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
+     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be
+     * thrown.
      */
     @Generated
     @Selector("pushTemplate:animated:completion:")
@@ -407,13 +423,18 @@ public class CPInterfaceController extends NSObject {
     }
 
     /**
-     * Set the root template. If no existing templates exist in the template navigation hierarchy, the animated flag will be ignored.
-     * If there is an existing template navigation hierarchy, the existing stack will be replaced by the new root template.
+     * Set the root template. If no existing templates exist in the template navigation hierarchy, the animated flag
+     * will be ignored.
+     * If there is an existing template navigation hierarchy, the existing stack will be replaced by the new root
+     * template.
      * <p>
-     * The completion block will be called after the template has been presented. If the template was presented successfully,
-     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided describing the failure.
+     * The completion block will be called after the template has been presented. If the template was presented
+     * successfully,
+     * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
+     * describing the failure.
      * <p>
-     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be thrown.
+     * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be
+     * thrown.
      */
     @Generated
     @Selector("setRootTemplate:animated:completion:")

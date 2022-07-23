@@ -105,7 +105,7 @@ public class CPInformationItem extends NSObject implements NSSecureCoding {
     public native CPInformationItem initWithCoder(NSCoder coder);
 
     /**
-     * Initializes a new  item to be used with @c CPInformationTemplate.
+     * Initializes a new item to be used with @c CPInformationTemplate.
      *
      * @param title  An optional string that will be styled by the template as the title text of the item.
      * @param detail An optional string that will be styled by the template as the detail text of the item.

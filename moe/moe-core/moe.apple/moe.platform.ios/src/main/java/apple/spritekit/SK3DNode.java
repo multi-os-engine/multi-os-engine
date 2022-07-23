@@ -199,7 +199,8 @@ public class SK3DNode extends SKNode {
      * <p>
      * Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
      * <p>
-     * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
+     * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only
+     * ambient lights.
      */
     @Generated
     @Selector("autoenablesDefaultLighting")
@@ -298,7 +299,8 @@ public class SK3DNode extends SKNode {
      * <p>
      * Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
      * <p>
-     * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only ambient lights.
+     * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only
+     * ambient lights.
      */
     @Generated
     @Selector("setAutoenablesDefaultLighting:")

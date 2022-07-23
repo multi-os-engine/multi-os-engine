@@ -38,7 +38,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 1. As the base class of a @c SHMatchedMedia item, and therefore as the result of a match
  * 2. As a way of associating metadata with reference signatures in a @c SHCustomCatalog
  * <p>
- * A SHMediaItem contains no required fields and may be entirely blank, they can also contain custom data set with custom keys when making a @c SHCustomCatalog.
+ * A SHMediaItem contains no required fields and may be entirely blank, they can also contain custom data set with
+ * custom keys when making a @c SHCustomCatalog.
  */
 @Generated
 @Library("ShazamKit")

@@ -162,7 +162,8 @@ public class SLComposeSheetConfigurationItem extends NSObject {
 
     /**
      * Called on the main queue when the configuration item is tapped.
-     * Your block should not keep a strong reference to either the configuration item, or the SLComposeServiceViewController, otherwise you'll end up with a retain cycle.
+     * Your block should not keep a strong reference to either the configuration item, or the
+     * SLComposeServiceViewController, otherwise you'll end up with a retain cycle.
      */
     @Generated
     @Selector("setTapHandler:")
@@ -191,7 +192,8 @@ public class SLComposeSheetConfigurationItem extends NSObject {
 
     /**
      * Called on the main queue when the configuration item is tapped.
-     * Your block should not keep a strong reference to either the configuration item, or the SLComposeServiceViewController, otherwise you'll end up with a retain cycle.
+     * Your block should not keep a strong reference to either the configuration item, or the
+     * SLComposeServiceViewController, otherwise you'll end up with a retain cycle.
      */
     @Generated
     @Selector("tapHandler")

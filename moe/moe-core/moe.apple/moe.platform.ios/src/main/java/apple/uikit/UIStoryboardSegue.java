@@ -176,8 +176,11 @@ public class UIStoryboardSegue extends NSObject {
             UIViewController destination);
 
     /**
-     * Subclasses can override this method to augment or replace the effect of this segue. For example, to animate alongside the effect of a Modal Presentation segue, an override of this method can call super, then send -animateAlongsideTransition:completion: to the transitionCoordinator of the destinationViewController.
-     * The segue runtime will call +[UIView setAnimationsAreEnabled:] prior to invoking this method, based on the value of the Animates checkbox in the Properties Inspector for the segue.
+     * Subclasses can override this method to augment or replace the effect of this segue. For example, to animate
+     * alongside the effect of a Modal Presentation segue, an override of this method can call super, then send
+     * -animateAlongsideTransition:completion: to the transitionCoordinator of the destinationViewController.
+     * The segue runtime will call +[UIView setAnimationsAreEnabled:] prior to invoking this method, based on the value
+     * of the Animates checkbox in the Properties Inspector for the segue.
      */
     @Generated
     @Selector("perform")

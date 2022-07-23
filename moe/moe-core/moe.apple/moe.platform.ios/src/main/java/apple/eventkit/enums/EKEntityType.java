@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum]       EKEntityType
+ * [@enum] EKEntityType
  * <p>
  * A value which specifies an entity type of event or reminder.
  */

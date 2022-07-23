@@ -17,7 +17,8 @@ public final class ARAltitudeSource {
      */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
-     * ARKit determined altitude based on a coarse digital elevation model. The provided value is too imprecise to be used at close range, but is sufficient to anchor far away content.
+     * ARKit determined altitude based on a coarse digital elevation model. The provided value is too imprecise to be
+     * used at close range, but is sufficient to anchor far away content.
      */
     @Generated @NInt public static final long Coarse = 0x0000000000000001L;
     /**

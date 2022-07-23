@@ -267,7 +267,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * An angle (in radians) defining a cone around the emission angle.
      * Emitted objects are uniformly distributed across this cone. Defaults
-     * to zero.  Animatable.
+     * to zero. Animatable.
      */
     @Generated
     @Selector("emissionRange")
@@ -491,7 +491,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * An angle (in radians) defining a cone around the emission angle.
      * Emitted objects are uniformly distributed across this cone. Defaults
-     * to zero.  Animatable.
+     * to zero. Animatable.
      */
     @Generated
     @Selector("setEmissionRange:")

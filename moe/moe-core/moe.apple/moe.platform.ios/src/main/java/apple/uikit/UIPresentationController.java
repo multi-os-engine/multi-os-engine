@@ -53,8 +53,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIPresentationController extends NSObject
-        implements UIAppearanceContainer, UITraitEnvironment, UIContentContainer, UIFocusEnvironment {
+public class UIPresentationController extends NSObject implements UIAppearanceContainer, UITraitEnvironment,
+        UIContentContainer, UIFocusEnvironment {
     static {
         NatJ.register();
     }
@@ -161,8 +161,10 @@ public class UIPresentationController extends NSObject
     public static native long version_static();
 
     /**
-     * By default this implementation defers to the delegate, if one exists, or returns the current presentation style. UIFormSheetPresentationController, and
-     * UIPopoverPresentationController override this implementation to return UIModalPresentationStyleFullscreen if the delegate does not provide an
+     * By default this implementation defers to the delegate, if one exists, or returns the current presentation style.
+     * UIFormSheetPresentationController, and
+     * UIPopoverPresentationController override this implementation to return UIModalPresentationStyleFullscreen if the
+     * delegate does not provide an
      * implementation for adaptivePresentationStyleForPresentationController:
      */
     @Generated
@@ -176,7 +178,8 @@ public class UIPresentationController extends NSObject
     public native long adaptivePresentationStyleForTraitCollection(UITraitCollection traitCollection);
 
     /**
-     * The view in which a presentation occurs. It is an ancestor of both the presenting and presented view controller's views.
+     * The view in which a presentation occurs. It is an ancestor of both the presenting and presented view controller's
+     * views.
      * This view is being passed to the animation controller.
      */
     @Generated
@@ -267,7 +270,8 @@ public class UIPresentationController extends NSObject
     public native void presentationTransitionWillBegin();
 
     /**
-     * A view that's going to be animated during the presentation. Must be an ancestor of a presented view controller's view
+     * A view that's going to be animated during the presentation. Must be an ancestor of a presented view controller's
+     * view
      * or a presented view controller's view itself.
      * (Default: presented view controller's view)
      */
@@ -320,7 +324,8 @@ public class UIPresentationController extends NSObject
     public native boolean shouldPresentInFullscreen();
 
     /**
-     * Indicate whether the view controller's view we are transitioning from will be removed from the window in the end of the
+     * Indicate whether the view controller's view we are transitioning from will be removed from the window in the end
+     * of the
      * presentation transition
      * (Default: NO)
      */

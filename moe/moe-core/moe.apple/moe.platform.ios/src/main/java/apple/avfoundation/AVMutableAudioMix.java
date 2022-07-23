@@ -162,22 +162,26 @@ public class AVMutableAudioMix extends AVAudioMix {
     public native AVMutableAudioMix init();
 
     /**
-     * [@property]		inputParameters
+     * [@property] inputParameters
      * <p>
      * Indicates parameters for inputs to the mix; an NSArray of instances of AVAudioMixInputParameters.
      * <p>
-     * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed according to default behavior.
+     * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the
+     * mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed
+     * according to default behavior.
      */
     @Generated
     @Selector("inputParameters")
     public native NSArray<? extends AVAudioMixInputParameters> inputParameters();
 
     /**
-     * [@property]		inputParameters
+     * [@property] inputParameters
      * <p>
      * Indicates parameters for inputs to the mix; an NSArray of instances of AVAudioMixInputParameters.
      * <p>
-     * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed according to default behavior.
+     * Note that an instance of AVAudioMixInputParameters is not required for each audio track that contributes to the
+     * mix; audio for those without associated AVAudioMixInputParameters will be included in the mix, processed
+     * according to default behavior.
      */
     @Generated
     @Selector("setInputParameters:")

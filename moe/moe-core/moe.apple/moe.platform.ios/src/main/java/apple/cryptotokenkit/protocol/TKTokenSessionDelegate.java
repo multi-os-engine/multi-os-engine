@@ -20,7 +20,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * TKTokenSessionDelegate contains operations with token objects provided by token implementors which should be performed in the context of authentication session.
+ * TKTokenSessionDelegate contains operations with token objects provided by token implementors which should be
+ * performed in the context of authentication session.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -34,7 +35,12 @@ public interface TKTokenSessionDelegate {
      * @param operation  Identifier of the operation.
      * @param constraint Constraint to be satisfied by this authentication operation.
      * @param error      Error details (see TKError.h).
-     * @return authOperation Resulting context of the operation, which will be eventually finalized by receiving 'finishWithError:'.  The resulting 'authOperation' can be of any type based on TKTokenAuthOperation. For known types (e.g. TKTokenPasswordAuthOperation) the system will first fill in the context-specific properties (e.g. 'password') before triggering 'finishWithError:'. When no authentication is actually needed (typically because the session is already authenticated for requested constraint), return instance of TKTokenAuthOperation class instead of any specific subclass.
+     * @return authOperation Resulting context of the operation, which will be eventually finalized by receiving
+     *         'finishWithError:'. The resulting 'authOperation' can be of any type based on TKTokenAuthOperation. For
+     *         known types (e.g. TKTokenPasswordAuthOperation) the system will first fill in the context-specific
+     *         properties (e.g. 'password') before triggering 'finishWithError:'. When no authentication is actually
+     *         needed (typically because the session is already authenticated for requested constraint), return instance
+     *         of TKTokenAuthOperation class instead of any specific subclass.
      */
     @Generated
     @IsOptional
@@ -52,7 +58,8 @@ public interface TKTokenSessionDelegate {
      * @param ciphertext  Encrypted data to decrypt.
      * @param keyObjectID Identifier of the private key object.
      * @param algorithm   Requested encryption/decryption algorithm to be used.
-     * @param error       Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
+     * @param error       Error details (see TKError.h). If authentication is required (by invoking
+     *                    beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Resulting decrypted plaintext, or nil if an error happened.
      */
     @Generated
@@ -71,8 +78,10 @@ public interface TKTokenSessionDelegate {
      * @param otherPartyPublicKeyData Raw public data of other party public key.
      * @param objectID                Identifier of the private key object.
      * @param algorithm               Requested key exchange algorithm to be used.
-     * @param parameters              Additional parameters for key exchange operation.  Chosen algorithm dictates meaning of parameters.
-     * @param error                   Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
+     * @param parameters              Additional parameters for key exchange operation. Chosen algorithm dictates
+     *                                meaning of parameters.
+     * @param error                   Error details (see TKError.h). If authentication is required (by invoking
+     *                                beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Result of key exchange operation, or nil if the operation failed.
      */
     @Generated
@@ -92,7 +101,8 @@ public interface TKTokenSessionDelegate {
      * @param dataToSign  Input data for the signature operation.
      * @param keyObjectID Identifier of the private key object.
      * @param algorithm   Requested signature algorithm to be used.
-     * @param error       Error details (see TKError.h).  If authentication is required (by invoking beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
+     * @param error       Error details (see TKError.h). If authentication is required (by invoking
+     *                    beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Resulting signature, or nil if an error happened.
      */
     @Generated
@@ -108,7 +118,8 @@ public interface TKTokenSessionDelegate {
      * Checks whether specified operation and algorithm is supported on specified key.
      *
      * @param session     Related TKTokenSession instance.
-     * @param operation   Type of cryptographic operation for which the list of supported algorithms should be retrieved.
+     * @param operation   Type of cryptographic operation for which the list of supported algorithms should be
+     *                    retrieved.
      * @param keyObjectID Identifier of the private key object.
      * @param algorithm   Algorithm with which the oepration should be performed.
      * @return YES if the operation is supported, NO otherwise.

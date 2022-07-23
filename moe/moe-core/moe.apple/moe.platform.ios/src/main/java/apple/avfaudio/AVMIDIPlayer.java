@@ -88,7 +88,7 @@ public class AVMIDIPlayer extends NSObject {
      * <p>
      * The current playback position in seconds
      * <p>
-     * Setting this positions the player to the specified time.  No range checking on the time value is done.
+     * Setting this positions the player to the specified time. No range checking on the time value is done.
      * This can be set while the player is playing, in which case playback will resume at the new time.
      */
     @Generated
@@ -127,7 +127,7 @@ public class AVMIDIPlayer extends NSObject {
      * Create a player with the contents of the file specified by the URL.
      * <p>
      * 'bankURL' should contain the path to a SoundFont2 or DLS bank to be used
-     * by the MIDI synthesizer.  For OSX it can be set to nil for the default,
+     * by the MIDI synthesizer. For OSX it can be set to nil for the default,
      * but for iOS it must always refer to a valid bank file.
      */
     @Generated
@@ -141,7 +141,7 @@ public class AVMIDIPlayer extends NSObject {
      * Create a player with the contents of the data object
      * <p>
      * 'bankURL' should contain the path to a SoundFont2 or DLS bank to be used
-     * by the MIDI synthesizer.  For OSX it can be set to nil for the default,
+     * by the MIDI synthesizer. For OSX it can be set to nil for the default,
      * but for iOS it must always refer to a valid bank file.
      */
     @Generated
@@ -216,7 +216,7 @@ public class AVMIDIPlayer extends NSObject {
      * <p>
      * The playback rate of the player
      * <p>
-     * 1.0 is normal playback rate.  Rate must be > 0.0.
+     * 1.0 is normal playback rate. Rate must be > 0.0.
      */
     @Generated
     @Selector("rate")
@@ -235,7 +235,7 @@ public class AVMIDIPlayer extends NSObject {
      * <p>
      * The current playback position in seconds
      * <p>
-     * Setting this positions the player to the specified time.  No range checking on the time value is done.
+     * Setting this positions the player to the specified time. No range checking on the time value is done.
      * This can be set while the player is playing, in which case playback will resume at the new time.
      */
     @Generated
@@ -247,7 +247,7 @@ public class AVMIDIPlayer extends NSObject {
      * <p>
      * The playback rate of the player
      * <p>
-     * 1.0 is normal playback rate.  Rate must be > 0.0.
+     * 1.0 is normal playback rate. Rate must be > 0.0.
      */
     @Generated
     @Selector("setRate:")

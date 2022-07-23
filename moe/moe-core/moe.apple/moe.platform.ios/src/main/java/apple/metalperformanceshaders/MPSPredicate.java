@@ -172,7 +172,7 @@ public class MPSPredicate extends NSObject {
     public native MTLBuffer predicateBuffer();
 
     /**
-     * [@property]   predicateOffset
+     * [@property] predicateOffset
      * <p>
      * Location of the predicate in bytes, must be multiple of four.
      * <p>

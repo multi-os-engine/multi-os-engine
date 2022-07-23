@@ -215,7 +215,9 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     /**
      * [@property] password
      * <p>
-     * The password portion of the authentication credential to use when communicating with the proxy server. This property is only saved persistently if the username property is non-nil and non-empty and if the authenticationRequired flag is set.
+     * The password portion of the authentication credential to use when communicating with the proxy server. This
+     * property is only saved persistently if the username property is non-nil and non-empty and if the
+     * authenticationRequired flag is set.
      */
     @Generated
     @Selector("password")
@@ -243,7 +245,9 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     /**
      * [@property] password
      * <p>
-     * The password portion of the authentication credential to use when communicating with the proxy server. This property is only saved persistently if the username property is non-nil and non-empty and if the authenticationRequired flag is set.
+     * The password portion of the authentication credential to use when communicating with the proxy server. This
+     * property is only saved persistently if the username property is non-nil and non-empty and if the
+     * authenticationRequired flag is set.
      */
     @Generated
     @Selector("setPassword:")

@@ -106,14 +106,14 @@ public class MPSImageEDLines extends MPSKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   clipRectSource
+     * [@property] clipRectSource
      * <p>
      * The source rectangle to use when reading data.
      * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
-     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("clipRectSource")
@@ -146,14 +146,20 @@ public class MPSImageEDLines extends MPSKernel {
      *
      * @param commandBuffer  A valid MTLCommandBuffer.
      * @param source         A valid MTLTexture containing the source image for the filter
-     * @param dest           A valid MTLTexture containing the destination image for the filter. If not nil, the output will be the edges
+     * @param dest           A valid MTLTexture containing the destination image for the filter. If not nil, the output
+     *                       will be the edges
      *                       found through the Edge Drawing algorithm.
      * @param endpointBuffer A valid MTLBuffer to receive the line segment count and endpoint results.
-     * @param endpointOffset Byte offset into endpoint buffer at which to write the  line segment endpoint results. Must be a multiple of 32 bytes.
-     *                       The total line segment count and the line segment endpoints are written to the endpoint buffer. The count
-     *                       is written as a uint32_t at the start of the buffer. The line segments are written to the endpoint buffer as
-     *                       start and end pixel coordinates of the segment. Coordinates are stored as unsigned short pairs, and a
-     *                       single line segment will consist of two pairs, or four total unsigned shorts. The endpoint buffer size must
+     * @param endpointOffset Byte offset into endpoint buffer at which to write the line segment endpoint results. Must
+     *                       be a multiple of 32 bytes.
+     *                       The total line segment count and the line segment endpoints are written to the endpoint
+     *                       buffer. The count
+     *                       is written as a uint32_t at the start of the buffer. The line segments are written to the
+     *                       endpoint buffer as
+     *                       start and end pixel coordinates of the segment. Coordinates are stored as unsigned short
+     *                       pairs, and a
+     *                       single line segment will consist of two pairs, or four total unsigned shorts. The endpoint
+     *                       buffer size must
      *                       be >= 4 * maxLines * sizeof(unsigned short) + sizeof(uint32_t).
      */
     @Generated
@@ -202,7 +208,7 @@ public class MPSImageEDLines extends MPSKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -234,14 +240,16 @@ public class MPSImageEDLines extends MPSKernel {
      *                               Gaussian weight, centered at 0, at integer grid i is given as
      * @param minLineLength          The minimum length of output line segments.
      * @param maxLines               The maximum amount of lines for the EDLines algorithm to output. The size of the
-     *                               endpointBuffer supplied at encode must be >= maxLines * 4 * sizeof(unsigned short) + sizeof(uint32_t).
+     *                               endpointBuffer supplied at encode must be >= maxLines * 4 * sizeof(unsigned short)
+     *                               + sizeof(uint32_t).
      * @param detailRatio            The detailRatio to use in the EDLines algorithm, which
      *                               inversely effects the number of anchor points
      * @param gradientThreshold      Any pixel with a gradient below the gradientThreshold will
      *                               not be considerd an edge
      * @param lineErrorThreshold     The limit of how much error a line segment can have relative
      *                               to the edge it represents
-     * @param mergeLocalityThreshold Determines how many pixels apart two lines can deviate spatially and still be merged.
+     * @param mergeLocalityThreshold Determines how many pixels apart two lines can deviate spatially and still be
+     *                               merged.
      *                               This value is normalized to the diagonal length of the image.
      * @return A valid object or nil, if failure.
      */
@@ -329,14 +337,14 @@ public class MPSImageEDLines extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   clipRectSource
+     * [@property] clipRectSource
      * <p>
      * The source rectangle to use when reading data.
      * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
-     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("setClipRectSource:")

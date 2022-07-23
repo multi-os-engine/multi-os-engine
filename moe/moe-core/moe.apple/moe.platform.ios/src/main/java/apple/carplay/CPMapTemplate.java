@@ -127,7 +127,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Dismisses the panning interface on the map interface if it is visible.
-     * [@note] When dismissing the panning interface, mapButtons previously hidden by the system will no longer be hidden.
+     * [@note] When dismissing the panning interface, mapButtons previously hidden by the system will no longer be
+     * hidden.
      */
     @Generated
     @Selector("dismissPanningInterfaceAnimated:")
@@ -305,7 +306,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     public native void setTrailingNavigationBarButtons(NSArray<? extends CPBarButton> value);
 
     /**
-     * The style used to display trip estimates during active navigation. If not set, will update automatically with changes to UIUserInterfaceStyle.
+     * The style used to display trip estimates during active navigation. If not set, will update automatically with
+     * changes to UIUserInterfaceStyle.
      */
     @Generated
     @Selector("setTripEstimateStyle:")
@@ -338,7 +340,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
             CPTripPreviewTextConfiguration textConfiguration);
 
     /**
-     * Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip options,
+     * Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip
+     * options,
      * such as for search results. Trip previews can appear over an active navigation session. Number of trips will be
      * limited to 12.
      */
@@ -375,7 +378,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();
 
     /**
-     * The style used to display trip estimates during active navigation. If not set, will update automatically with changes to UIUserInterfaceStyle.
+     * The style used to display trip estimates during active navigation. If not set, will update automatically with
+     * changes to UIUserInterfaceStyle.
      */
     @Generated
     @Selector("tripEstimateStyle")
@@ -383,14 +387,16 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     public native long tripEstimateStyle();
 
     /**
-     * Updates the arrival time, time remaining and distance remaining estimates for a trip preview or actively navigating trip with the default color for time remaining.
+     * Updates the arrival time, time remaining and distance remaining estimates for a trip preview or actively
+     * navigating trip with the default color for time remaining.
      */
     @Generated
     @Selector("updateTravelEstimates:forTrip:")
     public native void updateTravelEstimatesForTrip(CPTravelEstimates estimates, CPTrip trip);
 
     /**
-     * Updates the arrival time, time remaining and distance remaining estimates for a trip preview or actively navigating trip with a specified color for time remaining.
+     * Updates the arrival time, time remaining and distance remaining estimates for a trip preview or actively
+     * navigating trip with a specified color for time remaining.
      */
     @Generated
     @Selector("updateTravelEstimates:forTrip:withTimeRemainingColor:")
@@ -403,7 +409,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     public static native long version_static();
 
     /**
-     * Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip options,
+     * Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip
+     * options,
      * such as for search results. Trip previews can appear over an active navigation session. Number of trips will be
      * limited to 12. Optionally provide a CPTrip object from the list of trips to be selected when initially presented.
      */

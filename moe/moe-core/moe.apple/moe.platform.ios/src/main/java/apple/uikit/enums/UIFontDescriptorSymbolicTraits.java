@@ -22,12 +22,16 @@ import org.moe.natj.general.ann.Generated;
 public final class UIFontDescriptorSymbolicTraits {
     /**
      * Symbolic Font Traits (Typeface info - lower 16 bits of UIFontDescriptorSymbolicTraits)
-     * UIFontDescriptorSymbolicTraits symbolically describes stylistic aspects of a font. The upper 16 bits is used to describe appearance of the font whereas the lower 16 bits for typeface. The font appearance information represented by the upper 16 bits can be used for stylistic font matching.
+     * UIFontDescriptorSymbolicTraits symbolically describes stylistic aspects of a font. The upper 16 bits is used to
+     * describe appearance of the font whereas the lower 16 bits for typeface. The font appearance information
+     * represented by the upper 16 bits can be used for stylistic font matching.
      */
     @Generated public static final int TraitItalic = 0x00000001;
     /**
      * Symbolic Font Traits (Typeface info - lower 16 bits of UIFontDescriptorSymbolicTraits)
-     * UIFontDescriptorSymbolicTraits symbolically describes stylistic aspects of a font. The upper 16 bits is used to describe appearance of the font whereas the lower 16 bits for typeface. The font appearance information represented by the upper 16 bits can be used for stylistic font matching.
+     * UIFontDescriptorSymbolicTraits symbolically describes stylistic aspects of a font. The upper 16 bits is used to
+     * describe appearance of the font whereas the lower 16 bits for typeface. The font appearance information
+     * represented by the upper 16 bits can be used for stylistic font matching.
      */
     @Generated public static final int TraitBold = 0x00000002;
     /**
@@ -57,62 +61,98 @@ public final class UIFontDescriptorSymbolicTraits {
     @Generated public static final int TraitLooseLeading = 0x00010000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassMask = 0xF0000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassUnknown = 0x00000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassOldStyleSerifs = 0x10000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassTransitionalSerifs = 0x20000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassModernSerifs = 0x30000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassClarendonSerifs = 0x40000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassSlabSerifs = 0x50000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassFreeformSerifs = 0x70000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassSansSerif = 0x80000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassOrnamentals = 0x90000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassScripts = 0xA0000000;
     /**
      * Font appearance info (upper 16 bits of NSFontSymbolicTraits
-     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each identifier, refer to the OpenType specification.
+     * UIFontDescriptorClassFamily classifies certain stylistic qualities of the font. These values correspond closely
+     * to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+     * UIFontDescriptorSymbolicTraits and can be accessed via UIFontDescriptorClassMask. For specific meaning of each
+     * identifier, refer to the OpenType specification.
      */
     @Generated public static final int ClassSymbolic = 0xC0000000;
 

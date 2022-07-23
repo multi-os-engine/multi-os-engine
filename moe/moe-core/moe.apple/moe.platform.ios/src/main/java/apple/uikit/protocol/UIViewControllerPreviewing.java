@@ -40,7 +40,8 @@ public interface UIViewControllerPreviewing {
     UIViewControllerPreviewingDelegate delegate();
 
     /**
-     * This gesture can be used to cause the previewing presentation to wait until one of your gestures fails or to allow simultaneous recognition during the initial phase of the preview presentation.
+     * This gesture can be used to cause the previewing presentation to wait until one of your gestures fails or to
+     * allow simultaneous recognition during the initial phase of the preview presentation.
      */
     @Generated
     @Selector("previewingGestureRecognizerForFailureRelationship")

@@ -48,14 +48,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Immutable Set	***************
+ * Immutable Set ***************
  */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSSet<_ObjectType> extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration {
+public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutableCopying, NSSecureCoding,
+        NSFastEnumeration {
     static {
         NatJ.register();
     }
@@ -189,7 +189,8 @@ public class NSSet<_ObjectType> extends NSObject
     public static native long version_static();
 
     /**
-     * NSSets are not observable, so these methods raise exceptions when invoked on NSSets. Instead of observing a set, observe the unordered to-many relationship for which the set is the collection of related objects.
+     * NSSets are not observable, so these methods raise exceptions when invoked on NSSets. Instead of observing a set,
+     * observe the unordered to-many relationship for which the set is the collection of related objects.
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
@@ -372,7 +373,10 @@ public class NSSet<_ObjectType> extends NSObject
     }
 
     /**
-     * Return a set containing the results of invoking -valueForKey: on each of the receiver's members. The returned set might not have the same number of members as the receiver. The returned set will not contain any elements corresponding to instances of -valueForKey: returning nil (in contrast with -[NSArray(NSKeyValueCoding) valueForKey:], which may put NSNulls in the arrays it returns).
+     * Return a set containing the results of invoking -valueForKey: on each of the receiver's members. The returned set
+     * might not have the same number of members as the receiver. The returned set will not contain any elements
+     * corresponding to instances of -valueForKey: returning nil (in contrast with -[NSArray(NSKeyValueCoding)
+     * valueForKey:], which may put NSNulls in the arrays it returns).
      */
     @Generated
     @Selector("valueForKey:")

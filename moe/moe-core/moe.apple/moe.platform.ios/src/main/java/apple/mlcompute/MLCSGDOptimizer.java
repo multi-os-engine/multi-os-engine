@@ -124,9 +124,9 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   momentumScale
+     * [@property] momentumScale
      * <p>
-     * The momentum factor.  A hyper-parameter.
+     * The momentum factor. A hyper-parameter.
      * <p>
      * The default is 0.0.
      */
@@ -178,7 +178,7 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property]   usesNesterovMomentum
+     * [@property] usesNesterovMomentum
      * <p>
      * A boolean that specifies whether to apply nesterov momentum or not.
      * <p>

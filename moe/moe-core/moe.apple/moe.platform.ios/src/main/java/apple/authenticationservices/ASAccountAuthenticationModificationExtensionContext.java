@@ -124,7 +124,8 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
      * dismissed before the sheet is presented.
      *
      * @param state Can be specified to enhance security. State is returned in the ASAuthorizationAppleIDCredential.
-     * @param nonce Can be specified to enhance security. The returned identityToken on the ASAuthorizationAppleIDCredential can be exchanged with the server for the nonce.
+     * @param nonce Can be specified to enhance security. The returned identityToken on the
+     *              ASAuthorizationAppleIDCredential can be exchanged with the server for the nonce.
      */
     @Generated
     @Selector("getSignInWithAppleUpgradeAuthorizationWithState:nonce:completionHandler:")

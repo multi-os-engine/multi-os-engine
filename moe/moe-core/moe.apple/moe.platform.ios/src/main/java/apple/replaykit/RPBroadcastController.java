@@ -47,7 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * RPBroadcastController
  * <p>
- * Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used to start, pause and stop a broadcast.
+ * Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used
+ * to start, pause and stop a broadcast.
  */
 @Generated
 @Library("ReplayKit")
@@ -184,7 +185,8 @@ public class RPBroadcastController extends NSObject {
     /**
      * Finish the broadcast.
      *
-     * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has finished successfully.
+     * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
+     *              finished successfully.
      */
     @Generated
     @Selector("finishBroadcastWithHandler:")
@@ -224,7 +226,8 @@ public class RPBroadcastController extends NSObject {
     public native void resumeBroadcast();
 
     /**
-     * Dictionary updated by the service during a broadcast. The keys and values of this dictionary are defined by the broadcast service. KVO observable.
+     * Dictionary updated by the service during a broadcast. The keys and values of this dictionary are defined by the
+     * broadcast service. KVO observable.
      */
     @Generated
     @Selector("serviceInfo")
@@ -255,7 +258,8 @@ public class RPBroadcastController extends NSObject {
     /**
      * Start the broadcast.
      *
-     * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has started successfully.
+     * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
+     *              started successfully.
      */
     @Generated
     @Selector("startBroadcastWithHandler:")

@@ -180,8 +180,10 @@ public class NEFilterProvider extends NEProvider {
      * override this method and perform whatever steps are necessary to start the filter.
      *
      * @param completionHandler A block that must be called when the process of starting the filter is complete. If the
-     *                          filter was started successfully, subclass implementations must pass the nil value to this block. If an error occurred
-     *                          while starting the filter, sublcass implementations must pass a non-nil NSError containing more details about the error.
+     *                          filter was started successfully, subclass implementations must pass the nil value to
+     *                          this block. If an error occurred
+     *                          while starting the filter, sublcass implementations must pass a non-nil NSError
+     *                          containing more details about the error.
      */
     @Generated
     @Selector("startFilterWithCompletionHandler:")
@@ -219,7 +221,8 @@ public class NEFilterProvider extends NEProvider {
     /**
      * handleReport:
      * <p>
-     * This function is called by the framework when the data provider extension returns a verdict with the report property set to True.
+     * This function is called by the framework when the data provider extension returns a verdict with the report
+     * property set to True.
      * Subclass implementations may override this method to handle the flow report.
      *
      * @param report The report being delivered.

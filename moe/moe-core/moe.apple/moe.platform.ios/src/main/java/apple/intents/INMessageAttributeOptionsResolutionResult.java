@@ -182,7 +182,9 @@ public class INMessageAttributeOptionsResolutionResult extends INIntentResolutio
             @NUInt long messageAttributeOptionsToConfirm);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INMessageAttributeOptions. The resolvedValue can be different than the original INMessageAttributeOptions. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given
+     * INMessageAttributeOptions. The resolvedValue can be different than the original INMessageAttributeOptions. This
+     * allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

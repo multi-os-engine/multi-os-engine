@@ -49,7 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The NEProxySettings class declares the programmatic interface for an object that contains proxy settings.
  * <p>
- * NEProxySettings is used in the context of a Network Extension configuration to specify the proxy that should be used for network traffic when the Network Extension is active.
+ * NEProxySettings is used in the context of a Network Extension configuration to specify the proxy that should be used
+ * for network traffic when the Network Extension is active.
  */
 @Generated
 @Library("NetworkExtension")
@@ -223,7 +224,8 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     /**
      * [@property] exceptionList
      * <p>
-     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will not be used for the connection.
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these
+     * strings then the proxy settings will not be used for the connection.
      */
     @Generated
     @Selector("exceptionList")
@@ -232,7 +234,8 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     /**
      * [@property] excludeSimpleHostnames
      * <p>
-     * A flag indicating if the proxy settings should not be used for network destinations specified using single-label host names.
+     * A flag indicating if the proxy settings should not be used for network destinations specified using single-label
+     * host names.
      */
     @Generated
     @Selector("excludeSimpleHostnames")
@@ -249,7 +252,9 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     /**
      * [@property] matchDomains
      * <p>
-     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will be used for the connection. Otherwise the proxy settings will not be used. If this property is nil then all connections to which the Network Extension applies will use the proxy settings.
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these
+     * strings then the proxy settings will be used for the connection. Otherwise the proxy settings will not be used.
+     * If this property is nil then all connections to which the Network Extension applies will use the proxy settings.
      */
     @Generated
     @Selector("matchDomains")
@@ -285,7 +290,8 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     /**
      * [@property] exceptionList
      * <p>
-     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will not be used for the connection.
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these
+     * strings then the proxy settings will not be used for the connection.
      */
     @Generated
     @Selector("setExceptionList:")
@@ -294,7 +300,8 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     /**
      * [@property] excludeSimpleHostnames
      * <p>
-     * A flag indicating if the proxy settings should not be used for network destinations specified using single-label host names.
+     * A flag indicating if the proxy settings should not be used for network destinations specified using single-label
+     * host names.
      */
     @Generated
     @Selector("setExcludeSimpleHostnames:")
@@ -339,7 +346,9 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     /**
      * [@property] matchDomains
      * <p>
-     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these strings then the proxy settings will be used for the connection. Otherwise the proxy settings will not be used. If this property is nil then all connections to which the Network Extension applies will use the proxy settings.
+     * An array of domain strings. If the destination host name of a connection shares a suffix with one of these
+     * strings then the proxy settings will be used for the connection. Otherwise the proxy settings will not be used.
+     * If this property is nil then all connections to which the Network Extension applies will use the proxy settings.
      */
     @Generated
     @Selector("setMatchDomains:")

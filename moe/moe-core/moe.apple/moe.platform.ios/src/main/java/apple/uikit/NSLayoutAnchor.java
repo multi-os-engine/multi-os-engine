@@ -40,11 +40,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * An NSLayoutAnchor represents an edge or dimension of a layout item.  Its concrete subclasses allow concise creation of constraints.  The idea is that instead of invoking +[NSLayoutConstraint constraintWithItem: attribute: relatedBy: toItem: attribute: multiplier: constant:] directly, you can instead do something like this:
+ * An NSLayoutAnchor represents an edge or dimension of a layout item. Its concrete subclasses allow concise creation of
+ * constraints. The idea is that instead of invoking +[NSLayoutConstraint constraintWithItem: attribute: relatedBy:
+ * toItem: attribute: multiplier: constant:] directly, you can instead do something like this:
  * <p>
  * [myView.topAnchor constraintEqualToAnchor:otherView.topAnchor constant:10];
  * <p>
- * The -constraint* methods are available in multiple flavors to support use of different relations and omission of unused options.
+ * The -constraint* methods are available in multiple flavors to support use of different relations and omission of
+ * unused options.
  */
 @Generated
 @Library("UIKit")

@@ -53,7 +53,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The SCNPhysicsWorld class describes and allows to control the physics simulation of a 3d scene.
  * <p>
- * The SCNPhysicsWorld class should not be allocated directly but retrieved from the SCNScene class using the physicsWorld property.
+ * The SCNPhysicsWorld class should not be allocated directly but retrieved from the SCNScene class using the
+ * physicsWorld property.
  */
 @Generated
 @Library("SceneKit")
@@ -182,7 +183,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     /**
      * A delegate that is called when two physic bodies come in contact with each other.
-     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil before deallocating the delegate.
+     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil
+     * before deallocating the delegate.
      * Starting in iOS12, the property is weak
      */
     @Generated
@@ -213,7 +215,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * A global 3D vector specifying the field force acceleration due to gravity. The unit is meter per second. Default is {0, -9.8, 0}.
+     * A global 3D vector specifying the field force acceleration due to gravity. The unit is meter per second. Default
+     * is {0, -9.8, 0}.
      */
     @Generated
     @Selector("gravity")
@@ -246,7 +249,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     /**
      * A delegate that is called when two physic bodies come in contact with each other.
-     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil before deallocating the delegate.
+     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil
+     * before deallocating the delegate.
      * Starting in iOS12, the property is weak
      */
     @Generated
@@ -255,7 +259,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     /**
      * A delegate that is called when two physic bodies come in contact with each other.
-     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil before deallocating the delegate.
+     * On iOS 11 or lower the property is unsafe_unretained and it's the responsibility of the client to set it to nil
+     * before deallocating the delegate.
      * Starting in iOS12, the property is weak
      */
     @Generated
@@ -271,7 +276,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * A global 3D vector specifying the field force acceleration due to gravity. The unit is meter per second. Default is {0, -9.8, 0}.
+     * A global 3D vector specifying the field force acceleration due to gravity. The unit is meter per second. Default
+     * is {0, -9.8, 0}.
      */
     @Generated
     @Selector("setGravity:")
@@ -279,7 +285,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     /**
      * A speed multiplier applied to the physics simulation. Default is 1.0.
-     * The speed can be reduced to slowdown the simulation, but beware that increasing the speed factor will decrease the accuracy of the simulation.
+     * The speed can be reduced to slowdown the simulation, but beware that increasing the speed factor will decrease
+     * the accuracy of the simulation.
      */
     @Generated
     @Selector("setSpeed:")
@@ -294,7 +301,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     /**
      * A speed multiplier applied to the physics simulation. Default is 1.0.
-     * The speed can be reduced to slowdown the simulation, but beware that increasing the speed factor will decrease the accuracy of the simulation.
+     * The speed can be reduced to slowdown the simulation, but beware that increasing the speed factor will decrease
+     * the accuracy of the simulation.
      */
     @Generated
     @Selector("speed")

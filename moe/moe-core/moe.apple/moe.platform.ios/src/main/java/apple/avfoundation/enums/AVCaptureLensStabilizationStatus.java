@@ -17,7 +17,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVCaptureLensStabilizationStatusOutOfRange
  * Indicates that device motion or capture duration exceeded the stabilization module's correction limits.
  * [@constant] AVCaptureLensStabilizationStatusUnavailable
- * Indicates that the lens stabilization module was unavailable for use at the time of capture. The module may be available in subsequent captures.
+ * Indicates that the lens stabilization module was unavailable for use at the time of capture. The module may be
+ * available in subsequent captures.
  */
 @Generated
 public final class AVCaptureLensStabilizationStatus {

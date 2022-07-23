@@ -179,7 +179,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     public native CGPoint interactiveMovementTarget();
 
     /**
-     * if YES, the layout should requery section and item counts from the collection view - set to YES when the collection view is sent -reloadData and when items are inserted or deleted
+     * if YES, the layout should requery section and item counts from the collection view - set to YES when the
+     * collection view is sent -reloadData and when items are inserted or deleted
      */
     @Generated
     @Selector("invalidateDataSourceCounts")

@@ -211,7 +211,8 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     /**
      * [@property] positional
      * <p>
-     * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards to the SCNSceneRenderer's current listener node. Defaults to YES.
+     * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards
+     * to the SCNSceneRenderer's current listener node. Defaults to YES.
      * <p>
      * shouldStream must be set to false in order to get positional audio (see shouldStream).
      *
@@ -224,7 +225,8 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     /**
      * [@property] positional
      * <p>
-     * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards to the SCNSceneRenderer's current listener node. Defaults to YES.
+     * Marks the audio source as positional so that the audio mix considers relative position and velocity with regards
+     * to the SCNSceneRenderer's current listener node. Defaults to YES.
      * <p>
      * shouldStream must be set to false in order to get positional audio (see shouldStream).
      *
@@ -237,9 +239,11 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     /**
      * load
      * <p>
-     * Load and uncompress the audio source in memory. This method has no effect if "shouldStream" is set to YES or if the audio source is already loaded.
+     * Load and uncompress the audio source in memory. This method has no effect if "shouldStream" is set to YES or if
+     * the audio source is already loaded.
      * <p>
-     * This method let you preload your audio sources. If an audio source is not preloaded, it will be loaded anyway when playing it.
+     * This method let you preload your audio sources. If an audio source is not preloaded, it will be loaded anyway
+     * when playing it.
      */
     @Generated
     @Selector("load")

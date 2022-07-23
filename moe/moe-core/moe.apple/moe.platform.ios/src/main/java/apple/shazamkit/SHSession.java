@@ -33,9 +33,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * 1. Pass a @c SHSignature to the -[SHSession matchSignature:] method and respond to matches sent to the delegate
  * There is a 1 to 1 relationship between calls to this method and calls to the delegate
- * 2. Pass a continuous stream of @c AVAudioPCMBuffer to the -[SHSession matchStreamingBuffer:atTime:] method, matches are sent to the delegate.
- * ShazamKit will convert the buffers in SHSignature objects internally and perform matches against the @c SHCatalog. The details of how the matching
- * is performed is an implementation detail and is subject to change. As such there will be many callbacks to the delegate per stream of audio, and the same match
+ * 2. Pass a continuous stream of @c AVAudioPCMBuffer to the -[SHSession matchStreamingBuffer:atTime:] method, matches
+ * are sent to the delegate.
+ * ShazamKit will convert the buffers in SHSignature objects internally and perform matches against the @c SHCatalog.
+ * The details of how the matching
+ * is performed is an implementation detail and is subject to change. As such there will be many callbacks to the
+ * delegate per stream of audio, and the same match
  * may be reported multiple times in succession.
  */
 @Generated
@@ -165,13 +168,18 @@ public class SHSession extends NSObject {
     /**
      * Flow audio buffers for matching into the session
      * <p>
-     * Audio will be converted into signatures and matched against the store. Results are communicated through the delegate.
-     * The initial buffer specifies the @c AVAudioFormat and all subsequent buffers must contain the same format otherwise an error will be communicated through
+     * Audio will be converted into signatures and matched against the store. Results are communicated through the
+     * delegate.
+     * The initial buffer specifies the @c AVAudioFormat and all subsequent buffers must contain the same format
+     * otherwise an error will be communicated through
      * the delegate.
      * <p>
-     * It is advisable but not required to pass an @c AVAudioTime along with the audio buffer. The audio provided must be contiguous, gaps in the audio will have adverse
-     * effects on the ability to match the audio. The time variable is validated by the session to ensure that the audio is contiguous and mitigate the effect of discontiguous audio.
-     * [@note] This method will throw an exception if the audio format is not PCM in one of the following sample rates: 48000, 44100, 32000, 16000.
+     * It is advisable but not required to pass an @c AVAudioTime along with the audio buffer. The audio provided must
+     * be contiguous, gaps in the audio will have adverse
+     * effects on the ability to match the audio. The time variable is validated by the session to ensure that the audio
+     * is contiguous and mitigate the effect of discontiguous audio.
+     * [@note] This method will throw an exception if the audio format is not PCM in one of the following sample rates:
+     * 48000, 44100, 32000, 16000.
      *
      * @param buffer A buffer of audio to be used for recognition
      * @param time   Where in the stream the audio occurs

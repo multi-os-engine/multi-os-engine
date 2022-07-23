@@ -272,7 +272,8 @@ public class ARSession extends NSObject {
      * @param completionHandler The completion handler to call when the get has completed. This handler is executed
      *                          on the session's delegate queue. The completion handler takes the following parameters:
      *                          worldMap - The current world map or nil if unavailable.
-     *                          error - An error that indicates why the world map is unavailable, or nil if a world map was provided.
+     *                          error - An error that indicates why the world map is unavailable, or nil if a world map
+     *                          was provided.
      */
     @Generated
     @Selector("getCurrentWorldMapWithCompletionHandler:")
@@ -299,7 +300,8 @@ public class ARSession extends NSObject {
      * Perform a raycast.
      *
      * @param query Raycast query used for raycasting.
-     * @return List of raycast results, sorted from nearest to farthest (in distance from the camera). The results could be empty if raycast fails.
+     * @return List of raycast results, sorted from nearest to farthest (in distance from the camera). The results could
+     *         be empty if raycast fails.
      */
     @Generated
     @Selector("raycast:")
@@ -309,13 +311,16 @@ public class ARSession extends NSObject {
      * Perform a tracked raycast.
      * <p>
      * The session performs continuous raycasting and calls the update handler with the updated results.
-     * The ARTrackedRaycast object returned can be used to update the raycast with a new raycast query or stop raycasting.
+     * The ARTrackedRaycast object returned can be used to update the raycast with a new raycast query or stop
+     * raycasting.
      *
      * @param query         Raycast query used for raycasting.
-     * @param updateHandler update handler where updated list of results, sorted from nearest to farthest (in distance from
+     * @param updateHandler update handler where updated list of results, sorted from nearest to farthest (in distance
+     *                      from
      *                      the camera) are delivered. updateHandler will be called on session's delegate queue.
-     * @return Tracked raycast object used to update or stop raycasting. This could be nil if the raycast fails or if the
-     * configuration is not `ARWorldTrackingConfiguration` or its subclasses.
+     * @return Tracked raycast object used to update or stop raycasting. This could be nil if the raycast fails or if
+     *         the
+     *         configuration is not `ARWorldTrackingConfiguration` or its subclasses.
      */
     @Generated
     @Selector("trackedRaycast:updateHandler:")

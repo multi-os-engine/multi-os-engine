@@ -40,7 +40,8 @@ public interface UILayoutSupport {
     NSLayoutDimension heightAnchor();
 
     /**
-     * As a courtesy when not using auto layout, this value is safe to refer to in -viewDidLayoutSubviews, or in -layoutSubviews after calling super
+     * As a courtesy when not using auto layout, this value is safe to refer to in -viewDidLayoutSubviews, or in
+     * -layoutSubviews after calling super
      */
     @Generated
     @Selector("length")

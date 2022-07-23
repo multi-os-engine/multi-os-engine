@@ -73,7 +73,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property]   ceilMode
+     * [@property] ceilMode
      * <p>
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
@@ -135,7 +135,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
             @NUInt long paddingStyle);
 
     /**
-     * [@property]   dilationRates
+     * [@property] dilationRates
      * <p>
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode
@@ -150,7 +150,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public static native long hash_static();
 
     /**
-     * [@property]   includeZeroPadToAverage
+     * [@property] includeZeroPadToAverage
      * <p>
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
@@ -183,7 +183,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]   kernelSizes
+     * [@property] kernelSizes
      * <p>
      * Defines the pooling window size.
      * Must be four numbers, one for each spatial dimension, fastest running index last.
@@ -202,7 +202,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public static native MPSGraphPooling4DOpDescriptor new_objc();
 
     /**
-     * [@property]   paddingStyle
+     * [@property] paddingStyle
      * <p>
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
@@ -213,7 +213,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public native long paddingStyle();
 
     /**
-     * [@property]   paddingValues
+     * [@property] paddingValues
      * <p>
      * Must be eight numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
@@ -234,7 +234,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   ceilMode
+     * [@property] ceilMode
      * <p>
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
@@ -245,7 +245,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public native void setCeilMode(boolean value);
 
     /**
-     * [@property]   dilationRates
+     * [@property] dilationRates
      * <p>
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode
@@ -255,7 +255,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public native void setDilationRates(NSArray<? extends NSNumber> value);
 
     /**
-     * [@property]   includeZeroPadToAverage
+     * [@property] includeZeroPadToAverage
      * <p>
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
@@ -267,7 +267,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public native void setIncludeZeroPadToAverage(boolean value);
 
     /**
-     * [@property]   kernelSizes
+     * [@property] kernelSizes
      * <p>
      * Defines the pooling window size.
      * Must be four numbers, one for each spatial dimension, fastest running index last.
@@ -277,7 +277,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public native void setKernelSizes(NSArray<? extends NSNumber> value);
 
     /**
-     * [@property]   paddingStyle
+     * [@property] paddingStyle
      * <p>
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
@@ -287,7 +287,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * [@property]   paddingValues
+     * [@property] paddingValues
      * <p>
      * Must be eight numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
@@ -300,7 +300,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public native void setPaddingValues(NSArray<? extends NSNumber> value);
 
     /**
-     * [@property]   strides
+     * [@property] strides
      * <p>
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode
@@ -314,7 +314,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   strides
+     * [@property] strides
      * <p>
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode

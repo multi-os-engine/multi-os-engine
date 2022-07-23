@@ -40,7 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A NSExtensionItem is an immutable collection of values representing different aspects of an item for the extension to act upon.
+ * A NSExtensionItem is an immutable collection of values representing different aspects of an item for the extension to
+ * act upon.
  */
 @Generated
 @Library("Foundation")
@@ -157,7 +158,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     public static native long version_static();
 
     /**
-     * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types, but instead a collection to include in a social media post for example.
+     * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types,
+     * but instead a collection to include in a social media post for example.
      */
     @Generated
     @Selector("attachments")
@@ -196,7 +198,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     public native NSExtensionItem initWithCoder(NSCoder coder);
 
     /**
-     * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types, but instead a collection to include in a social media post for example.
+     * (optional) Contains images, videos, URLs, etc. This is not meant to be an array of alternate data formats/types,
+     * but instead a collection to include in a social media post for example.
      */
     @Generated
     @Selector("setAttachments:")
@@ -217,7 +220,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     public native void setAttributedTitle(NSAttributedString value);
 
     /**
-     * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
+     * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified
+     * in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
      */
     @Generated
     @Selector("setUserInfo:")
@@ -230,7 +234,8 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     }
 
     /**
-     * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
+     * (optional) dictionary of key-value data. The key/value pairs accepted by the service are expected to be specified
+     * in the extension's Info.plist. The values of NSExtensionItem's properties will be reflected into the dictionary.
      */
     @Generated
     @Selector("userInfo")

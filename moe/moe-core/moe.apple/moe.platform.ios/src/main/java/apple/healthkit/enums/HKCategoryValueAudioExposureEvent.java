@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKCategoryValueAudioExposureEvent
+ * [@enum] HKCategoryValueAudioExposureEvent
  * <p>
  * Specifies the kind of audio exposure event associated with the sample.
  */

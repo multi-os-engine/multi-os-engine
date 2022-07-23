@@ -41,11 +41,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CBMutableDescriptor
  * <p>
- * Used to create a local characteristic descriptor, which can be added to the local database via <code>CBPeripheralManager</code>.
+ * Used to create a local characteristic descriptor, which can be added to the local database via
+ * <code>CBPeripheralManager</code>.
  * Once a descriptor is published, it is cached and can no longer be changed.
- * Descriptor types are detailed in @link CBUUID.h @/link, but only the <code>Characteristic User Description</code> and <code>Characteristic Presentation
- * Format</code> descriptors are currently supported. The <code>Characteristic Extended Properties</code> and <code>Client Characteristic
- * Configuration</code> descriptors will be created automatically upon publication of the parent service, depending on the properties of the characteristic itself.
+ * Descriptor types are detailed in @link CBUUID.h @/link, but only the <code>Characteristic User Description</code> and
+ * <code>Characteristic Presentation
+ * Format</code> descriptors are currently supported. The <code>Characteristic Extended Properties</code> and
+ * <code>Client Characteristic
+ * Configuration</code> descriptors will be created automatically upon publication of the parent service, depending on
+ * the properties of the characteristic itself.
  */
 @Generated
 @Library("CoreBluetooth")
@@ -164,7 +168,8 @@ public class CBMutableDescriptor extends CBDescriptor {
     /**
      * initWithType:value:
      * <p>
-     * Returns a decriptor, initialized with a service type and value. The <i>value</i> is required and cannot be updated dynamically
+     * Returns a decriptor, initialized with a service type and value. The <i>value</i> is required and cannot be
+     * updated dynamically
      * once the parent service has been published.
      *
      * @param UUID  The Bluetooth UUID of the descriptor.

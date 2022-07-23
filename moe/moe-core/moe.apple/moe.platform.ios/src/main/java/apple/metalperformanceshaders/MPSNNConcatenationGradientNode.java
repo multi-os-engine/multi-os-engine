@@ -105,7 +105,8 @@ public class MPSNNConcatenationGradientNode extends MPSNNGradientFilterNode {
      * Generally you should use [MPSNNConcatenationNode gradientFiltersWithSources:] instead.
      *
      * @param gradientSourceNode The gradient image functioning as input for the operator
-     * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds with
+     * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds
+     *                           with
      * @param gradientState      The gradient state produced by the concatenation filter, consumed by this filter
      */
     @Generated
@@ -145,7 +146,8 @@ public class MPSNNConcatenationGradientNode extends MPSNNGradientFilterNode {
      * Generally you should use [MPSNNConcatenationNode gradientFiltersWithSources:] instead.
      *
      * @param gradientSourceNode The gradient image functioning as input for the operator
-     * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds with
+     * @param sourceImage        The particular input image to the concatentation, if any, that the slice corresponds
+     *                           with
      * @param gradientState      The gradient state produced by the concatenation filter, consumed by this filter
      */
     @Generated

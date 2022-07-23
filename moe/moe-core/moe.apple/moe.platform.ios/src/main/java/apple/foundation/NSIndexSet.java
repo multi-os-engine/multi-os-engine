@@ -224,9 +224,13 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
             @ObjCBlock(name = "call_enumerateRangesInRangeOptionsUsingBlock") Block_enumerateRangesInRangeOptionsUsingBlock block);
 
     /**
-     * The following three convenience methods allow you to enumerate the indexes in the receiver by ranges of contiguous indexes. The performance of these methods is not guaranteed to be any better than if they were implemented with enumerateIndexesInRange:options:usingBlock:. However, depending on the receiver's implementation, they may perform better than that.
+     * The following three convenience methods allow you to enumerate the indexes in the receiver by ranges of
+     * contiguous indexes. The performance of these methods is not guaranteed to be any better than if they were
+     * implemented with enumerateIndexesInRange:options:usingBlock:. However, depending on the receiver's
+     * implementation, they may perform better than that.
      * <p>
-     * If the specified range for enumeration intersects a range of contiguous indexes in the receiver, then the block will be invoked with the intersection of those two ranges.
+     * If the specified range for enumeration intersects a range of contiguous indexes in the receiver, then the block
+     * will be invoked with the intersection of those two ranges.
      */
     @Generated
     @Selector("enumerateRangesUsingBlock:")
@@ -247,7 +251,11 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     public native long firstIndex();
 
     /**
-     * Fills up to bufferSize indexes in the specified range into the buffer and returns the number of indexes actually placed in the buffer; also modifies the optional range passed in by pointer to be "positioned" after the last index filled into the buffer.Example: if the index set contains the indexes 0, 2, 4, ..., 98, 100, for a buffer of size 10 and the range (20, 80) the buffer would contain 20, 22, ..., 38 and the range would be modified to (40, 60).
+     * Fills up to bufferSize indexes in the specified range into the buffer and returns the number of indexes actually
+     * placed in the buffer; also modifies the optional range passed in by pointer to be "positioned" after the last
+     * index filled into the buffer.Example: if the index set contains the indexes 0, 2, 4, ..., 98, 100, for a buffer
+     * of size 10 and the range (20, 80) the buffer would contain 20, 22, ..., 38 and the range would be modified to
+     * (40, 60).
      */
     @Generated
     @Selector("getIndexes:maxCount:inIndexRange:")

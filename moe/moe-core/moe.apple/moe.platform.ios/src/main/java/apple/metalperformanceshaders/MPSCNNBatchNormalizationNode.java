@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Batch normalization operates differently for inference and training.
  * For inference, the normalization is done according to a static statistical
  * representation of data saved during training. For training, this representation
- * is ever evolving.  In the low level MPS batch normalization interface,
+ * is ever evolving. In the low level MPS batch normalization interface,
  * during training, the batch normalization is broken up into two steps:
  * calculation of the statistical representation of input data, followed
  * by normalization once the statistics are known for the entire batch.

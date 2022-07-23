@@ -173,7 +173,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      * @param SSID       The SSID of the WEP or WPA/WPA2 Personal Wi-Fi Network
      * @param passphrase The passphrase credential.
      *                   For WPA/WPA2 Personal networks: between 8 and 63 characters.
-     *                   For Static WEP(64bit)  : 10 Hex Digits
+     *                   For Static WEP(64bit) : 10 Hex Digits
      *                   For Static WEP(128bit) : 26 Hex Digits
      * @param isWEP      YES specifies WEP Wi-Fi Network else WPA/WPA2 Personal Wi-Fi Network
      */
@@ -321,7 +321,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      *                   Length of SSIDPrefix must be between 3 and 32 characters.
      * @param passphrase The passphrase credential.
      *                   For WPA/WPA2 Personal networks: between 8 and 63 characters.
-     *                   For Static WEP(64bit)  : 10 Hex Digits
+     *                   For Static WEP(64bit) : 10 Hex Digits
      *                   For Static WEP(128bit) : 26 Hex Digits
      * @param isWEP      YES specifies WEP Wi-Fi Network else WPA/WPA2 Personal Wi-Fi Network
      */

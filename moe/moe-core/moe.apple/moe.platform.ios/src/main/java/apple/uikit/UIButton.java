@@ -57,8 +57,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIButton extends UIControl
-        implements NSCoding, UISpringLoadedInteractionSupporting, UIAccessibilityContentSizeCategoryImageAdjusting {
+public class UIButton extends UIControl implements NSCoding, UISpringLoadedInteractionSupporting,
+        UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -414,7 +414,8 @@ public class UIButton extends UIControl
 
     /**
      * These methods will not be called when using a configuration.
-     * To change the layout of button content, override -layoutSubviews, call super, and then position views as you see fit.
+     * To change the layout of button content, override -layoutSubviews, call super, and then position views as you see
+     * fit.
      */
     @Generated
     @Selector("backgroundRectForBounds:")
@@ -758,7 +759,8 @@ public class UIButton extends UIControl
      * Called when the system pointer hovers over this button if its pointer interaction is enabled. The
      * system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
      * a customized version of the system provided style or return an entirely custom one.
-     * Setting this property automatically enables the button's pointer interaction and sets @c pointerInteractionEnabled to true.
+     * Setting this property automatically enables the button's pointer interaction and sets @c
+     * pointerInteractionEnabled to true.
      */
     @Generated
     @Selector("pointerStyleProvider")
@@ -784,7 +786,8 @@ public class UIButton extends UIControl
      * Called when the system pointer hovers over this button if its pointer interaction is enabled. The
      * system calls this block with a proposed UIPointerEffect and UIPointerShape. You may use them to construct
      * a customized version of the system provided style or return an entirely custom one.
-     * Setting this property automatically enables the button's pointer interaction and sets @c pointerInteractionEnabled to true.
+     * Setting this property automatically enables the button's pointer interaction and sets @c
+     * pointerInteractionEnabled to true.
      */
     @Generated
     @Selector("setPointerStyleProvider:")
@@ -800,21 +803,24 @@ public class UIButton extends UIControl
     }
 
     /**
-     * Creates a button of the given type, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and if appropriate uses primaryAction's title & image as the button's title & image.
+     * Creates a button of the given type, registers primaryAction for the UIControlEventPrimaryActionTriggered control
+     * event, and if appropriate uses primaryAction's title & image as the button's title & image.
      */
     @Generated
     @Selector("buttonWithType:primaryAction:")
     public static native UIButton buttonWithTypePrimaryAction(@NInt long buttonType, UIAction primaryAction);
 
     /**
-     * Initializes a custom button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and uses primaryAction's title & image as the button's title & image.
+     * Initializes a custom button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event,
+     * and uses primaryAction's title & image as the button's title & image.
      */
     @Generated
     @Selector("initWithFrame:primaryAction:")
     public native UIButton initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 
     /**
-     * An optional menu for the button to display. The button will automatically enable or disable its contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+     * An optional menu for the button to display. The button will automatically enable or disable its
+     * contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
      */
     @Generated
     @Selector("menu")
@@ -829,7 +835,8 @@ public class UIButton extends UIControl
     public native long role();
 
     /**
-     * An optional menu for the button to display. The button will automatically enable or disable its contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+     * An optional menu for the button to display. The button will automatically enable or disable its
+     * contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
      */
     @Generated
     @Selector("setMenu:")
@@ -843,21 +850,24 @@ public class UIButton extends UIControl
     public native void setRole(@NInt long value);
 
     /**
-     * Creates a system button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and uses primaryAction's title & image as the button's title & image.
+     * Creates a system button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and
+     * uses primaryAction's title & image as the button's title & image.
      */
     @Generated
     @Selector("systemButtonWithPrimaryAction:")
     public static native UIButton systemButtonWithPrimaryAction(UIAction primaryAction);
 
     /**
-     * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the button's state changes, and apply the updated configuration to the button. The default value is YES.
+     * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the
+     * button's state changes, and apply the updated configuration to the button. The default value is YES.
      */
     @Generated
     @Selector("automaticallyUpdatesConfiguration")
     public native boolean automaticallyUpdatesConfiguration();
 
     /**
-     * The button's behavioral style. This property always returns a concrete, resolved style (never UIBehavioralStyleAutomatic).
+     * The button's behavioral style. This property always returns a concrete, resolved style (never
+     * UIBehavioralStyleAutomatic).
      */
     @Generated
     @Selector("behavioralStyle")
@@ -865,7 +875,9 @@ public class UIButton extends UIControl
     public native long behavioralStyle();
 
     /**
-     * Construct a new UIButton. `configuration` will be installed on the created button, and `primaryAction` added to handle the .primaryActionTriggered control event. If `primaryAction` has a title or image, they will be copied to `configuration`
+     * Construct a new UIButton. `configuration` will be installed on the created button, and `primaryAction` added to
+     * handle the .primaryActionTriggered control event. If `primaryAction` has a title or image, they will be copied to
+     * `configuration`
      */
     @Generated
     @Selector("buttonWithConfiguration:primaryAction:")
@@ -875,21 +887,25 @@ public class UIButton extends UIControl
     /**
      * Indicates if the button changes selection as its primary action.
      * This shows the menu as options for selection if a menu is populated and showsMenuAsPrimaryAction is enabled.
-     * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the primary action.
+     * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the
+     * primary action.
      */
     @Generated
     @Selector("changesSelectionAsPrimaryAction")
     public native boolean changesSelectionAsPrimaryAction();
 
     /**
-     * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the button in a platform specific manner, and enable/disable some API.
+     * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the
+     * button in a platform specific manner, and enable/disable some API.
      */
     @Generated
     @Selector("configuration")
     public native UIButtonConfiguration configuration();
 
     /**
-     * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the button into configuration-based behavior (see the `configuration` property). This block is called after `-updateConfiguration`
+     * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the
+     * button into configuration-based behavior (see the `configuration` property). This block is called after
+     * `-updateConfiguration`
      */
     @Generated
     @Selector("configurationUpdateHandler")
@@ -926,7 +942,8 @@ public class UIButton extends UIControl
     public native long preferredBehavioralStyle();
 
     /**
-     * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the button's state changes, and apply the updated configuration to the button. The default value is YES.
+     * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the
+     * button's state changes, and apply the updated configuration to the button. The default value is YES.
      */
     @Generated
     @Selector("setAutomaticallyUpdatesConfiguration:")
@@ -935,21 +952,25 @@ public class UIButton extends UIControl
     /**
      * Indicates if the button changes selection as its primary action.
      * This shows the menu as options for selection if a menu is populated and showsMenuAsPrimaryAction is enabled.
-     * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the primary action.
+     * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the
+     * primary action.
      */
     @Generated
     @Selector("setChangesSelectionAsPrimaryAction:")
     public native void setChangesSelectionAsPrimaryAction(boolean value);
 
     /**
-     * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the button in a platform specific manner, and enable/disable some API.
+     * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the
+     * button in a platform specific manner, and enable/disable some API.
      */
     @Generated
     @Selector("setConfiguration:")
     public native void setConfiguration(UIButtonConfiguration value);
 
     /**
-     * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the button into configuration-based behavior (see the `configuration` property). This block is called after `-updateConfiguration`
+     * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the
+     * button into configuration-based behavior (see the `configuration` property). This block is called after
+     * `-updateConfiguration`
      */
     @Generated
     @Selector("setConfigurationUpdateHandler:")
@@ -964,7 +985,9 @@ public class UIButton extends UIControl
     }
 
     /**
-     * Requests the view update its configuration for its current state. This method is called automatically when the button's state may have changed, as well as in other circumstances where an update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     * Requests the view update its configuration for its current state. This method is called automatically when the
+     * button's state may have changed, as well as in other circumstances where an update may be required. Multiple
+     * requests may be coalesced into a single update at the appropriate time.
      */
     @Generated
     @Selector("setNeedsUpdateConfiguration")
@@ -985,7 +1008,8 @@ public class UIButton extends UIControl
     public native UILabel subtitleLabel();
 
     /**
-     * Subclasses should override this method and update the button's `configuration`. This method should not be called directly, use `setNeedsUpdateConfiguration` to request an update.
+     * Subclasses should override this method and update the button's `configuration`. This method should not be called
+     * directly, use `setNeedsUpdateConfiguration` to request an update.
      */
     @Generated
     @Selector("updateConfiguration")

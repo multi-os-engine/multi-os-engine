@@ -99,7 +99,8 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
      * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
      * for an easier way to do this.
      *
-     * @param gradientImages          The input gradient from the 'downstream' gradient filter and the source input image
+     * @param gradientImages          The input gradient from the 'downstream' gradient filter and the source input
+     *                                image
      *                                from the forward pass (primary or secondary).
      * @param filter                  The matching filter node from the forward pass.
      * @param isSecondarySourceFilter The isSecondarySourceFilter property is used to indicate whether the arithmetic

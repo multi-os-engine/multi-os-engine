@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueSecuritySystemAlarmType
+ * [@enum] HMCharacteristicValueSecuritySystemAlarmType
  * <p>
- * [@constant]  HMCharacteristicValueSecuritySystemAlarmTypeNoAlarm     No alarm.
- * [@constant]  HMCharacteristicValueSecuritySystemAlarmTypeUnknown     Unknown alarm type.
+ * [@constant] HMCharacteristicValueSecuritySystemAlarmTypeNoAlarm No alarm.
+ * [@constant] HMCharacteristicValueSecuritySystemAlarmTypeUnknown Unknown alarm type.
  */
 @Generated
 public final class HMCharacteristicValueSecuritySystemAlarmType {

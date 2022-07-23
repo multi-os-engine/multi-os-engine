@@ -61,7 +61,8 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
     }
 
     /**
-     * If an object adopting this protocol responds to these methods, the system will try sending them before sending their non-attributed versions.
+     * If an object adopting this protocol responds to these methods, the system will try sending them before sending
+     * their non-attributed versions.
      */
     @Generated
     @IsOptional

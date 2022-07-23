@@ -68,7 +68,8 @@ public class INListCarsIntentResponse extends INIntentResponse {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * An array of INCar objects representing a user’s electric vehicles. These vehicles should potentially respond to an INGetCarPowerLevelStatusIntent request so that the user can navigate with one of these vehicles in Maps.
+     * An array of INCar objects representing a user’s electric vehicles. These vehicles should potentially respond to
+     * an INGetCarPowerLevelStatusIntent request so that the user can navigate with one of these vehicles in Maps.
      */
     @Generated
     @Selector("cars")
@@ -105,9 +106,13 @@ public class INListCarsIntentResponse extends INIntentResponse {
     public native INListCarsIntentResponse init();
 
     /**
-     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the 'currentActivity'.
-     * If the the app is launched, an NSUserActivity will be passed in with the private state.  The NSUserActivity may also be used to query the app's UI extension (if provided) for a view controller representing the current intent handling state.
-     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This intent object will also be available in the NSUserActivity.interaction property.
+     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the
+     * 'currentActivity'.
+     * If the the app is launched, an NSUserActivity will be passed in with the private state. The NSUserActivity may
+     * also be used to query the app's UI extension (if provided) for a view controller representing the current intent
+     * handling state.
+     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
+     * intent object will also be available in the NSUserActivity.interaction property.
      */
     @Generated
     @Selector("initWithCode:userActivity:")
@@ -152,7 +157,8 @@ public class INListCarsIntentResponse extends INIntentResponse {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * An array of INCar objects representing a user’s electric vehicles. These vehicles should potentially respond to an INGetCarPowerLevelStatusIntent request so that the user can navigate with one of these vehicles in Maps.
+     * An array of INCar objects representing a user’s electric vehicles. These vehicles should potentially respond to
+     * an INGetCarPowerLevelStatusIntent request so that the user can navigate with one of these vehicles in Maps.
      */
     @Generated
     @Selector("setCars:")

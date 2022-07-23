@@ -176,7 +176,8 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     public static native long version_static();
 
     /**
-     * The deviation, often called 'sigma', is the deviation from the mean that would include roughly 68% of the distribution.
+     * The deviation, often called 'sigma', is the deviation from the mean that would include roughly 68% of the
+     * distribution.
      * The range of the distribution is [mean - 3 * deviation, mean + 3 * deviation]. Values beyond 3 deviations
      * are considered so improbable that they are removed from the output set.
      */
@@ -189,13 +190,15 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     public native GKGaussianDistribution init();
 
     /**
-     * Initializes a Gaussian random distribution within the range [lowest, highest] using a source to grab input values from.
+     * Initializes a Gaussian random distribution within the range [lowest, highest] using a source to grab input values
+     * from.
      * This sets the gaussian parameters to:
      * <p>
      * mean = (highest + lowest) / 2
      * deviation = (highest - lowest) / 6
      * <p>
-     * The mean and deviation will be floating point numbers even if the distribution is meant to produce integer values.
+     * The mean and deviation will be floating point numbers even if the distribution is meant to produce integer
+     * values.
      *
      * @see mean
      * @see deviation

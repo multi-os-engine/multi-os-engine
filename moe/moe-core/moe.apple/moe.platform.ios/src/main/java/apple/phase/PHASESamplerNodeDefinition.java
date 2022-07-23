@@ -177,10 +177,14 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      * <p>
      * The playback mode for the sampler.
      * <p>
-     * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the registered sound asset associated with this sampler
-     * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending playback.
-     * If the playback mode is set to PHASEPlaybackModeLooping, you need to make sure the audio data in the registered sound asset associated with this sampler
-     * loops smoothly from the end sample to the start sample. Please verify this during authoring. Failing to do so will result in audible clicks at loop boundaries.
+     * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the
+     * registered sound asset associated with this sampler
+     * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending
+     * playback.
+     * If the playback mode is set to PHASEPlaybackModeLooping, you need to make sure the audio data in the registered
+     * sound asset associated with this sampler
+     * loops smoothly from the end sample to the start sample. Please verify this during authoring. Failing to do so
+     * will result in audible clicks at loop boundaries.
      * The default value is PHASEPlaybackModeOneShot.
      */
     @Generated
@@ -212,10 +216,14 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
      * <p>
      * The playback mode for the sampler.
      * <p>
-     * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the registered sound asset associated with this sampler
-     * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending playback.
-     * If the playback mode is set to PHASEPlaybackModeLooping, you need to make sure the audio data in the registered sound asset associated with this sampler
-     * loops smoothly from the end sample to the start sample. Please verify this during authoring. Failing to do so will result in audible clicks at loop boundaries.
+     * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the
+     * registered sound asset associated with this sampler
+     * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending
+     * playback.
+     * If the playback mode is set to PHASEPlaybackModeLooping, you need to make sure the audio data in the registered
+     * sound asset associated with this sampler
+     * loops smoothly from the end sample to the start sample. Please verify this during authoring. Failing to do so
+     * will result in audible clicks at loop boundaries.
      * The default value is PHASEPlaybackModeOneShot.
      */
     @Generated

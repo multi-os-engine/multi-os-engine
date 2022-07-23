@@ -34,7 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * VNPoint represents a single, immutable, two-dimensional point in an image.
  * <p>
- * It should be noted that VNPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by observations that need to present points which may contain additional metadata.
+ * It should be noted that VNPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by
+ * observations that need to present points which may contain additional metadata.
  */
 @Generated
 @Library("Vision")
@@ -170,7 +171,8 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Returns the X and Y coordinates of the point, as CGPoint type, with respect to the origin of the coordinate system the point is defined in.
+     * Returns the X and Y coordinates of the point, as CGPoint type, with respect to the origin of the coordinate
+     * system the point is defined in.
      */
     @Generated
     @Selector("location")
@@ -225,14 +227,16 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * Returns the X coordinate of the point with respect to the origin of the coordinate system the point is defined in.
+     * Returns the X coordinate of the point with respect to the origin of the coordinate system the point is defined
+     * in.
      */
     @Generated
     @Selector("x")
     public native double x();
 
     /**
-     * Returns the Y coordinate of the point with respect to the origin of the coordinate system the point is defined in.
+     * Returns the Y coordinate of the point with respect to the origin of the coordinate system the point is defined
+     * in.
      */
     @Generated
     @Selector("y")

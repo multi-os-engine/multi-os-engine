@@ -98,7 +98,8 @@ public class PHCollectionList extends PHCollection {
     public static native String description_static();
 
     /**
-     * A PHAssetCollectionTypeMoment will be contained by a PHCollectionListSubtypeMomentListCluster and a PHCollectionListSubtypeMomentListYear
+     * A PHAssetCollectionTypeMoment will be contained by a PHCollectionListSubtypeMomentListCluster and a
+     * PHCollectionListSubtypeMomentListYear
      * Non-moment PHAssetCollections will only be contained by a single collection list
      */
     @Generated
@@ -107,7 +108,8 @@ public class PHCollectionList extends PHCollection {
             PHCollection collection, PHFetchOptions options);
 
     /**
-     * Fetch collection lists of a single type matching the provided local identifiers (type is inferred from the local identifiers)
+     * Fetch collection lists of a single type matching the provided local identifiers (type is inferred from the local
+     * identifiers)
      */
     @Generated
     @Selector("fetchCollectionListsWithLocalIdentifiers:options:")
@@ -115,7 +117,8 @@ public class PHCollectionList extends PHCollection {
             NSArray<String> identifiers, PHFetchOptions options);
 
     /**
-     * Fetch asset collections of a single type and subtype provided (use PHCollectionListSubtypeAny to match all subtypes)
+     * Fetch asset collections of a single type and subtype provided (use PHCollectionListSubtypeAny to match all
+     * subtypes)
      */
     @Generated
     @Selector("fetchCollectionListsWithType:subtype:options:")

@@ -46,7 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store Connect.
+ * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store
+ * Connect.
  */
 @Generated
 @Library("GameKit")
@@ -207,7 +208,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     public native String identifier();
 
     /**
-     * Image for completed achievement. Not valid until loadImage: has completed. Deprecated -- use loadImageWithCompletionHandler: instead.
+     * Image for completed achievement. Not valid until loadImage: has completed. Deprecated -- use
+     * loadImageWithCompletionHandler: instead.
      */
     @Generated
     @Deprecated
@@ -230,7 +232,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     public native boolean isHidden();
 
     /**
-     * Whether or not the achievement will be reported by the game when the user earns it again. This allows the achievement to be used for challenges when the recipient has previously earned it.
+     * Whether or not the achievement will be reported by the game when the user earns it again. This allows the
+     * achievement to be used for challenges when the recipient has previously earned it.
      */
     @Generated
     @Selector("isReplayable")

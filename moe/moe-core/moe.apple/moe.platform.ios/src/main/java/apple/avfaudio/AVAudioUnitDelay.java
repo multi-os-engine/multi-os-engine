@@ -93,9 +93,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] delayTime
      * Time taken by the delayed input signal to reach the output
      * <p>
-     * Range:      0 -> 2
-     * Default:    1
-     * Unit:       Seconds
+     * Range: 0 -> 2
+     * Default: 1
+     * Unit: Seconds
      */
     @Generated
     @Selector("delayTime")
@@ -109,9 +109,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] feedback
      * <p>
      * Amount of the output signal fed back into the delay line
-     * Range:      -100 -> 100
-     * Default:    50
-     * Unit:       Percent
+     * Range: -100 -> 100
+     * Default: 50
+     * Unit: Percent
      */
     @Generated
     @Selector("feedback")
@@ -162,9 +162,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] lowPassCutoff
      * <p>
      * Cutoff frequency above which high frequency content is rolled off
-     * Range:      10 -> (samplerate/2)
-     * Default:    15000
-     * Unit:       Hertz
+     * Range: 10 -> (samplerate/2)
+     * Default: 15000
+     * Unit: Hertz
      */
     @Generated
     @Selector("lowPassCutoff")
@@ -187,9 +187,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] delayTime
      * Time taken by the delayed input signal to reach the output
      * <p>
-     * Range:      0 -> 2
-     * Default:    1
-     * Unit:       Seconds
+     * Range: 0 -> 2
+     * Default: 1
+     * Unit: Seconds
      */
     @Generated
     @Selector("setDelayTime:")
@@ -199,9 +199,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] feedback
      * <p>
      * Amount of the output signal fed back into the delay line
-     * Range:      -100 -> 100
-     * Default:    50
-     * Unit:       Percent
+     * Range: -100 -> 100
+     * Default: 50
+     * Unit: Percent
      */
     @Generated
     @Selector("setFeedback:")
@@ -211,9 +211,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] lowPassCutoff
      * <p>
      * Cutoff frequency above which high frequency content is rolled off
-     * Range:      10 -> (samplerate/2)
-     * Default:    15000
-     * Unit:       Hertz
+     * Range: 10 -> (samplerate/2)
+     * Default: 15000
+     * Unit: Hertz
      */
     @Generated
     @Selector("setLowPassCutoff:")
@@ -227,9 +227,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] wetDryMix
      * <p>
      * Blend of the wet and dry signals
-     * Range:      0 (all dry) -> 100 (all wet)
-     * Default:    100
-     * Unit:       Percent
+     * Range: 0 (all dry) -> 100 (all wet)
+     * Default: 100
+     * Unit: Percent
      */
     @Generated
     @Selector("setWetDryMix:")
@@ -248,9 +248,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
      * [@property] wetDryMix
      * <p>
      * Blend of the wet and dry signals
-     * Range:      0 (all dry) -> 100 (all wet)
-     * Default:    100
-     * Unit:       Percent
+     * Range: 0 (all dry) -> 100 (all wet)
+     * Default: 100
+     * Unit: Percent
      */
     @Generated
     @Selector("wetDryMix")

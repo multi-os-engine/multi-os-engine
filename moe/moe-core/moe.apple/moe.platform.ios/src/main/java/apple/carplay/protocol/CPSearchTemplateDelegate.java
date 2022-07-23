@@ -22,7 +22,8 @@ public interface CPSearchTemplateDelegate {
      *
      * @param searchTemplate    The search template in use by the user
      * @param item              The item selected by the user
-     * @param completionHandler You must call the completionHandler when you have handled the row selection in the search result
+     * @param completionHandler You must call the completionHandler when you have handled the row selection in the
+     *                          search result
      */
     @Generated
     @Selector("searchTemplate:selectedResult:completionHandler:")
@@ -56,7 +57,8 @@ public interface CPSearchTemplateDelegate {
     }
 
     /**
-     * The user has selected the keyboard's search button. Generally, you should push a @c CPListTemplate containing the current search results.
+     * The user has selected the keyboard's search button. Generally, you should push a @c CPListTemplate containing the
+     * current search results.
      *
      * @param searchTemplate The search template in use by the user
      */

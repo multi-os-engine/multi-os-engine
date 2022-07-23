@@ -6,7 +6,8 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] AVAudioStereoOrientation
  * <p>
- * Constants indicating stereo input audio orientation, for use with built-in mic input data sources with a stereo polar pattern selected.
+ * Constants indicating stereo input audio orientation, for use with built-in mic input data sources with a stereo polar
+ * pattern selected.
  * <p>
  * [@var] AVAudioStereoOrientationNone
  * Indicates that audio capture orientation is not applicable (on mono capture, for instance).

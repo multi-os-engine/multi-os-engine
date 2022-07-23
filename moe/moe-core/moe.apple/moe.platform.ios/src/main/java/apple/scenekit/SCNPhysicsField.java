@@ -127,7 +127,8 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native SCNPhysicsField dragField();
 
     /**
-     * A force proportional to the charge on the object. An example use of this field is to make objects behavior differently
+     * A force proportional to the charge on the object. An example use of this field is to make objects behavior
+     * differently
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the first part of the Lorentz equation, F = qE
      */
@@ -162,7 +163,8 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Applies a force in the direction of the "direction" vector in the local space. To repel objects, use a negative strength.
+     * Applies a force in the direction of the "direction" vector in the local space. To repel objects, use a negative
+     * strength.
      * The force is the same everywhere in the field. Varies with the mass of the object according to F = ma
      * The field node's rotation property can be used to orient the gravity in a particular direction.
      */
@@ -172,7 +174,8 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * A force proportional to the charge on the object and the object’s velocity.
-     * An example use of this field is to make objects behavior differently from one another when they enter a region, or to make an object's behavior different than its mass based behavior
+     * An example use of this field is to make objects behavior differently from one another when they enter a region,
+     * or to make an object's behavior different than its mass based behavior
      * This field models the second part of the Lorentz equation, F = qvB
      */
     @Generated
@@ -196,8 +199,10 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
             @NFloat double speed);
 
     /**
-     * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative strength.
-     * The force is proportional to the distance from the field origin. Varies with the mass of the object according to F = ma
+     * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative
+     * strength.
+     * The force is proportional to the distance from the field origin. Varies with the mass of the object according to
+     * F = ma
      * The field node's rotation property can be used to orient the gravity in a particular direction.
      */
     @Generated
@@ -285,7 +290,8 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * Changes the power of the force based on the distance from the center of the field (1 / distance ^ falloffExponent). Defaults to 0.0.
+     * Changes the power of the force based on the distance from the center of the field (1 / distance ^
+     * falloffExponent). Defaults to 0.0.
      */
     @Generated
     @Selector("falloffExponent")
@@ -377,7 +383,8 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
     public native void setDirection(@ByValue SCNVector3 value);
 
     /**
-     * Changes the power of the force based on the distance from the center of the field (1 / distance ^ falloffExponent). Defaults to 0.0.
+     * Changes the power of the force based on the distance from the center of the field (1 / distance ^
+     * falloffExponent). Defaults to 0.0.
      */
     @Generated
     @Selector("setFalloffExponent:")

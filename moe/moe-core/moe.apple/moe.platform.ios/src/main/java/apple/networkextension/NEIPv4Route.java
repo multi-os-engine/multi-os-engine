@@ -191,7 +191,8 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * [@property] destinationSubnetMask
      * <p>
-     * An IPv4 subnet mask represented as a dotted decimal string. This mask in combination with the destinationAddress property is used to determine the destination network of the route.
+     * An IPv4 subnet mask represented as a dotted decimal string. This mask in combination with the destinationAddress
+     * property is used to determine the destination network of the route.
      */
     @Generated
     @Selector("destinationSubnetMask")
@@ -204,7 +205,8 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * [@property] gatewayAddress
      * <p>
-     * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
+     * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the
+     * tunnel's virtual interface.
      */
     @Generated
     @Selector("gatewayAddress")
@@ -234,7 +236,8 @@ public class NEIPv4Route extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * [@property] gatewayAddress
      * <p>
-     * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
+     * The IPv4 address of the route's gateway. If this property is nil then the route's gateway will be set to the
+     * tunnel's virtual interface.
      */
     @Generated
     @Selector("setGatewayAddress:")

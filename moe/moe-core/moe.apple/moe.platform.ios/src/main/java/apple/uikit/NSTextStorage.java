@@ -62,7 +62,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Note for subclassing NSTextStorage: NSTextStorage is a semi-abstract subclass of NSMutableAttributedString. It implements change management (beginEditing/endEditing), verification of attributes, delegate handling, and layout management notification. The one aspect it does not implement is the actual attributed string storage --- this is left up to the subclassers, which need to override the two NSMutableAttributedString primitives in addition to two NSAttributedString primitives:
+ * Note for subclassing NSTextStorage: NSTextStorage is a semi-abstract subclass of NSMutableAttributedString. It
+ * implements change management (beginEditing/endEditing), verification of attributes, delegate handling, and layout
+ * management notification. The one aspect it does not implement is the actual attributed string storage --- this is
+ * left up to the subclassers, which need to override the two NSMutableAttributedString primitives in addition to two
+ * NSAttributedString primitives:
  * <p>
  * - (NSString *)string;
  * - (NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range;
@@ -191,7 +195,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     public static native long version_static();
 
     /**
-     * Adds aLayoutManager to the receiver.  Sends -[NSLayoutManager setTextStorage:] to aLayoutManager with the receiver.
+     * Adds aLayoutManager to the receiver. Sends -[NSLayoutManager setTextStorage:] to aLayoutManager with the
+     * receiver.
      */
     @Generated
     @Selector("addLayoutManager:")
@@ -214,7 +219,9 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     public native NSTextStorageDelegate delegate();
 
     /**
-     * Notifies and records a recent change.  If there are no outstanding -beginEditing calls, this method calls -processEditing to trigger post-editing processes.  This method has to be called by the primitives after changes are made if subclassed and overridden.  editedRange is the range in the original string (before the edit).
+     * Notifies and records a recent change. If there are no outstanding -beginEditing calls, this method calls
+     * -processEditing to trigger post-editing processes. This method has to be called by the primitives after changes
+     * are made if subclassed and overridden. editedRange is the range in the original string (before the edit).
      */
     @Generated
     @Selector("edited:range:changeInLength:")
@@ -238,14 +245,18 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     public native NSRange editedRange();
 
     /**
-     * Ensures all attributes in range are validated and ready to be used.  An NSTextStorage that is lazy is required to call the following method before accessing any attributes.  This gives the attribute fixing a chance to occur if necessary.  NSTextStorage subclasses that wish to support laziness must call it from all attribute accessors that they implement.  The default concrete subclass does call this from its accessors.
+     * Ensures all attributes in range are validated and ready to be used. An NSTextStorage that is lazy is required to
+     * call the following method before accessing any attributes. This gives the attribute fixing a chance to occur if
+     * necessary. NSTextStorage subclasses that wish to support laziness must call it from all attribute accessors that
+     * they implement. The default concrete subclass does call this from its accessors.
      */
     @Generated
     @Selector("ensureAttributesAreFixedInRange:")
     public native void ensureAttributesAreFixedInRange(@ByValue NSRange range);
 
     /**
-     * Indicates if the receiver fixes invalidated attributes lazily.  The concrete UIKit subclass fixes attributes lazily by default.  The abstract class (hence, all custom subclasses) is not lazy.
+     * Indicates if the receiver fixes invalidated attributes lazily. The concrete UIKit subclass fixes attributes
+     * lazily by default. The abstract class (hence, all custom subclasses) is not lazy.
      */
     @Generated
     @Selector("fixesAttributesLazily")
@@ -291,7 +302,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Notes the range of attributes that requires validation.  If the NSTextStorage is not lazy this just calls fixAttributesInRange:.  If it is lazy this instead just records the range needing fixing in order to do it later.
+     * Notes the range of attributes that requires validation. If the NSTextStorage is not lazy this just calls
+     * fixAttributesInRange:. If it is lazy this instead just records the range needing fixing in order to do it later.
      */
     @Generated
     @Selector("invalidateAttributesInRange:")
@@ -305,14 +317,18 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     public native NSArray<? extends NSLayoutManager> layoutManagers();
 
     /**
-     * Sends out -textStorage:willProcessEditing, fixes the attributes, sends out -textStorage:didProcessEditing, and notifies the layout managers of change with the -processEditingForTextStorage:edited:range:changeInLength:invalidatedRange: method.  Invoked from -edited:range:changeInLength: or -endEditing.
+     * Sends out -textStorage:willProcessEditing, fixes the attributes, sends out -textStorage:didProcessEditing, and
+     * notifies the layout managers of change with the
+     * -processEditingForTextStorage:edited:range:changeInLength:invalidatedRange: method. Invoked from
+     * -edited:range:changeInLength: or -endEditing.
      */
     @Generated
     @Selector("processEditing")
     public native void processEditing();
 
     /**
-     * Removes aLayoutManager from the receiver if already owned by it.  Sends -[NSLayoutManager setTextStorage:] to aLayoutManager with nil.
+     * Removes aLayoutManager from the receiver if already owned by it. Sends -[NSLayoutManager setTextStorage:] to
+     * aLayoutManager with nil.
      */
     @Generated
     @Selector("removeLayoutManager:")

@@ -174,7 +174,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     public native NSItemProvider init();
 
     /**
-     * Initialize an NSItemProvider with load handlers for the given file URL, and the file content. A type identifier is inferred from the file extension.
+     * Initialize an NSItemProvider with load handlers for the given file URL, and the file content. A type identifier
+     * is inferred from the file extension.
      */
     @Generated
     @Selector("initWithContentsOfURL:")
@@ -189,7 +190,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
             String typeIdentifier);
 
     /**
-     * Loads the best matching item for a type identifier. The returned object depends on the class specified for the completion handler's `item` parameter.
+     * Loads the best matching item for a type identifier. The returned object depends on the class specified for the
+     * completion handler's `item` parameter.
      * See the table above for coercion rules.
      */
     @Generated
@@ -199,7 +201,10 @@ public class NSItemProvider extends NSObject implements NSCopying {
             @ObjCBlock(name = "call_loadItemForTypeIdentifierOptionsCompletionHandler") Block_loadItemForTypeIdentifierOptionsCompletionHandler completionHandler);
 
     /**
-     * Loads the preview image for this item by either calling the supplied preview block or falling back to a QuickLook-based handler. This method, like loadItemForTypeIdentifier:options:completionHandler:, supports implicit type coercion for the item parameter of the completion block. Allowed value classes are: NSData, NSURL, UIImage/NSImage.
+     * Loads the preview image for this item by either calling the supplied preview block or falling back to a
+     * QuickLook-based handler. This method, like loadItemForTypeIdentifier:options:completionHandler:, supports
+     * implicit type coercion for the item parameter of the completion block. Allowed value classes are: NSData, NSURL,
+     * UIImage/NSImage.
      */
     @Generated
     @Selector("loadPreviewImageWithOptions:completionHandler:")
@@ -239,7 +244,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
             @NInt long fileOptions);
 
     /**
-     * Instantiate an NSItemProvider by querying an object for its eligible type identifiers via the NSItemProviderWriting protocol.
+     * Instantiate an NSItemProvider by querying an object for its eligible type identifiers via the
+     * NSItemProviderWriting protocol.
      */
     @Generated
     @Selector("initWithObject:")
@@ -261,7 +267,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     }
 
     /**
-     * Writes a copy of the data to a temporary file. This file will be deleted when the completion handler returns. Your program should copy or move the file within the completion handler.
+     * Writes a copy of the data to a temporary file. This file will be deleted when the completion handler returns.
+     * Your program should copy or move the file within the completion handler.
      */
     @Generated
     @Selector("loadFileRepresentationForTypeIdentifier:completionHandler:")
@@ -277,7 +284,9 @@ public class NSItemProvider extends NSObject implements NSCopying {
 
     /**
      * Open the original file in place, if possible.
-     * If a file is not available for opening in place, a copy of the file is written to a temporary location, and `isInPlace` is set to NO. Your program may then copy or move the file, or the system will delete this file at some point in the future.
+     * If a file is not available for opening in place, a copy of the file is written to a temporary location, and
+     * `isInPlace` is set to NO. Your program may then copy or move the file, or the system will delete this file at
+     * some point in the future.
      */
     @Generated
     @Selector("loadInPlaceFileRepresentationForTypeIdentifier:completionHandler:")
@@ -322,7 +331,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     public native long preferredPresentationStyle();
 
     /**
-     * Add representations from an object using the NSItemProviderWriting protocol. Duplicate representations are ignored.
+     * Add representations from an object using the NSItemProviderWriting protocol. Duplicate representations are
+     * ignored.
      */
     @Generated
     @Selector("registerObject:visibility:")
@@ -361,7 +371,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     public native NSData teamData();
 
     /**
-     * Sets a custom preview image handler block for this item provider. The returned item should preferably be NSData or a file NSURL.
+     * Sets a custom preview image handler block for this item provider. The returned item should preferably be NSData
+     * or a file NSURL.
      */
     @Generated
     @Selector("previewImageHandler")
@@ -411,7 +422,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     /**
      * Registers a file-backed representation.
      * Set `coordinated` to YES if the returned file must be accessed using NSFileCoordinator.
-     * If `NSItemProviderFileOptionOpenInPlace` is not provided, the file provided will be copied before the load handler returns.
+     * If `NSItemProviderFileOptionOpenInPlace` is not provided, the file provided will be copied before the load
+     * handler returns.
      */
     @Generated
     @Selector("registerFileRepresentationForTypeIdentifier:fileOptions:visibility:loadHandler:")
@@ -486,7 +498,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
     }
 
     /**
-     * Sets a custom preview image handler block for this item provider. The returned item should preferably be NSData or a file NSURL.
+     * Sets a custom preview image handler block for this item provider. The returned item should preferably be NSData
+     * or a file NSURL.
      */
     @Generated
     @Selector("setPreviewImageHandler:")

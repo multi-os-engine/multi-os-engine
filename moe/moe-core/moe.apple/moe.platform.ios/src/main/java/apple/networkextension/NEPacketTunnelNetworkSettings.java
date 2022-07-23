@@ -44,9 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEPacketTunnelNetworkSettings
  * <p>
- * The NEPacketTunnelNetworkSettings class declares the programmatic interface for an object that contains IP network settings.
+ * The NEPacketTunnelNetworkSettings class declares the programmatic interface for an object that contains IP network
+ * settings.
  * <p>
- * NEPacketTunnelNetworkSettings is used by NEPacketTunnelProviders to communicate the desired IP network settings for the packet tunnel to the framework. The framework takes care of applying the contained settings to the system.
+ * NEPacketTunnelNetworkSettings is used by NEPacketTunnelProviders to communicate the desired IP network settings for
+ * the packet tunnel to the framework. The framework takes care of applying the contained settings to the system.
  * <p>
  * Instances of this class are thread safe.
  */
@@ -185,7 +187,8 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     /**
      * [@property] MTU
      * <p>
-     * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface. If this property is set, the tunnelOverheadBytes property is ignored.
+     * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface.
+     * If this property is set, the tunnelOverheadBytes property is ignored.
      */
     @Generated
     @Selector("MTU")
@@ -224,7 +227,8 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     /**
      * [@property] MTU
      * <p>
-     * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface. If this property is set, the tunnelOverheadBytes property is ignored.
+     * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface.
+     * If this property is set, the tunnelOverheadBytes property is ignored.
      */
     @Generated
     @Selector("setMTU:")
@@ -233,7 +237,9 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     /**
      * [@property] tunnelOverheadBytes
      * <p>
-     * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical interface.
+     * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the
+     * tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical
+     * interface.
      */
     @Generated
     @Selector("setTunnelOverheadBytes:")
@@ -248,7 +254,9 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     /**
      * [@property] tunnelOverheadBytes
      * <p>
-     * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical interface.
+     * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the
+     * tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical
+     * interface.
      */
     @Generated
     @Selector("tunnelOverheadBytes")

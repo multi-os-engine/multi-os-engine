@@ -52,7 +52,8 @@ public interface MTKViewDelegate {
      * <p>
      * Called whenever the drawableSize of the view will change
      * <p>
-     * Delegate can recompute view and projection matricies or regenerate any buffers to be compatible with the new view size or resolution
+     * Delegate can recompute view and projection matricies or regenerate any buffers to be compatible with the new view
+     * size or resolution
      *
      * @param view MTKView which called this method
      * @param size New drawable size in pixels

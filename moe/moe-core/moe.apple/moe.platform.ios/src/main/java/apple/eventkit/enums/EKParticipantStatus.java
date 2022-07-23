@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]       EKParticipantStatus
+ * [@enum] EKParticipantStatus
  * <p>
  * Value representing the status of a meeting participant.
  */

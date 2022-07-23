@@ -40,7 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * CLLocationButton
  * <p>
  * Discussion:
- * CLLocationButton is a UIControl that, in addition to functioning much like a UIButton, may grant a one-time authorization of the device's current location when pressed.
+ * CLLocationButton is a UIControl that, in addition to functioning much like a UIButton, may grant a one-time
+ * authorization of the device's current location when pressed.
  */
 @Generated
 @Library("CoreLocationUI")

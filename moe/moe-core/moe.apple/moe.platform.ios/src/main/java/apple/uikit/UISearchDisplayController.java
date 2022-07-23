@@ -159,7 +159,8 @@ public class UISearchDisplayController extends NSObject {
     public native UISearchDisplayDelegate delegate();
 
     /**
-     * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has one.
+     * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has
+     * one.
      */
     @Generated
     @Selector("displaysSearchBarInNavigationBar")
@@ -257,7 +258,8 @@ public class UISearchDisplayController extends NSObject {
     }
 
     /**
-     * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has one.
+     * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has
+     * one.
      */
     @Generated
     @Selector("setDisplaysSearchBarInNavigationBar:")

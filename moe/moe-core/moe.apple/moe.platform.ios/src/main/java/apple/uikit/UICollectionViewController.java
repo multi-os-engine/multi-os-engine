@@ -54,8 +54,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UICollectionViewController extends UIViewController
-        implements UICollectionViewDelegate, UICollectionViewDataSource {
+public class UICollectionViewController extends UIViewController implements UICollectionViewDelegate,
+        UICollectionViewDataSource {
     static {
         NatJ.register();
     }

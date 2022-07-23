@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Constellation type defines how many landmark points are used to map a face. Revisions 1, 2, and 3 support 65 points, where Rev3 also supports 76 points.
+ * Constellation type defines how many landmark points are used to map a face. Revisions 1, 2, and 3 support 65 points,
+ * where Rev3 also supports 76 points.
  */
 @Generated
 public final class VNRequestFaceLandmarksConstellation {

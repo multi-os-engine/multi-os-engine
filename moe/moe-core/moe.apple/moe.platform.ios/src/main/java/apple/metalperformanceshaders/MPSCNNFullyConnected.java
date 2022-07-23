@@ -54,7 +54,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * is 1x1. Thus, it takes a srcW x srcH x Ni MPSCNNImage, convolves it with Weights[No][SrcW][srcH][Ni]
  * and produces a 1 x 1 x No output. The following must be true:
  * [@code]
- * kernelWidth  == source.width
+ * kernelWidth == source.width
  * kernelHeight == source.height
  * clipRect.size.width == 1
  * clipRect.size.height == 1
@@ -195,18 +195,20 @@ public class MPSCNNFullyConnected extends MPSCNNConvolution {
 
     /**
      * Initializes a convolution kernel
-     * WARNING:                        This API is depreated and will be removed in the future. It cannot be used
+     * WARNING: This API is depreated and will be removed in the future. It cannot be used
      * when training. Also serialization/unserialization wont work for MPSCNNConvolution
      * objects created with this init. Please move onto using initWithDevice:weights:.
      *
      * @param device                The MTLDevice on which this MPSCNNConvolution filter will be used
      * @param convolutionDescriptor A pointer to a MPSCNNConvolutionDescriptor.
-     * @param kernelWeights         A pointer to a weights array.  Each entry is a float value. The number of entries is =
+     * @param kernelWeights         A pointer to a weights array. Each entry is a float value. The number of entries is
+     *                              =
      *                              inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth
      *                              The layout of filter weight is so that it can be reinterpreted as 4D tensor (array)
      *                              weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ]
      *                              Weights are converted to half float (fp16) internally for best performance.
-     * @param biasTerms             A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
+     * @param biasTerms             A pointer to bias terms to be applied to the convolution output. Each entry is a
+     *                              float value.
      *                              The number of entries is = numberOfOutputFeatureMaps
      * @param flags                 Currently unused. Pass MPSCNNConvolutionFlagsNone
      * @return A valid MPSCNNConvolution object or nil, if failure.
@@ -227,7 +229,7 @@ public class MPSCNNFullyConnected extends MPSCNNConvolution {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

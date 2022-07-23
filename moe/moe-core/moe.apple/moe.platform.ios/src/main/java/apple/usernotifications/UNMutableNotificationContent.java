@@ -171,14 +171,16 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     public native NSNumber badge();
 
     /**
-     * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
+     * string that will be localized at the time that the notification is presented.
      */
     @Generated
     @Selector("body")
     public native String body();
 
     /**
-     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to display for the notification.
+     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to
+     * display for the notification.
      */
     @Generated
     @Selector("categoryIdentifier")
@@ -214,14 +216,16 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     public native void setBadge(NSNumber value);
 
     /**
-     * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     * The body of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
+     * string that will be localized at the time that the notification is presented.
      */
     @Generated
     @Selector("setBody:")
     public native void setBody(String value);
 
     /**
-     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to display for the notification.
+     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to
+     * display for the notification.
      */
     @Generated
     @Selector("setCategoryIdentifier:")
@@ -242,28 +246,32 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     public native void setSound(UNNotificationSound value);
 
     /**
-     * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
+     * string that will be localized at the time that the notification is presented.
      */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
     /**
-     * The unique identifier for the thread or conversation related to this notification request. It will be used to visually group notifications together.
+     * The unique identifier for the thread or conversation related to this notification request. It will be used to
+     * visually group notifications together.
      */
     @Generated
     @Selector("setThreadIdentifier:")
     public native void setThreadIdentifier(String value);
 
     /**
-     * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
+     * string that will be localized at the time that the notification is presented.
      */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
     /**
-     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be
+     * set as the userInfo for remote notifications.
      */
     @Generated
     @Selector("setUserInfo:")
@@ -277,7 +285,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     public native UNNotificationSound sound();
 
     /**
-     * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     * The subtitle of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
+     * string that will be localized at the time that the notification is presented.
      */
     @Generated
     @Selector("subtitle")
@@ -290,21 +299,24 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     }
 
     /**
-     * The unique identifier for the thread or conversation related to this notification request. It will be used to visually group notifications together.
+     * The unique identifier for the thread or conversation related to this notification request. It will be used to
+     * visually group notifications together.
      */
     @Generated
     @Selector("threadIdentifier")
     public native String threadIdentifier();
 
     /**
-     * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     * The title of the notification. Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a
+     * string that will be localized at the time that the notification is presented.
      */
     @Generated
     @Selector("title")
     public native String title();
 
     /**
-     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be
+     * set as the userInfo for remote notifications.
      */
     @Generated
     @Selector("userInfo")
@@ -368,7 +380,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     public native long interruptionLevel();
 
     /**
-     * Relevance score determines the sorting for the notification across app notifications. The expected range is between 0.0f and 1.0f.
+     * Relevance score determines the sorting for the notification across app notifications. The expected range is
+     * between 0.0f and 1.0f.
      */
     @Generated
     @Selector("relevanceScore")
@@ -382,7 +395,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     public native void setInterruptionLevel(@NUInt long value);
 
     /**
-     * Relevance score determines the sorting for the notification across app notifications. The expected range is between 0.0f and 1.0f.
+     * Relevance score determines the sorting for the notification across app notifications. The expected range is
+     * between 0.0f and 1.0f.
      */
     @Generated
     @Selector("setRelevanceScore:")

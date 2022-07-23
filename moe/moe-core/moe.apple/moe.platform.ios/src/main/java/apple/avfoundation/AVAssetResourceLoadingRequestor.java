@@ -116,7 +116,7 @@ public class AVAssetResourceLoadingRequestor extends NSObject {
     public static native AVAssetResourceLoadingRequestor new_objc();
 
     /**
-     * [@property] 		providesExpiredSessionReports
+     * [@property] providesExpiredSessionReports
      * <p>
      * Whether the requestor provides expired session reports (see AVContentKeySession)
      */

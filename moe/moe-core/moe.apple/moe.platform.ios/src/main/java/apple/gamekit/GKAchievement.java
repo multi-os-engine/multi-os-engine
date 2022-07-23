@@ -147,7 +147,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     public static native GKAchievement new_objc();
 
     /**
-     * Report an array of achievements to the server. Percent complete is required. Points, completed state are set based on percentComplete. isHidden is set to NO anytime this method is invoked. Date is optional. Error will be nil on success.
+     * Report an array of achievements to the server. Percent complete is required. Points, completed state are set
+     * based on percentComplete. isHidden is set to NO anytime this method is invoked. Date is optional. Error will be
+     * nil on success.
      * Possible reasons for error:
      * 1. Local player not authenticated
      * 2. Communications failure
@@ -159,7 +161,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
             @ObjCBlock(name = "call_reportAchievementsWithCompletionHandler") Block_reportAchievementsWithCompletionHandler completionHandler);
 
     /**
-     * Use this alternative to reportAchievements:withCompletionHandler: to allow only certain specific challenges to be completed. Pass nil to avoid completing any challenges.
+     * Use this alternative to reportAchievements:withCompletionHandler: to allow only certain specific challenges to be
+     * completed. Pass nil to avoid completing any challenges.
      */
     @Generated
     @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
@@ -168,7 +171,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
             @ObjCBlock(name = "call_reportAchievementsWithEligibleChallengesWithCompletionHandler") Block_reportAchievementsWithEligibleChallengesWithCompletionHandler completionHandler);
 
     /**
-     * Reset the achievements progress for the local player. All the entries for the local player are removed from the server. Error will be nil on success.
+     * Reset the achievements progress for the local player. All the entries for the local player are removed from the
+     * server. Error will be nil on success.
      * Possible reasons for error:
      * 1. Local player not authenticated
      * 2. Communications failure
@@ -254,7 +258,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     public native GKAchievement initWithIdentifierForPlayer(String identifier, String playerID);
 
     /**
-     * Initialize the achievement for a specific player. Use to submit participant achievements when ending a turn-based match.
+     * Initialize the achievement for a specific player. Use to submit participant achievements when ending a turn-based
+     * match.
      */
     @Generated
     @Selector("initWithIdentifier:player:")
@@ -325,7 +330,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
             @ObjCBlock(name = "call_selectChallengeablePlayerIDsWithCompletionHandler") Block_selectChallengeablePlayerIDsWithCompletionHandler completionHandler);
 
     /**
-     * Given a list of players, return a subset of that list containing only players that are eligible to receive a challenge for the achievement.
+     * Given a list of players, return a subset of that list containing only players that are eligible to receive a
+     * challenge for the achievement.
      */
     @Generated
     @Selector("selectChallengeablePlayers:withCompletionHandler:")

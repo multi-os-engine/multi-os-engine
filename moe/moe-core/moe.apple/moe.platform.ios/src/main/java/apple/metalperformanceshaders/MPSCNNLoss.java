@@ -91,72 +91,72 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Mean Absolute Error loss filter. This filter measures the absolute error of the element-wise
  * difference between the predictions and labels.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = |y - t|
+ * Compute losses: losses = |y - t|
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * Mean Squared Error loss filter. This filter measures the squared error of the element-wise
  * difference between the predictions and labels.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = (y - t)^2
+ * Compute losses: losses = (y - t)^2
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * SoftMax Cross Entropy loss filter. This loss filter is applied element-wise.
  * This loss filter combines the LogSoftMax and Negative Log Likelihood operations in a
  * single filter. It is useful for training a classification problem with multiple classes.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = -t * LogSoftMax(y)
+ * Compute losses: losses = -t * LogSoftMax(y)
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * If reductionType is MPSCNNReductionTypeMean, the accumulated
  * loss value is divided by width * height instead of
  * width * height * featureChannels.
  * <p>
  * Sigmoid Cross Entropy loss filter. This loss filter is applied element-wise.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = max(y, 0) - y * t + log(1 + exp(-|y|))
+ * Compute losses: losses = max(y, 0) - y * t + log(1 + exp(-|y|))
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * Categorical Cross Entropy loss filter. This loss filter is applied element-wise.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = -t * log(y)
+ * Compute losses: losses = -t * log(y)
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * Hinge loss filter. This loss filter is applied element-wise.
  * The labels are expected to be 0.0 or 1.0.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = max(1 - (t * y), 0.0f)
+ * Compute losses: losses = max(1 - (t * y), 0.0f)
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * Huber loss filter. This loss filter is applied element-wise.
  * This loss function is computed according to the following formulas:
- * Compute losses:          if (|y - t| <= delta, losses = 0.5 * y^2
- * if (|y - t| >  delta, losses = 0.5 * delta^2 + delta * (|y - t| - delta)
+ * Compute losses: if (|y - t| <= delta, losses = 0.5 * y^2
+ * if (|y - t| > delta, losses = 0.5 * delta^2 + delta * (|y - t| - delta)
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * Cosine Distance loss filter. This loss filter is applied element-wise.
  * The only valid reduction type for this loss filter is MPSCNNReductionTypeSum.
  * This loss function is computed according to the following formulas:
- * Compute losses:          loss = 1 - reduce_sum(y * t)
- * Compute overall loss:    weighted_loss = weight * loss
+ * Compute losses: loss = 1 - reduce_sum(y * t)
+ * Compute overall loss: weighted_loss = weight * loss
  * <p>
  * Log loss filter. This loss filter is applied element-wise.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = -(t * log(y + epsilon)) - ((1 - t) * log(1 - y + epsilon))
+ * Compute losses: losses = -(t * log(y + epsilon)) - ((1 - t) * log(1 - y + epsilon))
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * Kullback-Leibler Divergence loss filter. This loss filter is applied element-wise.
  * The input (predictions) is expected to contain log-probabilities.
  * This loss function is computed according to the following formulas:
- * Compute losses:          losses = t * (log(t) - y)
+ * Compute losses: losses = t * (log(t) - y)
  * Compute weighted losses: weighted_losses = weight(s) * losses
- * Compute overall loss:    loss = reduce(weighted_losses, reductionType)
+ * Compute overall loss: loss = reduce(weighted_losses, reductionType)
  * <p>
  * <p>
  * <p>
@@ -165,54 +165,54 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Mean Absolute Error loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = (y - t) / |y - t|
+ * Compute gradient: d/dy = (y - t) / |y - t|
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Mean Squared Error loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = 2 * (y - t)
+ * Compute gradient: d/dy = 2 * (y - t)
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * SoftMax Cross Entropy loss.
  * The loss gradient is computed according to the following formulas:
  * First, apply the same label smoothing as in the MPSCNNLoss filter.
- * Compute gradient:          d/dy = y - t
+ * Compute gradient: d/dy = y - t
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Sigmoid Cross Entropy loss.
  * The loss gradient is computed according to the following formulas:
  * First, apply the same label smoothing as in the MPSCNNLoss filter.
- * Compute gradient:          d/dy = (1 / (1 + exp(-y)) - t
+ * Compute gradient: d/dy = (1 / (1 + exp(-y)) - t
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Categorical Cross Entropy loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = -t / y
+ * Compute gradient: d/dy = -t / y
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Hinge loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = ((1 + ((1 - (2 * t)) * y)) > 0) ? 1 - (2 * t) : 0
+ * Compute gradient: d/dy = ((1 + ((1 - (2 * t)) * y)) > 0) ? 1 - (2 * t) : 0
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Huber loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = |y - t| > delta ? delta : y - t
+ * Compute gradient: d/dy = |y - t| > delta ? delta : y - t
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Cosine Distance loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = -t
+ * Compute gradient: d/dy = -t
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Log loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = (-2 * epsilon * t - t + y + epsilon) / (y * (1 - y) + epsilon * (epsilon + 1))
+ * Compute gradient: d/dy = (-2 * epsilon * t - t + y + epsilon) / (y * (1 - y) + epsilon * (epsilon + 1))
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * Kullback-Leibler Divergence loss.
  * The loss gradient is computed according to the following formulas:
- * Compute gradient:          d/dy = -t / y
+ * Compute gradient: d/dy = -t / y
  * Compute weighted gradient: weighted_gradient = weight(s) * gradient
  * <p>
  * The number of output feature channels remains the same as the number of input feature

@@ -49,13 +49,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Provides methods to fetch and save contacts.
  * <p>
- * The CNContactStore is a thread safe class that can fetch and save contacts, fetch and save groups, and fetch containers.
+ * The CNContactStore is a thread safe class that can fetch and save contacts, fetch and save groups, and fetch
+ * containers.
  * <p>
  * [@note] Some good practices are:
  * 1) Only fetch contact properties that will be used.
- * 2) When fetching all contacts and caching the results, first fetch all contact identifiers only. Then fetch batches of detailed contacts by identifiers as you need them.
- * 3) To aggregate several contact fetches collect a set of unique contact identifiers from the fetches. Then fetch batches of detailed contacts by identifiers.
- * 4) When CNContactStoreDidChangeNotification is posted, if you cache any fetched contacts/groups/containers then they must be refetched and the old cached objects released.
+ * 2) When fetching all contacts and caching the results, first fetch all contact identifiers only. Then fetch batches
+ * of detailed contacts by identifiers as you need them.
+ * 3) To aggregate several contact fetches collect a set of unique contact identifiers from the fetches. Then fetch
+ * batches of detailed contacts by identifiers.
+ * 4) When CNContactStoreDidChangeNotification is posted, if you cache any fetched contacts/groups/containers then they
+ * must be refetched and the old cached objects released.
  */
 @Generated
 @Library("Contacts")
@@ -88,7 +92,8 @@ public class CNContactStore extends NSObject {
     /**
      * Indicates the current authorization status to access contact data.
      * <p>
-     * Based upon the access, the application could display or hide its UI elements that would access any Contacts API. This method is thread safe.
+     * Based upon the access, the application could display or hide its UI elements that would access any Contacts API.
+     * This method is thread safe.
      *
      * @return Returns the authorization status for the given entityType.
      */
@@ -186,7 +191,8 @@ public class CNContactStore extends NSObject {
      *
      * @param predicate The predicate to match against. Set to nil to match all containers.
      * @param error     If an error occurs, contains error information.
-     * @return An array of CNContainer objects matching the predicate. If no matches are found, an empty array is returned. If an error occurs, nil is returned.
+     * @return An array of CNContainer objects matching the predicate. If no matches are found, an empty array is
+     *         returned. If an error occurs, nil is returned.
      */
     @Generated
     @Selector("containersMatchingPredicate:error:")
@@ -198,7 +204,8 @@ public class CNContactStore extends NSObject {
      * <p>
      * This identifier can be used to fetch the default container.
      *
-     * @return The identifier of the default container. If the caller lacks Contacts authorization or an error occurs, nil is returned.
+     * @return The identifier of the default container. If the caller lacks Contacts authorization or an error occurs,
+     *         nil is returned.
      */
     @Generated
     @Selector("defaultContainerIdentifier")
@@ -207,7 +214,8 @@ public class CNContactStore extends NSObject {
     /**
      * Enumerates all contacts matching a contact fetch request.
      * <p>
-     * This method will wait until the enumeration is finished. If there are no results, the block is not called and YES is returned.
+     * This method will wait until the enumeration is finished. If there are no results, the block is not called and YES
+     * is returned.
      *
      * @param fetchRequest The contact fetch request that specifies the search criteria.
      * @param error        If an error occurs, contains error information.
@@ -223,7 +231,9 @@ public class CNContactStore extends NSObject {
     /**
      * Executes a save request.
      * <p>
-     * Do not access objects when save request is executing. A save request with contacts may modify the contacts while executing. A save request only applies the changes to the objects. If there are overlapping changes with multiple, concurrent CNSaveRequests then the last saved change wins.
+     * Do not access objects when save request is executing. A save request with contacts may modify the contacts while
+     * executing. A save request only applies the changes to the objects. If there are overlapping changes with
+     * multiple, concurrent CNSaveRequests then the last saved change wins.
      *
      * @param saveRequest Save request to execute.
      * @param error       If an error occurs, contains error information.
@@ -241,7 +251,8 @@ public class CNContactStore extends NSObject {
      *
      * @param predicate The predicate to match against. Set to nil to match all groups.
      * @param error     If an error occurs, contains error information.
-     * @return An array of CNGroup objects matching the predicate. If no matches are found, an empty array is returned. If an error occurs, nil is returned.
+     * @return An array of CNGroup objects matching the predicate. If no matches are found, an empty array is returned.
+     *         If an error occurs, nil is returned.
      */
     @Generated
     @Selector("groupsMatchingPredicate:error:")
@@ -255,12 +266,19 @@ public class CNContactStore extends NSObject {
     /**
      * Request access to the user's contacts.
      * <p>
-     * Users are able to grant or deny access to contact data on a per-application basis. To request access to contact data, call requestAccessForEntityType:completionHandler:. This will not block the application while the user is being asked to grant or deny access. The user will only be prompted the first time access is requested; any subsequent CNContactStore calls will use the existing permissions. The completion handler is called on an arbitrary queue.
+     * Users are able to grant or deny access to contact data on a per-application basis. To request access to contact
+     * data, call requestAccessForEntityType:completionHandler:. This will not block the application while the user is
+     * being asked to grant or deny access. The user will only be prompted the first time access is requested; any
+     * subsequent CNContactStore calls will use the existing permissions. The completion handler is called on an
+     * arbitrary queue.
      * <p>
-     * [@note] Recommended to use CNContactStore instance methods in this completion handler instead of the UI main thread. This method is optional when CNContactStore is used on a background thread. If it is not used in that case, CNContactStore will block if the user is asked to grant or deny access.
+     * [@note] Recommended to use CNContactStore instance methods in this completion handler instead of the UI main
+     * thread. This method is optional when CNContactStore is used on a background thread. If it is not used in that
+     * case, CNContactStore will block if the user is asked to grant or deny access.
      *
      * @param entityType        Set to CNEntityTypeContacts.
-     * @param completionHandler This block is called upon completion. If the user grants access then granted is YES and error is nil. Otherwise granted is NO with an error.
+     * @param completionHandler This block is called upon completion. If the user grants access then granted is YES and
+     *                          error is nil. Otherwise granted is NO with an error.
      */
     @Generated
     @Selector("requestAccessForEntityType:completionHandler:")
@@ -270,12 +288,15 @@ public class CNContactStore extends NSObject {
     /**
      * Fetch a unified contact with a given identifier.
      * <p>
-     * Due to unification the returned contact may have a different identifier. To fetch a batch of contacts by identifiers use [CNContact predicateForContactsWithIdentifiers:].
+     * Due to unification the returned contact may have a different identifier. To fetch a batch of contacts by
+     * identifiers use [CNContact predicateForContactsWithIdentifiers:].
      *
      * @param identifier The identifier of the contact to fetch.
-     * @param keys       The properties to fetch into the returned CNContact object. Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
+     * @param keys       The properties to fetch into the returned CNContact object. Should only fetch the properties
+     *                   that will be used. Can combine contact keys and contact key descriptors.
      * @param error      If an error occurs, contains error information.
-     * @return The unified contact matching or linked to the identifier. If no contact with the given identifier is found, nil is returned and error is set to CNErrorCodeRecordDoesNotExist.
+     * @return The unified contact matching or linked to the identifier. If no contact with the given identifier is
+     *         found, nil is returned and error is set to CNErrorCodeRecordDoesNotExist.
      */
     @Generated
     @Selector("unifiedContactWithIdentifier:keysToFetch:error:")
@@ -285,14 +306,17 @@ public class CNContactStore extends NSObject {
     /**
      * Fetch all unified contacts matching a given predicate.
      * <p>
-     * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Due to unification the returned contacts may have a different identifier.
+     * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Due to unification the
+     * returned contacts may have a different identifier.
      * <p>
      * [@note] To fetch all contacts use enumerateContactsWithFetchRequest:error:usingBlock:.
      *
      * @param predicate The predicate to match against.
-     * @param keys      The properties to fetch into the returned CNContact objects. Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
+     * @param keys      The properties to fetch into the returned CNContact objects. Should only fetch the properties
+     *                  that will be used. Can combine contact keys and contact key descriptors.
      * @param error     If an error occurs, contains error information.
-     * @return An array of CNContact objects matching the predicate. If no matches are found, an empty array is returned. If an error occurs, nil is returned.
+     * @return An array of CNContact objects matching the predicate. If no matches are found, an empty array is
+     *         returned. If an error occurs, nil is returned.
      */
     @Generated
     @Selector("unifiedContactsMatchingPredicate:keysToFetch:error:")
@@ -316,7 +340,8 @@ public class CNContactStore extends NSObject {
     /**
      * The current history token.
      * <p>
-     * Retrieve the current history token. If you are fetching contacts or change history events, you should use the token on the @c CNFetchResult instead.
+     * Retrieve the current history token. If you are fetching contacts or change history events, you should use the
+     * token on the @c CNFetchResult instead.
      */
     @Generated
     @Selector("currentHistoryToken")

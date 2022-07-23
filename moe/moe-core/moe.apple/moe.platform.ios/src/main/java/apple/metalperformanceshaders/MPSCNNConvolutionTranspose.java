@@ -35,14 +35,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@dependency] This depends on Metal.framework
  * <p>
  * The MPSCNNConvolutionTranspose specifies a transposed convolution.
- * The MPSCNNConvolutionTranspose convolves the input image with a set of filters, each producing one feature map in the output image.
+ * The MPSCNNConvolutionTranspose convolves the input image with a set of filters, each producing one feature map in the
+ * output image.
  * <p>
- * Some third-party frameworks may rotate the weights spatially by 180 degrees for Convolution Transpose. MPS uses the weights
- * specified by the developer as-is and does not perform any rotation. The developer may need to rotate the weights appropriately
+ * Some third-party frameworks may rotate the weights spatially by 180 degrees for Convolution Transpose. MPS uses the
+ * weights
+ * specified by the developer as-is and does not perform any rotation. The developer may need to rotate the weights
+ * appropriately
  * in case this rotation is needed before the convolution transpose is applied.
  * <p>
- * When the stride in any dimension is greater than 1, the convolution transpose puts (stride - 1) zeroes in-between the source
- * image pixels to create an expanded image. Then a convolution is done over the expanded image to generate the output of the
+ * When the stride in any dimension is greater than 1, the convolution transpose puts (stride - 1) zeroes in-between the
+ * source
+ * image pixels to create an expanded image. Then a convolution is done over the expanded image to generate the output
+ * of the
  * convolution transpose.
  * <p>
  * Intermediate image size = (srcSize - 1) * Stride + 1
@@ -55,24 +60,26 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Source image:
  * _______________
- * |   |   |   |   |
+ * | | | | |
  * | 1 | 2 | 3 | 4 |
- * |   |   |   |   |
+ * | | | | |
  * ---------------
  * <p>
  * Intermediate Image:
  * ___________________________
- * |   |   |   |   |   |   |   |
+ * | | | | | | | |
  * | 1 | 0 | 2 | 0 | 3 | 0 | 4 |
- * |   |   |   |   |   |   |   |
+ * | | | | | | | |
  * ---------------------------
  * <p>
  * <p>
  * NOTE on Offset:
  * There are 2 types of offsets defined:
- * 1) The Offset defined in MPSCNNKernel from which MPSCNNConvolutionTranspose inherits. This offset is applied to from where
+ * 1) The Offset defined in MPSCNNKernel from which MPSCNNConvolutionTranspose inherits. This offset is applied to from
+ * where
  * the kernel will be applied on the source.
- * 2) The kernelOffsetX and kernelOffsetY which is the offset applied to the kernel when it is finally applied on the intermediate
+ * 2) The kernelOffsetX and kernelOffsetY which is the offset applied to the kernel when it is finally applied on the
+ * intermediate
  * image.
  * <p>
  * So totalOffset = Offset * stride + kernelOffset
@@ -82,31 +89,31 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * X indicates where the convolution transpose begins:
  * <p>
- * Intermediate Image:  Offset = 0, kernelOffset = 0
+ * Intermediate Image: Offset = 0, kernelOffset = 0
  * ___________________________
- * |   |   |   |   |   |   |   |
+ * | | | | | | | |
  * | 1 | 0 | 2 | 0 | 3 | 0 | 4 |
- * | X |   |   |   |   |   |   |
+ * | X | | | | | | |
  * ---------------------------
  * <p>
  * <p>
  * X indicates where the convolution transpose begins:
  * <p>
- * Intermediate Image:  Offset = 0, kernelOffset = 1
+ * Intermediate Image: Offset = 0, kernelOffset = 1
  * ___________________________
- * |   |   |   |   |   |   |   |
+ * | | | | | | | |
  * | 1 | 0 | 2 | 0 | 3 | 0 | 4 |
- * |   | X |   |   |   |   |   |
+ * | | X | | | | | |
  * ---------------------------
  * <p>
  * <p>
  * X indicates where the convolution transpose begins:
  * <p>
- * Intermediate Image:  Offset = 0, kernelOffset = -1
+ * Intermediate Image: Offset = 0, kernelOffset = -1
  * ___________________________
- * |   |   |   |   |   |   |   |
+ * | | | | | | | |
  * X | 1 | 0 | 2 | 0 | 3 | 0 | 4 |
- * |   |   |   |   |   |   |   |
+ * | | | | | | | |
  * ---------------------------
  * <p>
  * <p>
@@ -116,24 +123,26 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Source image:
  * _______________
- * |   |   |   |   |
+ * | | | | |
  * | 1 | 2 | 3 | 4 |
- * |   |   | X |   |
+ * | | | X | |
  * ---------------
  * <p>
  * offset = 2, kernelOffset = 0
  * <p>
  * Intermediate Image:
  * ___________________________
- * |   |   |   |   |   |   |   |
+ * | | | | | | | |
  * | 1 | 0 | 2 | 0 | 3 | 0 | 4 |
- * |   |   |   |   | X |   |   |
+ * | | | | | X | | |
  * ---------------------------
  * <p>
  * [@endcode]
  * <p>
- * Note that if your application is not using MPSCNNConvolutionGradientState to configure the convolution transpose with respect to convolution,
- * your application may do this using padding policy. In such case if convolution uses valid padding policy, than convolution transpose should use
+ * Note that if your application is not using MPSCNNConvolutionGradientState to configure the convolution transpose with
+ * respect to convolution,
+ * your application may do this using padding policy. In such case if convolution uses valid padding policy, than
+ * convolution transpose should use
  * full padding policy and vice vera. Full padding remains full.
  */
 @Generated
@@ -195,7 +204,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * [@property]   groups
+     * [@property] groups
      * <p>
      * Number of groups input and output channels are divided into.
      */
@@ -245,7 +254,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * [@property]   inputFeatureChannels
+     * [@property] inputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the input image.
      */
@@ -272,7 +281,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]   kernelOffsetX
+     * [@property] kernelOffsetX
      * <p>
      * Offset in X from which the kernel starts sliding
      */
@@ -282,7 +291,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native long kernelOffsetX();
 
     /**
-     * [@property]   kernelOffsetY
+     * [@property] kernelOffsetY
      * <p>
      * Offset in Y from which the kernel starts sliding
      */
@@ -301,7 +310,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native MPSCNNConvolutionTranspose new_objc();
 
     /**
-     * [@property]   outputFeatureChannels
+     * [@property] outputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the output image.
      */
@@ -319,7 +328,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   kernelOffsetX
+     * [@property] kernelOffsetX
      * <p>
      * Offset in X from which the kernel starts sliding
      */
@@ -328,7 +337,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native void setKernelOffsetX(@NInt long value);
 
     /**
-     * [@property]   kernelOffsetY
+     * [@property] kernelOffsetY
      * <p>
      * Offset in Y from which the kernel starts sliding
      */
@@ -370,7 +379,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native long accumulatorPrecisionOption();
 
     /**
-     * [@property]   dataSource
+     * [@property] dataSource
      * <p>
      * dataSource with which convolution transpose object was created
      */
@@ -395,19 +404,24 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * Note: the regular encodeToCommandBuffer:sourceImage: method may be used when no state is needed,
      * such as when the convolution transpose operation is not balanced by a matching convolution object upstream.
      * These encode methods are for auto encoders where each convolution in inference pass is coupled with convolution
-     * transpose. In order for convolution transpose to correctly undo the convolution downsampling, MPSCNNConvolutionGradientState
+     * transpose. In order for convolution transpose to correctly undo the convolution downsampling,
+     * MPSCNNConvolutionGradientState
      * produced by convolution is needed by convolution transpose to correctly size destination image.
-     * These methods are only useful for inference only network. For training, use encode methods that take MPSCNNConvolutionTransposeGradientState below.
+     * These methods are only useful for inference only network. For training, use encode methods that take
+     * MPSCNNConvolutionTransposeGradientState below.
      *
      * @param commandBuffer            The command buffer
      * @param sourceImage              A MPSImage to use as the source images for the filter.
-     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState from the MPSCNNConvoluton counterpart to this MPSCNNConvolutionTranspose.
-     *                                 If there is no forward convolution counterpart, pass NULL here. This state affects the sizing
+     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState from the MPSCNNConvoluton counterpart to
+     *                                 this MPSCNNConvolutionTranspose.
+     *                                 If there is no forward convolution counterpart, pass NULL here. This state
+     *                                 affects the sizing
      *                                 the result.
-     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
-     * The offset property will be adjusted to reflect the offset used during the encode.
-     * The returned image will be automatically released when the command buffer completes. If you want to
-     * keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
+     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the
+     *         graph.
+     *         The offset property will be adjusted to reflect the offset used during the encode.
+     *         The returned image will be automatically released when the command buffer completes. If you want to
+     *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:")
@@ -424,8 +438,10 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     /**
      * These low level encode functions should be used during training. The first two encode functions, which return
      * destination image on left hand side, takes in MPSCNNConvolutionGradientState that was produced by corresponding
-     * MPSCNNConvolution when there is one e.g. auto encoders. This state is used to correctly size destination being returned.
-     * These encode methods return MPSCNNConvoltionTransposeGradientState object on auto release pool to be consumed by MPSCNNConvolutionTransposeGradient.
+     * MPSCNNConvolution when there is one e.g. auto encoders. This state is used to correctly size destination being
+     * returned.
+     * These encode methods return MPSCNNConvoltionTransposeGradientState object on auto release pool to be consumed by
+     * MPSCNNConvolutionTransposeGradient.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:destinationState:destinationStateIsTemporary:")
@@ -436,12 +452,15 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             boolean isTemporary);
 
     /**
-     * GPU side export. Enqueue a kernel to export current weights and biases stored in MPSCNNConvoltionTranspose's internal buffers into weights and biases MTLBuffer
-     * *              returned in MPSCNNConvolutionWeightsAndBiasesState.
+     * GPU side export. Enqueue a kernel to export current weights and biases stored in MPSCNNConvoltionTranspose's
+     * internal buffers into weights and biases MTLBuffer
+     * * returned in MPSCNNConvolutionWeightsAndBiasesState.
      * *
-     * *  @param      commandBuffer              Metal command buffer on which export kernel is enqueued.
-     * *  @param      resultStateCanBeTemporary  If FALSE, state returned will be non-temporary. If TRUE, returned state may or may not be temporary.
-     * *  @return     MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffer to which weights got exported. This state and be
+     * * @param commandBuffer Metal command buffer on which export kernel is enqueued.
+     * * @param resultStateCanBeTemporary If FALSE, state returned will be non-temporary. If TRUE, returned state may or
+     * may not be temporary.
+     * * @return MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffer to which weights got
+     * exported. This state and be
      * temporary or non-temporary depending on the flag resultStateCanBeTemporary
      */
     @Generated
@@ -450,20 +469,26 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, boolean resultStateCanBeTemporary);
 
     /**
-     * CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers. Weights and biases
-     * gradients needed for update are obtained from MPSCNNConvolutionTransposeGradientState object. Data provider passed in init call is used for this purpose.
+     * CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers.
+     * Weights and biases
+     * gradients needed for update are obtained from MPSCNNConvolutionTransposeGradientState object. Data provider
+     * passed in init call is used for this purpose.
      */
     @Generated
     @Selector("reloadWeightsAndBiasesFromDataSource")
     public native void reloadWeightsAndBiasesFromDataSource();
 
     /**
-     * GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal kernel into internal weights
-     * and biases buffer. Weights and biases gradients needed for update are obtained from MPSCNNConvolutionTransposeGradientState object's gradientForWeights and gradientForBiases metal buffer.
+     * GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal
+     * kernel into internal weights
+     * and biases buffer. Weights and biases gradients needed for update are obtained from
+     * MPSCNNConvolutionTransposeGradientState object's gradientForWeights and gradientForBiases metal buffer.
      *
-     * @param commandBuffer Metal command buffer on which application update kernel was enqueued consuming MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffers
+     * @param commandBuffer Metal command buffer on which application update kernel was enqueued consuming
+     *                      MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffers
      *                      and producing updateBuffer metal buffer.
-     * @param state         MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have updated weights produced by application's update kernel.
+     * @param state         MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have
+     *                      updated weights produced by application's update kernel.
      *                      The state readcount will be decremented.
      */
     @Generated
@@ -473,14 +498,16 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
             MPSCNNConvolutionWeightsAndBiasesState state);
 
     /**
-     * Allocate a MPCNNConvolutionTransposeGradientState to hold the results from a -encodeBatchToCommandBuffer... operation
+     * Allocate a MPCNNConvolutionTransposeGradientState to hold the results from a -encodeBatchToCommandBuffer...
+     * operation
      *
      * @param sourceImage  The MPSImage consumed by the associated -encode call.
      * @param sourceStates The list of MPSCNNConvolutionGradientState consumed by the associated -encode call,
-     *                     for a batch size of 1. In auto encoders, this state is produced by corresponding MPSCNNConvolution.
+     *                     for a batch size of 1. In auto encoders, this state is produced by corresponding
+     *                     MPSCNNConvolution.
      * @return The list of states produced by the -encode call for batch size of 1.
-     * -isResultStateReusedAcrossBatch returns YES for MPSCNNConvolutionTranspose so same
-     * state is used across entire batch. State object is not reusasable across batches.
+     *         -isResultStateReusedAcrossBatch returns YES for MPSCNNConvolutionTranspose so same
+     *         state is used across entire batch. State object is not reusasable across batches.
      */
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")

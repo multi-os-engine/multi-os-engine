@@ -66,9 +66,12 @@ public class NEHotspotConfigurationManager extends NSObject {
      * @param configuration     NEHotspotConfiguration object containing the Wi-Fi network configuration.
      * @param completionHandler A block that will be called when add/update operation is completed.
      *                          This could be nil if application does not intend to receive the result.
-     *                          The NSError passed to this block will be nil if the configuration is successfully stored, non-nil otherwise.
-     *                          If the configuration is found invalid or API encounters some other error then completionHandler is called
-     *                          with instance of NSError containing appropriate error code. This API attempts to join the Wi-Fi network
+     *                          The NSError passed to this block will be nil if the configuration is successfully
+     *                          stored, non-nil otherwise.
+     *                          If the configuration is found invalid or API encounters some other error then
+     *                          completionHandler is called
+     *                          with instance of NSError containing appropriate error code. This API attempts to join
+     *                          the Wi-Fi network
      *                          if the configuration is successfully added or updated and the network is found nearby.
      */
     @Generated

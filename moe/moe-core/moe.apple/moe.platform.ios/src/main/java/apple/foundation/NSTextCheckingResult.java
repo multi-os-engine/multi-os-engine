@@ -283,7 +283,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public native NSTextCheckingResult initWithCoder(NSCoder coder);
 
     /**
-     * A result must have at least one range, but may optionally have more (for example, to represent regular expression capture groups).  The range at index 0 always matches the range property.  Additional ranges, if any, will have indexes from 1 to numberOfRanges-1. rangeWithName: can be used with named regular expression capture groups.
+     * A result must have at least one range, but may optionally have more (for example, to represent regular expression
+     * capture groups). The range at index 0 always matches the range property. Additional ranges, if any, will have
+     * indexes from 1 to numberOfRanges-1. rangeWithName: can be used with named regular expression capture groups.
      */
     @Generated
     @Selector("numberOfRanges")

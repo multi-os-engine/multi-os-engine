@@ -149,7 +149,8 @@ public class UITextInputAssistantItem extends NSObject {
     public static native long version_static();
 
     /**
-     * Default is YES, controls if the user is allowed to hide the shortcuts bar. Does not influence the built in auto-hiding logic.
+     * Default is YES, controls if the user is allowed to hide the shortcuts bar. Does not influence the built in
+     * auto-hiding logic.
      */
     @Generated
     @Selector("allowsHidingShortcuts")
@@ -167,7 +168,8 @@ public class UITextInputAssistantItem extends NSObject {
     public native NSArray<? extends UIBarButtonItemGroup> leadingBarButtonGroups();
 
     /**
-     * Default is YES, controls if the user is allowed to hide the shortcuts bar. Does not influence the built in auto-hiding logic.
+     * Default is YES, controls if the user is allowed to hide the shortcuts bar. Does not influence the built in
+     * auto-hiding logic.
      */
     @Generated
     @Selector("setAllowsHidingShortcuts:")

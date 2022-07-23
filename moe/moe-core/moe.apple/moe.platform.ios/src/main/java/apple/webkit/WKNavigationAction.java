@@ -40,7 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A WKNavigationAction object contains information about an action that may cause a navigation, used for making policy decisions.
+ * A WKNavigationAction object contains information about an action that may cause a navigation, used for making policy
+ * decisions.
  */
 @Generated
 @Library("WebKit")

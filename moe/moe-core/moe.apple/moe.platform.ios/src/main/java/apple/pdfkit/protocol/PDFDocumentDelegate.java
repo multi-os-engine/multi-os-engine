@@ -43,7 +43,8 @@ public interface PDFDocumentDelegate {
     }
 
     /**
-     * If implemented by the delegate, called for every search instance found during a find. PDFDocument's implementation
+     * If implemented by the delegate, called for every search instance found during a find. PDFDocument's
+     * implementation
      * accumulates each PDFSelection (instance) in an NSArray.
      */
     @Generated

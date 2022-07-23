@@ -480,7 +480,8 @@ public class UISwitch extends UIControl implements NSCoding {
     public native void setTitle(String value);
 
     /**
-     * The switch's display style. This property always returns a concrete, resolved style (never UISwitchStyleAutomatic).
+     * The switch's display style. This property always returns a concrete, resolved style (never
+     * UISwitchStyleAutomatic).
      */
     @Generated
     @Selector("style")

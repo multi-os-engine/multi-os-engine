@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNPoolingMax
  * [@dependency] This depends on Metal.framework
  * <p>
- * Specifies the max pooling filter.  For each pixel, returns the maximum value of pixels
+ * Specifies the max pooling filter. For each pixel, returns the maximum value of pixels
  * in the kernelWidth x kernelHeight filter region.
  */
 @Generated
@@ -175,8 +175,8 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
      * Initialize a MPSCNNPoolingMax pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.

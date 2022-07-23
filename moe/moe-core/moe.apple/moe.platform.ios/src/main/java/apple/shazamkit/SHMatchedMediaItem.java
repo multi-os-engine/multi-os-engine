@@ -31,7 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@c] SHMatchedMediaItem represents metadata that has been matched against a @c SHCatalog
  * <p>
  * Extra information is presented that can only be generated from a match. The properties provided here
- * that are not available on @c SHMediaItem are ephemeral and can differ each time there is a match of the @c SHSignature that this
+ * that are not available on @c SHMediaItem are ephemeral and can differ each time there is a match of the @c
+ * SHSignature that this
  * object represents
  */
 @Generated

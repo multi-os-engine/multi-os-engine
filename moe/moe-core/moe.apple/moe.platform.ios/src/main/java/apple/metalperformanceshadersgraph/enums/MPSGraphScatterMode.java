@@ -4,17 +4,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@typedef]    MPSGraphScatterMode
+ * [@typedef] MPSGraphScatterMode
  * <p>
  * Scatter mode
  * <p>
- * [@constant]   MPSGraphScatterModeAdd              Add
- * [@constant]   MPSGraphScatterModeSub              Sub
- * [@constant]   MPSGraphScatterModeMul               Multiply
- * [@constant]   MPSGraphScatterModeDiv               Divide
- * [@constant]   MPSGraphScatterModeMin               Minimum
- * [@constant]   MPSGraphScatterModeMax              Maximum
- * [@constant]   MPSGraphScatterModeSet               Set
+ * [@constant] MPSGraphScatterModeAdd Add
+ * [@constant] MPSGraphScatterModeSub Sub
+ * [@constant] MPSGraphScatterModeMul Multiply
+ * [@constant] MPSGraphScatterModeDiv Divide
+ * [@constant] MPSGraphScatterModeMin Minimum
+ * [@constant] MPSGraphScatterModeMax Maximum
+ * [@constant] MPSGraphScatterModeSet Set
  */
 @Generated
 public final class MPSGraphScatterMode {

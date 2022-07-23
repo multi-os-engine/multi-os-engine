@@ -58,7 +58,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public static native TKTokenKeychainKey allocWithZone(VoidPtr zone);
 
     /**
-     * Represents private tag data.  The property is an equivalent to kSecAttrApplicationTag in SecItem.h
+     * Represents private tag data. The property is an equivalent to kSecAttrApplicationTag in SecItem.h
      */
     @Generated
     @Selector("applicationTag")
@@ -69,7 +69,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Indicates whether this key can be used to decrypt data.  The property is an equivalent to kSecAttrCanDecrypt in SecItem.h
+     * Indicates whether this key can be used to decrypt data. The property is an equivalent to kSecAttrCanDecrypt in
+     * SecItem.h
      */
     @Generated
     @Selector("canDecrypt")
@@ -83,7 +84,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public native boolean canPerformKeyExchange();
 
     /**
-     * Indicates whether this key can be used to create a digital signature.  The property is an equivalent to kSecAttrCanSign in SecItem.h
+     * Indicates whether this key can be used to create a digital signature. The property is an equivalent to
+     * kSecAttrCanSign in SecItem.h
      */
     @Generated
     @Selector("canSign")
@@ -125,7 +127,9 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public native TKTokenKeychainKey init();
 
     /**
-     * Initialize TKTokenKeychainKey with informations from SecCertificateRef associated with the key.  Use SecCertificateCreateWithData to obtain SecCertificateRef.  If NULL is passed instead of certificate, all properties of created instance must be initialized manually.
+     * Initialize TKTokenKeychainKey with informations from SecCertificateRef associated with the key. Use
+     * SecCertificateCreateWithData to obtain SecCertificateRef. If NULL is passed instead of certificate, all
+     * properties of created instance must be initialized manually.
      */
     @Generated
     @Selector("initWithCertificate:objectID:")
@@ -165,7 +169,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Indicates the number of bits in this key.  The property is an equivalent to kSecAttrKeySizeInBits in SecItem.h
+     * Indicates the number of bits in this key. The property is an equivalent to kSecAttrKeySizeInBits in SecItem.h
      */
     @Generated
     @Selector("keySizeInBits")
@@ -173,7 +177,8 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public native long keySizeInBits();
 
     /**
-     * Type of the key, currently kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom is supported).  The property is an equivalent to kSecAttrKeyType in SecItem.h
+     * Type of the key, currently kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom is supported). The property is
+     * an equivalent to kSecAttrKeyType in SecItem.h
      */
     @Generated
     @Selector("keyType")
@@ -192,7 +197,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public native NSData publicKeyData();
 
     /**
-     * SHA1 hash of the raw public key.  The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
+     * SHA1 hash of the raw public key. The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
      */
     @Generated
     @Selector("publicKeyHash")
@@ -207,14 +212,15 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Represents private tag data.  The property is an equivalent to kSecAttrApplicationTag in SecItem.h
+     * Represents private tag data. The property is an equivalent to kSecAttrApplicationTag in SecItem.h
      */
     @Generated
     @Selector("setApplicationTag:")
     public native void setApplicationTag(NSData value);
 
     /**
-     * Indicates whether this key can be used to decrypt data.  The property is an equivalent to kSecAttrCanDecrypt in SecItem.h
+     * Indicates whether this key can be used to decrypt data. The property is an equivalent to kSecAttrCanDecrypt in
+     * SecItem.h
      */
     @Generated
     @Selector("setCanDecrypt:")
@@ -228,21 +234,23 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public native void setCanPerformKeyExchange(boolean value);
 
     /**
-     * Indicates whether this key can be used to create a digital signature.  The property is an equivalent to kSecAttrCanSign in SecItem.h
+     * Indicates whether this key can be used to create a digital signature. The property is an equivalent to
+     * kSecAttrCanSign in SecItem.h
      */
     @Generated
     @Selector("setCanSign:")
     public native void setCanSign(boolean value);
 
     /**
-     * Indicates the number of bits in this key.  The property is an equivalent to kSecAttrKeySizeInBits in SecItem.h
+     * Indicates the number of bits in this key. The property is an equivalent to kSecAttrKeySizeInBits in SecItem.h
      */
     @Generated
     @Selector("setKeySizeInBits:")
     public native void setKeySizeInBits(@NInt long value);
 
     /**
-     * Type of the key, currently kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom is supported).  The property is an equivalent to kSecAttrKeyType in SecItem.h
+     * Type of the key, currently kSecAttrKeyTypeRSA and kSecAttrKeyTypeECSECPrimeRandom is supported). The property is
+     * an equivalent to kSecAttrKeyType in SecItem.h
      */
     @Generated
     @Selector("setKeyType:")
@@ -256,7 +264,7 @@ public class TKTokenKeychainKey extends TKTokenKeychainItem {
     public native void setPublicKeyData(NSData value);
 
     /**
-     * SHA1 hash of the raw public key.  The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
+     * SHA1 hash of the raw public key. The property is an equivalent to kSecAttrApplicationLabel in SecItem.h
      */
     @Generated
     @Selector("setPublicKeyHash:")

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum]       EKReminderPriority
+ * [@enum] EKReminderPriority
  * <p>
  * A priority for a reminder.
  * <p>
@@ -29,10 +29,10 @@ import org.moe.natj.general.ann.NUInt;
  * Clients are encouraged to use these values when setting a reminders's priority,
  * but is is possible to specify any integer value from 0 to 9.
  * <p>
- * [@constant]   EKReminderPriorityNone          The reminder has no priority set.
- * [@constant]   EKReminderPriorityHigh          The reminder is high priority.
- * [@constant]   EKReminderPriorityMedium        The reminder is medium priority.
- * [@constant]   EKReminderPriorityLow           The reminder is low priority.
+ * [@constant] EKReminderPriorityNone The reminder has no priority set.
+ * [@constant] EKReminderPriorityHigh The reminder is high priority.
+ * [@constant] EKReminderPriorityMedium The reminder is medium priority.
+ * [@constant] EKReminderPriorityLow The reminder is low priority.
  */
 @Generated
 public final class EKReminderPriority {

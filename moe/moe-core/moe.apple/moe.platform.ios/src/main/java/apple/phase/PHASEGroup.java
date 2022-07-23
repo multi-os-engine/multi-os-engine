@@ -95,7 +95,8 @@ public class PHASEGroup extends NSObject {
      *
      * @param gain      A target linear gain scalar. Values are clamped to the range [0, 1].
      * @param duration  The duration over which to ramp to the target linear gain scalar. Values must be >= 0.
-     *                  The duration is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     *                  The duration is scaled by unitsPerSecond internally, so can be provided at the client's native
+     *                  time scale.
      * @param curveType The type of curve function that is applied during the fade.
      */
     @Generated
@@ -111,7 +112,8 @@ public class PHASEGroup extends NSObject {
      *
      * @param rate      A target linear rate scalar. Values are clamped to the range [0.25, 4.0].
      * @param duration  The duration over which to ramp to the target linear rate scalar. Values must be >= 0.
-     *                  The duration is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     *                  The duration is scaled by unitsPerSecond internally, so can be provided at the client's native
+     *                  time scale.
      * @param curveType The type of curve function that is applied during the fade.
      */
     @Generated

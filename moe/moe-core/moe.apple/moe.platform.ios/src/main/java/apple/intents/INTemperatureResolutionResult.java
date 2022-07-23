@@ -91,7 +91,8 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * This resolution result is to ask Siri to confirm if this is the temperature with which the user wants to continue.
+     * This resolution result is to ask Siri to confirm if this is the temperature with which the user wants to
+     * continue.
      */
     @Generated
     @Selector("confirmationRequiredWithTemperatureToConfirm:")
@@ -166,7 +167,9 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given temperature. The resolvedTemperature can be different than the original temperature. This allows app extensions to apply business logic constraints to the temperature. For example, constraining it to a maximum or minimum value.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given temperature. The
+     * resolvedTemperature can be different than the original temperature. This allows app extensions to apply business
+     * logic constraints to the temperature. For example, constraining it to a maximum or minimum value.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

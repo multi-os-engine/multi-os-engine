@@ -18,19 +18,23 @@ public final class PHPhotosError {
      */
     @Generated @NInt public static final long UserCancelled = 0x0000000000000C00L;
     /**
-     * The photo library is unavailable because the file system volume that contains it is not mounted (register for PHPhotoLibraryAvailabilityObserver)
+     * The photo library is unavailable because the file system volume that contains it is not mounted (register for
+     * PHPhotoLibraryAvailabilityObserver)
      */
     @Generated @NInt public static final long LibraryVolumeOffline = 0x0000000000000C2AL;
     /**
-     * The photo library became unavailable because the user moved, renamed, or deleted the system photo library (register for PHPhotoLibraryAvailabilityObserver)
+     * The photo library became unavailable because the user moved, renamed, or deleted the system photo library
+     * (register for PHPhotoLibraryAvailabilityObserver)
      */
     @Generated @NInt public static final long RelinquishingLibraryBundleToWriter = 0x0000000000000C46L;
     /**
-     * The photo library became unavailable because the user switched the system photo library (register for PHPhotoLibraryAvailabilityObserver)
+     * The photo library became unavailable because the user switched the system photo library (register for
+     * PHPhotoLibraryAvailabilityObserver)
      */
     @Generated @NInt public static final long SwitchingSystemPhotoLibrary = 0x0000000000000C47L;
     /**
-     * The request for an asset resource failed because network access is required, set networkAccessAllowed = YES to enable network access
+     * The request for an asset resource failed because network access is required, set networkAccessAllowed = YES to
+     * enable network access
      */
     @Generated @NInt public static final long NetworkAccessRequired = 0x0000000000000C5CL;
     /**

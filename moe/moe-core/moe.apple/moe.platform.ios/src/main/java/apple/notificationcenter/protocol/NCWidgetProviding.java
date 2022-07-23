@@ -63,12 +63,15 @@ public interface NCWidgetProviding {
     }
 
     /**
-     * If implemented, the system will call at opportune times for the widget to update its state, both when the Notification Center is visible as well as in the background.
+     * If implemented, the system will call at opportune times for the widget to update its state, both when the
+     * Notification Center is visible as well as in the background.
      * An implementation is required to enable background updates.
-     * It's expected that the widget will perform the work to update asynchronously and off the main thread as much as possible.
+     * It's expected that the widget will perform the work to update asynchronously and off the main thread as much as
+     * possible.
      * Widgets should call the argument block when the work is complete, passing the appropriate 'NCUpdateResult'.
      * Widgets should NOT block returning from 'viewWillAppear:' on the results of this operation.
-     * Instead, widgets should load cached state in 'viewWillAppear:' in order to match the state of the view from the last 'viewWillDisappear:', then transition smoothly to the new data when it arrives.
+     * Instead, widgets should load cached state in 'viewWillAppear:' in order to match the state of the view from the
+     * last 'viewWillDisappear:', then transition smoothly to the new data when it arrives.
      */
     @Generated
     @IsOptional

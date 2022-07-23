@@ -226,8 +226,10 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     /**
      * Optionally determines if a selected person should be returned to the app (predicate evaluates to TRUE),
      * or if the selected person should be displayed (predicate evaluates to FALSE).
-     * If not set and -peoplePickerNavigationController:didSelectPerson: is implemented the selected person is returned to the app,
-     * or if not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected person is displayed.
+     * If not set and -peoplePickerNavigationController:didSelectPerson: is implemented the selected person is returned
+     * to the app,
+     * or if not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected
+     * person is displayed.
      */
     @Generated
     @Selector("predicateForSelectionOfPerson")
@@ -236,7 +238,8 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     /**
      * Optionally determines if a selected property should be returned to the app (predicate evaluates to TRUE),
      * or if the default action for the property should be performed (predicate evaluates to FALSE).
-     * If not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected property is returned to the app.
+     * If not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected property
+     * is returned to the app.
      */
     @Generated
     @Selector("predicateForSelectionOfProperty")
@@ -296,8 +299,10 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     /**
      * Optionally determines if a selected person should be returned to the app (predicate evaluates to TRUE),
      * or if the selected person should be displayed (predicate evaluates to FALSE).
-     * If not set and -peoplePickerNavigationController:didSelectPerson: is implemented the selected person is returned to the app,
-     * or if not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected person is displayed.
+     * If not set and -peoplePickerNavigationController:didSelectPerson: is implemented the selected person is returned
+     * to the app,
+     * or if not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected
+     * person is displayed.
      */
     @Generated
     @Selector("setPredicateForSelectionOfPerson:")
@@ -306,7 +311,8 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     /**
      * Optionally determines if a selected property should be returned to the app (predicate evaluates to TRUE),
      * or if the default action for the property should be performed (predicate evaluates to FALSE).
-     * If not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected property is returned to the app.
+     * If not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected property
+     * is returned to the app.
      */
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")

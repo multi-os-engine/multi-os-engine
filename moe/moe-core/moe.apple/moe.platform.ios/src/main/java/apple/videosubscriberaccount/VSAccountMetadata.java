@@ -155,7 +155,8 @@ public class VSAccountMetadata extends NSObject {
 
     /**
      * The SAML AttributeQuery response received from the account provider.
-     * The value might be nil if your account metadata request did not specify any SAML attributes or if the user does not have a valid authentication.
+     * The value might be nil if your account metadata request did not specify any SAML attributes or if the user does
+     * not have a valid authentication.
      */
     @Generated
     @Selector("SAMLAttributeQueryResponse")

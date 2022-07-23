@@ -123,7 +123,8 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
      * it will be scaled down to this size.
      *
      * @param conversationIdentifier A value meaningful to your app to identify this conversation.
-     *                               This identifier is not directly displayed to the user; rather, when the user selects this list item,
+     *                               This identifier is not directly displayed to the user; rather, when the user
+     *                               selects this list item,
      *                               SiriKit will pass this identifier back to your app for your own use.
      * @param text                   This is the main text label displayed to the user as well as spoken by
      *                               Siri when the user selects this list item.

@@ -13,7 +13,8 @@ import org.moe.natj.general.ann.NInt;
  * The commands associated with the encoder were completed.
  * <p>
  * [@constant] MTLCommandEncoderErrorStateAffected
- * The commands associated with the encoder were affected by an error, which may or may not have been caused by the commands themselves, and failed to execute in full.
+ * The commands associated with the encoder were affected by an error, which may or may not have been caused by the
+ * commands themselves, and failed to execute in full.
  * <p>
  * [@constant] MTLCommandEncoderErrorStatePending
  * The commands associated with the encoder never started execution.

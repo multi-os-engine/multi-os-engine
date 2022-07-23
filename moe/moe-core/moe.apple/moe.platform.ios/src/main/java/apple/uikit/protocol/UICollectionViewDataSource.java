@@ -63,7 +63,8 @@ public interface UICollectionViewDataSource {
     long collectionViewNumberOfItemsInSection(UICollectionView collectionView, @NInt long section);
 
     /**
-     * The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
+     * The view that is returned must be retrieved from a call to
+     * -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
      */
     @Generated
     @IsOptional

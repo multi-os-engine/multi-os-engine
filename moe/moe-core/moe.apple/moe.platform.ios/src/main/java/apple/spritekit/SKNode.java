@@ -635,7 +635,8 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     public native void setYScale(@NFloat double value);
 
     /**
-     * The z-order of the node (used for ordering). Negative z is "into" the screen, Positive z is "out" of the screen. A greater zPosition will sort in front of a lesser zPosition.
+     * The z-order of the node (used for ordering). Negative z is "into" the screen, Positive z is "out" of the screen.
+     * A greater zPosition will sort in front of a lesser zPosition.
      */
     @Generated
     @Selector("setZPosition:")
@@ -688,7 +689,8 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     public native double yScale();
 
     /**
-     * The z-order of the node (used for ordering). Negative z is "into" the screen, Positive z is "out" of the screen. A greater zPosition will sort in front of a lesser zPosition.
+     * The z-order of the node (used for ordering). Negative z is "into" the screen, Positive z is "out" of the screen.
+     * A greater zPosition will sort in front of a lesser zPosition.
      */
     @Generated
     @Selector("zPosition")
@@ -727,7 +729,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     public native NSDictionary<String, ? extends SKAttributeValue> attributeValues();
 
     /**
-     * Determines how this node participates in the focus system.  The default is SKNodeFocusBehaviorNone.
+     * Determines how this node participates in the focus system. The default is SKNodeFocusBehaviorNone.
      */
     @Generated
     @Selector("focusBehavior")
@@ -744,7 +746,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
 
     /**
-     * Determines how this node participates in the focus system.  The default is SKNodeFocusBehaviorNone.
+     * Determines how this node participates in the focus system. The default is SKNodeFocusBehaviorNone.
      */
     @Generated
     @Selector("setFocusBehavior:")

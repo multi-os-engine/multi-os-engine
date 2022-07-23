@@ -106,7 +106,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * An image displayed on the leading side of a cell displaying this list item.
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
@@ -140,7 +141,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      * <p>
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
@@ -242,7 +244,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * An image displayed on the trailing side of a cell displaying this list item.
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
@@ -278,7 +281,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      * <p>
      * [@note] The maximum size of the image is given by +[CPListItem maximumImageSize].
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
@@ -344,7 +348,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * Update the accessory image in this list item, reloading this item in the table if needed.
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
@@ -388,7 +393,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * Update the image in this list item, reloading this item in the table if needed.
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.

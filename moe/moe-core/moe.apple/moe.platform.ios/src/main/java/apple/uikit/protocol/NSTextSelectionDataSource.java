@@ -25,7 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("NSTextSelectionDataSource")
 public interface NSTextSelectionDataSource {
     /**
-     * Returns the base writing direction at location. It is recommended to return the resolved base direction either NSTextSelectionNavigationWritingDirectionLeftToRight or NSTextSelectionNavigationWritingDirectionRightToLeft.
+     * Returns the base writing direction at location. It is recommended to return the resolved base direction either
+     * NSTextSelectionNavigationWritingDirectionLeftToRight or NSTextSelectionNavigationWritingDirectionRightToLeft.
      */
     @Generated
     @Selector("baseWritingDirectionAtLocation:")
@@ -41,7 +42,9 @@ public interface NSTextSelectionDataSource {
 
     /**
      * Layout
-     * Enumerates all the caret offset from left to right in visual order. caretOffset should be in the coordinate system for the text container. When leadingEdge=YES, it indicates caretOffset is at the edge logically preceding the character. For LTR characters, it is on the left, and on the right for RTL characters.
+     * Enumerates all the caret offset from left to right in visual order. caretOffset should be in the coordinate
+     * system for the text container. When leadingEdge=YES, it indicates caretOffset is at the edge logically preceding
+     * the character. For LTR characters, it is on the left, and on the right for RTL characters.
      */
     @Generated
     @Selector("enumerateCaretOffsetsInLineFragmentAtLocation:usingBlock:")
@@ -58,7 +61,8 @@ public interface NSTextSelectionDataSource {
     }
 
     /**
-     * This optional method should be implemented enumerating the text container/page boundary when the text selection data provider supports such a layout functionality.
+     * This optional method should be implemented enumerating the text container/page boundary when the text selection
+     * data provider supports such a layout functionality.
      */
     @Generated
     @IsOptional
@@ -78,7 +82,11 @@ public interface NSTextSelectionDataSource {
     }
 
     /**
-     * Enumerating the textual segment boundaries starting at location. The segmentation logic should be based on the natural language semantics and rules such as Unicode Text Segmentation UAX 29. It is allowed to have custom text segmentation behavior for specialized document contents (i.e. text editors with structured document contents such as a programming language). NSStringEnumerationByLines should be aware of the visual line boundaries based on soft line wrapping.
+     * Enumerating the textual segment boundaries starting at location. The segmentation logic should be based on the
+     * natural language semantics and rules such as Unicode Text Segmentation UAX 29. It is allowed to have custom text
+     * segmentation behavior for specialized document contents (i.e. text editors with structured document contents such
+     * as a programming language). NSStringEnumerationByLines should be aware of the visual line boundaries based on
+     * soft line wrapping.
      */
     @Generated
     @Selector("enumerateSubstringsFromLocation:options:usingBlock:")
@@ -103,7 +111,8 @@ public interface NSTextSelectionDataSource {
             @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
-     * Returns a new location from location with offset. The offset value could be positive or negative indicating the logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
+     * Returns a new location from location with offset. The offset value could be positive or negative indicating the
+     * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
      */
     @Generated
     @Selector("locationFromLocation:withOffset:")
@@ -112,7 +121,8 @@ public interface NSTextSelectionDataSource {
             @NInt long offset);
 
     /**
-     * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound when the offset cannot be represented in an integer value (i.e. locations are not in the same document).
+     * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound
+     * when the offset cannot be represented in an integer value (i.e. locations are not in the same document).
      */
     @Generated
     @Selector("offsetFromLocation:toLocation:")
@@ -121,7 +131,8 @@ public interface NSTextSelectionDataSource {
             @Mapped(ObjCObjectMapper.class) NSTextLocation to);
 
     /**
-     * Returns the text layout orientation at location. If not implemented, NSTextSelectionNavigation assumes it is NSTextSelectionNavigationLayoutOrientationHorizontal.
+     * Returns the text layout orientation at location. If not implemented, NSTextSelectionNavigation assumes it is
+     * NSTextSelectionNavigationLayoutOrientationHorizontal.
      */
     @Generated
     @IsOptional
@@ -132,7 +143,8 @@ public interface NSTextSelectionDataSource {
     }
 
     /**
-     * Returns a text range corresponding to selectionGranularity enclosing location. Returns nil when documentRange.isEmpty=YES.
+     * Returns a text range corresponding to selectionGranularity enclosing location. Returns nil when
+     * documentRange.isEmpty=YES.
      */
     @Generated
     @Selector("textRangeForSelectionGranularity:enclosingLocation:")

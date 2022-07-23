@@ -23,7 +23,8 @@ public final class ARWorldMappingStatus {
     @Generated @NInt public static final long Limited = 0x0000000000000001L;
     /**
      * World mapping is actively extending the map with the user's motion.
-     * The world map will be relocalizable for previously visited areas but is still being updated for the current space.
+     * The world map will be relocalizable for previously visited areas but is still being updated for the current
+     * space.
      */
     @Generated @NInt public static final long Extending = 0x0000000000000002L;
     /**

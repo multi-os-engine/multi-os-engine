@@ -92,7 +92,7 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     public static native long hash_static();
 
     /**
-     * [@property]	identifier
+     * [@property] identifier
      * <p>
      * A unique id for the participant.
      * <p>
@@ -120,7 +120,7 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property]	readyToPlay
+     * [@property] readyToPlay
      * <p>
      * YES if the participant is ready to play.
      */
@@ -158,7 +158,7 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property]	suspensionReasons
+     * [@property] suspensionReasons
      * <p>
      * The reason, if any, this participant is currently not participating in coordinated playback.
      */

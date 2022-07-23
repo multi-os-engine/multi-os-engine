@@ -65,14 +65,16 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color (transparent).
+     * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color
+     * (transparent).
      */
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
     /**
-     * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor` is used as-is.
+     * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor`
+     * is used as-is.
      */
     @Generated
     @Selector("backgroundColorTransformer")
@@ -87,7 +89,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     }
 
     /**
-     * Insets (or outsets, if negative) for the background and stroke, relative to the edges of the containing view. These also apply to the custom view. Default is NSDirectionalEdgeInsetsZero.
+     * Insets (or outsets, if negative) for the background and stroke, relative to the edges of the containing view.
+     * These also apply to the custom view. Default is NSDirectionalEdgeInsetsZero.
      */
     @Generated
     @Selector("backgroundInsets")
@@ -126,7 +129,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * The preferred corner radius (using a continuous corner curve) for the background and stroke. This is also applied to the custom view. Default is 0.
+     * The preferred corner radius (using a continuous corner curve) for the background and stroke. This is also applied
+     * to the custom view. Default is 0.
      * If the view is too small to fit the requested radius, the corner curve and radius will be adjusted to fit.
      */
     @Generated
@@ -151,7 +155,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     public static native String description_static();
 
     /**
-     * The edges on which the containing view's layout margins are added to the `backgroundInsets`, effectively making the `backgroundInsets` values relative
+     * The edges on which the containing view's layout margins are added to the `backgroundInsets`, effectively making
+     * the `backgroundInsets` values relative
      * to the containing view's layout margins for these edges. Default is NSDirectionalRectEdgeNone.
      */
     @Generated
@@ -260,28 +265,32 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Returns the resolved background color for the specified tint color, based on the `backgroundColor` and `backgroundColorTransformer`.
+     * Returns the resolved background color for the specified tint color, based on the `backgroundColor` and
+     * `backgroundColorTransformer`.
      */
     @Generated
     @Selector("resolvedBackgroundColorForTintColor:")
     public native UIColor resolvedBackgroundColorForTintColor(UIColor tintColor);
 
     /**
-     * Returns the resolved stroke color for the specified tint color, based on the `strokeColor` and `strokeColorTransformer`.
+     * Returns the resolved stroke color for the specified tint color, based on the `strokeColor` and
+     * `strokeColorTransformer`.
      */
     @Generated
     @Selector("resolvedStrokeColorForTintColor:")
     public native UIColor resolvedStrokeColorForTintColor(UIColor tintColor);
 
     /**
-     * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color (transparent).
+     * Configures the color of the background. A nil value uses the view's tint color; use `clearColor` for no color
+     * (transparent).
      */
     @Generated
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
     /**
-     * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor` is used as-is.
+     * Optional color transformer that is used to resolve the background color. A nil value means the `backgroundColor`
+     * is used as-is.
      */
     @Generated
     @Selector("setBackgroundColorTransformer:")
@@ -296,14 +305,16 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     }
 
     /**
-     * Insets (or outsets, if negative) for the background and stroke, relative to the edges of the containing view. These also apply to the custom view. Default is NSDirectionalEdgeInsetsZero.
+     * Insets (or outsets, if negative) for the background and stroke, relative to the edges of the containing view.
+     * These also apply to the custom view. Default is NSDirectionalEdgeInsetsZero.
      */
     @Generated
     @Selector("setBackgroundInsets:")
     public native void setBackgroundInsets(@ByValue NSDirectionalEdgeInsets value);
 
     /**
-     * The preferred corner radius (using a continuous corner curve) for the background and stroke. This is also applied to the custom view. Default is 0.
+     * The preferred corner radius (using a continuous corner curve) for the background and stroke. This is also applied
+     * to the custom view. Default is 0.
      * If the view is too small to fit the requested radius, the corner curve and radius will be adjusted to fit.
      */
     @Generated
@@ -319,7 +330,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     public native void setCustomView(UIView value);
 
     /**
-     * The edges on which the containing view's layout margins are added to the `backgroundInsets`, effectively making the `backgroundInsets` values relative
+     * The edges on which the containing view's layout margins are added to the `backgroundInsets`, effectively making
+     * the `backgroundInsets` values relative
      * to the containing view's layout margins for these edges. Default is NSDirectionalRectEdgeNone.
      */
     @Generated
@@ -327,14 +339,16 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     public native void setEdgesAddingLayoutMarginsToBackgroundInsets(@NUInt long value);
 
     /**
-     * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color (transparent).
+     * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color
+     * (transparent).
      */
     @Generated
     @Selector("setStrokeColor:")
     public native void setStrokeColor(UIColor value);
 
     /**
-     * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used as-is.
+     * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
+     * as-is.
      */
     @Generated
     @Selector("setStrokeColorTransformer:")
@@ -349,7 +363,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     }
 
     /**
-     * Outset (or inset, if negative) for the stroke, relative to the background (including any backgroundInsets). Default is 0.
+     * Outset (or inset, if negative) for the stroke, relative to the background (including any backgroundInsets).
+     * Default is 0.
      * The corner radius of the stroke is adjusted for any outset to remain concentric with the background.
      */
     @Generated
@@ -375,14 +390,16 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     public native void setVisualEffect(UIVisualEffect value);
 
     /**
-     * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color (transparent).
+     * Configures the color of the stroke. A nil value uses the view's tint color; use `clearColor` for no color
+     * (transparent).
      */
     @Generated
     @Selector("strokeColor")
     public native UIColor strokeColor();
 
     /**
-     * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used as-is.
+     * Optional color transformer that is used to resolve the stroke color. A nil value means the `strokeColor` is used
+     * as-is.
      */
     @Generated
     @Selector("strokeColorTransformer")
@@ -397,7 +414,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     }
 
     /**
-     * Outset (or inset, if negative) for the stroke, relative to the background (including any backgroundInsets). Default is 0.
+     * Outset (or inset, if negative) for the stroke, relative to the background (including any backgroundInsets).
+     * Default is 0.
      * The corner radius of the stroke is adjusted for any outset to remain concentric with the background.
      */
     @Generated
@@ -428,7 +446,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     }
 
     /**
-     * Returns a copy of the configuration updated for the specified state, by applying the configuration's default values for that state to any properties that have not been customized.
+     * Returns a copy of the configuration updated for the specified state, by applying the configuration's default
+     * values for that state to any properties that have not been customized.
      */
     @Generated
     @Selector("updatedConfigurationForState:")

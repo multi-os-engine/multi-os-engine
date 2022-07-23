@@ -205,7 +205,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Returns the resolved image tint color for the specified tint color of the view, based on the `tintColor` and `tintColorTransformer`.
+     * Returns the resolved image tint color for the specified tint color of the view, based on the `tintColor` and
+     * `tintColorTransformer`.
      */
     @Generated
     @Selector("resolvedTintColorForTintColor:")
@@ -274,7 +275,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     public native void setTintColor(UIColor value);
 
     /**
-     * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used as-is.
+     * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used
+     * as-is.
      */
     @Generated
     @Selector("setTintColorTransformer:")
@@ -314,7 +316,8 @@ public class UIListContentImageProperties extends NSObject implements NSCopying,
     public native UIColor tintColor();
 
     /**
-     * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used as-is.
+     * Optional color transformer that is used to resolve the tint color. A nil value means the `tintColor` is used
+     * as-is.
      */
     @Generated
     @Selector("tintColorTransformer")

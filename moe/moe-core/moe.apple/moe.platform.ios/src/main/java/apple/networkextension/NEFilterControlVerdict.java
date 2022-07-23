@@ -93,7 +93,8 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
      * This class method returns a verdict indicating that the flow should be allowed to go through, and also
      * tell the data provider whether to update its rules or not.
      *
-     * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data provider
+     * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data
+     *                    provider
      * @return The NEFilterControlVerdict object.
      */
     @Generated
@@ -140,7 +141,8 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
      * This class method returns a verdict indicating that the flow should be dropped, and also tell the data
      * provider whether to update its rules or not.
      *
-     * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data provider
+     * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data
+     *                    provider
      * @return The NEFilterControlVerdict object.
      */
     @Generated

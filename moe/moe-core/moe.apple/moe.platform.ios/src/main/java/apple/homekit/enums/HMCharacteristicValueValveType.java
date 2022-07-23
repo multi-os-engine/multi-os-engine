@@ -4,12 +4,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueValveType
+ * [@enum] HMCharacteristicValueValveType
  * <p>
- * [@constant]  HMCharacteristicValueValveTypeGenericValve    Generic Valve.
- * [@constant]  HMCharacteristicValueValveTypeIrrigation      Irrigation.
- * [@constant]  HMCharacteristicValueValveTypeShowerHead      Shower Head.
- * [@constant]  HMCharacteristicValueValveTypeWaterFaucet     Water Faucet.
+ * [@constant] HMCharacteristicValueValveTypeGenericValve Generic Valve.
+ * [@constant] HMCharacteristicValueValveTypeIrrigation Irrigation.
+ * [@constant] HMCharacteristicValueValveTypeShowerHead Shower Head.
+ * [@constant] HMCharacteristicValueValveTypeWaterFaucet Water Faucet.
  */
 @Generated
 public final class HMCharacteristicValueValveType {

@@ -146,7 +146,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * Use setLayer:atIndex: to add or set the layer.
      * Identical to "layers[layerIndex]".
      *
-     * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't been set for this index.
+     * @return The MTLRasterizationRateLayerDescriptor instance for the given layerIndex, or nil if no instance hasn't
+     *         been set for this index.
      */
     @Generated
     @Selector("layerAtIndex:")
@@ -186,7 +187,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * <p>
      * Convenience descriptor creation function without layers
      *
-     * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied. The depth component of MTLSize is ignored.
+     * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied.
+     *                   The depth component of MTLSize is ignored.
      * @return A descriptor containing no layers. Add or remove layers using setObject:atIndexedSubscript:.
      */
     @Generated
@@ -199,7 +201,8 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * <p>
      * Convenience descriptor creation function for a single layer.
      *
-     * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied. The depth component of MTLSize is ignored.
+     * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied.
+     *                   The depth component of MTLSize is ignored.
      * @param layer      The single layer describing how the rasterization rate varies in screen space
      * @return A descriptor containing a single layer. Add or remove layers using setObject:atIndexedSubscript:.
      */
@@ -213,12 +216,16 @@ public class MTLRasterizationRateMapDescriptor extends NSObject implements NSCop
      * <p>
      * Convenience descriptor creation function for an arbitrary amount of layers stored in a C-array.
      * <p>
-     * The function copies the array of pointers internally, the caller need not keep the array alive after creating the descriptor.
+     * The function copies the array of pointers internally, the caller need not keep the array alive after creating the
+     * descriptor.
      *
-     * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied. The depth component of MTLSize is ignored.
+     * @param screenSize The dimensions, in screen space pixels, of the region where variable rasterization is applied.
+     *                   The depth component of MTLSize is ignored.
      * @param layerCount The number of layers in the descriptor.
-     * @param layers     An array of pointers to layer descriptors. The array must contain layerCount non-null pointers to MTLRasterizationRateLayerDescriptor instances.
-     * @return A descriptor containing all the specified layers. Add or remove layers using setObject:atIndexedSubscript:.
+     * @param layers     An array of pointers to layer descriptors. The array must contain layerCount non-null pointers
+     *                   to MTLRasterizationRateLayerDescriptor instances.
+     * @return A descriptor containing all the specified layers. Add or remove layers using
+     *         setObject:atIndexedSubscript:.
      */
     @Generated
     @Selector("rasterizationRateMapDescriptorWithScreenSize:layerCount:layers:")

@@ -78,7 +78,8 @@ public class CNPostalAddressFormatter extends NSFormatter {
     /**
      * Formats the postal address returning an attributed string.
      * <p>
-     * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
+     * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys
+     * CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
      *
      * @param postalAddress The postal address to be formatted.
      * @param style         The formatting style to be used for the postal address.
@@ -186,7 +187,8 @@ public class CNPostalAddressFormatter extends NSFormatter {
     /**
      * Formats the postal address returning an attributed string.
      * <p>
-     * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
+     * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys
+     * CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
      *
      * @param postalAddress The postal address to be formatted.
      * @param attributes    The default attributes to use. See NSFormatter for details.

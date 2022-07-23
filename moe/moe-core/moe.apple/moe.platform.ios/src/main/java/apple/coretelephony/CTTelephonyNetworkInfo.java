@@ -246,7 +246,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * <p>
      * Discussion:
      * A dictionary containing the current radio access technology each service is registered. The key to the dictionary
-     * is an NSString representing the service.  An entry may be nil if the service is not registered on any network.
+     * is an NSString representing the service. An entry may be nil if the service is not registered on any network.
      */
     @Generated
     @Selector("serviceCurrentRadioAccessTechnology")
@@ -257,7 +257,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * <p>
      * Discussion:
      * A dictionary containing CTCarrier objects for each service that contains information about the subscriber's
-     * home cellular service provider.  The key to the dictionary is an NSString representing the service.
+     * home cellular service provider. The key to the dictionary is an NSString representing the service.
      */
     @Generated
     @Selector("serviceSubscriberCellularProviders")
@@ -270,8 +270,8 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * A block that will be dispatched on the default priority global dispatch
      * queue when the subscriber's cellular provider information updates for any service. Set
      * this property to a block that is defined in your application to receive the newly
-     * updated information.  The NSString will contain the service identifier of the service
-     * whose information has changed.  This can be used as the key into serviceSubscriberCellularProvider
+     * updated information. The NSString will contain the service identifier of the service
+     * whose information has changed. This can be used as the key into serviceSubscriberCellularProvider
      * to obtain the new information.
      */
     @Generated
@@ -309,8 +309,8 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * A block that will be dispatched on the default priority global dispatch
      * queue when the subscriber's cellular provider information updates for any service. Set
      * this property to a block that is defined in your application to receive the newly
-     * updated information.  The NSString will contain the service identifier of the service
-     * whose information has changed.  This can be used as the key into serviceSubscriberCellularProvider
+     * updated information. The NSString will contain the service identifier of the service
+     * whose information has changed. This can be used as the key into serviceSubscriberCellularProvider
      * to obtain the new information.
      */
     @Generated

@@ -178,7 +178,8 @@ public class NSInputStream extends NSStream {
     public static native long version_static();
 
     /**
-     * reads up to length bytes into the supplied buffer, which must be at least of size len. Returns the actual number of bytes read.
+     * reads up to length bytes into the supplied buffer, which must be at least of size len. Returns the actual number
+     * of bytes read.
      */
     @Generated
     @Selector("getBuffer:length:")
@@ -186,7 +187,9 @@ public class NSInputStream extends NSStream {
             NUIntPtr len);
 
     /**
-     * returns in O(1) a pointer to the buffer in 'buffer' and by reference in 'len' how many bytes are available. This buffer is only valid until the next stream operation. Subclassers may return NO for this if it is not appropriate for the stream type. This may return NO if the buffer is not available.
+     * returns in O(1) a pointer to the buffer in 'buffer' and by reference in 'len' how many bytes are available. This
+     * buffer is only valid until the next stream operation. Subclassers may return NO for this if it is not appropriate
+     * for the stream type. This may return NO if the buffer is not available.
      */
     @Generated
     @Selector("hasBytesAvailable")

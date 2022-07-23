@@ -31,7 +31,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * _______________________________________________________________________________________________________________
- * this protocol represents the data model object. as such, it supplies no information about appearance (including the cells)
+ * this protocol represents the data model object. as such, it supplies no information about appearance (including the
+ * cells)
  */
 @Generated
 @Library("UIKit")
@@ -60,7 +61,8 @@ public interface UITableViewDataSource {
     }
 
     /**
-     * Individual rows can opt out of having the -editing property set for them. If not implemented, all rows are assumed to be editable.
+     * Individual rows can opt out of having the -editing property set for them. If not implemented, all rows are
+     * assumed to be editable.
      */
     @Generated
     @IsOptional
@@ -70,7 +72,8 @@ public interface UITableViewDataSource {
     }
 
     /**
-     * Allows the reorder accessory view to optionally be shown for a particular row. By default, the reorder control will be shown only if the datasource implements -tableView:moveRowAtIndexPath:toIndexPath:
+     * Allows the reorder accessory view to optionally be shown for a particular row. By default, the reorder control
+     * will be shown only if the datasource implements -tableView:moveRowAtIndexPath:toIndexPath:
      */
     @Generated
     @IsOptional
@@ -80,15 +83,18 @@ public interface UITableViewDataSource {
     }
 
     /**
-     * Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-     * Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+     * Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying
+     * for available reusable cells with dequeueReusableCellWithIdentifier:
+     * Cell gets various attributes set automatically based on table (separators) and data source (accessory views,
+     * editing controls)
      */
     @Generated
     @Selector("tableView:cellForRowAtIndexPath:")
     UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 
     /**
-     * After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the dataSource must commit the change
+     * After a row has the minus or plus button invoked (based on the UITableViewCellEditingStyle for the cell), the
+     * dataSource must commit the change
      * Not called for edit actions using UITableViewRowAction - the action's handler will be invoked instead
      */
     @Generated

@@ -114,7 +114,7 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]	isSyncSample
+     * [@property] isSyncSample
      * <p>
      * Indicates whether the sample is a sync sample.
      */
@@ -127,7 +127,7 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]	length
+     * [@property] length
      * <p>
      * The length of the sample.
      */
@@ -142,7 +142,7 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public static native AVAssetSegmentReportSampleInformation new_objc();
 
     /**
-     * [@property]	offset
+     * [@property] offset
      * <p>
      * The offset of the sample in the segment.
      */
@@ -152,11 +152,12 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     public native long offset();
 
     /**
-     * [@property]	presentationTimeStamp
+     * [@property] presentationTimeStamp
      * <p>
      * The presentation timestamp (PTS) of the sample.
      * <p>
-     * This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame reordering.
+     * This timestamp may be different from the earliestPresentationTimeStamp if the video is encoded using frame
+     * reordering.
      */
     @Generated
     @Selector("presentationTimeStamp")

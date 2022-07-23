@@ -67,7 +67,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Insets to apply to the bottom separator of the item that this configuration is applied to. Defaults to UIListSeparatorAutomaticInsets.
+     * Insets to apply to the bottom separator of the item that this configuration is applied to. Defaults to
+     * UIListSeparatorAutomaticInsets.
      */
     @Generated
     @Selector("bottomSeparatorInsets")
@@ -169,7 +170,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple selection group.
+     * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple
+     * selection group.
      */
     @Generated
     @Selector("multipleSelectionColor")
@@ -189,7 +191,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Insets to apply to the bottom separator of the item that this configuration is applied to. Defaults to UIListSeparatorAutomaticInsets.
+     * Insets to apply to the bottom separator of the item that this configuration is applied to. Defaults to
+     * UIListSeparatorAutomaticInsets.
      */
     @Generated
     @Selector("setBottomSeparatorInsets:")
@@ -210,14 +213,16 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     public native void setColor(UIColor value);
 
     /**
-     * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple selection group.
+     * The color to use for the separators for the item this configuration is applied to, when the item is in a multiple
+     * selection group.
      */
     @Generated
     @Selector("setMultipleSelectionColor:")
     public native void setMultipleSelectionColor(UIColor value);
 
     /**
-     * Insets to apply to the top separator of the item that this configuration is applied to. Defaults to UIListSeparatorAutomaticInsets.
+     * Insets to apply to the top separator of the item that this configuration is applied to. Defaults to
+     * UIListSeparatorAutomaticInsets.
      */
     @Generated
     @Selector("setTopSeparatorInsets:")
@@ -256,7 +261,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     }
 
     /**
-     * Insets to apply to the top separator of the item that this configuration is applied to. Defaults to UIListSeparatorAutomaticInsets.
+     * Insets to apply to the top separator of the item that this configuration is applied to. Defaults to
+     * UIListSeparatorAutomaticInsets.
      */
     @Generated
     @Selector("topSeparatorInsets")

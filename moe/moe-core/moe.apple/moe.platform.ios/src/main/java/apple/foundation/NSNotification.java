@@ -39,7 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Notifications	***************
+ * Notifications ***************
  */
 @Generated
 @Library("Foundation")

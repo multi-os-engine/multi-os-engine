@@ -138,8 +138,10 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
      * <p>
      * This is a convenience method to create a level of detail with a coverage radius threshold mode.
      *
-     * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be rendered for this level of detail.
-     * @param radius   The maximum radius in screen-space that this level of detail is suitable for. The coverage radius is calculated from the projected bounding sphere and expressed in pixels.
+     * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be
+     *                 rendered for this level of detail.
+     * @param radius   The maximum radius in screen-space that this level of detail is suitable for. The coverage radius
+     *                 is calculated from the projected bounding sphere and expressed in pixels.
      */
     @Generated
     @Selector("levelOfDetailWithGeometry:screenSpaceRadius:")
@@ -151,7 +153,8 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
      * <p>
      * This is a convenience method to create a level of detail with a distance threshold mode.
      *
-     * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be rendered for this level of detail.
+     * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be
+     *                 rendered for this level of detail.
      * @param distance The minimum distance to the current point of view that this level of detail is suitable for.
      */
     @Generated

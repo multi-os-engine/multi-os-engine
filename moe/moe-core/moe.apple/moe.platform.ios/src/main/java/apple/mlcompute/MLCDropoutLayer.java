@@ -132,7 +132,7 @@ public class MLCDropoutLayer extends MLCLayer {
     public static native MLCDropoutLayer new_objc();
 
     /**
-     * [@property]   rate
+     * [@property] rate
      * <p>
      * The probability that each element is dropped
      */
@@ -149,7 +149,7 @@ public class MLCDropoutLayer extends MLCLayer {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   seed
+     * [@property] seed
      * <p>
      * The initial seed used to generate random numbers
      */

@@ -166,7 +166,7 @@ public class NKAssetDownload extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]   URLRequest
+     * [@property] URLRequest
      * <p>
      * The NSURLRequest of the download
      */
@@ -186,7 +186,7 @@ public class NKAssetDownload extends NSObject {
             @Mapped(ObjCObjectMapper.class) NSURLConnectionDownloadDelegate delegate);
 
     /**
-     * [@property]   identifier
+     * [@property] identifier
      * <p>
      * A unique identifier representing the asset.
      */
@@ -206,14 +206,14 @@ public class NKAssetDownload extends NSObject {
     public native NKIssue issue();
 
     /**
-     * [@property]   userInfo
+     * [@property] userInfo
      * <p>
      * Application specific information that is saved with the asset. Can be nil.
      * <p>
      * You may add arbitrary key-value pairs to this dictionary. However, the keys
      * and values must be valid property-list types; if any are not, an exception is raised.
      * Using this property you can save download related information such as file name/paths,
-     * encoding mechanisms, custom identifiers, etc.  However, performance concerns dictate
+     * encoding mechanisms, custom identifiers, etc. However, performance concerns dictate
      * that you should make this content as minimal as possible.
      */
     @Generated
@@ -221,14 +221,14 @@ public class NKAssetDownload extends NSObject {
     public native void setUserInfo(NSDictionary<?, ?> value);
 
     /**
-     * [@property]   userInfo
+     * [@property] userInfo
      * <p>
      * Application specific information that is saved with the asset. Can be nil.
      * <p>
      * You may add arbitrary key-value pairs to this dictionary. However, the keys
      * and values must be valid property-list types; if any are not, an exception is raised.
      * Using this property you can save download related information such as file name/paths,
-     * encoding mechanisms, custom identifiers, etc.  However, performance concerns dictate
+     * encoding mechanisms, custom identifiers, etc. However, performance concerns dictate
      * that you should make this content as minimal as possible.
      */
     @Generated

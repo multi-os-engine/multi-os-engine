@@ -97,14 +97,16 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     public native boolean displayUsingSystemFont();
 
     /**
-     * Generate a filter predicate to filter to fonts that support one of the specified language identifiers (conforming to UTS #35).
+     * Generate a filter predicate to filter to fonts that support one of the specified language identifiers (conforming
+     * to UTS #35).
      */
     @Generated
     @Selector("filterPredicateForFilteredLanguages:")
     public static native NSPredicate filterPredicateForFilteredLanguages(NSArray<String> filteredLanguages);
 
     /**
-     * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of string language identifiers (conforming to UTS #35) supported by the font.
+     * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of
+     * string language identifiers (conforming to UTS #35) supported by the font.
      */
     @Generated
     @Selector("filteredLanguagesPredicate")
@@ -175,7 +177,8 @@ public class UIFontPickerViewControllerConfiguration extends NSObject implements
     public native void setDisplayUsingSystemFont(boolean value);
 
     /**
-     * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of string language identifiers (conforming to UTS #35) supported by the font.
+     * Filter fonts based on languages supported using a predicate. The predicate is evaluated against an array of
+     * string language identifiers (conforming to UTS #35) supported by the font.
      */
     @Generated
     @Selector("setFilteredLanguagesPredicate:")

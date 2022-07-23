@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNNeuronSigmoid
  * [@dependency] This depends on Metal.framework
  * <p>
- * Specifies the sigmoid neuron filter.  For each pixel, applies the following function: f(x) = 1 / (1 + e^-x)
+ * Specifies the sigmoid neuron filter. For each pixel, applies the following function: f(x) = 1 / (1 + e^-x)
  */
 @Generated
 @Library("MetalPerformanceShaders")

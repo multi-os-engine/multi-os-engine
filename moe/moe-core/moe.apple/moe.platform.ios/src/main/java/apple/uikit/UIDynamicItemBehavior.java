@@ -154,7 +154,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * The angular velocity, expressed in radians per second, that you want to add to the specified dynamic item
-     * If called before being associated to an animator, the behavior will accumulate values until being associated to an animator
+     * If called before being associated to an animator, the behavior will accumulate values until being associated to
+     * an animator
      */
     @Generated
     @Selector("addAngularVelocity:forItem:")
@@ -167,7 +168,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
 
     /**
      * The linear velocity, expressed in points per second, that you want to add to the specified dynamic item
-     * If called before being associated to an animator, the behavior will accumulate values until being associated to an animator
+     * If called before being associated to an animator, the behavior will accumulate values until being associated to
+     * an animator
      */
     @Generated
     @Selector("addLinearVelocity:forItem:")
@@ -195,7 +197,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     public native double angularVelocityForItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     /**
-     * Specifies the charge associated with the item behavior. Charge determines the degree to which a dynamic item is affected by
+     * Specifies the charge associated with the item behavior. Charge determines the degree to which a dynamic item is
+     * affected by
      * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
      * set charge and field strength appropriately. Defaults to 0.0
      */
@@ -290,7 +293,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     public native void setAngularResistance(@NFloat double value);
 
     /**
-     * Specifies the charge associated with the item behavior. Charge determines the degree to which a dynamic item is affected by
+     * Specifies the charge associated with the item behavior. Charge determines the degree to which a dynamic item is
+     * affected by
      * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
      * set charge and field strength appropriately. Defaults to 0.0
      */

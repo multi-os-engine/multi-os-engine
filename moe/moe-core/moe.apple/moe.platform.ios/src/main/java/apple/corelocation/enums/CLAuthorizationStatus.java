@@ -31,7 +31,7 @@ public final class CLAuthorizationStatus {
      */
     @Generated public static final int NotDetermined = 0x00000000;
     /**
-     * This application is not authorized to use location services.  Due
+     * This application is not authorized to use location services. Due
      * to active restrictions on location services, the user cannot change
      * this status, and may not have personally denied authorization
      */
@@ -43,21 +43,21 @@ public final class CLAuthorizationStatus {
     @Generated public static final int Denied = 0x00000002;
     /**
      * User has granted authorization to use their location at any
-     * time.  Your app may be launched into the background by
+     * time. Your app may be launched into the background by
      * monitoring APIs such as visit monitoring, region monitoring,
      * and significant location change monitoring.
      * <p>
-     * This value should be used on iOS, tvOS and watchOS.  It is available on
+     * This value should be used on iOS, tvOS and watchOS. It is available on
      * MacOS, but kCLAuthorizationStatusAuthorized is synonymous and preferred.
      */
     @Generated public static final int AuthorizedAlways = 0x00000003;
     /**
      * User has granted authorization to use their location only while
-     * they are using your app.  Note: You can reflect the user's
+     * they are using your app. Note: You can reflect the user's
      * continued engagement with your app using
      * -allowsBackgroundLocationUpdates.
      * <p>
-     * This value is not available on MacOS.  It should be used on iOS, tvOS and
+     * This value is not available on MacOS. It should be used on iOS, tvOS and
      * watchOS.
      */
     @Generated public static final int AuthorizedWhenInUse = 0x00000004;

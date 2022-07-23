@@ -109,7 +109,8 @@ public class CPInformationTemplate extends CPTemplate {
     /**
      * Initialize a CPInformationTemplate with a title, optional labels, and optional action buttons.
      * <p>
-     * [@note] The maximum number of @c CPInformationItem is 10. If you specify more than 10 items, only the first 10 will be used.
+     * [@note] The maximum number of @c CPInformationItem is 10. If you specify more than 10 items, only the first 10
+     * will be used.
      * The maximum number of @c CPTextButton is 3. If you specify more than 3, only the first 3 will be used.
      *
      * @param layout  Information template layout, either leading aligned or two columns

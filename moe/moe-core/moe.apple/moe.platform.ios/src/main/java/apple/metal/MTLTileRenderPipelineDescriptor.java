@@ -263,7 +263,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * <p>
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
      * <p>
-     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
+     * happen on the fast path.
      *
      * @see MTLBinaryArchive
      */
@@ -276,7 +277,8 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * <p>
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
      * <p>
-     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to happen on the fast path.
+     * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
+     * happen on the fast path.
      *
      * @see MTLBinaryArchive
      */
@@ -308,11 +310,15 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     /**
      * [@property] preloadedLibraries
      * <p>
-     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
+     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent
+     * MTLDynamicLibrary.
      * <p>
-     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use preloadedLibraries.
-     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
-     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
+     * without having to use preloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating
+     * alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
+     * have no stable installName that can be used to automatically load from the file system.
      *
      * @see MTLDynamicLibrary
      */
@@ -343,11 +349,15 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     /**
      * [@property] preloadedLibraries
      * <p>
-     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent MTLDynamicLibrary.
+     * The set of MTLDynamicLibrary to use to resolve external symbols before considering symbols from dependent
+     * MTLDynamicLibrary.
      * <p>
-     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time without having to use preloadedLibraries.
-     * This property can be used to override symbols from dependent libraries for experimentation or evaluating alternative implementations.
-     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that have no stable installName that can be used to automatically load from the file system.
+     * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
+     * without having to use preloadedLibraries.
+     * This property can be used to override symbols from dependent libraries for experimentation or evaluating
+     * alternative implementations.
+     * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
+     * have no stable installName that can be used to automatically load from the file system.
      *
      * @see MTLDynamicLibrary
      */

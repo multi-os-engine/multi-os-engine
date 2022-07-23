@@ -152,14 +152,17 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     public static native VNGeneratePersonSegmentationRequest new_objc();
 
     /**
-     * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_OneComponent32Float, kCVPixelFormatType_OneComponent16Half, and kCVPixelFormatType_OneComponent8. Default is kCVPixelFormatType_OneComponent8.
+     * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_OneComponent32Float,
+     * kCVPixelFormatType_OneComponent16Half, and kCVPixelFormatType_OneComponent8. Default is
+     * kCVPixelFormatType_OneComponent8.
      */
     @Generated
     @Selector("outputPixelFormat")
     public native int outputPixelFormat();
 
     /**
-     * The quality level selects which techniques will be used during the person segmentation. There are trade-offs between performance and accuracy.
+     * The quality level selects which techniques will be used during the person segmentation. There are trade-offs
+     * between performance and accuracy.
      */
     @Generated
     @Selector("qualityLevel")
@@ -179,14 +182,17 @@ public class VNGeneratePersonSegmentationRequest extends VNStatefulRequest {
     public native NSArray<? extends VNPixelBufferObservation> results();
 
     /**
-     * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_OneComponent32Float, kCVPixelFormatType_OneComponent16Half, and kCVPixelFormatType_OneComponent8. Default is kCVPixelFormatType_OneComponent8.
+     * Pixel format type of the output buffer. Valid values are kCVPixelFormatType_OneComponent32Float,
+     * kCVPixelFormatType_OneComponent16Half, and kCVPixelFormatType_OneComponent8. Default is
+     * kCVPixelFormatType_OneComponent8.
      */
     @Generated
     @Selector("setOutputPixelFormat:")
     public native void setOutputPixelFormat(int value);
 
     /**
-     * The quality level selects which techniques will be used during the person segmentation. There are trade-offs between performance and accuracy.
+     * The quality level selects which techniques will be used during the person segmentation. There are trade-offs
+     * between performance and accuracy.
      */
     @Generated
     @Selector("setQualityLevel:")

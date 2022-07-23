@@ -18,7 +18,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSTextContentStorageDelegate")
 public interface NSTextContentStorageDelegate extends NSTextContentManagerDelegate {
     /**
-     * Returns a custom NSTextParagraph for range in NSTextContentStorage.attributedString. When non-nil, textContentStorage uses the text paragraph instead of creating the standard NSTextParagraph with the attributed substring in range. The attributed string for a custom text paragraph must have range.length.
+     * Returns a custom NSTextParagraph for range in NSTextContentStorage.attributedString. When non-nil,
+     * textContentStorage uses the text paragraph instead of creating the standard NSTextParagraph with the attributed
+     * substring in range. The attributed string for a custom text paragraph must have range.length.
      */
     @Generated
     @IsOptional

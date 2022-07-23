@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MTLResourceStatePassDescriptor
  * <p>
- * MTLResourceStatePassDescriptor represents a collection of attachments to be used to create a concrete resourceState command encoder
+ * MTLResourceStatePassDescriptor represents a collection of attachments to be used to create a concrete resourceState
+ * command encoder
  */
 @Generated
 @Library("Metal")

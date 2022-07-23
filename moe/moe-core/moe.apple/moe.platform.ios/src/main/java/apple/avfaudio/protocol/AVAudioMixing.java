@@ -11,7 +11,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]   AVAudioMixing
+ * [@protocol] AVAudioMixing
  * <p>
  * Protocol that defines properties applicable to the input bus of a mixer
  * node
@@ -79,9 +79,9 @@ public interface AVAudioMixing extends AVAudioStereoMixing, AVAudio3DMixing {
      * <p>
      * Set a bus's input volume
      * <p>
-     * Range:      0.0 -> 1.0
-     * Default:    1.0
-     * Mixers:     AVAudioMixerNode, AVAudioEnvironmentNode
+     * Range: 0.0 -> 1.0
+     * Default: 1.0
+     * Mixers: AVAudioMixerNode, AVAudioEnvironmentNode
      */
     @Generated
     @Selector("setVolume:")
@@ -92,9 +92,9 @@ public interface AVAudioMixing extends AVAudioStereoMixing, AVAudio3DMixing {
      * <p>
      * Set a bus's input volume
      * <p>
-     * Range:      0.0 -> 1.0
-     * Default:    1.0
-     * Mixers:     AVAudioMixerNode, AVAudioEnvironmentNode
+     * Range: 0.0 -> 1.0
+     * Default: 1.0
+     * Mixers: AVAudioMixerNode, AVAudioEnvironmentNode
      */
     @Generated
     @Selector("volume")

@@ -22,11 +22,11 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * Rounding policies :
  * Original
- * value 1.2  1.21  1.25  1.35  1.27
- * Plain    1.2  1.2   1.3   1.4   1.3
- * Down     1.2  1.2   1.2   1.3   1.2
- * Up       1.2  1.3   1.3   1.4   1.3
- * Bankers  1.2  1.2   1.2   1.4   1.3
+ * value 1.2 1.21 1.25 1.35 1.27
+ * Plain 1.2 1.2 1.3 1.4 1.3
+ * Down 1.2 1.2 1.2 1.3 1.2
+ * Up 1.2 1.3 1.3 1.4 1.3
+ * Bankers 1.2 1.2 1.2 1.4 1.3
  */
 @Generated
 public final class NSRoundingMode {

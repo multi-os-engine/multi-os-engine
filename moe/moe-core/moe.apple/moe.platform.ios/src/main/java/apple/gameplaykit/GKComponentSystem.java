@@ -158,7 +158,8 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
 
     /**
      * Adds a component to the system. The component must be of the same class as the system's componentClass.
-     * The component is added to the tail of the collection and will be processed after components that were added before it.
+     * The component is added to the tail of the collection and will be processed after components that were added
+     * before it.
      *
      * @throws NSInvalidArgumentException if the component added is not a kind of the system's componentClass.
      */
@@ -188,7 +189,8 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
 
     /**
-     * The collection's component class. Any selector the component supports can be called on the system and it will be forwarded
+     * The collection's component class. Any selector the component supports can be called on the system and it will be
+     * forwarded
      * to each of the components in the collection.
      */
     @Generated
@@ -213,7 +215,8 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     public native GKComponentSystem<?> init();
 
     /**
-     * Initializes a system for the given component class. The receiver can now only accept components of the given class.
+     * Initializes a system for the given component class. The receiver can now only accept components of the given
+     * class.
      */
     @Generated
     @Selector("initWithComponentClass:")

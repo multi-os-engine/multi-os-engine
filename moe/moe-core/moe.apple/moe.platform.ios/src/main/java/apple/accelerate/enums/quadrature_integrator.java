@@ -33,8 +33,10 @@ import org.moe.natj.general.ann.Generated;
  * Allows selection of the number of Gauss-Kronrod points used in each subinterval, and the max number of subintervals.
  * <p>
  * [@constant] QUADRATURE_INTEGRATE_QAGS
- * Global adaptive quadrature based on 21-point or 15-point (if at least one bound is infinite) Gauss–Kronrod quadrature within each subinterval, with acceleration by Peter Wynn's epsilon algorithm.
- * If at least one of the interval bounds is infinite, this is equivalent to the QUADPACK QAGI routine. Otherwise, this is equivalent to the QUADPACK QAGS routine.
+ * Global adaptive quadrature based on 21-point or 15-point (if at least one bound is infinite) Gauss–Kronrod quadrature
+ * within each subinterval, with acceleration by Peter Wynn's epsilon algorithm.
+ * If at least one of the interval bounds is infinite, this is equivalent to the QUADPACK QAGI routine. Otherwise, this
+ * is equivalent to the QUADPACK QAGS routine.
  */
 @Generated
 public final class quadrature_integrator {

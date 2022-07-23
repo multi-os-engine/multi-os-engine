@@ -71,7 +71,8 @@ public interface UIAccessibilityReadingContent {
     String accessibilityPageContent();
 
     /**
-     * If an object adopting this protocol responds to these methods, the system will try sending them before sending the non-attributed versions.
+     * If an object adopting this protocol responds to these methods, the system will try sending them before sending
+     * the non-attributed versions.
      */
     @Generated
     @IsOptional

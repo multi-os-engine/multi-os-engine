@@ -42,7 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Purgeable Data	***************
+ * Purgeable Data ***************
  */
 @Generated
 @Library("Foundation")

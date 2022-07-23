@@ -158,7 +158,8 @@ public class ENExposureWindow extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Each scan instance corresponds to a scan (of a few seconds) when a beacon with a TEK causing this exposure was observed.
+     * Each scan instance corresponds to a scan (of a few seconds) when a beacon with a TEK causing this exposure was
+     * observed.
      */
     @Generated
     @Selector("scanInstances")

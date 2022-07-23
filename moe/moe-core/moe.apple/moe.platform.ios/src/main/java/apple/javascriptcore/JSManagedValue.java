@@ -196,7 +196,7 @@ public class JSManagedValue extends NSObject {
      * Get the JSValue from the JSManagedValue.
      *
      * @return The corresponding JSValue for this JSManagedValue or
-     * nil if the JSValue has been collected.
+     *         nil if the JSValue has been collected.
      */
     @Generated
     @Selector("value")

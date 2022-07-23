@@ -170,21 +170,24 @@ public class CKNotification extends NSObject {
     public native String alertBody();
 
     /**
-     * The name of an image in your app bundle to be used as the launch image when launching in response to the notification.
+     * The name of an image in your app bundle to be used as the launch image when launching in response to the
+     * notification.
      */
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted alert string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * alert string.
      */
     @Generated
     @Selector("alertLocalizationArgs")
     public native NSArray<String> alertLocalizationArgs();
 
     /**
-     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("alertLocalizationKey")
@@ -215,7 +218,9 @@ public class CKNotification extends NSObject {
     /**
      * Whether or not the notification fully represents what the server wanted to send.
      * <p>
-     * Push notifications have a limited size.  In some cases, CloudKit servers may not be able to send you a full @c CKNotification's worth of info in one push.  In those cases, isPruned returns YES.  The order in which we'll drop properties is defined in each @c CKNotification subclass below.
+     * Push notifications have a limited size. In some cases, CloudKit servers may not be able to send you a full @c
+     * CKNotification's worth of info in one push. In those cases, isPruned returns YES. The order in which we'll drop
+     * properties is defined in each @c CKNotification subclass below.
      * The @c CKNotification can be obtained in full via a @c CKFetchNotificationChangesOperation
      */
     @Generated
@@ -228,7 +233,7 @@ public class CKNotification extends NSObject {
 
     /**
      * When you instantiate a CKNotification from a remote notification dictionary, you will get back a concrete
-     * subclass defined below.  Use notificationType to avoid -isKindOfClass: checks
+     * subclass defined below. Use notificationType to avoid -isKindOfClass: checks
      */
     @Generated
     @Selector("notificationType")
@@ -257,14 +262,16 @@ public class CKNotification extends NSObject {
     public native String subtitle();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted subtitle string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * subtitle string.
      */
     @Generated
     @Selector("subtitleLocalizationArgs")
     public native NSArray<String> subtitleLocalizationArgs();
 
     /**
-     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("subtitleLocalizationKey")
@@ -278,14 +285,16 @@ public class CKNotification extends NSObject {
     public native String title();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted title string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * title string.
      */
     @Generated
     @Selector("titleLocalizationArgs")
     public native NSArray<String> titleLocalizationArgs();
 
     /**
-     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("titleLocalizationKey")

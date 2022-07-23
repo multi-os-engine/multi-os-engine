@@ -115,7 +115,7 @@ public class CIRenderDestination extends NSObject {
     /**
      * This property will defualt to an appropriate value given
      * the object that the CIRenderDestination was initialized with.
-     * This property can be  set to a different colorSpace if desired.
+     * This property can be set to a different colorSpace if desired.
      * This property can be set to nil to disable color matching
      * from the working space to the destination.
      */
@@ -187,9 +187,12 @@ public class CIRenderDestination extends NSObject {
      * The texture must have a MTLTextureType of MTLTextureType2D
      * <p>
      * An optional MTLCommandBuffer can be specified, with which to use for rendering to the MTLTexture.
-     * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an image into the specified buffer.
-     * This may impact system responsiveness and may result in higher memory usage if the image requires many passes to render.
-     * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:] and create the CIRenderDestination without specifying a buffer.
+     * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an
+     * image into the specified buffer.
+     * This may impact system responsiveness and may result in higher memory usage if the image requires many passes to
+     * render.
+     * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:] and
+     * create the CIRenderDestination without specifying a buffer.
      * <p>
      * The destination's 'colorspace' property will default a CGColorSpace created with kCGColorSpaceSRGB,
      * kCGColorSpaceExtendedSRGB, or kCGColorSpaceGenericGrayGamma2_2.
@@ -220,9 +223,12 @@ public class CIRenderDestination extends NSObject {
      * width, height and pixelFormat of the MTLTexture that will be returned by 'block'
      * <p>
      * An optional MTLCommandBuffer can be specified, with which to use for rendering to the MTLTexture.
-     * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an image into the specified buffer.
-     * This may impact system responsiveness and may result in higher memory usage if the image requires many passes to render.
-     * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:] and create the CIRenderDestination without specifying a buffer.
+     * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an
+     * image into the specified buffer.
+     * This may impact system responsiveness and may result in higher memory usage if the image requires many passes to
+     * render.
+     * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:] and
+     * create the CIRenderDestination without specifying a buffer.
      * <p>
      * The destination's 'colorspace' property will default a CGColorSpace created with kCGColorSpaceSRGB,
      * kCGColorSpaceExtendedSRGB, or kCGColorSpaceGenericGrayGamma2_2.
@@ -350,7 +356,7 @@ public class CIRenderDestination extends NSObject {
     /**
      * This property will defualt to an appropriate value given
      * the object that the CIRenderDestination was initialized with.
-     * This property can be  set to a different colorSpace if desired.
+     * This property can be set to a different colorSpace if desired.
      * This property can be set to nil to disable color matching
      * from the working space to the destination.
      */

@@ -24,9 +24,10 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * Represents the state of an EAWiFiUnconfiguredAccessory configuration process.
  * <p>
- * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusSuccess                     The configuration of the accessory succeeded.
- * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusUserCancelledConfiguration  The user cancelled the configuration process.
- * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusFailed                      The configuration failed.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusSuccess The configuration of the accessory succeeded.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusUserCancelledConfiguration The user cancelled the
+ * configuration process.
+ * [@constant] EAWiFiUnconfiguredAccessoryConfigurationStatusFailed The configuration failed.
  */
 @Generated
 public final class EAWiFiUnconfiguredAccessoryConfigurationStatus {

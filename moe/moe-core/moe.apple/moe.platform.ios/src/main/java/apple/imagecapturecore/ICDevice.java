@@ -30,11 +30,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * --------------------------------------------------------------------------------------------------------------------- ICDevice
+ * ---------------------------------------------------------------------------------------------------------------------
+ * ICDevice
  * <p>
  * ICDevice
  * <p>
- * ICDevice is an abstract class that represents a device supported by Image Capture facility. ImageCaptureCore defines two concrete subclasses of ICDevice, ICCameraDevice and ICScannerDevice. ICDeviceBrowser creates instances of these two subclasses to represent cameras and scanners it finds.
+ * ICDevice is an abstract class that represents a device supported by Image Capture facility. ImageCaptureCore defines
+ * two concrete subclasses of ICDevice, ICCameraDevice and ICScannerDevice. ICDeviceBrowser creates instances of these
+ * two subclasses to represent cameras and scanners it finds.
  */
 @Generated
 @Library("ImageCaptureCore")
@@ -113,7 +116,9 @@ public class ICDevice extends NSObject {
      * <p>
      * The delegate to receive messages once a session is opened on the device.
      * <p>
-     * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this delegate can expect to receive are described by these protocols.
+     * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in
+     * ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this
+     * delegate can expect to receive are described by these protocols.
      */
     @Generated
     @Selector("delegate")
@@ -141,7 +146,9 @@ public class ICDevice extends NSObject {
     /**
      * [@property] icon
      * <p>
-     * ￼Icon image for the device class.  If there is no custom icon present from a device manufacturer, this will be a rendered version of the system symbol for the device class.  Using a rendered system symbol instead of the systemSymbolName is discouraged.
+     * ￼Icon image for the device class. If there is no custom icon present from a device manufacturer, this will be a
+     * rendered version of the system symbol for the device class. Using a rendered system symbol instead of the
+     * systemSymbolName is discouraged.
      */
     @Generated
     @Selector("icon")
@@ -175,8 +182,10 @@ public class ICDevice extends NSObject {
     /**
      * [@property] name
      * <p>
-     * ￼Name of the device as reported by the device module or by the device transport when a device module is not in control of this device.
-     * [@note] This name may change if the device module overrides the default name of the device reported by the device's transport, or if the name of the filesystem volume mounted by the device is changed by the user.
+     * ￼Name of the device as reported by the device module or by the device transport when a device module is not in
+     * control of this device.
+     * [@note] This name may change if the device module overrides the default name of the device reported by the
+     * device's transport, or if the name of the filesystem volume mounted by the device is changed by the user.
      */
     @Generated
     @Selector("name")
@@ -262,7 +271,8 @@ public class ICDevice extends NSObject {
      * <p>
      * This message requests to open a session on the device.
      * <p>
-     * Make sure the receiver's delegate is set prior to sending this message; otherwise this message will be ignored. This request is completed when the delegate receives a "device:didOpenSessionWithError:" message.
+     * Make sure the receiver's delegate is set prior to sending this message; otherwise this message will be ignored.
+     * This request is completed when the delegate receives a "device:didOpenSessionWithError:" message.
      * [@note] Execution of the delegate callback will occur on the main thread.
      */
     @Generated
@@ -302,7 +312,9 @@ public class ICDevice extends NSObject {
      * <p>
      * The delegate to receive messages once a session is opened on the device.
      * <p>
-     * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this delegate can expect to receive are described by these protocols.
+     * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in
+     * ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this
+     * delegate can expect to receive are described by these protocols.
      */
     @Generated
     @Selector("setDelegate:")
@@ -313,7 +325,9 @@ public class ICDevice extends NSObject {
      * <p>
      * The delegate to receive messages once a session is opened on the device.
      * <p>
-     * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this delegate can expect to receive are described by these protocols.
+     * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in
+     * ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this
+     * delegate can expect to receive are described by these protocols.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ICDeviceDelegate value) {
@@ -338,7 +352,8 @@ public class ICDevice extends NSObject {
     /**
      * [@property] transportType
      * <p>
-     * ￼The transport type used by the device. The possible values are: ICTransportTypeUSB or ICTransportTypeMassStorage.
+     * ￼The transport type used by the device. The possible values are: ICTransportTypeUSB or
+     * ICTransportTypeMassStorage.
      */
     @Generated
     @Selector("transportType")
@@ -348,8 +363,10 @@ public class ICDevice extends NSObject {
      * [@property] type
      * <p>
      * ￼The type of the device as defined by ICDeviceType OR'd with its ICDeviceLocationType.
-     * [@note] The type of this device can be obtained by AND'ing the value retuned by this property with an appropriate ICDeviceTypeMask.
-     * [@note] The location type of this device can be obtained by AND'ing the value retuned by this property with an appropriate ICDeviceLocationTypeMask.
+     * [@note] The type of this device can be obtained by AND'ing the value retuned by this property with an appropriate
+     * ICDeviceTypeMask.
+     * [@note] The location type of this device can be obtained by AND'ing the value retuned by this property with an
+     * appropriate ICDeviceLocationTypeMask.
      */
     @Generated
     @Selector("type")

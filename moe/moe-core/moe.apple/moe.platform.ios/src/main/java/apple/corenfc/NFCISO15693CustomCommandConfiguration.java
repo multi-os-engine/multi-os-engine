@@ -79,7 +79,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * Manufacturer Custom Command Index.  Valid range is 0xA0 to 0xDF.
+     * Manufacturer Custom Command Index. Valid range is 0xA0 to 0xDF.
      */
     @Generated
     @Selector("customCommandCode")
@@ -109,7 +109,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
      * Initialize with default zero maximum retry and zero retry interval.
      *
      * @param manufacturerCode  8 bits manufacturer code.
-     * @param customCommandCode 8 bits custom command code.  Valid range is 0xA0 to 0xDF.
+     * @param customCommandCode 8 bits custom command code. Valid range is 0xA0 to 0xDF.
      * @param requestParameters Optional custom request parameters.
      */
     @Generated
@@ -121,7 +121,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
      * initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:
      *
      * @param manufacturerCode  8 bits manufacturer code.
-     * @param customCommandCode 8 bits custom command code.  Valid range is 0xA0 to 0xDF.
+     * @param customCommandCode 8 bits custom command code. Valid range is 0xA0 to 0xDF.
      * @param requestParameters Optional custom request parameters.
      * @param maximumRetries    Maximum number of retry attempt when tag response is not recevied.
      * @param retryInterval     Time interval wait between each retry attempt.
@@ -182,7 +182,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Manufacturer Custom Command Index.  Valid range is 0xA0 to 0xDF.
+     * Manufacturer Custom Command Index. Valid range is 0xA0 to 0xDF.
      */
     @Generated
     @Selector("setCustomCommandCode:")

@@ -24,7 +24,8 @@ public interface UILargeContentViewerInteractionDelegate {
      * Performs an action when the large content viewer gesture ends at the location of the given item.
      * (The point in the interaction's view's coordinate system is also provided.)
      * For example, you may wish to perform the action that would have occurred if the user had tapped on that item.
-     * If you don’t implement this method and are using standard UIKit controls, the system performs a default action, such as sending a touchUpInside event to the control.
+     * If you don’t implement this method and are using standard UIKit controls, the system performs a default action,
+     * such as sending a touchUpInside event to the control.
      * This method is called only if the gesture ends successfully (not if it fails or gets canceled).
      */
     @Generated
@@ -37,7 +38,8 @@ public interface UILargeContentViewerInteractionDelegate {
 
     /**
      * Returns the item at a given point in the interaction's view's coordinate system.
-     * If this is not implemented, -[UIView pointInside:withEvent:] will be called recursively on the interaction's view to find an appropriate view.
+     * If this is not implemented, -[UIView pointInside:withEvent:] will be called recursively on the interaction's view
+     * to find an appropriate view.
      */
     @Generated
     @IsOptional

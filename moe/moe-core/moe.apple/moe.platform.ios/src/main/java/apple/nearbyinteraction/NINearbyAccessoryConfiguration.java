@@ -115,7 +115,8 @@ public class NINearbyAccessoryConfiguration extends NIConfiguration {
      * Create a new nearby accessory configuration using data received from the accessory.
      *
      * @param data  Configuration data received from the accessory.
-     * @param error An optional out error parameter that will be populated with an error if the provided data is invalid or unsupported.
+     * @param error An optional out error parameter that will be populated with an error if the provided data is invalid
+     *              or unsupported.
      */
     @Generated
     @Selector("initWithData:error:")

@@ -33,7 +33,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@code]
  * Defaults:
  * alpha = 1.0f
- * beta  = 5.0f
+ * beta = 5.0f
  * delta = 1.0f
  * kernelHeight = kernelWidth = kernelSize
  * [@endcode]

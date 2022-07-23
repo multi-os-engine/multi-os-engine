@@ -47,7 +47,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A tile set contains all of the tile definitions that are available for use in a tile map. In addition, it also contains tile groups, which define collections of related tile definitions and the rules that govern their placement.
+ * A tile set contains all of the tile definitions that are available for use in a tile map. In addition, it also
+ * contains tile groups, which define collections of related tile definitions and the rules that govern their placement.
  */
 @Generated
 @Library("SpriteKit")
@@ -155,7 +156,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     public static native Class superclass_static();
 
     /**
-     * Creates a tile set from the specified tile set file. Returns nil if the URL doesn't point to a valid tile set file.
+     * Creates a tile set from the specified tile set file. Returns nil if the URL doesn't point to a valid tile set
+     * file.
      *
      * @param url the URL of the tile set file
      */
@@ -164,7 +166,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     public static native SKTileSet tileSetFromURL(NSURL url);
 
     /**
-     * Gets the tile set with the specified name from the SpriteKit resource bundle. Returns nil if a tile set with a matching name cannot be found.
+     * Gets the tile set with the specified name from the SpriteKit resource bundle. Returns nil if a tile set with a
+     * matching name cannot be found.
      *
      * @param name the name of the tile set to search for
      */
@@ -280,7 +283,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     public native void setTileGroups(NSArray<? extends SKTileGroup> value);
 
     /**
-     * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to SKTileSetTypeGrid.
+     * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to
+     * SKTileSetTypeGrid.
      */
     @Generated
     @Selector("setType:")
@@ -294,7 +298,8 @@ public class SKTileSet extends NSObject implements NSCopying, NSSecureCoding {
     public native NSArray<? extends SKTileGroup> tileGroups();
 
     /**
-     * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to SKTileSetTypeGrid.
+     * The tile set type specifies how the tiles in the set will be arranged when placed in a tile map. Defaults to
+     * SKTileSetTypeGrid.
      */
     @Generated
     @Selector("type")

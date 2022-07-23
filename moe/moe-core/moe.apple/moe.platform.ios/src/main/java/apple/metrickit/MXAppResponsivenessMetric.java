@@ -94,7 +94,7 @@ public class MXAppResponsivenessMetric extends MXMetric {
     public static native long hash_static();
 
     /**
-     * [@property]      histogrammedApplicationHangTime
+     * [@property] histogrammedApplicationHangTime
      * <p>
      * Histogrammed app hang time data.
      * <p>
@@ -102,7 +102,8 @@ public class MXAppResponsivenessMetric extends MXMetric {
      * <p>
      * The durations for periods of hangs will be reported in the histogram returned here.
      * <p>
-     * Application hang times that exceeds 9 seconds of wall clock time are reported in the final bucket of the histogram.
+     * Application hang times that exceeds 9 seconds of wall clock time are reported in the final bucket of the
+     * histogram.
      * <p>
      * Dimensioned as NSUnitDuration.
      */

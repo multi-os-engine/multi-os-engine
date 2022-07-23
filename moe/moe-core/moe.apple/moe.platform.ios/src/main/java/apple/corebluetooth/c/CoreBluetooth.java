@@ -105,7 +105,8 @@ public final class CoreBluetooth {
     /**
      * [@constant] CBAdvertisementDataIsConnectable
      * <p>
-     * An NSNumber (Boolean) indicating whether or not the advertising event type was connectable. This can be used to determine
+     * An NSNumber (Boolean) indicating whether or not the advertising event type was connectable. This can be used to
+     * determine
      * whether or not a peripheral is connectable in that instant.
      */
     @Generated
@@ -124,12 +125,13 @@ public final class CoreBluetooth {
     public static native String CBAdvertisementDataSolicitedServiceUUIDsKey();
 
     /**
-     * [@const]  CBCentralManagerOptionShowPowerAlertKey
+     * [@const] CBCentralManagerOptionShowPowerAlertKey
      * <p>
-     * An NSNumber (Boolean) indicating that the system should, if Bluetooth is powered off when <code>CBCentralManager</code> is instantiated, display
+     * An NSNumber (Boolean) indicating that the system should, if Bluetooth is powered off when
+     * <code>CBCentralManager</code> is instantiated, display
      * a warning dialog to the user.
      *
-     * @see        initWithDelegate:queue:options:
+     * @see initWithDelegate:queue:options:
      */
     @Generated
     @CVariable()
@@ -137,14 +139,16 @@ public final class CoreBluetooth {
     public static native String CBCentralManagerOptionShowPowerAlertKey();
 
     /**
-     * [@const]  CBCentralManagerOptionRestoreIdentifierKey
+     * [@const] CBCentralManagerOptionRestoreIdentifierKey
      * <p>
-     * An NSString containing a unique identifier (UID) for the <code>CBCentralManager</code> that is being instantiated. This UID is used
-     * by the system to identify a specific <code>CBCentralManager</code> instance for restoration and, therefore, must remain the same for
+     * An NSString containing a unique identifier (UID) for the <code>CBCentralManager</code> that is being
+     * instantiated. This UID is used
+     * by the system to identify a specific <code>CBCentralManager</code> instance for restoration and, therefore, must
+     * remain the same for
      * subsequent application executions in order for the manager to be restored.
      *
-     * @see        initWithDelegate:queue:options:
-     * @see    centralManager:willRestoreState:
+     * @see initWithDelegate:queue:options:
+     * @see centralManager:willRestoreState:
      */
     @Generated
     @CVariable()
@@ -154,10 +158,14 @@ public final class CoreBluetooth {
     /**
      * [@const] CBCentralManagerScanOptionAllowDuplicatesKey
      * <p>
-     * An NSNumber (Boolean) indicating that the scan should run without duplicate filtering. By default, multiple discoveries of the
-     * same peripheral are coalesced into a single discovery event. Specifying this option will cause a discovery event to be generated
-     * every time the peripheral is seen, which may be many times per second. This can be useful in specific situations, such as making
-     * a connection based on a peripheral's RSSI, but may have an adverse affect on battery-life and application performance.
+     * An NSNumber (Boolean) indicating that the scan should run without duplicate filtering. By default, multiple
+     * discoveries of the
+     * same peripheral are coalesced into a single discovery event. Specifying this option will cause a discovery event
+     * to be generated
+     * every time the peripheral is seen, which may be many times per second. This can be useful in specific situations,
+     * such as making
+     * a connection based on a peripheral's RSSI, but may have an adverse affect on battery-life and application
+     * performance.
      *
      * @see scanForPeripheralsWithServices:options:
      */
@@ -169,7 +177,8 @@ public final class CoreBluetooth {
     /**
      * [@const] CBCentralManagerScanOptionSolicitedServiceUUIDsKey
      * <p>
-     * An NSArray of <code>CBUUID</code> objects respresenting service UUIDs. Causes the scan to also look for peripherals soliciting
+     * An NSArray of <code>CBUUID</code> objects respresenting service UUIDs. Causes the scan to also look for
+     * peripherals soliciting
      * any of the services contained in the list.
      *
      * @see scanForPeripheralsWithServices:options:
@@ -182,10 +191,13 @@ public final class CoreBluetooth {
     /**
      * [@const] CBConnectPeripheralOptionNotifyOnConnectionKey
      * <p>
-     * An NSNumber (Boolean) indicating that the system should display a connection alert for a given peripheral, if the application is suspended
+     * An NSNumber (Boolean) indicating that the system should display a connection alert for a given peripheral, if the
+     * application is suspended
      * when a successful connection is made.
-     * This is useful for applications that have not specified the <code>bluetooth-central</code> background mode and cannot display their
-     * own alert. If more than one application has requested notification for a given peripheral, the one that was most recently in the foreground
+     * This is useful for applications that have not specified the <code>bluetooth-central</code> background mode and
+     * cannot display their
+     * own alert. If more than one application has requested notification for a given peripheral, the one that was most
+     * recently in the foreground
      * will receive the alert.
      *
      * @see connectPeripheral:
@@ -198,10 +210,13 @@ public final class CoreBluetooth {
     /**
      * [@const] CBConnectPeripheralOptionNotifyOnDisconnectionKey
      * <p>
-     * An NSNumber (Boolean) indicating that the system should display a disconnection alert for a given peripheral, if the application
+     * An NSNumber (Boolean) indicating that the system should display a disconnection alert for a given peripheral, if
+     * the application
      * is suspended at the time of the disconnection.
-     * This is useful for applications that have not specified the <code>bluetooth-central</code> background mode and cannot display their
-     * own alert. If more than one application has requested notification for a given peripheral, the one that was most recently in the foreground
+     * This is useful for applications that have not specified the <code>bluetooth-central</code> background mode and
+     * cannot display their
+     * own alert. If more than one application has requested notification for a given peripheral, the one that was most
+     * recently in the foreground
      * will receive the alert.
      *
      * @see connectPeripheral:
@@ -214,10 +229,13 @@ public final class CoreBluetooth {
     /**
      * [@const] CBConnectPeripheralOptionNotifyOnNotificationKey
      * <p>
-     * An NSNumber (Boolean) indicating that the system should display an alert for all notifications received from a given peripheral, if
+     * An NSNumber (Boolean) indicating that the system should display an alert for all notifications received from a
+     * given peripheral, if
      * the application is suspended at the time.
-     * This is useful for applications that have not specified the <code>bluetooth-central</code> background mode and cannot display their
-     * own alert. If more than one application has requested notification for a given peripheral, the one that was most recently in the foreground
+     * This is useful for applications that have not specified the <code>bluetooth-central</code> background mode and
+     * cannot display their
+     * own alert. If more than one application has requested notification for a given peripheral, the one that was most
+     * recently in the foreground
      * will receive the alert.
      *
      * @see connectPeripheral:
@@ -228,14 +246,16 @@ public final class CoreBluetooth {
     public static native String CBConnectPeripheralOptionNotifyOnNotificationKey();
 
     /**
-     * [@const]  CBCentralManagerRestoredStatePeripheralsKey
+     * [@const] CBCentralManagerRestoredStatePeripheralsKey
      * <p>
-     * An NSArray of <code>CBPeripheral</code> objects containing all peripherals that were connected or pending connection at the time the
-     * application was terminated by the system. When possible, all known information for each peripheral will be restored, including any discovered
+     * An NSArray of <code>CBPeripheral</code> objects containing all peripherals that were connected or pending
+     * connection at the time the
+     * application was terminated by the system. When possible, all known information for each peripheral will be
+     * restored, including any discovered
      * services, characteristics and descriptors, as well as characteristic notification states.
      *
-     * @see        centralManager:willRestoreState:
-     * @see    connectPeripheral:options:
+     * @see centralManager:willRestoreState:
+     * @see connectPeripheral:options:
      */
     @Generated
     @CVariable()
@@ -243,12 +263,13 @@ public final class CoreBluetooth {
     public static native String CBCentralManagerRestoredStatePeripheralsKey();
 
     /**
-     * [@const]  CBCentralManagerRestoredStateScanServicesKey
+     * [@const] CBCentralManagerRestoredStateScanServicesKey
      * <p>
-     * An NSArray of <code>CBUUID</code> objects containing the service(s) being scanned for at the time the application was terminated by the system.
+     * An NSArray of <code>CBUUID</code> objects containing the service(s) being scanned for at the time the application
+     * was terminated by the system.
      *
-     * @see        centralManager:willRestoreState:
-     * @see    scanForPeripheralsWithServices:options:
+     * @see centralManager:willRestoreState:
+     * @see scanForPeripheralsWithServices:options:
      */
     @Generated
     @CVariable()
@@ -256,12 +277,12 @@ public final class CoreBluetooth {
     public static native String CBCentralManagerRestoredStateScanServicesKey();
 
     /**
-     * [@const]  CBCentralManagerRestoredStateScanOptionsKey
+     * [@const] CBCentralManagerRestoredStateScanOptionsKey
      * <p>
      * An NSDictionary containing the scan options at the time the application was terminated by the system.
      *
-     * @see        centralManager:willRestoreState:
-     * @see    scanForPeripheralsWithServices:options:
+     * @see centralManager:willRestoreState:
+     * @see scanForPeripheralsWithServices:options:
      */
     @Generated
     @CVariable()
@@ -279,12 +300,13 @@ public final class CoreBluetooth {
     public static native String CBATTErrorDomain();
 
     /**
-     * [@const]  CBPeripheralManagerOptionShowPowerAlertKey
+     * [@const] CBPeripheralManagerOptionShowPowerAlertKey
      * <p>
-     * An NSNumber (Boolean) indicating that the system should, if Bluetooth is powered off when <code>CBPeripheralManager</code> is instantiated, display
+     * An NSNumber (Boolean) indicating that the system should, if Bluetooth is powered off when
+     * <code>CBPeripheralManager</code> is instantiated, display
      * a warning dialog to the user.
      *
-     * @see        initWithDelegate:queue:options:
+     * @see initWithDelegate:queue:options:
      */
     @Generated
     @CVariable()
@@ -292,14 +314,16 @@ public final class CoreBluetooth {
     public static native String CBPeripheralManagerOptionShowPowerAlertKey();
 
     /**
-     * [@const]  CBPeripheralManagerOptionRestoreIdentifierKey
+     * [@const] CBPeripheralManagerOptionRestoreIdentifierKey
      * <p>
-     * An NSString containing a unique identifier (UID) for the <code>CBPeripheralManager</code> that is being instantiated. This UID is used
-     * by the system to identify a specific <code>CBPeripheralManager</code> instance for restoration and, therefore, must remain the same for
+     * An NSString containing a unique identifier (UID) for the <code>CBPeripheralManager</code> that is being
+     * instantiated. This UID is used
+     * by the system to identify a specific <code>CBPeripheralManager</code> instance for restoration and, therefore,
+     * must remain the same for
      * subsequent application executions in order for the manager to be restored.
      *
-     * @see        initWithDelegate:queue:options:
-     * @see    centralManager:willRestoreState:
+     * @see initWithDelegate:queue:options:
+     * @see centralManager:willRestoreState:
      */
     @Generated
     @CVariable()
@@ -307,14 +331,16 @@ public final class CoreBluetooth {
     public static native String CBPeripheralManagerOptionRestoreIdentifierKey();
 
     /**
-     * [@const]  CBPeripheralManagerRestoredStateServicesKey
+     * [@const] CBPeripheralManagerRestoredStateServicesKey
      * <p>
-     * An NSArray of <code>CBMutableService</code> objects containing all services that were published to the local database at the time the
-     * application was terminated by the system. All information for each service will be restored, including all discovered
+     * An NSArray of <code>CBMutableService</code> objects containing all services that were published to the local
+     * database at the time the
+     * application was terminated by the system. All information for each service will be restored, including all
+     * discovered
      * services, characteristics and descriptors, as well as characteristic notification states.
      *
-     * @see        peripheralManager:willRestoreState:
-     * @see    addService:
+     * @see peripheralManager:willRestoreState:
+     * @see addService:
      */
     @Generated
     @CVariable()
@@ -322,12 +348,12 @@ public final class CoreBluetooth {
     public static native String CBPeripheralManagerRestoredStateServicesKey();
 
     /**
-     * [@const]  CBPeripheralManagerRestoredStateAdvertisementDataKey
+     * [@const] CBPeripheralManagerRestoredStateAdvertisementDataKey
      * <p>
      * An NSDictionary containing the data being advertised at the time the application was terminated by the system.
      *
-     * @see        peripheralManager:willRestoreState:
-     * @see    startAdvertising:
+     * @see peripheralManager:willRestoreState:
+     * @see startAdvertising:
      */
     @Generated
     @CVariable()
@@ -413,7 +439,7 @@ public final class CoreBluetooth {
      * [@const] CBUUIDL2CAPPSMCharacteristicString
      * <p>
      * The PSM (a little endian uint16_t) of an L2CAP Channel associated with the GATT service
-     * containing this characteristic.  Servers can publish this characteristic with the UUID
+     * containing this characteristic. Servers can publish this characteristic with the UUID
      * ABDD3056-28FA-441D-A470-55A75A52553A
      */
     @Generated
@@ -436,7 +462,8 @@ public final class CoreBluetooth {
     /**
      * [@const] CBConnectPeripheralOptionEnableTransportBridgingKey
      * <p>
-     * An NSNumber (Boolean) indicating that the system will bring up classic transport profiles when low energy transport for peripheral is connected.
+     * An NSNumber (Boolean) indicating that the system will bring up classic transport profiles when low energy
+     * transport for peripheral is connected.
      *
      * @see connectPeripheral:
      */
@@ -448,7 +475,8 @@ public final class CoreBluetooth {
     /**
      * [@const] CBConnectPeripheralOptionRequiresANCS
      * <p>
-     * An NSNumber (Boolean) indicating that the ANCS (Apple Notification Center Service) is required for the peripheral is connected.
+     * An NSNumber (Boolean) indicating that the ANCS (Apple Notification Center Service) is required for the peripheral
+     * is connected.
      *
      * @see connectPeripheral:
      */
@@ -458,14 +486,15 @@ public final class CoreBluetooth {
     public static native String CBConnectPeripheralOptionRequiresANCS();
 
     /**
-     * [@const]  CBConnectionEventMatchingOptionServiceUUIDs
+     * [@const] CBConnectionEventMatchingOptionServiceUUIDs
      * <p>
-     * An NSArray of <code>CBUUID</code> objects respresenting service UUIDs. A connected peer with any matching service UUIDs will result
+     * An NSArray of <code>CBUUID</code> objects respresenting service UUIDs. A connected peer with any matching service
+     * UUIDs will result
      * in a call to {@link centralManager:connectionEventDidOccur:}.
      * A maximum of 4 services can be registered.
      *
-     * @see        centralManager:connectionEventDidOccur:forPeripheral:
-     * @see    registerForConnectionEventsWithOptions:
+     * @see centralManager:connectionEventDidOccur:forPeripheral:
+     * @see registerForConnectionEventsWithOptions:
      */
     @Generated
     @CVariable()
@@ -473,13 +502,14 @@ public final class CoreBluetooth {
     public static native String CBConnectionEventMatchingOptionServiceUUIDs();
 
     /**
-     * [@const]  CBConnectionEventMatchingOptionPeripheralUUIDs
+     * [@const] CBConnectionEventMatchingOptionPeripheralUUIDs
      * <p>
-     * An NSArray of <code>NSUUID</code> objects respresenting <i>peripheral</i> identifiers. A connected peer with any matching identifier(s) will result
+     * An NSArray of <code>NSUUID</code> objects respresenting <i>peripheral</i> identifiers. A connected peer with any
+     * matching identifier(s) will result
      * in a call to {@link centralManager:connectionEventDidOccur:}.
      *
-     * @see        centralManager:connectionEventDidOccur:forPeripheral:
-     * @see    registerForConnectionEventsWithOptions:
+     * @see centralManager:connectionEventDidOccur:forPeripheral:
+     * @see registerForConnectionEventsWithOptions:
      */
     @Generated
     @CVariable()

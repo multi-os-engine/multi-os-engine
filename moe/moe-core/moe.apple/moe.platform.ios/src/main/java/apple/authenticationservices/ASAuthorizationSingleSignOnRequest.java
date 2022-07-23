@@ -54,7 +54,8 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     public static native ASAuthorizationSingleSignOnRequest allocWithZone(VoidPtr zone);
 
     /**
-     * Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
+     * Parameters required by the specific Authorization Server which should be used by the selected Authorization
+     * Services extension for authorization.
      */
     @Generated
     @Selector("authorizationOptions")
@@ -138,7 +139,8 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Parameters required by the specific Authorization Server which should be used by the selected Authorization Services extension for authorization.
+     * Parameters required by the specific Authorization Server which should be used by the selected Authorization
+     * Services extension for authorization.
      */
     @Generated
     @Selector("setAuthorizationOptions:")
@@ -170,7 +172,8 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     /**
      * Enables or disables the authorization user interface.
      * <p>
-     * The default values is YES. If user interface is not enabled, then the authorization will fail with @see ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
+     * The default values is YES. If user interface is not enabled, then the authorization will fail with @see
+     * ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
      */
     @Generated
     @Selector("isUserInterfaceEnabled")
@@ -179,7 +182,8 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     /**
      * Enables or disables the authorization user interface.
      * <p>
-     * The default values is YES. If user interface is not enabled, then the authorization will fail with @see ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
+     * The default values is YES. If user interface is not enabled, then the authorization will fail with @see
+     * ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
      */
     @Generated
     @Selector("setUserInterfaceEnabled:")

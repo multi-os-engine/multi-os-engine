@@ -42,7 +42,8 @@ public interface SCNSceneRendererDelegate {
      * <p>
      * Invoked on the delegate once the scene renderer did apply the animations.
      * <p>
-     * All modifications done within this method don't go through the transaction model, they are directly applied on the presentation tree.
+     * All modifications done within this method don't go through the transaction model, they are directly applied on
+     * the presentation tree.
      *
      * @param renderer The renderer that did render the scene.
      * @param time     The time at which the animations were applied.
@@ -60,7 +61,8 @@ public interface SCNSceneRendererDelegate {
      * <p>
      * Invoked on the delegate once the scene renderer did render the scene.
      * <p>
-     * Starting in 10.10 all modifications done within this method don't go through the transaction model, they are directly applied on the presentation tree.
+     * Starting in 10.10 all modifications done within this method don't go through the transaction model, they are
+     * directly applied on the presentation tree.
      *
      * @param renderer The renderer that did render the scene.
      * @param scene    The rendered scene.
@@ -79,7 +81,8 @@ public interface SCNSceneRendererDelegate {
      * <p>
      * Invoked on the delegate once the scene renderer did simulate the physics.
      * <p>
-     * All modifications done within this method don't go through the transaction model, they are directly applied on the presentation tree.
+     * All modifications done within this method don't go through the transaction model, they are directly applied on
+     * the presentation tree.
      *
      * @param renderer The renderer that did render the scene.
      * @param time     The time at which the physics were simulated.
@@ -95,9 +98,11 @@ public interface SCNSceneRendererDelegate {
     /**
      * renderer:updateAtTime:
      * <p>
-     * Implement this to perform per-frame game logic. Called exactly once per frame before any animation and actions are evaluated and any physics are simulated.
+     * Implement this to perform per-frame game logic. Called exactly once per frame before any animation and actions
+     * are evaluated and any physics are simulated.
      * <p>
-     * All modifications done within this method don't go through the transaction model, they are directly applied on the presentation tree.
+     * All modifications done within this method don't go through the transaction model, they are directly applied on
+     * the presentation tree.
      *
      * @param renderer The renderer that will render the scene.
      * @param time     The time at which to update the scene.
@@ -112,9 +117,11 @@ public interface SCNSceneRendererDelegate {
     /**
      * renderer:willRenderScene:atTime:
      * <p>
-     * Invoked on the delegate before the scene renderer renders the scene. At this point the openGL context and the destination framebuffer are bound.
+     * Invoked on the delegate before the scene renderer renders the scene. At this point the openGL context and the
+     * destination framebuffer are bound.
      * <p>
-     * Starting in 10.10 all modifications done within this method don't go through the transaction model, they are directly applied on the presentation tree.
+     * Starting in 10.10 all modifications done within this method don't go through the transaction model, they are
+     * directly applied on the presentation tree.
      *
      * @param renderer The renderer that will render the scene.
      * @param scene    The scene to be rendered.
@@ -133,7 +140,8 @@ public interface SCNSceneRendererDelegate {
      * <p>
      * Invoked on the delegate once the scene renderer did apply the constraints.
      * <p>
-     * All modifications done within this method don't go through the transaction model, they are directly applied on the presentation tree.
+     * All modifications done within this method don't go through the transaction model, they are directly applied on
+     * the presentation tree.
      *
      * @param renderer The renderer that did render the scene.
      * @param time     The time at which the constraints were simulated.

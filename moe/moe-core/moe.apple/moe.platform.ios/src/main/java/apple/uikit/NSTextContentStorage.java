@@ -32,7 +32,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSTextContentStorage is a concrete subclass of NSTextContentManager providing support for NSAttributedString backing-store. It also implements NSTextStorageObserving participating as a client of NSTextStorage. The facility only supports a single NSTextContentStorage associated with a text storage. When -textStorage!=nil, -attributedString is ignored. By default, NSTextContentStorage is initialized with NSTextStorage as the backing-store.
+ * NSTextContentStorage is a concrete subclass of NSTextContentManager providing support for NSAttributedString
+ * backing-store. It also implements NSTextStorageObserving participating as a client of NSTextStorage. The facility
+ * only supports a single NSTextContentStorage associated with a text storage. When -textStorage!=nil, -attributedString
+ * is ignored. By default, NSTextContentStorage is initialized with NSTextStorage as the backing-store.
  */
 @Generated
 @Library("UIKit")
@@ -53,7 +56,10 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Should be implemented if the location backing store requires manual adjustment after editing. When textRange is intersecting or following the current edited range, the method returns the range adjusted for the modification in the editing session. Returns nil, when no adjustment necessary. forEditingTextSelection indicates if textRange is for the text selection associated with the edit session.
+     * Should be implemented if the location backing store requires manual adjustment after editing. When textRange is
+     * intersecting or following the current edited range, the method returns the range adjusted for the modification in
+     * the editing session. Returns nil, when no adjustment necessary. forEditingTextSelection indicates if textRange is
+     * for the text selection associated with the edit session.
      */
     @Generated
     @Selector("adjustedRangeFromRange:forEditingTextSelection:")
@@ -154,7 +160,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Returns a new location from location with offset. The offset value could be positive or negative indicating the logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
+     * Returns a new location from location with offset. The offset value could be positive or negative indicating the
+     * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
      */
     @Generated
     @Selector("locationFromLocation:withOffset:")
@@ -168,7 +175,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     public static native NSTextContentStorage new_objc();
 
     /**
-     * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound when the offset cannot be represented in an integer value (i.e. locations are not in the same document).
+     * Returns the offset between from and to. The return value could be positive or negative. Could return NSNotFound
+     * when the offset cannot be represented in an integer value (i.e. locations are not in the same document).
      */
     @Generated
     @Selector("offsetFromLocation:toLocation:")
@@ -241,7 +249,8 @@ public class NSTextContentStorage extends NSTextContentManager implements NSText
     }
 
     /**
-     * Returns NSTextElement corresponding to attributedString. Returns nil when attributedString contains attributes not mappable to NSTextElement.
+     * Returns NSTextElement corresponding to attributedString. Returns nil when attributedString contains attributes
+     * not mappable to NSTextElement.
      */
     @Generated
     @Selector("textElementForAttributedString:")

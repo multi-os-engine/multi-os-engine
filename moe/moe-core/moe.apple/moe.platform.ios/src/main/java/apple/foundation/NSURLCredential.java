@@ -44,7 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSURLCredential
  * <p>
- * This class is an immutable object representing an authentication credential.  The actual type of the credential is determined by the constructor called in the categories declared below.
+ * This class is an immutable object representing an authentication credential. The actual type of the credential is
+ * determined by the constructor called in the categories declared below.
  */
 @Generated
 @Library("Foundation")
@@ -202,7 +203,8 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     public static native long version_static();
 
     /**
-     * Returns an NSArray of SecCertificateRef objects representing the client certificate for this credential, if this credential was created with an identity and certificate.
+     * Returns an NSArray of SecCertificateRef objects representing the client certificate for this credential, if this
+     * credential was created with an identity and certificate.
      *
      * @return an NSArray of SecCertificateRef or NULL if this is a username/password credential
      */

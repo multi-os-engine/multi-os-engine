@@ -157,7 +157,7 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     public static native long version_static();
 
     /**
-     * [@property]		audioTapProcessor
+     * [@property] audioTapProcessor
      * <p>
      * Indicates the audio processing tap that will be used for the audio track.
      */
@@ -166,12 +166,14 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     public native MTAudioProcessingTapRef audioTapProcessor();
 
     /**
-     * [@property]		audioTimePitchAlgorithm
+     * [@property] audioTimePitchAlgorithm
      * <p>
      * Indicates the processing algorithm used to manage audio pitch at varying rates and for scaled audio edits.
      * <p>
-     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
-     * Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
+     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in
+     * AVAudioProcessingSettings.h.
+     * Can be nil, in which case the audioTimePitchAlgorithm set on the AVPlayerItem, AVAssetExportSession, or
+     * AVAssetReaderAudioMixOutput on which the AVAudioMix is set will be used for the associated track.
      */
     @Generated
     @Selector("audioTimePitchAlgorithm")
@@ -188,12 +190,14 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
      * <p>
      * Obtains the volume ramp that includes the specified time.
      *
-     * @return An indication of success. NO will be returned if the specified time is beyond the duration of the last volume ramp that has been set.
-     * @param            time If a ramp with a timeRange that contains the specified time has been set, information about the effective ramp for that time is supplied.
-     * Otherwise, information about the first ramp that starts after the specified time is supplied.
-     * @param            startVolume A pointer to a float to receive the starting volume value for the volume ramp. May be NULL.
-     * @param            endVolume A pointer to a float to receive the ending volume value for the volume ramp. May be NULL.
-     * @param            timeRange A pointer to a CMTimeRange to receive the timeRange of the volume ramp. May be NULL.
+     * @return An indication of success. NO will be returned if the specified time is beyond the duration of the last
+     *         volume ramp that has been set.
+     * @param time        If a ramp with a timeRange that contains the specified time has been set, information about
+     *                    the effective ramp for that time is supplied.
+     *                    Otherwise, information about the first ramp that starts after the specified time is supplied.
+     * @param startVolume A pointer to a float to receive the starting volume value for the volume ramp. May be NULL.
+     * @param endVolume   A pointer to a float to receive the ending volume value for the volume ramp. May be NULL.
+     * @param timeRange   A pointer to a CMTimeRange to receive the timeRange of the volume ramp. May be NULL.
      */
     @Generated
     @Selector("getVolumeRampForTime:startVolume:endVolume:timeRange:")
@@ -211,7 +215,7 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     public native Object mutableCopyWithZone(VoidPtr zone);
 
     /**
-     * [@property]		trackID
+     * [@property] trackID
      * <p>
      * Indicates the trackID of the audio track to which the parameters should be applied.
      */

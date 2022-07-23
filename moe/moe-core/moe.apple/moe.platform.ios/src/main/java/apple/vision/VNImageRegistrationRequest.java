@@ -34,7 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A request that will calculate a transformation for morphing a "floating" image onto an unchanging "reference" image.
  * <p>
- * The request is created with the targeted image acting as the floating image. Processing the request will calculate the transformations that morph the floating image onto the reference image.
+ * The request is created with the targeted image acting as the floating image. Processing the request will calculate
+ * the transformations that morph the floating image onto the reference image.
  */
 @Generated
 @Library("Vision")

@@ -144,11 +144,15 @@ public class MTKMesh extends NSObject {
      * <p>
      * Initialize all meshes in a Model I/O asset.
      * <p>
-     * A convenience method to create MetalKit meshes from each mesh in a Model I/O asset.  resulting meshes are returned while the corresponding Model I/O meshes from which they were generated will appear in the sourceMeshes array.  All vertexBuffer objects in each MDLMesh object in the asset and the indexBuffer of each submesh within each of these meshes must have been created using a MTKMeshBufferAllocator object.  Thus
+     * A convenience method to create MetalKit meshes from each mesh in a Model I/O asset. resulting meshes are returned
+     * while the corresponding Model I/O meshes from which they were generated will appear in the sourceMeshes array.
+     * All vertexBuffer objects in each MDLMesh object in the asset and the indexBuffer of each submesh within each of
+     * these meshes must have been created using a MTKMeshBufferAllocator object. Thus
      *
      * @param asset        Model I/O asset from which to create MetalKit meshes
      * @param device       Metal device on which to create mesh resources
-     * @param sourceMeshes Array built by this method containing MDLMesh objects corresponding the returned MTKMesh objects
+     * @param sourceMeshes Array built by this method containing MDLMesh objects corresponding the returned MTKMesh
+     *                     objects
      * @param error        Pointer to an NSError object set if an error occurred
      * @return MetalKit Meshes created from the Model I/O asset
      */
@@ -190,7 +194,11 @@ public class MTKMesh extends NSObject {
      * <p>
      * Initialize the mesh and the mesh's submeshes.
      * <p>
-     * The designated initializer for this class.  This does NOT initialize any meshes that are children of the Model I/O mesh, only submeshes that are part of the given mesh.  An exception is raised if vertexBuffer objects in the given mesh and the indexBuffer of any submesh in this mesh have not been created with a MTKMeshBufferAllocator object.  If a submesh using MDLGeometryTypeQuads or MDLGeometryTypeTopology is used, that submesh will be copied, and recreated to use MDLGeometryTypeTriangles, before this routine creates the MTKSubmesh.
+     * The designated initializer for this class. This does NOT initialize any meshes that are children of the Model I/O
+     * mesh, only submeshes that are part of the given mesh. An exception is raised if vertexBuffer objects in the given
+     * mesh and the indexBuffer of any submesh in this mesh have not been created with a MTKMeshBufferAllocator object.
+     * If a submesh using MDLGeometryTypeQuads or MDLGeometryTypeTopology is used, that submesh will be copied, and
+     * recreated to use MDLGeometryTypeTriangles, before this routine creates the MTKSubmesh.
      *
      * @param mesh   Model I/O Mesh from which to create this MetalKit mesh
      * @param device Metal device on which to create mesh resources
@@ -237,7 +245,8 @@ public class MTKMesh extends NSObject {
      * <p>
      * Array of buffers in which mesh vertex data resides.
      * <p>
-     * This is filled with mesh buffer objects using the layout described by the vertexDescriptor property.  Elements in this array can be [NSNull null] if the vertexDescriptor does not specify elements for buffer for the given index
+     * This is filled with mesh buffer objects using the layout described by the vertexDescriptor property. Elements in
+     * this array can be [NSNull null] if the vertexDescriptor does not specify elements for buffer for the given index
      */
     @Generated
     @Selector("vertexBuffers")
@@ -258,7 +267,11 @@ public class MTKMesh extends NSObject {
      * <p>
      * Model I/O vertex descriptor specifying the layout of data in vertexBuffers.
      * <p>
-     * This is not directly used by this object, but the application can use this information to determine rendering state or create a Metal vertex descriptor to build a RenderPipelineState object capable of interpreting data in 'vertexBuffers'.  Changing propties in the object will not result in the relayout data in vertex descriptor and thus will make the vertex descriptor no loger describe the layout of vertes data and verticies. (i.e. don't change properties in this vertexDescriptor)
+     * This is not directly used by this object, but the application can use this information to determine rendering
+     * state or create a Metal vertex descriptor to build a RenderPipelineState object capable of interpreting data in
+     * 'vertexBuffers'. Changing propties in the object will not result in the relayout data in vertex descriptor and
+     * thus will make the vertex descriptor no loger describe the layout of vertes data and verticies. (i.e. don't
+     * change properties in this vertexDescriptor)
      */
     @Generated
     @Selector("vertexDescriptor")

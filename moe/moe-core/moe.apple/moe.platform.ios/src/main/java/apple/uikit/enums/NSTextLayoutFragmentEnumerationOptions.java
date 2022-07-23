@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * NSTextLayoutFragment represents the layout fragment typically corresponding to a rendering surface such as CALayer or UIView/NSView subclasses.
+ * NSTextLayoutFragment represents the layout fragment typically corresponding to a rendering surface such as CALayer or
+ * UIView/NSView subclasses.
  */
 @Generated
 public final class NSTextLayoutFragmentEnumerationOptions {

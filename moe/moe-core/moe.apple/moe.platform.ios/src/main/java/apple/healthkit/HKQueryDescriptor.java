@@ -148,7 +148,7 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
     public static native HKQueryDescriptor new_objc();
 
     /**
-     * [@property]      predicate
+     * [@property] predicate
      * <p>
      * The predicate which samples should match.
      */
@@ -165,7 +165,7 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]      sampleType
+     * [@property] sampleType
      * <p>
      * The type of sample to retrieve in an HKQuery.
      */

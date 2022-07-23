@@ -85,7 +85,8 @@ public class MLUpdateContext extends NSObject {
     public static native String description_static();
 
     /**
-     * Indicates the event the progress handler invocation corresponds to. This will be one of the events app registered via MLUpdateProgressHandlers.interestedEvents.
+     * Indicates the event the progress handler invocation corresponds to. This will be one of the events app registered
+     * via MLUpdateProgressHandlers.interestedEvents.
      */
     @Generated
     @Selector("event")

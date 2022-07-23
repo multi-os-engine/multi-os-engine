@@ -29,8 +29,10 @@ public interface ARCoachingOverlayViewDelegate {
     /**
      * This is called when the user taps the reset button in the relocalization state
      * <p>
-     * By default, when the relocalization reset button is tapped, the overlay will call run on the session using the current
-     * `configuration`, and the `ARSessionRunOptionResetTracking` and `ARSessionRunOptionRemoveExistingAnchors` options. The delegate may
+     * By default, when the relocalization reset button is tapped, the overlay will call run on the session using the
+     * current
+     * `configuration`, and the `ARSessionRunOptionResetTracking` and `ARSessionRunOptionRemoveExistingAnchors` options.
+     * The delegate may
      * implement this method to override this behavior. The delegate is then responsible for resetting the session.
      *
      * @param coachingOverlayView The view currently active

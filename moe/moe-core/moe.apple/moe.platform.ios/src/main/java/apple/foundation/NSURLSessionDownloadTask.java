@@ -151,7 +151,7 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     public static native long version_static();
 
     /**
-     * Cancel the download (and calls the superclass -cancel).  If
+     * Cancel the download (and calls the superclass -cancel). If
      * conditions will allow for resuming the download in the future, the
      * callback will be called with an opaque data blob, which may be used
      * with -downloadTaskWithResumeData: to attempt to resume the download.

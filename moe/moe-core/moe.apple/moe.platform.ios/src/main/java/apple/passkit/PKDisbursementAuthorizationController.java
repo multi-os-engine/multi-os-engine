@@ -55,7 +55,8 @@ public class PKDisbursementAuthorizationController extends NSObject {
     public static native PKDisbursementAuthorizationController allocWithZone(VoidPtr zone);
 
     /**
-     * This presents the Apple Pay sheet. If the sheet is presented successfully, success is YES. Otherwise, an error will be returned.
+     * This presents the Apple Pay sheet. If the sheet is presented successfully, success is YES. Otherwise, an error
+     * will be returned.
      */
     @Generated
     @Selector("authorizeDisbursementWithCompletion:")

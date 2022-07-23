@@ -27,7 +27,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * The MSStickerBrowserViewDataSource protocol declares the methods that the Sticker Browser View uses to access the contents of its data source object.
+ * The MSStickerBrowserViewDataSource protocol declares the methods that the Sticker Browser View uses to access the
+ * contents of its data source object.
  */
 @Generated
 @Library("Messages")

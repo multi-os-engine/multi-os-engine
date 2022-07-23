@@ -117,7 +117,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * A Boolean value indicating whether the string that displays the album and artist above the playback controls should be a tappable button
+     * A Boolean value indicating whether the string that displays the album and artist above the playback controls
+     * should be a tappable button
      * <p>
      * Set the value of this property to @c YES to enable the button.
      * <p>
@@ -178,7 +179,8 @@ public class CPNowPlayingTemplate extends CPTemplate {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * A Boolean value indicating whether the string that displays the album and artist above the playback controls should be a tappable button
+     * A Boolean value indicating whether the string that displays the album and artist above the playback controls
+     * should be a tappable button
      * <p>
      * Set the value of this property to @c YES to enable the button.
      * <p>

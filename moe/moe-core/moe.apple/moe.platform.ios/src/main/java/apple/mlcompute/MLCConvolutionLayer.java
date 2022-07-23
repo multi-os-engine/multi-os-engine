@@ -60,7 +60,7 @@ public class MLCConvolutionLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   biases
+     * [@property] biases
      * <p>
      * The bias tensor used by the convolution layer
      */
@@ -69,7 +69,7 @@ public class MLCConvolutionLayer extends MLCLayer {
     public native MLCTensor biases();
 
     /**
-     * [@property]   biasesParameter
+     * [@property] biasesParameter
      * <p>
      * The bias tensor parameter used for optimizer update
      */
@@ -104,7 +104,7 @@ public class MLCConvolutionLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * The convolution descriptor
      */
@@ -186,7 +186,7 @@ public class MLCConvolutionLayer extends MLCLayer {
     public static native long version_static();
 
     /**
-     * [@property]   weights
+     * [@property] weights
      * <p>
      * The weights tensor used by the convolution layer
      */
@@ -195,7 +195,7 @@ public class MLCConvolutionLayer extends MLCLayer {
     public native MLCTensor weights();
 
     /**
-     * [@property]   weightsParameter
+     * [@property] weightsParameter
      * <p>
      * The weights tensor parameter used for optimizer update
      */

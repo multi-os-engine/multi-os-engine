@@ -11,7 +11,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * The interaction effect of a `UISpringLoadedInteraction` object must adopt the `UISpringLoadedInteractionEffect` protocol.
+ * The interaction effect of a `UISpringLoadedInteraction` object must adopt the `UISpringLoadedInteractionEffect`
+ * protocol.
  * It is responsible for styling the interaction view according to the current springloading state.
  */
 @Generated

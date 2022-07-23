@@ -44,9 +44,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVCaptureMovieFileOutput
  * <p>
- * AVCaptureMovieFileOutput is a concrete subclass of AVCaptureFileOutput that writes captured media to QuickTime movie files.
+ * AVCaptureMovieFileOutput is a concrete subclass of AVCaptureFileOutput that writes captured media to QuickTime movie
+ * files.
  * <p>
- * AVCaptureMovieFileOutput implements the complete file recording interface declared by AVCaptureFileOutput for writing media data to QuickTime movie files. In addition, instances of AVCaptureMovieFileOutput allow clients to configure options specific to the QuickTime file format, including allowing them to write metadata collections to each file, specify media encoding options for each track (Mac OS X), and specify an interval at which movie fragments should be written.
+ * AVCaptureMovieFileOutput implements the complete file recording interface declared by AVCaptureFileOutput for writing
+ * media data to QuickTime movie files. In addition, instances of AVCaptureMovieFileOutput allow clients to configure
+ * options specific to the QuickTime file format, including allowing them to write metadata collections to each file,
+ * specify media encoding options for each track (Mac OS X), and specify an interval at which movie fragments should be
+ * written.
  */
 @Generated
 @Library("AVFoundation")
@@ -163,7 +168,9 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Indicates the supported video codec formats that can be specified in setOutputSettingsForConnection:.
      * <p>
-     * The value of this property is an NSArray of AVVideoCodecTypes that can be used as values for the AVVideoCodecKey in the receiver's setOutputSettingsForConnection: dictionary. The array of available video codecs may change depending on the current session preset. The first codec in the array is used by default when recording a file.
+     * The value of this property is an NSArray of AVVideoCodecTypes that can be used as values for the AVVideoCodecKey
+     * in the receiver's setOutputSettingsForConnection: dictionary. The array of available video codecs may change
+     * depending on the current session preset. The first codec in the array is used by default when recording a file.
      */
     @Generated
     @Selector("availableVideoCodecTypes")
@@ -178,7 +185,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * A collection of metadata to be written to the receiver's output files.
      * <p>
-     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level metadata to be written in each output file.
+     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level
+     * metadata to be written in each output file.
      */
     @Generated
     @Selector("metadata")
@@ -189,9 +197,13 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Specifies the frequency with which movie fragments should be written.
      * <p>
-     * When movie fragments are used, a partially written QuickTime movie file whose writing is unexpectedly interrupted can be successfully opened and played up to multiples of the specified time interval. A value of kCMTimeInvalid indicates that movie fragments should not be used, but that only a movie atom describing all of the media in the file should be written. The default value of this property is ten seconds.
+     * When movie fragments are used, a partially written QuickTime movie file whose writing is unexpectedly interrupted
+     * can be successfully opened and played up to multiples of the specified time interval. A value of kCMTimeInvalid
+     * indicates that movie fragments should not be used, but that only a movie atom describing all of the media in the
+     * file should be written. The default value of this property is ten seconds.
      * <p>
-     * Changing the value of this property will not affect the movie fragment interval of the file currently being written, if there is one.
+     * Changing the value of this property will not affect the movie fragment interval of the file currently being
+     * written, if there is one.
      */
     @Generated
     @Selector("movieFragmentInterval")
@@ -203,7 +215,11 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Returns the options the receiver uses to encode media from the given connection as it is being recorded.
      * <p>
-     * See AVAudioSettings.h for audio connections or AVVideoSettings.h for video connections for more information on the structure of an output settings dictionary. If the returned value is an empty dictionary (i.e. [NSDictionary dictionary], the format of the media from the connection will not be changed before being written to the file. If -setOutputSettings:forConnection: was called with a nil dictionary, this method returns a non-nil dictionary reflecting the settings used by the AVCaptureSession's current sessionPreset.
+     * See AVAudioSettings.h for audio connections or AVVideoSettings.h for video connections for more information on
+     * the structure of an output settings dictionary. If the returned value is an empty dictionary (i.e. [NSDictionary
+     * dictionary], the format of the media from the connection will not be changed before being written to the file. If
+     * -setOutputSettings:forConnection: was called with a nil dictionary, this method returns a non-nil dictionary
+     * reflecting the settings used by the AVCaptureSession's current sessionPreset.
      *
      * @param connection The connection delivering the media to be encoded.
      * @return An NSDictionary of output settings.
@@ -215,11 +231,15 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     /**
      * recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:
      * <p>
-     * Returns YES if the movie file output will create a timed metadata track that records samples which reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
+     * Returns YES if the movie file output will create a timed metadata track that records samples which reflect
+     * changes made to the given connection's videoOrientation and videoMirrored properties during recording.
      * <p>
-     * See setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection: for details on the behavior controlled by this value. The default value returned is NO.
+     * See setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection: for details on the behavior
+     * controlled by this value. The default value returned is NO.
      *
-     * @param connection A connection delivering video media to the movie file output. This method throws an NSInvalidArgumentException if the connection does not have a mediaType of AVMediaTypeVideo or if the connection does not terminate at the movie file output.
+     * @param connection A connection delivering video media to the movie file output. This method throws an
+     *                   NSInvalidArgumentException if the connection does not have a mediaType of AVMediaTypeVideo or
+     *                   if the connection does not terminate at the movie file output.
      */
     @Generated
     @Selector("recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:")
@@ -231,7 +251,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * A collection of metadata to be written to the receiver's output files.
      * <p>
-     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level metadata to be written in each output file.
+     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level
+     * metadata to be written in each output file.
      */
     @Generated
     @Selector("setMetadata:")
@@ -242,9 +263,13 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Specifies the frequency with which movie fragments should be written.
      * <p>
-     * When movie fragments are used, a partially written QuickTime movie file whose writing is unexpectedly interrupted can be successfully opened and played up to multiples of the specified time interval. A value of kCMTimeInvalid indicates that movie fragments should not be used, but that only a movie atom describing all of the media in the file should be written. The default value of this property is ten seconds.
+     * When movie fragments are used, a partially written QuickTime movie file whose writing is unexpectedly interrupted
+     * can be successfully opened and played up to multiples of the specified time interval. A value of kCMTimeInvalid
+     * indicates that movie fragments should not be used, but that only a movie atom describing all of the media in the
+     * file should be written. The default value of this property is ten seconds.
      * <p>
-     * Changing the value of this property will not affect the movie fragment interval of the file currently being written, if there is one.
+     * Changing the value of this property will not affect the movie fragment interval of the file currently being
+     * written, if there is one.
      */
     @Generated
     @Selector("setMovieFragmentInterval:")
@@ -255,11 +280,25 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Sets the options the receiver uses to encode media from the given connection as it is being recorded.
      * <p>
-     * See AVAudioSettings.h for audio connections or AVVideoSettings.h for video connections for more information on how to construct an output settings dictionary. A value of an empty dictionary (i.e. [NSDictionary dictionary], means that the format of the media from the connection should not be changed before being written to the file. A value of nil means that the output format will be determined by the session preset. In this case, -outputSettingsForConnection: will return a non-nil dictionary reflecting the settings used by the AVCaptureSession's current sessionPreset.
+     * See AVAudioSettings.h for audio connections or AVVideoSettings.h for video connections for more information on
+     * how to construct an output settings dictionary. A value of an empty dictionary (i.e. [NSDictionary dictionary],
+     * means that the format of the media from the connection should not be changed before being written to the file. A
+     * value of nil means that the output format will be determined by the session preset. In this case,
+     * -outputSettingsForConnection: will return a non-nil dictionary reflecting the settings used by the
+     * AVCaptureSession's current sessionPreset.
      * <p>
-     * On iOS, your outputSettings dictionary may only contain keys listed in - supportedOutputSettingsKeysForConnection:. If you specify any other key, an NSInvalidArgumentException will be thrown. Further restrictions may be imposed on the AVVideoCodecTypeKey. Its value should be present in the -availableVideoCodecTypes array. If AVVideoCompressionPropertiesKey is specified, you must also specify a valid value for AVVideoCodecKey. On iOS versions prior to 12.0, the only settable key for video connections is AVVideoCodecTypeKey. On iOS 12.0 and later, video connections gain support for AVVideoCompressionPropertiesKey.
+     * On iOS, your outputSettings dictionary may only contain keys listed in -
+     * supportedOutputSettingsKeysForConnection:. If you specify any other key, an NSInvalidArgumentException will be
+     * thrown. Further restrictions may be imposed on the AVVideoCodecTypeKey. Its value should be present in the
+     * -availableVideoCodecTypes array. If AVVideoCompressionPropertiesKey is specified, you must also specify a valid
+     * value for AVVideoCodecKey. On iOS versions prior to 12.0, the only settable key for video connections is
+     * AVVideoCodecTypeKey. On iOS 12.0 and later, video connections gain support for AVVideoCompressionPropertiesKey.
      * <p>
-     * On iOS, -outputSettingsForConnection: always provides a fully populated dictionary. If you call -outputSettingsForConnection: with the intent of overriding a few of the values, you must take care to exclude keys that are not supported before calling -setOutputSettings:forConnection:. When providing an AVVideoCompressionPropertiesKey sub dictionary, you may specify a sparse dictionary. AVCaptureMovieFileOutput will always fill in missing keys with default values for the current AVCaptureSession configuration.
+     * On iOS, -outputSettingsForConnection: always provides a fully populated dictionary. If you call
+     * -outputSettingsForConnection: with the intent of overriding a few of the values, you must take care to exclude
+     * keys that are not supported before calling -setOutputSettings:forConnection:. When providing an
+     * AVVideoCompressionPropertiesKey sub dictionary, you may specify a sparse dictionary. AVCaptureMovieFileOutput
+     * will always fill in missing keys with default values for the current AVCaptureSession configuration.
      *
      * @param outputSettings An NSDictionary of output settings.
      * @param connection     The connection delivering the media to be encoded.
@@ -272,20 +311,46 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     /**
      * setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:
      * <p>
-     * Controls whether or not the movie file output will create a timed metadata track that records samples which reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
+     * Controls whether or not the movie file output will create a timed metadata track that records samples which
+     * reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
      * <p>
-     * When a recording is started the current state of a video capture connection's videoOrientation and videoMirrored properties are used to build the display matrix for the created video track. The movie file format allows only one display matrix per track, which means that any changes made during a recording to the videoOrientation and videoMirrored properties are not captured. For example, a user starts a recording with their device in the portrait orientation, and then partway through the recording changes the device to a landscape orientation. The landscape orientation requires a different display matrix, but only the initial display matrix (the portrait display matrix) is recorded for the video track.
+     * When a recording is started the current state of a video capture connection's videoOrientation and videoMirrored
+     * properties are used to build the display matrix for the created video track. The movie file format allows only
+     * one display matrix per track, which means that any changes made during a recording to the videoOrientation and
+     * videoMirrored properties are not captured. For example, a user starts a recording with their device in the
+     * portrait orientation, and then partway through the recording changes the device to a landscape orientation. The
+     * landscape orientation requires a different display matrix, but only the initial display matrix (the portrait
+     * display matrix) is recorded for the video track.
      * <p>
-     * By invoking this method the client application directs the movie file output to create an additional track in the captured movie. This track is a timed metadata track that is associated with the video track, and contains one or more samples that contain a Video Orientation value (as defined by EXIF and TIFF specifications, which is enumerated by CGImagePropertyOrientation in <ImageIO/CGImageProperties.h>). The value represents the display matrix corresponding to the AVCaptureConnection's videoOrientation and videoMirrored properties when applied to the input source. The initial sample written to the timed metadata track represents video track's display matrix. During recording additional samples will be written to the timed metadata track whenever the client application changes the video connection's videoOrienation or videoMirrored properties. Using the above example, when the client application detects the user changing the device from portrait to landscape orientation, it updates the video connection's videoOrientation property, thus causing the movie file output to add a new sample to the timed metadata track.
+     * By invoking this method the client application directs the movie file output to create an additional track in the
+     * captured movie. This track is a timed metadata track that is associated with the video track, and contains one or
+     * more samples that contain a Video Orientation value (as defined by EXIF and TIFF specifications, which is
+     * enumerated by CGImagePropertyOrientation in <ImageIO/CGImageProperties.h>). The value represents the display
+     * matrix corresponding to the AVCaptureConnection's videoOrientation and videoMirrored properties when applied to
+     * the input source. The initial sample written to the timed metadata track represents video track's display matrix.
+     * During recording additional samples will be written to the timed metadata track whenever the client application
+     * changes the video connection's videoOrienation or videoMirrored properties. Using the above example, when the
+     * client application detects the user changing the device from portrait to landscape orientation, it updates the
+     * video connection's videoOrientation property, thus causing the movie file output to add a new sample to the timed
+     * metadata track.
      * <p>
-     * After capture, playback and editing applications can use the timed metadata track to enhance their user's experience. For example, when playing back the captured movie, a playback engine can use the samples to adjust the display of the video samples to keep the video properly oriented. Another example is an editing application that uses the sample the sample times to suggest cut points for breaking the captured movie into separate clips, where each clip is properly oriented.
+     * After capture, playback and editing applications can use the timed metadata track to enhance their user's
+     * experience. For example, when playing back the captured movie, a playback engine can use the samples to adjust
+     * the display of the video samples to keep the video properly oriented. Another example is an editing application
+     * that uses the sample the sample times to suggest cut points for breaking the captured movie into separate clips,
+     * where each clip is properly oriented.
      * <p>
      * The default behavior is to not create the timed metadata track.
      * <p>
-     * The doRecordChanges value is only observed at the start of recording. Changes to the value will not have any effect until the next recording is started.
+     * The doRecordChanges value is only observed at the start of recording. Changes to the value will not have any
+     * effect until the next recording is started.
      *
-     * @param doRecordChanges If YES, the movie file output will create a timed metadata track that records samples which reflect changes made to the given connection's videoOrientation and videoMirrored properties during recording.
-     * @param connection      A connection delivering video media to the movie file output. This method throws an NSInvalidArgumentException if the connection does not have a mediaType of AVMediaTypeVideo or if the connection does not terminate at the movie file output.
+     * @param doRecordChanges If YES, the movie file output will create a timed metadata track that records samples
+     *                        which reflect changes made to the given connection's videoOrientation and videoMirrored
+     *                        properties during recording.
+     * @param connection      A connection delivering video media to the movie file output. This method throws an
+     *                        NSInvalidArgumentException if the connection does not have a mediaType of AVMediaTypeVideo
+     *                        or if the connection does not terminate at the movie file output.
      */
     @Generated
     @Selector("setRecordsVideoOrientationAndMirroringChanges:asMetadataTrackForConnection:")
@@ -297,7 +362,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Indicates the supported keys that can be specified in setOutputSettings:forConnection:.
      * <p>
-     * Returns an NSArray of NSStrings listing the allowable keys in the receiver's setOutputSettings:forConnection: dictionary.
+     * Returns an NSArray of NSStrings listing the allowable keys in the receiver's setOutputSettings:forConnection:
+     * dictionary.
      *
      * @param connection The connection delivering the media to be encoded.
      */
@@ -310,7 +376,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Enable or disable a constituent device selection behavior when recording.
      * <p>
-     * This property enables a camera selection behavior to be applied when recording a movie. Once recording starts, the specified behavior and conditions take effect. Once recording stops the camera selection will change back to the primaryConstituentDeviceSwitchingBehavior specified by the AVCaptureDevice. By default, this property is set to YES when connected to an AVCaptureDevice that supports constituent device switching.
+     * This property enables a camera selection behavior to be applied when recording a movie. Once recording starts,
+     * the specified behavior and conditions take effect. Once recording stops the camera selection will change back to
+     * the primaryConstituentDeviceSwitchingBehavior specified by the AVCaptureDevice. By default, this property is set
+     * to YES when connected to an AVCaptureDevice that supports constituent device switching.
      */
     @Generated
     @Selector("isPrimaryConstituentDeviceSwitchingBehaviorForRecordingEnabled")
@@ -319,9 +388,12 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     /**
      * [@property] primaryConstituentDeviceRestrictedSwitchingBehaviorConditionsForRecording
      * <p>
-     * The primaryConstituentDeviceRestrictedSwitchingBehaviorConditions as set by -[AVCaptureMovieFileOutput setPrimaryConstituentDeviceSwitchingBehaviorForRecording:restrictedSwitchingBehaviorConditions:].
+     * The primaryConstituentDeviceRestrictedSwitchingBehaviorConditions as set by -[AVCaptureMovieFileOutput
+     * setPrimaryConstituentDeviceSwitchingBehaviorForRecording:restrictedSwitchingBehaviorConditions:].
      * <p>
-     * By default, this property is set to AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorCondition{VideoZoomChanged | FocusModeChanged | ExposureModeChanged}. This property is key-value observable.
+     * By default, this property is set to
+     * AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorCondition{VideoZoomChanged | FocusModeChanged |
+     * ExposureModeChanged}. This property is key-value observable.
      */
     @Generated
     @Selector("primaryConstituentDeviceRestrictedSwitchingBehaviorConditionsForRecording")
@@ -331,9 +403,11 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     /**
      * [@property] primaryConstituentDeviceSwitchingBehaviorForRecording
      * <p>
-     * The primaryConstituentDeviceSwitchingBehavior as set by -[AVCaptureMovieFileOutput setPrimaryConstituentDeviceSwitchingBehaviorForRecording:restrictedSwitchingBehaviorConditions:].
+     * The primaryConstituentDeviceSwitchingBehavior as set by -[AVCaptureMovieFileOutput
+     * setPrimaryConstituentDeviceSwitchingBehaviorForRecording:restrictedSwitchingBehaviorConditions:].
      * <p>
-     * By default, this property is set to AVCapturePrimaryConstituentDeviceSwitchingBehaviorRestricted. This property is key-value observable.
+     * By default, this property is set to AVCapturePrimaryConstituentDeviceSwitchingBehaviorRestricted. This property
+     * is key-value observable.
      */
     @Generated
     @Selector("primaryConstituentDeviceSwitchingBehaviorForRecording")
@@ -343,9 +417,17 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     /**
      * setPrimaryConstituentDeviceSwitchingBehaviorForRecording:restrictedSwitchingBehaviorConditions:
      * <p>
-     * When primaryConstituentDeviceSwitchingBehaviorForRecordingEnabled is set to YES, this method controls the switching behavior and conditions, while a movie file is being recorded.
+     * When primaryConstituentDeviceSwitchingBehaviorForRecordingEnabled is set to YES, this method controls the
+     * switching behavior and conditions, while a movie file is being recorded.
      * <p>
-     * This controls the camera selection behavior used while recording a movie, when enabled through primaryConstituentDeviceSwitchingBehaviorForRecordingEnabled. Setting the switching behavior to anything other than AVCapturePrimaryConstituentDeviceSwitchingBehaviorUnsupported when connected to an AVCaptureDevice that does not suport constituent device selection throws an NSInvalidArgumentException. Setting restrictedSwitchingBehaviorConditions to something other than AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionNone while setting switchingBehavior to something other than AVCapturePrimaryConstituentDeviceSwitchingBehaviorRestricted throws an NSInvalidArgumentException exception.
+     * This controls the camera selection behavior used while recording a movie, when enabled through
+     * primaryConstituentDeviceSwitchingBehaviorForRecordingEnabled. Setting the switching behavior to anything other
+     * than AVCapturePrimaryConstituentDeviceSwitchingBehaviorUnsupported when connected to an AVCaptureDevice that does
+     * not suport constituent device selection throws an NSInvalidArgumentException. Setting
+     * restrictedSwitchingBehaviorConditions to something other than
+     * AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionNone while setting switchingBehavior to
+     * something other than AVCapturePrimaryConstituentDeviceSwitchingBehaviorRestricted throws an
+     * NSInvalidArgumentException exception.
      */
     @Generated
     @Selector("setPrimaryConstituentDeviceSwitchingBehaviorForRecording:restrictedSwitchingBehaviorConditions:")
@@ -357,7 +439,10 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * <p>
      * Enable or disable a constituent device selection behavior when recording.
      * <p>
-     * This property enables a camera selection behavior to be applied when recording a movie. Once recording starts, the specified behavior and conditions take effect. Once recording stops the camera selection will change back to the primaryConstituentDeviceSwitchingBehavior specified by the AVCaptureDevice. By default, this property is set to YES when connected to an AVCaptureDevice that supports constituent device switching.
+     * This property enables a camera selection behavior to be applied when recording a movie. Once recording starts,
+     * the specified behavior and conditions take effect. Once recording stops the camera selection will change back to
+     * the primaryConstituentDeviceSwitchingBehavior specified by the AVCaptureDevice. By default, this property is set
+     * to YES when connected to an AVCaptureDevice that supports constituent device switching.
      */
     @Generated
     @Selector("setPrimaryConstituentDeviceSwitchingBehaviorForRecordingEnabled:")

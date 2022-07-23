@@ -46,7 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Properties describe values within a managed object. There are different types of properties, each of them represented by a subclass which encapsulates the specific property behavior.
+ * Properties describe values within a managed object. There are different types of properties, each of them represented
+ * by a subclass which encapsulates the specific property behavior.
  */
 @Generated
 @Library("CoreData")
@@ -181,14 +182,16 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     public native NSPropertyDescription initWithCoder(NSCoder coder);
 
     /**
-     * Returns a boolean value indicating if the property is important for searching.  NSPersistentStores can optionally utilize this information upon store creation for operations like defining indexes.
+     * Returns a boolean value indicating if the property is important for searching. NSPersistentStores can optionally
+     * utilize this information upon store creation for operations like defining indexes.
      */
     @Generated
     @Selector("isIndexed")
     public native boolean isIndexed();
 
     /**
-     * Returns a boolean value indicating if the property is important for searching.  NSPersistentStores can optionally utilize this information upon store creation for operations like defining indexes.
+     * Returns a boolean value indicating if the property is important for searching. NSPersistentStores can optionally
+     * utilize this information upon store creation for operations like defining indexes.
      */
     @Generated
     @Selector("setIndexed:")
@@ -237,14 +240,16 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     public native void setStoredInExternalRecord(boolean value);
 
     /**
-     * The transient flag specifies whether a property's value is persisted or ignored when an object is persisted - transient properties are still managed for undo/redo, validation, etc.
+     * The transient flag specifies whether a property's value is persisted or ignored when an object is persisted -
+     * transient properties are still managed for undo/redo, validation, etc.
      */
     @Generated
     @Selector("isTransient")
     public native boolean isTransient();
 
     /**
-     * The transient flag specifies whether a property's value is persisted or ignored when an object is persisted - transient properties are still managed for undo/redo, validation, etc.
+     * The transient flag specifies whether a property's value is persisted or ignored when an object is persisted -
+     * transient properties are still managed for undo/redo, validation, etc.
      */
     @Generated
     @Selector("setTransient:")
@@ -276,7 +281,10 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
             NSArray<? extends NSPredicate> validationPredicates, NSArray<String> validationWarnings);
 
     /**
-     * Returns/sets the version hash modifier for the property.  This value is included in the version hash for the property, allowing developers to mark/denote a property as being a different "version" than another, even if all of the values which affects persistence are equal.  (Such a difference is important in cases where the design of a property is unchanged, but the format or content of data has changed.)
+     * Returns/sets the version hash modifier for the property. This value is included in the version hash for the
+     * property, allowing developers to mark/denote a property as being a different "version" than another, even if all
+     * of the values which affects persistence are equal. (Such a difference is important in cases where the design of a
+     * property is unchanged, but the format or content of data has changed.)
      */
     @Generated
     @Selector("setVersionHashModifier:")
@@ -287,7 +295,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     public native NSDictionary<?, ?> userInfo();
 
     /**
-     * Instead of individual methods to set/get parameters like length, min and max values, formats, etc., there is a list of predicates evaluated against the managed objects and corresponding error messages (which can be localized).
+     * Instead of individual methods to set/get parameters like length, min and max values, formats, etc., there is a
+     * list of predicates evaluated against the managed objects and corresponding error messages (which can be
+     * localized).
      */
     @Generated
     @Selector("validationPredicates")
@@ -298,14 +308,21 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     public native NSArray<?> validationWarnings();
 
     /**
-     * Returns the version hash for the property.  The version hash is used to uniquely identify a property based on its configuration.  The version hash uses only values which affect the persistence of data and the user-defined versionHashModifier value.  (The values which affect persistence are the name of the property, the flags for isOptional, isTransient, and isReadOnly).  This value is stored as part of the version information in the metadata for stores, as well as a definition of a property involved in an NSPropertyMapping.
+     * Returns the version hash for the property. The version hash is used to uniquely identify a property based on its
+     * configuration. The version hash uses only values which affect the persistence of data and the user-defined
+     * versionHashModifier value. (The values which affect persistence are the name of the property, the flags for
+     * isOptional, isTransient, and isReadOnly). This value is stored as part of the version information in the metadata
+     * for stores, as well as a definition of a property involved in an NSPropertyMapping.
      */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
 
     /**
-     * Returns/sets the version hash modifier for the property.  This value is included in the version hash for the property, allowing developers to mark/denote a property as being a different "version" than another, even if all of the values which affects persistence are equal.  (Such a difference is important in cases where the design of a property is unchanged, but the format or content of data has changed.)
+     * Returns/sets the version hash modifier for the property. This value is included in the version hash for the
+     * property, allowing developers to mark/denote a property as being a different "version" than another, even if all
+     * of the values which affects persistence are equal. (Such a difference is important in cases where the design of a
+     * property is unchanged, but the format or content of data has changed.)
      */
     @Generated
     @Selector("versionHashModifier")

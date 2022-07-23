@@ -86,7 +86,8 @@ public class ASCredentialIdentityStore extends NSObject {
      * Get the state of the credential identity store.
      * <p>
      * Call this method to find out the current state of the store before attempting to call other store methods.
-     * Use the provided ASCredentialIdentityStoreState to find out if the store is enabled and whether it supports incremental
+     * Use the provided ASCredentialIdentityStoreState to find out if the store is enabled and whether it supports
+     * incremental
      * updates.
      *
      * @param completion completion handler to be called with the current state of the store.
@@ -142,7 +143,8 @@ public class ASCredentialIdentityStore extends NSObject {
      * Remove all existing credential identities from the store.
      *
      * @param completion optional completion handler to be called after removing all existing credential identities.
-     *                   If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain will be provided and none of
+     *                   If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain will be
+     *                   provided and none of
      *                   the existing credential identities will be removed from the store.
      */
     @Generated
@@ -165,7 +167,8 @@ public class ASCredentialIdentityStore extends NSObject {
      *
      * @param credentialIdentities array of ASPasswordCredentialIdentity objects to remove from the store.
      * @param completion           optional completion handler to be called after removing the credential identities.
-     *                             If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain will be provided
+     *                             If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain
+     *                             will be provided
      *                             and none of the objects in credentialIdentities will be removed from the store.
      */
     @Generated
@@ -224,7 +227,8 @@ public class ASCredentialIdentityStore extends NSObject {
      *
      * @param credentialIdentities array of ASPasswordCredentialIdentity objects to save to the store.
      * @param completion           optional completion handler to be called after adding the credential identities.
-     *                             If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain will be provided
+     *                             If the operation fails, an error with domain ASCredentialIdentityStoreErrorDomain
+     *                             will be provided
      *                             and none of the objects in credentialIdentities will be saved to the store.
      */
     @Generated

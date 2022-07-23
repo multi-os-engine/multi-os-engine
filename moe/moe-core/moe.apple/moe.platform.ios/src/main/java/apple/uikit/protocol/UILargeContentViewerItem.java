@@ -12,7 +12,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * The large content viewer allow users with relevant settings to view content at a larger size.
- * For example, users with an accessibility content size category can long press on a tab bar button to view a larger version.
+ * For example, users with an accessibility content size category can long press on a tab bar button to view a larger
+ * version.
  * The viewer should not be used as a replacement for proper Dynamic Type support in general.
  * It is intended only for use with items that must remain small due to unavoidable design constraints.
  * For example, buttons in a tab bar remain small to leave more room for the main content.

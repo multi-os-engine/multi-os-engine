@@ -229,7 +229,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     }
 
     /**
-     * If this item displays a badge, this color will be used for the badge's background. If set to nil, the default background color will be used instead.
+     * If this item displays a badge, this color will be used for the badge's background. If set to nil, the default
+     * background color will be used instead.
      */
     @Generated
     @Selector("badgeColor")
@@ -289,14 +290,17 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     public native UIImage selectedImage();
 
     /**
-     * If this item displays a badge, this color will be used for the badge's background. If set to nil, the default background color will be used instead.
+     * If this item displays a badge, this color will be used for the badge's background. If set to nil, the default
+     * background color will be used instead.
      */
     @Generated
     @Selector("setBadgeColor:")
     public native void setBadgeColor(UIColor value);
 
     /**
-     * Provide text attributes to use to draw the badge text for the given singular control state (Normal, Disabled, Focused, Selected, or Highlighted). Default values will be supplied for keys that are not provided by this dictionary. See NSAttributedString.h for details on what keys are available.
+     * Provide text attributes to use to draw the badge text for the given singular control state (Normal, Disabled,
+     * Focused, Selected, or Highlighted). Default values will be supplied for keys that are not provided by this
+     * dictionary. See NSAttributedString.h for details on what keys are available.
      */
     @Generated
     @Selector("setBadgeTextAttributes:forState:")
@@ -325,7 +329,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     /**
      * To set item label text attributes use the appearance selectors available on the superclass, UIBarItem.
      * <p>
-     * Use the following to tweak the relative position of the label within the tab button (for handling visual centering corrections if needed because of custom text attributes)
+     * Use the following to tweak the relative position of the label within the tab button (for handling visual
+     * centering corrections if needed because of custom text attributes)
      */
     @Generated
     @Selector("setTitlePositionAdjustment:")
@@ -334,7 +339,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     /**
      * To set item label text attributes use the appearance selectors available on the superclass, UIBarItem.
      * <p>
-     * Use the following to tweak the relative position of the label within the tab button (for handling visual centering corrections if needed because of custom text attributes)
+     * Use the following to tweak the relative position of the label within the tab button (for handling visual
+     * centering corrections if needed because of custom text attributes)
      */
     @Generated
     @Selector("titlePositionAdjustment")

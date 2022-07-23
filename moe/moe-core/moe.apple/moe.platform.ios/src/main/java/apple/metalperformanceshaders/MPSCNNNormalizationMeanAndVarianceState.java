@@ -158,7 +158,7 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   mean
+     * [@property] mean
      * <p>
      * A MTLBuffer containing the mean terms.
      */
@@ -224,7 +224,7 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
             @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
 
     /**
-     * [@property]   variance
+     * [@property] variance
      * <p>
      * A MTLBuffer containing the variance terms.
      */

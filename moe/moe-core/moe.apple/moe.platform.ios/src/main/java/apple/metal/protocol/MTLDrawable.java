@@ -82,7 +82,8 @@ public interface MTLDrawable {
     /**
      * presentAfterMinimumDuration
      * <p>
-     * Present this drawable while setting a minimum duration in seconds before allowing this drawable to appear on the display.
+     * Present this drawable while setting a minimum duration in seconds before allowing this drawable to appear on the
+     * display.
      *
      * @param duration Duration in seconds before this drawable is allowed to appear on the display
      */

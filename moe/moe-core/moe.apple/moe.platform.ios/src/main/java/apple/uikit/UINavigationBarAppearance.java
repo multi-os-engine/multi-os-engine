@@ -190,7 +190,8 @@ public class UINavigationBarAppearance extends UIBarAppearance {
     public native void setBackButtonAppearance(UIBarButtonItemAppearance value);
 
     /**
-     * Set the backIndicatorImage & backIndicatorTransitionMaskImage images. If either image is nil, then both images will be reset to their default.
+     * Set the backIndicatorImage & backIndicatorTransitionMaskImage images. If either image is nil, then both images
+     * will be reset to their default.
      */
     @Generated
     @Selector("setBackIndicatorImage:transitionMaskImage:")

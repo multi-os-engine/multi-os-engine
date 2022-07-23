@@ -137,7 +137,11 @@ public class NLModel extends NSObject {
     public static native NLModel new_objc();
 
     /**
-     * For inference purposes, a model will usually be attached to an NLTagger via -setModels:forTagScheme:, and the tagger will then take care of calling the model to produce tags as appropriate. However, it is also possible to use a model to make an individual prediction, either of the label for a given pieces of text (for a classifier model), or of the labels for a given sequence of tokens (for a sequence model).  In addition, it is possible to obtain multiple hypotheses for a given label with associated probability scores.
+     * For inference purposes, a model will usually be attached to an NLTagger via -setModels:forTagScheme:, and the
+     * tagger will then take care of calling the model to produce tags as appropriate. However, it is also possible to
+     * use a model to make an individual prediction, either of the label for a given pieces of text (for a classifier
+     * model), or of the labels for a given sequence of tokens (for a sequence model). In addition, it is possible to
+     * obtain multiple hypotheses for a given label with associated probability scores.
      */
     @Generated
     @Selector("predictedLabelForString:")

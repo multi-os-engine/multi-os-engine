@@ -183,7 +183,8 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     public static native long version_static();
 
     /**
-     * Returns a shuffled instance of the given array. The objects in the array are shuffled based on a Fisher-Yates shuffle.
+     * Returns a shuffled instance of the given array. The objects in the array are shuffled based on a Fisher-Yates
+     * shuffle.
      * <p>
      * Any random, be it custom, source or a distribution, that can provide a number with an upper bound of at least the
      * array.count is suitable for this shuffle.
@@ -204,8 +205,10 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
 
     /**
      * Creates a new random source initialized using bits from an entropy source like SecRandomCopyBytes.
-     * When used directly from the base class; this source is deterministic and performant but the underlying implementation
-     * details are not specified. Use a subclass with a specific algorithm implementation guaranteed if your application requires
+     * When used directly from the base class; this source is deterministic and performant but the underlying
+     * implementation
+     * details are not specified. Use a subclass with a specific algorithm implementation guaranteed if your application
+     * requires
      * very stringent random source charateristics.
      *
      * @see GKARC4RandomSource

@@ -196,7 +196,7 @@ public class AVSynchronizedLayer extends CALayer {
     public native AVSynchronizedLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
-     * [@property]		playerItem
+     * [@property] playerItem
      * <p>
      * Indicates the instance of AVPlayerItem to which the timing of the AVSynchronizedLayer is synchronized.
      * <p>
@@ -207,7 +207,7 @@ public class AVSynchronizedLayer extends CALayer {
     public native AVPlayerItem playerItem();
 
     /**
-     * [@property]		playerItem
+     * [@property] playerItem
      * <p>
      * Indicates the instance of AVPlayerItem to which the timing of the AVSynchronizedLayer is synchronized.
      * <p>

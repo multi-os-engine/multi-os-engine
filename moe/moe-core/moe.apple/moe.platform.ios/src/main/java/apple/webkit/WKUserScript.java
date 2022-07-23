@@ -166,7 +166,8 @@ public class WKUserScript extends NSObject implements NSCopying {
     /**
      * Returns an initialized user script that can be added to a @link WKUserContentController @/link.
      * <p>
-     * Calling this method is the same as calling `initWithSource:injectionTime:forMainFrameOnly:inContentWorld:` with a `contentWorld` value of `WKContentWorld.pageWorld`
+     * Calling this method is the same as calling `initWithSource:injectionTime:forMainFrameOnly:inContentWorld:` with a
+     * `contentWorld` value of `WKContentWorld.pageWorld`
      *
      * @param source           The script source.
      * @param injectionTime    When the script should be injected.

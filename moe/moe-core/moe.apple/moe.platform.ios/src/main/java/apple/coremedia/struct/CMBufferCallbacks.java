@@ -83,8 +83,8 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called from CMBufferQueueGetFirstDecodeTimeStamp (once),
-     * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times).  It should
-     * return the decode timestamp of the buffer.  If there are multiple samples
+     * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times). It should
+     * return the decode timestamp of the buffer. If there are multiple samples
      * in the buffer, this callback should return the minimum decode timestamp
      * in the buffer. Can be NULL (CMBufferQueueGetFirstDecodeTimeStamp and
      * CMBufferQueueGetMinDecodeTimeStamp will return kCMTimeInvalid).
@@ -96,8 +96,8 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called from CMBufferQueueGetFirstDecodeTimeStamp (once),
-     * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times).  It should
-     * return the decode timestamp of the buffer.  If there are multiple samples
+     * and from CMBufferQueueGetMinDecodeTimeStamp (multiple times). It should
+     * return the decode timestamp of the buffer. If there are multiple samples
      * in the buffer, this callback should return the minimum decode timestamp
      * in the buffer. Can be NULL (CMBufferQueueGetFirstDecodeTimeStamp and
      * CMBufferQueueGetMinDecodeTimeStamp will return kCMTimeInvalid).
@@ -110,7 +110,7 @@ public final class CMBufferCallbacks extends StructObject {
     /**
      * < This callback is called from CMBufferQueueGetFirstPresentationTimeStamp
      * (once) and from CMBufferQueueGetMinPresentationTimeStamp (multiple times).
-     * It should return the presentation timestamp of the buffer.  If there are
+     * It should return the presentation timestamp of the buffer. If there are
      * multiple samples in the buffer, this callback should return the minimum
      * presentation timestamp in the buffer. Can be NULL
      * (CMBufferQueueGetFirstPresentationTimeStamp and
@@ -124,7 +124,7 @@ public final class CMBufferCallbacks extends StructObject {
     /**
      * < This callback is called from CMBufferQueueGetFirstPresentationTimeStamp
      * (once) and from CMBufferQueueGetMinPresentationTimeStamp (multiple times).
-     * It should return the presentation timestamp of the buffer.  If there are
+     * It should return the presentation timestamp of the buffer. If there are
      * multiple samples in the buffer, this callback should return the minimum
      * presentation timestamp in the buffer. Can be NULL
      * (CMBufferQueueGetFirstPresentationTimeStamp and
@@ -137,7 +137,7 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called (once) during enqueue and dequeue operations to
-     * update the total duration of the queue.  Must not be NULL.
+     * update the total duration of the queue. Must not be NULL.
      */
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -146,7 +146,7 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called (once) during enqueue and dequeue operations to
-     * update the total duration of the queue.  Must not be NULL.
+     * update the total duration of the queue. Must not be NULL.
      */
     @Generated
     @StructureField(order = 4, isGetter = false)
@@ -154,7 +154,7 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called from CMBufferQueueDequeueIfDataReadyAndRetain, to
-     * ask if the buffer that is about to be dequeued is ready.  Can be NULL
+     * ask if the buffer that is about to be dequeued is ready. Can be NULL
      * (data will be assumed to be ready).
      */
     @Generated
@@ -164,7 +164,7 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called from CMBufferQueueDequeueIfDataReadyAndRetain, to
-     * ask if the buffer that is about to be dequeued is ready.  Can be NULL
+     * ask if the buffer that is about to be dequeued is ready. Can be NULL
      * (data will be assumed to be ready).
      */
     @Generated
@@ -208,7 +208,7 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called (once) during enqueue and dequeue operation to
-     * update the total size of the queue. Can be NULL.  Ignored if version < 1.
+     * update the total size of the queue. Can be NULL. Ignored if version < 1.
      */
     @Generated
     @StructureField(order = 8, isGetter = true)
@@ -217,7 +217,7 @@ public final class CMBufferCallbacks extends StructObject {
 
     /**
      * < This callback is called (once) during enqueue and dequeue operation to
-     * update the total size of the queue. Can be NULL.  Ignored if version < 1.
+     * update the total size of the queue. Can be NULL. Ignored if version < 1.
      */
     @Generated
     @StructureField(order = 8, isGetter = false)

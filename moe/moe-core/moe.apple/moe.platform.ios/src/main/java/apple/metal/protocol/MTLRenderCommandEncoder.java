@@ -43,7 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@protocol] MTLRenderCommandEncoder
  * <p>
- * MTLRenderCommandEncoder is a container for graphics rendering state and the code to translate the state into a command format that the device can execute.
+ * MTLRenderCommandEncoder is a container for graphics rendering state and the code to translate the state into a
+ * command format that the device can execute.
  */
 @Generated
 @Library("Metal")
@@ -67,7 +68,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param indexCount        The number of indexes to read from the index buffer for each instance.
      * @param indexType         The type if indexes, either 16 bit integer or 32 bit integer.
      * @param indexBuffer       A buffer object that the device will read indexes from.
-     * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from.  @a indexBufferOffset must be a multiple of the index size.
+     * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from. @a indexBufferOffset
+     *                          must be a multiple of the index size.
      */
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:")
@@ -84,7 +86,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param indexCount        The number of indexes to read from the index buffer for each instance.
      * @param indexType         The type if indexes, either 16 bit integer or 32 bit integer.
      * @param indexBuffer       A buffer object that the device will read indexes from.
-     * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from.  @a indexBufferOffset must be a multiple of the index size.
+     * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from. @a indexBufferOffset
+     *                          must be a multiple of the index size.
      * @param instanceCount     The number of instances drawn.
      */
     @Generated
@@ -102,7 +105,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param indexCount        The number of indexes to read from the index buffer for each instance.
      * @param indexType         The type if indexes, either 16 bit integer or 32 bit integer.
      * @param indexBuffer       A buffer object that the device will read indexes from.
-     * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from.  @a indexBufferOffset must be a multiple of the index size.
+     * @param indexBufferOffset Byte offset within @a indexBuffer to start reading indexes from. @a indexBufferOffset
+     *                          must be a multiple of the index size.
      * @param instanceCount     The number of instances drawn.
      * @param baseVertex        Offset for vertex_id. NOTE: this can be negative
      * @param baseInstance      Offset for instance_id.
@@ -122,9 +126,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param primitiveType        The type of primitives that elements are assembled into.
      * @param indexType            The type if indexes, either 16 bit integer or 32 bit integer.
      * @param indexBuffer          A buffer object that the device will read indexes from.
-     * @param indexBufferOffset    Byte offset within @a indexBuffer to start reading indexes from.  @a indexBufferOffset must be a multiple of the index size.
-     * @param indirectBuffer       A buffer object that the device will read drawIndexedPrimitives arguments from, see MTLDrawIndexedPrimitivesIndirectArguments.
-     * @param indirectBufferOffset Byte offset within @a indirectBuffer to start reading indexes from.  @a indirectBufferOffset must be a multiple of 4.
+     * @param indexBufferOffset    Byte offset within @a indexBuffer to start reading indexes from. @a indexBufferOffset
+     *                             must be a multiple of the index size.
+     * @param indirectBuffer       A buffer object that the device will read drawIndexedPrimitives arguments from, see
+     *                             MTLDrawIndexedPrimitivesIndirectArguments.
+     * @param indirectBufferOffset Byte offset within @a indirectBuffer to start reading indexes from. @a
+     *                             indirectBufferOffset must be a multiple of 4.
      */
     @Generated
     @Selector("drawIndexedPrimitives:indexType:indexBuffer:indexBufferOffset:indirectBuffer:indirectBufferOffset:")
@@ -146,8 +153,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * Draw primitives without an index list using an indirect buffer see MTLDrawPrimitivesIndirectArguments.
      *
      * @param primitiveType        The type of primitives that elements are assembled into.
-     * @param indirectBuffer       A buffer object that the device will read drawPrimitives arguments from, see MTLDrawPrimitivesIndirectArguments.
-     * @param indirectBufferOffset Byte offset within @a indirectBuffer to start reading indexes from.  @a indirectBufferOffset must be a multiple of 4.
+     * @param indirectBuffer       A buffer object that the device will read drawPrimitives arguments from, see
+     *                             MTLDrawPrimitivesIndirectArguments.
+     * @param indirectBufferOffset Byte offset within @a indirectBuffer to start reading indexes from. @a
+     *                             indirectBufferOffset must be a multiple of 4.
      */
     @Generated
     @Selector("drawPrimitives:indirectBuffer:indirectBufferOffset:")
@@ -213,10 +222,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setColorStoreAction:atIndex:
      * <p>
-     * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command encoder was created,
+     * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command
+     * encoder was created,
      * setColorStoreAction:atIndex: must be used to finalize the store action before endEncoding is called.
      *
-     * @param storeAction          The desired store action for the given color attachment.  This may be set to any value other than MTLStoreActionUnknown.
+     * @param storeAction          The desired store action for the given color attachment. This may be set to any value
+     *                             other than MTLStoreActionUnknown.
      * @param colorAttachmentIndex The index of the color attachment
      */
     @Generated
@@ -253,7 +264,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setDepthStoreAction:
      * <p>
-     * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder was created,
+     * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder
+     * was created,
      * setDepthStoreAction: must be used to finalize the store action before endEncoding is called.
      */
     @Generated
@@ -292,7 +304,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setFragmentBytes:length:atIndex:
      * <p>
-     * Set the data (by copy) for a given fragment buffer binding point.  This will remove any existing MTLBuffer from the binding point.
+     * Set the data (by copy) for a given fragment buffer binding point. This will remove any existing MTLBuffer from
+     * the binding point.
      */
     @Generated
     @Selector("setFragmentBytes:length:atIndex:")
@@ -378,7 +391,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setScissorRect:
      * <p>
-     * Specifies a rectangle for a fragment scissor test.  All fragments outside of this rectangle are discarded.
+     * Specifies a rectangle for a fragment scissor test. All fragments outside of this rectangle are discarded.
      */
     @Generated
     @Selector("setScissorRect:")
@@ -405,7 +418,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setStencilStoreAction:
      * <p>
-     * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command encoder was created,
+     * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command
+     * encoder was created,
      * setStencilStoreAction: must be used to finalize the store action before endEncoding is called.
      */
     @Generated
@@ -462,7 +476,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setVertexBytes:length:atIndex:
      * <p>
-     * Set the data (by copy) for a given vertex buffer binding point.  This will remove any existing MTLBuffer from the binding point.
+     * Set the data (by copy) for a given vertex buffer binding point. This will remove any existing MTLBuffer from the
+     * binding point.
      */
     @Generated
     @Selector("setVertexBytes:length:atIndex:")
@@ -530,7 +545,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setViewport:
      * <p>
-     * Set the viewport, which is used to transform vertexes from normalized device coordinates to window coordinates.  Fragments that lie outside of the viewport are clipped, and optionally clamped for fragments outside of znear/zfar.
+     * Set the viewport, which is used to transform vertexes from normalized device coordinates to window coordinates.
+     * Fragments that lie outside of the viewport are clipped, and optionally clamped for fragments outside of
+     * znear/zfar.
      */
     @Generated
     @Selector("setViewport:")
@@ -542,7 +559,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * Monitor if samples pass the depth and stencil tests.
      *
      * @param mode   Controls if the counter is disabled or moniters passing samples.
-     * @param offset The offset relative to the occlusion query buffer provided when the command encoder was created.  offset must be a multiple of 8.
+     * @param offset The offset relative to the occlusion query buffer provided when the command encoder was created.
+     *               offset must be a multiple of 8.
      */
     @Generated
     @Selector("setVisibilityResultMode:offset:")
@@ -553,7 +571,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * <p>
      * Update the fence to capture all GPU work so far enqueued by this encoder for the given stages.
      * <p>
-     * Unlike <st>updateFence:</st>, this method will update the fence when the given stage(s) complete, allowing for commands to overlap in execution.
+     * Unlike <st>updateFence:</st>, this method will update the fence when the given stage(s) complete, allowing for
+     * commands to overlap in execution.
      * On iOS, render command encoder fence updates are always delayed until the end of the encoder.
      */
     @Generated
@@ -565,7 +584,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * <p>
      * Prevent further GPU work until the fence is reached for the given stages.
      * <p>
-     * Unlike <st>waitForFence:</st>, this method will only block commands assoicated with the given stage(s), allowing for commands to overlap in execution.
+     * Unlike <st>waitForFence:</st>, this method will only block commands assoicated with the given stage(s), allowing
+     * for commands to overlap in execution.
      * On iOS, render command encoder fence waits always occur the beginning of the encoder.
      */
     @Generated
@@ -584,8 +604,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setColorStoreActionOptions:atIndex:
      * <p>
-     * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command encoder was created,
-     * setColorStoreActionOptions:atIndex: may be used to finalize the store action options before endEncoding is called.
+     * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command
+     * encoder was created,
+     * setColorStoreActionOptions:atIndex: may be used to finalize the store action options before endEncoding is
+     * called.
      *
      * @param storeActionOptions   The desired store action options for the given color attachment.
      * @param colorAttachmentIndex The index of the color attachment
@@ -606,7 +628,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setDepthStoreActionOptions:
      * <p>
-     * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder was created,
+     * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder
+     * was created,
      * setDepthStoreActionOptions: may be used to finalize the store action options before endEncoding is called.
      */
     @Generated
@@ -616,7 +639,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setStencilStoreActionOptions:
      * <p>
-     * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command encoder was created,
+     * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command
+     * encoder was created,
      * setStencilStoreActionOptions: may be used to finalize the store action options before endEncoding is called.
      */
     @Generated
@@ -664,7 +688,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setTileBytes:length:atIndex:
      * <p>
-     * Set the data (by copy) for a given tile buffer binding point.  This will remove any existing MTLBuffer from the binding point.
+     * Set the data (by copy) for a given tile buffer binding point. This will remove any existing MTLBuffer from the
+     * binding point.
      */
     @Generated
     @Selector("setTileBytes:length:atIndex:")
@@ -754,7 +779,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * <p>
      * Declare that the resources allocated from a heap may be accessed by the render pass through an argument buffer
      * <p>
-     * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method must be called before encoding any draw commands which may access the resources allocated from the heap through an argument buffer. This method may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method
+     * must be called before encoding any draw commands which may access the resources allocated from the heap through
+     * an argument buffer. This method may cause all of the color attachments allocated from the heap to become
+     * decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be
+     * used for color attachments instead, with a minimal (i.e. read-only) usage.
      */
     @Generated
     @Selector("useHeap:")
@@ -763,9 +792,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * useHeaps:count:
      * <p>
-     * Declare that the resources allocated from an array of heaps may be accessed by the render pass through an argument buffer
+     * Declare that the resources allocated from an array of heaps may be accessed by the render pass through an
+     * argument buffer
      * <p>
-     * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method must be called before encoding any draw commands which may access the resources allocated from the heaps through an argument buffer. This method may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method
+     * must be called before encoding any draw commands which may access the resources allocated from the heaps through
+     * an argument buffer. This method may cause all of the color attachments allocated from the heaps to become
+     * decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be
+     * used for color attachments instead, with a minimal (i.e. read-only) usage.
      */
     @Generated
     @Selector("useHeaps:count:")
@@ -774,9 +808,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * * @method useResource:usage:
      * * @abstract Declare that a resource may be accessed by the render pass through an argument buffer
-     * * @discussion This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method must be called before encoding any draw commands which may access the resource through an argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color attachments from becoming decompressed on some devices.
+     * * @discussion This method does not protect against data hazards; these hazards must be addressed using an
+     * MTLFence. This method must be called before encoding any draw commands which may access the resource through an
+     * argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method
+     * should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e.
+     * read-only) may prevent color attachments from becoming decompressed on some devices.
      * <p>
-     * Note that calling useResource does not retain the resource. It is the responsiblity of the user to retain the resource until
+     * Note that calling useResource does not retain the resource. It is the responsiblity of the user to retain the
+     * resource until
      * the command buffer has been executed.
      */
     @Generated
@@ -786,9 +825,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * * @method useResources:count:usage:
      * * @abstract Declare that an array of resources may be accessed through an argument buffer by the render pass
-     * * @discussion This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method must be called before encoding any draw commands which may access the resources through an argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color attachments from becoming decompressed on some devices.
+     * * @discussion This method does not protect against data hazards; these hazards must be addressed using an
+     * MTLFence. This method must be called before encoding any draw commands which may access the resources through an
+     * argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method
+     * should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e.
+     * read-only) may prevent color attachments from becoming decompressed on some devices.
      * <p>
-     * Note that calling useResources does not retain the resources. It is the responsiblity of the user to retain the resources until
+     * Note that calling useResources does not retain the resources. It is the responsiblity of the user to retain the
+     * resources until
      * the command buffer has been executed.
      */
     @Generated
@@ -818,8 +862,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * <p>
      * The same indirect command buffer may be executed any number of times within the same encoder.
      *
-     * @param indirectRangeBuffer  An indirect buffer from which the device reads the execution range parameter, as laid out in the MTLIndirectCommandBufferExecutionRange structure.
-     * @param indirectBufferOffset The byte offset within indirectBuffer where the execution range parameter is located. Must be a multiple of 4 bytes.
+     * @param indirectRangeBuffer  An indirect buffer from which the device reads the execution range parameter, as laid
+     *                             out in the MTLIndirectCommandBufferExecutionRange structure.
+     * @param indirectBufferOffset The byte offset within indirectBuffer where the execution range parameter is located.
+     *                             Must be a multiple of 4 bytes.
      */
     @Generated
     @Selector("executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:")
@@ -843,7 +889,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setScissorRects:
      * <p>
-     * Specifies an array of rectangles for a fragment scissor test. The specific rectangle used is based on the [[ viewport_array_index ]] value output by the vertex shader. Fragments that lie outside the scissor rectangle are discarded.
+     * Specifies an array of rectangles for a fragment scissor test. The specific rectangle used is based on the [[
+     * viewport_array_index ]] value output by the vertex shader. Fragments that lie outside the scissor rectangle are
+     * discarded.
      */
     @Generated
     @Selector("setScissorRects:count:")
@@ -856,7 +904,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * <p>
      * Specifies the vertex amplification count and associated view mappings for each amplification ID.
      * <p>
-     * Each mapping element describes how to route the corresponding amplification ID to a specific viewport and render target array index by using offsets from the base array index provided by the [[render_target_array_index]] and/or [[viewport_array_index]] output attributes in the vertex shader. This allows a modicum of programmability for each amplified vertex to be routed to a different [[render_target_array_index]] and [[viewport_array_index]] even though these attribytes cannot be amplified themselves.
+     * Each mapping element describes how to route the corresponding amplification ID to a specific viewport and render
+     * target array index by using offsets from the base array index provided by the [[render_target_array_index]]
+     * and/or [[viewport_array_index]] output attributes in the vertex shader. This allows a modicum of programmability
+     * for each amplified vertex to be routed to a different [[render_target_array_index]] and [[viewport_array_index]]
+     * even though these attribytes cannot be amplified themselves.
      *
      * @param count        the amplification count. The maximum value is currently 2.
      * @param viewMappings an array of mapping elements.
@@ -869,7 +921,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setViewports:
      * <p>
-     * Specifies an array of viewports, which are used to transform vertices from normalized device coordinates to window coordinates based on [[ viewport_array_index ]] value specified in the vertex shader.
+     * Specifies an array of viewports, which are used to transform vertices from normalized device coordinates to
+     * window coordinates based on [[ viewport_array_index ]] value specified in the vertex shader.
      */
     @Generated
     @Selector("setViewports:count:")
@@ -881,7 +934,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * <p>
      * Declare that the resources allocated from a heap may be accessed by the render pass through an argument buffer
      * <p>
-     * If the heap is tracked, this method protects against hazard tracking; these hazards must be addressed using an MTLFence. This method must be called before encoding any draw commands which may access the resources allocated from the heap through an argument buffer. This method may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * If the heap is tracked, this method protects against hazard tracking; these hazards must be addressed using an
+     * MTLFence. This method must be called before encoding any draw commands which may access the resources allocated
+     * from the heap through an argument buffer. This method may cause all of the color attachments allocated from the
+     * heap to become decompressed. Therefore, it is recommended that the useResource:usage: or
+     * useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
      */
     @Generated
     @Selector("useHeap:stages:")
@@ -890,9 +947,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * useHeaps:count:stages
      * <p>
-     * Declare that the resources allocated from an array of heaps may be accessed by the render pass through an argument buffer
+     * Declare that the resources allocated from an array of heaps may be accessed by the render pass through an
+     * argument buffer
      * <p>
-     * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method must be called before encoding any draw commands which may access the resources allocated from the heaps through an argument buffer. This method may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method
+     * must be called before encoding any draw commands which may access the resources allocated from the heaps through
+     * an argument buffer. This method may cause all of the color attachments allocated from the heaps to become
+     * decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be
+     * used for color attachments instead, with a minimal (i.e. read-only) usage.
      */
     @Generated
     @Selector("useHeaps:count:stages:")
@@ -902,9 +964,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * * @method useResources:usage:stage
      * * @abstract Declare that a resource may be accessed by the render pass through an argument buffer
-     * * @For hazard tracked resources, this method protects against data hazards. This method must be called before encoding any draw commands which may access the resource through an argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color attachments from becoming decompressed on some devices.
+     * * @For hazard tracked resources, this method protects against data hazards. This method must be called before
+     * encoding any draw commands which may access the resource through an argument buffer. However, this method may
+     * cause color attachments to become decompressed. Therefore, this method should be called until as late as possible
+     * within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color attachments from
+     * becoming decompressed on some devices.
      * <p>
-     * Note that calling useResource does not retain the resource. It is the responsiblity of the user to retain the resource until
+     * Note that calling useResource does not retain the resource. It is the responsiblity of the user to retain the
+     * resource until
      * the command buffer has been executed.
      */
     @Generated
@@ -915,9 +982,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * * @method useResources:count:usage:stages
      * * @abstract Declare that an array of resources may be accessed through an argument buffer by the render pass
-     * * @discussion For hazard tracked resources, this method protects against data hazards.  This method must be called before encoding any draw commands which may access the resources through an argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color attachments from becoming decompressed on some devices.
+     * * @discussion For hazard tracked resources, this method protects against data hazards. This method must be called
+     * before encoding any draw commands which may access the resources through an argument buffer. However, this method
+     * may cause color attachments to become decompressed. Therefore, this method should be called until as late as
+     * possible within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color
+     * attachments from becoming decompressed on some devices.
      * <p>
-     * Note that calling useResources does not retain the resources. It is the responsiblity of the user to retain the resources until
+     * Note that calling useResources does not retain the resources. It is the responsiblity of the user to retain the
+     * resources until
      * the command buffer has been executed.
      */
     @Generated
@@ -933,13 +1005,13 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      *
      * @param sampleBuffer The sample buffer to sample into
      * @param sampleIndex  The index into the counter buffer to write the sample.
-     * @param barrier      Insert a barrier before taking the sample.  Passing
+     * @param barrier      Insert a barrier before taking the sample. Passing
      *                     YES will ensure that all work encoded before this operation in the encoder is
-     *                     complete but does not isolate the work with respect to other encoders.  Passing
+     *                     complete but does not isolate the work with respect to other encoders. Passing
      *                     NO will allow the sample to be taken concurrently with other operations in this
      *                     encoder.
      *                     In general, passing YES will lead to more repeatable counter results but
-     *                     may negatively impact performance.  Passing NO will generally be higher performance
+     *                     may negatively impact performance. Passing NO will generally be higher performance
      *                     but counter results may not be repeatable.
      */
     @Generated
@@ -972,7 +1044,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setFragmentIntersectionFunctionTables:withBufferRange:
      * <p>
-     * Set an array of global intersection function tables for all fragment shaders with the given buffer bind point range.
+     * Set an array of global intersection function tables for all fragment shaders with the given buffer bind point
+     * range.
      */
     @Generated
     @Selector("setFragmentIntersectionFunctionTables:withBufferRange:")
@@ -1074,7 +1147,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * setVertexIntersectionFunctionTables:withBufferRange:
      * <p>
-     * Set an array of global intersection function tables for all vertex shaders with the given buffer bind point range.
+     * Set an array of global intersection function tables for all vertex shaders with the given buffer bind point
+     * range.
      */
     @Generated
     @Selector("setVertexIntersectionFunctionTables:withBufferRange:")

@@ -139,7 +139,8 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] enabled
      * <p>
-     * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another configuration that overlaps with this configuration.
+     * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another
+     * configuration that overlaps with this configuration.
      */
     @Generated
     @Selector("isEnabled")
@@ -156,10 +157,13 @@ public class NEAppPushManager extends NSObject {
     /**
      * loadAllFromPreferencesWithCompletionHandler:
      * <p>
-     * This class method asynchronously reads all of the saved configurations and returns them as an array of NEAppPushManager objects.
+     * This class method asynchronously reads all of the saved configurations and returns them as an array of
+     * NEAppPushManager objects.
      *
-     * @param completionHandler A block that takes an array of NEAppPushManager objects. The array passed to the block may be empty if no configurations
-     *                          were successfully read from the disk. The NSError object passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that takes an array of NEAppPushManager objects. The array passed to the block
+     *                          may be empty if no configurations
+     *                          were successfully read from the disk. The NSError object passed to this block will be
+     *                          nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("loadAllFromPreferencesWithCompletionHandler:")
@@ -179,7 +183,8 @@ public class NEAppPushManager extends NSObject {
      * <p>
      * This method loads the saved configuration from the persistent store.
      *
-     * @param completionHandler A block that will be called when the load operation is completed. The NSError object passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the load operation is completed. The NSError object
+     *                          passed to this block will be nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
@@ -205,7 +210,8 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] matchSSIDs
      * <p>
-     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings then the NEAppPushProvider
+     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings
+     * then the NEAppPushProvider
      * is started. The upper limit of number of SSIDs is 10.
      */
     @Generated
@@ -229,8 +235,10 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] providerConfiguration
      * <p>
-     * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data types supported by property list. Values of user defined data
-     * type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified for other specified reasons.
+     * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data
+     * types supported by property list. Values of user defined data
+     * type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified
+     * for other specified reasons.
      */
     @Generated
     @Selector("providerConfiguration")
@@ -241,7 +249,8 @@ public class NEAppPushManager extends NSObject {
      * <p>
      * This method removes the configuration from the persistent store.
      *
-     * @param completionHandler A block that will be called when the remove operation is completed. The NSError object passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the remove operation is completed. The NSError object
+     *                          passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
@@ -268,7 +277,8 @@ public class NEAppPushManager extends NSObject {
      * <p>
      * This method saves the configuration in the persistent store.
      *
-     * @param completionHandler A block that will be called when the save operation is completed. The NSError object passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the save operation is completed. The NSError object
+     *                          passed to this block will be nil if the save operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
@@ -311,7 +321,8 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] enabled
      * <p>
-     * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another configuration that overlaps with this configuration.
+     * Toggles the enabled status of the configuration. This property will be set to NO when the same app saves another
+     * configuration that overlaps with this configuration.
      */
     @Generated
     @Selector("setEnabled:")
@@ -329,7 +340,8 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] matchSSIDs
      * <p>
-     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings then the NEAppPushProvider
+     * An array of Wi-Fi SSID strings. If the SSID string of current Wi-Fi network matches with one of these strings
+     * then the NEAppPushProvider
      * is started. The upper limit of number of SSIDs is 10.
      */
     @Generated
@@ -348,8 +360,10 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] providerConfiguration
      * <p>
-     * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data types supported by property list. Values of user defined data
-     * type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified for other specified reasons.
+     * A dictionary containing vendor-specific key-value pairs, where the data type of values must be one of the data
+     * types supported by property list. Values of user defined data
+     * type are not supported. This dictionary is passed as-is to NEAppPushProvider when is it is started or notified
+     * for other specified reasons.
      */
     @Generated
     @Selector("setProviderConfiguration:")
@@ -371,8 +385,10 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] matchPrivateLTENetworks
      * <p>
-     * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties of one of these NEPrivateLTENetwork objects then the
-     * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks that are not band 48, the device must be supervised in order to perform the match
+     * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties
+     * of one of these NEPrivateLTENetwork objects then the
+     * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks
+     * that are not band 48, the device must be supervised in order to perform the match
      */
     @Generated
     @Selector("matchPrivateLTENetworks")
@@ -381,8 +397,10 @@ public class NEAppPushManager extends NSObject {
     /**
      * [@property] matchPrivateLTENetworks
      * <p>
-     * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties of one of these NEPrivateLTENetwork objects then the
-     * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks that are not band 48, the device must be supervised in order to perform the match
+     * An array of NEPrivateLTENetwork objects. If the properties of current private LTE network match with properties
+     * of one of these NEPrivateLTENetwork objects then the
+     * NEAppPushProvider is started. The upper limit of number of private LTE networks is 10. For private LTE networks
+     * that are not band 48, the device must be supervised in order to perform the match
      */
     @Generated
     @Selector("setMatchPrivateLTENetworks:")

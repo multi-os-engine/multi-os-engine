@@ -123,7 +123,8 @@ public class INMediaUserContext extends INUserContext {
     public static native INMediaUserContext new_objc();
 
     /**
-     * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) - used as a signal of user affinity for the app
+     * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) -
+     * used as a signal of user affinity for the app
      */
     @Generated
     @Selector("numberOfLibraryItems")
@@ -138,7 +139,8 @@ public class INMediaUserContext extends INUserContext {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) - used as a signal of user affinity for the app
+     * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) -
+     * used as a signal of user affinity for the app
      */
     @Generated
     @Selector("setNumberOfLibraryItems:")

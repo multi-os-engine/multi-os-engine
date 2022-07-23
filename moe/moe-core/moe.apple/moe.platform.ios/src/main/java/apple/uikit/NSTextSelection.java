@@ -48,7 +48,10 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Either upstream or downstream selection. NSTextSelectionAffinityDownstream by default. For a 0-length selection, it describes the visual location of the text cursor between the head of line containing the selection location (downstream) or tail of the previous line (upstream). For a selection with contents, it describes the logical direction of non-anchored edge of the selection.
+     * Either upstream or downstream selection. NSTextSelectionAffinityDownstream by default. For a 0-length selection,
+     * it describes the visual location of the text cursor between the head of line containing the selection location
+     * (downstream) or tail of the previous line (upstream). For a selection with contents, it describes the logical
+     * direction of non-anchored edge of the selection.
      */
     @Generated
     @Selector("affinity")
@@ -66,7 +69,10 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     public static native NSTextSelection allocWithZone(VoidPtr zone);
 
     /**
-     * Represents the anchor position offset from the beginning of a line fragment in the visual order for the initial tap or mouse down. That is from the left for a horizontal line fragment and from the top for a vertical. Navigating between lines uses this point when the current line fragment associated with the selection is shorter than the next line visited. 0.0 by default.
+     * Represents the anchor position offset from the beginning of a line fragment in the visual order for the initial
+     * tap or mouse down. That is from the left for a horizontal line fragment and from the top for a vertical.
+     * Navigating between lines uses this point when the current line fragment associated with the selection is shorter
+     * than the next line visited. 0.0 by default.
      */
     @Generated
     @Selector("anchorPositionOffset")
@@ -108,7 +114,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * The granularity of the selection. NSTextSelectionGranularityByCharacter by default. Extending operations should modify the selection by the granularity.
+     * The granularity of the selection. NSTextSelectionGranularityByCharacter by default. Extending operations should
+     * modify the selection by the granularity.
      */
     @Generated
     @Selector("granularity")
@@ -139,7 +146,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
             @NInt long granularity);
 
     /**
-     * textRanges should be ordered and not overlapping. Otherwise, textRanges would get normalized by reordered and merging overlapping ranges.
+     * textRanges should be ordered and not overlapping. Otherwise, textRanges would get normalized by reordered and
+     * merging overlapping ranges.
      */
     @Generated
     @Selector("initWithRanges:affinity:granularity:")
@@ -195,7 +203,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Specifies the secondary character location when user taps/clicks at a directional boundary. Setting non-nil location has a side effect of making -logical=NO.
+     * Specifies the secondary character location when user taps/clicks at a directional boundary. Setting non-nil
+     * location has a side effect of making -logical=NO.
      */
     @Generated
     @Selector("secondarySelectionLocation")
@@ -203,7 +212,10 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     public native NSTextLocation secondarySelectionLocation();
 
     /**
-     * Represents the anchor position offset from the beginning of a line fragment in the visual order for the initial tap or mouse down. That is from the left for a horizontal line fragment and from the top for a vertical. Navigating between lines uses this point when the current line fragment associated with the selection is shorter than the next line visited. 0.0 by default.
+     * Represents the anchor position offset from the beginning of a line fragment in the visual order for the initial
+     * tap or mouse down. That is from the left for a horizontal line fragment and from the top for a vertical.
+     * Navigating between lines uses this point when the current line fragment associated with the selection is shorter
+     * than the next line visited. 0.0 by default.
      */
     @Generated
     @Selector("setAnchorPositionOffset:")
@@ -217,7 +229,8 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     public native void setLogical(boolean value);
 
     /**
-     * Specifies the secondary character location when user taps/clicks at a directional boundary. Setting non-nil location has a side effect of making -logical=NO.
+     * Specifies the secondary character location when user taps/clicks at a directional boundary. Setting non-nil
+     * location has a side effect of making -logical=NO.
      */
     @Generated
     @Selector("setSecondarySelectionLocation:")
@@ -249,14 +262,16 @@ public class NSTextSelection extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * Represents an array of disjoint logical ranges in the selection. The array must be logically ordered. When editing, all ranges in a text selection constitute a single insertion point.
+     * Represents an array of disjoint logical ranges in the selection. The array must be logically ordered. When
+     * editing, all ranges in a text selection constitute a single insertion point.
      */
     @Generated
     @Selector("textRanges")
     public native NSArray<? extends NSTextRange> textRanges();
 
     /**
-     * Returns a copy of this selection, replacing this instance's textRanges property with textRanges but keeping all other attributes the same.
+     * Returns a copy of this selection, replacing this instance's textRanges property with textRanges but keeping all
+     * other attributes the same.
      */
     @Generated
     @Selector("textSelectionWithTextRanges:")

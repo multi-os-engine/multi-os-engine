@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A LSTM layer
  * <p>
- * The hidden and cell state for inputs and outputs have a layout of [numberOfLayers, numberOfDirections, batchSize, hiddenSize].
+ * The hidden and cell state for inputs and outputs have a layout of [numberOfLayers, numberOfDirections, batchSize,
+ * hiddenSize].
  */
 @Generated
 @Library("MLCompute")
@@ -62,7 +63,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   biases
+     * [@property] biases
      * <p>
      * The array of tensors describing the bias terms for the input, hidden, cell and output gates
      */
@@ -71,7 +72,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public native NSArray<? extends MLCTensor> biases();
 
     /**
-     * [@property]   biasesParameters
+     * [@property] biasesParameters
      * <p>
      * The bias tensor parameter used for optimizer update
      */
@@ -106,7 +107,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * The LSTM descriptor
      */
@@ -115,7 +116,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public native MLCLSTMDescriptor descriptor();
 
     /**
-     * [@property]   gateActivations
+     * [@property] gateActivations
      * <p>
      * The array of gate activations for input, hidden, cell and output gates
      * <p>
@@ -131,7 +132,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public static native long hash_static();
 
     /**
-     * [@property]   hiddenWeights
+     * [@property] hiddenWeights
      * <p>
      * The array of tensors describing the hidden weights for the input, hidden, cell and output gates
      */
@@ -140,7 +141,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public native NSArray<? extends MLCTensor> hiddenWeights();
 
     /**
-     * [@property]   hiddenWeightsParameters
+     * [@property] hiddenWeightsParameters
      * <p>
      * The hidden weights tensor parameters used for optimizer update
      */
@@ -153,7 +154,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public native MLCLSTMLayer init();
 
     /**
-     * [@property]   inputWeights
+     * [@property] inputWeights
      * <p>
      * The array of tensors describing the input weights for the input, hidden, cell and output gates
      */
@@ -162,7 +163,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public native NSArray<? extends MLCTensor> inputWeights();
 
     /**
-     * [@property]   inputWeightsParameters
+     * [@property] inputWeightsParameters
      * <p>
      * The input weights tensor parameters used for optimizer update
      */
@@ -231,19 +232,28 @@ public class MLCLSTMLayer extends MLCLayer {
      *
      * @param descriptor             The LSTM descriptor
      * @param inputWeights           An array of (layerCount * 4) tensors describing the input weights for the
-     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
-     *                               For bidirectional LSTM, the forward time weights for all stacked layers will come first followed by backward time weights
+     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for
+     *                               layerCount=n.
+     *                               For bidirectional LSTM, the forward time weights for all stacked layers will come
+     *                               first followed by backward time weights
      * @param hiddenWeights          An array of (layerCount * 4) tensors describing the hidden weights for the
-     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
-     *                               For bidirectional LSTM, the forward time weights for all stacked layers will come first followed by backward time weights
+     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for
+     *                               layerCount=n.
+     *                               For bidirectional LSTM, the forward time weights for all stacked layers will come
+     *                               first followed by backward time weights
      * @param peepholeWeights        An array of (layerCount * 4) tensors describing the peephole weights for the
-     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
+     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for
+     *                               layerCount=n.
      * @param biases                 An array of (layerCount * 4) tensors describing the input weights for the
-     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
-     *                               For bidirectional LSTM, the forward time bias terms for all stacked layers will come first followed by backward time bias terms
-     * @param gateActivations        An array of 4 neuron descriptors for the input, hidden, cell and output gate activations.
-     * @param outputResultActivation The neuron descriptor used for the activation function applied to output result.  Default is tanh.
-     * @return A new  LSTM layer.
+     *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for
+     *                               layerCount=n.
+     *                               For bidirectional LSTM, the forward time bias terms for all stacked layers will
+     *                               come first followed by backward time bias terms
+     * @param gateActivations        An array of 4 neuron descriptors for the input, hidden, cell and output gate
+     *                               activations.
+     * @param outputResultActivation The neuron descriptor used for the activation function applied to output result.
+     *                               Default is tanh.
+     * @return A new LSTM layer.
      */
     @Generated
     @Selector("layerWithDescriptor:inputWeights:hiddenWeights:peepholeWeights:biases:gateActivations:outputResultActivation:")
@@ -259,7 +269,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public static native MLCLSTMLayer new_objc();
 
     /**
-     * [@property]   outputResultActivation
+     * [@property] outputResultActivation
      * <p>
      * The output activation descriptor
      */
@@ -268,7 +278,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public native MLCActivationDescriptor outputResultActivation();
 
     /**
-     * [@property]   peepholeWeights
+     * [@property] peepholeWeights
      * <p>
      * The array of tensors describing the peephole weights for the input, hidden, cell and output gates
      */
@@ -277,7 +287,7 @@ public class MLCLSTMLayer extends MLCLayer {
     public native NSArray<? extends MLCTensor> peepholeWeights();
 
     /**
-     * [@property]   peepholeWeightsParameters
+     * [@property] peepholeWeightsParameters
      * <p>
      * The peephole weights tensor parameters used for optimizer update
      */

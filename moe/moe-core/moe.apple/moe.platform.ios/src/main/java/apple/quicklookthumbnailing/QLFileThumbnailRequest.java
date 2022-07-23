@@ -125,7 +125,8 @@ public class QLFileThumbnailRequest extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The maximum size of the generated thumbnail that will be accepted. This is also the preferred size, ideally either the width or the height will match the maximumSize's width or height respectively.
+     * The maximum size of the generated thumbnail that will be accepted. This is also the preferred size, ideally
+     * either the width or the height will match the maximumSize's width or height respectively.
      */
     @Generated
     @Selector("maximumSize")

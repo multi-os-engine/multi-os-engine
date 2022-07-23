@@ -33,8 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@dependency] This depends on Metal.framework
  * <p>
  * A state to hold information necessary to execute a gradient
- * pass for MPSCNNGroupNormalization.  Gradient states should
- * be created by using the forward kernel's methods.  This will
+ * pass for MPSCNNGroupNormalization. Gradient states should
+ * be created by using the forward kernel's methods. This will
  * ensure that the state captures all information necessary to
  * execute the corresponding gradient pass.
  */
@@ -113,7 +113,7 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
     public native MTLBuffer gamma();
 
     /**
-     * [@property]   The MTLBuffer containing the gradient values for beta.
+     * [@property] The MTLBuffer containing the gradient values for beta.
      */
     @Generated
     @Selector("gradientForBeta")
@@ -121,7 +121,7 @@ public class MPSCNNGroupNormalizationGradientState extends MPSNNGradientState {
     public native MTLBuffer gradientForBeta();
 
     /**
-     * [@property]   The MTLBuffer containing the gradient values for gamma.
+     * [@property] The MTLBuffer containing the gradient values for gamma.
      */
     @Generated
     @Selector("gradientForGamma")

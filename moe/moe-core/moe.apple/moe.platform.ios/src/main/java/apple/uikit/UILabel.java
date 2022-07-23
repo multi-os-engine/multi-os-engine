@@ -354,7 +354,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     public native boolean adjustsFontSizeToFitWidth();
 
     /**
-     * Non-functional.  Hand tune by using NSKernAttributeName to affect tracking, or consider using the allowsDefaultTighteningForTruncation property.
+     * Non-functional. Hand tune by using NSKernAttributeName to affect tracking, or consider using the
+     * allowsDefaultTighteningForTruncation property.
      */
     @Generated
     @Deprecated
@@ -526,8 +527,10 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     public native double minimumScaleFactor();
 
     /**
-     * this determines the number of lines to draw and what to do when sizeToFit is called. default value is 1 (single line). A value of 0 means no limit
-     * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed, the text will be
+     * this determines the number of lines to draw and what to do when sizeToFit is called. default value is 1 (single
+     * line). A value of 0 means no limit
+     * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed,
+     * the text will be
      * truncated using the line break mode.
      */
     @Generated
@@ -556,7 +559,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     public native void setAdjustsFontSizeToFitWidth(boolean value);
 
     /**
-     * Non-functional.  Hand tune by using NSKernAttributeName to affect tracking, or consider using the allowsDefaultTighteningForTruncation property.
+     * Non-functional. Hand tune by using NSKernAttributeName to affect tracking, or consider using the
+     * allowsDefaultTighteningForTruncation property.
      */
     @Generated
     @Deprecated
@@ -621,8 +625,10 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     public native void setMinimumScaleFactor(@NFloat double value);
 
     /**
-     * this determines the number of lines to draw and what to do when sizeToFit is called. default value is 1 (single line). A value of 0 means no limit
-     * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed, the text will be
+     * this determines the number of lines to draw and what to do when sizeToFit is called. default value is 1 (single
+     * line). A value of 0 means no limit
+     * if the height of the text reaches the # of lines or the height of the view is less than the # of lines allowed,
+     * the text will be
      * truncated using the line break mode.
      */
     @Generated
@@ -727,7 +733,9 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     /**
      * Specifies the line break strategies that may be used for laying out the text in this label.
      * If this property is not set, the default value is NSLineBreakStrategyStandard.
-     * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this property.
+     * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the
+     * set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this
+     * property.
      */
     @Generated
     @Selector("lineBreakStrategy")
@@ -737,21 +745,25 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     /**
      * Specifies the line break strategies that may be used for laying out the text in this label.
      * If this property is not set, the default value is NSLineBreakStrategyStandard.
-     * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this property.
+     * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the
+     * set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this
+     * property.
      */
     @Generated
     @Selector("setLineBreakStrategy:")
     public native void setLineBreakStrategy(@NUInt long value);
 
     /**
-     * Indicates whether expansion text will be shown when the view is too small to show all the contents. Defaults to NO.
+     * Indicates whether expansion text will be shown when the view is too small to show all the contents. Defaults to
+     * NO.
      */
     @Generated
     @Selector("setShowsExpansionTextWhenTruncated:")
     public native void setShowsExpansionTextWhenTruncated(boolean value);
 
     /**
-     * Indicates whether expansion text will be shown when the view is too small to show all the contents. Defaults to NO.
+     * Indicates whether expansion text will be shown when the view is too small to show all the contents. Defaults to
+     * NO.
      */
     @Generated
     @Selector("showsExpansionTextWhenTruncated")

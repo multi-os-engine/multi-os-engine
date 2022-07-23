@@ -203,7 +203,9 @@ public class SKTransition extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * Create a transition with a CIFilter. The filter must be a transition filter which requires only two images (inputImage, inputTargetImage) and generates a single image (outputImage). SpriteKit sets the inputImage, inputTargetImage, and inputTime properties when rendering, all others must be setup beforehand.
+     * Create a transition with a CIFilter. The filter must be a transition filter which requires only two images
+     * (inputImage, inputTargetImage) and generates a single image (outputImage). SpriteKit sets the inputImage,
+     * inputTargetImage, and inputTime properties when rendering, all others must be setup beforehand.
      */
     @Generated
     @Selector("transitionWithCIFilter:duration:")

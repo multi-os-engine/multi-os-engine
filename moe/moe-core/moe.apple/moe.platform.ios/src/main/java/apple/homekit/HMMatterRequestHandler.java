@@ -108,7 +108,8 @@ public class HMMatterRequestHandler extends NSObject implements NSExtensionReque
     public static native String description_static();
 
     /**
-     * Use this method to vend the rooms that correspond to a given home to accessory setup. iOS will issue this request before presenting the "Select Room" card.
+     * Use this method to vend the rooms that correspond to a given home to accessory setup. iOS will issue this request
+     * before presenting the "Select Room" card.
      *
      * @param home       The home for which iOS is requesting rooms.
      * @param completion Invoke the completion block with the requested rooms or an optional error.

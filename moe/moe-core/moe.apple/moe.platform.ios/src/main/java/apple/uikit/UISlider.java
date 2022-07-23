@@ -524,8 +524,10 @@ public class UISlider extends UIControl implements NSCoding {
     public native void setMinimumValueImage(UIImage value);
 
     /**
-     * set the images for the slider. there are 3, the thumb which is centered by default and the track. You can specify different left and right track
-     * e.g blue on the left as you increase and white to the right of the thumb. The track images should be 3 part resizable (via UIImage's resizableImage methods) along the direction that is longer
+     * set the images for the slider. there are 3, the thumb which is centered by default and the track. You can specify
+     * different left and right track
+     * e.g blue on the left as you increase and white to the right of the thumb. The track images should be 3 part
+     * resizable (via UIImage's resizableImage methods) along the direction that is longer
      */
     @Generated
     @Selector("setThumbImage:forState:")
@@ -585,7 +587,8 @@ public class UISlider extends UIControl implements NSCoding {
     public native UISlider initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 
     /**
-     * The slider's behavioral style. This property always returns a concrete, resolved style (never UIBehavioralStyleAutomatic).
+     * The slider's behavioral style. This property always returns a concrete, resolved style (never
+     * UIBehavioralStyleAutomatic).
      */
     @Generated
     @Selector("behavioralStyle")

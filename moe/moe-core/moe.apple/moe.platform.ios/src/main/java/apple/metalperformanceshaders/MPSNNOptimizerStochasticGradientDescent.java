@@ -33,16 +33,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * RMSProp is also known as root mean square propagation.
  * <p>
  * useNesterov == NO:
- * m[t]     = momentumScale * m[t-1] + learningRate * g
+ * m[t] = momentumScale * m[t-1] + learningRate * g
  * variable = variable - m[t]
  * <p>
  * useNesterov == YES:
- * m[t]     = momentumScale * m[t-1] + g
+ * m[t] = momentumScale * m[t-1] + g
  * variable = variable - (learningRate * (g + m[t] * momentumScale))
  * <p>
  * <p>
  * where,
- * g    is gradient of error wrt variable
+ * g is gradient of error wrt variable
  * m[t] is momentum of gradients it is a state we keep updating every update iteration
  */
 @Generated
@@ -110,27 +110,32 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * <p>
      * <p>
      * useNesterov == NO:
-     * m[t]     = momentumScale * m[t-1] + learningRate * g
+     * m[t] = momentumScale * m[t-1] + learningRate * g
      * variable = variable - m[t]
      * <p>
      * useNesterov == YES:
-     * m[t]     = momentumScale * m[t-1] + g
+     * m[t] = momentumScale * m[t-1] + g
      * variable = variable - (learningRate * (g + m[t] * momentumScale))
      * <p>
      * inputMomentumVector == nil
      * variable = variable - (learningRate * g)
      * <p>
      * where,
-     * g    is gradient of error wrt variable
+     * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
      *
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients for this update.
-     * @param batchNormalizationSourceState   A valid MPSCNNBatchNormalizationState object which specifies the input state with original gamma/beta for this update.
-     * @param inputMomentumVectors            An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
+     *                                        state with gradients for this update.
+     * @param batchNormalizationSourceState   A valid MPSCNNBatchNormalizationState object which specifies the input
+     *                                        state with original gamma/beta for this update.
+     * @param inputMomentumVectors            An array MPSVector object which specifies the gradient momentum vectors
+     *                                        which will
+     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1
+     *                                        corresponds to beta, array can be of
      *                                        size 1 in which case beta won't be updated
-     * @param resultState                     A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
+     * @param resultState                     A valid MPSCNNNormalizationGammaAndBetaState object which specifies the
+     *                                        resultValues state which will
      *                                        be updated and overwritten.
      */
     @Generated
@@ -148,26 +153,29 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * <p>
      * <p>
      * useNesterov == NO:
-     * m[t]     = momentumScale * m[t-1] + learningRate * g
+     * m[t] = momentumScale * m[t-1] + learningRate * g
      * variable = variable - m[t]
      * <p>
      * useNesterov == YES:
-     * m[t]     = momentumScale * m[t-1] + g
+     * m[t] = momentumScale * m[t-1] + g
      * variable = variable - (learningRate * (g + m[t] * momentumScale))
      * <p>
      * inputMomentumVector == nil
      * variable = variable - (learningRate * g)
      * <p>
      * where,
-     * g    is gradient of error wrt variable
+     * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
      *
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients and original gamma/beta for this update.
+     * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with
+     *                                gradients and original gamma/beta for this update.
      * @param inputMomentumVectors    An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds
+     *                                to beta, array can be of
      *                                size 1 in which case beta won't be updated
-     * @param resultState             A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
+     * @param resultState             A valid MPSCNNNormalizationGammaAndBetaState object which specifies the
+     *                                resultValues state which will
      *                                be updated and overwritten.
      */
     @Generated
@@ -184,27 +192,32 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * <p>
      * <p>
      * useNesterov == NO:
-     * m[t]     = momentumScale * m[t-1] + learningRate * g
+     * m[t] = momentumScale * m[t-1] + learningRate * g
      * variable = variable - m[t]
      * <p>
      * useNesterov == YES:
-     * m[t]     = momentumScale * m[t-1] + g
+     * m[t] = momentumScale * m[t-1] + g
      * variable = variable - (learningRate * (g + m[t] * momentumScale))
      * <p>
      * inputMomentumVector == nil
      * variable = variable - (learningRate * g)
      * <p>
      * where,
-     * g    is gradient of error wrt variable
+     * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
      *
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state with gradients for this update.
-     * @param convolutionSourceState   A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the input state with values to be updated.
-     * @param inputMomentumVectors     An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
+     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
+     *                                 with gradients for this update.
+     * @param convolutionSourceState   A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the input
+     *                                 state with values to be updated.
+     * @param inputMomentumVectors     An array MPSVector object which specifies the gradient momentum vectors which
+     *                                 will
+     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                 corresponds to biases, array can be of
      *                                 size 1 in which case biases won't be updated
-     * @param resultState              A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
+     * @param resultState              A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the
+     *                                 resultValues state which will
      *                                 be updated and overwritten.
      */
     @Generated
@@ -228,22 +241,23 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
      * <p>
      * <p>
      * useNesterov == NO:
-     * m[t]     = momentumScale * m[t-1] + learningRate * g
+     * m[t] = momentumScale * m[t-1] + learningRate * g
      * variable = variable - m[t]
      * <p>
      * useNesterov == YES:
-     * m[t]     = momentumScale * m[t-1] + g
+     * m[t] = momentumScale * m[t-1] + g
      * variable = variable - (learningRate * (g + m[t] * momentumScale))
      * <p>
      * inputMomentumVector == nil
      * variable = variable - (learningRate * g)
      * <p>
      * where,
-     * g    is gradient of error wrt variable
+     * g is gradient of error wrt variable
      * m[t] is momentum of gradients it is a state we keep updating every update iteration
      *
      * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param inputGradientVector A valid MPSVector object which specifies the input vector of gradients for this update.
+     * @param inputGradientVector A valid MPSVector object which specifies the input vector of gradients for this
+     *                            update.
      * @param inputValuesVector   A valid MPSVector object which specifies the input vector of values to be updated.
      * @param inputMomentumVector A valid MPSVector object which specifies the gradient momentum vector which will
      *                            be updated and overwritten.
@@ -318,7 +332,7 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   momentumScale
+     * [@property] momentumScale
      * <p>
      * The momentumScale at which we update momentum for values array
      * <p>
@@ -384,12 +398,12 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
             MPSNNOptimizerDescriptor optimizerDescriptor);
 
     /**
-     * [@property]   useNesterovMomentum
+     * [@property] useNesterovMomentum
      * <p>
      * Nesterov momentum is considered an improvement on the usual momentum update
      * <p>
      * Default value is NO
-     * [@note]       Maps to old useNestrovMomentum property
+     * [@note] Maps to old useNestrovMomentum property
      */
     @Generated
     @Selector("useNesterovMomentum")

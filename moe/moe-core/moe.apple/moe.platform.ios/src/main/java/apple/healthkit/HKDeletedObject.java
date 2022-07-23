@@ -163,7 +163,7 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * [@property]      UUID
+     * [@property] UUID
      * <p>
      * The unique identifier of the HKObject that was deleted from the HealthKit database.
      */
@@ -190,7 +190,7 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * [@property]      metadata
+     * [@property] metadata
      * <p>
      * Extra information describing properties of the receiver.
      * <p>

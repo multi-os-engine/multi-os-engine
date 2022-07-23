@@ -42,7 +42,8 @@ public interface UIGestureRecognizerDelegate {
     }
 
     /**
-     * called before pressesBegan:withEvent: is called on the gesture recognizer for a new press. return NO to prevent the gesture recognizer from seeing this press
+     * called before pressesBegan:withEvent: is called on the gesture recognizer for a new press. return NO to prevent
+     * the gesture recognizer from seeing this press
      */
     @Generated
     @IsOptional
@@ -52,7 +53,8 @@ public interface UIGestureRecognizerDelegate {
     }
 
     /**
-     * called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent the gesture recognizer from seeing this touch
+     * called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent
+     * the gesture recognizer from seeing this touch
      */
     @Generated
     @IsOptional
@@ -63,9 +65,11 @@ public interface UIGestureRecognizerDelegate {
 
     /**
      * called when the recognition of one of gestureRecognizer or otherGestureRecognizer would be blocked by the other
-     * return YES to allow both to recognize simultaneously. the default implementation returns NO (by default no two gestures can be recognized simultaneously)
+     * return YES to allow both to recognize simultaneously. the default implementation returns NO (by default no two
+     * gestures can be recognized simultaneously)
      * <p>
-     * note: returning YES is guaranteed to allow simultaneous recognition. returning NO is not guaranteed to prevent simultaneous recognition, as the other gesture's delegate may return YES
+     * note: returning YES is guaranteed to allow simultaneous recognition. returning NO is not guaranteed to prevent
+     * simultaneous recognition, as the other gesture's delegate may return YES
      */
     @Generated
     @IsOptional
@@ -76,10 +80,12 @@ public interface UIGestureRecognizerDelegate {
     }
 
     /**
-     * called once per attempt to recognize, so failure requirements can be determined lazily and may be set up between recognizers across view hierarchies
+     * called once per attempt to recognize, so failure requirements can be determined lazily and may be set up between
+     * recognizers across view hierarchies
      * return YES to set up a dynamic failure requirement between gestureRecognizer and otherGestureRecognizer
      * <p>
-     * note: returning YES is guaranteed to set up the failure requirement. returning NO does not guarantee that there will not be a failure requirement as the other gesture's counterpart delegate or subclass methods may return YES
+     * note: returning YES is guaranteed to set up the failure requirement. returning NO does not guarantee that there
+     * will not be a failure requirement as the other gesture's counterpart delegate or subclass methods may return YES
      */
     @Generated
     @IsOptional
@@ -90,7 +96,8 @@ public interface UIGestureRecognizerDelegate {
     }
 
     /**
-     * called when a gesture recognizer attempts to transition out of UIGestureRecognizerStatePossible. returning NO causes it to transition to UIGestureRecognizerStateFailed
+     * called when a gesture recognizer attempts to transition out of UIGestureRecognizerStatePossible. returning NO
+     * causes it to transition to UIGestureRecognizerStateFailed
      */
     @Generated
     @IsOptional

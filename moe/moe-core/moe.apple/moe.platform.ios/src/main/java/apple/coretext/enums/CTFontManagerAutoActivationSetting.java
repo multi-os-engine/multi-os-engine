@@ -22,13 +22,14 @@ import org.moe.natj.general.ann.Generated;
  * [@enum]
  * <p>
  * Auto-activation settings.
- * [@constant]   kCTFontManagerAutoActivationDefault
+ * [@constant] kCTFontManagerAutoActivationDefault
  * Default auto-activation setting. When specified, the application will use the global setting.
- * [@constant]   kCTFontManagerAutoActivationDisabled
+ * [@constant] kCTFontManagerAutoActivationDisabled
  * Disables auto-activation.
- * [@constant]   kCTFontManagerAutoActivationEnabled
+ * [@constant] kCTFontManagerAutoActivationEnabled
  * Enables auto-activation.
- * [@constant]   kCTFontManagerAutoActivationPromptUser - deprecated and treated as kCTFontManagerAutoActivationDefault on 10.13.
+ * [@constant] kCTFontManagerAutoActivationPromptUser - deprecated and treated as kCTFontManagerAutoActivationDefault on
+ * 10.13.
  * Requires user input for auto-activation. A dialog will be presented to the user to confirm auto
  * activation of the font.
  */

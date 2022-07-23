@@ -152,7 +152,8 @@ public class GCControllerElement extends NSObject {
     public static native long version_static();
 
     /**
-     * Each element can be part of a wider collection of inputs that map to a single logical element. A directional pad (dpad)
+     * Each element can be part of a wider collection of inputs that map to a single logical element. A directional pad
+     * (dpad)
      * is a logical collection of two axis inputs and thus each axis belongs to the same collection element - the dpad.
      */
     @Generated
@@ -203,7 +204,8 @@ public class GCControllerElement extends NSObject {
      * Defaults to GCSystemGestureStateEnabled for most elements
      * <p>
      * [@note] This is merely the preferred system gesture state - it is not guaranteed to be respected by the system.
-     * [@note] It is highly recommended to leave this set to the default value, however there may be situations (for example, game
+     * [@note] It is highly recommended to leave this set to the default value, however there may be situations (for
+     * example, game
      * streaming apps) where it is preferrable to disable system gestures.
      *
      * @see boundToSystemGesture
@@ -227,7 +229,8 @@ public class GCControllerElement extends NSObject {
      * Defaults to GCSystemGestureStateEnabled for most elements
      * <p>
      * [@note] This is merely the preferred system gesture state - it is not guaranteed to be respected by the system.
-     * [@note] It is highly recommended to leave this set to the default value, however there may be situations (for example, game
+     * [@note] It is highly recommended to leave this set to the default value, however there may be situations (for
+     * example, game
      * streaming apps) where it is preferrable to disable system gestures.
      *
      * @see boundToSystemGesture
@@ -248,7 +251,8 @@ public class GCControllerElement extends NSObject {
     /**
      * The element's localized name, not taking any input remapping into account.
      * <p>
-     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (localizedName is nil).
+     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
+     * mapping (localizedName is nil).
      */
     @Generated
     @Selector("setUnmappedLocalizedName:")
@@ -257,7 +261,8 @@ public class GCControllerElement extends NSObject {
     /**
      * The element's SF Symbols name, not taking any input remapping into account.
      * <p>
-     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (sfSymbolsName is nil).
+     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
+     * mapping (sfSymbolsName is nil).
      */
     @Generated
     @Selector("setUnmappedSfSymbolsName:")
@@ -275,7 +280,8 @@ public class GCControllerElement extends NSObject {
     /**
      * The element's localized name, not taking any input remapping into account.
      * <p>
-     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (localizedName is nil).
+     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
+     * mapping (localizedName is nil).
      */
     @Generated
     @Selector("unmappedLocalizedName")
@@ -284,7 +290,8 @@ public class GCControllerElement extends NSObject {
     /**
      * The element's SF Symbols name, not taking any input remapping into account.
      * <p>
-     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no mapping (sfSymbolsName is nil).
+     * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
+     * mapping (sfSymbolsName is nil).
      */
     @Generated
     @Selector("unmappedSfSymbolsName")

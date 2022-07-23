@@ -10,7 +10,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]	AVRoutePickerViewDelegate
+ * [@protocol] AVRoutePickerViewDelegate
  * <p>
  * Defines an interface for delegates of AVRoutePickerView.
  */

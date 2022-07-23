@@ -83,7 +83,8 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
 
     /**
      * Specifies a custom group with client-specified frames.
-     * During layout, the itemProvider will be called with the group's current geometry provided via the NSCollectionLayoutEnvironment supplied.
+     * During layout, the itemProvider will be called with the group's current geometry provided via the
+     * NSCollectionLayoutEnvironment supplied.
      * The coordinate space for returned frames should be {0,0} relative to this group's geometry.
      * Custom groups can be nested arbitrarily inside other groups.
      */
@@ -115,17 +116,18 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     public static native long hash_static();
 
     /**
-     * Specifies a group that will have N items equally sized along the horizontal axis. use interItemSpacing to insert space between items
+     * Specifies a group that will have N items equally sized along the horizontal axis. use interItemSpacing to insert
+     * space between items
      * <p>
      * +------+--+------+--+------+
-     * |~~~~~~|  |~~~~~~|  |~~~~~~|
-     * |~~~~~~|  |~~~~~~|  |~~~~~~|
-     * |~~~~~~|  |~~~~~~|  |~~~~~~|
+     * |~~~~~~| |~~~~~~| |~~~~~~|
+     * |~~~~~~| |~~~~~~| |~~~~~~|
+     * |~~~~~~| |~~~~~~| |~~~~~~|
      * +------+--+------+--+------+
-     * ^        ^
-     * |        |
+     * ^ ^
+     * | |
      * +-----------------------+
-     * |  Inter Item Spacing   |
+     * | Inter Item Spacing |
      * +-----------------------+
      */
     @Generated
@@ -235,19 +237,20 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     public static native long version_static();
 
     /**
-     * Specifies a group that will have N items equally sized along the vertical axis. use interItemSpacing to insert space between items
+     * Specifies a group that will have N items equally sized along the vertical axis. use interItemSpacing to insert
+     * space between items
      * +------+
      * |~~~~~~|
      * |~~~~~~|
      * |~~~~~~|
      * +------+
-     * |      |<--+
-     * +------+   |
-     * |~~~~~~|   |    +-----------------------+
-     * |~~~~~~|   +----|  Inter Item Spacing   |
-     * |~~~~~~|   |    +-----------------------+
-     * +------+   |
-     * |      |<--+
+     * | |<--+
+     * +------+ |
+     * |~~~~~~| | +-----------------------+
+     * |~~~~~~| +----| Inter Item Spacing |
+     * |~~~~~~| | +-----------------------+
+     * +------+ |
+     * | |<--+
      * +------+
      * |~~~~~~|
      * |~~~~~~|

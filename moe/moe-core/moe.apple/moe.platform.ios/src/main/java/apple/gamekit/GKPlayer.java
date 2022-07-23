@@ -168,14 +168,17 @@ public class GKPlayer extends GKBasePlayer {
     public static native long version_static();
 
     /**
-     * The alias property contains the player's nickname. When you need to display the name to the user, consider using displayName instead. The nickname is unique but not invariant: the player may change their nickname. The nickname may be very long, so be sure to use appropriate string truncation API when drawing.
+     * The alias property contains the player's nickname. When you need to display the name to the user, consider using
+     * displayName instead. The nickname is unique but not invariant: the player may change their nickname. The nickname
+     * may be very long, so be sure to use appropriate string truncation API when drawing.
      */
     @Generated
     @Selector("alias")
     public native String alias();
 
     /**
-     * This is player's alias to be displayed. The display name may be very long, so be sure to use appropriate string truncation API when drawing.
+     * This is player's alias to be displayed. The display name may be very long, so be sure to use appropriate string
+     * truncation API when drawing.
      */
     @Generated
     @Selector("displayName")
@@ -228,14 +231,16 @@ public class GKPlayer extends GKBasePlayer {
     public native String gamePlayerID();
 
     /**
-     * This convenience method checks if the gamePlayerID and the teamPlayerID (scopedIDs) are persistent or unique for the instantiation of this app.
+     * This convenience method checks if the gamePlayerID and the teamPlayerID (scopedIDs) are persistent or unique for
+     * the instantiation of this app.
      */
     @Generated
     @Selector("scopedIDsArePersistent")
     public native boolean scopedIDsArePersistent();
 
     /**
-     * This is the player's unique and persistent ID that is scoped to the Apple Store Connect Team identifier of this application.
+     * This is the player's unique and persistent ID that is scoped to the Apple Store Connect Team identifier of this
+     * application.
      */
     @Generated
     @Selector("teamPlayerID")

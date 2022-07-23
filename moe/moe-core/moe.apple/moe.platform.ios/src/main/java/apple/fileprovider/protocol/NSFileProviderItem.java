@@ -22,7 +22,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSFileProviderItem")
 public interface NSFileProviderItem {
     /**
-     * The capabilities of the item.  This controls the list of actions that the UI
+     * The capabilities of the item. This controls the list of actions that the UI
      * will allow for the item.
      * <p>
      * Capabilities on an item only apply to the item itself. They are not inherited by the children of directories.
@@ -75,15 +75,15 @@ public interface NSFileProviderItem {
 
     /**
      * The presence of a favorite rank indicates that a directory is a favorite.
-     * Favorite ranks are 64-bit unsigned integers.  The initial value for the first
+     * Favorite ranks are 64-bit unsigned integers. The initial value for the first
      * item is the time since the unix epoch in milliseconds, but subsequent items are
-     * simply placed relative to that.  Favorite ranks are modified when the user
+     * simply placed relative to that. Favorite ranks are modified when the user
      * reorders favorites.
      * <p>
      * When favoriting folders on other platforms, set the rank to the time since the
-     * unix epoch in milliseconds.  Special value @(NSFileProviderFavoriteRankUnranked)
+     * unix epoch in milliseconds. Special value @(NSFileProviderFavoriteRankUnranked)
      * may be used if no rank is available: the system will then figure out the best
-     * rank and set it.  Please persist and sync the new value.
+     * rank and set it. Please persist and sync the new value.
      * <p>
      * This property must not be shared between users, even if the item is.
      */
@@ -156,7 +156,8 @@ public interface NSFileProviderItem {
      * Trashed items should remain in the working set; however, children of trashed
      * directories should be removed from the working set.
      * <p>
-     * Additionally, when an item is trashed, the `parentItemIdentifier` refers to the location the item was before being
+     * Additionally, when an item is trashed, the `parentItemIdentifier` refers to the location the item was before
+     * being
      * trashed. As such, when the user decides to restore the item from trash, `parentItemIdentifier` will be used for
      * the default restore location.
      */
@@ -200,9 +201,9 @@ public interface NSFileProviderItem {
     String itemIdentifier();
 
     /**
-     * The date this item was last used.  This is neither the modification date nor
+     * The date this item was last used. This is neither the modification date nor
      * the last access date exposed in traditional file system APIs, and indicates a
-     * very clear user intent to use the document.  For example, this is set when the
+     * very clear user intent to use the document. For example, this is set when the
      * document is open full screen on a device.
      * <p>
      * This is the system's cue that the document is recent and should appear in the
@@ -239,11 +240,11 @@ public interface NSFileProviderItem {
      * The parent identifier specifies the parent of the item in the hierarchy.
      * <p>
      * Set to NSFileProviderRootContainerItemIdentifier for an item at the root of the
-     * user's storage.  Set to the itemIdentifier of the item's parent otherwise.
+     * user's storage. Set to the itemIdentifier of the item's parent otherwise.
      * <p>
      * When enumerating the root container or a generic container, the
      * parentItemIdentifier of the enumerated items is expected to match the
-     * enumerated item's identifier.  When enumerating the working set, the
+     * enumerated item's identifier. When enumerating the working set, the
      * parentItemIdentifier is expected to match the actual parent of the item in the
      * hierarchy (ie. it is not NSFileProviderWorkingSetContainerItemIdentifier).
      * <p>
@@ -254,7 +255,7 @@ public interface NSFileProviderItem {
     String parentItemIdentifier();
 
     /**
-     * An abstract data blob representing the tags associated with the item.  The same
+     * An abstract data blob representing the tags associated with the item. The same
      * tags that are available via -[NSURL getResourceValue:forKey:error:] with key
      * NSURLTagNamesKey on macOS, except that this data blob may transport more
      * information than just the tag names.
@@ -315,8 +316,10 @@ public interface NSFileProviderItem {
      * Additionally, any entry of this dictionary with a key ending in `.inherited`
      * will be accessible to predicates for descendants of this item via the context key `inheritedUserInfo`.
      * <p>
-     * Items can redefine inherited values for their descendants by specifying the same key used in an ancestor's `userInfo`.
-     * Thus, `inheritedUserInfo` for a given item is a dictionary of `*.inherited` keys from all if its ancestors, with each value
+     * Items can redefine inherited values for their descendants by specifying the same key used in an ancestor's
+     * `userInfo`.
+     * Thus, `inheritedUserInfo` for a given item is a dictionary of `*.inherited` keys from all if its ancestors, with
+     * each value
      * taken from the nearest ancestor that has the entry defined.
      * <p>
      * In this example directory structure:
@@ -351,14 +354,14 @@ public interface NSFileProviderItem {
      * [@parameters] predicates
      * - `destinationItem`: the destination item for an action. Present for Move/MoveIn/Copy/CopyIn/Create
      * - `action` : the action that is being performed
-     * 'Move'       : moving item(s) within the same provider
-     * 'MoveOut'    : moving item(s) out of the provider
-     * 'MoveIn'     : importing item(s) into a folder/root of the provider
-     * 'Copy'       : copying item(s) within the same provider
-     * 'CopyOut'    : copying item(s) out of the provider
-     * 'CopyIn'     : copying item(s) into a folder/root of the provider
-     * 'Trash'      : trashing item(s)
-     * 'Create'      : creating an item (available in macOS 12.0 and later)
+     * 'Move' : moving item(s) within the same provider
+     * 'MoveOut' : moving item(s) out of the provider
+     * 'MoveIn' : importing item(s) into a folder/root of the provider
+     * 'Copy' : copying item(s) within the same provider
+     * 'CopyOut' : copying item(s) out of the provider
+     * 'CopyIn' : copying item(s) into a folder/root of the provider
+     * 'Trash' : trashing item(s)
+     * 'Create' : creating an item (available in macOS 12.0 and later)
      * The Create action will be evaluated when the user creates a new file
      * or folder in a system Open/Save panel.
      * The sourceItem is the file/folder being created. The only field that is
@@ -366,14 +369,16 @@ public interface NSFileProviderItem {
      * are unknown at Create evaluation time.
      * The destinationItem is the directory which the file/folder is being created
      * within.
-     * 'Delete'     : deleting item(s)
+     * 'Delete' : deleting item(s)
      * If the provider wishes to take full responsibility for showing warnings on Delete,
      * the provider can set NSExtensionFileProviderAllowsSystemDeleteAlerts=0 in the provider's Info.plist.
      * This will ensure that the system does not display it's warnings when the user is deleting a file.
-     * 'ExcludeFromSync' : deleting items(s) because the user chose to exclude those from sync (available in macOS 12.0 and later)
-     * 'Rename'  : renaming item(s) (available in macOS 11.3 and later)
+     * 'ExcludeFromSync' : deleting items(s) because the user chose to exclude those from sync (available in macOS 12.0
+     * and later)
+     * 'Rename' : renaming item(s) (available in macOS 11.3 and later)
      * The destinationItem has only the `filename` field populated (available in macOS 12.0.1 and later).
-     * - `sourceItem` : current item that the predicate is evaluating. Present for Move/MoveOut/Copy/CopyOut/Create/Trash/Delete/ExcludeFromSync/Rename
+     * - `sourceItem` : current item that the predicate is evaluating. Present for
+     * Move/MoveOut/Copy/CopyOut/Create/Trash/Delete/ExcludeFromSync/Rename
      * - `sourceItemsCount` :
      * - In userInteraction, represents the count of sourceItems of an action operation
      * - In subUserInteraction: represents the count of items that matched the previous predicate
@@ -392,9 +397,11 @@ public interface NSFileProviderItem {
      * - `Cancel` *string*, the string for the cancel button - default value if not specified
      * - `RecoveryOptions` (optional)
      * - `Continue` *bool*, the boolean for whether to have a continue button - default value is YES if not specified
-     * - `Destructive` *bool*, the boolean for whether continuing is a destructive action - default value is NO if not specified
+     * - `Destructive` *bool*, the boolean for whether continuing is a destructive action - default value is NO if not
+     * specified
      * - `HelpURL` *string*: If present, a help button will be displayed on the Alert that is shown. If the user
-     * clicks the help button, this help URL will be opened. This URL is not restricted to Web URLs. For instance, the extension could configure
+     * clicks the help button, this help URL will be opened. This URL is not restricted to Web URLs. For instance, the
+     * extension could configure
      * the HelpURL to launch it's application with a custom URL scheme. (available in macOS 12.0 and later)
      * - `SubInteractions `: *dictionary* (same as `NSFileProviderUserInteractions`)
      * - `SupressionIdentifier` *string*: If present, when this predicate matches, the alert will display an option to
@@ -404,8 +411,10 @@ public interface NSFileProviderItem {
      * protocol on the principal class of the FileProvider extension (available in
      * macOS 12.0 and later).
      * <p>
-     * For each interaction, either Alert or SubInteractions must be specified. SubInteractions will be evaluated if the main ActivationRule evaluates to
-     * YES for at least once. This allows you to match a general pattern via the top-level activation rule and then select a specialized error message from a list
+     * For each interaction, either Alert or SubInteractions must be specified. SubInteractions will be evaluated if the
+     * main ActivationRule evaluates to
+     * YES for at least once. This allows you to match a general pattern via the top-level activation rule and then
+     * select a specialized error message from a list
      * of subpatterns.
      * <p>
      * At most one UserInteraction alert will be shown for each FileProvider domain involved in the user's Action. For

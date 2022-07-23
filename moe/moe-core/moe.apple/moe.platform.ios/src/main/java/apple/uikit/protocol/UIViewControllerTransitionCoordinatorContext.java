@@ -79,7 +79,8 @@ public interface UIViewControllerTransitionCoordinatorContext {
     boolean isCancelled();
 
     /**
-     * Interactive transitions have non-interactive segments. For example, they all complete non-interactively. Some interactive transitions may have
+     * Interactive transitions have non-interactive segments. For example, they all complete non-interactively. Some
+     * interactive transitions may have
      * intermediate segments that are not interactive.
      */
     @Generated
@@ -101,7 +102,8 @@ public interface UIViewControllerTransitionCoordinatorContext {
     double percentComplete();
 
     /**
-     * A modal presentation style whose transition is being customized or UIModalPresentationNone if this is not a modal presentation
+     * A modal presentation style whose transition is being customized or UIModalPresentationNone if this is not a modal
+     * presentation
      * or dismissal.
      */
     @Generated

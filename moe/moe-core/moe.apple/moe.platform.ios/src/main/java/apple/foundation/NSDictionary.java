@@ -54,13 +54,13 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-@SuppressWarnings({ "rawtypes", "unchecked" })
+@SuppressWarnings({ "rawtypes", "unchecked"
+})
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSDictionary<_KeyType, _ObjectType> extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, NSFetchRequestResult,
-        Map<_KeyType, _ObjectType> {
+public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSCopying, NSMutableCopying,
+        NSSecureCoding, NSFastEnumeration, NSFetchRequestResult, Map<_KeyType, _ObjectType> {
     static {
         NatJ.register();
     }
@@ -115,7 +115,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionary();
 
     /**
-     * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants that use errors instead.
+     * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants
+     * that use errors instead.
      */
     @Generated
     @Selector("dictionaryWithContentsOfFile:")
@@ -202,8 +203,10 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
      * The keys are copied from the array and must be copyable.
      * If the array parameter is nil or not an NSArray, an exception is thrown.
      * If the array of keys is empty, an empty key set is returned.
-     * The array of keys may contain duplicates, which are ignored (it is undefined which object of each duplicate pair is used).
-     * As for any usage of hashing, is recommended that the keys have a well-distributed implementation of -hash, and the hash codes must satisfy the hash/isEqual: invariant.
+     * The array of keys may contain duplicates, which are ignored (it is undefined which object of each duplicate pair
+     * is used).
+     * As for any usage of hashing, is recommended that the keys have a well-distributed implementation of -hash, and
+     * the hash codes must satisfy the hash/isEqual: invariant.
      * Keys with duplicate hash codes are allowed, but will cause lower performance and increase memory usage.
      */
     @Generated
@@ -351,7 +354,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
     public native String fileType();
 
     /**
-     * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:andKeys:count:
+     * This method is unsafe because it could potentially cause buffer overruns. You should use
+     * -getObjects:andKeys:count:
      */
     @Generated
     @Selector("getObjects:andKeys:")
@@ -652,8 +656,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
                 @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
-    private static final class NSDictionaryEntrySet<_KeyType, _ObjectType>
-            implements Set<Entry<_KeyType, _ObjectType>> {
+    private static final class NSDictionaryEntrySet<_KeyType, _ObjectType> implements
+            Set<Entry<_KeyType, _ObjectType>> {
 
         private final NSDictionary<_KeyType, _ObjectType> dict;
 
@@ -802,8 +806,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
             return result;
         }
 
-        private final static class NSDictionaryEntrySetIterator<_KeyType, _ObjectType>
-                implements Iterator<Entry<_KeyType, _ObjectType>> {
+        private final static class NSDictionaryEntrySetIterator<_KeyType, _ObjectType> implements
+                Iterator<Entry<_KeyType, _ObjectType>> {
 
             private final NSDictionary<_KeyType, _ObjectType> dict;
             private final NSArray<_KeyType> keys;
@@ -847,8 +851,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
                     public boolean equals(Object o) {
                         if (o instanceof Entry) {
                             Entry e2 = (Entry)o;
-                            return (getKey() == null ? e2.getKey() == null : getKey().equals(e2.getKey())) && (
-                                    getValue() == null ? e2.getValue() == null : getValue().equals(e2.getValue()));
+                            return (getKey() == null ? e2.getKey() == null : getKey().equals(e2.getKey()))
+                                    && (getValue() == null ? e2.getValue() == null : getValue().equals(e2.getValue()));
                         }
                         return false;
                     }
@@ -1136,7 +1140,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0). For other formats use NSPropertyListSerialization directly.
+     * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0).
+     * For other formats use NSPropertyListSerialization directly.
      */
     @Generated
     @Selector("writeToURL:error:")

@@ -29,7 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A simple home  representation that can be passed back and forth between Partner Ecosystem App extensions and iOS for the purposes of CHIP accessory setup.
+ * A simple home representation that can be passed back and forth between Partner Ecosystem App extensions and iOS for
+ * the purposes of CHIP accessory setup.
  */
 @Generated
 @Library("HomeKit")

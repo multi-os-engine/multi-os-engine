@@ -33,13 +33,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Describes the minimum rasterization rate screen space using two piecewise linear functions.
  * <p>
- * The two piecewise linear function (PLF) describe the desired rasterization quality on the horizontal and vertical axis separately.
- * Each quality sample in the PLF is stored in an array as single precision floating point value between 0 (lowest quality) and 1 (highest quality).
+ * The two piecewise linear function (PLF) describe the desired rasterization quality on the horizontal and vertical
+ * axis separately.
+ * Each quality sample in the PLF is stored in an array as single precision floating point value between 0 (lowest
+ * quality) and 1 (highest quality).
  * The first sample in the array describes the quality at the top (vertical) or left (horizontal) edge of screen space.
- * The last sample in the array describes the quality at the bottom (vertical) or right (horizontal) edge of screen space.
+ * The last sample in the array describes the quality at the bottom (vertical) or right (horizontal) edge of screen
+ * space.
  * All other samples are spaced equidistant in screen space.
- * MTLRasterizationRateLayerDescriptor instances will be stored inside a MTLRasterizationRateMapDescriptor which in turn is compiled by MTLDevice into a MTLRasterizationRateMap.
- * Because MTLDevice may not support the requested granularity, the provided samples may be rounded up (towards higher quality) during compilation.
+ * MTLRasterizationRateLayerDescriptor instances will be stored inside a MTLRasterizationRateMapDescriptor which in turn
+ * is compiled by MTLDevice into a MTLRasterizationRateMap.
+ * Because MTLDevice may not support the requested granularity, the provided samples may be rounded up (towards higher
+ * quality) during compilation.
  */
 @Generated
 @Library("Metal")
@@ -145,7 +150,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * <p>
      * All values are initialized to zero.
      *
-     * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis respectively. The depth component is ignored.
+     * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis
+     *                    respectively. The depth component is ignored.
      */
     @Generated
     @Selector("initWithSampleCount:")
@@ -158,9 +164,12 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * <p>
      * Use initWithSampleCount: to initialize with zeroes instead.
      *
-     * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis respectively. The depth component is ignored.
-     * @param horizontal  The initial sample values on the horizontal axis. Must point to an array of sampleCount.width elements, of which the values will be copied into the MTLRasterizationRateLayerDescriptor.
-     * @param vertical    The initial sample values on the vertical axis. Must point to an array of sampleCount.height elements, of which the values will be copied into the MTLRasterizationRateLayerDescriptor.
+     * @param sampleCount The width and height components are the number of samples on the horizontal and vertical axis
+     *                    respectively. The depth component is ignored.
+     * @param horizontal  The initial sample values on the horizontal axis. Must point to an array of sampleCount.width
+     *                    elements, of which the values will be copied into the MTLRasterizationRateLayerDescriptor.
+     * @param vertical    The initial sample values on the vertical axis. Must point to an array of sampleCount.height
+     *                    elements, of which the values will be copied into the MTLRasterizationRateLayerDescriptor.
      */
     @Generated
     @Selector("initWithSampleCount:horizontal:vertical:")
@@ -204,7 +213,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     /**
      * [@property] sampleCount
      *
-     * @return The number of quality samples that this descriptor uses to describe its current function, for the horizontal and vertical axis. The depth component of the returned MTLSize is always 0.
+     * @return The number of quality samples that this descriptor uses to describe its current function, for the
+     *         horizontal and vertical axis. The depth component of the returned MTLSize is always 0.
      */
     @Generated
     @Selector("sampleCount")
@@ -251,7 +261,9 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     /**
      * [@property] maxSampleCount
      *
-     * @return The maximum number of quality samples that this descriptor can use to describe its function, for the horizontal and vertical axis, this is the sampleCount that the descriptor was initialized with. The depth component of the returned MTLSize is always 0.
+     * @return The maximum number of quality samples that this descriptor can use to describe its function, for the
+     *         horizontal and vertical axis, this is the sampleCount that the descriptor was initialized with. The depth
+     *         component of the returned MTLSize is always 0.
      */
     @Generated
     @Selector("maxSampleCount")
@@ -263,7 +275,8 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
      * <p>
      * This declaration adds a setter to the previously (prior to macOS 12.0 and iOS 15.0) read-only property.
      * <p>
-     * Setting a value (must be <= maxSampleCount) to allow MTLRasterizationRateLayerDescriptor to be re-used with a different number of samples without having to be recreated.
+     * Setting a value (must be <= maxSampleCount) to allow MTLRasterizationRateLayerDescriptor to be re-used with a
+     * different number of samples without having to be recreated.
      */
     @Generated
     @Selector("setSampleCount:")

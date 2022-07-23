@@ -159,7 +159,7 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * Limits the maximum number of objects returned in the fetch result, a value of 0 means no limit.  Defaults to 0.
+     * Limits the maximum number of objects returned in the fetch result, a value of 0 means no limit. Defaults to 0.
      */
     @Generated
     @Selector("fetchLimit")
@@ -174,8 +174,9 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native boolean includeAllBurstAssets();
 
     /**
-     * The asset source types included in the fetch results.  Defaults to PHAssetSourceTypeNone.
-     * If set to PHAssetSourceTypeNone the asset source types included in the fetch results are inferred from the type of query performed (see PHAsset fetchAssetsWithOptions:)
+     * The asset source types included in the fetch results. Defaults to PHAssetSourceTypeNone.
+     * If set to PHAssetSourceTypeNone the asset source types included in the fetch results are inferred from the type
+     * of query performed (see PHAsset fetchAssetsWithOptions:)
      */
     @Generated
     @Selector("includeAssetSourceTypes")
@@ -201,7 +202,7 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native NSPredicate predicate();
 
     /**
-     * Limits the maximum number of objects returned in the fetch result, a value of 0 means no limit.  Defaults to 0.
+     * Limits the maximum number of objects returned in the fetch result, a value of 0 means no limit. Defaults to 0.
      */
     @Generated
     @Selector("setFetchLimit:")
@@ -215,8 +216,9 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native void setIncludeAllBurstAssets(boolean value);
 
     /**
-     * The asset source types included in the fetch results.  Defaults to PHAssetSourceTypeNone.
-     * If set to PHAssetSourceTypeNone the asset source types included in the fetch results are inferred from the type of query performed (see PHAsset fetchAssetsWithOptions:)
+     * The asset source types included in the fetch results. Defaults to PHAssetSourceTypeNone.
+     * If set to PHAssetSourceTypeNone the asset source types included in the fetch results are inferred from the type
+     * of query performed (see PHAsset fetchAssetsWithOptions:)
      */
     @Generated
     @Selector("setIncludeAssetSourceTypes:")
@@ -241,7 +243,8 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native void setSortDescriptors(NSArray<? extends NSSortDescriptor> value);
 
     /**
-     * Whether the owner of this object is interested in incremental change details for the results of this fetch (see PHChange)
+     * Whether the owner of this object is interested in incremental change details for the results of this fetch (see
+     * PHChange)
      * Defaults to YES
      */
     @Generated
@@ -253,7 +256,8 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     public native NSArray<? extends NSSortDescriptor> sortDescriptors();
 
     /**
-     * Whether the owner of this object is interested in incremental change details for the results of this fetch (see PHChange)
+     * Whether the owner of this object is interested in incremental change details for the results of this fetch (see
+     * PHChange)
      * Defaults to YES
      */
     @Generated

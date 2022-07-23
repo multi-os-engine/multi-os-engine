@@ -19,7 +19,7 @@ package apple.coremidi.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]			MIDIObjectType
+ * [@enum] MIDIObjectType
  * <p>
  * Signifies the type of a MIDIObject.
  * <p>

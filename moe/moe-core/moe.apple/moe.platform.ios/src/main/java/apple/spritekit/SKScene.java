@@ -217,7 +217,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native UIColor backgroundColor();
 
     /**
-     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the scene.
+     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
+     * scene.
      */
     @Generated
     @Selector("camera")
@@ -239,7 +240,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native SKSceneDelegate delegate();
 
     /**
-     * Override this to perform game logic. Called exactly once per frame after any enabled constraints have been applied. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is not simulated until the next update. Any changes to constraints will not be applied until the next update.
+     * Override this to perform game logic. Called exactly once per frame after any enabled constraints have been
+     * applied. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is
+     * not simulated until the next update. Any changes to constraints will not be applied until the next update.
      */
     @Generated
     @Selector("didApplyConstraints")
@@ -250,16 +253,20 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native void didChangeSize(@ByValue CGSize oldSize);
 
     /**
-     * Override this to perform game logic. Called exactly once per frame after any actions have been evaluated but before any physics are simulated. Any additional actions applied is not evaluated until the next update.
+     * Override this to perform game logic. Called exactly once per frame after any actions have been evaluated but
+     * before any physics are simulated. Any additional actions applied is not evaluated until the next update.
      */
     @Generated
     @Selector("didEvaluateActions")
     public native void didEvaluateActions();
 
     /**
-     * Override this to perform game logic. Called after all update logic has been completed. Any additional actions applied are not evaluated until the next update. Any changes to physics bodies are not simulated until the next update. Any changes to constraints will not be applied until the next update.
+     * Override this to perform game logic. Called after all update logic has been completed. Any additional actions
+     * applied are not evaluated until the next update. Any changes to physics bodies are not simulated until the next
+     * update. Any changes to constraints will not be applied until the next update.
      * <p>
-     * No futher update logic will be applied to the scene after this call. Any values set on nodes here will be used when the scene is rendered for the current frame.
+     * No futher update logic will be applied to the scene after this call. Any values set on nodes here will be used
+     * when the scene is rendered for the current frame.
      */
     @Generated
     @Selector("didFinishUpdate")
@@ -270,7 +277,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native void didMoveToView(SKView view);
 
     /**
-     * Override this to perform game logic. Called exactly once per frame after any actions have been evaluated and any physics have been simulated. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is not simulated until the next update.
+     * Override this to perform game logic. Called exactly once per frame after any actions have been evaluated and any
+     * physics have been simulated. Any additional actions applied is not evaluated until the next update. Any changes
+     * to physics bodies is not simulated until the next update.
      */
     @Generated
     @Selector("didSimulatePhysics")
@@ -285,7 +294,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native SKScene initWithCoder(NSCoder aDecoder);
 
     /**
-     * A scene is infinitely large, but it has a viewport that is the frame through which you present the content of the scene.
+     * A scene is infinitely large, but it has a viewport that is the frame through which you present the content of the
+     * scene.
      * The passed in size defines the size of this viewport that you use to present the scene.
      *
      * @param size a size in points that signifies the viewport into the scene that defines your framing of the scene.
@@ -341,14 +351,16 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native void setBackgroundColor(UIColor value);
 
     /**
-     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the scene.
+     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
+     * scene.
      */
     @Generated
     @Selector("setCamera:")
     public native void setCamera_unsafe(SKCameraNode value);
 
     /**
-     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the scene.
+     * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
+     * scene.
      */
     @Generated
     public void setCamera(SKCameraNode value) {
@@ -421,7 +433,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     public native CGSize size();
 
     /**
-     * Override this to perform per-frame game logic. Called exactly once per frame before any actions are evaluated and any physics are simulated.
+     * Override this to perform per-frame game logic. Called exactly once per frame before any actions are evaluated and
+     * any physics are simulated.
      *
      * @param currentTime the current time in the app. This must be monotonically increasing.
      */

@@ -251,11 +251,13 @@ public class MLModel extends NSObject {
     /**
      * Construct a model asynchronously given the location of its on-disk representation and configuration.
      * <p>
-     * Model loading may take time when the model content is not immediately available (e.g. encrypted model). Use this factory method especially when the caller is on the main thread.
+     * Model loading may take time when the model content is not immediately available (e.g. encrypted model). Use this
+     * factory method especially when the caller is on the main thread.
      *
      * @param url           the location of its on-disk representation (.mlmodelc directory).
      * @param configuration The model configuration
-     * @param handler       When the model load completes successfully or unsuccessfully, the completion handler is invoked with a valid MLModel instance or NSError object.
+     * @param handler       When the model load completes successfully or unsuccessfully, the completion handler is
+     *                      invoked with a valid MLModel instance or NSError object.
      */
     @Generated
     @Selector("loadContentsOfURL:configuration:completionHandler:")

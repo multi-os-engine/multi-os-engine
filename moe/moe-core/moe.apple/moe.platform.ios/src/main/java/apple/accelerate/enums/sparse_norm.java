@@ -23,14 +23,14 @@ import org.moe.natj.general.ann.Generated;
  * [@constant] SPARSE_NORM_ONE
  * Matrix element wise: sum over i,j ( | A[i,j] | )
  * <p>
- * Matrix operator    : max over j ( sum over i ( | A[i,j] | )
+ * Matrix operator : max over j ( sum over i ( | A[i,j] | )
  * <p>
  * Vector element wise: sum over i ( | x[i] | )
  * <p>
  * [@constant] SPARSE_NORM_TWO
  * Matrix element wise: sqrt( sum over i,j (A[i,j])^2 )
  * <p>
- * Matrix operator    : Largest singular value of matrix, note that the operator
+ * Matrix operator : Largest singular value of matrix, note that the operator
  * SPARSE_NORM_TWO is significantly more expensive than other norm operations.
  * <p>
  * Vector element wise: sqrt( sum over i (x[i])^2 )
@@ -38,14 +38,14 @@ import org.moe.natj.general.ann.Generated;
  * [@constant] SPARSE_NORM_INF
  * Matrix element wise: max over i,j ( | A[i,j] | )
  * <p>
- * Matrix operator    : max over i ( sum over j ( | A[i,j] | )
+ * Matrix operator : max over i ( sum over j ( | A[i,j] | )
  * <p>
  * Vector element wise: max over i ( | x[i] | )
  * <p>
  * [@constant] SPARSE_NORM_R1
  * Matrix element wise: sum over j ( sqrt ( sum over i ( A[i,j]^2 ) ) )
  * <p>
- * Matrix operator    : Not supported. Undefined
+ * Matrix operator : Not supported. Undefined
  * <p>
  * Vector element wise: Not supported. Undefined
  */

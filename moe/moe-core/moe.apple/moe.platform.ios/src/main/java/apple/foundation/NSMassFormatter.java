@@ -167,14 +167,16 @@ public class NSMassFormatter extends NSFormatter {
     public native NSMassFormatter initWithCoder(NSCoder coder);
 
     /**
-     * default is NO; if it is set to YES, the number argument for -stringFromKilograms: and -unitStringFromKilograms: is considered as a person’s mass
+     * default is NO; if it is set to YES, the number argument for -stringFromKilograms: and -unitStringFromKilograms:
+     * is considered as a person’s mass
      */
     @Generated
     @Selector("isForPersonMassUse")
     public native boolean isForPersonMassUse();
 
     /**
-     * default is NO; if it is set to YES, the number argument for -stringFromKilograms: and -unitStringFromKilograms: is considered as a person’s mass
+     * default is NO; if it is set to YES, the number argument for -stringFromKilograms: and -unitStringFromKilograms:
+     * is considered as a person’s mass
      */
     @Generated
     @Selector("setForPersonMassUse:")
@@ -202,7 +204,8 @@ public class NSMassFormatter extends NSFormatter {
     public native void setUnitStyle(@NInt long value);
 
     /**
-     * Format a number in kilograms to a localized string with the locale-appropriate unit and an appropriate scale (e.g. 1.2kg = 2.64lb in the US locale).
+     * Format a number in kilograms to a localized string with the locale-appropriate unit and an appropriate scale
+     * (e.g. 1.2kg = 2.64lb in the US locale).
      */
     @Generated
     @Selector("stringFromKilograms:")

@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A gram matrix layer
  * <p>
- * The MLComputeGramMatrix  specifies a layer which computes the uncentered cross-correlation
+ * The MLComputeGramMatrix specifies a layer which computes the uncentered cross-correlation
  * values between the spatial planes of each feature channel of a tensor. If the input tensor batch is
  * x = x[b, y, x, c], where 'b' is batch index, 'y' and 'x' are the spatial coordinates and 'c' is the feature channel
  * index then this layer computes the values:
@@ -152,7 +152,7 @@ public class MLCGramMatrixLayer extends MLCLayer {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   scale
+     * [@property] scale
      * <p>
      * The scale factor
      */

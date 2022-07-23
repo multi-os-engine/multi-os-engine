@@ -104,7 +104,8 @@ public class NINearbyObject extends NSObject implements NSCopying, NSSecureCodin
     public native NIDiscoveryToken discoveryToken();
 
     /**
-     * Distance to the nearby object in meters. If not available in this update, the value of this property will be equal to NINearbyObjectDistanceNotAvailable in Objective C, or nil in Swift.
+     * Distance to the nearby object in meters. If not available in this update, the value of this property will be
+     * equal to NINearbyObjectDistanceNotAvailable in Objective C, or nil in Swift.
      */
     @Generated
     @Selector("distance")

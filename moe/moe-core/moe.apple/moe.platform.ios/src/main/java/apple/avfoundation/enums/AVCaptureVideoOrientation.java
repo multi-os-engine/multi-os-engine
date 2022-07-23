@@ -22,7 +22,8 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] AVCaptureVideoOrientation
  * <p>
- * Constants indicating video orientation, for use with AVCaptureVideoPreviewLayer (see AVCaptureVideoPreviewLayer.h) and AVCaptureConnection (see below).
+ * Constants indicating video orientation, for use with AVCaptureVideoPreviewLayer (see AVCaptureVideoPreviewLayer.h)
+ * and AVCaptureConnection (see below).
  * <p>
  * [@constant] AVCaptureVideoOrientationPortrait
  * Indicates that video should be oriented vertically, home button on the bottom.

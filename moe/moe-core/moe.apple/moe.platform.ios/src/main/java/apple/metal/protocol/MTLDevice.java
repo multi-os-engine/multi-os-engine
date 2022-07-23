@@ -154,7 +154,8 @@ public interface MTLDevice {
     /**
      * newCommandQueue
      * <p>
-     * Create and return a new command queue.   Command Queues created via this method will only allow up to 64 non-completed command buffers.
+     * Create and return a new command queue. Command Queues created via this method will only allow up to 64
+     * non-completed command buffers.
      *
      * @return The new command queue object
      */
@@ -369,7 +370,8 @@ public interface MTLDevice {
     /**
      * newRenderPipelineState:options:completionHandler:
      * <p>
-     * Create and compile a new MTLRenderPipelineState object asynchronously and returns additional reflection information
+     * Create and compile a new MTLRenderPipelineState object asynchronously and returns additional reflection
+     * information
      */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:options:completionHandler:")
@@ -380,7 +382,8 @@ public interface MTLDevice {
     /**
      * newRenderPipelineStateWithDescriptor:options:reflection:error:
      * <p>
-     * Create and compile a new MTLRenderPipelineState object synchronously and returns additional reflection information.
+     * Create and compile a new MTLRenderPipelineState object synchronously and returns additional reflection
+     * information.
      */
     @Generated
     @Selector("newRenderPipelineStateWithDescriptor:options:reflection:error:")
@@ -424,7 +427,8 @@ public interface MTLDevice {
      * <p>
      * Query device if it support textures with a given sampleCount.
      *
-     * @return BOOL value. If YES, device supports the given sampleCount for textures. If NO, device does not support the given sampleCount.
+     * @return BOOL value. If YES, device supports the given sampleCount for textures. If NO, device does not support
+     *         the given sampleCount.
      */
     @Generated
     @Selector("supportsTextureSampleCount:")
@@ -538,7 +542,8 @@ public interface MTLDevice {
      * Retrieve the default sample positions.
      *
      * @param positions The destination array for default sample position data.
-     * @param count     Specifies the sample count for which to retrieve the default positions, the length of the positions array, and must be set to a valid sample count.
+     * @param count     Specifies the sample count for which to retrieve the default positions, the length of the
+     *                  positions array, and must be set to a valid sample count.
      */
     @Generated
     @Selector("getDefaultSamplePositions:count:")
@@ -559,7 +564,8 @@ public interface MTLDevice {
     /**
      * minimumLinearTextureAlignmentForPixelFormat:
      * <p>
-     * Returns the minimum alignment required for offset and rowBytes when creating a linear texture. An error is thrown for queries with invalid pixel formats (depth, stencil, or compressed formats).
+     * Returns the minimum alignment required for offset and rowBytes when creating a linear texture. An error is thrown
+     * for queries with invalid pixel formats (depth, stencil, or compressed formats).
      */
     @Generated
     @Selector("minimumLinearTextureAlignmentForPixelFormat:")
@@ -694,8 +700,9 @@ public interface MTLDevice {
      * <p>
      * Returns YES if this GPU shares its memory with the rest of the machine (CPU, etc.)
      * <p>
-     * Some GPU architectures do not have dedicated local memory and instead only use the same memory shared with the rest
-     * of the machine.  This property will return YES for GPUs that fall into that category.
+     * Some GPU architectures do not have dedicated local memory and instead only use the same memory shared with the
+     * rest
+     * of the machine. This property will return YES for GPUs that fall into that category.
      */
     @Generated
     @Selector("hasUnifiedMemory")
@@ -706,7 +713,10 @@ public interface MTLDevice {
      * <p>
      * The maximum number of unique argument buffer samplers per app.
      * <p>
-     * This limit is only applicable to samplers that have their supportArgumentBuffers property set to true. A MTLSamplerState object is considered unique if the configuration of its originating MTLSamplerDescriptor properties is unique. For example, two samplers with equal minFilter values but different magFilter values are considered unique.
+     * This limit is only applicable to samplers that have their supportArgumentBuffers property set to true. A
+     * MTLSamplerState object is considered unique if the configuration of its originating MTLSamplerDescriptor
+     * properties is unique. For example, two samplers with equal minFilter values but different magFilter values are
+     * considered unique.
      */
     @Generated
     @Selector("maxArgumentBufferSamplerCount")
@@ -760,9 +770,11 @@ public interface MTLDevice {
      * <p>
      * Creates a new variable rasterization rate map with the given descriptor.
      * <p>
-     * If '[self supportsRasterizationRateMapWithLayerCount:descriptor.layerCount]' returns NO, or descriptor.screenSize describes an empty region, the result will always be nil.
+     * If '[self supportsRasterizationRateMapWithLayerCount:descriptor.layerCount]' returns NO, or descriptor.screenSize
+     * describes an empty region, the result will always be nil.
      *
-     * @return A MTLRasterizationRateMap instance that can be used for rendering on this MTLDevice, or nil if the device does not support the combination of parameters stored in the descriptor.
+     * @return A MTLRasterizationRateMap instance that can be used for rendering on this MTLDevice, or nil if the device
+     *         does not support the combination of parameters stored in the descriptor.
      */
     @Generated
     @Selector("newRasterizationRateMapWithDescriptor:")
@@ -859,7 +871,8 @@ public interface MTLDevice {
      * Query device for variable rasterization rate support with the given number of layers.
      *
      * @param layerCount The number of layers for which to query device support.
-     * @return YES if the device supports creation of rendering using a MTLRasterizationRateMap with the given number of layers.
+     * @return YES if the device supports creation of rendering using a MTLRasterizationRateMap with the given number of
+     *         layers.
      */
     @Generated
     @Selector("supportsRasterizationRateMapWithLayerCount:")
@@ -871,7 +884,8 @@ public interface MTLDevice {
      * Query device for vertex amplification support.
      *
      * @param count The amplification count to check
-     * @return BOOL value. If YES, the device supports vertex amplification with the given count. If NO, the device does not.
+     * @return BOOL value. If YES, the device supports vertex amplification with the given count. If NO, the device does
+     *         not.
      */
     @Generated
     @Selector("supportsVertexAmplificationCount:")
@@ -950,7 +964,8 @@ public interface MTLDevice {
      * <p>
      * Creates a MTLDynamicLibrary by compiling the code in a MTLLibrary.
      *
-     * @param library The MTLLibrary from which to compile code. This library must have .type set to MTLLibraryTypeDynamic.
+     * @param library The MTLLibrary from which to compile code. This library must have .type set to
+     *                MTLLibraryTypeDynamic.
      * @param error   If an error occurs during creation, this parameter is updated to describe the failure.
      * @return On success, the MTLDynamicLibrary containing compiled code. On failure, nil.
      * @see MTLDynamicLibrary
@@ -966,7 +981,8 @@ public interface MTLDevice {
      * <p>
      * Creates a MTLDynamicLibrary by loading compiled code from a file.
      *
-     * @param url   The file URL from which to load. If the file contains no compiled code for this device, compilation is attempted as with newDynamicLibrary:error:
+     * @param url   The file URL from which to load. If the file contains no compiled code for this device, compilation
+     *              is attempted as with newDynamicLibrary:error:
      * @param error If an error occurs during creation, this parameter is updated to describe the failure.
      * @return On success, the MTLDynamicLibrary containing compiled code (either loaded or compiled). On failure, nil.
      * @see MTLDynamicLibrary
@@ -1005,7 +1021,8 @@ public interface MTLDevice {
      * <p>
      * Query device support for creating and using dynamic libraries in a compute pipeline.
      *
-     * @return BOOL value. If YES, the device supports creating and using dynamic libraries in a compute pipeline. If NO, the device does not.
+     * @return BOOL value. If YES, the device supports creating and using dynamic libraries in a compute pipeline. If
+     *         NO, the device does not.
      */
     @Generated
     @Selector("supportsDynamicLibraries")
@@ -1016,7 +1033,8 @@ public interface MTLDevice {
      * <p>
      * Query device support for using function pointers from compute pipelines.
      *
-     * @return BOOL value. If YES, the device supports function pointers from compute pipelines. If NO, the device does not.
+     * @return BOOL value. If YES, the device supports function pointers from compute pipelines. If NO, the device does
+     *         not.
      */
     @Generated
     @Selector("supportsFunctionPointers")
@@ -1025,7 +1043,8 @@ public interface MTLDevice {
     /**
      * [@property] supportsPullModelInterpolation
      * <p>
-     * Query device for pull model interpolation support which allows a fragment shader to compute multiple interpolations (at center, at centroid, at offset, at sample) of a fragment input.
+     * Query device for pull model interpolation support which allows a fragment shader to compute multiple
+     * interpolations (at center, at centroid, at offset, at sample) of a fragment input.
      *
      * @return BOOL value. If YES, the device supports pull model interpolation. If NO, the device does not.
      */
@@ -1098,9 +1117,12 @@ public interface MTLDevice {
     /**
      * [@property] supports32BitMSAA
      * <p>
-     * Query device for 32-bit MSAA texture support. Specifically, added support for allocating 32-bit Integer format textures (R32Uint, R32Sint, RG32Uint, RG32Sint, RGBA32Uint, and RGBA32Sint) and resolving 32-bit Float format textures (R32Float, RG32Float, and RGBA32Float).
+     * Query device for 32-bit MSAA texture support. Specifically, added support for allocating 32-bit Integer format
+     * textures (R32Uint, R32Sint, RG32Uint, RG32Sint, RGBA32Uint, and RGBA32Sint) and resolving 32-bit Float format
+     * textures (R32Float, RG32Float, and RGBA32Float).
      *
-     * @return BOOL value. If YES, the device supports these additional 32-bit MSAA texture capabilities. If NO, the devices does not.
+     * @return BOOL value. If YES, the device supports these additional 32-bit MSAA texture capabilities. If NO, the
+     *         devices does not.
      */
     @Generated
     @Selector("supports32BitMSAA")
@@ -1111,7 +1133,8 @@ public interface MTLDevice {
      * <p>
      * Query device support for using function pointers from render pipeline stages.
      *
-     * @return BOOL value. If YES, the device supports function pointers from render pipeline stages. If NO, the device does not.
+     * @return BOOL value. If YES, the device supports function pointers from render pipeline stages. If NO, the device
+     *         does not.
      */
     @Generated
     @Selector("supportsFunctionPointersFromRender")
@@ -1131,7 +1154,8 @@ public interface MTLDevice {
     /**
      * [@property] supportsQueryTextureLOD
      * <p>
-     * Query device for whether it supports the `calculate_clampled_lod` and `calculate_unclamped_lod` Metal shading language functionality.
+     * Query device for whether it supports the `calculate_clampled_lod` and `calculate_unclamped_lod` Metal shading
+     * language functionality.
      *
      * @return BOOL value. If YES, the device supports the calculate LOD functionality. If NO, the device does not.
      */
@@ -1144,7 +1168,8 @@ public interface MTLDevice {
      * <p>
      * Query device support for using ray tracing from render pipeline stages.
      *
-     * @return BOOL value. If YES, the device supports ray tracing from render pipeline stages. If NO, the device does not.
+     * @return BOOL value. If YES, the device supports ray tracing from render pipeline stages. If NO, the device does
+     *         not.
      */
     @Generated
     @Selector("supportsRaytracingFromRender")
@@ -1155,7 +1180,8 @@ public interface MTLDevice {
      * <p>
      * Query device support for creating and using dynamic libraries in render pipeline stages.
      *
-     * @return BOOL value. If YES, the device supports creating and using dynamic libraries in render pipeline stages. If NO, the device does not.
+     * @return BOOL value. If YES, the device supports creating and using dynamic libraries in render pipeline stages.
+     *         If NO, the device does not.
      */
     @Generated
     @Selector("supportsRenderDynamicLibraries")

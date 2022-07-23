@@ -56,13 +56,13 @@ public final class SystemConfiguration {
      * [@function] SCNetworkReachabilityCreateWithAddress
      * <p>
      * Creates a reference to the specified network
-     * address.  This reference can be used later to monitor the
+     * address. This reference can be used later to monitor the
      * reachability of the target host.
      *
      * @param address The address of the desired host.
      * @return Returns a reference to the new immutable SCNetworkReachabilityRef.
-     * <p>
-     * You must release the returned value.
+     *         <p>
+     *         You must release the returned value.
      */
     @Generated
     @CFunction
@@ -73,16 +73,16 @@ public final class SystemConfiguration {
      * [@function] SCNetworkReachabilityCreateWithAddressPair
      * <p>
      * Creates a reference to the specified network
-     * address.  This reference can be used later to monitor the
+     * address. This reference can be used later to monitor the
      * reachability of the target host.
      *
      * @param localAddress  The local address associated with a network
-     *                      connection.  If NULL, only the remote address is of interest.
+     *                      connection. If NULL, only the remote address is of interest.
      * @param remoteAddress The remote address associated with a network
-     *                      connection.  If NULL, only the local address is of interest.
+     *                      connection. If NULL, only the local address is of interest.
      * @return Returns a reference to the new immutable SCNetworkReachabilityRef.
-     * <p>
-     * You must release the returned value.
+     *         <p>
+     *         You must release the returned value.
      */
     @Generated
     @CFunction
@@ -94,15 +94,15 @@ public final class SystemConfiguration {
      * [@function] SCNetworkReachabilityCreateWithName
      * <p>
      * Creates a reference to the specified network host or node
-     * name.  This reference can be used later to monitor the
+     * name. This reference can be used later to monitor the
      * reachability of the target host.
      *
      * @param nodename The node name of the desired host.
      *                 This name would be the same as that passed to the
      *                 gethostbyname(3) or getaddrinfo(3) functions.
      * @return Returns a reference to the new immutable SCNetworkReachabilityRef.
-     * <p>
-     * You must release the returned value.
+     *         <p>
+     *         You must release the returned value.
      */
     @Generated
     @CFunction
@@ -132,7 +132,7 @@ public final class SystemConfiguration {
      *               SCNetworkReachabilityFlags detailing the reachability
      *               of the specified target.
      * @return Returns TRUE if the network connection flags are valid;
-     * FALSE if the status could not be determined.
+     *         FALSE if the status could not be determined.
      */
     @Generated
     @CFunction
@@ -147,10 +147,10 @@ public final class SystemConfiguration {
      * @param target  The network reference associated with the address or
      *                name to be checked for reachability.
      * @param callout The function to be called when the reachability of the
-     *                target changes.  If NULL, the current client for the target
+     *                target changes. If NULL, the current client for the target
      *                is removed.
      * @param context The SCNetworkReachabilityContext associated with
-     *                the callout.  The value may be NULL.
+     *                the callout. The value may be NULL.
      * @return Returns TRUE if the notification client was successfully set.
      */
     @Generated
@@ -165,13 +165,13 @@ public final class SystemConfiguration {
      * Schedules the given target with the given run loop and mode.
      *
      * @param target      The address or name that is set up for asynchronous
-     *                    notifications.  Must be non-NULL.
+     *                    notifications. Must be non-NULL.
      * @param runLoop     A reference to a run loop on which the target should
-     *                    be scheduled.  Must be non-NULL.
+     *                    be scheduled. Must be non-NULL.
      * @param runLoopMode The mode on which to schedule the target.
      *                    Must be non-NULL.
      * @return Returns TRUE if the target is scheduled successfully;
-     * FALSE otherwise.
+     *         FALSE otherwise.
      */
     @Generated
     @CFunction
@@ -185,13 +185,13 @@ public final class SystemConfiguration {
      * and mode.
      *
      * @param target      The address or name that is set up for asynchronous
-     *                    notifications.  Must be non-NULL.
+     *                    notifications. Must be non-NULL.
      * @param runLoop     A reference to a run loop from which the target
-     *                    should be unscheduled.  Must be non-NULL.
+     *                    should be unscheduled. Must be non-NULL.
      * @param runLoopMode The mode on which to unschedule the target.
      *                    Must be non-NULL.
      * @return Returns TRUE if the target is unscheduled successfully;
-     * FALSE otherwise.
+     *         FALSE otherwise.
      */
     @Generated
     @CFunction
@@ -205,11 +205,11 @@ public final class SystemConfiguration {
      * dispatch queue.
      *
      * @param target The address or name that is set up for asynchronous
-     *               notifications.  Must be non-NULL.
+     *               notifications. Must be non-NULL.
      * @param queue  A libdispatch queue to run the callback on.
      *               Pass NULL to unschedule callbacks.
      * @return Returns TRUE if the target is scheduled or unscheduled successfully;
-     * FALSE otherwise.
+     *         FALSE otherwise.
      */
     @Generated
     @CFunction
@@ -314,8 +314,8 @@ public final class SystemConfiguration {
      * copies a list of all interfaces CaptiveNetworkSupport is monitoring.
      *
      * @return An array of CFStringRef- BSD interface names.
-     * Returns NULL if an error was encountered.
-     * You MUST release the returned value.
+     *         Returns NULL if an error was encountered.
+     *         You MUST release the returned value.
      */
     @Generated
     @CFunction
@@ -324,36 +324,43 @@ public final class SystemConfiguration {
     /**
      * [@function] CNCopyCurrentNetworkInfo
      * <p>
-     * Returns the network information for the specified interface when the requesting application meets one of following 4 requirements -.
+     * Returns the network information for the specified interface when the requesting application meets one of
+     * following 4 requirements -.
      * 1. application is using CoreLocation API and has the user's authorization to access location.
      * 2. application has used the NEHotspotConfiguration API to configure the current Wi-Fi network.
      * 3. application has active VPN configurations installed.
      * 4. application has active NEDNSSettingsManager configurations installed.
      * <p>
-     * - An application that is linked against iOS 12.0 SDK and above must have the "com.apple.developer.networking.wifi-info" entitlement.
-     * - An application will receive a pseudo network information if it is linked against an SDK before iOS 13.0, and if it fails to meet any of the
+     * - An application that is linked against iOS 12.0 SDK and above must have the
+     * "com.apple.developer.networking.wifi-info" entitlement.
+     * - An application will receive a pseudo network information if it is linked against an SDK before iOS 13.0, and if
+     * it fails to meet any of the
      * above requirements.
-     * - An application will receive NULL if it is linked against iOS 13.0 SDK (or newer), and if it fails to meet any of the above requirements.
-     * - On Mac Catalyst platform, to receive current Wi-Fi network information, an application must have "com.apple.developer.networking.wifi-info"
+     * - An application will receive NULL if it is linked against iOS 13.0 SDK (or newer), and if it fails to meet any
+     * of the above requirements.
+     * - On Mac Catalyst platform, to receive current Wi-Fi network information, an application must have
+     * "com.apple.developer.networking.wifi-info"
      * entitlement and user's authorization to access location.
      * <p>
      * Network Information dictionary will contain the following keys, and values:
      * <pre>
+     * 
      * @textblock
-     * Keys                      : Values
-     * =======================================
-     * kCNNetworkInfoKeySSIDData : CFDataRef
-     * kCNNetworkInfoKeySSID     : CFStringRef
-     * kCNNetworkInfoKeyBSSID    : CFStringRef
+     *            Keys : Values
+     *            =======================================
+     *            kCNNetworkInfoKeySSIDData : CFDataRef
+     *            kCNNetworkInfoKeySSID : CFStringRef
+     *            kCNNetworkInfoKeyBSSID : CFStringRef
      * @/textblock
-     * </pre>
-     * <p>
-     * Pseudo network information will contain "Wi-Fi" SSID and "00:00:00:00:00:00" BSSID. For China region, the SSID will be "WLAN".
+     *             </pre>
+     *             <p>
+     *             Pseudo network information will contain "Wi-Fi" SSID and "00:00:00:00:00:00" BSSID. For China region,
+     *             the SSID will be "WLAN".
      *
      * @param interfaceName Name of the interface you are interested in
      * @return Network Information dictionary associated with the interface.
-     * Returns NULL if an error was encountered.
-     * You MUST release the returned value.
+     *         Returns NULL if an error was encountered.
+     *         You MUST release the returned value.
      */
     @Generated
     @CFunction

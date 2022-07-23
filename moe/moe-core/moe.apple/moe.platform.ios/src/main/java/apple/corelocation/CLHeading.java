@@ -48,7 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * CLHeading
  * <p>
  * Discussion:
- * Represents a vector pointing to magnetic North constructed from axis component values x, y, and z. An accuracy of the heading calculation is also provided along with timestamp information.
+ * Represents a vector pointing to magnetic North constructed from axis component values x, y, and z. An accuracy of the
+ * heading calculation is also provided along with timestamp information.
  */
 @Generated
 @Library("CoreLocation")
@@ -178,7 +179,8 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * headingAccuracy
      * <p>
      * Discussion:
-     * Represents the maximum deviation of where the magnetic heading may differ from the actual geomagnetic heading in degrees. A negative value indicates an invalid heading.
+     * Represents the maximum deviation of where the magnetic heading may differ from the actual geomagnetic heading in
+     * degrees. A negative value indicates an invalid heading.
      */
     @Generated
     @Selector("headingAccuracy")
@@ -196,7 +198,8 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
      * magneticHeading
      * <p>
      * Discussion:
-     * Represents the direction in degrees, where 0 degrees is magnetic North. The direction is referenced from the top of the device regardless of device orientation as well as the orientation of the user interface.
+     * Represents the direction in degrees, where 0 degrees is magnetic North. The direction is referenced from the top
+     * of the device regardless of device orientation as well as the orientation of the user interface.
      * <p>
      * Range:
      * 0.0 - 359.9 degrees, 0 being magnetic North

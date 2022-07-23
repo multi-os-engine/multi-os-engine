@@ -188,7 +188,8 @@ public class ARReferenceImage extends NSObject {
     /**
      * The AR resource group name for this image.
      * <p>
-     * If this image was loaded via an AR resource group in the Xcode asset catalogue this property will have the name of the resource group,
+     * If this image was loaded via an AR resource group in the Xcode asset catalogue this property will have the name
+     * of the resource group,
      * else be set to nil.
      */
     @Generated
@@ -213,11 +214,14 @@ public class ARReferenceImage extends NSObject {
     /**
      * Validate if this image can be used for image detection or tracking.
      * <p>
-     * When loading reference images from the asset catalog this verification is not needed as the same verification happens
+     * When loading reference images from the asset catalog this verification is not needed as the same verification
+     * happens
      * at compile time.
      *
-     * @param completionHandler Completion handler invoked when validation is done. The completion handler takes the following parameters:
-     *                          error - An error that indicates why the image is not suitable for tracking, or nil if no error occured.
+     * @param completionHandler Completion handler invoked when validation is done. The completion handler takes the
+     *                          following parameters:
+     *                          error - An error that indicates why the image is not suitable for tracking, or nil if no
+     *                          error occured.
      */
     @Generated
     @Selector("validateWithCompletionHandler:")

@@ -163,7 +163,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public static native long version_static();
 
     /**
-     * [@property]   activeConversation
+     * [@property] activeConversation
      * <p>
      * Current active conversation.
      */
@@ -187,7 +187,8 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      * <p>
      * Informs the extension that the user has removed the message from the input field.
      * <p>
-     * This method will not be called when the `presentationStyle` is MSMessagesAppPresentationStyleTranscript or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * This method will not be called when the `presentationStyle` is MSMessagesAppPresentationStyleTranscript or the
+     * `presentationContext` is `MSMessagesAppPresentationContextMedia`.
      *
      * @param message      The message sent.
      * @param conversation The conversation.
@@ -201,7 +202,8 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      * <p>
      * Informs the extension that a new message has arrived.
      * <p>
-     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the
+     * `presentationContext` is `MSMessagesAppPresentationContextMedia`.
      *
      * @param message      The message received.
      * @param conversation The conversation.
@@ -226,7 +228,8 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      * <p>
      * Informs the extension that a new message has been selected in the conversation.
      * <p>
-     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the
+     * `presentationContext` is `MSMessagesAppPresentationContextMedia`.
      *
      * @param message      The message selected.
      * @param conversation The conversation.
@@ -240,7 +243,10 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      * <p>
      * Informs the extension that the message send has been triggered.
      * <p>
-     * This is called when a user interaction with Messages start the message send process. It does not guarantee the message will be successfully sent or delivered. This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * This is called when a user interaction with Messages start the message send process. It does not guarantee the
+     * message will be successfully sent or delivered. This method will not be called when the `presentationStyle` is
+     * `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is
+     * `MSMessagesAppPresentationContextMedia`.
      *
      * @param message      The message being sent.
      * @param conversation The conversation the message belongs to.
@@ -286,7 +292,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native MSMessagesAppViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * [@property]   presentationStyle
+     * [@property] presentationStyle
      * <p>
      * Get the presentation extension's current presentation style.
      */
@@ -300,9 +306,11 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      * <p>
      * Requests that Messages transition the extension to the specified presentation style.
      * <p>
-     * When the current `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`, a new instance of `MSMessagesAppViewController` will be instantiated with the requested presentation style if needed.
+     * When the current `presentationStyle` is `MSMessagesAppPresentationStyleTranscript`, a new instance of
+     * `MSMessagesAppViewController` will be instantiated with the requested presentation style if needed.
      *
-     * @param presentationStyle The presentation style to transition to. `MSMessagesAppPresentationStyleTranscript` is not a valid presentation style to request.
+     * @param presentationStyle The presentation style to transition to. `MSMessagesAppPresentationStyleTranscript` is
+     *                          not a valid presentation style to request.
      */
     @Generated
     @Selector("requestPresentationStyle:")
@@ -335,7 +343,8 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
      * <p>
      * Informs the extension that a new message will be selected in the conversation.
      * <p>
-     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the `presentationContext` is `MSMessagesAppPresentationContextMedia`.
+     * This method will not be called when the `presentationStyle` is `MSMessagesAppPresentationStyleTranscript` or the
+     * `presentationContext` is `MSMessagesAppPresentationContextMedia`.
      *
      * @param message      The message selected.
      * @param conversation The conversation.
@@ -363,7 +372,7 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     public native CGSize contentSizeThatFits(@ByValue CGSize size);
 
     /**
-     * [@property]   presentationContext
+     * [@property] presentationContext
      * <p>
      * The context for which the extension was launched
      */

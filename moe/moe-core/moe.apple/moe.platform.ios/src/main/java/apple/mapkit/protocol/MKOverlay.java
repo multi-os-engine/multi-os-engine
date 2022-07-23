@@ -34,7 +34,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface MKOverlay extends MKAnnotation {
     /**
      * boundingMapRect should be the smallest rectangle that completely contains the overlay.
-     * For overlays that span the 180th meridian, boundingMapRect should have either a negative MinX or a MaxX that is greater than MKMapSizeWorld.width.
+     * For overlays that span the 180th meridian, boundingMapRect should have either a negative MinX or a MaxX that is
+     * greater than MKMapSizeWorld.width.
      */
     @Generated
     @Selector("boundingMapRect")
@@ -42,7 +43,8 @@ public interface MKOverlay extends MKAnnotation {
     MKMapRect boundingMapRect();
 
     /**
-     * If this method is implemented and returns YES, MKMapView may use it as a hint to skip loading or drawing the built in map content in the area covered by this overlay.
+     * If this method is implemented and returns YES, MKMapView may use it as a hint to skip loading or drawing the
+     * built in map content in the area covered by this overlay.
      */
     @Generated
     @IsOptional

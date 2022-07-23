@@ -40,9 +40,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * NSHTTPCookieStorage
  * <p>
  * NSHTTPCookieStorage implements a singleton object (shared
- * instance) which manages the shared cookie store.  It has methods
+ * instance) which manages the shared cookie store. It has methods
  * to allow clients to set and remove cookies, and get the current
- * set of cookies.  It also has convenience methods to parse and
+ * set of cookies. It also has convenience methods to parse and
  * generate cookie-related HTTP header fields.
  */
 @Generated
@@ -297,9 +297,12 @@ public class NSHTTPCookieStorage extends NSObject {
     /**
      * sortedCookiesUsingDescriptors:
      * <p>
-     * Returns an array of all cookies in the store, sorted according to the key value and sorting direction of the NSSortDescriptors specified in the parameter.
+     * Returns an array of all cookies in the store, sorted according to the key value and sorting direction of the
+     * NSSortDescriptors specified in the parameter.
      * <p>
-     * proper sorting of cookies may require extensive string conversion, which can be avoided by allowing the system to perform the sorting.  This API is to be preferred over the more generic -[NSHTTPCookieStorage cookies] API, if sorting is going to be performed.
+     * proper sorting of cookies may require extensive string conversion, which can be avoided by allowing the system to
+     * perform the sorting. This API is to be preferred over the more generic -[NSHTTPCookieStorage cookies] API, if
+     * sorting is going to be performed.
      *
      * @param sortOrder an array of NSSortDescriptors which represent the preferred sort order of the resulting array.
      */

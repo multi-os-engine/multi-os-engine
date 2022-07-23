@@ -21,7 +21,8 @@ public interface UICollectionViewDropItem {
     UIDragItem dragItem();
 
     /**
-     * May be useful for computing the UIDragPreviewTarget transform for UICollectionViewDropCoordinator dropItem:toTarget:
+     * May be useful for computing the UIDragPreviewTarget transform for UICollectionViewDropCoordinator
+     * dropItem:toTarget:
      * Returns CGSizeZero if the dragItem does not have a visible drop preview.
      */
     @Generated

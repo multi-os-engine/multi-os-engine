@@ -26,7 +26,8 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * When the frequency is set to SCNBufferFrequencyPerFrame, the binding block is invoked once per frame.
  * When the frequency is set to SCNBufferFrequencyPerNode, the binding block is invoked once per SCNNode.
- * When the frequency is set to SCNBufferFrequencyPerShadable, the binding block is invoked once per SCNMaterial or SCNGeometry (depending on the object that owns the SCNProgram).
+ * When the frequency is set to SCNBufferFrequencyPerShadable, the binding block is invoked once per SCNMaterial or
+ * SCNGeometry (depending on the object that owns the SCNProgram).
  */
 @Generated
 public final class SCNBufferFrequency {

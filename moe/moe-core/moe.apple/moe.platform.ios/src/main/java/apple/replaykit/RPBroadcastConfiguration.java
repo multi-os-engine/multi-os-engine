@@ -158,7 +158,8 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     public static native long version_static();
 
     /**
-     * Specify the duration of a movie clip before it is delivered to the movie clip handler extension. Default is 5 seconds.
+     * Specify the duration of a movie clip before it is delivered to the movie clip handler extension. Default is 5
+     * seconds.
      */
     @Generated
     @Selector("clipDuration")
@@ -177,14 +178,16 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     public native RPBroadcastConfiguration initWithCoder(NSCoder coder);
 
     /**
-     * Specify the duration of a movie clip before it is delivered to the movie clip handler extension. Default is 5 seconds.
+     * Specify the duration of a movie clip before it is delivered to the movie clip handler extension. Default is 5
+     * seconds.
      */
     @Generated
     @Selector("setClipDuration:")
     public native void setClipDuration(double value);
 
     /**
-     * Override the video compression properties used to encode movie clips. See AVVideoCompressionPropertiesKey in <AVFoundation/AVVideoSettings.h> for available properties.
+     * Override the video compression properties used to encode movie clips. See AVVideoCompressionPropertiesKey in
+     * <AVFoundation/AVVideoSettings.h> for available properties.
      */
     @Generated
     @Selector("setVideoCompressionProperties:")
@@ -197,7 +200,8 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     }
 
     /**
-     * Override the video compression properties used to encode movie clips. See AVVideoCompressionPropertiesKey in <AVFoundation/AVVideoSettings.h> for available properties.
+     * Override the video compression properties used to encode movie clips. See AVVideoCompressionPropertiesKey in
+     * <AVFoundation/AVVideoSettings.h> for available properties.
      */
     @Generated
     @Selector("videoCompressionProperties")

@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] MTLFunctionStitchingFunctionNode
  * <p>
- * A function node that calls the specified function with arguments and ordering determined by data and control dependencies.
+ * A function node that calls the specified function with arguments and ordering determined by data and control
+ * dependencies.
  */
 @Generated
 @Library("Metal")

@@ -38,7 +38,7 @@ public final class CFStringBuiltInEncodings {
      */
     @Generated public static final int ASCII = 0x00000600;
     /**
-     * kTextEncodingUnicodeDefault  + kTextEncodingDefaultFormat (aka kUnicode16BitFormat)
+     * kTextEncodingUnicodeDefault + kTextEncodingDefaultFormat (aka kUnicode16BitFormat)
      */
     @Generated public static final int Unicode = 0x00000100;
     /**

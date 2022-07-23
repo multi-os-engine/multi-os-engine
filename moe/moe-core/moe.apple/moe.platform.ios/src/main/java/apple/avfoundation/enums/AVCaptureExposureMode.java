@@ -27,7 +27,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVCaptureExposureModeLocked
  * Indicates that the exposure should be locked at its current value.
  * [@constant] AVCaptureExposureModeAutoExpose
- * Indicates that the device should automatically adjust exposure once and then change the exposure mode to AVCaptureExposureModeLocked.
+ * Indicates that the device should automatically adjust exposure once and then change the exposure mode to
+ * AVCaptureExposureModeLocked.
  * [@constant] AVCaptureExposureModeContinuousAutoExposure
  * Indicates that the device should automatically adjust exposure when needed.
  * [@constant] AVCaptureExposureModeCustom

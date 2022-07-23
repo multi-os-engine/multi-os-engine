@@ -146,7 +146,8 @@ public class UIPointerStyle extends NSObject implements NSCopying {
      * Applies the provided content effect and pointer shape within the current region.
      *
      * @param effect The desired pointer effect.
-     * @param shape  The desired pointer shape. If omitted, a pointer will be generated automatically from the effect's preview view.
+     * @param shape  The desired pointer shape. If omitted, a pointer will be generated automatically from the effect's
+     *               preview view.
      */
     @Generated
     @Selector("styleWithEffect:shape:")
@@ -188,7 +189,8 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     public native void setAccessories(NSArray<? extends UIPointerAccessory> value);
 
     /**
-     * Pointer style that displays an unconstrained system pointer. Use this to display accessories alongside the default pointer.
+     * Pointer style that displays an unconstrained system pointer. Use this to display accessories alongside the
+     * default pointer.
      */
     @Generated
     @Selector("systemPointerStyle")

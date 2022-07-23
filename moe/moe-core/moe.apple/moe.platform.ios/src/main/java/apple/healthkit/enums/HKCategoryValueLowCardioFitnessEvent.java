@@ -4,11 +4,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKCategoryValueLowCardioFitnessEvent
+ * [@enum] HKCategoryValueLowCardioFitnessEvent
  * <p>
  * Specifies the type of cardio fitness event.
  * <p>
- * [@constant]      HKCategoryValueLowCardioFitnessEventLowFitness       This constant defines an event where a VO2Max measurement was recorded that falls into the "Low" fitness classification
+ * [@constant] HKCategoryValueLowCardioFitnessEventLowFitness This constant defines an event where a VO2Max measurement
+ * was recorded that falls into the "Low" fitness classification
  */
 @Generated
 public final class HKCategoryValueLowCardioFitnessEvent {

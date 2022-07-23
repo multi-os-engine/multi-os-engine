@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MLCTensorParameter
  * <p>
- * A tensor parameter object.  This is used to describe input tensors that are updated by the optimizer during training.
+ * A tensor parameter object. This is used to describe input tensors that are updated by the optimizer during training.
  */
 @Generated
 @Library("MLCompute")
@@ -112,7 +112,7 @@ public class MLCTensorParameter extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]   isUpdatable
+     * [@property] isUpdatable
      * <p>
      * Specifies whether this tensor parameter is updatable
      */
@@ -160,7 +160,7 @@ public class MLCTensorParameter extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   isUpdatable
+     * [@property] isUpdatable
      * <p>
      * Specifies whether this tensor parameter is updatable
      */
@@ -177,7 +177,7 @@ public class MLCTensorParameter extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property]   tensor
+     * [@property] tensor
      * <p>
      * The underlying tensor
      */

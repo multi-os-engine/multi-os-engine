@@ -101,7 +101,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     public static native INRideCompletionStatus canceledByUser();
 
     /**
-     * The ride was canceled by the service because the passenger was not present for pickup and the vehicle maximum wait time elapsed.
+     * The ride was canceled by the service because the passenger was not present for pickup and the vehicle maximum
+     * wait time elapsed.
      */
     @Generated
     @Selector("canceledMissedPickup")
@@ -132,7 +133,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
             INCurrencyAmount outstandingPaymentAmount);
 
     /**
-     * The ride completed. The fare in the provided amount was successfully paid; this amount may be displayed to the user.
+     * The ride completed. The fare in the provided amount was successfully paid; this amount may be displayed to the
+     * user.
      */
     @Generated
     @Selector("completedWithSettledPaymentAmount:")
@@ -204,7 +206,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     public static native long version_static();
 
     /**
-     * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding payment). Acting on that UI will continue this activity in your application.
+     * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding
+     * payment). Acting on that UI will continue this activity in your application.
      */
     @Generated
     @Selector("completionUserActivity")
@@ -264,7 +267,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     public native INCurrencyAmount paymentAmount();
 
     /**
-     * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding payment). Acting on that UI will continue this activity in your application.
+     * If this property is set, UI may be shown to the user to complete post-ride tasks (e.g. for settling outstanding
+     * payment). Acting on that UI will continue this activity in your application.
      */
     @Generated
     @Selector("setCompletionUserActivity:")
@@ -277,7 +281,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     }
 
     /**
-     * The ride completed but there is feedback outstanding that the user may provide to the system. See INSendRideFeedbackIntent.
+     * The ride completed but there is feedback outstanding that the user may provide to the system. See
+     * INSendRideFeedbackIntent.
      * If feedbackType includes INRideFeedbackTypeOptionTip, the .defaultTippingOptions should be set.
      */
     @Generated

@@ -20,14 +20,14 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueAirQuality
+ * [@enum] HMCharacteristicValueAirQuality
  * <p>
- * [@constant]  HMCharacteristicValueAirQualityUnknown              Air quality is unknown.
- * [@constant]  HMCharacteristicValueAirQualityExcellent            Air quality is excellent.
- * [@constant]  HMCharacteristicValueAirQualityGood                 Air quality is good.
- * [@constant]  HMCharacteristicValueAirQualityFair                 Air quality is fair.
- * [@constant]  HMCharacteristicValueAirQualityInferior             Air quality is inferior.
- * [@constant]  HMCharacteristicValueAirQualityPoor                 Air quality is poor.
+ * [@constant] HMCharacteristicValueAirQualityUnknown Air quality is unknown.
+ * [@constant] HMCharacteristicValueAirQualityExcellent Air quality is excellent.
+ * [@constant] HMCharacteristicValueAirQualityGood Air quality is good.
+ * [@constant] HMCharacteristicValueAirQualityFair Air quality is fair.
+ * [@constant] HMCharacteristicValueAirQualityInferior Air quality is inferior.
+ * [@constant] HMCharacteristicValueAirQualityPoor Air quality is poor.
  */
 @Generated
 public final class HMCharacteristicValueAirQuality {

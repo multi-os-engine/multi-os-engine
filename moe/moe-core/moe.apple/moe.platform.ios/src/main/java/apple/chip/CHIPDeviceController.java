@@ -168,7 +168,7 @@ public class CHIPDeviceController extends NSObject {
     public native void setListenPort(char port);
 
     /**
-     * Set the Delegate for the Device Pairing  as well as the Queue on which the Delegate callbacks will be triggered
+     * Set the Delegate for the Device Pairing as well as the Queue on which the Delegate callbacks will be triggered
      *
      * @param[in] delegate The delegate the pairing process should use
      * @param[in] queue The queue on which the callbacks will be delivered
@@ -240,7 +240,8 @@ public class CHIPDeviceController extends NSObject {
             int setupPINCode, NSData csrNonce, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Start the CHIP Stack. Repeated calls to startup without calls to shutdown in between are NO-OPs. Use the isRunning property to
+     * Start the CHIP Stack. Repeated calls to startup without calls to shutdown in between are NO-OPs. Use the
+     * isRunning property to
      * check if the stack needs to be started up.
      *
      * @param[in] storageDelegate The delegate for persistent storage

@@ -110,24 +110,24 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
      * <p>
      * If during the factorization a leading minor of the matrix is found to be
      * not positive definite, MPSMatrixDecompositionNonPositiveDefinite will be returned
-     * in the provided status buffer.  Previously computed pivots and the non positive
+     * in the provided status buffer. Previously computed pivots and the non positive
      * pivot are written to the result, but the factorization does not complete.
      * The data referenced by the MTLBuffer is not valid until the command buffer has completed
-     * execution.  If the matrix return status is not desired NULL may be provided.
+     * execution. If the matrix return status is not desired NULL may be provided.
      * <p>
      * If the return status is MPSMatrixDecompositionStatusSuccess, resultMatrix
      * contains the resulting factors in its lower or upper triangular regions
      * respectively.
      * <p>
      * This kernel functions either in-place, if the result matrix
-     * completely aliases the source matrix, or out-of-place.  If there
+     * completely aliases the source matrix, or out-of-place. If there
      * is any partial overlap between input and output data the results
      * are undefined.
      *
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded filter
-     * @param sourceMatrix  A valid MPSMatrix containing the source data.  Must have
+     * @param sourceMatrix  A valid MPSMatrix containing the source data. Must have
      *                      enough space to hold a order x order matrix.
-     * @param resultMatrix  A valid MPSMatrix to contain the result.  Must have enough
+     * @param resultMatrix  A valid MPSMatrix to contain the result. Must have enough
      *                      space to hold a order x order matrix.
      * @param status        A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus
      *                      value.
@@ -165,7 +165,7 @@ public class MPSMatrixDecompositionCholesky extends MPSMatrixUnaryKernel {
      *
      * @param device The device on which the kernel will execute.
      * @param lower  A boolean value indicating if the lower triangular
-     *               part of the source matrix is stored.  If lower = YES
+     *               part of the source matrix is stored. If lower = YES
      *               the lower triangular part will be used and the factor
      *               will be written to the lower triangular part of the
      *               result, otherwise the upper triangular part will be used

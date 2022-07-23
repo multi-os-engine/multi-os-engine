@@ -27,7 +27,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] kMACaptionAppearanceBehaviorUseValue
  * The value should override any content, application, or otherwise-defined values.
  * [@constant] kMACaptionAppearanceBehaviorUseContentIfAvailable
- * Content, application, or otherwise-defined values should override the returned value. If no other value is defined, then the return value should be used.
+ * Content, application, or otherwise-defined values should override the returned value. If no other value is defined,
+ * then the return value should be used.
  */
 @Generated
 public final class MACaptionAppearanceBehavior {

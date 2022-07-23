@@ -25,7 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Directional Gamepad profile.
  * <p>
- * All controller profiles provide a base level of information about the controller they belong to. A directional gamepad
+ * All controller profiles provide a base level of information about the controller they belong to. A directional
+ * gamepad
  * features a subset of the possible inputs on a micro gamepad. It guarantees:
  * - The gamepad does not support motion, meaning
  * - -[GCController motion] is always nil
@@ -40,9 +41,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the motion and analog dpad functionality of GCMicroGamepad, be sure to add Directional Gamepad to your project's
  * supported Game Controller capabilities.
  * <p>
- * [@note] If you want to use the additional functionality of GCDirectionalGamepad, you should set GCSupportsMultipleMicroGamepads to YES and handle microgamepad connections separately.
+ * [@note] If you want to use the additional functionality of GCDirectionalGamepad, you should set
+ * GCSupportsMultipleMicroGamepads to YES and handle microgamepad connections separately.
  * <p>
- * [@note] This profile represents the 2021 2nd generation Siri Remote. Make sure you set GCSupportsMultipleMicroGamepads to YES to properly support the remote.
+ * [@note] This profile represents the 2021 2nd generation Siri Remote. Make sure you set
+ * GCSupportsMultipleMicroGamepads to YES to properly support the remote.
  *
  * @see GCMicroGamepad
  */

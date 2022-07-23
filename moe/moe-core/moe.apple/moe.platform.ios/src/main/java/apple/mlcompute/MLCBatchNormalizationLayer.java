@@ -60,7 +60,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
      * The beta tensor
      */
@@ -69,7 +69,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public native MLCTensor beta();
 
     /**
-     * [@property]   betaParameter
+     * [@property] betaParameter
      * <p>
      * The beta tensor parameter used for optimizer update
      */
@@ -104,7 +104,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   featureChannelCount
+     * [@property] featureChannelCount
      * <p>
      * The number of feature channels
      */
@@ -114,7 +114,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public native long featureChannelCount();
 
     /**
-     * [@property]   gamma
+     * [@property] gamma
      * <p>
      * The gamma tensor
      */
@@ -123,7 +123,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public native MLCTensor gamma();
 
     /**
-     * [@property]   gammaParameter
+     * [@property] gammaParameter
      * <p>
      * The gamma tensor parameter used for optimizer update
      */
@@ -169,7 +169,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * @param variance            The variance tensor
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
-     * @param varianceEpsilon     The  epslion value
+     * @param varianceEpsilon     The epslion value
      * @return A new batch normalization layer.
      */
     @Generated
@@ -186,8 +186,8 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
      * @param variance            The variance tensor
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
-     * @param varianceEpsilon     The  epslion value
-     * @param momentum            The  momentum value for the running mean and variance computation
+     * @param varianceEpsilon     The epslion value
+     * @param momentum            The momentum value for the running mean and variance computation
      * @return A new batch normalization layer.
      */
     @Generated
@@ -197,7 +197,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
             float varianceEpsilon, float momentum);
 
     /**
-     * [@property]   mean
+     * [@property] mean
      * <p>
      * The mean tensor
      */
@@ -206,7 +206,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public native MLCTensor mean();
 
     /**
-     * [@property]   momentum
+     * [@property] momentum
      * <p>
      * The value used for the running mean and variance computation
      * <p>
@@ -242,7 +242,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
 
     /**
-     * [@property]   variance
+     * [@property] variance
      * <p>
      * The variance tensor
      */
@@ -251,7 +251,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
     public native MLCTensor variance();
 
     /**
-     * [@property]   varianceEpsilon
+     * [@property] varianceEpsilon
      * <p>
      * A value used for numerical stability
      */

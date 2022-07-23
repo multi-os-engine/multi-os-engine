@@ -176,7 +176,8 @@ public class UICloudSharingController extends UIViewController {
     public native UIActivityItemSource activityItemSource();
 
     /**
-     * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified combinations of permissions are selectable.
+     * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified
+     * combinations of permissions are selectable.
      */
     @Generated
     @Selector("availablePermissions")
@@ -208,7 +209,8 @@ public class UICloudSharingController extends UIViewController {
     public native UICloudSharingController initWithShareContainer(CKShare share, CKContainer container);
 
     /**
-     * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified combinations of permissions are selectable.
+     * Restrict the sharing invitation UI to specific types of share permissions. If set, only the specified
+     * combinations of permissions are selectable.
      */
     @Generated
     @Selector("setAvailablePermissions:")

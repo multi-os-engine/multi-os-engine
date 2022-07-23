@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCSoftmaxOperation
+ * [@enum] MLCSoftmaxOperation
  * <p>
  * A softmax operation.
  */

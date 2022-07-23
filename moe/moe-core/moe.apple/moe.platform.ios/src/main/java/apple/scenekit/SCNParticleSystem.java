@@ -202,7 +202,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Modifications handling
-     * "block" will be invoked at every simulation step at the specified stage. The data and dataStride passed to the block will corresponds to the specified "properties".
+     * "block" will be invoked at every simulation step at the specified stage. The data and dataStride passed to the
+     * block will corresponds to the specified "properties".
      */
     @Generated
     @Selector("addModifierForProperties:atStage:withBlock:")
@@ -318,7 +319,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native SCNGeometry emitterShape();
 
     /**
-     * Specifies the emitting direction of newly created particles, used in the SCNParticleBirthDirectionConstant mode. Defaults to {0, 0, 1}. Animatable.
+     * Specifies the emitting direction of newly created particles, used in the SCNParticleBirthDirectionConstant mode.
+     * Defaults to {0, 0, 1}. Animatable.
      */
     @Generated
     @Selector("emittingDirection")
@@ -331,7 +333,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Specifies the receiver's fresnel exponent value. Defaults to 3. Animatable.
-     * Only used if the particleImage is a cube map. The bigger the amount, the more concentrated the reflection is around the edges
+     * Only used if the particleImage is a cube map. The bigger the amount, the more concentrated the reflection is
+     * around the edges
      */
     @Generated
     @Selector("fresnelExponent")
@@ -340,7 +343,9 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Events handling
-     * "block" will be invoked for particles that trigger the specified event, with the data and dataStride that corresponds to "properties". The block should only update the particle properties reference by the "indices" passed as argument in the block.
+     * "block" will be invoked for particles that trigger the specified event, with the data and dataStride that
+     * corresponds to "properties". The block should only update the particle properties reference by the "indices"
+     * passed as argument in the block.
      */
     @Generated
     @Selector("handleEvent:forProperties:withBlock:")
@@ -396,7 +401,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native double imageSequenceFrameRateVariation();
 
     /**
-     * Specifies the texture initial frame index. Ranges from 0 to (imageSequenceColumnCount * imageSequenceRowCount - 1). Defaults to 0. Animatable.
+     * Specifies the texture initial frame index. Ranges from 0 to (imageSequenceColumnCount * imageSequenceRowCount -
+     * 1). Defaults to 0. Animatable.
      */
     @Generated
     @Selector("imageSequenceInitialFrame")
@@ -809,7 +815,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native void setEmitterShape(SCNGeometry value);
 
     /**
-     * Specifies the emitting direction of newly created particles, used in the SCNParticleBirthDirectionConstant mode. Defaults to {0, 0, 1}. Animatable.
+     * Specifies the emitting direction of newly created particles, used in the SCNParticleBirthDirectionConstant mode.
+     * Defaults to {0, 0, 1}. Animatable.
      */
     @Generated
     @Selector("setEmittingDirection:")
@@ -817,7 +824,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Specifies the receiver's fresnel exponent value. Defaults to 3. Animatable.
-     * Only used if the particleImage is a cube map. The bigger the amount, the more concentrated the reflection is around the edges
+     * Only used if the particleImage is a cube map. The bigger the amount, the more concentrated the reflection is
+     * around the edges
      */
     @Generated
     @Selector("setFresnelExponent:")
@@ -866,7 +874,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native void setImageSequenceFrameRateVariation(@NFloat double value);
 
     /**
-     * Specifies the texture initial frame index. Ranges from 0 to (imageSequenceColumnCount * imageSequenceRowCount - 1). Defaults to 0. Animatable.
+     * Specifies the texture initial frame index. Ranges from 0 to (imageSequenceColumnCount * imageSequenceRowCount -
+     * 1). Defaults to 0. Animatable.
      */
     @Generated
     @Selector("setImageSequenceInitialFrame:")
@@ -1086,7 +1095,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native void setSpeedFactor(@NFloat double value);
 
     /**
-     * Specifies the spreading direction of newly created particles, in degrees. Not used in SCNParticleBirthDirectionRandom. Defaults to 0. Animatable.
+     * Specifies the spreading direction of newly created particles, in degrees. Not used in
+     * SCNParticleBirthDirectionRandom. Defaults to 0. Animatable.
      */
     @Generated
     @Selector("setSpreadingAngle:")
@@ -1145,7 +1155,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native double speedFactor();
 
     /**
-     * Specifies the spreading direction of newly created particles, in degrees. Not used in SCNParticleBirthDirectionRandom. Defaults to 0. Animatable.
+     * Specifies the spreading direction of newly created particles, in degrees. Not used in
+     * SCNParticleBirthDirectionRandom. Defaults to 0. Animatable.
      */
     @Generated
     @Selector("spreadingAngle")
@@ -1222,7 +1233,9 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native SCNAnimationPlayer animationPlayerForKey(String key);
 
     /**
-     * Specifies the orientation direction of newly created particles, used in the SCNParticleOrientationModeFree mode. The particle will rotate around this axis. Defaults to {0, 0, 0}, which means random. The particle will then rotate arbitraly. Animatable.
+     * Specifies the orientation direction of newly created particles, used in the SCNParticleOrientationModeFree mode.
+     * The particle will rotate around this axis. Defaults to {0, 0, 0}, which means random. The particle will then
+     * rotate arbitraly. Animatable.
      */
     @Generated
     @Selector("orientationDirection")
@@ -1250,7 +1263,9 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
     /**
-     * Specifies the orientation direction of newly created particles, used in the SCNParticleOrientationModeFree mode. The particle will rotate around this axis. Defaults to {0, 0, 0}, which means random. The particle will then rotate arbitraly. Animatable.
+     * Specifies the orientation direction of newly created particles, used in the SCNParticleOrientationModeFree mode.
+     * The particle will rotate around this axis. Defaults to {0, 0, 0}, which means random. The particle will then
+     * rotate arbitraly. Animatable.
      */
     @Generated
     @Selector("setOrientationDirection:")

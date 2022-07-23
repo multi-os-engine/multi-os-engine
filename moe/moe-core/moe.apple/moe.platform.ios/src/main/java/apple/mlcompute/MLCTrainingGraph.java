@@ -122,7 +122,7 @@ public class MLCTrainingGraph extends MLCGraph {
      * Returns true if the data is successfully associated with the tensor and copied to the device.
      * <p>
      * The caller must guarantee the lifetime of the underlying memory of \p data for the entirety of the tensor's
-     * lifetime.  The \p deviceData buffers are allocated by MLCompute.  This method must be called
+     * lifetime. The \p deviceData buffers are allocated by MLCompute. This method must be called
      * before executeOptimizerUpdateWithOptions or executeWithInputsData is called for the training graph.
      * We recommend using this method instead of using [MLCTensor bindOptimizerData] especially if the
      * optimizer update is being called multiple times for each batch.
@@ -159,9 +159,11 @@ public class MLCTrainingGraph extends MLCGraph {
      * Compile the optimizer to be used with a training graph.
      * <p>
      * Typically the optimizer to be used with a training graph is specifed when the training graph is created using
-     * graphWithGraphObjects:lossLayer:optimizer.  The optimizer will be compiled in when compileWithOptions:device
-     * is called if an optimizer is specified with the training graph.  In the case where the optimizer to be used is not known
-     * when the graph is created or compiled, this method can be used to associate and compile a training graph with an optimizer.
+     * graphWithGraphObjects:lossLayer:optimizer. The optimizer will be compiled in when compileWithOptions:device
+     * is called if an optimizer is specified with the training graph. In the case where the optimizer to be used is not
+     * known
+     * when the graph is created or compiled, this method can be used to associate and compile a training graph with an
+     * optimizer.
      *
      * @param optimizer The MLCOptimizer object
      * @return A boolean indicating success or failure
@@ -184,7 +186,8 @@ public class MLCTrainingGraph extends MLCGraph {
     /**
      * Compile the training graph for a device.
      * <p>
-     * Specifying the list of constant tensors when we compile the graph allows MLCompute to perform additional optimizations at compile time.
+     * Specifying the list of constant tensors when we compile the graph allows MLCompute to perform additional
+     * optimizations at compile time.
      *
      * @param options          The compiler options to use when compiling the training graph
      * @param device           The MLCDevice object
@@ -207,7 +210,7 @@ public class MLCTrainingGraph extends MLCGraph {
     public static native String description_static();
 
     /**
-     * [@property]   The device memory size used by the training graph
+     * [@property] The device memory size used by the training graph
      * <p>
      * Returns the total size in bytes of device memory used for all intermediate tensors
      * for forward, gradient passes and optimizer update for all layers in the training graph.
@@ -225,7 +228,8 @@ public class MLCTrainingGraph extends MLCGraph {
     /**
      * Execute the forward pass of the training graph
      *
-     * @param batchSize         The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
+     *                          must be 0.
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
@@ -246,7 +250,8 @@ public class MLCTrainingGraph extends MLCGraph {
     /**
      * Execute the forward pass for the training graph
      *
-     * @param batchSize         The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
+     *                          must be 0.
      * @param options           The execution options
      * @param outputsData       The data objects to use for outputs
      * @param completionHandler The completion handler
@@ -269,7 +274,8 @@ public class MLCTrainingGraph extends MLCGraph {
     /**
      * Execute the gradient pass of the training graph
      *
-     * @param batchSize         The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
+     *                          must be 0.
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
@@ -290,7 +296,8 @@ public class MLCTrainingGraph extends MLCGraph {
     /**
      * Execute the gradient pass of the training graph
      *
-     * @param batchSize         The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
+     *                          must be 0.
      * @param options           The execution options
      * @param outputsData       The data objects to use for outputs
      * @param completionHandler The completion handler
@@ -333,15 +340,19 @@ public class MLCTrainingGraph extends MLCGraph {
     /**
      * Execute the training graph (forward, gradient and optimizer update) with given source and label data
      * <p>
-     * Execute the training graph with given source and label data.  If an optimizer is specified, the optimizer update is applied.
-     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
-     * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called after the graph
+     * Execute the training graph with given source and label data. If an optimizer is specified, the optimizer update
+     * is applied.
+     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
+     * executed.
+     * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
+     * after the graph
      * has finished execution.
      *
      * @param inputsData           The data objects to use for inputs
      * @param lossLabelsData       The data objects to use for loss labels
      * @param lossLabelWeightsData The data objects to use for loss label weights
-     * @param batchSize            The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize            The batch size to use. For a graph where batch size changes between layers this value
+     *                             must be 0.
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
@@ -369,7 +380,8 @@ public class MLCTrainingGraph extends MLCGraph {
      * @param lossLabelsData       The data objects to use for loss labels
      * @param lossLabelWeightsData The data objects to use for loss label weights
      * @param outputsData          The data objects to use for outputs
-     * @param batchSize            The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize            The batch size to use. For a graph where batch size changes between layers this value
+     *                             must be 0.
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
@@ -398,7 +410,7 @@ public class MLCTrainingGraph extends MLCGraph {
      * fully connected or convolution transpose layer
      *
      * @param parameter The updatable parameter associated with the layer
-     * @param layer     A layer in the training graph.  Must be one of the following:
+     * @param layer     A layer in the training graph. Must be one of the following:
      *                  - MLCConvolutionLayer
      *                  - MLCFullyConnectedLayer
      *                  - MLCBatchNormalizationLayer
@@ -407,8 +419,8 @@ public class MLCTrainingGraph extends MLCGraph {
      *                  - MLCLayerNormalizationLayer
      *                  - MLCEmbeddingLayer
      *                  - MLCMultiheadAttentionLayer
-     * @return The gradient data.  Will return nil if the layer is marked as not trainable or if
-     * training graph is not executed with separate calls to forward and gradient passes.
+     * @return The gradient data. Will return nil if the layer is marked as not trainable or if
+     *         training graph is not executed with separate calls to forward and gradient passes.
      */
     @Generated
     @Selector("gradientDataForParameter:layer:")
@@ -432,7 +444,7 @@ public class MLCTrainingGraph extends MLCGraph {
      * Create a training graph
      *
      * @param graphObjects The layers from these graph objects will be added to the training graph
-     * @param lossLayer    The loss layer to use.  The loss layer can also be added to the training graph
+     * @param lossLayer    The loss layer to use. The loss layer can also be added to the training graph
      *                     using nodeWithLayer:sources:lossLabels
      * @param optimizer    The optimizer to use
      * @return A new training graph object
@@ -491,7 +503,7 @@ public class MLCTrainingGraph extends MLCGraph {
     public static native MLCTrainingGraph new_objc();
 
     /**
-     * [@property]   optimizer
+     * [@property] optimizer
      * <p>
      * The optimizer to be used with the training graph
      */
@@ -521,7 +533,7 @@ public class MLCTrainingGraph extends MLCGraph {
      * Set the input tensor parameters that also will be updated by the optimizer
      * <p>
      * These represent the list of input tensors to be updated when we execute the optimizer update
-     * Weights, bias or beta, gamma tensors are not included in this list.  MLCompute automatically
+     * Weights, bias or beta, gamma tensors are not included in this list. MLCompute automatically
      * adds them to the parameter list based on whether the layer is marked as updatable or not.
      *
      * @param parameters The list of input tensors to be updated by the optimizer

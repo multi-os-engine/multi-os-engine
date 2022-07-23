@@ -28,10 +28,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Configuration parameters for the download task.
  * <p>
- * Download configuration consists of primary and auxiliary content configurations. Primary content configuration represents the primary set of renditions essential for offline playback. Auxiliary content configurations represent additional configurations to complement the primary.
- * For example, the primary content configuration may represent stereo audio renditions and auxiliary configuration may represent complementing multichannel audio renditions.
+ * Download configuration consists of primary and auxiliary content configurations. Primary content configuration
+ * represents the primary set of renditions essential for offline playback. Auxiliary content configurations represent
+ * additional configurations to complement the primary.
+ * For example, the primary content configuration may represent stereo audio renditions and auxiliary configuration may
+ * represent complementing multichannel audio renditions.
  * <p>
- * It is important to configure your download configuration object appropriately before using it to create a download task. Download task makes a copy of the configuration settings you provide and use those settings to configure the task. Once configured, the task object ignores any changes you make to the NSURLSessionConfiguration object. If you need to modify your settings, you must update the download configuration object and use it to create a new download task object.
+ * It is important to configure your download configuration object appropriately before using it to create a download
+ * task. Download task makes a copy of the configuration settings you provide and use those settings to configure the
+ * task. Once configured, the task object ignores any changes you make to the NSURLSessionConfiguration object. If you
+ * need to modify your settings, you must update the download configuration object and use it to create a new download
+ * task object.
  */
 @Generated
 @Library("AVFoundation")
@@ -62,9 +69,10 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native AVAssetDownloadConfiguration allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]		assetArtworkData
+     * [@property] assetArtworkData
      * <p>
-     * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of the Settings app. Must work with +[UIImage imageWithData:].
+     * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
+     * the Settings app. Must work with +[UIImage imageWithData:].
      */
     @Generated
     @Selector("artworkData")
@@ -75,11 +83,13 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]		auxiliaryContentConfigurations
+     * [@property] auxiliaryContentConfigurations
      * <p>
      * The auxiliary content for the download. Optional.
      * <p>
-     * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These content configurations can be augmented with additional content configurations or removed entirely if no auxiliary content is desired.
+     * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
+     * content configurations can be augmented with additional content configurations or removed entirely if no
+     * auxiliary content is desired.
      */
     @Generated
     @Selector("auxiliaryContentConfigurations")
@@ -118,8 +128,9 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * <p>
      * This method will throw an exception if AVURLAsset has been invalidated.
      *
-     * @param            asset The asset to create the download configuration for.
-     * @param            title A human readable title for this asset, expected to be as suitable as possible for the user's preferred languages. Will show up in the usage pane of the settings app.
+     * @param asset The asset to create the download configuration for.
+     * @param title A human readable title for this asset, expected to be as suitable as possible for the user's
+     *              preferred languages. Will show up in the usage pane of the settings app.
      */
     @Generated
     @Selector("downloadConfigurationWithAsset:title:")
@@ -162,18 +173,21 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native AVAssetDownloadConfiguration new_objc();
 
     /**
-     * [@property]		optimizesAuxiliaryContentConfigurations
+     * [@property] optimizesAuxiliaryContentConfigurations
      * <p>
-     * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions downloaded. True by default.
+     * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions
+     * downloaded. True by default.
      * <p>
-     * For example, if the primary content configuration represents stereo renditions and auxiliary content configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to avoid downloading duplicate video renditions.
+     * For example, if the primary content configuration represents stereo renditions and auxiliary content
+     * configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to
+     * avoid downloading duplicate video renditions.
      */
     @Generated
     @Selector("optimizesAuxiliaryContentConfigurations")
     public native boolean optimizesAuxiliaryContentConfigurations();
 
     /**
-     * [@property]		primaryContentConfiguration
+     * [@property] primaryContentConfiguration
      * <p>
      * The primary content for the download.
      */
@@ -190,31 +204,37 @@ public class AVAssetDownloadConfiguration extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]		assetArtworkData
+     * [@property] assetArtworkData
      * <p>
-     * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of the Settings app. Must work with +[UIImage imageWithData:].
+     * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
+     * the Settings app. Must work with +[UIImage imageWithData:].
      */
     @Generated
     @Selector("setArtworkData:")
     public native void setArtworkData(NSData value);
 
     /**
-     * [@property]		auxiliaryContentConfigurations
+     * [@property] auxiliaryContentConfigurations
      * <p>
      * The auxiliary content for the download. Optional.
      * <p>
-     * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These content configurations can be augmented with additional content configurations or removed entirely if no auxiliary content is desired.
+     * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
+     * content configurations can be augmented with additional content configurations or removed entirely if no
+     * auxiliary content is desired.
      */
     @Generated
     @Selector("setAuxiliaryContentConfigurations:")
     public native void setAuxiliaryContentConfigurations(NSArray<? extends AVAssetDownloadContentConfiguration> value);
 
     /**
-     * [@property]		optimizesAuxiliaryContentConfigurations
+     * [@property] optimizesAuxiliaryContentConfigurations
      * <p>
-     * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions downloaded. True by default.
+     * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions
+     * downloaded. True by default.
      * <p>
-     * For example, if the primary content configuration represents stereo renditions and auxiliary content configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to avoid downloading duplicate video renditions.
+     * For example, if the primary content configuration represents stereo renditions and auxiliary content
+     * configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to
+     * avoid downloading duplicate video renditions.
      */
     @Generated
     @Selector("setOptimizesAuxiliaryContentConfigurations:")

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueRotationDirection
+ * [@enum] HMCharacteristicValueRotationDirection
  * <p>
- * [@constant]  HMCharacteristicValueRotationDirectionClockwise         Clockwise.
- * [@constant]  HMCharacteristicValueRotationDirectionCounterClockwise  Counter-clockwise.
+ * [@constant] HMCharacteristicValueRotationDirectionClockwise Clockwise.
+ * [@constant] HMCharacteristicValueRotationDirectionCounterClockwise Counter-clockwise.
  */
 @Generated
 public final class HMCharacteristicValueRotationDirection {

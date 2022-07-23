@@ -19,7 +19,7 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       AudioComponentInstantiationOptions
+ * [@enum] AudioComponentInstantiationOptions
  * <p>
  * Options controlling component instantiation.
  * <p>

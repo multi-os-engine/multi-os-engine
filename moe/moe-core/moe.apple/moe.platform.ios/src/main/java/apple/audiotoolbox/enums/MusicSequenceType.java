@@ -29,12 +29,12 @@ import org.moe.natj.general.ann.Generated;
  * Beats - normal midi file
  * Seconds - midi file with SMPTE time
  * Samples - cannot be saved to a midi file
- * [@constant]	kMusicSequenceType_Beats
+ * [@constant] kMusicSequenceType_Beats
  * The default/normal type of a sequence.
  * Tempo track defines the number of beats per second and can have multiple tempo events
- * [@constant]	kMusicSequenceType_Seconds
+ * [@constant] kMusicSequenceType_Seconds
  * A music sequence with a single 60bpm tempo event
- * [@constant]	kMusicSequenceType_Samples
+ * [@constant] kMusicSequenceType_Samples
  * A music sequence with a single tempo event that represents the audio sample rate
  */
 @Generated

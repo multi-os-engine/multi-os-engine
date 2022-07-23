@@ -107,12 +107,15 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     /**
      * Creates an optimal bidirectional graph based on a list of obstacles.
-     * Each vertex of each obstacle is extruded and a connection is made between each vertex that does not intersect an obstacle
+     * Each vertex of each obstacle is extruded and a connection is made between each vertex that does not intersect an
+     * obstacle
      * Guaranteed not to have any edges which intersect obstacles.
      * Same effect as [[GKObstacleGraph alloc] init], setting bufferRadius, and then calling addObstacles.
      *
      * @param obstacles    a list of obstacles to create the graph from
-     * @param bufferRadius the circular radius of a potential agent that will navigate this graph.  Obstacles are extruded by this amount to create the graph.  Must be positive.  Negative values are clipped to 0.0f
+     * @param bufferRadius the circular radius of a potential agent that will navigate this graph. Obstacles are
+     *                     extruded by this amount to create the graph. Must be positive. Negative values are clipped to
+     *                     0.0f
      */
     @Generated
     @Selector("graphWithObstacles:bufferRadius:")
@@ -121,13 +124,16 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     /**
      * Creates an optimal bidirectional graph based on a list of obstacles.
-     * Each vertex of each obstacle is extruded and a connection is made between each vertex that does not intersect an obstacle
+     * Each vertex of each obstacle is extruded and a connection is made between each vertex that does not intersect an
+     * obstacle
      * Guaranteed not to have any edges which intersect obstacles.
      * Same effect as [[GKObstacleGraph alloc] init], setting bufferRadius, and then calling addObstacles.
      *
      * @param obstacles    a list of obstacles to create the graph from
-     * @param bufferRadius the circular radius of a potential agent that will navigate this graph.  Obstacles are extruded by this amount to create the graph.  Must be positive.  Negative values are clipped to 0.0f
-     * @param nodeClass    the class of the nodes that this graph should create.  Must descend from GKGraphNode2D
+     * @param bufferRadius the circular radius of a potential agent that will navigate this graph. Obstacles are
+     *                     extruded by this amount to create the graph. Must be positive. Negative values are clipped to
+     *                     0.0f
+     * @param nodeClass    the class of the nodes that this graph should create. Must descend from GKGraphNode2D
      */
     @Generated
     @Selector("graphWithObstacles:bufferRadius:nodeClass:")
@@ -190,7 +196,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      * Adds obstacles to this graph.
      * Obstacle is extruded and graph nodes are generated from its vertices and then connected to this graph
      * Nothing is done if an obstacle is already present in this graph
-     * Any existing connections that intersect the new obstacles are destroyed unless they are protected with [GKObstacleGraph lockConnection:]
+     * Any existing connections that intersect the new obstacles are destroyed unless they are protected with
+     * [GKObstacleGraph lockConnection:]
      *
      * @param obstacles an array of obstacles to be added
      * @see lockConnection
@@ -225,7 +232,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     public native void connectNodeUsingObstacles(GKGraphNode2D node);
 
     /**
-     * Same behavior as connectNodeUsingObstacles: except you can optionally ignore the bounding radius of certain obstacles from being tested for intersection
+     * Same behavior as connectNodeUsingObstacles: except you can optionally ignore the bounding radius of certain
+     * obstacles from being tested for intersection
      */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringBufferRadiusOfObstacles:")
@@ -233,7 +241,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
             NSArray<? extends GKPolygonObstacle> obstaclesBufferRadiusToIgnore);
 
     /**
-     * Same behavior as connectNodeUsingObstacles: except you can optionally ignore certain obstacles from being tested for intersection.
+     * Same behavior as connectNodeUsingObstacles: except you can optionally ignore certain obstacles from being tested
+     * for intersection.
      */
     @Generated
     @Selector("connectNodeUsingObstacles:ignoringObstacles:")
@@ -267,7 +276,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      *
      * @param startNode startNode of the connection to query
      * @param endNode   endNode of the connection to query
-     * @return YES if the connection was locked with lockConnection, NO if it was never locked or was unlocked via unlockConnection
+     * @return YES if the connection was locked with lockConnection, NO if it was never locked or was unlocked via
+     *         unlockConnection
      * @see lockConnection
      * @see unlockConnection
      */
@@ -276,7 +286,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     public native boolean isConnectionLockedFromNodeToNode(GKGraphNode2D startNode, GKGraphNode2D endNode);
 
     /**
-     * Marks a connection as "locked", preventing this connection from being destroyed when you add obstacles that would intersect it
+     * Marks a connection as "locked", preventing this connection from being destroyed when you add obstacles that would
+     * intersect it
      *
      * @param startNode startNode of the connection to lock
      * @param endNode   endNode of the connection to lock
@@ -321,7 +332,8 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     public native void removeObstacles(NSArray<? extends GKPolygonObstacle> obstacles);
 
     /**
-     * "Unlocks" a connection, removing its protection from being destroyed when you add obstacles that would intersect it
+     * "Unlocks" a connection, removing its protection from being destroyed when you add obstacles that would intersect
+     * it
      *
      * @param startNode startNode of the connection to unlock
      * @param endNode   endNode of the connection to unlock

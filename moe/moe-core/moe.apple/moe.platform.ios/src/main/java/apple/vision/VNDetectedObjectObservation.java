@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * VNDetectedObjectObservation
  * [@superclass] VNObservation
  * <p>
- * VNDetectedObjectObservation is VNObservation in an image that has a location and/or dimension. Further attributes depend on the specific detected object.
+ * VNDetectedObjectObservation is VNObservation in an image that has a location and/or dimension. Further attributes
+ * depend on the specific detected object.
  * <p>
  * All result objects (faces, scene objects, shapes etc) must extend from this class.
  */
@@ -67,7 +68,8 @@ public class VNDetectedObjectObservation extends VNObservation {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * The bounding box of the detected object. The coordinates are normalized to the dimensions of the processed image, with the origin at the image's lower-left corner.
+     * The bounding box of the detected object. The coordinates are normalized to the dimensions of the processed image,
+     * with the origin at the image's lower-left corner.
      */
     @Generated
     @Selector("boundingBox")

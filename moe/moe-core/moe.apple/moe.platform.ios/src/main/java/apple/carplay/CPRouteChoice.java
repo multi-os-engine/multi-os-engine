@@ -49,8 +49,10 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * additionalInformationVariants is an array of additional information variants for this route choice, arranged from most to least preferred. You must provide at least one variant.
-     * The system will select the first variant that fits the available space. The variant strings should be provided as localized, displayable content.
+     * additionalInformationVariants is an array of additional information variants for this route choice, arranged from
+     * most to least preferred. You must provide at least one variant.
+     * The system will select the first variant that fits the available space. The variant strings should be provided as
+     * localized, displayable content.
      * Examples: "Fastest Route", "Avoids Tolls"
      */
     @Generated
@@ -121,7 +123,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     public native CPRouteChoice initWithCoder(NSCoder coder);
 
     /**
-     * Initialize a @c CPRouteChoice with summary variants, additional information variants, and selection summary variants.
+     * Initialize a @c CPRouteChoice with summary variants, additional information variants, and selection summary
+     * variants.
      * The variant strings should be provided as localized, displayable content.
      */
     @Generated
@@ -165,7 +168,8 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * selectionSummaryVariants is an array of summary variants for this route choice, arranged from most to least preferred. You must provide at least one variant.
+     * selectionSummaryVariants is an array of summary variants for this route choice, arranged from most to least
+     * preferred. You must provide at least one variant.
      * The system will select the first variant that fits the available space.
      */
     @Generated
@@ -184,8 +188,10 @@ public class CPRouteChoice extends NSObject implements NSCopying, NSSecureCoding
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * summaryVariants is an array of summary variants for this route choice, arranged from most to least preferred. You must provide at least one variant.
-     * The system will select the first variant that fits the available space. The variant strings should be provided as localized, displayable content.
+     * summaryVariants is an array of summary variants for this route choice, arranged from most to least preferred. You
+     * must provide at least one variant.
+     * The system will select the first variant that fits the available space. The variant strings should be provided as
+     * localized, displayable content.
      * Example: "Via I-280 S"
      */
     @Generated

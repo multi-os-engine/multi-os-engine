@@ -143,7 +143,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * Returns a display transform for the provided viewport size and orientation.
      * <p>
      * The display transform can be used to convert normalized points in the image-space coordinate system
-     * of the captured image to normalized points in the view’s coordinate space. The transform provides the correct rotation
+     * of the captured image to normalized points in the view’s coordinate space. The transform provides the correct
+     * rotation
      * and aspect-fill for presenting the captured image in the given orientation and size.
      *
      * @param orientation  The orientation of the viewport.
@@ -164,7 +165,8 @@ public class ARFrame extends NSObject implements NSCopying {
      * Searches the frame for objects corresponding to a point in the captured image.
      * <p>
      * A 2D point in the captured image’s coordinate space can refer to any point along a line segment
-     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
+     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line
+     * segment.
      *
      * @param point A point in the image-space coordinate system of the captured image.
      *              Values should range from (0,0) - upper left corner to (1,1) - lower right corner.
@@ -289,7 +291,8 @@ public class ARFrame extends NSObject implements NSCopying {
     /**
      * A buffer that represents the estimated depth values for a performed segmentation.
      * <p>
-     * For each non-background pixel in the segmentation buffer the corresponding depth value can be accessed in this buffer.
+     * For each non-background pixel in the segmentation buffer the corresponding depth value can be accessed in this
+     * buffer.
      *
      * @see -[ARConfiguration setFrameSemantics:]
      * @see -[ARFrame segmentationBuffer]
@@ -299,9 +302,11 @@ public class ARFrame extends NSObject implements NSCopying {
     public native CVBufferRef estimatedDepthData();
 
     /**
-     * Creates a raycast query originating from the point on the captured image, aligned along the center of the field of view of the camera.
+     * Creates a raycast query originating from the point on the captured image, aligned along the center of the field
+     * of view of the camera.
      * <p>
-     * A 2D point in the captured image’s coordinate space and the field of view of the frame's camera is used to create a ray in the 3D cooridnate space originating at the point.
+     * A 2D point in the captured image’s coordinate space and the field of view of the frame's camera is used to create
+     * a ray in the 3D cooridnate space originating at the point.
      *
      * @param point     A point in the image-space coordinate system of the captured image.
      *                  Values should range from (0,0) - upper left corner to (1,1) - lower right corner.
@@ -316,7 +321,8 @@ public class ARFrame extends NSObject implements NSCopying {
     /**
      * A buffer that represents the segmented content of the capturedImage.
      * <p>
-     * In order to identify to which class a pixel has been classified one needs to compare its intensity value with the values
+     * In order to identify to which class a pixel has been classified one needs to compare its intensity value with the
+     * values
      * found in `ARSegmentationClass`.
      *
      * @see ARSegmentationClass

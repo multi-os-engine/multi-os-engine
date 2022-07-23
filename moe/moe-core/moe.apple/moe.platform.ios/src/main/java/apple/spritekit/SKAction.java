@@ -968,7 +968,7 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
      * Creates an action that reverses the behavior of another action
      *
      * @return This method always returns an action object; however, not all actions
-     * are reversible
+     *         are reversible
      */
     @Generated
     @Selector("reversedAction")

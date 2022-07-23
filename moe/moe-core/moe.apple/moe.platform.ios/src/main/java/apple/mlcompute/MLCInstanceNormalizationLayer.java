@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MLCInstanceNormalizationLayer
  * <p>
- * An instance normalization layer.  For more information refer to https://pytorch.org/docs/stable/nn.html#instancenorm2d
+ * An instance normalization layer. For more information refer to https://pytorch.org/docs/stable/nn.html#instancenorm2d
  */
 @Generated
 @Library("MLCompute")
@@ -60,7 +60,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
      * The beta tensor
      */
@@ -69,7 +69,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public native MLCTensor beta();
 
     /**
-     * [@property]   betaParameter
+     * [@property] betaParameter
      * <p>
      * The beta tensor parameter used for optimizer update
      */
@@ -104,7 +104,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   featureChannelCount
+     * [@property] featureChannelCount
      * <p>
      * The number of feature channels
      */
@@ -114,7 +114,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public native long featureChannelCount();
 
     /**
-     * [@property]   gamma
+     * [@property] gamma
      * <p>
      * The gamma tensor
      */
@@ -123,7 +123,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public native MLCTensor gamma();
 
     /**
-     * [@property]   gammaParameter
+     * [@property] gammaParameter
      * <p>
      * The gamma tensor parameter used for optimizer update
      */
@@ -167,7 +167,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * @param featureChannelCount The number of feature channels
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
-     * @param varianceEpsilon     The  epslion value
+     * @param varianceEpsilon     The epslion value
      * @return A new instance normalization layer.
      */
     @Generated
@@ -181,8 +181,8 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * @param featureChannelCount The number of feature channels
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
-     * @param varianceEpsilon     The  epslion value
-     * @param momentum            The  momentum value for the running mean and variance computation
+     * @param varianceEpsilon     The epslion value
+     * @param momentum            The momentum value for the running mean and variance computation
      * @return A new instance normalization layer.
      */
     @Generated
@@ -198,8 +198,8 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * @param variance            The running variance tensor
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
-     * @param varianceEpsilon     The  epslion value
-     * @param momentum            The  momentum value for the running mean and variance computation
+     * @param varianceEpsilon     The epslion value
+     * @param momentum            The momentum value for the running mean and variance computation
      * @return A new instance normalization layer.
      */
     @Generated
@@ -209,7 +209,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
             float varianceEpsilon, float momentum);
 
     /**
-     * [@property]   mean
+     * [@property] mean
      * <p>
      * The running mean tensor
      */
@@ -218,7 +218,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public native MLCTensor mean();
 
     /**
-     * [@property]   momentum
+     * [@property] momentum
      * <p>
      * The value used for the running mean and variance computation
      * <p>
@@ -254,7 +254,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
 
     /**
-     * [@property]   variance
+     * [@property] variance
      * <p>
      * The running variance tensor
      */
@@ -263,7 +263,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     public native MLCTensor variance();
 
     /**
-     * [@property]   varianceEpsilon
+     * [@property] varianceEpsilon
      * <p>
      * A value used for numerical stability
      */

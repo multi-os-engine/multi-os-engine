@@ -28,7 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Wraps the information a Matter Ecosystem Partner is expected to pass when initiating setup. The number of homes vended to HomeKit by this class dictate whether a home selection step will be presented as part of setup. If so, these homes will be represented in system UI for user selection.
+ * Wraps the information a Matter Ecosystem Partner is expected to pass when initiating setup. The number of homes
+ * vended to HomeKit by this class dictate whether a home selection step will be presented as part of setup. If so,
+ * these homes will be represented in system UI for user selection.
  */
 @Generated
 @Library("HomeKit")
@@ -104,7 +106,7 @@ public class HMMatterTopology extends NSObject implements NSCopying, NSSecureCod
     public static native long hash_static();
 
     /**
-     * Homes  provided by the partner ecosystem app for selection in iOS system UI.
+     * Homes provided by the partner ecosystem app for selection in iOS system UI.
      */
     @Generated
     @Selector("homes")
@@ -121,7 +123,7 @@ public class HMMatterTopology extends NSObject implements NSCopying, NSSecureCod
     /**
      * HMMatterTopology initializer.
      *
-     * @param homes count must be greater than 0.  If count is greater than 1, setup will present a home selection card.
+     * @param homes count must be greater than 0. If count is greater than 1, setup will present a home selection card.
      */
     @Generated
     @Selector("initWithHomes:")

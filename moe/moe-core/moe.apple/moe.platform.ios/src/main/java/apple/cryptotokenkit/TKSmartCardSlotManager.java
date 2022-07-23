@@ -82,7 +82,9 @@ public class TKSmartCardSlotManager extends NSObject {
 
     /**
      * Global pool of SmartCard reader slots.
-     * Note that defaultManager instance is accessible only if the calling application has 'com.apple.security.smartcard' entitlement set to Boolean:YES.  If the calling application does not have this entitlement, defaultManager is always set to nil.
+     * Note that defaultManager instance is accessible only if the calling application has
+     * 'com.apple.security.smartcard' entitlement set to Boolean:YES. If the calling application does not have this
+     * entitlement, defaultManager is always set to nil.
      */
     @Generated
     @Selector("defaultManager")
@@ -93,7 +95,7 @@ public class TKSmartCardSlotManager extends NSObject {
     public static native String description_static();
 
     /**
-     * Instantiates smartcard reader slot of specified name.  If specified name is not registered, reports nil.
+     * Instantiates smartcard reader slot of specified name. If specified name is not registered, reports nil.
      */
     @Generated
     @Selector("getSlotWithName:reply:")
@@ -155,14 +157,15 @@ public class TKSmartCardSlotManager extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Gets SmartCard reader slot with specified name.  If reader slot with this name does not exist, returns nil.
+     * Gets SmartCard reader slot with specified name. If reader slot with this name does not exist, returns nil.
      */
     @Generated
     @Selector("slotNamed:")
     public native TKSmartCardSlot slotNamed(String name);
 
     /**
-     * Array of currently known slots in the system.  Slots are identified by NSString name instances.  Use KVO to be notified about slots arrivals and removals.
+     * Array of currently known slots in the system. Slots are identified by NSString name instances. Use KVO to be
+     * notified about slots arrivals and removals.
      */
     @Generated
     @Selector("slotNames")

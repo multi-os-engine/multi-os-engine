@@ -229,7 +229,9 @@ public class NSDateIntervalFormatter extends NSFormatter {
     public native void setTimeZone(NSTimeZone value);
 
     /**
-     * If the range smaller than the resolution specified by the dateTemplate, a single date format will be produced. If the range is larger than the format specified by the dateTemplate, a locale-specific fallback will be used to format the items missing from the pattern.
+     * If the range smaller than the resolution specified by the dateTemplate, a single date format will be produced. If
+     * the range is larger than the format specified by the dateTemplate, a locale-specific fallback will be used to
+     * format the items missing from the pattern.
      * <p>
      * For example, if the range is 2010-03-04 07:56 - 2010-03-04 19:56 (12 hours)
      * - The pattern jm will produce

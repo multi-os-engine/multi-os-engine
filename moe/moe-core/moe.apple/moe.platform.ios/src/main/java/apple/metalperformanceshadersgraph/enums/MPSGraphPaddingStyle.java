@@ -4,14 +4,14 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@typedef]    MPSGraphPaddingStyle
+ * [@typedef] MPSGraphPaddingStyle
  * <p>
  * Tensor Layout
  * <p>
- * [@constant]   MPSGraphPaddingStyleExplicit                Explicit
- * [@constant]   MPSGraphPaddingStyleTF_SAME           TF_SAME
- * [@constant]   MPSGraphPaddingStyleTF_VALID           TF_VALID
- * [@constant]   MPSGraphPaddingStyleExplicitOffset       Explicit offsets
+ * [@constant] MPSGraphPaddingStyleExplicit Explicit
+ * [@constant] MPSGraphPaddingStyleTF_SAME TF_SAME
+ * [@constant] MPSGraphPaddingStyleTF_VALID TF_VALID
+ * [@constant] MPSGraphPaddingStyleExplicitOffset Explicit offsets
  */
 @Generated
 public final class MPSGraphPaddingStyle {

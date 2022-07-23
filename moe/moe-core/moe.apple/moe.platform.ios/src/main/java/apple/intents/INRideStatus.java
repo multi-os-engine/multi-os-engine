@@ -162,7 +162,8 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * These actions may be available for the user to choose during the ride.
-     * When shown, the .title of each activity will presented to the user. Selecting an activity will open your application to continue it.
+     * When shown, the .title of each activity will presented to the user. Selecting an activity will open your
+     * application to continue it.
      */
     @Generated
     @Selector("additionalActionActivities")
@@ -202,7 +203,8 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     public native NSDate estimatedPickupDate();
 
     /**
-     * This is the date after arrival at the pickup location after which the ride may stop waiting for the passenger to be picked up.
+     * This is the date after arrival at the pickup location after which the ride may stop waiting for the passenger to
+     * be picked up.
      * The passenger is expected to arrive at pickup before this date.
      */
     @Generated
@@ -236,7 +238,8 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * These actions may be available for the user to choose during the ride.
-     * When shown, the .title of each activity will presented to the user. Selecting an activity will open your application to continue it.
+     * When shown, the .title of each activity will presented to the user. Selecting an activity will open your
+     * application to continue it.
      */
     @Generated
     @Selector("setAdditionalActionActivities:")
@@ -266,7 +269,8 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     public native void setEstimatedPickupDate(NSDate value);
 
     /**
-     * This is the date after arrival at the pickup location after which the ride may stop waiting for the passenger to be picked up.
+     * This is the date after arrival at the pickup location after which the ride may stop waiting for the passenger to
+     * be picked up.
      * The passenger is expected to arrive at pickup before this date.
      */
     @Generated
@@ -290,7 +294,9 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     public native void setRideOption(INRideOption value);
 
     /**
-     * If set, and the ride hasn't completed or been canceled yet, the system may open the containing application and request continuation of this activity to request that the ride be canceled. It is appropriate to show confirmation UI to the user when this happens.
+     * If set, and the ride hasn't completed or been canceled yet, the system may open the containing application and
+     * request continuation of this activity to request that the ride be canceled. It is appropriate to show
+     * confirmation UI to the user when this happens.
      */
     @Generated
     @Selector("setUserActivityForCancelingInApplication:")
@@ -311,7 +317,9 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     }
 
     /**
-     * If set, and the ride hasn't completed or been canceled yet, the system may open the containing application and request continuation of this activity to request that the ride be canceled. It is appropriate to show confirmation UI to the user when this happens.
+     * If set, and the ride hasn't completed or been canceled yet, the system may open the containing application and
+     * request continuation of this activity to request that the ride be canceled. It is appropriate to show
+     * confirmation UI to the user when this happens.
      */
     @Generated
     @Selector("userActivityForCancelingInApplication")

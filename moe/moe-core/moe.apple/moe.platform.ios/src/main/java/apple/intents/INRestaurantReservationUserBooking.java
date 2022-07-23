@@ -158,7 +158,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     public static native long version_static();
 
     /**
-     * a string representing restaurant specific information related to the reservation: things like late policies, parking instructions, or specials
+     * a string representing restaurant specific information related to the reservation: things like late policies,
+     * parking instructions, or specials
      */
     @Generated
     @Selector("advisementText")
@@ -215,7 +216,8 @@ public class INRestaurantReservationUserBooking extends INRestaurantReservationB
     public native INRestaurantOffer selectedOffer();
 
     /**
-     * a string representing restaurant specific information related to the reservation: things like late policies, parking instructions, or specials
+     * a string representing restaurant specific information related to the reservation: things like late policies,
+     * parking instructions, or specials
      */
     @Generated
     @Selector("setAdvisementText:")

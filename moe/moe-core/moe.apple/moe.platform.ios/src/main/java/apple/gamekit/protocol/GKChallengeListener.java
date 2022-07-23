@@ -32,7 +32,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("GKChallengeListener")
 public interface GKChallengeListener {
     /**
-     * Called when a player has completed a challenge, triggered while the game is running, or when the user has tapped a challenge notification banner while outside of the game.
+     * Called when a player has completed a challenge, triggered while the game is running, or when the user has tapped
+     * a challenge notification banner while outside of the game.
      * player: The player who completed the challenge
      * challenge: The challenge which the player completed
      * friendPlayer: The friend who sent the challenge originally
@@ -46,7 +47,8 @@ public interface GKChallengeListener {
     }
 
     /**
-     * Called when a player has received a challenge, triggered by a push notification from the server. Received only while the game is running.
+     * Called when a player has received a challenge, triggered by a push notification from the server. Received only
+     * while the game is running.
      * player: The player who received the challenge
      * challenge: The challenge which was received
      */
@@ -58,7 +60,8 @@ public interface GKChallengeListener {
     }
 
     /**
-     * Called when a player's friend has completed a challenge which the player sent to that friend. Triggered while the game is running, or when the user has tapped a challenge notification banner while outside of the game.
+     * Called when a player's friend has completed a challenge which the player sent to that friend. Triggered while the
+     * game is running, or when the user has tapped a challenge notification banner while outside of the game.
      * player: The player who sent the challenge originally
      * challenge: The challenge which the player created and sent
      * friendPlayer: The friend who completed the challenge
@@ -72,7 +75,8 @@ public interface GKChallengeListener {
     }
 
     /**
-     * Called when a player starts the game with the intent of playing a challenge, or intends to play a challenge after selecting it within the in-game Game Center UI.
+     * Called when a player starts the game with the intent of playing a challenge, or intends to play a challenge after
+     * selecting it within the in-game Game Center UI.
      * player: The player who selected the challenge
      * challenge: The challenge which was selected
      */

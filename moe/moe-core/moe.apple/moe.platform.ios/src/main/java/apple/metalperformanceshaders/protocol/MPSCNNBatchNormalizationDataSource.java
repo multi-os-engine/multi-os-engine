@@ -23,7 +23,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@protocol]   MPSCNNBatchNormalizationDataSource
+ * [@protocol] MPSCNNBatchNormalizationDataSource
  * <p>
  * The MPSCNNBatchNormalizationDataSource protocol declares the methods that an
  * instance of MPSCNNBatchNormalizationState uses to initialize the
@@ -115,8 +115,8 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * Load will always be called atleast once after initial construction
      * or each purge of the object before anything else is called.
      *
-     * @return Returns YES on success.  If NO is returned, expect MPS
-     * object construction to fail.
+     * @return Returns YES on success. If NO is returned, expect MPS
+     *         object construction to fail.
      */
     @Generated
     @Selector("load")
@@ -162,7 +162,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * Compute new gamma and beta values using current values and gradients contained within a
-     * MPSCNNBatchNormalizationState.  Perform the update using the CPU.
+     * MPSCNNBatchNormalizationState. Perform the update using the CPU.
      *
      * @param batchNormalizationState The MPSCNNBatchNormalizationState object containing the current gamma and
      *                                beta values and the gradient values.
@@ -178,15 +178,16 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * Compute new gamma and beta values using current values and gradients contained within a
-     * MPSCNNBatchNormalizationState.  Perform the update using a GPU.
+     * MPSCNNBatchNormalizationState. Perform the update using a GPU.
      * <p>
      * This operation is expected to also decrement the read count of batchNormalizationState by 1.
      *
      * @param commandBuffer           The command buffer on which to encode the update.
      * @param batchNormalizationState The MPSCNNBatchNormalizationState object containing the current gamma and
      *                                beta values and the gradient values.
-     * @return A MPSCNNNormalizationMeanAndVarianceState object containing updated mean and variance values.  If NULL, the MPSNNGraph
-     * batch normalization filter gamma and beta values will remain unmodified.
+     * @return A MPSCNNNormalizationMeanAndVarianceState object containing updated mean and variance values. If NULL,
+     *         the MPSNNGraph
+     *         batch normalization filter gamma and beta values will remain unmodified.
      */
     @Generated
     @IsOptional
@@ -199,7 +200,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * Compute new mean and variance values using current batch statistics contained within a
-     * MPSCNNBatchNormalizationState.  Perform the update using the CPU.
+     * MPSCNNBatchNormalizationState. Perform the update using the CPU.
      *
      * @param batchNormalizationState The MPSCNNBatchNormalizationState object containing the current batch statistics.
      * @return A boolean value indicating if the update was performed.
@@ -214,14 +215,15 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
 
     /**
      * Compute new mean and variance values using current batch statistics contained within a
-     * MPSCNNBatchNormalizationState.  Perform the update using a GPU.
+     * MPSCNNBatchNormalizationState. Perform the update using a GPU.
      * <p>
      * This operation is expected to also decrement the read count of batchNormalizationState by 1.
      *
      * @param commandBuffer           The command buffer on which to encode the update.
      * @param batchNormalizationState The MPSCNNBatchNormalizationState object containing the current batch statistics.
-     * @return A MPSCNNNormalizationMeanAndVarianceState object containing updated mean and variance values.  If NULL, the MPSNNGraph
-     * batch normalization filter mean and variance values will remain unmodified.
+     * @return A MPSCNNNormalizationMeanAndVarianceState object containing updated mean and variance values. If NULL,
+     *         the MPSNNGraph
+     *         batch normalization filter mean and variance values will remain unmodified.
      */
     @Generated
     @IsOptional

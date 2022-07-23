@@ -301,7 +301,7 @@ public class NSFileProviderManager extends NSObject {
      * <p>
      * If you have a change in the working set, call this method with
      * containerItemIdentifier set to NSFileProviderWorkingSetContainerItemIdentifier,
-     * even if there is no live enumeration for this item.  The working set is cached
+     * even if there is no live enumeration for this item. The working set is cached
      * on the device and it's important to keep the cache in sync.
      * <p>
      * In addition to using this method, your application/extension can register for

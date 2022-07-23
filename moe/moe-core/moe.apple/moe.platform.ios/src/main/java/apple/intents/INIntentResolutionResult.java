@@ -135,7 +135,8 @@ public class INIntentResolutionResult extends NSObject {
     public static native INIntentResolutionResult new_objc();
 
     /**
-     * This result is to tell Siri to continue regardless of whether the user has provided a value for this parameter or not
+     * This result is to tell Siri to continue regardless of whether the user has provided a value for this parameter or
+     * not
      */
     @Generated
     @Selector("notRequired")

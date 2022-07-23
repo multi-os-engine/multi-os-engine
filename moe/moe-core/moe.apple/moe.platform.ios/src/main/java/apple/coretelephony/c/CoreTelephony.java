@@ -142,9 +142,11 @@ public final class CoreTelephony {
      * CTServiceRadioAccessTechnologyDataTechnologyDidChangeNotification
      * <p>
      * Description:
-     * A NSNotification broadcast when radio access technology changes for one of the services.  Only an object is sent with
-     * this notfication.  The object is an NSString that represents the service identifier of the service whose radio access
-     * technology has changed.  This NSString should be used as the key in serviceCurrentRadioAccessTechnology to get the
+     * A NSNotification broadcast when radio access technology changes for one of the services. Only an object is sent
+     * with
+     * this notfication. The object is an NSString that represents the service identifier of the service whose radio
+     * access
+     * technology has changed. This NSString should be used as the key in serviceCurrentRadioAccessTechnology to get the
      * value of the new radio access technology for the service.
      */
     @Generated

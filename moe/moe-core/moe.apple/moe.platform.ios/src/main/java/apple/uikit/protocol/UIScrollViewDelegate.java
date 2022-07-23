@@ -145,7 +145,8 @@ public interface UIScrollViewDelegate {
     }
 
     /**
-     * called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
+     * called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to
+     * adjust where the scroll view comes to rest
      */
     @Generated
     @IsOptional

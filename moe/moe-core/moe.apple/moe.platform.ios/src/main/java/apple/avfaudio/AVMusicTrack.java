@@ -93,7 +93,7 @@ public class AVMusicTrack extends NSObject {
      * <p>
      * The AVAudioUnit which will receive the track's events
      * <p>
-     * This is mutually exclusive with setting a destination MIDIEndpoint.  The AU must already be
+     * This is mutually exclusive with setting a destination MIDIEndpoint. The AU must already be
      * attached to an audio engine, and the track must be part of the AVAudioSequencer associated
      * with that engine. When playing, the track will send its events to that AVAudioUnit. The
      * destination AU cannot be changed while the track's sequence is playing.
@@ -171,7 +171,7 @@ public class AVMusicTrack extends NSObject {
      * The total duration of the track in beats
      * <p>
      * This will return the beat of the last event in the track plus any additional time that may
-     * be needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
+     * be needed for fading out of ending notes or round a loop point to musical bar, etc. If this
      * has not been set by the user, the track length will always be adjusted to the end of the
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * <p>
@@ -187,7 +187,7 @@ public class AVMusicTrack extends NSObject {
      * The total duration of the track in seconds
      * <p>
      * This will return time of the last event in the track plus any additional time that may be
-     * needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
+     * needed for fading out of ending notes or round a loop point to musical bar, etc. If this
      * has not been set by the user, the track length will always be adjusted to the end of the
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * <p>
@@ -251,7 +251,7 @@ public class AVMusicTrack extends NSObject {
      * <p>
      * The AVAudioUnit which will receive the track's events
      * <p>
-     * This is mutually exclusive with setting a destination MIDIEndpoint.  The AU must already be
+     * This is mutually exclusive with setting a destination MIDIEndpoint. The AU must already be
      * attached to an audio engine, and the track must be part of the AVAudioSequencer associated
      * with that engine. When playing, the track will send its events to that AVAudioUnit. The
      * destination AU cannot be changed while the track's sequence is playing.
@@ -270,7 +270,7 @@ public class AVMusicTrack extends NSObject {
      * The total duration of the track in beats
      * <p>
      * This will return the beat of the last event in the track plus any additional time that may
-     * be needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
+     * be needed for fading out of ending notes or round a loop point to musical bar, etc. If this
      * has not been set by the user, the track length will always be adjusted to the end of the
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * <p>
@@ -286,7 +286,7 @@ public class AVMusicTrack extends NSObject {
      * The total duration of the track in seconds
      * <p>
      * This will return time of the last event in the track plus any additional time that may be
-     * needed for fading out of ending notes or round a loop point to musical bar, etc.  If this
+     * needed for fading out of ending notes or round a loop point to musical bar, etc. If this
      * has not been set by the user, the track length will always be adjusted to the end of the
      * last active event in a track and is adjusted dynamically as events are added or removed.
      * <p>

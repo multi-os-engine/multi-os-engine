@@ -32,7 +32,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@protocol] SCNAnimatable
  * <p>
- * The SCNAnimatable protocol defines an animatable property. Objects that implement this protocol can be animated through these methods.
+ * The SCNAnimatable protocol defines an animatable property. Objects that implement this protocol can be animated
+ * through these methods.
  */
 @Generated
 @Library("SceneKit")
@@ -45,7 +46,8 @@ public interface SCNAnimatable {
      * Adds and runs an animation
      * <p>
      * Only SCNAnimation (preferred), CABasicAnimation, CAKeyframeAnimation and CAAnimationGroup are supported.
-     * The animation starts playing right away. The animation is automatically removed on completion unless if removedOnCompletion is explicitly set to NO.
+     * The animation starts playing right away. The animation is automatically removed on completion unless if
+     * removedOnCompletion is explicitly set to NO.
      *
      * @param animation Added animation.
      * @param key       May be any string such that only one animation per unique key is added per animatable object.

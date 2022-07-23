@@ -107,9 +107,9 @@ public class NSHTTPCookie extends NSObject {
      *
      * @param properties The dictionary to use to initialize this cookie.
      * @return A newly-created and autoreleased NSHTTPCookie instance, or
-     * nil if the set of dictionary keys is invalid, for example because
-     * a required key is missing, or a recognized key maps to an illegal
-     * value.
+     *         nil if the set of dictionary keys is invalid, for example because
+     *         a required key is missing, or a recognized key maps to an illegal
+     *         value.
      */
     @Generated
     @Selector("cookieWithProperties:")
@@ -179,7 +179,7 @@ public class NSHTTPCookie extends NSObject {
      *
      * @param cookies The cookies to turn into request headers.
      * @return An NSDictionary where the keys are header field names, and the values
-     * are the corresponding header field values.
+     *         are the corresponding header field values.
      */
     @Generated
     @Selector("requestHeaderFieldsWithCookies:")
@@ -210,7 +210,7 @@ public class NSHTTPCookie extends NSObject {
      * cookie. It may be nil.
      *
      * @return The comment of the receiver, or nil if the receiver has no
-     * comment.
+     *         comment.
      */
     @Generated
     @Selector("comment")
@@ -224,7 +224,7 @@ public class NSHTTPCookie extends NSObject {
      * this cookie. It may be nil.
      *
      * @return The comment URL of the receiver, or nil if the receiver
-     * has no comment URL.
+     *         has no comment URL.
      */
     @Generated
     @Selector("commentURL")
@@ -276,107 +276,107 @@ public class NSHTTPCookie extends NSObject {
      *
      * <table border="1" cellspacing="2" cellpadding="4">
      * <tr>
-     *     <th>Property key constant</th>
-     *     <th>Type of value</th>
-     *     <th>Required</th>
-     *     <th>Description</th>
+     * <th>Property key constant</th>
+     * <th>Type of value</th>
+     * <th>Required</th>
+     * <th>Description</th>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieComment</td>
-     *     <td>NSString</td>
-     *     <td>NO</td>
-     *     <td>Comment for the cookie. Only valid for version 1 cookies and
-     *     later. Default is nil.</td>
+     * <td>NSHTTPCookieComment</td>
+     * <td>NSString</td>
+     * <td>NO</td>
+     * <td>Comment for the cookie. Only valid for version 1 cookies and
+     * later. Default is nil.</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieCommentURL</td>
-     *     <td>NSURL or NSString</td>
-     *     <td>NO</td>
-     *     <td>Comment URL for the cookie. Only valid for version 1 cookies
-     *     and later. Default is nil.</td>
+     * <td>NSHTTPCookieCommentURL</td>
+     * <td>NSURL or NSString</td>
+     * <td>NO</td>
+     * <td>Comment URL for the cookie. Only valid for version 1 cookies
+     * and later. Default is nil.</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieDomain</td>
-     *     <td>NSString</td>
-     *     <td>Special, a value for either NSHTTPCookieOriginURL or
-     *     NSHTTPCookieDomain must be specified.</td>
-     *     <td>Domain for the cookie. Inferred from the value for
-     *     NSHTTPCookieOriginURL if not provided.</td>
+     * <td>NSHTTPCookieDomain</td>
+     * <td>NSString</td>
+     * <td>Special, a value for either NSHTTPCookieOriginURL or
+     * NSHTTPCookieDomain must be specified.</td>
+     * <td>Domain for the cookie. Inferred from the value for
+     * NSHTTPCookieOriginURL if not provided.</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieDiscard</td>
-     *     <td>NSString</td>
-     *     <td>NO</td>
-     *     <td>A string stating whether the cookie should be discarded at
-     *     the end of the session. String value must be either "TRUE" or
-     *     "FALSE". Default is "FALSE", unless this is cookie is version
-     *     1 or greater and a value for NSHTTPCookieMaximumAge is not
-     *     specified, in which case it is assumed "TRUE".</td>
+     * <td>NSHTTPCookieDiscard</td>
+     * <td>NSString</td>
+     * <td>NO</td>
+     * <td>A string stating whether the cookie should be discarded at
+     * the end of the session. String value must be either "TRUE" or
+     * "FALSE". Default is "FALSE", unless this is cookie is version
+     * 1 or greater and a value for NSHTTPCookieMaximumAge is not
+     * specified, in which case it is assumed "TRUE".</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieExpires</td>
-     *     <td>NSDate or NSString</td>
-     *     <td>NO</td>
-     *     <td>Expiration date for the cookie. Used only for version 0
-     *     cookies. Ignored for version 1 or greater.</td>
+     * <td>NSHTTPCookieExpires</td>
+     * <td>NSDate or NSString</td>
+     * <td>NO</td>
+     * <td>Expiration date for the cookie. Used only for version 0
+     * cookies. Ignored for version 1 or greater.</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieMaximumAge</td>
-     *     <td>NSString</td>
-     *     <td>NO</td>
-     *     <td>A string containing an integer value stating how long in
-     *     seconds the cookie should be kept, at most. Only valid for
-     *     version 1 cookies and later. Default is "0".</td>
+     * <td>NSHTTPCookieMaximumAge</td>
+     * <td>NSString</td>
+     * <td>NO</td>
+     * <td>A string containing an integer value stating how long in
+     * seconds the cookie should be kept, at most. Only valid for
+     * version 1 cookies and later. Default is "0".</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieName</td>
-     *     <td>NSString</td>
-     *     <td>YES</td>
-     *     <td>Name of the cookie</td>
+     * <td>NSHTTPCookieName</td>
+     * <td>NSString</td>
+     * <td>YES</td>
+     * <td>Name of the cookie</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieOriginURL</td>
-     *     <td>NSURL or NSString</td>
-     *     <td>Special, a value for either NSHTTPCookieOriginURL or
-     *     NSHTTPCookieDomain must be specified.</td>
-     *     <td>URL that set this cookie. Used as default for other fields
-     *     as noted.</td>
+     * <td>NSHTTPCookieOriginURL</td>
+     * <td>NSURL or NSString</td>
+     * <td>Special, a value for either NSHTTPCookieOriginURL or
+     * NSHTTPCookieDomain must be specified.</td>
+     * <td>URL that set this cookie. Used as default for other fields
+     * as noted.</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookiePath</td>
-     *     <td>NSString</td>
-     *     <td>NO</td>
-     *     <td>Path for the cookie. Inferred from the value for
-     *     NSHTTPCookieOriginURL if not provided. Default is "/".</td>
+     * <td>NSHTTPCookiePath</td>
+     * <td>NSString</td>
+     * <td>NO</td>
+     * <td>Path for the cookie. Inferred from the value for
+     * NSHTTPCookieOriginURL if not provided. Default is "/".</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookiePort</td>
-     *     <td>NSString</td>
-     *     <td>NO</td>
-     *     <td>comma-separated integer values specifying the ports for the
-     *     cookie. Only valid for version 1 cookies and later. Default is
-     *     empty string ("").</td>
+     * <td>NSHTTPCookiePort</td>
+     * <td>NSString</td>
+     * <td>NO</td>
+     * <td>comma-separated integer values specifying the ports for the
+     * cookie. Only valid for version 1 cookies and later. Default is
+     * empty string ("").</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieSecure</td>
-     *     <td>NSString</td>
-     *     <td>NO</td>
-     *     <td>A string stating whether the cookie should be transmitted
-     *     only over secure channels. String value must be either "TRUE"
-     *     or "FALSE". Default is "FALSE".</td>
+     * <td>NSHTTPCookieSecure</td>
+     * <td>NSString</td>
+     * <td>NO</td>
+     * <td>A string stating whether the cookie should be transmitted
+     * only over secure channels. String value must be either "TRUE"
+     * or "FALSE". Default is "FALSE".</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieValue</td>
-     *     <td>NSString</td>
-     *     <td>YES</td>
-     *     <td>Value of the cookie</td>
+     * <td>NSHTTPCookieValue</td>
+     * <td>NSString</td>
+     * <td>YES</td>
+     * <td>Value of the cookie</td>
      * </tr>
      * <tr>
-     *     <td>NSHTTPCookieVersion</td>
-     *     <td>NSString</td>
-     *     <td>NO</td>
-     *     <td>Specifies the version of the cookie. Must be either "0" or
-     *     "1". Default is "0".</td>
+     * <td>NSHTTPCookieVersion</td>
+     * <td>NSString</td>
+     * <td>NO</td>
+     * <td>Specifies the version of the cookie. Must be either "0" or
+     * "1". Default is "0".</td>
      * </tr>
      * </table>
      * <p>
@@ -385,8 +385,8 @@ public class NSHTTPCookie extends NSObject {
      * @param properties The dictionary of properties to be used to
      *                   initialize this cookie.
      * @return An initialized NSHTTPCookie, or nil if the set of
-     * dictionary keys is invalid, for example because a required key is
-     * missing, or a recognized key maps to an illegal value.
+     *         dictionary keys is invalid, for example because a required key is
+     *         missing, or a recognized key maps to an illegal value.
      */
     @Generated
     @Selector("initWithProperties:")
@@ -403,7 +403,7 @@ public class NSHTTPCookie extends NSObject {
      * applications to prevent cross-site scripting vulnerabilities.
      *
      * @return YES if this cookie should only be sent via HTTP headers,
-     * NO otherwise.
+     *         NO otherwise.
      */
     @Generated
     @Selector("isHTTPOnly")
@@ -419,7 +419,7 @@ public class NSHTTPCookie extends NSObject {
      * javascript applications to prevent cross-site scripting vulnerabilities.
      *
      * @return YES if this cookie should be sent only over secure channels,
-     * NO otherwise.
+     *         NO otherwise.
      */
     @Generated
     @Selector("isSecure")
@@ -429,8 +429,8 @@ public class NSHTTPCookie extends NSObject {
      * Returns whether the receiver is session-only.
      *
      * @return YES if this receiver should be discarded at the end of the
-     * session (regardless of expiration date), NO if receiver need not
-     * be discarded at the end of the session.
+     *         session (regardless of expiration date), NO if receiver need not
+     *         be discarded at the end of the session.
      */
     @Generated
     @Selector("isSessionOnly")
@@ -467,8 +467,8 @@ public class NSHTTPCookie extends NSObject {
      * cookie should be sent.
      *
      * @return The list ports to which the receiver should be sent. The
-     * array may be nil, in which case this cookie can be sent to any
-     * port.
+     *         array may be nil, in which case this cookie can be sent to any
+     *         port.
      */
     @Generated
     @Selector("portList")
@@ -520,10 +520,11 @@ public class NSHTTPCookie extends NSObject {
      * Cookies marked with "strict" (NSHTTPCookieSameSiteStrict) are not sent along with cross-site requests.
      * Cookies marked with "lax" (NSHTTPCookieSameSiteLax) sent along cross-site requests provided the
      * cross-site requests are top-level-requests (one that changes the url in the address bar).
-     * The attribute value is canonicalized and stored. Any value other than the default (strict and lax) will be ignored.
+     * The attribute value is canonicalized and stored. Any value other than the default (strict and lax) will be
+     * ignored.
      *
      * @return strict or lax. The result could also be nil, in which case the
-     * cookie will be sent along with all cross-site requests.
+     *         cookie will be sent along with all cross-site requests.
      */
     @Generated
     @Selector("sameSitePolicy")

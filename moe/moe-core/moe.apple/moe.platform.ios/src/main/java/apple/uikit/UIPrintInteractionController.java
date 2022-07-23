@@ -345,7 +345,8 @@ public class UIPrintInteractionController extends NSObject {
     public native void setShowsPageRange(boolean value);
 
     /**
-     * default is NO.  Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and UIPrintInfoOutputPhotoGrayscale
+     * default is NO. Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and
+     * UIPrintInfoOutputPhotoGrayscale
      */
     @Generated
     @Selector("setShowsPaperSelectionForLoadedPapers:")
@@ -363,7 +364,8 @@ public class UIPrintInteractionController extends NSObject {
     public native boolean showsPageRange();
 
     /**
-     * default is NO.  Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and UIPrintInfoOutputPhotoGrayscale
+     * default is NO. Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and
+     * UIPrintInfoOutputPhotoGrayscale
      */
     @Generated
     @Selector("showsPaperSelectionForLoadedPapers")

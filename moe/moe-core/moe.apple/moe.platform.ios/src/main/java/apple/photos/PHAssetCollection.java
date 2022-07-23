@@ -116,7 +116,8 @@ public class PHAssetCollection extends PHCollection {
             NSArray<? extends NSURL> assetGroupURLs, PHFetchOptions options);
 
     /**
-     * Fetch asset collections of a single type matching the provided local identifiers (type is inferred from the local identifiers)
+     * Fetch asset collections of a single type matching the provided local identifiers (type is inferred from the local
+     * identifiers)
      */
     @Generated
     @Selector("fetchAssetCollectionsWithLocalIdentifiers:options:")
@@ -124,7 +125,8 @@ public class PHAssetCollection extends PHCollection {
             NSArray<String> identifiers, PHFetchOptions options);
 
     /**
-     * Fetch asset collections of a single type and subtype provided (use PHAssetCollectionSubtypeAny to match all subtypes)
+     * Fetch asset collections of a single type and subtype provided (use PHAssetCollectionSubtypeAny to match all
+     * subtypes)
      */
     @Generated
     @Selector("fetchAssetCollectionsWithType:subtype:options:")
@@ -234,7 +236,8 @@ public class PHAssetCollection extends PHCollection {
     public native NSDate endDate();
 
     /**
-     * These counts are just estimates; the actual count of objects returned from a fetch should be used if you care about accuracy. Returns NSNotFound if a count cannot be quickly returned.
+     * These counts are just estimates; the actual count of objects returned from a fetch should be used if you care
+     * about accuracy. Returns NSNotFound if a count cannot be quickly returned.
      */
     @Generated
     @Selector("estimatedAssetCount")

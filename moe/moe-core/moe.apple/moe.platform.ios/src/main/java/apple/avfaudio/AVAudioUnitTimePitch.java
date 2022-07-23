@@ -144,9 +144,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
      * <p>
-     * Range:      3.0 -> 32.0
-     * Default:    8.0
-     * Unit:       Generic
+     * Range: 3.0 -> 32.0
+     * Default: 8.0
+     * Unit: Generic
      */
     @Generated
     @Selector("overlap")
@@ -157,12 +157,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * <p>
      * amount by which the input signal is pitch shifted
      * <p>
-     * 1 octave  = 1200 cents
-     * 1 musical semitone  = 100 cents
+     * 1 octave = 1200 cents
+     * 1 musical semitone = 100 cents
      * <p>
-     * Range:      -2400 -> 2400
-     * Default:    0.0
-     * Unit:       Cents
+     * Range: -2400 -> 2400
+     * Default: 0.0
+     * Unit: Cents
      */
     @Generated
     @Selector("pitch")
@@ -173,9 +173,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * <p>
      * playback rate of the input signal
      * <p>
-     * Range:      1/32 -> 32.0
-     * Default:    1.0
-     * Unit:       Generic
+     * Range: 1/32 -> 32.0
+     * Default: 1.0
+     * Unit: Generic
      */
     @Generated
     @Selector("rate")
@@ -197,9 +197,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
      * <p>
-     * Range:      3.0 -> 32.0
-     * Default:    8.0
-     * Unit:       Generic
+     * Range: 3.0 -> 32.0
+     * Default: 8.0
+     * Unit: Generic
      */
     @Generated
     @Selector("setOverlap:")
@@ -210,12 +210,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * <p>
      * amount by which the input signal is pitch shifted
      * <p>
-     * 1 octave  = 1200 cents
-     * 1 musical semitone  = 100 cents
+     * 1 octave = 1200 cents
+     * 1 musical semitone = 100 cents
      * <p>
-     * Range:      -2400 -> 2400
-     * Default:    0.0
-     * Unit:       Cents
+     * Range: -2400 -> 2400
+     * Default: 0.0
+     * Unit: Cents
      */
     @Generated
     @Selector("setPitch:")
@@ -226,9 +226,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
      * <p>
      * playback rate of the input signal
      * <p>
-     * Range:      1/32 -> 32.0
-     * Default:    1.0
-     * Unit:       Generic
+     * Range: 1/32 -> 32.0
+     * Default: 1.0
+     * Unit: Generic
      */
     @Generated
     @Selector("setRate:")

@@ -33,7 +33,8 @@ public interface UICollectionViewDropCoordinator {
     /**
      * Animate the dragItem to a rect inside an existing item.
      * The rect is in the coordinate space of the cell at this index path.
-     * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to shrink the item to a single point.
+     * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to
+     * shrink the item to a single point.
      */
     @Generated
     @Selector("dropItem:intoItemAtIndexPath:rect:")
@@ -42,9 +43,11 @@ public interface UICollectionViewDropCoordinator {
 
     /**
      * Animate the dragItem to a newly inserted item at the specified index path.
-     * You must call -performBatchUpdates:completion: to update your data source and insert a new item into the collection view prior to calling this method.
+     * You must call -performBatchUpdates:completion: to update your data source and insert a new item into the
+     * collection view prior to calling this method.
      * <p>
-     * To tweak the appearance of the preview being dropping (e.g. supply a clipping path), see -collectionView:dropPreviewParametersForItemAtIndexPath:
+     * To tweak the appearance of the preview being dropping (e.g. supply a clipping path), see
+     * -collectionView:dropPreviewParametersForItemAtIndexPath:
      */
     @Generated
     @Selector("dropItem:toItemAtIndexPath:")
@@ -54,15 +57,18 @@ public interface UICollectionViewDropCoordinator {
     /**
      * Animate the dragItem to an automatically inserted placeholder item.
      * <p>
-     * A placeholder cell will be created for the reuse identifier and inserted at the specified indexPath without requiring a dataSource update.
+     * A placeholder cell will be created for the reuse identifier and inserted at the specified indexPath without
+     * requiring a dataSource update.
      * <p>
-     * The cellUpdateHandler will be called whenever the placeholder cell becomes visible; -collectionView:cellForItemAtIndexPath: will not be called
+     * The cellUpdateHandler will be called whenever the placeholder cell becomes visible;
+     * -collectionView:cellForItemAtIndexPath: will not be called
      * for the placeholder.
      * <p>
      * Once the dragItem data is available, you can exchange the temporary placeholder cell with the final cell using
      * the placeholder context method -commitInsertionWithDataSourceUpdates:
      * <p>
-     * UICollectionViewDropPlaceholderContext also conforms to UIDragAnimating to allow adding alongside animations and completion handlers.
+     * UICollectionViewDropPlaceholderContext also conforms to UIDragAnimating to allow adding alongside animations and
+     * completion handlers.
      */
     @Generated
     @Selector("dropItem:toPlaceholder:")

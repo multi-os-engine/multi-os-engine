@@ -19,7 +19,7 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]			AudioUnitRemoteControlEvent
+ * [@enum] AudioUnitRemoteControlEvent
  * <p>
  * In inter-app audio, messages to control the host's transport state.
  */

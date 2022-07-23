@@ -191,7 +191,9 @@ public class SKEmitterNode extends SKNode {
     public static native long version_static();
 
     /**
-     * The particle simulation is stepped automatically each frame when present in the scene. This allows the user to manually advance the simulation by a fixed amount of time. Useful for pre-populating particles before adding them to the scene.
+     * The particle simulation is stepped automatically each frame when present in the scene. This allows the user to
+     * manually advance the simulation by a fixed amount of time. Useful for pre-populating particles before adding them
+     * to the scene.
      */
     @Generated
     @Selector("advanceSimulationTime:")
@@ -222,7 +224,8 @@ public class SKEmitterNode extends SKNode {
     public native double emissionAngleRange();
 
     /**
-     * Defines what logical 'categories' of fields this particles emitted respond to. Defaults to all bits set (all categories).
+     * Defines what logical 'categories' of fields this particles emitted respond to. Defaults to all bits set (all
+     * categories).
      * Can be forced off via affectedByGravity.
      */
     @Generated
@@ -406,7 +409,8 @@ public class SKEmitterNode extends SKNode {
     public native CGPoint particlePosition();
 
     /**
-     * The random variance about the starting position for each particle in the emitter's coordinate space. Defaults to (0.0, 0,0).
+     * The random variance about the starting position for each particle in the emitter's coordinate space. Defaults to
+     * (0.0, 0,0).
      */
     @Generated
     @Selector("particlePositionRange")
@@ -474,7 +478,9 @@ public class SKEmitterNode extends SKNode {
     public native double particleScaleSpeed();
 
     /**
-     * The starting size for each particle. If set to CGSizeZero (the default) the particles will start at the size of the texture assigned to particleTexture. Note that particleScale and particleScaleRange will also have an effect on the effective size of each new particle.
+     * The starting size for each particle. If set to CGSizeZero (the default) the particles will start at the size of
+     * the texture assigned to particleTexture. Note that particleScale and particleScaleRange will also have an effect
+     * on the effective size of each new particle.
      */
     @Generated
     @Selector("particleSize")
@@ -560,7 +566,8 @@ public class SKEmitterNode extends SKNode {
     public native void setEmissionAngleRange(@NFloat double value);
 
     /**
-     * Defines what logical 'categories' of fields this particles emitted respond to. Defaults to all bits set (all categories).
+     * Defines what logical 'categories' of fields this particles emitted respond to. Defaults to all bits set (all
+     * categories).
      * Can be forced off via affectedByGravity.
      */
     @Generated
@@ -716,7 +723,8 @@ public class SKEmitterNode extends SKNode {
     public native void setParticlePosition(@ByValue CGPoint value);
 
     /**
-     * The random variance about the starting position for each particle in the emitter's coordinate space. Defaults to (0.0, 0,0).
+     * The random variance about the starting position for each particle in the emitter's coordinate space. Defaults to
+     * (0.0, 0,0).
      */
     @Generated
     @Selector("setParticlePositionRange:")
@@ -776,7 +784,9 @@ public class SKEmitterNode extends SKNode {
     public native void setParticleScaleSpeed(@NFloat double value);
 
     /**
-     * The starting size for each particle. If set to CGSizeZero (the default) the particles will start at the size of the texture assigned to particleTexture. Note that particleScale and particleScaleRange will also have an effect on the effective size of each new particle.
+     * The starting size for each particle. If set to CGSizeZero (the default) the particles will start at the size of
+     * the texture assigned to particleTexture. Note that particleScale and particleScaleRange will also have an effect
+     * on the effective size of each new particle.
      */
     @Generated
     @Selector("setParticleSize:")
@@ -831,14 +841,18 @@ public class SKEmitterNode extends SKNode {
     public native void setShader(SKShader value);
 
     /**
-     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard behavior).
+     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if
+     * they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard
+     * behavior).
      */
     @Generated
     @Selector("setTargetNode:")
     public native void setTargetNode_unsafe(SKNode value);
 
     /**
-     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard behavior).
+     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if
+     * they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard
+     * behavior).
      */
     @Generated
     public void setTargetNode(SKNode value) {
@@ -857,7 +871,8 @@ public class SKEmitterNode extends SKNode {
     public native void setValueForAttributeNamed(SKAttributeValue value, String key);
 
     /**
-     * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity. Defaults to 0.0.
+     * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity.
+     * Defaults to 0.0.
      */
     @Generated
     @Selector("setXAcceleration:")
@@ -872,7 +887,9 @@ public class SKEmitterNode extends SKNode {
     public native SKShader shader();
 
     /**
-     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard behavior).
+     * Normally the particles are rendered as if they were a child of the SKEmitterNode, they can also be rendered as if
+     * they were a child of any other node in the scene by setting the targetNode property. Defaults to nil (standard
+     * behavior).
      */
     @Generated
     @Selector("targetNode")
@@ -883,7 +900,8 @@ public class SKEmitterNode extends SKNode {
     public native SKAttributeValue valueForAttributeNamed(String key);
 
     /**
-     * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity. Defaults to 0.0.
+     * The acceleration to apply to each particles velocity. Useful for simulating effects such as wind or gravity.
+     * Defaults to 0.0.
      */
     @Generated
     @Selector("xAcceleration")

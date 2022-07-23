@@ -147,7 +147,8 @@ public class AVAudioRecorder extends NSObject {
     public native AVAudioRecorder init();
 
     /**
-     * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from the file extension. Will overwrite a file at the specified url if a file exists.
+     * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from
+     * the file extension. Will overwrite a file at the specified url if a file exists.
      */
     @Generated
     @Selector("initWithURL:format:error:")
@@ -155,7 +156,8 @@ public class AVAudioRecorder extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from the file extension. Will overwrite a file at the specified url if a file exists.
+     * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from
+     * the file extension. Will overwrite a file at the specified url if a file exists.
      */
     @Generated
     @Selector("initWithURL:settings:error:")
@@ -231,14 +233,16 @@ public class AVAudioRecorder extends NSObject {
     public native boolean record();
 
     /**
-     * start recording at specified time in the future. time is an absolute time based on and greater than deviceCurrentTime.
+     * start recording at specified time in the future. time is an absolute time based on and greater than
+     * deviceCurrentTime.
      */
     @Generated
     @Selector("recordAtTime:")
     public native boolean recordAtTime(double time);
 
     /**
-     * record a file of a specified duration starting at specified time. time is an absolute time based on and greater than deviceCurrentTime.
+     * record a file of a specified duration starting at specified time. time is an absolute time based on and greater
+     * than deviceCurrentTime.
      */
     @Generated
     @Selector("recordAtTime:forDuration:")

@@ -47,7 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An entity is the general purpose object in an entity-component system.
  * Entites have many components but components are associated with only a single entity.
  * <p>
- * Note: GKEntity supports NSCopying and NSSecureCoding, but your custom GKComponent's must also support NSCopying and NSSecureCoding
+ * Note: GKEntity supports NSCopying and NSSecureCoding, but your custom GKComponent's must also support NSCopying and
+ * NSSecureCoding
  *
  * @see GKComponent
  * @see GKComponentSystem
@@ -170,7 +171,8 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * Adds a component to this entity.  If a component of the same class already exists it is overwritten with the new component.
+     * Adds a component to this entity. If a component of the same class already exists it is overwritten with the new
+     * component.
      *
      * @param component the component to be added
      * @see GKComponent
@@ -185,7 +187,8 @@ public class GKEntity extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Access the current set of components as an array.
-     * Note: this is not the internal array of components, but rather a newly created array of the current component mapping.
+     * Note: this is not the internal array of components, but rather a newly created array of the current component
+     * mapping.
      */
     @Generated
     @Selector("components")

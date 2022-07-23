@@ -112,7 +112,8 @@ public class AVAudioFile extends NSObject {
      * <p>
      * The position in the file at which the next read or write will occur.
      * <p>
-     * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position by the number of frames read or written.
+     * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position
+     * by the number of frames read or written.
      */
     @Generated
     @Selector("framePosition")
@@ -190,7 +191,7 @@ public class AVAudioFile extends NSObject {
      * This opens the file for writing using the standard format (deinterleaved floating point).
      *
      * @param fileURL  the path at which to create the file
-     * @param settings the format of the file to create (See `AVAudioRecorder`.)  For linear PCM,
+     * @param settings the format of the file to create (See `AVAudioRecorder`.) For linear PCM,
      *                 only interleaved formats are supported for the saved file, non interleaved setting will be
      *                 ignored and a warning is shown.
      * @param outError on exit, if an error occurs, a description of the error
@@ -295,7 +296,8 @@ public class AVAudioFile extends NSObject {
      * <p>
      * The position in the file at which the next read or write will occur.
      * <p>
-     * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position by the number of frames read or written.
+     * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position
+     * by the number of frames read or written.
      */
     @Generated
     @Selector("setFramePosition:")

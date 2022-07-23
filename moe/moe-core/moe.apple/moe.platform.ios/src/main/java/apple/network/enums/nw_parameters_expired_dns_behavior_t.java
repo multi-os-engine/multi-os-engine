@@ -15,7 +15,8 @@ public final class nw_parameters_expired_dns_behavior_t {
     }
 
     /**
-     * [@const] nw_parameters_expired_dns_behavior_default Let the system determine whether or not to allow expired DNS answers
+     * [@const] nw_parameters_expired_dns_behavior_default Let the system determine whether or not to allow expired DNS
+     * answers
      */
     @Generated public static final int nw_parameters_expired_dns_behavior_default = 0x00000000;
     /**

@@ -34,7 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * AVSampleBufferAudioRenderer can decompress and play compressed or uncompressed audio.
  * <p>
- * An instance of AVSampleBufferAudioRenderer must be added to an AVSampleBufferRenderSynchronizer before the first sample buffer is enqueued.
+ * An instance of AVSampleBufferAudioRenderer must be added to an AVSampleBufferRenderSynchronizer before the first
+ * sample buffer is enqueued.
  */
 @Generated
 @Library("AVFoundation")
@@ -65,13 +66,16 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native AVSampleBufferAudioRenderer allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]		audioTimePitchAlgorithm
+     * [@property] audioTimePitchAlgorithm
      * <p>
      * Indicates the processing algorithm used to manage audio pitch at varying rates.
      * <p>
-     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
+     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in
+     * AVAudioProcessingSettings.h.
      * <p>
-     * The default value for applications linked on or after iOS 15.0 or macOS 12.0 is AVAudioTimePitchAlgorithmTimeDomain. For iOS versions prior to 15.0 the default value is AVAudioTimePitchAlgorithmLowQualityZeroLatency.
+     * The default value for applications linked on or after iOS 15.0 or macOS 12.0 is
+     * AVAudioTimePitchAlgorithmTimeDomain. For iOS versions prior to 15.0 the default value is
+     * AVAudioTimePitchAlgorithmLowQualityZeroLatency.
      * For macOS versions prior to 12.0 the default value is AVAudioTimePitchAlgorithmSpectral.
      * <p>
      * If the timebase's rate is not supported by the audioTimePitchAlgorithm, audio will be muted.
@@ -117,11 +121,14 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public native void enqueueSampleBuffer(CMSampleBufferRef sampleBuffer);
 
     /**
-     * [@property]		error
+     * [@property] error
      * <p>
-     * If the renderer's status is AVQueuedSampleBufferRenderingStatusFailed, this describes the error that caused the failure.
+     * If the renderer's status is AVQueuedSampleBufferRenderingStatusFailed, this describes the error that caused the
+     * failure.
      * <p>
-     * The value of this property is an NSError that describes what caused the renderer to no longer be able to render sample buffers.  The value of this property is nil unless the value of status is AVQueuedSampleBufferRenderingStatusFailed.
+     * The value of this property is an NSError that describes what caused the renderer to no longer be able to render
+     * sample buffers. The value of this property is nil unless the value of status is
+     * AVQueuedSampleBufferRenderingStatusFailed.
      */
     @Generated
     @Selector("error")
@@ -136,11 +143,19 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * <p>
      * Flushes enqueued sample buffers with presentation time stamps later than or equal to the specified time.
      * <p>
-     * This method can be used to replace media data scheduled to be rendered in the future, without interrupting playback.  One example of this is when the data that has already been enqueued is from a sequence of two songs and the second song is swapped for a new song.  In this case, this method would be called with the time stamp of the first sample buffer from the second song.  After the completion handler is executed with a YES parameter, media data may again be enqueued with timestamps at the specified time.
+     * This method can be used to replace media data scheduled to be rendered in the future, without interrupting
+     * playback. One example of this is when the data that has already been enqueued is from a sequence of two songs and
+     * the second song is swapped for a new song. In this case, this method would be called with the time stamp of the
+     * first sample buffer from the second song. After the completion handler is executed with a YES parameter, media
+     * data may again be enqueued with timestamps at the specified time.
      * <p>
-     * If NO is provided to the completion handler, the flush did not succeed and the set of enqueued sample buffers remains unchanged.  A flush can fail becuse the source time was too close to (or earlier than) the current time or because the current configuration of the receiver does not support flushing at a particular time.  In these cases, the caller can choose to flush all enqueued media data by invoking the -flush method.
+     * If NO is provided to the completion handler, the flush did not succeed and the set of enqueued sample buffers
+     * remains unchanged. A flush can fail becuse the source time was too close to (or earlier than) the current time or
+     * because the current configuration of the receiver does not support flushing at a particular time. In these cases,
+     * the caller can choose to flush all enqueued media data by invoking the -flush method.
      *
-     * @param            completionHandler A block that is invoked, possibly asynchronously, after the flush operation completes or fails.
+     * @param completionHandler A block that is invoked, possibly asynchronously, after the flush operation completes or
+     *                          fails.
      */
     @Generated
     @Selector("flushFromSourceTime:completionHandler:")
@@ -177,7 +192,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property]		muted
+     * [@property] muted
      * <p>
      * Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
      * <p>
@@ -218,13 +233,16 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]		audioTimePitchAlgorithm
+     * [@property] audioTimePitchAlgorithm
      * <p>
      * Indicates the processing algorithm used to manage audio pitch at varying rates.
      * <p>
-     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in AVAudioProcessingSettings.h.
+     * Constants for various time pitch algorithms, e.g. AVAudioTimePitchSpectral, are defined in
+     * AVAudioProcessingSettings.h.
      * <p>
-     * The default value for applications linked on or after iOS 15.0 or macOS 12.0 is AVAudioTimePitchAlgorithmTimeDomain. For iOS versions prior to 15.0 the default value is AVAudioTimePitchAlgorithmLowQualityZeroLatency.
+     * The default value for applications linked on or after iOS 15.0 or macOS 12.0 is
+     * AVAudioTimePitchAlgorithmTimeDomain. For iOS versions prior to 15.0 the default value is
+     * AVAudioTimePitchAlgorithmLowQualityZeroLatency.
      * For macOS versions prior to 12.0 the default value is AVAudioTimePitchAlgorithmSpectral.
      * <p>
      * If the timebase's rate is not supported by the audioTimePitchAlgorithm, audio will be muted.
@@ -236,7 +254,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public native void setAudioTimePitchAlgorithm(String value);
 
     /**
-     * [@property]		muted
+     * [@property] muted
      * <p>
      * Indicates whether or not audio output of the AVSampleBufferAudioRenderer is muted.
      * <p>
@@ -251,7 +269,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]		volume
+     * [@property] volume
      * <p>
      * Indicates the current audio volume of the AVSampleBufferAudioRenderer.
      * <p>
@@ -259,22 +277,25 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * <p>
      * This property should be used for frequent volume changes, for example via a volume knob or fader.
      * <p>
-     * This property is most useful on iOS to control the volume of the AVSampleBufferAudioRenderer relative to other audio output, not for setting absolute volume.
+     * This property is most useful on iOS to control the volume of the AVSampleBufferAudioRenderer relative to other
+     * audio output, not for setting absolute volume.
      */
     @Generated
     @Selector("setVolume:")
     public native void setVolume(float value);
 
     /**
-     * [@property]		status
+     * [@property] status
      * <p>
      * Indicates the status of the audio renderer.
      * <p>
      * A renderer begins with status AVQueuedSampleBufferRenderingStatusUnknown.
      * <p>
-     * As sample buffers are enqueued for rendering using -enqueueSampleBuffer:, the renderer will transition to either AVQueuedSampleBufferRenderingStatusRendering or AVQueuedSampleBufferRenderingStatusFailed.
+     * As sample buffers are enqueued for rendering using -enqueueSampleBuffer:, the renderer will transition to either
+     * AVQueuedSampleBufferRenderingStatusRendering or AVQueuedSampleBufferRenderingStatusFailed.
      * <p>
-     * If the status is AVQueuedSampleBufferRenderingStatusFailed, check the value of the renderer's error property for information on the error encountered.  This is terminal status from which recovery is not always possible.
+     * If the status is AVQueuedSampleBufferRenderingStatusFailed, check the value of the renderer's error property for
+     * information on the error encountered. This is terminal status from which recovery is not always possible.
      * <p>
      * This property is key value observable.
      */
@@ -301,7 +322,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     public static native long version_static();
 
     /**
-     * [@property]		volume
+     * [@property] volume
      * <p>
      * Indicates the current audio volume of the AVSampleBufferAudioRenderer.
      * <p>
@@ -309,7 +330,8 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * <p>
      * This property should be used for frequent volume changes, for example via a volume knob or fader.
      * <p>
-     * This property is most useful on iOS to control the volume of the AVSampleBufferAudioRenderer relative to other audio output, not for setting absolute volume.
+     * This property is most useful on iOS to control the volume of the AVSampleBufferAudioRenderer relative to other
+     * audio output, not for setting absolute volume.
      */
     @Generated
     @Selector("volume")
@@ -320,7 +342,19 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * <p>
      * Indicates the source audio channel layouts allowed by the receiver for spatialization.
      * <p>
-     * Spatialization uses psychoacoustic methods to create a more immersive audio rendering when the content is played on specialized headphones and speaker arrangements. When an  AVSampleBufferAudioRenderer's allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMonoAndStereo the  AVSampleBufferAudioRenderer will attempt to spatialize content tagged with a stereo channel layout, two-channel content with no layout specified as well as mono. It is considered incorrect to render a binaural recording with spatialization. A binaural recording is captured using two carefully placed microphones at each ear where the intent, when played on headphones, is to reproduce a naturally occurring spatial effect. Content tagged with a binaural channel layout will ignore this property value. When an  AVSampleBufferAudioRenderer's allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMultichannel the  AVSampleBufferAudioRenderer will attempt to spatialize any decodable multichannel layout. Setting this property to AVAudioSpatializationFormatMonoStereoAndMultichannel indicates that the sender allows the  AVSampleBufferAudioRenderer to spatialize any decodable mono, stereo or multichannel layout. This property is not observable. The default value for this property is AVAudioSpatializationFormatMultichannel.
+     * Spatialization uses psychoacoustic methods to create a more immersive audio rendering when the content is played
+     * on specialized headphones and speaker arrangements. When an AVSampleBufferAudioRenderer's
+     * allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMonoAndStereo the
+     * AVSampleBufferAudioRenderer will attempt to spatialize content tagged with a stereo channel layout, two-channel
+     * content with no layout specified as well as mono. It is considered incorrect to render a binaural recording with
+     * spatialization. A binaural recording is captured using two carefully placed microphones at each ear where the
+     * intent, when played on headphones, is to reproduce a naturally occurring spatial effect. Content tagged with a
+     * binaural channel layout will ignore this property value. When an AVSampleBufferAudioRenderer's
+     * allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMultichannel the
+     * AVSampleBufferAudioRenderer will attempt to spatialize any decodable multichannel layout. Setting this property
+     * to AVAudioSpatializationFormatMonoStereoAndMultichannel indicates that the sender allows the
+     * AVSampleBufferAudioRenderer to spatialize any decodable mono, stereo or multichannel layout. This property is not
+     * observable. The default value for this property is AVAudioSpatializationFormatMultichannel.
      */
     @Generated
     @Selector("allowedAudioSpatializationFormats")
@@ -336,7 +370,19 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
      * <p>
      * Indicates the source audio channel layouts allowed by the receiver for spatialization.
      * <p>
-     * Spatialization uses psychoacoustic methods to create a more immersive audio rendering when the content is played on specialized headphones and speaker arrangements. When an  AVSampleBufferAudioRenderer's allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMonoAndStereo the  AVSampleBufferAudioRenderer will attempt to spatialize content tagged with a stereo channel layout, two-channel content with no layout specified as well as mono. It is considered incorrect to render a binaural recording with spatialization. A binaural recording is captured using two carefully placed microphones at each ear where the intent, when played on headphones, is to reproduce a naturally occurring spatial effect. Content tagged with a binaural channel layout will ignore this property value. When an  AVSampleBufferAudioRenderer's allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMultichannel the  AVSampleBufferAudioRenderer will attempt to spatialize any decodable multichannel layout. Setting this property to AVAudioSpatializationFormatMonoStereoAndMultichannel indicates that the sender allows the  AVSampleBufferAudioRenderer to spatialize any decodable mono, stereo or multichannel layout. This property is not observable. The default value for this property is AVAudioSpatializationFormatMultichannel.
+     * Spatialization uses psychoacoustic methods to create a more immersive audio rendering when the content is played
+     * on specialized headphones and speaker arrangements. When an AVSampleBufferAudioRenderer's
+     * allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMonoAndStereo the
+     * AVSampleBufferAudioRenderer will attempt to spatialize content tagged with a stereo channel layout, two-channel
+     * content with no layout specified as well as mono. It is considered incorrect to render a binaural recording with
+     * spatialization. A binaural recording is captured using two carefully placed microphones at each ear where the
+     * intent, when played on headphones, is to reproduce a naturally occurring spatial effect. Content tagged with a
+     * binaural channel layout will ignore this property value. When an AVSampleBufferAudioRenderer's
+     * allowedAudioSpatializationFormats property is set to AVAudioSpatializationFormatMultichannel the
+     * AVSampleBufferAudioRenderer will attempt to spatialize any decodable multichannel layout. Setting this property
+     * to AVAudioSpatializationFormatMonoStereoAndMultichannel indicates that the sender allows the
+     * AVSampleBufferAudioRenderer to spatialize any decodable mono, stereo or multichannel layout. This property is not
+     * observable. The default value for this property is AVAudioSpatializationFormatMultichannel.
      */
     @Generated
     @Selector("setAllowedAudioSpatializationFormats:")

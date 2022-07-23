@@ -43,7 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A segment of a mesh and properties to render the segement.
  * <p>
- * Container for data that can be rendered in a single draw call. 1:1 mapping to MDLSubmesh.  Each submesh contains an index Buffer with which the parents mesh data can be rendered.  Actual vertex data resides in the submesh's parent MTKMesh object.
+ * Container for data that can be rendered in a single draw call. 1:1 mapping to MDLSubmesh. Each submesh contains an
+ * index Buffer with which the parents mesh data can be rendered. Actual vertex data resides in the submesh's parent
+ * MTKMesh object.
  */
 @Generated
 @Library("MetalKit")
@@ -210,7 +212,8 @@ public class MTKSubmesh extends NSObject {
      * <p>
      * Name from the original MDLSubmesh object.
      * <p>
-     * Although not directly used by this object, the application may use this to identify the submesh in the renderer/scene/world.
+     * Although not directly used by this object, the application may use this to identify the submesh in the
+     * renderer/scene/world.
      */
     @Generated
     @Selector("name")
@@ -233,7 +236,8 @@ public class MTKSubmesh extends NSObject {
      * <p>
      * Name from the original MDLSubmesh object.
      * <p>
-     * Although not directly used by this object, the application may use this to identify the submesh in the renderer/scene/world.
+     * Although not directly used by this object, the application may use this to identify the submesh in the
+     * renderer/scene/world.
      */
     @Generated
     @Selector("setName:")

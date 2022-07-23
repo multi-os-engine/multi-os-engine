@@ -32,7 +32,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UIPreviewInteractionDelegate")
 public interface UIPreviewInteractionDelegate {
     /**
-     * If implemented, a preview interaction will also trigger haptic feedback when detecting a commit (pop). The provided transitionProgress ranges from 0 to 1.
+     * If implemented, a preview interaction will also trigger haptic feedback when detecting a commit (pop). The
+     * provided transitionProgress ranges from 0 to 1.
      */
     @Generated
     @IsOptional

@@ -149,7 +149,9 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INAccountType. The resolvedValue can be different than the original INAccountType. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INAccountType.
+     * The resolvedValue can be different than the original INAccountType. This allows app extensions to apply business
+     * logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

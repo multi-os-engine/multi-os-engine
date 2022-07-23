@@ -29,7 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Channel mixer definition.
  * <p>
  * Channel mixers render audio without spatialization or environmental effects.
- * Use channel mixers for regular stem-based content that needs be rendered directly to the output device, such as stereo music
+ * Use channel mixers for regular stem-based content that needs be rendered directly to the output device, such as
+ * stereo music
  * or center channel narrative dialogue.
  */
 @Generated

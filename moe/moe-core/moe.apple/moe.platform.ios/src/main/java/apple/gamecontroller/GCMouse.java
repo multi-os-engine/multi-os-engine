@@ -144,7 +144,7 @@ public class GCMouse extends NSObject implements GCDevice {
 
     /**
      * Unlike GCController GCMouse supports only one input profile
-     * Profile contains mouse buttons, scroll wheel and  pointer delta.
+     * Profile contains mouse buttons, scroll wheel and pointer delta.
      */
     @Generated
     @Selector("mouseInput")

@@ -115,7 +115,8 @@ public class UIFontPickerViewController extends UIViewController {
     public native UIFontPickerViewController initWithCoder(NSCoder coder);
 
     /**
-     * UIFontPickerViewController allows selecting a font family or specific face based on the configuration provided. Mutating the configuration after invoking the initializer has no effect on the view controller.
+     * UIFontPickerViewController allows selecting a font family or specific face based on the configuration provided.
+     * Mutating the configuration after invoking the initializer has no effect on the view controller.
      */
     @Generated
     @Selector("initWithConfiguration:")

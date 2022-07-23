@@ -78,7 +78,8 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
-     * This resolution result is to ask Siri to confirm if this is the time interval value with which the user wants to continue.
+     * This resolution result is to ask Siri to confirm if this is the time interval value with which the user wants to
+     * continue.
      */
     @Generated
     @Selector("confirmationRequiredWithTimeIntervalToConfirm:")
@@ -149,7 +150,9 @@ public class INTimeIntervalResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed with a given value. The resolvedValue need not be identical to the input value. If the app extension wants to continue with a 'nil' value, it must use +notRequired.
+     * This resolution result is for when the app extension wants to tell Siri to proceed with a given value. The
+     * resolvedValue need not be identical to the input value. If the app extension wants to continue with a 'nil'
+     * value, it must use +notRequired.
      */
     @Generated
     @Selector("successWithResolvedTimeInterval:")

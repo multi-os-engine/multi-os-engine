@@ -30,9 +30,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@dependency] This depends on Metal.framework
  * <p>
  * Specifies the ReLUN neuron filter.
- * For each pixel, applies the following function: f(x) = [ x    , x >= 0
- * [ a * x, x <  0
- * [ b    , x >= b
+ * For each pixel, applies the following function: f(x) = [ x , x >= 0
+ * [ a * x, x < 0
+ * [ b , x >= b
  * As an example, the TensorFlow Relu6 activation layer can be implemented
  * by setting the parameter b to 6.0f:
  * https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/relu6.

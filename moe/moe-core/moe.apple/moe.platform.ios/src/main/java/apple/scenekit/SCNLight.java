@@ -189,7 +189,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] IESProfileURL
      * <p>
-     * Specifies the IES file from which the shape, direction, and intensity of illumination is determined. Defaults to nil.
+     * Specifies the IES file from which the shape, direction, and intensity of illumination is determined. Defaults to
+     * nil.
      */
     @Generated
     @Selector("IESProfileURL")
@@ -220,7 +221,9 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] attenuationFalloffExponent
      * <p>
-     * Specifies the attenuation between the start and end attenuation distances. 0 means a constant attenuation, 1 a linear attenuation and 2 a quadratic attenuation, but any positive value will work (Omni or Spot light types only). Animatable. Defaults to 2.
+     * Specifies the attenuation between the start and end attenuation distances. 0 means a constant attenuation, 1 a
+     * linear attenuation and 2 a quadratic attenuation, but any positive value will work (Omni or Spot light types
+     * only). Animatable. Defaults to 2.
      */
     @Generated
     @Selector("attenuationFalloffExponent")
@@ -263,7 +266,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's color (NSColor or CGColorRef). Animatable. Defaults to white.
      * <p>
-     * The initial value is a NSColor. The renderer multiplies the light's color is by the color derived from the light's temperature.
+     * The initial value is a NSColor. The renderer multiplies the light's color is by the color derived from the
+     * light's temperature.
      */
     @Generated
     @Selector("color")
@@ -304,7 +308,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's intensity.
      * <p>
-     * This intensity is used to modulate the light color. When used with a physically-based material, this corresponds to the luminous flux of the light, expressed in lumens (lm). Defaults to 1000. Animatable.
+     * This intensity is used to modulate the light color. When used with a physically-based material, this corresponds
+     * to the luminous flux of the light, expressed in lumens (lm). Defaults to 1000. Animatable.
      */
     @Generated
     @Selector("intensity")
@@ -368,7 +373,9 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] attenuationFalloffExponent
      * <p>
-     * Specifies the attenuation between the start and end attenuation distances. 0 means a constant attenuation, 1 a linear attenuation and 2 a quadratic attenuation, but any positive value will work (Omni or Spot light types only). Animatable. Defaults to 2.
+     * Specifies the attenuation between the start and end attenuation distances. 0 means a constant attenuation, 1 a
+     * linear attenuation and 2 a quadratic attenuation, but any positive value will work (Omni or Spot light types
+     * only). Animatable. Defaults to 2.
      */
     @Generated
     @Selector("setAttenuationFalloffExponent:")
@@ -408,7 +415,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's color (NSColor or CGColorRef). Animatable. Defaults to white.
      * <p>
-     * The initial value is a NSColor. The renderer multiplies the light's color is by the color derived from the light's temperature.
+     * The initial value is a NSColor. The renderer multiplies the light's color is by the color derived from the
+     * light's temperature.
      */
     @Generated
     @Selector("setColor:")
@@ -417,7 +425,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] IESProfileURL
      * <p>
-     * Specifies the IES file from which the shape, direction, and intensity of illumination is determined. Defaults to nil.
+     * Specifies the IES file from which the shape, direction, and intensity of illumination is determined. Defaults to
+     * nil.
      */
     @Generated
     @Selector("setIESProfileURL:")
@@ -428,7 +437,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's intensity.
      * <p>
-     * This intensity is used to modulate the light color. When used with a physically-based material, this corresponds to the luminous flux of the light, expressed in lumens (lm). Defaults to 1000. Animatable.
+     * This intensity is used to modulate the light color. When used with a physically-based material, this corresponds
+     * to the luminous flux of the light, expressed in lumens (lm). Defaults to 1000. Animatable.
      */
     @Generated
     @Selector("setIntensity:")
@@ -457,7 +467,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] shadowBias
      * <p>
-     * Specifies the correction to apply to the shadow map to correct acne artefacts. It is multiplied by an implementation-specific value to create a constant depth offset. Defaults to 1.0
+     * Specifies the correction to apply to the shadow map to correct acne artefacts. It is multiplied by an
+     * implementation-specific value to create a constant depth offset. Defaults to 1.0
      */
     @Generated
     @Selector("setShadowBias:")
@@ -479,7 +490,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the size of the shadow map.
      * <p>
-     * The larger the shadow map is the more precise the shadows are but the slower the computation is. If set to {0,0} the size of the shadow map is automatically chosen. Defaults to {0,0}.
+     * The larger the shadow map is the more precise the shadows are but the slower the computation is. If set to {0,0}
+     * the size of the shadow map is automatically chosen. Defaults to {0,0}.
      */
     @Generated
     @Selector("setShadowMapSize:")
@@ -488,7 +500,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] shadowMode
      * <p>
-     * Specified the mode to use to cast shadows. See above for the available modes and their description. Defaults to SCNShadowModeForward.
+     * Specified the mode to use to cast shadows. See above for the available modes and their description. Defaults to
+     * SCNShadowModeForward.
      */
     @Generated
     @Selector("setShadowMode:")
@@ -509,7 +522,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * Specifies the number of sample per fragment to compute the shadow map. Defaults to 0.
      * <p>
      * On macOS 10.11 or earlier, the shadowSampleCount defaults to 16. On iOS 9 or earlier it defaults to 1.0.
-     * On macOS 10.12, iOS 10 and greater, when the shadowSampleCount is set to 0, a default sample count is chosen depending on the platform.
+     * On macOS 10.12, iOS 10 and greater, when the shadowSampleCount is set to 0, a default sample count is chosen
+     * depending on the platform.
      */
     @Generated
     @Selector("setShadowSampleCount:")
@@ -522,7 +536,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] spotInnerAngle
      * <p>
-     * The angle in degrees between the spot direction and the lit element below which the lighting is at full strength. Animatable. Defaults to 0.
+     * The angle in degrees between the spot direction and the lit element below which the lighting is at full strength.
+     * Animatable. Defaults to 0.
      */
     @Generated
     @Selector("setSpotInnerAngle:")
@@ -531,7 +546,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] spotOuterAngle
      * <p>
-     * The angle in degrees between the spot direction and the lit element after which the lighting is at zero strength. Animatable. Defaults to 45 degrees.
+     * The angle in degrees between the spot direction and the lit element after which the lighting is at zero strength.
+     * Animatable. Defaults to 45 degrees.
      */
     @Generated
     @Selector("setSpotOuterAngle:")
@@ -546,7 +562,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's temperature.
      * <p>
-     * This specifies the temperature of the light in Kelvin. The renderer multiplies the light's color by the color derived from the light's temperature. Defaults to 6500 (pure white). Animatable.
+     * This specifies the temperature of the light in Kelvin. The renderer multiplies the light's color by the color
+     * derived from the light's temperature. Defaults to 6500 (pure white). Animatable.
      */
     @Generated
     @Selector("setTemperature:")
@@ -557,7 +574,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's type.
      * <p>
-     * Defaults to SCNLightTypeOmni on iOS 8 and later, and on macOS 10.10 and later (otherwise defaults to SCNLightTypeAmbient).
+     * Defaults to SCNLightTypeOmni on iOS 8 and later, and on macOS 10.10 and later (otherwise defaults to
+     * SCNLightTypeAmbient).
      */
     @Generated
     @Selector("setType:")
@@ -566,7 +584,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] zFar
      * <p>
-     * Specifies the maximal distance between the light and a visible surface to cast shadow on. If a surface is further from the light than this maximal distance, then the surface won't be shadowed. Animatable. Defaults to 100.
+     * Specifies the maximal distance between the light and a visible surface to cast shadow on. If a surface is further
+     * from the light than this maximal distance, then the surface won't be shadowed. Animatable. Defaults to 100.
      */
     @Generated
     @Selector("setZFar:")
@@ -575,7 +594,9 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] zNear
      * <p>
-     * Specifies the minimal distance between the light and the surface to cast shadow on. If a surface is closer to the light than this minimal distance, then the surface won't be shadowed. The near value must be different than zero. Animatable. Defaults to 1.
+     * Specifies the minimal distance between the light and the surface to cast shadow on. If a surface is closer to the
+     * light than this minimal distance, then the surface won't be shadowed. The near value must be different than zero.
+     * Animatable. Defaults to 1.
      */
     @Generated
     @Selector("setZNear:")
@@ -584,7 +605,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] shadowBias
      * <p>
-     * Specifies the correction to apply to the shadow map to correct acne artefacts. It is multiplied by an implementation-specific value to create a constant depth offset. Defaults to 1.0
+     * Specifies the correction to apply to the shadow map to correct acne artefacts. It is multiplied by an
+     * implementation-specific value to create a constant depth offset. Defaults to 1.0
      */
     @Generated
     @Selector("shadowBias")
@@ -608,7 +630,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the size of the shadow map.
      * <p>
-     * The larger the shadow map is the more precise the shadows are but the slower the computation is. If set to {0,0} the size of the shadow map is automatically chosen. Defaults to {0,0}.
+     * The larger the shadow map is the more precise the shadows are but the slower the computation is. If set to {0,0}
+     * the size of the shadow map is automatically chosen. Defaults to {0,0}.
      */
     @Generated
     @Selector("shadowMapSize")
@@ -618,7 +641,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] shadowMode
      * <p>
-     * Specified the mode to use to cast shadows. See above for the available modes and their description. Defaults to SCNShadowModeForward.
+     * Specified the mode to use to cast shadows. See above for the available modes and their description. Defaults to
+     * SCNShadowModeForward.
      */
     @Generated
     @Selector("shadowMode")
@@ -641,7 +665,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * Specifies the number of sample per fragment to compute the shadow map. Defaults to 0.
      * <p>
      * On macOS 10.11 or earlier, the shadowSampleCount defaults to 16. On iOS 9 or earlier it defaults to 1.0.
-     * On macOS 10.12, iOS 10 and greater, when the shadowSampleCount is set to 0, a default sample count is chosen depending on the platform.
+     * On macOS 10.12, iOS 10 and greater, when the shadowSampleCount is set to 0, a default sample count is chosen
+     * depending on the platform.
      */
     @Generated
     @Selector("shadowSampleCount")
@@ -651,7 +676,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] spotInnerAngle
      * <p>
-     * The angle in degrees between the spot direction and the lit element below which the lighting is at full strength. Animatable. Defaults to 0.
+     * The angle in degrees between the spot direction and the lit element below which the lighting is at full strength.
+     * Animatable. Defaults to 0.
      */
     @Generated
     @Selector("spotInnerAngle")
@@ -661,7 +687,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] spotOuterAngle
      * <p>
-     * The angle in degrees between the spot direction and the lit element after which the lighting is at zero strength. Animatable. Defaults to 45 degrees.
+     * The angle in degrees between the spot direction and the lit element after which the lighting is at zero strength.
+     * Animatable. Defaults to 45 degrees.
      */
     @Generated
     @Selector("spotOuterAngle")
@@ -683,7 +710,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's temperature.
      * <p>
-     * This specifies the temperature of the light in Kelvin. The renderer multiplies the light's color by the color derived from the light's temperature. Defaults to 6500 (pure white). Animatable.
+     * This specifies the temperature of the light in Kelvin. The renderer multiplies the light's color by the color
+     * derived from the light's temperature. Defaults to 6500 (pure white). Animatable.
      */
     @Generated
     @Selector("temperature")
@@ -695,7 +723,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Specifies the receiver's type.
      * <p>
-     * Defaults to SCNLightTypeOmni on iOS 8 and later, and on macOS 10.10 and later (otherwise defaults to SCNLightTypeAmbient).
+     * Defaults to SCNLightTypeOmni on iOS 8 and later, and on macOS 10.10 and later (otherwise defaults to
+     * SCNLightTypeAmbient).
      */
     @Generated
     @Selector("type")
@@ -704,7 +733,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] zFar
      * <p>
-     * Specifies the maximal distance between the light and a visible surface to cast shadow on. If a surface is further from the light than this maximal distance, then the surface won't be shadowed. Animatable. Defaults to 100.
+     * Specifies the maximal distance between the light and a visible surface to cast shadow on. If a surface is further
+     * from the light than this maximal distance, then the surface won't be shadowed. Animatable. Defaults to 100.
      */
     @Generated
     @Selector("zFar")
@@ -714,7 +744,9 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] zNear
      * <p>
-     * Specifies the minimal distance between the light and the surface to cast shadow on. If a surface is closer to the light than this minimal distance, then the surface won't be shadowed. The near value must be different than zero. Animatable. Defaults to 1.
+     * Specifies the minimal distance between the light and the surface to cast shadow on. If a surface is closer to the
+     * light than this minimal distance, then the surface won't be shadowed. The near value must be different than zero.
+     * Animatable. Defaults to 1.
      */
     @Generated
     @Selector("zNear")
@@ -751,7 +783,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] maximumShadowDistance
      * <p>
-     * Specifies the maximum distance from the viewpoint from which the shadows for the receiver light won't be computed. Defaults to 100.0.
+     * Specifies the maximum distance from the viewpoint from which the shadows for the receiver light won't be
+     * computed. Defaults to 100.0.
      */
     @Generated
     @Selector("maximumShadowDistance")
@@ -793,7 +826,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] maximumShadowDistance
      * <p>
-     * Specifies the maximum distance from the viewpoint from which the shadows for the receiver light won't be computed. Defaults to 100.0.
+     * Specifies the maximum distance from the viewpoint from which the shadows for the receiver light won't be
+     * computed. Defaults to 100.0.
      */
     @Generated
     @Selector("setMaximumShadowDistance:")
@@ -811,7 +845,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] shadowCascadeCount
      * <p>
-     * Specifies the number of distinct shadow maps that will be computed for the receiver light. Defaults to 1. Maximum is 4.
+     * Specifies the number of distinct shadow maps that will be computed for the receiver light. Defaults to 1. Maximum
+     * is 4.
      */
     @Generated
     @Selector("setShadowCascadeCount:")
@@ -829,7 +864,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     /**
      * [@property] shadowCascadeCount
      * <p>
-     * Specifies the number of distinct shadow maps that will be computed for the receiver light. Defaults to 1. Maximum is 4.
+     * Specifies the number of distinct shadow maps that will be computed for the receiver light. Defaults to 1. Maximum
+     * is 4.
      */
     @Generated
     @Selector("shadowCascadeCount")
@@ -851,7 +887,9 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * The receiver's spherical harmonics coefficients.
      * <p>
-     * Currently spherical harmonics are only supported by light probes (SCNLightTypeProbe). The data is an array of 27 32-bit floating-point values, containing three non-interleaved data sets corresponding to the red, green, and blue sets of coefficients.
+     * Currently spherical harmonics are only supported by light probes (SCNLightTypeProbe). The data is an array of 27
+     * 32-bit floating-point values, containing three non-interleaved data sets corresponding to the red, green, and
+     * blue sets of coefficients.
      */
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
@@ -883,7 +921,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Determines whether a light of type SCNLightTypeArea is double-sided. Defaults NO.
      * <p>
-     * Area lights of type SCNLightAreaTypeRectangle or SCNLightAreaTypePolygon emit light along the -Z axis. When set to YES, they also emit light along the +Z axis.
+     * Area lights of type SCNLightAreaTypeRectangle or SCNLightAreaTypePolygon emit light along the -Z axis. When set
+     * to YES, they also emit light along the +Z axis.
      */
     @Generated
     @Selector("doubleSided")
@@ -953,7 +992,8 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * <p>
      * Determines whether a light of type SCNLightTypeArea is double-sided. Defaults NO.
      * <p>
-     * Area lights of type SCNLightAreaTypeRectangle or SCNLightAreaTypePolygon emit light along the -Z axis. When set to YES, they also emit light along the +Z axis.
+     * Area lights of type SCNLightAreaTypeRectangle or SCNLightAreaTypePolygon emit light along the -Z axis. When set
+     * to YES, they also emit light along the +Z axis.
      */
     @Generated
     @Selector("setDoubleSided:")

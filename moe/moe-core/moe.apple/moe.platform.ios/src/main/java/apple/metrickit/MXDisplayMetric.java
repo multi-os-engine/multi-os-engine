@@ -62,7 +62,7 @@ public class MXDisplayMetric extends MXMetric {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      averagePixelLuminance
+     * [@property] averagePixelLuminance
      * <p>
      * Average Pixel Luminance for the application.
      * <p>

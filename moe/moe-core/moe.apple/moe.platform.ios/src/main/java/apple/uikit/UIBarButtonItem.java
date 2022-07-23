@@ -266,7 +266,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     public native double backgroundVerticalPositionAdjustmentForBarMetrics(@NInt long barMetrics);
 
     /**
-     * The group that the UIBarButtonItem is currently associated with, either as a member of the barButtonItems array or as that group's representativeItem.
+     * The group that the UIBarButtonItem is currently associated with, either as a member of the barButtonItems array
+     * or as that group's representativeItem.
      */
     @Generated
     @Selector("buttonGroup")
@@ -355,9 +356,11 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
             @NInt long barMetrics);
 
     /**
-     * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
+     * In general, you should specify a value for the normal state to be used by other states which don't have a custom
+     * value set.
      * <p>
-     * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a different height from standard), be sure to specify a value for UIBarMetricsDefault.
+     * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a
+     * different height from standard), be sure to specify a value for UIBarMetricsDefault.
      * <p>
      * This sets the background image for buttons of any style.
      */
@@ -367,7 +370,9 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
             @NInt long barMetrics);
 
     /**
-     * This sets the background image for buttons with a specific style. When calling this on a UIBarButtonItem instance, the style argument must match the button's style; when calling on the UIAppearance proxy, any style may be passed.
+     * This sets the background image for buttons with a specific style. When calling this on a UIBarButtonItem
+     * instance, the style argument must match the button's style; when calling on the UIAppearance proxy, any style may
+     * be passed.
      */
     @Generated
     @Selector("setBackgroundImage:forState:style:barMetrics:")
@@ -499,14 +504,16 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     public static native UIBarButtonItem flexibleSpaceItem();
 
     /**
-     * Creates a bar button item for the given systemItem. The constructed item will present the menu immediately when touched.
+     * Creates a bar button item for the given systemItem. The constructed item will present the menu immediately when
+     * touched.
      */
     @Generated
     @Selector("initWithBarButtonSystemItem:menu:")
     public native UIBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem, UIMenu menu);
 
     /**
-     * Creates a bar button item for the given systemItem. The primaryAction is copied, and its title & image are ignored.
+     * Creates a bar button item for the given systemItem. The primaryAction is copied, and its title & image are
+     * ignored.
      */
     @Generated
     @Selector("initWithBarButtonSystemItem:primaryAction:")
@@ -514,7 +521,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
             UIAction primaryAction);
 
     /**
-     * Creates a plain-style bar button item with the given item. The constructed item will present the menu immediately when touched.
+     * Creates a plain-style bar button item with the given item. The constructed item will present the menu immediately
+     * when touched.
      */
     @Generated
     @Selector("initWithImage:menu:")
@@ -528,35 +536,42 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     public native UIBarButtonItem initWithPrimaryAction(UIAction primaryAction);
 
     /**
-     * Creates a plain-style bar button item with the given title. The constructed item will present the menu immediately when touched.
+     * Creates a plain-style bar button item with the given title. The constructed item will present the menu
+     * immediately when touched.
      */
     @Generated
     @Selector("initWithTitle:menu:")
     public native UIBarButtonItem initWithTitleMenu(String title, UIMenu menu);
 
     /**
-     * When non-nil the menu is presented, the gesture used to trigger the menu is based on if the bar button item would normally trigger an action when tapped.
+     * When non-nil the menu is presented, the gesture used to trigger the menu is based on if the bar button item would
+     * normally trigger an action when tapped.
      */
     @Generated
     @Selector("menu")
     public native UIMenu menu();
 
     /**
-     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
+     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is
+     * non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are
+     * ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
      */
     @Generated
     @Selector("primaryAction")
     public native UIAction primaryAction();
 
     /**
-     * When non-nil the menu is presented, the gesture used to trigger the menu is based on if the bar button item would normally trigger an action when tapped.
+     * When non-nil the menu is presented, the gesture used to trigger the menu is based on if the bar button item would
+     * normally trigger an action when tapped.
      */
     @Generated
     @Selector("setMenu:")
     public native void setMenu(UIMenu value);
 
     /**
-     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
+     * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is
+     * non-nil, and this is not a system item). When primaryAction is non-nil, the target & action properties are
+     * ignored. If primaryAction is set to nil, the title & image properties are left unchanged.
      */
     @Generated
     @Selector("setPrimaryAction:")
@@ -565,7 +580,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * Indicates if the button changes selection as its primary action.
      * This shows the menu as options for selection if a menu is populated and no action when tapped is enabled.
-     * If no menu is provided and no action is enabled when tapped, the item is toggled on and off for the primary action.
+     * If no menu is provided and no action is enabled when tapped, the item is toggled on and off for the primary
+     * action.
      */
     @Generated
     @Selector("changesSelectionAsPrimaryAction")
@@ -578,7 +594,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * Indicates if the button changes selection as its primary action.
      * This shows the menu as options for selection if a menu is populated and no action when tapped is enabled.
-     * If no menu is provided and no action is enabled when tapped, the item is toggled on and off for the primary action.
+     * If no menu is provided and no action is enabled when tapped, the item is toggled on and off for the primary
+     * action.
      */
     @Generated
     @Selector("setChangesSelectionAsPrimaryAction:")

@@ -26,8 +26,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INCarPlayDomainHandling")
-public interface INCarPlayDomainHandling
-        extends INSetAudioSourceInCarIntentHandling, INSetClimateSettingsInCarIntentHandling,
-        INSetDefrosterSettingsInCarIntentHandling, INSetSeatSettingsInCarIntentHandling,
-        INSetProfileInCarIntentHandling, INSaveProfileInCarIntentHandling {
+public interface INCarPlayDomainHandling extends INSetAudioSourceInCarIntentHandling,
+        INSetClimateSettingsInCarIntentHandling, INSetDefrosterSettingsInCarIntentHandling,
+        INSetSeatSettingsInCarIntentHandling, INSetProfileInCarIntentHandling, INSaveProfileInCarIntentHandling {
 }

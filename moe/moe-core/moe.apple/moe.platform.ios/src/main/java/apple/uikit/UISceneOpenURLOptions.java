@@ -55,7 +55,8 @@ public class UISceneOpenURLOptions extends NSObject {
     public static native UISceneOpenURLOptions allocWithZone(VoidPtr zone);
 
     /**
-     * A property-list typed object corresponding to what the originating application passed in UIDocumentInteractionController's annotation property
+     * A property-list typed object corresponding to what the originating application passed in
+     * UIDocumentInteractionController's annotation property
      */
     @Generated
     @Selector("annotation")

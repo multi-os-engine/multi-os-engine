@@ -53,7 +53,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A Sprite is a textured 2D node. It can be placed, rotated, scaled and animated like any other node except it draws a textured rectangle specified by the bounds and anchor point.
+ * A Sprite is a textured 2D node. It can be placed, rotated, scaled and animated like any other node except it draws a
+ * textured rectangle specified by the bounds and anchor point.
  * <p>
  * Sprites are used to define quad primitives with color and/or textures applied to them.
  * See <a href="http://en.wikipedia.org/wiki/Sprite_(computer_graphics)">wiki</a> for a definition of a Sprite.
@@ -196,9 +197,12 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public static native SKSpriteNode spriteNodeWithColorSize(UIColor color, @ByValue CGSize size);
 
     /**
-     * Create a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite. Its size is set to the SKTexture's pixel width/height)
-     * The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
-     * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
+     * Create a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite.
+     * Its size is set to the SKTexture's pixel width/height)
+     * The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the
+     * width and half the height.
+     * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a
+     * different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
      *
      * @param name is the name of an image file stored in the app bundle.
      */
@@ -243,7 +247,8 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public static native long version_static();
 
     /**
-     * Used to choose the location in the sprite that maps to its 'position' in the parent's coordinate space. The valid interval for each input is from 0.0 up to and including 1.0.
+     * Used to choose the location in the sprite that maps to its 'position' in the parent's coordinate space. The valid
+     * interval for each input is from 0.0 up to and including 1.0.
      */
     @Generated
     @Selector("anchorPoint")
@@ -269,7 +274,10 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native long blendMode();
 
     /**
-     * Controls how the texture is stretched to fill the SKSpriteNode. Stretching is performed via a 9-part algorithm where the upper & lower middle parts are scaled horizontally, the left and right middle parts are scaled vertically, the center is scaled in both directions, and the corners are preserved. The centerRect defines the center region in a (0.0 - 1.0) coordinate space. Defaults to {(0,0) (1,1)} (the entire texture is stretched).
+     * Controls how the texture is stretched to fill the SKSpriteNode. Stretching is performed via a 9-part algorithm
+     * where the upper & lower middle parts are scaled horizontally, the left and right middle parts are scaled
+     * vertically, the center is scaled in both directions, and the corners are preserved. The centerRect defines the
+     * center region in a (0.0 - 1.0) coordinate space. Defaults to {(0,0) (1,1)} (the entire texture is stretched).
      */
     @Generated
     @Selector("centerRect")
@@ -284,7 +292,9 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native UIColor color();
 
     /**
-     * Controls the blending between the texture and the sprite's color. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.
+     * Controls the blending between the texture and the sprite's color. The valid interval of values is from 0.0 up to
+     * and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum
+     * (1.0) if above.
      */
     @Generated
     @Selector("colorBlendFactor")
@@ -313,9 +323,12 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native SKSpriteNode initWithColorSize(UIColor color, @ByValue CGSize size);
 
     /**
-     * Initialize a sprite with an image from your app bundle (An SKTexture is created for the image and set on the sprite. Its size is set to the SKTexture's pixel width/height)
-     * The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the width and half the height.
-     * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
+     * Initialize a sprite with an image from your app bundle (An SKTexture is created for the image and set on the
+     * sprite. Its size is set to the SKTexture's pixel width/height)
+     * The position of the sprite is (0, 0) and the texture anchored at (0.5, 0.5), so that it is offset by half the
+     * width and half the height.
+     * Thus the sprite has the texture centered about the position. If you wish to have the texture anchored at a
+     * different offset set the anchorPoint to another pair of values in the interval from 0.0 up to and including 1.0.
      *
      * @param name the name or path of the image to load.
      */
@@ -376,7 +389,8 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native void scaleToSize(@ByValue CGSize size);
 
     /**
-     * Used to choose the location in the sprite that maps to its 'position' in the parent's coordinate space. The valid interval for each input is from 0.0 up to and including 1.0.
+     * Used to choose the location in the sprite that maps to its 'position' in the parent's coordinate space. The valid
+     * interval for each input is from 0.0 up to and including 1.0.
      */
     @Generated
     @Selector("setAnchorPoint:")
@@ -400,7 +414,10 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native void setBlendMode(@NInt long value);
 
     /**
-     * Controls how the texture is stretched to fill the SKSpriteNode. Stretching is performed via a 9-part algorithm where the upper & lower middle parts are scaled horizontally, the left and right middle parts are scaled vertically, the center is scaled in both directions, and the corners are preserved. The centerRect defines the center region in a (0.0 - 1.0) coordinate space. Defaults to {(0,0) (1,1)} (the entire texture is stretched).
+     * Controls how the texture is stretched to fill the SKSpriteNode. Stretching is performed via a 9-part algorithm
+     * where the upper & lower middle parts are scaled horizontally, the left and right middle parts are scaled
+     * vertically, the center is scaled in both directions, and the corners are preserved. The centerRect defines the
+     * center region in a (0.0 - 1.0) coordinate space. Defaults to {(0,0) (1,1)} (the entire texture is stretched).
      */
     @Generated
     @Selector("setCenterRect:")
@@ -414,7 +431,9 @@ public class SKSpriteNode extends SKNode implements SKWarpable {
     public native void setColor(UIColor value);
 
     /**
-     * Controls the blending between the texture and the sprite's color. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.
+     * Controls the blending between the texture and the sprite's color. The valid interval of values is from 0.0 up to
+     * and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum
+     * (1.0) if above.
      */
     @Generated
     @Selector("setColorBlendFactor:")

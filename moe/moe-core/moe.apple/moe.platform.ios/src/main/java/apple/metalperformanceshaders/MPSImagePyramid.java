@@ -58,9 +58,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The Gaussian image pyramid filter ignores @ref clipRect and @ref offset and fills
  * the entire mipmap levels.
  * <p>
- * [@note]       Make sure your texture type is compatible with mipmapping and supports texture views
+ * [@note] Make sure your texture type is compatible with mipmapping and supports texture views
  * (see @ref MTLTextureUsagePixelFormatView).
- * [@note]       Recall the size of the nth mipmap level:
+ * [@note] Recall the size of the nth mipmap level:
  * [@code]
  * w_n = max(1, floor(w_0 / 2^n))
  * h_n = max(1, floor(h_0 / 2^n)),
@@ -184,7 +184,7 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
     /**
      * Initialize a downwards 5-tap image pyramid with the default filter kernel and device
      * <p>
-     * The filter kernel is the outer product of w = [ 1/16,  1/4,  3/8,  1/4,  1/16 ]^T, with itself
+     * The filter kernel is the outer product of w = [ 1/16, 1/4, 3/8, 1/4, 1/16 ]^T, with itself
      *
      * @param device The device the filter will run on
      * @return A valid object or nil, if failure.
@@ -197,8 +197,8 @@ public class MPSImagePyramid extends MPSUnaryImageKernel {
      * Initialize a downwards 5-tap image pyramid with a central weight parameter and device
      *
      * @param device       The device the filter will run on
-     * @param centerWeight Defines form of the filter-kernel  through the outer product ww^T, where
-     *                     w = [ (1/4 - a/2),  1/4,  a,  1/4,  (1/4 - a/2) ]^T and 'a' is centerWeight.
+     * @param centerWeight Defines form of the filter-kernel through the outer product ww^T, where
+     *                     w = [ (1/4 - a/2), 1/4, a, 1/4, (1/4 - a/2) ]^T and 'a' is centerWeight.
      * @return A valid object or nil, if failure.
      */
     @Generated

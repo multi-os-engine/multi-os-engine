@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSMatrixRandomMTGP32
  * <p>
  * Generates random numbers using a Mersenne Twister algorithm
- * suitable for GPU execution.  It uses a period of 2**11214.
+ * suitable for GPU execution. It uses a period of 2**11214.
  * For further details see:
  * Mutsuo Saito. A Variant of Mersenne Twister Suitable for Graphic Processors. arXiv:1005.4973
  */

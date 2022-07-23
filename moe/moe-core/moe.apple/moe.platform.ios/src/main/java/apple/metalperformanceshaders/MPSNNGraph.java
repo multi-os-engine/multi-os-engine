@@ -146,15 +146,15 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     /**
      * Encode the graph to a MTLCommandBuffer
      * <p>
-     * IMPORTANT:  Please use [MTLCommandBuffer addCompletedHandler:] to determine when this work is
+     * IMPORTANT: Please use [MTLCommandBuffer addCompletedHandler:] to determine when this work is
      * done. Use CPU time that would have been spent waiting for the GPU to encode the next command
-     * buffer and commit it too.  That way, the work for the next command buffer is ready to go the
+     * buffer and commit it too. That way, the work for the next command buffer is ready to go the
      * moment the GPU is done. This will keep the GPU busy and running at top speed.
      * <p>
      * Those who ignore this advice and use [MTLCommandBuffer waitUntilCompleted] instead will likely
      * cause their code to slow down by a factor of two or more. The CPU clock spins down while it
      * waits for the GPU. When the GPU completes, the CPU runs slowly for a while until it spins up.
-     * The GPU has to wait for the CPU to  encode more work (at low clock), giving it plenty of time to
+     * The GPU has to wait for the CPU to encode more work (at low clock), giving it plenty of time to
      * spin its own clock down. In typical CNN graph usage, neither may ever reach maximum clock
      * frequency, causing slow down far beyond what otherwise would be expected from simple failure
      * to schedule CPU and GPU work concurrently. Regrattably, it is probable that every performance
@@ -165,8 +165,10 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *                      the CPU-side latency is much reduced.
      * @param sourceImages  A list of MPSImages to use as the source images for the graph.
      *                      These should be in the same order as the list returned from MPSNNGraph.sourceImageHandles.
-     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
-     * It will be automatically released when commandBuffer completes.  It can be nil if resultImageIsNeeded == NO
+     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the
+     *         graph.
+     *         It will be automatically released when commandBuffer completes. It can be nil if resultImageIsNeeded ==
+     *         NO
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:")
@@ -180,28 +182,38 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *                           the work will be committed to Metal in small pieces so that
      *                           the CPU-side latency is much reduced.
      * @param sourceImages       A list of MPSImages to use as the source images for the graph.
-     *                           These should be in the same order as the list returned from MPSNNGraph.sourceImageHandles.
+     *                           These should be in the same order as the list returned from
+     *                           MPSNNGraph.sourceImageHandles.
      *                           The images may be image arrays. Typically, this is only one or two images
-     *                           such as a .JPG decoded into a MPSImage*.  If the sourceImages are MPSTemporaryImages,
+     *                           such as a .JPG decoded into a MPSImage*. If the sourceImages are MPSTemporaryImages,
      *                           the graph will decrement the readCount by 1, even if the graph actually
      *                           reads an image multiple times.
      * @param sourceStates       A list of MPSState objects to use as state for a graph.
-     *                           These should be in the same order as the list returned from MPSNNGraph.sourceStateHandles.
+     *                           These should be in the same order as the list returned from
+     *                           MPSNNGraph.sourceStateHandles.
      *                           May be nil, if there is no source state. If the sourceStates are temporary,
      *                           the graph will decrement the readCount by 1, even if the graph actually
      *                           reads the state multiple times.
-     * @param intermediateImages An optional NSMutableArray to receive any MPSImage objects exported as part of its operation.
-     *                           These are only the images that were tagged with MPSNNImageNode.exportFromGraph = YES. The
-     *                           identity of the states is given by -resultStateHandles.  If temporary, each intermediateImage
-     *                           will have a readCount of 1.  If the result was tagged exportFromGraph = YES, it will be here
-     *                           too, with a readCount of 2. To be able to access the images from outside the graph on the CPU,
+     * @param intermediateImages An optional NSMutableArray to receive any MPSImage objects exported as part of its
+     *                           operation.
+     *                           These are only the images that were tagged with MPSNNImageNode.exportFromGraph = YES.
+     *                           The
+     *                           identity of the states is given by -resultStateHandles. If temporary, each
+     *                           intermediateImage
+     *                           will have a readCount of 1. If the result was tagged exportFromGraph = YES, it will be
+     *                           here
+     *                           too, with a readCount of 2. To be able to access the images from outside the graph on
+     *                           the CPU,
      *                           your application must also set MPSNNImageNode.synchronizeResource = YES,
-     *                           and MPSNNImageNode.imageAllocator = [MPSImage defaultAllocator]; The defaultAllocator creates
+     *                           and MPSNNImageNode.imageAllocator = [MPSImage defaultAllocator]; The defaultAllocator
+     *                           creates
      *                           a permanent image that can be read with readBytes.
-     * @param destinationStates  An optional NSMutableArray to receive any MPSState objects created as part of its operation.
+     * @param destinationStates  An optional NSMutableArray to receive any MPSState objects created as part of its
+     *                           operation.
      *                           The identity of the states is given by -resultStateHandles.
-     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
-     * It will be automatically released when commandBuffer completes.
+     * @return A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the
+     *         graph.
+     *         It will be automatically released when commandBuffer completes.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:")
@@ -219,23 +231,23 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * <p>
      * This function will synchronously encode the graph on a private command buffer,
      * commit it to a MPS internal command queue and return. The GPU will start working.
-     * When the GPU is done, the completion handler will be called.  You should use
+     * When the GPU is done, the completion handler will be called. You should use
      * the intervening time to encode other work for execution on the GPU, so that
      * the GPU stays busy and doesn't clock down.
      * <p>
      * The work will be performed on the MTLDevice that hosts the source images.
      * <p>
-     * This is a convenience API.  There are a few situations it does not handle optimally.
+     * This is a convenience API. There are a few situations it does not handle optimally.
      * These may be better handled using [encodeToCommandBuffer:sourceImages:].
      * Specifically:
      * [@code]
-     * o     If the graph needs to be run multiple times for different images,
+     * o If the graph needs to be run multiple times for different images,
      * it would be better to encode the graph multiple times on the same
-     * command buffer using [encodeToCommandBuffer:sourceImages:]  This
+     * command buffer using [encodeToCommandBuffer:sourceImages:] This
      * will allow the multiple graphs to share memory for intermediate
      * storage, dramatically reducing memory usage.
      * <p>
-     * o     If preprocessing or post-processing of the MPSImage is required,
+     * o If preprocessing or post-processing of the MPSImage is required,
      * such as resizing or normalization outside of a convolution, it would
      * be better to encode those things on the same command buffer.
      * Memory may be saved here too for intermediate storage. (MPSTemporaryImage
@@ -248,7 +260,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *                     the same MTLDevice. There must be at least one source image.
      *                     Note: this array is intended to handle the case where multiple
      *                     input images are required to generate a single graph result.
-     *                     That is, the graph itself has multiple inputs.  If you need to
+     *                     That is, the graph itself has multiple inputs. If you need to
      *                     execute the graph multiple times, then call this API multiple
      *                     times, or (faster) make use of MPSImageBatches using
      *                     -executeBatchToCommandBuffer:sourceImages:sourceStates:...
@@ -258,7 +270,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *                     The image, if any, passed to this callback is the same image
      *                     as that returned from the left hand side.
      * @return A MPSImage to receive the result. The data in the image will not be valid until
-     * the completionHandler is called.
+     *         the completionHandler is called.
      */
     @Generated
     @Selector("executeAsyncWithSourceImages:completionHandler:")
@@ -291,7 +303,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -474,7 +486,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      *
      * @param device         The MTLDevice on which to run the graph
      * @param resultImage    The MPSNNImageNode corresponding to the last image in the graph.
-     *                       This is the image that will be returned.  Note: the imageAllocator
+     *                       This is the image that will be returned. Note: the imageAllocator
      *                       for this node is ignored and the MPSNNGraph.destinationImageAllocator
      *                       is used for this node instead.
      * @param resultIsNeeded Commonly, when training a graph, the last MPSImage out of the
@@ -518,14 +530,14 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Find the number of times a image will be read by the graph *
      * <p>
      * From the set of images (or image batches) passed in to the graph, find
-     * the number of times the graph will read an image.  This may be needed
+     * the number of times the graph will read an image. This may be needed
      * by your application to correctly set the MPSImage.readCount property.
      *
      * @param index The index of the image. The index of the image matches the index of the image in the array returned
      *              by the sourceImageHandles property.
      * @return The read count of the image(s) at the index will be reduced by the value returned
-     * when the graph is finished encoding. The readcount of the image(s) must be at least
-     * this value when it is passed into the -encode... method.
+     *         when the graph is finished encoding. The readcount of the image(s) must be at least
+     *         this value when it is passed into the -encode... method.
      */
     @Generated
     @Selector("readCountForSourceImageAtIndex:")
@@ -536,14 +548,14 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * Find the number of times a state will be read by the graph *
      * <p>
      * From the set of state (or state batches) passed in to the graph, find
-     * the number of times the graph will read a state.  This may be needed
+     * the number of times the graph will read a state. This may be needed
      * by your application to correctly set the MPSState.readCount property.
      *
      * @param index The index of the state. The index of the state matches the index of the state in the array returned
      *              by the sourceStateHandles property.
      * @return The read count of the state(s) at the index will be reduced by the value returned
-     * when the graph is finished encoding. The read count of the state(s) must be at least
-     * this value when it is passed into the -encode... method.
+     *         when the graph is finished encoding. The read count of the state(s) must be at least
+     *         this value when it is passed into the -encode... method.
      */
     @Generated
     @Selector("readCountForSourceStateAtIndex:")
@@ -559,7 +571,7 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
      * is read from these once at graph initialization time and then
      * not looked at again, except during the weight / parameter update
      * phase of the corresponding gradient nodes and then only if CPU
-     * updates are requested.  Otherwise, update occurs on the GPU,
+     * updates are requested. Otherwise, update occurs on the GPU,
      * and the data in the data source is thereafter ignored.
      * <p>
      * It can happen, though, that your application has determined the

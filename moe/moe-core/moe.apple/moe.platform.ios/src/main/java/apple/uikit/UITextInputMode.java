@@ -103,7 +103,7 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The current input mode.  Nil if unset.
+     * The current input mode. Nil if unset.
      */
     @Generated
     @Deprecated
@@ -187,7 +187,7 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
     public native UITextInputMode initWithCoder(NSCoder coder);
 
     /**
-     * The primary language, if any, of the input mode.  A BCP 47 language identifier such as en-US
+     * The primary language, if any, of the input mode. A BCP 47 language identifier such as en-US
      */
     @Generated
     @Selector("primaryLanguage")

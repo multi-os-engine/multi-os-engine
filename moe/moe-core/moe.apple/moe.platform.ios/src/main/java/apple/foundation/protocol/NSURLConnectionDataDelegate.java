@@ -32,7 +32,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]       NSURLConnectionDataDelegate
+ * [@protocol] NSURLConnectionDataDelegate
  * <p>
  * Delegate methods used for loading data to memory.
  * These delegate methods are all optional.
@@ -40,8 +40,8 @@ import org.moe.natj.objc.ann.Selector;
  * connection:willSendRequest:redirectResponse: is
  * called whenever an connection determines that it
  * must change URLs in order to continue loading a
- * request.  This gives the delegate an opportunity
- * inspect and if necessary modify a request.  A
+ * request. This gives the delegate an opportunity
+ * inspect and if necessary modify a request. A
  * delegate can cause the request to abort by either
  * calling the connections -cancel method, or by
  * returning nil from this callback.<p>
@@ -69,7 +69,7 @@ import org.moe.natj.objc.ann.Selector;
  * connection:didReceiveData: is called with a single
  * immutable NSData object to the delegate,
  * representing the next portion of the data loaded
- * from the connection.  This is the only guaranteed
+ * from the connection. This is the only guaranteed
  * for the delegate to receive the data from the
  * resource load.<p>
  * <p>
@@ -77,15 +77,15 @@ import org.moe.natj.objc.ann.Selector;
  * loader must retransmit a requests payload, due to
  * connection errors or authentication challenges.
  * Delegates should construct a new unopened and
- * autoreleased NSInputStream.  If not implemented,
+ * autoreleased NSInputStream. If not implemented,
  * the loader will be required to spool the bytes to
  * be uploaded to disk, a potentially expensive
- * operation.  Returning nil will cancel the
+ * operation. Returning nil will cancel the
  * connection.
  * <p>
  * connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:
  * is called during an upload operation to provide
- * progress feedback.  Note that the values may
+ * progress feedback. Note that the values may
  * change in unexpected ways if the request needs to
  * be retransmitted.<p>
  * <p>
@@ -93,8 +93,8 @@ import org.moe.natj.objc.ann.Selector;
  * an opportunity to inspect and modify the
  * NSCachedURLResponse which will be cached by the
  * loader if caching is enabled for the original
- * NSURLRequest.  Returning nil from this delegate
- * will prevent the resource from being cached.  Note
+ * NSURLRequest. Returning nil from this delegate
+ * will prevent the resource from being cached. Note
  * that the -data method of the cached response may
  * return an autoreleased in-memory copy of the true
  * data, and should not be used as an alternative to

@@ -285,8 +285,8 @@ public class HKAnchoredObjectQuery extends HKQuery {
      * @param type      The type of sample to retrieve.
      * @param predicate The predicate which samples should match.
      * @param anchor    The anchor which was returned by a previous HKAnchoredObjectQuery result or update
-     *                  handler.  Pass nil when querying for the first time.
-     * @param limit     The maximum number of samples and deleted objects to return.  Pass HKObjectQueryNoLimit
+     *                  handler. Pass nil when querying for the first time.
+     * @param limit     The maximum number of samples and deleted objects to return. Pass HKObjectQueryNoLimit
      *                  for no limit.
      * @param handler   The block to invoke with results when the query has finished finding.
      */
@@ -297,11 +297,11 @@ public class HKAnchoredObjectQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithTypePredicateAnchorLimitResultsHandler") Block_initWithTypePredicateAnchorLimitResultsHandler handler);
 
     /**
-     * [@property]      updateHandler
+     * [@property] updateHandler
      * <p>
      * An optional handler to be called when samples matching the given predicate are added or deleted.
      * <p>
-     * This property may not be modified once the query has been executed.  It may only be set if the query has
+     * This property may not be modified once the query has been executed. It may only be set if the query has
      * no limit.
      */
     @Generated
@@ -309,11 +309,11 @@ public class HKAnchoredObjectQuery extends HKQuery {
     public native void setUpdateHandler(@ObjCBlock(name = "call_setUpdateHandler") Block_setUpdateHandler value);
 
     /**
-     * [@property]      updateHandler
+     * [@property] updateHandler
      * <p>
      * An optional handler to be called when samples matching the given predicate are added or deleted.
      * <p>
-     * This property may not be modified once the query has been executed.  It may only be set if the query has
+     * This property may not be modified once the query has been executed. It may only be set if the query has
      * no limit.
      */
     @Generated
@@ -394,7 +394,7 @@ public class HKAnchoredObjectQuery extends HKQuery {
      * @param queryDescriptors An array of query descriptors that describes the sample types and predicates that
      *                         you are interested in getting notified for.
      * @param anchor           The anchor which was returned by a previous HKAnchoredObjectQuery result or update
-     *                         handler.  Pass nil when querying for the first time.
+     *                         handler. Pass nil when querying for the first time.
      * @param limit            The maximum number of samples and deleted objects to return. Pass
      *                         HKObjectQueryNoLimit for no limit.
      * @param handler          The block to invoke with results when the query has finished finding.

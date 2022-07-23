@@ -26,7 +26,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * The QLPreviewItem protocol declares the methods that a QLPreviewController instance uses to access the contents of a given item.
+ * The QLPreviewItem protocol declares the methods that a QLPreviewController instance uses to access the contents of a
+ * given item.
  */
 @Generated
 @Library("QuickLook")

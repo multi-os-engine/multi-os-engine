@@ -22,9 +22,14 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * While the Notification Center ultimately controls the layout of its children, widgets can request a change in height.
  * Widgets with heights defined by constraints will be automatically adjusted (within limits).
- * Widgets using explicit layout can request a new height (that may, or may not, be adjusted or honored at all) by changing the value of their ‘preferredContentSize’.
- * Should either form of request result in a height change, the widget will be messaged with ‘viewWillTransitionToSize:withTransitionCoordinator:’ and, if the transition is animated, passed a transition coordinator.
- * If the transition coordinator argument is not 'nil', and the widget has additional animations it wishes to run in concert with the height change, it can specify them and/or a completion block by messaging the coordinator with 'animateAlongsideTransition:completion:'.
+ * Widgets using explicit layout can request a new height (that may, or may not, be adjusted or honored at all) by
+ * changing the value of their ‘preferredContentSize’.
+ * Should either form of request result in a height change, the widget will be messaged with
+ * ‘viewWillTransitionToSize:withTransitionCoordinator:’ and, if the transition is animated, passed a transition
+ * coordinator.
+ * If the transition coordinator argument is not 'nil', and the widget has additional animations it wishes to run in
+ * concert with the height change, it can specify them and/or a completion block by messaging the coordinator with
+ * 'animateAlongsideTransition:completion:'.
  */
 @Generated
 public final class NCUpdateResult {

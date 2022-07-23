@@ -186,7 +186,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native void finishWithComposedVideoFrame(CVBufferRef composedVideoFrame);
 
     /**
-     * callback the custom compositor should call when composition failed. The error parameter should describe the actual error.
+     * callback the custom compositor should call when composition failed. The error parameter should describe the
+     * actual error.
      */
     @Generated
     @Selector("finishWithError:")
@@ -208,7 +209,7 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
      * <p>
      * Returns the source CVPixelBufferRef for the given track ID
      *
-     * @param            trackID The track ID for the requested source frame
+     * @param trackID The track ID for the requested source frame
      */
     @Generated
     @Selector("sourceFrameByTrackID:")
@@ -234,7 +235,7 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
      * <p>
      * Returns the source CMSampleBufferRef for the given track ID
      *
-     * @param            trackID The track ID for the requested source sample buffer
+     * @param trackID The track ID for the requested source sample buffer
      */
     @Generated
     @Selector("sourceSampleBufferByTrackID:")
@@ -252,7 +253,7 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
      * <p>
      * Returns the source AVTimedMetadataGroup * for the given track ID
      *
-     * @param            trackID The track ID for the requested source timed metadata group.
+     * @param trackID The track ID for the requested source timed metadata group.
      */
     @Generated
     @Selector("sourceTimedMetadataByTrackID:")

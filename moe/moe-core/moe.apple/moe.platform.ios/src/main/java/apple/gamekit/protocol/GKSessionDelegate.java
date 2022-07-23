@@ -36,7 +36,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("GKSessionDelegate")
 public interface GKSessionDelegate {
     /**
-     * Indicates a connection error occurred with a peer, which includes connection request failures, or disconnects due to timeouts.
+     * Indicates a connection error occurred with a peer, which includes connection request failures, or disconnects due
+     * to timeouts.
      */
     @Generated
     @IsOptional

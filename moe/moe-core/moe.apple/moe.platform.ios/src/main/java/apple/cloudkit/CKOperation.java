@@ -184,7 +184,8 @@ public class CKOperation extends NSOperation {
     /**
      * This is an identifier unique to this CKOperation.
      * <p>
-     * This value is chosen by the system, and will be unique to this instance of a CKOperation.  This identifier will be sent to Apple's servers, and can be used to identify any server-side logging associated with this operation.
+     * This value is chosen by the system, and will be unique to this instance of a CKOperation. This identifier will be
+     * sent to Apple's servers, and can be used to identify any server-side logging associated with this operation.
      */
     @Generated
     @Selector("operationID")
@@ -242,7 +243,8 @@ public class CKOperation extends NSOperation {
     /**
      * This defines per-operation configuration settings.
      * <p>
-     * See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
+     * See the CKOperationConfiguration class description for info on how this configuration composes with
+     * CKOperationGroup.defaultConfiguration
      */
     @Generated
     @Selector("configuration")
@@ -258,7 +260,8 @@ public class CKOperation extends NSOperation {
     /**
      * This defines per-operation configuration settings.
      * <p>
-     * See the CKOperationConfiguration class description for info on how this configuration composes with CKOperationGroup.defaultConfiguration
+     * See the CKOperationConfiguration class description for info on how this configuration composes with
+     * CKOperationGroup.defaultConfiguration
      */
     @Generated
     @Selector("setConfiguration:")

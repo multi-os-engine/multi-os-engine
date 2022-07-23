@@ -18,7 +18,8 @@ public final class MPSNNTrainingStyle {
      */
     @Generated @NUInt public static final long CPU = 0x0000000000000001L;
     /**
-     * The weight update pass will be called immediately after the gradient pass is encoded, with a nonnull command buffer
+     * The weight update pass will be called immediately after the gradient pass is encoded, with a nonnull command
+     * buffer
      */
     @Generated @NUInt public static final long GPU = 0x0000000000000002L;
 }

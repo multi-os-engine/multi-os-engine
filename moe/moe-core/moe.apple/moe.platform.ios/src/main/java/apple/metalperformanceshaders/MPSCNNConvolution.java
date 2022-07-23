@@ -50,7 +50,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@dependency] This depends on Metal.framework
  * <p>
  * The MPSCNNConvolution specifies a convolution.
- * The MPSCNNConvolution convolves the input image with a set of filters, each producing one feature map in the output image.
+ * The MPSCNNConvolution convolves the input image with a set of filters, each producing one feature map in the output
+ * image.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -163,7 +164,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public static native long version_static();
 
     /**
-     * [@property]   groups
+     * [@property] groups
      * <p>
      * Number of groups input and output channels are divided into.
      */
@@ -182,18 +183,20 @@ public class MPSCNNConvolution extends MPSCNNKernel {
 
     /**
      * Initializes a convolution kernel
-     * WARNING:                        This API is depreated and will be removed in the future. It cannot be used
+     * WARNING: This API is depreated and will be removed in the future. It cannot be used
      * when training. Also serialization/unserialization wont work for MPSCNNConvolution
      * objects created with this init. Please move onto using initWithDevice:weights:.
      *
      * @param device                The MTLDevice on which this MPSCNNConvolution filter will be used
      * @param convolutionDescriptor A pointer to a MPSCNNConvolutionDescriptor.
-     * @param kernelWeights         A pointer to a weights array.  Each entry is a float value. The number of entries is =
+     * @param kernelWeights         A pointer to a weights array. Each entry is a float value. The number of entries is
+     *                              =
      *                              inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth
      *                              The layout of filter weight is so that it can be reinterpreted as 4D tensor (array)
      *                              weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ]
      *                              Weights are converted to half float (fp16) internally for best performance.
-     * @param biasTerms             A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
+     * @param biasTerms             A pointer to bias terms to be applied to the convolution output. Each entry is a
+     *                              float value.
      *                              The number of entries is = numberOfOutputFeatureMaps
      * @param flags                 Currently unused. Pass MPSCNNConvolutionFlagsNone
      * @return A valid MPSCNNConvolution object or nil, if failure.
@@ -205,7 +208,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
             ConstFloatPtr kernelWeights, ConstFloatPtr biasTerms, @NUInt long flags);
 
     /**
-     * [@property]   inputFeatureChannels
+     * [@property] inputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the input image.
      */
@@ -215,7 +218,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native long inputFeatureChannels();
 
     /**
-     * [@property]   neuron
+     * [@property] neuron
      * <p>
      * MPSCNNNeuron filter to be applied as part of convolution.
      * Can be nil in wich case no neuron activation fuction is applied.
@@ -225,7 +228,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native MPSCNNNeuron neuron();
 
     /**
-     * [@property]   outputFeatureChannels
+     * [@property] outputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the output image.
      */
@@ -256,7 +259,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -284,7 +287,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
-     * Parameter "a" for the neuron.  Default: 1.0f
+     * Parameter "a" for the neuron. Default: 1.0f
      * <p>
      * Please see class description for interpretation of a.
      */
@@ -293,7 +296,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native float neuronParameterA();
 
     /**
-     * Parameter "b" for the neuron.  Default: 1.0f
+     * Parameter "b" for the neuron. Default: 1.0f
      * <p>
      * Please see class description for interpretation of b.
      */
@@ -311,9 +314,10 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native int neuronType();
 
     /**
-     * [@property]   subPixelScaleFactor
+     * [@property] subPixelScaleFactor
      * <p>
-     * Sub pixel scale factor which was passed in as part of MPSCNNConvolutionDescriptor when creating this MPSCNNConvolution object.
+     * Sub pixel scale factor which was passed in as part of MPSCNNConvolutionDescriptor when creating this
+     * MPSCNNConvolution object.
      */
     @Generated
     @Selector("subPixelScaleFactor")
@@ -341,7 +345,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native long accumulatorPrecisionOption();
 
     /**
-     * [@property]   dataSource
+     * [@property] dataSource
      * <p>
      * dataSource with which convolution object was created
      */
@@ -351,12 +355,15 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native MPSCNNConvolutionDataSource dataSource();
 
     /**
-     * GPU side export. Enqueue a kernel to export current weights and biases stored in MPSCNNConvoltion's internal buffers into weights and biases MTLBuffer
-     * *              returned in MPSCNNConvolutionWeightsAndBiasesState.
+     * GPU side export. Enqueue a kernel to export current weights and biases stored in MPSCNNConvoltion's internal
+     * buffers into weights and biases MTLBuffer
+     * * returned in MPSCNNConvolutionWeightsAndBiasesState.
      * *
-     * *  @param      commandBuffer              Metal command buffer on which export kernel is enqueued.
-     * *  @param      resultStateCanBeTemporary  If FALSE, state returned will be non-temporary. If TRUE, returned state may or may not be temporary.
-     * *  @return     MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffer to which weights got exported. This state and be
+     * * @param commandBuffer Metal command buffer on which export kernel is enqueued.
+     * * @param resultStateCanBeTemporary If FALSE, state returned will be non-temporary. If TRUE, returned state may or
+     * may not be temporary.
+     * * @return MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffer to which weights got
+     * exported. This state and be
      * temporary or non-temporary depending on the flag resultStateCanBeTemporary
      */
     @Generated
@@ -374,7 +381,7 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native MPSNNNeuronDescriptor fusedNeuronDescriptor();
 
     /**
-     * Parameter "c" for the neuron.  Default: 1.0f
+     * Parameter "c" for the neuron. Default: 1.0f
      * <p>
      * Please see class description for interpretation of c.
      */
@@ -383,20 +390,26 @@ public class MPSCNNConvolution extends MPSCNNKernel {
     public native float neuronParameterC();
 
     /**
-     * CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers. Weights and biases
-     * gradients needed for update are obtained from MPSCNNConvolutionGradientState object. Data provider passed in init call is used for this purpose.
+     * CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers.
+     * Weights and biases
+     * gradients needed for update are obtained from MPSCNNConvolutionGradientState object. Data provider passed in init
+     * call is used for this purpose.
      */
     @Generated
     @Selector("reloadWeightsAndBiasesFromDataSource")
     public native void reloadWeightsAndBiasesFromDataSource();
 
     /**
-     * GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal kernel into internal weights
-     * and biases buffer. Weights and biases gradients needed for update are obtained from MPSCNNConvolutionGradientState object's gradientForWeights and gradientForBiases metal buffer.
+     * GPU side reload. Reload the updated weights and biases from update buffer produced by application enqueued metal
+     * kernel into internal weights
+     * and biases buffer. Weights and biases gradients needed for update are obtained from
+     * MPSCNNConvolutionGradientState object's gradientForWeights and gradientForBiases metal buffer.
      *
-     * @param commandBuffer Metal command buffer on which application update kernel was enqueued consuming MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffers
+     * @param commandBuffer Metal command buffer on which application update kernel was enqueued consuming
+     *                      MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffers
      *                      and producing updateBuffer metal buffer.
-     * @param state         MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have updated weights produced by application's update kernel.
+     * @param state         MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have
+     *                      updated weights produced by application's update kernel.
      *                      The state readcount will be decremented.
      */
     @Generated
@@ -420,8 +433,8 @@ public class MPSCNNConvolution extends MPSCNNKernel {
      * @param sourceStates The list of MPSStates consumed by the associated -encode call,
      *                     for a batch size of 1.
      * @return The list of states produced by the -encode call for batch size of 1.
-     * -isResultStateReusedAcrossBatch returns YES for MPSCNNConvolution so same
-     * state is used across entire batch. State object is not reusasable across batches.
+     *         -isResultStateReusedAcrossBatch returns YES for MPSCNNConvolution so same
+     *         state is used across entire batch. State object is not reusasable across batches.
      */
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")

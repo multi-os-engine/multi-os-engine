@@ -31,9 +31,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CMDyskineticSymptomResult
  * <p>
- * A CMDyskineticSymptomResult object describes the presence and prevalence of dyskinetic symptoms (specifically, choreiform movements) during a one minute result period when subjects wear the Apple Watch on their most affected arm.
+ * A CMDyskineticSymptomResult object describes the presence and prevalence of dyskinetic symptoms (specifically,
+ * choreiform movements) during a one minute result period when subjects wear the Apple Watch on their most affected
+ * arm.
  * percentUnlikely + percentLikely = 1.0
- * Please note dyskinetic symptom measurements are designed for subjects with known presence of chorea in the arm and should not be displayed to users who do not report episodes of dyskinetic symptoms.
+ * Please note dyskinetic symptom measurements are designed for subjects with known presence of chorea in the arm and
+ * should not be displayed to users who do not report episodes of dyskinetic symptoms.
  */
 @Generated
 @Library("CoreMotion")

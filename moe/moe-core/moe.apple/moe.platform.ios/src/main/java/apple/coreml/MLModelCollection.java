@@ -71,7 +71,8 @@ public class MLModelCollection extends NSObject {
      * all models are downloaded, an MLModelCollection instance is made available for use with the completion handler.
      *
      * @param identifier        The model collection identifier, as managed in Core ML Model Deployment.
-     * @param completionHandler The completion handler, invoked with a valid MLModelCollection instance on success or NSError on failure.
+     * @param completionHandler The completion handler, invoked with a valid MLModelCollection instance on success or
+     *                          NSError on failure.
      * @return NSProgress for updates during setup and download of the model collection
      */
     @Generated
@@ -110,7 +111,8 @@ public class MLModelCollection extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * The identifier for the currently downloaded deployment, corresponding to a recent deployment on the Core ML Model Deployment dashboard.
+     * The identifier for the currently downloaded deployment, corresponding to a recent deployment on the Core ML Model
+     * Deployment dashboard.
      */
     @Generated
     @Selector("deploymentID")
@@ -121,7 +123,8 @@ public class MLModelCollection extends NSObject {
     public static native String description_static();
 
     /**
-     * End access to a model collection. This informs the system you have finished accessing the models within the collection.
+     * End access to a model collection. This informs the system you have finished accessing the models within the
+     * collection.
      * <p>
      * Call this method as soon as you have finished using the models in this collection.
      *
@@ -141,7 +144,8 @@ public class MLModelCollection extends NSObject {
     }
 
     /**
-     * Information about the models downloaded in the collection, or an empty dictionary if the collection has not been downloaded.
+     * Information about the models downloaded in the collection, or an empty dictionary if the collection has not been
+     * downloaded.
      */
     @Generated
     @Selector("entries")
@@ -153,7 +157,8 @@ public class MLModelCollection extends NSObject {
     public static native long hash_static();
 
     /**
-     * The identifier of the model collection you want to access, as configured in the Core ML Model Deployment dashboard.
+     * The identifier of the model collection you want to access, as configured in the Core ML Model Deployment
+     * dashboard.
      */
     @Generated
     @Selector("identifier")

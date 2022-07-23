@@ -93,7 +93,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptor extends NSObject imp
      * [@property] endOfEncoderSampleIndex
      * <p>
      * The sample index to use to store the sample taken at the end of
-     * command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * command encoder processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
      * <p>
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
@@ -152,7 +152,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptor extends NSObject imp
      * <p>
      * The sample buffer to store samples for the compute-pass defined samples.
      * If sampleBuffer is non-nil, the sample indices will be used to store samples into
-     * the sample buffer.  If no sample buffer is provided, no samples will be taken.
+     * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
      */
@@ -165,7 +165,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptor extends NSObject imp
      * [@property] endOfEncoderSampleIndex
      * <p>
      * The sample index to use to store the sample taken at the end of
-     * command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * command encoder processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
      * <p>
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
@@ -180,7 +180,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptor extends NSObject imp
      * <p>
      * The sample buffer to store samples for the compute-pass defined samples.
      * If sampleBuffer is non-nil, the sample indices will be used to store samples into
-     * the sample buffer.  If no sample buffer is provided, no samples will be taken.
+     * the sample buffer. If no sample buffer is provided, no samples will be taken.
      * If any of the sample indices are specified as MTLCounterDontSample, no sample
      * will be taken for that action.
      */
@@ -192,7 +192,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptor extends NSObject imp
      * [@property] startOfEncoderSampleIndex
      * <p>
      * The sample index to use to store the sample taken at the start of
-     * command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * command encoder processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
      * <p>
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,
@@ -210,7 +210,7 @@ public class MTLComputePassSampleBufferAttachmentDescriptor extends NSObject imp
      * [@property] startOfEncoderSampleIndex
      * <p>
      * The sample index to use to store the sample taken at the start of
-     * command encoder processing.  Setting the value to MTLCounterDontSample will cause
+     * command encoder processing. Setting the value to MTLCounterDontSample will cause
      * this sample to be omitted.
      * <p>
      * On devices where MTLCounterSamplingPointAtStageBoundary is unsupported,

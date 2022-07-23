@@ -89,7 +89,7 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]   dataType
+     * [@property] dataType
      * <p>
      * dataType of the tensor
      */
@@ -141,9 +141,9 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
     public static native MPSGraphTensor new_objc();
 
     /**
-     * [@property]   operation
+     * [@property] operation
      * <p>
-     * operation  responsible for creating this tensor
+     * operation responsible for creating this tensor
      */
     @Generated
     @Selector("operation")

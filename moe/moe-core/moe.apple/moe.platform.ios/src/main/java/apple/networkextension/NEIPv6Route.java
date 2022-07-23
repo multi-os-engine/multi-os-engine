@@ -192,7 +192,8 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * [@property] destinationNetworkPrefixLength
      * <p>
-     * A number containing the length in bits of the network prefix of the destination network. This prefix in combination with the destinationAddress property is used to determine the destination network of the route.
+     * A number containing the length in bits of the network prefix of the destination network. This prefix in
+     * combination with the destinationAddress property is used to determine the destination network of the route.
      */
     @Generated
     @Selector("destinationNetworkPrefixLength")
@@ -205,7 +206,8 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * [@property] gatewayAddress
      * <p>
-     * The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
+     * The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the
+     * tunnel's virtual interface.
      */
     @Generated
     @Selector("gatewayAddress")
@@ -225,7 +227,8 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
      * Initialize a newly-allocated NEIPv6Route.
      *
      * @param address             The IPv6 address of the destination network.
-     * @param networkPrefixLength A number containing the length in bits of the network prefix of the destination network.
+     * @param networkPrefixLength A number containing the length in bits of the network prefix of the destination
+     *                            network.
      * @return The initialized NEIPv6Route.
      */
     @Generated
@@ -236,7 +239,8 @@ public class NEIPv6Route extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * [@property] gatewayAddress
      * <p>
-     * The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the tunnel's virtual interface.
+     * The IPv6 address of the route's gateway. If this property is nil then the route's gateway will be set to the
+     * tunnel's virtual interface.
      */
     @Generated
     @Selector("setGatewayAddress:")

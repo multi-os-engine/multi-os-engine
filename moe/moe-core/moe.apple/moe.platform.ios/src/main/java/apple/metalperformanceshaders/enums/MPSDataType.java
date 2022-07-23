@@ -58,15 +58,15 @@ public final class MPSDataType {
      */
     @Generated public static final int UInt32 = 0x00000020;
     /**
-     * unsigned normalized  (see for example Metal's unorm8 and unorm16 pixel formats). Range: [0, 1.0]
+     * unsigned normalized (see for example Metal's unorm8 and unorm16 pixel formats). Range: [0, 1.0]
      */
     @Generated public static final int NormalizedBit = 0x40000000;
     /**
-     * unsigned normalized  (see for example Metal's unorm8 and unorm16 pixel formats). Range: [0, 1.0]
+     * unsigned normalized (see for example Metal's unorm8 and unorm16 pixel formats). Range: [0, 1.0]
      */
     @Generated public static final int Unorm1 = 0x40000001;
     /**
-     * unsigned normalized  (see for example Metal's unorm8 and unorm16 pixel formats). Range: [0, 1.0]
+     * unsigned normalized (see for example Metal's unorm8 and unorm16 pixel formats). Range: [0, 1.0]
      */
     @Generated public static final int Unorm8 = 0x40000008;
     /**

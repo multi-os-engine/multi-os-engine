@@ -20,7 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Expressions are the core of the predicate implementation. When expressionValueWithObject: is called, the expression is evaluated, and a value returned which can then be handled by an operator. Expressions can be anything from constants to method invocations. Scalars should be wrapped in appropriate NSValue classes.
+ * Expressions are the core of the predicate implementation. When expressionValueWithObject: is called, the expression
+ * is evaluated, and a value returned which can then be handled by an operator. Expressions can be anything from
+ * constants to method invocations. Scalars should be wrapped in appropriate NSValue classes.
  */
 @Generated
 public final class NSExpressionType {
@@ -45,15 +47,18 @@ public final class NSExpressionType {
      */
     @Generated @NUInt public static final long FunctionExpressionType = 0x0000000000000004L;
     /**
-     * Expression that returns the result of doing a unionSet: on two expressions that evaluate to flat collections (arrays or sets)
+     * Expression that returns the result of doing a unionSet: on two expressions that evaluate to flat collections
+     * (arrays or sets)
      */
     @Generated @NUInt public static final long UnionSetExpressionType = 0x0000000000000005L;
     /**
-     * Expression that returns the result of doing an intersectSet: on two expressions that evaluate to flat collections (arrays or sets)
+     * Expression that returns the result of doing an intersectSet: on two expressions that evaluate to flat collections
+     * (arrays or sets)
      */
     @Generated @NUInt public static final long IntersectSetExpressionType = 0x0000000000000006L;
     /**
-     * Expression that returns the result of doing a minusSet: on two expressions that evaluate to flat collections (arrays or sets)
+     * Expression that returns the result of doing a minusSet: on two expressions that evaluate to flat collections
+     * (arrays or sets)
      */
     @Generated @NUInt public static final long MinusSetExpressionType = 0x0000000000000007L;
     @Generated @NUInt public static final long SubqueryExpressionType = 0x000000000000000DL;

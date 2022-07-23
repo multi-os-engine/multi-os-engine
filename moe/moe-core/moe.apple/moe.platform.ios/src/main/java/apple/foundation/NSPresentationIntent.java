@@ -143,7 +143,9 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     public native long headerLevel();
 
     /**
-     * An integer value which uniquely identifies this intent in the document. Identity disambiguates attributes which apply to contiguous text -- for example, two headers in a row with the same level. It can also be used to track the location in an attributed string of a particular part of a document, even after mutation.
+     * An integer value which uniquely identifies this intent in the document. Identity disambiguates attributes which
+     * apply to contiguous text -- for example, two headers in a row with the same level. It can also be used to track
+     * the location in an attributed string of a particular part of a document, even after mutation.
      */
     @Generated
     @Selector("identity")
@@ -151,7 +153,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     public native long identity();
 
     /**
-     * The indentation level of this intent. Each nested list increases the indentation level by one; all elements within the same list (and not then nested into a child list intent) have the same indentation level.
+     * The indentation level of this intent. Each nested list increases the indentation level by one; all elements
+     * within the same list (and not then nested into a child list intent) have the same indentation level.
      * Text outside list intents has an indentation level of 0.
      */
     @Generated
@@ -186,7 +189,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     public native long intentKind();
 
     /**
-     * Returns `YES` if this intent is equivalent to the other presentation intent. Equivalence is the same as equality except that identity is not taken into account.
+     * Returns `YES` if this intent is equivalent to the other presentation intent. Equivalence is the same as equality
+     * except that identity is not taken into account.
      */
     @Generated
     @Selector("isEquivalentToPresentationIntent:")
@@ -248,7 +252,8 @@ public class NSPresentationIntent extends NSObject implements NSCopying, NSSecur
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The row to which this cell belongs (0-based). If the intent is not a row, this value is 0. Header rows are always row 0. If the table has more rows, those start at row 1.
+     * The row to which this cell belongs (0-based). If the intent is not a row, this value is 0. Header rows are always
+     * row 0. If the table has more rows, those start at row 1.
      */
     @Generated
     @Selector("row")

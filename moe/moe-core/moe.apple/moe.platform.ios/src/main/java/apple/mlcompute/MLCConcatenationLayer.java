@@ -86,7 +86,7 @@ public class MLCConcatenationLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   dimension
+     * [@property] dimension
      * <p>
      * The dimension (or axis) along which to concatenate tensors
      * <p>

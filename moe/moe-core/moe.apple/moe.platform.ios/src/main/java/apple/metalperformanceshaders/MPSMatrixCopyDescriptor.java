@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A list of copy operations
  * <p>
- * The MPSMatrixCopy filter can do multiple copy operations.  For RNN filters, these
+ * The MPSMatrixCopy filter can do multiple copy operations. For RNN filters, these
  * copies are often small, and are more efficient when grouped together.
  * The MPSMatriceCopyDescriptor provides a container to list the operations.
  * The operations occur in any order, and may not alias.
@@ -117,7 +117,7 @@ public class MPSMatrixCopyDescriptor extends NSObject {
      * @param device The device on which the copy will be performed
      * @param count  The number of copy operations the object will encode
      * @return A MPSMatrixCopyDescriptor. It still needs to be initialized with
-     * -setCopyOperationAtIndex:sourceMatrix:destinationMatrix:copyOffsets
+     *         -setCopyOperationAtIndex:sourceMatrix:destinationMatrix:copyOffsets
      */
     @Generated
     @Selector("initWithDevice:count:")

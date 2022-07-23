@@ -16,7 +16,8 @@ import org.moe.natj.objc.ann.Selector;
  * <p>
  * A protocol which defines operations for pausing, resuming, seeking, and sending parameters to a pattern player.
  * <p>
- * Instances of these objects are created via the factory methods such as `CHHapticEngine(createAdvancedPlayerWithPattern:error)`.
+ * Instances of these objects are created via the factory methods such as
+ * `CHHapticEngine(createAdvancedPlayerWithPattern:error)`.
  */
 @Generated
 @Library("CoreHaptics")
@@ -84,11 +85,11 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
     /**
      * [@property] playbackRate
      * <p>
-     * Allows a pattern to be played back at any multiple of its normal rate.  The rate can be adjusted
+     * Allows a pattern to be played back at any multiple of its normal rate. The rate can be adjusted
      * at any point before or during pattern playback.
      * <p>
      * This rate factor scales the relative times of all events and parameters as they are played, as well as the
-     * durations of Continuous events.  It does not affect the pitches of the events.  Any value greater than
+     * durations of Continuous events. It does not affect the pitches of the events. Any value greater than
      * 0.0 is valid; all others are ignored.
      */
     @Generated
@@ -112,7 +113,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * <p>
      * Set the playback position on an active player to the specified offset time.
      * <p>
-     * If 'offsetTime' is set to 0.0, the pattern will start from the beginning.  If
+     * If 'offsetTime' is set to 0.0, the pattern will start from the beginning. If
      * set to >= the duration of the pattern, playback will terminate as soon as possible
      * unless the player is looped, in which case playback will start at the beginning of
      * the loop.
@@ -170,11 +171,11 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
     /**
      * [@property] playbackRate
      * <p>
-     * Allows a pattern to be played back at any multiple of its normal rate.  The rate can be adjusted
+     * Allows a pattern to be played back at any multiple of its normal rate. The rate can be adjusted
      * at any point before or during pattern playback.
      * <p>
      * This rate factor scales the relative times of all events and parameters as they are played, as well as the
-     * durations of Continuous events.  It does not affect the pitches of the events.  Any value greater than
+     * durations of Continuous events. It does not affect the pitches of the events. Any value greater than
      * 0.0 is valid; all others are ignored.
      */
     @Generated

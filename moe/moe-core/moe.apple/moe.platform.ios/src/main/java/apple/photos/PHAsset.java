@@ -230,7 +230,8 @@ public class PHAsset extends PHObject {
     public native boolean isFavorite();
 
     /**
-     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular album collections
+     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular
+     * album collections
      */
     @Generated
     @Selector("isHidden")
@@ -292,7 +293,9 @@ public class PHAsset extends PHObject {
     }
 
     /**
-     * Playback style describes how the asset should be presented to the user (regardless of the backing media for that asset).  Use this value to choose the type of view and the appropriate APIs on the PHImageManager to display this asset
+     * Playback style describes how the asset should be presented to the user (regardless of the backing media for that
+     * asset). Use this value to choose the type of view and the appropriate APIs on the PHImageManager to display this
+     * asset
      */
     @Generated
     @Selector("playbackStyle")

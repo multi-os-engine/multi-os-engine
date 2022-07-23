@@ -201,7 +201,8 @@ public class GLKSubmesh extends NSObject {
      * <p>
      * Name from the original MDLSubmesh object.
      * <p>
-     * Although not directly used by this object, the application may use this to identify the submesh in it renderer/scene/world.
+     * Although not directly used by this object, the application may use this to identify the submesh in it
+     * renderer/scene/world.
      */
     @Generated
     @Selector("name")

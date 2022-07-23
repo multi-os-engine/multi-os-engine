@@ -19,24 +19,24 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       CTRunStatus
+ * [@enum] CTRunStatus
  * <p>
  * A bitfield passed back by CTRunGetStatus that is used to
  * indicate the disposition of the run.
  * <p>
- * [@constant]   kCTRunStatusNoStatus
+ * [@constant] kCTRunStatusNoStatus
  * The run has no special attributes.
  * <p>
- * [@constant]   kCTRunStatusRightToLeft
+ * [@constant] kCTRunStatusRightToLeft
  * When set, the run is right to left.
  * <p>
- * [@constant]   kCTRunStatusNonMonotonic
+ * [@constant] kCTRunStatusNonMonotonic
  * When set, the run has been reordered in some way such that
  * the string indices associated with the glyphs are no longer
  * strictly increasing (for left to right runs) or decreasing
  * (for right to left runs).
  * <p>
- * [@constant]   kCTRunStatusHasNonIdentityMatrix
+ * [@constant] kCTRunStatusHasNonIdentityMatrix
  * When set, the run requires a specific text matrix to be set
  * in the current CG context for proper drawing.
  */

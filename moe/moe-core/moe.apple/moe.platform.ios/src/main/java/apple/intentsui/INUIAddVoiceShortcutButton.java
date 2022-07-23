@@ -224,7 +224,8 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     /**
      * A custom corner radius for the @c INUIAddVoiceShortcutButton.
      * <p>
-     * If the provided corner radius is greater than half of the button’s height, it will be capped at half of the button’s height.
+     * If the provided corner radius is greater than half of the button’s height, it will be capped at half of the
+     * button’s height.
      */
     @Generated
     @Selector("cornerRadius")
@@ -380,7 +381,8 @@ public class INUIAddVoiceShortcutButton extends UIButton {
     /**
      * A custom corner radius for the @c INUIAddVoiceShortcutButton.
      * <p>
-     * If the provided corner radius is greater than half of the button’s height, it will be capped at half of the button’s height.
+     * If the provided corner radius is greater than half of the button’s height, it will be capped at half of the
+     * button’s height.
      */
     @Generated
     @Selector("setCornerRadius:")

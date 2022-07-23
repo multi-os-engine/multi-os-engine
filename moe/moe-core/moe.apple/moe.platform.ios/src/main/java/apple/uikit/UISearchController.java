@@ -53,8 +53,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UISearchController extends UIViewController
-        implements UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+public class UISearchController extends UIViewController implements UIViewControllerTransitioningDelegate,
+        UIViewControllerAnimatedTransitioning {
     static {
         NatJ.register();
     }
@@ -227,7 +227,8 @@ public class UISearchController extends UIViewController
     public native UISearchController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * Pass nil if you wish to display search results in the same view that you are searching. This is not supported on tvOS; please provide a results controller on tvOS.
+     * Pass nil if you wish to display search results in the same view that you are searching. This is not supported on
+     * tvOS; please provide a results controller on tvOS.
      */
     @Generated
     @Selector("initWithSearchResultsController:")
@@ -255,14 +256,18 @@ public class UISearchController extends UIViewController
             @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
-     * Setting this property to YES is a convenience method that performs a default presentation of the search controller appropriate for how the controller is configured. Implement -presentSearchController: if the default presentation is not adequate.
+     * Setting this property to YES is a convenience method that performs a default presentation of the search
+     * controller appropriate for how the controller is configured. Implement -presentSearchController: if the default
+     * presentation is not adequate.
      */
     @Generated
     @Selector("isActive")
     public native boolean isActive();
 
     /**
-     * Setting this property to YES is a convenience method that performs a default presentation of the search controller appropriate for how the controller is configured. Implement -presentSearchController: if the default presentation is not adequate.
+     * Setting this property to YES is a convenience method that performs a default presentation of the search
+     * controller appropriate for how the controller is configured. Implement -presentSearchController: if the default
+     * presentation is not adequate.
      */
     @Generated
     @Selector("setActive:")
@@ -381,7 +386,8 @@ public class UISearchController extends UIViewController
     public native boolean automaticallyShowsScopeBar();
 
     /**
-     * When true, UISearchController will automatically show its results controller based on the contents of its text property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
+     * When true, UISearchController will automatically show its results controller based on the contents of its text
+     * property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
      */
     @Generated
     @Selector("automaticallyShowsSearchResultsController")
@@ -402,21 +408,24 @@ public class UISearchController extends UIViewController
     public native void setAutomaticallyShowsScopeBar(boolean value);
 
     /**
-     * When true, UISearchController will automatically show its results controller based on the contents of its text property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
+     * When true, UISearchController will automatically show its results controller based on the contents of its text
+     * property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
      */
     @Generated
     @Selector("setAutomaticallyShowsSearchResultsController:")
     public native void setAutomaticallyShowsSearchResultsController(boolean value);
 
     /**
-     * Set this property to directly control the visibility of the search results controller. Setting this property changes the automaticallyShowsSearchResultsController property to false.
+     * Set this property to directly control the visibility of the search results controller. Setting this property
+     * changes the automaticallyShowsSearchResultsController property to false.
      */
     @Generated
     @Selector("setShowsSearchResultsController:")
     public native void setShowsSearchResultsController(boolean value);
 
     /**
-     * Set this property to directly control the visibility of the search results controller. Setting this property changes the automaticallyShowsSearchResultsController property to false.
+     * Set this property to directly control the visibility of the search results controller. Setting this property
+     * changes the automaticallyShowsSearchResultsController property to false.
      */
     @Generated
     @Selector("showsSearchResultsController")

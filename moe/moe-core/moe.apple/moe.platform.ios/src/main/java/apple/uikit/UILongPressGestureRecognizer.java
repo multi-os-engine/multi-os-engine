@@ -41,9 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Begins:  when numberOfTouchesRequired have tapped numberOfTapsRequired times and been held for minimumPressDuration
+ * Begins: when numberOfTouchesRequired have tapped numberOfTapsRequired times and been held for minimumPressDuration
  * Changes: when a finger moves
- * Ends:    when a finger is lifted
+ * Ends: when a finger is lifted
  */
 @Generated
 @Library("UIKit")
@@ -156,7 +156,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     public static native long version_static();
 
     /**
-     * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
+     * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after
+     * minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
      */
     @Generated
     @Selector("allowableMovement")
@@ -196,7 +197,8 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     public native long numberOfTouchesRequired();
 
     /**
-     * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
+     * Default is 10. Maximum movement in pixels allowed before the gesture fails. Once recognized (after
+     * minimumPressDuration) there is no limit on finger movement for the remainder of the touch tracking
      */
     @Generated
     @Selector("setAllowableMovement:")

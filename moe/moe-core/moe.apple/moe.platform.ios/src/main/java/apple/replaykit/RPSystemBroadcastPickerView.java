@@ -299,7 +299,8 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
             @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     /**
-     * Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions will be presented
+     * Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions
+     * will be presented
      */
     @Generated
     @Selector("preferredExtension")
@@ -366,7 +367,8 @@ public class RPSystemBroadcastPickerView extends UIView implements NSCoding {
     public static native void setAnimationsEnabled(boolean enabled);
 
     /**
-     * Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions will be presented
+     * Bundle identifier of extension that should be used for broadcast. Default is nil which means that all extensions
+     * will be presented
      */
     @Generated
     @Selector("setPreferredExtension:")

@@ -167,7 +167,8 @@ public class INVocabulary extends NSObject {
     /**
      * Replaces all vocabulary strings already set for the given type.
      * Strings should be sorted by their expected importance to the user, in descending order.
-     * There is no guarantee that every provided string will be used, but preference is given to strings at the beginning of the set.
+     * There is no guarantee that every provided string will be used, but preference is given to strings at the
+     * beginning of the set.
      * Any strings larger than 1024 bytes when encoded as UTF-16 (roughly 500 characters) will be discarded.
      */
     @Generated

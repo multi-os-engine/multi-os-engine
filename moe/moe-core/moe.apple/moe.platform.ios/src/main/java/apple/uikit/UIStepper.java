@@ -450,7 +450,8 @@ public class UIStepper extends UIControl {
     public native void setAutorepeat(boolean value);
 
     /**
-     * a background image which will be 3-way stretched over the whole of the control. Each half of the stepper will paint the image appropriate for its state
+     * a background image which will be 3-way stretched over the whole of the control. Each half of the stepper will
+     * paint the image appropriate for its state
      */
     @Generated
     @Selector("setBackgroundImage:forState:")
@@ -464,7 +465,8 @@ public class UIStepper extends UIControl {
     public native void setDecrementImageForState(UIImage image, @NUInt long state);
 
     /**
-     * an image which will be painted in between the two stepper segments. The image is selected depending both segments' state
+     * an image which will be painted in between the two stepper segments. The image is selected depending both
+     * segments' state
      */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:")

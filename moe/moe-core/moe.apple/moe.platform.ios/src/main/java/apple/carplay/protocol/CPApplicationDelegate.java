@@ -30,7 +30,8 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
      * <p>
-     * [@note] It is the responsibility of the delegate to maintain a reference to the interface controller beyond the scope of this method.
+     * [@note] It is the responsibility of the delegate to maintain a reference to the interface controller beyond the
+     * scope of this method.
      */
     @Generated
     @Selector("application:didConnectCarInterfaceController:toWindow:")
@@ -58,7 +59,8 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
     }
 
     /**
-     * If your application posts a @c CPNavigationAlert while backgrounded, a notification banner may be presented to the user.
+     * If your application posts a @c CPNavigationAlert while backgrounded, a notification banner may be presented to
+     * the user.
      * If the user taps on that banner, your application will launch on the car screen and this method will be called
      * with the alert the user tapped.
      */

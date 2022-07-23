@@ -182,7 +182,8 @@ public class NSOutputStream extends NSStream {
     public static native long version_static();
 
     /**
-     * writes the bytes from the specified buffer to the stream up to len bytes. Returns the number of bytes actually written.
+     * writes the bytes from the specified buffer to the stream up to len bytes. Returns the number of bytes actually
+     * written.
      */
     @Generated
     @Selector("hasSpaceAvailable")

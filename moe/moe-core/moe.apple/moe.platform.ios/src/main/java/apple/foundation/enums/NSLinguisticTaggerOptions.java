@@ -20,7 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Options arguments of type NSLinguisticTaggerOptions may include the following flags, which allow clients interested only in certain general types of tokens to specify that tokens of other types should be omitted from the returned results.
+ * Options arguments of type NSLinguisticTaggerOptions may include the following flags, which allow clients interested
+ * only in certain general types of tokens to specify that tokens of other types should be omitted from the returned
+ * results.
  */
 @Generated
 public final class NSLinguisticTaggerOptions {

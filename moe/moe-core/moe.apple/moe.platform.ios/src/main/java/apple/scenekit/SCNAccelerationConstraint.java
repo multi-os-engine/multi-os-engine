@@ -92,7 +92,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     /**
      * [@property] damping
      * <p>
-     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
+     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
+     * fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
      */
     @Generated
     @Selector("damping")
@@ -191,7 +192,8 @@ public class SCNAccelerationConstraint extends SCNConstraint {
     /**
      * [@property] damping
      * <p>
-     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
+     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
+     * fluid/air friction. Value should be zero or greater. Defaults to 0.1. Animatable.
      */
     @Generated
     @Selector("setDamping:")

@@ -30,7 +30,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * VNRecognizedObjectObservation
  * [@superclass] VNDetectedObjectObservation
  * <p>
- * VNRecognizedObjectObservation is a VNDetectedObjectObservation with an array of classifications that classify the recognized object. The confidence of the classifications sum up to 1.0. It is common practice to multiply the classification confidence with the confidence of this observation.
+ * VNRecognizedObjectObservation is a VNDetectedObjectObservation with an array of classifications that classify the
+ * recognized object. The confidence of the classifications sum up to 1.0. It is common practice to multiply the
+ * classification confidence with the confidence of this observation.
  */
 @Generated
 @Library("Vision")

@@ -39,8 +39,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * GKNoiseMap represents an extracted portion of sampled points from continuous 3D noise.  Extracted values are useful
- * for 2D and 3D games.  Noise values may be queried, set to explicit values or used as input for other uses,
+ * GKNoiseMap represents an extracted portion of sampled points from continuous 3D noise. Extracted values are useful
+ * for 2D and 3D games. Noise values may be queried, set to explicit values or used as input for other uses,
  * including textures and tile maps.
  *
  * @see GKNoiseSource

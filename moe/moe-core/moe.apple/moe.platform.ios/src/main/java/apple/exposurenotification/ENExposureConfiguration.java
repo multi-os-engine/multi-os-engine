@@ -33,9 +33,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * exposureDuration =
  * ( ( immediateDuration * immediateDurationWeight ) +
- * ( nearDuration      * nearDurationWeight ) +
- * ( mediumDuration    * mediumDurationWeight ) +
- * ( otherDuration     * otherDurationWeight ) )
+ * ( nearDuration * nearDurationWeight ) +
+ * ( mediumDuration * mediumDurationWeight ) +
+ * ( otherDuration * otherDurationWeight ) )
  * * infectiousnessWeight )
  * * reportTypeWeight )
  */
@@ -70,8 +70,8 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Thresholds for calculating attenuationDurations. Defaults to [50, 70, 90].
      * <p>
-     * Index		|0	|1	|2
-     * Variable	|X	|Y	|Z
+     * Index |0 |1 |2
+     * Variable |X |Y |Z
      */
     @Generated
     @Selector("attenuationDurationThresholds")
@@ -214,7 +214,8 @@ public class ENExposureConfiguration extends NSObject {
     public native byte minimumRiskScore();
 
     /**
-     * Minimum risk score. Excludes exposure incidents with scores lower than this. Full range and not capped to ENRiskScore.
+     * Minimum risk score. Excludes exposure incidents with scores lower than this. Full range and not capped to
+     * ENRiskScore.
      */
     @Generated
     @Selector("minimumRiskScoreFullRange")
@@ -271,8 +272,8 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Thresholds for calculating attenuationDurations. Defaults to [50, 70, 90].
      * <p>
-     * Index		|0	|1	|2
-     * Variable	|X	|Y	|Z
+     * Index |0 |1 |2
+     * Variable |X |Y |Z
      */
     @Generated
     @Selector("setAttenuationDurationThresholds:")
@@ -355,7 +356,8 @@ public class ENExposureConfiguration extends NSObject {
     public native void setMinimumRiskScore(byte value);
 
     /**
-     * Minimum risk score. Excludes exposure incidents with scores lower than this. Full range and not capped to ENRiskScore.
+     * Minimum risk score. Excludes exposure incidents with scores lower than this. Full range and not capped to
+     * ENRiskScore.
      */
     @Generated
     @Selector("setMinimumRiskScoreFullRange:")

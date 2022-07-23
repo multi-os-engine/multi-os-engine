@@ -19,7 +19,8 @@ public interface AVCaptureDataOutputSynchronizerDelegate {
      * <p>
      * Called when an AVCaptureDataOutputSynchronizer instance outputs synchronized data from one or more data outputs.
      * <p>
-     * The synchronized data collection only contains synchronized data for capture outputs with synchronized data ready.
+     * The synchronized data collection only contains synchronized data for capture outputs with synchronized data
+     * ready.
      *
      * @param synchronizer               The AVCaptureDataOutputSynchronizer instance delivering synchronized data.
      * @param synchronizedDataCollection A collection of synchronized data objects indexed by data output.

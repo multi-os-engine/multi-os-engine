@@ -204,8 +204,10 @@ public class SKFieldNode extends SKNode {
             NSArray<? extends SKNode> sprites, float accuracy);
 
     /**
-     * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative strength.
-     * The force is proportional to the distance from the field origin. Varies with the mass of the object according to F = ma
+     * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative
+     * strength.
+     * The force is proportional to the distance from the field origin. Varies with the mass of the object according to
+     * F = ma
      * The field node's rotation property can be used to orient the gravity in a particular direction.
      */
     @Generated
@@ -257,7 +259,8 @@ public class SKFieldNode extends SKNode {
      * Velocity fields are typically used for such effects as advection, for example, a velocity field
      * might describe the velocity on the surface of a river. An object placed in the river would then follow the river.
      *
-     * @param velocityTexture The R and G channels of the supplied texture become x and y components of velocity. B and A, if present in the SKTexture, are ignored.
+     * @param velocityTexture The R and G channels of the supplied texture become x and y components of velocity. B and
+     *                        A, if present in the SKTexture, are ignored.
      * @see texture
      */
     @Generated

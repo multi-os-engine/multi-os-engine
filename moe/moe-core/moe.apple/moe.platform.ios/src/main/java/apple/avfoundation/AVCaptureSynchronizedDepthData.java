@@ -88,7 +88,11 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
      * <p>
      * An instance of AVDepthData.
      * <p>
-     * If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data. This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
+     * If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus
+     * this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data.
+     * This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of
+     * synchronized data returned by AVCaptureDataOutputSynchronizer's
+     * -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
      */
     @Generated
     @Selector("depthData")

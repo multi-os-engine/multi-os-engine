@@ -123,7 +123,8 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     public static native UICollectionViewDropPlaceholder new_objc();
 
     /**
-     * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the placeholder cell) of the animating dropped item.
+     * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the
+     * placeholder cell) of the animating dropped item.
      * Handler will be called as-needed.
      */
     @Generated
@@ -147,7 +148,8 @@ public class UICollectionViewDropPlaceholder extends UICollectionViewPlaceholder
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the placeholder cell) of the animating dropped item.
+     * If specified, will be used to modify the appearance (e.g. visiblePath to supply a "cut out" region of the
+     * placeholder cell) of the animating dropped item.
      * Handler will be called as-needed.
      */
     @Generated

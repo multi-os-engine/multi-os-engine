@@ -137,7 +137,8 @@ public class GLKMesh extends NSObject {
      * newMeshesFromAsset:sourceMeshes:error:
      * <p>
      * Initialize all meshes in a Model I/O asset.
-     * [@dicussion] A convenience method to create GLKit meshes from each mesh in a Model/IO asset.  Resulting meshes are returned while Model I/O meshes from which they were generated will appear in the sourceMeshes array.
+     * [@dicussion] A convenience method to create GLKit meshes from each mesh in a Model/IO asset. Resulting meshes are
+     * returned while Model I/O meshes from which they were generated will appear in the sourceMeshes array.
      *
      * @param asset        Model I/O asset from which to create GLKit meshes
      * @param sourceMeshes Model I/O meshes corresponding the newly created GLKMeshes
@@ -237,7 +238,8 @@ public class GLKMesh extends NSObject {
      * <p>
      * Model I/O vertex descriptor specifying the layout of data in vertexBuffers
      * <p>
-     * This is not directly used by this object, but the application can use this information to determine rendering state or setup a vertex attribute object.
+     * This is not directly used by this object, but the application can use this information to determine rendering
+     * state or setup a vertex attribute object.
      */
     @Generated
     @Selector("vertexDescriptor")

@@ -69,7 +69,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      bucketCount
+     * [@property] bucketCount
      * <p>
      * An NSUInteger representing the number of samples in this histogram bucket.
      */
@@ -79,7 +79,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     public native long bucketCount();
 
     /**
-     * [@property]      bucketEnd
+     * [@property] bucketEnd
      * <p>
      * An NSMeasurement representing the end of a histogram bucket.
      */
@@ -88,7 +88,7 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     public native NSMeasurement<NSUnit> bucketEnd();
 
     /**
-     * [@property]      bucketStart
+     * [@property] bucketStart
      * <p>
      * An NSMeasurement representing the start of a histogram bucket.
      */

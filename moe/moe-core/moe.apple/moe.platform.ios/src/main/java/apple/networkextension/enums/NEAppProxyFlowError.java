@@ -59,7 +59,8 @@ public final class NEAppProxyFlowError {
      */
     @Generated @NInt public static final long Internal = 0x0000000000000008L;
     /**
-     * [@const] NEAppProxyFlowErrorDatagramTooLarge An attempt was made to write a datagram that is larger than the socket's receive window
+     * [@const] NEAppProxyFlowErrorDatagramTooLarge An attempt was made to write a datagram that is larger than the
+     * socket's receive window
      */
     @Generated @NInt public static final long DatagramTooLarge = 0x0000000000000009L;
     /**

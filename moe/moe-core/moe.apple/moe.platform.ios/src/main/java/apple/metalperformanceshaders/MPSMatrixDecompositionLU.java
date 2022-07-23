@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A is a matrix for which the LU factorization is to be computed.
  * L is a unit lower triangular matrix and U is an upper triangular
- * matrix.  P is a permutation matrix.
+ * matrix. P is a permutation matrix.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -112,8 +112,8 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
      * <p>
      * If during the computation U[k, k], for some k, is determined to be
      * exactly zero MPSMatrixDecompositionStatusSingular will be returned in the
-     * provided status buffer.  The data referenced by the MTLBuffer is not valid
-     * until the command buffer has completed execution.  If the matrix
+     * provided status buffer. The data referenced by the MTLBuffer is not valid
+     * until the command buffer has completed execution. If the matrix
      * return status is not desired NULL may be provided.
      * <p>
      * Upon successful factorization, resultMatrix contains the resulting
@@ -122,14 +122,14 @@ public class MPSMatrixDecompositionLU extends MPSMatrixUnaryKernel {
      * its upper triangular region.
      * <p>
      * This kernel functions either in-place, if the result matrix
-     * completely aliases the source matrix, or out-of-place.  If there
+     * completely aliases the source matrix, or out-of-place. If there
      * is any partial overlap between input and output data the results
      * are undefined.
      *
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded filter
-     * @param sourceMatrix  A valid MPSMatrix containing the source data.  Must have
+     * @param sourceMatrix  A valid MPSMatrix containing the source data. Must have
      *                      enough space to hold a rows x columns matrix.
-     * @param resultMatrix  A valid MPSMatrix to contain the result.  Must have enough
+     * @param resultMatrix  A valid MPSMatrix to contain the result. Must have enough
      *                      space to hold a rows x columns matrix.
      * @param pivotIndices  A valid MPSMatrix to contain the pivot indices. Must have enough space
      *                      to hold an array of size 1xmin(rows, columns) values.

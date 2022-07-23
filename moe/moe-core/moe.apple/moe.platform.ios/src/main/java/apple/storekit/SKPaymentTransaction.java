@@ -181,14 +181,16 @@ public class SKPaymentTransaction extends NSObject {
     public native SKPayment payment();
 
     /**
-     * The date when the transaction was added to the server queue.  Only valid if state is SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored.
+     * The date when the transaction was added to the server queue. Only valid if state is
+     * SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored.
      */
     @Generated
     @Selector("transactionDate")
     public native NSDate transactionDate();
 
     /**
-     * The unique server-provided identifier.  Only valid if state is SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored.
+     * The unique server-provided identifier. Only valid if state is SKPaymentTransactionStatePurchased or
+     * SKPaymentTransactionStateRestored.
      */
     @Generated
     @Selector("transactionIdentifier")

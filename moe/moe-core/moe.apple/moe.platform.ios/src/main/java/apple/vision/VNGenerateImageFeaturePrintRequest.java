@@ -103,7 +103,8 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     public static native long hash_static();
 
     /**
-     * Determine what type of croping and scaling action should be applied to the image before generating the feature print.
+     * Determine what type of croping and scaling action should be applied to the image before generating the feature
+     * print.
      * <p>
      * The default value for this property is VNImageCropAndScaleOptionScaleFill.
      */
@@ -156,7 +157,8 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Determine what type of croping and scaling action should be applied to the image before generating the feature print.
+     * Determine what type of croping and scaling action should be applied to the image before generating the feature
+     * print.
      * <p>
      * The default value for this property is VNImageCropAndScaleOptionScaleFill.
      */

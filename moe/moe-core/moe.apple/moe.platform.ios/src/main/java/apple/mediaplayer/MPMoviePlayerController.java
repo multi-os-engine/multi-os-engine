@@ -277,7 +277,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native boolean isAirPlayVideoActive();
 
     /**
-     * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is NO.
+     * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is
+     * NO.
      * Setting this property to YES before the movie player's view is visible will have no effect.
      */
     @Deprecated
@@ -286,7 +287,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native boolean isFullscreen();
 
     /**
-     * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is NO.
+     * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is
+     * NO.
      * Setting this property to YES before the movie player's view is visible will have no effect.
      */
     @Deprecated
@@ -475,7 +477,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native void setScalingMode(@NInt long value);
 
     /**
-     * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g. network conditions. Defaults to YES.
+     * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g.
+     * network conditions. Defaults to YES.
      */
     @Deprecated
     @Generated
@@ -483,8 +486,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native void setShouldAutoplay(boolean value);
 
     /**
-     * Indicates if the movie player should inherit the application's audio session instead of creating a new session (which would interrupt the application's session).
-     * Defaults to YES. Setting this property during playback will not take effect until playback is stopped and started again.
+     * Indicates if the movie player should inherit the application's audio session instead of creating a new session
+     * (which would interrupt the application's session).
+     * Defaults to YES. Setting this property during playback will not take effect until playback is stopped and started
+     * again.
      */
     @Generated
     @Deprecated
@@ -492,7 +497,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native void setUseApplicationAudioSession(boolean value);
 
     /**
-     * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g. network conditions. Defaults to YES.
+     * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g.
+     * network conditions. Defaults to YES.
      */
     @Deprecated
     @Generated
@@ -505,7 +511,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Returns a thumbnail at the given time.
-     * Deprecated.  Use -requestThumbnailImagesAtTimes:timeOption: / MPMoviePlayerThumbnailImageRequestDidFinishNotification instead.
+     * Deprecated. Use -requestThumbnailImagesAtTimes:timeOption: /
+     * MPMoviePlayerThumbnailImageRequestDidFinishNotification instead.
      */
     @Deprecated
     @Generated
@@ -521,8 +528,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     public native NSArray<?> timedMetadata();
 
     /**
-     * Indicates if the movie player should inherit the application's audio session instead of creating a new session (which would interrupt the application's session).
-     * Defaults to YES. Setting this property during playback will not take effect until playback is stopped and started again.
+     * Indicates if the movie player should inherit the application's audio session instead of creating a new session
+     * (which would interrupt the application's session).
+     * Defaults to YES. Setting this property during playback will not take effect until playback is stopped and started
+     * again.
      */
     @Generated
     @Deprecated

@@ -24,8 +24,10 @@ import org.moe.natj.general.ann.NUInt;
  * <p>
  * The types of audiovisual media which will require a user gesture to begin playing.
  * [@constant] WKAudiovisualMediaTypeNone No audiovisual media will require a user gesture to begin playing.
- * [@constant] WKAudiovisualMediaTypeAudio Audiovisual media containing audio will require a user gesture to begin playing.
- * [@constant] WKAudiovisualMediaTypeVideo Audiovisual media containing video will require a user gesture to begin playing.
+ * [@constant] WKAudiovisualMediaTypeAudio Audiovisual media containing audio will require a user gesture to begin
+ * playing.
+ * [@constant] WKAudiovisualMediaTypeVideo Audiovisual media containing video will require a user gesture to begin
+ * playing.
  * [@constant] WKAudiovisualMediaTypeAll All audiovisual media will require a user gesture to begin playing.
  */
 @Generated

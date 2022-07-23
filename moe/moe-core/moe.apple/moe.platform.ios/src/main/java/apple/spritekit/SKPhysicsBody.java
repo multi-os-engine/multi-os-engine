@@ -51,9 +51,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A SpriteKit physics body. These are the physical representations of your nodes. These specify the area and mass and any collision masking needed.
+ * A SpriteKit physics body. These are the physical representations of your nodes. These specify the area and mass and
+ * any collision masking needed.
  * <p>
- * All bodies have zero, one or more shapes that define its area. A body with no shapes is ethereal and does not collide with other bodies.
+ * All bodies have zero, one or more shapes that define its area. A body with no shapes is ethereal and does not collide
+ * with other bodies.
  */
 @Generated
 @Library("SpriteKit")
@@ -113,7 +115,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public static native SKPhysicsBody bodyWithCircleOfRadiusCenter(@NFloat double r, @ByValue CGPoint center);
 
     /**
-     * Creates an edge chain from a path. The path must have no self intersection. Edges have no volume and are intended to be used to create static environments. Edges can collide with bodies of volume, but not with each other.
+     * Creates an edge chain from a path. The path must have no self intersection. Edges have no volume and are intended
+     * to be used to create static environments. Edges can collide with bodies of volume, but not with each other.
      *
      * @param path the path to use
      */
@@ -122,7 +125,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public static native SKPhysicsBody bodyWithEdgeChainFromPath(CGPathRef path);
 
     /**
-     * Creates an edge from p1 to p2. Edges have no volume and are intended to be used to create static environments. Edges can collide with bodies of volume, but not with each other.
+     * Creates an edge from p1 to p2. Edges have no volume and are intended to be used to create static environments.
+     * Edges can collide with bodies of volume, but not with each other.
      *
      * @param p1 start point
      * @param p2 end point
@@ -132,7 +136,9 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public static native SKPhysicsBody bodyWithEdgeFromPointToPoint(@ByValue CGPoint p1, @ByValue CGPoint p2);
 
     /**
-     * Creates an edge loop from a path. A loop is automatically created by joining the last point to the first. The path must have no self intersection. Edges have no volume and are intended to be used to create static environments. Edges can collide with body's of volume, but not with each other.
+     * Creates an edge loop from a path. A loop is automatically created by joining the last point to the first. The
+     * path must have no self intersection. Edges have no volume and are intended to be used to create static
+     * environments. Edges can collide with body's of volume, but not with each other.
      *
      * @param path the path to use
      */
@@ -141,7 +147,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public static native SKPhysicsBody bodyWithEdgeLoopFromPath(CGPathRef path);
 
     /**
-     * Creates an edge loop from a CGRect. Edges have no volume and are intended to be used to create static environments. Edges can collide with body's of volume, but not with each other.
+     * Creates an edge loop from a CGRect. Edges have no volume and are intended to be used to create static
+     * environments. Edges can collide with body's of volume, but not with each other.
      *
      * @param rect the CGRect to use
      */
@@ -150,7 +157,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public static native SKPhysicsBody bodyWithEdgeLoopFromRect(@ByValue CGRect rect);
 
     /**
-     * The path must represent a convex or concave polygon with counter clockwise winding and no self intersection. Positions are relative to the node's origin.
+     * The path must represent a convex or concave polygon with counter clockwise winding and no self intersection.
+     * Positions are relative to the node's origin.
      *
      * @param path the path to use
      */
@@ -277,9 +285,11 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public static native long version_static();
 
     /**
-     * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set appropriately. The default value is YES.
+     * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set
+     * appropriately. The default value is YES.
      * <p>
-     * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to modify the strength of the force.
+     * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to
+     * modify the strength of the force.
      */
     @Generated
     @Selector("affectedByGravity")
@@ -297,7 +307,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native boolean allowsRotation();
 
     /**
-     * Optionally reduce the body's angular velocity each frame to simulate rotational friction. (0.0 - 1.0). Defaults to 0.1
+     * Optionally reduce the body's angular velocity each frame to simulate rotational friction. (0.0 - 1.0). Defaults
+     * to 0.1
      */
     @Generated
     @Selector("angularDamping")
@@ -361,14 +372,16 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native double charge();
 
     /**
-     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all categories).
+     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all
+     * categories).
      */
     @Generated
     @Selector("collisionBitMask")
     public native int collisionBitMask();
 
     /**
-     * Defines what logical 'categories' of bodies this body generates intersection notifications with. Defaults to all bits cleared (no categories).
+     * Defines what logical 'categories' of bodies this body generates intersection notifications with. Defaults to all
+     * bits cleared (no categories).
      */
     @Generated
     @Selector("contactTestBitMask")
@@ -383,7 +396,9 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * The density of the body.
      * <p>
-     * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
+     * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that
+     * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
+     * Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated
     @Selector("density")
@@ -427,8 +442,10 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native void setDynamic(boolean value);
 
     /**
-     * If the physics simulation has determined that this body is at rest it may set the resting property to YES. Resting bodies do not participate
-     * in the simulation until some collision with a non-resting  object, or an impulse is applied, that unrests it. If all bodies in the world are resting
+     * If the physics simulation has determined that this body is at rest it may set the resting property to YES.
+     * Resting bodies do not participate
+     * in the simulation until some collision with a non-resting object, or an impulse is applied, that unrests it. If
+     * all bodies in the world are resting
      * then the simulation as a whole is "at rest".
      */
     @Generated
@@ -436,8 +453,10 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native boolean isResting();
 
     /**
-     * If the physics simulation has determined that this body is at rest it may set the resting property to YES. Resting bodies do not participate
-     * in the simulation until some collision with a non-resting  object, or an impulse is applied, that unrests it. If all bodies in the world are resting
+     * If the physics simulation has determined that this body is at rest it may set the resting property to YES.
+     * Resting bodies do not participate
+     * in the simulation until some collision with a non-resting object, or an impulse is applied, that unrests it. If
+     * all bodies in the world are resting
      * then the simulation as a whole is "at rest".
      */
     @Generated
@@ -449,9 +468,12 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native NSArray<? extends SKPhysicsJoint> joints();
 
     /**
-     * Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1.
-     * Used in conjunction with per frame impulses, an object can be made to move at a constant speed. For example, if an object 64 points in size
-     * and default density and a linearDamping of 25 will slide across the screen in a few seconds if an impulse of magnitude 10 is applied every update.
+     * Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or
+     * greater. Defaults to 0.1.
+     * Used in conjunction with per frame impulses, an object can be made to move at a constant speed. For example, if
+     * an object 64 points in size
+     * and default density and a linearDamping of 25 will slide across the screen in a few seconds if an impulse of
+     * magnitude 10 is applied every update.
      */
     @Generated
     @Selector("linearDamping")
@@ -461,7 +483,9 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * The mass of the body.
      * <p>
-     * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
+     * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that
+     * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
+     * Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated
     @Selector("mass")
@@ -488,9 +512,11 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native double restitution();
 
     /**
-     * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set appropriately. The default value is YES.
+     * Bodies are affected by field forces such as gravity if this property is set and the field's category mask is set
+     * appropriately. The default value is YES.
      * <p>
-     * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to modify the strength of the force.
+     * If this is set a force is applied to the object based on the mass. Set the field force vector in the scene to
+     * modify the strength of the force.
      */
     @Generated
     @Selector("setAffectedByGravity:")
@@ -501,7 +527,8 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native void setAllowsRotation(boolean value);
 
     /**
-     * Optionally reduce the body's angular velocity each frame to simulate rotational friction. (0.0 - 1.0). Defaults to 0.1
+     * Optionally reduce the body's angular velocity each frame to simulate rotational friction. (0.0 - 1.0). Defaults
+     * to 0.1
      */
     @Generated
     @Selector("setAngularDamping:")
@@ -528,14 +555,16 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native void setCharge(@NFloat double value);
 
     /**
-     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all categories).
+     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all
+     * categories).
      */
     @Generated
     @Selector("setCollisionBitMask:")
     public native void setCollisionBitMask(int value);
 
     /**
-     * Defines what logical 'categories' of bodies this body generates intersection notifications with. Defaults to all bits cleared (no categories).
+     * Defines what logical 'categories' of bodies this body generates intersection notifications with. Defaults to all
+     * bits cleared (no categories).
      */
     @Generated
     @Selector("setContactTestBitMask:")
@@ -544,7 +573,9 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * The density of the body.
      * <p>
-     * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
+     * The unit is arbitrary, as long as the relative densities are consistent throughout the application. Note that
+     * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
+     * Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated
     @Selector("setDensity:")
@@ -566,9 +597,12 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     public native void setFriction(@NFloat double value);
 
     /**
-     * Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1.
-     * Used in conjunction with per frame impulses, an object can be made to move at a constant speed. For example, if an object 64 points in size
-     * and default density and a linearDamping of 25 will slide across the screen in a few seconds if an impulse of magnitude 10 is applied every update.
+     * Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or
+     * greater. Defaults to 0.1.
+     * Used in conjunction with per frame impulses, an object can be made to move at a constant speed. For example, if
+     * an object 64 points in size
+     * and default density and a linearDamping of 25 will slide across the screen in a few seconds if an impulse of
+     * magnitude 10 is applied every update.
      */
     @Generated
     @Selector("setLinearDamping:")
@@ -577,7 +611,9 @@ public class SKPhysicsBody extends NSObject implements NSCopying, NSSecureCoding
     /**
      * The mass of the body.
      * <p>
-     * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that density and mass are inherently related (they are directly proportional), so changing one also changes the other. Both are provided so either can be used depending on what is more relevant to your usage.
+     * The unit is arbitrary, as long as the relative masses are consistent throughout the application. Note that
+     * density and mass are inherently related (they are directly proportional), so changing one also changes the other.
+     * Both are provided so either can be used depending on what is more relevant to your usage.
      */
     @Generated
     @Selector("setMass:")

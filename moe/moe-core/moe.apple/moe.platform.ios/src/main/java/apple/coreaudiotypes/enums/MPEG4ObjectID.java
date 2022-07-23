@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]           MPEG4ObjectID
+ * [@enum] MPEG4ObjectID
  *
- * @ deprecated    in version 10.5
+ * @ deprecated in version 10.5
  * <p>
  * Constants that describe the various kinds of MPEG-4 audio data.
  * <p>

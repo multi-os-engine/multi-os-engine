@@ -48,7 +48,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Add a selection to this selection. Selections don't have to be contiguous. If the selection added overlaps with this
+     * Add a selection to this selection. Selections don't have to be contiguous. If the selection added overlaps with
+     * this
      * selection, overlaps are removed.
      */
     @Generated
@@ -56,7 +57,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     public native void addSelection(PDFSelection selection);
 
     /**
-     * For adding several selections, you can get better performance calling -[addSelections:] and passing in an array of
+     * For adding several selections, you can get better performance calling -[addSelections:] and passing in an array
+     * of
      * PDFSelections than calling -[addSelection] above inside a loop. It is the "normalization" (removing the overlaps)
      * that can be slow when adding a selection to another. This function adds all the selections first and then
      * normalizes just once at the end.
@@ -85,7 +87,8 @@ public class PDFSelection extends NSObject implements NSCopying {
 
     /**
      * Given a PDFPage, returns the bounds in page-space of the text covered by the selection on that page.
-     * Note that the bounds are relative to the origin of the page content, not the origin of any particular PDFDisplayBox.
+     * Note that the bounds are relative to the origin of the page content, not the origin of any particular
+     * PDFDisplayBox.
      */
     @Generated
     @Selector("boundsForPage:")
@@ -111,7 +114,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * If no color is ever specified, PDFSelections will draw using [NSColor selectedTextBackgroundColor] when active and
+     * If no color is ever specified, PDFSelections will draw using [NSColor selectedTextBackgroundColor] when active
+     * and
      * [NSColor secondarySelectedControlColor] when not active. Calling -[setColor] will force the specified color to be
      * used for both active and inactive drawing.
      */
@@ -142,7 +146,8 @@ public class PDFSelection extends NSObject implements NSCopying {
 
     /**
      * Draws the selection in page space relative to the origin of box. Box can be kPDFDisplayBoxMediaBox,
-     * kPDFDisplayBoxCropBox, kPDFDisplayBoxBleedBox, kPDFDisplayBoxTrimBox or kPDFDisplayBoxArtBox. If active is true, it
+     * kPDFDisplayBoxCropBox, kPDFDisplayBoxBleedBox, kPDFDisplayBoxTrimBox or kPDFDisplayBoxArtBox. If active is true,
+     * it
      * is drawn using -[NSColor selectedTextBackgroundColor], otherwise it is drawn using
      * -[NSColor secondarySelectedControlColor].
      */
@@ -151,7 +156,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     public native void drawForPageWithBoxActive(PDFPage page, @NInt long box, boolean active);
 
     /**
-     * Extends the selection at either end. Selections can be extended right off onto neighboring pages even to include the
+     * Extends the selection at either end. Selections can be extended right off onto neighboring pages even to include
+     * the
      * entire PDF document.
      */
     @Generated
@@ -163,8 +169,10 @@ public class PDFSelection extends NSObject implements NSCopying {
     public native void extendSelectionAtStart(@NInt long precede);
 
     /**
-     * Extend to the selection to the beginning and end of the currently selected lines of text. If the current selection is on a single
-     * line, then this will extend it to the entire line width. If the selection is across multiple lines, then the first and last
+     * Extend to the selection to the beginning and end of the currently selected lines of text. If the current
+     * selection is on a single
+     * line, then this will extend it to the entire line width. If the selection is across multiple lines, then the
+     * first and last
      * lines are expected to wholly contain their respective rows of text.
      */
     @Generated
@@ -181,7 +189,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     public native PDFSelection init();
 
     /**
-     * Returns and empty PDFSelection. Generally this is not useful but you can use this empty PDFSelection as a container
+     * Returns and empty PDFSelection. Generally this is not useful but you can use this empty PDFSelection as a
+     * container
      * into which you -[addSelection] or -[addSelections] below.
      */
     @Generated
@@ -249,7 +258,8 @@ public class PDFSelection extends NSObject implements NSCopying {
 
     /**
      * Returns an array of PDFSelection objects - one for each line of text covered by the receiver. For example if the
-     * receiver PDFSelection represents a selected paragraph, calling this method would return several PDFSelections - one
+     * receiver PDFSelection represents a selected paragraph, calling this method would return several PDFSelections -
+     * one
      * for each line of text in the paragraph.
      */
     @Generated
@@ -257,7 +267,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     public native NSArray<? extends PDFSelection> selectionsByLine();
 
     /**
-     * If no color is ever specified, PDFSelections will draw using [NSColor selectedTextBackgroundColor] when active and
+     * If no color is ever specified, PDFSelections will draw using [NSColor selectedTextBackgroundColor] when active
+     * and
      * [NSColor secondarySelectedControlColor] when not active. Calling -[setColor] will force the specified color to be
      * used for both active and inactive drawing.
      */

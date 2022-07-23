@@ -39,8 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * op(A) * X = B
  * <p>
- * Where op(A) is A**T or A.  B is the array of right hand sides for which
- * the equations are to be solved.  X is the resulting matrix of solutions.
+ * Where op(A) is A**T or A. B is the array of right hand sides for which
+ * the equations are to be solved. X is the resulting matrix of solutions.
  */
 @Generated
 @Library("MetalPerformanceShaders")

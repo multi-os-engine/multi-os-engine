@@ -171,8 +171,8 @@ public class MPSCNNPooling extends MPSCNNKernel {
      * Initialize a pooling filter
      *
      * @param device       The device the filter will run on
-     * @param kernelWidth  The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth  The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight The height of the kernel. Can be an odd or even value.
      * @return A valid MPSCNNPooling object or nil, if failure.
      */
     @Generated
@@ -184,8 +184,8 @@ public class MPSCNNPooling extends MPSCNNKernel {
      * Initialize a pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.

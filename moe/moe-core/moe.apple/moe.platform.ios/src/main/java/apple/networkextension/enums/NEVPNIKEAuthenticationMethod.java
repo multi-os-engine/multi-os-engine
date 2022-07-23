@@ -31,7 +31,8 @@ public final class NEVPNIKEAuthenticationMethod {
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
-     * [@const] NEVPNIKEAuthenticationMethodCertificate Use a certificate and private key as the authentication credential
+     * [@const] NEVPNIKEAuthenticationMethodCertificate Use a certificate and private key as the authentication
+     * credential
      */
     @Generated @NInt public static final long Certificate = 0x0000000000000001L;
     /**

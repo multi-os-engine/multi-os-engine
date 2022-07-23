@@ -40,7 +40,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSOrthography is a class used to describe the linguistic content of a piece of text, especially for the purposes of spelling and grammar checking.  It describes (a) which scripts the text contains, (b) a dominant language and possibly other languages for each of these scripts, and (c) a dominant script and language for the text as a whole.  Scripts are uniformly described by standard four-letter tags (Latn, Grek, Cyrl, etc.) with the supertags Jpan and Kore typically used for Japanese and Korean text, Hans and Hant for Chinese text; the tag Zyyy is used if a specific script cannot be identified.  Languages are uniformly described by BCP-47 tags, preferably in canonical form; the tag und is used if a specific language cannot be determined.
+ * NSOrthography is a class used to describe the linguistic content of a piece of text, especially for the purposes of
+ * spelling and grammar checking. It describes (a) which scripts the text contains, (b) a dominant language and possibly
+ * other languages for each of these scripts, and (c) a dominant script and language for the text as a whole. Scripts
+ * are uniformly described by standard four-letter tags (Latn, Grek, Cyrl, etc.) with the supertags Jpan and Kore
+ * typically used for Japanese and Korean text, Hans and Hant for Chinese text; the tag Zyyy is used if a specific
+ * script cannot be identified. Languages are uniformly described by BCP-47 tags, preferably in canonical form; the tag
+ * und is used if a specific language cannot be determined.
  */
 @Generated
 @Library("Foundation")
@@ -176,7 +182,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * The dominantLanguage is the first in the list of languages for the dominant script, allScripts includes the dominant script and all others appearing as keys in the language map, and allLanguages includes all languages appearing in the values of the language map.
+     * The dominantLanguage is the first in the list of languages for the dominant script, allScripts includes the
+     * dominant script and all others appearing as keys in the language map, and allLanguages includes all languages
+     * appearing in the values of the language map.
      */
     @Generated
     @Selector("dominantLanguage")
@@ -187,7 +195,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     public native String dominantLanguageForScript(String script);
 
     /**
-     * These are the primitive properties which a subclass must implement.  The dominantScript should be a script tag (such as Latn, Cyrl, and so forth) and the languageMap should be a dictionary whose keys are script tags and whose values are arrays of language tags (such as en, fr, de, and so forth).
+     * These are the primitive properties which a subclass must implement. The dominantScript should be a script tag
+     * (such as Latn, Cyrl, and so forth) and the languageMap should be a dictionary whose keys are script tags and
+     * whose values are arrays of language tags (such as en, fr, de, and so forth).
      */
     @Generated
     @Selector("dominantScript")
@@ -215,7 +225,8 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     public native NSDictionary<String, ? extends NSArray<String>> languageMap();
 
     /**
-     * languagesForScript: returns the list of languages for the specified script, and dominantLanguageForScript: returns the first item on that list.
+     * languagesForScript: returns the list of languages for the specified script, and dominantLanguageForScript:
+     * returns the first item on that list.
      */
     @Generated
     @Selector("languagesForScript:")

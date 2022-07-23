@@ -27,10 +27,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVPlayerInterstitialEventController
  * <p>
- * An AVPlayerInterstitialEventController allows you to specify a schedule of interstitial events for items played by a primary player.
- * By creating an instance of AVPlayerInterstitialEventController and setting a schedule of interstitial events, you pre-empt directives the are intrinsic to the items played by the primary player, if any exist, causing them to be ignored.
+ * An AVPlayerInterstitialEventController allows you to specify a schedule of interstitial events for items played by a
+ * primary player.
+ * By creating an instance of AVPlayerInterstitialEventController and setting a schedule of interstitial events, you
+ * pre-empt directives the are intrinsic to the items played by the primary player, if any exist, causing them to be
+ * ignored.
  * <p>
- * The schedule of interstitial events is specified as an array of AVPlayerInterstitialEvents. For each AVPlayerInterstitialEvent, when the primary player's current item is the primary item of the interstitial event and its currentDate reaches the date of the event, playback of the primary item by the primary player is temporarily suspended, i.e. its timeControlStatus changes to AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate and its reasonForWaitingToPlay will change to AVPlayerWaitingDuringInterstitialEventReason. During this suspension, playback of items that replicate the interstitial template items of the event are played by the interstitial player, which temporarily assumes the output configuration of the primary player; for example, its visual content will be routed to AVPlayerLayers that reference the primary player. Once the interstitial player has advanced through playback of the interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content will resume, at an offset from the time at which it was suspended as specified by the event.
+ * The schedule of interstitial events is specified as an array of AVPlayerInterstitialEvents. For each
+ * AVPlayerInterstitialEvent, when the primary player's current item is the primary item of the interstitial event and
+ * its currentDate reaches the date of the event, playback of the primary item by the primary player is temporarily
+ * suspended, i.e. its timeControlStatus changes to AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate and its
+ * reasonForWaitingToPlay will change to AVPlayerWaitingDuringInterstitialEventReason. During this suspension, playback
+ * of items that replicate the interstitial template items of the event are played by the interstitial player, which
+ * temporarily assumes the output configuration of the primary player; for example, its visual content will be routed to
+ * AVPlayerLayers that reference the primary player. Once the interstitial player has advanced through playback of the
+ * interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content
+ * will resume, at an offset from the time at which it was suspended as specified by the event.
  */
 @Generated
 @Library("AVFoundation")
@@ -67,13 +79,18 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     /**
      * cancelCurrentEventWithResumptionOffset:
      * <p>
-     * Causes the playback of any and all interstitial content currently in progress to be abandoned and the playback of primary content to be resumed.
+     * Causes the playback of any and all interstitial content currently in progress to be abandoned and the playback of
+     * primary content to be resumed.
      * <p>
      * If invoked during the handling of coinciding interstitial events, they will all be canceled.
-     * When you cancel interstitial events via the use of this method, the value of resumptionOffset that you pass overrides the events' resumptionOffset.
+     * When you cancel interstitial events via the use of this method, the value of resumptionOffset that you pass
+     * overrides the events' resumptionOffset.
      * Has no effect while currentEvent is nil.
      *
-     * @param resumptionOffset Specifies the offset in time at which playback of the primary player's current item should resume after interstitial playback has finished. To specify that the effective resumption time offset should accord with the wallclock time elapsed during interstitial playback, pass a value of kCMTimeIndefinite.
+     * @param resumptionOffset Specifies the offset in time at which playback of the primary player's current item
+     *                         should resume after interstitial playback has finished. To specify that the effective
+     *                         resumption time offset should accord with the wallclock time elapsed during interstitial
+     *                         playback, pass a value of kCMTimeIndefinite.
      */
     @Generated
     @Selector("cancelCurrentEventWithResumptionOffset:")
@@ -106,17 +123,28 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     public static native String description_static();
 
     /**
-     * [@property]     events
+     * [@property] events
      * <p>
      * Specifies the current schedule of interstitial events.
      * <p>
-     * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial events, including those that are intrinsically specified by the content of primary items, such as directives carried by HLS media playlists. Setting it to nil causes its value to be reset in accordance with the content of the current primary item.
+     * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial
+     * events, including those that are intrinsically specified by the content of primary items, such as directives
+     * carried by HLS media playlists. Setting it to nil causes its value to be reset in accordance with the content of
+     * the current primary item.
      * <p>
-     * If you change the value of events during an interstitial event and the current event is not included in the new value of events, the current event is nevertheless allowed to continue until completion. If you wish to cancel the current event, use -cancelCurrentEventWithResumptionOffset:.
+     * If you change the value of events during an interstitial event and the current event is not included in the new
+     * value of events, the current event is nevertheless allowed to continue until completion. If you wish to cancel
+     * the current event, use -cancelCurrentEventWithResumptionOffset:.
      * <p>
-     * If interstitial events are scheduled with dates that coincide either with the date of another scheduled interstitial event or with the date range of the primary content that's omitted according to the resumption offset of another scheduled interstitial event, the primary content will remain suspended until all coinciding interstitial events have been completed. The effective resumption offset will be the sum of the resumption offsets of the coinciding interstitial events. (Note that the sum of a numeric CMTime and kCMTimeIndefinite is kCMTimeIndefinite.)
+     * If interstitial events are scheduled with dates that coincide either with the date of another scheduled
+     * interstitial event or with the date range of the primary content that's omitted according to the resumption
+     * offset of another scheduled interstitial event, the primary content will remain suspended until all coinciding
+     * interstitial events have been completed. The effective resumption offset will be the sum of the resumption
+     * offsets of the coinciding interstitial events. (Note that the sum of a numeric CMTime and kCMTimeIndefinite is
+     * kCMTimeIndefinite.)
      * <p>
-     * If interstitial events are scheduled for the same date, they are ordered according to their position in the events array.
+     * If interstitial events are scheduled for the same date, they are ordered according to their position in the
+     * events array.
      */
     @Generated
     @Selector("events")
@@ -188,17 +216,28 @@ public class AVPlayerInterstitialEventController extends AVPlayerInterstitialEve
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]     events
+     * [@property] events
      * <p>
      * Specifies the current schedule of interstitial events.
      * <p>
-     * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial events, including those that are intrinsically specified by the content of primary items, such as directives carried by HLS media playlists. Setting it to nil causes its value to be reset in accordance with the content of the current primary item.
+     * Setting this property to a non-nil value cancels and overrides all previously scheduled future interstitial
+     * events, including those that are intrinsically specified by the content of primary items, such as directives
+     * carried by HLS media playlists. Setting it to nil causes its value to be reset in accordance with the content of
+     * the current primary item.
      * <p>
-     * If you change the value of events during an interstitial event and the current event is not included in the new value of events, the current event is nevertheless allowed to continue until completion. If you wish to cancel the current event, use -cancelCurrentEventWithResumptionOffset:.
+     * If you change the value of events during an interstitial event and the current event is not included in the new
+     * value of events, the current event is nevertheless allowed to continue until completion. If you wish to cancel
+     * the current event, use -cancelCurrentEventWithResumptionOffset:.
      * <p>
-     * If interstitial events are scheduled with dates that coincide either with the date of another scheduled interstitial event or with the date range of the primary content that's omitted according to the resumption offset of another scheduled interstitial event, the primary content will remain suspended until all coinciding interstitial events have been completed. The effective resumption offset will be the sum of the resumption offsets of the coinciding interstitial events. (Note that the sum of a numeric CMTime and kCMTimeIndefinite is kCMTimeIndefinite.)
+     * If interstitial events are scheduled with dates that coincide either with the date of another scheduled
+     * interstitial event or with the date range of the primary content that's omitted according to the resumption
+     * offset of another scheduled interstitial event, the primary content will remain suspended until all coinciding
+     * interstitial events have been completed. The effective resumption offset will be the sum of the resumption
+     * offsets of the coinciding interstitial events. (Note that the sum of a numeric CMTime and kCMTimeIndefinite is
+     * kCMTimeIndefinite.)
      * <p>
-     * If interstitial events are scheduled for the same date, they are ordered according to their position in the events array.
+     * If interstitial events are scheduled for the same date, they are ordered according to their position in the
+     * events array.
      */
     @Generated
     @Selector("setEvents:")

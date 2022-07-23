@@ -86,9 +86,9 @@ public class MLCSoftmaxLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   dimension
+     * [@property] dimension
      * <p>
-     * The  dimension over which softmax operation should be performed
+     * The dimension over which softmax operation should be performed
      */
     @Generated
     @Selector("dimension")
@@ -139,7 +139,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
      * Create a softmax layer
      *
      * @param operation The softmax operation
-     * @param dimension The  dimension over which softmax operation should be performed
+     * @param dimension The dimension over which softmax operation should be performed
      * @return A new softmax layer
      */
     @Generated
@@ -152,9 +152,9 @@ public class MLCSoftmaxLayer extends MLCLayer {
     public static native MLCSoftmaxLayer new_objc();
 
     /**
-     * [@property]   operation
+     * [@property] operation
      * <p>
-     * The softmax operation.  Supported values are softmax and log softmax.
+     * The softmax operation. Supported values are softmax and log softmax.
      */
     @Generated
     @Selector("operation")

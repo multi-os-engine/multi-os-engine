@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@dependency] This depends on Metal.framework
  * <p>
  * A MPSVector object describes a 1-dimensional array of data and provides storage
- * for its values.  Some MPSMatrixKernel objects operate on MPSVector objects
+ * for its values. Some MPSMatrixKernel objects operate on MPSVector objects
  * for convenience.
  */
 @Generated
@@ -86,7 +86,7 @@ public class MPSVector extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   data
+     * [@property] data
      * <p>
      * An MTLBuffer to store the data.
      */
@@ -96,7 +96,7 @@ public class MPSVector extends NSObject {
     public native MTLBuffer data();
 
     /**
-     * [@property]   dataType
+     * [@property] dataType
      * <p>
      * The type of the MPSVector data.
      */
@@ -113,7 +113,7 @@ public class MPSVector extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]   device
+     * [@property] device
      * <p>
      * The device on which the MPSVector will be used.
      */
@@ -134,7 +134,7 @@ public class MPSVector extends NSObject {
     /**
      * Initialize a MPSVector object with a MTLBuffer.
      * <p>
-     * This function returns a MPSVector object which uses the supplied MTLBuffer.  The
+     * This function returns a MPSVector object which uses the supplied MTLBuffer. The
      * length, number of vectors, and stride between vectors are specified by the
      * MPSVectorDescriptor object.
      * <p>
@@ -175,7 +175,7 @@ public class MPSVector extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   length
+     * [@property] length
      * <p>
      * The number of elements in the vector.
      */
@@ -206,7 +206,7 @@ public class MPSVector extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property]   vectorBytes
+     * [@property] vectorBytes
      * <p>
      * The stride, in bytes, between corresponding elements of
      * consecutive vectors.
@@ -217,7 +217,7 @@ public class MPSVector extends NSObject {
     public native long vectorBytes();
 
     /**
-     * [@property]   vectors
+     * [@property] vectors
      * <p>
      * The number of vectors in the MPSVector.
      */
@@ -248,7 +248,7 @@ public class MPSVector extends NSObject {
      * <p>
      * The vector object will be created, but the storage to hold the
      * vector data will only be allocated when it is needed, typically
-     * when the data property is invoked.  In conjunction
+     * when the data property is invoked. In conjunction
      * with -resourceSize, this will allow you to estimate storage needs
      * without actually creating the backing store for the vector.
      *
@@ -262,7 +262,7 @@ public class MPSVector extends NSObject {
             MPSVectorDescriptor descriptor);
 
     /**
-     * [@property]   offset
+     * [@property] offset
      * <p>
      * Byte-offset to the buffer where the vector data begins - see @ref initWithBuffer: offset: descriptor: .
      */

@@ -27,8 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * For each pixel, applies the following function:
  * [@code]
- * f(x) = x            if x >= 0
- * = a * x        if x < 0
+ * f(x) = x if x >= 0
+ * = a * x if x < 0
  * [@endcode]
  */
 @Generated

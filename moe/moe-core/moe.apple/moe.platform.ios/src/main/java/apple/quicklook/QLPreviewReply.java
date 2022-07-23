@@ -66,7 +66,8 @@ public class QLPreviewReply extends NSObject {
     public static native QLPreviewReply allocWithZone(VoidPtr zone);
 
     /**
-     * Attachments for HTML data previews. The keys of the dictionary are the attachment identifiers (eg foo) that can be referenced with the cid:id URL (eg cid:foo).
+     * Attachments for HTML data previews. The keys of the dictionary are the attachment identifiers (eg foo) that can
+     * be referenced with the cid:id URL (eg cid:foo).
      */
     @Generated
     @Selector("attachments")
@@ -114,8 +115,14 @@ public class QLPreviewReply extends NSObject {
     /**
      * Use this method to provide a preview with a PDFDocument
      *
-     * @param defaultPageSize       The size of your pages in the document. If the page size varies, use the first page's size.
-     * @param documentCreationBlock Create and return the PDFDocument. Heavy lifting should be done inside of the documentCreationBlock instead of when creating the QLPreviewReply. The QLPreviewReply passed into this block is the same as the one created by this method and is provided for convenience for any further updates to its properties during document creation. Return the PDFDocument if successfully created. Populate error if unsuccessful.
+     * @param defaultPageSize       The size of your pages in the document. If the page size varies, use the first
+     *                              page's size.
+     * @param documentCreationBlock Create and return the PDFDocument. Heavy lifting should be done inside of the
+     *                              documentCreationBlock instead of when creating the QLPreviewReply. The
+     *                              QLPreviewReply passed into this block is the same as the one created by this method
+     *                              and is provided for convenience for any further updates to its properties during
+     *                              document creation. Return the PDFDocument if successfully created. Populate error if
+     *                              unsuccessful.
      */
     @Generated
     @Selector("initForPDFWithPageSize:documentCreationBlock:")
@@ -135,7 +142,10 @@ public class QLPreviewReply extends NSObject {
      *
      * @param contextSize  The size of your image.
      * @param isBitmap     Whether the context should be bitmap or vector.
-     * @param drawingBlock The preview should be drawn into the context passed to this block. The QLPreviewReply passed into this block is the same as the one created by this method and is provided for convenience for any further updates to its properties during the drawing block. Return YES if the preview was successfully drawn into the context. Return NO and populate error otherwise.
+     * @param drawingBlock The preview should be drawn into the context passed to this block. The QLPreviewReply passed
+     *                     into this block is the same as the one created by this method and is provided for convenience
+     *                     for any further updates to its properties during the drawing block. Return YES if the preview
+     *                     was successfully drawn into the context. Return NO and populate error otherwise.
      */
     @Generated
     @Selector("initWithContextSize:isBitmap:drawingBlock:")
@@ -154,8 +164,18 @@ public class QLPreviewReply extends NSObject {
      * Use this method to provide a preview with data of a supported format.
      *
      * @param contentType       The content type of the data.
-     * @param contentSize       A hint for the size you would like to display your content at. If your content has an intrinsic size built in, such as images and PDFs, that will be used as the final size, but providing the correct size here will allow QuickLook to present loading UI at the correct size before you are finished creating the data. QuickLook will use a default size if NSZeroSize is passed in.
-     * @param dataCreationBlock Create and return data representing the file preview. Supported types include: UTTypeImage, UTTypePDF, UTTypeHTML, UTTypeXML, UTTypePlainText, UTTypeRTF. Heavy lifting should be done inside of the dataCreationBlock instead of when creating the QLPreviewReply. The QLPreviewReply passed into this block is the same as the one created by this method and is provided for convenience for any further updates to its properties, such as attachments, during the data generation. Return the data if successful. Populate error if unsuccessful.
+     * @param contentSize       A hint for the size you would like to display your content at. If your content has an
+     *                          intrinsic size built in, such as images and PDFs, that will be used as the final size,
+     *                          but providing the correct size here will allow QuickLook to present loading UI at the
+     *                          correct size before you are finished creating the data. QuickLook will use a default
+     *                          size if NSZeroSize is passed in.
+     * @param dataCreationBlock Create and return data representing the file preview. Supported types include:
+     *                          UTTypeImage, UTTypePDF, UTTypeHTML, UTTypeXML, UTTypePlainText, UTTypeRTF. Heavy lifting
+     *                          should be done inside of the dataCreationBlock instead of when creating the
+     *                          QLPreviewReply. The QLPreviewReply passed into this block is the same as the one created
+     *                          by this method and is provided for convenience for any further updates to its
+     *                          properties, such as attachments, during the data generation. Return the data if
+     *                          successful. Populate error if unsuccessful.
      */
     @Generated
     @Selector("initWithDataOfContentType:contentSize:dataCreationBlock:")
@@ -174,7 +194,9 @@ public class QLPreviewReply extends NSObject {
     /**
      * Use this method to provide a preview by providing a URL to a file of a supported type.
      *
-     * @param fileURL A file URL representing a preview of the previewed URL. Currently supported types include: UTTypeImage, UTTypePDF, UTTypeHTML, UTTypeXML, UTTypePlainText, UTTypeRTF, UTTypeRTFD, UTTypeMovie, UTTypeAudio
+     * @param fileURL A file URL representing a preview of the previewed URL. Currently supported types include:
+     *                UTTypeImage, UTTypePDF, UTTypeHTML, UTTypeXML, UTTypePlainText, UTTypeRTF, UTTypeRTFD,
+     *                UTTypeMovie, UTTypeAudio
      */
     @Generated
     @Selector("initWithFileURL:")
@@ -215,7 +237,8 @@ public class QLPreviewReply extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Attachments for HTML data previews. The keys of the dictionary are the attachment identifiers (eg foo) that can be referenced with the cid:id URL (eg cid:foo).
+     * Attachments for HTML data previews. The keys of the dictionary are the attachment identifiers (eg foo) that can
+     * be referenced with the cid:id URL (eg cid:foo).
      */
     @Generated
     @Selector("setAttachments:")

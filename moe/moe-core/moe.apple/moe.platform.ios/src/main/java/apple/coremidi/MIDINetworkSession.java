@@ -200,14 +200,16 @@ public class MIDINetworkSession extends NSObject {
     public native MIDINetworkSession init();
 
     /**
-     * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO (disabled).
+     * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO
+     * (disabled).
      */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
     /**
-     * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO (disabled).
+     * disabled sessions do not appear on the network and cannot initiate or receive connections. default is NO
+     * (disabled).
      */
     @Generated
     @Selector("setEnabled:")

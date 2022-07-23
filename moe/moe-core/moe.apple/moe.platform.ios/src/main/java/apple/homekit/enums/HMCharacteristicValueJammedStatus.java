@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueJammedStatus
+ * [@enum] HMCharacteristicValueJammedStatus
  * <p>
- * [@constant]  HMCharacteristicValueJammedStatusNone               Not Jammed.
- * [@constant]  HMCharacteristicValueJammedStatusJammed             Jammed.
+ * [@constant] HMCharacteristicValueJammedStatusNone Not Jammed.
+ * [@constant] HMCharacteristicValueJammedStatusJammed Jammed.
  */
 @Generated
 public final class HMCharacteristicValueJammedStatus {

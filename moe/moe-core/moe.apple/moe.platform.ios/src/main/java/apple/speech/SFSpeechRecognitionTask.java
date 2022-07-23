@@ -161,7 +161,8 @@ public class SFSpeechRecognitionTask extends NSObject {
     public native NSError error();
 
     /**
-     * Instructs the task to stop accepting new audio (e.g. stop recording) but complete processing on audio already buffered.
+     * Instructs the task to stop accepting new audio (e.g. stop recording) but complete processing on audio already
+     * buffered.
      * This has no effect on URL-based recognition requests, which effectively buffer the entire file immediately.
      */
     @Generated

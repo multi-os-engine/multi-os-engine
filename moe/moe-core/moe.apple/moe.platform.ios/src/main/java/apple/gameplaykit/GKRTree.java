@@ -149,7 +149,8 @@ public class GKRTree<_ElementType> extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * Creates an RTree with a given maximum number of children per node.  Nodes that grow beyond this number of children will be split.
+     * Creates an RTree with a given maximum number of children per node. Nodes that grow beyond this number of children
+     * will be split.
      *
      * @param maxNumberOfChildren the maximum number of children per node before splitting
      */

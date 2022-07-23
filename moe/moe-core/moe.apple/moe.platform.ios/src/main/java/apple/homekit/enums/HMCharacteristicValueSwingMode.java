@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueSwingMode
+ * [@enum] HMCharacteristicValueSwingMode
  * <p>
- * [@constant]  HMCharacteristicValueSwingModeDisabled  Swing mode is disabled.
- * [@constant]  HMCharacteristicValueSwingModeEnabled   Swing mode is enabled.
+ * [@constant] HMCharacteristicValueSwingModeDisabled Swing mode is disabled.
+ * [@constant] HMCharacteristicValueSwingModeEnabled Swing mode is enabled.
  */
 @Generated
 public final class HMCharacteristicValueSwingMode {

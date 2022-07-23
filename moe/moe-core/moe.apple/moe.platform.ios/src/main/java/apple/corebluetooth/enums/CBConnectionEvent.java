@@ -8,8 +8,8 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * Represents the connection state of a peer.
  * <p>
- * [@constant] CBConnectionEventPeerDisconnected	Peer is disconnected.
- * [@constant] CBConnectionEventPeerConnected	Peer is connected.
+ * [@constant] CBConnectionEventPeerDisconnected Peer is disconnected.
+ * [@constant] CBConnectionEventPeerConnected Peer is connected.
  */
 @Generated
 public final class CBConnectionEvent {

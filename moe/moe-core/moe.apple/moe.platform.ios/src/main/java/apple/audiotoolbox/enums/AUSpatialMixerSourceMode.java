@@ -3,9 +3,9 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]			Property values for kAudioUnitProperty_SpatialMixerSourceMode
+ * [@enum] Property values for kAudioUnitProperty_SpatialMixerSourceMode
  * <p>
- * [@constant]		kSpatialMixerSourceMode_SpatializeIfMono
+ * [@constant] kSpatialMixerSourceMode_SpatializeIfMono
  * <p>
  * Mono input is spatialized using kAudioUnitProperty_SpatializationAlgorithm.
  * Any input with more than one channel is passed through without spatialization. This is
@@ -13,7 +13,7 @@ import org.moe.natj.general.ann.Generated;
  * kSpatialMixerSourceMode_PointSource for mono input and
  * kSpatialMixerSourceMode_Bypass for input with more than one channel.
  * <p>
- * [@constant]		kSpatialMixerSourceMode_Bypass
+ * [@constant] kSpatialMixerSourceMode_Bypass
  * <p>
  * No spatial rendering. If input and output AudioChannelLayouts are equivalent, all
  * input channels are copied to corresponding output channels. If the input and
@@ -21,12 +21,12 @@ import org.moe.natj.general.ann.Generated;
  * kAudioFormatProperty_MatrixMixMap property of the layouts. No occlusion, obstruction,
  * or reverb is applied in this mode.
  * <p>
- * [@constant]		kSpatialMixerSourceMode_PointSource
+ * [@constant] kSpatialMixerSourceMode_PointSource
  * <p>
  * All channels of the input signal are rendered as a single source except if rendering
  * in-head with kSpatialMixerPointSourceInHeadMode_Bypass.
  * <p>
- * [@constant]		kSpatialMixerSourceMode_AmbienceBed
+ * [@constant] kSpatialMixerSourceMode_AmbienceBed
  * <p>
  * The input channels are spatialized around the listener as far-field sources.
  * The relative directions of the individual channels are specified by the

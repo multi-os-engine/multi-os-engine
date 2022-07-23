@@ -22,7 +22,8 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class NSByteCountFormatterUnits {
     /**
-     * This causes default units appropriate for the platform to be used. Specifying any units explicitly causes just those units to be used in showing the number.
+     * This causes default units appropriate for the platform to be used. Specifying any units explicitly causes just
+     * those units to be used in showing the number.
      */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**

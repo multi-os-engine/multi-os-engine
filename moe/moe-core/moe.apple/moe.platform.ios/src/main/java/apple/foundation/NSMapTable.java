@@ -47,8 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSMapTable<_KeyType, _ObjectType> extends NSObject
-        implements NSCopying, NSSecureCoding, NSFastEnumeration {
+public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCopying, NSSecureCoding,
+        NSFastEnumeration {
     static {
         NatJ.register();
     }
@@ -232,7 +232,8 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject
     public native NSEnumerator<_KeyType> keyEnumerator();
 
     /**
-     * return an NSPointerFunctions object reflecting the functions in use.  This is a new autoreleased object that can be subsequently modified and/or used directly in the creation of other pointer "collections".
+     * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
+     * be subsequently modified and/or used directly in the creation of other pointer "collections".
      */
     @Generated
     @Selector("keyPointerFunctions")

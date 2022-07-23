@@ -158,10 +158,12 @@ public class CHHapticEngine extends NSObject {
      * <p>
      * Create an instance of the CHHapticEngine.
      * <p>
-     * More than one instance may exist within a process.  Each will function independently of the others.
+     * More than one instance may exist within a process. Each will function independently of the others.
      * CHHapticEngines created using this method will be associated with the device's internal haptics hardware system,
-     * if one exists.  For systems without internal haptics, this method will fail with the error `CHHapticErrorCodeNotSupported`.
-     * To access engine instances associated with external game controllers, see the GameController framework documentation
+     * if one exists. For systems without internal haptics, this method will fail with the error
+     * `CHHapticErrorCodeNotSupported`.
+     * To access engine instances associated with external game controllers, see the GameController framework
+     * documentation
      * for the `hapticEngines` property on the GCController class.
      */
     @Generated
@@ -171,14 +173,17 @@ public class CHHapticEngine extends NSObject {
     /**
      * initWithAudioSession:error
      * <p>
-     * Create an instance of an CHHapticEngine and associate it with an audio session.  If 'audioSession' is nil,
+     * Create an instance of an CHHapticEngine and associate it with an audio session. If 'audioSession' is nil,
      * the engine will create its own.
      * <p>
-     * More than one instance may exist within a process.  Each will function independently of the others, but all
-     * CHHapticEngines which share an audio session will have identical audio behavior with regard to interruptions, etc.
+     * More than one instance may exist within a process. Each will function independently of the others, but all
+     * CHHapticEngines which share an audio session will have identical audio behavior with regard to interruptions,
+     * etc.
      * CHHapticEngines created using this method will be associated with the device's internal haptics hardware system,
-     * if one exists.  For systems without internal haptics, this method will fail with the error `CHHapticErrorCodeNotSupported`.
-     * To access engine instances associated with external game controllers, see the GameController framework documentation
+     * if one exists. For systems without internal haptics, this method will fail with the error
+     * `CHHapticErrorCodeNotSupported`.
+     * To access engine instances associated with external game controllers, see the GameController framework
+     * documentation
      * for the `hapticEngines` property on the GCController class.
      */
     @Generated
@@ -259,7 +264,8 @@ public class CHHapticEngine extends NSObject {
      * If additional players are started after this call is made, they will delay the callback.
      * If no players are active or the engine is stopped, the callback will happen immediately.
      *
-     * @param finishedHandler The block that will be called asynchronously.  The return value of this block determines the action the
+     * @param finishedHandler The block that will be called asynchronously. The return value of this block determines
+     *                        the action the
      *                        engine will take when the block finishes (see `CHHapticEngineFinishedHandler`).
      */
     @Generated
@@ -309,7 +315,8 @@ public class CHHapticEngine extends NSObject {
 
     /**
      * [@property] playsHapticsOnly
-     * If set to YES, the CHHapticEngine will ignore all events of type CHHapticEventTypeAudio and play only haptic events.
+     * If set to YES, the CHHapticEngine will ignore all events of type CHHapticEventTypeAudio and play only haptic
+     * events.
      * <p>
      * This behavior change will only take effect after the engine is stopped and restarted.
      * The default is NO.
@@ -324,7 +331,8 @@ public class CHHapticEngine extends NSObject {
      * Register an external audio file for use as a custom waveform.
      *
      * @param resourceURL A URL referencing the location of the audio file to be registered.
-     * @param options     A dictionary containing CHHapticAudioResourceKey/value pairs describing how this resource should be played.
+     * @param options     A dictionary containing CHHapticAudioResourceKey/value pairs describing how this resource
+     *                    should be played.
      * @param outError    If register operation fails, this will be set to a valid NSError describing the error.
      */
     @Generated
@@ -339,7 +347,7 @@ public class CHHapticEngine extends NSObject {
      * This block will called asynchronously if the haptic engine has to reset itself after a server failure.
      * <p>
      * In response to this handler being called, the client must release all haptic pattern players
-     * and recreate them.  All CHHapticPattern objects and CHHapticEngine properties will have been preserved.
+     * and recreate them. All CHHapticPattern objects and CHHapticEngine properties will have been preserved.
      * In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
      * it in a thread-safe manner.
      */
@@ -403,7 +411,8 @@ public class CHHapticEngine extends NSObject {
 
     /**
      * [@property] playsHapticsOnly
-     * If set to YES, the CHHapticEngine will ignore all events of type CHHapticEventTypeAudio and play only haptic events.
+     * If set to YES, the CHHapticEngine will ignore all events of type CHHapticEventTypeAudio and play only haptic
+     * events.
      * <p>
      * This behavior change will only take effect after the engine is stopped and restarted.
      * The default is NO.
@@ -418,7 +427,7 @@ public class CHHapticEngine extends NSObject {
      * This block will called asynchronously if the haptic engine has to reset itself after a server failure.
      * <p>
      * In response to this handler being called, the client must release all haptic pattern players
-     * and recreate them.  All CHHapticPattern objects and CHHapticEngine properties will have been preserved.
+     * and recreate them. All CHHapticPattern objects and CHHapticEngine properties will have been preserved.
      * In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
      * it in a thread-safe manner.
      */
@@ -437,7 +446,7 @@ public class CHHapticEngine extends NSObject {
      * [@property] stoppedHandler
      * <p>
      * The engine will call this block when it has stopped due to external causes (such as
-     * an audio session interruption or the app going into the background).  It will NOT be called
+     * an audio session interruption or the app going into the background). It will NOT be called
      * if the client calls stopWithCompletionHandler:.
      * <p>
      * In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle
@@ -491,7 +500,7 @@ public class CHHapticEngine extends NSObject {
     /**
      * stopWithCompletionHandler:
      * <p>
-     * Asynchronously stop the engine.  The handler will be called when the operation completes.
+     * Asynchronously stop the engine. The handler will be called when the operation completes.
      * <p>
      * The handler is guaranteed to be called on either success or failure.
      */
@@ -511,7 +520,7 @@ public class CHHapticEngine extends NSObject {
      * [@property] stoppedHandler
      * <p>
      * The engine will call this block when it has stopped due to external causes (such as
-     * an audio session interruption or the app going into the background).  It will NOT be called
+     * an audio session interruption or the app going into the background). It will NOT be called
      * if the client calls stopWithCompletionHandler:.
      * <p>
      * In general, callbacks arrive on a non-main thread and it is the client's responsibility to handle

@@ -180,7 +180,7 @@ public final class HealthKit {
     public static native String HKWorkoutSortIdentifierTotalSwimmingStrokeCount();
 
     /**
-     * [@constant]     HKPredicateKeyPathCategoryValue
+     * [@constant] HKPredicateKeyPathCategoryValue
      */
     @Generated
     @CVariable()
@@ -188,7 +188,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCategoryValue();
 
     /**
-     * [@constant]  HKPredicateKeyPathCDATitle
+     * [@constant] HKPredicateKeyPathCDATitle
      */
     @Generated
     @CVariable()
@@ -196,7 +196,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDATitle();
 
     /**
-     * [@constant]  HKPredicateKeyPathCDAPatientName
+     * [@constant] HKPredicateKeyPathCDAPatientName
      */
     @Generated
     @CVariable()
@@ -204,7 +204,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDAPatientName();
 
     /**
-     * [@constant]  HKPredicateKeyPathCDAAuthorName
+     * [@constant] HKPredicateKeyPathCDAAuthorName
      */
     @Generated
     @CVariable()
@@ -212,7 +212,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDAAuthorName();
 
     /**
-     * [@constant]  HKPredicateKeyPathCDACustodianName
+     * [@constant] HKPredicateKeyPathCDACustodianName
      */
     @Generated
     @CVariable()
@@ -220,7 +220,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathCDACustodianName();
 
     /**
-     * [@constant]      HKDetailedCDAValidationErrorKey
+     * [@constant] HKDetailedCDAValidationErrorKey
      * <p>
      * This may be used with the validationError parameter of
      * CDADocumentSampleWithData:startDate:endDate:device:metadata:validationError: to obtain a detailed
@@ -232,7 +232,7 @@ public final class HealthKit {
     public static native String HKDetailedCDAValidationErrorKey();
 
     /**
-     * [@constant]      HKDevicePropertyKeyName
+     * [@constant] HKDevicePropertyKeyName
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a device name.
      * <p>
@@ -244,7 +244,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyName();
 
     /**
-     * [@constant]      HKDevicePropertyKeyManufacturer
+     * [@constant] HKDevicePropertyKeyManufacturer
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a device manufacturer.
      * <p>
@@ -256,7 +256,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyManufacturer();
 
     /**
-     * [@constant]      HKDevicePropertyKeyModel
+     * [@constant] HKDevicePropertyKeyModel
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a device model.
      * <p>
@@ -268,7 +268,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyModel();
 
     /**
-     * [@constant]      HKDevicePropertyKeyHardwareVersion
+     * [@constant] HKDevicePropertyKeyHardwareVersion
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a hardware version.
      * <p>
@@ -280,7 +280,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyHardwareVersion();
 
     /**
-     * [@constant]      HKDevicePropertyKeyFirmwareVersion
+     * [@constant] HKDevicePropertyKeyFirmwareVersion
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a firmware version.
      * <p>
@@ -292,7 +292,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyFirmwareVersion();
 
     /**
-     * [@constant]      HKDevicePropertyKeySoftwareVersion
+     * [@constant] HKDevicePropertyKeySoftwareVersion
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a software version.
      * <p>
@@ -304,7 +304,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeySoftwareVersion();
 
     /**
-     * [@constant]      HKDevicePropertyKeyLocalIdentifier
+     * [@constant] HKDevicePropertyKeyLocalIdentifier
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a local identifier.
      * <p>
@@ -316,7 +316,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyLocalIdentifier();
 
     /**
-     * [@constant]      HKDevicePropertyKeyUDIDeviceIdentifier
+     * [@constant] HKDevicePropertyKeyUDIDeviceIdentifier
      * <p>
      * Used with predicateForObjectsWithDeviceProperty to specify a UDI device identifier.
      * <p>
@@ -328,7 +328,7 @@ public final class HealthKit {
     public static native String HKDevicePropertyKeyUDIDeviceIdentifier();
 
     /**
-     * [@constant]      HKUserPreferencesDidChangeNotification
+     * [@constant] HKUserPreferencesDidChangeNotification
      * <p>
      * A notification posted every time the user updates their preferred units.
      * <p>
@@ -343,7 +343,7 @@ public final class HealthKit {
     public static native String HKUserPreferencesDidChangeNotification();
 
     /**
-     * [@constant]      HKMetadataKeyUDIProductionIdentifier
+     * [@constant] HKMetadataKeyUDIProductionIdentifier
      * <p>
      * Represents the serial number of the device that created the HKObject.
      * <p>
@@ -355,7 +355,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyDeviceSerialNumber();
 
     /**
-     * [@constant]      HKMetadataKeyBodyTemperatureSensorLocation
+     * [@constant] HKMetadataKeyBodyTemperatureSensorLocation
      * <p>
      * Represents the location where a particular body temperature reading was taken.
      * <p>
@@ -367,7 +367,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyBodyTemperatureSensorLocation();
 
     /**
-     * [@constant]      HKMetadataKeyHeartRateSensorLocation
+     * [@constant] HKMetadataKeyHeartRateSensorLocation
      * <p>
      * Represents the location where a particular heart rate reading was taken.
      * <p>
@@ -379,7 +379,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyHeartRateSensorLocation();
 
     /**
-     * [@constant]      HKMetadataKeyFoodType
+     * [@constant] HKMetadataKeyFoodType
      * <p>
      * Represents the type of food that was consumed when creating an HKObject.
      * <p>
@@ -392,7 +392,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyFoodType();
 
     /**
-     * [@constant]      HKMetadataKeyUDIDeviceIdentifier
+     * [@constant] HKMetadataKeyUDIDeviceIdentifier
      * <p>
      * Represents the device identifier portion of a device's UDI (Unique Device Identifier).
      * <p>
@@ -407,7 +407,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyUDIDeviceIdentifier();
 
     /**
-     * [@constant]      HKMetadataKeyUDIProductionIdentifier
+     * [@constant] HKMetadataKeyUDIProductionIdentifier
      * <p>
      * Represents the production identifier portion of a device's UDI (Unique Device Identifier).
      * <p>
@@ -423,7 +423,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyUDIProductionIdentifier();
 
     /**
-     * [@constant]      HKMetadataKeyDigitalSignature
+     * [@constant] HKMetadataKeyDigitalSignature
      * <p>
      * Represents a digital signature validating the origin of an HKObject's value.
      * <p>
@@ -440,7 +440,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyDigitalSignature();
 
     /**
-     * [@constant]      HKMetadataKeyExternalUUID
+     * [@constant] HKMetadataKeyExternalUUID
      * <p>
      * Represents a unique identifier for an HKObject that is set by its source.
      * Uniqueness of objects with the same value of this key is not enforced by HealthKit.
@@ -453,7 +453,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyExternalUUID();
 
     /**
-     * [@constant]      HKMetadataKeyTimeZone
+     * [@constant] HKMetadataKeyTimeZone
      * <p>
      * Represents the time zone that the user was in when the HKObject was created.
      * <p>
@@ -465,7 +465,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyTimeZone();
 
     /**
-     * [@constant]      HKMetadataKeyDeviceName
+     * [@constant] HKMetadataKeyDeviceName
      * <p>
      * Represents the name of the device that took the reading.
      * <p>
@@ -479,7 +479,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyDeviceName();
 
     /**
-     * [@constant]      HKMetadataKeyDeviceManufacturerName
+     * [@constant] HKMetadataKeyDeviceManufacturerName
      * <p>
      * Represents the name of the manufacturer of the device that took the reading.
      * <p>
@@ -493,7 +493,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyDeviceManufacturerName();
 
     /**
-     * [@constant]      HKMetadataKeyWasTakenInLab
+     * [@constant] HKMetadataKeyWasTakenInLab
      * <p>
      * Represents whether or not the reading was taken in a lab.
      * <p>
@@ -505,7 +505,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyWasTakenInLab();
 
     /**
-     * [@constant]      HKMetadataKeyReferenceRangeLowerLimit
+     * [@constant] HKMetadataKeyReferenceRangeLowerLimit
      * <p>
      * Represents the lower limit of the reference range for a lab result.
      * <p>
@@ -517,7 +517,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyReferenceRangeLowerLimit();
 
     /**
-     * [@constant]      HKMetadataKeyReferenceRangeUpperLimit
+     * [@constant] HKMetadataKeyReferenceRangeUpperLimit
      * <p>
      * Represents the upper limit of the reference range for a lab result.
      * <p>
@@ -529,7 +529,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyReferenceRangeUpperLimit();
 
     /**
-     * [@constant]      HKMetadataKeyWasUserEntered
+     * [@constant] HKMetadataKeyWasUserEntered
      * <p>
      * Represents whether or not the reading was entered by the user.
      * <p>
@@ -541,7 +541,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyWasUserEntered();
 
     /**
-     * [@constant]      HKMetadataKeyWorkoutBrandName
+     * [@constant] HKMetadataKeyWorkoutBrandName
      * <p>
      * Represents the brand name of a particular workout.
      * <p>
@@ -553,7 +553,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyWorkoutBrandName();
 
     /**
-     * [@constant]      HKMetadataKeyGroupFitness
+     * [@constant] HKMetadataKeyGroupFitness
      * <p>
      * Represents whether or not a workout was performed as part of a group fitness class.
      * <p>
@@ -565,7 +565,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyGroupFitness();
 
     /**
-     * [@constant]      HKMetadataKeyIndoorWorkout
+     * [@constant] HKMetadataKeyIndoorWorkout
      * <p>
      * Represents whether or not a workout was performed indoors as opposed to outdoors.
      * <p>
@@ -577,7 +577,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyIndoorWorkout();
 
     /**
-     * [@constant]      HKMetadataKeyCoachedWorkout
+     * [@constant] HKMetadataKeyCoachedWorkout
      * <p>
      * Represents whether or not a workout was performed with a coach or personal trainer.
      * <p>
@@ -589,7 +589,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyCoachedWorkout();
 
     /**
-     * [@constant]      HKMetadataKeyWeatherCondition
+     * [@constant] HKMetadataKeyWeatherCondition
      * <p>
      * Represents the weather condition during the sample.
      * <p>
@@ -602,7 +602,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyWeatherCondition();
 
     /**
-     * [@constant]      HKMetadataKeyWeatherTemperature
+     * [@constant] HKMetadataKeyWeatherTemperature
      * <p>
      * Represents the weather temperature during the sample.
      * <p>
@@ -615,7 +615,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyWeatherTemperature();
 
     /**
-     * [@constant]      HKMetadataKeyHumidity
+     * [@constant] HKMetadataKeyHumidity
      * <p>
      * Represents the weather humidity during the sample.
      * <p>
@@ -628,7 +628,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyWeatherHumidity();
 
     /**
-     * [@constant]      HKMetadataKeySexualActivityProtectionUsed
+     * [@constant] HKMetadataKeySexualActivityProtectionUsed
      * <p>
      * Represents whether or not protection was used during sexual activity. This can be used to track either
      * protection from STIs or protection from pregnancy.
@@ -641,7 +641,7 @@ public final class HealthKit {
     public static native String HKMetadataKeySexualActivityProtectionUsed();
 
     /**
-     * [@constant]      HKMetadataKeyMenstrualCycleStart
+     * [@constant] HKMetadataKeyMenstrualCycleStart
      * <p>
      * Indicates whether or not the sample represents the start of a menstrual cycle. This is a required
      * metadata key for category samples of type HKCategoryTypeIdentifierMenstrualFlow.
@@ -654,7 +654,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyMenstrualCycleStart();
 
     /**
-     * [@constant]      HKMetadataKeyLapLength
+     * [@constant] HKMetadataKeyLapLength
      * <p>
      * Represents the length of a lap recorded during a workout.
      * <p>
@@ -667,7 +667,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyLapLength();
 
     /**
-     * [@constant]      HKMetadataKeySwimmingLocationType
+     * [@constant] HKMetadataKeySwimmingLocationType
      * <p>
      * Represents the location type of a swimming workout.
      * <p>
@@ -680,7 +680,7 @@ public final class HealthKit {
     public static native String HKMetadataKeySwimmingLocationType();
 
     /**
-     * [@constant]      HKMetadataKeySwimmingStrokeStyle
+     * [@constant] HKMetadataKeySwimmingStrokeStyle
      * <p>
      * Represents the predominant stroke style during a lap of a swimming workout.
      * <p>
@@ -694,7 +694,7 @@ public final class HealthKit {
     public static native String HKMetadataKeySwimmingStrokeStyle();
 
     /**
-     * Scalar(Count),               Discrete
+     * Scalar(Count), Discrete
      */
     @Generated
     @CVariable()
@@ -702,7 +702,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyMassIndex();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0),  Discrete
+     * Scalar(Percent, 0.0 - 1.0), Discrete
      */
     @Generated
     @CVariable()
@@ -710,7 +710,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyFatPercentage();
 
     /**
-     * Length,                      Discrete
+     * Length, Discrete
      */
     @Generated
     @CVariable()
@@ -718,7 +718,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierHeight();
 
     /**
-     * Mass,                        Discrete
+     * Mass, Discrete
      */
     @Generated
     @CVariable()
@@ -726,7 +726,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyMass();
 
     /**
-     * Mass,                        Discrete
+     * Mass, Discrete
      */
     @Generated
     @CVariable()
@@ -734,7 +734,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierLeanBodyMass();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -742,7 +742,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierStepCount();
 
     /**
-     * Length,                      Cumulative
+     * Length, Cumulative
      */
     @Generated
     @CVariable()
@@ -750,7 +750,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceWalkingRunning();
 
     /**
-     * Length,                      Cumulative
+     * Length, Cumulative
      */
     @Generated
     @CVariable()
@@ -758,7 +758,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceCycling();
 
     /**
-     * Length,                      Cumulative
+     * Length, Cumulative
      */
     @Generated
     @CVariable()
@@ -766,7 +766,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceWheelchair();
 
     /**
-     * Energy,                      Cumulative
+     * Energy, Cumulative
      */
     @Generated
     @CVariable()
@@ -774,7 +774,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBasalEnergyBurned();
 
     /**
-     * Energy,                      Cumulative
+     * Energy, Cumulative
      */
     @Generated
     @CVariable()
@@ -782,7 +782,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierActiveEnergyBurned();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -790,7 +790,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierFlightsClimbed();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -798,7 +798,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierNikeFuel();
 
     /**
-     * Time                         Cumulative
+     * Time Cumulative
      */
     @Generated
     @CVariable()
@@ -806,7 +806,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleExerciseTime();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -814,7 +814,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierPushCount();
 
     /**
-     * Length,                      Cumulative
+     * Length, Cumulative
      */
     @Generated
     @CVariable()
@@ -822,7 +822,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceSwimming();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -830,7 +830,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierSwimmingStrokeCount();
 
     /**
-     * Scalar(Count)/Time,          Discrete
+     * Scalar(Count)/Time, Discrete
      */
     @Generated
     @CVariable()
@@ -838,7 +838,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierHeartRate();
 
     /**
-     * Temperature,                 Discrete
+     * Temperature, Discrete
      */
     @Generated
     @CVariable()
@@ -846,7 +846,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyTemperature();
 
     /**
-     * Basal Body Temperature,      Discrete
+     * Basal Body Temperature, Discrete
      */
     @Generated
     @CVariable()
@@ -854,7 +854,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBasalBodyTemperature();
 
     /**
-     * Pressure,                    Discrete
+     * Pressure, Discrete
      */
     @Generated
     @CVariable()
@@ -862,7 +862,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodPressureSystolic();
 
     /**
-     * Pressure,                    Discrete
+     * Pressure, Discrete
      */
     @Generated
     @CVariable()
@@ -870,7 +870,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodPressureDiastolic();
 
     /**
-     * Scalar(Count)/Time,          Discrete
+     * Scalar(Count)/Time, Discrete
      */
     @Generated
     @CVariable()
@@ -878,7 +878,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRespiratoryRate();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0),  Discrete
+     * Scalar(Percent, 0.0 - 1.0), Discrete
      */
     @Generated
     @CVariable()
@@ -886,7 +886,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierOxygenSaturation();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0),  Discrete
+     * Scalar(Percent, 0.0 - 1.0), Discrete
      */
     @Generated
     @CVariable()
@@ -894,7 +894,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierPeripheralPerfusionIndex();
 
     /**
-     * Mass/Volume,                 Discrete
+     * Mass/Volume, Discrete
      */
     @Generated
     @CVariable()
@@ -902,7 +902,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodGlucose();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -910,7 +910,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierNumberOfTimesFallen();
 
     /**
-     * Conductance,                 Discrete
+     * Conductance, Discrete
      */
     @Generated
     @CVariable()
@@ -918,7 +918,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierElectrodermalActivity();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -926,7 +926,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierInhalerUsage();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0),  Discrete
+     * Scalar(Percent, 0.0 - 1.0), Discrete
      */
     @Generated
     @CVariable()
@@ -934,7 +934,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodAlcoholContent();
 
     /**
-     * Volume,                      Discrete
+     * Volume, Discrete
      */
     @Generated
     @CVariable()
@@ -942,7 +942,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierForcedVitalCapacity();
 
     /**
-     * Volume,                      Discrete
+     * Volume, Discrete
      */
     @Generated
     @CVariable()
@@ -950,7 +950,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierForcedExpiratoryVolume1();
 
     /**
-     * Volume/Time,                 Discrete
+     * Volume/Time, Discrete
      */
     @Generated
     @CVariable()
@@ -958,7 +958,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierPeakExpiratoryFlowRate();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -966,7 +966,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatTotal();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -974,7 +974,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatPolyunsaturated();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -982,7 +982,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatMonounsaturated();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -990,7 +990,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatSaturated();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -998,7 +998,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryCholesterol();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -1006,7 +1006,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietarySodium();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -1014,7 +1014,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryCarbohydrates();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -1022,7 +1022,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFiber();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -1038,7 +1038,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryEnergyConsumed();
 
     /**
-     * Mass,   Cumulative
+     * Mass, Cumulative
      */
     @Generated
     @CVariable()
@@ -1425,7 +1425,7 @@ public final class HealthKit {
     public static native String HKWorkoutSortIdentifierTotalFlightsClimbed();
 
     /**
-     * [@constant]      HKMetadataKeyHeartRateMotionContext
+     * [@constant] HKMetadataKeyHeartRateMotionContext
      * <p>
      * Represents the context in which a particular heart rate reading was taken.
      * <p>
@@ -1439,7 +1439,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyHeartRateMotionContext();
 
     /**
-     * [@constant]      HKMetadataKeySyncIdentifier
+     * [@constant] HKMetadataKeySyncIdentifier
      * <p>
      * Represents an identifier for an HKObject that is set by its source and is used by HealthKit to uniquely
      * identify an object.
@@ -1456,7 +1456,7 @@ public final class HealthKit {
     public static native String HKMetadataKeySyncIdentifier();
 
     /**
-     * [@constant]      HKMetadataKeySyncVersion
+     * [@constant] HKMetadataKeySyncVersion
      * <p>
      * Represents the version of the HKObject that is set by its source and is used by HealthKit to identify an
      * object's version.
@@ -1470,7 +1470,7 @@ public final class HealthKit {
     public static native String HKMetadataKeySyncVersion();
 
     /**
-     * [@constant]      HKMetadataKeyInsulinDeliveryReason
+     * [@constant] HKMetadataKeyInsulinDeliveryReason
      * <p>
      * Represents the medical reason for the delivery of an insulin dose. This is a required metadata key for
      * samples of type HKQuantityTypeIdentifierInsulinDelivery.
@@ -1483,7 +1483,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyInsulinDeliveryReason();
 
     /**
-     * [@constant]      HKMetadataKeyBloodGlucoseMealTime
+     * [@constant] HKMetadataKeyBloodGlucoseMealTime
      * <p>
      * Indicates the relative timing of a blood glucose reading to a meal.
      * <p>
@@ -1499,7 +1499,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyBloodGlucoseMealTime();
 
     /**
-     * [@constant]      HKMetadataKeyVO2MaxTestType
+     * [@constant] HKMetadataKeyVO2MaxTestType
      * <p>
      * Represents the test used to create VO2 Max Sample
      * <p>
@@ -1511,7 +1511,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyVO2MaxTestType();
 
     /**
-     * Length,                      Discrete
+     * Length, Discrete
      */
     @Generated
     @CVariable()
@@ -1519,7 +1519,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWaistCircumference();
 
     /**
-     * ml/(kg*min)                  Discrete
+     * ml/(kg*min) Discrete
      */
     @Generated
     @CVariable()
@@ -1527,7 +1527,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierVO2Max();
 
     /**
-     * Scalar(Count)/Time,          Discrete
+     * Scalar(Count)/Time, Discrete
      */
     @Generated
     @CVariable()
@@ -1535,7 +1535,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRestingHeartRate();
 
     /**
-     * Scalar(Count)/Time,          Discrete
+     * Scalar(Count)/Time, Discrete
      */
     @Generated
     @CVariable()
@@ -1543,7 +1543,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingHeartRateAverage();
 
     /**
-     * Time (ms),                   Discrete
+     * Time (ms), Discrete
      */
     @Generated
     @CVariable()
@@ -1551,7 +1551,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierHeartRateVariabilitySDNN();
 
     /**
-     * Pharmacology (IU)            Cumulative
+     * Pharmacology (IU) Cumulative
      */
     @Generated
     @CVariable()
@@ -1637,7 +1637,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathClinicalRecordFHIRResourceType();
 
     /**
-     * Length,                      Cumulative
+     * Length, Cumulative
      */
     @Generated
     @CVariable()
@@ -1645,7 +1645,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceDownhillSnowSports();
 
     /**
-     * Time,                        Cumulative
+     * Time, Cumulative
      */
     @Generated
     @CVariable()
@@ -1653,7 +1653,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleStandTime();
 
     /**
-     * Pressure,                    DiscreteEquivalentContinuousLevel
+     * Pressure, DiscreteEquivalentContinuousLevel
      */
     @Generated
     @CVariable()
@@ -1661,7 +1661,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierEnvironmentalAudioExposure();
 
     /**
-     * Pressure,                    DiscreteEquivalentContinuousLevel
+     * Pressure, DiscreteEquivalentContinuousLevel
      */
     @Generated
     @CVariable()
@@ -1800,7 +1800,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathMostRecentDuration();
 
     /**
-     * [@constant]      HKMetadataKeyAverageSpeed
+     * [@constant] HKMetadataKeyAverageSpeed
      * <p>
      * Represents the average speed for a workout segment or distance sample.
      * <p>
@@ -1817,7 +1817,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyAverageSpeed();
 
     /**
-     * [@constant]      HKMetadataKeyMaximumSpeed
+     * [@constant] HKMetadataKeyMaximumSpeed
      * <p>
      * Represents the maximum speed for a workout segment or distance sample.
      * <p>
@@ -1831,7 +1831,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyMaximumSpeed();
 
     /**
-     * [@constant]      HKMetadataKeyAlpineSlopeGrade
+     * [@constant] HKMetadataKeyAlpineSlopeGrade
      * <p>
      * Represents the grade of a ski run.
      * <p>
@@ -1847,7 +1847,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyAlpineSlopeGrade();
 
     /**
-     * [@constant]      HKMetadataKeyElevationAscended
+     * [@constant] HKMetadataKeyElevationAscended
      * <p>
      * Represents the cumulative elevation ascent during a workout.
      * <p>
@@ -1860,7 +1860,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyElevationAscended();
 
     /**
-     * [@constant]      HKMetadataKeyElevationDescended
+     * [@constant] HKMetadataKeyElevationDescended
      * <p>
      * Represents the cumulative elevation descent during a workout.
      * <p>
@@ -1873,7 +1873,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyElevationDescended();
 
     /**
-     * [@constant]      HKMetadataKeyFitnessMachineDuration
+     * [@constant] HKMetadataKeyFitnessMachineDuration
      * <p>
      * Represents the workout duration as displayed by a GymKit connected fitness machine.
      * <p>
@@ -1887,7 +1887,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyFitnessMachineDuration();
 
     /**
-     * [@constant]      HKMetadataKeyIndoorBikeDistance
+     * [@constant] HKMetadataKeyIndoorBikeDistance
      * <p>
      * Represents the distance covered during an indoor bike workout.
      * <p>
@@ -1900,7 +1900,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyIndoorBikeDistance();
 
     /**
-     * [@constant]      HKMetadataKeyCrossTrainerDistance
+     * [@constant] HKMetadataKeyCrossTrainerDistance
      * <p>
      * Represents the distance covered during a cross trainer workout.
      * <p>
@@ -1913,7 +1913,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyCrossTrainerDistance();
 
     /**
-     * [@constant]      HKMetadataKeyHeartRateEventThreshold
+     * [@constant] HKMetadataKeyHeartRateEventThreshold
      * <p>
      * Represents the threshold heart rate that triggered a heart rate event.
      * <p>
@@ -1927,7 +1927,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyHeartRateEventThreshold();
 
     /**
-     * [@constant]      HKMetadataKeyAverageMETs
+     * [@constant] HKMetadataKeyAverageMETs
      * <p>
      * Represents the average METs, or Metabolic Equivalent of Task during a workout.
      * <p>
@@ -1940,7 +1940,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyAverageMETs();
 
     /**
-     * [@constant]      HKMetadataKeyAudioExposureLevel
+     * [@constant] HKMetadataKeyAudioExposureLevel
      * <p>
      * Represents the audio level associated with an audio event.
      * <p>
@@ -2245,7 +2245,7 @@ public final class HealthKit {
     public static native String HKFHIRResourceTypeMedicationRequest();
 
     /**
-     * m/s,                         Discrete
+     * m/s, Discrete
      */
     @Generated
     @CVariable()
@@ -2253,7 +2253,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingSpeed();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0),  Discrete
+     * Scalar(Percent, 0.0 - 1.0), Discrete
      */
     @Generated
     @CVariable()
@@ -2261,7 +2261,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingDoubleSupportPercentage();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0),  Discrete
+     * Scalar(Percent, 0.0 - 1.0), Discrete
      */
     @Generated
     @CVariable()
@@ -2269,7 +2269,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingAsymmetryPercentage();
 
     /**
-     * Length,                      Discrete
+     * Length, Discrete
      */
     @Generated
     @CVariable()
@@ -2277,7 +2277,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingStepLength();
 
     /**
-     * Length,                      Discrete
+     * Length, Discrete
      */
     @Generated
     @CVariable()
@@ -2285,7 +2285,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierSixMinuteWalkTestDistance();
 
     /**
-     * m/s,                         Discrete
+     * m/s, Discrete
      */
     @Generated
     @CVariable()
@@ -2293,7 +2293,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierStairAscentSpeed();
 
     /**
-     * m/s),                        Discrete
+     * m/s), Discrete
      */
     @Generated
     @CVariable()
@@ -2402,7 +2402,7 @@ public final class HealthKit {
     public static native String HKFHIRReleaseUnknown();
 
     /**
-     * [@constant]      HKMetadataKeyAppleECGAlgorithmVersion
+     * [@constant] HKMetadataKeyAppleECGAlgorithmVersion
      * <p>
      * Represents the ECG algorithm version that was used to generate a particular HKElectrocardiogram.
      * <p>
@@ -2414,11 +2414,11 @@ public final class HealthKit {
     public static native String HKMetadataKeyAppleECGAlgorithmVersion();
 
     /**
-     * [@constant]      HKMetadataKeyDevicePlacementSide
+     * [@constant] HKMetadataKeyDevicePlacementSide
      * <p>
      * Represents the detected placement of the device during the bout of walking
      * <p>
-     * The expected value type is an NSNumber containing a HKDevicePlacementSide value.  This key is expected to
+     * The expected value type is an NSNumber containing a HKDevicePlacementSide value. This key is expected to
      * be written for Walking Aymmetry Percentage.
      */
     @Generated
@@ -2427,11 +2427,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyDevicePlacementSide();
 
     /**
-     * [@constant]      HKMetadataKeyBarometricPressure
+     * [@constant] HKMetadataKeyBarometricPressure
      * <p>
      * Represents the barometric pressure recorded at the time of a sample.
      * <p>
-     * The expected value type is an HKQuantity representing a value in units of pressure (atmospheres, pascals, millimeters of Mercury).
+     * The expected value type is an HKQuantity representing a value in units of pressure (atmospheres, pascals,
+     * millimeters of Mercury).
      */
     @Generated
     @CVariable()
@@ -2439,11 +2440,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyBarometricPressure();
 
     /**
-     * [@constant]      HKMetadataKeyAppleDeviceCalibrated
+     * [@constant] HKMetadataKeyAppleDeviceCalibrated
      * <p>
      * Represents the calibration status of the devices used to generate this sample.
      * <p>
-     * The expected value is a boolean NSNumber indicating whether the sample value was estimated using a sufficient set of device calibration data. The calibration status of a device may vary per data type. This key is read-only.
+     * The expected value is a boolean NSNumber indicating whether the sample value was estimated using a sufficient set
+     * of device calibration data. The calibration status of a device may vary per data type. This key is read-only.
      */
     @Generated
     @CVariable()
@@ -2459,7 +2461,7 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierHeadphoneAudioExposureEvent();
 
     /**
-     * [@constant]      HKMetadataKeyAudioExposureDuration
+     * [@constant] HKMetadataKeyAudioExposureDuration
      * <p>
      * Represents the duration of time that is covered by audio samples.
      * <p>
@@ -2478,7 +2480,8 @@ public final class HealthKit {
      * @param value             Apple Walking Steadiness quantity with expected value between 0% and 100%.
      * @param classificationOut A pointer to the classification determined for the provided value.
      * @param errorOut          A pointer to an error describing why an unknown classification was returned.
-     * @return YES if the classification was successful. NO otherwise, meaning the provided value could not be classified.
+     * @return YES if the classification was successful. NO otherwise, meaning the provided value could not be
+     *         classified.
      */
     @Generated
     @CFunction
@@ -2504,7 +2507,7 @@ public final class HealthKit {
     public static native HKQuantity HKAppleWalkingSteadinessMaximumQuantityForClassification(@NInt long classification);
 
     /**
-     * Time,                        Cumulative
+     * Time, Cumulative
      */
     @Generated
     @CVariable()
@@ -2512,7 +2515,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleMoveTime();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0),  Discrete
+     * Scalar(Percent, 0.0 - 1.0), Discrete
      */
     @Generated
     @CVariable()
@@ -2520,7 +2523,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleWalkingSteadiness();
 
     /**
-     * Scalar(Count),               Cumulative
+     * Scalar(Count), Cumulative
      */
     @Generated
     @CVariable()
@@ -2581,7 +2584,7 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierAppleWalkingSteadinessEvent();
 
     /**
-     * [@constant]      HKMetadataKeyVO2MaxValue
+     * [@constant] HKMetadataKeyVO2MaxValue
      * <p>
      * Represents a VO2Max value that can be associated with, for example, Cardio Fitness Events
      * <p>
@@ -2593,11 +2596,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyVO2MaxValue();
 
     /**
-     * [@constant]      HKMetadataKeyLowCardioFitnessEventThreshold
+     * [@constant] HKMetadataKeyLowCardioFitnessEventThreshold
      * <p>
      * Can be used to store a snapshot of the threshold used to classify VO2Max values as "low"
      * <p>
-     * This key should be used to store an HKQuantity, with a unit of `ml/kg·min`, representing the low fitness threshold.
+     * This key should be used to store an HKQuantity, with a unit of `ml/kg·min`, representing the low fitness
+     * threshold.
      */
     @Generated
     @CVariable()
@@ -2605,11 +2609,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyLowCardioFitnessEventThreshold();
 
     /**
-     * [@constant]      HKMetadataKeyDateOfEarliestDataUsedForEstimate
+     * [@constant] HKMetadataKeyDateOfEarliestDataUsedForEstimate
      * <p>
      * Represents how far back an estimation algorithm incorporated data from.
      * <p>
-     * The expected value is an NSDate indicating the earliest date of data used to produce an estimated value for an HKSample.
+     * The expected value is an NSDate indicating the earliest date of data used to produce an estimated value for an
+     * HKSample.
      */
     @Generated
     @CVariable()
@@ -2617,11 +2622,12 @@ public final class HealthKit {
     public static native String HKMetadataKeyDateOfEarliestDataUsedForEstimate();
 
     /**
-     * [@constant]      HKMetadataKeyAlgorithmVersion
+     * [@constant] HKMetadataKeyAlgorithmVersion
      * <p>
      * The version of the algorithm used to generate the sample.
      * <p>
-     * The key for an NSNumber containing an NSInteger indicating the version of the algorithm used to generate the sample.
+     * The key for an NSNumber containing an NSInteger indicating the version of the algorithm used to generate the
+     * sample.
      */
     @Generated
     @CVariable()

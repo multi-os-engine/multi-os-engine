@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A is a matrix represented by a MPSMatrix object. alpha and beta
  * are scalar values (of the same data type as values of y) which are
- * applied as shown above.  A may have an optional transposition
+ * applied as shown above. A may have an optional transposition
  * operation applied.
  * <p>
  * A MPSMatrixVectorMultiplication object is initialized with the transpose
@@ -111,11 +111,11 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
      * elements beginning at primarySourceMatrixOrigin.
      * <p>
      * The input vector must be large enough to hold an array of size (columns)
-     * elements beginning at secondarySourceMatrixOrigin.x  secondarySourceMatrixOrigin.y and
+     * elements beginning at secondarySourceMatrixOrigin.x secondarySourceMatrixOrigin.y and
      * secondarySourceMatrixOrigin.z must be zero.
      * <p>
      * The result vector must be large enough to hold an array of size (rows)
-     * elements beginning at resultMatrixOrigin.x.  resultMatrixOrigin.y and
+     * elements beginning at resultMatrixOrigin.x. resultMatrixOrigin.y and
      * resultMatrixOrigin.z must be zero.
      *
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
@@ -155,7 +155,7 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
     /**
      * Convenience initialization for a matrix-vector multiplication
      * with no transposition, unit scaling of the product, and no
-     * accumulation of the result.  The scaling factors alpha and beta
+     * accumulation of the result. The scaling factors alpha and beta
      * are taken to be 1.0 and 0.0 respectively.
      *
      * @param device  The device on which the kernel will execute.
@@ -176,17 +176,17 @@ public class MPSMatrixVectorMultiplication extends MPSMatrixBinaryKernel {
      *
      * @param device    The device on which the kernel will execute.
      * @param transpose A boolean value which indicates if the input matrix should be
-     *                  used in transposed form.  if 'YES' then op(A) == A**T, otherwise
+     *                  used in transposed form. if 'YES' then op(A) == A**T, otherwise
      *                  op(A) == A.
      * @param rows      The number of rows in the input matrix op(A), and the number of elements
      *                  in the vector y.
      * @param columns   The number of columns in the input matrix op(A), and the number of
      *                  elements in the input vector x.
-     * @param alpha     The scale factor to apply to the product.  Specified in double
-     *                  precision.  Will be converted to the appropriate precision in the
+     * @param alpha     The scale factor to apply to the product. Specified in double
+     *                  precision. Will be converted to the appropriate precision in the
      *                  implementation subject to rounding and/or clamping as necessary.
-     * @param beta      The scale factor to apply to the initial values of y.  Specified
-     *                  in double precision.  Will be converted to the appropriate precision in the
+     * @param beta      The scale factor to apply to the initial values of y. Specified
+     *                  in double precision. Will be converted to the appropriate precision in the
      *                  implementation subject to rounding and/or clamping as necessary.
      * @return A valid MPSMatrixVectorMultiplication object or nil, if failure.
      */

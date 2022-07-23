@@ -47,7 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEVPNProtocol
  * <p>
- * The NEVPNProtocol class declares the programmatic interface of an object that manages the protocol-specific portion of a VPN configuration.
+ * The NEVPNProtocol class declares the programmatic interface of an object that manages the protocol-specific portion
+ * of a VPN configuration.
  * <p>
  * NEVPNProtocol is an abstract base class from which other protocol-specific classes are derived.
  * <p>
@@ -207,7 +208,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] identityReference
      * <p>
-     * The certificate and private key component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassIdentity class.
+     * The certificate and private key component of the VPN authentication credential. The value is a persistent
+     * reference to a keychain item with the kSecClassIdentity class.
      */
     @Generated
     @Selector("identityReference")
@@ -224,7 +226,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] passwordReference
      * <p>
-     * The password component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassGenericPassword class.
+     * The password component of the VPN authentication credential. The value is a persistent reference to a keychain
+     * item with the kSecClassGenericPassword class.
      */
     @Generated
     @Selector("passwordReference")
@@ -278,7 +281,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] identityReference
      * <p>
-     * The certificate and private key component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassIdentity class.
+     * The certificate and private key component of the VPN authentication credential. The value is a persistent
+     * reference to a keychain item with the kSecClassIdentity class.
      */
     @Generated
     @Selector("setIdentityReference:")
@@ -287,7 +291,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] passwordReference
      * <p>
-     * The password component of the VPN authentication credential. The value is a persistent reference to a keychain item with the kSecClassGenericPassword class.
+     * The password component of the VPN authentication credential. The value is a persistent reference to a keychain
+     * item with the kSecClassGenericPassword class.
      */
     @Generated
     @Selector("setPasswordReference:")
@@ -338,7 +343,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] includeAllNetworks
      * <p>
-     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The default is NO.
+     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The
+     * default is NO.
      */
     @Generated
     @Selector("includeAllNetworks")
@@ -347,7 +353,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] includeAllNetworks
      * <p>
-     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The default is NO.
+     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The
+     * default is NO.
      */
     @Generated
     @Selector("setIncludeAllNetworks:")
@@ -365,7 +372,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] excludeLocalNetworks
      * <p>
-     * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and YES on iOS.
+     * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and
+     * YES on iOS.
      */
     @Generated
     @Selector("excludeLocalNetworks")
@@ -383,7 +391,8 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] excludeLocalNetworks
      * <p>
-     * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and YES on iOS.
+     * If YES, all traffic destined for local networks will be excluded from the tunnel. The default is NO on macOS and
+     * YES on iOS.
      */
     @Generated
     @Selector("setExcludeLocalNetworks:")

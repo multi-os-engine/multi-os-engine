@@ -41,7 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Counted Set	***************
+ * Counted Set ***************
  */
 @Generated
 @Library("Foundation")

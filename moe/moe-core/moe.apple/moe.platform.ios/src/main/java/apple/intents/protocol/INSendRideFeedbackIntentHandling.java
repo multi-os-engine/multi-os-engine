@@ -12,9 +12,11 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * Protocol to declare support for handling an INSendRideFeedbackIntent. By implementing this protocol, a class can provide logic for confirming and handling the intent.
+ * Protocol to declare support for handling an INSendRideFeedbackIntent. By implementing this protocol, a class can
+ * provide logic for confirming and handling the intent.
  * <p>
- * The minimum requirement for an implementing class is that it should be able to handle the intent. The handling method is always called last, after confirming the intent.
+ * The minimum requirement for an implementing class is that it should be able to handle the intent. The handling method
+ * is always called last, after confirming the intent.
  */
 @Generated
 @Library("Intents")
@@ -24,10 +26,14 @@ public interface INSendRideFeedbackIntentHandling {
     /**
      * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
      * <p>
-     * Called prior to asking the app to handle the intent. The app should return a response object that contains additional information about the intent, which may be relevant for the system to show the user prior to handling. If unimplemented, the system will not allow calling of the handle method.
+     * Called prior to asking the app to handle the intent. The app should return a response object that contains
+     * additional information about the intent, which may be relevant for the system to show the user prior to handling.
+     * If unimplemented, the system will not allow calling of the handle method.
      *
      * @param sendRideFeedbackIntent The input intent
-     * @param completion             The response block contains an INSendRideFeedbackIntentResponse containing additional details about the intent that may be relevant for the system to show the user prior to handling.
+     * @param completion             The response block contains an INSendRideFeedbackIntentResponse containing
+     *                               additional details about the intent that may be relevant for the system to show the
+     *                               user prior to handling.
      * @see INSendRideFeedbackIntentResponse
      */
     @Generated
@@ -51,7 +57,8 @@ public interface INSendRideFeedbackIntentHandling {
      * Called to actually execute the intent. The app must return a response for this intent.
      *
      * @param sendRideFeedbackintent The input intent
-     * @param completion             The response handling block takes a INSendRideFeedbackIntentResponse containing the details of the result of having executed the intent
+     * @param completion             The response handling block takes a INSendRideFeedbackIntentResponse containing the
+     *                               details of the result of having executed the intent
      * @see INSendRideFeedbackIntentResponse
      */
     @Generated

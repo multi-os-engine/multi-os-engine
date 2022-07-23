@@ -46,7 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEFilterRemediationVerdict
  * <p>
- * The NEFilterRemediationVerdict class declares the programmatic interface of an object that is the verdict for a flow which has been blocked by the filter, but the user has made a request for remediation.
+ * The NEFilterRemediationVerdict class declares the programmatic interface of an object that is the verdict for a flow
+ * which has been blocked by the filter, but the user has made a request for remediation.
  * <p>
  * NEFilterRemediationVerdict is part of NetworkExtension.framework
  */
@@ -159,7 +160,9 @@ public class NEFilterRemediationVerdict extends NEFilterVerdict implements NSSec
     /**
      * needRulesVerdict
      * <p>
-     * This class method returns a verdict indicating that control provider needs to be asked how to handle the remediation. The control provider can either drop or allow the flow, or update the rules and ask the data provider to decide on the data flow again.
+     * This class method returns a verdict indicating that control provider needs to be asked how to handle the
+     * remediation. The control provider can either drop or allow the flow, or update the rules and ask the data
+     * provider to decide on the data flow again.
      *
      * @return The NEFilterRemediationVerdict object.
      */

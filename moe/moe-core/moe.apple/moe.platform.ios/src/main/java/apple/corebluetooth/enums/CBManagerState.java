@@ -24,12 +24,12 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * Represents the current state of a CBManager.
  * <p>
- * [@constant] CBManagerStateUnknown       State unknown, update imminent.
- * [@constant] CBManagerStateResetting     The connection with the system service was momentarily lost, update imminent.
- * [@constant] CBManagerStateUnsupported   The platform doesn't support the Bluetooth Low Energy Central/Client role.
- * [@constant] CBManagerStateUnauthorized  The application is not authorized to use the Bluetooth Low Energy role.
- * [@constant] CBManagerStatePoweredOff    Bluetooth is currently powered off.
- * [@constant] CBManagerStatePoweredOn     Bluetooth is currently powered on and available to use.
+ * [@constant] CBManagerStateUnknown State unknown, update imminent.
+ * [@constant] CBManagerStateResetting The connection with the system service was momentarily lost, update imminent.
+ * [@constant] CBManagerStateUnsupported The platform doesn't support the Bluetooth Low Energy Central/Client role.
+ * [@constant] CBManagerStateUnauthorized The application is not authorized to use the Bluetooth Low Energy role.
+ * [@constant] CBManagerStatePoweredOff Bluetooth is currently powered off.
+ * [@constant] CBManagerStatePoweredOn Bluetooth is currently powered on and available to use.
  *
  * @see authorization
  */

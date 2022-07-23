@@ -30,8 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@dependency] This depends on Metal.framework
  * <p>
  * Specifies the parametric ELU neuron filter.
- * For each pixel, applies the following function: f(x) = [ a * (exp(x) - 1), x <  0
- * [ x               , x >= 0
+ * For each pixel, applies the following function: f(x) = [ a * (exp(x) - 1), x < 0
+ * [ x , x >= 0
  */
 @Generated
 @Library("MetalPerformanceShaders")

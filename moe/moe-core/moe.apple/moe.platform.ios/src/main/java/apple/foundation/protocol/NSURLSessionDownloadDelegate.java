@@ -37,7 +37,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSURLSessionDownloadDelegate")
 public interface NSURLSessionDownloadDelegate extends NSURLSessionTaskDelegate {
     /**
-     * Sent when a download task that has completed a download.  The delegate should
+     * Sent when a download task that has completed a download. The delegate should
      * copy or move the file at the given location to a new location as it will be
      * removed when the delegate message returns. URLSession:task:didCompleteWithError: will
      * still be called.

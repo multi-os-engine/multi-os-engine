@@ -4,8 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Applications that are locked into Guided Access via a Single App Mode profile are granted the ability to configure certain accessibility features,
- * to support kiosk deployments. If your app is locked into Single App Mode, you can use the UIGuidedAccessConfigureAccessibilityFeatures function
+ * Applications that are locked into Guided Access via a Single App Mode profile are granted the ability to configure
+ * certain accessibility features,
+ * to support kiosk deployments. If your app is locked into Single App Mode, you can use the
+ * UIGuidedAccessConfigureAccessibilityFeatures function
  * to configure what accessibility features are enabled.
  */
 @Generated

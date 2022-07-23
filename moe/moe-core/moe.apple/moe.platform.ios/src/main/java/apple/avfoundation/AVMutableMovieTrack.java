@@ -57,8 +57,9 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Establishes a track association of a specific type between two tracks.
      *
-     * @param            movieTrack An AVMovieTrack object that is to be associated with the receiver.
-     * @param            trackAssociationType The type of track association to add between the receiver and the specified movieTrack (for instance, AVTrackAssociationTypeChapterList).
+     * @param movieTrack           An AVMovieTrack object that is to be associated with the receiver.
+     * @param trackAssociationType The type of track association to add between the receiver and the specified
+     *                             movieTrack (for instance, AVTrackAssociationTypeChapterList).
      */
     @Generated
     @Selector("addTrackAssociationToTrack:type:")
@@ -75,7 +76,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native AVMutableMovieTrack allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]       alternateGroupID
+     * [@property] alternateGroupID
      * <p>
      * An integer indicating the track as a member of a particular alternate group.
      */
@@ -87,12 +88,16 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     /**
      * appendSampleBuffer:decodeTime:presentationTime:error:
      * <p>
-     * Appends sample data to a media file and adds sample references for the added data to a track's media sample tables.
+     * Appends sample data to a media file and adds sample references for the added data to a track's media sample
+     * tables.
      * <p>
-     * If the sample buffer carries sample data, the sample data is written to the container specified by the track property mediaDataStorage if non-nil,
-     * or else by the movie property defaultMediaDataStorage if non-nil, and sample references will be appended to the track's media.
+     * If the sample buffer carries sample data, the sample data is written to the container specified by the track
+     * property mediaDataStorage if non-nil,
+     * or else by the movie property defaultMediaDataStorage if non-nil, and sample references will be appended to the
+     * track's media.
      * If both media data storage properties are nil, the method will fail and return NO.
-     * If the sample buffer carries sample references only, sample data will not be written and sample references to the samples in their
+     * If the sample buffer carries sample references only, sample data will not be written and sample references to the
+     * samples in their
      * original container will be appended to the track's media as necessary.
      * <p>
      * Note regarding sample timing: in a track's media, the first sample's decode timestamp must always be zero.
@@ -100,17 +105,23 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * For other track types, difference between a sample's decode timestamp and the following
      * sample's decode timestamp is used as the first sample's decode duration, so as to preserve the relative timing.
      * <p>
-     * Note that this method does not modify the track's sourceTimeMappings but only appends sample references and sample data to the track's media.
+     * Note that this method does not modify the track's sourceTimeMappings but only appends sample references and
+     * sample data to the track's media.
      * To make the new samples appear in the track's timeline, invoke -insertMediaTimeRange:intoTimeRange:.
      * You can retrieve the mediaPresentationTimeRange property before and after appending a sequence of samples,
      * using CMTimeRangeGetEnd on each to calculate the media TimeRange for -insertMediaTimeRange:intoTimeRange:.
      * <p>
      * It's safe for multiple threads to call this method on different tracks at once.
      *
-     * @param            sampleBuffer The CMSampleBuffer to be appended; this may be obtained from an instance of AVAssetReader.
-     * @param            outDecodeTime A pointer to a CMTime structure to receive the decode time in the media of the first sample appended from the sample buffer. Pass NULL if you do not need this information.
-     * @param            outPresentationTime A pointer to a CMTime structure to receive the presentation time in the media of the first sample appended from the sample buffer. Pass NULL if you do not need this information.
-     * @param            outError If the appending fails, describes the nature of the failure. For example, if the device containing the track's media data storage is full, AVErrorDiskFull is returned.
+     * @param sampleBuffer        The CMSampleBuffer to be appended; this may be obtained from an instance of
+     *                            AVAssetReader.
+     * @param outDecodeTime       A pointer to a CMTime structure to receive the decode time in the media of the first
+     *                            sample appended from the sample buffer. Pass NULL if you do not need this information.
+     * @param outPresentationTime A pointer to a CMTime structure to receive the presentation time in the media of the
+     *                            first sample appended from the sample buffer. Pass NULL if you do not need this
+     *                            information.
+     * @param outError            If the appending fails, describes the nature of the failure. For example, if the
+     *                            device containing the track's media data storage is full, AVErrorDiskFull is returned.
      * @return A BOOL value indicating the success of the operation.
      */
     @Generated
@@ -143,7 +154,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]       cleanApertureDimensions
+     * [@property] cleanApertureDimensions
      * <p>
      * A CGSize indicating the clean aperture dimensions of the track.
      */
@@ -161,7 +172,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native String description_static();
 
     /**
-     * [@property]       encodedPixelsDimensions
+     * [@property] encodedPixelsDimensions
      * <p>
      * A CGSize indicating the dimensions encoded pixels dimensions of the track.
      */
@@ -171,18 +182,19 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native CGSize encodedPixelsDimensions();
 
     /**
-     * [@property]       extendedLanguageTag
+     * [@property] extendedLanguageTag
      * <p>
      * The language tag associated with the track.
      * <p>
-     * The value of this property is an IETF BCP 47 (RFC 4646) language identifier indicating the language tag associated with the track; may be nil if no language tag is indicated.
+     * The value of this property is an IETF BCP 47 (RFC 4646) language identifier indicating the language tag
+     * associated with the track; may be nil if no language tag is indicated.
      */
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
 
     /**
-     * [@property]       hasProtectedContent
+     * [@property] hasProtectedContent
      * <p>
      * Whether a track contains protected content.
      * <p>
@@ -206,7 +218,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Adds an empty time range to the target track.
      *
-     * @param            timeRange The time range to be made empty. Note that you cannot add empty time ranges to the end of a track.
+     * @param timeRange The time range to be made empty. Note that you cannot add empty time ranges to the end of a
+     *                  track.
      */
     @Generated
     @Selector("insertEmptyTimeRange:")
@@ -219,13 +232,15 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Use this method after you have appended samples or sample references to a track's media.
      * <p>
-     * To specify that the media time range be played at its natural rate, pass mediaTimeRange.duration == trackTimeRange.duration;
+     * To specify that the media time range be played at its natural rate, pass mediaTimeRange.duration ==
+     * trackTimeRange.duration;
      * otherwise, the ratio between these is used to determine the playback rate.
      * <p>
-     * Pass kCMTimeInvalid for trackTimeRange.start to indicate that the segment should be appended to the end of the track.
+     * Pass kCMTimeInvalid for trackTimeRange.start to indicate that the segment should be appended to the end of the
+     * track.
      *
-     * @param            mediaTimeRange The presentation time range of the media to be inserted.
-     * @param            trackTimeRange The time range of the track into which the media is to be inserted.
+     * @param mediaTimeRange The presentation time range of the media to be inserted.
+     * @param trackTimeRange The time range of the track into which the media is to be inserted.
      * @return A BOOL value indicating the success of the operation.
      */
     @Generated
@@ -238,16 +253,22 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Inserts a portion of an AVAssetTrack object into the target movie.
      *
-     * @param            timeRange The time range from the track from which media is to be inserted.
-     * @param            track An AVAssetTrack object indicating the source of the inserted media. Only AVAssetTracks of AVURLAssets and AVCompositions are supported.
-     * Must not be nil.
-     * @param            startTime The time in the target track at which the media is to be inserted.
-     * @param            copySampleData A BOOL value that indicates whether sample data is to be copied from the source to the destination during edits.
-     * If YES, the sample data is written to the file specified by the track property mediaDataStorage if non-nil,
-     * or else by the movie property defaultMediaDataStorage if non-nil; if both are nil, the method will fail and return NO.
-     * If NO, sample data will not be written and sample references to the samples in their original container will be added
-     * as necessary. Note that in this case, this method will fail if the original samples are fragmented.
-     * @param            outError If the insertion fails, describes the nature of the failure.
+     * @param timeRange      The time range from the track from which media is to be inserted.
+     * @param track          An AVAssetTrack object indicating the source of the inserted media. Only AVAssetTracks of
+     *                       AVURLAssets and AVCompositions are supported.
+     *                       Must not be nil.
+     * @param startTime      The time in the target track at which the media is to be inserted.
+     * @param copySampleData A BOOL value that indicates whether sample data is to be copied from the source to the
+     *                       destination during edits.
+     *                       If YES, the sample data is written to the file specified by the track property
+     *                       mediaDataStorage if non-nil,
+     *                       or else by the movie property defaultMediaDataStorage if non-nil; if both are nil, the
+     *                       method will fail and return NO.
+     *                       If NO, sample data will not be written and sample references to the samples in their
+     *                       original container will be added
+     *                       as necessary. Note that in this case, this method will fail if the original samples are
+     *                       fragmented.
+     * @param outError       If the insertion fails, describes the nature of the failure.
      * @return A BOOL value that indicates the success of the insertion.
      */
     @Generated
@@ -270,7 +291,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property]       enabled
+     * [@property] enabled
      * <p>
      * A BOOL value indicating whether the track is enabled by default for presentation.
      */
@@ -279,11 +300,12 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native boolean isEnabled();
 
     /**
-     * [@property]       modified
+     * [@property] modified
      * <p>
      * Whether a track has been modified.
      * <p>
-     * The value of this property is a BOOL that indicates whether the AVMutableMovieTrack object has been modified since it was created, was last written, or had its modified state cleared via a call to setModified:NO.
+     * The value of this property is a BOOL that indicates whether the AVMutableMovieTrack object has been modified
+     * since it was created, was last written, or had its modified state cleared via a call to setModified:NO.
      */
     @Generated
     @Selector("isModified")
@@ -298,18 +320,19 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]       languageCode
+     * [@property] languageCode
      * <p>
      * The language associated with the track.
      * <p>
-     * The value of this property is an ISO 639-2/T language code indicating the language associated with the track; may be nil if no language is indicated.
+     * The value of this property is an ISO 639-2/T language code indicating the language associated with the track; may
+     * be nil if no language is indicated.
      */
     @Generated
     @Selector("languageCode")
     public native String languageCode();
 
     /**
-     * [@property]       layer
+     * [@property] layer
      * <p>
      * The layer level of the visual media data of the track.
      */
@@ -319,29 +342,31 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native long layer();
 
     /**
-     * [@property]       mediaDataStorage
+     * [@property] mediaDataStorage
      * <p>
      * The storage container for media data added to a track.
      * <p>
-     * The value of this property is an AVMediaDataStorage object that indicates the location at which media data inserted or appended to the track will be written.
+     * The value of this property is an AVMediaDataStorage object that indicates the location at which media data
+     * inserted or appended to the track will be written.
      */
     @Generated
     @Selector("mediaDataStorage")
     public native AVMediaDataStorage mediaDataStorage();
 
     /**
-     * [@property]       metadata
+     * [@property] metadata
      * <p>
      * A collection of metadata stored by the track.
      * <p>
-     * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored by the track.
+     * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
+     * by the track.
      */
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
 
     /**
-     * [@property]       naturalSize
+     * [@property] naturalSize
      * <p>
      * A CGSize indicating the dimensions at which the visual media data of the track should be displayed.
      */
@@ -356,11 +381,12 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native AVMutableMovieTrack new_objc();
 
     /**
-     * [@property]		preferredMediaChunkAlignment
+     * [@property] preferredMediaChunkAlignment
      * <p>
      * For file types that support media chunk alignment, the boundary for media chunk alignment (in bytes).
      * <p>
-     * The default value is 0, which means that no padding should be used to achieve chunk alignment. It is an error to set a negative value for chunk alignment.
+     * The default value is 0, which means that no padding should be used to achieve chunk alignment. It is an error to
+     * set a negative value for chunk alignment.
      */
     @Generated
     @Selector("preferredMediaChunkAlignment")
@@ -368,13 +394,16 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native long preferredMediaChunkAlignment();
 
     /**
-     * [@property]		preferredMediaChunkDuration
+     * [@property] preferredMediaChunkDuration
      * <p>
-     * For file types that support media chunk durations, the maximum duration to be used for each chunk of sample data written to the file.
+     * For file types that support media chunk durations, the maximum duration to be used for each chunk of sample data
+     * written to the file.
      * <p>
-     * The total duration of the samples in a chunk will be no greater than this preferred chunk duration, or the duration of a single sample if the sample's duration is greater than this preferred chunk duration.
+     * The total duration of the samples in a chunk will be no greater than this preferred chunk duration, or the
+     * duration of a single sample if the sample's duration is greater than this preferred chunk duration.
      * <p>
-     * The default media chunk duration is 1.0 second. It is an error to set a chunk duration that is negative or non-numeric.
+     * The default media chunk duration is 1.0 second. It is an error to set a chunk duration that is negative or
+     * non-numeric.
      */
     @Generated
     @Selector("preferredMediaChunkDuration")
@@ -382,11 +411,13 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native CMTime preferredMediaChunkDuration();
 
     /**
-     * [@property]       preferredMediaChunkSize
+     * [@property] preferredMediaChunkSize
      * <p>
-     * For file types that support media chunk sizes, the maximum size (in bytes) to be used for each chunk of sample data written to the file.
+     * For file types that support media chunk sizes, the maximum size (in bytes) to be used for each chunk of sample
+     * data written to the file.
      * <p>
-     * The total size of the samples in a chunk will be no larger than this preferred chunk size, or the size of a single sample if the sample is larger than this preferred chunk size.
+     * The total size of the samples in a chunk will be no larger than this preferred chunk size, or the size of a
+     * single sample if the sample is larger than this preferred chunk size.
      * <p>
      * The default media chunk size is 1024 * 1024 bytes. It is an error to set a negative chunk size.
      */
@@ -396,9 +427,11 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native long preferredMediaChunkSize();
 
     /**
-     * [@property]       preferredTransform
+     * [@property] preferredTransform
      * <p>
-     * A CGAffineTransform indicating the transform specified in the track's storage container as the preferred transformation of the visual media data for display purposes; the value is often but not always CGAffineTransformIdentity.
+     * A CGAffineTransform indicating the transform specified in the track's storage container as the preferred
+     * transformation of the visual media data for display purposes; the value is often but not always
+     * CGAffineTransformIdentity.
      */
     @Generated
     @Selector("preferredTransform")
@@ -406,7 +439,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native CGAffineTransform preferredTransform();
 
     /**
-     * [@property]       preferredVolume
+     * [@property] preferredVolume
      * <p>
      * The preferred volume of the audible media data of the track; often but not always 1.0.
      */
@@ -415,7 +448,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native float preferredVolume();
 
     /**
-     * [@property]       productionApertureDimensions
+     * [@property] productionApertureDimensions
      * <p>
      * A CGSize indicating the production aperture dimensions of the track.
      */
@@ -429,7 +462,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Removes a specified time range from a track.
      *
-     * @param            timeRange The time range to be removed.
+     * @param timeRange The time range to be removed.
      */
     @Generated
     @Selector("removeTimeRange:")
@@ -440,8 +473,9 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Removes a track association of a specific type between two tracks.
      *
-     * @param            movieTrack An AVMovieTrack object that is associated with the receiver.
-     * @param            trackAssociationType The type of track association to remove between the receiver and the specified movieTrack (for instance, AVTrackAssociationTypeChapterList).
+     * @param movieTrack           An AVMovieTrack object that is associated with the receiver.
+     * @param trackAssociationType The type of track association to remove between the receiver and the specified
+     *                             movieTrack (for instance, AVTrackAssociationTypeChapterList).
      */
     @Generated
     @Selector("removeTrackAssociationToTrack:type:")
@@ -452,12 +486,19 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Replaces one of the receiver's format descriptions with another format description
      * <p>
-     * You can use this method to make surgical changes to a track's format descriptions, such as adding format description extensions to a format description or changing the audio channel layout of an audio track. You should note that a format description can have extensions of type kCMFormatDescriptionExtension_VerbatimSampleDescription and kCMFormatDescriptionExtension_VerbatimISOSampleEntry; if you modify a copy of a format description, you should delete those extensions from the copy or your changes might be ignored.
+     * You can use this method to make surgical changes to a track's format descriptions, such as adding format
+     * description extensions to a format description or changing the audio channel layout of an audio track. You should
+     * note that a format description can have extensions of type
+     * kCMFormatDescriptionExtension_VerbatimSampleDescription and kCMFormatDescriptionExtension_VerbatimISOSampleEntry;
+     * if you modify a copy of a format description, you should delete those extensions from the copy or your changes
+     * might be ignored.
      * <p>
-     * An NSInvalidArgumentException will be thrown if the media type of the new format description does not match the media type of the receiver.
+     * An NSInvalidArgumentException will be thrown if the media type of the new format description does not match the
+     * media type of the receiver.
      *
-     * @param            formatDescription A CMFormatDescription occurring in the array returned by the -formatDescriptions method.
-     * @param            newFormatDescription A CMFormatDescription to replace the specified format description.
+     * @param formatDescription    A CMFormatDescription occurring in the array returned by the -formatDescriptions
+     *                             method.
+     * @param newFormatDescription A CMFormatDescription to replace the specified format description.
      */
     @Generated
     @Selector("replaceFormatDescription:withFormatDescription:")
@@ -473,13 +514,21 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]       sampleReferenceBaseURL
+     * [@property] sampleReferenceBaseURL
      * <p>
-     * For file types that support writing sample references, such as QuickTime Movie files, specifies the base URL that sample references are relative to; may be nil.
+     * For file types that support writing sample references, such as QuickTime Movie files, specifies the base URL that
+     * sample references are relative to; may be nil.
      * <p>
-     * If the value of this property can be resolved as an absolute URL, the sample locations written to the file when appending sample references to this track will be relative to this URL. The URL must point to a location contained by any common parent directory of the locations that will be referenced. For example, setting the sampleReferenceBaseURL property to "file:///Users/johnappleseed/Movies/" and appending sample buffers that refer to "file:///Users/johnappleseed/Movies/data/movie1.mov" will cause the sample reference "data/movie1.mov" to be written to the movie file.
+     * If the value of this property can be resolved as an absolute URL, the sample locations written to the file when
+     * appending sample references to this track will be relative to this URL. The URL must point to a location
+     * contained by any common parent directory of the locations that will be referenced. For example, setting the
+     * sampleReferenceBaseURL property to "file:///Users/johnappleseed/Movies/" and appending sample buffers that refer
+     * to "file:///Users/johnappleseed/Movies/data/movie1.mov" will cause the sample reference "data/movie1.mov" to be
+     * written to the movie file.
      * <p>
-     * If the value of the property cannot be resolved as an absolute URL or if it points to a location that is not contained by any common parent directory of the locations that will be referenced, the location will be written unmodified.
+     * If the value of the property cannot be resolved as an absolute URL or if it points to a location that is not
+     * contained by any common parent directory of the locations that will be referenced, the location will be written
+     * unmodified.
      * <p>
      * The default value is nil, which means that the location will be written unmodified.
      */
@@ -492,15 +541,15 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * <p>
      * Changes the duration of a time range of a track.
      *
-     * @param            timeRange The time range to be scaled.
-     * @param            duration The new duration of the time range.
+     * @param timeRange The time range to be scaled.
+     * @param duration  The new duration of the time range.
      */
     @Generated
     @Selector("scaleTimeRange:toDuration:")
     public native void scaleTimeRangeToDuration(@ByValue CMTimeRange timeRange, @ByValue CMTime duration);
 
     /**
-     * [@property]       alternateGroupID
+     * [@property] alternateGroupID
      * <p>
      * An integer indicating the track as a member of a particular alternate group.
      */
@@ -509,7 +558,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setAlternateGroupID(@NInt long value);
 
     /**
-     * [@property]       cleanApertureDimensions
+     * [@property] cleanApertureDimensions
      * <p>
      * A CGSize indicating the clean aperture dimensions of the track.
      */
@@ -518,7 +567,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setCleanApertureDimensions(@ByValue CGSize value);
 
     /**
-     * [@property]       enabled
+     * [@property] enabled
      * <p>
      * A BOOL value indicating whether the track is enabled by default for presentation.
      */
@@ -527,7 +576,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setEnabled(boolean value);
 
     /**
-     * [@property]       encodedPixelsDimensions
+     * [@property] encodedPixelsDimensions
      * <p>
      * A CGSize indicating the dimensions encoded pixels dimensions of the track.
      */
@@ -536,29 +585,31 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setEncodedPixelsDimensions(@ByValue CGSize value);
 
     /**
-     * [@property]       extendedLanguageTag
+     * [@property] extendedLanguageTag
      * <p>
      * The language tag associated with the track.
      * <p>
-     * The value of this property is an IETF BCP 47 (RFC 4646) language identifier indicating the language tag associated with the track; may be nil if no language tag is indicated.
+     * The value of this property is an IETF BCP 47 (RFC 4646) language identifier indicating the language tag
+     * associated with the track; may be nil if no language tag is indicated.
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
     public native void setExtendedLanguageTag(String value);
 
     /**
-     * [@property]       languageCode
+     * [@property] languageCode
      * <p>
      * The language associated with the track.
      * <p>
-     * The value of this property is an ISO 639-2/T language code indicating the language associated with the track; may be nil if no language is indicated.
+     * The value of this property is an ISO 639-2/T language code indicating the language associated with the track; may
+     * be nil if no language is indicated.
      */
     @Generated
     @Selector("setLanguageCode:")
     public native void setLanguageCode(String value);
 
     /**
-     * [@property]       layer
+     * [@property] layer
      * <p>
      * The layer level of the visual media data of the track.
      */
@@ -567,40 +618,43 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setLayer(@NInt long value);
 
     /**
-     * [@property]       mediaDataStorage
+     * [@property] mediaDataStorage
      * <p>
      * The storage container for media data added to a track.
      * <p>
-     * The value of this property is an AVMediaDataStorage object that indicates the location at which media data inserted or appended to the track will be written.
+     * The value of this property is an AVMediaDataStorage object that indicates the location at which media data
+     * inserted or appended to the track will be written.
      */
     @Generated
     @Selector("setMediaDataStorage:")
     public native void setMediaDataStorage(AVMediaDataStorage value);
 
     /**
-     * [@property]       metadata
+     * [@property] metadata
      * <p>
      * A collection of metadata stored by the track.
      * <p>
-     * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored by the track.
+     * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
+     * by the track.
      */
     @Generated
     @Selector("setMetadata:")
     public native void setMetadata(NSArray<? extends AVMetadataItem> value);
 
     /**
-     * [@property]       modified
+     * [@property] modified
      * <p>
      * Whether a track has been modified.
      * <p>
-     * The value of this property is a BOOL that indicates whether the AVMutableMovieTrack object has been modified since it was created, was last written, or had its modified state cleared via a call to setModified:NO.
+     * The value of this property is a BOOL that indicates whether the AVMutableMovieTrack object has been modified
+     * since it was created, was last written, or had its modified state cleared via a call to setModified:NO.
      */
     @Generated
     @Selector("setModified:")
     public native void setModified(boolean value);
 
     /**
-     * [@property]       naturalSize
+     * [@property] naturalSize
      * <p>
      * A CGSize indicating the dimensions at which the visual media data of the track should be displayed.
      */
@@ -609,35 +663,41 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setNaturalSize(@ByValue CGSize value);
 
     /**
-     * [@property]		preferredMediaChunkAlignment
+     * [@property] preferredMediaChunkAlignment
      * <p>
      * For file types that support media chunk alignment, the boundary for media chunk alignment (in bytes).
      * <p>
-     * The default value is 0, which means that no padding should be used to achieve chunk alignment. It is an error to set a negative value for chunk alignment.
+     * The default value is 0, which means that no padding should be used to achieve chunk alignment. It is an error to
+     * set a negative value for chunk alignment.
      */
     @Generated
     @Selector("setPreferredMediaChunkAlignment:")
     public native void setPreferredMediaChunkAlignment(@NInt long value);
 
     /**
-     * [@property]		preferredMediaChunkDuration
+     * [@property] preferredMediaChunkDuration
      * <p>
-     * For file types that support media chunk durations, the maximum duration to be used for each chunk of sample data written to the file.
+     * For file types that support media chunk durations, the maximum duration to be used for each chunk of sample data
+     * written to the file.
      * <p>
-     * The total duration of the samples in a chunk will be no greater than this preferred chunk duration, or the duration of a single sample if the sample's duration is greater than this preferred chunk duration.
+     * The total duration of the samples in a chunk will be no greater than this preferred chunk duration, or the
+     * duration of a single sample if the sample's duration is greater than this preferred chunk duration.
      * <p>
-     * The default media chunk duration is 1.0 second. It is an error to set a chunk duration that is negative or non-numeric.
+     * The default media chunk duration is 1.0 second. It is an error to set a chunk duration that is negative or
+     * non-numeric.
      */
     @Generated
     @Selector("setPreferredMediaChunkDuration:")
     public native void setPreferredMediaChunkDuration(@ByValue CMTime value);
 
     /**
-     * [@property]       preferredMediaChunkSize
+     * [@property] preferredMediaChunkSize
      * <p>
-     * For file types that support media chunk sizes, the maximum size (in bytes) to be used for each chunk of sample data written to the file.
+     * For file types that support media chunk sizes, the maximum size (in bytes) to be used for each chunk of sample
+     * data written to the file.
      * <p>
-     * The total size of the samples in a chunk will be no larger than this preferred chunk size, or the size of a single sample if the sample is larger than this preferred chunk size.
+     * The total size of the samples in a chunk will be no larger than this preferred chunk size, or the size of a
+     * single sample if the sample is larger than this preferred chunk size.
      * <p>
      * The default media chunk size is 1024 * 1024 bytes. It is an error to set a negative chunk size.
      */
@@ -646,16 +706,18 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setPreferredMediaChunkSize(@NInt long value);
 
     /**
-     * [@property]       preferredTransform
+     * [@property] preferredTransform
      * <p>
-     * A CGAffineTransform indicating the transform specified in the track's storage container as the preferred transformation of the visual media data for display purposes; the value is often but not always CGAffineTransformIdentity.
+     * A CGAffineTransform indicating the transform specified in the track's storage container as the preferred
+     * transformation of the visual media data for display purposes; the value is often but not always
+     * CGAffineTransformIdentity.
      */
     @Generated
     @Selector("setPreferredTransform:")
     public native void setPreferredTransform(@ByValue CGAffineTransform value);
 
     /**
-     * [@property]       preferredVolume
+     * [@property] preferredVolume
      * <p>
      * The preferred volume of the audible media data of the track; often but not always 1.0.
      */
@@ -664,7 +726,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setPreferredVolume(float value);
 
     /**
-     * [@property]       productionApertureDimensions
+     * [@property] productionApertureDimensions
      * <p>
      * A CGSize indicating the production aperture dimensions of the track.
      */
@@ -673,13 +735,21 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setProductionApertureDimensions(@ByValue CGSize value);
 
     /**
-     * [@property]       sampleReferenceBaseURL
+     * [@property] sampleReferenceBaseURL
      * <p>
-     * For file types that support writing sample references, such as QuickTime Movie files, specifies the base URL that sample references are relative to; may be nil.
+     * For file types that support writing sample references, such as QuickTime Movie files, specifies the base URL that
+     * sample references are relative to; may be nil.
      * <p>
-     * If the value of this property can be resolved as an absolute URL, the sample locations written to the file when appending sample references to this track will be relative to this URL. The URL must point to a location contained by any common parent directory of the locations that will be referenced. For example, setting the sampleReferenceBaseURL property to "file:///Users/johnappleseed/Movies/" and appending sample buffers that refer to "file:///Users/johnappleseed/Movies/data/movie1.mov" will cause the sample reference "data/movie1.mov" to be written to the movie file.
+     * If the value of this property can be resolved as an absolute URL, the sample locations written to the file when
+     * appending sample references to this track will be relative to this URL. The URL must point to a location
+     * contained by any common parent directory of the locations that will be referenced. For example, setting the
+     * sampleReferenceBaseURL property to "file:///Users/johnappleseed/Movies/" and appending sample buffers that refer
+     * to "file:///Users/johnappleseed/Movies/data/movie1.mov" will cause the sample reference "data/movie1.mov" to be
+     * written to the movie file.
      * <p>
-     * If the value of the property cannot be resolved as an absolute URL or if it points to a location that is not contained by any common parent directory of the locations that will be referenced, the location will be written unmodified.
+     * If the value of the property cannot be resolved as an absolute URL or if it points to a location that is not
+     * contained by any common parent directory of the locations that will be referenced, the location will be written
+     * unmodified.
      * <p>
      * The default value is nil, which means that the location will be written unmodified.
      */
@@ -688,9 +758,10 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public native void setSampleReferenceBaseURL(NSURL value);
 
     /**
-     * [@property]       timescale
+     * [@property] timescale
      * <p>
-     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the time scale of the track's media.
+     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the time scale of the track's
+     * media.
      * <p>
      * The default media time scale is 0.
      * <p>
@@ -709,9 +780,10 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     public static native Class superclass_static();
 
     /**
-     * [@property]       timescale
+     * [@property] timescale
      * <p>
-     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the time scale of the track's media.
+     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the time scale of the track's
+     * media.
      * <p>
      * The default media time scale is 0.
      * <p>

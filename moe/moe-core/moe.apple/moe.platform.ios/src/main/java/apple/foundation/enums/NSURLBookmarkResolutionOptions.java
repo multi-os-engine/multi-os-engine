@@ -35,7 +35,9 @@ public final class NSURLBookmarkResolutionOptions {
     }
 
     /**
-     * Disable implicitly starting access of the ephemeral security-scoped resource during resolution. Instead, call `-[NSURL startAccessingSecurityScopedResource]` on the returned URL when ready to use the resource. Not applicable to security-scoped bookmarks.
+     * Disable implicitly starting access of the ephemeral security-scoped resource during resolution. Instead, call
+     * `-[NSURL startAccessingSecurityScopedResource]` on the returned URL when ready to use the resource. Not
+     * applicable to security-scoped bookmarks.
      */
     @Generated @NUInt public static final long ImplicitStartAccessing = 0x0000000000008000L;
 }

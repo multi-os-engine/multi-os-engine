@@ -155,12 +155,15 @@ public class AVCompositionTrack extends AVAssetTrack {
     public native AVCompositionTrack init();
 
     /**
-     * [@property]       segments
+     * [@property] segments
      * <p>
      * Provides read-only access to the array of track segments, each an instance of AVCompositionTrackSegment.
      * <p>
-     * Note that timeMapping.target.start of the first AVCompositionTrackSegment must be kCMTimeZero, and the timeMapping.target.start of each subsequent AVCompositionTrackSegment must equal CMTimeRangeGetEnd(the previous AVCompositionTrackSegment's timeMapping.target).
-     * Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments conforms to this rule.
+     * Note that timeMapping.target.start of the first AVCompositionTrackSegment must be kCMTimeZero, and the
+     * timeMapping.target.start of each subsequent AVCompositionTrackSegment must equal CMTimeRangeGetEnd(the previous
+     * AVCompositionTrackSegment's timeMapping.target).
+     * Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments
+     * conforms to this rule.
      */
     @Generated
     @Selector("segments")
@@ -169,11 +172,13 @@ public class AVCompositionTrack extends AVAssetTrack {
     /**
      * segmentForTrackTime:
      * <p>
-     * Supplies the AVCompositionTrackSegment from the segments array with a target timeRange that either contains the specified track time or is the closest to it among the target timeRanges of the track's segments.
+     * Supplies the AVCompositionTrackSegment from the segments array with a target timeRange that either contains the
+     * specified track time or is the closest to it among the target timeRanges of the track's segments.
      * <p>
-     * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the segment closest in time to the specified trackTime is returned.
+     * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the
+     * segment closest in time to the specified trackTime is returned.
      *
-     * @param            trackTime The trackTime for which an AVCompositionTrackSegment is requested.
+     * @param trackTime The trackTime for which an AVCompositionTrackSegment is requested.
      * @return An AVCompositionTrackSegment.
      */
     @Generated
@@ -181,11 +186,16 @@ public class AVCompositionTrack extends AVAssetTrack {
     public native AVCompositionTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);
 
     /**
-     * [@property]		formatDescriptionReplacements
+     * [@property] formatDescriptionReplacements
      * <p>
-     * An array of AVCompositionTrackFormatDescriptionReplacement objects indicating original format descriptions and their replacements.
+     * An array of AVCompositionTrackFormatDescriptionReplacement objects indicating original format descriptions and
+     * their replacements.
      * <p>
-     * The value of this property is an array of AVCompositionTrackFormatDescriptionReplacement objects, each of which specifies an original format description together with its replacement format description (as specified by a previous call to -replaceFormatDescription:withFormatDescription:). Only format descriptions that are to be replaced will occur as the originalFormatDescription elements in the AVCompositionTrackFormatDescriptionReplacement objects in this array.
+     * The value of this property is an array of AVCompositionTrackFormatDescriptionReplacement objects, each of which
+     * specifies an original format description together with its replacement format description (as specified by a
+     * previous call to -replaceFormatDescription:withFormatDescription:). Only format descriptions that are to be
+     * replaced will occur as the originalFormatDescription elements in the
+     * AVCompositionTrackFormatDescriptionReplacement objects in this array.
      */
     @Generated
     @Selector("formatDescriptionReplacements")

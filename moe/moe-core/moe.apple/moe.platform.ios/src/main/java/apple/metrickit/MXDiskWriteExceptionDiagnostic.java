@@ -66,7 +66,7 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      callStackTree
+     * [@property] callStackTree
      * <p>
      * The application call stack tree associated with the excessive disk writes.
      */
@@ -166,7 +166,7 @@ public class MXDiskWriteExceptionDiagnostic extends MXDiagnostic {
     }
 
     /**
-     * [@property]      totalWritesCaused
+     * [@property] totalWritesCaused
      * <p>
      * Total disk writes caused in the scope of this disk write exception.
      * <p>

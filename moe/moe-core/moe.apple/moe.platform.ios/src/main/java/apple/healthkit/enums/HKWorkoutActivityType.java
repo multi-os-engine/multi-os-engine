@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum]          HKWorkoutActivityType
+ * [@enum] HKWorkoutActivityType
  * <p>
  * Represents a particular type of workout or exercise
  */
@@ -40,7 +40,8 @@ public final class HKWorkoutActivityType {
     @Generated @NUInt public static final long Climbing = 0x0000000000000009L;
     @Generated @NUInt public static final long Cricket = 0x000000000000000AL;
     /**
-     * Any mix of cardio and/or strength training. See also HKWorkoutActivityTypeCoreTraining and HKWorkoutActivityTypeFlexibility.
+     * Any mix of cardio and/or strength training. See also HKWorkoutActivityTypeCoreTraining and
+     * HKWorkoutActivityTypeFlexibility.
      */
     @Generated @NUInt public static final long CrossTraining = 0x000000000000000BL;
     @Generated @NUInt public static final long Curling = 0x000000000000000CL;
@@ -105,7 +106,8 @@ public final class HKWorkoutActivityType {
      */
     @Generated @NUInt public static final long SkatingSports = 0x0000000000000027L;
     /**
-     * Sledding, Snowmobiling, Building a Snowman, etc. See also HKWorkoutActivityTypeCrossCountrySkiing, HKWorkoutActivityTypeSnowboarding, and HKWorkoutActivityTypeDownhillSkiing.
+     * Sledding, Snowmobiling, Building a Snowman, etc. See also HKWorkoutActivityTypeCrossCountrySkiing,
+     * HKWorkoutActivityTypeSnowboarding, and HKWorkoutActivityTypeDownhillSkiing.
      */
     @Generated @NUInt public static final long SnowSports = 0x0000000000000028L;
     @Generated @NUInt public static final long Soccer = 0x0000000000000029L;

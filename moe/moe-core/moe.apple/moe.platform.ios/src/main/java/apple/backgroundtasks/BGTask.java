@@ -89,8 +89,12 @@ public class BGTask extends NSObject {
     /**
      * Called by the system shortly before your app's background time expires.
      * <p>
-     * There is a limit to how long your app has to perform its background work, and your work may need to be interrupted if system conditions change. Assign a handler to this property to cancel any ongoing tasks, perform any needed cleanup, and then call setTaskCompletedWithSuccess: to signal completion to the system and allow your app to be suspended.
-     * This property is cleared after it is called by the system or when setTaskCompletedWithSuccess: is called. This is to mitigate the impact of a retain cycle created by referencing the BGTask instance inside this block.
+     * There is a limit to how long your app has to perform its background work, and your work may need to be
+     * interrupted if system conditions change. Assign a handler to this property to cancel any ongoing tasks, perform
+     * any needed cleanup, and then call setTaskCompletedWithSuccess: to signal completion to the system and allow your
+     * app to be suspended.
+     * This property is cleared after it is called by the system or when setTaskCompletedWithSuccess: is called. This is
+     * to mitigate the impact of a retain cycle created by referencing the BGTask instance inside this block.
      */
     @Generated
     @Selector("expirationHandler")
@@ -157,8 +161,12 @@ public class BGTask extends NSObject {
     /**
      * Called by the system shortly before your app's background time expires.
      * <p>
-     * There is a limit to how long your app has to perform its background work, and your work may need to be interrupted if system conditions change. Assign a handler to this property to cancel any ongoing tasks, perform any needed cleanup, and then call setTaskCompletedWithSuccess: to signal completion to the system and allow your app to be suspended.
-     * This property is cleared after it is called by the system or when setTaskCompletedWithSuccess: is called. This is to mitigate the impact of a retain cycle created by referencing the BGTask instance inside this block.
+     * There is a limit to how long your app has to perform its background work, and your work may need to be
+     * interrupted if system conditions change. Assign a handler to this property to cancel any ongoing tasks, perform
+     * any needed cleanup, and then call setTaskCompletedWithSuccess: to signal completion to the system and allow your
+     * app to be suspended.
+     * This property is cleared after it is called by the system or when setTaskCompletedWithSuccess: is called. This is
+     * to mitigate the impact of a retain cycle created by referencing the BGTask instance inside this block.
      */
     @Generated
     @Selector("setExpirationHandler:")
@@ -175,10 +183,15 @@ public class BGTask extends NSObject {
     /**
      * Marks this task as complete.
      * <p>
-     * Call this method as soon as the background work associated with this task is complete. The system provides your app with a limited amount of time to finish the task. If you do not call setTaskCompletedWithSuccess: on the task, the system continues to run in the background until all the available time is consumed, wasting battery power.
+     * Call this method as soon as the background work associated with this task is complete. The system provides your
+     * app with a limited amount of time to finish the task. If you do not call setTaskCompletedWithSuccess: on the
+     * task, the system continues to run in the background until all the available time is consumed, wasting battery
+     * power.
      * The system suspends the app as soon as all background tasks are complete.
      *
-     * @param success Whether the task was completed successfully. If the task was unsuccessful, you may request the system to try again later by submitting a new task request to the scheduler before calling this method.
+     * @param success Whether the task was completed successfully. If the task was unsuccessful, you may request the
+     *                system to try again later by submitting a new task request to the scheduler before calling this
+     *                method.
      */
     @Generated
     @Selector("setTaskCompletedWithSuccess:")

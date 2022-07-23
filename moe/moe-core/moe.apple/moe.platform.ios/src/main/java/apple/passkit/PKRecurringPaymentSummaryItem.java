@@ -120,7 +120,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     public native long intervalCount();
 
     /**
-     * The interval at which payments will be taken (daily, weekly, monthly, yearly, etc.). The default value is NSCalendarUnitMonth.
+     * The interval at which payments will be taken (daily, weekly, monthly, yearly, etc.). The default value is
+     * NSCalendarUnitMonth.
      */
     @Generated
     @Selector("intervalUnit")
@@ -163,7 +164,8 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     public native void setIntervalCount(@NInt long value);
 
     /**
-     * The interval at which payments will be taken (daily, weekly, monthly, yearly, etc.). The default value is NSCalendarUnitMonth.
+     * The interval at which payments will be taken (daily, weekly, monthly, yearly, etc.). The default value is
+     * NSCalendarUnitMonth.
      */
     @Generated
     @Selector("setIntervalUnit:")

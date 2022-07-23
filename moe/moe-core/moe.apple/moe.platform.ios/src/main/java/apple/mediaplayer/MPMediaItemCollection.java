@@ -206,7 +206,8 @@ public class MPMediaItemCollection extends MPMediaEntity {
 
     /**
      * Returns an item representative of other items in the collection.
-     * This item can be used for common item properties in the collection, often more efficiently than fetching an item out of the items array.
+     * This item can be used for common item properties in the collection, often more efficiently than fetching an item
+     * out of the items array.
      */
     @Generated
     @Selector("representativeItem")

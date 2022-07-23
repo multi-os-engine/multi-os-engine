@@ -31,8 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifierType> extends NSObject
-        implements UITableViewDataSource {
+public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifierType> extends NSObject implements
+        UITableViewDataSource {
     static {
         NatJ.register();
     }
@@ -59,13 +59,18 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     /**
      * Apply a snapshot to the table view committing to the new data source state.
      * <p>
-     * animatingDifferences == YES: perform a diff between the current UITableView state and the snapshot, and animate the update.
-     * animatingDifferences == NO: perform a diff between the current UITableView state and the snapshot, but don't animate the update.
+     * animatingDifferences == YES: perform a diff between the current UITableView state and the snapshot, and animate
+     * the update.
+     * animatingDifferences == NO: perform a diff between the current UITableView state and the snapshot, but don't
+     * animate the update.
      * <p>
-     * If the (optional) completion block is specified, it will be called on the main queue when any animations are completed.
+     * If the (optional) completion block is specified, it will be called on the main queue when any animations are
+     * completed.
      * <p>
-     * Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the calling queue and the
-     * final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to the same queue.
+     * Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the
+     * calling queue and the
+     * final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to
+     * the same queue.
      * (if you violate this restriction and mix calls between the main queue and some background queue, the framework
      * will log and/or assert to avoid deadlocks)
      */

@@ -335,42 +335,60 @@ public class UIKeyCommand extends UICommand {
     public native String title();
 
     /**
-     * Suppose the system detects a given key command that is not reachable in the current keyboard layout; it will localize the key command to something reachable. By setting this property to NO, you will opt-out this menu item from the system-provided localization. YES by default for apps linked against 15.0 and later SDK.
+     * Suppose the system detects a given key command that is not reachable in the current keyboard layout; it will
+     * localize the key command to something reachable. By setting this property to NO, you will opt-out this menu item
+     * from the system-provided localization. YES by default for apps linked against 15.0 and later SDK.
      */
     @Generated
     @Selector("allowsAutomaticLocalization")
     public native boolean allowsAutomaticLocalization();
 
     /**
-     * Suppose the system detects a given key command with the following input string [ ] { } ( ) < > ← → in a right-to-left user interface environment (UIUserInterfaceLayoutDirectionRightToLeft); in that case, the system will automatically mirror the key command. For example, a pair of key commands with input { and } will be localized to } and { in a right-to-left user interface. By setting this property to NO, you will opt-out this key command of automatically mirroring in RTL. It would be best only to do this if your action will result in some sort of directional change in the UI, e.g. a segmented control for text alignment or a D-pad in a game. YES by default for apps linked against 15.0 and later SDK.
+     * Suppose the system detects a given key command with the following input string [ ] { } ( ) < > ← → in a
+     * right-to-left user interface environment (UIUserInterfaceLayoutDirectionRightToLeft); in that case, the system
+     * will automatically mirror the key command. For example, a pair of key commands with input { and } will be
+     * localized to } and { in a right-to-left user interface. By setting this property to NO, you will opt-out this key
+     * command of automatically mirroring in RTL. It would be best only to do this if your action will result in some
+     * sort of directional change in the UI, e.g. a segmented control for text alignment or a D-pad in a game. YES by
+     * default for apps linked against 15.0 and later SDK.
      */
     @Generated
     @Selector("allowsAutomaticMirroring")
     public native boolean allowsAutomaticMirroring();
 
     /**
-     * Suppose the system detects a given key command that is not reachable in the current keyboard layout; it will localize the key command to something reachable. By setting this property to NO, you will opt-out this menu item from the system-provided localization. YES by default for apps linked against 15.0 and later SDK.
+     * Suppose the system detects a given key command that is not reachable in the current keyboard layout; it will
+     * localize the key command to something reachable. By setting this property to NO, you will opt-out this menu item
+     * from the system-provided localization. YES by default for apps linked against 15.0 and later SDK.
      */
     @Generated
     @Selector("setAllowsAutomaticLocalization:")
     public native void setAllowsAutomaticLocalization(boolean value);
 
     /**
-     * Suppose the system detects a given key command with the following input string [ ] { } ( ) < > ← → in a right-to-left user interface environment (UIUserInterfaceLayoutDirectionRightToLeft); in that case, the system will automatically mirror the key command. For example, a pair of key commands with input { and } will be localized to } and { in a right-to-left user interface. By setting this property to NO, you will opt-out this key command of automatically mirroring in RTL. It would be best only to do this if your action will result in some sort of directional change in the UI, e.g. a segmented control for text alignment or a D-pad in a game. YES by default for apps linked against 15.0 and later SDK.
+     * Suppose the system detects a given key command with the following input string [ ] { } ( ) < > ← → in a
+     * right-to-left user interface environment (UIUserInterfaceLayoutDirectionRightToLeft); in that case, the system
+     * will automatically mirror the key command. For example, a pair of key commands with input { and } will be
+     * localized to } and { in a right-to-left user interface. By setting this property to NO, you will opt-out this key
+     * command of automatically mirroring in RTL. It would be best only to do this if your action will result in some
+     * sort of directional change in the UI, e.g. a segmented control for text alignment or a D-pad in a game. YES by
+     * default for apps linked against 15.0 and later SDK.
      */
     @Generated
     @Selector("setAllowsAutomaticMirroring:")
     public native void setAllowsAutomaticMirroring(boolean value);
 
     /**
-     * Indicates whether the key command should execute if it conflicts with focus or text-editing system commands, defaults to @c NO
+     * Indicates whether the key command should execute if it conflicts with focus or text-editing system commands,
+     * defaults to @c NO
      */
     @Generated
     @Selector("setWantsPriorityOverSystemBehavior:")
     public native void setWantsPriorityOverSystemBehavior(boolean value);
 
     /**
-     * Indicates whether the key command should execute if it conflicts with focus or text-editing system commands, defaults to @c NO
+     * Indicates whether the key command should execute if it conflicts with focus or text-editing system commands,
+     * defaults to @c NO
      */
     @Generated
     @Selector("wantsPriorityOverSystemBehavior")

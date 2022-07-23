@@ -30,11 +30,13 @@ public final class MPSImageFeatureChannelFormat {
      */
     @Generated @NUInt public static final long Unorm16 = 0x0000000000000002L;
     /**
-     * IEEE-754 16-bit floating-point value. "half precision" Representable normal range is +-[2**-14, 65504], 0, Infinity, NaN. 11 bits of precision + exponent.
+     * IEEE-754 16-bit floating-point value. "half precision" Representable normal range is +-[2**-14, 65504], 0,
+     * Infinity, NaN. 11 bits of precision + exponent.
      */
     @Generated @NUInt public static final long Float16 = 0x0000000000000003L;
     /**
-     * IEEE-754 32-bit floating-point value.  "single precision" (standard float type in C) 24 bits of precision + exponent
+     * IEEE-754 32-bit floating-point value. "single precision" (standard float type in C) 24 bits of precision +
+     * exponent
      */
     @Generated @NUInt public static final long Float32 = 0x0000000000000004L;
 
@@ -43,7 +45,7 @@ public final class MPSImageFeatureChannelFormat {
     }
 
     /**
-     * No format. This can mean  according to context invalid format or any format.  In the
+     * No format. This can mean according to context invalid format or any format. In the
      * latter case, it is an invitation to MPS to pick a format.
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;

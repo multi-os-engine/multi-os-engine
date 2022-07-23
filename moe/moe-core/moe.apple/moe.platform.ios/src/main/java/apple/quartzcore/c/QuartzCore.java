@@ -67,7 +67,7 @@ public final class QuartzCore {
 
     /**
      * Returns a transform that translates by '(tx, ty, tz)':
-     * t' =  [1 0 0 0; 0 1 0 0; 0 0 1 0; tx ty tz 1].
+     * t' = [1 0 0 0; 0 1 0 0; 0 0 1 0; tx ty tz 1].
      */
     @Generated
     @CFunction

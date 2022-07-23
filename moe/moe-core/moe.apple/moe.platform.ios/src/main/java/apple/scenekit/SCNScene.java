@@ -168,7 +168,8 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * <p>
      * This method initializes with no options and does not check for errors. The resulting object is not cached.
      *
-     * @param name The name of the file. The method looks for a file with the specified name in the application’s main bundle.
+     * @param name The name of the file. The method looks for a file with the specified name in the application’s main
+     *             bundle.
      */
     @Generated
     @Selector("sceneNamed:")
@@ -181,7 +182,8 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * <p>
      * This method initializes with no options and does not check for errors. The resulting object is not cached.
      *
-     * @param name      The name of the file. The method looks for a file with the specified name in the application’s main bundle.
+     * @param name      The name of the file. The method looks for a file with the specified name in the application’s
+     *                  main bundle.
      * @param directory The name of the bundle sub-directory to search into.
      * @param options   An options dictionary. The relevant keys are documented in the SCNSceneSource class.
      */
@@ -204,7 +206,8 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      *
      * @param url     The URL to the 3D file.
      * @param options An options dictionary. The relevant keys are documented in the SCNSceneSource class.
-     * @param error   A NSError object passed by reference to get more information about the error when a nil is returned.
+     * @param error   A NSError object passed by reference to get more information about the error when a nil is
+     *                returned.
      */
     @Generated
     @Selector("sceneWithURL:options:error:")
@@ -284,7 +287,8 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * <p>
      * Specifies the receiver's fog power exponent. Animatable. Defaults to 1.
      * <p>
-     * Controls the attenuation between the start and end fog distances. 0 means a constant fog, 1 a linear fog and 2 a quadratic fog, but any positive value will work.
+     * Controls the attenuation between the start and end fog distances. 0 means a constant fog, 1 a linear fog and 2 a
+     * quadratic fog, but any positive value will work.
      */
     @Generated
     @Selector("fogDensityExponent")
@@ -365,7 +369,9 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * <p>
      * Specifies the physics world of the receiver.
      * <p>
-     * Every scene automatically creates a physics world object to simulate physics on nodes in the scene. You use this property to access the scene’s global physics properties, such as gravity. To add physics to a particular node, see physicsBody.
+     * Every scene automatically creates a physics world object to simulate physics on nodes in the scene. You use this
+     * property to access the scene’s global physics properties, such as gravity. To add physics to a particular node,
+     * see physicsBody.
      */
     @Generated
     @Selector("physicsWorld")
@@ -428,7 +434,8 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * <p>
      * Specifies the receiver's fog power exponent. Animatable. Defaults to 1.
      * <p>
-     * Controls the attenuation between the start and end fog distances. 0 means a constant fog, 1 a linear fog and 2 a quadratic fog, but any positive value will work.
+     * Controls the attenuation between the start and end fog distances. 0 means a constant fog, 1 a linear fog and 2 a
+     * quadratic fog, but any positive value will work.
      */
     @Generated
     @Selector("setFogDensityExponent:")
@@ -468,11 +475,12 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * Starting iOS 10 exporting supports .scn as well as all file formats supported by Model I/O.
      *
      * @param url             the destination url to write the scene to.
-     * @param options         A dictionary of options. The valid keys are described in the "Scene writing options" section.
+     * @param options         A dictionary of options. The valid keys are described in the "Scene writing options"
+     *                        section.
      * @param delegate        an optional delegate to manage external references such as images.
      * @param progressHandler an optional block to handle the progress of the operation.
      * @return Returns YES if the operation succeeded, NO otherwise. Errors checking can be done via the "error"
-     * parameter of the 'progressHandler'.
+     *         parameter of the 'progressHandler'.
      */
     @Generated
     @Selector("writeToURL:options:delegate:progressHandler:")

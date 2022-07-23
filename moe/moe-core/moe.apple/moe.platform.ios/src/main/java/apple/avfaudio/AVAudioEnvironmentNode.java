@@ -213,7 +213,7 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * Default:
      * The default orientation is with the listener looking directly along the negative Z axis.
      * forward: (0, 0, -1)
-     * up:      (0, 1, 0)
+     * up: (0, 1, 0)
      */
     @Generated
     @Selector("listenerVectorOrientation")
@@ -258,7 +258,7 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * a value other than AVAudio3DMixingOutputTypeAuto should listen to route change
      * notifications and update the output type accordingly.
      * <p>
-     * Default:    AVAudio3DMixingOutputTypeAuto
+     * Default: AVAudio3DMixingOutputTypeAuto
      */
     @Generated
     @Selector("outputType")
@@ -362,7 +362,7 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * Default:
      * The default orientation is with the listener looking directly along the negative Z axis.
      * forward: (0, 0, -1)
-     * up:      (0, 1, 0)
+     * up: (0, 1, 0)
      */
     @Generated
     @Selector("setListenerVectorOrientation:")
@@ -389,7 +389,7 @@ public class AVAudioEnvironmentNode extends AVAudioNode implements AVAudioMixing
      * a value other than AVAudio3DMixingOutputTypeAuto should listen to route change
      * notifications and update the output type accordingly.
      * <p>
-     * Default:    AVAudio3DMixingOutputTypeAuto
+     * Default: AVAudio3DMixingOutputTypeAuto
      */
     @Generated
     @Selector("setOutputType:")

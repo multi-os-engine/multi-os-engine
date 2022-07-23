@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum] TKTokenOperation enumerates operations which can be performed with objects (keys and certificates) on the token.
+ * [@enum] TKTokenOperation enumerates operations which can be performed with objects (keys and certificates) on the
+ * token.
  */
 @Generated
 public final class TKTokenOperation {

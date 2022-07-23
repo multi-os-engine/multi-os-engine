@@ -90,7 +90,8 @@ public class INIntegerResolutionResult extends INIntentResolutionResult {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * This resolution result is to ask Siri to confirm if this is the integer value with which the user wants to continue.
+     * This resolution result is to ask Siri to confirm if this is the integer value with which the user wants to
+     * continue.
      */
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
@@ -156,7 +157,9 @@ public class INIntegerResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given integer. The resolvedValue can be different than the original integer. This allows app extensions to apply business logic constraints. For example, the extension could constrain the value to some maximum.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given integer. The
+     * resolvedValue can be different than the original integer. This allows app extensions to apply business logic
+     * constraints. For example, the extension could constrain the value to some maximum.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

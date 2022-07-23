@@ -126,7 +126,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSArray<String> fontNamesForFamilyName(String familyName);
 
     /**
-     * Returns a font matching the font descriptor. If fontSize is greater than 0.0, it has precedence over UIFontDescriptorSizeAttribute in fontDescriptor.
+     * Returns a font matching the font descriptor. If fontSize is greater than 0.0, it has precedence over
+     * UIFontDescriptorSizeAttribute in fontDescriptor.
      */
     @Generated
     @Selector("fontWithDescriptor:size:")
@@ -184,14 +185,16 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     public static native UIFont new_objc();
 
     /**
-     * Returns an instance of the font associated with the text style and scaled appropriately for the user's selected content size category. See UIFontDescriptor.h for the complete list.
+     * Returns an instance of the font associated with the text style and scaled appropriately for the user's selected
+     * content size category. See UIFontDescriptor.h for the complete list.
      */
     @Generated
     @Selector("preferredFontForTextStyle:")
     public static native UIFont preferredFontForTextStyle(String style);
 
     /**
-     * Returns an instance of the font associated with the text style and scaled appropriately for the content size category defined in the trait collection.
+     * Returns an instance of the font associated with the text style and scaled appropriately for the content size
+     * category defined in the trait collection.
      */
     @Generated
     @Selector("preferredFontForTextStyle:compatibleWithTraitCollection:")
@@ -220,7 +223,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     public static native Class superclass_static();
 
     /**
-     * Think carefully before using these methods. In most cases, a font returned by +preferredFontForTextStyle: will be more appropriate, and will respect the user's selected content size category.
+     * Think carefully before using these methods. In most cases, a font returned by +preferredFontForTextStyle: will be
+     * more appropriate, and will respect the user's selected content size category.
      */
     @Generated
     @Selector("systemFontOfSize:")
@@ -316,7 +320,11 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     public native double xHeight();
 
     /**
-     * Returns current default monospaced font for system UI. Clients of this API should be aware that the monospaced system font has a similar coverage of default system UI font, which includes Latin and common symbols used for displaying text like source code. For the characters it does not cover, the substituted fonts are usually not the same width as the monospaced system font, they can be wider, narrower, or variable. To ensure fixed advances in text layout, clients can consider using string attributes like UIFontDescriptorFixedAdvanceAttribute.
+     * Returns current default monospaced font for system UI. Clients of this API should be aware that the monospaced
+     * system font has a similar coverage of default system UI font, which includes Latin and common symbols used for
+     * displaying text like source code. For the characters it does not cover, the substituted fonts are usually not the
+     * same width as the monospaced system font, they can be wider, narrower, or variable. To ensure fixed advances in
+     * text layout, clients can consider using string attributes like UIFontDescriptorFixedAdvanceAttribute.
      */
     @Generated
     @Selector("monospacedSystemFontOfSize:weight:")

@@ -30,8 +30,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Depthwise convolution applies different filter to each input feature channel i.e. no cross channel mixing.
  * Number of outputFeatureChannels can be greater than number of inputFeatureChannels, in which case convolution
  * expects channelMultipler = outputFeactureChannels/inputFeatureChannels number of filters for each input channel.
- * This means channelMultipler filters are applied to each input feature channel producing channelMultipler output feature channels.
- * All channelMultipler output feature channels produced by single input feature channel are stored togather in output image i.e.
+ * This means channelMultipler filters are applied to each input feature channel producing channelMultipler output
+ * feature channels.
+ * All channelMultipler output feature channels produced by single input feature channel are stored togather in output
+ * image i.e.
  * output[x,y,k*channelMultiplier + q] = input[x,y,k] * filter[k,q]
  * where * here denotes convolution.
  * group must be 1.
@@ -85,9 +87,10 @@ public class MPSCNNDepthWiseConvolutionDescriptor extends MPSCNNConvolutionDescr
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property]      channelMultiplier
+     * [@property] channelMultiplier
      * <p>
-     * Ratio of outputFeactureChannel to inputFeatureChannels for depthwise convolution i.e. how many output feature channels are
+     * Ratio of outputFeactureChannel to inputFeatureChannels for depthwise convolution i.e. how many output feature
+     * channels are
      * produced by each input channel.
      */
     @Generated

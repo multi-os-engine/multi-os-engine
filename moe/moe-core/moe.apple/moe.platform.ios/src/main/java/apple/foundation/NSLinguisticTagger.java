@@ -75,7 +75,9 @@ public class NSLinguisticTagger extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Clients wishing to know the tag schemes supported in NSLinguisticTagger for a particular language at the word level may query them with this method.  The language should be specified using a standard abbreviation as with NSOrthography.
+     * Clients wishing to know the tag schemes supported in NSLinguisticTagger for a particular language at the word
+     * level may query them with this method. The language should be specified using a standard abbreviation as with
+     * NSOrthography.
      */
     @Generated
     @Selector("availableTagSchemesForLanguage:")
@@ -173,7 +175,8 @@ public class NSLinguisticTagger extends NSObject {
     public native NSLinguisticTagger init();
 
     /**
-     * An instance of NSLinguisticTagger is created with an array of tag schemes.  The tagger will be able to supply tags corresponding to any of the schemes in this array.
+     * An instance of NSLinguisticTagger is created with an array of tag schemes. The tagger will be able to supply tags
+     * corresponding to any of the schemes in this array.
      */
     @Generated
     @Selector("initWithTagSchemes:options:")
@@ -201,7 +204,9 @@ public class NSLinguisticTagger extends NSObject {
     public native NSRange sentenceRangeForRange(@ByValue NSRange range);
 
     /**
-     * If clients know the orthography for a given portion of the string, they may supply it to the tagger.  Otherwise, the tagger will infer the language from the contents of the text.  In each case, the charIndex or range passed in must not extend beyond the end of the tagger's string, or the methods will raise an exception.
+     * If clients know the orthography for a given portion of the string, they may supply it to the tagger. Otherwise,
+     * the tagger will infer the language from the contents of the text. In each case, the charIndex or range passed in
+     * must not extend beyond the end of the tagger's string, or the methods will raise an exception.
      */
     @Generated
     @Selector("setOrthography:range:")
@@ -216,7 +221,11 @@ public class NSLinguisticTagger extends NSObject {
     public native String string();
 
     /**
-     * If the string attached to the tagger is mutable, this method must be called to inform the tagger whenever the string changes.  The newRange is the range in the final string which was explicitly edited, and delta is the change in length from the previous version to the current version of the string.  Alternatively, the client may call setString: again to reset all information about the string, but this has the disadvantage of not preserving information about portions of the string that have not changed.
+     * If the string attached to the tagger is mutable, this method must be called to inform the tagger whenever the
+     * string changes. The newRange is the range in the final string which was explicitly edited, and delta is the
+     * change in length from the previous version to the current version of the string. Alternatively, the client may
+     * call setString: again to reset all information about the string, but this has the disadvantage of not preserving
+     * information about portions of the string that have not changed.
      */
     @Generated
     @Selector("stringEditedInRange:changeInLength:")
@@ -245,21 +254,26 @@ public class NSLinguisticTagger extends NSObject {
     }
 
     /**
-     * Clients wishing to know the tag schemes supported in NSLinguisticTagger for a particular unit and language may query them with this method.  The language should be specified using a standard BCP-47 language tag as with NSOrthography.
+     * Clients wishing to know the tag schemes supported in NSLinguisticTagger for a particular unit and language may
+     * query them with this method. The language should be specified using a standard BCP-47 language tag as with
+     * NSOrthography.
      */
     @Generated
     @Selector("availableTagSchemesForUnit:language:")
     public static native NSArray<String> availableTagSchemesForUnitLanguage(@NInt long unit, String language);
 
     /**
-     * Returns the top identified language (if any) for the entire string.  Convenience for tagAtIndex: with NSLinguisticTagSchemeLanguage and NSLinguisticTaggerUnitDocument.
+     * Returns the top identified language (if any) for the entire string. Convenience for tagAtIndex: with
+     * NSLinguisticTagSchemeLanguage and NSLinguisticTaggerUnitDocument.
      */
     @Generated
     @Selector("dominantLanguage")
     public native String dominantLanguage();
 
     /**
-     * The following class methods are conveniences for clients who wish to perform a single analysis on a string without having to create an instance of NSLinguisticTagger.  If more than one tagging operation is needed on a given string, it is more efficient to use an explicit NSLinguisticTagger instance.
+     * The following class methods are conveniences for clients who wish to perform a single analysis on a string
+     * without having to create an instance of NSLinguisticTagger. If more than one tagging operation is needed on a
+     * given string, it is more efficient to use an explicit NSLinguisticTagger instance.
      */
     @Generated
     @Selector("dominantLanguageForString:")
@@ -280,7 +294,13 @@ public class NSLinguisticTagger extends NSObject {
     }
 
     /**
-     * The tagger will segment the string as needed into tokens for the given unit, and return those ranges along with a tag for any scheme in its array of tag schemes.  The fundamental tagging method on NSLinguisticTagger is a block iterator, that iterates over all tokens intersecting a given range, supplying tags and ranges.  There are several additional convenience methods, for obtaining a sentence range, information about a single token, or for obtaining information about all tokens intersecting a given range at once, in arrays.  In each case, the charIndex or range passed in must not extend beyond the end of the tagger's string, or the methods will raise an exception.  Note that a given instance of NSLinguisticTagger should not be used from more than one thread simultaneously.
+     * The tagger will segment the string as needed into tokens for the given unit, and return those ranges along with a
+     * tag for any scheme in its array of tag schemes. The fundamental tagging method on NSLinguisticTagger is a block
+     * iterator, that iterates over all tokens intersecting a given range, supplying tags and ranges. There are several
+     * additional convenience methods, for obtaining a sentence range, information about a single token, or for
+     * obtaining information about all tokens intersecting a given range at once, in arrays. In each case, the charIndex
+     * or range passed in must not extend beyond the end of the tagger's string, or the methods will raise an exception.
+     * Note that a given instance of NSLinguisticTagger should not be used from more than one thread simultaneously.
      */
     @Generated
     @Selector("enumerateTagsInRange:unit:scheme:options:usingBlock:")

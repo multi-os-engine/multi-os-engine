@@ -14,7 +14,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]	AVPlaybackCoordinatorPlaybackControlDelegate
+ * [@protocol] AVPlaybackCoordinatorPlaybackControlDelegate
  * <p>
  * A custom player implementation
  */
@@ -26,18 +26,23 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
     /**
      * playbackCoordinator:didIssueBufferingCommand:completionHandler:
      * <p>
-     * Called by the coordinator to indicate that playback is expected to begin soon and the playback object should begin buffering.
+     * Called by the coordinator to indicate that playback is expected to begin soon and the playback object should
+     * begin buffering.
      * <p>
-     * The coordinator issues this command when playback is currently paused and the coordinator is expecting playback to start soon.
+     * The coordinator issues this command when playback is currently paused and the coordinator is expecting playback
+     * to start soon.
      * In response to this command, it is appropriate to update playback UI to indicate playback in a waiting state.
      * The expected start can be cancelled by calling -[AVDelegatingPlaybackCoordinator coordinateRateChangeTo:0].
      *
-     * @param bufferingCommand A buffering command object. See AVDelegatingPlaybackCoordinatorBufferingCommand.
-     *                         The receiver should verify that the command is still valid by inspecting the expectedCurrentItemIdentifier property before applying the command.
-     * @param        coordinator The coordinator requesting buffering to begin.
-     * @param        completionHandler The receiver must call the completion handler when done, either when the command has been handled succesfully or when the receiver has indicated its inability
-     * to handle the command by beginning a suspension with an appropriate reason.
-     * For buffering commands, the command should only be considered complete once the playback object is ready to receive a subsequent play command.
+     * @param bufferingCommand  A buffering command object. See AVDelegatingPlaybackCoordinatorBufferingCommand.
+     *                          The receiver should verify that the command is still valid by inspecting the
+     *                          expectedCurrentItemIdentifier property before applying the command.
+     * @param coordinator       The coordinator requesting buffering to begin.
+     * @param completionHandler The receiver must call the completion handler when done, either when the command has
+     *                          been handled succesfully or when the receiver has indicated its inability
+     *                          to handle the command by beginning a suspension with an appropriate reason.
+     *                          For buffering commands, the command should only be considered complete once the playback
+     *                          object is ready to receive a subsequent play command.
      */
     @Generated
     @Selector("playbackCoordinator:didIssueBufferingCommand:completionHandler:")
@@ -57,12 +62,16 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      * <p>
      * Called by the coordinator to pause playback.
      *
-     * @param pauseCommand A pause command object. See AVDelegatingPlaybackCoordinatorPauseCommand.
-     *                     The receiver should verify that the command is still valid by inspecting the expectedCurrentItemIdentifier property before applying the command.
-     * @param        coordinator The coordinator requesting playback to pause.
-     * @param        completionHandler The receiver must call the completion handler when done, either when the command has been handled succesfully or when the receiver has indicated its inability
-     * to handle the command by beginning a suspension with an appropriate reason.
-     * If the command's shouldBufferInAnticipationOfPlayback is YES, the completion handler should also only be called once the playback object is ready to receive a subsequent play command.
+     * @param pauseCommand      A pause command object. See AVDelegatingPlaybackCoordinatorPauseCommand.
+     *                          The receiver should verify that the command is still valid by inspecting the
+     *                          expectedCurrentItemIdentifier property before applying the command.
+     * @param coordinator       The coordinator requesting playback to pause.
+     * @param completionHandler The receiver must call the completion handler when done, either when the command has
+     *                          been handled succesfully or when the receiver has indicated its inability
+     *                          to handle the command by beginning a suspension with an appropriate reason.
+     *                          If the command's shouldBufferInAnticipationOfPlayback is YES, the completion handler
+     *                          should also only be called once the playback object is ready to receive a subsequent
+     *                          play command.
      */
     @Generated
     @Selector("playbackCoordinator:didIssuePauseCommand:completionHandler:")
@@ -80,16 +89,20 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
     /**
      * playbackCoordinator:didIssuePlayCommand:completionHandler:
      * <p>
-     * Called by the coordinator to match the playback rate of the control delegate to the group, when the target rate is non-zero.
+     * Called by the coordinator to match the playback rate of the control delegate to the group, when the target rate
+     * is non-zero.
      * <p>
-     * The coordinator issues this command when the desired playback timeline has changed. This may mean that the rate has changed, but it can also mean that the anchor time has changed.
+     * The coordinator issues this command when the desired playback timeline has changed. This may mean that the rate
+     * has changed, but it can also mean that the anchor time has changed.
      * Play commands are only issued when the desired playback rate is non-zero.
      *
-     * @param playCommand A play command object. See AVDelegatingPlaybackCoordinatorPlayCommand.
-     *                    The receiver should verify that the command is still valid by inspecting the expectedCurrentItemIdentifier property before applying the command.
-     * @param        coordinator The coordinator requesting a change in playback rate.
-     * @param        completionHandler The receiver must call the completion handler when done, either when the command has been handled succesfully or when the receiver has indicated its inability
-     * to handle the command by beginning a suspension with an appropriate reason.
+     * @param playCommand       A play command object. See AVDelegatingPlaybackCoordinatorPlayCommand.
+     *                          The receiver should verify that the command is still valid by inspecting the
+     *                          expectedCurrentItemIdentifier property before applying the command.
+     * @param coordinator       The coordinator requesting a change in playback rate.
+     * @param completionHandler The receiver must call the completion handler when done, either when the command has
+     *                          been handled succesfully or when the receiver has indicated its inability
+     *                          to handle the command by beginning a suspension with an appropriate reason.
      */
     @Generated
     @Selector("playbackCoordinator:didIssuePlayCommand:completionHandler:")
@@ -109,14 +122,19 @@ public interface AVPlaybackCoordinatorPlaybackControlDelegate {
      * <p>
      * Called by the coordinator to seek to a new time.
      * <p>
-     * The coordinator issues this command when the playback object current time changes, potentially also pausing playback.
+     * The coordinator issues this command when the playback object current time changes, potentially also pausing
+     * playback.
      *
-     * @param seekCommand A seek command object. See AVDelegatingPlaybackCoordinatorSeekCommand.
-     *                    The receiver should verify that the command is still valid by inspecting the expectedCurrentItemIdentifier property before applying the command.
-     * @param        coordinator The coordinator requesting the seek.
-     * @param        completionHandler The receiver must call the completion handler when done, either when the command has been handled succesfully or when the receiver has indicated its inability
-     * to handle the command by beginning a suspension with an appropriate reason.
-     * If the command's shouldBufferInAnticipationOfPlayback is YES, the completion handler should also only be called once the playback object is ready to receive a subsequent play command.
+     * @param seekCommand       A seek command object. See AVDelegatingPlaybackCoordinatorSeekCommand.
+     *                          The receiver should verify that the command is still valid by inspecting the
+     *                          expectedCurrentItemIdentifier property before applying the command.
+     * @param coordinator       The coordinator requesting the seek.
+     * @param completionHandler The receiver must call the completion handler when done, either when the command has
+     *                          been handled succesfully or when the receiver has indicated its inability
+     *                          to handle the command by beginning a suspension with an appropriate reason.
+     *                          If the command's shouldBufferInAnticipationOfPlayback is YES, the completion handler
+     *                          should also only be called once the playback object is ready to receive a subsequent
+     *                          play command.
      */
     @Generated
     @Selector("playbackCoordinator:didIssueSeekCommand:completionHandler:")

@@ -23,7 +23,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("UICollectionViewDragDelegate")
 public interface UICollectionViewDragDelegate {
     /**
-     * Allows customization of the preview used for the item being lifted from or cancelling back to the collection view.
+     * Allows customization of the preview used for the item being lifted from or cancelling back to the collection
+     * view.
      * If not implemented or if nil is returned, the entire cell will be used for the preview.
      */
     @Generated
@@ -84,7 +85,8 @@ public interface UICollectionViewDragDelegate {
 
     /**
      * Called to request items to add to an existing drag session in response to the add item gesture.
-     * You can use the provided point (in the collection view's coordinate space) to do additional hit testing if desired.
+     * You can use the provided point (in the collection view's coordinate space) to do additional hit testing if
+     * desired.
      * If not implemented, or if an empty array is returned, no items will be added to the drag and the gesture
      * will be handled normally.
      */

@@ -30,8 +30,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A device that will be used to execute a neural network.
  * If a MLCdevice is created with multiple devices using the [devicesWithType:selectMultipleDvices], on configurations
  * where multiple GPUs are available such as on the Mac Pro, the framework may transparently schedule the execution
- * across multiple GPUs.  There are some requirements for a MLCDevice with multiple devices such as there can only be
- * one training and/or inference graph associated with this device.  If multiple graphs are used, they must be compiled using
+ * across multiple GPUs. There are some requirements for a MLCDevice with multiple devices such as there can only be
+ * one training and/or inference graph associated with this device. If multiple graphs are used, they must be compiled
+ * using
  * MLCGraphCompilationOptionsLinkGraphs specified in compileOptions and the multiple graphs should be linked together
  * with linkWithGraphs.
  */
@@ -54,11 +55,11 @@ public class MLCDevice extends NSObject implements NSCopying {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]   actualDeviceType
+     * [@property] actualDeviceType
      * <p>
      * The specific device selected.
      * <p>
-     * This can be CPU, GPU or ANE.  If type is MLCDeviceTypeAny, this property
+     * This can be CPU, GPU or ANE. If type is MLCDeviceTypeAny, this property
      * can be used to find out the specific device type that is selected.
      */
     @Generated
@@ -228,7 +229,7 @@ public class MLCDevice extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property]   type
+     * [@property] type
      * <p>
      * The type specified when the device is created
      * <p>

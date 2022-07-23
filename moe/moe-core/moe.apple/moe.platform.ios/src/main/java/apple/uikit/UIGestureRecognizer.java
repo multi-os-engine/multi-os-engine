@@ -176,21 +176,26 @@ public class UIGestureRecognizer extends NSObject {
     public native NSArray<? extends NSNumber> allowedTouchTypes();
 
     /**
-     * default is YES. causes touchesCancelled:withEvent: or pressesCancelled:withEvent: to be sent to the view for all touches or presses recognized as part of this gesture immediately before the action method is called.
+     * default is YES. causes touchesCancelled:withEvent: or pressesCancelled:withEvent: to be sent to the view for all
+     * touches or presses recognized as part of this gesture immediately before the action method is called.
      */
     @Generated
     @Selector("cancelsTouchesInView")
     public native boolean cancelsTouchesInView();
 
     /**
-     * default is NO.  causes all touch or press events to be delivered to the target view only after this gesture has failed recognition. set to YES to prevent views from processing any touches or presses that may be recognized as part of this gesture
+     * default is NO. causes all touch or press events to be delivered to the target view only after this gesture has
+     * failed recognition. set to YES to prevent views from processing any touches or presses that may be recognized as
+     * part of this gesture
      */
     @Generated
     @Selector("delaysTouchesBegan")
     public native boolean delaysTouchesBegan();
 
     /**
-     * default is YES. causes touchesEnded or pressesEnded events to be delivered to the target view only after this gesture has failed recognition. this ensures that a touch or press that is part of the gesture can be cancelled if the gesture is recognized
+     * default is YES. causes touchesEnded or pressesEnded events to be delivered to the target view only after this
+     * gesture has failed recognition. this ensures that a touch or press that is part of the gesture can be cancelled
+     * if the gesture is recognized
      */
     @Generated
     @Selector("delaysTouchesEnded")
@@ -216,14 +221,16 @@ public class UIGestureRecognizer extends NSObject {
     public native UIGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
     /**
-     * default is YES. disabled gesture recognizers will not receive touches. when changed to NO the gesture recognizer will be cancelled if it's currently recognizing a gesture
+     * default is YES. disabled gesture recognizers will not receive touches. when changed to NO the gesture recognizer
+     * will be cancelled if it's currently recognizing a gesture
      */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
     /**
-     * default is YES. disabled gesture recognizers will not receive touches. when changed to NO the gesture recognizer will be cancelled if it's currently recognizing a gesture
+     * default is YES. disabled gesture recognizers will not receive touches. when changed to NO the gesture recognizer
+     * will be cancelled if it's currently recognizing a gesture
      */
     @Generated
     @Selector("setEnabled:")
@@ -261,8 +268,10 @@ public class UIGestureRecognizer extends NSObject {
     public native void removeTargetAction(@Mapped(ObjCObjectMapper.class) Object target, SEL action);
 
     /**
-     * create a relationship with another gesture recognizer that will prevent this gesture's actions from being called until otherGestureRecognizer transitions to UIGestureRecognizerStateFailed
-     * if otherGestureRecognizer transitions to UIGestureRecognizerStateRecognized or UIGestureRecognizerStateBegan then this recognizer will instead transition to UIGestureRecognizerStateFailed
+     * create a relationship with another gesture recognizer that will prevent this gesture's actions from being called
+     * until otherGestureRecognizer transitions to UIGestureRecognizerStateFailed
+     * if otherGestureRecognizer transitions to UIGestureRecognizerStateRecognized or UIGestureRecognizerStateBegan then
+     * this recognizer will instead transition to UIGestureRecognizerStateFailed
      * example usage: a single tap may require a double tap to fail
      */
     @Generated
@@ -291,21 +300,26 @@ public class UIGestureRecognizer extends NSObject {
     public native void setAllowedTouchTypes(NSArray<? extends NSNumber> value);
 
     /**
-     * default is YES. causes touchesCancelled:withEvent: or pressesCancelled:withEvent: to be sent to the view for all touches or presses recognized as part of this gesture immediately before the action method is called.
+     * default is YES. causes touchesCancelled:withEvent: or pressesCancelled:withEvent: to be sent to the view for all
+     * touches or presses recognized as part of this gesture immediately before the action method is called.
      */
     @Generated
     @Selector("setCancelsTouchesInView:")
     public native void setCancelsTouchesInView(boolean value);
 
     /**
-     * default is NO.  causes all touch or press events to be delivered to the target view only after this gesture has failed recognition. set to YES to prevent views from processing any touches or presses that may be recognized as part of this gesture
+     * default is NO. causes all touch or press events to be delivered to the target view only after this gesture has
+     * failed recognition. set to YES to prevent views from processing any touches or presses that may be recognized as
+     * part of this gesture
      */
     @Generated
     @Selector("setDelaysTouchesBegan:")
     public native void setDelaysTouchesBegan(boolean value);
 
     /**
-     * default is YES. causes touchesEnded or pressesEnded events to be delivered to the target view only after this gesture has failed recognition. this ensures that a touch or press that is part of the gesture can be cancelled if the gesture is recognized
+     * default is YES. causes touchesEnded or pressesEnded events to be delivered to the target view only after this
+     * gesture has failed recognition. this ensures that a touch or press that is part of the gesture can be cancelled
+     * if the gesture is recognized
      */
     @Generated
     @Selector("setDelaysTouchesEnded:")
@@ -349,7 +363,8 @@ public class UIGestureRecognizer extends NSObject {
     public native long state();
 
     /**
-     * the view the gesture is attached to. set by adding the recognizer to a UIView using the addGestureRecognizer: method
+     * the view the gesture is attached to. set by adding the recognizer to a UIView using the addGestureRecognizer:
+     * method
      */
     @Generated
     @Selector("view")
@@ -374,7 +389,8 @@ public class UIGestureRecognizer extends NSObject {
     public native boolean canBePreventedByGestureRecognizer(UIGestureRecognizer preventingGestureRecognizer);
 
     /**
-     * same behavior as the equivalent delegate methods, but can be used by subclasses to define class-wide prevention rules
+     * same behavior as the equivalent delegate methods, but can be used by subclasses to define class-wide prevention
+     * rules
      * for example, a UITapGestureRecognizer never prevents another UITapGestureRecognizer with a higher tap count
      */
     @Generated
@@ -386,7 +402,8 @@ public class UIGestureRecognizer extends NSObject {
     public native void ignorePressForEvent(UIPress button, UIPressesEvent event);
 
     /**
-     * if a touch isn't part of this gesture it can be passed to this method to be ignored. ignored touches won't be cancelled on the view even if cancelsTouchesInView is YES
+     * if a touch isn't part of this gesture it can be passed to this method to be ignored. ignored touches won't be
+     * cancelled on the view even if cancelsTouchesInView is YES
      */
     @Generated
     @Selector("ignoreTouch:forEvent:")
@@ -415,14 +432,16 @@ public class UIGestureRecognizer extends NSObject {
     /**
      * called automatically by the runtime after the gesture state has been set to UIGestureRecognizerStateEnded
      * any internal state should be reset to prepare for a new attempt to recognize the gesture
-     * after this is received all remaining active touches will be ignored (no further updates will be received for touches that had already begun but haven't ended)
+     * after this is received all remaining active touches will be ignored (no further updates will be received for
+     * touches that had already begun but haven't ended)
      */
     @Generated
     @Selector("reset")
     public native void reset();
 
     /**
-     * the current state of the gesture recognizer. can only be set by subclasses of UIGestureRecognizer, but can be read by consumers
+     * the current state of the gesture recognizer. can only be set by subclasses of UIGestureRecognizer, but can be
+     * read by consumers
      */
     @Generated
     @Selector("setState:")
@@ -433,7 +452,8 @@ public class UIGestureRecognizer extends NSObject {
     public native boolean shouldBeRequiredToFailByGestureRecognizer(UIGestureRecognizer otherGestureRecognizer);
 
     /**
-     * same behavior as the equivalent delegate methods, but can be used by subclasses to define class-wide failure requirements
+     * same behavior as the equivalent delegate methods, but can be used by subclasses to define class-wide failure
+     * requirements
      */
     @Generated
     @Selector("shouldRequireFailureOfGestureRecognizer:")
@@ -441,7 +461,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * mirror of the touch-delivery methods on UIResponder
-     * UIGestureRecognizers aren't in the responder chain, but observe touches hit-tested to their view and their view's subviews
+     * UIGestureRecognizers aren't in the responder chain, but observe touches hit-tested to their view and their view's
+     * subviews
      * UIGestureRecognizers receive touches before the view to which the touch was hit-tested
      */
     @Generated

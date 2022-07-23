@@ -43,7 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEVPNProtocolIKEv2
  * <p>
- * The NEVPNProtocolIKEv2 class declares the programmatic interface of an object that manages the IKEv2-specific portion of a VPN configuration.
+ * The NEVPNProtocolIKEv2 class declares the programmatic interface of an object that manages the IKEv2-specific portion
+ * of a VPN configuration.
  * <p>
  * Instances of this class use IKE version 2 for key negotiation.
  * Instances of this class are thread safe.
@@ -174,7 +175,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] certificateType
      * <p>
-     * contains the type of certificate if an certificate is configured.  Default is RSA.
+     * contains the type of certificate if an certificate is configured. Default is RSA.
      */
     @Generated
     @Selector("certificateType")
@@ -193,7 +194,8 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] deadPeerDetectionRate
      * <p>
-     * How frequently the IKEv2 client will run the dead peer detection algorithm.  Default is NEVPNIKEv2DeadPeerDetectionRateMedium.
+     * How frequently the IKEv2 client will run the dead peer detection algorithm. Default is
+     * NEVPNIKEv2DeadPeerDetectionRateMedium.
      */
     @Generated
     @Selector("deadPeerDetectionRate")
@@ -256,7 +258,8 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] serverCertificateIssuerCommonName
      * <p>
-     * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2 server's certificate.
+     * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2
+     * server's certificate.
      */
     @Generated
     @Selector("serverCertificateIssuerCommonName")
@@ -265,7 +268,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] certificateType
      * <p>
-     * contains the type of certificate if an certificate is configured.  Default is RSA.
+     * contains the type of certificate if an certificate is configured. Default is RSA.
      */
     @Generated
     @Selector("setCertificateType:")
@@ -274,7 +277,8 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] deadPeerDetectionRate
      * <p>
-     * How frequently the IKEv2 client will run the dead peer detection algorithm.  Default is NEVPNIKEv2DeadPeerDetectionRateMedium.
+     * How frequently the IKEv2 client will run the dead peer detection algorithm. Default is
+     * NEVPNIKEv2DeadPeerDetectionRateMedium.
      */
     @Generated
     @Selector("setDeadPeerDetectionRate:")
@@ -328,7 +332,8 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] serverCertificateIssuerCommonName
      * <p>
-     * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2 server's certificate.
+     * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2
+     * server's certificate.
      */
     @Generated
     @Selector("setServerCertificateIssuerCommonName:")
@@ -346,7 +351,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] useConfigurationAttributeInternalIPSubnet
      * <p>
-     * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes.  Default is False.
+     * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes. Default is False.
      */
     @Generated
     @Selector("setUseConfigurationAttributeInternalIPSubnet:")
@@ -370,7 +375,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] useConfigurationAttributeInternalIPSubnet
      * <p>
-     * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes.  Default is False.
+     * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes. Default is False.
      */
     @Generated
     @Selector("useConfigurationAttributeInternalIPSubnet")
@@ -417,9 +422,12 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] enableFallback
      * <p>
-     * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch over
-     * to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a tunnel over
-     * Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback requires that the
+     * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch
+     * over
+     * to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a
+     * tunnel over
+     * Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback
+     * requires that the
      * server support multiple tunnels for a single user. Default is NO.
      */
     @Generated
@@ -429,9 +437,12 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     /**
      * [@property] enableFallback
      * <p>
-     * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch over
-     * to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a tunnel over
-     * Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback requires that the
+     * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch
+     * over
+     * to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a
+     * tunnel over
+     * Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback
+     * requires that the
      * server support multiple tunnels for a single user. Default is NO.
      */
     @Generated

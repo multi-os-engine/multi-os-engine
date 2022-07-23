@@ -49,7 +49,7 @@ public class VSSubscription extends NSObject {
      * Describes the level of access the subscriber has to your catalog of content.
      * <p>
      * It is an error to provide a subscription with an unknown access level as
-     * the current subscription.  Instead, choose the access level that describes
+     * the current subscription. Instead, choose the access level that describes
      * the content that the subscriber can play.
      */
     @Generated
@@ -165,7 +165,7 @@ public class VSSubscription extends NSObject {
      * Describes the level of access the subscriber has to your catalog of content.
      * <p>
      * It is an error to provide a subscription with an unknown access level as
-     * the current subscription.  Instead, choose the access level that describes
+     * the current subscription. Instead, choose the access level that describes
      * the content that the subscriber can play.
      */
     @Generated
@@ -225,7 +225,7 @@ public class VSSubscription extends NSObject {
     public static native long version_static();
 
     /**
-     * Identifies the billing group associated with the subscription.  May be used,
+     * Identifies the billing group associated with the subscription. May be used,
      * for example, to restrict content availability based on the proximity of the
      * billing address to a specific venue.
      */
@@ -234,7 +234,7 @@ public class VSSubscription extends NSObject {
     public native String billingIdentifier();
 
     /**
-     * Identifies the billing group associated with the subscription.  May be used,
+     * Identifies the billing group associated with the subscription. May be used,
      * for example, to restrict content availability based on the proximity of the
      * billing address to a specific venue.
      */

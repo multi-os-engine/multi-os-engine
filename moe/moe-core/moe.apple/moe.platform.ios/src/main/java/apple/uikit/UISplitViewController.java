@@ -167,7 +167,8 @@ public class UISplitViewController extends UIViewController {
     public native UISplitViewControllerDelegate delegate();
 
     /**
-     * The actual current displayMode of the split view controller. This will never return `UISplitViewControllerDisplayModeAutomatic`.
+     * The actual current displayMode of the split view controller. This will never return
+     * `UISplitViewControllerDisplayModeAutomatic`.
      */
     @Generated
     @Selector("displayMode")
@@ -175,7 +176,11 @@ public class UISplitViewController extends UIViewController {
     public native long displayMode();
 
     /**
-     * A system bar button item whose action will change the displayMode property depending on the result of targetDisplayModeForActionInSplitViewController:. When inserted into the navigation bar of the secondary view controller it will change its appearance to match its target display mode. When the target displayMode is PrimaryHidden, this will appear as a fullscreen button, for AllVisible or PrimaryOverlay it will appear as a Back button, and when it won't cause any action it will become hidden.
+     * A system bar button item whose action will change the displayMode property depending on the result of
+     * targetDisplayModeForActionInSplitViewController:. When inserted into the navigation bar of the secondary view
+     * controller it will change its appearance to match its target display mode. When the target displayMode is
+     * PrimaryHidden, this will appear as a fullscreen button, for AllVisible or PrimaryOverlay it will appear as a Back
+     * button, and when it won't cause any action it will become hidden.
      * Not supported for column-style UISplitViewController
      */
     @Generated
@@ -218,7 +223,9 @@ public class UISplitViewController extends UIViewController {
     public native double minimumPrimaryColumnWidth();
 
     /**
-     * An animatable property that controls how the primary view controller is hidden and displayed. A value of `UISplitViewControllerDisplayModeAutomatic` specifies the default behavior split view controller, which on an iPad, corresponds to an overlay mode in portrait and a side-by-side mode in landscape.
+     * An animatable property that controls how the primary view controller is hidden and displayed. A value of
+     * `UISplitViewControllerDisplayModeAutomatic` specifies the default behavior split view controller, which on an
+     * iPad, corresponds to an overlay mode in portrait and a side-by-side mode in landscape.
      */
     @Generated
     @Selector("preferredDisplayMode")
@@ -279,7 +286,9 @@ public class UISplitViewController extends UIViewController {
     public native void setMinimumPrimaryColumnWidth(@NFloat double value);
 
     /**
-     * An animatable property that controls how the primary view controller is hidden and displayed. A value of `UISplitViewControllerDisplayModeAutomatic` specifies the default behavior split view controller, which on an iPad, corresponds to an overlay mode in portrait and a side-by-side mode in landscape.
+     * An animatable property that controls how the primary view controller is hidden and displayed. A value of
+     * `UISplitViewControllerDisplayModeAutomatic` specifies the default behavior split view controller, which on an
+     * iPad, corresponds to an overlay mode in portrait and a side-by-side mode in landscape.
      */
     @Generated
     @Selector("setPreferredDisplayMode:")
@@ -307,7 +316,11 @@ public class UISplitViewController extends UIViewController {
     public native void setViewControllers(NSArray<? extends UIViewController> value);
 
     /**
-     * In a horizontally-regular environment this will set the detail view controller unless it provided an implementation for showViewController:sender: in which case it will be called. In a horizontally-compact environment the master view controller or detail view controller is sent the showViewController:sender: message. If neither one of them provide an implementation for this method then it will fall back to a full screen presentation.
+     * In a horizontally-regular environment this will set the detail view controller unless it provided an
+     * implementation for showViewController:sender: in which case it will be called. In a horizontally-compact
+     * environment the master view controller or detail view controller is sent the showViewController:sender: message.
+     * If neither one of them provide an implementation for this method then it will fall back to a full screen
+     * presentation.
      */
     @Generated
     @Selector("showDetailViewController:sender:")
@@ -315,7 +328,9 @@ public class UISplitViewController extends UIViewController {
             @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
-     * In a horizontally-regular environment this will set either the master or detail view controller depending on the original target. In a compact environment this defaults to a full screen presentation. In general the master or detail view controller will have implemented showViewController:sender: so this method would not be invoked.
+     * In a horizontally-regular environment this will set either the master or detail view controller depending on the
+     * original target. In a compact environment this defaults to a full screen presentation. In general the master or
+     * detail view controller will have implemented showViewController:sender: so this method would not be invoked.
      */
     @Generated
     @Selector("showViewController:sender:")
@@ -378,7 +393,8 @@ public class UISplitViewController extends UIViewController {
      * ignored when the column is already visible in the current displayMode;
      * otherwise animates to the nearest displayMode where the column is visible
      * <p>
-     * If an animation is started due to -show/hideColumn:, the transitionCoordinator for the UISplitViewController is available following the -show/hideColumn: message.
+     * If an animation is started due to -show/hideColumn:, the transitionCoordinator for the UISplitViewController is
+     * available following the -show/hideColumn: message.
      */
     @Generated
     @Selector("hideColumn:")
@@ -420,7 +436,8 @@ public class UISplitViewController extends UIViewController {
     public native double preferredSupplementaryColumnWidth();
 
     /**
-     * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style UISplitViewController
+     * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style
+     * UISplitViewController
      */
     @Generated
     @Selector("preferredSupplementaryColumnWidthFraction")
@@ -454,7 +471,8 @@ public class UISplitViewController extends UIViewController {
     public native void setPreferredSupplementaryColumnWidth(@NFloat double value);
 
     /**
-     * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style UISplitViewController
+     * Same as the "Primary" versions but applying to the Supplementary column for the triple-column style
+     * UISplitViewController
      */
     @Generated
     @Selector("setPreferredSupplementaryColumnWidthFraction:")

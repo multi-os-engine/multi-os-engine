@@ -27,7 +27,8 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class SCNBlendMode {
     /**
-     * Blends the source and destination colors by adding the source multiplied by source alpha and the destination multiplied by one minus source alpha.
+     * Blends the source and destination colors by adding the source multiplied by source alpha and the destination
+     * multiplied by one minus source alpha.
      */
     @Generated @NInt public static final long Alpha = 0x0000000000000000L;
     /**
@@ -43,7 +44,8 @@ public final class SCNBlendMode {
      */
     @Generated @NInt public static final long Multiply = 0x0000000000000003L;
     /**
-     * Blends the source and destination colors by multiplying one minus the source with the destination and adding the source.
+     * Blends the source and destination colors by multiplying one minus the source with the destination and adding the
+     * source.
      */
     @Generated @NInt public static final long Screen = 0x0000000000000004L;
     /**

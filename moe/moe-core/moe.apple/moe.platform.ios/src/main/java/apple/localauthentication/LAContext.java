@@ -174,7 +174,7 @@ public class LAContext extends NSObject {
      * for an extensive period of time. At least, it is guaranteed to stay valid until the
      * application enters background.
      * <p>
-     * [@warning]    Do not call this method in the reply block of evaluatePolicy:reply: because it could
+     * [@warning] Do not call this method in the reply block of evaluatePolicy:reply: because it could
      * lead to a deadlock.
      *
      * @param policy Policy for which the preflight check should be run.
@@ -231,9 +231,11 @@ public class LAContext extends NSObject {
      *                        title. Therefore, you should make sure that users are already aware of the need
      *                        and reason for Face ID authentication before they have triggered the policy evaluation.
      * @param reply           Reply block that is executed when access control evaluation finishes.
-     *                        success Reply parameter that is YES if the access control has been evaluated successfully or
+     *                        success Reply parameter that is YES if the access control has been evaluated successfully
+     *                        or
      *                        NO if the evaluation failed.
-     *                        error Reply parameter that is nil if the access control has been evaluated successfully, or
+     *                        error Reply parameter that is nil if the access control has been evaluated successfully,
+     *                        or
      *                        it contains error information about the evaluation failure.
      */
     @Generated
@@ -270,9 +272,9 @@ public class LAContext extends NSObject {
      * the first use or later in Face ID privacy settings. When the use of Face ID is denied, evaluations
      * will fail with LAErrorBiometryNotAvailable.
      * <p>
-     * [@li]          LAErrorUserFallback if user tapped the fallback button
-     * [@li]          LAErrorUserCancel if user has tapped the Cancel button
-     * [@li]          LAErrorSystemCancel if some system event interrupted the evaluation (e.g. Home button pressed).
+     * [@li] LAErrorUserFallback if user tapped the fallback button
+     * [@li] LAErrorUserCancel if user has tapped the Cancel button
+     * [@li] LAErrorSystemCancel if some system event interrupted the evaluation (e.g. Home button pressed).
      *
      * @param policy          Policy to be evaluated.
      * @param reply           Reply block that is executed when policy evaluation finishes.
@@ -292,8 +294,8 @@ public class LAContext extends NSObject {
      *                        title. Therefore, you should make sure that users are already aware of the need
      *                        and reason for Face ID authentication before they have triggered the policy evaluation.
      * @see LAError
-     * <p>
-     * Typical error codes returned by this call are:
+     *      <p>
+     *      Typical error codes returned by this call are:
      */
     @Generated
     @Selector("evaluatePolicy:localizedReason:reply:")
@@ -311,7 +313,8 @@ public class LAContext extends NSObject {
      * but comparing data of evaluatedPolicyDomainState after different evaluatePolicy
      * will reveal the fact database was changed between calls.
      * <p>
-     * [@warning] Please note that the value returned by this property can change exceptionally between major OS versions even if
+     * [@warning] Please note that the value returned by this property can change exceptionally between major OS
+     * versions even if
      * the state of biometry has not changed.
      */
     @Generated

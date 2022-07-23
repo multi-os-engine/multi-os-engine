@@ -82,9 +82,9 @@ public final class AVFAudio {
      * <p>
      * ```
      * [[NSNotificationCenter defaultCenter] addObserver: myObject
-     * selector:    @selector(handleInterruption:)
-     * name:        AVAudioEngineConfigurationChangeNotification
-     * object:      engine];
+     * selector: @selector(handleInterruption:)
+     * name: AVAudioEngineConfigurationChangeNotification
+     * object: engine];
      * ```
      * <p>
      * When the engine's I/O unit observes a change to the audio input or output hardware's
@@ -299,7 +299,7 @@ public final class AVFAudio {
     public static native String AVAudioSessionPortBuiltInMic();
 
     /**
-     * Microphone on a wired headset.  Headset refers to an accessory that has headphone outputs paired with a
+     * Microphone on a wired headset. Headset refers to an accessory that has headphone outputs paired with a
      * microphone.
      */
     @Generated
@@ -453,7 +453,7 @@ public final class AVFAudio {
     public static native String AVAudioSessionCategoryAmbient();
 
     /**
-     * Use this category for background sounds.  Other music will stop playing.
+     * Use this category for background sounds. Other music will stop playing.
      */
     @Generated
     @CVariable()
@@ -498,8 +498,8 @@ public final class AVFAudio {
      * For example, this category provides an application with the ability to use an available USB output
      * and headphone output simultaneously for separate, distinct streams of audio data. Use of
      * this category by an application requires a more detailed knowledge of, and interaction with,
-     * the capabilities of the available audio routes.  May be used for input, output, or both.
-     * Note that not all output types and output combinations are eligible for multi-route.  Input is limited
+     * the capabilities of the available audio routes. May be used for input, output, or both.
+     * Note that not all output types and output combinations are eligible for multi-route. Input is limited
      * to the last-in input port. Eligible inputs consist of the following:
      * AVAudioSessionPortUSBAudio, AVAudioSessionPortHeadsetMic, and AVAudioSessionPortBuiltInMic.
      * Eligible outputs consist of the following:
@@ -522,10 +522,10 @@ public final class AVFAudio {
     public static native String AVAudioSessionModeDefault();
 
     /**
-     * Only valid with AVAudioSessionCategoryPlayAndRecord.  Appropriate for Voice over IP
-     * (VoIP) applications.  Reduces the number of allowable audio routes to be only those
+     * Only valid with AVAudioSessionCategoryPlayAndRecord. Appropriate for Voice over IP
+     * (VoIP) applications. Reduces the number of allowable audio routes to be only those
      * that are appropriate for VoIP applications and may engage appropriate system-supplied
-     * signal processing.  Has the side effect of setting AVAudioSessionCategoryOptionAllowBluetooth
+     * signal processing. Has the side effect of setting AVAudioSessionCategoryOptionAllowBluetooth
      */
     @Generated
     @CVariable()
@@ -562,7 +562,7 @@ public final class AVFAudio {
     public static native String AVAudioSessionModeMeasurement();
 
     /**
-     * Engages appropriate output signal processing for movie playback scenarios.  Currently
+     * Engages appropriate output signal processing for movie playback scenarios. Currently
      * only applied during playback over built-in speaker.
      */
     @Generated
@@ -573,7 +573,7 @@ public final class AVFAudio {
     /**
      * Only valid with kAudioSessionCategory_PlayAndRecord. Reduces the number of allowable audio
      * routes to be only those that are appropriate for video chat applications. May engage appropriate
-     * system-supplied signal processing.  Has the side effect of setting
+     * system-supplied signal processing. Has the side effect of setting
      * AVAudioSessionCategoryOptionAllowBluetooth and AVAudioSessionCategoryOptionDefaultToSpeaker.
      */
     @Generated
@@ -582,9 +582,12 @@ public final class AVFAudio {
     public static native String AVAudioSessionModeVideoChat();
 
     /**
-     * Appropriate for applications which play spoken audio and wish to be paused (via audio session interruption) rather than ducked
-     * if another app (such as a navigation app) plays a spoken audio prompt.  Examples of apps that would use this are podcast players and
-     * audio books.  For more information, see the related category option AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers.
+     * Appropriate for applications which play spoken audio and wish to be paused (via audio session interruption)
+     * rather than ducked
+     * if another app (such as a navigation app) plays a spoken audio prompt. Examples of apps that would use this are
+     * podcast players and
+     * audio books. For more information, see the related category option
+     * AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers.
      */
     @Generated
     @CVariable()
@@ -592,9 +595,12 @@ public final class AVFAudio {
     public static native String AVAudioSessionModeSpokenAudio();
 
     /**
-     * Appropriate for applications which play audio using text to speech. Setting this mode allows for different routing behaviors when
-     * connected to certain audio devices such as CarPlay. An example of an app that would use this mode is a turn by turn navigation app that
-     * plays short prompts to the user. Typically, these same types of applications would also configure their session to use
+     * Appropriate for applications which play audio using text to speech. Setting this mode allows for different
+     * routing behaviors when
+     * connected to certain audio devices such as CarPlay. An example of an app that would use this mode is a turn by
+     * turn navigation app that
+     * plays short prompts to the user. Typically, these same types of applications would also configure their session
+     * to use
      * AVAudioSessionCategoryOptionDuckOthers and AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers
      */
     @Generated
@@ -658,7 +664,9 @@ public final class AVFAudio {
     public static native String AVAudioSessionPolarPatternSubcardioid();
 
     /**
-     * If you select a data source with AVAudioSessionPolarPatternStereo, then you must call setPreferredInputOrientation:error: on your Audio Session so that left and right are presented from the correct directions.
+     * If you select a data source with AVAudioSessionPolarPatternStereo, then you must call
+     * setPreferredInputOrientation:error: on your Audio Session so that left and right are presented from the correct
+     * directions.
      */
     @Generated
     @CVariable()
@@ -695,7 +703,7 @@ public final class AVFAudio {
      * Notification sent to registered listeners if the media server is killed.
      * <p>
      * In the event that the server is killed, take appropriate steps to handle requests that come in
-     * before the server resets.  See Technical Q&A QA1749.
+     * before the server resets. See Technical Q&A QA1749.
      */
     @Generated
     @CVariable()
@@ -706,7 +714,7 @@ public final class AVFAudio {
      * Notification sent to registered listeners when the media server restarts.
      * <p>
      * In the event that the server restarts, take appropriate steps to re-initialize any audio objects
-     * used by your application.  See Technical Q&A QA1749.
+     * used by your application. See Technical Q&A QA1749.
      */
     @Generated
     @CVariable()
@@ -763,7 +771,7 @@ public final class AVFAudio {
     public static native String AVAudioSessionInterruptionTypeKey();
 
     /**
-     * Only present for end interruption events.  Value is of type AVAudioSessionInterruptionOptions.
+     * Only present for end interruption events. Value is of type AVAudioSessionInterruptionOptions.
      */
     @Generated
     @CVariable()
@@ -901,9 +909,9 @@ public final class AVFAudio {
      * <p>
      * ```
      * [[NSNotificationCenter defaultCenter] addObserver: myObject
-     * selector:    @selector(registrationsChanged:)
-     * name:        AVAudioUnitComponentManagerRegistrationsChangedNotification
-     * object:      [AVAudioUnitComponentManager sharedAudioUnitComponentManager]];
+     * selector: @selector(registrationsChanged:)
+     * name: AVAudioUnitComponentManagerRegistrationsChangedNotification
+     * object: [AVAudioUnitComponentManager sharedAudioUnitComponentManager]];
      * ```
      */
     @Generated
@@ -933,7 +941,8 @@ public final class AVFAudio {
     public static native String AVSpeechSynthesisVoiceIdentifierAlex();
 
     /**
-     * NSString, containing International Phonetic Alphabet (IPA) symbols. Controls pronunciation of a certain word or phrase, e.g. a proper name.
+     * NSString, containing International Phonetic Alphabet (IPA) symbols. Controls pronunciation of a certain word or
+     * phrase, e.g. a proper name.
      */
     @Generated
     @CVariable()

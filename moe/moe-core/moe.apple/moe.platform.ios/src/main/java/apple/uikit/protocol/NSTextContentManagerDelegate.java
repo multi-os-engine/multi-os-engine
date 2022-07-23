@@ -19,7 +19,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("NSTextContentManagerDelegate")
 public interface NSTextContentManagerDelegate {
     /**
-     * Gives delegate a chance to validate textElement right before block() invocation with -enumerateTextElementsFromLocation:options:usingBlock:. Returning NO indicates textElement to be skipped from the enumeration.
+     * Gives delegate a chance to validate textElement right before block() invocation with
+     * -enumerateTextElementsFromLocation:options:usingBlock:. Returning NO indicates textElement to be skipped from the
+     * enumeration.
      */
     @Generated
     @IsOptional
@@ -30,7 +32,8 @@ public interface NSTextContentManagerDelegate {
     }
 
     /**
-     * Returns a custom element for location. When non-nil, textContentManager uses the element instead of creating based on its standard mapping logic.
+     * Returns a custom element for location. When non-nil, textContentManager uses the element instead of creating
+     * based on its standard mapping logic.
      */
     @Generated
     @IsOptional

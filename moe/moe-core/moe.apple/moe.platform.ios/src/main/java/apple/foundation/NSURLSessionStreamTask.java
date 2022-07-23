@@ -38,24 +38,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An NSURLSessionStreamTask provides an interface to perform reads
- * and writes to a TCP/IP stream created via NSURLSession.  This task
+ * and writes to a TCP/IP stream created via NSURLSession. This task
  * may be explicitly created from an NSURLSession, or created as a
  * result of the appropriate disposition response to a
  * -URLSession:dataTask:didReceiveResponse: delegate message.
  * <p>
  * NSURLSessionStreamTask can be used to perform asynchronous reads
- * and writes.  Reads and writes are enquened and executed serially,
+ * and writes. Reads and writes are enquened and executed serially,
  * with the completion handler being invoked on the sessions delegate
- * queuee.  If an error occurs, or the task is canceled, all
+ * queuee. If an error occurs, or the task is canceled, all
  * outstanding read and write calls will have their completion
  * handlers invoked with an appropriate error.
  * <p>
  * It is also possible to create NSInputStream and NSOutputStream
  * instances from an NSURLSessionTask by sending
- * -captureStreams to the task.  All outstanding read and writess are
- * completed before the streams are created.  Once the streams are
+ * -captureStreams to the task. All outstanding read and writess are
+ * completed before the streams are created. Once the streams are
  * delivered to the session delegate, the task is considered complete
- * and will receive no more messsages.  These streams are
+ * and will receive no more messsages. These streams are
  * disassociated from the underlying session.
  */
 @Generated
@@ -192,7 +192,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     /**
      * Enqueue a request to close the write end of the underlying socket.
      * All outstanding IO will complete before the write side of the
-     * socket is closed.  The server, however, may continue to write bytes
+     * socket is closed. The server, however, may continue to write bytes
      * back to the client, so best practice is to continue reading from
      * the server until you receive EOF.
      */
@@ -217,8 +217,8 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
             @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
 
     /**
-     * Begin encrypted handshake.  The hanshake begins after all pending
-     * IO has completed.  TLS authentication callbacks are sent to the
+     * Begin encrypted handshake. The hanshake begins after all pending
+     * IO has completed. TLS authentication callbacks are sent to the
      * session's -URLSession:task:didReceiveChallenge:completionHandler:
      */
     @Generated
@@ -236,9 +236,9 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     public native void stopSecureConnection();
 
     /**
-     * Write the data completely to the underlying socket.  If all the
+     * Write the data completely to the underlying socket. If all the
      * bytes have not been written by the timeout, a timeout error will
-     * occur.  Note that invocation of the completion handler does not
+     * occur. Note that invocation of the completion handler does not
      * guarantee that the remote side has received all the bytes, only
      * that they have been written to the kernel.
      */

@@ -82,11 +82,12 @@ public class MXGPUMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cumulativeGPUTime
+     * [@property] cumulativeGPUTime
      * <p>
      * GPU time aggregated cumulatively.
      * <p>
-     * The data here represents the total GPU time an application consumed over the date range of the containing payload.
+     * The data here represents the total GPU time an application consumed over the date range of the containing
+     * payload.
      * <p>
      * Dimensioned as NSUnitDuration.
      */

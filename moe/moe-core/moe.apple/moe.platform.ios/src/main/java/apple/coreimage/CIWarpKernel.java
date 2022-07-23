@@ -195,7 +195,7 @@ public class CIWarpKernel extends CIKernel {
      * <p>
      * The 'args' is an array of parameters needed to describe the warping function.
      * The object types of the items in the array correspond to the argument types of the
-     * kernel function.  For example, if the first argument in the kernel is a vec3,
+     * kernel function. For example, if the first argument in the kernel is a vec3,
      * then the first object in the array must be a CIVector of count 3.
      */
     @Generated

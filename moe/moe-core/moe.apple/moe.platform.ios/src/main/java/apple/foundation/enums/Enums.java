@@ -120,9 +120,8 @@ public final class Enums {
     @Generated @NInt public static final long NSDateComponentUndefined = org.moe.natj.general.NatJ.is64Bit() ?
             0x7FFFFFFFFFFFFFFFL :
             0x000000007FFFFFFFL;
-    @Deprecated @Generated @NInt public static final long NSUndefinedDateComponent = org.moe.natj.general.NatJ.is64Bit() ?
-            0x7FFFFFFFFFFFFFFFL :
-            0x000000007FFFFFFFL;
+    @Deprecated @Generated @NInt public static final long NSUndefinedDateComponent = org.moe.natj.general.NatJ
+            .is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
     @Generated @NInt public static final long NSURLErrorCancelledReasonUserForceQuitApplication = 0x0000000000000000L;
     @Generated @NInt public static final long NSURLErrorCancelledReasonBackgroundUpdatesDisabled = 0x0000000000000001L;
     @Generated @NInt public static final long NSURLErrorCancelledReasonInsufficientSystemResources = 0x0000000000000002L;
@@ -298,15 +297,18 @@ public final class Enums {
     @Generated @NInt public static final long NSXPCConnectionErrorMinimum = 0x0000000000001000L;
     @Generated @NInt public static final long NSXPCConnectionErrorMaximum = 0x0000000000001080L;
     /**
-     * NSURLUbiquitousItemDownloadingErrorKey contains an error with this code when the item has not been uploaded to iCloud by the other devices yet
+     * NSURLUbiquitousItemDownloadingErrorKey contains an error with this code when the item has not been uploaded to
+     * iCloud by the other devices yet
      */
     @Generated @NInt public static final long NSUbiquitousFileUnavailableError = 0x0000000000001101L;
     /**
-     * NSURLUbiquitousItemUploadingErrorKey contains an error with this code when the item has not been uploaded to iCloud because it would make the account go over-quota
+     * NSURLUbiquitousItemUploadingErrorKey contains an error with this code when the item has not been uploaded to
+     * iCloud because it would make the account go over-quota
      */
     @Generated @NInt public static final long NSUbiquitousFileNotUploadedDueToQuotaError = 0x0000000000001102L;
     /**
-     * NSURLUbiquitousItemDownloadingErrorKey and NSURLUbiquitousItemUploadingErrorKey contain an error with this code when connecting to the iCloud servers failed
+     * NSURLUbiquitousItemDownloadingErrorKey and NSURLUbiquitousItemUploadingErrorKey contain an error with this code
+     * when connecting to the iCloud servers failed
      */
     @Generated @NInt public static final long NSUbiquitousFileUbiquityServerNotAvailable = 0x0000000000001103L;
     @Generated @NInt public static final long NSUbiquitousFileErrorMinimum = 0x0000000000001100L;
@@ -366,7 +368,9 @@ public final class Enums {
      */
     @Generated @NInt public static final long NSCloudSharingTooManyParticipantsError = 0x0000000000001402L;
     /**
-     * A conflict occurred while trying to save changes to the CKShare and/or root CKRecord. Respond to this error by first fetching the server's changes to the records, then either handle the conflict manually or present it, which will instruct the user to try the operation again.
+     * A conflict occurred while trying to save changes to the CKShare and/or root CKRecord. Respond to this error by
+     * first fetching the server's changes to the records, then either handle the conflict manually or present it, which
+     * will instruct the user to try the operation again.
      */
     @Generated @NInt public static final long NSCloudSharingConflictError = 0x0000000000001403L;
     /**
@@ -374,7 +378,9 @@ public final class Enums {
      */
     @Generated @NInt public static final long NSCloudSharingNoPermissionError = 0x0000000000001404L;
     /**
-     * These errors may require application-specific responses. For CloudKit sharing, use the NSUnderlyingErrorKey, which is a CKErrorDomain error, to discover the specific error and refer to the CloudKit documentation for the proper response to these errors.
+     * These errors may require application-specific responses. For CloudKit sharing, use the NSUnderlyingErrorKey,
+     * which is a CKErrorDomain error, to discover the specific error and refer to the CloudKit documentation for the
+     * proper response to these errors.
      */
     @Generated @NInt public static final long NSCloudSharingOtherError = 0x00000000000014FFL;
     @Generated @NInt public static final long NSCloudSharingErrorMinimum = 0x0000000000001400L;

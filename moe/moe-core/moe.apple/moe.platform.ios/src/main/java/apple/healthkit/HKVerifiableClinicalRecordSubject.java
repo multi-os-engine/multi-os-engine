@@ -90,7 +90,7 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]     dateOfBirthComponents
+     * [@property] dateOfBirthComponents
      * <p>
      * The subject's date of birth components.
      */
@@ -111,7 +111,7 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * [@property]     fullName
+     * [@property] fullName
      * <p>
      * The subject's full name.
      */

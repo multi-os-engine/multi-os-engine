@@ -100,7 +100,8 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     public static native String debugDescription_static();
 
     /**
-     * The delegate for a CPTemplateApplicationDashboardScene must conform to the CPTemplateApplicationDashboardSceneDelegate protocol.
+     * The delegate for a CPTemplateApplicationDashboardScene must conform to the
+     * CPTemplateApplicationDashboardSceneDelegate protocol.
      */
     @Generated
     @Selector("delegate")
@@ -160,7 +161,8 @@ public class CPTemplateApplicationDashboardScene extends UIScene {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The delegate for a CPTemplateApplicationDashboardScene must conform to the CPTemplateApplicationDashboardSceneDelegate protocol.
+     * The delegate for a CPTemplateApplicationDashboardScene must conform to the
+     * CPTemplateApplicationDashboardSceneDelegate protocol.
      */
     @Generated
     @Selector("setDelegate:")

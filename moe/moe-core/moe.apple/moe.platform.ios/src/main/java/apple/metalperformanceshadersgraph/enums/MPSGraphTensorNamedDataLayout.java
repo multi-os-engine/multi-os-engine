@@ -4,17 +4,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@typedef]    MPSGraphTensorNamedDataLayout
+ * [@typedef] MPSGraphTensorNamedDataLayout
  * <p>
  * Tensor Layout
  * <p>
- * [@constant]   MPSGraphTensorNamedDataLayoutNCHW           LayoutNCHW
- * [@constant]   MPSGraphTensorNamedDataLayoutNHWC           LayoutNHWC
- * [@constant]   MPSGraphTensorNamedDataLayoutOIHW            LayoutOIHW
- * [@constant]   MPSGraphTensorNamedDataLayoutHWIO            LayoutHWIO
- * [@constant]   MPSGraphTensorNamedDataLayoutCHW             LayoutCHW
- * [@constant]   MPSGraphTensorNamedDataLayoutHWC             LayoutHWC
- * [@constant]   MPSGraphTensorNamedDataLayoutHW                LayoutHW
+ * [@constant] MPSGraphTensorNamedDataLayoutNCHW LayoutNCHW
+ * [@constant] MPSGraphTensorNamedDataLayoutNHWC LayoutNHWC
+ * [@constant] MPSGraphTensorNamedDataLayoutOIHW LayoutOIHW
+ * [@constant] MPSGraphTensorNamedDataLayoutHWIO LayoutHWIO
+ * [@constant] MPSGraphTensorNamedDataLayoutCHW LayoutCHW
+ * [@constant] MPSGraphTensorNamedDataLayoutHWC LayoutHWC
+ * [@constant] MPSGraphTensorNamedDataLayoutHW LayoutHW
  */
 @Generated
 public final class MPSGraphTensorNamedDataLayout {

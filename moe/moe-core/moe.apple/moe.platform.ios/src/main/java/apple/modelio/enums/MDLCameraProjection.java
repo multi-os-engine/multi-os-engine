@@ -166,11 +166,11 @@ import org.moe.natj.general.ann.NUInt;
  * <p>
  * The default aperture is 24mm, corresponding to a 35mm stills camera.
  * _____________________
- * [][][][][][][][][][][              ^
- * \     |         |  \      ^       |
- * \    |         |   \    24mm   35mm
- * \   |         |    \    v       |
- * ][][][][][][][][][][]           v
+ * [][][][][][][][][][][ ^
+ * \ | | \ ^ |
+ * \ | | \ 24mm 35mm
+ * \ | | \ v |
+ * ][][][][][][][][][][] v
  * ---------------------
  * <- 36mm -->
  * <p>
@@ -226,10 +226,10 @@ import org.moe.natj.general.ann.NUInt;
  * pow(exposureCompression((sensor value + flash) * exposure), displayGamma)
  *
  * @see MDLObject transform property
- * <p>
- * The MDLTransformComponent on an MDLCamera is an MDLTransform.
- * <p>
- * 2. Visible Objects and Lights
+ *      <p>
+ *      The MDLTransformComponent on an MDLCamera is an MDLTransform.
+ *      <p>
+ *      2. Visible Objects and Lights
  */
 @Generated
 public final class MDLCameraProjection {

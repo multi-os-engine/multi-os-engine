@@ -32,9 +32,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSImageCopyToMatrix
  * <p>
  * The MPSImageCopyToMatrix copies image data to a MPSMatrix.
- * The image data is stored in a row of a matrix.  The dataLayout
+ * The image data is stored in a row of a matrix. The dataLayout
  * specifies the order in which the feature channels in the MPSImage
- * get stored in the matrix.  If MPSImage stores a batch of images,
+ * get stored in the matrix. If MPSImage stores a batch of images,
  * the images are copied into multiple rows, one row per image.
  * <p>
  * The number of elements in a row in the matrix must be >= image width *
@@ -91,11 +91,11 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   dataLayout
+     * [@property] dataLayout
      * <p>
      * The data layout to use
      * <p>
-     * Returns the data layout.  When copying from a MPSImage to a MPSMatrix, this
+     * Returns the data layout. When copying from a MPSImage to a MPSMatrix, this
      * describes the order in which the image values are stored in the buffer associated
      * with the MPSMatrix.
      * Default: MPSDataLayoutFeatureChannelsxHeightxWidth
@@ -114,9 +114,9 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     public static native String description_static();
 
     /**
-     * [@property]   destinationMatrixBatchIndex
+     * [@property] destinationMatrixBatchIndex
      * <p>
-     * The index of the destination matrix in the batch.  This property is
+     * The index of the destination matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
      */
     @Generated
@@ -125,12 +125,12 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     public native long destinationMatrixBatchIndex();
 
     /**
-     * [@property]   destinationMatrixOrigin
+     * [@property] destinationMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the destination matrix, at which to
-     * start writing results.  This property is modifiable and defaults
-     * to [0, 0] at initialization time.  If a different origin is desired
-     * then this should be modified prior to encoding the kernel.  The z
+     * start writing results. This property is modifiable and defaults
+     * to [0, 0] at initialization time. If a different origin is desired
+     * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
      */
     @Generated
@@ -143,7 +143,7 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * using a MTLComputeCommandEncoder.
      * <p>
      * The kernel copies feature channels from sourceImage to the buffer
-     * associated with destinationMatrix.  The kernel will not begin to execute until
+     * associated with destinationMatrix. The kernel will not begin to execute until
      * after the command buffer has been enqueued and committed.
      * <p>
      * NOTE: The destinationMatrix.dataType must match the feature channel data type in sourceImage.
@@ -177,7 +177,7 @@ public class MPSImageCopyToMatrix extends MPSKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -240,9 +240,9 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   destinationMatrixBatchIndex
+     * [@property] destinationMatrixBatchIndex
      * <p>
-     * The index of the destination matrix in the batch.  This property is
+     * The index of the destination matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time.
      */
     @Generated
@@ -250,12 +250,12 @@ public class MPSImageCopyToMatrix extends MPSKernel {
     public native void setDestinationMatrixBatchIndex(@NUInt long value);
 
     /**
-     * [@property]   destinationMatrixOrigin
+     * [@property] destinationMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the destination matrix, at which to
-     * start writing results.  This property is modifiable and defaults
-     * to [0, 0] at initialization time.  If a different origin is desired
-     * then this should be modified prior to encoding the kernel.  The z
+     * start writing results. This property is modifiable and defaults
+     * to [0, 0] at initialization time. If a different origin is desired
+     * then this should be modified prior to encoding the kernel. The z
      * value must be 0.
      */
     @Generated

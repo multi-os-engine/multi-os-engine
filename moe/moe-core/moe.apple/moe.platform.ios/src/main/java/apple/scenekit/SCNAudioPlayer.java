@@ -171,7 +171,8 @@ public class SCNAudioPlayer extends NSObject {
     /**
      * [@property] audioNode
      * <p>
-     * The audioNode. If this player was not initialised with a custom AVAudioNode this contains the internal audio player node used by scene kit internally.
+     * The audioNode. If this player was not initialised with a custom AVAudioNode this contains the internal audio
+     * player node used by scene kit internally.
      */
     @Generated
     @Selector("audioNode")
@@ -203,7 +204,8 @@ public class SCNAudioPlayer extends NSObject {
     /**
      * [@property] initWithAVAudioNode:
      * <p>
-     * Init an audio player with an AVAudioNode. Most people should use audioPlayerWithAVAudioNode as it permits to recycle previous players instead of creating new ones for each instance.
+     * Init an audio player with an AVAudioNode. Most people should use audioPlayerWithAVAudioNode as it permits to
+     * recycle previous players instead of creating new ones for each instance.
      */
     @Generated
     @Selector("initWithAVAudioNode:")
@@ -212,7 +214,8 @@ public class SCNAudioPlayer extends NSObject {
     /**
      * [@property] initWithSource:
      * <p>
-     * Init an audio player with a source. Most people should use audioPlayerWithSource as it permits to recycle previous players instead of creating new ones for each instance.
+     * Init an audio player with a source. Most people should use audioPlayerWithSource as it permits to recycle
+     * previous players instead of creating new ones for each instance.
      */
     @Generated
     @Selector("initWithSource:")

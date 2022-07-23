@@ -95,7 +95,7 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      * @param sourceArrays The list of sources for the filter in a NSArray.
      *                     Ordering to be defined by subclass
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
-     * when the command buffer completes successfully.
+     *         when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:")
@@ -141,9 +141,10 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      * @param sourceArrays           The list of sources for the filter in a NSArray.
      *                               Ordering to be defined by subclass
      * @param outGradientState       If non-nil, the address output gradient state is written to this address
-     * @param outputStateIsTemporary If YES, the state if any will be allocated to contain temporary textures and buffers as needed
+     * @param outputStateIsTemporary If YES, the state if any will be allocated to contain temporary textures and
+     *                               buffers as needed
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
-     * when the command buffer completes successfully.
+     *         when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:resultState:outputStateIsTemporary:")

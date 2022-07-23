@@ -53,10 +53,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * delta = 1/1024 = 0.0009765625.
  * <p>
  * T(i,j) = (delta + alpha * VAR(i,j))
- * N      = kw * kh
+ * N = kw * kh
  * <p>
  * OutputGradient:
- * dZ/dX(i,j) =  ps * T(i,j)^(-beta) * ( dZ/dY(i,j) - (sum_{l,k in L(i),K(j)} dZ/dY(l,k) * (((p0/N) + (2*alpha*beta/N)*(X(k,l)-1)*(X(i,j)-M(i,j)*p0)/T(i,j)))) )
+ * dZ/dX(i,j) = ps * T(i,j)^(-beta) * ( dZ/dY(i,j) - (sum_{l,k in L(i),K(j)} dZ/dY(l,k) * (((p0/N) +
+ * (2*alpha*beta/N)*(X(k,l)-1)*(X(i,j)-M(i,j)*p0)/T(i,j)))) )
  * N is the kernel size. The window L(i) and K(j) itself is defined as:
  * L(i) = [i-floor((kw-1)/2), i+floor(kw/2]
  * K(j) = [j-floor((kh-1)/2), j+floor(kh/2]
@@ -92,9 +93,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native MPSCNNLocalContrastNormalizationGradient allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 0.0
+     * The value of alpha. Default is 0.0
      * <p>
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
@@ -111,9 +112,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 0.5
+     * The value of beta. Default is 0.5
      */
     @Generated
     @Selector("beta")
@@ -142,9 +143,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native String debugDescription_static();
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1/1024
+     * The value of delta. Default is 1/1024
      */
     @Generated
     @Selector("delta")
@@ -173,7 +174,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -197,8 +198,8 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
      * @param kernelWidth  The width of the kernel
      * @param kernelHeight The height of the kernel
      * @return A valid MPSCNNLocalContrastNormalization object or nil, if failure.
-     * <p>
-     * NOTE:  For now, kernelWidth must be equal to kernelHeight
+     *         <p>
+     *         NOTE: For now, kernelWidth must be equal to kernelHeight
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -232,27 +233,27 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native MPSCNNLocalContrastNormalizationGradient new_objc();
 
     /**
-     * [@property]   p0
+     * [@property] p0
      * <p>
-     * The value of p0.  Default is 1.0
+     * The value of p0. Default is 1.0
      */
     @Generated
     @Selector("p0")
     public native float p0();
 
     /**
-     * [@property]   pm
+     * [@property] pm
      * <p>
-     * The value of pm.  Default is 0.0
+     * The value of pm. Default is 0.0
      */
     @Generated
     @Selector("pm")
     public native float pm();
 
     /**
-     * [@property]   ps
+     * [@property] ps
      * <p>
-     * The value of ps.  Default is 1.0
+     * The value of ps. Default is 1.0
      */
     @Generated
     @Selector("ps")
@@ -267,9 +268,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 0.0
+     * The value of alpha. Default is 0.0
      * <p>
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
@@ -282,45 +283,45 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
     public native void setAlpha(float value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 0.5
+     * The value of beta. Default is 0.5
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1/1024
+     * The value of delta. Default is 1/1024
      */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
     /**
-     * [@property]   p0
+     * [@property] p0
      * <p>
-     * The value of p0.  Default is 1.0
+     * The value of p0. Default is 1.0
      */
     @Generated
     @Selector("setP0:")
     public native void setP0(float value);
 
     /**
-     * [@property]   pm
+     * [@property] pm
      * <p>
-     * The value of pm.  Default is 0.0
+     * The value of pm. Default is 0.0
      */
     @Generated
     @Selector("setPm:")
     public native void setPm(float value);
 
     /**
-     * [@property]   ps
+     * [@property] ps
      * <p>
-     * The value of ps.  Default is 1.0
+     * The value of ps. Default is 1.0
      */
     @Generated
     @Selector("setPs:")

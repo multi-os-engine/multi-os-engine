@@ -61,14 +61,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * CNContact is thread safe.
  * <p>
- * If using a CNContact instance where you are not certain of the keys that were fetched, use isKeyAvailable: or areKeysAvailable:. If these return NO you need to refetch the contact by the contact identifier with the keys you want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.
+ * If using a CNContact instance where you are not certain of the keys that were fetched, use isKeyAvailable: or
+ * areKeysAvailable:. If these return NO you need to refetch the contact by the contact identifier with the keys you
+ * want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.
  */
 @Generated
 @Library("Contacts")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CNContact extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, NSItemProviderReading, NSItemProviderWriting {
+public class CNContact extends NSObject implements NSCopying, NSMutableCopying, NSSecureCoding, NSItemProviderReading,
+        NSItemProviderWriting {
     static {
         NatJ.register();
     }
@@ -282,7 +284,8 @@ public class CNContact extends NSObject
     public native String givenName();
 
     /**
-     * The identifier is unique among contacts on the device. It can be saved and used for fetching contacts next application launch.
+     * The identifier is unique among contacts on the device. It can be saved and used for fetching contacts next
+     * application launch.
      */
     @Generated
     @Selector("identifier")
@@ -317,7 +320,8 @@ public class CNContact extends NSObject
 
     /**
      * Unification
-     * Returns YES if the receiver was fetched as a unified contact and includes the contact having contactIdentifier in its unification
+     * Returns YES if the receiver was fetched as a unified contact and includes the contact having contactIdentifier in
+     * its unification
      */
     @Generated
     @Selector("isUnifiedWithContactWithIdentifier:")

@@ -32,7 +32,7 @@ public final class INSiriAuthorizationStatus {
      */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
-     * This application is not authorized to use Siri services.  Due
+     * This application is not authorized to use Siri services. Due
      * to active restrictions on Siri services, the user cannot change
      * this status, and may not have personally denied authorization.
      */

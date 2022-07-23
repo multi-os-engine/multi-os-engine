@@ -77,7 +77,8 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     public static native UNNotificationAttachment allocWithZone(VoidPtr zone);
 
     /**
-     * Creates an attachment for the data at URL with an optional options dictionary. URL must be a file URL. Returns nil if the data at URL is not supported.
+     * Creates an attachment for the data at URL with an optional options dictionary. URL must be a file URL. Returns
+     * nil if the data at URL is not supported.
      */
     @Generated
     @Selector("attachmentWithIdentifier:URL:options:error:")
@@ -171,7 +172,8 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     public static native long version_static();
 
     /**
-     * The URL to the attachment's data. If you have obtained this attachment from UNUserNotificationCenter then the URL will be security-scoped.
+     * The URL to the attachment's data. If you have obtained this attachment from UNUserNotificationCenter then the URL
+     * will be security-scoped.
      */
     @Generated
     @Selector("URL")

@@ -133,7 +133,8 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_4444AYpCbCr8 = 0x79343038;
     /**
-     * Component Y'CbCrA 16-bit 4:4:4:4, ordered A Y' Cb Cr, full range alpha, video range Y'CbCr, 16-bit little-endian samples.
+     * Component Y'CbCrA 16-bit 4:4:4:4, ordered A Y' Cb Cr, full range alpha, video range Y'CbCr, 16-bit little-endian
+     * samples.
      */
     @Generated public static final int kCVPixelFormatType_4444AYpCbCr16 = 0x79343136;
     /**
@@ -153,11 +154,12 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_444YpCbCr10 = 0x76343130;
     /**
-     * Planar Component Y'CbCr 8-bit 4:2:0.  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrPlanar struct
+     * Planar Component Y'CbCr 8-bit 4:2:0. baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_420YpCbCr8Planar = 0x79343230;
     /**
-     * Planar Component Y'CbCr 8-bit 4:2:0, full range.  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrPlanar struct
+     * Planar Component Y'CbCr 8-bit 4:2:0, full range. baseAddr points to a big-endian
+     * CVPlanarPixelBufferInfo_YCbCrPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_420YpCbCr8PlanarFullRange = 0x66343230;
     /**
@@ -165,11 +167,13 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_422YpCbCr_4A_8BiPlanar = 0x61327679;
     /**
-     * Bi-Planar Component Y'CbCr 8-bit 4:2:0, video-range (luma=[16,235] chroma=[16,240]).  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
+     * Bi-Planar Component Y'CbCr 8-bit 4:2:0, video-range (luma=[16,235] chroma=[16,240]). baseAddr points to a
+     * big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange = 0x34323076;
     /**
-     * Bi-Planar Component Y'CbCr 8-bit 4:2:0, full-range (luma=[0,255] chroma=[1,255]).  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
+     * Bi-Planar Component Y'CbCr 8-bit 4:2:0, full-range (luma=[0,255] chroma=[1,255]). baseAddr points to a big-endian
+     * CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_420YpCbCr8BiPlanarFullRange = 0x34323066;
     /**
@@ -304,11 +308,13 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_ARGB2101010LEPacked = 0x6C313072;
     /**
-     * IEEE754-2008 binary16 (half float), describing the normalized shift when comparing two images. Units are 1/meters: ( pixelShift / (pixelFocalLength * baselineInMeters) )
+     * IEEE754-2008 binary16 (half float), describing the normalized shift when comparing two images. Units are
+     * 1/meters: ( pixelShift / (pixelFocalLength * baselineInMeters) )
      */
     @Generated public static final int kCVPixelFormatType_DisparityFloat16 = 0x68646973;
     /**
-     * IEEE754-2008 binary32 float, describing the normalized shift when comparing two images. Units are 1/meters: ( pixelShift / (pixelFocalLength * baselineInMeters) )
+     * IEEE754-2008 binary32 float, describing the normalized shift when comparing two images. Units are 1/meters: (
+     * pixelShift / (pixelFocalLength * baselineInMeters) )
      */
     @Generated public static final int kCVPixelFormatType_DisparityFloat32 = 0x66646973;
     /**
@@ -344,23 +350,28 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_444YpCbCr10BiPlanarFullRange = 0x78663434;
     /**
-     * first and second planes as per 420YpCbCr8BiPlanarVideoRange (420v), alpha 8 bits in third plane full-range.  No CVPlanarPixelBufferInfo struct.
+     * first and second planes as per 420YpCbCr8BiPlanarVideoRange (420v), alpha 8 bits in third plane full-range. No
+     * CVPlanarPixelBufferInfo struct.
      */
     @Generated public static final int kCVPixelFormatType_420YpCbCr8VideoRange_8A_TriPlanar = 0x76306138;
     /**
-     * Bi-Planar Component Y'CbCr 8-bit 4:2:2, video-range (luma=[16,235] chroma=[16,240]).  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
+     * Bi-Planar Component Y'CbCr 8-bit 4:2:2, video-range (luma=[16,235] chroma=[16,240]). baseAddr points to a
+     * big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_422YpCbCr8BiPlanarVideoRange = 0x34323276;
     /**
-     * Bi-Planar Component Y'CbCr 8-bit 4:2:2, full-range (luma=[0,255] chroma=[1,255]).  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
+     * Bi-Planar Component Y'CbCr 8-bit 4:2:2, full-range (luma=[0,255] chroma=[1,255]). baseAddr points to a big-endian
+     * CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_422YpCbCr8BiPlanarFullRange = 0x34323266;
     /**
-     * Bi-Planar Component Y'CbCr 8-bit 4:4:4, video-range (luma=[16,235] chroma=[16,240]).  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
+     * Bi-Planar Component Y'CbCr 8-bit 4:4:4, video-range (luma=[16,235] chroma=[16,240]). baseAddr points to a
+     * big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_444YpCbCr8BiPlanarVideoRange = 0x34343476;
     /**
-     * Bi-Planar Component Y'CbCr 8-bit 4:4:4, full-range (luma=[0,255] chroma=[1,255]).  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
+     * Bi-Planar Component Y'CbCr 8-bit 4:4:4, full-range (luma=[0,255] chroma=[1,255]). baseAddr points to a big-endian
+     * CVPlanarPixelBufferInfo_YCbCrBiPlanar struct
      */
     @Generated public static final int kCVPixelFormatType_444YpCbCr8BiPlanarFullRange = 0x34343466;
     /**
@@ -380,11 +391,14 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_TwoComponent16 = 0x32433136;
     /**
-     * Single plane Bayer 16-bit little-endian sensor element ("sensel") samples from full-size decoding of ProRes RAW images; Bayer pattern (sensel ordering) and other raw conversion information is described via buffer attachments
+     * Single plane Bayer 16-bit little-endian sensor element ("sensel") samples from full-size decoding of ProRes RAW
+     * images; Bayer pattern (sensel ordering) and other raw conversion information is described via buffer attachments
      */
     @Generated public static final int kCVPixelFormatType_16VersatileBayer = 0x62703136;
     /**
-     * Single plane 64-bit RGBA (16-bit little-endian samples) from downscaled decoding of ProRes RAW images; components--which may not be co-sited with one another--are sensel values and require raw conversion, information for which is described via buffer attachments
+     * Single plane 64-bit RGBA (16-bit little-endian samples) from downscaled decoding of ProRes RAW images;
+     * components--which may not be co-sited with one another--are sensel values and require raw conversion, information
+     * for which is described via buffer attachments
      */
     @Generated public static final int kCVPixelFormatType_64RGBA_DownscaledProResRAW = 0x62703634;
     @Generated public static final int kCVVersatileBayer_BayerPattern_RGGB = 0x00000000;
@@ -400,7 +414,8 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_40ARGBLEWideGamut = 0x77343061;
     /**
-     * little-endian ARGB10101010, each 10 bits in the MSBs of 16bits, wide-gamut (384-895, including alpha). Alpha premultiplied
+     * little-endian ARGB10101010, each 10 bits in the MSBs of 16bits, wide-gamut (384-895, including alpha). Alpha
+     * premultiplied
      */
     @Generated public static final int kCVPixelFormatType_40ARGBLEWideGamutPremultiplied = 0x7734306D;
     /**
@@ -412,7 +427,8 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_444YpCbCr16BiPlanarVideoRange = 0x73763434;
     /**
-     * 3 plane video-range YCbCr16 4:4:4 with 16-bit full-range alpha (luma=[4096,60160] chroma=[4096,61440] alpha=[0,65535]).  No CVPlanarPixelBufferInfo struct.
+     * 3 plane video-range YCbCr16 4:4:4 with 16-bit full-range alpha (luma=[4096,60160] chroma=[4096,61440]
+     * alpha=[0,65535]). No CVPlanarPixelBufferInfo struct.
      */
     @Generated public static final int kCVPixelFormatType_444YpCbCr16VideoRange_16A_TriPlanar = 0x73346173;
     /**
@@ -420,19 +436,21 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_Lossy_32BGRA = 0x2D424741;
     /**
-     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct.
+     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange. No CVPlanarPixelBufferInfo struct.
      */
     @Generated public static final int kCVPixelFormatType_Lossy_420YpCbCr8BiPlanarVideoRange = 0x2D387630;
     /**
-     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarFullRange.  No CVPlanarPixelBufferInfo struct.
+     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarFullRange. No CVPlanarPixelBufferInfo struct.
      */
     @Generated public static final int kCVPixelFormatType_Lossy_420YpCbCr8BiPlanarFullRange = 0x2D386630;
     /**
-     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     * Lossy-compressed form of kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange. No CVPlanarPixelBufferInfo struct.
+     * Format is compressed-packed with no padding bits between pixels.
      */
     @Generated public static final int kCVPixelFormatType_Lossy_420YpCbCr10PackedBiPlanarVideoRange = 0x2D787630;
     /**
-     * Lossy-compressed form of kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     * Lossy-compressed form of kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange. No CVPlanarPixelBufferInfo struct.
+     * Format is compressed-packed with no padding bits between pixels.
      */
     @Generated public static final int kCVPixelFormatType_Lossy_422YpCbCr10PackedBiPlanarVideoRange = 0x2D787632;
     /**
@@ -440,19 +458,21 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_Lossless_32BGRA = 0x26424741;
     /**
-     * Lossless-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct.
+     * Lossless-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange. No CVPlanarPixelBufferInfo struct.
      */
     @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr8BiPlanarVideoRange = 0x26387630;
     /**
-     * Lossless-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarFullRange.  No CVPlanarPixelBufferInfo struct.
+     * Lossless-compressed form of kCVPixelFormatType_420YpCbCr8BiPlanarFullRange. No CVPlanarPixelBufferInfo struct.
      */
     @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr8BiPlanarFullRange = 0x26386630;
     /**
-     * Lossless-compressed-packed form of kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     * Lossless-compressed-packed form of kCVPixelFormatType_420YpCbCr10BiPlanarVideoRange. No CVPlanarPixelBufferInfo
+     * struct. Format is compressed-packed with no padding bits between pixels.
      */
     @Generated public static final int kCVPixelFormatType_Lossless_420YpCbCr10PackedBiPlanarVideoRange = 0x26787630;
     /**
-     * Lossless-compressed form of kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange.  No CVPlanarPixelBufferInfo struct. Format is compressed-packed with no padding bits between pixels.
+     * Lossless-compressed form of kCVPixelFormatType_422YpCbCr10BiPlanarVideoRange. No CVPlanarPixelBufferInfo struct.
+     * Format is compressed-packed with no padding bits between pixels.
      */
     @Generated public static final int kCVPixelFormatType_Lossless_422YpCbCr10PackedBiPlanarVideoRange = 0x26787632;
 }

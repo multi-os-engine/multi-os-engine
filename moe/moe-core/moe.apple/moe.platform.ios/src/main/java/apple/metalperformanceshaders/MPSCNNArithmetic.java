@@ -45,11 +45,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * value for primaryScale and secondaryScale is 1.0f. The default value for bias is 0.0f. This
  * filter applies primaryScale, secondaryScale, and bias to the primary source pixel (x) and
  * secondary source pixel (y) in the following way:
- * - Addition:         result = ((primaryScale * x) + (secondaryScale * y)) + bias
- * - Subtraction:      result = ((primaryScale * x) - (secondaryScale * y)) + bias
- * - Multiplicaton:    result = ((primaryScale * x) * (secondaryScale * y)) + bias
- * - Division:         result = ((primaryScale * x) / (secondaryScale * y)) + bias
- * - Comparison:       Unused.
+ * - Addition: result = ((primaryScale * x) + (secondaryScale * y)) + bias
+ * - Subtraction: result = ((primaryScale * x) - (secondaryScale * y)) + bias
+ * - Multiplicaton: result = ((primaryScale * x) * (secondaryScale * y)) + bias
+ * - Division: result = ((primaryScale * x) / (secondaryScale * y)) + bias
+ * - Comparison: Unused.
  * <p>
  * To clamp the result of an arithmetic operation, where
  * result = clamp(result, minimumValue, maximumValue),
@@ -193,7 +193,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   maximumValue
+     * [@property] maximumValue
      * <p>
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
@@ -204,7 +204,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native float maximumValue();
 
     /**
-     * [@property]   minimumValue
+     * [@property] minimumValue
      * <p>
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
@@ -224,7 +224,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native float primaryScale();
 
     /**
-     * [@property]   primaryStrideInPixels
+     * [@property] primaryStrideInPixels
      * <p>
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
@@ -247,7 +247,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native float secondaryScale();
 
     /**
-     * [@property]   secondaryStrideInPixels
+     * [@property] secondaryStrideInPixels
      * <p>
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
@@ -262,7 +262,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setBias(float value);
 
     /**
-     * [@property]   maximumValue
+     * [@property] maximumValue
      * <p>
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
@@ -273,7 +273,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setMaximumValue(float value);
 
     /**
-     * [@property]   minimumValue
+     * [@property] minimumValue
      * <p>
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
@@ -288,7 +288,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setPrimaryScale(float value);
 
     /**
-     * [@property]   primaryStrideInPixels
+     * [@property] primaryStrideInPixels
      * <p>
      * The primarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
@@ -302,7 +302,7 @@ public class MPSCNNArithmetic extends MPSCNNBinaryKernel {
     public native void setSecondaryScale(float value);
 
     /**
-     * [@property]   secondaryStrideInPixels
+     * [@property] secondaryStrideInPixels
      * <p>
      * The secondarySource stride in the feature channel dimension. The only supported values are 0 or 1.
      * The default value for each dimension is 1.

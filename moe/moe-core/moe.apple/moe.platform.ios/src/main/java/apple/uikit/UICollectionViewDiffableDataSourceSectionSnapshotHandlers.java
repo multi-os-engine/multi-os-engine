@@ -29,8 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType> extends NSObject
-        implements NSCopying {
+public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType> extends NSObject implements
+        NSCopying {
     static {
         NatJ.register();
     }

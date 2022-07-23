@@ -187,7 +187,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      stringRepresentation
+     * [@property] stringRepresentation
      * <p>
      * A string representation in the format "{major}.{minor}.{patch}".
      */

@@ -76,7 +76,8 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * This method initializes and returns an instance of @see ASAuthorizationAppleIDRequest to be serviced by @see ASAuthorizationController.
+     * This method initializes and returns an instance of @see ASAuthorizationAppleIDRequest to be serviced by @see
+     * ASAuthorizationController.
      */
     @Generated
     @Selector("createRequest")
@@ -92,10 +93,12 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
 
     /**
      * This method can be used to get the current state of an opaque user ID previously given.
-     * [@note] If credentialState is @see ASAuthorizationAppleIDProviderCredentialNotFound, an error will also be passed in the completion block.
+     * [@note] If credentialState is @see ASAuthorizationAppleIDProviderCredentialNotFound, an error will also be passed
+     * in the completion block.
      *
      * @param userID     Opaque user identifier that will be checked for state.
-     * @param completion A completion block that will return one of 3 possible states @see ASAuthorizationAppleIDProviderCredentialState.
+     * @param completion A completion block that will return one of 3 possible states @see
+     *                   ASAuthorizationAppleIDProviderCredentialState.
      */
     @Generated
     @Selector("getCredentialStateForUserID:completion:")

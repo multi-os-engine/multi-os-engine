@@ -27,7 +27,8 @@ public final class UISemanticContentAttribute {
      */
     @Generated @NInt public static final long Playback = 0x0000000000000001L;
     /**
-     * for controls that result in some sort of directional change in the UI, e.g. a segmented control for text alignment or a D-pad in a game
+     * for controls that result in some sort of directional change in the UI, e.g. a segmented control for text
+     * alignment or a D-pad in a game
      */
     @Generated @NInt public static final long Spatial = 0x0000000000000002L;
     @Generated @NInt public static final long ForceLeftToRight = 0x0000000000000003L;

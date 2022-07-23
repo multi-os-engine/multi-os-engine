@@ -255,7 +255,8 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
     /**
-     * return an NSPointerFunctions object reflecting the functions in use.  This is a new autoreleased object that can be subsequently modified and/or used directly in the creation of other pointer "collections".
+     * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
+     * be subsequently modified and/or used directly in the creation of other pointer "collections".
      */
     @Generated
     @Selector("pointerFunctions")

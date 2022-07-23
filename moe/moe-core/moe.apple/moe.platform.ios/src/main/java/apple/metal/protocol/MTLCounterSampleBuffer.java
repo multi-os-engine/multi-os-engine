@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MTLCounterSampleBuffer")
 public interface MTLCounterSampleBuffer {
     /**
-     * [@property] device The device that created the sample buffer.  It is only valid
+     * [@property] device The device that created the sample buffer. It is only valid
      * to use the sample buffer with this device.
      */
     @Generated
@@ -34,7 +34,7 @@ public interface MTLCounterSampleBuffer {
     MTLDevice device();
 
     /**
-     * [@property] label The label for the sample buffer.  This is set by the label
+     * [@property] label The label for the sample buffer. This is set by the label
      * property of the descriptor that is used to create the sample buffer.
      */
     @Generated
@@ -45,7 +45,7 @@ public interface MTLCounterSampleBuffer {
      * resolveCounterRange:
      * <p>
      * Resolve the counters from the sample buffer to an NSData containing
-     * the counter values.  This may only be used with sample buffers that have
+     * the counter values. This may only be used with sample buffers that have
      * MTLStorageModeShared.
      * <p>
      * Samples that encountered an error during resolve will be set to

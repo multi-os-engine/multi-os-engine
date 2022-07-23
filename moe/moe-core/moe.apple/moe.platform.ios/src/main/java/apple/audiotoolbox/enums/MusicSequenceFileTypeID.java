@@ -22,11 +22,11 @@ import org.moe.natj.general.ann.Generated;
  * [@enum] MusicSequenceFileTypeID
  * <p>
  * describes different types of files that can be parsed by a music sequence
- * [@constant]	kMusicSequenceFile_AnyType
+ * [@constant] kMusicSequenceFile_AnyType
  * let the system read iMelody files and read and write MIDI files (and any future types)
- * [@constant]	kMusicSequenceFile_MIDIType
+ * [@constant] kMusicSequenceFile_MIDIType
  * read and write MIDI files
- * [@constant]	kMusicSequenceFile_iMelodyType
+ * [@constant] kMusicSequenceFile_iMelodyType
  * read iMelody files
  */
 @Generated

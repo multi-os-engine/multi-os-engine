@@ -201,7 +201,8 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     public native UIUserNotificationAction initWithCoder(NSCoder coder);
 
     /**
-     * Whether this action is secure and should require unlocking before being performed. If the activation mode is UIUserNotificationActivationModeForeground, then the action is considered secure and this property is ignored.
+     * Whether this action is secure and should require unlocking before being performed. If the activation mode is
+     * UIUserNotificationActivationModeForeground, then the action is considered secure and this property is ignored.
      */
     @Generated
     @Selector("isAuthenticationRequired")

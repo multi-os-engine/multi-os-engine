@@ -181,7 +181,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     public native UINavigationItem initWithTitle(String title);
 
     /**
-     * Some navigation items want to display a custom left or right item when they're on top of the stack. A custom left item replaces the regular back button unless you set leftItemsSupplementBackButton to YES
+     * Some navigation items want to display a custom left or right item when they're on top of the stack. A custom left
+     * item replaces the regular back button unless you set leftItemsSupplementBackButton to YES
      */
     @Generated
     @Selector("leftBarButtonItem")
@@ -248,7 +249,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     public native void setHidesBackButtonAnimated(boolean hidesBackButton, boolean animated);
 
     /**
-     * Some navigation items want to display a custom left or right item when they're on top of the stack. A custom left item replaces the regular back button unless you set leftItemsSupplementBackButton to YES
+     * Some navigation items want to display a custom left or right item when they're on top of the stack. A custom left
+     * item replaces the regular back button unless you set leftItemsSupplementBackButton to YES
      */
     @Generated
     @Selector("setLeftBarButtonItem:")
@@ -341,14 +343,17 @@ public class UINavigationItem extends NSObject implements NSCoding {
     public native UIView titleView();
 
     /**
-     * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the navigation bar.
+     * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the
+     * top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the
+     * navigation bar.
      */
     @Generated
     @Selector("hidesSearchBarWhenScrolling")
     public native boolean hidesSearchBarWhenScrolling();
 
     /**
-     * When UINavigationBar.prefersLargeTitles=YES, this property controls when the larger out-of-line title is displayed. If prefersLargeTitles=NO, this property has no effect. The default value is Automatic.
+     * When UINavigationBar.prefersLargeTitles=YES, this property controls when the larger out-of-line title is
+     * displayed. If prefersLargeTitles=NO, this property has no effect. The default value is Automatic.
      */
     @Generated
     @Selector("largeTitleDisplayMode")
@@ -356,70 +361,81 @@ public class UINavigationItem extends NSObject implements NSCoding {
     public native long largeTitleDisplayMode();
 
     /**
-     * A view controller that will be shown inside of a navigation controller can assign a UISearchController to this property to display the search controller’s search bar in its containing navigation controller’s navigation bar.
+     * A view controller that will be shown inside of a navigation controller can assign a UISearchController to this
+     * property to display the search controller’s search bar in its containing navigation controller’s navigation bar.
      */
     @Generated
     @Selector("searchController")
     public native UISearchController searchController();
 
     /**
-     * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the navigation bar.
+     * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the
+     * top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the
+     * navigation bar.
      */
     @Generated
     @Selector("setHidesSearchBarWhenScrolling:")
     public native void setHidesSearchBarWhenScrolling(boolean value);
 
     /**
-     * When UINavigationBar.prefersLargeTitles=YES, this property controls when the larger out-of-line title is displayed. If prefersLargeTitles=NO, this property has no effect. The default value is Automatic.
+     * When UINavigationBar.prefersLargeTitles=YES, this property controls when the larger out-of-line title is
+     * displayed. If prefersLargeTitles=NO, this property has no effect. The default value is Automatic.
      */
     @Generated
     @Selector("setLargeTitleDisplayMode:")
     public native void setLargeTitleDisplayMode(@NInt long value);
 
     /**
-     * A view controller that will be shown inside of a navigation controller can assign a UISearchController to this property to display the search controller’s search bar in its containing navigation controller’s navigation bar.
+     * A view controller that will be shown inside of a navigation controller can assign a UISearchController to this
+     * property to display the search controller’s search bar in its containing navigation controller’s navigation bar.
      */
     @Generated
     @Selector("setSearchController:")
     public native void setSearchController(UISearchController value);
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See UINavigationBar.compactAppearance for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See
+     * UINavigationBar.compactAppearance for further details.
      */
     @Generated
     @Selector("compactAppearance")
     public native UINavigationBarAppearance compactAppearance();
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See UINavigationBar.scrollEdgeAppearance for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See
+     * UINavigationBar.scrollEdgeAppearance for further details.
      */
     @Generated
     @Selector("scrollEdgeAppearance")
     public native UINavigationBarAppearance scrollEdgeAppearance();
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See UINavigationBar.compactAppearance for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See
+     * UINavigationBar.compactAppearance for further details.
      */
     @Generated
     @Selector("setCompactAppearance:")
     public native void setCompactAppearance(UINavigationBarAppearance value);
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See UINavigationBar.scrollEdgeAppearance for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See
+     * UINavigationBar.scrollEdgeAppearance for further details.
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")
     public native void setScrollEdgeAppearance(UINavigationBarAppearance value);
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See UINavigationBar.standardAppearance for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See
+     * UINavigationBar.standardAppearance for further details.
      */
     @Generated
     @Selector("setStandardAppearance:")
     public native void setStandardAppearance(UINavigationBarAppearance value);
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See UINavigationBar.standardAppearance for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See
+     * UINavigationBar.standardAppearance for further details.
      */
     @Generated
     @Selector("standardAppearance")
@@ -434,7 +450,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     public native long backButtonDisplayMode();
 
     /**
-     * Title to use when this item is the navigation bar's backItem. Default is nil. backBarButtonItem takes precedence if both are specified.
+     * Title to use when this item is the navigation bar's backItem. Default is nil. backBarButtonItem takes precedence
+     * if both are specified.
      */
     @Generated
     @Selector("backButtonTitle")
@@ -448,21 +465,24 @@ public class UINavigationItem extends NSObject implements NSCoding {
     public native void setBackButtonDisplayMode(@NInt long value);
 
     /**
-     * Title to use when this item is the navigation bar's backItem. Default is nil. backBarButtonItem takes precedence if both are specified.
+     * Title to use when this item is the navigation bar's backItem. Default is nil. backBarButtonItem takes precedence
+     * if both are specified.
      */
     @Generated
     @Selector("setBackButtonTitle:")
     public native void setBackButtonTitle(String value);
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See UINavigationBar.h for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See
+     * UINavigationBar.h for further details.
      */
     @Generated
     @Selector("compactScrollEdgeAppearance")
     public native UINavigationBarAppearance compactScrollEdgeAppearance();
 
     /**
-     * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See UINavigationBar.h for further details.
+     * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See
+     * UINavigationBar.h for further details.
      */
     @Generated
     @Selector("setCompactScrollEdgeAppearance:")

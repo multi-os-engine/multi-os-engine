@@ -68,9 +68,14 @@ public final class JavaScriptCore {
      * @param ctx                The execution context to use.
      * @param script             A JSString containing the script to evaluate.
      * @param thisObject         The object to use as "this," or NULL to use the global object as "this."
-     * @param sourceURL          A JSString containing a URL for the script's source file. This is used by debuggers and when reporting exceptions. Pass NULL if you do not care to include source file information.
-     * @param startingLineNumber An integer value specifying the script's starting line number in the file located at sourceURL. This is only used when reporting exceptions. The value is one-based, so the first line is line 1 and invalid values are clamped to 1.
-     * @param exception          A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param sourceURL          A JSString containing a URL for the script's source file. This is used by debuggers and
+     *                           when reporting exceptions. Pass NULL if you do not care to include source file
+     *                           information.
+     * @param startingLineNumber An integer value specifying the script's starting line number in the file located at
+     *                           sourceURL. This is only used when reporting exceptions. The value is one-based, so the
+     *                           first line is line 1 and invalid values are clamped to 1.
+     * @param exception          A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do
+     *                           not care to store an exception.
      * @return The JSValue that results from evaluating script, or NULL if an exception is thrown.
      */
     @Generated
@@ -85,9 +90,14 @@ public final class JavaScriptCore {
      *
      * @param ctx                The execution context to use.
      * @param script             A JSString containing the script to check for syntax errors.
-     * @param sourceURL          A JSString containing a URL for the script's source file. This is only used when reporting exceptions. Pass NULL if you do not care to include source file information in exceptions.
-     * @param startingLineNumber An integer value specifying the script's starting line number in the file located at sourceURL. This is only used when reporting exceptions. The value is one-based, so the first line is line 1 and invalid values are clamped to 1.
-     * @param exception          A pointer to a JSValueRef in which to store a syntax error exception, if any. Pass NULL if you do not care to store a syntax error exception.
+     * @param sourceURL          A JSString containing a URL for the script's source file. This is only used when
+     *                           reporting exceptions. Pass NULL if you do not care to include source file information
+     *                           in exceptions.
+     * @param startingLineNumber An integer value specifying the script's starting line number in the file located at
+     *                           sourceURL. This is only used when reporting exceptions. The value is one-based, so the
+     *                           first line is line 1 and invalid values are clamped to 1.
+     * @param exception          A pointer to a JSValueRef in which to store a syntax error exception, if any. Pass NULL
+     *                           if you do not care to store a syntax error exception.
      * @return true if the script is syntactically correct, otherwise false.
      */
     @Generated
@@ -253,8 +263,10 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param value     The JSValue whose Typed Array type to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A value of type JSTypedArrayType that identifies value's Typed Array type, or kJSTypedArrayTypeNone if the value is not a Typed Array object.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
+     * @return A value of type JSTypedArrayType that identifies value's Typed Array type, or kJSTypedArrayTypeNone if
+     *         the value is not a Typed Array object.
      */
     @Generated
     @CFunction
@@ -268,7 +280,8 @@ public final class JavaScriptCore {
      * @param ctx       The execution context to use.
      * @param a         The first value to test.
      * @param b         The second value to test.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return true if the two values are equal, false if they are not equal or an exception is thrown.
      */
     @Generated
@@ -293,13 +306,16 @@ public final class JavaScriptCore {
     /**
      * [@function]
      * <p>
-     * Tests whether a JavaScript value is an object constructed by a given constructor, as compared by the JS instanceof operator.
+     * Tests whether a JavaScript value is an object constructed by a given constructor, as compared by the JS
+     * instanceof operator.
      *
      * @param ctx         The execution context to use.
      * @param value       The JSValue to test.
      * @param constructor The constructor to test against.
-     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return true if value is an object constructed by constructor, as compared by the JS instanceof operator, otherwise false.
+     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                    to store an exception.
+     * @return true if value is an object constructed by constructor, as compared by the JS instanceof operator,
+     *         otherwise false.
      */
     @Generated
     @CFunction
@@ -390,8 +406,10 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param value     The value to serialize.
-     * @param indent    The number of spaces to indent when nesting.  If 0, the resulting JSON will not contains newlines.  The size of the indent is clamped to 10 spaces.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param indent    The number of spaces to indent when nesting. If 0, the resulting JSON will not contains
+     *                  newlines. The size of the indent is clamped to 10 spaces.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return A JSString with the result of serialization, or NULL if an exception is thrown.
      */
     @Generated
@@ -419,7 +437,8 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return The numeric result of conversion, or NaN if an exception is thrown.
      */
     @Generated
@@ -433,8 +452,10 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A JSString with the result of conversion, or NULL if an exception is thrown. Ownership follows the Create Rule.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
+     * @return A JSString with the result of conversion, or NULL if an exception is thrown. Ownership follows the Create
+     *         Rule.
      */
     @Generated
     @CFunction
@@ -447,7 +468,8 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param value     The JSValue to convert.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return The JSObject result of conversion, or NULL if an exception is thrown.
      */
     @Generated
@@ -460,9 +482,11 @@ public final class JavaScriptCore {
      * <p>
      * Protects a JavaScript value from garbage collection.
      * <p>
-     * Use this method when you want to store a JSValue in a global or on the heap, where the garbage collector will not be able to discover your reference to it.
+     * Use this method when you want to store a JSValue in a global or on the heap, where the garbage collector will not
+     * be able to discover your reference to it.
      * <p>
-     * A value may be protected multiple times and must be unprotected an equal number of times before becoming eligible for garbage collection.
+     * A value may be protected multiple times and must be unprotected an equal number of times before becoming eligible
+     * for garbage collection.
      *
      * @param ctx   The execution context to use.
      * @param value The JSValue to protect.
@@ -527,9 +551,11 @@ public final class JavaScriptCore {
      * <p>
      * Creates a JavaScript object.
      * <p>
-     * The default object class does not allocate storage for private data, so you must provide a non-NULL jsClass to JSObjectMake if you want your object to be able to store private data.
+     * The default object class does not allocate storage for private data, so you must provide a non-NULL jsClass to
+     * JSObjectMake if you want your object to be able to store private data.
      * <p>
-     * data is set on the created object before the intialize methods in its class chain are called. This enables the initialize methods to retrieve and manipulate data through JSObjectGetPrivate.
+     * data is set on the created object before the intialize methods in its class chain are called. This enables the
+     * initialize methods to retrieve and manipulate data through JSObjectGetPrivate.
      *
      * @param ctx     The execution context to use.
      * @param jsClass The JSClass to assign to the object. Pass NULL to use the default object class.
@@ -546,7 +572,8 @@ public final class JavaScriptCore {
      * Convenience method for creating a JavaScript function with a given callback as its implementation.
      *
      * @param ctx            The execution context to use.
-     * @param name           A JSString containing the function's name. This will be used when converting the function to string. Pass NULL to create an anonymous function.
+     * @param name           A JSString containing the function's name. This will be used when converting the function
+     *                       to string. Pass NULL to create an anonymous function.
      * @param callAsFunction The JSObjectCallAsFunctionCallback to invoke when the function is called.
      * @return A JSObject that is a function. The object's prototype will be the default function prototype.
      */
@@ -560,11 +587,16 @@ public final class JavaScriptCore {
      * <p>
      * Convenience method for creating a JavaScript constructor.
      * <p>
-     * The default object constructor takes no arguments and constructs an object of class jsClass with no private data. If the constructor is inherited via JS subclassing and the value returned from callAsConstructor was created with jsClass, then the returned object will have it's prototype overridden to the derived class's prototype.
+     * The default object constructor takes no arguments and constructs an object of class jsClass with no private data.
+     * If the constructor is inherited via JS subclassing and the value returned from callAsConstructor was created with
+     * jsClass, then the returned object will have it's prototype overridden to the derived class's prototype.
      *
      * @param ctx               The execution context to use.
-     * @param jsClass           A JSClass that is the class your constructor will assign to the objects its constructs. jsClass will be used to set the constructor's .prototype property, and to evaluate 'instanceof' expressions. Pass NULL to use the default object class.
-     * @param callAsConstructor A JSObjectCallAsConstructorCallback to invoke when your constructor is used in a 'new' expression. Pass NULL to use the default object constructor.
+     * @param jsClass           A JSClass that is the class your constructor will assign to the objects its constructs.
+     *                          jsClass will be used to set the constructor's .prototype property, and to evaluate
+     *                          'instanceof' expressions. Pass NULL to use the default object class.
+     * @param callAsConstructor A JSObjectCallAsConstructorCallback to invoke when your constructor is used in a 'new'
+     *                          expression. Pass NULL to use the default object constructor.
      * @return A JSObject that is a constructor. The object's prototype will be the default object prototype.
      */
     @Generated
@@ -577,13 +609,15 @@ public final class JavaScriptCore {
      * <p>
      * Creates a JavaScript Array object.
      * <p>
-     * The behavior of this function does not exactly match the behavior of the built-in Array constructor. Specifically, if one argument
+     * The behavior of this function does not exactly match the behavior of the built-in Array constructor.
+     * Specifically, if one argument
      * is supplied, this function returns an array with one element.
      *
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
      * @param arguments     A JSValue array of data to populate the Array with. Pass NULL if argumentCount is 0.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
      * @return A JSObject that is an Array.
      */
     @Generated
@@ -598,8 +632,10 @@ public final class JavaScriptCore {
      *
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
-     * @param arguments     A JSValue array of arguments to pass to the Date Constructor. Pass NULL if argumentCount is 0.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param arguments     A JSValue array of arguments to pass to the Date Constructor. Pass NULL if argumentCount is
+     *                      0.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
      * @return A JSObject that is a Date.
      */
     @Generated
@@ -614,8 +650,10 @@ public final class JavaScriptCore {
      *
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
-     * @param arguments     A JSValue array of arguments to pass to the Error Constructor. Pass NULL if argumentCount is 0.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param arguments     A JSValue array of arguments to pass to the Error Constructor. Pass NULL if argumentCount is
+     *                      0.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
      * @return A JSObject that is an Error.
      */
     @Generated
@@ -630,8 +668,10 @@ public final class JavaScriptCore {
      *
      * @param ctx           The execution context to use.
      * @param argumentCount An integer count of the number of arguments in arguments.
-     * @param arguments     A JSValue array of arguments to pass to the RegExp Constructor. Pass NULL if argumentCount is 0.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param arguments     A JSValue array of arguments to pass to the RegExp Constructor. Pass NULL if argumentCount
+     *                      is 0.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
      * @return A JSObject that is a RegExp.
      */
     @Generated
@@ -644,17 +684,26 @@ public final class JavaScriptCore {
      * <p>
      * Creates a function with a given script as its body.
      * <p>
-     * Use this method when you want to execute a script repeatedly, to avoid the cost of re-parsing the script before each execution.
+     * Use this method when you want to execute a script repeatedly, to avoid the cost of re-parsing the script before
+     * each execution.
      *
      * @param ctx                The execution context to use.
-     * @param name               A JSString containing the function's name. This will be used when converting the function to string. Pass NULL to create an anonymous function.
+     * @param name               A JSString containing the function's name. This will be used when converting the
+     *                           function to string. Pass NULL to create an anonymous function.
      * @param parameterCount     An integer count of the number of parameter names in parameterNames.
-     * @param parameterNames     A JSString array containing the names of the function's parameters. Pass NULL if parameterCount is 0.
+     * @param parameterNames     A JSString array containing the names of the function's parameters. Pass NULL if
+     *                           parameterCount is 0.
      * @param body               A JSString containing the script to use as the function's body.
-     * @param sourceURL          A JSString containing a URL for the script's source file. This is only used when reporting exceptions. Pass NULL if you do not care to include source file information in exceptions.
-     * @param startingLineNumber An integer value specifying the script's starting line number in the file located at sourceURL. This is only used when reporting exceptions. The value is one-based, so the first line is line 1 and invalid values are clamped to 1.
-     * @param exception          A pointer to a JSValueRef in which to store a syntax error exception, if any. Pass NULL if you do not care to store a syntax error exception.
-     * @return A JSObject that is a function, or NULL if either body or parameterNames contains a syntax error. The object's prototype will be the default function prototype.
+     * @param sourceURL          A JSString containing a URL for the script's source file. This is only used when
+     *                           reporting exceptions. Pass NULL if you do not care to include source file information
+     *                           in exceptions.
+     * @param startingLineNumber An integer value specifying the script's starting line number in the file located at
+     *                           sourceURL. This is only used when reporting exceptions. The value is one-based, so the
+     *                           first line is line 1 and invalid values are clamped to 1.
+     * @param exception          A pointer to a JSValueRef in which to store a syntax error exception, if any. Pass NULL
+     *                           if you do not care to store a syntax error exception.
+     * @return A JSObject that is a function, or NULL if either body or parameterNames contains a syntax error. The
+     *         object's prototype will be the default function prototype.
      */
     @Generated
     @CFunction
@@ -709,7 +758,8 @@ public final class JavaScriptCore {
      * @param ctx          The execution context to use.
      * @param object       The JSObject whose property you want to get.
      * @param propertyName A JSString containing the property's name.
-     * @param exception    A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception    A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                     care to store an exception.
      * @return The property's value if object has the property, otherwise the undefined value.
      */
     @Generated
@@ -727,7 +777,8 @@ public final class JavaScriptCore {
      * @param propertyName A JSString containing the property's name.
      * @param value        A JSValueRef to use as the property's value.
      * @param attributes   A logically ORed set of JSPropertyAttributes to give to the property.
-     * @param exception    A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception    A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                     care to store an exception.
      */
     @Generated
     @CFunction
@@ -742,8 +793,10 @@ public final class JavaScriptCore {
      * @param ctx          The execution context to use.
      * @param object       The JSObject whose property you want to delete.
      * @param propertyName A JSString containing the property's name.
-     * @param exception    A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return true if the delete operation succeeds, otherwise false (for example, if the property has the kJSPropertyAttributeDontDelete attribute set).
+     * @param exception    A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                     care to store an exception.
+     * @return true if the delete operation succeeds, otherwise false (for example, if the property has the
+     *         kJSPropertyAttributeDontDelete attribute set).
      */
     @Generated
     @CFunction
@@ -755,12 +808,14 @@ public final class JavaScriptCore {
      * <p>
      * Gets a property from an object by numeric index.
      * <p>
-     * Calling JSObjectGetPropertyAtIndex is equivalent to calling JSObjectGetProperty with a string containing propertyIndex, but JSObjectGetPropertyAtIndex provides optimized access to numeric properties.
+     * Calling JSObjectGetPropertyAtIndex is equivalent to calling JSObjectGetProperty with a string containing
+     * propertyIndex, but JSObjectGetPropertyAtIndex provides optimized access to numeric properties.
      *
      * @param ctx           The execution context to use.
      * @param object        The JSObject whose property you want to get.
      * @param propertyIndex An integer value that is the property's name.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
      * @return The property's value if object has the property, otherwise the undefined value.
      */
     @Generated
@@ -773,13 +828,15 @@ public final class JavaScriptCore {
      * <p>
      * Sets a property on an object by numeric index.
      * <p>
-     * Calling JSObjectSetPropertyAtIndex is equivalent to calling JSObjectSetProperty with a string containing propertyIndex, but JSObjectSetPropertyAtIndex provides optimized access to numeric properties.
+     * Calling JSObjectSetPropertyAtIndex is equivalent to calling JSObjectSetProperty with a string containing
+     * propertyIndex, but JSObjectSetPropertyAtIndex provides optimized access to numeric properties.
      *
      * @param ctx           The execution context to use.
      * @param object        The JSObject whose property you want to set.
      * @param propertyIndex The property's name as a number.
      * @param value         A JSValue to use as the property's value.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
      */
     @Generated
     @CFunction
@@ -803,7 +860,8 @@ public final class JavaScriptCore {
      * <p>
      * Sets a pointer to private data on an object.
      * <p>
-     * The default object class does not allocate storage for private data. Only objects created with a non-NULL JSClass can store private data.
+     * The default object class does not allocate storage for private data. Only objects created with a non-NULL JSClass
+     * can store private data.
      *
      * @param object The JSObject whose private data you want to set.
      * @param data   A void* to set as the object's private data.
@@ -836,8 +894,10 @@ public final class JavaScriptCore {
      * @param thisObject    The object to use as "this," or NULL to use the global object as "this."
      * @param argumentCount An integer count of the number of arguments in arguments.
      * @param arguments     A JSValue array of arguments to pass to the function. Pass NULL if argumentCount is 0.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return The JSValue that results from calling object as a function, or NULL if an exception is thrown or object is not a function.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
+     * @return The JSValue that results from calling object as a function, or NULL if an exception is thrown or object
+     *         is not a function.
      */
     @Generated
     @CFunction
@@ -866,8 +926,10 @@ public final class JavaScriptCore {
      * @param object        The JSObject to call as a constructor.
      * @param argumentCount An integer count of the number of arguments in arguments.
      * @param arguments     A JSValue array of arguments to pass to the constructor. Pass NULL if argumentCount is 0.
-     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return The JSObject that results from calling object as a constructor, or NULL if an exception is thrown or object is not a constructor.
+     * @param exception     A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not
+     *                      care to store an exception.
+     * @return The JSObject that results from calling object as a constructor, or NULL if an exception is thrown or
+     *         object is not a constructor.
      */
     @Generated
     @CFunction
@@ -881,7 +943,8 @@ public final class JavaScriptCore {
      *
      * @param ctx    The execution context to use.
      * @param object The object whose property names you want to get.
-     * @return A JSPropertyNameArray containing the names object's enumerable properties. Ownership follows the Create Rule.
+     * @return A JSPropertyNameArray containing the names object's enumerable properties. Ownership follows the Create
+     *         Rule.
      */
     @Generated
     @CFunction
@@ -1027,7 +1090,7 @@ public final class JavaScriptCore {
      * @param group             The context group to use. The created global context retains the group.
      *                          Pass NULL to create a unique group for the context.
      * @return A JSGlobalContext with a global object of class globalObjectClass and a context
-     * group equal to group.
+     *         group equal to group.
      */
     @Generated
     @CFunction
@@ -1190,7 +1253,7 @@ public final class JavaScriptCore {
      *
      * @param string The JSString whose backing store you want to access.
      * @return A pointer to the Unicode character buffer that serves as string's
-     * backing store, which will be deallocated when string is deallocated.
+     *         backing store, which will be deallocated when string is deallocated.
      */
     @Generated
     @CFunction
@@ -1205,8 +1268,8 @@ public final class JavaScriptCore {
      * @param string The JSString whose maximum converted size (in bytes) you
      *               want to know.
      * @return The maximum number of bytes that could be required to convert string into a
-     * null-terminated UTF8 string. The number of bytes that the conversion actually ends
-     * up requiring could be less than this, but never more.
+     *         null-terminated UTF8 string. The number of bytes that the conversion actually ends
+     *         up requiring could be less than this, but never more.
      */
     @Generated
     @CFunction
@@ -1266,9 +1329,11 @@ public final class JavaScriptCore {
      * Creates a JavaScript Typed Array object with the given number of elements.
      *
      * @param ctx       The execution context to use.
-     * @param arrayType A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or kJSTypedArrayTypeArrayBuffer then NULL will be returned.
+     * @param arrayType A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or
+     *                  kJSTypedArrayTypeArrayBuffer then NULL will be returned.
      * @param length    The number of elements to be in the new Typed Array.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return A JSObjectRef that is a Typed Array with all elements set to zero or NULL if there was an error.
      */
     @Generated
@@ -1284,13 +1349,17 @@ public final class JavaScriptCore {
      * If an exception is thrown during this function the bytesDeallocator will always be called.
      *
      * @param ctx                The execution context to use.
-     * @param arrayType          A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or kJSTypedArrayTypeArrayBuffer then NULL will be returned.
+     * @param arrayType          A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone
+     *                           or kJSTypedArrayTypeArrayBuffer then NULL will be returned.
      * @param bytes              A pointer to the byte buffer to be used as the backing store of the Typed Array object.
      * @param byteLength         The number of bytes pointed to by the parameter bytes.
-     * @param bytesDeallocator   The allocator to use to deallocate the external buffer when the JSTypedArrayData object is deallocated.
+     * @param bytesDeallocator   The allocator to use to deallocate the external buffer when the JSTypedArrayData object
+     *                           is deallocated.
      * @param deallocatorContext A pointer to pass back to the deallocator.
-     * @param exception          A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A JSObjectRef Typed Array whose backing store is the same as the one pointed to by bytes or NULL if there was an error.
+     * @param exception          A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do
+     *                           not care to store an exception.
+     * @return A JSObjectRef Typed Array whose backing store is the same as the one pointed to by bytes or NULL if there
+     *         was an error.
      */
     @Generated
     @CFunction
@@ -1305,10 +1374,14 @@ public final class JavaScriptCore {
      * Creates a JavaScript Typed Array object from an existing JavaScript Array Buffer object.
      *
      * @param ctx       The execution context to use.
-     * @param arrayType A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or kJSTypedArrayTypeArrayBuffer then NULL will be returned.
-     * @param buffer    An Array Buffer object that should be used as the backing store for the created JavaScript Typed Array object.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A JSObjectRef that is a Typed Array or NULL if there was an error. The backing store of the Typed Array will be buffer.
+     * @param arrayType A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or
+     *                  kJSTypedArrayTypeArrayBuffer then NULL will be returned.
+     * @param buffer    An Array Buffer object that should be used as the backing store for the created JavaScript Typed
+     *                  Array object.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
+     * @return A JSObjectRef that is a Typed Array or NULL if there was an error. The backing store of the Typed Array
+     *         will be buffer.
      */
     @Generated
     @CFunction
@@ -1318,15 +1391,21 @@ public final class JavaScriptCore {
     /**
      * [@function]
      * <p>
-     * Creates a JavaScript Typed Array object from an existing JavaScript Array Buffer object with the given offset and length.
+     * Creates a JavaScript Typed Array object from an existing JavaScript Array Buffer object with the given offset and
+     * length.
      *
      * @param ctx        The execution context to use.
-     * @param arrayType  A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or kJSTypedArrayTypeArrayBuffer then NULL will be returned.
-     * @param buffer     An Array Buffer object that should be used as the backing store for the created JavaScript Typed Array object.
-     * @param byteOffset The byte offset for the created Typed Array. byteOffset should aligned with the element size of arrayType.
+     * @param arrayType  A value identifying the type of array to create. If arrayType is kJSTypedArrayTypeNone or
+     *                   kJSTypedArrayTypeArrayBuffer then NULL will be returned.
+     * @param buffer     An Array Buffer object that should be used as the backing store for the created JavaScript
+     *                   Typed Array object.
+     * @param byteOffset The byte offset for the created Typed Array. byteOffset should aligned with the element size of
+     *                   arrayType.
      * @param length     The number of elements to include in the Typed Array.
-     * @param exception  A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A JSObjectRef that is a Typed Array or NULL if there was an error. The backing store of the Typed Array will be buffer.
+     * @param exception  A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                   to store an exception.
+     * @return A JSObjectRef that is a Typed Array or NULL if there was an error. The backing store of the Typed Array
+     *         will be buffer.
      */
     @Generated
     @CFunction
@@ -1338,12 +1417,15 @@ public final class JavaScriptCore {
      * <p>
      * Returns a temporary pointer to the backing store of a JavaScript Typed Array object.
      * <p>
-     * The pointer returned by this function is temporary and is not guaranteed to remain valid across JavaScriptCore API calls.
+     * The pointer returned by this function is temporary and is not guaranteed to remain valid across JavaScriptCore
+     * API calls.
      *
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose backing store pointer to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A pointer to the raw data buffer that serves as object's backing store or NULL if object is not a Typed Array object.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
+     * @return A pointer to the raw data buffer that serves as object's backing store or NULL if object is not a Typed
+     *         Array object.
      */
     @Generated
     @CFunction
@@ -1357,7 +1439,8 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose length to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return The length of the Typed Array object or 0 if the object is not a Typed Array object.
      */
     @Generated
@@ -1373,7 +1456,8 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose byte length to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return The byte length of the Typed Array object or 0 if the object is not a Typed Array object.
      */
     @Generated
@@ -1389,7 +1473,8 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param object    The Typed Array object whose byte offset to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return The byte offset of the Typed Array object or 0 if the object is not a Typed Array object.
      */
     @Generated
@@ -1405,8 +1490,10 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param object    The JSObjectRef whose Typed Array type data pointer to obtain.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A JSObjectRef with a JSTypedArrayType of kJSTypedArrayTypeArrayBuffer or NULL if object is not a Typed Array.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
+     * @return A JSObjectRef with a JSTypedArrayType of kJSTypedArrayTypeArrayBuffer or NULL if object is not a Typed
+     *         Array.
      */
     @Generated
     @CFunction
@@ -1423,10 +1510,13 @@ public final class JavaScriptCore {
      * @param ctx                The execution context to use.
      * @param bytes              A pointer to the byte buffer to be used as the backing store of the Typed Array object.
      * @param byteLength         The number of bytes pointed to by the parameter bytes.
-     * @param bytesDeallocator   The allocator to use to deallocate the external buffer when the Typed Array data object is deallocated.
+     * @param bytesDeallocator   The allocator to use to deallocate the external buffer when the Typed Array data object
+     *                           is deallocated.
      * @param deallocatorContext A pointer to pass back to the deallocator.
-     * @param exception          A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A JSObjectRef Array Buffer whose backing store is the same as the one pointed to by bytes or NULL if there was an error.
+     * @param exception          A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do
+     *                           not care to store an exception.
+     * @return A JSObjectRef Array Buffer whose backing store is the same as the one pointed to by bytes or NULL if
+     *         there was an error.
      */
     @Generated
     @CFunction
@@ -1440,11 +1530,14 @@ public final class JavaScriptCore {
      * <p>
      * Returns a pointer to the data buffer that serves as the backing store for a JavaScript Typed Array object.
      * <p>
-     * The pointer returned by this function is temporary and is not guaranteed to remain valid across JavaScriptCore API calls.
+     * The pointer returned by this function is temporary and is not guaranteed to remain valid across JavaScriptCore
+     * API calls.
      *
      * @param object    The Array Buffer object whose internal backing store pointer to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return A pointer to the raw data buffer that serves as object's backing store or NULL if object is not an Array Buffer object.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
+     * @return A pointer to the raw data buffer that serves as object's backing store or NULL if object is not an Array
+     *         Buffer object.
      */
     @Generated
     @CFunction
@@ -1458,7 +1551,8 @@ public final class JavaScriptCore {
      *
      * @param ctx       The execution context to use.
      * @param object    The JS Arary Buffer object whose length in bytes to return.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return The number of bytes stored in the data object.
      */
     @Generated
@@ -1500,7 +1594,8 @@ public final class JavaScriptCore {
      * <p>
      * A JSClassDefinition structure of the current version, filled with NULL pointers and having no attributes.
      * <p>
-     * Use this constant as a convenience when creating class definitions. For example, to create a class definition with only a finalize method:
+     * Use this constant as a convenience when creating class definitions. For example, to create a class definition
+     * with only a finalize method:
      * <p>
      * JSClassDefinition definition = kJSClassDefinitionEmpty;
      * definition.finalize = Finalize;
@@ -1650,9 +1745,12 @@ public final class JavaScriptCore {
      * Creates a JavaScript promise object by invoking the provided executor.
      *
      * @param ctx       The execution context to use.
-     * @param resolve   A pointer to a JSObjectRef in which to store the resolve function for the new promise. Pass NULL if you do not care to store the resolve callback.
-     * @param reject    A pointer to a JSObjectRef in which to store the reject function for the new promise. Pass NULL if you do not care to store the reject callback.
-     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param resolve   A pointer to a JSObjectRef in which to store the resolve function for the new promise. Pass NULL
+     *                  if you do not care to store the resolve callback.
+     * @param reject    A pointer to a JSObjectRef in which to store the reject function for the new promise. Pass NULL
+     *                  if you do not care to store the reject callback.
+     * @param exception A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                  to store an exception.
      * @return A JSObject that is a promise or NULL if an exception occurred.
      */
     @Generated
@@ -1669,7 +1767,8 @@ public final class JavaScriptCore {
      *
      * @param object      The JSObject to test.
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
-     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                    to store an exception.
      * @return true if the object has a property whose name matches propertyKey, otherwise false.
      */
     @Generated
@@ -1687,7 +1786,8 @@ public final class JavaScriptCore {
      * @param ctx         The execution context to use.
      * @param object      The JSObject whose property you want to get.
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
-     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                    to store an exception.
      * @return The property's value if object has the property key, otherwise the undefined value.
      */
     @Generated
@@ -1707,7 +1807,8 @@ public final class JavaScriptCore {
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
      * @param value       A JSValueRef to use as the property's value.
      * @param attributes  A logically ORed set of JSPropertyAttributes to give to the property.
-     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
+     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                    to store an exception.
      */
     @Generated
     @CFunction
@@ -1724,8 +1825,10 @@ public final class JavaScriptCore {
      * @param ctx         The execution context to use.
      * @param object      The JSObject whose property you want to delete.
      * @param propertyKey A JSValueRef containing the property key to use when looking up the property.
-     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care to store an exception.
-     * @return true if the delete operation succeeds, otherwise false (for example, if the property has the kJSPropertyAttributeDontDelete attribute set).
+     * @param exception   A pointer to a JSValueRef in which to store an exception, if any. Pass NULL if you do not care
+     *                    to store an exception.
+     * @return true if the delete operation succeeds, otherwise false (for example, if the property has the
+     *         kJSPropertyAttributeDontDelete attribute set).
      */
     @Generated
     @CFunction

@@ -116,7 +116,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -138,7 +138,8 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      * @param device           The MTLDevice on which this MPSCNNBinaryFullyConnected filter will be used
      * @param convolutionData  A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                         The MPSCNNConvolutionDataSource protocol declares the methods that an
-     *                         instance of MPSCNNBinaryFullyConnected uses to obtain the weights and the convolution descriptor.
+     *                         instance of MPSCNNBinaryFullyConnected uses to obtain the weights and the convolution
+     *                         descriptor.
      *                         Each entry in the convolutionData:weights array is a 32-bit unsigned integer value
      *                         and each bit represents one filter weight (given in machine byte order).
      *                         The featurechannel indices increase from the least significant bit within the 32-bits.
@@ -146,21 +147,33 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                         ceil( inputFeatureChannels/32.0 ) * outputFeatureChannels * kernelHeight * kernelWidth
      *                         The layout of filter weight is so that it can be reinterpreted as a 4D tensor (array)
      *                         weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ ceil( inputChannels / 32.0 ) ]
-     *                         (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based on
+     *                         (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based
+     *                         on
      *                         inputchannels varies most rapidly, followed by kernelWidth, then kernelHeight and finally
      *                         outputChannels varies least rapidly.)
-     * @param outputBiasTerms  A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
+     * @param outputBiasTerms  A pointer to bias terms to be applied to the convolution output. Each entry is a float
+     *                         value.
      *                         The number of entries is = numberOfOutputFeatureMaps. If nil then 0.0 is used for bias.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
-     * @param outputScaleTerms A pointer to scale terms to be applied to binary convolution results per output feature channel.
-     *                         Each entry is a float value. The number of entries is = numberOfOutputFeatureMaps. If nil then 1.0 is used.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
-     * @param inputBiasTerms   A pointer to offset terms to be applied to the input before convolution and before input scaling.
-     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If NULL then 0.0 is used for bias.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
-     * @param inputScaleTerms  A pointer to scale terms to be applied to the input before convolution, but after input biasing.
-     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If nil then 1.0 is used.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
+     * @param outputScaleTerms A pointer to scale terms to be applied to binary convolution results per output feature
+     *                         channel.
+     *                         Each entry is a float value. The number of entries is = numberOfOutputFeatureMaps. If nil
+     *                         then 1.0 is used.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
+     * @param inputBiasTerms   A pointer to offset terms to be applied to the input before convolution and before input
+     *                         scaling.
+     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If NULL
+     *                         then 0.0 is used for bias.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
+     * @param inputScaleTerms  A pointer to scale terms to be applied to the input before convolution, but after input
+     *                         biasing.
+     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If nil then
+     *                         1.0 is used.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
      * @param type             What kind of binarization strategy is to be used.
      * @param flags            See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.
@@ -188,11 +201,13 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                        ceil( inputFeatureChannels/32.0 ) * outputFeatureChannels * kernelHeight * kernelWidth
      *                        The layout of filter weight is so that it can be reinterpreted as a 4D tensor (array)
      *                        weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ ceil( inputChannels / 32.0 ) ]
-     *                        (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based on
+     *                        (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based
+     *                        on
      *                        inputchannels varies most rapidly, followed by kernelWidth, then kernelHeight and finally
      *                        outputChannels varies least rapidly.)
      * @param scaleValue      A single floating point value used to scale the entire convolution.
-     *                        Each entry is a float value. The number of entries is 'inputFeatureChannels'. If nil then 1.0 is used.
+     *                        Each entry is a float value. The number of entries is 'inputFeatureChannels'. If nil then
+     *                        1.0 is used.
      * @param type            What kind of binarization strategy is to be used.
      * @param flags           See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.

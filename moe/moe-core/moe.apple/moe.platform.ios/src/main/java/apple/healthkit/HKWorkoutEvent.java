@@ -197,7 +197,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     public native HKWorkoutEvent initWithCoder(NSCoder coder);
 
     /**
-     * [@property]      metadata
+     * [@property] metadata
      * <p>
      * Extra information describing properties of the receiver.
      * <p>
@@ -215,7 +215,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     }
 
     /**
-     * [@property]      workoutEventType
+     * [@property] workoutEventType
      * <p>
      * Represents the type of event that occurred during a workout.
      */
@@ -225,7 +225,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     public native long type();
 
     /**
-     * [@property]      dateInterval
+     * [@property] dateInterval
      * <p>
      * Date interval representing the time period for which the event is valid.
      * <p>

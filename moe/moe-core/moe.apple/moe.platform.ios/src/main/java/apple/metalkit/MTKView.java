@@ -411,7 +411,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * Controls whether to resize the drawable as the view changes size.
      * <p>
-     * If true, the size of the currentDrawable's texture, depthStencilTexture, and multisampleColorTexture will automatically resize as the view resizes.  If false, these textures will take on the size of drawableSize and drawableSize will not change. The default value is true.
+     * If true, the size of the currentDrawable's texture, depthStencilTexture, and multisampleColorTexture will
+     * automatically resize as the view resizes. If false, these textures will take on the size of drawableSize and
+     * drawableSize will not change. The default value is true.
      */
     @Generated
     @Selector("autoResizeDrawable")
@@ -476,9 +478,11 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     /**
      * [@property] currentRenderPassDescriptor
      * <p>
-     * A render pass descriptor generated from the currentDrawable's texture and the view's depth, stencil, and sample buffers and clear values.
+     * A render pass descriptor generated from the currentDrawable's texture and the view's depth, stencil, and sample
+     * buffers and clear values.
      * <p>
-     * This is a convience property.  The view does not use this descriptor and there is no requirement for an app to use this descriptor.
+     * This is a convience property. The view does not use this descriptor and there is no requirement for an app to use
+     * this descriptor.
      */
     @Generated
     @Selector("currentRenderPassDescriptor")
@@ -509,7 +513,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * A packed depth and stencil texture to be attached to a MTLRenderPassDescriptor
      * <p>
-     * The view will generate the depth buffer using the specified depthPixelFormat.  This will be nil if depthStencilPixelFormat is MTLPixelFormatInvalid.
+     * The view will generate the depth buffer using the specified depthPixelFormat. This will be nil if
+     * depthStencilPixelFormat is MTLPixelFormatInvalid.
      */
     @Generated
     @Selector("depthStencilTexture")
@@ -536,9 +541,12 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     /**
      * draw
      * <p>
-     * Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (delegate) or drawRect (subclass) method.
+     * Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (delegate) or
+     * drawRect (subclass) method.
      * <p>
-     * Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (delegate) or drawRect (subclass) method. This should be used when the view's paused proprety is set to true and enableSetNeedsDisplay is set to false.
+     * Manually ask the view to draw new contents. This causes the view to call either the drawInMTKView (delegate) or
+     * drawRect (subclass) method. This should be used when the view's paused proprety is set to true and
+     * enableSetNeedsDisplay is set to false.
      */
     @Generated
     @Selector("draw")
@@ -554,7 +562,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The current size of drawable textures
      * <p>
-     * The size currentDrawable's texture, depthStencilTexture, and multisampleColorTexture.  If autoResizeDrawable is true this value will be updated as the view's size changes. If autoResizeDrawable is false, this can be set to fix the size of the drawable textures.
+     * The size currentDrawable's texture, depthStencilTexture, and multisampleColorTexture. If autoResizeDrawable is
+     * true this value will be updated as the view's size changes. If autoResizeDrawable is false, this can be set to
+     * fix the size of the drawable textures.
      */
     @Generated
     @Selector("drawableSize")
@@ -566,7 +576,10 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * Controls whether the view responds to setNeedsDisplay.
      * <p>
-     * If true, then the view behaves similarily to a UIView or NSView, responding to calls to setNeedsDisplay. When the view has been marked for display, the view is automatically redisplayed on each pass through the application’s event loop. Setting enableSetNeedsDisplay to true will also pause the MTKView's internal render loop and updates will instead be event driven. The default value is false.
+     * If true, then the view behaves similarily to a UIView or NSView, responding to calls to setNeedsDisplay. When the
+     * view has been marked for display, the view is automatically redisplayed on each pass through the application’s
+     * event loop. Setting enableSetNeedsDisplay to true will also pause the MTKView's internal render loop and updates
+     * will instead be event driven. The default value is false.
      */
     @Generated
     @Selector("enableSetNeedsDisplay")
@@ -581,7 +594,11 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * If the currentDrawable can be used for sampling or texture read operations
      * <p>
-     * This defaults to YES. This property controls whether or not the returned drawables' MTLTextures may only be used for framebuffer attachments (YES) or whether they may also be used for texture sampling and pixel read/write operations (NO). A value of YES allows the CAMetalLayer to allocate the MTLTexture objects in ways that are optimized for display purposes that makes them unsuitable for sampling. The recommended value for most applications is YES.
+     * This defaults to YES. This property controls whether or not the returned drawables' MTLTextures may only be used
+     * for framebuffer attachments (YES) or whether they may also be used for texture sampling and pixel read/write
+     * operations (NO). A value of YES allows the CAMetalLayer to allocate the MTLTexture objects in ways that are
+     * optimized for display purposes that makes them unsuitable for sampling. The recommended value for most
+     * applications is YES.
      */
     @Generated
     @Selector("framebufferOnly")
@@ -617,7 +634,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * Controls whether the draw methods should countinue at preferredFramesPerSecond
      * <p>
-     * If true, the delegate will receive drawInMTKView: messages or the subclass will receive drawRect: messages at a rate of preferredFramesPerSecond based on an internal timer. The default value is false.
+     * If true, the delegate will receive drawInMTKView: messages or the subclass will receive drawRect: messages at a
+     * rate of preferredFramesPerSecond based on an internal timer. The default value is false.
      */
     @Generated
     @Selector("isPaused")
@@ -628,7 +646,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * Controls whether the draw methods should countinue at preferredFramesPerSecond
      * <p>
-     * If true, the delegate will receive drawInMTKView: messages or the subclass will receive drawRect: messages at a rate of preferredFramesPerSecond based on an internal timer. The default value is false.
+     * If true, the delegate will receive drawInMTKView: messages or the subclass will receive drawRect: messages at a
+     * rate of preferredFramesPerSecond based on an internal timer. The default value is false.
      */
     @Generated
     @Selector("setPaused:")
@@ -649,7 +668,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * A multisample color texture that will be resolved into the currentDrawable's texture
      * <p>
-     * The view will generate the multisample color buffer using the specified colorPixelFormat.  This will be nil if sampleCount is less than or equal to 1.
+     * The view will generate the multisample color buffer using the specified colorPixelFormat. This will be nil if
+     * sampleCount is less than or equal to 1.
      */
     @Generated
     @Selector("multisampleColorTexture")
@@ -661,7 +681,13 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The rate you want the view to redraw its contents.
      * <p>
-     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to be the actual frame rate. Your application should choose a frame rate that it can consistently maintain. The default value is 60 frames per second.
+     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
+     * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
+     * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
+     * refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the
+     * actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to
+     * be the actual frame rate. Your application should choose a frame rate that it can consistently maintain. The
+     * default value is 60 frames per second.
      */
     @Generated
     @Selector("preferredFramesPerSecond")
@@ -673,7 +699,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * If the layer should be presented synchronously
      * <p>
-     * Defaults to NO. When NO, changes to the layer's render buffer appear on-screen asynchronously to normal layer updates. When YES, changes to the MTL content are sent to the screen via the standard CATransaction mechanisms.
+     * Defaults to NO. When NO, changes to the layer's render buffer appear on-screen asynchronously to normal layer
+     * updates. When YES, changes to the MTL content are sent to the screen via the standard CATransaction mechanisms.
      */
     @Generated
     @Selector("presentsWithTransaction")
@@ -684,7 +711,10 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * Release the depthStencilTexture and multisampleColorTexture
      * <p>
-     * Can be called by the app to release the textures in order to conserve memory when it goes into the background.   The view will recreate multisampleColorTexture or depthStencilTexture upon the next access of the respective properties.  Both multisampleColorTexture and depthStencilTexture will be recreated in the access to currentRenderPassDescriptor.
+     * Can be called by the app to release the textures in order to conserve memory when it goes into the background.
+     * The view will recreate multisampleColorTexture or depthStencilTexture upon the next access of the respective
+     * properties. Both multisampleColorTexture and depthStencilTexture will be recreated in the access to
+     * currentRenderPassDescriptor.
      */
     @Generated
     @Selector("releaseDrawables")
@@ -695,7 +725,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The sample count used to to create multisampleColorTexture
      * <p>
-     * This defaults to 1.  If sampleCount is greater than 1 a multisampled color texture will be created and the currentDrawable's texture will be set as the resolve texture in the currentRenderPassDescriptor and the store action will be set to MTLStoreActionMultisampleResolve
+     * This defaults to 1. If sampleCount is greater than 1 a multisampled color texture will be created and the
+     * currentDrawable's texture will be set as the resolve texture in the currentRenderPassDescriptor and the store
+     * action will be set to MTLStoreActionMultisampleResolve
      */
     @Generated
     @Selector("sampleCount")
@@ -707,7 +739,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * Controls whether to resize the drawable as the view changes size.
      * <p>
-     * If true, the size of the currentDrawable's texture, depthStencilTexture, and multisampleColorTexture will automatically resize as the view resizes.  If false, these textures will take on the size of drawableSize and drawableSize will not change. The default value is true.
+     * If true, the size of the currentDrawable's texture, depthStencilTexture, and multisampleColorTexture will
+     * automatically resize as the view resizes. If false, these textures will take on the size of drawableSize and
+     * drawableSize will not change. The default value is true.
      */
     @Generated
     @Selector("setAutoResizeDrawable:")
@@ -806,7 +840,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The current size of drawable textures
      * <p>
-     * The size currentDrawable's texture, depthStencilTexture, and multisampleColorTexture.  If autoResizeDrawable is true this value will be updated as the view's size changes. If autoResizeDrawable is false, this can be set to fix the size of the drawable textures.
+     * The size currentDrawable's texture, depthStencilTexture, and multisampleColorTexture. If autoResizeDrawable is
+     * true this value will be updated as the view's size changes. If autoResizeDrawable is false, this can be set to
+     * fix the size of the drawable textures.
      */
     @Generated
     @Selector("setDrawableSize:")
@@ -817,7 +853,10 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * Controls whether the view responds to setNeedsDisplay.
      * <p>
-     * If true, then the view behaves similarily to a UIView or NSView, responding to calls to setNeedsDisplay. When the view has been marked for display, the view is automatically redisplayed on each pass through the application’s event loop. Setting enableSetNeedsDisplay to true will also pause the MTKView's internal render loop and updates will instead be event driven. The default value is false.
+     * If true, then the view behaves similarily to a UIView or NSView, responding to calls to setNeedsDisplay. When the
+     * view has been marked for display, the view is automatically redisplayed on each pass through the application’s
+     * event loop. Setting enableSetNeedsDisplay to true will also pause the MTKView's internal render loop and updates
+     * will instead be event driven. The default value is false.
      */
     @Generated
     @Selector("setEnableSetNeedsDisplay:")
@@ -828,7 +867,11 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * If the currentDrawable can be used for sampling or texture read operations
      * <p>
-     * This defaults to YES. This property controls whether or not the returned drawables' MTLTextures may only be used for framebuffer attachments (YES) or whether they may also be used for texture sampling and pixel read/write operations (NO). A value of YES allows the CAMetalLayer to allocate the MTLTexture objects in ways that are optimized for display purposes that makes them unsuitable for sampling. The recommended value for most applications is YES.
+     * This defaults to YES. This property controls whether or not the returned drawables' MTLTextures may only be used
+     * for framebuffer attachments (YES) or whether they may also be used for texture sampling and pixel read/write
+     * operations (NO). A value of YES allows the CAMetalLayer to allocate the MTLTexture objects in ways that are
+     * optimized for display purposes that makes them unsuitable for sampling. The recommended value for most
+     * applications is YES.
      */
     @Generated
     @Selector("setFramebufferOnly:")
@@ -839,7 +882,13 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The rate you want the view to redraw its contents.
      * <p>
-     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to be the actual frame rate. Your application should choose a frame rate that it can consistently maintain. The default value is 60 frames per second.
+     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
+     * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
+     * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
+     * refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the
+     * actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to
+     * be the actual frame rate. Your application should choose a frame rate that it can consistently maintain. The
+     * default value is 60 frames per second.
      */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
@@ -850,7 +899,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * If the layer should be presented synchronously
      * <p>
-     * Defaults to NO. When NO, changes to the layer's render buffer appear on-screen asynchronously to normal layer updates. When YES, changes to the MTL content are sent to the screen via the standard CATransaction mechanisms.
+     * Defaults to NO. When NO, changes to the layer's render buffer appear on-screen asynchronously to normal layer
+     * updates. When YES, changes to the MTL content are sent to the screen via the standard CATransaction mechanisms.
      */
     @Generated
     @Selector("setPresentsWithTransaction:")
@@ -861,7 +911,9 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The sample count used to to create multisampleColorTexture
      * <p>
-     * This defaults to 1.  If sampleCount is greater than 1 a multisampled color texture will be created and the currentDrawable's texture will be set as the resolve texture in the currentRenderPassDescriptor and the store action will be set to MTLStoreActionMultisampleResolve
+     * This defaults to 1. If sampleCount is greater than 1 a multisampled color texture will be created and the
+     * currentDrawable's texture will be set as the resolve texture in the currentRenderPassDescriptor and the store
+     * action will be set to MTLStoreActionMultisampleResolve
      */
     @Generated
     @Selector("setSampleCount:")
@@ -872,7 +924,10 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The usage flags set on the depth attachment.
      * <p>
-     * This property controls the texture usage flags set on the MTKView's depth-stencil attachment on creation.  This value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is MTLTextureUsageRenderTarget. Changing this value re-creates the depth attachment, but any data currently in the depth attachment will be lost.
+     * This property controls the texture usage flags set on the MTKView's depth-stencil attachment on creation. This
+     * value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
+     * MTLTextureUsageRenderTarget. Changing this value re-creates the depth attachment, but any data currently in the
+     * depth attachment will be lost.
      */
     @Generated
     @Selector("depthStencilAttachmentTextureUsage")
@@ -890,7 +945,10 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The texture usage flags for the multisample color attachment.
      * <p>
-     * This property controls the texture usage flags set on the the multisample color attachment attachment.  This value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is MTLTextureUsageRenderTarget. Changing this value re-creates the multisample color attachment, but any data currently in the multisample color attachment will be lost.
+     * This property controls the texture usage flags set on the the multisample color attachment attachment. This value
+     * defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
+     * MTLTextureUsageRenderTarget. Changing this value re-creates the multisample color attachment, but any data
+     * currently in the multisample color attachment will be lost.
      */
     @Generated
     @Selector("multisampleColorAttachmentTextureUsage")
@@ -900,7 +958,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
     /**
      * [@property] preferredDevice
      * <p>
-     * The preferred device is updated per-frame by the system in order to identify the most efficient GPU for presentation (e.g. the one being used for compositing).
+     * The preferred device is updated per-frame by the system in order to identify the most efficient GPU for
+     * presentation (e.g. the one being used for compositing).
      * <p>
      * This value is determined by the underlying CAMetalLayer and this property is a convenience accessor for it.
      */
@@ -914,7 +973,8 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The preferred drawable size reported by the backing NSView to match a NSView's native resolution.
      * <p>
-     * this value can be observed via key-value observation to determine if the current native drawable size has changed.
+     * this value can be observed via key-value observation to determine if the current native drawable size has
+     * changed.
      */
     @Generated
     @Selector("preferredDrawableSize")
@@ -926,7 +986,10 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The usage flags set on the depth attachment.
      * <p>
-     * This property controls the texture usage flags set on the MTKView's depth-stencil attachment on creation.  This value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is MTLTextureUsageRenderTarget. Changing this value re-creates the depth attachment, but any data currently in the depth attachment will be lost.
+     * This property controls the texture usage flags set on the MTKView's depth-stencil attachment on creation. This
+     * value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
+     * MTLTextureUsageRenderTarget. Changing this value re-creates the depth attachment, but any data currently in the
+     * depth attachment will be lost.
      */
     @Generated
     @Selector("setDepthStencilAttachmentTextureUsage:")
@@ -937,7 +1000,10 @@ public class MTKView extends UIView implements NSCoding, CALayerDelegate {
      * <p>
      * The texture usage flags for the multisample color attachment.
      * <p>
-     * This property controls the texture usage flags set on the the multisample color attachment attachment.  This value defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is MTLTextureUsageRenderTarget. Changing this value re-creates the multisample color attachment, but any data currently in the multisample color attachment will be lost.
+     * This property controls the texture usage flags set on the the multisample color attachment attachment. This value
+     * defaults to MTLTextureUsageRenderTarget. The recommended value for most applications is
+     * MTLTextureUsageRenderTarget. Changing this value re-creates the multisample color attachment, but any data
+     * currently in the multisample color attachment will be lost.
      */
     @Generated
     @Selector("setMultisampleColorAttachmentTextureUsage:")

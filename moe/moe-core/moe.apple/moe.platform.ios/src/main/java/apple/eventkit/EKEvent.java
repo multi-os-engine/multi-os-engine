@@ -164,7 +164,7 @@ public class EKEvent extends EKCalendarItem {
     public static native long version_static();
 
     /**
-     * [@property]   availability
+     * [@property] availability
      * <p>
      * The availability setting for this event.
      * <p>
@@ -192,7 +192,7 @@ public class EKEvent extends EKCalendarItem {
     public native String birthdayContactIdentifier();
 
     /**
-     * [@property]   birthdayPersonID
+     * [@property] birthdayPersonID
      * <p>
      * Specifies the address book ID of the person this event was created for.
      * <p>
@@ -217,7 +217,7 @@ public class EKEvent extends EKCalendarItem {
     public native long compareStartDateWithEvent(EKEvent other);
 
     /**
-     * [@property]   endDate
+     * [@property] endDate
      * <p>
      * The end date for the event.
      * <p>
@@ -228,7 +228,7 @@ public class EKEvent extends EKCalendarItem {
     public native NSDate endDate();
 
     /**
-     * [@property]   eventIdentifier
+     * [@property] eventIdentifier
      * <p>
      * A unique identifier for this event.
      * <p>
@@ -254,7 +254,7 @@ public class EKEvent extends EKCalendarItem {
     public native EKEvent init();
 
     /**
-     * [@property]   allDay
+     * [@property] allDay
      * <p>
      * Indicates this event is an 'all day' event.
      */
@@ -263,7 +263,7 @@ public class EKEvent extends EKCalendarItem {
     public native boolean isAllDay();
 
     /**
-     * [@property]   allDay
+     * [@property] allDay
      * <p>
      * Indicates this event is an 'all day' event.
      */
@@ -272,7 +272,7 @@ public class EKEvent extends EKCalendarItem {
     public native void setAllDay(boolean value);
 
     /**
-     * [@property]   isDetached
+     * [@property] isDetached
      * <p>
      * Represents whether this event is detached from a recurring series.
      * <p>
@@ -286,7 +286,7 @@ public class EKEvent extends EKCalendarItem {
     public native boolean isDetached();
 
     /**
-     * [@property]   occurrenceDate:
+     * [@property] occurrenceDate:
      * <p>
      * The occurrence date of an event if it is part of a recurring series.
      * <p>
@@ -304,7 +304,7 @@ public class EKEvent extends EKCalendarItem {
     public native NSDate occurrenceDate();
 
     /**
-     * [@property]   organizer
+     * [@property] organizer
      * <p>
      * The organizer of this event, or nil.
      */
@@ -335,7 +335,7 @@ public class EKEvent extends EKCalendarItem {
     public native boolean refresh();
 
     /**
-     * [@property]   availability
+     * [@property] availability
      * <p>
      * The availability setting for this event.
      * <p>
@@ -349,7 +349,7 @@ public class EKEvent extends EKCalendarItem {
     public native void setAvailability(@NInt long value);
 
     /**
-     * [@property]   endDate
+     * [@property] endDate
      * <p>
      * The end date for the event.
      * <p>
@@ -360,7 +360,7 @@ public class EKEvent extends EKCalendarItem {
     public native void setEndDate(NSDate value);
 
     /**
-     * [@property]   startDate
+     * [@property] startDate
      * <p>
      * The start date for the event.
      * <p>
@@ -375,7 +375,7 @@ public class EKEvent extends EKCalendarItem {
     public native void setStartDate(NSDate value);
 
     /**
-     * [@property]   structuredLocation
+     * [@property] structuredLocation
      * <p>
      * Allows you to set a structured location (a location with a potential geo-coordinate) on an
      * event. The getter for EKEvent’s location property just returns the structured location’s title.
@@ -387,7 +387,7 @@ public class EKEvent extends EKCalendarItem {
     public native void setStructuredLocation(EKStructuredLocation value);
 
     /**
-     * [@property]   startDate
+     * [@property] startDate
      * <p>
      * The start date for the event.
      * <p>
@@ -402,7 +402,7 @@ public class EKEvent extends EKCalendarItem {
     public native NSDate startDate();
 
     /**
-     * [@property]   status
+     * [@property] status
      * <p>
      * The status of the event.
      * <p>
@@ -417,7 +417,7 @@ public class EKEvent extends EKCalendarItem {
     public native long status();
 
     /**
-     * [@property]   structuredLocation
+     * [@property] structuredLocation
      * <p>
      * Allows you to set a structured location (a location with a potential geo-coordinate) on an
      * event. The getter for EKEvent’s location property just returns the structured location’s title.

@@ -47,14 +47,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Then the new output image h1_i data is computed as follows:
  * <p>
- * h1_i = gi( W_ij * x_j + U_ij * h0_j  + b_i )
+ * h1_i = gi( W_ij * x_j + U_ij * h0_j + b_i )
  * <p>
  * The '*' stands for convolution (see @ref MPSRNNImageInferenceLayer) or matrix-vector/matrix multiplication
  * (see @ref MPSRNNMatrixInferenceLayer).
  * Summation is over index j (except for the batch index), but there is no summation over
  * repeated index i - the output index.
  * Note that for validity all intermediate images have to be of same size and the U matrix has to be square
- * (ie. outputFeatureChannels == inputFeatureChannels in those). Also the bias terms are scalars wrt. spatial dimensions.
+ * (ie. outputFeatureChannels == inputFeatureChannels in those). Also the bias terms are scalars wrt. spatial
+ * dimensions.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -136,7 +137,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public native MPSRNNSingleGateDescriptor init();
 
     /**
-     * [@property]   inputWeights
+     * [@property] inputWeights
      * <p>
      * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
@@ -173,7 +174,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public static native MPSRNNSingleGateDescriptor new_objc();
 
     /**
-     * [@property]   recurrentWeights
+     * [@property] recurrentWeights
      * <p>
      * Contains weights 'U_ij' from the simple RNN layer formula.
      * If nil then assumed zero weights. Defaults to nil.
@@ -192,7 +193,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   inputWeights
+     * [@property] inputWeights
      * <p>
      * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
@@ -202,7 +203,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     public native void setInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
-     * [@property]   recurrentWeights
+     * [@property] recurrentWeights
      * <p>
      * Contains weights 'U_ij' from the simple RNN layer formula.
      * If nil then assumed zero weights. Defaults to nil.

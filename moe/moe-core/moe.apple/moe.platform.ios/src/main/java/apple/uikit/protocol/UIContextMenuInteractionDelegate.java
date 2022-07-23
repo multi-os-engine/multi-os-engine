@@ -25,10 +25,13 @@ public interface UIContextMenuInteractionDelegate {
      *
      * @param interaction The UIContextMenuInteraction.
      * @param location    The location of the interaction in its view.
-     * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction from beginning.
-     * Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
-     * to indicate to users that it's possible for a menu to be presented from this view, but that there are no actions to
-     * present at this particular time.
+     * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction
+     *         from beginning.
+     *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect.
+     *         You might use this
+     *         to indicate to users that it's possible for a menu to be presented from this view, but that there are no
+     *         actions to
+     *         present at this particular time.
      */
     @Generated
     @Selector("contextMenuInteraction:configurationForMenuAtLocation:")
@@ -36,13 +39,14 @@ public interface UIContextMenuInteractionDelegate {
             UIContextMenuInteraction interaction, @ByValue CGPoint location);
 
     /**
-     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
+     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal
+     * target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
      *
      * @param interaction   The UIContextMenuInteraction requesting a dismissal preview.
      * @param configuration The configuration of the menu displayed by this interaction.
      * @return Return a UITargetedPreview describing the desired dismissal target. Return nil to cause the menu to
-     * animate away without morphing into a specific view.
+     *         animate away without morphing into a specific view.
      */
     @Generated
     @IsOptional

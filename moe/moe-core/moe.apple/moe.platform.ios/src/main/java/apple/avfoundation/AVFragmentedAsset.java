@@ -111,8 +111,10 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * <p>
      * Returns an instance of AVFragmentedAsset for inspection of a fragmented media resource.
      *
-     * @param        URL An instance of NSURL that references a media resource.
-     * @param        options An instance of NSDictionary that contains keys for specifying options for the initialization of the AVFragmentedAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and AVURLAssetReferenceRestrictionsKey above.
+     * @param URL     An instance of NSURL that references a media resource.
+     * @param options An instance of NSDictionary that contains keys for specifying options for the initialization of
+     *                the AVFragmentedAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
+     *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVFragmentedAsset.
      */
     @Generated
@@ -189,7 +191,7 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param        trackID The trackID of the requested AVFragmentedAssetTrack.
+     * @param trackID The trackID of the requested AVFragmentedAssetTrack.
      * @return An instance of AVFragmentedAssetTrack; may be nil if no track of the specified trackID is available.
      */
     @Generated
@@ -197,11 +199,12 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
     public native AVFragmentedAssetTrack trackWithTrackID(int trackID);
 
     /**
-     * [@property]       tracks
+     * [@property] tracks
      * <p>
      * The tracks in an asset.
      * <p>
-     * The value of this property is an array of tracks the asset contains; the tracks are of type AVFragmentedAssetTrack.
+     * The value of this property is an array of tracks the asset contains; the tracks are of type
+     * AVFragmentedAssetTrack.
      */
     @Generated
     @Selector("tracks")
@@ -214,8 +217,10 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param        mediaCharacteristic The media characteristic according to which the receiver filters its AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h)
-     * @return An NSArray of AVFragmentedAssetTracks; may be empty if no tracks with the specified characteristic are available.
+     * @param mediaCharacteristic The media characteristic according to which the receiver filters its
+     *                            AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h)
+     * @return An NSArray of AVFragmentedAssetTracks; may be empty if no tracks with the specified characteristic are
+     *         available.
      */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
@@ -228,8 +233,10 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param        mediaType The media type according to which the receiver filters its AVFragmentedAssetTracks. (Media types are defined in AVMediaFormat.h)
-     * @return An NSArray of AVFragmentedAssetTracks; may be empty if no tracks of the specified media type are available.
+     * @param mediaType The media type according to which the receiver filters its AVFragmentedAssetTracks. (Media types
+     *                  are defined in AVMediaFormat.h)
+     * @return An NSArray of AVFragmentedAssetTracks; may be empty if no tracks of the specified media type are
+     *         available.
      */
     @Generated
     @Selector("tracksWithMediaType:")
@@ -291,8 +298,9 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * <p>
      * Loads an instance of AVFragmentedAssetTrack that represents the track of the specified trackID.
      *
-     * @param        trackID The trackID of the requested AVFragmentedAssetTrack.
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded track (which may be nil if no track of the specified trackID is available) or an error.
+     * @param trackID           The trackID of the requested AVFragmentedAssetTrack.
+     * @param completionHandler A block that is called when the loading is finished, with either the loaded track (which
+     *                          may be nil if no track of the specified trackID is available) or an error.
      */
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
@@ -311,8 +319,11 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * <p>
      * Loads an array of AVFragmentedAssetTracks of the asset that present media with the specified characteristic.
      *
-     * @param        mediaCharacteristic The media characteristic according to which AVAsset filters its AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h.)
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks with the specified characteristic are available) or an error.
+     * @param mediaCharacteristic The media characteristic according to which AVAsset filters its
+     *                            AVFragmentedAssetTracks. (Media characteristics are defined in AVMediaFormat.h.)
+     * @param completionHandler   A block that is called when the loading is finished, with either the loaded tracks
+     *                            (which may be empty if no tracks with the specified characteristic are available) or
+     *                            an error.
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
@@ -332,8 +343,10 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
      * <p>
      * Loads an array of AVFragmentedAssetTracks of the asset that present media of the specified media type.
      *
-     * @param        mediaType The media type according to which AVAsset filters its AVFragmentedAssetTracks. (Media types are defined in AVMediaFormat.h.)
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks of the specified media type are available) or an error.
+     * @param mediaType         The media type according to which AVAsset filters its AVFragmentedAssetTracks. (Media
+     *                          types are defined in AVMediaFormat.h.)
+     * @param completionHandler A block that is called when the loading is finished, with either the loaded tracks
+     *                          (which may be empty if no tracks of the specified media type are available) or an error.
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")

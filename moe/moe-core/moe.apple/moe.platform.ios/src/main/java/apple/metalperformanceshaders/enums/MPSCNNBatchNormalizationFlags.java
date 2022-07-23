@@ -14,7 +14,8 @@ public final class MPSCNNBatchNormalizationFlags {
      */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
-     * Statistics are calculated if another node consumes the gradient node (training). The data source is used otherwise.
+     * Statistics are calculated if another node consumes the gradient node (training). The data source is used
+     * otherwise.
      */
     @Generated @NUInt public static final long CalculateStatisticsAutomatic = 0x0000000000000000L;
     /**
@@ -26,7 +27,7 @@ public final class MPSCNNBatchNormalizationFlags {
      */
     @Generated @NUInt public static final long CalculateStatisticsNever = 0x0000000000000002L;
     /**
-     * Bits used for  MPSCNNBatchNormalizationFlagsCalculateStatistics
+     * Bits used for MPSCNNBatchNormalizationFlagsCalculateStatistics
      */
     @Generated @NUInt public static final long CalculateStatisticsMask = 0x0000000000000003L;
 }

@@ -49,7 +49,7 @@ public interface MTLResource {
     /**
      * [@property] device
      * <p>
-     * The device this resource was created against.  This resource can only be used with this device.
+     * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -74,8 +74,8 @@ public interface MTLResource {
      * Returns whether future heap sub-allocations may alias against this resource's memory.
      *
      * @return YES if <st>makeAliasable</st> was previously successfully called on this resource. NO otherwise.
-     * If resource is sub-allocated from other resource created on the heap, isAliasable returns
-     * aliasing state of that base resource. Also returns NO when storage mode is memoryless.
+     *         If resource is sub-allocated from other resource created on the heap, isAliasable returns
+     *         aliasing state of that base resource. Also returns NO when storage mode is memoryless.
      */
     @Generated
     @Selector("isAliasable")
@@ -120,7 +120,8 @@ public interface MTLResource {
      * Set (or query) the purgeability state of a resource
      * <p>
      * Synchronously set the purgeability state of a resource and return what the prior (or current) state is.
-     * FIXME: If the device is keeping a cached copy of the resource, both the shared copy and cached copy are made purgeable.  Any access to the resource by either the CPU or device will be undefined.
+     * FIXME: If the device is keeping a cached copy of the resource, both the shared copy and cached copy are made
+     * purgeable. Any access to the resource by either the CPU or device will be undefined.
      */
     @Generated
     @Selector("setPurgeableState:")
@@ -152,7 +153,8 @@ public interface MTLResource {
      * Whether or not the resource is hazard tracked.
      * <p>
      * This value can be either MTLHazardTrackingModeUntracked or MTLHazardTrackingModeTracked.
-     * Resources created from heaps are by default untracked, whereas resources created from the device are by default tracked.
+     * Resources created from heaps are by default untracked, whereas resources created from the device are by default
+     * tracked.
      */
     @Generated
     @Selector("hazardTrackingMode")

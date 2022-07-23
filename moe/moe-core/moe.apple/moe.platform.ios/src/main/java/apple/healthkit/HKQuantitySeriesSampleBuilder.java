@@ -101,7 +101,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]      device
+     * [@property] device
      */
     @Generated
     @Selector("device")
@@ -306,7 +306,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     public static native HKQuantitySeriesSampleBuilder new_objc();
 
     /**
-     * [@property]      quantityType
+     * [@property] quantityType
      */
     @Generated
     @Selector("quantityType")
@@ -325,7 +325,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      startDate
+     * [@property] startDate
      */
     @Generated
     @Selector("startDate")

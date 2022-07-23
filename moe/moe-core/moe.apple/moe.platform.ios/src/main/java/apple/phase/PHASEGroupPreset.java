@@ -26,7 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] PHASEGroupPreset
  * <p>
- * A PHASEGroupPreset holds a collection of PHASEGroupPresetSetting objects and other parameters to be applied all at once during playback.
+ * A PHASEGroupPreset holds a collection of PHASEGroupPresetSetting objects and other parameters to be applied all at
+ * once during playback.
  * <p>
  * Initialize beforehand, and use activate or deactivate to switch to the new preset during playback.
  * Activating a preset will automatically deactivate the current one.
@@ -65,7 +66,8 @@ public class PHASEGroupPreset extends NSObject {
      * Activate this preset in the PHASEEngine object it was initialized with.
      * The current preset will be deactivated automatically.
      * [@note]
-     * The timeToTargetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * The timeToTargetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time
+     * scale.
      *
      * @param timeToTargetOverride Override the timeToTarget value in the preset with this value.
      */
@@ -119,7 +121,8 @@ public class PHASEGroupPreset extends NSObject {
      * <p>
      * Deactivate this preset and return the system to default unity values.
      * [@note]
-     * The timeToResetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * The timeToResetOverride is scaled by unitsPerSecond internally, so can be provided at the client's native time
+     * scale.
      *
      * @param timeToResetOverride Override the timeToReset value in the preset with this value.
      */
@@ -149,12 +152,16 @@ public class PHASEGroupPreset extends NSObject {
      * <p>
      * Create a new PHASEGroupPreset object with a given PHASEEngine object.
      * [@note]
-     * The timeToTarget and timeToReset are scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     * The timeToTarget and timeToReset are scaled by unitsPerSecond internally, so can be provided at the client's
+     * native time scale.
      *
      * @param engine       The PHASEEngine object to register this preset with.
-     * @param settings     A dictionary containing PHASEGroupPresetSetting objects paired with PHASEGroup objects as keys.
-     * @param timeToTarget The time interval that all group settings in this preset will take to gradually fade to the new value
-     * @param timeToReset  The time interval that all group settings in this preset will take to gradually fade to the unity value
+     * @param settings     A dictionary containing PHASEGroupPresetSetting objects paired with PHASEGroup objects as
+     *                     keys.
+     * @param timeToTarget The time interval that all group settings in this preset will take to gradually fade to the
+     *                     new value
+     * @param timeToReset  The time interval that all group settings in this preset will take to gradually fade to the
+     *                     unity value
      */
     @Generated
     @Selector("initWithEngine:settings:timeToTarget:timeToReset:")

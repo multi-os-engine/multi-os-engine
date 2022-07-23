@@ -31,7 +31,8 @@ public final class NETunnelProviderError {
      */
     @Generated @NInt public static final long Invalid = 0x0000000000000001L;
     /**
-     * [@const] NETunnelProviderErrorNetworkSettingsCanceled The request to set/clear the tunnel network settings was canceled.
+     * [@const] NETunnelProviderErrorNetworkSettingsCanceled The request to set/clear the tunnel network settings was
+     * canceled.
      */
     @Generated @NInt public static final long Canceled = 0x0000000000000002L;
     /**

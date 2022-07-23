@@ -57,7 +57,8 @@ public interface MTLCommandEncoder {
     /**
      * insertDebugSignpost:
      * <p>
-     * Inserts a debug string into the command buffer.  This does not change any API behavior, but can be useful when debugging.
+     * Inserts a debug string into the command buffer. This does not change any API behavior, but can be useful when
+     * debugging.
      */
     @Generated
     @Selector("insertDebugSignpost:")

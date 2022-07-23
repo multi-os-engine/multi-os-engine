@@ -90,7 +90,7 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     public static native String description_static();
 
     /**
-     * [@property]  dilationRate
+     * [@property] dilationRate
      * <p>
      * The stride in each dimension from one PSF tap to an adjacent
      * PSF tap. Default: 1
@@ -101,7 +101,7 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     public native MPSNDArraySizes dilationRates();
 
     /**
-     * [@property]  edgeMode
+     * [@property] edgeMode
      * <p>
      * The edge mode used for a source NDArray
      * Default: MPSImageEdgeModeZero
@@ -119,7 +119,7 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
      * @param cmdBuf      The command buffer into which to encode the kernel
      * @param sourceArray The source for the filter in an NSArray.
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
-     * when the command buffer completes successfully.
+     *         when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:")
@@ -161,9 +161,10 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
      * @param cmdBuf                 The command buffer into which to encode the kernel
      * @param sourceArray            The source for the filter in an NSArray.
      * @param outGradientState       If non-nil, the address output gradient state is written to this address
-     * @param outputStateIsTemporary If YES, the state if any will be allocated to contain temporary textures and buffers as needed
+     * @param outputStateIsTemporary If YES, the state if any will be allocated to contain temporary textures and
+     *                               buffers as needed
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
-     * when the command buffer completes successfully.
+     *         when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceArray:resultState:outputStateIsTemporary:")
@@ -219,7 +220,7 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]  kernelSizes
+     * [@property] kernelSizes
      * <p>
      * The diameters of the point spread function in each dimension for a source NDArray
      * Default: 1
@@ -239,7 +240,7 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     public static native MPSNDArrayUnaryKernel new_objc();
 
     /**
-     * [@property]  offsets
+     * [@property] offsets
      * <p>
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
@@ -266,7 +267,7 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]  kernelStrides
+     * [@property] kernelStrides
      * <p>
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and

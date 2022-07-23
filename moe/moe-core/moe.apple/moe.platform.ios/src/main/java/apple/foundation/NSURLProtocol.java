@@ -193,7 +193,7 @@ public class NSURLProtocol extends NSObject {
      * @param key     The string to use for the property lookup.
      * @param request The request to use for the property lookup.
      * @return The property stored with the given key, or nil if no property
-     * had previously been stored with the given key in the given request.
+     *         had previously been stored with the given key in the given request.
      */
     @Generated
     @Selector("propertyForKey:inRequest:")
@@ -223,8 +223,8 @@ public class NSURLProtocol extends NSObject {
      *
      * @param protocolClass the class to register.
      * @return YES if the protocol was registered successfully, NO if not.
-     * The only way that failure can occur is if the given class is not a
-     * subclass of NSURLProtocol.
+     *         The only way that failure can occur is if the given class is not a
+     *         subclass of NSURLProtocol.
      */
     @Generated
     @Selector("registerClass:")

@@ -112,7 +112,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
 
     /**
      * A force proportional to the charge on the object. A charge property has been
-     * added to UIDynamicItemBehavior to accomplish this. An example use of this field is to make objects behavior differently
+     * added to UIDynamicItemBehavior to accomplish this. An example use of this field is to make objects behavior
+     * differently
      * from one another when they enter a region, or to make an object's behavior different than its mass based behavior
      * This field models the first part of the Lorentz equation, F = qE
      */
@@ -165,8 +166,10 @@ public class UIFieldBehavior extends UIDynamicBehavior {
      * Applies a force in the direction of the vector in the local space. To repel objects, use a negative strength.
      * The force is the same everywhere in the field. Varies with the mass of the object according to F = ma
      *
-     * @param direction The direction the force is applied in the x,y plane. The length of the direction vector is multiplied by
-     *                  the field's strength property to get the final calculated force. All components of the direction vector are used to calculate the length.
+     * @param direction The direction the force is applied in the x,y plane. The length of the direction vector is
+     *                  multiplied by
+     *                  the field's strength property to get the final calculated force. All components of the direction
+     *                  vector are used to calculate the length.
      * @see direction
      */
     @Generated
@@ -176,8 +179,10 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * The magnetic field is a uniform field in the positive-z direction (coming out of the screen). When the velocity
      * of a charged dynamic item is perpendicular to the uniform magnetic field, the item feels a resulting force normal
-     * to both the velocity and the B field. This results CCW circular motion. You can adjust the strength of the B field
-     * to be negative which will result in circular motion being CW instead of CCW. An example use of this field is to make
+     * to both the velocity and the B field. This results CCW circular motion. You can adjust the strength of the B
+     * field
+     * to be negative which will result in circular motion being CW instead of CCW. An example use of this field is to
+     * make
      * objects behavior differently from one another when they enter a region, or to make an object's behavior different
      * than its mass based behavior. This field models the second part of the Lorentz equation, F = qvB
      */
@@ -205,8 +210,10 @@ public class UIFieldBehavior extends UIDynamicBehavior {
             @NFloat double speed);
 
     /**
-     * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative strength.
-     * The force is proportional to the distance from the field origin. Varies with the mass of the object according to F = ma
+     * Applies a force in the direction of the origin of the field in local space. To repel objects, use a negative
+     * strength.
+     * The force is proportional to the distance from the field origin. Varies with the mass of the object according to
+     * F = ma
      *
      * @param position the origin of the field
      * @see position
@@ -272,7 +279,8 @@ public class UIFieldBehavior extends UIDynamicBehavior {
     /**
      * Applies a force tangential to the direction from the sample point to the field's position.
      * The force will be CCW to the direction. Make the strength negative to apply force in the CW direction.
-     * Amount is proportional to distance from center and the object's mass. This can be used to create rotational effects.
+     * Amount is proportional to distance from center and the object's mass. This can be used to create rotational
+     * effects.
      */
     @Generated
     @Selector("vortexField")

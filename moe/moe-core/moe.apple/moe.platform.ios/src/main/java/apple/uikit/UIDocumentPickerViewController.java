@@ -181,7 +181,8 @@ public class UIDocumentPickerViewController extends UIViewController {
     public native UIDocumentPickerViewController initWithCoder(NSCoder coder);
 
     /**
-     * Initializes the picker instance for selecting a document in a remote location. The valid modes are Import and Open.
+     * Initializes the picker instance for selecting a document in a remote location. The valid modes are Import and
+     * Open.
      */
     @Generated
     @Selector("initWithDocumentTypes:inMode:")
@@ -193,7 +194,8 @@ public class UIDocumentPickerViewController extends UIViewController {
     public native UIDocumentPickerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * Initializes the picker for exporting a local file to an external location. The valid modes are Export and Move. The new location will be returned using `didPickDocumentAtURL:`.
+     * Initializes the picker for exporting a local file to an external location. The valid modes are Export and Move.
+     * The new location will be returned using `didPickDocumentAtURL:`.
      */
     @Generated
     @Selector("initWithURL:inMode:")
@@ -220,7 +222,8 @@ public class UIDocumentPickerViewController extends UIViewController {
     public native boolean allowsMultipleSelection();
 
     /**
-     * Initializes the picker for exporting local files to an external location. The valid modes are Export and Move. The new locations will be returned using `didPickDocumentAtURLs:`.
+     * Initializes the picker for exporting local files to an external location. The valid modes are Export and Move.
+     * The new locations will be returned using `didPickDocumentAtURLs:`.
      */
     @Generated
     @Selector("initWithURLs:inMode:")
@@ -259,16 +262,20 @@ public class UIDocumentPickerViewController extends UIViewController {
     public native boolean shouldShowFileExtensions();
 
     /**
-     * Initializes the picker for exporting local documents to an external location. The new locations will be returned using `didPickDocumentAtURLs:`. The original document will be moved to the destination.
+     * Initializes the picker for exporting local documents to an external location. The new locations will be returned
+     * using `didPickDocumentAtURLs:`. The original document will be moved to the destination.
      */
     @Generated
     @Selector("initForExportingURLs:")
     public native UIDocumentPickerViewController initForExportingURLs(NSArray<? extends NSURL> urls);
 
     /**
-     * Initializes the picker for exporting local documents to an external location. The new locations will be returned using `didPickDocumentAtURLs:`.
+     * Initializes the picker for exporting local documents to an external location. The new locations will be returned
+     * using `didPickDocumentAtURLs:`.
      *
-     * @param asCopy if true, a copy will be exported to the destination, otherwise the original document will be moved to the destination. For performance reasons and to avoid copies, we recommend you set `asCopy` to false.
+     * @param asCopy if true, a copy will be exported to the destination, otherwise the original document will be moved
+     *               to the destination. For performance reasons and to avoid copies, we recommend you set `asCopy` to
+     *               false.
      */
     @Generated
     @Selector("initForExportingURLs:asCopy:")
@@ -276,7 +283,8 @@ public class UIDocumentPickerViewController extends UIViewController {
             boolean asCopy);
 
     /**
-     * Initializes the picker instance for selecting a document in a remote location, giving you access to the original document.
+     * Initializes the picker instance for selecting a document in a remote location, giving you access to the original
+     * document.
      */
     @Generated
     @Selector("initForOpeningContentTypes:")
@@ -285,7 +293,8 @@ public class UIDocumentPickerViewController extends UIViewController {
     /**
      * Initializes the picker instance for selecting a document in a remote location.
      *
-     * @param asCopy if true, the picker will give you access to a local copy of the document, otherwise you will have access to the original document
+     * @param asCopy if true, the picker will give you access to a local copy of the document, otherwise you will have
+     *               access to the original document
      */
     @Generated
     @Selector("initForOpeningContentTypes:asCopy:")

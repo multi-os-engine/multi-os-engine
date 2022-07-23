@@ -159,9 +159,9 @@ public class ENExposureSummaryItem extends NSObject {
      * Sum of exposure durations weighted by their attenuation.
      * weightedDurationSum =
      * ( immediateDuration * immediateDurationWeight ) +
-     * ( nearDuration      * nearDurationWeight ) +
-     * ( mediumDuration    * mediumDurationWeight ) +
-     * ( otherDuration     * otherDurationWeight ).
+     * ( nearDuration * nearDurationWeight ) +
+     * ( mediumDuration * mediumDurationWeight ) +
+     * ( otherDuration * otherDurationWeight ).
      */
     @Generated
     @Selector("weightedDurationSum")

@@ -171,8 +171,10 @@ public final class StoreKit {
     public static native String SKCloudServiceSetupOptionsCampaignTokenKey();
 
     /**
-     * Identifier used to select the main message presented to the user for this setup view (SKCloudServiceSetupMessageIdentifier).
-     * When missing, the setup view will be configured in a way that is equivalent to using SKCloudServiceSetupMessageIdentifierJoin.
+     * Identifier used to select the main message presented to the user for this setup view
+     * (SKCloudServiceSetupMessageIdentifier).
+     * When missing, the setup view will be configured in a way that is equivalent to using
+     * SKCloudServiceSetupMessageIdentifierJoin.
      */
     @Generated
     @CVariable()

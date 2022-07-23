@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNCircle
  * <p>
- * VNCircle is two-dimensional circle represented by the center point 'center' and its radius 'radius'. Once created, VNCircle objects are immutable.
+ * VNCircle is two-dimensional circle represented by the center point 'center' and its radius 'radius'. Once created,
+ * VNCircle objects are immutable.
  */
 @Generated
 @Library("Vision")

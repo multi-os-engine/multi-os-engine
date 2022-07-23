@@ -76,7 +76,8 @@ public class SCNTransaction extends NSObject {
 
     /**
      * Accessors for the "animationDuration" per-thread transaction
-     * property. Defines the default duration of animations. Defaults to 1/4s for explicit transactions, 0s for implicit transactions.
+     * property. Defines the default duration of animations. Defaults to 1/4s for explicit transactions, 0s for implicit
+     * transactions.
      */
     @Generated
     @Selector("animationDuration")
@@ -212,7 +213,8 @@ public class SCNTransaction extends NSObject {
 
     /**
      * Accessors for the "animationDuration" per-thread transaction
-     * property. Defines the default duration of animations. Defaults to 1/4s for explicit transactions, 0s for implicit transactions.
+     * property. Defines the default duration of animations. Defaults to 1/4s for explicit transactions, 0s for implicit
+     * transactions.
      */
     @Generated
     @Selector("setAnimationDuration:")

@@ -169,13 +169,13 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public static native long version_static();
 
     /**
-     * [@property]   clipRect
+     * [@property] clipRect
      * <p>
      * An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.
      * <p>
      * A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
      * completely within the destination image, the intersection between clip rectangle and destination bounds is
-     * used.   Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
+     * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * <p>
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
      */
@@ -199,7 +199,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * and properties passed to it. You should never assume that a MPSKernel will
      * continue to work in place, even if you have observed it doing so before.
      * [@endcode]
-     * If the operation succeeds in-place, YES is returned.  If the in-place operation
+     * If the operation succeeds in-place, YES is returned. If the in-place operation
      * fails and no copyAllocator is provided, then NO is returned. In neither
      * case is the pointer held at *texture modified.
      * <p>
@@ -209,7 +209,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * the results, allowing the filter to proceed reliably out-of-place. The
      * original texture will be released, replaced with a pointer to the new texture
      * and YES will be returned. If the allocator returns an invalid texture, it is
-     * released, *texture remains unmodified and NO is returned.  Please see the
+     * released, *texture remains unmodified and NO is returned. Please see the
      * MPSCopyAllocator definition for a sample allocator implementation.
      * <p>
      * Note: Image filters that look at neighboring pixel values may actually consume more
@@ -231,8 +231,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      *                              provided MTLCommandBuffer using the provided
      *                              MTLComputeCommandEncoder to initialize the texture contents.
      * @return On success, YES is returned. The texture may have been replaced with a new
-     * texture if a copyAllocator was provided.  On failure, NO is returned. The
-     * texture is unmodified.
+     *         texture if a copyAllocator was provided. On failure, NO is returned. The
+     *         texture is unmodified.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inPlacePrimaryTexture:secondaryTexture:fallbackCopyAllocator:")
@@ -255,7 +255,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * and properties passed to it. You should never assume that a MPSKernel will
      * continue to work in place, even if you have observed it doing so before.
      * <p>
-     * If the operation succeeds in-place, YES is returned.  If the in-place operation
+     * If the operation succeeds in-place, YES is returned. If the in-place operation
      * fails and no copyAllocator is provided, then NO is returned. In neither
      * case is the pointer held at *texture modified.
      * <p>
@@ -265,7 +265,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * the results, allowing the filter to proceed reliably out-of-place. The
      * original texture will be released, replaced with a pointer to the new texture
      * and YES will be returned. If the allocator returns an invalid texture, it is
-     * released, *texture remains unmodified and NO is returned.  Please see the
+     * released, *texture remains unmodified and NO is returned. Please see the
      * MPSCopyAllocator definition for a sample allocator implementation.
      * <p>
      * Note: Image filters that look at neighboring pixel values may actually consume more
@@ -289,8 +289,8 @@ public class MPSBinaryImageKernel extends MPSKernel {
      *                                provided MTLCommandBuffer using the provided
      *                                MTLComputeCommandEncoder to initialize the texture contents.
      * @return On success, YES is returned. The texture may have been replaced with a new
-     * texture if a copyAllocator was provided.  On failure, NO is returned. The
-     * texture is unmodified.
+     *         texture if a copyAllocator was provided. On failure, NO is returned. The
+     *         texture is unmodified.
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:inPlaceSecondaryTexture:fallbackCopyAllocator:")
@@ -301,12 +301,13 @@ public class MPSBinaryImageKernel extends MPSKernel {
             @ObjCBlock(name = "call_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator") Block_encodeToCommandBufferPrimaryTextureInPlaceSecondaryTextureFallbackCopyAllocator copyAllocator);
 
     /**
-     * Encode a MPSKernel into a command Buffer.  The operation shall proceed out-of-place.
+     * Encode a MPSKernel into a command Buffer. The operation shall proceed out-of-place.
      *
      * @param commandBuffer      A valid MTLCommandBuffer to receive the encoded filter
      * @param primaryTexture     A valid MTLTexture containing the primary source image.
      * @param secondaryTexture   A valid MTLTexture containing the secondary source image.
-     * @param destinationTexture A valid MTLTexture to be overwritten by result image. destinationTexture may not alias the source textures.
+     * @param destinationTexture A valid MTLTexture to be overwritten by result image. destinationTexture may not alias
+     *                           the source textures.
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture:")
@@ -325,26 +326,26 @@ public class MPSBinaryImageKernel extends MPSKernel {
      *
      * @param device The device that the filter will be used on. May not be NULL.
      * @return a pointer to the newly initialized object. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Selector("initWithDevice:")
     public native MPSBinaryImageKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * [@property]   primaryEdgeMode
+     * [@property] primaryEdgeMode
      * <p>
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the primary source image
      * <p>
      * Most MPSKernel objects can read off the edge of a source image. This can happen because of a
      * negative offset property, because the offset + clipRect.size is larger than the
      * source image or because the filter looks at neighboring pixels, such as a Convolution
-     * or morphology filter.   Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
+     * or morphology filter. Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
      * to MPSImageEdgeModeClamp, because MPSImageEdgeModeZero is either not supported or
      * would produce unexpected results.)
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_edgemode
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
      */
     @Generated
     @Selector("primaryEdgeMode")
@@ -352,14 +353,14 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public native long primaryEdgeMode();
 
     /**
-     * [@property]   primaryOffset
+     * [@property] primaryOffset
      * <p>
      * The position of the destination clip rectangle origin relative to the primary source buffer.
      * <p>
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_mpsoffset
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
      */
     @Generated
     @Selector("primaryOffset")
@@ -370,7 +371,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * primarySourceRegionForDestinationSize: is used to determine which region of the
      * primaryTexture will be read by encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture
      * (and in-place variants) when the filter runs. This information may be needed if the
-     * primary source image is broken into multiple textures.  The size of the full
+     * primary source image is broken into multiple textures. The size of the full
      * (untiled) destination image is provided. The region of the full (untiled)
      * source image that will be read is returned. You can then piece together an
      * appropriate texture containing that information for use in your tiled context.
@@ -398,18 +399,18 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public native MPSRegion primarySourceRegionForDestinationSize(@ByValue MTLSize destinationSize);
 
     /**
-     * [@property]   secondaryEdgeMode
+     * [@property] secondaryEdgeMode
      * <p>
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the secondary source image
      * <p>
      * Most MPSKernel objects can read off the edge of a source image. This can happen because of a
      * negative offset property, because the offset + clipRect.size is larger than the
      * source image or because the filter looks at neighboring pixels, such as a Convolution
-     * or morphology filter.   Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
+     * or morphology filter. Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
      * to MPSImageEdgeModeClamp, because MPSImageEdgeModeZero is either not supported or
      * would produce unexpected results.)
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_edgemode
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
      */
     @Generated
     @Selector("secondaryEdgeMode")
@@ -417,14 +418,14 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public native long secondaryEdgeMode();
 
     /**
-     * [@property]   secondaryOffset
+     * [@property] secondaryOffset
      * <p>
      * The position of the destination clip rectangle origin relative to the secondary source buffer.
      * <p>
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and secondary source image align.
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_mpsoffset
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
      */
     @Generated
     @Selector("secondaryOffset")
@@ -435,14 +436,14 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * secondarySourceRegionForDestinationSize: is used to determine which region of the
      * sourceTexture will be read by encodeToCommandBuffer:primaryTexture:secondaryTexture:destinationTexture
      * (and in-place variants) when the filter runs. This information may be needed if the
-     * secondary source image is broken into multiple textures.  The size of the full
+     * secondary source image is broken into multiple textures. The size of the full
      * (untiled) destination image is provided. The region of the full (untiled)
      * secondary source image that will be read is returned. You can then piece together an
      * appropriate texture containing that information for use in your tiled context.
      * <p>
      * The function will consult the MPSBinaryImageKernel secondaryOffset and clipRect
      * parameters, to determine the full region read by the function. Other parameters
-     * such as kernelHeight and kernelWidth will be consulted as necessary.  All properties
+     * such as kernelHeight and kernelWidth will be consulted as necessary. All properties
      * should be set to intended values prior to calling secondarySourceRegionForDestinationSize:.
      * <p>
      * Caution: This function operates using global image coordinates, but
@@ -463,13 +464,13 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public native MPSRegion secondarySourceRegionForDestinationSize(@ByValue MTLSize destinationSize);
 
     /**
-     * [@property]   clipRect
+     * [@property] clipRect
      * <p>
      * An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.
      * <p>
      * A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
      * completely within the destination image, the intersection between clip rectangle and destination bounds is
-     * used.   Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
+     * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * <p>
      * See Also: @ref MetalPerformanceShaders.h subsubsection_clipRect
      */
@@ -478,64 +479,64 @@ public class MPSBinaryImageKernel extends MPSKernel {
     public native void setClipRect(@ByValue MTLRegion value);
 
     /**
-     * [@property]   primaryEdgeMode
+     * [@property] primaryEdgeMode
      * <p>
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the primary source image
      * <p>
      * Most MPSKernel objects can read off the edge of a source image. This can happen because of a
      * negative offset property, because the offset + clipRect.size is larger than the
      * source image or because the filter looks at neighboring pixels, such as a Convolution
-     * or morphology filter.   Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
+     * or morphology filter. Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
      * to MPSImageEdgeModeClamp, because MPSImageEdgeModeZero is either not supported or
      * would produce unexpected results.)
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_edgemode
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
      */
     @Generated
     @Selector("setPrimaryEdgeMode:")
     public native void setPrimaryEdgeMode(@NUInt long value);
 
     /**
-     * [@property]   primaryOffset
+     * [@property] primaryOffset
      * <p>
      * The position of the destination clip rectangle origin relative to the primary source buffer.
      * <p>
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_mpsoffset
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
      */
     @Generated
     @Selector("setPrimaryOffset:")
     public native void setPrimaryOffset(@ByValue MPSOffset value);
 
     /**
-     * [@property]   secondaryEdgeMode
+     * [@property] secondaryEdgeMode
      * <p>
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the secondary source image
      * <p>
      * Most MPSKernel objects can read off the edge of a source image. This can happen because of a
      * negative offset property, because the offset + clipRect.size is larger than the
      * source image or because the filter looks at neighboring pixels, such as a Convolution
-     * or morphology filter.   Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
+     * or morphology filter. Default: usually MPSImageEdgeModeZero. (Some MPSKernel types default
      * to MPSImageEdgeModeClamp, because MPSImageEdgeModeZero is either not supported or
      * would produce unexpected results.)
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_edgemode
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_edgemode
      */
     @Generated
     @Selector("setSecondaryEdgeMode:")
     public native void setSecondaryEdgeMode(@NUInt long value);
 
     /**
-     * [@property]   secondaryOffset
+     * [@property] secondaryOffset
      * <p>
      * The position of the destination clip rectangle origin relative to the secondary source buffer.
      * <p>
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and secondary source image align.
      * <p>
-     * See Also: @ref MetalPerformanceShaders.h  subsubsection_mpsoffset
+     * See Also: @ref MetalPerformanceShaders.h subsubsection_mpsoffset
      */
     @Generated
     @Selector("setSecondaryOffset:")
@@ -560,12 +561,13 @@ public class MPSBinaryImageKernel extends MPSKernel {
     }
 
     /**
-     * Encode a MPSKernel into a command Buffer.  The operation shall proceed out-of-place.
+     * Encode a MPSKernel into a command Buffer. The operation shall proceed out-of-place.
      *
      * @param commandBuffer    A valid MTLCommandBuffer to receive the encoded filter
      * @param primaryImage     A valid MPSImage containing the primary source image.
      * @param secondaryImage   A valid MPSImage containing the secondary source image.
-     * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias the source images.
+     * @param destinationImage A valid MPSImage to be overwritten by result image. destinationImage may not alias the
+     *                         source images.
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationImage:")
@@ -583,7 +585,7 @@ public class MPSBinaryImageKernel extends MPSKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

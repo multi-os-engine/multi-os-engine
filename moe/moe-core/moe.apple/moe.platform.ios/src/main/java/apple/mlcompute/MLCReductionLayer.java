@@ -91,7 +91,7 @@ public class MLCReductionLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   dimension
+     * [@property] dimension
      * <p>
      * The dimension over which to perform the reduction operation
      */
@@ -101,7 +101,7 @@ public class MLCReductionLayer extends MLCLayer {
     public native long dimension();
 
     /**
-     * [@property]   dimensions
+     * [@property] dimensions
      * <p>
      * The dimensions over which to perform the reduction operation
      */
@@ -168,7 +168,7 @@ public class MLCReductionLayer extends MLCLayer {
     public static native MLCReductionLayer new_objc();
 
     /**
-     * [@property]   reductionType
+     * [@property] reductionType
      * <p>
      * The reduction type
      */

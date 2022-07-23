@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueOccupancyStatus
+ * [@enum] HMCharacteristicValueOccupancyStatus
  * <p>
- * [@constant]  HMCharacteristicValueOccupancyStatusNotOccupied     Occupancy is not detected.
- * [@constant]  HMCharacteristicValueOccupancyStatusOccupied        Occupancy is detected.
+ * [@constant] HMCharacteristicValueOccupancyStatusNotOccupied Occupancy is not detected.
+ * [@constant] HMCharacteristicValueOccupancyStatusOccupied Occupancy is detected.
  */
 @Generated
 public final class HMCharacteristicValueOccupancyStatus {

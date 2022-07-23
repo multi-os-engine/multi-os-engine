@@ -225,7 +225,7 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]           maximumCount
+     * [@property] maximumCount
      * <p>
      * The maximum number of heartbeats that can be added to an HKHeartbeatSeriesBuilder.
      * <p>

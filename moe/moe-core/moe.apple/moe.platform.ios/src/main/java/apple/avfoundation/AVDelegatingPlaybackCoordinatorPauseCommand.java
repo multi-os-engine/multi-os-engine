@@ -56,7 +56,7 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
     public static native AVDelegatingPlaybackCoordinatorPauseCommand allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]	anticipatedPlaybackRate
+     * [@property] anticipatedPlaybackRate
      * <p>
      * The rate to prepare for if shouldBufferInAnticipationOfPlayback is YES.
      */
@@ -142,13 +142,15 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]	shouldBufferInAnticipationOfPlayback
+     * [@property] shouldBufferInAnticipationOfPlayback
      * <p>
      * Indicates that playback is anticipated and the player should begin buffering if necessary.
      * <p>
-     * When shouldBufferInAnticipationOfPlayback is YES, some participant wants to resume playback at the rate indicated by the anticipatedPlaybackRate property.
+     * When shouldBufferInAnticipationOfPlayback is YES, some participant wants to resume playback at the rate indicated
+     * by the anticipatedPlaybackRate property.
      * This should be treated similar to receiving a separate AVDelegatingPlaybackCoordinatorBufferingCommand.
-     * If YES, the command should only be considered complete once the player is ready to receive an AVDelegatingPlaybackCoordinatorPlayCommand with the indicated rate.
+     * If YES, the command should only be considered complete once the player is ready to receive an
+     * AVDelegatingPlaybackCoordinatorPlayCommand with the indicated rate.
      */
     @Generated
     @Selector("shouldBufferInAnticipationOfPlayback")

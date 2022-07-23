@@ -51,7 +51,7 @@ public final class CMTimeMapping extends StructObject {
     }
 
     /**
-     * eg, media.  source.start is kCMTimeInvalid for empty edits.
+     * eg, media. source.start is kCMTimeInvalid for empty edits.
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -59,7 +59,7 @@ public final class CMTimeMapping extends StructObject {
     public native CMTimeRange source();
 
     /**
-     * eg, media.  source.start is kCMTimeInvalid for empty edits.
+     * eg, media. source.start is kCMTimeInvalid for empty edits.
      */
     @Generated
     @StructureField(order = 0, isGetter = false)

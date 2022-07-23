@@ -25,8 +25,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * Objects which are safe to be encoded and decoded across privilege boundaries should adopt NSSecureCoding instead of NSCoding. Secure coders (those that respond YES to requiresSecureCoding) will only encode objects that adopt the NSSecureCoding protocol.
- * NOTE: NSSecureCoding guarantees only that an archive contains the classes it claims. It makes no guarantees about the suitability for consumption by the receiver of the decoded content of the archive. Archived objects which  may trigger code evaluation should be validated independently by the consumer of the objects to verify that no malicious code is executed (i.e. by checking key paths, selectors etc. specified in the archive).
+ * Objects which are safe to be encoded and decoded across privilege boundaries should adopt NSSecureCoding instead of
+ * NSCoding. Secure coders (those that respond YES to requiresSecureCoding) will only encode objects that adopt the
+ * NSSecureCoding protocol.
+ * NOTE: NSSecureCoding guarantees only that an archive contains the classes it claims. It makes no guarantees about the
+ * suitability for consumption by the receiver of the decoded content of the archive. Archived objects which may trigger
+ * code evaluation should be validated independently by the consumer of the objects to verify that no malicious code is
+ * executed (i.e. by checking key paths, selectors etc. specified in the archive).
  */
 @Generated
 @Library("Foundation")
@@ -34,7 +39,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSSecureCoding")
 public interface NSSecureCoding extends NSCoding {
     /**
-     * This property must return YES on all classes that allow secure coding. Subclasses of classes that adopt NSSecureCoding and override initWithCoder: must also override this method and return YES.
+     * This property must return YES on all classes that allow secure coding. Subclasses of classes that adopt
+     * NSSecureCoding and override initWithCoder: must also override this method and return YES.
      * The Secure Coding Guide should be consulted when writing methods that decode data.
      */
     @Generated

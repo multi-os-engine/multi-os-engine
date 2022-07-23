@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNDilatedPoolingMax
  * [@dependency] This depends on Metal.framework
  * <p>
- * Specifies the dilated max pooling filter.  For each pixel, returns the maximum value of pixels
+ * Specifies the dilated max pooling filter. For each pixel, returns the maximum value of pixels
  * in the kernelWidth x kernelHeight filter region by step size dilationRateX x dilationRateY.
  */
 @Generated
@@ -91,7 +91,7 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
     public static native String description_static();
 
     /**
-     * [@property]   dilationRateX
+     * [@property] dilationRateX
      * <p>
      * dilationRateX for accessing the image passed in as source
      */
@@ -101,7 +101,7 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
     public native long dilationRateX();
 
     /**
-     * [@property]   dilationRateY
+     * [@property] dilationRateY
      * <p>
      * dilationRateY for accessing the image passed in as source
      */
@@ -150,8 +150,8 @@ public class MPSCNNDilatedPoolingMax extends MPSCNNPooling {
      * Initialize a MPSCNNDilatedPoolingMax pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param dilationRateX   The dilation rate in the x dimension.
      * @param dilationRateY   The dilation rate in the y dimension.
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.

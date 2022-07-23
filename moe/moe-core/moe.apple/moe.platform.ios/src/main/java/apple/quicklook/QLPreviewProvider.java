@@ -25,7 +25,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Data-based preview extensions should subclass QLPreviewProvider in their principal object. The subclass should conform to QLPreviewingController.
+ * Data-based preview extensions should subclass QLPreviewProvider in their principal object. The subclass should
+ * conform to QLPreviewingController.
  */
 @Generated
 @Library("QuickLook")

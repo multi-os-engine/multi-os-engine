@@ -172,7 +172,7 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param        trackID The trackID of the requested AVFragmentedMovieTrack.
+     * @param trackID The trackID of the requested AVFragmentedMovieTrack.
      * @return An instance of AVFragmentedMovieTrack; may be nil if no track of the specified trackID is available.
      */
     @Generated
@@ -180,11 +180,12 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
     public native AVFragmentedMovieTrack trackWithTrackID(int trackID);
 
     /**
-     * [@property]       tracks
+     * [@property] tracks
      * <p>
      * The tracks in a movie.
      * <p>
-     * The value of this property is an array of tracks the movie contains; the tracks are of type AVFragmentedMovieTrack.
+     * The value of this property is an array of tracks the movie contains; the tracks are of type
+     * AVFragmentedMovieTrack.
      */
     @Generated
     @Selector("tracks")
@@ -197,8 +198,10 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param        mediaCharacteristic The media characteristic according to which the receiver filters its AVFragmentedMovieTracks. (Media characteristics are defined in AVMediaFormat.h)
-     * @return An NSArray of AVFragmentedMovieTracks; may be empty if no tracks with the specified characteristic are available.
+     * @param mediaCharacteristic The media characteristic according to which the receiver filters its
+     *                            AVFragmentedMovieTracks. (Media characteristics are defined in AVMediaFormat.h)
+     * @return An NSArray of AVFragmentedMovieTracks; may be empty if no tracks with the specified characteristic are
+     *         available.
      */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
@@ -211,8 +214,10 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param        mediaType The media type according to which the receiver filters its AVFragmentedMovieTracks. (Media types are defined in AVMediaFormat.h)
-     * @return An NSArray of AVFragmentedMovieTracks; may be empty if no tracks of the specified media type are available.
+     * @param mediaType The media type according to which the receiver filters its AVFragmentedMovieTracks. (Media types
+     *                  are defined in AVMediaFormat.h)
+     * @return An NSArray of AVFragmentedMovieTracks; may be empty if no tracks of the specified media type are
+     *         available.
      */
     @Generated
     @Selector("tracksWithMediaType:")
@@ -228,8 +233,9 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * <p>
      * Loads an instance of AVFragmentedMovieTrack that represents the track of the specified trackID.
      *
-     * @param        trackID The trackID of the requested AVFragmentedMovieTrack.
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded track (which may be nil if no track of the specified trackID is available) or an error.
+     * @param trackID           The trackID of the requested AVFragmentedMovieTrack.
+     * @param completionHandler A block that is called when the loading is finished, with either the loaded track (which
+     *                          may be nil if no track of the specified trackID is available) or an error.
      */
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
@@ -248,8 +254,11 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * <p>
      * Loads an array of AVFragmentedMovieTracks of the asset that present media with the specified characteristic.
      *
-     * @param        mediaCharacteristic The media characteristic according to which AVAsset filters its AVFragmentedMovieTracks. (Media characteristics are defined in AVMediaFormat.h.)
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks with the specified characteristic are available) or an error.
+     * @param mediaCharacteristic The media characteristic according to which AVAsset filters its
+     *                            AVFragmentedMovieTracks. (Media characteristics are defined in AVMediaFormat.h.)
+     * @param completionHandler   A block that is called when the loading is finished, with either the loaded tracks
+     *                            (which may be empty if no tracks with the specified characteristic are available) or
+     *                            an error.
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
@@ -269,8 +278,10 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
      * <p>
      * Loads an array of AVFragmentedMovieTracks of the asset that present media of the specified media type.
      *
-     * @param        mediaType The media type according to which AVAsset filters its AVFragmentedMovieTracks. (Media types are defined in AVMediaFormat.h.)
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks of the specified media type are available) or an error.
+     * @param mediaType         The media type according to which AVAsset filters its AVFragmentedMovieTracks. (Media
+     *                          types are defined in AVMediaFormat.h.)
+     * @param completionHandler A block that is called when the loading is finished, with either the loaded tracks
+     *                          (which may be empty if no tracks of the specified media type are available) or an error.
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")

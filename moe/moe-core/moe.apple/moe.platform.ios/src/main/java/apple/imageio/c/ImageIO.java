@@ -136,7 +136,7 @@ public final class ImageIO {
      *               in the tag. Therefore, modifying a mutable value after the tag is created
      *               will not affect the tag's value.
      * @return Returns a pointer to a new CGImageMetadataTag. Returns NULL if a tag
-     * could not be created with the specified parameters.
+     *         could not be created with the specified parameters.
      */
     @Generated
     @CFunction
@@ -196,7 +196,7 @@ public final class ImageIO {
      * Get the type of the CGImageMetadataTag
      *
      * @return Returns a CGImageMetadataType constant for the CGImageMetadataTag.
-     * This is primarily used to determine how to interpret the tag's value.
+     *         This is primarily used to determine how to interpret the tag's value.
      */
     @Generated
     @CFunction
@@ -213,8 +213,8 @@ public final class ImageIO {
      * for elements of an alternate-text array.
      *
      * @return Returns a copy of the array of qualifiers. Elements of the array are
-     * CGImageMetadataTags. Returns NULL if the tag does not have any qualifiers.
-     * The copy is shallow, the qualifiers are not deep copied.
+     *         CGImageMetadataTags. Returns NULL if the tag does not have any qualifiers.
+     *         The copy is shallow, the qualifiers are not deep copied.
      */
     @Generated
     @CFunction
@@ -232,7 +232,7 @@ public final class ImageIO {
      * Obtain an array of tags from a CGImageMetadataRef
      *
      * @return Returns an array with a shallow copy of all top-level
-     * CGImageMetadataTagRefs in a CGImageMetadataRef.
+     *         CGImageMetadataTagRefs in a CGImageMetadataRef.
      */
     @Generated
     @CFunction
@@ -257,10 +257,13 @@ public final class ImageIO {
      * @param path     A string representing a path to the desired tag. Paths consist of
      *                 a tag prefix (i.e. "exif") joined with a tag name (i.e. "Flash") by a colon
      *                 (":"), such as CFSTR("exif:Flash").
-     *                 Elements of ordered and unordered arrays are accessed via 0-based indices inside square [] brackets.
-     *                 Elements of alternate-text arrays are accessed by an RFC 3066 language code inside square [] brackets.
+     *                 Elements of ordered and unordered arrays are accessed via 0-based indices inside square []
+     *                 brackets.
+     *                 Elements of alternate-text arrays are accessed by an RFC 3066 language code inside square []
+     *                 brackets.
      *                 Fields of a structure are delimited by a period, '.'.
-     *                 Qualifiers are delimited by the '?' character. Only tags with string values (kCGImageMetadataTypeString)
+     *                 Qualifiers are delimited by the '?' character. Only tags with string values
+     *                 (kCGImageMetadataTypeString)
      *                 are allowed to have qualifiers - arrays and structures may not contain qualifiers.
      *                 <p>
      *                 If parent is NULL, a prefix must be specified for the first tag. Prefixes for
@@ -271,26 +274,27 @@ public final class ImageIO {
      *                 <p>
      *                 Examples:
      *                 <ul>
-     *                   <li>'path' = CFSTR("xmp:CreateDate")</li>
-     *                   <li>'path' = CFSTR("exif:Flash.Fired")</li>
-     *                   <li>'parent' = tag at path CFSTR("exif:Flash"), path = CFSTR("exif:Fired") (equivilent to previous)</li>
-     *                   <li>'path' = CFSTR("exif:Flash.RedEyeMode")</li>
-     *                   <li>'path' = CFSTR("dc:title")</li>
-     *                   <li>'path' = CFSTR("dc:subject")</li>
-     *                   <li>'path' = CFSTR("dc:subject[2]") </li>
-     *                   <li>'parent' = tag at path CFSTR("dc:subject"), path = CFSTR("[2]") (equivilent to previous)</li>
-     *                   <li>'path' = CFSTR("dc:description[x-default])"</li>
-     *                   <li>'path' = CFSTR("dc.description[de])"</li>
-     *                   <li>'path' = CFSTR("dc.description[fr])"</li>
-     *                   <li>'path' = CFSTR("foo:product)"</li>
-     *                   <li>'path' = CFSTR("foo:product?bar:manufacturer)"</li>
+     *                 <li>'path' = CFSTR("xmp:CreateDate")</li>
+     *                 <li>'path' = CFSTR("exif:Flash.Fired")</li>
+     *                 <li>'parent' = tag at path CFSTR("exif:Flash"), path = CFSTR("exif:Fired") (equivilent to
+     *                 previous)</li>
+     *                 <li>'path' = CFSTR("exif:Flash.RedEyeMode")</li>
+     *                 <li>'path' = CFSTR("dc:title")</li>
+     *                 <li>'path' = CFSTR("dc:subject")</li>
+     *                 <li>'path' = CFSTR("dc:subject[2]") </li>
+     *                 <li>'parent' = tag at path CFSTR("dc:subject"), path = CFSTR("[2]") (equivilent to previous)</li>
+     *                 <li>'path' = CFSTR("dc:description[x-default])"</li>
+     *                 <li>'path' = CFSTR("dc.description[de])"</li>
+     *                 <li>'path' = CFSTR("dc.description[fr])"</li>
+     *                 <li>'path' = CFSTR("foo:product)"</li>
+     *                 <li>'path' = CFSTR("foo:product?bar:manufacturer)"</li>
      *                 </ul>
      * @return Returns a copy of CGImageMetadataTag matching 'path', or NULL if no
-     * match is found. The copy of the tag's value is shallow. Tags
-     * copied from an immutable CGImageMetadataRef are also immutable. Because this
-     * function returns a copy of the tag's value, any modification of the tag's
-     * value must be followed by a CGImageMetadataSetTagWithPath to commit the
-     * change to the metadata container.
+     *         match is found. The copy of the tag's value is shallow. Tags
+     *         copied from an immutable CGImageMetadataRef are also immutable. Because this
+     *         function returns a copy of the tag's value, any modification of the tag's
+     *         value must be followed by a CGImageMetadataSetTagWithPath to commit the
+     *         change to the metadata container.
      */
     @Generated
     @CFunction
@@ -313,9 +317,9 @@ public final class ImageIO {
      *                 the documentation of @link CGImageMetadataCopyTagWithPath @/link for
      *                 information about path syntax.
      * @return Returns a string from a CGImageMetadataTag located at 'path'. The
-     * tag must be of type kCGImageMetadataTypeString or kCGImageMetadataTypeAlternateText.
-     * For AlternateText tags, the element with the "x-default" language qualifier
-     * will be returned. For other types, NULL will be returned.
+     *         tag must be of type kCGImageMetadataTypeString or kCGImageMetadataTypeAlternateText.
+     *         For AlternateText tags, the element with the "x-default" language qualifier
+     *         will be returned. For other types, NULL will be returned.
      */
     @Generated
     @CFunction
@@ -339,7 +343,7 @@ public final class ImageIO {
      * prefixes must be unique.
      *
      * @return Returns true if successful. Returns false and sets 'err' if an error
-     * or conflict occurs.
+     *         or conflict occurs.
      */
     @Generated
     @CFunction
@@ -403,11 +407,11 @@ public final class ImageIO {
      * <p>
      * Examples
      * <ul>
-     *     <li>'path' = CFSTR("xmp:CreateDate"), 'value' = CFSTR("2011-09-20T14:54:47-08:00")</li>
-     *     <li>'path' = CFSTR("dc:subject[0]"), 'value' = CFSTR("San Francisco")</li>
-     *     <li>'path' = CFSTR("dc:subject[1]"), 'value' = CFSTR("Golden Gate Bridge")</li>
-     *     <li>'path' = CFSTR("dc:description[en]") 'value' = CFSTR("my image description")</li>
-     *     <li>'path' = CFSTR("dc:description[de]") 'value' = CFSTR("meine bildbeschreibung")</li>
+     * <li>'path' = CFSTR("xmp:CreateDate"), 'value' = CFSTR("2011-09-20T14:54:47-08:00")</li>
+     * <li>'path' = CFSTR("dc:subject[0]"), 'value' = CFSTR("San Francisco")</li>
+     * <li>'path' = CFSTR("dc:subject[1]"), 'value' = CFSTR("Golden Gate Bridge")</li>
+     * <li>'path' = CFSTR("dc:description[en]") 'value' = CFSTR("my image description")</li>
+     * <li>'path' = CFSTR("dc:description[de]") 'value' = CFSTR("meine bildbeschreibung")</li>
      * </ul>
      * Note that if a parent tag is provided,
      * the children of that tag reference will be modified, which may be a different
@@ -510,8 +514,8 @@ public final class ImageIO {
      *                       kCGImagePropertyExifDateTimeOriginal, or kCGImagePropertyIPTCKeywords. A warning
      *                       will be logged if the CGImageProperty is unsupported by CGImageMetadata.
      * @return Returns a CGImageMetadataTagRef with the appropriate namespace, prefix,
-     * tag name, and XMP value for the corresponding CGImageProperty. Returns NULL if the
-     * property could not be found.
+     *         tag name, and XMP value for the corresponding CGImageProperty. Returns NULL if the
+     *         property could not be found.
      */
     @Generated
     @CFunction
@@ -566,7 +570,7 @@ public final class ImageIO {
      * @param options  should be NULL. Options are currently not used, but may be used in
      *                 future release.
      * @return Returns a CFData containing an XMP representation of the metadata. Returns
-     * NULL if an error occurred.
+     *         NULL if an error occurred.
      */
     @Generated
     @CFunction
@@ -578,7 +582,7 @@ public final class ImageIO {
      * Creates a collection of CGImageMetadataTags from a block of XMP data
      * <p>
      * Converts XMP data into a collection of metadata tags.
-     * The data must be a complete XMP tree. XMP packet  headers (<?xpacket .. ?>) are
+     * The data must be a complete XMP tree. XMP packet headers (<?xpacket .. ?>) are
      * supported.
      *
      * @param data The XMP data.
@@ -614,7 +618,7 @@ public final class ImageIO {
             CFDictionaryRef options);
 
     /**
-     * Create an image source reading from `data'.  The `options' dictionary
+     * Create an image source reading from `data'. The `options' dictionary
      * may be used to request additional creation options; see the list of keys
      * above for more information.
      */
@@ -632,9 +636,9 @@ public final class ImageIO {
     public static native CGImageSourceRef CGImageSourceCreateWithURL(CFURLRef url, CFDictionaryRef options);
 
     /**
-     * Return the type identifier of the image source `isrc'.  This type is the
+     * Return the type identifier of the image source `isrc'. This type is the
      * type of the source "container", which is not necessarily the type of the
-     * image(s) in the container.  For example, the .icns format supports
+     * image(s) in the container. For example, the .icns format supports
      * embedded JPEG2000 but the source type will be "com.apple.icns".
      */
     @Generated
@@ -651,7 +655,7 @@ public final class ImageIO {
     public static native long CGImageSourceGetCount(CGImageSourceRef isrc);
 
     /**
-     * Return the properties of the image source `isrc'.  These properties
+     * Return the properties of the image source `isrc'. These properties
      * apply to the container in general but not necessarily to any individual
      * image that it contains.
      */
@@ -661,7 +665,7 @@ public final class ImageIO {
 
     /**
      * Return the properties of the image at `index' in the image source
-     * `isrc'.  The index is zero-based. The `options' dictionary may be used
+     * `isrc'. The index is zero-based. The `options' dictionary may be used
      * to request additional options; see the list of keys above for more
      * information.
      */
@@ -682,7 +686,7 @@ public final class ImageIO {
             CFDictionaryRef options);
 
     /**
-     * Return the image at `index' in the image source `isrc'.  The index is
+     * Return the image at `index' in the image source `isrc'. The index is
      * zero-based. The `options' dictionary may be used to request additional
      * creation options; see the list of keys above for more information.
      */
@@ -713,7 +717,7 @@ public final class ImageIO {
     /**
      * Create an incremental image source. No data is provided at creation
      * time; it is assumed that data will eventually be provided using
-     * "CGImageSourceUpdateDataProvider" or "CGImageSourceUpdateData".  The
+     * "CGImageSourceUpdateDataProvider" or "CGImageSourceUpdateData". The
      * `options' dictionary may be used to request additional creation options;
      * see the list of keys above for more information.
      */
@@ -722,7 +726,7 @@ public final class ImageIO {
     public static native CGImageSourceRef CGImageSourceCreateIncremental(CFDictionaryRef options);
 
     /**
-     * Update the incremental image source `isrc' with new data.  The new data
+     * Update the incremental image source `isrc' with new data. The new data
      * must include all the previous data plus any additional new data. The
      * `final' parameter should be true when the final set of data is provided;
      * false otherwise.
@@ -743,7 +747,7 @@ public final class ImageIO {
             boolean final_);
 
     /**
-     * Return the overall status of the image source `isrc'.  The status is
+     * Return the overall status of the image source `isrc'. The status is
      * particularly informative for incremental image sources, but may be used
      * by clients providing non-incremental data as well.
      */
@@ -779,8 +783,8 @@ public final class ImageIO {
     /**
      * Create an image destination writing to the data consumer `consumer'.
      * The parameter `type' specifies the type identifier of the resulting
-     * image file.  Constants for `type' are found in the LaunchServices framework
-     * header UTCoreTypes.h.  The parameter `count' specifies number of images
+     * image file. Constants for `type' are found in the LaunchServices framework
+     * header UTCoreTypes.h. The parameter `count' specifies number of images
      * (not including thumbnails) that the image file will contain. The `options'
      * dictionary is reserved for future use; currently, you should pass NULL for
      * this parameter.
@@ -792,8 +796,8 @@ public final class ImageIO {
 
     /**
      * Create an image destination writing to `data'. The parameter `type'
-     * specifies the type identifier of the resulting image file.  Constants for
-     * `type' are found in the LaunchServices framework header UTCoreTypes.h.  The
+     * specifies the type identifier of the resulting image file. Constants for
+     * `type' are found in the LaunchServices framework header UTCoreTypes.h. The
      * parameter `count' specifies number of images (not including thumbnails)
      * that the image file will contain. The `options' dictionary is reserved
      * for future use; currently, you should pass NULL for this parameter.
@@ -805,8 +809,8 @@ public final class ImageIO {
 
     /**
      * Create an image destination writing to `url'. The parameter `type'
-     * specifies the type identifier of the resulting image file.  Constants for
-     * `type' are found in the LaunchServices framework header UTCoreTypes.h.  The
+     * specifies the type identifier of the resulting image file. Constants for
+     * `type' are found in the LaunchServices framework header UTCoreTypes.h. The
      * parameter `count' specifies number of images (not including thumbnails)
      * that the image file will contain. The `options' dictionary is reserved
      * for future use; currently, you should pass NULL for this parameter.
@@ -827,7 +831,7 @@ public final class ImageIO {
 
     /**
      * Set the next image in the image destination `idst' to be `image' with
-     * optional properties specified in `properties'.  An error is logged if
+     * optional properties specified in `properties'. An error is logged if
      * more images are added than specified in the original count of the image
      * destination.
      */
@@ -838,9 +842,9 @@ public final class ImageIO {
 
     /**
      * Set the next image in the image destination `idst' to be the image at
-     * `index' in the image source `isrc'.  The index is zero-based. The
+     * `index' in the image source `isrc'. The index is zero-based. The
      * properties of the source image can be added to or overriden by supplying
-     * additional keys/values in `properties'.  If a key in `properties' has
+     * additional keys/values in `properties'. If a key in `properties' has
      * the value kCFNull, the corresponding property in the destination will be
      * removed.
      */
@@ -851,9 +855,9 @@ public final class ImageIO {
 
     /**
      * Write everything to the destination data, url or consumer of the image
-     * destination `idst'.  You must call this function or the image
-     * destination will not be valid.  After this function is called, no
-     * additional data will be written to the image destination.  Return true
+     * destination `idst'. You must call this function or the image
+     * destination will not be valid. After this function is called, no
+     * additional data will be written to the image destination. Return true
      * if the image was successfully written; false otherwise.
      */
     @Generated
@@ -1019,7 +1023,7 @@ public final class ImageIO {
      * Specifies whether the image should be returned as a floating
      * point CGImageRef if supported by the file format. Extended
      * range floating point CGImageRef may require additional
-     * processing  to render pleasingly.  The value of this key must
+     * processing to render pleasingly. The value of this key must
      * be a CFBooleanRef; the default value is kCFBooleanFalse.
      */
     @Generated
@@ -1028,7 +1032,7 @@ public final class ImageIO {
 
     /**
      * Specifies whether a thumbnail should be automatically created for an
-     * image if a thumbnail isn't present in the image source file.  The
+     * image if a thumbnail isn't present in the image source file. The
      * thumbnail will be created from the full image, subject to the limit
      * specified by kCGImageSourceThumbnailMaxPixelSize---if a maximum pixel
      * size isn't specified, then the thumbnail will be the size of the full
@@ -1053,9 +1057,9 @@ public final class ImageIO {
     public static native CFStringRef kCGImageSourceCreateThumbnailFromImageAlways();
 
     /**
-     * Specifies the maximum width and height in pixels of a thumbnail.  If
+     * Specifies the maximum width and height in pixels of a thumbnail. If
      * this this key is not specified, the width and height of a thumbnail is
-     * not limited and thumbnails may be as big as the image itself.  If
+     * not limited and thumbnails may be as big as the image itself. If
      * present, this value of this key must be a CFNumberRef.
      */
     @Generated
@@ -1073,8 +1077,10 @@ public final class ImageIO {
     public static native CFStringRef kCGImageSourceCreateThumbnailWithTransform();
 
     /**
-     * Specifies that, if possible, an image should be returned as scaled down (in height and width) by a specified factor.
-     * The resulting image will be smaller and have reduced spatial quality but will otherwise have the same characteristics
+     * Specifies that, if possible, an image should be returned as scaled down (in height and width) by a specified
+     * factor.
+     * The resulting image will be smaller and have reduced spatial quality but will otherwise have the same
+     * characteristics
      * as the full size normal image.
      * If the specified scaling factor is not supported, a larger or full size normal image will be returned.
      * Supported file formats are JPEG, HEIF, TIFF, and PNG.
@@ -1100,7 +1106,7 @@ public final class ImageIO {
      * The desired background color to composite against when writing
      * an image with alpha to a destination format that does not support
      * alpha. If present, the value of this key is a CGColorRef without
-     * any alpha component of its own.  If not present a white color
+     * any alpha component of its own. If not present a white color
      * will be used if needed.
      */
     @Generated
@@ -1319,15 +1325,15 @@ public final class ImageIO {
     /**
      * The intended display orientation of the image. If present, the value
      * of this key is a CFNumberRef with the same value as defined by the
-     * TIFF and Exif specifications.  That is:
-     * 1  =  0th row is at the top, and 0th column is on the left.
-     * 2  =  0th row is at the top, and 0th column is on the right.
-     * 3  =  0th row is at the bottom, and 0th column is on the right.
-     * 4  =  0th row is at the bottom, and 0th column is on the left.
-     * 5  =  0th row is on the left, and 0th column is the top.
-     * 6  =  0th row is on the right, and 0th column is the top.
-     * 7  =  0th row is on the right, and 0th column is the bottom.
-     * 8  =  0th row is on the left, and 0th column is the bottom.
+     * TIFF and Exif specifications. That is:
+     * 1 = 0th row is at the top, and 0th column is on the left.
+     * 2 = 0th row is at the top, and 0th column is on the right.
+     * 3 = 0th row is at the bottom, and 0th column is on the right.
+     * 4 = 0th row is at the bottom, and 0th column is on the left.
+     * 5 = 0th row is on the left, and 0th column is the top.
+     * 6 = 0th row is on the right, and 0th column is the top.
+     * 7 = 0th row is on the right, and 0th column is the bottom.
+     * 8 = 0th row is on the left, and 0th column is the bottom.
      * If not present, a value of 1 is assumed.
      */
     @Generated
@@ -2648,7 +2654,8 @@ public final class ImageIO {
      * - the auxiliary data (CFDataRef) - (kCGImageAuxiliaryDataInfoData),
      * - the auxiliary data description (CFDictionary) - (kCGImageAuxiliaryDataInfoDataDescription)
      * - metadata (CGImageMetadataRef) - (kCGImageAuxiliaryDataInfoMetadata)
-     * To add auxiliary data to an image, call CGImageDestinationAddAuxiliaryDataInfo() after adding the CGImage to the CGImageDestinationRef.
+     * To add auxiliary data to an image, call CGImageDestinationAddAuxiliaryDataInfo() after adding the CGImage to the
+     * CGImageDestinationRef.
      */
     @Generated
     @CFunction
@@ -2673,7 +2680,8 @@ public final class ImageIO {
 
     /**
      * Depth/Disparity data support for JPEG, HEIF, and DNG images:
-     * CGImageSourceCopyAuxiliaryDataInfoAtIndex and CGImageDestinationAddAuxiliaryDataInfo will use these keys in the dictionary:
+     * CGImageSourceCopyAuxiliaryDataInfoAtIndex and CGImageDestinationAddAuxiliaryDataInfo will use these keys in the
+     * dictionary:
      * kCGImageAuxiliaryDataInfoData - the depth data (CFDataRef)
      * kCGImageAuxiliaryDataInfoDataDescription - the depth data description (CFDictionary)
      * kCGImageAuxiliaryDataInfoMetadata - metadata (CGImageMetadataRef)
@@ -3955,7 +3963,8 @@ public final class ImageIO {
 
     /**
      * For CGImageDestinationAddImageFromSource: when set to kCFBooleanTrue, a HEIF-embedded GainMap will be preserved.
-     * If the destination image is scaled (using kCGImageDestinationImageMaxPixelSize), the GainMap will be scaled accordingly.
+     * If the destination image is scaled (using kCGImageDestinationImageMaxPixelSize), the GainMap will be scaled
+     * accordingly.
      * The value should be kCFBooleanTrue or kCFBooleanFalse
      * Defaults to kCFBooleanFalse
      */

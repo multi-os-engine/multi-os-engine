@@ -41,7 +41,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Relationships represent references to other objects. They usually come in pairs, where the reference back is called the "inverse".
+ * Relationships represent references to other objects. They usually come in pairs, where the reference back is called
+ * the "inverse".
  */
 @Generated
 @Library("CoreData")
@@ -190,7 +191,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     public native boolean isToMany();
 
     /**
-     * Min and max count indicate the number of objects referenced (1/1 for a to-one relationship, 0 for the max count means undefined) - note that the counts are only enforced if the relationship value is not nil/"empty" (so as long as the relationship value is optional, there might be zero objects in the relationship, which might be less than the min count)
+     * Min and max count indicate the number of objects referenced (1/1 for a to-one relationship, 0 for the max count
+     * means undefined) - note that the counts are only enforced if the relationship value is not nil/"empty" (so as
+     * long as the relationship value is optional, there might be zero objects in the relationship, which might be less
+     * than the min count)
      */
     @Generated
     @Selector("maxCount")
@@ -239,7 +243,10 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     }
 
     /**
-     * Min and max count indicate the number of objects referenced (1/1 for a to-one relationship, 0 for the max count means undefined) - note that the counts are only enforced if the relationship value is not nil/"empty" (so as long as the relationship value is optional, there might be zero objects in the relationship, which might be less than the min count)
+     * Min and max count indicate the number of objects referenced (1/1 for a to-one relationship, 0 for the max count
+     * means undefined) - note that the counts are only enforced if the relationship value is not nil/"empty" (so as
+     * long as the relationship value is optional, there might be zero objects in the relationship, which might be less
+     * than the min count)
      */
     @Generated
     @Selector("setMaxCount:")
@@ -250,7 +257,9 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     public native void setMinCount(@NUInt long value);
 
     /**
-     * Returns the version hash for the relationship.  This value includes the versionHash information from the NSPropertyDescription superclass, the name of the destination entity and the inverse relationship, and the min and max count.
+     * Returns the version hash for the relationship. This value includes the versionHash information from the
+     * NSPropertyDescription superclass, the name of the destination entity and the inverse relationship, and the min
+     * and max count.
      */
     @Generated
     @Selector("versionHash")

@@ -49,7 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An app can use an INInteraction to donate an action (represented as an intent) and its state to the system.
  * <p>
- * The system may also launch the app with an NSUserActivity containing an INInteraction such that the app can perform the action if it chooses.
+ * The system may also launch the app with an NSUserActivity containing an INInteraction such that the app can perform
+ * the action if it chooses.
  */
 @Generated
 @Library("Intents")
@@ -196,7 +197,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it defaults to the time of creation of this interaction object
+     * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it
+     * defaults to the time of creation of this interaction object
      */
     @Generated
     @Selector("dateInterval")
@@ -267,7 +269,8 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     public native INIntentResponse intentResponse();
 
     /**
-     * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it defaults to the time of creation of this interaction object
+     * The time the interaction started/occurred and its duration. The app can override with their own timestamp but it
+     * defaults to the time of creation of this interaction object
      */
     @Generated
     @Selector("setDateInterval:")

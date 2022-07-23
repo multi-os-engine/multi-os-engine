@@ -16,7 +16,7 @@ public final class GKFriendsAuthorizationStatus {
      */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
-     * This application is not authorized to use friend list data.  Due
+     * This application is not authorized to use friend list data. Due
      * to active restrictions on friend list data, the user cannot change
      * this status, and may not have personally denied authorization.
      * If you have previously collected data for this player's friend list,

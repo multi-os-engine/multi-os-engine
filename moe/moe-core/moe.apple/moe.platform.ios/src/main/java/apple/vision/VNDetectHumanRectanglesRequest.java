@@ -170,14 +170,16 @@ public class VNDetectHumanRectanglesRequest extends VNImageBasedRequest {
     public native NSArray<? extends VNHumanObservation> results();
 
     /**
-     * Boolean property to specify whether the human upper body or full body needs to be detected. The default is YES, meaning the request is setup to detect upper body only
+     * Boolean property to specify whether the human upper body or full body needs to be detected. The default is YES,
+     * meaning the request is setup to detect upper body only
      */
     @Generated
     @Selector("setUpperBodyOnly:")
     public native void setUpperBodyOnly(boolean value);
 
     /**
-     * Boolean property to specify whether the human upper body or full body needs to be detected. The default is YES, meaning the request is setup to detect upper body only
+     * Boolean property to specify whether the human upper body or full body needs to be detected. The default is YES,
+     * meaning the request is setup to detect upper body only
      */
     @Generated
     @Selector("upperBodyOnly")

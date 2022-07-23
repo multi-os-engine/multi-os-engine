@@ -171,7 +171,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]      UDIDeviceIdentifier
+     * [@property] UDIDeviceIdentifier
      * <p>
      * Represents the device identifier portion of a device's FDA UDI (Unique Device Identifier).
      * <p>
@@ -179,7 +179,8 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
      * Identifier Database). Note that for user privacy concerns this field should not be used to
      * persist the production identifier portion of the device UDI. HealthKit clients should manage
      * the production identifier independently, if needed.
-     * See http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/ for more information.
+     * See http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/ for more
+     * information.
      */
     @Generated
     @Selector("UDIDeviceIdentifier")
@@ -196,7 +197,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * [@property]      firmwareVersion
+     * [@property] firmwareVersion
      * <p>
      * The firmware revision of the receiver.
      */
@@ -205,7 +206,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native String firmwareVersion();
 
     /**
-     * [@property]      hardwareVersion
+     * [@property] hardwareVersion
      * <p>
      * The hardware revision of the receiver.
      */
@@ -236,7 +237,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
             String softwareVersion, String localIdentifier, String UDIDeviceIdentifier);
 
     /**
-     * [@property]      localIdentifier
+     * [@property] localIdentifier
      * <p>
      * A unique identifier for the receiver.
      * <p>
@@ -251,7 +252,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native String localIdentifier();
 
     /**
-     * [@property]      manufacturer
+     * [@property] manufacturer
      * <p>
      * The manufacturer of the receiver.
      */
@@ -260,7 +261,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native String manufacturer();
 
     /**
-     * [@property]      model
+     * [@property] model
      * <p>
      * The model of the receiver.
      */
@@ -269,7 +270,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native String model();
 
     /**
-     * [@property]      name
+     * [@property] name
      * <p>
      * The name of the receiver.
      * <p>
@@ -280,7 +281,7 @@ public class HKDevice extends NSObject implements NSSecureCoding, NSCopying {
     public native String name();
 
     /**
-     * [@property]      softwareVersion
+     * [@property] softwareVersion
      * <p>
      * The software revision of the receiver.
      */

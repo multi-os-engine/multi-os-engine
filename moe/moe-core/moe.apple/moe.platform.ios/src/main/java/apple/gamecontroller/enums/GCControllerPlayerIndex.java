@@ -20,8 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * This is the player index that a connected controller will have if it has never been assigned a player index on the current system.
- * Controllers retain the player index they have been assigned between game sessions, so if you wish to unset the player index of a
+ * This is the player index that a connected controller will have if it has never been assigned a player index on the
+ * current system.
+ * Controllers retain the player index they have been assigned between game sessions, so if you wish to unset the player
+ * index of a
  * controller set it back to this value.
  */
 @Generated

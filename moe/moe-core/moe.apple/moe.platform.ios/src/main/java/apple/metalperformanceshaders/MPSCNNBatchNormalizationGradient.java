@@ -98,7 +98,7 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
     public static native String description_static();
 
     /**
-     * Encode this operation to a command buffer.  Create an MPSImage to contain
+     * Encode this operation to a command buffer. Create an MPSImage to contain
      * the result and return it.
      * See encodeToCommandBuffer:sourceImage:sourceGradient:sourceImage:batchNormalizationState:destinationGradient
      * for further details.
@@ -118,8 +118,10 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      * @param sourceImage             An MPSImage containing the source image for batch normalization.
      * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which
      *                                has been previously updated using a MPSCNNBatchNormalizationStatisticsGradient
-     *                                kernel and the source images. If the state is temporary its read count will be decremented.
-     * @param destinationGradient     An MPSImage which contains the gradient of the loss function with respect to the source image.
+     *                                kernel and the source images. If the state is temporary its read count will be
+     *                                decremented.
+     * @param destinationGradient     An MPSImage which contains the gradient of the loss function with respect to the
+     *                                source image.
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:batchNormalizationState:destinationGradient:")
@@ -146,9 +148,9 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use a subclass of NSCoder that
-     * implements the <MPSDeviceProvider> protocol  to
+     * implements the <MPSDeviceProvider> protocol to
      * tell MPS the MTLDevice to use.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -171,7 +173,8 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      * @param fusedNeuronDescriptor A MPSNNNeuronDescriptor object which specifies a neuron activation function whose
      *                              gradient should be applied prior to computing the resulting gradient.
      *                              This neuron descriptor should match that used in the corresponding forward batch
-     *                              normalization kernel as well as the preceeding batch normalization statistics gradient
+     *                              normalization kernel as well as the preceeding batch normalization statistics
+     *                              gradient
      *                              kernel.
      * @return A valid MPSCNNBatchNormalizationGradient object or nil, if failure.
      */

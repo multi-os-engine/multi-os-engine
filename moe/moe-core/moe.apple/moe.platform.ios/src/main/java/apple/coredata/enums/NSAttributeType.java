@@ -42,7 +42,8 @@ public final class NSAttributeType {
     @Generated @NUInt public static final long NSUUIDAttributeType = 0x000000000000044CL;
     @Generated @NUInt public static final long NSURIAttributeType = 0x00000000000004B0L;
     /**
-     * If your attribute is of NSTransformableAttributeType, the attributeValueClassName must be set or attribute value class must implement NSCopying.
+     * If your attribute is of NSTransformableAttributeType, the attributeValueClassName must be set or attribute value
+     * class must implement NSCopying.
      */
     @Generated @NUInt public static final long NSTransformableAttributeType = 0x0000000000000708L;
     @Generated @NUInt public static final long NSObjectIDAttributeType = 0x00000000000007D0L;

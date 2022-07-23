@@ -203,8 +203,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * Sets the request body to be the contents of the given stream.
      * <p>
      * The provided stream should be unopened; the request will take
-     * over the stream's delegate.  The entire stream's contents will be
-     * transmitted as the HTTP body of the request.  Note that the body stream
+     * over the stream's delegate. The entire stream's contents will be
+     * transmitted as the HTTP body of the request. Note that the body stream
      * and the body data (set by setHTTPBody:, above) are mutually exclusive
      * - setting one will clear the other.
      */
@@ -235,16 +235,16 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * Sets whether the request should not wait for the previous response
      * before transmitting (YES if the receiver should transmit before the previous response is
-     * received.  NO to wait for the previous response before transmitting)
+     * received. NO to wait for the previous response before transmitting)
      * <p>
      * Calling this method with a YES value does not guarantee HTTP
-     * pipelining behavior.  This method may have no effect if an HTTP proxy is
+     * pipelining behavior. This method may have no effect if an HTTP proxy is
      * configured, or if the HTTP request uses an unsafe request method (e.g., POST
-     * requests will not pipeline).  Pipelining behavior also may not begin until
-     * the second request on a given TCP connection.  There may be other situations
+     * requests will not pipeline). Pipelining behavior also may not begin until
+     * the second request on a given TCP connection. There may be other situations
      * where pipelining does not occur even though YES was set.
      * HTTP 1.1 allows the client to send multiple requests to the server without
-     * waiting for a response.  Though HTTP 1.1 requires support for pipelining,
+     * waiting for a response. Though HTTP 1.1 requires support for pipelining,
      * some servers report themselves as being HTTP 1.1 but do not support
      * pipelining (disconnecting, sending resources misordered, omitting part of
      * a resource, etc.).
@@ -302,7 +302,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * the built in cellular radios (if present).
      * <p>
      * NO if the receiver should not be allowed to use the built in
-     * cellular radios to satisfy the request, YES otherwise.  The default is YES.
+     * cellular radios to satisfy the request, YES otherwise. The default is YES.
      */
     @Generated
     @Selector("allowsCellularAccess")
@@ -349,7 +349,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * The caller should pass the URL for an appropriate main
      * document, if known. For example, when loading a web page, the URL
      * of the main html document for the top-level frame should be
-     * passed.  This main document is used to implement the cookie "only
+     * passed. This main document is used to implement the cookie "only
      * from same domain as main document" policy, attributing this request
      * as a sub-resource of a user-specified URL, and possibly other things
      * in the future.
@@ -362,7 +362,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * Sets the NSURLRequestNetworkServiceType to associate with this request
      * <p>
      * This method is used to provide the network layers with a hint as to the purpose
-     * of the request.  Most clients should not need to use this method.
+     * of the request. Most clients should not need to use this method.
      */
     @Generated
     @Selector("networkServiceType")
@@ -390,7 +390,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * the built in cellular radios (if present).
      * <p>
      * NO if the receiver should not be allowed to use the built in
-     * cellular radios to satisfy the request, YES otherwise.  The default is YES.
+     * cellular radios to satisfy the request, YES otherwise. The default is YES.
      */
     @Generated
     @Selector("setAllowsCellularAccess:")
@@ -417,8 +417,8 @@ public class NSMutableURLRequest extends NSURLRequest {
      * Sets the request body to be the contents of the given stream.
      * <p>
      * The provided stream should be unopened; the request will take
-     * over the stream's delegate.  The entire stream's contents will be
-     * transmitted as the HTTP body of the request.  Note that the body stream
+     * over the stream's delegate. The entire stream's contents will be
+     * transmitted as the HTTP body of the request. Note that the body stream
      * and the body data (set by setHTTPBody:, above) are mutually exclusive
      * - setting one will clear the other.
      */
@@ -449,16 +449,16 @@ public class NSMutableURLRequest extends NSURLRequest {
     /**
      * Sets whether the request should not wait for the previous response
      * before transmitting (YES if the receiver should transmit before the previous response is
-     * received.  NO to wait for the previous response before transmitting)
+     * received. NO to wait for the previous response before transmitting)
      * <p>
      * Calling this method with a YES value does not guarantee HTTP
-     * pipelining behavior.  This method may have no effect if an HTTP proxy is
+     * pipelining behavior. This method may have no effect if an HTTP proxy is
      * configured, or if the HTTP request uses an unsafe request method (e.g., POST
-     * requests will not pipeline).  Pipelining behavior also may not begin until
-     * the second request on a given TCP connection.  There may be other situations
+     * requests will not pipeline). Pipelining behavior also may not begin until
+     * the second request on a given TCP connection. There may be other situations
      * where pipelining does not occur even though YES was set.
      * HTTP 1.1 allows the client to send multiple requests to the server without
-     * waiting for a response.  Though HTTP 1.1 requires support for pipelining,
+     * waiting for a response. Though HTTP 1.1 requires support for pipelining,
      * some servers report themselves as being HTTP 1.1 but do not support
      * pipelining (disconnecting, sending resources misordered, omitting part of
      * a resource, etc.).
@@ -473,7 +473,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * The caller should pass the URL for an appropriate main
      * document, if known. For example, when loading a web page, the URL
      * of the main html document for the top-level frame should be
-     * passed.  This main document is used to implement the cookie "only
+     * passed. This main document is used to implement the cookie "only
      * from same domain as main document" policy, attributing this request
      * as a sub-resource of a user-specified URL, and possibly other things
      * in the future.
@@ -486,7 +486,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * Sets the NSURLRequestNetworkServiceType to associate with this request
      * <p>
      * This method is used to provide the network layers with a hint as to the purpose
-     * of the request.  Most clients should not need to use this method.
+     * of the request. Most clients should not need to use this method.
      */
     @Generated
     @Selector("setNetworkServiceType:")
@@ -607,7 +607,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * racing without HTTP/3 service discovery.
      *
      * @return YES if server endpoint is known to support HTTP/3. Defaults to NO.
-     * The default may be YES in a future OS update.
+     *         The default may be YES in a future OS update.
      */
     @Generated
     @Selector("assumesHTTP3Capable")
@@ -629,7 +629,7 @@ public class NSMutableURLRequest extends NSURLRequest {
      * racing without HTTP/3 service discovery.
      *
      * @return YES if server endpoint is known to support HTTP/3. Defaults to NO.
-     * The default may be YES in a future OS update.
+     *         The default may be YES in a future OS update.
      */
     @Generated
     @Selector("setAssumesHTTP3Capable:")

@@ -40,9 +40,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Used to report merge conflicts which include uniqueness constraint violations. Optimistic locking failures will be reported
- * separately from uniquness conflicts and will be resolved first. Each constraint violated will result in a separate NSMergeConflict,
- * although if an entity hierarchy has a constraint which is extended in subentities, all constraint violations for that constraint
+ * Used to report merge conflicts which include uniqueness constraint violations. Optimistic locking failures will be
+ * reported
+ * separately from uniquness conflicts and will be resolved first. Each constraint violated will result in a separate
+ * NSMergeConflict,
+ * although if an entity hierarchy has a constraint which is extended in subentities, all constraint violations for that
+ * constraint
  * will be collapsed into a single report.
  */
 @Generated
@@ -163,7 +166,8 @@ public class NSConstraintConflict extends NSObject {
     public native NSArray<? extends NSManagedObject> conflictingObjects();
 
     /**
-     * The original property values of objects in violation of the constraint.  Will contain as many objects as there are conflictingObjects. If an object was unchanged, its snapshot will instead be -[NSNull null].
+     * The original property values of objects in violation of the constraint. Will contain as many objects as there are
+     * conflictingObjects. If an object was unchanged, its snapshot will instead be -[NSNull null].
      */
     @Generated
     @Selector("conflictingSnapshots")
@@ -177,7 +181,8 @@ public class NSConstraintConflict extends NSObject {
     public native NSArray<String> constraint();
 
     /**
-     * The values which the conflictingObjects had when this conflict was created. May no longer match the values of any conflicted object if something else resolved the conflict.
+     * The values which the conflictingObjects had when this conflict was created. May no longer match the values of any
+     * conflicted object if something else resolved the conflict.
      */
     @Generated
     @Selector("constraintValues")
@@ -213,7 +218,8 @@ public class NSConstraintConflict extends NSObject {
      * a single conflicting object and its snapshot from when it was first faulted or inserted.
      * <p>
      * Snapshot dictionaries include values for all attributes and to-one relationships, but not to-many relationships.
-     * Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent store as needed.
+     * Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent
+     * store as needed.
      */
     @Generated
     @Selector("initWithConstraint:databaseObject:databaseSnapshot:conflictingObjects:conflictingSnapshots:")

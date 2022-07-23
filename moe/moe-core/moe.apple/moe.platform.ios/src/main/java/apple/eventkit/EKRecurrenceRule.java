@@ -165,7 +165,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]       calendarIdentifier;
+     * [@property] calendarIdentifier;
      * <p>
      * Calendar used by this recurrence rule.
      */
@@ -180,10 +180,12 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]       daysOfTheMonth
+     * [@property] daysOfTheMonth
      * <p>
-     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyMonthly, and that were initialized
-     * with one or more specific days of the month (not with a day of the week and week of the month). This property can be
+     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyMonthly, and that were
+     * initialized
+     * with one or more specific days of the month (not with a day of the week and week of the month). This property can
+     * be
      * accessed as an array containing one or more NSNumbers corresponding to the days of the month the event recurs.
      * For all other EKRecurrenceRules, this property is nil. This property corresponds to BYMONTHDAY in the iCalendar
      * specification.
@@ -193,10 +195,12 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native NSArray<? extends NSNumber> daysOfTheMonth();
 
     /**
-     * [@property]       daysOfTheWeek
+     * [@property] daysOfTheWeek
      * <p>
-     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyWeekly, EKRecurrenceFrequencyMonthly, or
-     * EKRecurrenceFrequencyYearly. This property can be accessed as an array containing one or more EKRecurrenceDayOfWeek objects
+     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyWeekly,
+     * EKRecurrenceFrequencyMonthly, or
+     * EKRecurrenceFrequencyYearly. This property can be accessed as an array containing one or more
+     * EKRecurrenceDayOfWeek objects
      * corresponding to the days of the week the event recurs. For all other EKRecurrenceRules, this property is nil.
      * This property corresponds to BYDAY in the iCalendar specification.
      */
@@ -205,11 +209,14 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native NSArray<? extends EKRecurrenceDayOfWeek> daysOfTheWeek();
 
     /**
-     * [@property]       daysOfTheYear
+     * [@property] daysOfTheYear
      * <p>
-     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyYearly. This property can be accessed
-     * as an array containing one or more NSNumbers corresponding to the days of the year the event recurs. For all other
-     * EKRecurrenceRules, this property is nil. This property corresponds to BYYEARDAY in the iCalendar specification. It should
+     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyYearly. This property can be
+     * accessed
+     * as an array containing one or more NSNumbers corresponding to the days of the year the event recurs. For all
+     * other
+     * EKRecurrenceRules, this property is nil. This property corresponds to BYYEARDAY in the iCalendar specification.
+     * It should
      * contain values between 1 to 366 or -366 to -1.
      */
     @Generated
@@ -217,11 +224,13 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native NSArray<? extends NSNumber> daysOfTheYear();
 
     /**
-     * [@property]       firstDayOfTheWeek
+     * [@property] firstDayOfTheWeek
      * <p>
-     * Recurrence patterns can specify which day of the week should be treated as the first day. Possible values for this
+     * Recurrence patterns can specify which day of the week should be treated as the first day. Possible values for
+     * this
      * property are integers 0 and 1-7, which correspond to days of the week with Sunday = 1. Zero indicates that the
-     * property is not set for this recurrence. The first day of the week only affects the way the recurrence is expanded
+     * property is not set for this recurrence. The first day of the week only affects the way the recurrence is
+     * expanded
      * for weekly recurrence patterns with an interval greater than 1. For those types of recurrence patterns, the
      * Calendar framework will set firstDayOfTheWeek to be 2 (Monday). In all other cases, this property will be set
      * to zero. The iCalendar spec stipulates that the default value is Monday if this property is not set.
@@ -232,7 +241,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native long firstDayOfTheWeek();
 
     /**
-     * [@property]       frequency
+     * [@property] frequency
      * <p>
      * This property designates the unit of time used to describe the recurrence pattern.
      */
@@ -256,23 +265,35 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
      *
      * @param type            The type of recurrence
      * @param interval        The interval. Passing zero will raise an exception.
-     * @param daysOfTheWeek   An array of EKRecurrenceDayOfWeek objects. Valid for all recurrence types except daily. Ignored otherwise.
+     * @param daysOfTheWeek   An array of EKRecurrenceDayOfWeek objects. Valid for all recurrence types except daily.
+     *                        Ignored otherwise.
      *                        Corresponds to the BYDAY value in the iCalendar specification.
-     * @param daysOfTheMonth  An array of NSNumbers ([+/-] 1 to 31). Negative numbers infer counting from the end of the month.
-     *                        For example, -1 means the last day of the month. Valid only for monthly recurrences. Ignored otherwise.
+     * @param daysOfTheMonth  An array of NSNumbers ([+/-] 1 to 31). Negative numbers infer counting from the end of the
+     *                        month.
+     *                        For example, -1 means the last day of the month. Valid only for monthly recurrences.
+     *                        Ignored otherwise.
      *                        Corresponds to the BYMONTHDAY value in the iCalendar specification.
-     * @param monthsOfTheYear An array of NSNumbers (1 to 12). Valid only for yearly recurrences. Ignored otherwise. Corresponds to
+     * @param monthsOfTheYear An array of NSNumbers (1 to 12). Valid only for yearly recurrences. Ignored otherwise.
+     *                        Corresponds to
      *                        the BYMONTH value in the iCalendar specification.
-     * @param weeksOfTheYear  An array of NSNumbers ([+/1] 1 to 53). Negative numbers infer counting from the end of the year.
-     *                        For example, -1 means the last week of the year. Valid only for yearly recurrences. Ignored otherwise.
+     * @param weeksOfTheYear  An array of NSNumbers ([+/1] 1 to 53). Negative numbers infer counting from the end of the
+     *                        year.
+     *                        For example, -1 means the last week of the year. Valid only for yearly recurrences.
+     *                        Ignored otherwise.
      *                        Corresponds to the BYWEEKNO value in the iCalendar specification.
-     * @param daysOfTheYear   An array of NSNumbers ([+/1] 1 to 366). Negative numbers infer counting from the end of the year.
-     *                        For example, -1 means the last day of the year. Valid only for yearly recurrences. Ignored otherwise.
+     * @param daysOfTheYear   An array of NSNumbers ([+/1] 1 to 366). Negative numbers infer counting from the end of
+     *                        the year.
+     *                        For example, -1 means the last day of the year. Valid only for yearly recurrences. Ignored
+     *                        otherwise.
      *                        Corresponds to the BYYEARDAY value in the iCalendar specification.
-     * @param setPositions    An array of NSNumbers ([+/1] 1 to 366). Used at the end of recurrence computation to filter the list
-     *                        to the positions specified. Negative numbers indicate starting at the end, i.e. -1 indicates taking the
-     *                        last result of the set. Valid when daysOfTheWeek, daysOfTheMonth, monthsOfTheYear, weeksOfTheYear, or
-     *                        daysOfTheYear is passed. Ignored otherwise. Corresponds to the BYSETPOS value in the iCalendar specification.
+     * @param setPositions    An array of NSNumbers ([+/1] 1 to 366). Used at the end of recurrence computation to
+     *                        filter the list
+     *                        to the positions specified. Negative numbers indicate starting at the end, i.e. -1
+     *                        indicates taking the
+     *                        last result of the set. Valid when daysOfTheWeek, daysOfTheMonth, monthsOfTheYear,
+     *                        weeksOfTheYear, or
+     *                        daysOfTheYear is passed. Ignored otherwise. Corresponds to the BYSETPOS value in the
+     *                        iCalendar specification.
      * @param end             The recurrence end, or nil.
      */
     @Generated
@@ -297,7 +318,7 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
             EKRecurrenceEnd end);
 
     /**
-     * [@property]       interval
+     * [@property] interval
      * <p>
      * The interval of a EKRecurrenceRule is an integer value which specifies how often the recurrence rule repeats
      * over the unit of time described by the EKRecurrenceFrequency. For example, if the EKRecurrenceFrequency is
@@ -312,10 +333,12 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native long interval();
 
     /**
-     * [@property]       monthsOfTheYear
+     * [@property] monthsOfTheYear
      * <p>
-     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyYearly. This property can be accessed
-     * as an array containing one or more NSNumbers corresponding to the months of the year the event recurs. For all other
+     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyYearly. This property can be
+     * accessed
+     * as an array containing one or more NSNumbers corresponding to the months of the year the event recurs. For all
+     * other
      * EKRecurrenceRules, this property is nil. This property corresponds to BYMONTH in the iCalendar specification.
      */
     @Generated
@@ -323,9 +346,10 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native NSArray<? extends NSNumber> monthsOfTheYear();
 
     /**
-     * [@property]       recurrenceEnd
+     * [@property] recurrenceEnd
      * <p>
-     * This property defines when the the repeating event is scheduled to end. The end date can be specified by a number of
+     * This property defines when the the repeating event is scheduled to end. The end date can be specified by a number
+     * of
      * occurrences, or with an end date.
      */
     @Generated
@@ -333,21 +357,26 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native EKRecurrenceEnd recurrenceEnd();
 
     /**
-     * [@property]       setPositions
+     * [@property] setPositions
      * <p>
-     * This property is valid for rules which have a valid daysOfTheWeek, daysOfTheMonth, weeksOfTheYear, or monthsOfTheYear property.
-     * It allows you to specify a set of ordinal numbers to help choose which objects out of the set of selected events should be
-     * included. For example, setting the daysOfTheWeek to Monday-Friday and including a value of -1 in the array would indicate
-     * the last weekday in the recurrence range (month, year, etc). This value corresponds to the iCalendar BYSETPOS property.
+     * This property is valid for rules which have a valid daysOfTheWeek, daysOfTheMonth, weeksOfTheYear, or
+     * monthsOfTheYear property.
+     * It allows you to specify a set of ordinal numbers to help choose which objects out of the set of selected events
+     * should be
+     * included. For example, setting the daysOfTheWeek to Monday-Friday and including a value of -1 in the array would
+     * indicate
+     * the last weekday in the recurrence range (month, year, etc). This value corresponds to the iCalendar BYSETPOS
+     * property.
      */
     @Generated
     @Selector("setPositions")
     public native NSArray<? extends NSNumber> setPositions();
 
     /**
-     * [@property]       recurrenceEnd
+     * [@property] recurrenceEnd
      * <p>
-     * This property defines when the the repeating event is scheduled to end. The end date can be specified by a number of
+     * This property defines when the the repeating event is scheduled to end. The end date can be specified by a number
+     * of
      * occurrences, or with an end date.
      */
     @Generated
@@ -355,11 +384,14 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     public native void setRecurrenceEnd(EKRecurrenceEnd value);
 
     /**
-     * [@property]       weeksOfTheYear
+     * [@property] weeksOfTheYear
      * <p>
-     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyYearly. This property can be accessed
-     * as an array containing one or more NSNumbers corresponding to the weeks of the year the event recurs. For all other
-     * EKRecurrenceRules, this property is nil. This property corresponds to BYWEEK in the iCalendar specification. It should
+     * This property is valid for rules whose EKRecurrenceFrequency is EKRecurrenceFrequencyYearly. This property can be
+     * accessed
+     * as an array containing one or more NSNumbers corresponding to the weeks of the year the event recurs. For all
+     * other
+     * EKRecurrenceRules, this property is nil. This property corresponds to BYWEEK in the iCalendar specification. It
+     * should
      * contain integers from 1 to 53 or -1 to -53.
      */
     @Generated

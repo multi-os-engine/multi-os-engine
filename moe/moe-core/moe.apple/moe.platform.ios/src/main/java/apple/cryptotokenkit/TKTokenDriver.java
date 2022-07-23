@@ -25,7 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Base class for token drivers.  SmartCard token drivers should use TKSmartCardTokenDriver subclass.
+ * Base class for token drivers. SmartCard token drivers should use TKSmartCardTokenDriver subclass.
  */
 @Generated
 @Library("CryptoTokenKit")

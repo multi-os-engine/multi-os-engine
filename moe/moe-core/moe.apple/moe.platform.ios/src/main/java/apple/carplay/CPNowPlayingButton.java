@@ -136,18 +136,21 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is enabled.
      * <p>
-     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
+     * property is @c YES.
      */
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
 
     /**
-     * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected appearance to
+     * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected
+     * appearance to
      * indicate its selected state.
      * <p>
      * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
-     * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle states.
+     * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle
+     * states.
      */
     @Generated
     @Selector("isSelected")
@@ -177,18 +180,21 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether the button is enabled.
      * <p>
-     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
+     * property is @c YES.
      */
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
 
     /**
-     * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected appearance to
+     * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected
+     * appearance to
      * indicate its selected state.
      * <p>
      * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
-     * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle states.
+     * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle
+     * states.
      */
     @Generated
     @Selector("setSelected:")

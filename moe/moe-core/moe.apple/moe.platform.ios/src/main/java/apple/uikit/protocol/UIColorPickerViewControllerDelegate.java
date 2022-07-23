@@ -42,7 +42,8 @@ public interface UIColorPickerViewControllerDelegate {
      *
      * @param viewController This color picker.
      * @param color          The new selected color
-     * @param continuously   YES, if this update is part of a continuous user interaction (e.g. dragging through the spectrum). It's recommended
+     * @param continuously   YES, if this update is part of a continuous user interaction (e.g. dragging through the
+     *                       spectrum). It's recommended
      *                       to show these updates in your UI but to not include them in any undo operations.
      */
     @Generated

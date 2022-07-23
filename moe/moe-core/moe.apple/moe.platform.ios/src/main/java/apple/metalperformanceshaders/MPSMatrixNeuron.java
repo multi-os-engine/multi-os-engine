@@ -77,10 +77,10 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native MPSMatrixNeuron allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The scale factor to apply to the input.  Specified in double
-     * precision.  Will be converted to the appropriate precision in the
+     * The scale factor to apply to the input. Specified in double
+     * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
      */
@@ -117,8 +117,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -136,7 +136,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     /**
      * Encode a MPSMatrixNeuron object to a command buffer.
      * <p>
-     * Encodes the operation to the specified command buffer.  resultMatrix
+     * Encodes the operation to the specified command buffer. resultMatrix
      * must be large enough to hold a
      * MIN(sourceNumberOfFeatureVectors, inputMatrix.rows - sourceMatrixOrigin.x)
      * x
@@ -250,10 +250,10 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The scale factor to apply to the input.  Specified in double
-     * precision.  Will be converted to the appropriate precision in the
+     * The scale factor to apply to the input. Specified in double
+     * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
      */
@@ -279,7 +279,8 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * -setNeuronType:parameterA:parameterB:
      *
      * @param A An array containing float values for neuron parameter A.
-     *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y,
+     *          sourceInputFeatureChannels)
      */
     @Generated
     @Selector("setNeuronToPReLUWithParametersA:")
@@ -294,7 +295,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
      * this method for neuron activation functions like MPSCNNNeuronTypePReLU,
      * which require per-channel parameter values. For those kind of neuron activation functions,
-     * use appropriate setter functions.  An MPSMatrixNeuron kernel is initialized
+     * use appropriate setter functions. An MPSMatrixNeuron kernel is initialized
      * with a default neuron function of MPSCNNNeuronTypeNone.
      *
      * @param neuronType Type of neuron activation function. For full list see MPSCNNNeuronType.h
@@ -308,12 +309,12 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
             float parameterC);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
-     * The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation. This is equivalent to the
      * number of columns in the primary (input array) source matrix to consider
      * and the number of channels to produce for the output matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available input size is used.
      * The value of NSUIntegerMax thus indicates that all available columns in
      * the input array (beginning at sourceMatrixOrigin.y) should be considered.
@@ -326,14 +327,14 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
-     * The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array. This
      * is equivalent to the number of rows to consider from the primary
      * source matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available number of inputs is
-     * used.  The value of NSUIntegerMax thus indicates that all available input
+     * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
      */
     @Generated
@@ -345,12 +346,12 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
-     * The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation. This is equivalent to the
      * number of columns in the primary (input array) source matrix to consider
      * and the number of channels to produce for the output matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available input size is used.
      * The value of NSUIntegerMax thus indicates that all available columns in
      * the input array (beginning at sourceMatrixOrigin.y) should be considered.
@@ -364,14 +365,14 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
-     * The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array. This
      * is equivalent to the number of rows to consider from the primary
      * source matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available number of inputs is
-     * used.  The value of NSUIntegerMax thus indicates that all available input
+     * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
      */
     @Generated

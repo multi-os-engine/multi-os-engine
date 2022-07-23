@@ -24,8 +24,8 @@ import org.moe.natj.general.ann.Generated;
  * Flags to pass to CVPixelBufferLockBaseAddress() / CVPixelBufferUnlockBaseAddress()
  * [@constant] kCVPixelBufferLock_ReadOnly
  * If you are not going to modify the data while you hold the lock, you should set this flag
- * to avoid potentially invalidating any existing caches of the buffer contents.  This flag
- * should be passed both to the lock and unlock functions.  Non-symmetrical usage of this
+ * to avoid potentially invalidating any existing caches of the buffer contents. This flag
+ * should be passed both to the lock and unlock functions. Non-symmetrical usage of this
  * flag will result in undefined behavior.
  */
 @Generated

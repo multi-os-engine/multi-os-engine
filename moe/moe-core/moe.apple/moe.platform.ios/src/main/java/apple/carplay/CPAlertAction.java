@@ -27,7 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@c] CPAlertAction represents a single action that appears inside of a @c CPActionSheetTemplate or @c CPAlertTemplate.
+ * [@c] CPAlertAction represents a single action that appears inside of a @c CPActionSheetTemplate or @c
+ * CPAlertTemplate.
  * <p>
  * The style of the parent template and the style of the @c CPAlertAction will together
  * determine the action's appearance.

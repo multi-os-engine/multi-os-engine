@@ -201,7 +201,8 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     public native long pageCount();
 
     /**
-     * default is UIEdgeInsetsZero from edge of the page.  applies to content on each page (each edge applies to each page)
+     * default is UIEdgeInsetsZero from edge of the page. applies to content on each page (each edge applies to each
+     * page)
      */
     @Generated
     @Selector("perPageContentInsets")
@@ -246,7 +247,8 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     public native void setMaximumContentWidth(@NFloat double value);
 
     /**
-     * default is UIEdgeInsetsZero from edge of the page.  applies to content on each page (each edge applies to each page)
+     * default is UIEdgeInsetsZero from edge of the page. applies to content on each page (each edge applies to each
+     * page)
      */
     @Generated
     @Selector("setPerPageContentInsets:")

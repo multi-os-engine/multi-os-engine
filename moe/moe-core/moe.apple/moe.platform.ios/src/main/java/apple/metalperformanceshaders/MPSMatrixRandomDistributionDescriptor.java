@@ -104,7 +104,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native String description_static();
 
     /**
-     * [@property]   distributionType
+     * [@property] distributionType
      * <p>
      * The type of distribution.
      */
@@ -144,7 +144,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   maximum
+     * [@property] maximum
      * <p>
      * For distributions of values bounded above, this value describes the maximum.
      */
@@ -153,7 +153,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public native float maximum();
 
     /**
-     * [@property]   mean
+     * [@property] mean
      * <p>
      * The value to use for distributions described by their mean.
      */
@@ -162,7 +162,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public native float mean();
 
     /**
-     * [@property]   minimum
+     * [@property] minimum
      * <p>
      * For distributions of values bounded below, this value describes the minimum.
      */
@@ -184,7 +184,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   distributionType
+     * [@property] distributionType
      * <p>
      * The type of distribution.
      */
@@ -193,7 +193,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public native void setDistributionType(@NUInt long value);
 
     /**
-     * [@property]   maximum
+     * [@property] maximum
      * <p>
      * For distributions of values bounded above, this value describes the maximum.
      */
@@ -202,7 +202,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public native void setMaximum(float value);
 
     /**
-     * [@property]   mean
+     * [@property] mean
      * <p>
      * The value to use for distributions described by their mean.
      */
@@ -211,7 +211,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public native void setMean(float value);
 
     /**
-     * [@property]   minimum
+     * [@property] minimum
      * <p>
      * For distributions of values bounded below, this value describes the minimum.
      */
@@ -220,7 +220,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public native void setMinimum(float value);
 
     /**
-     * [@property]   standardDeviation
+     * [@property] standardDeviation
      * <p>
      * The value to use for distributions described by their standardDeviation.
      */
@@ -233,7 +233,7 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   standardDeviation
+     * [@property] standardDeviation
      * <p>
      * The value to use for distributions described by their standardDeviation.
      */

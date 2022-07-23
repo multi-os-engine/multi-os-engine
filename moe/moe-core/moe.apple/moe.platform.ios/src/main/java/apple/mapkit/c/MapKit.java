@@ -96,7 +96,7 @@ public final class MapKit {
     public static native double MKMetersBetweenMapPoints(@ByValue MKMapPoint a, @ByValue MKMapPoint b);
 
     /**
-     * Geometric operations on MKMapPoint/Size/Rect.  See CGGeometry.h for
+     * Geometric operations on MKMapPoint/Size/Rect. See CGGeometry.h for
      * information on the CGFloat versions of these functions.
      */
     @Generated
@@ -251,7 +251,7 @@ public final class MapKit {
     /**
      * For map rects that span the 180th meridian, this returns the portion of the rect
      * that lies outside of the world rect wrapped around to the other side of the
-     * world.  The portion of the rect that lies inside the world rect can be
+     * world. The portion of the rect that lies inside the world rect can be
      * determined with MKMapRectIntersection(rect, MKMapRectWorld).
      */
     @Generated
@@ -260,7 +260,7 @@ public final class MapKit {
     public static native MKMapRect MKMapRectRemainder(@ByValue MKMapRect rect);
 
     /**
-     * Road widths are typically not drawn to scale on the map.  This function
+     * Road widths are typically not drawn to scale on the map. This function
      * returns the approximate width in points of roads at the specified zoomScale.
      * The result of this function is suitable for use with CGContextSetLineWidth.
      */

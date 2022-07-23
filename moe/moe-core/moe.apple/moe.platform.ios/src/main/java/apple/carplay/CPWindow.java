@@ -274,7 +274,8 @@ public class CPWindow extends UIWindow {
     public static native Class layerClass();
 
     /**
-     * [@c] mapButtonSafeAreaLayoutGuide can be used to layout content that appears above the map buttons presented on the map template.
+     * [@c] mapButtonSafeAreaLayoutGuide can be used to layout content that appears above the map buttons presented on
+     * the map template.
      */
     @Generated
     @Selector("mapButtonSafeAreaLayoutGuide")

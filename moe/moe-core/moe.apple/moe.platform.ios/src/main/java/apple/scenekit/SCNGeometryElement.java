@@ -115,7 +115,8 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
      * <p>
      * Creates and returns a geometry element from the given data and data format info.
      *
-     * @param data           The data that contains element indexes. You can pass nil to use an implicit vertex ordering (0,1,2...).
+     * @param data           The data that contains element indexes. You can pass nil to use an implicit vertex ordering
+     *                       (0,1,2...).
      * @param primitiveType  The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
      * @param primitiveCount The number of primitives in the data.
      * @param bytesPerIndex  The number of bytes that represent a single index value in the data.
@@ -275,7 +276,8 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     /**
      * [@property] primitiveRange
      * <p>
-     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to NSMakeRange(NSNotFound, 0).
+     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to
+     * NSMakeRange(NSNotFound, 0).
      * <p>
      * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
      */
@@ -314,7 +316,8 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     /**
      * [@property] primitiveRange
      * <p>
-     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to NSMakeRange(NSNotFound, 0).
+     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to
+     * NSMakeRange(NSNotFound, 0).
      * <p>
      * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
      */

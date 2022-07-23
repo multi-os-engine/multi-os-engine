@@ -82,7 +82,9 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
     public static native String description_static();
 
     /**
-     * The automatic behavior is to track the keyboard only when docked. When offscreen or undocked, the topAnchor is tied to the safeAreaLayoutGuide's bottomAnchor. To instead follow all keyboard anchors even when undocked or floating, set followsUndockedKeyboard to YES.
+     * The automatic behavior is to track the keyboard only when docked. When offscreen or undocked, the topAnchor is
+     * tied to the safeAreaLayoutGuide's bottomAnchor. To instead follow all keyboard anchors even when undocked or
+     * floating, set followsUndockedKeyboard to YES.
      */
     @Generated
     @Selector("followsUndockedKeyboard")
@@ -136,7 +138,9 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The automatic behavior is to track the keyboard only when docked. When offscreen or undocked, the topAnchor is tied to the safeAreaLayoutGuide's bottomAnchor. To instead follow all keyboard anchors even when undocked or floating, set followsUndockedKeyboard to YES.
+     * The automatic behavior is to track the keyboard only when docked. When offscreen or undocked, the topAnchor is
+     * tied to the safeAreaLayoutGuide's bottomAnchor. To instead follow all keyboard anchors even when undocked or
+     * floating, set followsUndockedKeyboard to YES.
      */
     @Generated
     @Selector("setFollowsUndockedKeyboard:")

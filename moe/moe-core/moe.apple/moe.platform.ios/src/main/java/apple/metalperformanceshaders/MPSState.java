@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSState
- * [@dependency]     This depends on Metal Framework
+ * [@dependency] This depends on Metal Framework
  * <p>
  * A semi-opaque data container for large storage in MPS CNN filters
  * <p>
@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * convolution weights, or other information not contained in the
  * usual MPSImage result from a MPSCNNKernel. A MPSState object
  * typically contains one or more expensive MTLResources such as
- * textures or buffers to store this information.  It provides a
+ * textures or buffers to store this information. It provides a
  * base class with interfaces for managing this storage. Child
  * classes may add additional functionality specific to their
  * contents.
@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Some MPSState objects are temporary. Temporary state objects,
  * like MPSTemporaryImages and Matrices, are for very short lived storage,
  * perhaps just a few lines of code within the scope of a single
- * MTLCommandBuffer.  They are very efficient for storage, as several
+ * MTLCommandBuffer. They are very efficient for storage, as several
  * temporary objects can share the same memory over the course of a
  * MTLCommandBuffer. This can improve both memory usage and time spent
  * in the kernel wiring down memory and such. You may find that some
@@ -63,15 +63,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * property. Each time a MPSCNNKernel reads a temporary MPSState object
  * the readCount is automatically decremented. When it reaches zero, the
  * underlying storage is recycled for use by other MPS temporary objects,
- * and the data is becomes undefined.  If you need to consume the data
+ * and the data is becomes undefined. If you need to consume the data
  * multiple times, you should set the readCount to a larger number to
- * prevent the data from becomming undefined.  You may set the readCount
+ * prevent the data from becomming undefined. You may set the readCount
  * to 0 yourself to return the storage to MPS, if for any reason, you
  * realize that the MPSState object will no longer be used.
  * <p>
  * The contents of a temporary MPSState object are only valid from
  * creation to the time the readCount reaches 0. The data is only valid
- * for the MTLCommandBuffer on which it was created.  Non-temporary
+ * for the MTLCommandBuffer on which it was created. Non-temporary
  * MPSState objects are valid on any MTLCommandBuffer on the same
  * device until they are released.
  * <p>
@@ -190,9 +190,9 @@ public class MPSState extends NSObject {
      * readcount reaches 0. Non-temporary MPSState objects can in contrast
      * be used at any time with any command buffer, until they are released and
      * their reference count reaches 0. (Reference and read counts are different
-     * things.)  Since the lifetimes of temporary and non-temporary MPSState
+     * things.) Since the lifetimes of temporary and non-temporary MPSState
      * objects vary widely, it can be important to know what sort of state
-     * object it is so that it can be handled correctly.  MPSStates without
+     * object it is so that it can be handled correctly. MPSStates without
      * a resource are not temporary.
      */
     @Generated
@@ -252,7 +252,7 @@ public class MPSState extends NSObject {
      * batch, such as during weight update for convolution or statistics accumulation
      * in batch normalization. In such cases, the single MPSState accumulator
      * is represented as a MPSStateBatch with batch.count pointers to the same
-     * MPSState object.  When MPS decrements the read count on states or images
+     * MPSState object. When MPS decrements the read count on states or images
      * in a batch it only does so on unique objects. Your application should follow
      * the same convention. MPSStateBatchIncrementReadCount() is provided to help you.
      */
@@ -313,7 +313,7 @@ public class MPSState extends NSObject {
      * batch, such as during weight update for convolution or statistics accumulation
      * in batch normalization. In such cases, the single MPSState accumulator
      * is represented as a MPSStateBatch with batch.count pointers to the same
-     * MPSState object.  When MPS decrements the read count on states or images
+     * MPSState object. When MPS decrements the read count on states or images
      * in a batch it only does so on unique objects. Your application should follow
      * the same convention. MPSStateBatchIncrementReadCount() is provided to help you.
      */
@@ -349,7 +349,7 @@ public class MPSState extends NSObject {
      * <p>
      * A MPSState has the opportunity to reconfigure the MPSImageDescriptor
      * used to create the filter result state and set the MPSKernel.offset
-     * to the correct value.  By default, the MPSState does not modify the
+     * to the correct value. By default, the MPSState does not modify the
      * descriptor.
      * <p>
      * There is a order of operations defined for who may update the descriptor:
@@ -366,7 +366,8 @@ public class MPSState extends NSObject {
      * Some code that may prove helpful:
      * <p>
      * [@code]
-     * const int centeringPolicy = 0;  // When kernelSize is even: 0 pad bottom right. 1 pad top left.    Centers the kernel for even sized kernels.
+     * const int centeringPolicy = 0; // When kernelSize is even: 0 pad bottom right. 1 pad top left. Centers the kernel
+     * for even sized kernels.
      * <p>
      * typedef enum Style{
      * StyleValidOnly = -1,
@@ -376,15 +377,15 @@ public class MPSState extends NSObject {
      * <p>
      * // Typical destination size in one dimension for forward filters (most filters)
      * static int DestSize( int sourceSize, int stride, int filterWindowSize, Style style ){
-     * sourceSize += style * (filterWindowSize - 1);       // adjust how many pixels we are allowed to read
-     * return (sourceSize + stride - 1) / stride;          // sourceSize / stride, round up
+     * sourceSize += style * (filterWindowSize - 1); // adjust how many pixels we are allowed to read
+     * return (sourceSize + stride - 1) / stride; // sourceSize / stride, round up
      * }
      * <p>
      * // Typical destination size in one dimension for reverse filters (e.g. convolution transpose)
      * static int DestSizeReverse( int sourceSize, int stride, int filterWindowSize, Style style ){
-     * return (sourceSize-1) * stride +        // center tap for the last N-1 results. Take stride into account
-     * 1 +                             // center tap for the first result
-     * style * (filterWindowSize-1);   // add or subtract (or ignore) the filter extent
+     * return (sourceSize-1) * stride + // center tap for the last N-1 results. Take stride into account
+     * 1 + // center tap for the first result
+     * style * (filterWindowSize-1); // add or subtract (or ignore) the filter extent
      * }
      * <p>
      * // Find the MPSOffset in one dimension
@@ -398,7 +399,8 @@ public class MPSState extends NSObject {
      * <p>
      * // Center the area consumed in the source image:
      * // Calculate the size of the destination image
-     * int destSize = DestSize( sourceSize, stride, filterWindowSize, style ); // use DestSizeReverse here instead as appropriate
+     * int destSize = DestSize( sourceSize, stride, filterWindowSize, style ); // use DestSizeReverse here instead as
+     * appropriate
      * <p>
      * // calculate extent of pixels we need to read in source to populate the destination
      * int readSize = (destSize-1) * stride + filterWindowSize;
@@ -421,8 +423,8 @@ public class MPSState extends NSObject {
      *                     MPSNNPaddingMethodCustom) set for the object. You should adjust the offset
      *                     and image size accordingly. It is on an autoreleasepool.
      * @return The MPSImageDescriptor to use to make a MPSImage to capture the results from the filter.
-     * The MPSImageDescriptor is assumed to be on an autoreleasepool. Your method must also set the
-     * kernel.offset property.
+     *         The MPSImageDescriptor is assumed to be on an autoreleasepool. Your method must also set the
+     *         kernel.offset property.
      */
     @Generated
     @Selector("destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:")
@@ -438,7 +440,7 @@ public class MPSState extends NSObject {
     /**
      * Initialize a non-temporary state to hold a number of textures and buffers
      * <p>
-     * The allocation of each resource will be deferred  until it is needed.
+     * The allocation of each resource will be deferred until it is needed.
      * This occurs when -resource or -resourceAtIndex: is called.
      *
      * @param resourceList The list of resources to create.
@@ -494,7 +496,7 @@ public class MPSState extends NSObject {
      * implementation dependent. It may change by operating system
      * version or device. If you are the author of the subclass then it
      * is for your own use, and MPS will not look at it, except perhaps
-     * so as to pass it to a custom kernel.  Otherwise, the method is made
+     * so as to pass it to a custom kernel. Otherwise, the method is made
      * available to facilitate debugging and to allow you to write your own
      * state objects.
      */
@@ -514,7 +516,7 @@ public class MPSState extends NSObject {
      * implementation dependent. It may change by operating system
      * version or device. If you are the author of the subclass then it
      * is for your own use, and MPS will not look at it, except perhaps
-     * so as to pass it to a custom kernel.  Otherwise, the method is made
+     * so as to pass it to a custom kernel. Otherwise, the method is made
      * available to facilitate debugging and to allow you to write your own
      * state objects. Provide accessors to read this information
      * in a defined format.
@@ -580,7 +582,8 @@ public class MPSState extends NSObject {
     public native long resourceTypeAtIndex(@NUInt long index);
 
     /**
-     * Flush any copy of MTLResources held by the state from the device's caches, and invalidate any CPU caches if needed.
+     * Flush any copy of MTLResources held by the state from the device's caches, and invalidate any CPU caches if
+     * needed.
      * <p>
      * This will call [id <MTLBlitEncoder> synchronizeResource: ] on the state's MTLResources.
      * This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKCategoryValue
+ * [@enum] HKCategoryValue
  * <p>
  * This category value is to be used for types which don't have a specific value defined.
  */

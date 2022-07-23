@@ -63,7 +63,7 @@ public class MPSMatrixRandom extends MPSKernel {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   batchSize
+     * [@property] batchSize
      * <p>
      * The size of the batch to process.
      */
@@ -73,7 +73,7 @@ public class MPSMatrixRandom extends MPSKernel {
     public native long batchSize();
 
     /**
-     * [@property]   batchStart
+     * [@property] batchStart
      * <p>
      * The starting index in the destination batch.
      */
@@ -109,7 +109,7 @@ public class MPSMatrixRandom extends MPSKernel {
     public static native String description_static();
 
     /**
-     * [@property]   destinationDataType
+     * [@property] destinationDataType
      * <p>
      * The type of the data which makes up the values of the result.
      * Supported values are:
@@ -123,7 +123,7 @@ public class MPSMatrixRandom extends MPSKernel {
     public native int destinationDataType();
 
     /**
-     * [@property]   distributionType
+     * [@property] distributionType
      * <p>
      * The distribution from which to generate random values.
      * <p>
@@ -212,7 +212,7 @@ public class MPSMatrixRandom extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   batchSize
+     * [@property] batchSize
      * <p>
      * The size of the batch to process.
      */
@@ -221,7 +221,7 @@ public class MPSMatrixRandom extends MPSKernel {
     public native void setBatchSize(@NUInt long value);
 
     /**
-     * [@property]   batchStart
+     * [@property] batchStart
      * <p>
      * The starting index in the destination batch.
      */

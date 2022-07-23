@@ -161,7 +161,7 @@ public class GKMatchRequest extends NSObject {
     public static native long version_static();
 
     /**
-     * Default number of players to use during matchmaking.  If not set we default to maxPlayers
+     * Default number of players to use during matchmaking. If not set we default to maxPlayers
      */
     @Generated
     @Selector("defaultNumberOfPlayers")
@@ -203,7 +203,11 @@ public class GKMatchRequest extends NSObject {
     public native long minPlayers();
 
     /**
-     * optional mask that specifies the role that the local player would like to play in the game.  If this value is 0, it will be set to 0xFFFFFFFF (the default), and this property will be ignored. If the value is nonzero, then automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the resulting match equals 0xFFFFFFFF.
+     * optional mask that specifies the role that the local player would like to play in the game. If this value is 0,
+     * it will be set to 0xFFFFFFFF (the default), and this property will be ignored. If the value is nonzero, then
+     * automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with
+     * player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the
+     * resulting match equals 0xFFFFFFFF.
      */
     @Generated
     @Selector("playerAttributes")
@@ -241,7 +245,7 @@ public class GKMatchRequest extends NSObject {
     public native NSArray<? extends GKPlayer> recipients();
 
     /**
-     * Default number of players to use during matchmaking.  If not set we default to maxPlayers
+     * Default number of players to use during matchmaking. If not set we default to maxPlayers
      */
     @Generated
     @Selector("setDefaultNumberOfPlayers:")
@@ -276,7 +280,11 @@ public class GKMatchRequest extends NSObject {
     public native void setMinPlayers(@NUInt long value);
 
     /**
-     * optional mask that specifies the role that the local player would like to play in the game.  If this value is 0, it will be set to 0xFFFFFFFF (the default), and this property will be ignored. If the value is nonzero, then automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the resulting match equals 0xFFFFFFFF.
+     * optional mask that specifies the role that the local player would like to play in the game. If this value is 0,
+     * it will be set to 0xFFFFFFFF (the default), and this property will be ignored. If the value is nonzero, then
+     * automatching uses the value as a mask that restricts the role the player can play in the group. Automatching with
+     * player attributes matches new players into the game so that the bitwise OR of the masks of all the players in the
+     * resulting match equals 0xFFFFFFFF.
      */
     @Generated
     @Selector("setPlayerAttributes:")
@@ -341,18 +349,18 @@ public class GKMatchRequest extends NSObject {
     }
 
     /**
-     * Whether or not a match will be created only using auto-match.  If YES, then a player will not be able to
+     * Whether or not a match will be created only using auto-match. If YES, then a player will not be able to
      * invite anyone (including contacts, friends, and nearby players) to the match, but rely on auto-matching to
-     * find players for the match.  Default is NO.
+     * find players for the match. Default is NO.
      */
     @Generated
     @Selector("restrictToAutomatch")
     public native boolean restrictToAutomatch();
 
     /**
-     * Whether or not a match will be created only using auto-match.  If YES, then a player will not be able to
+     * Whether or not a match will be created only using auto-match. If YES, then a player will not be able to
      * invite anyone (including contacts, friends, and nearby players) to the match, but rely on auto-matching to
-     * find players for the match.  Default is NO.
+     * find players for the match. Default is NO.
      */
     @Generated
     @Selector("setRestrictToAutomatch:")

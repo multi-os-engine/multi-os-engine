@@ -42,7 +42,8 @@ public interface NSXMLParserDelegate {
      * elementName == cvslog, namespaceURI == http://xml.apple.com/cvslog, qualifiedName == cvslog
      * In the case of the radar tag, the following is what's passed in:
      * elementName == radar, namespaceURI == http://xml.apple.com/radar, qualifiedName == radar:radar
-     * If namespace processing >isn't< on, the xmlns:radar="http://xml.apple.com/radar" is returned as an attribute pair, the elementName is 'radar:radar' and there is no qualifiedName.
+     * If namespace processing >isn't< on, the xmlns:radar="http://xml.apple.com/radar" is returned as an attribute
+     * pair, the elementName is 'radar:radar' and there is no qualifiedName.
      */
     @Generated
     @IsOptional
@@ -54,8 +55,10 @@ public interface NSXMLParserDelegate {
 
     /**
      * sent when the parser first sees a namespace attribute.
-     * In the case of the cvslog tag, before the didStartElement:, you'd get one of these with prefix == @"" and namespaceURI == @"http://xml.apple.com/cvslog" (i.e. the default namespace)
-     * In the case of the radar:radar tag, before the didStartElement: you'd get one of these with prefix == @"radar" and namespaceURI == @"http://xml.apple.com/radar"
+     * In the case of the cvslog tag, before the didStartElement:, you'd get one of these with prefix == @"" and
+     * namespaceURI == @"http://xml.apple.com/cvslog" (i.e. the default namespace)
+     * In the case of the radar:radar tag, before the didStartElement: you'd get one of these with prefix == @"radar"
+     * and namespaceURI == @"http://xml.apple.com/radar"
      */
     @Generated
     @IsOptional
@@ -111,7 +114,8 @@ public interface NSXMLParserDelegate {
     }
 
     /**
-     * The parser reports a processing instruction to you using this method. In the case above, target == @"xml-stylesheet" and data == @"type='text/css' href='cvslog.css'"
+     * The parser reports a processing instruction to you using this method. In the case above, target
+     * == @"xml-stylesheet" and data == @"type='text/css' href='cvslog.css'"
      */
     @Generated
     @IsOptional
@@ -136,7 +140,9 @@ public interface NSXMLParserDelegate {
     }
 
     /**
-     * This returns the string of the characters encountered thus far. You may not necessarily get the longest character run. The parser reserves the right to hand these to the delegate as potentially many calls in a row to -parser:foundCharacters:
+     * This returns the string of the characters encountered thus far. You may not necessarily get the longest character
+     * run. The parser reserves the right to hand these to the delegate as potentially many calls in a row to
+     * -parser:foundCharacters:
      */
     @Generated
     @IsOptional

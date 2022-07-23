@@ -26,7 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A rotating disclosure chevron for use with outlines, used to indicate and toggle the expanded/collapsed state of the item.
+ * A rotating disclosure chevron for use with outlines, used to indicate and toggle the expanded/collapsed state of the
+ * item.
  */
 @Generated
 @Library("UIKit")
@@ -47,7 +48,8 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when using
+     * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when
+     * using
      * a NSDiffableDataSourceSectionSnapshot is to toggle the expand/collapse state of the item in the section snapshot.
      */
     @Generated
@@ -150,7 +152,8 @@ public class UICellAccessoryOutlineDisclosure extends UICellAccessory {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when using
+     * An optional handler to call when the outline disclosure accessory is tapped. If nil, the default behavior when
+     * using
      * a NSDiffableDataSourceSectionSnapshot is to toggle the expand/collapse state of the item in the section snapshot.
      */
     @Generated

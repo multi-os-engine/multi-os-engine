@@ -107,7 +107,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     public static native long hash_static();
 
     /**
-     * Initializes a new configuration with the system photo library. This configuration never returns asset identifiers.
+     * Initializes a new configuration with the system photo library. This configuration never returns asset
+     * identifiers.
      */
     @Generated
     @Selector("init")
@@ -147,9 +148,11 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     public static native PHPickerConfiguration new_objc();
 
     /**
-     * Preferred representation mode of selected assets. Default is \c PHPickerConfigurationAssetRepresentationModeAutomatic.
+     * Preferred representation mode of selected assets. Default is \c
+     * PHPickerConfigurationAssetRepresentationModeAutomatic.
      * <p>
-     * Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
+     * Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the
+     * best representation determined by the system will be used.
      */
     @Generated
     @Selector("preferredAssetRepresentationMode")
@@ -184,9 +187,11 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     public native void setFilter(PHPickerFilter value);
 
     /**
-     * Preferred representation mode of selected assets. Default is \c PHPickerConfigurationAssetRepresentationModeAutomatic.
+     * Preferred representation mode of selected assets. Default is \c
+     * PHPickerConfigurationAssetRepresentationModeAutomatic.
      * <p>
-     * Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the best representation determined by the system will be used.
+     * Setting \c preferredAssetRepresentationMode to \c PHPickerConfigurationAssetRepresentationModeAutomatic means the
+     * best representation determined by the system will be used.
      */
     @Generated
     @Selector("setPreferredAssetRepresentationMode:")
@@ -217,7 +222,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     /**
      * Local identifiers of assets to be shown as selected when the picker is presented. Default is an empty array.
      * <p>
-     * \c preselectedAssetIdentifiers should be an empty array if \c selectionLimit is 1 or \c photoLibrary is not specified. Returned item providers for preselected assets are always empty.
+     * \c preselectedAssetIdentifiers should be an empty array if \c selectionLimit is 1 or \c photoLibrary is not
+     * specified. Returned item providers for preselected assets are always empty.
      */
     @Generated
     @Selector("preselectedAssetIdentifiers")
@@ -234,7 +240,8 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     /**
      * Local identifiers of assets to be shown as selected when the picker is presented. Default is an empty array.
      * <p>
-     * \c preselectedAssetIdentifiers should be an empty array if \c selectionLimit is 1 or \c photoLibrary is not specified. Returned item providers for preselected assets are always empty.
+     * \c preselectedAssetIdentifiers should be an empty array if \c selectionLimit is 1 or \c photoLibrary is not
+     * specified. Returned item providers for preselected assets are always empty.
      */
     @Generated
     @Selector("setPreselectedAssetIdentifiers:")

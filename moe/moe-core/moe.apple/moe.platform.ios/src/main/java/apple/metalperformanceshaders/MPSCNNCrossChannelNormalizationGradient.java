@@ -46,7 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * becomes zero - in such situations the resulting pixel-value is undefined.
  * <p>
  * OutputGradient:
- * dZ/dX(i,j,k) = dZ/dY(i,j,k) * (L(i,j,k)^-beta) - 2 * alpha * beta * X(i,j,k) * ( sum_{r in R(k)} dZ/dY(i,j,r) * X(i,j,r) * (L(i,j,r) ^ (-beta-1)) )
+ * dZ/dX(i,j,k) = dZ/dY(i,j,k) * (L(i,j,k)^-beta) - 2 * alpha * beta * X(i,j,k) * ( sum_{r in R(k)} dZ/dY(i,j,r) *
+ * X(i,j,r) * (L(i,j,r) ^ (-beta-1)) )
  * N is the kernel size. The window L(i) and K(j) itself is defined as:
  * R(k) = [max(0, k-floor((N-1)/2)), min(D-1, k+floor(N/2)]
  * <p>
@@ -81,9 +82,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native MPSCNNCrossChannelNormalizationGradient allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("alpha")
@@ -94,9 +95,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("beta")
@@ -125,9 +126,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native String debugDescription_static();
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("delta")
@@ -156,7 +157,7 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -202,9 +203,9 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]   kernelSize
+     * [@property] kernelSize
      * <p>
-     * The size of the square filter window.  Default is 5
+     * The size of the square filter window. Default is 5
      */
     @Generated
     @Selector("kernelSize")
@@ -229,27 +230,27 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("setDelta:")

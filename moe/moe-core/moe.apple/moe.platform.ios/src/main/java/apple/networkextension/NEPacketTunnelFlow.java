@@ -44,7 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEPacketTunnelFlow
  * <p>
- * The NEPacketTunnelFlow class declares the programmatic interface of an object that is used by NEPacketTunnelProvider implementations to tunnel IP packets.
+ * The NEPacketTunnelFlow class declares the programmatic interface of an object that is used by NEPacketTunnelProvider
+ * implementations to tunnel IP packets.
  * <p>
  * NEPacketTunnelFlow is part of NetworkExtension.framework
  * <p>
@@ -169,7 +170,9 @@ public class NEPacketTunnelFlow extends NSObject {
      * <p>
      * Read available IP packets from the flow.
      *
-     * @param completionHandler A block that will be executed to handle the packets. This block takes an array of NEPacket objects. If after handling the packets the caller wants to read more packets then the caller must call this method again.
+     * @param completionHandler A block that will be executed to handle the packets. This block takes an array of
+     *                          NEPacket objects. If after handling the packets the caller wants to read more packets
+     *                          then the caller must call this method again.
      */
     @Generated
     @Selector("readPacketObjectsWithCompletionHandler:")
@@ -181,7 +184,10 @@ public class NEPacketTunnelFlow extends NSObject {
      * <p>
      * Read available IP packets from the flow.
      *
-     * @param completionHandler A block that will be executed to handle the packets. This block takes an array of NSData objects and an array of NSNumber objects. The NSData and NSNumber in corresponding indicies in the array represent one packet. If after handling the packets the caller wants to read more packets then the caller must call this method again.
+     * @param completionHandler A block that will be executed to handle the packets. This block takes an array of NSData
+     *                          objects and an array of NSNumber objects. The NSData and NSNumber in corresponding
+     *                          indicies in the array represent one packet. If after handling the packets the caller
+     *                          wants to read more packets then the caller must call this method again.
      */
     @Generated
     @Selector("readPacketsWithCompletionHandler:")
@@ -205,7 +211,8 @@ public class NEPacketTunnelFlow extends NSObject {
      * Write multiple IP packets to the flow.
      *
      * @param packets   An array of NSData objects, each containing packet data to be written.
-     * @param protocols An array of NSNumber objects. Each number contains the protocol of the packet in the corresponding index in the packets array.
+     * @param protocols An array of NSNumber objects. Each number contains the protocol of the packet in the
+     *                  corresponding index in the packets array.
      */
     @Generated
     @Selector("writePackets:withProtocols:")

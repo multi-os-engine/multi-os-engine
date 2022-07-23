@@ -63,7 +63,8 @@ public class MSServiceAccount extends NSObject {
     public native String authorizationScope();
 
     /**
-     * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving configuration.
+     * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving
+     * configuration.
      */
     @Generated
     @Selector("authorizationTokenURL")
@@ -92,21 +93,24 @@ public class MSServiceAccount extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it can also be unique per registration.
+     * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it
+     * can also be unique per registration.
      */
     @Generated
     @Selector("clientID")
     public native String clientID();
 
     /**
-     * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash, but not a plaintext password
+     * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash,
+     * but not a plaintext password
      */
     @Generated
     @Selector("clientSecret")
     public native String clientSecret();
 
     /**
-     * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account. The configuration is retrieved with the Oauth2 Bearer token.
+     * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account.
+     * The configuration is retrieved with the Oauth2 Bearer token.
      */
     @Generated
     @Selector("configurationURL")
@@ -179,28 +183,32 @@ public class MSServiceAccount extends NSObject {
     public native void setAuthorizationScope(String value);
 
     /**
-     * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving configuration.
+     * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving
+     * configuration.
      */
     @Generated
     @Selector("setAuthorizationTokenURL:")
     public native void setAuthorizationTokenURL(NSURL value);
 
     /**
-     * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it can also be unique per registration.
+     * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it
+     * can also be unique per registration.
      */
     @Generated
     @Selector("setClientID:")
     public native void setClientID(String value);
 
     /**
-     * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash, but not a plaintext password
+     * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash,
+     * but not a plaintext password
      */
     @Generated
     @Selector("setClientSecret:")
     public native void setClientSecret(String value);
 
     /**
-     * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account. The configuration is retrieved with the Oauth2 Bearer token.
+     * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account.
+     * The configuration is retrieved with the Oauth2 Bearer token.
      */
     @Generated
     @Selector("setConfigurationURL:")

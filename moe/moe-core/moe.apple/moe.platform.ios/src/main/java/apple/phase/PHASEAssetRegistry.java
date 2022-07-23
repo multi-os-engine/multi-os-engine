@@ -156,7 +156,8 @@ public class PHASEAssetRegistry extends NSObject {
      * Register a global metaparameter with the asset registry.
      * [@note]
      * This function is synchronous and thread-safe.
-     * Clients can safely run this function to register multiple global metaparameters from multiple threads, if required.
+     * Clients can safely run this function to register multiple global metaparameters from multiple threads, if
+     * required.
      *
      * @param metaParameterDefinition The metaparameter object to register.
      * @param error                   The error object in case of an error.
@@ -177,11 +178,14 @@ public class PHASEAssetRegistry extends NSObject {
      * Clients can safely run this function to register multiple sound assets from multiple threads, if required.
      *
      * @param url               The URL of the audio file.
-     * @param identifier        An identifier that uniquely represents this sound event asset. Nil generates an automatic identifier.
+     * @param identifier        An identifier that uniquely represents this sound event asset. Nil generates an
+     *                          automatic identifier.
      * @param assetType         The asset type for this sound asset.
      * @param channelLayout     The audio channel layout for this sound asset.
-     *                          If a valid channel layout definition is read from the file being registered, this will override it.
-     *                          If nil is passed as a value for this property, the file must either be mono or stereo, or already contain a vaild channel layout definition.
+     *                          If a valid channel layout definition is read from the file being registered, this will
+     *                          override it.
+     *                          If nil is passed as a value for this property, the file must either be mono or stereo,
+     *                          or already contain a vaild channel layout definition.
      *                          This channel layout must have the same channel count as the audio file being loaded.
      * @param normalizationMode The normalization mode.
      * @param error             The error object in case of an error
@@ -202,7 +206,8 @@ public class PHASEAssetRegistry extends NSObject {
      * Clients can safely run this function to register multiple sound assets from multiple threads, if required.
      *
      * @param data              A buffer containing the audio data to register as a sound asset.
-     *                          Audio data must either be a single PCM buffer of interleaved channels or multiple deinterleaved PCM buffers per channel packed back to back.
+     *                          Audio data must either be a single PCM buffer of interleaved channels or multiple
+     *                          deinterleaved PCM buffers per channel packed back to back.
      * @param identifier        The identifier to assign to this sound asset. Nil generates an automatic identifier.
      * @param format            The AVAudioFormat object that describes the audio data in the buffer.
      * @param normalizationMode The normalization mode.
@@ -224,7 +229,8 @@ public class PHASEAssetRegistry extends NSObject {
      * Clients can safely run this function to register multiple sound event assets from multiple threads, if required.
      *
      * @param rootNode   The root node of the sound event asset to register.
-     * @param identifier An identifier that uniquely represents this sound event asset. Nil generates an automatic identifier.
+     * @param identifier An identifier that uniquely represents this sound event asset. Nil generates an automatic
+     *                   identifier.
      * @param error      The error object in case of an error
      * @return A PHASESoundEventNodeAsset object
      */

@@ -52,7 +52,7 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
     }
 
     /**
-     * [@property]     FHIRResource
+     * [@property] FHIRResource
      * <p>
      * The FHIR resource (where applicable) backing this sample.
      */
@@ -115,7 +115,7 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
     public static native String description_static();
 
     /**
-     * [@property]     displayName
+     * [@property] displayName
      * <p>
      * The primary display name used in Health.
      * <p>

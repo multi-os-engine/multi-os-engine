@@ -151,7 +151,7 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
     public native long pageIndex();
 
     /**
-     * Get and set the point on the above page referenced by the action.  Just like PDFDestination a value of
+     * Get and set the point on the above page referenced by the action. Just like PDFDestination a value of
      * kPDFDestinationUnspecifiedValue for the x or the y of the point indicates that no position is specified.
      */
     @Generated
@@ -175,7 +175,7 @@ public class PDFActionRemoteGoTo extends PDFAction implements NSCopying {
     public native void setPageIndex(@NUInt long value);
 
     /**
-     * Get and set the point on the above page referenced by the action.  Just like PDFDestination a value of
+     * Get and set the point on the above page referenced by the action. Just like PDFDestination a value of
      * kPDFDestinationUnspecifiedValue for the x or the y of the point indicates that no position is specified.
      */
     @Generated

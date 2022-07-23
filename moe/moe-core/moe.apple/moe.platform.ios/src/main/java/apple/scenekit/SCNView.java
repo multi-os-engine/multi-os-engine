@@ -367,8 +367,11 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
      * <p>
      * A Boolean value that determines whether the user can manipulate the point of view used to render the scene.
      * <p>
-     * When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras won't be modified by this action. The default value of this property is NO.
-     * Note that the default event handling provided by the view may not suite your needs. You may want to implement you own evnet handler.
+     * When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user
+     * can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras
+     * won't be modified by this action. The default value of this property is NO.
+     * Note that the default event handling provided by the view may not suite your needs. You may want to implement you
+     * own evnet handler.
      * The built-in camera controller let you:
      * - pan with 1 finger to rotate the camera around the scene.
      * - pan with 2 fingers to translate the camera on its local X,Y plan.
@@ -590,7 +593,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
      * <p>
      * The rate you want the view to redraw its contents.
      * <p>
-     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to be the actual frame rate. Your application should choose a frame rate that it can consistently maintain.
+     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
+     * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
+     * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
+     * refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the
+     * actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to
+     * be the actual frame rate. Your application should choose a frame rate that it can consistently maintain.
      * The default value is 0 which means the display link will fire at the native cadence of the display hardware.
      */
     @Generated
@@ -637,8 +645,11 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
      * <p>
      * A Boolean value that determines whether the user can manipulate the point of view used to render the scene.
      * <p>
-     * When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras won't be modified by this action. The default value of this property is NO.
-     * Note that the default event handling provided by the view may not suite your needs. You may want to implement you own evnet handler.
+     * When set to YES, a defaultCameraController is created and the view will handle UI events to pilot it so the user
+     * can manipulate the current point of view with the mouse or the trackpad. The scene graph and existing cameras
+     * won't be modified by this action. The default value of this property is NO.
+     * Note that the default event handling provided by the view may not suite your needs. You may want to implement you
+     * own evnet handler.
      * The built-in camera controller let you:
      * - pan with 1 finger to rotate the camera around the scene.
      * - pan with 2 fingers to translate the camera on its local X,Y plan.
@@ -712,7 +723,12 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
      * <p>
      * The rate you want the view to redraw its contents.
      * <p>
-     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to be the actual frame rate. Your application should choose a frame rate that it can consistently maintain.
+     * When your application sets its preferred frame rate, the view chooses a frame rate as close to that as possible
+     * based on the capabilities of the screen the view is displayed on. The actual frame rate chosen is usually a
+     * factor of the maximum refresh rate of the screen to provide a consistent frame rate. For example, if the maximum
+     * refresh rate of the screen is 60 frames per second, that is also the highest frame rate the view sets as the
+     * actual frame rate. However, if you ask for a lower frame rate, it might choose 30, 20, 15 or some other factor to
+     * be the actual frame rate. Your application should choose a frame rate that it can consistently maintain.
      * The default value is 0 which means the display link will fire at the native cadence of the display hardware.
      */
     @Generated
@@ -790,7 +806,8 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     /**
      * [@property] defaultCameraController
      * <p>
-     * Returns the default SCNCameraController used to drive the current point of view when allowCameraController is set to YES.
+     * Returns the default SCNCameraController used to drive the current point of view when allowCameraController is set
+     * to YES.
      */
     @Generated
     @Selector("defaultCameraController")
@@ -799,7 +816,8 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     /**
      * [@property] rendersContinuously
      * <p>
-     * When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only redraw when something change or animates in the receiver's scene. Defaults to NO.
+     * When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only
+     * redraw when something change or animates in the receiver's scene. Defaults to NO.
      */
     @Generated
     @Selector("rendersContinuously")
@@ -808,7 +826,8 @@ public class SCNView extends UIView implements SCNSceneRenderer, SCNTechniqueSup
     /**
      * [@property] rendersContinuously
      * <p>
-     * When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only redraw when something change or animates in the receiver's scene. Defaults to NO.
+     * When set to YES, the view continously redraw at the display link frame rate. When set to NO the view will only
+     * redraw when something change or animates in the receiver's scene. Defaults to NO.
      */
     @Generated
     @Selector("setRendersContinuously:")

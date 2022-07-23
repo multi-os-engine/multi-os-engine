@@ -146,7 +146,8 @@ public class AXLiveAudioGraph extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * Sets the pitch of the audio graph's tone. This should be a normalized value in the range [0.0, 1.0], where 0 represents the minimum displayable y-axis value for your series
+     * Sets the pitch of the audio graph's tone. This should be a normalized value in the range [0.0, 1.0], where 0
+     * represents the minimum displayable y-axis value for your series
      * and 1 represents the maximum displayable y-axis value for your series.
      */
     @Generated

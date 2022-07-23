@@ -298,7 +298,8 @@ public final class MediaPlayer {
     public static native String MPMediaItemPropertyDateAdded();
 
     /**
-     * Any items or playlists which were previously cached should be re-evaluated from queries when MPMediaLibraryDidChangeNotification is posted.
+     * Any items or playlists which were previously cached should be re-evaluated from queries when
+     * MPMediaLibraryDidChangeNotification is posted.
      */
     @Generated
     @CVariable()
@@ -330,7 +331,8 @@ public final class MediaPlayer {
     public static native String MPMediaPlaylistPropertyPlaylistAttributes();
 
     /**
-     * For playlists with attribute MPMediaPlaylistAttributeGenius, the seedItems are the MPMediaItems which were used to the generate the playlist.
+     * For playlists with attribute MPMediaPlaylistAttributeGenius, the seedItems are the MPMediaItems which were used
+     * to the generate the playlist.
      * Returns nil for playlists without MPMediaPlaylistAttributeGenius set.
      */
     @Generated

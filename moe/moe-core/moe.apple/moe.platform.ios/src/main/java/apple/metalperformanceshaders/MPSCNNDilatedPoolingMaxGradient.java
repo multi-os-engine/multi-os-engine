@@ -130,8 +130,8 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
      * Initialize a MPSCNNDilatedPoolingMaxGradient pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param dilationRateX   The dilation rate in the x dimension.
      * @param dilationRateY   The dilation rate in the y dimension.
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.

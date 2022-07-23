@@ -179,7 +179,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     /**
      * Returns a new reference object by aligning and merging the provided object with this reference.
      * <p>
-     * This can be used to combine multiple scans of the same object for detection in different conditions. The object being merged
+     * This can be used to combine multiple scans of the same object for detection in different conditions. The object
+     * being merged
      * must share similar feature points for the merge to succeed.
      *
      * @param object The reference object to align and merge.
@@ -214,7 +215,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     /**
      * The AR resource group name for this object.
      * <p>
-     * If this object was loaded via an AR resource group in the Xcode asset catalogue this property will have the name of the resource group,
+     * If this object was loaded via an AR resource group in the Xcode asset catalogue this property will have the name
+     * of the resource group,
      * else be set to nil.
      */
     @Generated

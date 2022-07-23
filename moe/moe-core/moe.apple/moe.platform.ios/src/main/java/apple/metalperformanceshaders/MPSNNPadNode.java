@@ -98,7 +98,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
     public static native String description_static();
 
     /**
-     * [@property]   fillValue
+     * [@property] fillValue
      * <p>
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      */
@@ -184,7 +184,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   fillValue
+     * [@property] fillValue
      * <p>
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      */

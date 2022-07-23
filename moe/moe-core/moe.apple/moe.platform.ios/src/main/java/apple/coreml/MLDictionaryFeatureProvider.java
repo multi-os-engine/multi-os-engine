@@ -39,8 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MLDictionaryFeatureProvider extends NSObject
-        implements MLFeatureProvider, NSFastEnumeration, NSSecureCoding {
+public class MLDictionaryFeatureProvider extends NSObject implements MLFeatureProvider, NSFastEnumeration,
+        NSSecureCoding {
     static {
         NatJ.register();
     }

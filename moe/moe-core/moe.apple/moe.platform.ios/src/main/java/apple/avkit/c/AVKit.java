@@ -38,7 +38,7 @@ public final class AVKit {
     }
 
     /**
-     * [@constant]	AVKitErrorDomain
+     * [@constant] AVKitErrorDomain
      * <p>
      * Domain for errors from AVKit APIs.
      */

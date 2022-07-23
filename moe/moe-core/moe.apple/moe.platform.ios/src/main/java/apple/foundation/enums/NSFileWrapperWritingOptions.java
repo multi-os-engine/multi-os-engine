@@ -22,11 +22,19 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class NSFileWrapperWritingOptions {
     /**
-     * Whether writing is done atomically. You can use this option to ensure that when overwriting a file package the overwriting either completely succeeds or completely fails, with no possibility of leaving the file package in an inconsistent state. Because this option causes additional I/O you shouldn't use it unnecessarily. For example, on Mac OS X you wouldn't use this option in an override of -[NSDocument writeToURL:ofType:error:] because NSDocument's implementation of safe saving already does atomic writing.
+     * Whether writing is done atomically. You can use this option to ensure that when overwriting a file package the
+     * overwriting either completely succeeds or completely fails, with no possibility of leaving the file package in an
+     * inconsistent state. Because this option causes additional I/O you shouldn't use it unnecessarily. For example, on
+     * Mac OS X you wouldn't use this option in an override of -[NSDocument writeToURL:ofType:error:] because
+     * NSDocument's implementation of safe saving already does atomic writing.
      */
     @Generated @NUInt public static final long Atomic = 0x0000000000000001L;
     /**
-     * Whether descendant file wrappers are sent -setFilename: if the writing succeeds. This is necessary when your application passes original contents URLs to -writeToURL:options:originalContentsURL:error:. Without using this and reusing child file wrappers properly subsequent invocations of -writeToURL:options:originalContentsURL:error: wouldn't be able to reliably create hard links in a new file package for performance because the record of names in the old file package would be out of date.
+     * Whether descendant file wrappers are sent -setFilename: if the writing succeeds. This is necessary when your
+     * application passes original contents URLs to -writeToURL:options:originalContentsURL:error:. Without using this
+     * and reusing child file wrappers properly subsequent invocations of -writeToURL:options:originalContentsURL:error:
+     * wouldn't be able to reliably create hard links in a new file package for performance because the record of names
+     * in the old file package would be out of date.
      */
     @Generated @NUInt public static final long WithNameUpdating = 0x0000000000000002L;
 

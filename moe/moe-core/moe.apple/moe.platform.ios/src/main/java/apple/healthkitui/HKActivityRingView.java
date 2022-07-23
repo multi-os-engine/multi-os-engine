@@ -53,7 +53,7 @@ public class HKActivityRingView extends UIView {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]      activitySummary
+     * [@property] activitySummary
      * <p>
      * The activity summary that is currently being displayed in the activity ring view
      * <p>
@@ -311,7 +311,7 @@ public class HKActivityRingView extends UIView {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]      activitySummary
+     * [@property] activitySummary
      * <p>
      * The activity summary that is currently being displayed in the activity ring view
      * <p>

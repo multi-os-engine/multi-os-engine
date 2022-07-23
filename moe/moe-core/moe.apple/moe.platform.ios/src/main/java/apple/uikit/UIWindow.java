@@ -470,7 +470,8 @@ public class UIWindow extends UIView {
     public native UIViewController rootViewController();
 
     /**
-     * default is [UIScreen mainScreen]. changing the screen may be an expensive operation and should not be done in performance-sensitive code
+     * default is [UIScreen mainScreen]. changing the screen may be an expensive operation and should not be done in
+     * performance-sensitive code
      */
     @Generated
     @Selector("screen")
@@ -510,14 +511,16 @@ public class UIWindow extends UIView {
     public native double windowLevel();
 
     /**
-     * Indicates whether content should drive the size of arbitrarily resizable windows (which are currently present only on macOS).
+     * Indicates whether content should drive the size of arbitrarily resizable windows (which are currently present
+     * only on macOS).
      */
     @Generated
     @Selector("canResizeToFitContent")
     public native boolean canResizeToFitContent();
 
     /**
-     * instantiate a UIWindow already associated with a given UIWindowScene instance, with matching frame & interface orientations.
+     * instantiate a UIWindow already associated with a given UIWindowScene instance, with matching frame & interface
+     * orientations.
      */
     @Generated
     @Selector("initWithWindowScene:")
@@ -530,7 +533,8 @@ public class UIWindow extends UIView {
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * Indicates whether content should drive the size of arbitrarily resizable windows (which are currently present only on macOS).
+     * Indicates whether content should drive the size of arbitrarily resizable windows (which are currently present
+     * only on macOS).
      */
     @Generated
     @Selector("setCanResizeToFitContent:")

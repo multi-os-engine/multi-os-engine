@@ -40,8 +40,10 @@ public final class CoreSpotlight {
 
     /**
      * When opening a document from Spotlight, the application's application:willContinueUserActivityWithType:
-     * method will get called with CSSearchableItemActionType, followed by  application:continueUserActivity:restorationHandler:
-     * with an NSUserActivity where the userInfo dictionary has a key value pair where CSSearchableItemActivityIdentifier is the key
+     * method will get called with CSSearchableItemActionType, followed by
+     * application:continueUserActivity:restorationHandler:
+     * with an NSUserActivity where the userInfo dictionary has a key value pair where
+     * CSSearchableItemActivityIdentifier is the key
      * and the value is the uniqueIdentifier used when creating the item.
      */
     @Generated
@@ -56,10 +58,12 @@ public final class CoreSpotlight {
 
     /**
      * When continuing a query from Spotlight, the application's -application:willContinueUserActivityWithType:
-     * method will get called with CSQueryContinuationActionType, followed by -application:continueUserActivity:restorationHandler:
+     * method will get called with CSQueryContinuationActionType, followed by
+     * -application:continueUserActivity:restorationHandler:
      * with an NSUserActivity where the userInfo dictionary has a key value pair with CSSearchQueryString as the key
      * and the value is the string the application should use when performing its query.
-     * The application should declare that it supports the query continuation by adding the CoreSpotlightContinuation key to its Info.plist:
+     * The application should declare that it supports the query continuation by adding the CoreSpotlightContinuation
+     * key to its Info.plist:
      *
      * <key>CoreSpotlightContinuation</key>
      * <true/>
@@ -132,7 +136,8 @@ public final class CoreSpotlight {
     public static native ConstBytePtr CoreSpotlightVersionString();
 
     /**
-     * For custom actions on iOS, the userInfo dictionary also has another key value pair where CSActionIdentifier is the key
+     * For custom actions on iOS, the userInfo dictionary also has another key value pair where CSActionIdentifier is
+     * the key
      * and the value is the action tapped in the UI based on what was indexed by the app.
      */
     @Generated

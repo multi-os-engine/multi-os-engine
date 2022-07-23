@@ -103,7 +103,7 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public static native long hash_static();
 
     /**
-     * [@property]      includeSample
+     * [@property] includeSample
      * <p>
      * Include owning HKQuantitySample in quantityHandler handler.
      * <p>
@@ -197,7 +197,7 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public static native HKQuantitySeriesSampleQuery new_objc();
 
     /**
-     * [@property]      orderByQuantitySampleStartDate
+     * [@property] orderByQuantitySampleStartDate
      * <p>
      * Order enumerated results first by quantitySample.startDate,
      * then by the quantity's dateInterval.startDate.
@@ -337,7 +337,7 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]      includeSample
+     * [@property] includeSample
      * <p>
      * Include owning HKQuantitySample in quantityHandler handler.
      * <p>
@@ -352,7 +352,7 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     public native void setIncludeSample(boolean value);
 
     /**
-     * [@property]      orderByQuantitySampleStartDate
+     * [@property] orderByQuantitySampleStartDate
      * <p>
      * Order enumerated results first by quantitySample.startDate,
      * then by the quantity's dateInterval.startDate.

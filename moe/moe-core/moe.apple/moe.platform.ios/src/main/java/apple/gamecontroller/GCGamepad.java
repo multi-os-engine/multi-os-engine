@@ -155,7 +155,7 @@ public class GCGamepad extends GCPhysicalInputProfile {
      * <p>
      * Y
      * / \
-     * X   B
+     * X B
      * \ /
      * A
      */
@@ -205,7 +205,8 @@ public class GCGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput rightShoulder();
 
     /**
-     * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device independent
+     * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device
+     * independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
      * <p>

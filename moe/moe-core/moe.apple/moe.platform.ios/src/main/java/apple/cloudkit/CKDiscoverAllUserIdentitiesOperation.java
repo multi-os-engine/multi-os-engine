@@ -45,7 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Finds all discoverable users in the device's contacts database. No Contacts access dialog will be displayed.
  * <p>
- * This operation scales linearly with the number of email addresses and phone numbers in the device's address book.  It may take some time to complete.
+ * This operation scales linearly with the number of email addresses and phone numbers in the device's address book. It
+ * may take some time to complete.
  */
 @Generated
 @Library("CloudKit")

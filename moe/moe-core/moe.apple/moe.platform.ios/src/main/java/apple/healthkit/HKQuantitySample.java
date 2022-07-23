@@ -231,7 +231,7 @@ public class HKQuantitySample extends HKSample {
     }
 
     /**
-     * [@property]      count
+     * [@property] count
      * <p>
      * The number of individual values making up the receiver's quantity.
      * <p>

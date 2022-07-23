@@ -103,7 +103,9 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When set to less than 1, the animation value is blent with the current presentation value of the animated property. Defaults to 1.0. Animatable.
+     * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When
+     * set to less than 1, the animation value is blent with the current presentation value of the animated property.
+     * Defaults to 1.0. Animatable.
      */
     @Generated
     @Selector("blendFactor")
@@ -236,7 +238,9 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     public native void resumeAnimationForKey(String key);
 
     /**
-     * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When set to less than 1, the animation value is blent with the current presentation value of the animated property. Defaults to 1.0. Animatable.
+     * Controls the influence of the played animation. When set to 1 the animation is applied without any blending. When
+     * set to less than 1, the animation value is blent with the current presentation value of the animated property.
+     * Defaults to 1.0. Animatable.
      */
     @Generated
     @Selector("setBlendFactor:")

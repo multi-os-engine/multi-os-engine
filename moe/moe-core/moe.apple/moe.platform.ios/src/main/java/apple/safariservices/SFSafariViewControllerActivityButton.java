@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SFSafariViewControllerActivityButton
- * A custom button to show in SFSafariViewController's toolbar. When tapped, it will invoke a Share or Action Extension bundled with your app.
+ * A custom button to show in SFSafariViewController's toolbar. When tapped, it will invoke a Share or Action Extension
+ * bundled with your app.
  * <p>
  * The default VoiceOver description of this button is the `CFBundleDisplayName` set in the extension's Info.plist.
  * To set a different description for VoiceOver to read, set this object's `accessibilityLabel` property.
@@ -104,8 +105,10 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * The Bundle Identifier of the extension that should be ran when the button is tapped. This extension can run JavaScript
-     * and present a UIViewController, just as if it was selected from the UIActivityViewController in Safari or SFSafariViewController.
+     * The Bundle Identifier of the extension that should be ran when the button is tapped. This extension can run
+     * JavaScript
+     * and present a UIViewController, just as if it was selected from the UIActivityViewController in Safari or
+     * SFSafariViewController.
      * This extension must be part of your app or another app with the same Team ID.
      */
     @Generated
@@ -126,13 +129,18 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
     public native SFSafariViewControllerActivityButton initWithCoder(NSCoder coder);
 
     /**
-     * Initializes an SFSafariViewControllerActivityButton with the given image, accessibility label, and extension bundle identifier.
+     * Initializes an SFSafariViewControllerActivityButton with the given image, accessibility label, and extension
+     * bundle identifier.
      *
-     * @param templateImage       the image to show in SFSafariViewController's toolbar. This is a template image that will get the same color as all
-     *                            other buttons, defined by @link -[SFSafariViewController preferredControlTintColor] @/link. This image should look similar to the
+     * @param templateImage       the image to show in SFSafariViewController's toolbar. This is a template image that
+     *                            will get the same color as all
+     *                            other buttons, defined by @link -[SFSafariViewController
+     *                            preferredControlTintColor] @/link. This image should look similar to the
      *                            other buttons in SFSafariViewController, and should be close to a 1:1 aspect ratio.
-     * @param extensionIdentifier the bundle identifier of the Action or Sharing Extension to run when the button is tapped. The extension can run
-     *                            JavaScript and present a view controller, as if it were selected from the UIActivityViewController in Safari or SFSafariViewController.
+     * @param extensionIdentifier the bundle identifier of the Action or Sharing Extension to run when the button is
+     *                            tapped. The extension can run
+     *                            JavaScript and present a view controller, as if it were selected from the
+     *                            UIActivityViewController in Safari or SFSafariViewController.
      *                            This extension must be part of your app or another app with the same Team ID.
      */
     @Generated
@@ -193,8 +201,10 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
     }
 
     /**
-     * A template image to use for the toolbar button. This button should look similar to the rest of SFSafariViewController's buttons,
-     * and be close to a 1:1 aspect ratio. The button will inherit the tint color set by @link -[SFSafariViewController preferredControlTintColor] @/link.
+     * A template image to use for the toolbar button. This button should look similar to the rest of
+     * SFSafariViewController's buttons,
+     * and be close to a 1:1 aspect ratio. The button will inherit the tint color set by @link -[SFSafariViewController
+     * preferredControlTintColor] @/link.
      */
     @Generated
     @Selector("templateImage")

@@ -168,7 +168,8 @@ public class GKSession extends NSObject {
     public native void cancelConnectToPeer(String peerID);
 
     /**
-     * Attempt connection to a remote peer.  Remote peer gets a callback to -session:didReceiveConnectionRequestFromPeer:.
+     * Attempt connection to a remote peer. Remote peer gets a callback to
+     * -session:didReceiveConnectionRequestFromPeer:.
      * <p>
      * Success results in a call to delegate -session:peer:didChangeState: GKPeerStateConnected
      * Failure results in a call to delegate -session:connectionWithPeerFailed:withError:
@@ -229,14 +230,16 @@ public class GKSession extends NSObject {
     public native GKSession initWithSessionIDDisplayNameSessionMode(String sessionID, String name, int mode);
 
     /**
-     * Toggle availability on the network based on session mode and search criteria.  Delegate will get a callback -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
+     * Toggle availability on the network based on session mode and search criteria. Delegate will get a callback
+     * -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
      */
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
 
     /**
-     * Toggle availability on the network based on session mode and search criteria.  Delegate will get a callback -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
+     * Toggle availability on the network based on session mode and search criteria. Delegate will get a callback
+     * -session:didReceiveConnectionRequestFromPeer: when a peer attempts a connection.
      */
     @Generated
     @Selector("setAvailable:")
@@ -258,7 +261,8 @@ public class GKSession extends NSObject {
     public native NSArray<?> peersWithConnectionState(int state);
 
     /**
-     * Asynchronous delivery of data to one or more peers.  Returns YES if delivery started, NO if unable to start sending, and error will be set.  Delivery will be reliable or unreliable as set by mode.
+     * Asynchronous delivery of data to one or more peers. Returns YES if delivery started, NO if unable to start
+     * sending, and error will be set. Delivery will be reliable or unreliable as set by mode.
      */
     @Generated
     @Deprecated

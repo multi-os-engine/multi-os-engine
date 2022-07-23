@@ -107,7 +107,8 @@ public interface SCNActionable {
     /**
      * runAction:forKey:completionHandler:
      * <p>
-     * Adds an identifiable action to the list of actions executed by the node. Your block is called when the action completes.
+     * Adds an identifiable action to the list of actions executed by the node. Your block is called when the action
+     * completes.
      */
     @Generated
     @Selector("runAction:forKey:completionHandler:")

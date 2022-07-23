@@ -58,7 +58,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     public static native MLCRMSPropOptimizer allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
      * The smoothing constant.
      * <p>
@@ -105,7 +105,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * A term added to improve numerical stability.
      * <p>
@@ -138,7 +138,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property]   isCentered
+     * [@property] isCentered
      * <p>
      * If True, compute the centered RMSProp, the gradient is normalized by an estimation of its variance.
      * <p>
@@ -157,9 +157,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   momentumScale
+     * [@property] momentumScale
      * <p>
-     * The momentum factor.  A hyper-parameter.
+     * The momentum factor. A hyper-parameter.
      * <p>
      * The default is 0.0.
      */

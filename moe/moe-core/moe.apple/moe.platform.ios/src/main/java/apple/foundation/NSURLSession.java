@@ -178,18 +178,18 @@ public class NSURLSession extends NSObject {
     public native NSURLSessionConfiguration configuration();
 
     /**
-     * Creates a data task with the given request.  The request may have a body stream.
+     * Creates a data task with the given request. The request may have a body stream.
      */
     @Generated
     @Selector("dataTaskWithRequest:")
     public native NSURLSessionDataTask dataTaskWithRequest(NSURLRequest request);
 
     /**
-     * data task convenience methods.  These methods create tasks that
+     * data task convenience methods. These methods create tasks that
      * bypass the normal delegate calls for response and data delivery,
      * and provide a simple cancelable asynchronous interface to receiving
-     * data.  Errors will be returned in the NSURLErrorDomain,
-     * see <Foundation/NSURLError.h>.  The delegate, if any, will still be
+     * data. Errors will be returned in the NSURLErrorDomain,
+     * see <Foundation/NSURLError.h>. The delegate, if any, will still be
      * called for authentication challenges.
      */
     @Generated
@@ -226,9 +226,9 @@ public class NSURLSession extends NSObject {
     public native NSURLSessionDownloadTask downloadTaskWithRequest(NSURLRequest request);
 
     /**
-     * download task convenience methods.  When a download successfully
+     * download task convenience methods. When a download successfully
      * completes, the NSURL will point to a file that must be read or
-     * copied during the invocation of the completion routine.  The file
+     * copied during the invocation of the completion routine. The file
      * will be removed automatically.
      */
     @Generated
@@ -237,7 +237,8 @@ public class NSURLSession extends NSObject {
             @ObjCBlock(name = "call_downloadTaskWithRequestCompletionHandler") Block_downloadTaskWithRequestCompletionHandler completionHandler);
 
     /**
-     * Creates a download task with the resume data.  If the download cannot be successfully resumed, URLSession:task:didCompleteWithError: will be called.
+     * Creates a download task with the resume data. If the download cannot be successfully resumed,
+     * URLSession:task:didCompleteWithError: will be called.
      */
     @Generated
     @Selector("downloadTaskWithResumeData:")
@@ -262,7 +263,7 @@ public class NSURLSession extends NSObject {
 
     /**
      * -finishTasksAndInvalidate returns immediately and existing tasks will be allowed
-     * to run to completion.  New tasks may not be created.  The session
+     * to run to completion. New tasks may not be created. The session
      * will continue to make delegate callbacks until URLSession:didBecomeInvalidWithError:
      * has been issued.
      * <p>
@@ -278,7 +279,8 @@ public class NSURLSession extends NSObject {
     public native void finishTasksAndInvalidate();
 
     /**
-     * flush storage to disk and clear transient network caches.  Invokes completionHandler() on the delegate queue if not nil.
+     * flush storage to disk and clear transient network caches. Invokes completionHandler() on the delegate queue if
+     * not nil.
      */
     @Generated
     @Selector("flushWithCompletionHandler:")
@@ -307,7 +309,7 @@ public class NSURLSession extends NSObject {
 
     /**
      * -invalidateAndCancel acts as -finishTasksAndInvalidate, but issues
-     * -cancel to all outstanding tasks for this session.  Note task
+     * -cancel to all outstanding tasks for this session. Note task
      * cancellation is subject to the state of the task, and some tasks may
      * have already have completed at the time they are sent -cancel.
      */
@@ -316,7 +318,8 @@ public class NSURLSession extends NSObject {
     public native void invalidateAndCancel();
 
     /**
-     * empty all cookies, cache and credential stores, removes disk files, issues -flushWithCompletionHandler:. Invokes completionHandler() on the delegate queue if not nil.
+     * empty all cookies, cache and credential stores, removes disk files, issues -flushWithCompletionHandler:. Invokes
+     * completionHandler() on the delegate queue if not nil.
      */
     @Generated
     @Selector("resetWithCompletionHandler:")
@@ -355,7 +358,7 @@ public class NSURLSession extends NSObject {
     public native NSURLSessionStreamTask streamTaskWithNetService(NSNetService service);
 
     /**
-     * Creates an upload task with the given request.  The body of the request is provided from the bodyData.
+     * Creates an upload task with the given request. The body of the request is provided from the bodyData.
      */
     @Generated
     @Selector("uploadTaskWithRequest:fromData:")
@@ -368,7 +371,8 @@ public class NSURLSession extends NSObject {
             @ObjCBlock(name = "call_uploadTaskWithRequestFromDataCompletionHandler") Block_uploadTaskWithRequestFromDataCompletionHandler completionHandler);
 
     /**
-     * Creates an upload task with the given request.  The body of the request will be created from the file referenced by fileURL
+     * Creates an upload task with the given request. The body of the request will be created from the file referenced
+     * by fileURL
      */
     @Generated
     @Selector("uploadTaskWithRequest:fromFile:")
@@ -384,7 +388,8 @@ public class NSURLSession extends NSObject {
             @ObjCBlock(name = "call_uploadTaskWithRequestFromFileCompletionHandler") Block_uploadTaskWithRequestFromFileCompletionHandler completionHandler);
 
     /**
-     * Creates an upload task with the given request.  The previously set body stream of the request (if any) is ignored and the URLSession:task:needNewBodyStream: delegate will be called when the body payload is required.
+     * Creates an upload task with the given request. The previously set body stream of the request (if any) is ignored
+     * and the URLSession:task:needNewBodyStream: delegate will be called when the body payload is required.
      */
     @Generated
     @Selector("uploadTaskWithStreamedRequest:")
@@ -470,9 +475,11 @@ public class NSURLSession extends NSObject {
     }
 
     /**
-     * Creates a WebSocket task given the request. The request properties can be modified and will be used by the task during the HTTP handshake phase.
+     * Creates a WebSocket task given the request. The request properties can be modified and will be used by the task
+     * during the HTTP handshake phase.
      * Clients who want to add custom protocols can do so by directly adding headers with the key Sec-WebSocket-Protocol
-     * and a comma separated list of protocols they wish to negotiate with the server. The custom HTTP headers provided by the client will remain unchanged for the handshake with the server.
+     * and a comma separated list of protocols they wish to negotiate with the server. The custom HTTP headers provided
+     * by the client will remain unchanged for the handshake with the server.
      */
     @Generated
     @Selector("webSocketTaskWithRequest:")
@@ -486,9 +493,11 @@ public class NSURLSession extends NSObject {
     public native NSURLSessionWebSocketTask webSocketTaskWithURL(NSURL url);
 
     /**
-     * Creates a WebSocket task given the url and an array of protocols. The protocols will be used in the WebSocket handshake to
+     * Creates a WebSocket task given the url and an array of protocols. The protocols will be used in the WebSocket
+     * handshake to
      * negotiate a prefered protocol with the server
-     * Note - The protocol will not affect the WebSocket framing. More details on the protocol can be found by reading the WebSocket RFC
+     * Note - The protocol will not affect the WebSocket framing. More details on the protocol can be found by reading
+     * the WebSocket RFC
      */
     @Generated
     @Selector("webSocketTaskWithURL:protocols:")

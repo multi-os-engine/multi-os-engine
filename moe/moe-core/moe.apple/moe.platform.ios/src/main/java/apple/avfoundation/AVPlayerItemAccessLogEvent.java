@@ -160,7 +160,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]		URI
+     * [@property] URI
      * <p>
      * The URI of the playback item. Can be nil.
      * <p>
@@ -172,9 +172,10 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String URI();
 
     /**
-     * [@property]		averageAudioBitrate
+     * [@property] averageAudioBitrate
      * <p>
-     * The average bitrate of audio track. This is not available if audio is muxed with video. Measured in bits per second.
+     * The average bitrate of audio track. This is not available if audio is muxed with video. Measured in bits per
+     * second.
      * <p>
      * Value is negative if unknown. Corresponds to "c-avg-audio-bitrate".
      * This property is not observable.
@@ -184,9 +185,10 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double averageAudioBitrate();
 
     /**
-     * [@property]		averageVideoBitrate
+     * [@property] averageVideoBitrate
      * <p>
-     * The average bitrate of video track if it is unmuxed. Average bitrate of combined content if muxed. Measured in bits per second.
+     * The average bitrate of video track if it is unmuxed. Average bitrate of combined content if muxed. Measured in
+     * bits per second.
      * <p>
      * Value is negative if unknown. Corresponds to "c-avg-video-bitrate".
      * This property is not observable.
@@ -202,7 +204,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]		downloadOverdue
+     * [@property] downloadOverdue
      * <p>
      * The total number of times the download of the segments took too long.
      * <p>
@@ -215,7 +217,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long downloadOverdue();
 
     /**
-     * [@property]		durationWatched
+     * [@property] durationWatched
      * <p>
      * The accumulated duration of the media played. Measured in seconds.
      * <p>
@@ -227,7 +229,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double durationWatched();
 
     /**
-     * [@property]		indicatedAverageBitrate
+     * [@property] indicatedAverageBitrate
      * <p>
      * Average throughput required to play the stream, as advertised by the server. Measured in bits per second.
      * <p>
@@ -239,7 +241,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double indicatedAverageBitrate();
 
     /**
-     * [@property]		indicatedBitrate
+     * [@property] indicatedBitrate
      * <p>
      * The throughput required to play the stream, as advertised by the server. Measured in bits per second.
      * <p>
@@ -255,7 +257,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native AVPlayerItemAccessLogEvent init();
 
     /**
-     * [@property]		mediaRequestsWWAN
+     * [@property] mediaRequestsWWAN
      * <p>
      * Number of network read requests over WWAN.
      * <p>
@@ -268,7 +270,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long mediaRequestsWWAN();
 
     /**
-     * [@property]		numberOfBytesTransferred
+     * [@property] numberOfBytesTransferred
      * <p>
      * The accumulated number of bytes transferred.
      * <p>
@@ -280,7 +282,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfBytesTransferred();
 
     /**
-     * [@property]		numberOfDroppedVideoFrames
+     * [@property] numberOfDroppedVideoFrames
      * <p>
      * The total number of dropped video frames.
      * <p>
@@ -293,11 +295,12 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfDroppedVideoFrames();
 
     /**
-     * [@property]		numberOfMediaRequests
+     * [@property] numberOfMediaRequests
      * <p>
      * A count of media read requests.
      * <p>
-     * Value is negative if unknown. A count of media read requests from the server to this client. Corresponds to "sc-count".
+     * Value is negative if unknown. A count of media read requests from the server to this client. Corresponds to
+     * "sc-count".
      * For HTTP live Streaming, a count of media segments downloaded from the server to this client.
      * For progressive-style HTTP media downloads, a count of HTTP GET (byte-range) requests for the resource.
      * This property is not observable.
@@ -308,11 +311,12 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfMediaRequests();
 
     /**
-     * [@property]		numberOfSegmentsDownloaded
+     * [@property] numberOfSegmentsDownloaded
      * <p>
      * A count of media segments downloaded.
      * <p>
-     * Value is negative if unknown. A count of media segments downloaded from the server to this client. Corresponds to "sc-count".
+     * Value is negative if unknown. A count of media segments downloaded from the server to this client. Corresponds to
+     * "sc-count".
      * This property is not observable.
      * This property is deprecated. Use numberOfMediaRequests instead.
      */
@@ -323,7 +327,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfSegmentsDownloaded();
 
     /**
-     * [@property]		numberOfServerAddressChanges
+     * [@property] numberOfServerAddressChanges
      * <p>
      * A count of changes to the property serverAddress, see above, over the last uninterrupted period of playback.
      * <p>
@@ -336,7 +340,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfServerAddressChanges();
 
     /**
-     * [@property]		numberOfStalls
+     * [@property] numberOfStalls
      * <p>
      * The total number of playback stalls encountered.
      * <p>
@@ -349,7 +353,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native long numberOfStalls();
 
     /**
-     * [@property]		observedBitrate
+     * [@property] observedBitrate
      * <p>
      * The empirical throughput across all media downloaded. Measured in bits per second.
      * <p>
@@ -361,7 +365,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedBitrate();
 
     /**
-     * [@property]		observedBitrateStandardDeviation
+     * [@property] observedBitrateStandardDeviation
      * <p>
      * Standard deviation of observed segment download bit rates.
      * <p>
@@ -373,7 +377,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedBitrateStandardDeviation();
 
     /**
-     * [@property]		observedMaxBitrate
+     * [@property] observedMaxBitrate
      * <p>
      * Maximum observed segment download bit rate.
      * <p>
@@ -385,7 +389,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedMaxBitrate();
 
     /**
-     * [@property]		observedMinBitrate
+     * [@property] observedMinBitrate
      * <p>
      * Minimum observed segment download bit rate.
      * <p>
@@ -397,7 +401,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double observedMinBitrate();
 
     /**
-     * [@property]		playbackSessionID
+     * [@property] playbackSessionID
      * <p>
      * A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
      * <p>
@@ -409,7 +413,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String playbackSessionID();
 
     /**
-     * [@property]		playbackStartDate
+     * [@property] playbackStartDate
      * <p>
      * The date/time at which playback began for this event. Can be nil.
      * <p>
@@ -421,7 +425,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native NSDate playbackStartDate();
 
     /**
-     * [@property]		playbackStartOffset
+     * [@property] playbackStartOffset
      * <p>
      * An offset into the playlist where the last uninterrupted period of playback began. Measured in seconds.
      * <p>
@@ -433,7 +437,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double playbackStartOffset();
 
     /**
-     * [@property]		playbackType
+     * [@property] playbackType
      * <p>
      * Playback type (LIVE, VOD, FILE).
      * <p>
@@ -445,7 +449,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String playbackType();
 
     /**
-     * [@property]		segmentsDownloadedDuration
+     * [@property] segmentsDownloadedDuration
      * <p>
      * The accumulated duration of the media downloaded. Measured in seconds.
      * <p>
@@ -457,7 +461,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double segmentsDownloadedDuration();
 
     /**
-     * [@property]		serverAddress
+     * [@property] serverAddress
      * <p>
      * The IP address of the server that was the source of the last delivered media segment. Can be nil.
      * <p>
@@ -469,7 +473,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native String serverAddress();
 
     /**
-     * [@property]		startupTime
+     * [@property] startupTime
      * <p>
      * The accumulated duration until player item is ready to play. Measured in seconds.
      * <p>
@@ -481,7 +485,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double startupTime();
 
     /**
-     * [@property]		switchBitrate
+     * [@property] switchBitrate
      * <p>
      * Bandwidth that caused us to switch (up or down).
      * <p>
@@ -493,7 +497,7 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     public native double switchBitrate();
 
     /**
-     * [@property]		transferDuration
+     * [@property] transferDuration
      * <p>
      * The accumulated duration of active network transfer of bytes. Measured in seconds.
      * <p>

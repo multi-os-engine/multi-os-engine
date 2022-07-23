@@ -44,7 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEAppProxyTCPFlow
  * <p>
- * The NEAppProxyTCPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider implementations to proxy the payload of TCP connections.
+ * The NEAppProxyTCPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider
+ * implementations to proxy the payload of TCP connections.
  * <p>
  * NEAppProxyTCPFlow is part of NetworkExtension.framework
  * <p>
@@ -169,7 +170,12 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
      * <p>
      * Read data from the flow.
      *
-     * @param completionHandler A block that will be executed when some data is read from the flow. The block is passed either the data that was read or a non-nil error if an error occurred. If data has a length of 0 then no data can be subsequently read from the flow. The completion handler is only called for the single read operation that was initiated by calling this method. If the caller wants to read more data then it should call this method again to schedule another read operation and another execution of the completion handler block.
+     * @param completionHandler A block that will be executed when some data is read from the flow. The block is passed
+     *                          either the data that was read or a non-nil error if an error occurred. If data has a
+     *                          length of 0 then no data can be subsequently read from the flow. The completion handler
+     *                          is only called for the single read operation that was initiated by calling this method.
+     *                          If the caller wants to read more data then it should call this method again to schedule
+     *                          another read operation and another execution of the completion handler block.
      */
     @Generated
     @Selector("readDataWithCompletionHandler:")
@@ -191,7 +197,10 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
      * Write data to the flow.
      *
      * @param data              The data to write.
-     * @param completionHandler A block that will be executed when the data is written into the associated socket's receive buffer. The caller should use this callback as an indication that it is possible to write more data to the flow without using up excessive buffer memory. If an error occurs while writing the data then a non-nil NSError object is passed to the block.
+     * @param completionHandler A block that will be executed when the data is written into the associated socket's
+     *                          receive buffer. The caller should use this callback as an indication that it is possible
+     *                          to write more data to the flow without using up excessive buffer memory. If an error
+     *                          occurs while writing the data then a non-nil NSError object is passed to the block.
      */
     @Generated
     @Selector("writeData:withCompletionHandler:")

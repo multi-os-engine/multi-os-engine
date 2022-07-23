@@ -62,7 +62,8 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at the time that the notification is presented.
+     * Use -[NSString localizedUserNotificationStringForKey:arguments:] to provide a string that will be localized at
+     * the time that the notification is presented.
      */
     @Generated
     @Selector("actionWithIdentifier:title:options:")

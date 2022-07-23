@@ -163,7 +163,8 @@ public class UIGravityBehavior extends UIDynamicBehavior {
 
     /**
      * The default value for the gravity vector is (0.0, 1.0)
-     * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per second².
+     * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per
+     * second².
      */
     @Generated
     @Selector("gravityDirection")
@@ -201,7 +202,8 @@ public class UIGravityBehavior extends UIDynamicBehavior {
 
     /**
      * The default value for the gravity vector is (0.0, 1.0)
-     * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per second².
+     * The acceleration for a dynamic item subject to a (0.0, 1.0) gravity vector is downwards at 1000 points per
+     * second².
      */
     @Generated
     @Selector("setGravityDirection:")

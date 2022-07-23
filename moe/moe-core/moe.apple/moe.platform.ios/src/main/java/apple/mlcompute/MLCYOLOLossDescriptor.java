@@ -59,7 +59,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     public static native MLCYOLOLossDescriptor allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   anchorBoxCount
+     * [@property] anchorBoxCount
      * <p>
      * number of anchor boxes used to detect object per grid cell
      */
@@ -69,7 +69,7 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     public native long anchorBoxCount();
 
     /**
-     * [@property]   anchorBoxes
+     * [@property] anchorBoxes
      * <p>
      * \p NSData containing the width and height for \p anchorBoxCount anchor boxes
      * This \p NSData should have 2 floating-point values per anchor box which represent the width
@@ -158,17 +158,17 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   negative IOU
+     * [@property] negative IOU
      * <p>
      * If the prediction IOU with groundTruth is lower than this
-     * value we consider it a confident object absence.  The default is 0.3
+     * value we consider it a confident object absence. The default is 0.3
      */
     @Generated
     @Selector("maximumIOUForObjectAbsence")
     public native float maximumIOUForObjectAbsence();
 
     /**
-     * [@property]   positive IOU
+     * [@property] positive IOU
      * <p>
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, The default is 0.7
@@ -191,62 +191,62 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   scaleClass
+     * [@property] scaleClass
      * <p>
-     * The scale factor for no object classes loss and loss gradient.  The default is 2.0
+     * The scale factor for no object classes loss and loss gradient. The default is 2.0
      */
     @Generated
     @Selector("scaleClassLoss")
     public native float scaleClassLoss();
 
     /**
-     * [@property]   scaleNoObject
+     * [@property] scaleNoObject
      * <p>
-     * The scale factor for no object confidence loss and loss gradient.  The default is 5.0
+     * The scale factor for no object confidence loss and loss gradient. The default is 5.0
      */
     @Generated
     @Selector("scaleNoObjectConfidenceLoss")
     public native float scaleNoObjectConfidenceLoss();
 
     /**
-     * [@property]   scaleObject
+     * [@property] scaleObject
      * <p>
-     * The scale factor for object confidence loss and loss gradient.  The default is 100.0
+     * The scale factor for object confidence loss and loss gradient. The default is 100.0
      */
     @Generated
     @Selector("scaleObjectConfidenceLoss")
     public native float scaleObjectConfidenceLoss();
 
     /**
-     * [@property]   scaleSpatialPositionLoss
+     * [@property] scaleSpatialPositionLoss
      * <p>
-     * The scale factor for spatial position loss and loss gradient.  The default is 10.0
+     * The scale factor for spatial position loss and loss gradient. The default is 10.0
      */
     @Generated
     @Selector("scaleSpatialPositionLoss")
     public native float scaleSpatialPositionLoss();
 
     /**
-     * [@property]   scaleSpatialSizeLoss
+     * [@property] scaleSpatialSizeLoss
      * <p>
-     * The scale factor for spatial size loss and loss gradient.  The default is 10.0
+     * The scale factor for spatial size loss and loss gradient. The default is 10.0
      */
     @Generated
     @Selector("scaleSpatialSizeLoss")
     public native float scaleSpatialSizeLoss();
 
     /**
-     * [@property]   negative IOU
+     * [@property] negative IOU
      * <p>
      * If the prediction IOU with groundTruth is lower than this
-     * value we consider it a confident object absence.  The default is 0.3
+     * value we consider it a confident object absence. The default is 0.3
      */
     @Generated
     @Selector("setMaximumIOUForObjectAbsence:")
     public native void setMaximumIOUForObjectAbsence(float value);
 
     /**
-     * [@property]   positive IOU
+     * [@property] positive IOU
      * <p>
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, The default is 0.7
@@ -256,55 +256,55 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     public native void setMinimumIOUForObjectPresence(float value);
 
     /**
-     * [@property]   scaleClass
+     * [@property] scaleClass
      * <p>
-     * The scale factor for no object classes loss and loss gradient.  The default is 2.0
+     * The scale factor for no object classes loss and loss gradient. The default is 2.0
      */
     @Generated
     @Selector("setScaleClassLoss:")
     public native void setScaleClassLoss(float value);
 
     /**
-     * [@property]   scaleNoObject
+     * [@property] scaleNoObject
      * <p>
-     * The scale factor for no object confidence loss and loss gradient.  The default is 5.0
+     * The scale factor for no object confidence loss and loss gradient. The default is 5.0
      */
     @Generated
     @Selector("setScaleNoObjectConfidenceLoss:")
     public native void setScaleNoObjectConfidenceLoss(float value);
 
     /**
-     * [@property]   scaleObject
+     * [@property] scaleObject
      * <p>
-     * The scale factor for object confidence loss and loss gradient.  The default is 100.0
+     * The scale factor for object confidence loss and loss gradient. The default is 100.0
      */
     @Generated
     @Selector("setScaleObjectConfidenceLoss:")
     public native void setScaleObjectConfidenceLoss(float value);
 
     /**
-     * [@property]   scaleSpatialPositionLoss
+     * [@property] scaleSpatialPositionLoss
      * <p>
-     * The scale factor for spatial position loss and loss gradient.  The default is 10.0
+     * The scale factor for spatial position loss and loss gradient. The default is 10.0
      */
     @Generated
     @Selector("setScaleSpatialPositionLoss:")
     public native void setScaleSpatialPositionLoss(float value);
 
     /**
-     * [@property]   scaleSpatialSizeLoss
+     * [@property] scaleSpatialSizeLoss
      * <p>
-     * The scale factor for spatial size loss and loss gradient.  The default is 10.0
+     * The scale factor for spatial size loss and loss gradient. The default is 10.0
      */
     @Generated
     @Selector("setScaleSpatialSizeLoss:")
     public native void setScaleSpatialSizeLoss(float value);
 
     /**
-     * [@property]   shouldRescore
+     * [@property] shouldRescore
      * <p>
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
-     * of predicted bounding box and the groundTruth boundingBox.  The default is YES
+     * of predicted bounding box and the groundTruth boundingBox. The default is YES
      */
     @Generated
     @Selector("setShouldRescore:")
@@ -315,10 +315,10 @@ public class MLCYOLOLossDescriptor extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   shouldRescore
+     * [@property] shouldRescore
      * <p>
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
-     * of predicted bounding box and the groundTruth boundingBox.  The default is YES
+     * of predicted bounding box and the groundTruth boundingBox. The default is YES
      */
     @Generated
     @Selector("shouldRescore")

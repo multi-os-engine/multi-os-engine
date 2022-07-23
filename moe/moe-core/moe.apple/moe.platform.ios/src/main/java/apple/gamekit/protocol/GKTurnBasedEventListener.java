@@ -35,7 +35,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("GKTurnBasedEventListener")
 public interface GKTurnBasedEventListener {
     /**
-     * If Game Center initiates a match the developer should create a GKTurnBasedMatch from playersToInvite and present a GKTurnbasedMatchmakerViewController.
+     * If Game Center initiates a match the developer should create a GKTurnBasedMatch from playersToInvite and present
+     * a GKTurnbasedMatchmakerViewController.
      */
     @Generated
     @IsOptional
@@ -77,7 +78,8 @@ public interface GKTurnBasedEventListener {
     }
 
     /**
-     * called when all players either respond or timeout responding to this request.  This is sent to both the turn holder and the initiator of the exchange
+     * called when all players either respond or timeout responding to this request. This is sent to both the turn
+     * holder and the initiator of the exchange
      */
     @Generated
     @IsOptional
@@ -99,13 +101,14 @@ public interface GKTurnBasedEventListener {
     }
 
     /**
-     * called when it becomes this player's turn.  It also gets called under the following conditions:
+     * called when it becomes this player's turn. It also gets called under the following conditions:
      * the player's turn has a timeout and it is about to expire.
      * the player accepts an invite from another player.
      * when the game is running it will additionally recieve turn events for the following:
      * turn was passed to another player
      * another player saved the match data
-     * Because of this the app needs to be prepared to handle this even while the player is taking a turn in an existing match.  The boolean indicates whether this event launched or brought to forground the app.
+     * Because of this the app needs to be prepared to handle this even while the player is taking a turn in an existing
+     * match. The boolean indicates whether this event launched or brought to forground the app.
      */
     @Generated
     @IsOptional
@@ -116,7 +119,9 @@ public interface GKTurnBasedEventListener {
     }
 
     /**
-     * Called when a player chooses to quit a match and that player has the current turn.  The developer should call participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler: on the match passing in appropriate values.  They can also update matchOutcome for other players as appropriate.
+     * Called when a player chooses to quit a match and that player has the current turn. The developer should call
+     * participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler: on the match passing
+     * in appropriate values. They can also update matchOutcome for other players as appropriate.
      */
     @Generated
     @IsOptional

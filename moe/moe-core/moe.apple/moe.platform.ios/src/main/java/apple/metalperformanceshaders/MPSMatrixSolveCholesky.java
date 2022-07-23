@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A * X = B
  * <p>
- * Where A is symmetric positive definite.  B is the array of
+ * Where A is symmetric positive definite. B is the array of
  * right hand sides for which the equations are to be solved.
  * X is the resulting matrix of solutions.
  */

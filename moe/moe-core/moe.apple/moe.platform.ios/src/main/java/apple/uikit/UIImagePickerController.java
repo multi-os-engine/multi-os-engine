@@ -372,7 +372,8 @@ public class UIImagePickerController extends UINavigationController implements N
     public native void setVideoMaximumDuration(double value);
 
     /**
-     * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality, it will use the default value.
+     * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality,
+     * it will use the default value.
      */
     @Generated
     @Selector("setVideoQuality:")
@@ -395,7 +396,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * programmatically initiates still image capture. ignored if image capture is in-flight.
-     * clients can initiate additional captures after receiving -imagePickerController:didFinishPickingMediaWithInfo: delegate callback
+     * clients can initiate additional captures after receiving -imagePickerController:didFinishPickingMediaWithInfo:
+     * delegate callback
      */
     @Generated
     @Selector("startVideoCapture")
@@ -417,7 +419,8 @@ public class UIImagePickerController extends UINavigationController implements N
     public native double videoMaximumDuration();
 
     /**
-     * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality, it will use the default value.
+     * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality,
+     * it will use the default value.
      */
     @Generated
     @Selector("videoQuality")
@@ -440,14 +443,18 @@ public class UIImagePickerController extends UINavigationController implements N
     public native void setImageExportPreset(@NInt long value);
 
     /**
-     * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string). If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if the source type is UIImagePickerControllerSourceTypeCamera
+     * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string).
+     * If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if
+     * the source type is UIImagePickerControllerSourceTypeCamera
      */
     @Generated
     @Selector("setVideoExportPreset:")
     public native void setVideoExportPreset(String value);
 
     /**
-     * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string). If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if the source type is UIImagePickerControllerSourceTypeCamera
+     * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string).
+     * If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if
+     * the source type is UIImagePickerControllerSourceTypeCamera
      */
     @Generated
     @Selector("videoExportPreset")

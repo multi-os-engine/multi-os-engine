@@ -167,7 +167,8 @@ public class NSURLSessionTaskMetrics extends NSObject {
     public native NSDateInterval taskInterval();
 
     /**
-     * transactionMetrics array contains the metrics collected for every request/response transaction created during the task execution.
+     * transactionMetrics array contains the metrics collected for every request/response transaction created during the
+     * task execution.
      */
     @Generated
     @Selector("transactionMetrics")

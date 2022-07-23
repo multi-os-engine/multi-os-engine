@@ -30,8 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLayoutSupplementaryItem
-        implements NSCopying {
+public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLayoutSupplementaryItem implements
+        NSCopying {
     static {
         NatJ.register();
     }
@@ -69,29 +69,29 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
      * position the boundary supplementary item.
      * <p>
      * +------------------------------------------+
-     * +----------------------+                 |Boundary Supplementary Item               |
-     * |                      |<----------------|* alignment: [.top, .leading]             |
-     * +----------------------+                 |* absoluteOffset: CGPoint(x:0.0, y:-10.0) |
+     * +----------------------+ |Boundary Supplementary Item |
+     * | |<----------------|* alignment: [.top, .leading] |
+     * +----------------------+ |* absoluteOffset: CGPoint(x:0.0, y:-10.0) |
      * +------------------------------------------+
      * +----------------------------------+
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |      +--------------------------------+
-     * |                                  |<-----|        Section Geometry        |
-     * |                                  |      +--------------------------------+
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
-     * |                                  |
+     * | |
+     * | |
+     * | |
+     * | |
+     * | |
+     * | |
+     * | |
+     * | |
+     * | | +--------------------------------+
+     * | |<-----| Section Geometry |
+     * | | +--------------------------------+
+     * | |
+     * | |
+     * | |
+     * | |
+     * | |
+     * | |
+     * | |
      * +----------------------------------+
      */
     @Generated
@@ -197,8 +197,10 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     public native CGPoint offset();
 
     /**
-     * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g. section) is visible.
-     * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
+     * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g.
+     * section) is visible.
+     * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header +
+     * footer both pinned)
      */
     @Generated
     @Selector("pinToVisibleBounds")
@@ -221,8 +223,10 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     public native void setExtendsBoundary(boolean value);
 
     /**
-     * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g. section) is visible.
-     * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header + footer both pinned)
+     * Default is NO. Specify YES to keep the supplementary visible while any portion of the host geometry (e.g.
+     * section) is visible.
+     * Occlusion disambiguation between other supplementaries will be managed automatically (e.g. section header +
+     * footer both pinned)
      */
     @Generated
     @Selector("setPinToVisibleBounds:")

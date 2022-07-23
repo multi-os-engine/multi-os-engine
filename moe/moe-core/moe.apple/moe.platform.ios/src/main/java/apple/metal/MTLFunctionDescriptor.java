@@ -77,7 +77,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] constantValues
      * <p>
-     * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
+     * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid
+     * constant values for all required function constants.
      */
     @Generated
     @Selector("constantValues")
@@ -171,7 +172,8 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] constantValues
      * <p>
-     * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid constant values for all required function constants.
+     * The set of constant values assigned to the function constants. Compilation fails if you do not provide valid
+     * constant values for all required function constants.
      */
     @Generated
     @Selector("setConstantValues:")

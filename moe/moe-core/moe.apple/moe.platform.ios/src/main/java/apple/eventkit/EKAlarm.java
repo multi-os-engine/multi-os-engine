@@ -185,7 +185,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]   absoluteDate
+     * [@property] absoluteDate
      * <p>
      * Represents an alarm that fires at a specific date.
      * <p>
@@ -207,7 +207,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public native EKAlarm init();
 
     /**
-     * [@property]   proximity
+     * [@property] proximity
      * <p>
      * Defines whether this alarm triggers via entering/exiting a geofence as defined by
      * structuredLocation.
@@ -218,7 +218,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public native long proximity();
 
     /**
-     * [@property]   relativeOffset
+     * [@property] relativeOffset
      * <p>
      * Specifies a relative offset from an event start date to fire an alarm.
      * <p>
@@ -231,7 +231,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public native double relativeOffset();
 
     /**
-     * [@property]   absoluteDate
+     * [@property] absoluteDate
      * <p>
      * Represents an alarm that fires at a specific date.
      * <p>
@@ -243,7 +243,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public native void setAbsoluteDate(NSDate value);
 
     /**
-     * [@property]   proximity
+     * [@property] proximity
      * <p>
      * Defines whether this alarm triggers via entering/exiting a geofence as defined by
      * structuredLocation.
@@ -253,7 +253,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public native void setProximity(@NInt long value);
 
     /**
-     * [@property]   relativeOffset
+     * [@property] relativeOffset
      * <p>
      * Specifies a relative offset from an event start date to fire an alarm.
      * <p>
@@ -266,7 +266,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public native void setRelativeOffset(double value);
 
     /**
-     * [@property]   structuredLocation
+     * [@property] structuredLocation
      * <p>
      * Allows you to set a structured location (a location with a potential geo-coordinate)
      * on an alarm. This is used in conjunction with proximity to do geofence-based
@@ -277,7 +277,7 @@ public class EKAlarm extends EKObject implements NSCopying {
     public native void setStructuredLocation(EKStructuredLocation value);
 
     /**
-     * [@property]   structuredLocation
+     * [@property] structuredLocation
      * <p>
      * Allows you to set a structured location (a location with a potential geo-coordinate)
      * on an alarm. This is used in conjunction with proximity to do geofence-based

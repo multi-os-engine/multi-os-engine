@@ -35,11 +35,12 @@ public final class INVocabularyStringType {
     @Generated @NInt public static final long PhotoTag = 0x0000000000000064L;
     /**
      * The name for a photograph album, for example "WWDC 2015 Karaoke".
-     * You may find that INVocabularyStringTypePhotoTag is a better match for concepts that are similar to, but not exactly, albums.
+     * You may find that INVocabularyStringTypePhotoTag is a better match for concepts that are similar to, but not
+     * exactly, albums.
      */
     @Generated @NInt public static final long PhotoAlbumName = 0x0000000000000065L;
     /**
-     * The name a user has created for a workout, for example  “Half Marathon”, “Kettlebell exercise”
+     * The name a user has created for a workout, for example “Half Marathon”, “Kettlebell exercise”
      */
     @Generated @NInt public static final long WorkoutActivityName = 0x00000000000000C8L;
     /**
@@ -65,7 +66,8 @@ public final class INVocabularyStringType {
      */
     @Generated @NInt public static final long PaymentsAccountNickname = 0x0000000000000191L;
     /**
-     * The title of a note, task, or task list as a person will say it; for example, "Grocery list" or "Weekly meeting minutes".
+     * The title of a note, task, or task list as a person will say it; for example, "Grocery list" or "Weekly meeting
+     * minutes".
      */
     @Generated @NInt public static final long NotebookItemTitle = 0x00000000000001F4L;
     /**

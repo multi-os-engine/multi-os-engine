@@ -25,7 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] PHASEOccluder
  * <p>
- * A PHASEOccluder represents a shape (with associated materials) that can affect sound transmission within the simulated acoustic scene.
+ * A PHASEOccluder represents a shape (with associated materials) that can affect sound transmission within the
+ * simulated acoustic scene.
  */
 @Generated
 @Library("PHASE")

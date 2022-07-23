@@ -48,7 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The NETunnelNetworkSettings class declares the programmatic interface for an object that contains network settings.
  * <p>
- * NETunnelNetworkSettings is used by NETunnelProviders to communicate the desired network settings for the tunnel to the framework. The framework takes care of applying the contained settings to the system.
+ * NETunnelNetworkSettings is used by NETunnelProviders to communicate the desired network settings for the tunnel to
+ * the framework. The framework takes care of applying the contained settings to the system.
  * <p>
  * Instances of this class are thread safe.
  */

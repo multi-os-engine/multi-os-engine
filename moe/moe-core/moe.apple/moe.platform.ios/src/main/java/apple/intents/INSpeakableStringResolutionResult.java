@@ -164,7 +164,9 @@ public class INSpeakableStringResolutionResult extends INIntentResolutionResult 
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INSpeakableString. The resolvedString can be different than the original INSpeakableString. This allows app extensions to add a pronunciationHint, or otherwise tweak the string.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given
+     * INSpeakableString. The resolvedString can be different than the original INSpeakableString. This allows app
+     * extensions to add a pronunciationHint, or otherwise tweak the string.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

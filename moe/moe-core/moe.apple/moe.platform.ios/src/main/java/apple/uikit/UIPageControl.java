@@ -396,7 +396,8 @@ public class UIPageControl extends UIControl {
     public native UIColor currentPageIndicatorTintColor();
 
     /**
-     * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is called. default is NO
+     * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is
+     * called. default is NO
      */
     @Generated
     @Selector("defersCurrentPageDisplay")
@@ -451,7 +452,8 @@ public class UIPageControl extends UIControl {
     public native void setCurrentPageIndicatorTintColor(UIColor value);
 
     /**
-     * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is called. default is NO
+     * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is
+     * called. default is NO
      */
     @Generated
     @Selector("setDefersCurrentPageDisplay:")
@@ -479,7 +481,8 @@ public class UIPageControl extends UIControl {
     public native void setPageIndicatorTintColor(UIColor value);
 
     /**
-     * Returns the minimum size required to display indicators for the given page count. Can be used to size the control if the page count could change.
+     * Returns the minimum size required to display indicators for the given page count. Can be used to size the control
+     * if the page count could change.
      */
     @Generated
     @Selector("sizeForNumberOfPages:")
@@ -487,7 +490,8 @@ public class UIPageControl extends UIControl {
     public native CGSize sizeForNumberOfPages(@NInt long pageCount);
 
     /**
-     * update page display to match the currentPage. ignored if defersCurrentPageDisplay is NO. setting the page value directly will update immediately
+     * update page display to match the currentPage. ignored if defersCurrentPageDisplay is NO. setting the page value
+     * directly will update immediately
      */
     @Generated
     @Selector("updateCurrentPageDisplay")
@@ -507,7 +511,8 @@ public class UIPageControl extends UIControl {
     public native boolean allowsContinuousInteraction();
 
     /**
-     * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and UIPageControlBackgroundStyleProminent on tvOS.
+     * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and
+     * UIPageControlBackgroundStyleProminent on tvOS.
      */
     @Generated
     @Selector("backgroundStyle")
@@ -550,7 +555,8 @@ public class UIPageControl extends UIControl {
     public native void setAllowsContinuousInteraction(boolean value);
 
     /**
-     * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and UIPageControlBackgroundStyleProminent on tvOS.
+     * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and
+     * UIPageControlBackgroundStyleProminent on tvOS.
      */
     @Generated
     @Selector("setBackgroundStyle:")

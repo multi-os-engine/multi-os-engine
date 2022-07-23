@@ -162,7 +162,8 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * Locales which support speech recognition.
-     * Note that supported does not mean currently available; some locales may require an internet connection, for example.
+     * Note that supported does not mean currently available; some locales may require an internet connection, for
+     * example.
      */
     @Generated
     @Selector("supportedLocales")

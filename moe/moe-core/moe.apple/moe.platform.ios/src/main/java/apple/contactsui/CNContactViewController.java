@@ -190,7 +190,7 @@ public class CNContactViewController extends UIViewController {
      * Use this view controller for a contact that has been fetched
      * from the user’s contacts database.
      * Allows editing of the contact by default.
-     * [@note]        All keys of the given contact must be fetched.
+     * [@note] All keys of the given contact must be fetched.
      *
      * @see contactStore
      * @see allowsEditing
@@ -203,7 +203,7 @@ public class CNContactViewController extends UIViewController {
      * Initializes a contact view controller for creating a new contact.
      * <p>
      * Use this view controller with a contact to be added to the user's contacts.
-     * [@note]         The given contact should be a newly initialized contact and
+     * [@note] The given contact should be a newly initialized contact and
      * not one fetched from the user's contacts.
      */
     @Generated
@@ -284,7 +284,7 @@ public class CNContactViewController extends UIViewController {
      * The @c CNContact property keys to display.
      * <p>
      * If @c nil, all properties are displayed. (The property is @c nil by default.)
-     * [@note]         All properties are visible when editing the contact.
+     * [@note] All properties are visible when editing the contact.
      */
     @Generated
     @Selector("displayedPropertyKeys")
@@ -332,7 +332,7 @@ public class CNContactViewController extends UIViewController {
      * A @c CNGroup where the new contact will be assigned membership.
      * <p>
      * If not set the contact is added only to the default @c CNContainer with no group membership.
-     * [@note]        When set to a group not in the default container, the container
+     * [@note] When set to a group not in the default container, the container
      * property must also be set to the container of parentGroup.
      */
     @Generated
@@ -405,7 +405,7 @@ public class CNContactViewController extends UIViewController {
      * The @c CNContact property keys to display.
      * <p>
      * If @c nil, all properties are displayed. (The property is @c nil by default.)
-     * [@note]         All properties are visible when editing the contact.
+     * [@note] All properties are visible when editing the contact.
      */
     @Generated
     @Selector("setDisplayedPropertyKeys:")
@@ -431,7 +431,7 @@ public class CNContactViewController extends UIViewController {
      * A @c CNGroup where the new contact will be assigned membership.
      * <p>
      * If not set the contact is added only to the default @c CNContainer with no group membership.
-     * [@note]        When set to a group not in the default container, the container
+     * [@note] When set to a group not in the default container, the container
      * property must also be set to the container of parentGroup.
      */
     @Generated

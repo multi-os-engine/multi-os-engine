@@ -170,7 +170,8 @@ public class CBDescriptor extends CBAttribute {
     /**
      * [@property] value
      * <p>
-     * The value of the descriptor. The corresponding value types for the various descriptors are detailed in @link CBUUID.h @/link.
+     * The value of the descriptor. The corresponding value types for the various descriptors are detailed in @link
+     * CBUUID.h @/link.
      */
     @Generated
     @Selector("value")

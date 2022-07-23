@@ -210,7 +210,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public static native long version_static();
 
     /**
-     * indicates the data type of the metadata item's value.  Publicly defined data types are declared in <CoreMedia/CMMetadata.h>
+     * indicates the data type of the metadata item's value. Publicly defined data types are declared in
+     * <CoreMedia/CMMetadata.h>
      */
     @Generated
     @Selector("dataType")
@@ -225,21 +226,24 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public native CMTime duration();
 
     /**
-     * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag information is available
+     * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag
+     * information is available
      */
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
 
     /**
-     * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics of their carriage in their container format. Keys for extra attributes are declared in AVMetadataFormat.h.
+     * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics
+     * of their carriage in their container format. Keys for extra attributes are declared in AVMetadataFormat.h.
      */
     @Generated
     @Selector("extraAttributes")
     public native NSDictionary<String, ?> extraAttributes();
 
     /**
-     * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in AVMetadataIdentifiers.h.
+     * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in
+     * AVMetadataIdentifiers.h.
      */
     @Generated
     @Selector("identifier")
@@ -250,7 +254,9 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public native AVMutableMetadataItem init();
 
     /**
-     * Indicates the key of the metadata item. Metadata item keys that are not instances NSString, NSNumber, or NSData cannot be converted to metadata identifiers; they also cannot be written to media resources via AVAssetExportSession or AVAssetWriter.
+     * Indicates the key of the metadata item. Metadata item keys that are not instances NSString, NSNumber, or NSData
+     * cannot be converted to metadata identifiers; they also cannot be written to media resources via
+     * AVAssetExportSession or AVAssetWriter.
      */
     @Generated
     @Selector("key")
@@ -258,7 +264,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public native Object key();
 
     /**
-     * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata container in which the metadata item is stored.
+     * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata
+     * container in which the metadata item is stored.
      */
     @Generated
     @Selector("keySpace")
@@ -272,7 +279,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public native NSLocale locale();
 
     /**
-     * indicates the data type of the metadata item's value.  Publicly defined data types are declared in <CoreMedia/CMMetadata.h>
+     * indicates the data type of the metadata item's value. Publicly defined data types are declared in
+     * <CoreMedia/CMMetadata.h>
      */
     @Generated
     @Selector("setDataType:")
@@ -286,35 +294,41 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     public native void setDuration(@ByValue CMTime value);
 
     /**
-     * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag information is available
+     * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag
+     * information is available
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
     public native void setExtendedLanguageTag(String value);
 
     /**
-     * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics of their carriage in their container format. Keys for extra attributes are declared in AVMetadataFormat.h.
+     * Provides a dictionary of the additional attributes. Extra attributes of metadata items are related to specifics
+     * of their carriage in their container format. Keys for extra attributes are declared in AVMetadataFormat.h.
      */
     @Generated
     @Selector("setExtraAttributes:")
     public native void setExtraAttributes(NSDictionary<String, ?> value);
 
     /**
-     * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in AVMetadataIdentifiers.h.
+     * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in
+     * AVMetadataIdentifiers.h.
      */
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
     /**
-     * Indicates the key of the metadata item. Metadata item keys that are not instances NSString, NSNumber, or NSData cannot be converted to metadata identifiers; they also cannot be written to media resources via AVAssetExportSession or AVAssetWriter.
+     * Indicates the key of the metadata item. Metadata item keys that are not instances NSString, NSNumber, or NSData
+     * cannot be converted to metadata identifiers; they also cannot be written to media resources via
+     * AVAssetExportSession or AVAssetWriter.
      */
     @Generated
     @Selector("setKey:")
     public native void setKey(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata container in which the metadata item is stored.
+     * Indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata
+     * container in which the metadata item is stored.
      */
     @Generated
     @Selector("setKeySpace:")

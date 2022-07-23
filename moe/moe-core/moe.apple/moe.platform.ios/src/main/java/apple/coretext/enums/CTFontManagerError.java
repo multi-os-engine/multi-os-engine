@@ -25,39 +25,39 @@ import org.moe.natj.general.ann.NInt;
  * Font registration errors
  * <p>
  * Errors that would prevent registration of fonts for a specified font file URL.
- * [@constant]   kCTFontManagerErrorFileNotFound
+ * [@constant] kCTFontManagerErrorFileNotFound
  * The file does not exist at the specified URL.
- * [@constant]   kCTFontManagerErrorInsufficientPermissions
+ * [@constant] kCTFontManagerErrorInsufficientPermissions
  * Cannot access the file due to insufficient permissions.
- * [@constant]   kCTFontManagerErrorUnrecognizedFormat
+ * [@constant] kCTFontManagerErrorUnrecognizedFormat
  * The file is not a recognized or supported font file format.
- * [@constant]   kCTFontManagerErrorInvalidFontData
+ * [@constant] kCTFontManagerErrorInvalidFontData
  * The file contains invalid font data that could cause system problems.
- * [@constant]   kCTFontManagerErrorAlreadyRegistered
+ * [@constant] kCTFontManagerErrorAlreadyRegistered
  * The file has already been registered in the specified scope.
  * <p>
  * Errors that would prevent un-registration of fonts for a specified font file URL.
- * [@constant]   kCTFontManagerErrorNotRegistered
+ * [@constant] kCTFontManagerErrorNotRegistered
  * The file is not registered in the specified scope.
- * [@constant]   kCTFontManagerErrorInUse
+ * [@constant] kCTFontManagerErrorInUse
  * The font file is actively in use and cannot be unregistered.
- * [@constant]   kCTFontManagerErrorSystemRequired
+ * [@constant] kCTFontManagerErrorSystemRequired
  * The file is required by the system and cannot be unregistered.
- * [@constant]   kCTFontManagerErrorRegistrationFailed
+ * [@constant] kCTFontManagerErrorRegistrationFailed
  * The file could not be processed due to an unexpected FontProvider error.
- * [@constant]   kCTFontManagerErrorMissingEntitlement
+ * [@constant] kCTFontManagerErrorMissingEntitlement
  * The file could not be processed because the provider does not have a necessary entitlement.
- * [@constant]   kCTFontManagerErrorInsufficientInfo
+ * [@constant] kCTFontManagerErrorInsufficientInfo
  * The font descriptor does not have information to specify a font file.
- * [@constant]   kCTFontManagerErrorCancelledByUser
+ * [@constant] kCTFontManagerErrorCancelledByUser
  * The operation was cancelled by the user.
- * [@constant]   kCTFontManagerErrorDuplicatedName
+ * [@constant] kCTFontManagerErrorDuplicatedName
  * The file could not be registered because of a duplicated font name.
- * [@constant]   kCTFontManagerErrorInvalidFilePath
+ * [@constant] kCTFontManagerErrorInvalidFilePath
  * The file is not in an allowed location. It must be either in the application's bundle or an on-demand resource.
- * [@constant]   kCTFontManagerErrorExceededResourceLimit
+ * [@constant] kCTFontManagerErrorExceededResourceLimit
  * The operation failed due to a system limitation.
- * [@constant]   kCTFontManagerErrorUnsupportedScope
+ * [@constant] kCTFontManagerErrorUnsupportedScope
  * The specified scope is not supported.
  */
 @Generated

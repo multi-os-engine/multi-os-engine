@@ -23,7 +23,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * --------------------------------------------------------------------------------------------------------------- ICCameraFolder
+ * ---------------------------------------------------------------------------------------------------------------
+ * ICCameraFolder
  * <p>
  * ICCameraFolder
  * <p>

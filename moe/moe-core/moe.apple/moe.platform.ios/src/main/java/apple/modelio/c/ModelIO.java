@@ -200,7 +200,8 @@ public final class ModelIO {
     public static native String MDLVertexAttributeTextureCoordinate();
 
     /**
-     * Universal Scene Description Mobile file format, file extension USDZ, UTI com.pixar.universal-scene-description-mobile
+     * Universal Scene Description Mobile file format, file extension USDZ, UTI
+     * com.pixar.universal-scene-description-mobile
      */
     @Generated
     @CVariable()

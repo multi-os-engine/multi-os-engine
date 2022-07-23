@@ -239,7 +239,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     /**
      * Allows opting-out of spring loading for an particular item.
      * <p>
-     * If you want the interaction effect on a different subview of the spring loaded cell, modify the context.targetView property.
+     * If you want the interaction effect on a different subview of the spring loaded cell, modify the
+     * context.targetView property.
      * The default is the cell.
      * <p>
      * If this method is not implemented, the default is YES.
@@ -258,10 +259,13 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * @param collectionView This UICollectionView.
      * @param indexPath      IndexPath of the item for which a configuration is being requested.
      * @param point          Location in the collection view's coordinate space
-     * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction from beginning.
-     * Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
-     * to indicate to users that it's possible for a menu to be presented from this element, but that there are no actions to
-     * present at this particular time.
+     * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction
+     *         from beginning.
+     *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect.
+     *         You might use this
+     *         to indicate to users that it's possible for a menu to be presented from this element, but that there are
+     *         no actions to
+     *         present at this particular time.
      */
     @Generated
     @IsOptional
@@ -272,10 +276,12 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Called right after allowsMultipleSelection is set to YES if -collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:
+     * Called right after allowsMultipleSelection is set to YES if
+     * -collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:
      * returned YES.
      * <p>
-     * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is now selecting
+     * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is
+     * now selecting
      * multiple items at once; such as updating buttons to say "Done" instead of "Select"/"Edit", for instance.
      */
     @Generated
@@ -287,7 +293,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
+     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal
+     * target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
      *
      * @param collectionView This UICollectionView.
@@ -316,13 +323,17 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Allows a two-finger pan gesture to automatically enable allowsMultipleSelection and start selecting multiple cells.
+     * Allows a two-finger pan gesture to automatically enable allowsMultipleSelection and start selecting multiple
+     * cells.
      * <p>
-     * After a multi-select gesture is recognized, this method will be called before allowsMultipleSelection is automatically
-     * set to YES to allow the user to select multiple contiguous items using a two-finger pan gesture across the constrained
+     * After a multi-select gesture is recognized, this method will be called before allowsMultipleSelection is
+     * automatically
+     * set to YES to allow the user to select multiple contiguous items using a two-finger pan gesture across the
+     * constrained
      * scroll direction.
      * <p>
-     * If the collection view has no constrained scroll direction (i.e., the collection view scrolls both horizontally and vertically),
+     * If the collection view has no constrained scroll direction (i.e., the collection view scrolls both horizontally
+     * and vertically),
      * then this method will not be called and the multi-select gesture will be disabled.
      * <p>
      * If this method is not implemented, the default is NO.
@@ -354,7 +365,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     /**
      * Called when the multi-select interaction ends.
      * <p>
-     * At this point, the collection view will remain in multi-select mode, but this delegate method is called to indicate that the
+     * At this point, the collection view will remain in multi-select mode, but this delegate method is called to
+     * indicate that the
      * multiple selection gesture or hardware keyboard interaction has ended.
      */
     @Generated
@@ -412,7 +424,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Return a valid @c UIWindowSceneActivationConfiguration to allow for the cell to be expanded into a new scene. Return nil to prevent the interaction from starting.
+     * Return a valid @c UIWindowSceneActivationConfiguration to allow for the cell to be expanded into a new scene.
+     * Return nil to prevent the interaction from starting.
      *
      * @param collectionView The collection view
      * @param indexPath      The index path of the cell being interacted with
@@ -428,7 +441,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Determines if the item at the specified index path should also become selected when focus moves to it.
-     * If the collection view's global selectionFollowsFocus is enabled, this method will allow you to override that behavior on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
+     * If the collection view's global selectionFollowsFocus is enabled, this method will allow you to override that
+     * behavior on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
      */
     @Generated
     @IsOptional

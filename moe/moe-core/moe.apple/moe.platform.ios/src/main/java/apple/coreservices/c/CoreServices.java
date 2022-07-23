@@ -25,7 +25,7 @@ public final class CoreServices {
     }
 
     /**
-     * UTTypeCreatePreferredIdentifierForTag()   *** DEPRECATED ***
+     * UTTypeCreatePreferredIdentifierForTag() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Creates a uniform type identifier for the type indicated by the
@@ -74,7 +74,7 @@ public final class CoreServices {
             CFStringRef inConformingToUTI);
 
     /**
-     * UTTypeCreateAllIdentifiersForTag()   *** DEPRECATED ***
+     * UTTypeCreateAllIdentifiersForTag() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Creates an array of all uniform type identifiers indicated by the
@@ -117,7 +117,7 @@ public final class CoreServices {
             CFStringRef inConformingToUTI);
 
     /**
-     * UTTypeCopyPreferredTagWithClass()   *** DEPRECATED ***
+     * UTTypeCopyPreferredTagWithClass() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Returns the identified type's preferred tag with the specified
@@ -145,7 +145,7 @@ public final class CoreServices {
     public static native CFStringRef UTTypeCopyPreferredTagWithClass(CFStringRef inUTI, CFStringRef inTagClass);
 
     /**
-     * UTTypeCopyAllTagsWithClass()   *** DEPRECATED ***
+     * UTTypeCopyAllTagsWithClass() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Returns each of the identified type's tags with the specified
@@ -167,7 +167,7 @@ public final class CoreServices {
     public static native CFArrayRef UTTypeCopyAllTagsWithClass(CFStringRef inUTI, CFStringRef inTagClass);
 
     /**
-     * UTTypeEqual()   *** DEPRECATED ***
+     * UTTypeEqual() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Compares two identified types for equality. Types are equal if
@@ -190,7 +190,7 @@ public final class CoreServices {
     public static native byte UTTypeEqual(CFStringRef inUTI1, CFStringRef inUTI2);
 
     /**
-     * UTTypeConformsTo()   *** DEPRECATED ***
+     * UTTypeConformsTo() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Tests for a conformance relationship between the two identified
@@ -213,7 +213,7 @@ public final class CoreServices {
     public static native byte UTTypeConformsTo(CFStringRef inUTI, CFStringRef inConformsToUTI);
 
     /**
-     * UTTypeCopyDescription()   *** DEPRECATED ***
+     * UTTypeCopyDescription() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Returns the localized, user-readable type description string
@@ -234,7 +234,7 @@ public final class CoreServices {
     public static native CFStringRef UTTypeCopyDescription(CFStringRef inUTI);
 
     /**
-     * UTTypeIsDeclared()   *** DEPRECATED ***
+     * UTTypeIsDeclared() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Returns whether or not the specified UTI has a declaration
@@ -254,7 +254,7 @@ public final class CoreServices {
     public static native byte UTTypeIsDeclared(CFStringRef inUTI);
 
     /**
-     * UTTypeIsDynamic()   *** DEPRECATED ***
+     * UTTypeIsDynamic() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Returns whether or not the specified UTI is a dynamic UTI.
@@ -272,7 +272,7 @@ public final class CoreServices {
     public static native byte UTTypeIsDynamic(CFStringRef inUTI);
 
     /**
-     * UTTypeCopyDeclaration()   *** DEPRECATED ***
+     * UTTypeCopyDeclaration() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Returns the identified type's declaration dictionary, as it
@@ -296,7 +296,7 @@ public final class CoreServices {
     public static native CFDictionaryRef UTTypeCopyDeclaration(CFStringRef inUTI);
 
     /**
-     * UTTypeCopyDeclaringBundleURL()   *** DEPRECATED ***
+     * UTTypeCopyDeclaringBundleURL() *** DEPRECATED ***
      * <p>
      * Discussion:
      * Returns the URL of the bundle containing the type declaration of
@@ -318,7 +318,7 @@ public final class CoreServices {
     public static native CFURLRef UTTypeCopyDeclaringBundleURL(CFStringRef inUTI);
 
     /**
-     * kUTTypeItem   *** DEPRECATED ***
+     * kUTTypeItem *** DEPRECATED ***
      * <p>
      * generic base type for most things
      * (files, directories)
@@ -326,7 +326,7 @@ public final class CoreServices {
      * UTI: public.item
      * <p>
      * <p>
-     * kUTTypeContent   *** DEPRECATED ***
+     * kUTTypeContent *** DEPRECATED ***
      * <p>
      * base type for anything containing user-viewable document content
      * (documents, pasteboard data, and document packages.) Types describing
@@ -336,7 +336,7 @@ public final class CoreServices {
      * UTI: public.content
      * <p>
      * <p>
-     * kUTTypeCompositeContent   *** DEPRECATED ***
+     * kUTTypeCompositeContent *** DEPRECATED ***
      * <p>
      * base type for content formats supporting mixed embedded content
      * (i.e., compound documents)
@@ -345,28 +345,28 @@ public final class CoreServices {
      * conforms to: public.content
      * <p>
      * <p>
-     * kUTTypeMessage   *** DEPRECATED ***
+     * kUTTypeMessage *** DEPRECATED ***
      * <p>
      * base type for messages (email, IM, etc.)
      * <p>
      * UTI: public.message
      * <p>
      * <p>
-     * kUTTypeContact   *** DEPRECATED ***
+     * kUTTypeContact *** DEPRECATED ***
      * <p>
      * contact information, e.g. for a person, group, organization
      * <p>
      * UTI: public.contact
      * <p>
      * <p>
-     * kUTTypeArchive   *** DEPRECATED ***
+     * kUTTypeArchive *** DEPRECATED ***
      * <p>
      * an archive of files and directories
      * <p>
      * UTI: public.archive
      * <p>
      * <p>
-     * kUTTypeDiskImage   *** DEPRECATED ***
+     * kUTTypeDiskImage *** DEPRECATED ***
      * <p>
      * a data item mountable as a volume
      * <p>
@@ -401,7 +401,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeDiskImage();
 
     /**
-     * kUTTypeData   *** DEPRECATED ***
+     * kUTTypeData *** DEPRECATED ***
      * <p>
      * base type for any sort of simple byte stream,
      * including files and in-memory data
@@ -410,7 +410,7 @@ public final class CoreServices {
      * conforms to: public.item
      * <p>
      * <p>
-     * kUTTypeDirectory   *** DEPRECATED ***
+     * kUTTypeDirectory *** DEPRECATED ***
      * <p>
      * file system directory
      * (includes packages AND folders)
@@ -419,14 +419,14 @@ public final class CoreServices {
      * conforms to: public.item
      * <p>
      * <p>
-     * kUTTypeResolvable   *** DEPRECATED ***
+     * kUTTypeResolvable *** DEPRECATED ***
      * <p>
      * symlink and alias file types conform to this UTI
      * <p>
      * UTI: com.apple.resolvable
      * <p>
      * <p>
-     * kUTTypeSymLink   *** DEPRECATED ***
+     * kUTTypeSymLink *** DEPRECATED ***
      * <p>
      * a symbolic link
      * <p>
@@ -434,14 +434,14 @@ public final class CoreServices {
      * conforms to: public.item, com.apple.resolvable
      * <p>
      * <p>
-     * kUTTypeExecutable   *** DEPRECATED ***
+     * kUTTypeExecutable *** DEPRECATED ***
      * <p>
      * an executable item
      * UTI: public.executable
      * conforms to: public.item
      * <p>
      * <p>
-     * kUTTypeMountPoint   *** DEPRECATED ***
+     * kUTTypeMountPoint *** DEPRECATED ***
      * <p>
      * a volume mount point (resolvable, resolves to the root dir of a volume)
      * <p>
@@ -449,7 +449,7 @@ public final class CoreServices {
      * conforms to: public.item, com.apple.resolvable
      * <p>
      * <p>
-     * kUTTypeAliasFile   *** DEPRECATED ***
+     * kUTTypeAliasFile *** DEPRECATED ***
      * <p>
      * a fully-formed alias file
      * <p>
@@ -457,7 +457,7 @@ public final class CoreServices {
      * conforms to: public.data, com.apple.resolvable
      * <p>
      * <p>
-     * kUTTypeAliasRecord   *** DEPRECATED ***
+     * kUTTypeAliasRecord *** DEPRECATED ***
      * <p>
      * raw alias data
      * <p>
@@ -465,7 +465,7 @@ public final class CoreServices {
      * conforms to: public.data, com.apple.resolvable
      * <p>
      * <p>
-     * kUTTypeURLBookmarkData   *** DEPRECATED ***
+     * kUTTypeURLBookmarkData *** DEPRECATED ***
      * <p>
      * URL bookmark
      * <p>
@@ -509,7 +509,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeURLBookmarkData();
 
     /**
-     * kUTTypeURL   *** DEPRECATED ***
+     * kUTTypeURL *** DEPRECATED ***
      * <p>
      * The bytes of a URL
      * (OSType 'url ')
@@ -518,7 +518,7 @@ public final class CoreServices {
      * conforms to: public.data
      * <p>
      * <p>
-     * kUTTypeFileURL   *** DEPRECATED ***
+     * kUTTypeFileURL *** DEPRECATED ***
      * <p>
      * The text of a "file:" URL
      * (OSType 'furl')
@@ -535,7 +535,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeFileURL();
 
     /**
-     * kUTTypeText   *** DEPRECATED ***
+     * kUTTypeText *** DEPRECATED ***
      * <p>
      * base type for all text-encoded data,
      * including text with markup (HTML, RTF, etc.)
@@ -544,7 +544,7 @@ public final class CoreServices {
      * conforms to: public.data, public.content
      * <p>
      * <p>
-     * kUTTypePlainText   *** DEPRECATED ***
+     * kUTTypePlainText *** DEPRECATED ***
      * <p>
      * text with no markup, unspecified encoding
      * <p>
@@ -552,7 +552,7 @@ public final class CoreServices {
      * conforms to: public.text
      * <p>
      * <p>
-     * kUTTypeUTF8PlainText   *** DEPRECATED ***
+     * kUTTypeUTF8PlainText *** DEPRECATED ***
      * <p>
      * plain text, UTF-8 encoding
      * (OSType 'utf8', NSPasteboardType "NSStringPBoardType")
@@ -561,7 +561,7 @@ public final class CoreServices {
      * conforms to: public.plain-text
      * <p>
      * <p>
-     * kUTTypeUTF16ExternalPlainText   *** DEPRECATED ***
+     * kUTTypeUTF16ExternalPlainText *** DEPRECATED ***
      * <p>
      * plain text, UTF-16 encoding, with BOM, or if BOM
      * is not present, has "external representation"
@@ -572,7 +572,7 @@ public final class CoreServices {
      * conforms to: public.plain-text
      * <p>
      * <p>
-     * kUTTypeUTF16PlainText   *** DEPRECATED ***
+     * kUTTypeUTF16PlainText *** DEPRECATED ***
      * <p>
      * plain text, UTF-16 encoding, native byte order, optional BOM
      * (OSType 'utxt')
@@ -581,7 +581,7 @@ public final class CoreServices {
      * conforms to: public.plain-text
      * <p>
      * <p>
-     * kUTTypeDelimitedText   *** DEPRECATED ***
+     * kUTTypeDelimitedText *** DEPRECATED ***
      * <p>
      * text containing delimited values
      * <p>
@@ -589,7 +589,7 @@ public final class CoreServices {
      * conforms to: public.text
      * <p>
      * <p>
-     * kUTTypeCommaSeparatedText   *** DEPRECATED ***
+     * kUTTypeCommaSeparatedText *** DEPRECATED ***
      * <p>
      * text containing comma-separated values (.csv)
      * <p>
@@ -597,7 +597,7 @@ public final class CoreServices {
      * conforms to: public.delimited-values-text
      * <p>
      * <p>
-     * kUTTypeTabSeparatedText   *** DEPRECATED ***
+     * kUTTypeTabSeparatedText *** DEPRECATED ***
      * <p>
      * text containing tab-separated values
      * <p>
@@ -605,7 +605,7 @@ public final class CoreServices {
      * conforms to: public.delimited-values-text
      * <p>
      * <p>
-     * kUTTypeUTF8TabSeparatedText   *** DEPRECATED ***
+     * kUTTypeUTF8TabSeparatedText *** DEPRECATED ***
      * <p>
      * UTF-8 encoded text containing tab-separated values
      * <p>
@@ -613,7 +613,7 @@ public final class CoreServices {
      * conforms to: public.tab-separated-values-text, public.utf8-plain-text
      * <p>
      * <p>
-     * kUTTypeRTF   *** DEPRECATED ***
+     * kUTTypeRTF *** DEPRECATED ***
      * <p>
      * Rich Text Format
      * <p>
@@ -661,7 +661,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeRTF();
 
     /**
-     * kUTTypeHTML   *** DEPRECATED ***
+     * kUTTypeHTML *** DEPRECATED ***
      * <p>
      * HTML, any version
      * <p>
@@ -669,7 +669,7 @@ public final class CoreServices {
      * conforms to: public.text
      * <p>
      * <p>
-     * kUTTypeXML   *** DEPRECATED ***
+     * kUTTypeXML *** DEPRECATED ***
      * <p>
      * generic XML
      * <p>
@@ -685,7 +685,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeXML();
 
     /**
-     * kUTTypeSourceCode   *** DEPRECATED ***
+     * kUTTypeSourceCode *** DEPRECATED ***
      * <p>
      * abstract type for source code (any language)
      * <p>
@@ -693,7 +693,7 @@ public final class CoreServices {
      * conforms to: public.plain-text
      * <p>
      * <p>
-     * kUTTypeAssemblyLanguageSource   *** DEPRECATED ***
+     * kUTTypeAssemblyLanguageSource *** DEPRECATED ***
      * <p>
      * assembly language source (.s)
      * <p>
@@ -701,7 +701,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeCSource   *** DEPRECATED ***
+     * kUTTypeCSource *** DEPRECATED ***
      * <p>
      * C source code (.c)
      * <p>
@@ -709,7 +709,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeObjectiveCSource   *** DEPRECATED ***
+     * kUTTypeObjectiveCSource *** DEPRECATED ***
      * <p>
      * Objective-C source code (.m)
      * <p>
@@ -717,7 +717,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeSwiftSource   *** DEPRECATED ***
+     * kUTTypeSwiftSource *** DEPRECATED ***
      * <p>
      * Swift source code (.swift)
      * <p>
@@ -725,7 +725,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeCPlusPlusSource   *** DEPRECATED ***
+     * kUTTypeCPlusPlusSource *** DEPRECATED ***
      * <p>
      * C++ source code (.cp, etc.)
      * <p>
@@ -733,7 +733,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeObjectiveCPlusPlusSource   *** DEPRECATED ***
+     * kUTTypeObjectiveCPlusPlusSource *** DEPRECATED ***
      * <p>
      * Objective-C++ source code
      * <p>
@@ -741,7 +741,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeCHeader   *** DEPRECATED ***
+     * kUTTypeCHeader *** DEPRECATED ***
      * <p>
      * C header
      * <p>
@@ -749,7 +749,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeCPlusPlusHeader   *** DEPRECATED ***
+     * kUTTypeCPlusPlusHeader *** DEPRECATED ***
      * <p>
      * C++ header
      * <p>
@@ -757,7 +757,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeJavaSource   *** DEPRECATED ***
+     * kUTTypeJavaSource *** DEPRECATED ***
      * <p>
      * Java source code
      * <p>
@@ -805,7 +805,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeJavaSource();
 
     /**
-     * kUTTypeScript   *** DEPRECATED ***
+     * kUTTypeScript *** DEPRECATED ***
      * <p>
      * scripting language source
      * <p>
@@ -813,7 +813,7 @@ public final class CoreServices {
      * conforms to: public.source-code
      * <p>
      * <p>
-     * kUTTypeAppleScript   *** DEPRECATED ***
+     * kUTTypeAppleScript *** DEPRECATED ***
      * <p>
      * AppleScript text format (.applescript)
      * <p>
@@ -821,7 +821,7 @@ public final class CoreServices {
      * conforms to: public.script
      * <p>
      * <p>
-     * kUTTypeOSAScript   *** DEPRECATED ***
+     * kUTTypeOSAScript *** DEPRECATED ***
      * <p>
      * Open Scripting Architecture script binary format (.scpt)
      * <p>
@@ -829,7 +829,7 @@ public final class CoreServices {
      * conforms to: public.data, public.script
      * <p>
      * <p>
-     * kUTTypeOSAScriptBundle   *** DEPRECATED ***
+     * kUTTypeOSAScriptBundle *** DEPRECATED ***
      * <p>
      * Open Scripting Architecture script bundle format (.scptd)
      * <p>
@@ -837,7 +837,7 @@ public final class CoreServices {
      * conforms to: com.apple.bundle, com.apple.package, public.script
      * <p>
      * <p>
-     * kUTTypeJavaScript   *** DEPRECATED ***
+     * kUTTypeJavaScript *** DEPRECATED ***
      * <p>
      * JavaScript source code
      * <p>
@@ -845,7 +845,7 @@ public final class CoreServices {
      * conforms to: public.source-code, public.executable
      * <p>
      * <p>
-     * kUTTypeShellScript   *** DEPRECATED ***
+     * kUTTypeShellScript *** DEPRECATED ***
      * <p>
      * base type for shell scripts
      * <p>
@@ -853,7 +853,7 @@ public final class CoreServices {
      * conforms to: public.script
      * <p>
      * <p>
-     * kUTTypePerlScript   *** DEPRECATED ***
+     * kUTTypePerlScript *** DEPRECATED ***
      * <p>
      * Perl script
      * <p>
@@ -861,7 +861,7 @@ public final class CoreServices {
      * conforms to: public.shell-script
      * <p>
      * <p>
-     * kUTTypePythonScript   *** DEPRECATED ***
+     * kUTTypePythonScript *** DEPRECATED ***
      * <p>
      * Python script
      * <p>
@@ -869,7 +869,7 @@ public final class CoreServices {
      * conforms to: public.shell-script
      * <p>
      * <p>
-     * kUTTypeRubyScript   *** DEPRECATED ***
+     * kUTTypeRubyScript *** DEPRECATED ***
      * <p>
      * Ruby script
      * <p>
@@ -877,7 +877,7 @@ public final class CoreServices {
      * conforms to: public.shell-script
      * <p>
      * <p>
-     * kUTTypePHPScript   *** DEPRECATED ***
+     * kUTTypePHPScript *** DEPRECATED ***
      * <p>
      * PHP script
      * <p>
@@ -925,7 +925,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypePHPScript();
 
     /**
-     * kUTTypeJSON   *** DEPRECATED ***
+     * kUTTypeJSON *** DEPRECATED ***
      * <p>
      * JavaScript object notation (JSON) data
      * NOTE: JSON almost but doesn't quite conform to
@@ -935,7 +935,7 @@ public final class CoreServices {
      * conforms to: public.text
      * <p>
      * <p>
-     * kUTTypePropertyList   *** DEPRECATED ***
+     * kUTTypePropertyList *** DEPRECATED ***
      * <p>
      * base type for property lists
      * <p>
@@ -943,7 +943,7 @@ public final class CoreServices {
      * conforms to: public.data
      * <p>
      * <p>
-     * kUTTypeXMLPropertyList   *** DEPRECATED ***
+     * kUTTypeXMLPropertyList *** DEPRECATED ***
      * <p>
      * XML property list
      * <p>
@@ -951,7 +951,7 @@ public final class CoreServices {
      * conforms to: public.xml, com.apple.property-list
      * <p>
      * <p>
-     * kUTTypeBinaryPropertyList   *** DEPRECATED ***
+     * kUTTypeBinaryPropertyList *** DEPRECATED ***
      * <p>
      * XML property list
      * <p>
@@ -975,7 +975,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeBinaryPropertyList();
 
     /**
-     * kUTTypePDF   *** DEPRECATED ***
+     * kUTTypePDF *** DEPRECATED ***
      * <p>
      * Adobe PDF
      * <p>
@@ -983,7 +983,7 @@ public final class CoreServices {
      * conforms to: public.data, public.composite-content
      * <p>
      * <p>
-     * kUTTypeRTFD   *** DEPRECATED ***
+     * kUTTypeRTFD *** DEPRECATED ***
      * <p>
      * Rich Text Format Directory
      * (RTF with content embedding, on-disk format)
@@ -992,7 +992,7 @@ public final class CoreServices {
      * conforms to: com.apple.package, public.composite-content
      * <p>
      * <p>
-     * kUTTypeFlatRTFD   *** DEPRECATED ***
+     * kUTTypeFlatRTFD *** DEPRECATED ***
      * <p>
      * Flattened RTFD (pasteboard format)
      * <p>
@@ -1000,7 +1000,7 @@ public final class CoreServices {
      * conforms to: public.data, public.composite-content
      * <p>
      * <p>
-     * kUTTypeTXNTextAndMultimediaData   *** DEPRECATED ***
+     * kUTTypeTXNTextAndMultimediaData *** DEPRECATED ***
      * <p>
      * MLTE (Textension) format for mixed text & multimedia data
      * (OSType 'txtn')
@@ -1009,7 +1009,7 @@ public final class CoreServices {
      * conforms to: public.data, public.composite-content
      * <p>
      * <p>
-     * kUTTypeWebArchive   *** DEPRECATED ***
+     * kUTTypeWebArchive *** DEPRECATED ***
      * <p>
      * The WebKit webarchive format
      * <p>
@@ -1037,7 +1037,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeWebArchive();
 
     /**
-     * kUTTypeImage   *** DEPRECATED ***
+     * kUTTypeImage *** DEPRECATED ***
      * <p>
      * abstract image data
      * <p>
@@ -1045,7 +1045,7 @@ public final class CoreServices {
      * conforms to: public.data, public.content
      * <p>
      * <p>
-     * kUTTypeJPEG   *** DEPRECATED ***
+     * kUTTypeJPEG *** DEPRECATED ***
      * <p>
      * JPEG image
      * <p>
@@ -1053,7 +1053,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeJPEG2000   *** DEPRECATED ***
+     * kUTTypeJPEG2000 *** DEPRECATED ***
      * <p>
      * JPEG-2000 image
      * <p>
@@ -1061,7 +1061,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeTIFF   *** DEPRECATED ***
+     * kUTTypeTIFF *** DEPRECATED ***
      * <p>
      * TIFF image
      * <p>
@@ -1069,7 +1069,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypePICT   *** DEPRECATED ***
+     * kUTTypePICT *** DEPRECATED ***
      * <p>
      * Quickdraw PICT format
      * <p>
@@ -1077,7 +1077,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeGIF   *** DEPRECATED ***
+     * kUTTypeGIF *** DEPRECATED ***
      * <p>
      * GIF image
      * <p>
@@ -1085,7 +1085,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypePNG   *** DEPRECATED ***
+     * kUTTypePNG *** DEPRECATED ***
      * <p>
      * PNG image
      * <p>
@@ -1093,7 +1093,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeQuickTimeImage   *** DEPRECATED ***
+     * kUTTypeQuickTimeImage *** DEPRECATED ***
      * <p>
      * QuickTime image format (OSType 'qtif')
      * <p>
@@ -1101,7 +1101,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeAppleICNS   *** DEPRECATED ***
+     * kUTTypeAppleICNS *** DEPRECATED ***
      * <p>
      * Apple icon data
      * <p>
@@ -1109,7 +1109,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeBMP   *** DEPRECATED ***
+     * kUTTypeBMP *** DEPRECATED ***
      * <p>
      * Windows bitmap
      * <p>
@@ -1117,7 +1117,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeICO   *** DEPRECATED ***
+     * kUTTypeICO *** DEPRECATED ***
      * <p>
      * Windows icon data
      * <p>
@@ -1125,7 +1125,7 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeRawImage   *** DEPRECATED ***
+     * kUTTypeRawImage *** DEPRECATED ***
      * <p>
      * base type for raw image data (.raw)
      * <p>
@@ -1133,14 +1133,14 @@ public final class CoreServices {
      * conforms to: public.image
      * <p>
      * <p>
-     * kUTTypeScalableVectorGraphics   *** DEPRECATED ***
+     * kUTTypeScalableVectorGraphics *** DEPRECATED ***
      * <p>
      * SVG image
      * <p>
      * UTI: public.svg-image
      * conforms to: public.image
      * <p>
-     * kUTTypeLivePhoto   *** DEPRECATED ***
+     * kUTTypeLivePhoto *** DEPRECATED ***
      * <p>
      * Live Photo
      * <p>
@@ -1203,7 +1203,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeLivePhoto();
 
     /**
-     * kUTTypeAudiovisualContent   *** DEPRECATED ***
+     * kUTTypeAudiovisualContent *** DEPRECATED ***
      * <p>
      * audio and/or video content
      * <p>
@@ -1211,7 +1211,7 @@ public final class CoreServices {
      * conforms to: public.data, public.content
      * <p>
      * <p>
-     * kUTTypeMovie   *** DEPRECATED ***
+     * kUTTypeMovie *** DEPRECATED ***
      * <p>
      * A media format which may contain both video and audio
      * Corresponds to what users would label a "movie"
@@ -1220,7 +1220,7 @@ public final class CoreServices {
      * conforms to: public.audiovisual-content
      * <p>
      * <p>
-     * kUTTypeVideo   *** DEPRECATED ***
+     * kUTTypeVideo *** DEPRECATED ***
      * <p>
      * pure video (no audio)
      * <p>
@@ -1228,7 +1228,7 @@ public final class CoreServices {
      * conforms to: public.movie
      * <p>
      * <p>
-     * kUTTypeAudio   *** DEPRECATED ***
+     * kUTTypeAudio *** DEPRECATED ***
      * <p>
      * pure audio (no video)
      * <p>
@@ -1236,7 +1236,7 @@ public final class CoreServices {
      * conforms to: public.audiovisual-content
      * <p>
      * <p>
-     * kUTTypeQuickTimeMovie   *** DEPRECATED ***
+     * kUTTypeQuickTimeMovie *** DEPRECATED ***
      * <p>
      * QuickTime movie
      * <p>
@@ -1244,7 +1244,7 @@ public final class CoreServices {
      * conforms to: public.movie
      * <p>
      * <p>
-     * kUTTypeMPEG   *** DEPRECATED ***
+     * kUTTypeMPEG *** DEPRECATED ***
      * <p>
      * MPEG-1 or MPEG-2 movie
      * <p>
@@ -1252,7 +1252,7 @@ public final class CoreServices {
      * conforms to: public.movie
      * <p>
      * <p>
-     * kUTTypeMPEG2Video   *** DEPRECATED ***
+     * kUTTypeMPEG2Video *** DEPRECATED ***
      * <p>
      * MPEG-2 video
      * <p>
@@ -1260,7 +1260,7 @@ public final class CoreServices {
      * conforms to: public.video
      * <p>
      * <p>
-     * kUTTypeMPEG2TransportStream   *** DEPRECATED ***
+     * kUTTypeMPEG2TransportStream *** DEPRECATED ***
      * <p>
      * MPEG-2 Transport Stream movie format
      * <p>
@@ -1268,7 +1268,7 @@ public final class CoreServices {
      * conforms to: public.movie
      * <p>
      * <p>
-     * kUTTypeMP3   *** DEPRECATED ***
+     * kUTTypeMP3 *** DEPRECATED ***
      * <p>
      * MP3 audio
      * <p>
@@ -1276,7 +1276,7 @@ public final class CoreServices {
      * conforms to: public.audio
      * <p>
      * <p>
-     * kUTTypeMPEG4   *** DEPRECATED ***
+     * kUTTypeMPEG4 *** DEPRECATED ***
      * <p>
      * MPEG-4 movie
      * <p>
@@ -1284,7 +1284,7 @@ public final class CoreServices {
      * conforms to: public.movie
      * <p>
      * <p>
-     * kUTTypeMPEG4Audio   *** DEPRECATED ***
+     * kUTTypeMPEG4Audio *** DEPRECATED ***
      * <p>
      * MPEG-4 audio layer
      * <p>
@@ -1292,7 +1292,7 @@ public final class CoreServices {
      * conforms to: public.mpeg-4, public.audio
      * <p>
      * <p>
-     * kUTTypeAppleProtectedMPEG4Audio   *** DEPRECATED ***
+     * kUTTypeAppleProtectedMPEG4Audio *** DEPRECATED ***
      * <p>
      * Apple protected MPEG4 format
      * (.m4p, iTunes music store format)
@@ -1301,7 +1301,7 @@ public final class CoreServices {
      * conforms to: public.audio
      * <p>
      * <p>
-     * kUTTypeAppleProtectedMPEG4Video   *** DEPRECATED ***
+     * kUTTypeAppleProtectedMPEG4Video *** DEPRECATED ***
      * <p>
      * Apple protected MPEG-4 movie
      * <p>
@@ -1309,7 +1309,7 @@ public final class CoreServices {
      * conforms to: com.apple.m4v-video
      * <p>
      * <p>
-     * kUTTypeAVIMovie   *** DEPRECATED ***
+     * kUTTypeAVIMovie *** DEPRECATED ***
      * <p>
      * Audio Video Interleaved (AVI) movie format
      * <p>
@@ -1317,7 +1317,7 @@ public final class CoreServices {
      * conforms to: public.movie
      * <p>
      * <p>
-     * kUTTypeAudioInterchangeFileFormat   *** DEPRECATED ***
+     * kUTTypeAudioInterchangeFileFormat *** DEPRECATED ***
      * <p>
      * AIFF audio format
      * <p>
@@ -1325,7 +1325,7 @@ public final class CoreServices {
      * conforms to: public.aifc-audio
      * <p>
      * <p>
-     * kUTTypeWaveformAudio   *** DEPRECATED ***
+     * kUTTypeWaveformAudio *** DEPRECATED ***
      * <p>
      * Waveform audio format (.wav)
      * <p>
@@ -1333,7 +1333,7 @@ public final class CoreServices {
      * conforms to: public.audio
      * <p>
      * <p>
-     * kUTTypeMIDIAudio   *** DEPRECATED ***
+     * kUTTypeMIDIAudio *** DEPRECATED ***
      * <p>
      * MIDI audio format
      * <p>
@@ -1409,14 +1409,14 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeMIDIAudio();
 
     /**
-     * kUTTypePlaylist   *** DEPRECATED ***
+     * kUTTypePlaylist *** DEPRECATED ***
      * <p>
      * base type for playlists
      * <p>
      * UTI: public.playlist
      * <p>
      * <p>
-     * kUTTypeM3UPlaylist   *** DEPRECATED ***
+     * kUTTypeM3UPlaylist *** DEPRECATED ***
      * <p>
      * M3U or M3U8 playlist
      * <p>
@@ -1432,7 +1432,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeM3UPlaylist();
 
     /**
-     * kUTTypeFolder   *** DEPRECATED ***
+     * kUTTypeFolder *** DEPRECATED ***
      * <p>
      * a user-browsable directory (i.e., not a package)
      * <p>
@@ -1440,7 +1440,7 @@ public final class CoreServices {
      * conforms to: public.directory
      * <p>
      * <p>
-     * kUTTypeVolume   *** DEPRECATED ***
+     * kUTTypeVolume *** DEPRECATED ***
      * <p>
      * the root folder of a volume/mount point
      * <p>
@@ -1448,7 +1448,7 @@ public final class CoreServices {
      * conforms to: public.folder
      * <p>
      * <p>
-     * kUTTypePackage   *** DEPRECATED ***
+     * kUTTypePackage *** DEPRECATED ***
      * <p>
      * a packaged directory
      * <p>
@@ -1456,7 +1456,7 @@ public final class CoreServices {
      * conforms to: public.directory
      * <p>
      * <p>
-     * kUTTypeBundle   *** DEPRECATED ***
+     * kUTTypeBundle *** DEPRECATED ***
      * <p>
      * a directory conforming to one of the CFBundle layouts
      * <p>
@@ -1464,7 +1464,7 @@ public final class CoreServices {
      * conforms to: public.directory
      * <p>
      * <p>
-     * kUTTypePluginBundle   *** DEPRECATED ***
+     * kUTTypePluginBundle *** DEPRECATED ***
      * <p>
      * base type for bundle-based plugins
      * <p>
@@ -1472,7 +1472,7 @@ public final class CoreServices {
      * conforms to: com.apple.bundle, com.apple.package
      * <p>
      * <p>
-     * kUTTypeSpotlightImporter   *** DEPRECATED ***
+     * kUTTypeSpotlightImporter *** DEPRECATED ***
      * <p>
      * a Spotlight metadata importer
      * <p>
@@ -1480,7 +1480,7 @@ public final class CoreServices {
      * conforms to: com.apple.plugin
      * <p>
      * <p>
-     * kUTTypeQuickLookGenerator   *** DEPRECATED ***
+     * kUTTypeQuickLookGenerator *** DEPRECATED ***
      * <p>
      * a QuickLook preview generator
      * <p>
@@ -1488,7 +1488,7 @@ public final class CoreServices {
      * conforms to: com.apple.plugin
      * <p>
      * <p>
-     * kUTTypeXPCService   *** DEPRECATED ***
+     * kUTTypeXPCService *** DEPRECATED ***
      * <p>
      * an XPC service
      * <p>
@@ -1496,7 +1496,7 @@ public final class CoreServices {
      * conforms to: com.apple.bundle, com.apple.package
      * <p>
      * <p>
-     * kUTTypeFramework   *** DEPRECATED ***
+     * kUTTypeFramework *** DEPRECATED ***
      * <p>
      * a Mac OS X framework
      * <p>
@@ -1540,7 +1540,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeFramework();
 
     /**
-     * kUTTypeApplication   *** DEPRECATED ***
+     * kUTTypeApplication *** DEPRECATED ***
      * <p>
      * base type for OS X applications, launchable items
      * <p>
@@ -1548,7 +1548,7 @@ public final class CoreServices {
      * conforms to: public.executable
      * <p>
      * <p>
-     * kUTTypeApplicationBundle   *** DEPRECATED ***
+     * kUTTypeApplicationBundle *** DEPRECATED ***
      * <p>
      * a bundled application
      * <p>
@@ -1556,7 +1556,7 @@ public final class CoreServices {
      * conforms to: com.apple.application, com.apple.bundle, com.apple.package
      * <p>
      * <p>
-     * kUTTypeApplicationFile   *** DEPRECATED ***
+     * kUTTypeApplicationFile *** DEPRECATED ***
      * <p>
      * a single-file Carbon/Classic application
      * <p>
@@ -1564,7 +1564,7 @@ public final class CoreServices {
      * conforms to: com.apple.application, public.data
      * <p>
      * <p>
-     * kUTTypeUnixExecutable   *** DEPRECATED ***
+     * kUTTypeUnixExecutable *** DEPRECATED ***
      * <p>
      * a UNIX executable (flat file)
      * <p>
@@ -1572,7 +1572,7 @@ public final class CoreServices {
      * conforms to: public.data, public.executable
      * <p>
      * <p>
-     * kUTTypeWindowsExecutable   *** DEPRECATED ***
+     * kUTTypeWindowsExecutable *** DEPRECATED ***
      * <p>
      * a Windows executable (.exe files)
      * <p>
@@ -1580,7 +1580,7 @@ public final class CoreServices {
      * conforms to: public.data, public.executable
      * <p>
      * <p>
-     * kUTTypeJavaClass   *** DEPRECATED ***
+     * kUTTypeJavaClass *** DEPRECATED ***
      * <p>
      * a Java class
      * <p>
@@ -1588,7 +1588,7 @@ public final class CoreServices {
      * conforms to: public.data, public.executable
      * <p>
      * <p>
-     * kUTTypeJavaArchive   *** DEPRECATED ***
+     * kUTTypeJavaArchive *** DEPRECATED ***
      * <p>
      * a Java archive (.jar)
      * <p>
@@ -1596,7 +1596,7 @@ public final class CoreServices {
      * conforms to: public.zip-archive, public.executable
      * <p>
      * <p>
-     * kUTTypeSystemPreferencesPane   *** DEPRECATED ***
+     * kUTTypeSystemPreferencesPane *** DEPRECATED ***
      * <p>
      * a System Preferences pane
      * <p>
@@ -1644,7 +1644,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeSystemPreferencesPane();
 
     /**
-     * kUTTypeGNUZipArchive   *** DEPRECATED ***
+     * kUTTypeGNUZipArchive *** DEPRECATED ***
      * <p>
      * a GNU zip archive (gzip)
      * <p>
@@ -1652,7 +1652,7 @@ public final class CoreServices {
      * conforms to: public.data, public.archive
      * <p>
      * <p>
-     * kUTTypeBzip2Archive   *** DEPRECATED ***
+     * kUTTypeBzip2Archive *** DEPRECATED ***
      * <p>
      * a bzip2 archive (.bz2)
      * <p>
@@ -1660,7 +1660,7 @@ public final class CoreServices {
      * conforms to: public.data, public.archive
      * <p>
      * <p>
-     * kUTTypeZipArchive   *** DEPRECATED ***
+     * kUTTypeZipArchive *** DEPRECATED ***
      * <p>
      * a zip archive
      * <p>
@@ -1680,7 +1680,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeZipArchive();
 
     /**
-     * kUTTypeSpreadsheet   *** DEPRECATED ***
+     * kUTTypeSpreadsheet *** DEPRECATED ***
      * <p>
      * base spreadsheet document type
      * <p>
@@ -1688,7 +1688,7 @@ public final class CoreServices {
      * conforms to: public.content
      * <p>
      * <p>
-     * kUTTypePresentation   *** DEPRECATED ***
+     * kUTTypePresentation *** DEPRECATED ***
      * <p>
      * base presentation document type
      * <p>
@@ -1696,7 +1696,7 @@ public final class CoreServices {
      * conforms to: public.composite-content
      * <p>
      * <p>
-     * kUTTypeDatabase   *** DEPRECATED ***
+     * kUTTypeDatabase *** DEPRECATED ***
      * <p>
      * a database store
      * <p>
@@ -1715,7 +1715,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeDatabase();
 
     /**
-     * kUTTypeVCard   *** DEPRECATED ***
+     * kUTTypeVCard *** DEPRECATED ***
      * <p>
      * VCard format
      * <p>
@@ -1723,21 +1723,21 @@ public final class CoreServices {
      * conforms to: public.text, public.contact
      * <p>
      * <p>
-     * kUTTypeToDoItem   *** DEPRECATED ***
+     * kUTTypeToDoItem *** DEPRECATED ***
      * <p>
      * to-do item
      * <p>
      * UTI: public.to-do-item
      * <p>
      * <p>
-     * kUTTypeCalendarEvent   *** DEPRECATED ***
+     * kUTTypeCalendarEvent *** DEPRECATED ***
      * <p>
      * calendar event
      * <p>
      * UTI: public.calendar-event
      * <p>
      * <p>
-     * kUTTypeEmailMessage   *** DEPRECATED ***
+     * kUTTypeEmailMessage *** DEPRECATED ***
      * <p>
      * e-mail message
      * <p>
@@ -1761,7 +1761,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeEmailMessage();
 
     /**
-     * kUTTypeInternetLocation   *** DEPRECATED ***
+     * kUTTypeInternetLocation *** DEPRECATED ***
      * <p>
      * base type for Apple Internet locations
      * <p>
@@ -1773,7 +1773,7 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeInternetLocation();
 
     /**
-     * kUTTypeInkText   *** DEPRECATED ***
+     * kUTTypeInkText *** DEPRECATED ***
      * <p>
      * Opaque InkText data
      * <p>
@@ -1781,21 +1781,21 @@ public final class CoreServices {
      * conforms to: public.data
      * <p>
      * <p>
-     * kUTTypeFont   *** DEPRECATED ***
+     * kUTTypeFont *** DEPRECATED ***
      * <p>
      * base type for fonts
      * <p>
      * UTI: public.font
      * <p>
      * <p>
-     * kUTTypeBookmark   *** DEPRECATED ***
+     * kUTTypeBookmark *** DEPRECATED ***
      * <p>
      * bookmark
      * <p>
      * UTI: public.bookmark
      * <p>
      * <p>
-     * kUTType3DContent   *** DEPRECATED ***
+     * kUTType3DContent *** DEPRECATED ***
      * <p>
      * base type for 3D content
      * <p>
@@ -1803,7 +1803,7 @@ public final class CoreServices {
      * conforms to: public.content
      * <p>
      * <p>
-     * kUTTypePKCS12   *** DEPRECATED ***
+     * kUTTypePKCS12 *** DEPRECATED ***
      * <p>
      * PKCS#12 format
      * <p>
@@ -1811,7 +1811,7 @@ public final class CoreServices {
      * conforms to: public.data
      * <p>
      * <p>
-     * kUTTypeX509Certificate   *** DEPRECATED ***
+     * kUTTypeX509Certificate *** DEPRECATED ***
      * <p>
      * X.509 certificate format
      * <p>
@@ -1819,7 +1819,7 @@ public final class CoreServices {
      * conforms to: public.data
      * <p>
      * <p>
-     * kUTTypeElectronicPublication   *** DEPRECATED ***
+     * kUTTypeElectronicPublication *** DEPRECATED ***
      * <p>
      * ePub format
      * <p>
@@ -1827,7 +1827,7 @@ public final class CoreServices {
      * conforms to: public.data, public.composite-content
      * <p>
      * <p>
-     * kUTTypeLog   *** DEPRECATED ***
+     * kUTTypeLog *** DEPRECATED ***
      * <p>
      * console log
      * <p>
@@ -1937,14 +1937,14 @@ public final class CoreServices {
      * The following constant strings identify tag classes for use
      * when converting uniform type identifiers to and from
      * equivalent tags.
-     * kUTTagClassFilenameExtension   *** DEPRECATED ***
+     * kUTTagClassFilenameExtension *** DEPRECATED ***
      */
     @Generated
     @CVariable()
     public static native CFStringRef kUTTagClassFilenameExtension();
 
     /**
-     * kUTTagClassMIMEType   *** DEPRECATED ***
+     * kUTTagClassMIMEType *** DEPRECATED ***
      */
     @Generated
     @CVariable()

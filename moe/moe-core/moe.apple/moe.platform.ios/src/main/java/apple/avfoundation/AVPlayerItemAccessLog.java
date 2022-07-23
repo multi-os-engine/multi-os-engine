@@ -167,7 +167,7 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]		events
+     * [@property] events
      * <p>
      * An ordered collection of AVPlayerItemAccessLogEvent instances.
      * <p>
@@ -195,7 +195,7 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     public native NSData extendedLogData();
 
     /**
-     * [@property]		extendedLogDataStringEncoding
+     * [@property] extendedLogDataStringEncoding
      * <p>
      * Returns the NSStringEncoding for extendedLogData, see above.
      * <p>

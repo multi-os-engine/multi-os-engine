@@ -92,7 +92,8 @@ public interface GKMatchDelegate {
     }
 
     /**
-     * This method is called when the match is interrupted; if it returns YES, a new invite will be sent to attempt reconnection. This is supported only for 1v1 games
+     * This method is called when the match is interrupted; if it returns YES, a new invite will be sent to attempt
+     * reconnection. This is supported only for 1v1 games
      */
     @Generated
     @IsOptional

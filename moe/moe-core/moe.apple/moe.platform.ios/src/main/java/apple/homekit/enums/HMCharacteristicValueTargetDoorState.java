@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueTargetDoorState
+ * [@enum] HMCharacteristicValueTargetDoorState
  * <p>
- * [@constant]  HMCharacteristicValueTargetDoorStateOpen    Open.
- * [@constant]  HMCharacteristicValueTargetDoorStateClosed  Closed.
+ * [@constant] HMCharacteristicValueTargetDoorStateOpen Open.
+ * [@constant] HMCharacteristicValueTargetDoorStateClosed Closed.
  */
 @Generated
 public final class HMCharacteristicValueTargetDoorState {

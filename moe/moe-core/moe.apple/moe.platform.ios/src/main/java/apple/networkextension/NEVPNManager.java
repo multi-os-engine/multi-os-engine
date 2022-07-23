@@ -43,7 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEVPNManager
  * <p>
- * The NEVPNManager class declares the programmatic interface for an object that manages Virtual Private Network (VPN) configurations.
+ * The NEVPNManager class declares the programmatic interface for an object that manages Virtual Private Network (VPN)
+ * configurations.
  * <p>
  * NEVPNManager declares methods and properties for configuring and controlling a VPN.
  * <p>
@@ -184,7 +185,8 @@ public class NEVPNManager extends NSObject {
     /**
      * [@property] enabled
      * <p>
-     * Toggles the enabled status of the VPN. Setting this property will disable VPN configurations of other apps. This property will be set to NO  when other VPN configurations are enabled.
+     * Toggles the enabled status of the VPN. Setting this property will disable VPN configurations of other apps. This
+     * property will be set to NO when other VPN configurations are enabled.
      */
     @Generated
     @Selector("isEnabled")
@@ -193,7 +195,8 @@ public class NEVPNManager extends NSObject {
     /**
      * [@property] enabled
      * <p>
-     * Toggles the enabled status of the VPN. Setting this property will disable VPN configurations of other apps. This property will be set to NO  when other VPN configurations are enabled.
+     * Toggles the enabled status of the VPN. Setting this property will disable VPN configurations of other apps. This
+     * property will be set to NO when other VPN configurations are enabled.
      */
     @Generated
     @Selector("setEnabled:")
@@ -222,7 +225,9 @@ public class NEVPNManager extends NSObject {
      * <p>
      * This function loads the current VPN configuration from the caller's VPN preferences.
      *
-     * @param completionHandler A block that will be called on the main thread when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called on the main thread when the load operation is completed. The
+     *                          NSError passed to this block will be nil if the load operation succeeded, non-nil
+     *                          otherwise.
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
@@ -269,9 +274,12 @@ public class NEVPNManager extends NSObject {
     /**
      * removeFromPreferencesWithCompletionHandler:
      * <p>
-     * This function removes the VPN configuration from the caller's VPN preferences. If the VPN is enabled, has VPN On Demand enabled, and has VPN On Demand rules, the VPN is disabled and the VPN On Demand rules are de-activated.
+     * This function removes the VPN configuration from the caller's VPN preferences. If the VPN is enabled, has VPN On
+     * Demand enabled, and has VPN On Demand rules, the VPN is disabled and the VPN On Demand rules are de-activated.
      *
-     * @param completionHandler A block that will be called on the main thread when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called on the main thread when the remove operation is completed.
+     *                          The NSError passed to this block will be nil if the remove operation succeeded, non-nil
+     *                          otherwise.
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
@@ -281,9 +289,12 @@ public class NEVPNManager extends NSObject {
     /**
      * saveToPreferencesWithCompletionHandler:
      * <p>
-     * This function saves the VPN configuration in the caller's VPN preferences. If the VPN is enabled, has VPN On Demand enabled, and has VPN On Demand rules, the VPN On Demand rules are activated.
+     * This function saves the VPN configuration in the caller's VPN preferences. If the VPN is enabled, has VPN On
+     * Demand enabled, and has VPN On Demand rules, the VPN On Demand rules are activated.
      *
-     * @param completionHandler A block that will be called on the main thread when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called on the main thread when the save operation is completed. The
+     *                          NSError passed to this block will be nil if the save operation succeeded, non-nil
+     *                          otherwise.
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")

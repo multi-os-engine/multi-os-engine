@@ -157,7 +157,8 @@ public class UIUserNotificationSettings extends NSObject {
     public static native long version_static();
 
     /**
-     * The set of UIUserNotificationCategory objects that describe the actions to show when a user notification is presented
+     * The set of UIUserNotificationCategory objects that describe the actions to show when a user notification is
+     * presented
      */
     @Generated
     @Selector("categories")

@@ -169,7 +169,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     public native long depthCompareFunction();
 
     /**
-     * Separate stencil state for front and back state.  Both front and back can be made to track the same state by assigning the same MTLStencilDescriptor to both.
+     * Separate stencil state for front and back state. Both front and back can be made to track the same state by
+     * assigning the same MTLStencilDescriptor to both.
      */
     @Generated
     @Selector("frontFaceStencil")
@@ -214,7 +215,8 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     public native void setDepthCompareFunction(@NUInt long value);
 
     /**
-     * Separate stencil state for front and back state.  Both front and back can be made to track the same state by assigning the same MTLStencilDescriptor to both.
+     * Separate stencil state for front and back state. Both front and back can be made to track the same state by
+     * assigning the same MTLStencilDescriptor to both.
      */
     @Generated
     @Selector("setFrontFaceStencil:")

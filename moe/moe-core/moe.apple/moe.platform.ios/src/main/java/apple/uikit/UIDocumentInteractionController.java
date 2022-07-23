@@ -170,7 +170,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     public native NSURL URL();
 
     /**
-     * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be determined automatically
+     * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be
+     * determined automatically
      */
     @Generated
     @Selector("UTI")
@@ -238,14 +239,16 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
 
     /**
      * Returns an array of gesture recognizers preconfigured to manage the quick look and options menu.
-     * These gesture recognizers should only be installed on your view when the file has been copied locally and is present at URL.
+     * These gesture recognizers should only be installed on your view when the file has been copied locally and is
+     * present at URL.
      */
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
 
     /**
-     * determined from name if set, URL otherwise. will return a generic document icon if an icon cannot be determined. returns an array of icons sorted from smallest to largest.
+     * determined from name if set, URL otherwise. will return a generic document icon if an icon cannot be determined.
+     * returns an array of icons sorted from smallest to largest.
      */
     @Generated
     @Selector("icons")
@@ -267,7 +270,7 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     public native boolean presentOpenInMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
     /**
-     * Presents a menu allowing the user to open the document in another application.  The menu
+     * Presents a menu allowing the user to open the document in another application. The menu
      * will contain all applications that can open the item at URL.
      * Returns NO if there are no applications that can open the item at URL.
      */
@@ -280,19 +283,23 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     public native boolean presentOptionsMenuFromBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
     /**
-     * This is the default method you should call to give your users the option to quick look, open, or copy the document.
+     * This is the default method you should call to give your users the option to quick look, open, or copy the
+     * document.
      * Presents a menu allowing the user to Quick Look, open, or copy the item specified by URL.
      * This automatically determines the correct application or applications that can open the item at URL.
      * Returns NO if the options menu contained no options and was not opened.
-     * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to get the Quick Look menu item.
+     * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to get
+     * the Quick Look menu item.
      */
     @Generated
     @Selector("presentOptionsMenuFromRect:inView:animated:")
     public native boolean presentOptionsMenuFromRectInViewAnimated(@ByValue CGRect rect, UIView view, boolean animated);
 
     /**
-     * Bypasses the menu and opens the full screen preview window for the item at URL.  Returns NO if the item could not be previewed.
-     * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to preview the document.
+     * Bypasses the menu and opens the full screen preview window for the item at URL. Returns NO if the item could not
+     * be previewed.
+     * Note that you must implement the delegate method documentInteractionControllerViewControllerForPreview: to
+     * preview the document.
      */
     @Generated
     @Selector("presentPreviewAnimated:")
@@ -343,7 +350,8 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     public native void setURL(NSURL value);
 
     /**
-     * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be determined automatically
+     * determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be
+     * determined automatically
      */
     @Generated
     @Selector("setUTI:")

@@ -150,7 +150,7 @@ public class UIPress extends NSObject {
     public static native long version_static();
 
     /**
-     * For analog buttons, returns a value between 0 and 1.  Digital buttons return 0 or 1.
+     * For analog buttons, returns a value between 0 and 1. Digital buttons return 0 or 1.
      */
     @Generated
     @Selector("force")

@@ -79,11 +79,15 @@ public class PDFDestination extends NSObject implements NSCopying {
 
     /**
      * If the destination passed in is further along in the document than the receiver, we return NSOrderedAscending. If
-     * the destination passed in precedes the receiver, we return NSOrderedDescending. Otherwise if the destination passed in
-     * matches the receiver, we return NSOrderedSame. For purposes of comparison, the horizontal component on the point is
-     * ignored. Also for purposes of comparison, having kPDFDestinationUnspecifiedValue for the vertical component of the
+     * the destination passed in precedes the receiver, we return NSOrderedDescending. Otherwise if the destination
+     * passed in
+     * matches the receiver, we return NSOrderedSame. For purposes of comparison, the horizontal component on the point
+     * is
+     * ignored. Also for purposes of comparison, having kPDFDestinationUnspecifiedValue for the vertical component of
+     * the
      * destination point will be treated as the top point on the destination page.
-     * An exception will be raised if either destination does not have a page associated with it or if the pages of the two
+     * An exception will be raised if either destination does not have a page associated with it or if the pages of the
+     * two
      * destinations are associated with different documents.
      */
     @Generated
@@ -115,7 +119,8 @@ public class PDFDestination extends NSObject implements NSCopying {
     public native PDFDestination init();
 
     /**
-     * Initializer. You do not often create PDFDestinations, but usually get them from link annotations or PDFOutline items.
+     * Initializer. You do not often create PDFDestinations, but usually get them from link annotations or PDFOutline
+     * items.
      */
     @Generated
     @Selector("initWithPage:atPoint:")

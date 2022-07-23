@@ -156,7 +156,9 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * <p>
      * YES by default.
      * Server-side write atomicity is only enforced on zones that have @c CKRecordZoneCapabilityAtomic.
-     * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities.  (For example, if a record is malformed, and cannot be sent to the server, the client will forcibly fail all other records-to-be-modified in that zone)
+     * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities. (For example, if a
+     * record is malformed, and cannot be sent to the server, the client will forcibly fail all other
+     * records-to-be-modified in that zone)
      */
     @Generated
     @Selector("atomic")
@@ -183,9 +185,12 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] savedRecords, @c deletedRecordIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordSaveBlock and @c perRecordDeleteBlock invocations
-     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to
+     * errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedRecords, @c deletedRecordIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent
+     * back in previous @c perRecordSaveBlock and @c perRecordDeleteBlock invocations
+     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is
+     * processing the side effects of those changes.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -207,7 +212,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     /**
      * Indicates the progress for each record.
      * <p>
-     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only reported for records that contain assets.
+     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only
+     * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -237,7 +243,9 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * <p>
      * YES by default.
      * Server-side write atomicity is only enforced on zones that have @c CKRecordZoneCapabilityAtomic.
-     * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities.  (For example, if a record is malformed, and cannot be sent to the server, the client will forcibly fail all other records-to-be-modified in that zone)
+     * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities. (For example, if a
+     * record is malformed, and cannot be sent to the server, the client will forcibly fail all other
+     * records-to-be-modified in that zone)
      */
     @Generated
     @Selector("setAtomic:")
@@ -255,9 +263,12 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] savedRecords, @c deletedRecordIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordSaveBlock and @c perRecordDeleteBlock invocations
-     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is processing the side effects of those changes.
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to
+     * errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedRecords, @c deletedRecordIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent
+     * back in previous @c perRecordSaveBlock and @c perRecordDeleteBlock invocations
+     * This call happens as soon as the server has seen all record changes, and may be invoked while the server is
+     * processing the side effects of those changes.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -279,7 +290,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     /**
      * Indicates the progress for each record.
      * <p>
-     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only reported for records that contain assets.
+     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only
+     * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -368,7 +380,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Called on success or failure of a record save
      * <p>
      * Following a successful record save, this callback will be invoked with a nonnull @c record, and a nil @c error.
-     * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will be invoked with a nil @c record, and a nonnull @c error
+     * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will
+     * be invoked with a nil @c record, and a nonnull @c error
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -404,7 +417,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Called on success or failure of a record save
      * <p>
      * Following a successful record save, this callback will be invoked with a nonnull @c record, and a nil @c error.
-     * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will be invoked with a nil @c record, and a nonnull @c error
+     * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will
+     * be invoked with a nil @c record, and a nonnull @c error
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

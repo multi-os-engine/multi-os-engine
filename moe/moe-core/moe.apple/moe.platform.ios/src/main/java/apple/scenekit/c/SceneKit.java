@@ -95,7 +95,7 @@ public final class SceneKit {
 
     /**
      * Returns a transform that translates by '(tx, ty, tz)':
-     * m' =  [1 0 0 0; 0 1 0 0; 0 0 1 0; tx ty tz 1].
+     * m' = [1 0 0 0; 0 1 0 0; 0 0 1 0; tx ty tz 1].
      */
     @Generated
     @Inline
@@ -205,7 +205,8 @@ public final class SceneKit {
      * <p>
      * Exports SceneKit's symbols (constants and class definition) into the specified JavaScript context.
      * <p>
-     * SceneKit's classes, properties and constants are exported as global object with their original name. Selectors are exported using the rules defined in JavaScriptCore's JSExport.h.
+     * SceneKit's classes, properties and constants are exported as global object with their original name. Selectors
+     * are exported using the rules defined in JavaScriptCore's JSExport.h.
      * <p>
      * For example to instanciate a node in JavaScript:
      * <p>
@@ -228,13 +229,13 @@ public final class SceneKit {
      * <p>
      * The following special objects are also exported:
      * <p>
-     * class name           constructor                                                  Objective-C class
-     * SCNColor             SCNColor.color(r,g,b,a)                                      NSColor
-     * CATimingFunction     CATimingFunction.functionWithName(name)                      CATimingFunction
-     * CABasicAnimation     CABasicAnimation.animationWithKeyPath(aPath)                 CABasicAnimation
-     * CAAnimationGroup     new CAAnimationGroup()                                       CAAnimationGroup
-     * CAKeyframeAnimation  CAKeyframeAnimation.animationWithKeyPath(aPath)              CAKeyframeAnimation
-     * SCNImage             SCNImage.imageWithURL(aURL)                                  NSImage / UIImage
+     * class name constructor Objective-C class
+     * SCNColor SCNColor.color(r,g,b,a) NSColor
+     * CATimingFunction CATimingFunction.functionWithName(name) CATimingFunction
+     * CABasicAnimation CABasicAnimation.animationWithKeyPath(aPath) CABasicAnimation
+     * CAAnimationGroup new CAAnimationGroup() CAAnimationGroup
+     * CAKeyframeAnimation CAKeyframeAnimation.animationWithKeyPath(aPath) CAKeyframeAnimation
+     * SCNImage SCNImage.imageWithURL(aURL) NSImage / UIImage
      * SCNImage.imageWithPath(aPath)
      * <p>
      * Vectors use this syntax:
@@ -352,7 +353,10 @@ public final class SceneKit {
     public static native String SCNHitTestOptionCategoryBitMask();
 
     /**
-     * This key is optional and may be used in association with the SCNGeometrySourceSemanticTexcoord semantic. It allows to associate a mapping channel from the geometry to a symbol from the program source code. The mapping channel allows to plug programs that work with multiple texture coordinates. The associated value must be a NSNumber(integer) greater than zero.
+     * This key is optional and may be used in association with the SCNGeometrySourceSemanticTexcoord semantic. It
+     * allows to associate a mapping channel from the geometry to a symbol from the program source code. The mapping
+     * channel allows to plug programs that work with multiple texture coordinates. The associated value must be a
+     * NSNumber(integer) greater than zero.
      */
     @Generated
     @CVariable()
@@ -369,11 +373,11 @@ public final class SceneKit {
      * Structures available from the SCNShaderModifierEntryPointGeometry entry point:
      * <p>
      * | struct SCNShaderGeometry {
-     * |    float4 position;
-     * |    float3 normal;
-     * |    float4 tangent;
-     * |    float4 color;
-     * |    float2 texcoords[kSCNTexcoordCount];
+     * | float4 position;
+     * | float3 normal;
+     * | float4 tangent;
+     * | float4 color;
+     * | float2 texcoords[kSCNTexcoordCount];
      * | } _geometry;
      * |
      * | Access: ReadWrite
@@ -381,22 +385,27 @@ public final class SceneKit {
      * <p>
      * kSCNTexcoordCount is a constant integer set to the number of texture coordinates used.
      * <p>
-     * All the geometric fields (position, normal and tangent) are in model space. You can use one of the provided automatic uniforms
-     * such as u_modelTransform or u_modelViewTransform if you want to operate in another space (but the results must stay in the model space, otherwise remaining computations won't be correct).
-     * The texture coordinates are the raw values found in the mesh, they have not been transformed yet by their optional contentsTransform. The contentsTransform if any is applied after the geometry shader modifier.
+     * All the geometric fields (position, normal and tangent) are in model space. You can use one of the provided
+     * automatic uniforms
+     * such as u_modelTransform or u_modelViewTransform if you want to operate in another space (but the results must
+     * stay in the model space, otherwise remaining computations won't be correct).
+     * The texture coordinates are the raw values found in the mesh, they have not been transformed yet by their
+     * optional contentsTransform. The contentsTransform if any is applied after the geometry shader modifier.
      * <p>
      * Example: Simple sinusoidal deformation
      * <p>
      * GLSL
      * | uniform float Amplitude = 0.1;
      * |
-     * | _geometry.position.xyz += _geometry.normal * (Amplitude * _geometry.position.y * _geometry.position.x) * sin(u_time);
+     * | _geometry.position.xyz += _geometry.normal * (Amplitude * _geometry.position.y * _geometry.position.x) *
+     * sin(u_time);
      * <p>
      * Metal Shading Language
      * | #pragma arguments
      * | float Amplitude;
      * |
-     * | _geometry.position.xyz += _geometry.normal * (Amplitude * _geometry.position.y * _geometry.position.x) * sin(scn_frame.time);
+     * | _geometry.position.xyz += _geometry.normal * (Amplitude * _geometry.position.y * _geometry.position.x) *
+     * sin(scn_frame.time);
      */
     @Generated
     @CVariable()
@@ -411,49 +420,61 @@ public final class SceneKit {
      * Structures available from the SCNShaderModifierEntryPointSurface entry point:
      * <p>
      * | struct SCNShaderSurface {
-     * |    float3 view;                       // Direction from the point on the surface toward the camera (V)
-     * |    float3 position;                   // Position of the fragment
-     * |    float3 normal;                     // Normal of the fragment (N)
-     * |    float3 geometryNormal;             // Geometric normal of the fragment (normal map is ignored)
-     * |    float3 tangent;                    // Tangent of the fragment
-     * |    float3 bitangent;                  // Bitangent of the fragment
-     * |    float4 ambient;                    // Ambient property of the fragment
-     * |    float2 ambientTexcoord;            // Ambient texture coordinates
-     * |    float4 diffuse;                    // Diffuse property of the fragment. Alpha contains the opacity.
-     * |    float2 diffuseTexcoord;            // Diffuse texture coordinates
-     * |    float4 specular;                   // Specular property of the fragment
-     * |    float2 specularTexcoord;           // Specular texture coordinates
-     * |    float4 emission;                   // Emission property of the fragment
-     * |    float2 emissionTexcoord;           // Emission texture coordinates
-     * |    float4 multiply;                   // Multiply property of the fragment
-     * |    float2 multiplyTexcoord;           // Multiply texture coordinates
-     * |    float4 transparent;                // Transparent property of the fragment
-     * |    float2 transparentTexcoord;        // Transparent texture coordinates
-     * |    float4 reflective;                 // Reflective property of the fragment
-     * |    float  metalness;                  // Metalness property of the fragment
-     * |    float2 metalnessTexcoord;          // Metalness texture coordinates
-     * |    float  roughness;                  // Roughness property of the fragment
-     * |    float2 roughnessTexcoord;          // Roughness texture coordinates
-     * |    float  clearCoat;                  // Clear Coat property of the fragment.           Available since macOS 10.15, iOS 13, tvOS 13 and watchOS 6.
-     * |    float2 clearCoatTexcoord;          // Clear Coat texture coordinates.                Available since macOS 10.15, iOS 13, tvOS 13 and watchOS 6.
-     * |    float  clearCoatRoughness;         // Clear Coat Roughness property of the fragment. Available since macOS 10.15, iOS 13, tvOS 13 and watchOS 6.
-     * |    float2 clearCoatRoughnessTexcoord; // Clear Coat Roughness texture coordinates.      Available since macOS 10.15, iOS 13, tvOS 13 and watchOS 6.
-     * |    float3 clearCoatNormal;            // Clear Coat Normal property of the fragment.    Available since macOS 10.15, iOS 13, tvOS 13 and watchOS 6.
-     * |    float2 clearCoatNormalTexcoord;    // Clear Coat Normnal texture coordinates.        Available since macOS 10.15, iOS 13, tvOS 13 and watchOS 6.
-     * |    float4 selfIllumination;           // Self Illumination property of the fragment.    Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `emission` in previous versions.
-     * |    float2 selfIlluminationTexcoord;   // Self Illumination texture coordinates.         Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `emissionTexcoord` in previous versions.
-     * |    float  ambientOcclusion;           // Ambient Occlusion property of the fragment.    Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `multiply` in previous versions.
-     * |    float2 ambientOcclusionTexcoord;   // Ambient Occlusion texture coordinates.         Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `multiplyTexcoord` in previous versions.
-     * |    float  shininess;                  // Shininess property of the fragment
-     * |    float  fresnel;                    // Fresnel property of the fragment
+     * | float3 view; // Direction from the point on the surface toward the camera (V)
+     * | float3 position; // Position of the fragment
+     * | float3 normal; // Normal of the fragment (N)
+     * | float3 geometryNormal; // Geometric normal of the fragment (normal map is ignored)
+     * | float3 tangent; // Tangent of the fragment
+     * | float3 bitangent; // Bitangent of the fragment
+     * | float4 ambient; // Ambient property of the fragment
+     * | float2 ambientTexcoord; // Ambient texture coordinates
+     * | float4 diffuse; // Diffuse property of the fragment. Alpha contains the opacity.
+     * | float2 diffuseTexcoord; // Diffuse texture coordinates
+     * | float4 specular; // Specular property of the fragment
+     * | float2 specularTexcoord; // Specular texture coordinates
+     * | float4 emission; // Emission property of the fragment
+     * | float2 emissionTexcoord; // Emission texture coordinates
+     * | float4 multiply; // Multiply property of the fragment
+     * | float2 multiplyTexcoord; // Multiply texture coordinates
+     * | float4 transparent; // Transparent property of the fragment
+     * | float2 transparentTexcoord; // Transparent texture coordinates
+     * | float4 reflective; // Reflective property of the fragment
+     * | float metalness; // Metalness property of the fragment
+     * | float2 metalnessTexcoord; // Metalness texture coordinates
+     * | float roughness; // Roughness property of the fragment
+     * | float2 roughnessTexcoord; // Roughness texture coordinates
+     * | float clearCoat; // Clear Coat property of the fragment. Available since macOS 10.15, iOS 13, tvOS 13 and
+     * watchOS 6.
+     * | float2 clearCoatTexcoord; // Clear Coat texture coordinates. Available since macOS 10.15, iOS 13, tvOS 13 and
+     * watchOS 6.
+     * | float clearCoatRoughness; // Clear Coat Roughness property of the fragment. Available since macOS 10.15, iOS
+     * 13, tvOS 13 and watchOS 6.
+     * | float2 clearCoatRoughnessTexcoord; // Clear Coat Roughness texture coordinates. Available since macOS 10.15,
+     * iOS 13, tvOS 13 and watchOS 6.
+     * | float3 clearCoatNormal; // Clear Coat Normal property of the fragment. Available since macOS 10.15, iOS 13,
+     * tvOS 13 and watchOS 6.
+     * | float2 clearCoatNormalTexcoord; // Clear Coat Normnal texture coordinates. Available since macOS 10.15, iOS 13,
+     * tvOS 13 and watchOS 6.
+     * | float4 selfIllumination; // Self Illumination property of the fragment. Available since macOS 10.13, iOS 11,
+     * tvOS 11 and watchOS 4. Available as `emission` in previous versions.
+     * | float2 selfIlluminationTexcoord; // Self Illumination texture coordinates. Available since macOS 10.13, iOS 11,
+     * tvOS 11 and watchOS 4. Available as `emissionTexcoord` in previous versions.
+     * | float ambientOcclusion; // Ambient Occlusion property of the fragment. Available since macOS 10.13, iOS 11,
+     * tvOS 11 and watchOS 4. Available as `multiply` in previous versions.
+     * | float2 ambientOcclusionTexcoord; // Ambient Occlusion texture coordinates. Available since macOS 10.13, iOS 11,
+     * tvOS 11 and watchOS 4. Available as `multiplyTexcoord` in previous versions.
+     * | float shininess; // Shininess property of the fragment
+     * | float fresnel; // Fresnel property of the fragment
      * | } _surface;
      * |
      * | Access: ReadWrite
      * | Stages: Fragment shader only
      * <p>
      * All geometric fields are in view space.
-     * All the other properties will be colors (texture have already been sampled at this stage) or floats. You can however do an extra sampling of standard textures if you want.
-     * In this case the naming pattern is u_<property>Texture. For example u_diffuseTexture or u_reflectiveTexture. Note that you have to be sure that the material do have a texture
+     * All the other properties will be colors (texture have already been sampled at this stage) or floats. You can
+     * however do an extra sampling of standard textures if you want.
+     * In this case the naming pattern is u_<property>Texture. For example u_diffuseTexture or u_reflectiveTexture. Note
+     * that you have to be sure that the material do have a texture
      * set for this property, otherwise you'll trigger a shader compilation error.
      * <p>
      * Example: Procedural black and white stripes
@@ -492,7 +513,8 @@ public final class SceneKit {
      * [@constant] SCNShaderModifierEntryPointLightingModel
      * <p>
      * This is the entry point to provide custom lighting equation. The fragment will be called for each active light
-     * of the scene and will need to accumulate lighting contribution for the vertex or the fragment in the _lightingContribution structure, using the light structure given.
+     * of the scene and will need to accumulate lighting contribution for the vertex or the fragment in the
+     * _lightingContribution structure, using the light structure given.
      * <p>
      * Structures available from the SCNShaderModifierEntryPointLightingModel entry point:
      * <p>
@@ -502,17 +524,17 @@ public final class SceneKit {
      * | Stages: Vertex shader and fragment shader
      * <p>
      * | struct SCNShaderLightingContribution {
-     * |    float3 ambient;
-     * |    float3 diffuse;
-     * |    float3 specular;
+     * | float3 ambient;
+     * | float3 diffuse;
+     * | float3 specular;
      * | } _lightingContribution;
      * |
      * | Access: ReadWrite
      * | Stages: Vertex shader and fragment shader
      * <p>
      * | struct SCNShaderLight {
-     * |    float4 intensity;
-     * |    float3 direction; // Direction from the point on the surface toward the light (L)
+     * | float4 intensity;
+     * | float3 direction; // Direction from the point on the surface toward the light (L)
      * | } _light;
      * |
      * | Access: ReadOnly
@@ -559,7 +581,7 @@ public final class SceneKit {
      * | Stages: Fragment shader only
      * <p>
      * | struct SCNShaderOutput {
-     * |    float4 color;
+     * | float4 color;
      * | } _output;
      * |
      * | Access: ReadWrite
@@ -581,7 +603,9 @@ public final class SceneKit {
     /**
      * [@constant] SCNViewOptionPreferredRenderingAPI Specifies the preferred rendering API to be used by the renderer.
      * <p>
-     * Pass it as the key in the options dictionary given to initWithFrame:options:. The value is a NSNumber wrapping a SCNRenderingAPI. You can also select the preferred rendering API directly from the SCNView inspector in InterfaceBuilder.
+     * Pass it as the key in the options dictionary given to initWithFrame:options:. The value is a NSNumber wrapping a
+     * SCNRenderingAPI. You can also select the preferred rendering API directly from the SCNView inspector in
+     * InterfaceBuilder.
      */
     @Generated
     @CVariable()
@@ -610,7 +634,8 @@ public final class SceneKit {
 
     /**
      * [@group] Scene source properties
-     * File contributors. The values are dictionaries populated with keys documented in the "Contributor dictionary keys" group.
+     * File contributors. The values are dictionaries populated with keys documented in the "Contributor dictionary
+     * keys" group.
      */
     @Generated
     @CVariable()
@@ -642,7 +667,8 @@ public final class SceneKit {
     public static native String SCNSceneSourceAssetUpAxisKey();
 
     /**
-     * The unit used in the file. The value is a dictionary populated with keys documented in the "Unit dictionary keys" group.
+     * The unit used in the file. The value is a dictionary populated with keys documented in the "Unit dictionary keys"
+     * group.
      */
     @Generated
     @CVariable()
@@ -676,7 +702,8 @@ public final class SceneKit {
     public static native String SCNSceneSourceAssetUnitNameKey();
 
     /**
-     * A NSNumber encapsulating a floating-point value indicating how many meters the unit is. For example, if the name is \@"centimeter", then this will be 0.01.
+     * A NSNumber encapsulating a floating-point value indicating how many meters the unit is. For example, if the name
+     * is \@"centimeter", then this will be 0.01.
      */
     @Generated
     @CVariable()
@@ -704,7 +731,8 @@ public final class SceneKit {
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
      * SceneKit will attempt to check the document for consistency.
      * If the document doesn't pass the consistency check it is then not loaded and an error is returned.
-     * This is slower, but for security reasons it should be set to YES if you are not sure the files you load are valid and have not been tampered with.
+     * This is slower, but for security reasons it should be set to YES if you are not sure the files you load are valid
+     * and have not been tampered with.
      */
     @Generated
     @CVariable()
@@ -733,7 +761,8 @@ public final class SceneKit {
      * <p>
      * This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
-     * SceneKit will forbid network accesses, prevent the loading of resources from arbitrary directories, and will not execute
+     * SceneKit will forbid network accesses, prevent the loading of resources from arbitrary directories, and will not
+     * execute
      * any code present in the loaded files.
      */
     @Generated
@@ -746,7 +775,8 @@ public final class SceneKit {
      * <p>
      * Pass an array of directory URLs where SceneKit should look for resources
      * <p>
-     * By default, SceneKit will look for the external resources it cannot find in the parent directory of the imported file.
+     * By default, SceneKit will look for the external resources it cannot find in the parent directory of the imported
+     * file.
      * You can add additional directories by setting an array of URLs for this key when calling sceneWithOptions:error:.
      * This is recommended if you want to construct your scene source from a data object, not from an URL,
      * and need to load resources whose paths are not absolute.
@@ -762,7 +792,8 @@ public final class SceneKit {
      * Pass YES in order to override assets URLs with the directory URLs passed via SCNSceneSourceAssetDirectoryURLsKey.
      * <p>
      * By default, SceneKit will look for the external resources using the paths/urls as described in the imported file.
-     * You can force SceneKit to only search for extern resources within the directories specified by the SCNSceneSourceAssetDirectoryURLsKey key.
+     * You can force SceneKit to only search for extern resources within the directories specified by the
+     * SCNSceneSourceAssetDirectoryURLsKey key.
      * This can be useful to load a file and its resources from a specific bundle for instance.
      */
     @Generated
@@ -789,7 +820,10 @@ public final class SceneKit {
      * <p>
      * Pass one of the value below to specify what to do with loaded animations.
      * <p>
-     * See below for the description of each individual key. Defaults to SCNSceneSourceAnimationImportPolicyPlayRepeatedly. On 10.9 and before the behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase. For compatibility reason if the application was built on 10.9 or before the default behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase.
+     * See below for the description of each individual key. Defaults to
+     * SCNSceneSourceAnimationImportPolicyPlayRepeatedly. On 10.9 and before the behavior is
+     * SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase. For compatibility reason if the application was built
+     * on 10.9 or before the default behavior is SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase.
      */
     @Generated
     @CVariable()
@@ -799,7 +833,8 @@ public final class SceneKit {
     /**
      * [@constant] SCNSceneSourceLoadingOptionPreserveOriginalTopology
      * <p>
-     * Pass YES to make SceneKit preserve the original topology instead of triangulating at load time. This can be useful to get better results when subdividing a geometry.
+     * Pass YES to make SceneKit preserve the original topology instead of triangulating at load time. This can be
+     * useful to get better results when subdividing a geometry.
      * <p>
      * Defaults to YES starting macOS 10.15, iOS 13, tvOS 13 and watchOS 6. Defaults to NO in previous versions.
      */
@@ -841,7 +876,8 @@ public final class SceneKit {
     /**
      * [@constant] SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase
      * <p>
-     * Add animations to the scene and play them using the SCNView/SCNRenderer's scene time (usesSceneTimeBase set to YES)
+     * Add animations to the scene and play them using the SCNView/SCNRenderer's scene time (usesSceneTimeBase set to
+     * YES)
      */
     @Generated
     @CVariable()
@@ -900,7 +936,8 @@ public final class SceneKit {
      * <p>
      * Specifies the final destination (as a NSURL) of the scene being exported.
      * <p>
-     * The destination URL is required if the scene is exported to a temporary directory and then moved to a final destination. This enables the exported document to get correct relative paths to referenced images.
+     * The destination URL is required if the scene is exported to a temporary directory and then moved to a final
+     * destination. This enables the exported document to get correct relative paths to referenced images.
      */
     @Generated
     @CVariable()
@@ -932,7 +969,8 @@ public final class SceneKit {
     public static native String SCNSceneFrameRateAttributeKey();
 
     /**
-     * A vector3 value, encapsulated in a NSValue, containing the up axis of the scene. This is just for information, setting the up axis as no effect.
+     * A vector3 value, encapsulated in a NSValue, containing the up axis of the scene. This is just for information,
+     * setting the up axis as no effect.
      */
     @Generated
     @CVariable()
@@ -1094,7 +1132,7 @@ public final class SceneKit {
     public static native String SCNGeometrySourceSemanticBoneIndices();
 
     /**
-     * float3 : {x,y,z}     controller animation type : {NSValue(SCNVector3)}
+     * float3 : {x,y,z} controller animation type : {NSValue(SCNVector3)}
      */
     @Generated
     @CVariable()
@@ -1102,7 +1140,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyPosition();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1110,7 +1148,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyAngle();
 
     /**
-     * float3 : {x,y,z}     controller animation type : {NSValue(SCNVector3)}
+     * float3 : {x,y,z} controller animation type : {NSValue(SCNVector3)}
      */
     @Generated
     @CVariable()
@@ -1118,7 +1156,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyRotationAxis();
 
     /**
-     * float3 : {x,y,z}     controller animation type : {NSValue(SCNVector3)}
+     * float3 : {x,y,z} controller animation type : {NSValue(SCNVector3)}
      */
     @Generated
     @CVariable()
@@ -1126,7 +1164,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyVelocity();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1134,7 +1172,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyAngularVelocity();
 
     /**
-     * float                not controllable
+     * float not controllable
      */
     @Generated
     @CVariable()
@@ -1142,7 +1180,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyLife();
 
     /**
-     * float4 : {r,g,b,a}   controller animation type : {UIColor}
+     * float4 : {r,g,b,a} controller animation type : {UIColor}
      */
     @Generated
     @CVariable()
@@ -1150,7 +1188,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyColor();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1158,7 +1196,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyOpacity();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1166,7 +1204,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertySize();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1174,7 +1212,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyFrame();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1182,7 +1220,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyFrameRate();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1190,7 +1228,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyBounce();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1198,7 +1236,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyCharge();
 
     /**
-     * float                controller animation type : {NSNumber}
+     * float controller animation type : {NSNumber}
      */
     @Generated
     @CVariable()
@@ -1206,7 +1244,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyFriction();
 
     /**
-     * float3               not controllable
+     * float3 not controllable
      */
     @Generated
     @CVariable()
@@ -1214,7 +1252,7 @@ public final class SceneKit {
     public static native String SCNParticlePropertyContactPoint();
 
     /**
-     * float3               not controllable
+     * float3 not controllable
      */
     @Generated
     @CVariable()
@@ -1230,7 +1268,8 @@ public final class SceneKit {
     public static native String SCNPhysicsShapeTypeKey();
 
     /**
-     * A boolean to decide if a hierarchy is kept as a compound of shapes or flattened as one single volume. Default is true.
+     * A boolean to decide if a hierarchy is kept as a compound of shapes or flattened as one single volume. Default is
+     * true.
      */
     @Generated
     @CVariable()
@@ -1269,7 +1308,8 @@ public final class SceneKit {
     public static native String SCNPhysicsShapeTypeConcavePolyhedron();
 
     /**
-     * Allows to filter the objects tested by rayTest, contactTest and convexSweep. Default is SCNPhysicsCollisionCategoryAll
+     * Allows to filter the objects tested by rayTest, contactTest and convexSweep. Default is
+     * SCNPhysicsCollisionCategoryAll
      */
     @Generated
     @CVariable()
@@ -1277,7 +1317,8 @@ public final class SceneKit {
     public static native String SCNPhysicsTestCollisionBitMaskKey();
 
     /**
-     * Specifies how to perform the ray/contact/sweep test. Values are defined below. If not defined, then defaults to SCNPhysicsTestSearchModeAny
+     * Specifies how to perform the ray/contact/sweep test. Values are defined below. If not defined, then defaults to
+     * SCNPhysicsTestSearchModeAny
      */
     @Generated
     @CVariable()
@@ -1329,9 +1370,12 @@ public final class SceneKit {
      * <p>
      * Pass the units you want the scene to be converted to (in meter).
      * <p>
-     * Use this with a floating value encapsulated in a NSNumber. The default value is nil which means no conversion done. Passing a non-zero value will convert the scene coordinates so that 1 unit corresponds to N meters. For example pass 0.01 for 1 unit == 1 centimeter, pass 0.3048 for 1 unit == 1 foot...
+     * Use this with a floating value encapsulated in a NSNumber. The default value is nil which means no conversion
+     * done. Passing a non-zero value will convert the scene coordinates so that 1 unit corresponds to N meters. For
+     * example pass 0.01 for 1 unit == 1 centimeter, pass 0.3048 for 1 unit == 1 foot...
      * For better physics simulation it is recommended to use 1 unit equals to 1 meter.
-     * This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression options instead).
+     * This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression
+     * options instead).
      */
     @Generated
     @CVariable()
@@ -1344,7 +1388,8 @@ public final class SceneKit {
      * Pass YES if a scene should be converted to Y up if it currently has a different up axis.
      * <p>
      * Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
-     * This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression options instead).
+     * This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression
+     * options instead).
      */
     @Generated
     @CVariable()

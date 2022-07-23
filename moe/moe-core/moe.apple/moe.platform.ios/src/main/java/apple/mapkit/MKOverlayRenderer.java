@@ -165,7 +165,7 @@ public class MKOverlayRenderer extends NSObject {
     /**
      * Return YES if the renderer is currently ready to draw in the specified rect.
      * Return NO if the renderer will not draw in the specified rect or if the
-     * data necessary to draw in the specified rect is not available.  In the
+     * data necessary to draw in the specified rect is not available. In the
      * case where the renderer may want to draw in the specified rect but the data is
      * not available, use setNeedsDisplayInMapRect:zoomLevel: to signal when the
      * data does become available.

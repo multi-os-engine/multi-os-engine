@@ -132,8 +132,8 @@ public class HKHealthStore extends NSObject {
      * <p>
      * Returns YES if HealthKit is supported on the device.
      * <p>
-     * HealthKit is not supported on all iOS devices.  Using HKHealthStore APIs on devices which are not
-     * supported will result in errors with the HKErrorHealthDataUnavailable code.  Call isHealthDataAvailable
+     * HealthKit is not supported on all iOS devices. Using HKHealthStore APIs on devices which are not
+     * supported will result in errors with the HKErrorHealthDataUnavailable code. Call isHealthDataAvailable
      * before attempting to use other parts of the framework.
      */
     @Generated
@@ -258,7 +258,7 @@ public class HKHealthStore extends NSObject {
      * <p>
      * Deletes multiple HKObjects from the HealthKit database.
      * <p>
-     * An application may only delete objects that it previously saved.  This operation is performed
+     * An application may only delete objects that it previously saved. This operation is performed
      * asynchronously and the completion will be executed on an arbitrary background queue.
      */
     @Generated
@@ -271,7 +271,7 @@ public class HKHealthStore extends NSObject {
      * <p>
      * Deletes all objects matching the given predicate from the HealthKit database.
      * <p>
-     * An application may only delete objects that it previously saved.  This operation is performed
+     * An application may only delete objects that it previously saved. This operation is performed
      * asynchronously and the completion will be executed on an arbitrary background queue.
      */
     @Generated
@@ -323,8 +323,8 @@ public class HKHealthStore extends NSObject {
      * Begins executing the given query.
      * <p>
      * After executing a query, the completion, update, and/or results handlers of that query will be invoked
-     * asynchronously on an arbitrary background queue as results become available.  Errors that prevent a
-     * query from executing will be delivered to one of the query's handlers.  Which handler the error will be
+     * asynchronously on an arbitrary background queue as results become available. Errors that prevent a
+     * query from executing will be delivered to one of the query's handlers. Which handler the error will be
      * delivered to is defined by the HKQuery subclass.
      * <p>
      * Each HKQuery instance may only be executed once and calling this method with a currently executing query
@@ -360,8 +360,8 @@ public class HKHealthStore extends NSObject {
      * types that the extension requested access to.
      * <p>
      * The request is performed asynchronously and its completion will be executed on an arbitrary background
-     * queue after the user has responded.  The success parameter of the completion indicates whether prompting
-     * the user, if necessary, completed successfully and was not cancelled by the user.  It does NOT indicate
+     * queue after the user has responded. The success parameter of the completion indicates whether prompting
+     * the user, if necessary, completed successfully and was not cancelled by the user. It does NOT indicate
      * whether the application was granted authorization.
      */
     @Generated
@@ -403,10 +403,10 @@ public class HKHealthStore extends NSObject {
      * from the user to read and share every type of object for which the application may require access.
      * <p>
      * The request is performed asynchronously and its completion will be executed on an arbitrary background
-     * queue after the user has responded.  If the user has already chosen whether to grant the application
+     * queue after the user has responded. If the user has already chosen whether to grant the application
      * access to all of the types provided, then the completion will be called without prompting the user.
      * The success parameter of the completion indicates whether prompting the user, if necessary, completed
-     * successfully and was not cancelled by the user.  It does NOT indicate whether the application was
+     * successfully and was not cancelled by the user. It does NOT indicate whether the application was
      * granted authorization.
      * <p>
      * To customize the messages displayed on the authorization sheet, set the following keys in your app's
@@ -428,8 +428,8 @@ public class HKHealthStore extends NSObject {
      * to the HKSourceRevision representing the version of the application that saved it.
      * <p>
      * If the object has an HKObjectType property, then in order to save an object successfully the application
-     * must first request authorization to share objects with that type.  Saving an object with the same unique
-     * identifier as another object that has already been saved will fail.  When the application attempts to
+     * must first request authorization to share objects with that type. Saving an object with the same unique
+     * identifier as another object that has already been saved will fail. When the application attempts to
      * save multiple objects, if any single object cannot be saved then none of the objects will be saved.
      * The operation will fail if the objects array contains samples with endDates that are older than the date
      * returned by earliestPermittedSampleDate.
@@ -490,7 +490,7 @@ public class HKHealthStore extends NSObject {
      * <p>
      * Stops a query that is executing from continuing to run.
      * <p>
-     * Calling this method will prevent the handlers of the query from being invoked in the future.  If the
+     * Calling this method will prevent the handlers of the query from being invoked in the future. If the
      * query is already stopped, this method does nothing.
      */
     @Generated
@@ -666,7 +666,8 @@ public class HKHealthStore extends NSObject {
      * <p>
      * Recalibrates the prediction algorithm used for this sample type.
      * <p>
-     * Check -[HKSampleType allowsRecalibrationForEstimates] to see if a given sample type is supported. Calling this method results in first-party
+     * Check -[HKSampleType allowsRecalibrationForEstimates] to see if a given sample type is supported. Calling this
+     * method results in first-party
      * estimation algorithms to recalibrate what data is used when generating values for HKSamples of this sampleType.
      */
     @Generated

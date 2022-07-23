@@ -172,7 +172,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
      * @param error If an error occurs, upon return the NSError object describes the error.
      *              Set to NULL to ignore errors.
      * @return On success, an initialized PKDrawing object. If nil, the outError parameter
-     * contains an NSError instance describing the problem.
+     *         contains an NSError instance describing the problem.
      */
     @Generated
     @Selector("initWithData:error:")

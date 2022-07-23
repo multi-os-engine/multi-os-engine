@@ -147,7 +147,7 @@ public class ILCommunication extends NSObject implements NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The phone number or e-mail address of the sender.  The value will be nil if the sender is unknown.
+     * The phone number or e-mail address of the sender. The value will be nil if the sender is unknown.
      */
     @Generated
     @Selector("sender")

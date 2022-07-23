@@ -133,7 +133,7 @@ public class TKTokenKeychainItem extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Contains the user-visible label for this item.  This property is an equivalent of kSecAttrLabel in SecItem.h
+     * Contains the user-visible label for this item. This property is an equivalent of kSecAttrLabel in SecItem.h
      */
     @Generated
     @Selector("label")
@@ -168,7 +168,7 @@ public class TKTokenKeychainItem extends NSObject {
     public native void setConstraints(NSDictionary<? extends NSNumber, ?> value);
 
     /**
-     * Contains the user-visible label for this item.  This property is an equivalent of kSecAttrLabel in SecItem.h
+     * Contains the user-visible label for this item. This property is an equivalent of kSecAttrLabel in SecItem.h
      */
     @Generated
     @Selector("setLabel:")

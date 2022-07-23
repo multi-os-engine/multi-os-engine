@@ -49,7 +49,8 @@ public final class GameController {
     /**
      * Fills out a v100 snapshot from any compatible NSData source
      *
-     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
+     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
+     *         YES for all other cases.
      */
     @Generated
     @CFunction
@@ -59,7 +60,8 @@ public final class GameController {
 
     /**
      * Creates an NSData object from a v100 snapshot.
-     * If the version and size is not set in the snapshot the data will automatically have version 0x100 and sizeof(GCGamepadSnapShotDataV100) set as the values implicitly.
+     * If the version and size is not set in the snapshot the data will automatically have version 0x100 and
+     * sizeof(GCGamepadSnapShotDataV100) set as the values implicitly.
      *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
      */
@@ -71,7 +73,8 @@ public final class GameController {
     /**
      * Fills out a v100 snapshot from any compatible NSData source
      *
-     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
+     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
+     *         YES for all other cases.
      */
     @Generated
     @CFunction
@@ -81,9 +84,11 @@ public final class GameController {
 
     /**
      * Creates an NSData object from a v100 snapshot.
-     * If the version and size is not set in the snapshot the data will automatically have version 0x100 and sizeof(GCExtendedGamepadSnapShotDataV100) set as the values implicitly.
+     * If the version and size is not set in the snapshot the data will automatically have version 0x100 and
+     * sizeof(GCExtendedGamepadSnapShotDataV100) set as the values implicitly.
      *
-     * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCExtendedGamepadSnapshot.snapshotData
+     * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with
+     *         GCExtendedGamepadSnapshot.snapshotData
      */
     @Generated
     @CFunction
@@ -93,7 +98,8 @@ public final class GameController {
     /**
      * Fills out a v100 snapshot from any compatible NSData source
      *
-     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
+     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
+     *         YES for all other cases.
      */
     @Generated
     @CFunction
@@ -103,7 +109,8 @@ public final class GameController {
 
     /**
      * Creates an NSData object from a v100 snapshot.
-     * If the version and size is not set in the snapshot the data will automatically have version 0x100 and sizeof(GCMicroGamepadSnapShotDataV100) set as the values implicitly.
+     * If the version and size is not set in the snapshot the data will automatically have version 0x100 and
+     * sizeof(GCMicroGamepadSnapShotDataV100) set as the values implicitly.
      *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
      */
@@ -147,7 +154,8 @@ public final class GameController {
     /**
      * Fills out a snapshot from any compatible NSData source
      *
-     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
+     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
+     *         YES for all other cases.
      */
     @Generated
     @CFunction
@@ -157,9 +165,12 @@ public final class GameController {
 
     /**
      * Creates an NSData object from a snapshot.
-     * If the version and size is not set in the snapshot the data will automatically have the version GCCurrentExtendedGamepadSnapshotDataVersion and sizeof(GCExtendedGamepadSnapshotData) set as the values implicitly.
+     * If the version and size is not set in the snapshot the data will automatically have the version
+     * GCCurrentExtendedGamepadSnapshotDataVersion and sizeof(GCExtendedGamepadSnapshotData) set as the values
+     * implicitly.
      *
-     * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCExtendedGamepadSnapshot.snapshotData
+     * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with
+     *         GCExtendedGamepadSnapshot.snapshotData
      */
     @Generated
     @CFunction
@@ -169,7 +180,8 @@ public final class GameController {
     /**
      * Fills out a snapshot from any compatible NSData source
      *
-     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot. YES for all other cases.
+     * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
+     *         YES for all other cases.
      */
     @Generated
     @CFunction
@@ -179,7 +191,8 @@ public final class GameController {
 
     /**
      * Creates an NSData object from a snapshot.
-     * If the version and size is not set in the snapshot the data will automatically have version GCCurrentMicroGamepadSnapshotDataVersion and sizeof(GCMicroGamepadSnapshotData) set as the values implicitly.
+     * If the version and size is not set in the snapshot the data will automatically have version
+     * GCCurrentMicroGamepadSnapshotDataVersion and sizeof(GCMicroGamepadSnapshotData) set as the values implicitly.
      *
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
      */
@@ -2354,7 +2367,8 @@ public final class GameController {
     public static native String GCKeyRightGUI();
 
     /**
-     * Use these constants with NSNotificationCenter to listen to a controller becoming the most recently used controller.
+     * Use these constants with NSNotificationCenter to listen to a controller becoming the most recently used
+     * controller.
      * This is a good time to swap out UI to match the new current controller, and unregister any handlers with
      * the old current controller.
      * <p>
@@ -2389,7 +2403,8 @@ public final class GameController {
      * <p>
      * The 'object' property of the notification will contain the GCKeyboard that was connected or disconnected.
      * <p>
-     * [@note] All connected keyboards are coalesced into one keyboard object, so notification about connection/disconnection will only be delivered once until last keyboard disconnects.
+     * [@note] All connected keyboards are coalesced into one keyboard object, so notification about
+     * connection/disconnection will only be delivered once until last keyboard disconnects.
      *
      * @see NSNotificationCetner
      */
@@ -2652,7 +2667,8 @@ public final class GameController {
      * <p>
      * [@note] Equivalent to microgamepad.dpad
      * <p>
-     * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents touching anywhere on the entire touch surface.
+     * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents touching anywhere on the entire
+     * touch surface.
      */
     @Generated
     @CVariable()
@@ -2662,7 +2678,8 @@ public final class GameController {
     /**
      * The primary button for the microgamepad
      * <p>
-     * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents pressing anywhere on the touch surface.
+     * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents pressing anywhere on the touch
+     * surface.
      */
     @Generated
     @CVariable()
@@ -2686,9 +2703,11 @@ public final class GameController {
      * <p>
      * [@note] Equivalent to microgamepad.buttonMenu
      * <p>
-     * [@note] For the 1st generation Siri Remote, this represents pressing the play/pause button. For the 2nd generation Siri Remote, this represents pressing the back button.
+     * [@note] For the 1st generation Siri Remote, this represents pressing the play/pause button. For the 2nd
+     * generation Siri Remote, this represents pressing the back button.
      * <p>
-     * [@note] You should avoid polling this button every frame. tvOS will run a gesture recognizer on events before forwarding them to your application that can reduce the window
+     * [@note] You should avoid polling this button every frame. tvOS will run a gesture recognizer on events before
+     * forwarding them to your application that can reduce the window
      * to poll button changes. Instead, register a pressedChangedHandler or a valueChangedHandler.
      */
     @Generated
@@ -2701,7 +2720,8 @@ public final class GameController {
      * <p>
      * [@note] Equivalent to microgamepad.dpad
      * <p>
-     * [@note] For the 2021 2nd generation Siri Remote, this represents touching anywhere on the entire touch surface - including the inner and outer rings.
+     * [@note] For the 2021 2nd generation Siri Remote, this represents touching anywhere on the entire touch surface -
+     * including the inner and outer rings.
      */
     @Generated
     @CVariable()
@@ -2709,11 +2729,13 @@ public final class GameController {
     public static native String GCInputDirectionalDpad();
 
     /**
-     * The button corresponding to pressing anywhere on the primary directional input surface for the directional gamepad
+     * The button corresponding to pressing anywhere on the primary directional input surface for the directional
+     * gamepad
      * <p>
      * [@note] Equivalent to microgamepad.buttonA
      * <p>
-     * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere the entire touch surface - including the inner and outer rings.
+     * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere the entire touch surface -
+     * including the inner and outer rings.
      */
     @Generated
     @CVariable()
@@ -2721,7 +2743,8 @@ public final class GameController {
     public static native String GCInputDirectionalTouchSurfaceButton();
 
     /**
-     * An optional secondary directional input surface for the directional gamepad. This input is guaranteed to be an 8-way digital dpad with physical Up, Down, Left, Right butttons.
+     * An optional secondary directional input surface for the directional gamepad. This input is guaranteed to be an
+     * 8-way digital dpad with physical Up, Down, Left, Right butttons.
      * <p>
      * [@note] For the 2021 2nd generation Siri Remote, this represents pressing on the outer ring of the touch surface.
      */
@@ -2733,7 +2756,8 @@ public final class GameController {
     /**
      * An optional button for the directional gamepad. This input represents the center button of the cardinal dpad.
      * <p>
-     * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere on the inner ring of the touch surface.
+     * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere on the inner ring of the touch
+     * surface.
      */
     @Generated
     @CVariable()
@@ -2764,7 +2788,8 @@ public final class GameController {
     public static native String GCProductCategoryXboxOne();
 
     /**
-     * The Siri Remote (1st generation), or Apple TV Remote (1st generation), was first introduced in 2015. It features a Touch surface for touch navigation, and supports device motion.
+     * The Siri Remote (1st generation), or Apple TV Remote (1st generation), was first introduced in 2015. It features
+     * a Touch surface for touch navigation, and supports device motion.
      */
     @Generated
     @CVariable()
@@ -2772,7 +2797,8 @@ public final class GameController {
     public static native String GCProductCategorySiriRemote1stGen();
 
     /**
-     * The Siri Remote (2nd generation), or Apple TV Remote (2nd generation), was first introduced in 2021. It features a touch-enabled clickpad for navigation.
+     * The Siri Remote (2nd generation), or Apple TV Remote (2nd generation), was first introduced in 2021. It features
+     * a touch-enabled clickpad for navigation.
      */
     @Generated
     @CVariable()
@@ -2788,7 +2814,8 @@ public final class GameController {
     public static native String GCProductCategoryControlCenterRemote();
 
     /**
-     * The Universal Electronics remote is an infrared and Bluetooth Low Energy remote designed to work with the Apple TV.
+     * The Universal Electronics remote is an infrared and Bluetooth Low Energy remote designed to work with the Apple
+     * TV.
      */
     @Generated
     @CVariable()
@@ -2796,10 +2823,12 @@ public final class GameController {
     public static native String GCProductCategoryUniversalElectronicsRemote();
 
     /**
-     * If multiple remotes have been combined into one, the device will have the GCProductCategoryCoalescedRemote product category.
+     * If multiple remotes have been combined into one, the device will have the GCProductCategoryCoalescedRemote
+     * product category.
      * <p>
      * By default, the Game Controller framework will try to coalesce, or combine, the physical Apple TV Remote and the
-     * virtual Control Center remote and treat them as a single GCDevice instance. By setting GCSupportsMultipleMicroGamepads in your
+     * virtual Control Center remote and treat them as a single GCDevice instance. By setting
+     * GCSupportsMultipleMicroGamepads in your
      * app's plist to true, you can disable this behavior.
      */
     @Generated

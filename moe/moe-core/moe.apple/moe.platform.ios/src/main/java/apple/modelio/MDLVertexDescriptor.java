@@ -180,7 +180,7 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      * Retrieves the attribute with the given name
      *
      * @return The attribute with the supplied name or nil if attribute with the given
-     * name does not exist in the descriptor object
+     *         name does not exist in the descriptor object
      */
     @Generated
     @Selector("attributeNamed:")

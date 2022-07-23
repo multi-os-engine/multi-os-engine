@@ -72,7 +72,8 @@ public class TKTokenConfiguration extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * Returns certificate with specified objectID.  Fills error with TKTokenErrorCodeObjectNotFound if no such certificate exists.
+     * Returns certificate with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such
+     * certificate exists.
      */
     @Generated
     @Selector("certificateForObjectID:error:")
@@ -90,7 +91,10 @@ public class TKTokenConfiguration extends NSObject {
     /**
      * Additional configuration available for token instance.
      * <p>
-     * Token implementation and its hosting application can use this data for specifying any additional configuration for the token. System does not interpret this data in any way. For example, network-based HSM can store here (using Codable or other serialization mechanisms) target network address, access credentials and the list of identities accessible in the HSM.
+     * Token implementation and its hosting application can use this data for specifying any additional configuration
+     * for the token. System does not interpret this data in any way. For example, network-based HSM can store here
+     * (using Codable or other serialization mechanisms) target network address, access credentials and the list of
+     * identities accessible in the HSM.
      */
     @Generated
     @Selector("configurationData")
@@ -114,7 +118,8 @@ public class TKTokenConfiguration extends NSObject {
     public native TKTokenConfiguration init();
 
     /**
-     * Unique, persistent identifier of this token, always created by specific token implementation. Typically implemented by some kind of serial number of the target hardware, for example SmartCard serial number.
+     * Unique, persistent identifier of this token, always created by specific token implementation. Typically
+     * implemented by some kind of serial number of the target hardware, for example SmartCard serial number.
      */
     @Generated
     @Selector("instanceID")
@@ -138,7 +143,8 @@ public class TKTokenConfiguration extends NSObject {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * Returns keychain item key with specified objectID.  Fills error with TKTokenErrorCodeObjectNotFound if no such key exists.
+     * Returns keychain item key with specified objectID. Fills error with TKTokenErrorCodeObjectNotFound if no such key
+     * exists.
      */
     @Generated
     @Selector("keyForObjectID:error:")
@@ -172,7 +178,10 @@ public class TKTokenConfiguration extends NSObject {
     /**
      * Additional configuration available for token instance.
      * <p>
-     * Token implementation and its hosting application can use this data for specifying any additional configuration for the token. System does not interpret this data in any way. For example, network-based HSM can store here (using Codable or other serialization mechanisms) target network address, access credentials and the list of identities accessible in the HSM.
+     * Token implementation and its hosting application can use this data for specifying any additional configuration
+     * for the token. System does not interpret this data in any way. For example, network-based HSM can store here
+     * (using Codable or other serialization mechanisms) target network address, access credentials and the list of
+     * identities accessible in the HSM.
      */
     @Generated
     @Selector("setConfigurationData:")

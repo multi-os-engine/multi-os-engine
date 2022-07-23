@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueSlatType
+ * [@enum] HMCharacteristicValueSlatType
  * <p>
- * [@constant]  HMCharacteristicValueSlatTypeHorizontal          Slat type is horizontal.
- * [@constant]  HMCharacteristicValueSlatTypeVertical            Slat type is vertical.
+ * [@constant] HMCharacteristicValueSlatTypeHorizontal Slat type is horizontal.
+ * [@constant] HMCharacteristicValueSlatTypeVertical Slat type is vertical.
  */
 @Generated
 public final class HMCharacteristicValueSlatType {

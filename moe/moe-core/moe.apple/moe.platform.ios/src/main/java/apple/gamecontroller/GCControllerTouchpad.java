@@ -129,11 +129,15 @@ public class GCControllerTouchpad extends GCControllerElement {
     public static native GCControllerTouchpad new_objc();
 
     /**
-     * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
+     * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad
+     * centered around the first contact point with the surface.
      * <p>
-     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
+     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to
+     * that center. Movement outside the window will slide the window with it to re-center it. This is great for
+     * surfaces where there is no clear sense of a middle and drift over time is an issue.
      * <p>
-     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
+     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or
+     * by a developer using the dpad.
      * <p>
      * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
      */
@@ -150,11 +154,15 @@ public class GCControllerTouchpad extends GCControllerElement {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad centered around the first contact point with the surface.
+     * The touchpad can use the raw position values of its surface as D-pad values, or it can create a virtual dpad
+     * centered around the first contact point with the surface.
      * <p>
-     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to that center. Movement outside the window will slide the window with it to re-center it. This is great for surfaces where there is no clear sense of a middle and drift over time is an issue.
+     * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to
+     * that center. Movement outside the window will slide the window with it to re-center it. This is great for
+     * surfaces where there is no clear sense of a middle and drift over time is an issue.
      * <p>
-     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or by a developer using the dpad.
+     * If YES; the absolute values are used and any drift will have to managed manually either through user traning or
+     * by a developer using the dpad.
      * <p>
      * The default value for this property is YES, meaning the touch surface's raw positional values are reported.
      */

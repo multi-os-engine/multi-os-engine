@@ -79,7 +79,8 @@ public class AVContentKeySpecifier extends NSObject {
      * <p>
      * Creates a new instance of AVContentKeySpecifier.
      * <p>
-     * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key system.
+     * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
+     * system.
      *
      * @param keySystem            A valid key system for content keys.
      * @param contentKeyIdentifier Container and protocol-specific key identifier.
@@ -105,7 +106,7 @@ public class AVContentKeySpecifier extends NSObject {
     public static native long hash_static();
 
     /**
-     * [@property]      identifier
+     * [@property] identifier
      * <p>
      * Container and protocol-specific key identifier.
      */
@@ -123,7 +124,8 @@ public class AVContentKeySpecifier extends NSObject {
      * <p>
      * Initialize an instance of AVContentKeySpecifier.
      * <p>
-     * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key system.
+     * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
+     * system.
      *
      * @param keySystem            A valid key system for content keys.
      * @param contentKeyIdentifier Container and protocol-specific key identifier.
@@ -157,7 +159,7 @@ public class AVContentKeySpecifier extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]      keySystem
+     * [@property] keySystem
      * <p>
      * A valid key system for content keys.
      */
@@ -171,7 +173,7 @@ public class AVContentKeySpecifier extends NSObject {
     public static native AVContentKeySpecifier new_objc();
 
     /**
-     * [@property]      options
+     * [@property] options
      * <p>
      * Additional information necessary to obtain the key, can be empty if none needed.
      */

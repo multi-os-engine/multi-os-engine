@@ -123,7 +123,7 @@ public class MPSGraphDevice extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   metalDevice
+     * [@property] metalDevice
      * <p>
      * if deviceType GPU then returns MTLDevice or nil
      */
@@ -154,7 +154,7 @@ public class MPSGraphDevice extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property]   type
+     * [@property] type
      */
     @Generated
     @Selector("type")

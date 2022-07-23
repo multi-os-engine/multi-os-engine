@@ -132,7 +132,8 @@ public class MTLResourceStatePassSampleBufferAttachmentDescriptorArray extends N
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * This always uses 'copy' semantics.  It is safe to set the attachment state at any legal index to nil, which resets that attachment descriptor state to default vaules.
+     * This always uses 'copy' semantics. It is safe to set the attachment state at any legal index to nil, which resets
+     * that attachment descriptor state to default vaules.
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")

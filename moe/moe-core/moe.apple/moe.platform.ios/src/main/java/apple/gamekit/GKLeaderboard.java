@@ -193,7 +193,8 @@ public class GKLeaderboard extends NSObject {
     public native String category();
 
     /**
-     * set when leaderboards have been designated a game group; set when loadLeaderboardsWithCompletionHandler has been called for leaderboards that support game groups
+     * set when leaderboards have been designated a game group; set when loadLeaderboardsWithCompletionHandler has been
+     * called for leaderboards that support game groups
      */
     @Generated
     @Selector("groupIdentifier")
@@ -221,7 +222,8 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Specify an array of GKPlayers. For example, the players who are in a match together
-     * Defaults to AllTime score, if you want to change the timeScope, set the property before loading the scores. Range and playerScope are not applicable. players may not be nil.
+     * Defaults to AllTime score, if you want to change the timeScope, set the property before loading the scores. Range
+     * and playerScope are not applicable. players may not be nil.
      */
     @Generated
     @Selector("initWithPlayers:")
@@ -274,7 +276,8 @@ public class GKLeaderboard extends NSObject {
     public native long playerScope();
 
     /**
-     * Leaderboards start at index 1 and the length should be less than 100. Does not apply to leaderboards initialized with players.  Exception will be thrown if developer tries to set an invalid range.
+     * Leaderboards start at index 1 and the length should be less than 100. Does not apply to leaderboards initialized
+     * with players. Exception will be thrown if developer tries to set an invalid range.
      */
     @Generated
     @Selector("range")
@@ -311,7 +314,8 @@ public class GKLeaderboard extends NSObject {
     public native void setPlayerScope(@NInt long value);
 
     /**
-     * Leaderboards start at index 1 and the length should be less than 100. Does not apply to leaderboards initialized with players.  Exception will be thrown if developer tries to set an invalid range.
+     * Leaderboards start at index 1 and the length should be less than 100. Does not apply to leaderboards initialized
+     * with players. Exception will be thrown if developer tries to set an invalid range.
      */
     @Generated
     @Selector("setRange:")
@@ -377,7 +381,8 @@ public class GKLeaderboard extends NSObject {
     public native String baseLeaderboardID();
 
     /**
-     * Duration from startDate during which this leaderboard instance accepts score submissions (only applicable to recurring leaderboards)
+     * Duration from startDate during which this leaderboard instance accepts score submissions (only applicable to
+     * recurring leaderboards)
      */
     @Generated
     @Selector("duration")
@@ -447,7 +452,9 @@ public class GKLeaderboard extends NSObject {
     }
 
     /**
-     * Loads the occurrence preceding this occurrence for a recurring leaderboard in which the local player submitted a score. If no previous occurrence is found that the player submitted a score to, then the most recent previous occurrence is returned.
+     * Loads the occurrence preceding this occurrence for a recurring leaderboard in which the local player submitted a
+     * score. If no previous occurrence is found that the player submitted a score to, then the most recent previous
+     * occurrence is returned.
      */
     @Generated
     @Selector("loadPreviousOccurrenceWithCompletionHandler:")
@@ -462,7 +469,8 @@ public class GKLeaderboard extends NSObject {
     }
 
     /**
-     * Date and time the next instance will start accepting score submissions (only applicable to recurring leaderboards)
+     * Date and time the next instance will start accepting score submissions (only applicable to recurring
+     * leaderboards)
      */
     @Generated
     @Selector("nextStartDate")

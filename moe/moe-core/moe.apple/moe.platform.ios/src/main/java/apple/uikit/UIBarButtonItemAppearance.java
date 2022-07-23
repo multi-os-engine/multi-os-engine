@@ -104,7 +104,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     public static native String description_static();
 
     /**
-     * The appearance when the bar button item is in the disabled control state. If unspecified, then synthesized from the normal state.
+     * The appearance when the bar button item is in the disabled control state. If unspecified, then synthesized from
+     * the normal state.
      */
     @Generated
     @Selector("disabled")
@@ -115,7 +116,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * The appearance when the bar button item is in the focused control state. If unspecified, then synthesized from the highlighted state.
+     * The appearance when the bar button item is in the focused control state. If unspecified, then synthesized from
+     * the highlighted state.
      */
     @Generated
     @Selector("focused")
@@ -127,7 +129,8 @@ public class UIBarButtonItemAppearance extends NSObject implements NSCopying, NS
     public static native long hash_static();
 
     /**
-     * The appearance when the bar button item is in the highlighted control state. If unspecified, then synthesized from the normal state.
+     * The appearance when the bar button item is in the highlighted control state. If unspecified, then synthesized
+     * from the normal state.
      */
     @Generated
     @Selector("highlighted")

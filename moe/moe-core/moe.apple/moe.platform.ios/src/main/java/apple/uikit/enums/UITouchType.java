@@ -43,7 +43,8 @@ public final class UITouchType {
      */
     @Generated @NInt public static final long Pencil = 0x0000000000000002L;
     /**
-     * A touch representing a button-based, indirect input device describing the input sequence from button press to button release
+     * A touch representing a button-based, indirect input device describing the input sequence from button press to
+     * button release
      */
     @Generated @NInt public static final long IndirectPointer = 0x0000000000000003L;
 }

@@ -165,7 +165,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * Adds nodes to this graph.  No new connections are added.
+     * Adds nodes to this graph. No new connections are added.
      * If the node already exists in this graph this does nothing.
      *
      * @param nodes and array of nodes to be added
@@ -198,7 +198,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
      * Attempts to find the optimal path between the two nodes indicated.
      * If such a path exists, it is returned in start to end order.
      * If it doesn't exist, the array returned will be empty.
-     * Asserts if neither of these nodes are in this graph.  Use [GKGraphNode findPathFromNode:] instead.
+     * Asserts if neither of these nodes are in this graph. Use [GKGraphNode findPathFromNode:] instead.
      *
      * @param startNode node to start pathing from
      * @param endNode   goal node of the pathfinding attempt

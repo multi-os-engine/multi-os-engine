@@ -62,7 +62,8 @@ public final class NetworkExtension {
     public static native String NEVPNErrorDomain();
 
     /**
-     * [@const] NEVPNConfigurationChangeNotification Name of the NSNotification that is posted when the VPN configuration changes.
+     * [@const] NEVPNConfigurationChangeNotification Name of the NSNotification that is posted when the VPN
+     * configuration changes.
      */
     @Generated
     @CVariable()
@@ -94,7 +95,8 @@ public final class NetworkExtension {
     public static native String NEFilterErrorDomain();
 
     /**
-     * [@const] NEFilterConfigurationDidChangeNotification Name of the NSNotification that is posted when the filter configuration changes.
+     * [@const] NEFilterConfigurationDidChangeNotification Name of the NSNotification that is posted when the filter
+     * configuration changes.
      */
     @Generated
     @CVariable()
@@ -108,7 +110,7 @@ public final class NetworkExtension {
      * the application.
      * <p>
      * This key specifies the display name for the application, if an alternate
-     * name is desired.  If this property is not specified, the application's
+     * name is desired. If this property is not specified, the application's
      * name is used.
      * <p>
      * This name appears in Settings -> Wi-Fi underneath the Wi-Fi network
@@ -128,7 +130,9 @@ public final class NetworkExtension {
     public static native String NEVPNStatusDidChangeNotification();
 
     /**
-     * [@const] NEVPNConnectionStartOptionUsername Specify this key in the options dictionary passed to startVPNTunnelWithOptions:returningError: to override the username saved in the configuration. The value is a string
+     * [@const] NEVPNConnectionStartOptionUsername Specify this key in the options dictionary passed to
+     * startVPNTunnelWithOptions:returningError: to override the username saved in the configuration. The value is a
+     * string
      */
     @Generated
     @CVariable()
@@ -136,7 +140,9 @@ public final class NetworkExtension {
     public static native String NEVPNConnectionStartOptionUsername();
 
     /**
-     * [@const] NEVPNConnectionStartOptionPassword Specify this key in the options dictionary passed to startVPNTunnelWithOptions:returningError: to override the password saved in the configuration. The value is a string
+     * [@const] NEVPNConnectionStartOptionPassword Specify this key in the options dictionary passed to
+     * startVPNTunnelWithOptions:returningError: to override the password saved in the configuration. The value is a
+     * string
      */
     @Generated
     @CVariable()
@@ -152,7 +158,8 @@ public final class NetworkExtension {
     public static native String NEDNSProxyErrorDomain();
 
     /**
-     * [@const] NEDNSProxyConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS proxy configuration changes.
+     * [@const] NEDNSProxyConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS
+     * proxy configuration changes.
      */
     @Generated
     @CVariable()
@@ -176,7 +183,8 @@ public final class NetworkExtension {
     public static native String NEDNSSettingsErrorDomain();
 
     /**
-     * [@const] NEDNSSettingsConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS settings configuration changes.
+     * [@const] NEDNSSettingsConfigurationDidChangeNotification Name of the NSNotification that is posted when the DNS
+     * settings configuration changes.
      */
     @Generated
     @CVariable()

@@ -117,9 +117,11 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game for example.
+     * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game
+     * for example.
      * <p>
-     * The DualSense has adaptive triggers, allowing you to specify a dynamic resistance force that is applied when pulling the trigger. This can,
+     * The DualSense has adaptive triggers, allowing you to specify a dynamic resistance force that is applied when
+     * pulling the trigger. This can,
      * for example, be used to emulate the feeling of pulling back a bow string, firing a weapon, or pulling a lever.
      */
     @Generated

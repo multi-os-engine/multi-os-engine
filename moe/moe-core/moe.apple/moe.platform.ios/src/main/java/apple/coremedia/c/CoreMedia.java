@@ -91,9 +91,9 @@ public final class CoreMedia {
     }
 
     /**
-     * [@function]	CMTimeMake
+     * [@function] CMTimeMake
      * <p>
-     * Make a valid CMTime with value and timescale.  Epoch is implied to be 0.
+     * Make a valid CMTime with value and timescale. Epoch is implied to be 0.
      *
      * @return The resulting CMTime.
      */
@@ -103,7 +103,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeMake(long value, int timescale);
 
     /**
-     * [@function]	CMTimeMakeWithEpoch
+     * [@function] CMTimeMakeWithEpoch
      * <p>
      * Make a valid CMTime with value, scale and epoch.
      *
@@ -115,14 +115,14 @@ public final class CoreMedia {
     public static native CMTime CMTimeMakeWithEpoch(long value, int timescale, long epoch);
 
     /**
-     * [@function]	CMTimeMakeWithSeconds
+     * [@function] CMTimeMakeWithSeconds
      * <p>
      * Make a CMTime from a Float64 number of seconds, and a preferred timescale.
      * <p>
-     * The epoch of the result will be zero.  If preferredTimescale is <= 0, the result
-     * will be an invalid CMTime.  If the preferred timescale will cause an overflow, the
+     * The epoch of the result will be zero. If preferredTimescale is <= 0, the result
+     * will be an invalid CMTime. If the preferred timescale will cause an overflow, the
      * timescale will be halved repeatedly until the overflow goes away, or the timescale
-     * is 1.  If it still overflows at that point, the result will be +/- infinity.  The
+     * is 1. If it still overflows at that point, the result will be +/- infinity. The
      * kCMTimeFlags_HasBeenRounded flag will be set if the result, when converted back to
      * seconds, is not exactly equal to the original seconds value.
      *
@@ -134,13 +134,13 @@ public final class CoreMedia {
     public static native CMTime CMTimeMakeWithSeconds(double seconds, int preferredTimescale);
 
     /**
-     * [@function]	CMTimeGetSeconds
+     * [@function] CMTimeGetSeconds
      * <p>
      * Converts a CMTime to seconds.
      * <p>
-     * If the CMTime is invalid or indefinite, NAN is returned.  If the CMTime is infinite, +/- __inf()
-     * is returned.  If the CMTime is numeric, epoch is ignored, and time.value / time.timescale is
-     * returned.  The division is done in Float64, so the fraction is not lost in the returned result.
+     * If the CMTime is invalid or indefinite, NAN is returned. If the CMTime is infinite, +/- __inf()
+     * is returned. If the CMTime is numeric, epoch is ignored, and time.value / time.timescale is
+     * returned. The division is done in Float64, so the fraction is not lost in the returned result.
      *
      * @return The resulting Float64 number of seconds.
      */
@@ -149,7 +149,7 @@ public final class CoreMedia {
     public static native double CMTimeGetSeconds(@ByValue CMTime time);
 
     /**
-     * [@function]	CMTimeConvertScale
+     * [@function] CMTimeConvertScale
      * <p>
      * Returns a new CMTime containing the source CMTime converted to a new timescale (rounding as requested).
      * <p>
@@ -165,46 +165,47 @@ public final class CoreMedia {
     public static native CMTime CMTimeConvertScale(@ByValue CMTime time, int newTimescale, int method);
 
     /**
-     * [@function]	CMTimeAdd
+     * [@function] CMTimeAdd
      * <p>
      * Returns the sum of two CMTimes.
      * <p>
      * If the operands both have the same timescale, the timescale of the result will be the same as
-     * the operands' timescale.  If the operands have different timescales, the timescale of the result
-     * will be the least common multiple of the operands' timescales.  If that LCM timescale is
+     * the operands' timescale. If the operands have different timescales, the timescale of the result
+     * will be the least common multiple of the operands' timescales. If that LCM timescale is
      * greater than kCMTimeMaxTimescale, the result timescale will be kCMTimeMaxTimescale,
      * and default rounding will be applied when converting the result to this timescale.
      * <p>
      * If the result value overflows, the result timescale will be repeatedly halved until the result
-     * value no longer overflows.  Again, default rounding will be applied when converting the
-     * result to this timescale.  If the result value still overflows when timescale == 1, then the
+     * value no longer overflows. Again, default rounding will be applied when converting the
+     * result to this timescale. If the result value still overflows when timescale == 1, then the
      * result will be either positive or negative infinity, depending on the direction of the
      * overflow.
      * <p>
      * If any rounding occurs for any reason, the result's kCMTimeFlags_HasBeenRounded flag will be
-     * set.  This flag will also be set if either of the operands has kCMTimeFlags_HasBeenRounded set.
+     * set. This flag will also be set if either of the operands has kCMTimeFlags_HasBeenRounded set.
      * <p>
      * If either of the operands is invalid, the result will be invalid.
      * <p>
      * If the operands are valid, but just one operand is infinite, the result will be similarly
      * infinite. If the operands are valid, and both are infinite, the results will be as follows:
-     * <ul>			+infinity + +infinity == +infinity
-     * <li>			-infinity + -infinity == -infinity
-     * <li>			+infinity + -infinity == invalid
-     * <li>			-infinity + +infinity == invalid
+     * <ul> +infinity + +infinity == +infinity
+     * <li> -infinity + -infinity == -infinity
+     * <li> +infinity + -infinity == invalid
+     * <li> -infinity + +infinity == invalid
      * </ul>
-     * 				If the operands are valid, not infinite, and either or both is indefinite, the result
-     * 				will be indefinite.
+     * If the operands are valid, not infinite, and either or both is indefinite, the result
+     * will be indefinite.
      * <p>
-     * 				If the two operands are numeric (ie. valid, not infinite, not indefinite), but have
-     * 				different nonzero epochs, the result will be invalid.  If they have the same nonzero
-     * 				epoch, the result will have epoch zero (a duration).  Times in different epochs
-     * 				cannot be added or subtracted, because epoch length is unknown.  Times in epoch zero
-     * 				are considered to be durations and can be added to times in other epochs.
-     * 				Times in different epochs can be compared, however, because numerically greater
-     * 				epochs always occur after numerically lesser epochs.
+     * If the two operands are numeric (ie. valid, not infinite, not indefinite), but have
+     * different nonzero epochs, the result will be invalid. If they have the same nonzero
+     * epoch, the result will have epoch zero (a duration). Times in different epochs
+     * cannot be added or subtracted, because epoch length is unknown. Times in epoch zero
+     * are considered to be durations and can be added to times in other epochs.
+     * Times in different epochs can be compared, however, because numerically greater
+     * epochs always occur after numerically lesser epochs.
      * <p>
-     *     @return The sum of the two CMTimes (lhs + rhs).
+     * 
+     * @return The sum of the two CMTimes (lhs + rhs).
      */
     @Generated
     @CFunction
@@ -212,46 +213,47 @@ public final class CoreMedia {
     public static native CMTime CMTimeAdd(@ByValue CMTime lhs, @ByValue CMTime rhs);
 
     /**
-     * [@function]	CMTimeSubtract
+     * [@function] CMTimeSubtract
      * <p>
      * Returns the difference of two CMTimes.
      * <p>
      * If the operands both have the same timescale, the timescale of the result will be the same as
-     * the operands' timescale.  If the operands have different timescales, the timescale of the result
-     * will be the least common multiple of the operands' timescales.  If that LCM timescale is
+     * the operands' timescale. If the operands have different timescales, the timescale of the result
+     * will be the least common multiple of the operands' timescales. If that LCM timescale is
      * greater than kCMTimeMaxTimescale, the result timescale will be kCMTimeMaxTimescale,
      * and default rounding will be applied when converting the result to this timescale.
      * <p>
      * If the result value overflows, the result timescale will be repeatedly halved until the result
-     * value no longer overflows.  Again, default rounding will be applied when converting the
-     * result to this timescale.  If the result value still overflows when timescale == 1, then the
+     * value no longer overflows. Again, default rounding will be applied when converting the
+     * result to this timescale. If the result value still overflows when timescale == 1, then the
      * result will be either positive or negative infinity, depending on the direction of the
      * overflow.
      * <p>
      * If any rounding occurs for any reason, the result's kCMTimeFlags_HasBeenRounded flag will be
-     * set.  This flag will also be set if either of the operands has kCMTimeFlags_HasBeenRounded set.
+     * set. This flag will also be set if either of the operands has kCMTimeFlags_HasBeenRounded set.
      * <p>
      * If either of the operands is invalid, the result will be invalid.
      * <p>
      * If the operands are valid, but just one operand is infinite, the result will be similarly
      * infinite. If the operands are valid, and both are infinite, the results will be as follows:
-     * <ul>			+infinity - +infinity == invalid
-     * <li>			-infinity - -infinity == invalid
-     * <li>			+infinity - -infinity == +infinity
-     * <li>			-infinity - +infinity == -infinity
+     * <ul> +infinity - +infinity == invalid
+     * <li> -infinity - -infinity == invalid
+     * <li> +infinity - -infinity == +infinity
+     * <li> -infinity - +infinity == -infinity
      * </ul>
-     * 				If the operands are valid, not infinite, and either or both is indefinite, the result
-     * 				will be indefinite.
+     * If the operands are valid, not infinite, and either or both is indefinite, the result
+     * will be indefinite.
      * <p>
-     * 				If the two operands are numeric (ie. valid, not infinite, not indefinite), but have
-     * 				different nonzero epochs, the result will be invalid.  If they have the same nonzero
-     * 				epoch, the result will have epoch zero (a duration).  Times in different epochs
-     * 				cannot be added or subtracted, because epoch length is unknown.  Times in epoch zero
-     * 				are considered to be durations and can be subtracted from times in other epochs.
-     * 				Times in different epochs can be compared, however, because numerically greater
-     * 				epochs always occur after numerically lesser epochs.
+     * If the two operands are numeric (ie. valid, not infinite, not indefinite), but have
+     * different nonzero epochs, the result will be invalid. If they have the same nonzero
+     * epoch, the result will have epoch zero (a duration). Times in different epochs
+     * cannot be added or subtracted, because epoch length is unknown. Times in epoch zero
+     * are considered to be durations and can be subtracted from times in other epochs.
+     * Times in different epochs can be compared, however, because numerically greater
+     * epochs always occur after numerically lesser epochs.
      * <p>
-     *     @return The difference of the two CMTimes (lhs - rhs).
+     * 
+     * @return The difference of the two CMTimes (lhs - rhs).
      */
     @Generated
     @CFunction
@@ -259,18 +261,18 @@ public final class CoreMedia {
     public static native CMTime CMTimeSubtract(@ByValue CMTime lhs, @ByValue CMTime rhs);
 
     /**
-     * [@function]	CMTimeMultiply
+     * [@function] CMTimeMultiply
      * <p>
      * Returns the product of a CMTime and a 32-bit integer.
      * <p>
      * The result will have the same timescale as the CMTime operand. If the result value overflows,
      * the result timescale will be repeatedly halved until the result value no longer overflows.
-     * Again, default rounding will be applied when converting the result to this timescale.  If the
+     * Again, default rounding will be applied when converting the result to this timescale. If the
      * result value still overflows when timescale == 1, then the result will be either positive or
      * negative infinity, depending on the direction of the overflow.
      * <p>
      * If any rounding occurs for any reason, the result's kCMTimeFlags_HasBeenRounded flag will be
-     * set.  This flag will also be set if the CMTime operand has kCMTimeFlags_HasBeenRounded set.
+     * set. This flag will also be set if the CMTime operand has kCMTimeFlags_HasBeenRounded set.
      * <p>
      * If the CMTime operand is invalid, the result will be invalid.
      * <p>
@@ -287,7 +289,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeMultiply(@ByValue CMTime time, int multiplier);
 
     /**
-     * [@function]	CMTimeMultiplyByFloat64
+     * [@function] CMTimeMultiplyByFloat64
      * <p>
      * Returns the product of a CMTime and a 64-bit float.
      * <p>
@@ -295,12 +297,12 @@ public final class CoreMedia {
      * If the result timescale is less than 65536, it will be repeatedly doubled until it is at least 65536.
      * If the result value overflows, the result timescale will be repeatedly halved until the
      * result value no longer overflows.
-     * Again, default rounding will be applied when converting the result to this timescale.  If the
+     * Again, default rounding will be applied when converting the result to this timescale. If the
      * result value still overflows when timescale == 1, then the result will be either positive or
      * negative infinity, depending on the direction of the overflow.
      * <p>
      * If any rounding occurs for any reason, the result's kCMTimeFlags_HasBeenRounded flag will be
-     * set.  This flag will also be set if the CMTime operand has kCMTimeFlags_HasBeenRounded set.
+     * set. This flag will also be set if the CMTime operand has kCMTimeFlags_HasBeenRounded set.
      * <p>
      * If the CMTime operand is invalid, the result will be invalid.
      * <p>
@@ -317,21 +319,21 @@ public final class CoreMedia {
     public static native CMTime CMTimeMultiplyByFloat64(@ByValue CMTime time, double multiplier);
 
     /**
-     * [@function]	CMTimeMultiplyByRatio
+     * [@function] CMTimeMultiplyByRatio
      * <p>
      * Returns the result of multiplying a CMTime by an integer, then dividing by another integer.
      * <p>
-     * The exact rational value will be preserved, if possible without overflow.  If an overflow
+     * The exact rational value will be preserved, if possible without overflow. If an overflow
      * would occur, a new timescale will be chosen so as to minimize the rounding error.
-     * Default rounding will be applied when converting the result to this timescale.  If the
+     * Default rounding will be applied when converting the result to this timescale. If the
      * result value still overflows when timescale == 1, then the result will be either positive
      * or negative infinity, depending on the direction of the overflow.
      * <p>
      * If any rounding occurs for any reason, the result's kCMTimeFlags_HasBeenRounded flag will be
-     * set.  This flag will also be set if the CMTime operand has kCMTimeFlags_HasBeenRounded set.
+     * set. This flag will also be set if the CMTime operand has kCMTimeFlags_HasBeenRounded set.
      * <p>
      * If the denominator, and either the time or the numerator, are zero, the result will be
-     * kCMTimeInvalid.  If only the denominator is zero, the result will be either kCMTimePositiveInfinity
+     * kCMTimeInvalid. If only the denominator is zero, the result will be either kCMTimePositiveInfinity
      * or kCMTimeNegativeInfinity, depending on the signs of the other arguments.
      * <p>
      * If time is invalid, the result will be invalid. If time is infinite, the result will be
@@ -345,7 +347,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeMultiplyByRatio(@ByValue CMTime time, int multiplier, int divisor);
 
     /**
-     * [@function]	CMTimeCompare
+     * [@function] CMTimeCompare
      * <p>
      * Returns the numerical relationship (-1 = less than, 1 = greater than, 0 = equal) of two CMTimes.
      * <p>
@@ -363,7 +365,7 @@ public final class CoreMedia {
      * any other CMTime. Positive infinity is considered to be less than any invalid CMTime,
      * equal to itself, and greater than any other CMTime. An indefinite CMTime is considered
      * to be less than any invalid CMTime, less than positive infinity, equal to itself,
-     * and greater than any other CMTime.  Negative infinity is considered to be equal to itself,
+     * and greater than any other CMTime. Negative infinity is considered to be equal to itself,
      * and less than any other CMTime.
      * <p>
      * -1 is returned if time1 is less than time2. 0 is returned if they
@@ -376,7 +378,7 @@ public final class CoreMedia {
     public static native int CMTimeCompare(@ByValue CMTime time1, @ByValue CMTime time2);
 
     /**
-     * [@function]	CMTimeMinimum
+     * [@function] CMTimeMinimum
      * <p>
      * Returns the lesser of two CMTimes (as defined by CMTimeCompare).
      *
@@ -388,7 +390,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeMinimum(@ByValue CMTime time1, @ByValue CMTime time2);
 
     /**
-     * [@function]	CMTimeMaximum
+     * [@function] CMTimeMaximum
      * <p>
      * Returns the greater of two CMTimes (as defined by CMTimeCompare).
      *
@@ -400,7 +402,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeMaximum(@ByValue CMTime time1, @ByValue CMTime time2);
 
     /**
-     * [@function]	CMTimeAbsoluteValue
+     * [@function] CMTimeAbsoluteValue
      * <p>
      * Returns the absolute value of a CMTime.
      *
@@ -412,7 +414,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeAbsoluteValue(@ByValue CMTime time);
 
     /**
-     * [@function]	CMTimeCopyAsDictionary
+     * [@function] CMTimeCopyAsDictionary
      * <p>
      * Returns a CFDictionary version of a CMTime.
      * <p>
@@ -425,11 +427,11 @@ public final class CoreMedia {
     public static native CFDictionaryRef CMTimeCopyAsDictionary(@ByValue CMTime time, CFAllocatorRef allocator);
 
     /**
-     * [@function]	CMTimeMakeFromDictionary
+     * [@function] CMTimeMakeFromDictionary
      * <p>
      * Reconstitutes a CMTime struct from a CFDictionary previously created by CMTimeCopyAsDictionary.
      * <p>
-     * This is useful when getting CMTimes from CF container types.  If the CFDictionary does not
+     * This is useful when getting CMTimes from CF container types. If the CFDictionary does not
      * have the requisite keyed values, an invalid time is returned.
      *
      * @return The created CMTime.
@@ -440,12 +442,12 @@ public final class CoreMedia {
     public static native CMTime CMTimeMakeFromDictionary(CFDictionaryRef dictionaryRepresentation);
 
     /**
-     * [@function]	CMTimeCopyDescription
+     * [@function] CMTimeCopyDescription
      * <p>
      * Creates a CFString with a description of a CMTime (just like CFCopyDescription).
      * <p>
      * This is used from within CFShow on an object that contains CMTime fields. It is
-     * also useful from other client debugging code.  The caller owns the returned
+     * also useful from other client debugging code. The caller owns the returned
      * CFString, and is responsible for releasing it.
      *
      * @return The created CFString description.
@@ -455,7 +457,7 @@ public final class CoreMedia {
     public static native CFStringRef CMTimeCopyDescription(CFAllocatorRef allocator, @ByValue CMTime time);
 
     /**
-     * [@function]	CMTimeShow
+     * [@function] CMTimeShow
      * <p>
      * Prints a description of the CMTime (just like CFShow).
      * <p>
@@ -466,7 +468,7 @@ public final class CoreMedia {
     public static native void CMTimeShow(@ByValue CMTime time);
 
     /**
-     * [@function]	CMTimeRangeMake
+     * [@function] CMTimeRangeMake
      * <p>
      * Make a valid CMTimeRange with start and duration.
      * <p>
@@ -480,11 +482,12 @@ public final class CoreMedia {
     public static native CMTimeRange CMTimeRangeMake(@ByValue CMTime start, @ByValue CMTime duration);
 
     /**
-     * [@function]	CMTimeRangeGetUnion
+     * [@function] CMTimeRangeGetUnion
      * <p>
      * Returns the union of two CMTimeRanges.
      * <p>
-     * This function returns a CMTimeRange structure that represents the union of the time ranges specified by the <i>range</i> and <i>otherRange</i> parameters.
+     * This function returns a CMTimeRange structure that represents the union of the time ranges specified by the
+     * <i>range</i> and <i>otherRange</i> parameters.
      * This is the smallest range that includes all times that are in either range.
      *
      * @return The union of the two CMTimeRanges.
@@ -495,11 +498,12 @@ public final class CoreMedia {
     public static native CMTimeRange CMTimeRangeGetUnion(@ByValue CMTimeRange range, @ByValue CMTimeRange otherRange);
 
     /**
-     * [@function]	CMTimeRangeGetIntersection
+     * [@function] CMTimeRangeGetIntersection
      * <p>
      * Returns the intersection of two CMTimeRanges.
      * <p>
-     * This function returns a CMTimeRange structure that represents the intersection of the time ranges specified by the <i>range</i> and <i>otherRange</i> parameters.
+     * This function returns a CMTimeRange structure that represents the intersection of the time ranges specified by
+     * the <i>range</i> and <i>otherRange</i> parameters.
      * This is the largest range that both ranges include.
      *
      * @return The intersection of the two CMTimeRanges.
@@ -511,11 +515,12 @@ public final class CoreMedia {
             @ByValue CMTimeRange otherRange);
 
     /**
-     * [@function]	CMTimeRangeEqual
+     * [@function] CMTimeRangeEqual
      * <p>
      * Returns a Boolean value that indicates whether two CMTimeRanges are identical.
      * <p>
-     * This function returns a Boolean value that indicates whether the time ranges specified by the <i>range1</i> and <i>range2</i> parameters are identical.
+     * This function returns a Boolean value that indicates whether the time ranges specified by the <i>range1</i> and
+     * <i>range2</i> parameters are identical.
      *
      * @return Returns true if the two time ranges are identical, false if they differ.
      */
@@ -524,7 +529,7 @@ public final class CoreMedia {
     public static native byte CMTimeRangeEqual(@ByValue CMTimeRange range1, @ByValue CMTimeRange range2);
 
     /**
-     * [@function]	CMTimeRangeContainsTime
+     * [@function] CMTimeRangeContainsTime
      * <p>
      * Indicates whether a time is contained within a time range.
      * <p>
@@ -538,11 +543,12 @@ public final class CoreMedia {
     public static native byte CMTimeRangeContainsTime(@ByValue CMTimeRange range, @ByValue CMTime time);
 
     /**
-     * [@function]	CMTimeRangeContainsTimeRange
+     * [@function] CMTimeRangeContainsTimeRange
      * <p>
      * Indicates whether a time range is contained within a time range.
      * <p>
-     * This function returns a Boolean value that indicates whether the time range specified by the <i>range</i> parameter
+     * This function returns a Boolean value that indicates whether the time range specified by the <i>range</i>
+     * parameter
      * contains the range specified by the <i>otherRange</i> parameter.
      *
      * @return Returns true if the second time range is contained within the first time range, false if it is not.
@@ -552,11 +558,12 @@ public final class CoreMedia {
     public static native byte CMTimeRangeContainsTimeRange(@ByValue CMTimeRange range, @ByValue CMTimeRange otherRange);
 
     /**
-     * [@function]	CMTimeRangeGetEnd
+     * [@function] CMTimeRangeGetEnd
      * <p>
      * Returns a CMTime structure representing the end of a time range.
      * <p>
-     * This function returns a CMTime structure that indicates the end of the time range specified by the <i>range</i> parameter.
+     * This function returns a CMTime structure that indicates the end of the time range specified by the <i>range</i>
+     * parameter.
      * CMTimeRangeContainsTime(range, CMTimeRangeGetEnd(range)) is always false.
      *
      * @return A CMTime structure representing the end of the specified time range.
@@ -567,7 +574,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeRangeGetEnd(@ByValue CMTimeRange range);
 
     /**
-     * [@function]	CMTimeMapTimeFromRangeToRange
+     * [@function] CMTimeMapTimeFromRangeToRange
      * <p>
      * Translates a time through a mapping from CMTimeRange to CMTimeRange.
      * <p>
@@ -588,7 +595,7 @@ public final class CoreMedia {
             @ByValue CMTimeRange toRange);
 
     /**
-     * [@function]	CMTimeClampToRange
+     * [@function] CMTimeClampToRange
      * <p>
      * For a given CMTime and CMTimeRange, returns the nearest CMTime inside that time range.
      * <p>
@@ -606,7 +613,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeClampToRange(@ByValue CMTime time, @ByValue CMTimeRange range);
 
     /**
-     * [@function]	CMTimeMapDurationFromRangeToRange
+     * [@function] CMTimeMapDurationFromRangeToRange
      * <p>
      * Translates a duration through a mapping from CMTimeRange to CMTimeRange.
      * <p>
@@ -623,7 +630,7 @@ public final class CoreMedia {
             @ByValue CMTimeRange toRange);
 
     /**
-     * [@function]	CMTimeRangeFromTimeToTime
+     * [@function] CMTimeRangeFromTimeToTime
      * <p>
      * Make a valid CMTimeRange with the given starting and ending times.
      *
@@ -635,7 +642,7 @@ public final class CoreMedia {
     public static native CMTimeRange CMTimeRangeFromTimeToTime(@ByValue CMTime start, @ByValue CMTime end);
 
     /**
-     * [@function]	CMTimeRangeCopyAsDictionary
+     * [@function] CMTimeRangeCopyAsDictionary
      * <p>
      * Returns a CFDictionary version of a CMTimeRange.
      * <p>
@@ -649,11 +656,11 @@ public final class CoreMedia {
             CFAllocatorRef allocator);
 
     /**
-     * [@function]	CMTimeRangeMakeFromDictionary
+     * [@function] CMTimeRangeMakeFromDictionary
      * <p>
      * Reconstitutes a CMTimeRange struct from a CFDictionary previously created by CMTimeRangeCopyAsDictionary.
      * <p>
-     * This is useful when getting CMTimeRanges from CF container types.  If the CFDictionary does not
+     * This is useful when getting CMTimeRanges from CF container types. If the CFDictionary does not
      * have the requisite keyed values, an invalid time range is returned.
      *
      * @return The created CMTimeRange.
@@ -664,12 +671,13 @@ public final class CoreMedia {
     public static native CMTimeRange CMTimeRangeMakeFromDictionary(CFDictionaryRef dictionaryRepresentation);
 
     /**
-     * [@function]	CMTimeRangeCopyDescription
+     * [@function] CMTimeRangeCopyDescription
      * <p>
      * Creates a CFString with a description of a CMTimeRange (just like CFCopyDescription).
      * <p>
      * This is used from within CFShow on an object that contains CMTimeRange fields. It is
-     * also useful from other client debugging code.  The caller owns the returned CFString and is responsible for releasing it.
+     * also useful from other client debugging code. The caller owns the returned CFString and is responsible for
+     * releasing it.
      *
      * @return The created CFString description.
      */
@@ -678,7 +686,7 @@ public final class CoreMedia {
     public static native CFStringRef CMTimeRangeCopyDescription(CFAllocatorRef allocator, @ByValue CMTimeRange range);
 
     /**
-     * [@function]	CMTimeRangeShow
+     * [@function] CMTimeRangeShow
      * <p>
      * Prints a description of the CMTimeRange (just like CFShow).
      * <p>
@@ -689,11 +697,12 @@ public final class CoreMedia {
     public static native void CMTimeRangeShow(@ByValue CMTimeRange range);
 
     /**
-     * [@function]	CMTimeMappingMake
+     * [@function] CMTimeMappingMake
      * <p>
      * Make a valid CMTimeMapping with source and target.
      * <p>
-     * The source and target parameters must have durations whose epoch is 0; otherwise an invalid time mapping will be returned.
+     * The source and target parameters must have durations whose epoch is 0; otherwise an invalid time mapping will be
+     * returned.
      *
      * @return The resulting CMTimeMapping.
      */
@@ -703,7 +712,7 @@ public final class CoreMedia {
     public static native CMTimeMapping CMTimeMappingMake(@ByValue CMTimeRange source, @ByValue CMTimeRange target);
 
     /**
-     * [@function]	CMTimeMappingMakeEmpty
+     * [@function] CMTimeMappingMakeEmpty
      * <p>
      * Make a valid CMTimeMapping with an empty source.
      * <p>
@@ -717,7 +726,7 @@ public final class CoreMedia {
     public static native CMTimeMapping CMTimeMappingMakeEmpty(@ByValue CMTimeRange target);
 
     /**
-     * [@function]	CMTimeMappingCopyAsDictionary
+     * [@function] CMTimeMappingCopyAsDictionary
      * <p>
      * Returns a CFDictionary version of a CMTimeMapping.
      * <p>
@@ -731,11 +740,11 @@ public final class CoreMedia {
             CFAllocatorRef allocator);
 
     /**
-     * [@function]	CMTimeMappingMakeFromDictionary
+     * [@function] CMTimeMappingMakeFromDictionary
      * <p>
      * Reconstitutes a CMTimeMapping struct from a CFDictionary previously created by CMTimeMappingCopyAsDictionary.
      * <p>
-     * This is useful when getting CMTimeMappings from CF container types.  If the CFDictionary does not
+     * This is useful when getting CMTimeMappings from CF container types. If the CFDictionary does not
      * have the requisite keyed values, an invalid time mapping is returned.
      *
      * @return The created CMTimeMapping.
@@ -746,12 +755,13 @@ public final class CoreMedia {
     public static native CMTimeMapping CMTimeMappingMakeFromDictionary(CFDictionaryRef dictionaryRepresentation);
 
     /**
-     * [@function]	CMTimeMappingCopyDescription
+     * [@function] CMTimeMappingCopyDescription
      * <p>
      * Creates a CFString with a description of a CMTimeMapping (just like CFCopyDescription).
      * <p>
      * This is used from within CFShow on an object that contains CMTimeMapping fields. It is
-     * also useful from other client debugging code.  The caller owns the returned CFString and is responsible for releasing it.
+     * also useful from other client debugging code. The caller owns the returned CFString and is responsible for
+     * releasing it.
      *
      * @return The created CFString description.
      */
@@ -761,7 +771,7 @@ public final class CoreMedia {
             @ByValue CMTimeMapping mapping);
 
     /**
-     * [@function]	CMTimeMappingShow
+     * [@function] CMTimeMappingShow
      * <p>
      * Prints a description of a CMTimeMapping (just like CFShow).
      * <p>
@@ -772,16 +782,21 @@ public final class CoreMedia {
     public static native void CMTimeMappingShow(@ByValue CMTimeMapping mapping);
 
     /**
-     * [@function]   CMSetAttachment
+     * [@function] CMSetAttachment
      * <p>
      * Sets or adds a attachment of a CMAttachmentBearer
      * <p>
-     * You can attach any CF object to a CMAttachmentBearer object to store additional information. CMSetAttachment stores an attachment identified by a key. If the key doesn't exist, the attachment will be added. If the key does exist, the existing attachment will be replaced. In both cases the retain count of the attachment will be incremented. The value can be any CFType but nil has no defined behavior.  Given a CVBufferRef, CMSetAttachment is equivalent to CVBufferSetAttachment.
+     * You can attach any CF object to a CMAttachmentBearer object to store additional information. CMSetAttachment
+     * stores an attachment identified by a key. If the key doesn't exist, the attachment will be added. If the key does
+     * exist, the existing attachment will be replaced. In both cases the retain count of the attachment will be
+     * incremented. The value can be any CFType but nil has no defined behavior. Given a CVBufferRef, CMSetAttachment is
+     * equivalent to CVBufferSetAttachment.
      *
      * @param target         Target CMAttachmentBearer.
      * @param key            Key in form of a CFString identifying the desired attachment.
      * @param value          Attachment in form af a CF object.
-     * @param attachmentMode Specifies which attachment mode is desired for this attachment.   A particular attachment key may only exist in
+     * @param attachmentMode Specifies which attachment mode is desired for this attachment. A particular attachment key
+     *                       may only exist in
      *                       a single mode at a time.
      */
     @Generated
@@ -790,15 +805,16 @@ public final class CoreMedia {
             int attachmentMode);
 
     /**
-     * [@function]   CMGetAttachment
+     * [@function] CMGetAttachment
      * <p>
      * Returns a specific attachment of a CMAttachmentBearer
      * <p>
-     * You can attach any CF object to a CMAttachmentBearer to store additional information. CMGetAttachment retrieves an attachment identified by a key.  Given a CVBufferRef, CMGetAttachment is equivalent to CVBufferGetAttachment.
+     * You can attach any CF object to a CMAttachmentBearer to store additional information. CMGetAttachment retrieves
+     * an attachment identified by a key. Given a CVBufferRef, CMGetAttachment is equivalent to CVBufferGetAttachment.
      *
      * @param target            Target CMAttachmentBearer.
      * @param key               Key in form of a CFString identifying the desired attachment.
-     * @param attachmentModeOut Returns the mode of the attachment, if desired.  May be NULL.
+     * @param attachmentModeOut Returns the mode of the attachment, if desired. May be NULL.
      * @return If found the attachment object; else NULL.
      */
     @Generated
@@ -806,11 +822,12 @@ public final class CoreMedia {
     public static native ConstVoidPtr CMGetAttachment(ConstVoidPtr target, CFStringRef key, IntPtr attachmentModeOut);
 
     /**
-     * [@function]   CMRemoveAttachment
+     * [@function] CMRemoveAttachment
      * <p>
      * Removes a specific attachment of a CMAttachmentBearer
      * <p>
-     * CMRemoveAttachment removes an attachment identified by a key. If found the attachment is removed and the retain count decremented.  Given a CVBufferRef, CMRemoveAttachment is equivalent to CVBufferRemoveAttachment.
+     * CMRemoveAttachment removes an attachment identified by a key. If found the attachment is removed and the retain
+     * count decremented. Given a CVBufferRef, CMRemoveAttachment is equivalent to CVBufferRemoveAttachment.
      *
      * @param target Target CMAttachmentBearer.
      * @param key    Key in form of a CFString identifying the desired attachment.
@@ -820,11 +837,13 @@ public final class CoreMedia {
     public static native void CMRemoveAttachment(ConstVoidPtr target, CFStringRef key);
 
     /**
-     * [@function]   CMRemoveAllAttachments
+     * [@function] CMRemoveAllAttachments
      * <p>
      * Removes all attachments of a CMAttachmentBearer
      * <p>
-     * While CMRemoveAttachment removes a specific attachment identified by a key CMRemoveAllAttachments removes all attachments of a buffer and decrements their retain counts.  Given a CVBufferRef, CMRemoveAllAttachments is equivalent to CVBufferRemoveAllAttachments.
+     * While CMRemoveAttachment removes a specific attachment identified by a key CMRemoveAllAttachments removes all
+     * attachments of a buffer and decrements their retain counts. Given a CVBufferRef, CMRemoveAllAttachments is
+     * equivalent to CVBufferRemoveAllAttachments.
      *
      * @param target Target CMAttachmentBearer.
      */
@@ -833,16 +852,20 @@ public final class CoreMedia {
     public static native void CMRemoveAllAttachments(ConstVoidPtr target);
 
     /**
-     * [@function]   CMCopyDictionaryOfAttachments
+     * [@function] CMCopyDictionaryOfAttachments
      * <p>
      * Returns all attachments of a CMAttachmentBearer
      * <p>
-     * CMCopyDictionaryOfAttachments is a convenience call that returns all attachments with their corresponding keys in a new CFDictionary that the caller must dispose by calling CFRelease.  Given a CVBufferRef, CMCopyDictionaryOfAttachments is similar to CVBufferGetAttachments, except that CVBufferGetAttachments returns a CFDictionary that may change if attachments are added later.
+     * CMCopyDictionaryOfAttachments is a convenience call that returns all attachments with their corresponding keys in
+     * a new CFDictionary that the caller must dispose by calling CFRelease. Given a CVBufferRef,
+     * CMCopyDictionaryOfAttachments is similar to CVBufferGetAttachments, except that CVBufferGetAttachments returns a
+     * CFDictionary that may change if attachments are added later.
      *
      * @param allocator Allocator for the new dictionary; pass kCFAllocatorDefault or NULL to use the default allocator.
      * @param target    Target CMAttachmentBearer.
-     * @return A CFDictionary with all buffer attachments identified by there keys. If no attachment is present, NULL is returned.  Returns NULL
-     * for invalid attachment mode.
+     * @return A CFDictionary with all buffer attachments identified by there keys. If no attachment is present, NULL is
+     *         returned. Returns NULL
+     *         for invalid attachment mode.
      */
     @Generated
     @CFunction
@@ -850,11 +873,13 @@ public final class CoreMedia {
             int attachmentMode);
 
     /**
-     * [@function]   CMSetAttachments
+     * [@function] CMSetAttachments
      * <p>
      * Sets a set of attachments for a CMAttachmentBearer
      * <p>
-     * CMSetAttachments is a convenience call that in turn calls CMSetAttachment for each key and value in the given dictionary. All key value pairs must be in the root level of the dictionary.  Given a CVBufferRef, CMSetAttachments is equivalent to CVBufferSetAttachments.
+     * CMSetAttachments is a convenience call that in turn calls CMSetAttachment for each key and value in the given
+     * dictionary. All key value pairs must be in the root level of the dictionary. Given a CVBufferRef,
+     * CMSetAttachments is equivalent to CVBufferSetAttachments.
      *
      * @param target Target CMAttachmentBearer.
      */
@@ -863,12 +888,13 @@ public final class CoreMedia {
     public static native void CMSetAttachments(ConstVoidPtr target, CFDictionaryRef theAttachments, int attachmentMode);
 
     /**
-     * [@function]   CMPropagateAttachments
+     * [@function] CMPropagateAttachments
      * <p>
      * Copy all propagatable attachments from one buffer to another.
      * <p>
-     * CMPropagateAttachments is a convenience call that copies all attachments with a mode of kCMAttachmentMode_ShouldPropagate from one
-     * buffer to another.  Given a CVBufferRef, CMPropagateAttachments is equivalent to CVBufferPropagateAttachments.
+     * CMPropagateAttachments is a convenience call that copies all attachments with a mode of
+     * kCMAttachmentMode_ShouldPropagate from one
+     * buffer to another. Given a CVBufferRef, CMPropagateAttachments is equivalent to CVBufferPropagateAttachments.
      *
      * @param source      CMAttachmentBearer to copy attachments from.
      * @param destination CMAttachmentBearer to copy attachments to.
@@ -878,7 +904,7 @@ public final class CoreMedia {
     public static native void CMPropagateAttachments(ConstVoidPtr source, ConstVoidPtr destination);
 
     /**
-     * [@function]	CMBlockBufferCreateEmpty
+     * [@function] CMBlockBufferCreateEmpty
      * <p>
      * Creates an empty CMBlockBuffer
      * <p>
@@ -889,12 +915,13 @@ public final class CoreMedia {
      * The memory for the CMBlockBuffer object will be allocated using the given allocator.
      * If NULL is passed for the allocator, the default allocator is used.
      *
-     * @param    structureAllocator    Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
-     * default allocator to be used.
-     * @param    subBlockCapacity    Number of subBlocks the newBlockBuffer shall accommodate before expansion occurs.
-     * A value of zero means "do the reasonable default"
-     * @param    flags                Feature and control flags
-     * @param    blockBufferOut        Receives newly-created empty CMBlockBuffer object with retain count of 1. Must not be  NULL.
+     * @param structureAllocator Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
+     *                           default allocator to be used.
+     * @param subBlockCapacity   Number of subBlocks the newBlockBuffer shall accommodate before expansion occurs.
+     *                           A value of zero means "do the reasonable default"
+     * @param flags              Feature and control flags
+     * @param blockBufferOut     Receives newly-created empty CMBlockBuffer object with retain count of 1. Must not be
+     *                           NULL.
      * @return Returns kCMBlockBufferNoErr if successful.
      */
     @Generated
@@ -903,36 +930,48 @@ public final class CoreMedia {
             int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMBlockBufferCreateWithMemoryBlock
+     * [@function] CMBlockBufferCreateWithMemoryBlock
      * <p>
      * Creates a new CMBlockBuffer backed by a memory block (or promise thereof).
      * <p>
-     * Creates a new CMBlockBuffer backed by a memory block. The memory block may be statically allocated, dynamically allocated
-     * using the given allocator (or customBlockSource) or not yet allocated. The returned CMBlockBuffer may be further expanded using
+     * Creates a new CMBlockBuffer backed by a memory block. The memory block may be statically allocated, dynamically
+     * allocated
+     * using the given allocator (or customBlockSource) or not yet allocated. The returned CMBlockBuffer may be further
+     * expanded using
      * CMBlockBufferAppendMemoryBlock() and/or CMBlockBufferAppendBufferReference().
      * <p>
-     * If the kCMBlockBufferAssureMemoryNowFlag is set in the flags parameter, the memory block is allocated immediately using the blockAllocator or
+     * If the kCMBlockBufferAssureMemoryNowFlag is set in the flags parameter, the memory block is allocated immediately
+     * using the blockAllocator or
      * customBlockSource.
      *
-     * @param    structureAllocator    Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
-     * default allocator to be used.
-     * @param    memoryBlock            Block of memory to hold buffered data. If NULL, a memory block will be allocated when needed (via a call
-     * to CMBlockBufferAssureBlockMemory()) using the provided blockAllocator or customBlockSource. If non-NULL,
-     * the block will be used and will be deallocated when the new CMBlockBuffer is finalized (i.e. released for
-     * the last time).
-     * @param    blockLength            Overall length of the memory block in bytes. Must not be zero. This is the size of the
-     * supplied memory block or the size to allocate if memoryBlock is NULL.
-     * @param    blockAllocator        Allocator to be used for allocating the memoryBlock, if memoryBlock is NULL. If memoryBlock is non-NULL,
-     * this allocator will be used to deallocate it if provided. Passing NULL will cause the default allocator
-     * (as set at the time of the call) to be used. Pass kCFAllocatorNull if no deallocation is desired.
-     * @param    customBlockSource    If non-NULL, it will be used for the allocation and freeing of the memory block (the blockAllocator
-     * parameter is ignored). If provided, and the memoryBlock parameter is NULL, its Allocate() routine must
-     * be non-NULL. Allocate will be called once, if successful, when the memoryBlock is allocated. Free() will
-     * be called once when the CMBlockBuffer is disposed.
-     * @param    offsetToData        Offset within the memoryBlock at which the CMBlockBuffer should refer to data.
-     * @param    dataLength            Number of relevant data bytes, starting at offsetToData, within the memory block.
-     * @param    flags                Feature and control flags
-     * @param    blockBufferOut        Receives newly-created CMBlockBuffer object with a retain count of 1. Must not be  NULL.
+     * @param structureAllocator Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
+     *                           default allocator to be used.
+     * @param memoryBlock        Block of memory to hold buffered data. If NULL, a memory block will be allocated when
+     *                           needed (via a call
+     *                           to CMBlockBufferAssureBlockMemory()) using the provided blockAllocator or
+     *                           customBlockSource. If non-NULL,
+     *                           the block will be used and will be deallocated when the new CMBlockBuffer is finalized
+     *                           (i.e. released for
+     *                           the last time).
+     * @param blockLength        Overall length of the memory block in bytes. Must not be zero. This is the size of the
+     *                           supplied memory block or the size to allocate if memoryBlock is NULL.
+     * @param blockAllocator     Allocator to be used for allocating the memoryBlock, if memoryBlock is NULL. If
+     *                           memoryBlock is non-NULL,
+     *                           this allocator will be used to deallocate it if provided. Passing NULL will cause the
+     *                           default allocator
+     *                           (as set at the time of the call) to be used. Pass kCFAllocatorNull if no deallocation
+     *                           is desired.
+     * @param customBlockSource  If non-NULL, it will be used for the allocation and freeing of the memory block (the
+     *                           blockAllocator
+     *                           parameter is ignored). If provided, and the memoryBlock parameter is NULL, its
+     *                           Allocate() routine must
+     *                           be non-NULL. Allocate will be called once, if successful, when the memoryBlock is
+     *                           allocated. Free() will
+     *                           be called once when the CMBlockBuffer is disposed.
+     * @param offsetToData       Offset within the memoryBlock at which the CMBlockBuffer should refer to data.
+     * @param dataLength         Number of relevant data bytes, starting at offsetToData, within the memory block.
+     * @param flags              Feature and control flags
+     * @param blockBufferOut     Receives newly-created CMBlockBuffer object with a retain count of 1. Must not be NULL.
      * @return Returns kCMBlockBufferNoErr if successful.
      */
     @Generated
@@ -943,22 +982,27 @@ public final class CoreMedia {
             @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMBlockBufferCreateWithBufferReference
+     * [@function] CMBlockBufferCreateWithBufferReference
      * <p>
      * Creates a new CMBlockBuffer that refers to another CMBlockBuffer.
      * <p>
      * Creates a new CMBlockBuffer that refers to (a possibly subset portion of) another CMBlockBuffer.
-     * The returned CMBlockBuffer may be further expanded using CMBlockBufferAppendMemoryBlock() and/or CMBlockBufferAppendBufferReference().
+     * The returned CMBlockBuffer may be further expanded using CMBlockBufferAppendMemoryBlock() and/or
+     * CMBlockBufferAppendBufferReference().
      *
-     * @param    structureAllocator    Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
-     * default allocator to be used.
-     * @param    bufferReference        CMBlockBuffer to refer to. This parameter must not be NULL. Unless the kCMBlockBufferPermitEmptyReferenceFlag
-     * is passed, it must not be empty and it must have a data length at least large enough to supply the data subset
-     * specified (i.e. offsetToData+dataLength bytes).
-     * @param    offsetToData        Offset within the reference CMBlockBuffer at which the new CMBlockBuffer should refer to data.
-     * @param    dataLength            Number of relevant data bytes, starting at offsetToData, within the target CMBlockBuffer.
-     * @param    flags                Feature and control flags
-     * @param    blockBufferOut        Receives newly-created CMBlockBuffer object with a retain count of 1. Must not be  NULL.
+     * @param structureAllocator Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
+     *                           default allocator to be used.
+     * @param bufferReference    CMBlockBuffer to refer to. This parameter must not be NULL. Unless the
+     *                           kCMBlockBufferPermitEmptyReferenceFlag
+     *                           is passed, it must not be empty and it must have a data length at least large enough to
+     *                           supply the data subset
+     *                           specified (i.e. offsetToData+dataLength bytes).
+     * @param offsetToData       Offset within the reference CMBlockBuffer at which the new CMBlockBuffer should refer
+     *                           to data.
+     * @param dataLength         Number of relevant data bytes, starting at offsetToData, within the target
+     *                           CMBlockBuffer.
+     * @param flags              Feature and control flags
+     * @param blockBufferOut     Receives newly-created CMBlockBuffer object with a retain count of 1. Must not be NULL.
      * @return Returns kCMBlockBufferNoErr if successful.
      */
     @Generated
@@ -968,30 +1012,39 @@ public final class CoreMedia {
             Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMBlockBufferCreateContiguous
+     * [@function] CMBlockBufferCreateContiguous
      * <p>
      * Produces a CMBlockBuffer containing a contiguous copy of or reference to the data specified by the parameters.
      * <p>
      * Produces a CMBlockBuffer containing a contiguous copy of or reference to the data specified by the parameters.
-     * The resulting new CMBlockBuffer may contain an allocated copy of the data, or may contain a contiguous CMBlockBuffer reference.
+     * The resulting new CMBlockBuffer may contain an allocated copy of the data, or may contain a contiguous
+     * CMBlockBuffer reference.
      * <p>
-     * If the kCMBlockBufferAlwaysCopyDataFlag is set in the flags parameter, the resulting CMBlockBuffer will contain an allocated
+     * If the kCMBlockBufferAlwaysCopyDataFlag is set in the flags parameter, the resulting CMBlockBuffer will contain
+     * an allocated
      * copy of the data rather than a reference to sourceBuffer.
      *
-     * @param    structureAllocator    Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
-     * default allocator to be used.
-     * @param    sourceBuffer        CMBlockBuffer from which data will be copied or referenced. Must not be NULL nor empty,
-     * @param    blockAllocator        Allocator to be used for allocating the memoryBlock if a contiguous copy of the data is to be made. Passing NULL will cause the default
-     * allocator (as set at the time of the call) to be used.
-     * @param    customBlockSource    If non-NULL, it will be used for the allocation and freeing of the memory block (the blockAllocator
-     * parameter is ignored). If provided, and the memoryBlock parameter is NULL, its Allocate() routine must
-     * be non-NULL. Allocate will be called once, if successful, when the memoryBlock is allocated. Free() will
-     * be called once when the CMBlockBuffer is disposed.
-     * @param    offsetToData        Offset within the source CMBlockBuffer at which the new CMBlockBuffer should obtain data.
-     * @param    dataLength            Number of relevant data bytes, starting at offsetToData, within the source CMBlockBuffer. If zero, the
-     * target buffer's total available dataLength (starting at offsetToData) will be referenced.
-     * @param    flags                Feature and control flags
-     * @param    blockBufferOut        Receives newly-created CMBlockBuffer object with a retain count of 1. Must not be  NULL.
+     * @param structureAllocator Allocator to use for allocating the CMBlockBuffer object. NULL will cause the
+     *                           default allocator to be used.
+     * @param sourceBuffer       CMBlockBuffer from which data will be copied or referenced. Must not be NULL nor empty,
+     * @param blockAllocator     Allocator to be used for allocating the memoryBlock if a contiguous copy of the data is
+     *                           to be made. Passing NULL will cause the default
+     *                           allocator (as set at the time of the call) to be used.
+     * @param customBlockSource  If non-NULL, it will be used for the allocation and freeing of the memory block (the
+     *                           blockAllocator
+     *                           parameter is ignored). If provided, and the memoryBlock parameter is NULL, its
+     *                           Allocate() routine must
+     *                           be non-NULL. Allocate will be called once, if successful, when the memoryBlock is
+     *                           allocated. Free() will
+     *                           be called once when the CMBlockBuffer is disposed.
+     * @param offsetToData       Offset within the source CMBlockBuffer at which the new CMBlockBuffer should obtain
+     *                           data.
+     * @param dataLength         Number of relevant data bytes, starting at offsetToData, within the source
+     *                           CMBlockBuffer. If zero, the
+     *                           target buffer's total available dataLength (starting at offsetToData) will be
+     *                           referenced.
+     * @param flags              Feature and control flags
+     * @param blockBufferOut     Receives newly-created CMBlockBuffer object with a retain count of 1. Must not be NULL.
      * @return Returns kCMBlockBufferNoErr if successful
      */
     @Generated
@@ -1002,7 +1055,7 @@ public final class CoreMedia {
             @NUInt long offsetToData, @NUInt long dataLength, int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMBlockBufferGetTypeID
+     * [@function] CMBlockBufferGetTypeID
      * <p>
      * Obtains the CoreFoundation type ID for the CMBlockBuffer type.
      * <p>
@@ -1016,7 +1069,7 @@ public final class CoreMedia {
     public static native long CMBlockBufferGetTypeID();
 
     /**
-     * [@function]	CMBlockBufferAppendMemoryBlock
+     * [@function] CMBlockBufferAppendMemoryBlock
      * <p>
      * Adds a memoryBlock to an existing CMBlockBuffer.
      * <p>
@@ -1028,24 +1081,34 @@ public final class CoreMedia {
      * allocated immediately using the blockAllocator or customBlockSource. Note that append operations
      * are not thread safe, so care must be taken when appending to BlockBuffers that are used by multiple threads.
      *
-     * @param    theBuffer        CMBlockBuffer to which the new memoryBlock will be added. Must not be NULL
-     * @param    memoryBlock        Block of memory to hold buffered data. If NULL, a memory block will be allocated when needed
-     * (via a call to CMBlockBufferAssureBlockMemory()) using the provided blockAllocator or customBlockSource.
-     * If non-NULL, the block will be used and will be deallocated when the CMBlockBuffer is finalized (i.e. released
-     * for the last time).
-     * @param    blockLength        Overall length of the memory block in bytes. Must not be zero. This is the size of the supplied
-     * memory block or the size to allocate if memoryBlock is NULL.
-     * @param    blockAllocator    Allocator to be used for allocating the memoryBlock, if memoryBlock is NULL. If memoryBlock is
-     * non-NULL, this allocator will be used to deallocate it if provided. Passing NULL will cause
-     * the default allocator (as set at the time of the call) to be used. Pass kCFAllocatorNull if no
-     * deallocation is desired.
-     * @param    customBlockSource    If non-NULL, it will be used for the allocation and freeing of the memory block (the blockAllocator
-     * parameter is ignored). If provided, and the memoryBlock parameter is NULL, its Allocate() routine must
-     * be non-NULL. Allocate will be called once, if successful, when the memoryBlock is allocated. Free() will
-     * be called once when the CMBlockBuffer is disposed.
-     * @param    offsetToData    Offset within the memoryBlock at which the CMBlockBuffer should refer to data.
-     * @param    dataLength        Number of relevant data bytes, starting at offsetToData, within the memory block.
-     * @param    flags            Feature and control flags
+     * @param theBuffer         CMBlockBuffer to which the new memoryBlock will be added. Must not be NULL
+     * @param memoryBlock       Block of memory to hold buffered data. If NULL, a memory block will be allocated when
+     *                          needed
+     *                          (via a call to CMBlockBufferAssureBlockMemory()) using the provided blockAllocator or
+     *                          customBlockSource.
+     *                          If non-NULL, the block will be used and will be deallocated when the CMBlockBuffer is
+     *                          finalized (i.e. released
+     *                          for the last time).
+     * @param blockLength       Overall length of the memory block in bytes. Must not be zero. This is the size of the
+     *                          supplied
+     *                          memory block or the size to allocate if memoryBlock is NULL.
+     * @param blockAllocator    Allocator to be used for allocating the memoryBlock, if memoryBlock is NULL. If
+     *                          memoryBlock is
+     *                          non-NULL, this allocator will be used to deallocate it if provided. Passing NULL will
+     *                          cause
+     *                          the default allocator (as set at the time of the call) to be used. Pass kCFAllocatorNull
+     *                          if no
+     *                          deallocation is desired.
+     * @param customBlockSource If non-NULL, it will be used for the allocation and freeing of the memory block (the
+     *                          blockAllocator
+     *                          parameter is ignored). If provided, and the memoryBlock parameter is NULL, its
+     *                          Allocate() routine must
+     *                          be non-NULL. Allocate will be called once, if successful, when the memoryBlock is
+     *                          allocated. Free() will
+     *                          be called once when the CMBlockBuffer is disposed.
+     * @param offsetToData      Offset within the memoryBlock at which the CMBlockBuffer should refer to data.
+     * @param dataLength        Number of relevant data bytes, starting at offsetToData, within the memory block.
+     * @param flags             Feature and control flags
      * @return Returns kCMBlockBufferNoErr if successful.
      */
     @Generated
@@ -1056,7 +1119,7 @@ public final class CoreMedia {
             @NUInt long offsetToData, @NUInt long dataLength, int flags);
 
     /**
-     * [@function]	CMBlockBufferAppendBufferReference
+     * [@function] CMBlockBufferAppendBufferReference
      * <p>
      * Adds a CMBlockBuffer reference to an existing CMBlockBuffer.
      * <p>
@@ -1064,14 +1127,17 @@ public final class CoreMedia {
      * The CMBlockBuffer's total data length will be increased by the specified dataLength. Note that append operations
      * are not thread safe, so care must be taken when appending to BlockBuffers that are used by multiple threads.
      *
-     * @param    theBuffer        CMBlockBuffer to which the new CMBlockBuffer reference will be added. Must not be NULL
-     * @param    targetBBuf        CMBlockBuffer to refer to. This parameter must not be NULL. Unless the kCMBlockBufferPermitEmptyReferenceFlag
-     * is passed, it must not be empty and it must have a data length at least large enough to supply the data subset
-     * specified (i.e. offsetToData+dataLength bytes).
-     * @param    offsetToData    Offset within the target CMBlockBuffer at which the CMBlockBuffer should refer to data.
-     * @param    dataLength        Number of relevant data bytes, starting at offsetToData, within the target CMBlockBuffer. If zero, the target
-     * buffer's total available dataLength (starting at offsetToData) will be referenced.
-     * @param    flags            Feature and control flags
+     * @param theBuffer    CMBlockBuffer to which the new CMBlockBuffer reference will be added. Must not be NULL
+     * @param targetBBuf   CMBlockBuffer to refer to. This parameter must not be NULL. Unless the
+     *                     kCMBlockBufferPermitEmptyReferenceFlag
+     *                     is passed, it must not be empty and it must have a data length at least large enough to
+     *                     supply the data subset
+     *                     specified (i.e. offsetToData+dataLength bytes).
+     * @param offsetToData Offset within the target CMBlockBuffer at which the CMBlockBuffer should refer to data.
+     * @param dataLength   Number of relevant data bytes, starting at offsetToData, within the target CMBlockBuffer. If
+     *                     zero, the target
+     *                     buffer's total available dataLength (starting at offsetToData) will be referenced.
+     * @param flags        Feature and control flags
      * @return Returns kCMBlockBufferNoErr if successful.
      */
     @Generated
@@ -1080,14 +1146,14 @@ public final class CoreMedia {
             @NUInt long offsetToData, @NUInt long dataLength, int flags);
 
     /**
-     * [@function]	CMBlockBufferAssureBlockMemory
+     * [@function] CMBlockBufferAssureBlockMemory
      * <p>
      * Assures all memory blocks in a CMBlockBuffer are allocated.
      * <p>
      * Traverses the possibly complex CMBlockBuffer, allocating the memory for any constituent
      * memory blocks that are not yet allocated.
      *
-     * @param    theBuffer        CMBlockBuffer to operate on. Must not be NULL
+     * @param theBuffer CMBlockBuffer to operate on. Must not be NULL
      * @return Returns kCMBlockBufferNoErr if successful.
      */
     @Generated
@@ -1095,7 +1161,7 @@ public final class CoreMedia {
     public static native int CMBlockBufferAssureBlockMemory(CMBlockBufferRef theBuffer);
 
     /**
-     * [@function]	CMBlockBufferAccessDataBytes
+     * [@function] CMBlockBufferAccessDataBytes
      * <p>
      * Accesses potentially noncontiguous data in a CMBlockBuffer.
      * <p>
@@ -1103,13 +1169,13 @@ public final class CoreMedia {
      * into the given CMBlockBuffer if possible, otherwise the data will be assembled and copied into the
      * given temporary block and its pointer will be returned.
      *
-     * @param    theBuffer            CMBlockBuffer to operate on. Must not be NULL
-     * @param    offset                Offset within the CMBlockBuffer's offset range.
-     * @param    length                Desired number of bytes to access at offset
-     * @param    temporaryBlock        A piece of memory, assumed to be at least length bytes in size. Must not be NULL
-     * @param    returnedPointerOut    Receives NULL if the desired amount of data could not be accessed at the given offset.
-     * Receives non-NULL if it could. The value returned will either be a direct pointer into
-     * the CMBlockBuffer or temporaryBlock Must not be NULL.
+     * @param theBuffer          CMBlockBuffer to operate on. Must not be NULL
+     * @param offset             Offset within the CMBlockBuffer's offset range.
+     * @param length             Desired number of bytes to access at offset
+     * @param temporaryBlock     A piece of memory, assumed to be at least length bytes in size. Must not be NULL
+     * @param returnedPointerOut Receives NULL if the desired amount of data could not be accessed at the given offset.
+     *                           Receives non-NULL if it could. The value returned will either be a direct pointer into
+     *                           the CMBlockBuffer or temporaryBlock Must not be NULL.
      * @return Returns kCMBlockBufferNoErr if the desired amount of data could be accessed at the given offset.
      */
     @Generated
@@ -1118,7 +1184,7 @@ public final class CoreMedia {
             @NUInt long length, VoidPtr temporaryBlock, Ptr<BytePtr> returnedPointerOut);
 
     /**
-     * [@function]	CMBlockBufferCopyDataBytes
+     * [@function] CMBlockBufferCopyDataBytes
      * <p>
      * Copies bytes from a CMBlockBuffer into a provided memory area.
      * <p>
@@ -1128,10 +1194,11 @@ public final class CoreMedia {
      * of data are not available in the CMBlockBuffer, an error is returned and the contents of the
      * destination are undefined.
      *
-     * @param    theSourceBuffer    The buffer from which data will be  copied into the destination
-     * @param    offsetToData    Offset within the source CMBlockBuffer at which the copy should begin.
-     * @param    dataLength        Number of bytes to copy, starting at offsetToData, within the source CMBlockBuffer. Must not be zero.
-     * @param    destination        Memory into which the data should be copied.
+     * @param theSourceBuffer The buffer from which data will be copied into the destination
+     * @param offsetToData    Offset within the source CMBlockBuffer at which the copy should begin.
+     * @param dataLength      Number of bytes to copy, starting at offsetToData, within the source CMBlockBuffer. Must
+     *                        not be zero.
+     * @param destination     Memory into which the data should be copied.
      * @return Returns kCMBlockBufferNoErr if the copy succeeded, returns an error otherwise.
      */
     @Generated
@@ -1140,19 +1207,23 @@ public final class CoreMedia {
             @NUInt long dataLength, VoidPtr destination);
 
     /**
-     * [@function]	CMBlockBufferReplaceDataBytes
+     * [@function] CMBlockBufferReplaceDataBytes
      * <p>
      * Copies bytes from a given memory block into a CMBlockBuffer, replacing bytes in the underlying data blocks
      * <p>
-     * This function is used to replace bytes in a CMBlockBuffer's memory blocks with those from a provided piece of memory.
-     * It deals with the possibility of the destination range of data being noncontiguous. CMBlockBufferAssureBlockMemory() is
-     * called on the given CMBlockBuffer. If desired range is subsequently not accessible in the CMBlockBuffer, an error is returned
+     * This function is used to replace bytes in a CMBlockBuffer's memory blocks with those from a provided piece of
+     * memory.
+     * It deals with the possibility of the destination range of data being noncontiguous.
+     * CMBlockBufferAssureBlockMemory() is
+     * called on the given CMBlockBuffer. If desired range is subsequently not accessible in the CMBlockBuffer, an error
+     * is returned
      * and the contents of the CMBlockBuffer are untouched.
      *
-     * @param    sourceBytes                Memory block from which bytes are copied into the CMBlockBuffer
-     * @param    destinationBuffer        CMBlockBuffer whose range of bytes will be replaced by the sourceBytes.
-     * @param    offsetIntoDestination    Offset within the destination CMBlockBuffer at which replacement should begin.
-     * @param    dataLength                Number of bytes to be replaced, starting at offsetIntoDestination, in the destinationBuffer.
+     * @param sourceBytes           Memory block from which bytes are copied into the CMBlockBuffer
+     * @param destinationBuffer     CMBlockBuffer whose range of bytes will be replaced by the sourceBytes.
+     * @param offsetIntoDestination Offset within the destination CMBlockBuffer at which replacement should begin.
+     * @param dataLength            Number of bytes to be replaced, starting at offsetIntoDestination, in the
+     *                              destinationBuffer.
      * @return Returns kCMBlockBufferNoErr if the replacement succeeded, returns an error otherwise.
      */
     @Generated
@@ -1161,20 +1232,24 @@ public final class CoreMedia {
             @NUInt long offsetIntoDestination, @NUInt long dataLength);
 
     /**
-     * [@function]	CMBlockBufferFillDataBytes
+     * [@function] CMBlockBufferFillDataBytes
      * <p>
      * Fills a CMBlockBuffer with a given byte value, replacing bytes in the underlying data blocks
      * <p>
      * This function is used to fill bytes in a CMBlockBuffer's memory blocks with a given byte value.
-     * It deals with the possibility of the destination range of data being noncontiguous. CMBlockBufferAssureBlockMemory() is
-     * called on the given CMBlockBuffer. If desired range is subsequently not accessible in the CMBlockBuffer, an error is returned
+     * It deals with the possibility of the destination range of data being noncontiguous.
+     * CMBlockBufferAssureBlockMemory() is
+     * called on the given CMBlockBuffer. If desired range is subsequently not accessible in the CMBlockBuffer, an error
+     * is returned
      * and the contents of the CMBlockBuffer are untouched.
      *
-     * @param    fillByte                The value with which to fill the specified data range
-     * @param    destinationBuffer        CMBlockBuffer whose range of bytes will be filled.
-     * @param    offsetIntoDestination    Offset within the destination CMBlockBuffer at which filling should begin.
-     * @param    dataLength                Number of bytes to be filled, starting at offsetIntoDestination, in the destinationBuffer. If zero, the
-     * destinationBuffer's total available dataLength (starting at offsetToData) will be filled.
+     * @param fillByte              The value with which to fill the specified data range
+     * @param destinationBuffer     CMBlockBuffer whose range of bytes will be filled.
+     * @param offsetIntoDestination Offset within the destination CMBlockBuffer at which filling should begin.
+     * @param dataLength            Number of bytes to be filled, starting at offsetIntoDestination, in the
+     *                              destinationBuffer. If zero, the
+     *                              destinationBuffer's total available dataLength (starting at offsetToData) will be
+     *                              filled.
      * @return Returns kCMBlockBufferNoErr if the fill succeeded, returns an error otherwise.
      */
     @Generated
@@ -1183,7 +1258,7 @@ public final class CoreMedia {
             @NUInt long offsetIntoDestination, @NUInt long dataLength);
 
     /**
-     * [@function]	CMBlockBufferGetDataPointer
+     * [@function] CMBlockBufferGetDataPointer
      * <p>
      * Gains access to the data represented by a CMBlockBuffer.
      * <p>
@@ -1195,16 +1270,19 @@ public final class CoreMedia {
      * original CMBlockBuffer is referenced - once the CMBlockBuffer is released for the last time, any pointers
      * into it will be invalid.
      *
-     * @param    theBuffer            CMBlockBuffer to operate on. Must not be NULL
-     * @param    offset                Offset within the buffer's offset range.
-     * @param    lengthAtOffsetOut    On return, contains the amount of data available at the specified offset. May be NULL.
-     * @param    totalLengthOut        On return, contains the block buffer's total data length (from offset 0). May be NULL.
-     * The caller can compare (offset+lengthAtOffset) with totalLength to determine whether
-     * the entire CMBlockBuffer has been referenced and whether it is possible to access the CMBlockBuffer's
-     * data with a contiguous reference.
-     * @param    dataPointerOut        On return, contains a pointer to the data byte at the specified offset; lengthAtOffset bytes are
-     * available at this address. May be NULL.
-     * @return Returns kCMBlockBufferNoErr if data was accessible at the specified offset within the given CMBlockBuffer, false otherwise.
+     * @param theBuffer         CMBlockBuffer to operate on. Must not be NULL
+     * @param offset            Offset within the buffer's offset range.
+     * @param lengthAtOffsetOut On return, contains the amount of data available at the specified offset. May be NULL.
+     * @param totalLengthOut    On return, contains the block buffer's total data length (from offset 0). May be NULL.
+     *                          The caller can compare (offset+lengthAtOffset) with totalLength to determine whether
+     *                          the entire CMBlockBuffer has been referenced and whether it is possible to access the
+     *                          CMBlockBuffer's
+     *                          data with a contiguous reference.
+     * @param dataPointerOut    On return, contains a pointer to the data byte at the specified offset; lengthAtOffset
+     *                          bytes are
+     *                          available at this address. May be NULL.
+     * @return Returns kCMBlockBufferNoErr if data was accessible at the specified offset within the given
+     *         CMBlockBuffer, false otherwise.
      */
     @Generated
     @CFunction
@@ -1212,7 +1290,7 @@ public final class CoreMedia {
             NUIntPtr lengthAtOffsetOut, NUIntPtr totalLengthOut, Ptr<BytePtr> dataPointerOut);
 
     /**
-     * [@function]	CMBlockBufferGetDataLength
+     * [@function] CMBlockBufferGetDataLength
      * <p>
      * Obtains the total data length reachable via a CMBlockBuffer.
      * <p>
@@ -1221,8 +1299,9 @@ public final class CoreMedia {
      * the _portions_ of those constituents that this CMBlockBuffer subscribes to. This CMBlockBuffer presents a
      * contiguous range of offsets from zero to its totalDataLength as returned by this routine.
      *
-     * @param    theBuffer        CMBlockBuffer to examine.
-     * @return Returns the total data length available via this CMBlockBuffer, or zero if it is empty, NULL, or somehow invalid.
+     * @param theBuffer CMBlockBuffer to examine.
+     * @return Returns the total data length available via this CMBlockBuffer, or zero if it is empty, NULL, or somehow
+     *         invalid.
      */
     @Generated
     @CFunction
@@ -1230,19 +1309,21 @@ public final class CoreMedia {
     public static native long CMBlockBufferGetDataLength(CMBlockBufferRef theBuffer);
 
     /**
-     * [@function]	CMBlockBufferIsRangeContiguous
+     * [@function] CMBlockBufferIsRangeContiguous
      * <p>
      * Determines whether the specified range within the given CMBlockBuffer is contiguous.
      * <p>
-     * Determines whether the specified range within the given CMBlockBuffer is contiguous. if CMBlockBufferGetDataPointer()
+     * Determines whether the specified range within the given CMBlockBuffer is contiguous. if
+     * CMBlockBufferGetDataPointer()
      * were to be called with the same parameters, the returned pointer would address the desired number of bytes.
      *
-     * @param    theBuffer        CMBlockBuffer to examine. Must not be NULL
-     * @param    offset            Offset within the buffer's offset range.
-     * @param    length            Desired number of bytes to access at offset. If zero, the number of bytes available at offset
-     * (dataLength – offset), contiguous or not, is used.
-     * @return Returns true if the specified range is contiguous within the CMBlockBuffer, false otherwise. Also returns false if the
-     * CMBlockBuffer is NULL or empty.
+     * @param theBuffer CMBlockBuffer to examine. Must not be NULL
+     * @param offset    Offset within the buffer's offset range.
+     * @param length    Desired number of bytes to access at offset. If zero, the number of bytes available at offset
+     *                  (dataLength – offset), contiguous or not, is used.
+     * @return Returns true if the specified range is contiguous within the CMBlockBuffer, false otherwise. Also returns
+     *         false if the
+     *         CMBlockBuffer is NULL or empty.
      */
     @Generated
     @CFunction
@@ -1250,14 +1331,14 @@ public final class CoreMedia {
             @NUInt long length);
 
     /**
-     * [@function]	CMBlockBufferIsEmpty
+     * [@function] CMBlockBufferIsEmpty
      * <p>
      * Indicates whether the given CMBlockBuffer is empty.
      * <p>
      * Indicates whether the given CMBlockBuffer is empty, i.e., devoid of any memoryBlocks or CMBlockBuffer references.
      * Note that a CMBlockBuffer containing a not-yet allocated memoryBlock is not considered empty.
      *
-     * @param    theBuffer        CMBlockBuffer to examine. Must not be NULL
+     * @param theBuffer CMBlockBuffer to examine. Must not be NULL
      * @return Returns the result of the emptiness test. Will return false if the CMBlockBuffer is NULL.
      */
     @Generated
@@ -1265,12 +1346,12 @@ public final class CoreMedia {
     public static native byte CMBlockBufferIsEmpty(CMBlockBufferRef theBuffer);
 
     /**
-     * [@function]	CMFormatDescriptionCreate
+     * [@function] CMFormatDescriptionCreate
      * <p>
      * Creates a generic CMFormatDescription object.
      * <p>
      * Use this call to create any CMFormatDescription that is composed solely of extensions, and for which
-     * CFEqual() of a the extensions dictionaries is a valid test for Format Description equality.  Note that
+     * CFEqual() of a the extensions dictionaries is a valid test for Format Description equality. Note that
      * for some media types using this routine may result in creating a format description that is not fully
      * specified for the purpose of media processing. Whenever possible, use media-specific format description
      * creations routines such as CMVideoFormatDescriptionCreate, CMAudioFormatDescriptionCreate, etc.
@@ -1283,7 +1364,7 @@ public final class CoreMedia {
             CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMFormatDescriptionGetTypeID
+     * [@function] CMFormatDescriptionGetTypeID
      * <p>
      * Returns the CFTypeID of CMFormatDescription objects.
      * <p>
@@ -1296,7 +1377,7 @@ public final class CoreMedia {
     public static native long CMFormatDescriptionGetTypeID();
 
     /**
-     * [@function]	CMFormatDescriptionEqual
+     * [@function] CMFormatDescriptionEqual
      * <p>
      * Compares two CMFormatDescription objects for equality.
      * <p>
@@ -1309,9 +1390,10 @@ public final class CoreMedia {
             CMFormatDescriptionRef otherFormatDescription);
 
     /**
-     * [@function]	CMFormatDescriptionEqualIgnoringExtensionKeys
+     * [@function] CMFormatDescriptionEqualIgnoringExtensionKeys
      * <p>
-     * Compares two CMFormatDescription objects for equality, ignoring differences in specified lists of format description extension keys and sample description extension keys.
+     * Compares two CMFormatDescription objects for equality, ignoring differences in specified lists of format
+     * description extension keys and sample description extension keys.
      * <p>
      * This function is NULL safe.
      * If any keys are passed, kCMFormatDescriptionExtension_VerbatimSampleDescription
@@ -1320,9 +1402,11 @@ public final class CoreMedia {
      *
      * @param formatDescriptionExtensionKeysToIgnore     Either a single format description extension key (CFString)
      *                                                   or a CFArray of such keys.
-     * @param sampleDescriptionExtensionAtomKeysToIgnore Either a single sample description extension atom key (four-character CFString)
+     * @param sampleDescriptionExtensionAtomKeysToIgnore Either a single sample description extension atom key
+     *                                                   (four-character CFString)
      *                                                   or a CFArray of such keys.
-     *                                                   See kCMFormatDescriptionExtension_SampleDescriptionExtensionAtoms.
+     *                                                   See
+     *                                                   kCMFormatDescriptionExtension_SampleDescriptionExtensionAtoms.
      */
     @Generated
     @CFunction
@@ -1331,7 +1415,7 @@ public final class CoreMedia {
             ConstVoidPtr sampleDescriptionExtensionAtomKeysToIgnore);
 
     /**
-     * [@function]	CMFormatDescriptionGetMediaType
+     * [@function] CMFormatDescriptionGetMediaType
      * <p>
      * Returns the media type of a CMFormatDescription.
      * <p>
@@ -1344,7 +1428,7 @@ public final class CoreMedia {
     public static native int CMFormatDescriptionGetMediaType(CMFormatDescriptionRef desc);
 
     /**
-     * [@function]	CMFormatDescriptionGetMediaSubType
+     * [@function] CMFormatDescriptionGetMediaSubType
      * <p>
      * Returns the media subtype of a CMFormatDescription.
      * <p>
@@ -1355,7 +1439,7 @@ public final class CoreMedia {
      * For example, 'aac ' is returned for a description of an AAC audio
      * stream, 'avc1' is returned for a description of an H.264 video
      * stream, and 'mp2t' is returned for a description of an MPEG-2
-     * transport (muxed) stream.  If a particular type of media stream
+     * transport (muxed) stream. If a particular type of media stream
      * does not have subtypes, this API may return 0.
      *
      * @return The media subtype of the CMFormatDescription.
@@ -1365,24 +1449,24 @@ public final class CoreMedia {
     public static native int CMFormatDescriptionGetMediaSubType(CMFormatDescriptionRef desc);
 
     /**
-     * [@function]	CMFormatDescriptionGetExtensions
+     * [@function] CMFormatDescriptionGetExtensions
      * <p>
      * Returns an immutable dictionary containing all the extensions of a CMFormatDescription.
      * <p>
      * If there are no extensions, NULL is returned. Extensions dictionaries are valid property list
-     * objects.  This means that dictionary keys are all CFStrings, and the values are all either
+     * objects. This means that dictionary keys are all CFStrings, and the values are all either
      * CFNumber, CFString, CFBoolean, CFArray, CFDictionary, CFDate, or CFData. The returned
      * dictionary is not retained by this call, so clients are required to retain it if they
      * need to keep it longer.
      *
-     * @return An immutable dictionary containing all the extensions of the CMFormatDescription.  May be NULL.
+     * @return An immutable dictionary containing all the extensions of the CMFormatDescription. May be NULL.
      */
     @Generated
     @CFunction
     public static native CFDictionaryRef CMFormatDescriptionGetExtensions(CMFormatDescriptionRef desc);
 
     /**
-     * [@function]	CMFormatDescriptionGetExtension
+     * [@function] CMFormatDescriptionGetExtension
      * <p>
      * Returns the specified extension of a CMFormatDescription.
      * <p>
@@ -1393,7 +1477,7 @@ public final class CoreMedia {
      * long as the CMFormatDescription is valid. Clients are required to retain it if they
      * need to keep it longer.
      *
-     * @return The specified extension of the CMFormatDescription.  May be NULL.
+     * @return The specified extension of the CMFormatDescription. May be NULL.
      */
     @Generated
     @CFunction
@@ -1401,15 +1485,15 @@ public final class CoreMedia {
             CFStringRef extensionKey);
 
     /**
-     * [@function]	CMAudioFormatDescriptionCreate
+     * [@function] CMAudioFormatDescriptionCreate
      * <p>
      * Creates a format description for an audio media stream.
      * <p>
      * The ASBD is required, the channel layout is optional, and the magic cookie is required
      * for some compression formats (and must be NULL for all others). The caller owns the
-     * returned CMFormatDescription, and must release it when done with it.  The ASBD,
+     * returned CMFormatDescription, and must release it when done with it. The ASBD,
      * magic cookie, channel layout, and extensions are all copied (the extensions are
-     * deep-copied).  The caller can deallocate them or re-use them after making this call.
+     * deep-copied). The caller can deallocate them or re-use them after making this call.
      */
     @Generated
     @CFunction
@@ -1421,7 +1505,7 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMAudioFormatDescriptionGetStreamBasicDescription
+     * [@function] CMAudioFormatDescriptionGetStreamBasicDescription
      * <p>
      * Returns a read-only pointer to the AudioStreamBasicDescription inside an audio CMFormatDescription.
      * <p>
@@ -1436,7 +1520,7 @@ public final class CoreMedia {
             CMFormatDescriptionRef desc);
 
     /**
-     * [@function]	CMAudioFormatDescriptionGetMagicCookie
+     * [@function] CMAudioFormatDescriptionGetMagicCookie
      * <p>
      * Returns a read-only pointer to (and size of) the magic cookie inside an audio CMFormatDescription.
      * <p>
@@ -1454,7 +1538,7 @@ public final class CoreMedia {
             NUIntPtr sizeOut);
 
     /**
-     * [@function]	CMAudioFormatDescriptionGetChannelLayout
+     * [@function] CMAudioFormatDescriptionGetChannelLayout
      * <p>
      * Returns a read-only pointer to (and size of) the AudioChannelLayout inside an audio CMFormatDescription.
      * <p>
@@ -1473,12 +1557,13 @@ public final class CoreMedia {
             NUIntPtr sizeOut);
 
     /**
-     * [@function]	CMAudioFormatDescriptionGetFormatList
+     * [@function] CMAudioFormatDescriptionGetFormatList
      * <p>
-     * Returns a read-only pointer to (and size of) the array of AudioFormatListItem structs inside an audio CMFormatDescription.
+     * Returns a read-only pointer to (and size of) the array of AudioFormatListItem structs inside an audio
+     * CMFormatDescription.
      * <p>
      * This property is analogous to kAudioFormatProperty_FormatList (See AudioFormat.h) and follows
-     * its conventions.  Namely, formats are returned in order from the most to least 'rich', with
+     * its conventions. Namely, formats are returned in order from the most to least 'rich', with
      * channel count taking the highest precedence followed by sample rate.
      * This API is specific to audio format descriptions, and will return NULL if called with a non-audio
      * format description.
@@ -1492,14 +1577,14 @@ public final class CoreMedia {
             NUIntPtr sizeOut);
 
     /**
-     * [@function]	CMAudioFormatDescriptionGetRichestDecodableFormat
+     * [@function] CMAudioFormatDescriptionGetRichestDecodableFormat
      * <p>
      * Returns a read-only pointer to the appropriate AudioFormatListItem inside an audio CMFormatDescription.
      * <p>
-     * This property performs validation on the formats represented by the audio in the description.  It
+     * This property performs validation on the formats represented by the audio in the description. It
      * finds the first AudioFormatListItem for which the current system has a valid decoder.
      * This API is specific to audio format descriptions, and will return NULL if called with a non-audio
-     * format description.  It may also return NULL if there is no suitable decoder available on the
+     * format description. It may also return NULL if there is no suitable decoder available on the
      * current system for this audio format.
      *
      * @return A read-only pointer to the appropriate AudioFormatListItem inside the audio format description.
@@ -1511,12 +1596,12 @@ public final class CoreMedia {
             CMFormatDescriptionRef desc);
 
     /**
-     * [@function]	CMAudioFormatDescriptionGetMostCompatibleFormat
+     * [@function] CMAudioFormatDescriptionGetMostCompatibleFormat
      * <p>
      * Returns a read-only pointer to the appropriate AudioFormatListItem inside an audio CMFormatDescription.
      * <p>
      * This property returns a pointer to the last AudioFormatListItem in the kAudioFormatProperty_FormatList
-     * (see AudioFormat.h).  This API is specific to audio format descriptions, and will return NULL if called
+     * (see AudioFormat.h). This API is specific to audio format descriptions, and will return NULL if called
      * with a non-audio format description.
      *
      * @return A read-only pointer to the appropriate AudioFormatListItem inside the audio format description.
@@ -1528,7 +1613,7 @@ public final class CoreMedia {
             CMFormatDescriptionRef desc);
 
     /**
-     * [@function]	CMAudioFormatDescriptionCreateSummary
+     * [@function] CMAudioFormatDescriptionCreateSummary
      * <p>
      * Creates a summary audio format description from an array of audio format descriptions.
      * <p>
@@ -1542,7 +1627,7 @@ public final class CoreMedia {
             CFArrayRef formatDescriptionArray, int flags, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMAudioFormatDescriptionEqual
+     * [@function] CMAudioFormatDescriptionEqual
      * <p>
      * Evaluates equality for the specified parts of two audio format descriptions.
      * <p>
@@ -1552,8 +1637,8 @@ public final class CoreMedia {
      * all bits in equalityMaskOut will be cleared. If you pass kCMAudioFormatDescriptionMask_All in equalityMask,
      * and NULL for equalityMaskOut, this API is equivalent to CFEqual(desc1, desc2).
      *
-     * @return The result of the comparison.  True if all parts in which the caller is interested are equal.
-     * False if any of the parts in which the caller is interested are not equal.
+     * @return The result of the comparison. True if all parts in which the caller is interested are equal.
+     *         False if any of the parts in which the caller is interested are not equal.
      */
     @Generated
     @CFunction
@@ -1561,12 +1646,13 @@ public final class CoreMedia {
             CMFormatDescriptionRef otherFormatDescription, int equalityMask, IntPtr equalityMaskOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionCreate
+     * [@function] CMVideoFormatDescriptionCreate
      * <p>
      * Creates a format description for a video media stream.
      * <p>
      * The caller owns the returned CMFormatDescription, and must release it when done with it. All input parameters
-     * are copied (the extensions are deep-copied).  The caller can deallocate them or re-use them after making this call.
+     * are copied (the extensions are deep-copied). The caller can deallocate them or re-use them after making this
+     * call.
      */
     @Generated
     @CFunction
@@ -1574,7 +1660,7 @@ public final class CoreMedia {
             int height, CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionCreateForImageBuffer
+     * [@function] CMVideoFormatDescriptionCreateForImageBuffer
      * <p>
      * Creates a format description for a video media stream contained in CVImageBuffers of the type provided.
      * <p>
@@ -1596,13 +1682,16 @@ public final class CoreMedia {
             CVBufferRef imageBuffer, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionCreateFromH264ParameterSets
+     * [@function] CMVideoFormatDescriptionCreateFromH264ParameterSets
      * <p>
      * Creates a format description for a video media stream described by H.264 parameter set NAL units.
      * <p>
-     * This function parses the dimensions provided by the parameter sets and creates a format description suitable for a raw H.264 stream.
+     * This function parses the dimensions provided by the parameter sets and creates a format description suitable for
+     * a raw H.264 stream.
      * The parameter sets' data can come from raw NAL units and must have any emulation prevention bytes needed.
-     * The supported NAL unit types to be included in the format description are 7 (sequence parameter set), 8 (picture parameter set) and 13 (sequence parameter set extension). At least one sequence parameter set and one picture parameter set must be provided.
+     * The supported NAL unit types to be included in the format description are 7 (sequence parameter set), 8 (picture
+     * parameter set) and 13 (sequence parameter set extension). At least one sequence parameter set and one picture
+     * parameter set must be provided.
      */
     @Generated
     @CFunction
@@ -1612,14 +1701,18 @@ public final class CoreMedia {
             ConstNUIntPtr parameterSetSizes, int NALUnitHeaderLength, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionGetH264ParameterSetAtIndex
+     * [@function] CMVideoFormatDescriptionGetH264ParameterSetAtIndex
      * <p>
      * Returns a parameter set contained in a H.264 format description.
      * <p>
-     * This function parses the AVC decoder configuration record contained in a H.264 video format description and returns the NAL unit at the given index from it.  These NAL units are typically parameter sets (e.g. SPS, PPS), but may contain others as specified by ISO/IEC 14496-15 (e.g. user-data SEI).
-     * Both parameterSetPointerOut and parameterSetSizeOut may be NULL, parameterSetCountOut will return the total number of parameter set NAL units contained in the AVC decoder configuration record.
+     * This function parses the AVC decoder configuration record contained in a H.264 video format description and
+     * returns the NAL unit at the given index from it. These NAL units are typically parameter sets (e.g. SPS, PPS),
+     * but may contain others as specified by ISO/IEC 14496-15 (e.g. user-data SEI).
+     * Both parameterSetPointerOut and parameterSetSizeOut may be NULL, parameterSetCountOut will return the total
+     * number of parameter set NAL units contained in the AVC decoder configuration record.
      * The parameter set NAL units returned will already have any emulation prevention bytes needed.
-     * The pointer returned in parameterSetPointerOut points to internal memory of videoDesc, and may only be accessed as long as a retain on videoDesc is held.
+     * The pointer returned in parameterSetPointerOut points to internal memory of videoDesc, and may only be accessed
+     * as long as a retain on videoDesc is held.
      */
     @Generated
     @CFunction
@@ -1629,7 +1722,7 @@ public final class CoreMedia {
             NUIntPtr parameterSetSizeOut, NUIntPtr parameterSetCountOut, IntPtr NALUnitHeaderLengthOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionGetDimensions
+     * [@function] CMVideoFormatDescriptionGetDimensions
      * <p>
      * Returns the dimensions (in encoded pixels)
      * <p>
@@ -1641,7 +1734,7 @@ public final class CoreMedia {
     public static native CMVideoDimensions CMVideoFormatDescriptionGetDimensions(CMFormatDescriptionRef videoDesc);
 
     /**
-     * [@function]	CMVideoFormatDescriptionGetPresentationDimensions
+     * [@function] CMVideoFormatDescriptionGetPresentationDimensions
      * <p>
      * Returns the dimensions, adjusted to take pixel aspect ratio and/or clean aperture into account.
      * <p>
@@ -1654,7 +1747,7 @@ public final class CoreMedia {
             byte usePixelAspectRatio, byte useCleanAperture);
 
     /**
-     * [@function]	CMVideoFormatDescriptionGetCleanAperture
+     * [@function] CMVideoFormatDescriptionGetCleanAperture
      * <p>
      * Returns the clean aperture.
      * <p>
@@ -1668,7 +1761,7 @@ public final class CoreMedia {
             byte originIsAtTopLeft);
 
     /**
-     * [@function]	CMVideoFormatDescriptionGetExtensionKeysCommonWithImageBuffers
+     * [@function] CMVideoFormatDescriptionGetExtensionKeysCommonWithImageBuffers
      * <p>
      * Returns an array of the keys that are used both as CMVideoFormatDescription extensions
      * and CVImageBuffer attachments and attributes.
@@ -1701,7 +1794,7 @@ public final class CoreMedia {
     public static native CFArrayRef CMVideoFormatDescriptionGetExtensionKeysCommonWithImageBuffers();
 
     /**
-     * [@function]	CMVideoFormatDescriptionMatchesImageBuffer
+     * [@function] CMVideoFormatDescriptionMatchesImageBuffer
      * <p>
      * Checks to see if a given format description matches an image buffer.
      * <p>
@@ -1716,7 +1809,7 @@ public final class CoreMedia {
             CVBufferRef imageBuffer);
 
     /**
-     * [@function]	CMMuxedFormatDescriptionCreate
+     * [@function] CMMuxedFormatDescriptionCreate
      * <p>
      * Creates a format description for a muxed media stream.
      * <p>
@@ -1724,7 +1817,7 @@ public final class CoreMedia {
      * That information will only be discoverable by the demuxer software (or other software which understands
      * the details of the muxed bitstream) which will need to produce separate format descriptions for each of
      * its output streams. The caller owns the returned CMFormatDescription, and must release it when done
-     * with it. All input parameters are copied (the extensions are deep-copied).  The caller can deallocate
+     * with it. All input parameters are copied (the extensions are deep-copied). The caller can deallocate
      * them or re-use them after making this call.
      */
     @Generated
@@ -1733,11 +1826,12 @@ public final class CoreMedia {
             CFDictionaryRef extensions, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMTextFormatDescriptionGetDisplayFlags
+     * [@function] CMTextFormatDescriptionGetDisplayFlags
      * <p>
      * Returns the displayFlags.
      * <p>
-     * These are the flags that control how the text appears. The function can return kCMFormatDescriptionError_ValueNotAvailable for formats without display flags.
+     * These are the flags that control how the text appears. The function can return
+     * kCMFormatDescriptionError_ValueNotAvailable for formats without display flags.
      */
     @Generated
     @CFunction
@@ -1745,11 +1839,12 @@ public final class CoreMedia {
             IntPtr displayFlagsOut);
 
     /**
-     * [@function]	CMTextFormatDescriptionGetJustification
+     * [@function] CMTextFormatDescriptionGetJustification
      * <p>
      * Returns horizontal and vertical justification.
      * <p>
-     * Values are kCMTextJustification_* constants. The function returns kCMFormatDescriptionError_ValueNotAvailable for format descriptions that do not carry text justification.
+     * Values are kCMTextJustification_* constants. The function returns kCMFormatDescriptionError_ValueNotAvailable for
+     * format descriptions that do not carry text justification.
      */
     @Generated
     @CFunction
@@ -1757,11 +1852,13 @@ public final class CoreMedia {
             BytePtr horizontaJustificationlOut, BytePtr verticalJustificationOut);
 
     /**
-     * [@function]	CMTextFormatDescriptionGetDefaultTextBox
+     * [@function] CMTextFormatDescriptionGetDefaultTextBox
      * <p>
      * Returns the default text box.
      * <p>
-     * Within a text track, text is rendered within a text box.  There is a default text box set, which can be over-ridden by a sample. The function can return kCMFormatDescriptionError_ValueNotAvailable for format descriptions that do not carry a default text box.
+     * Within a text track, text is rendered within a text box. There is a default text box set, which can be
+     * over-ridden by a sample. The function can return kCMFormatDescriptionError_ValueNotAvailable for format
+     * descriptions that do not carry a default text box.
      */
     @Generated
     @CFunction
@@ -1770,11 +1867,12 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CGRect defaultTextBoxOut);
 
     /**
-     * [@function]	CMTextFormatDescriptionGetFontName
+     * [@function] CMTextFormatDescriptionGetFontName
      * <p>
      * Returns the font name for a local font ID.
      * <p>
-     * Some format descriptions carry a mapping from local font IDs to font names. The function returns kCMFormatDescriptionError_ValueNotAvailable for format descriptions that do not carry such a font mapping table.
+     * Some format descriptions carry a mapping from local font IDs to font names. The function returns
+     * kCMFormatDescriptionError_ValueNotAvailable for format descriptions that do not carry such a font mapping table.
      */
     @Generated
     @CFunction
@@ -1782,12 +1880,13 @@ public final class CoreMedia {
             Ptr<CFStringRef> fontNameOut);
 
     /**
-     * [@function]	CMTimeCodeFormatDescriptionCreate
+     * [@function] CMTimeCodeFormatDescriptionCreate
      * <p>
      * Creates a format description for a timecode media.
      * <p>
      * The caller owns the returned CMFormatDescription, and must release it when done with it. All input parameters
-     * are copied (the extensions are deep-copied).  The caller can deallocate them or re-use them after making this call.
+     * are copied (the extensions are deep-copied). The caller can deallocate them or re-use them after making this
+     * call.
      */
     @Generated
     @CFunction
@@ -1796,7 +1895,7 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMTimeCodeFormatDescriptionGetFrameDuration
+     * [@function] CMTimeCodeFormatDescriptionGetFrameDuration
      * <p>
      * Returns the duration of each frame (eg. 100/2997)
      */
@@ -1807,7 +1906,7 @@ public final class CoreMedia {
             CMFormatDescriptionRef timeCodeFormatDescription);
 
     /**
-     * [@function]	CMTimeCodeFormatDescriptionGetFrameQuanta
+     * [@function] CMTimeCodeFormatDescriptionGetFrameQuanta
      * <p>
      * Returns the frames/sec for timecode (eg. 30) OR frames/tick for counter mode
      */
@@ -1817,7 +1916,7 @@ public final class CoreMedia {
             CMFormatDescriptionRef timeCodeFormatDescription);
 
     /**
-     * [@function]	CMTimeCodeFormatDescriptionGetTimeCodeFlags
+     * [@function] CMTimeCodeFormatDescriptionGetTimeCodeFlags
      * <p>
      * Returns the flags for kCMTimeCodeFlag_DropFrame, kCMTimeCodeFlag_24HourMax, kCMTimeCodeFlag_NegTimesOK
      */
@@ -1857,80 +1956,83 @@ public final class CoreMedia {
     public static native CFArrayRef CMMetadataFormatDescriptionGetIdentifiers(CMFormatDescriptionRef desc);
 
     /**
-     * [@function]	CMSampleBufferCreate
+     * [@function] CMSampleBufferCreate
      * <p>
      * Creates a CMSampleBuffer.
      * <p>
      * Array parameters (sampleSizeArray, sampleTimingArray) should have only one element if that same
      * element applies to all samples. All parameters are copied; on return, the caller can release them,
-     * free them, reuse them or whatever.  On return, the caller owns the returned CMSampleBuffer, and
+     * free them, reuse them or whatever. On return, the caller owns the returned CMSampleBuffer, and
      * must release it when done with it.
      * <p>
      * Example of usage for in-display-order video frames:
-     * <ul>				dataBuffer: contains 7 Motion JPEG frames
-     * <li>				dataFormatDescription: describes Motion JPEG video
-     * <li>				numSamples: 7
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {duration = 1001/30000, presentationTimeStamp = 0/30000, decodeTimeStamp = invalid }
-     * <li>				numSampleSizeEntries: 7
-     * <li>				sampleSizeArray: {105840, 104456, 103464, 116460, 100412, 94808, 120400}
+     * <ul> dataBuffer: contains 7 Motion JPEG frames
+     * <li> dataFormatDescription: describes Motion JPEG video
+     * <li> numSamples: 7
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {duration = 1001/30000, presentationTimeStamp = 0/30000, decodeTimeStamp =
+     * invalid }
+     * <li> numSampleSizeEntries: 7
+     * <li> sampleSizeArray: {105840, 104456, 103464, 116460, 100412, 94808, 120400}
      * </ul>
-     * 				Example of usage for out-of-display-order video frames:
-     * <ul>				dataBuffer: contains 6 H.264 frames in decode order (P2,B0,B1,I5,B3,B4)
-     * <li>				dataFormatDescription: describes H.264 video
-     * <li>				numSamples: 6
-     * <li>				numSampleTimingEntries: 6
-     * <li>				sampleTimingArray: 6 entries = {
-     * <ul>					{duration = 1001/30000, presentationTimeStamp = 12012/30000, decodeTimeStamp = 10010/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 10010/30000, decodeTimeStamp = 11011/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 11011/30000, decodeTimeStamp = 12012/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 15015/30000, decodeTimeStamp = 13013/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 13013/30000, decodeTimeStamp = 14014/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 14014/30000, decodeTimeStamp = 15015/30000}}
+     * Example of usage for out-of-display-order video frames:
+     * <ul> dataBuffer: contains 6 H.264 frames in decode order (P2,B0,B1,I5,B3,B4)
+     * <li> dataFormatDescription: describes H.264 video
+     * <li> numSamples: 6
+     * <li> numSampleTimingEntries: 6
+     * <li> sampleTimingArray: 6 entries = {
+     * <ul> {duration = 1001/30000, presentationTimeStamp = 12012/30000, decodeTimeStamp = 10010/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 10010/30000, decodeTimeStamp = 11011/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 11011/30000, decodeTimeStamp = 12012/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 15015/30000, decodeTimeStamp = 13013/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 13013/30000, decodeTimeStamp = 14014/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 14014/30000, decodeTimeStamp = 15015/30000}}
      * </ul>
-     * <li>				numSampleSizeEntries: 6
-     * <li>				sampleSizeArray: {10580, 1234, 1364, 75660, 1012, 988}
+     * <li> numSampleSizeEntries: 6
+     * <li> sampleSizeArray: {10580, 1234, 1364, 75660, 1012, 988}
      * </ul>
-     * 				Example of usage for compressed audio:
-     * <ul>				dataBuffer: contains 24 compressed AAC packets
-     * <li>				dataFormatDescription: describes 44.1kHz AAC audio
-     * <li>				numSamples: 24
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {
-     * <ul>					{duration = 1024/44100, presentationTimeStamp = 0/44100, decodeTimeStamp = invalid }}
+     * Example of usage for compressed audio:
+     * <ul> dataBuffer: contains 24 compressed AAC packets
+     * <li> dataFormatDescription: describes 44.1kHz AAC audio
+     * <li> numSamples: 24
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {
+     * <ul> {duration = 1024/44100, presentationTimeStamp = 0/44100, decodeTimeStamp = invalid }}
      * </ul>
-     * <li>				numSampleSizeEntries: 24
-     * <li>				sampleSizeArray:
-     * <ul>					{191, 183, 208, 213, 202, 206, 209, 206, 204, 192, 202, 277,
-     * <li>					 282, 240, 209, 194, 193, 197, 196, 198, 168, 199, 171, 194}
+     * <li> numSampleSizeEntries: 24
+     * <li> sampleSizeArray:
+     * <ul> {191, 183, 208, 213, 202, 206, 209, 206, 204, 192, 202, 277,
+     * <li> 282, 240, 209, 194, 193, 197, 196, 198, 168, 199, 171, 194}
      * </ul>
      * </ul>
-     * 				Example of usage for uncompressed interleaved audio:
-     * <ul>				dataBuffer: contains 24000 uncompressed interleaved stereo frames, each containing 2 Float32s =
-     * <ul>					{{L,R},
-     * <li>					 {L,R},
-     * <li>					 {L,R}, ...}
+     * Example of usage for uncompressed interleaved audio:
+     * <ul> dataBuffer: contains 24000 uncompressed interleaved stereo frames, each containing 2 Float32s =
+     * <ul> {{L,R},
+     * <li> {L,R},
+     * <li> {L,R}, ...}
      * </ul>
-     * <li>				dataFormatDescription: describes 48kHz Float32 interleaved audio
-     * <li>				numSamples: 24000
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {
-     * <ul>					{duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp = invalid }}
+     * <li> dataFormatDescription: describes 48kHz Float32 interleaved audio
+     * <li> numSamples: 24000
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {
+     * <ul> {duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp = invalid }}
      * </ul>
-     * <li>				numSampleSizeEntries: 1
-     * <li>				sampleSizeArray: {8}
+     * <li> numSampleSizeEntries: 1
+     * <li> sampleSizeArray: {8}
      * </ul>
-     * 				Example of usage for uncompressed non-interleaved audio:
-     * <ul>				dataBuffer: contains 24000 uncompressed non-interleaved stereo frames, each containing 2 (non-contiguous) Float32s =
-     * <ul>					{{L,L,L,L,L,...},
-     * <li>					 {R,R,R,R,R,...}}
+     * Example of usage for uncompressed non-interleaved audio:
+     * <ul> dataBuffer: contains 24000 uncompressed non-interleaved stereo frames, each containing 2 (non-contiguous)
+     * Float32s =
+     * <ul> {{L,L,L,L,L,...},
+     * <li> {R,R,R,R,R,...}}
      * </ul>
-     * <li>				dataFormatDescription: describes 48kHz Float32 non-interleaved audio
-     * <li>				numSamples: 24000
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp = invalid }
-     * <li>				numSampleSizeEntries: 0
-     * <li>				sampleSizeArray: NULL (because the samples are not contiguous)
+     * <li> dataFormatDescription: describes 48kHz Float32 non-interleaved audio
+     * <li> numSamples: 24000
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp =
+     * invalid }
+     * <li> numSampleSizeEntries: 0
+     * <li> sampleSizeArray: NULL (because the samples are not contiguous)
      * </ul>
      */
     @Generated
@@ -1943,82 +2045,85 @@ public final class CoreMedia {
             @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMSampleBufferCreateReady
+     * [@function] CMSampleBufferCreateReady
      * <p>
      * Creates a CMSampleBuffer.
      * <p>
      * Array parameters (sampleSizeArray, sampleTimingArray) should have only one element if that same
      * element applies to all samples. All parameters are copied; on return, the caller can release them,
-     * free them, reuse them or whatever.  On return, the caller owns the returned CMSampleBuffer, and
+     * free them, reuse them or whatever. On return, the caller owns the returned CMSampleBuffer, and
      * must release it when done with it.
      * CMSampleBufferCreateReady is identical to CMSampleBufferCreate except that dataReady is always true,
      * and so no makeDataReadyCallback or refcon needs to be passed.
      * <p>
      * Example of usage for in-display-order video frames:
-     * <ul>				dataBuffer: contains 7 Motion JPEG frames
-     * <li>				dataFormatDescription: describes Motion JPEG video
-     * <li>				numSamples: 7
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {duration = 1001/30000, presentationTimeStamp = 0/30000, decodeTimeStamp = invalid }
-     * <li>				numSampleSizeEntries: 7
-     * <li>				sampleSizeArray: {105840, 104456, 103464, 116460, 100412, 94808, 120400}
+     * <ul> dataBuffer: contains 7 Motion JPEG frames
+     * <li> dataFormatDescription: describes Motion JPEG video
+     * <li> numSamples: 7
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {duration = 1001/30000, presentationTimeStamp = 0/30000, decodeTimeStamp =
+     * invalid }
+     * <li> numSampleSizeEntries: 7
+     * <li> sampleSizeArray: {105840, 104456, 103464, 116460, 100412, 94808, 120400}
      * </ul>
-     * 				Example of usage for out-of-display-order video frames:
-     * <ul>				dataBuffer: contains 6 H.264 frames in decode order (P2,B0,B1,I5,B3,B4)
-     * <li>				dataFormatDescription: describes H.264 video
-     * <li>				numSamples: 6
-     * <li>				numSampleTimingEntries: 6
-     * <li>				sampleTimingArray: 6 entries = {
-     * <ul>					{duration = 1001/30000, presentationTimeStamp = 12012/30000, decodeTimeStamp = 10010/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 10010/30000, decodeTimeStamp = 11011/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 11011/30000, decodeTimeStamp = 12012/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 15015/30000, decodeTimeStamp = 13013/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 13013/30000, decodeTimeStamp = 14014/30000},
-     * <li>					{duration = 1001/30000, presentationTimeStamp = 14014/30000, decodeTimeStamp = 15015/30000}}
+     * Example of usage for out-of-display-order video frames:
+     * <ul> dataBuffer: contains 6 H.264 frames in decode order (P2,B0,B1,I5,B3,B4)
+     * <li> dataFormatDescription: describes H.264 video
+     * <li> numSamples: 6
+     * <li> numSampleTimingEntries: 6
+     * <li> sampleTimingArray: 6 entries = {
+     * <ul> {duration = 1001/30000, presentationTimeStamp = 12012/30000, decodeTimeStamp = 10010/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 10010/30000, decodeTimeStamp = 11011/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 11011/30000, decodeTimeStamp = 12012/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 15015/30000, decodeTimeStamp = 13013/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 13013/30000, decodeTimeStamp = 14014/30000},
+     * <li> {duration = 1001/30000, presentationTimeStamp = 14014/30000, decodeTimeStamp = 15015/30000}}
      * </ul>
-     * <li>				numSampleSizeEntries: 6
-     * <li>				sampleSizeArray: {10580, 1234, 1364, 75660, 1012, 988}
+     * <li> numSampleSizeEntries: 6
+     * <li> sampleSizeArray: {10580, 1234, 1364, 75660, 1012, 988}
      * </ul>
-     * 				Example of usage for compressed audio:
-     * <ul>				dataBuffer: contains 24 compressed AAC packets
-     * <li>				dataFormatDescription: describes 44.1kHz AAC audio
-     * <li>				numSamples: 24
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {
-     * <ul>					{duration = 1024/44100, presentationTimeStamp = 0/44100, decodeTimeStamp = invalid }}
+     * Example of usage for compressed audio:
+     * <ul> dataBuffer: contains 24 compressed AAC packets
+     * <li> dataFormatDescription: describes 44.1kHz AAC audio
+     * <li> numSamples: 24
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {
+     * <ul> {duration = 1024/44100, presentationTimeStamp = 0/44100, decodeTimeStamp = invalid }}
      * </ul>
-     * <li>				numSampleSizeEntries: 24
-     * <li>				sampleSizeArray:
-     * <ul>					{191, 183, 208, 213, 202, 206, 209, 206, 204, 192, 202, 277,
-     * <li>					 282, 240, 209, 194, 193, 197, 196, 198, 168, 199, 171, 194}
+     * <li> numSampleSizeEntries: 24
+     * <li> sampleSizeArray:
+     * <ul> {191, 183, 208, 213, 202, 206, 209, 206, 204, 192, 202, 277,
+     * <li> 282, 240, 209, 194, 193, 197, 196, 198, 168, 199, 171, 194}
      * </ul>
      * </ul>
-     * 				Example of usage for uncompressed interleaved audio:
-     * <ul>				dataBuffer: contains 24000 uncompressed interleaved stereo frames, each containing 2 Float32s =
-     * <ul>					{{L,R},
-     * <li>					 {L,R},
-     * <li>					 {L,R}, ...}
+     * Example of usage for uncompressed interleaved audio:
+     * <ul> dataBuffer: contains 24000 uncompressed interleaved stereo frames, each containing 2 Float32s =
+     * <ul> {{L,R},
+     * <li> {L,R},
+     * <li> {L,R}, ...}
      * </ul>
-     * <li>				dataFormatDescription: describes 48kHz Float32 interleaved audio
-     * <li>				numSamples: 24000
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {
-     * <ul>					{duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp = invalid }}
+     * <li> dataFormatDescription: describes 48kHz Float32 interleaved audio
+     * <li> numSamples: 24000
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {
+     * <ul> {duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp = invalid }}
      * </ul>
-     * <li>				numSampleSizeEntries: 1
-     * <li>				sampleSizeArray: {8}
+     * <li> numSampleSizeEntries: 1
+     * <li> sampleSizeArray: {8}
      * </ul>
-     * 				Example of usage for uncompressed non-interleaved audio:
-     * <ul>				dataBuffer: contains 24000 uncompressed non-interleaved stereo frames, each containing 2 (non-contiguous) Float32s =
-     * <ul>					{{L,L,L,L,L,...},
-     * <li>					 {R,R,R,R,R,...}}
+     * Example of usage for uncompressed non-interleaved audio:
+     * <ul> dataBuffer: contains 24000 uncompressed non-interleaved stereo frames, each containing 2 (non-contiguous)
+     * Float32s =
+     * <ul> {{L,L,L,L,L,...},
+     * <li> {R,R,R,R,R,...}}
      * </ul>
-     * <li>				dataFormatDescription: describes 48kHz Float32 non-interleaved audio
-     * <li>				numSamples: 24000
-     * <li>				numSampleTimingEntries: 1
-     * <li>				sampleTimingArray: one entry = {duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp = invalid }
-     * <li>				numSampleSizeEntries: 0
-     * <li>				sampleSizeArray: NULL (because the samples are not contiguous)
+     * <li> dataFormatDescription: describes 48kHz Float32 non-interleaved audio
+     * <li> numSamples: 24000
+     * <li> numSampleTimingEntries: 1
+     * <li> sampleTimingArray: one entry = {duration = 1/48000, presentationTimeStamp = 0/48000, decodeTimeStamp =
+     * invalid }
+     * <li> numSampleSizeEntries: 0
+     * <li> sampleSizeArray: NULL (because the samples are not contiguous)
      * </ul>
      */
     @Generated
@@ -2029,7 +2134,7 @@ public final class CoreMedia {
             @NInt long numSampleSizeEntries, ConstNUIntPtr sampleSizeArray, Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMAudioSampleBufferCreateWithPacketDescriptions
+     * [@function] CMAudioSampleBufferCreateWithPacketDescriptions
      * <p>
      * Creates an CMSampleBuffer containing audio given packetDescriptions instead of sizing and timing info
      * <p>
@@ -2048,14 +2153,15 @@ public final class CoreMedia {
             Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMAudioSampleBufferCreateReadyWithPacketDescriptions
+     * [@function] CMAudioSampleBufferCreateReadyWithPacketDescriptions
      * <p>
      * Creates an CMSampleBuffer containing audio given packetDescriptions instead of sizing and timing info
      * <p>
      * Provides an optimization over CMSampleBufferCreate() when the caller already has packetDescriptions for
      * the audio data. This routine will use the packetDescriptions to create the sizing and timing arrays required
      * to make the sample buffer if necessary.
-     * CMAudioSampleBufferCreateReadyWithPacketDescriptions is identical to CMAudioSampleBufferCreateWithPacketDescriptions
+     * CMAudioSampleBufferCreateReadyWithPacketDescriptions is identical to
+     * CMAudioSampleBufferCreateWithPacketDescriptions
      * except that dataReady is always true, and so no makeDataReadyCallback or refcon needs to be passed.
      */
     @Generated
@@ -2067,23 +2173,23 @@ public final class CoreMedia {
             Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMSampleBufferCreateForImageBuffer
+     * [@function] CMSampleBufferCreateForImageBuffer
      * <p>
      * Creates a CMSampleBuffer that contains a CVImageBuffer instead of a CMBlockBuffer.
      * <p>
      * Unlike a CMBlockBuffer which can reference many samples, a CVImageBuffer is defined to
-     * reference only one sample;  therefore this routine has fewer parameters then
+     * reference only one sample; therefore this routine has fewer parameters then
      * CMSampleBufferCreate.
      * <p>
      * Sample timing information, which is a vector for CMSampleBufferCreate,
      * consists of only one value for this routine.
      * <p>
-     * The concept of sample size does not apply to CVImageBuffers.  As such, CMSampleBufferGetSampleSizeArray
+     * The concept of sample size does not apply to CVImageBuffers. As such, CMSampleBufferGetSampleSizeArray
      * will return kCMSampleBufferError_BufferHasNoSampleSizes, and CMSampleBufferGetSampleSize
      * will return 0.
      * <p>
      * Because CVImageBuffers hold visual data, the format description provided is a
-     * CMVideoFormatDescription.  The format description must be consistent with the attributes
+     * CMVideoFormatDescription. The format description must be consistent with the attributes
      * and formatting information attached to the CVImageBuffer. The width, height, and codecType must
      * match (for CVPixelBuffers the codec type is given by CVPixelBufferGetPixelFormatType(pixelBuffer);
      * for other CVImageBuffers, the codecType must be 0). The format description extensions must
@@ -2101,23 +2207,23 @@ public final class CoreMedia {
             Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMSampleBufferCreateReadyWithImageBuffer
+     * [@function] CMSampleBufferCreateReadyWithImageBuffer
      * <p>
      * Creates a CMSampleBuffer that contains a CVImageBuffer instead of a CMBlockBuffer.
      * <p>
      * Unlike a CMBlockBuffer which can reference many samples, a CVImageBuffer is defined to
-     * reference only one sample;  therefore this routine has fewer parameters then
+     * reference only one sample; therefore this routine has fewer parameters then
      * CMSampleBufferCreate.
      * <p>
      * Sample timing information, which is a vector for CMSampleBufferCreate,
      * consists of only one value for this routine.
      * <p>
-     * The concept of sample size does not apply to CVImageBuffers.  As such, CMSampleBufferGetSampleSizeArray
+     * The concept of sample size does not apply to CVImageBuffers. As such, CMSampleBufferGetSampleSizeArray
      * will return kCMSampleBufferError_BufferHasNoSampleSizes, and CMSampleBufferGetSampleSize
      * will return 0.
      * <p>
      * Because CVImageBuffers hold visual data, the format description provided is a
-     * CMVideoFormatDescription.  The format description must be consistent with the attributes
+     * CMVideoFormatDescription. The format description must be consistent with the attributes
      * and formatting information attached to the CVImageBuffer. The width, height, and codecType must
      * match (for CVPixelBuffers the codec type is given by CVPixelBufferGetPixelFormatType(pixelBuffer);
      * for other CVImageBuffers, the codecType must be 0). The format description extensions must
@@ -2136,7 +2242,7 @@ public final class CoreMedia {
             Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMSampleBufferCreateCopy
+     * [@function] CMSampleBufferCreateCopy
      * <p>
      * Creates a copy of a CMSampleBuffer.
      * <p>
@@ -2151,15 +2257,15 @@ public final class CoreMedia {
             Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMSampleBufferCreateCopyWithNewTiming
+     * [@function] CMSampleBufferCreateCopyWithNewTiming
      * <p>
      * Creates a CMSampleBuffer with new timing information from another sample buffer.
      * <p>
      * This emulates CMSampleBufferCreateCopy, but changes the timing.
      * Array parameters (sampleTimingArray) should have only one element if that same
      * element applies to all samples. All parameters are copied; on return, the caller can release them,
-     * free them, reuse them or whatever.  Any outputPresentationTimestamp that has been set on the original Buffer
-     * will not be copied because it is no longer relevant.	On return, the caller owns the returned
+     * free them, reuse them or whatever. Any outputPresentationTimestamp that has been set on the original Buffer
+     * will not be copied because it is no longer relevant. On return, the caller owns the returned
      * CMSampleBuffer, and must release it when done with it.
      */
     @Generated
@@ -2170,7 +2276,7 @@ public final class CoreMedia {
             Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMSampleBufferCopySampleBufferForRange
+     * [@function] CMSampleBufferCopySampleBufferForRange
      * <p>
      * Creates a CMSampleBuffer containing a range of samples from an existing CMSampleBuffer.
      * <p>
@@ -2182,11 +2288,12 @@ public final class CoreMedia {
             @ByValue CFRange sampleRange, Ptr<CMSampleBufferRef> sampleBufferOut);
 
     /**
-     * [@function]	CMSampleBufferGetTypeID
+     * [@function] CMSampleBufferGetTypeID
      * <p>
      * Returns the CFTypeID of CMSampleBuffer objects.
      * <p>
-     * You can check if a CFTypeRef object is actually a CMSampleBuffer by comparing CFGetTypeID(object) with CMSampleBufferGetTypeID().
+     * You can check if a CFTypeRef object is actually a CMSampleBuffer by comparing CFGetTypeID(object) with
+     * CMSampleBufferGetTypeID().
      *
      * @return CFTypeID of CMSampleBuffer objects.
      */
@@ -2196,15 +2303,16 @@ public final class CoreMedia {
     public static native long CMSampleBufferGetTypeID();
 
     /**
-     * [@function]	CMSampleBufferSetDataBuffer
+     * [@function] CMSampleBufferSetDataBuffer
      * <p>
      * Associates a CMSampleBuffer with its CMBlockBuffer of media data.
      * <p>
      * If successful, this operation retains the dataBuffer thereafter, so the caller can release the dataBuffer
-     * after calling this API, if it has no further need to reference it. This is a write-once operation; it will fail if
+     * after calling this API, if it has no further need to reference it. This is a write-once operation; it will fail
+     * if
      * the CMSampleBuffer already has a dataBuffer. This API allows a CMSampleBuffer to exist, with timing and format
      * information, before the associated data shows up. Example of usage: Some media services may have access to sample
-     * size, timing, and format information before the data is read.  Such services may create CMSampleBuffers with that
+     * size, timing, and format information before the data is read. Such services may create CMSampleBuffers with that
      * information and insert them into queues early, and use this API to attach the CMBlockBuffers later, when the data
      * becomes ready.
      */
@@ -2213,35 +2321,39 @@ public final class CoreMedia {
     public static native int CMSampleBufferSetDataBuffer(CMSampleBufferRef sbuf, CMBlockBufferRef dataBuffer);
 
     /**
-     * [@function]	CMSampleBufferGetDataBuffer
+     * [@function] CMSampleBufferGetDataBuffer
      * <p>
      * Returns a CMSampleBuffer's CMBlockBuffer of media data.
      * <p>
-     * The caller does not own the returned dataBuffer, and must retain it explicitly if the caller needs to maintain a reference to it.
+     * The caller does not own the returned dataBuffer, and must retain it explicitly if the caller needs to maintain a
+     * reference to it.
      *
-     * @return CMBlockBuffer of media data. The result will be NULL if the CMSampleBuffer does not contain a CMBlockBuffer, if the
-     * CMSampleBuffer contains a CVImageBuffer, or if there is some other error.
+     * @return CMBlockBuffer of media data. The result will be NULL if the CMSampleBuffer does not contain a
+     *         CMBlockBuffer, if the
+     *         CMSampleBuffer contains a CVImageBuffer, or if there is some other error.
      */
     @Generated
     @CFunction
     public static native CMBlockBufferRef CMSampleBufferGetDataBuffer(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetImageBuffer
+     * [@function] CMSampleBufferGetImageBuffer
      * <p>
      * Returns a CMSampleBuffer's CVImageBuffer of media data.
      * <p>
-     * The caller does not own the returned dataBuffer, and must retain it explicitly if the caller needs to maintain a reference to it.
+     * The caller does not own the returned dataBuffer, and must retain it explicitly if the caller needs to maintain a
+     * reference to it.
      *
-     * @return CVImageBuffer of media data. The result will be NULL if the CMSampleBuffer does not contain a CVImageBuffer, if the
-     * CMSampleBuffer contains a CMBlockBuffer, or if there is some other error.
+     * @return CVImageBuffer of media data. The result will be NULL if the CMSampleBuffer does not contain a
+     *         CVImageBuffer, if the
+     *         CMSampleBuffer contains a CMBlockBuffer, or if there is some other error.
      */
     @Generated
     @CFunction
     public static native CVBufferRef CMSampleBufferGetImageBuffer(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferSetDataBufferFromAudioBufferList
+     * [@function] CMSampleBufferSetDataBufferFromAudioBufferList
      * <p>
      * Creates a CMBlockBuffer containing a copy of the data from the AudioBufferList,
      * and sets that as the CMSampleBuffer's data buffer. The resulting buffer(s) in the
@@ -2255,11 +2367,11 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferList);
 
     /**
-     * [@function]	CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer
+     * [@function] CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer
      * <p>
      * Creates an AudioBufferList containing the data from the CMSampleBuffer,
      * and a CMBlockBuffer which references (and manages the lifetime of) the
-     * data in that AudioBufferList.  The data may or may not be copied,
+     * data in that AudioBufferList. The data may or may not be copied,
      * depending on the contiguity and 16-byte alignment of the CMSampleBuffer's
      * data. The buffers placed in the AudioBufferList are guaranteed to be contiguous.
      * The buffers in the AudioBufferList will be 16-byte-aligned if
@@ -2274,13 +2386,13 @@ public final class CoreMedia {
             CFAllocatorRef blockBufferBlockAllocator, int flags, Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMSampleBufferGetAudioStreamPacketDescriptions
+     * [@function] CMSampleBufferGetAudioStreamPacketDescriptions
      * <p>
      * Creates an array of AudioStreamPacketDescriptions for the
      * variable bytes per packet or variable frames per packet
-     * audio data in the provided CMSampleBuffer.  Constant bitrate,
+     * audio data in the provided CMSampleBuffer. Constant bitrate,
      * constant frames-per-packet audio yields a return value of noErr
-     * and no packet descriptions.  This API is specific to audio format
+     * and no packet descriptions. This API is specific to audio format
      * sample buffers, and will return kCMSampleBufferError_InvalidMediaTypeForOperation
      * if called with a non-audio sample buffer.
      */
@@ -2292,15 +2404,15 @@ public final class CoreMedia {
             NUIntPtr packetDescriptionsSizeNeededOut);
 
     /**
-     * [@function]	CMSampleBufferGetAudioStreamPacketDescriptionsPtr
+     * [@function] CMSampleBufferGetAudioStreamPacketDescriptionsPtr
      * <p>
      * Returns a pointer to (and size of) a constant array of
      * AudioStreamPacketDescriptions for the variable bytes per
      * packet or variable frames per packet audio data in the
-     * provided CMSampleBuffer.  The pointer will remain valid
+     * provided CMSampleBuffer. The pointer will remain valid
      * as long as the sbuf continues to be retained.
      * Constant bitrate, constant frames-per-packet audio yields a
-     * return value of noErr and no packet descriptions.  This API is
+     * return value of noErr and no packet descriptions. This API is
      * specific to audio format sample buffers, and will return
      * kCMSampleBufferError_InvalidMediaTypeForOperation if called
      * with a non-audio sample buffer.
@@ -2312,13 +2424,13 @@ public final class CoreMedia {
             NUIntPtr packetDescriptionsSizeOut);
 
     /**
-     * [@function]	CMSampleBufferCopyPCMDataIntoAudioBufferList
+     * [@function] CMSampleBufferCopyPCMDataIntoAudioBufferList
      * <p>
      * Copies PCM audio data from the given CMSampleBuffer into
      * a pre-populated AudioBufferList. The AudioBufferList must
      * contain the same number of channels and its data buffers
      * must be sized to hold the specified number of frames.
-     * This API is	specific to audio format sample buffers, and
+     * This API is specific to audio format sample buffers, and
      * will return kCMSampleBufferError_InvalidMediaTypeForOperation
      * if called with a non-audio sample buffer. It will return an
      * error if the CMSampleBuffer does not contain PCM audio data
@@ -2331,11 +2443,11 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferList);
 
     /**
-     * [@function]	CMSampleBufferSetDataReady
+     * [@function] CMSampleBufferSetDataReady
      * <p>
      * Marks a CMSampleBuffer's data as "ready".
      * <p>
-     * There is no way to undo this operation.  The only way to get an "unready"
+     * There is no way to undo this operation. The only way to get an "unready"
      * CMSampleBuffer is to call CMSampleBufferCreate with the dataReady parameter
      * set to false. Example of usage: in a read completion routine.
      */
@@ -2344,19 +2456,19 @@ public final class CoreMedia {
     public static native int CMSampleBufferSetDataReady(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferDataIsReady
+     * [@function] CMSampleBufferDataIsReady
      * <p>
      * Returns whether or not a CMSampleBuffer's data is ready.
      *
-     * @return Whether or not the CMSampleBuffer's data is ready.  True is returned for special marker buffers, even
-     * though they have no data. False is returned if there is an error.
+     * @return Whether or not the CMSampleBuffer's data is ready. True is returned for special marker buffers, even
+     *         though they have no data. False is returned if there is an error.
      */
     @Generated
     @CFunction
     public static native byte CMSampleBufferDataIsReady(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferSetDataFailed
+     * [@function] CMSampleBufferSetDataFailed
      * <p>
      * Marks a CMSampleBuffer's data as "failed", to indicate that the data will not become ready.
      */
@@ -2365,7 +2477,7 @@ public final class CoreMedia {
     public static native int CMSampleBufferSetDataFailed(CMSampleBufferRef sbuf, int status);
 
     /**
-     * [@function]	CMSampleBufferHasDataFailed
+     * [@function] CMSampleBufferHasDataFailed
      * <p>
      * Returns whether or not a CMSampleBuffer's data loading request has failed.
      */
@@ -2374,14 +2486,14 @@ public final class CoreMedia {
     public static native byte CMSampleBufferHasDataFailed(CMSampleBufferRef sbuf, IntPtr statusOut);
 
     /**
-     * [@function]	CMSampleBufferMakeDataReady
+     * [@function] CMSampleBufferMakeDataReady
      * <p>
      * Makes a CMSampleBuffer's data ready, by calling the client's CMSampleBufferMakeDataReadyCallback.
      * <p>
      * The CMSampleBufferMakeDataReadyCallback is passed in by the client during creation. It must return
      * 0 if successful, and in that case, CMSampleBufferMakeDataReady will set the data readiness of
      * the CMSampleBuffer to true. Example of usage: when it is time to actually use the data. Example of
-     * callback routine: a routine to force a scheduled read to complete.  If the CMSampleBuffer is not
+     * callback routine: a routine to force a scheduled read to complete. If the CMSampleBuffer is not
      * ready, and there is no CMSampleBufferMakeDataReadyCallback to call, kCMSampleBufferError_BufferNotReady
      * will be returned. Similarly, if the CMSampleBuffer is not ready, and the CMSampleBufferMakeDataReadyCallback
      * fails and returns an error, kCMSampleBufferError_BufferNotReady will be returned.
@@ -2391,7 +2503,7 @@ public final class CoreMedia {
     public static native int CMSampleBufferMakeDataReady(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferTrackDataReadiness
+     * [@function] CMSampleBufferTrackDataReadiness
      * <p>
      * Associates a CMSampleBuffer's data readiness with another CMSampleBuffer's data readiness.
      * <p>
@@ -2407,7 +2519,7 @@ public final class CoreMedia {
             CMSampleBufferRef sampleBufferToTrack);
 
     /**
-     * [@function]	CMSampleBufferInvalidate
+     * [@function] CMSampleBufferInvalidate
      * <p>
      * Makes the sample buffer invalid, calling any installed invalidation callback.
      * <p>
@@ -2420,7 +2532,7 @@ public final class CoreMedia {
     public static native int CMSampleBufferInvalidate(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferSetInvalidateCallback
+     * [@function] CMSampleBufferSetInvalidateCallback
      * <p>
      * Sets the sample buffer's invalidation callback, which is called during CMSampleBufferInvalidate.
      * <p>
@@ -2434,7 +2546,7 @@ public final class CoreMedia {
             long invalidateRefCon);
 
     /**
-     * [@function]	CMSampleBufferSetInvalidateHandler
+     * [@function] CMSampleBufferSetInvalidateHandler
      * <p>
      * Sets the sample buffer's invalidation handler block, which is called during CMSampleBufferInvalidate.
      * <p>
@@ -2447,7 +2559,7 @@ public final class CoreMedia {
             @ObjCBlock(name = "call_CMSampleBufferSetInvalidateHandler") Block_CMSampleBufferSetInvalidateHandler invalidateHandler);
 
     /**
-     * [@function]	CMSampleBufferIsValid
+     * [@function] CMSampleBufferIsValid
      * <p>
      * Queries whether a sample buffer is still valid.
      * <p>
@@ -2459,7 +2571,7 @@ public final class CoreMedia {
     public static native byte CMSampleBufferIsValid(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetNumSamples
+     * [@function] CMSampleBufferGetNumSamples
      * <p>
      * Returns the number of media samples in a CMSampleBuffer.
      *
@@ -2471,11 +2583,12 @@ public final class CoreMedia {
     public static native long CMSampleBufferGetNumSamples(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetDuration
+     * [@function] CMSampleBufferGetDuration
      * <p>
      * Returns the total duration of a CMSampleBuffer.
      * <p>
-     * If the buffer contains out-of-presentation-order samples, any gaps in the presentation timeline are not represented in the returned duration.
+     * If the buffer contains out-of-presentation-order samples, any gaps in the presentation timeline are not
+     * represented in the returned duration.
      * The returned duration is simply the sum of all the individual sample durations.
      *
      * @return The duration of the CMSampleBuffer. kCMTimeInvalid is returned if there is an error.
@@ -2486,7 +2599,7 @@ public final class CoreMedia {
     public static native CMTime CMSampleBufferGetDuration(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetPresentationTimeStamp
+     * [@function] CMSampleBufferGetPresentationTimeStamp
      * <p>
      * Returns the numerically earliest presentation timestamp of all the samples in a CMSampleBuffer.
      * <p>
@@ -2494,7 +2607,8 @@ public final class CoreMedia {
      * For out-of-presentation-order samples, this is the presentation timestamp of the sample that
      * will be presented first, which is not necessarily the first sample in the buffer.
      *
-     * @return Numerically earliest sample presentation timestamp in the CMSampleBuffer.  kCMTimeInvalid is returned if there is an error.
+     * @return Numerically earliest sample presentation timestamp in the CMSampleBuffer. kCMTimeInvalid is returned if
+     *         there is an error.
      */
     @Generated
     @CFunction
@@ -2502,14 +2616,15 @@ public final class CoreMedia {
     public static native CMTime CMSampleBufferGetPresentationTimeStamp(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetDecodeTimeStamp
+     * [@function] CMSampleBufferGetDecodeTimeStamp
      * <p>
      * Returns the numerically earliest decode timestamp of all the samples in a CMSampleBuffer.
      * <p>
      * The returned decode timestamp is always the decode timestamp of the first sample in the buffer,
      * since even out-of-presentation-order samples are expected to be in decode order in the buffer.
      *
-     * @return Numerically earliest sample decode timestamp in the CMSampleBuffer.  kCMTimeInvalid is returned if there is an error.
+     * @return Numerically earliest sample decode timestamp in the CMSampleBuffer. kCMTimeInvalid is returned if there
+     *         is an error.
      */
     @Generated
     @CFunction
@@ -2517,7 +2632,7 @@ public final class CoreMedia {
     public static native CMTime CMSampleBufferGetDecodeTimeStamp(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetOutputDuration
+     * [@function] CMSampleBufferGetOutputDuration
      * <p>
      * Returns the output duration of a CMSampleBuffer.
      * <p>
@@ -2532,7 +2647,7 @@ public final class CoreMedia {
     public static native CMTime CMSampleBufferGetOutputDuration(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetOutputPresentationTimeStamp
+     * [@function] CMSampleBufferGetOutputPresentationTimeStamp
      * <p>
      * Returns the output presentation timestamp of the CMSampleBuffer.
      * <p>
@@ -2548,7 +2663,8 @@ public final class CoreMedia {
      * For general forward playback in a scaled edit, the OutputPresentationTimeStamp should be set to:
      * ((PresentationTimeStamp + TrimDurationAtStart - EditStartMediaTime) / EditSpeedMultiplier) + EditStartTrackTime.
      * For general reversed playback:
-     * ((PresentationTimeStamp + Duration - TrimDurationAtEnd - EditStartMediaTime) / EditSpeedMultiplier) + EditStartTrackTime.
+     * ((PresentationTimeStamp + Duration - TrimDurationAtEnd - EditStartMediaTime) / EditSpeedMultiplier) +
+     * EditStartTrackTime.
      *
      * @return kCMTimeInvalid is returned if there is an error.
      */
@@ -2558,7 +2674,7 @@ public final class CoreMedia {
     public static native CMTime CMSampleBufferGetOutputPresentationTimeStamp(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferSetOutputPresentationTimeStamp
+     * [@function] CMSampleBufferSetOutputPresentationTimeStamp
      * <p>
      * Sets an output presentation timestamp to be used in place of a calculated value.
      * <p>
@@ -2570,7 +2686,8 @@ public final class CoreMedia {
      * For general forward playback in a scaled edit, the OutputPresentationTimeStamp should be set to:
      * ((PresentationTimeStamp + TrimDurationAtStart - EditStartMediaTime) / EditSpeedMultiplier) + EditStartTrackTime.
      * For general reversed playback:
-     * ((PresentationTimeStamp + Duration - TrimDurationAtEnd - EditStartMediaTime) / EditSpeedMultiplier) + EditStartTrackTime.
+     * ((PresentationTimeStamp + Duration - TrimDurationAtEnd - EditStartMediaTime) / EditSpeedMultiplier) +
+     * EditStartTrackTime.
      */
     @Generated
     @CFunction
@@ -2578,7 +2695,7 @@ public final class CoreMedia {
             @ByValue CMTime outputPresentationTimeStamp);
 
     /**
-     * [@function]	CMSampleBufferGetOutputDecodeTimeStamp
+     * [@function] CMSampleBufferGetOutputDecodeTimeStamp
      * <p>
      * Returns the output decode timestamp of the CMSampleBuffer.
      * <p>
@@ -2593,22 +2710,30 @@ public final class CoreMedia {
     public static native CMTime CMSampleBufferGetOutputDecodeTimeStamp(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetSampleTimingInfoArray
+     * [@function] CMSampleBufferGetSampleTimingInfoArray
      * <p>
      * Returns an array of CMSampleTimingInfo structs, one for each sample in a CMSampleBuffer.
      * <p>
      * If only one CMSampleTimingInfo struct is returned, it applies to all samples in the buffer.
-     * See documentation of CMSampleTimingInfo for details of how a single CMSampleTimingInfo struct can apply to multiple samples.
-     * The timingArrayOut must be allocated by the caller, and the number of entries allocated must be passed in timingArrayEntries.
-     * If timingArrayOut is NULL, timingArrayEntriesNeededOut will return the required number of entries.  Similarly,
-     * if timingArrayEntries is too small, kCMSampleBufferError_ArrayTooSmall will be returned, and timingArrayEntriesNeededOut
-     * will return the required number of entries. In either case, the caller can then make an appropriately-sized timingArrayOut and call again.
-     * For example, the caller might pass the address of a CMSampleTimingInfo struct on the stack (as timingArrayOut), and 1 (as
-     * timingArrayEntries). If all samples are describable with a single CMSampleTimingInfo struct (or there is only one sample
-     * in the CMSampleBuffer), this call will succeed. If not, it will fail, and will return the number of entries required in
+     * See documentation of CMSampleTimingInfo for details of how a single CMSampleTimingInfo struct can apply to
+     * multiple samples.
+     * The timingArrayOut must be allocated by the caller, and the number of entries allocated must be passed in
+     * timingArrayEntries.
+     * If timingArrayOut is NULL, timingArrayEntriesNeededOut will return the required number of entries. Similarly,
+     * if timingArrayEntries is too small, kCMSampleBufferError_ArrayTooSmall will be returned, and
+     * timingArrayEntriesNeededOut
+     * will return the required number of entries. In either case, the caller can then make an appropriately-sized
+     * timingArrayOut and call again.
+     * For example, the caller might pass the address of a CMSampleTimingInfo struct on the stack (as timingArrayOut),
+     * and 1 (as
+     * timingArrayEntries). If all samples are describable with a single CMSampleTimingInfo struct (or there is only one
+     * sample
+     * in the CMSampleBuffer), this call will succeed. If not, it will fail, and will return the number of entries
+     * required in
      * timingArrayEntriesNeededOut. Only in this case will the caller actually need to allocate an array.
      * <p>
-     * If there is no timingInfo in this CMSampleBuffer, kCMSampleBufferError_BufferHasNoSampleTimingInfo will be returned, and
+     * If there is no timingInfo in this CMSampleBuffer, kCMSampleBufferError_BufferHasNoSampleTimingInfo will be
+     * returned, and
      * timingArrayEntriesNeededOut will be set to 0.
      */
     @Generated
@@ -2619,22 +2744,30 @@ public final class CoreMedia {
             NIntPtr timingArrayEntriesNeededOut);
 
     /**
-     * [@function]	CMSampleBufferGetOutputSampleTimingInfoArray
+     * [@function] CMSampleBufferGetOutputSampleTimingInfoArray
      * <p>
      * Returns an array of output CMSampleTimingInfo structs, one for each sample in a CMSampleBuffer.
      * <p>
      * If only one CMSampleTimingInfo struct is returned, it applies to all samples in the buffer.
-     * See documentation of CMSampleTimingInfo for details of how a single CMSampleTimingInfo struct can apply to multiple samples.
-     * The timingArrayOut must be allocated by the caller, and the number of entries allocated must be passed in timingArrayEntries.
-     * If timingArrayOut is NULL, timingArrayEntriesNeededOut will return the required number of entries.  Similarly,
-     * if timingArrayEntries is too small, kCMSampleBufferError_ArrayTooSmall will be returned, and timingArrayEntriesNeededOut
-     * will return the required number of entries. In either case, the caller can then make an appropriately-sized timingArrayOut and call again.
-     * For example, the caller might pass the address of a CMSampleTimingInfo struct on the stack (as timingArrayOut), and 1 (as
-     * timingArrayEntries). If all samples are describable with a single CMSampleTimingInfo struct (or there is only one sample
-     * in the CMSampleBuffer), this call will succeed. If not, it will fail, and will return the number of entries required in
+     * See documentation of CMSampleTimingInfo for details of how a single CMSampleTimingInfo struct can apply to
+     * multiple samples.
+     * The timingArrayOut must be allocated by the caller, and the number of entries allocated must be passed in
+     * timingArrayEntries.
+     * If timingArrayOut is NULL, timingArrayEntriesNeededOut will return the required number of entries. Similarly,
+     * if timingArrayEntries is too small, kCMSampleBufferError_ArrayTooSmall will be returned, and
+     * timingArrayEntriesNeededOut
+     * will return the required number of entries. In either case, the caller can then make an appropriately-sized
+     * timingArrayOut and call again.
+     * For example, the caller might pass the address of a CMSampleTimingInfo struct on the stack (as timingArrayOut),
+     * and 1 (as
+     * timingArrayEntries). If all samples are describable with a single CMSampleTimingInfo struct (or there is only one
+     * sample
+     * in the CMSampleBuffer), this call will succeed. If not, it will fail, and will return the number of entries
+     * required in
      * timingArrayEntriesNeededOut. Only in this case will the caller actually need to allocate an array.
      * <p>
-     * If there is no timingInfo in this CMSampleBuffer, kCMSampleBufferError_BufferHasNoSampleTimingInfo will be returned,
+     * If there is no timingInfo in this CMSampleBuffer, kCMSampleBufferError_BufferHasNoSampleTimingInfo will be
+     * returned,
      * and *timingArrayEntriesNeededOut will be set to 0.
      */
     @Generated
@@ -2645,15 +2778,15 @@ public final class CoreMedia {
             NIntPtr timingArrayEntriesNeededOut);
 
     /**
-     * [@function]	CMSampleBufferGetSampleTimingInfo
+     * [@function] CMSampleBufferGetSampleTimingInfo
      * <p>
      * Returns a CMSampleTimingInfo struct describing a specified sample in a CMSampleBuffer.
      * <p>
      * A sample-specific CMSampleTimingInfo struct will be returned (ie. with a sample-specific
      * presentationTimeStamp and decodeTimeStamp), even if a single CMSampleTimingInfo struct was used
      * during creation to describe all the samples in the buffer. The timingInfo struct must be
-     * allocated by the caller.  If the sample index is not in the range 0 .. numSamples-1,
-     * kCMSampleBufferError_SampleIndexOutOfRange will be returned.  If there is no timingInfo
+     * allocated by the caller. If the sample index is not in the range 0 .. numSamples-1,
+     * kCMSampleBufferError_SampleIndexOutOfRange will be returned. If there is no timingInfo
      * in this CMSampleBuffer, kCMSampleBufferError_BufferHasNoSampleTimingInfo will be returned.
      */
     @Generated
@@ -2662,23 +2795,32 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMSampleTimingInfo timingInfoOut);
 
     /**
-     * [@function]	CMSampleBufferGetSampleSizeArray
+     * [@function] CMSampleBufferGetSampleSizeArray
      * <p>
      * Returns an array of sample sizes, one for each sample in a CMSampleBuffer.
      * <p>
      * If only one size entry is returned, all samples in the buffer are of this size.
-     * The sizeArrayOut must be allocated by the caller, and the number of entries allocated must be passed in sizeArrayEntries.
-     * If sizeArrayOut is NULL, sizeArrayEntriesNeededOut will return the required number of entries.  Similarly, if sizeArrayEntries
-     * is too small, kCMSampleBufferError_ArrayTooSmall will be returned, and sizeArrayEntriesNeededOut will return the required number of entries.
-     * The caller can then make an appropriately-sized sizeArrayOut and call again. For example, the caller might pass the address
-     * of a size_t variable on the stack (as sizeArrayOut), and 1 (as sizeArrayEntries). If all samples are the same size (or there
-     * is only one sample in the CMSampleBuffer), this call would succeed. If not, it will fail, and will return the number of
-     * entries required in sizeArrayEntriesNeededOut. Only in this case (multiple samples of different sizes) will the caller
-     * need to allocate an array.  0 entries will be returned if the samples in the buffer are non-contiguous (eg. non-interleaved
+     * The sizeArrayOut must be allocated by the caller, and the number of entries allocated must be passed in
+     * sizeArrayEntries.
+     * If sizeArrayOut is NULL, sizeArrayEntriesNeededOut will return the required number of entries. Similarly, if
+     * sizeArrayEntries
+     * is too small, kCMSampleBufferError_ArrayTooSmall will be returned, and sizeArrayEntriesNeededOut will return the
+     * required number of entries.
+     * The caller can then make an appropriately-sized sizeArrayOut and call again. For example, the caller might pass
+     * the address
+     * of a size_t variable on the stack (as sizeArrayOut), and 1 (as sizeArrayEntries). If all samples are the same
+     * size (or there
+     * is only one sample in the CMSampleBuffer), this call would succeed. If not, it will fail, and will return the
+     * number of
+     * entries required in sizeArrayEntriesNeededOut. Only in this case (multiple samples of different sizes) will the
+     * caller
+     * need to allocate an array. 0 entries will be returned if the samples in the buffer are non-contiguous (eg.
+     * non-interleaved
      * audio, where the channel values for a single sample are scattered through the buffer).
      * <p>
-     * If there are no sample sizes in this CMSampleBuffer, kCMSampleBufferError_BufferHasNoSampleSizes will be returned,
-     * and *sizeArrayEntriesNeededOut will be set to 0.  This will be true, for example,
+     * If there are no sample sizes in this CMSampleBuffer, kCMSampleBufferError_BufferHasNoSampleSizes will be
+     * returned,
+     * and *sizeArrayEntriesNeededOut will be set to 0. This will be true, for example,
      * if the samples in the buffer are non-contiguous (eg. non-interleaved audio, where
      * the channel values for a single sample are scattered through the buffer), or if
      * this CMSampleBuffer contains a CVImageBuffer.
@@ -2689,17 +2831,17 @@ public final class CoreMedia {
             NUIntPtr sizeArrayOut, NIntPtr sizeArrayEntriesNeededOut);
 
     /**
-     * [@function]	CMSampleBufferGetSampleSize
+     * [@function] CMSampleBufferGetSampleSize
      * <p>
      * Returns the size in bytes of a specified sample in a CMSampleBuffer.
      *
      * @return Size in bytes of the specified sample in the CMSampleBuffer.
-     * If the sample index is not in the range 0 .. numSamples-1,
-     * a size of 0 will be returned.  If there are no sample sizes
-     * in this CMSampleBuffer, a size of 0 will be returned.  This will be true, for example,
-     * if the samples in the buffer are non-contiguous (eg. non-interleaved audio, where
-     * the channel values for a single sample are scattered through the buffer),
-     * or if this CMSampleBuffer contains a CVImageBuffer.
+     *         If the sample index is not in the range 0 .. numSamples-1,
+     *         a size of 0 will be returned. If there are no sample sizes
+     *         in this CMSampleBuffer, a size of 0 will be returned. This will be true, for example,
+     *         if the samples in the buffer are non-contiguous (eg. non-interleaved audio, where
+     *         the channel values for a single sample are scattered through the buffer),
+     *         or if this CMSampleBuffer contains a CVImageBuffer.
      */
     @Generated
     @CFunction
@@ -2707,12 +2849,12 @@ public final class CoreMedia {
     public static native long CMSampleBufferGetSampleSize(CMSampleBufferRef sbuf, @NInt long sampleIndex);
 
     /**
-     * [@function]	CMSampleBufferGetTotalSampleSize
+     * [@function] CMSampleBufferGetTotalSampleSize
      * <p>
      * Returns the total size in bytes of sample data in a CMSampleBuffer.
      *
      * @return Total size in bytes of sample data in the CMSampleBuffer.
-     * If there are no sample sizes in this CMSampleBuffer, a size of 0 will be returned.
+     *         If there are no sample sizes in this CMSampleBuffer, a size of 0 will be returned.
      */
     @Generated
     @CFunction
@@ -2720,34 +2862,39 @@ public final class CoreMedia {
     public static native long CMSampleBufferGetTotalSampleSize(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetFormatDescription
+     * [@function] CMSampleBufferGetFormatDescription
      * <p>
      * Returns the format description of the samples in a CMSampleBuffer.
      * <p>
-     * On return, the caller does not own the returned formatDesc, and must retain it explicitly if the caller needs to maintain a reference to it.
+     * On return, the caller does not own the returned formatDesc, and must retain it explicitly if the caller needs to
+     * maintain a reference to it.
      *
-     * @return The format description of the samples in the CMSampleBuffer.  NULL is returned if there is an error.
+     * @return The format description of the samples in the CMSampleBuffer. NULL is returned if there is an error.
      */
     @Generated
     @CFunction
     public static native CMFormatDescriptionRef CMSampleBufferGetFormatDescription(CMSampleBufferRef sbuf);
 
     /**
-     * [@function]	CMSampleBufferGetSampleAttachmentsArray
+     * [@function] CMSampleBufferGetSampleAttachmentsArray
      * <p>
-     * Returns a reference to a CMSampleBuffer's immutable array of mutable sample attachments dictionaries (one dictionary
+     * Returns a reference to a CMSampleBuffer's immutable array of mutable sample attachments dictionaries (one
+     * dictionary
      * per sample in the CMSampleBuffer).
      * <p>
      * Attachments can then be added/removed directly by the caller, using CF APIs. On return, the caller does not
      * own the returned array of attachments dictionaries, and must retain it if the caller needs to maintain a
-     * reference to it. If there are no sample attachments yet, and createIfNecessary is true, a new CFArray containing N empty
+     * reference to it. If there are no sample attachments yet, and createIfNecessary is true, a new CFArray containing
+     * N empty
      * CFMutableDictionaries is returned (where N is the number of samples in the CMSampleBuffer), so that
      * attachments can be added directly by the caller. If there are no sample attachments yet, and createIfNecessary is
-     * false, NULL is returned.  Once the CFArray has been created, subsequent calls will return it, even if there are still
+     * false, NULL is returned. Once the CFArray has been created, subsequent calls will return it, even if there are
+     * still
      * no sample attachments in the array.
      *
-     * @return A reference to the CMSampleBuffer's immutable array of mutable sample attachments dictionaries (one dictionary per sample
-     * in the CMSampleBuffer). NULL is returned if there is an error.
+     * @return A reference to the CMSampleBuffer's immutable array of mutable sample attachments dictionaries (one
+     *         dictionary per sample
+     *         in the CMSampleBuffer). NULL is returned if there is an error.
      */
     @Generated
     @CFunction
@@ -2755,7 +2902,7 @@ public final class CoreMedia {
             byte createIfNecessary);
 
     /**
-     * [@function]	CMSampleBufferCallForEachSample
+     * [@function] CMSampleBufferCallForEachSample
      * <p>
      * Calls a function for every individual sample in a sample buffer.
      * <p>
@@ -2764,7 +2911,8 @@ public final class CoreMedia {
      * The callback function may retain these sample buffers if desired.
      * If the callback function returns an error, iteration will stop immediately
      * and the error will be returned.
-     * If there are no sample sizes in the provided sample buffer, kCMSampleBufferError_CannotSubdivide will be returned.
+     * If there are no sample sizes in the provided sample buffer, kCMSampleBufferError_CannotSubdivide will be
+     * returned.
      * This will happen, for example, if the samples in the buffer are non-contiguous (eg. non-interleaved audio, where
      * the channel values for a single sample are scattered through the buffer).
      */
@@ -2775,7 +2923,7 @@ public final class CoreMedia {
             VoidPtr refcon);
 
     /**
-     * [@function]	CMSampleBufferCallBlockForEachSample
+     * [@function] CMSampleBufferCallBlockForEachSample
      * <p>
      * Calls a block for every individual sample in a sample buffer.
      * <p>
@@ -2784,7 +2932,8 @@ public final class CoreMedia {
      * The block may retain these sample buffers if desired.
      * If the block returns an error, iteration will stop immediately
      * and the error will be returned.
-     * If there are no sample sizes in the provided sample buffer, kCMSampleBufferError_CannotSubdivide will be returned.
+     * If there are no sample sizes in the provided sample buffer, kCMSampleBufferError_CannotSubdivide will be
+     * returned.
      * This will happen, for example, if the samples in the buffer are non-contiguous (eg. non-interleaved audio, where
      * the channel values for a single sample are scattered through the buffer).
      */
@@ -2794,7 +2943,7 @@ public final class CoreMedia {
             @ObjCBlock(name = "call_CMSampleBufferCallBlockForEachSample") Block_CMSampleBufferCallBlockForEachSample handler);
 
     /**
-     * [@function]	CMClockGetTypeID
+     * [@function] CMClockGetTypeID
      * <p>
      * Returns the CFTypeID for CMClock.
      */
@@ -2804,7 +2953,7 @@ public final class CoreMedia {
     public static native long CMClockGetTypeID();
 
     /**
-     * [@function]	CMClockGetHostTimeClock
+     * [@function] CMClockGetHostTimeClock
      * <p>
      * Returns a reference to the singleton clock logically identified with host time.
      * <p>
@@ -2816,7 +2965,7 @@ public final class CoreMedia {
     public static native CMClockRef CMClockGetHostTimeClock();
 
     /**
-     * [@function]	CMClockConvertHostTimeToSystemUnits
+     * [@function] CMClockConvertHostTimeToSystemUnits
      * <p>
      * Converts a host time from CMTime to the host time's native units.
      * <p>
@@ -2830,7 +2979,7 @@ public final class CoreMedia {
     public static native long CMClockConvertHostTimeToSystemUnits(@ByValue CMTime hostTime);
 
     /**
-     * [@function]	CMClockMakeHostTimeFromSystemUnits
+     * [@function] CMClockMakeHostTimeFromSystemUnits
      * <p>
      * Converts a host time from native units to CMTime.
      * <p>
@@ -2845,7 +2994,7 @@ public final class CoreMedia {
     public static native CMTime CMClockMakeHostTimeFromSystemUnits(long hostTime);
 
     /**
-     * [@function]	CMClockGetTime
+     * [@function] CMClockGetTime
      * <p>
      * Retrieves the current time from a clock.
      */
@@ -2855,7 +3004,7 @@ public final class CoreMedia {
     public static native CMTime CMClockGetTime(CMClockRef clock);
 
     /**
-     * [@function]	CMClockGetAnchorTime
+     * [@function] CMClockGetAnchorTime
      * <p>
      * Retrieves the current time from a clock and also the matching time from the clock's reference clock.
      * <p>
@@ -2868,7 +3017,7 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime referenceClockTimeOut);
 
     /**
-     * [@function]	CMClockMightDrift
+     * [@function] CMClockMightDrift
      * <p>
      * Indicates whether it is possible for two clocks to drift relative to each other.
      */
@@ -2877,7 +3026,7 @@ public final class CoreMedia {
     public static native byte CMClockMightDrift(CMClockRef clock, CMClockRef otherClock);
 
     /**
-     * [@function]	CMClockInvalidate
+     * [@function] CMClockInvalidate
      * <p>
      * Makes the clock stop functioning.
      * <p>
@@ -2890,7 +3039,7 @@ public final class CoreMedia {
     public static native void CMClockInvalidate(CMClockRef clock);
 
     /**
-     * [@function]	CMTimebaseGetTypeID
+     * [@function] CMTimebaseGetTypeID
      * <p>
      * Returns the CFTypeID for CMTimebase.
      */
@@ -2932,7 +3081,7 @@ public final class CoreMedia {
     public static native CMClockRef CMTimebaseCopyUltimateMasterClock(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseGetMasterTimebase
+     * [@function] CMTimebaseGetMasterTimebase
      * <p>
      * Returns the immediate source timebase of a timebase.
      * <p>
@@ -2945,7 +3094,7 @@ public final class CoreMedia {
     public static native CMTimebaseRef CMTimebaseGetMasterTimebase(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseGetMasterClock
+     * [@function] CMTimebaseGetMasterClock
      * <p>
      * Returns the immediate source clock of a timebase.
      * <p>
@@ -2958,7 +3107,7 @@ public final class CoreMedia {
     public static native CMClockRef CMTimebaseGetMasterClock(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseGetMaster
+     * [@function] CMTimebaseGetMaster
      * <p>
      * Returns the immediate source (either timebase or clock) of a timebase.
      * <p>
@@ -2972,7 +3121,7 @@ public final class CoreMedia {
     public static native ConstVoidPtr CMTimebaseGetMaster(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseGetUltimateMasterClock
+     * [@function] CMTimebaseGetUltimateMasterClock
      * <p>
      * Returns the source clock that is the source of all of a timebase's source timebases.
      * <p>
@@ -2984,7 +3133,7 @@ public final class CoreMedia {
     public static native CMClockRef CMTimebaseGetUltimateMasterClock(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseGetTime
+     * [@function] CMTimebaseGetTime
      * <p>
      * Retrieves the current time from a timebase.
      */
@@ -2994,7 +3143,7 @@ public final class CoreMedia {
     public static native CMTime CMTimebaseGetTime(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseGetTimeWithTimeScale
+     * [@function] CMTimebaseGetTimeWithTimeScale
      * <p>
      * Retrieves the current time from a timebase in the specified timescale.
      */
@@ -3004,7 +3153,7 @@ public final class CoreMedia {
     public static native CMTime CMTimebaseGetTimeWithTimeScale(CMTimebaseRef timebase, int timescale, int method);
 
     /**
-     * [@function]	CMTimebaseSetTime
+     * [@function] CMTimebaseSetTime
      * <p>
      * Sets the current time of a timebase.
      */
@@ -3013,7 +3162,7 @@ public final class CoreMedia {
     public static native int CMTimebaseSetTime(CMTimebaseRef timebase, @ByValue CMTime time);
 
     /**
-     * [@function]	CMTimebaseSetAnchorTime
+     * [@function] CMTimebaseSetAnchorTime
      * <p>
      * Sets the time of a timebase at a particular source time.
      * <p>
@@ -3029,7 +3178,7 @@ public final class CoreMedia {
             @ByValue CMTime immediateSourceTime);
 
     /**
-     * [@function]	CMTimebaseGetRate
+     * [@function] CMTimebaseGetRate
      * <p>
      * Retrieves the current rate of a timebase.
      * <p>
@@ -3041,7 +3190,7 @@ public final class CoreMedia {
     public static native double CMTimebaseGetRate(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseGetTimeAndRate
+     * [@function] CMTimebaseGetTimeAndRate
      * <p>
      * Retrieves the current time and rate of a timebase.
      * <p>
@@ -3054,7 +3203,7 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime timeOut, DoublePtr rateOut);
 
     /**
-     * [@function]	CMTimebaseSetRate
+     * [@function] CMTimebaseSetRate
      * <p>
      * Sets the rate of a timebase.
      */
@@ -3063,7 +3212,7 @@ public final class CoreMedia {
     public static native int CMTimebaseSetRate(CMTimebaseRef timebase, double rate);
 
     /**
-     * [@function]	CMTimebaseSetRateAndAnchorTime
+     * [@function] CMTimebaseSetRateAndAnchorTime
      * <p>
      * Sets the time of a timebase at a particular source time, and changes the rate at exactly that time.
      * <p>
@@ -3082,7 +3231,7 @@ public final class CoreMedia {
             @ByValue CMTime timebaseTime, @ByValue CMTime immediateSourceTime);
 
     /**
-     * [@function]	CMTimebaseGetEffectiveRate
+     * [@function] CMTimebaseGetEffectiveRate
      * <p>
      * Gets the effective rate of a timebase (which combines its rate with the rates of all its source timebases).
      * <p>
@@ -3096,7 +3245,7 @@ public final class CoreMedia {
     public static native double CMTimebaseGetEffectiveRate(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMTimebaseAddTimer
+     * [@function] CMTimebaseAddTimer
      * <p>
      * Adds the timer to the list of timers managed by the timebase.
      * <p>
@@ -3114,7 +3263,7 @@ public final class CoreMedia {
     public static native int CMTimebaseAddTimer(CMTimebaseRef timebase, CFRunLoopTimerRef timer, CFRunLoopRef runloop);
 
     /**
-     * [@function]	CMTimebaseRemoveTimer
+     * [@function] CMTimebaseRemoveTimer
      * <p>
      * Removes the timer from the list of timers managed by the timebase.
      * <p>
@@ -3127,7 +3276,7 @@ public final class CoreMedia {
     public static native int CMTimebaseRemoveTimer(CMTimebaseRef timebase, CFRunLoopTimerRef timer);
 
     /**
-     * [@function]	CMTimebaseSetTimerNextFireTime
+     * [@function] CMTimebaseSetTimerNextFireTime
      * <p>
      * Sets the CMTime on the timebase's timeline at which the timer should next be fired.
      * <p>
@@ -3139,9 +3288,9 @@ public final class CoreMedia {
      * <BR>
      * IMPORTANT NOTE: Due to the way that CFRunLoopTimers are implemented, if a timer passes
      * through a state in which it is due to fire, it may fire even if its rescheduled before
-     * the runloop runs again.  Clients should take care to avoid temporarily scheduling timers
-     * in the past.  For example, set the timebase's rate or time before you set the timer's
-     * next fire time, if you are doing both at once.  (If setting the timebase's rate or time
+     * the runloop runs again. Clients should take care to avoid temporarily scheduling timers
+     * in the past. For example, set the timebase's rate or time before you set the timer's
+     * next fire time, if you are doing both at once. (If setting the timebase's rate or time
      * might put the timer's fire time in the past, you may need to set the fire time to
      * kCMTimeInvalid across the timebase change.)
      */
@@ -3151,7 +3300,7 @@ public final class CoreMedia {
             @ByValue CMTime fireTime, int flags);
 
     /**
-     * [@function]	CMTimebaseSetTimerToFireImmediately
+     * [@function] CMTimebaseSetTimerToFireImmediately
      * <p>
      * Sets the timer to fire immediately once, overriding any previous CMTimebaseSetTimerNextFireTime call.
      * <p>
@@ -3165,7 +3314,7 @@ public final class CoreMedia {
     public static native int CMTimebaseSetTimerToFireImmediately(CMTimebaseRef timebase, CFRunLoopTimerRef timer);
 
     /**
-     * [@function]	CMTimebaseAddTimerDispatchSource
+     * [@function] CMTimebaseAddTimerDispatchSource
      * <p>
      * Adds the timer dispatch source to the list of timers managed by the timebase.
      * <p>
@@ -3187,7 +3336,7 @@ public final class CoreMedia {
     public static native int CMTimebaseAddTimerDispatchSource(CMTimebaseRef timebase, NSObject timerSource);
 
     /**
-     * [@function]	CMTimebaseRemoveTimerDispatchSource
+     * [@function] CMTimebaseRemoveTimerDispatchSource
      * <p>
      * Removes the timer dispatch source from the list of timers managed by the timebase.
      * <p>
@@ -3200,7 +3349,7 @@ public final class CoreMedia {
     public static native int CMTimebaseRemoveTimerDispatchSource(CMTimebaseRef timebase, NSObject timerSource);
 
     /**
-     * [@function]	CMTimebaseSetTimerDispatchSourceNextFireTime
+     * [@function] CMTimebaseSetTimerDispatchSourceNextFireTime
      * <p>
      * Sets the CMTime on the timebase's timeline at which the timer dispatch source should next be fired.
      * <p>
@@ -3212,9 +3361,9 @@ public final class CoreMedia {
      * <BR>
      * IMPORTANT NOTE: Due to the way that timer dispatch sources are implemented, if a timer passes
      * through a state in which it is due to fire, it may fire even if its rescheduled before
-     * the event handler is run.  Clients should take care to avoid temporarily scheduling timers
-     * in the past.  For example, set the timebase's rate or time before you set the timer's
-     * next fire time, if you are doing both at once.  (If setting the timebase's rate or time
+     * the event handler is run. Clients should take care to avoid temporarily scheduling timers
+     * in the past. For example, set the timebase's rate or time before you set the timer's
+     * next fire time, if you are doing both at once. (If setting the timebase's rate or time
      * might put the timer's fire time in the past, you may need to set the fire time to
      * kCMTimeInvalid across the timebase change.)
      */
@@ -3224,7 +3373,7 @@ public final class CoreMedia {
             @ByValue CMTime fireTime, int flags);
 
     /**
-     * [@function]	CMTimebaseSetTimerDispatchSourceToFireImmediately
+     * [@function] CMTimebaseSetTimerDispatchSourceToFireImmediately
      * <p>
      * Sets the timer dispatch source to fire immediately once, overriding any previous
      * CMTimebaseSetTimerDispatchSourceNextFireTime call.
@@ -3240,7 +3389,7 @@ public final class CoreMedia {
             NSObject timerSource);
 
     /**
-     * [@function]	CMSyncGetRelativeRate
+     * [@function] CMSyncGetRelativeRate
      * <p>
      * Queries the relative rate of one timebase or clock relative to another timebase or clock.
      * <p>
@@ -3260,9 +3409,10 @@ public final class CoreMedia {
             ConstVoidPtr relativeToClockOrTimebase);
 
     /**
-     * [@function]	CMSyncGetRelativeRateAndAnchorTime
+     * [@function] CMSyncGetRelativeRateAndAnchorTime
      * <p>
-     * Queries the relative rate of one timebase or clock relative to another timebase or clock and the times of each timebase or clock at which the relative rate went into effect.
+     * Queries the relative rate of one timebase or clock relative to another timebase or clock and the times of each
+     * timebase or clock at which the relative rate went into effect.
      * <p>
      * If both have a common source, this calculation is performed purely based on the rates in the common tree
      * rooted in that source.
@@ -3278,7 +3428,7 @@ public final class CoreMedia {
             @UncertainArgument("Options: reference, array Fallback: reference") CMTime outRelativeToClockOrTimebaseAnchorTime);
 
     /**
-     * [@function]	CMSyncConvertTime
+     * [@function] CMSyncConvertTime
      * <p>
      * Converts a time from one timebase or clock to another timebase or clock.
      * <p>
@@ -3295,7 +3445,7 @@ public final class CoreMedia {
             ConstVoidPtr toClockOrTimebase);
 
     /**
-     * [@function]	CMSyncMightDrift
+     * [@function] CMSyncMightDrift
      * <p>
      * Reports whether it is possible for one timebase/clock to drift relative to the other.
      * <p>
@@ -3307,7 +3457,7 @@ public final class CoreMedia {
     public static native byte CMSyncMightDrift(ConstVoidPtr clockOrTimebase1, ConstVoidPtr clockOrTimebase2);
 
     /**
-     * [@function]	CMSyncGetTime
+     * [@function] CMSyncGetTime
      * <p>
      * A helper function to get time from a clock or timebase.
      * <p>
@@ -3323,7 +3473,7 @@ public final class CoreMedia {
     public static native CMTime CMSyncGetTime(ConstVoidPtr clockOrTimebase);
 
     /**
-     * [@function]	CMTimebaseNotificationBarrier
+     * [@function] CMTimebaseNotificationBarrier
      * <p>
      * Requests that the timebase wait until it is not posting any notifications.
      */
@@ -3332,16 +3482,16 @@ public final class CoreMedia {
     public static native int CMTimebaseNotificationBarrier(CMTimebaseRef timebase);
 
     /**
-     * [@function]	CMVideoFormatDescriptionCreateFromBigEndianImageDescriptionData
+     * [@function] CMVideoFormatDescriptionCreateFromBigEndianImageDescriptionData
      * <p>
      * Creates a CMVideoFormatDescription from a big-endian ImageDescription data structure.
      *
-     * @param    allocator                        Allocator to use for allocating the CMVideoFormatDescription object. May be NULL.
-     * @param    imageDescriptionData            ImageDescription data structure in big-endian byte ordering.
-     * @param    size                            Size of ImageDescription data structure.
-     * @param    stringEncoding                    Pass CFStringGetSystemEncoding() or GetApplicationTextEncoding().
-     * @param    flavor                            kCMImageDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
-     * @param    formatDescriptionOut            Receives new CMVideoFormatDescription.
+     * @param allocator            Allocator to use for allocating the CMVideoFormatDescription object. May be NULL.
+     * @param imageDescriptionData ImageDescription data structure in big-endian byte ordering.
+     * @param size                 Size of ImageDescription data structure.
+     * @param stringEncoding       Pass CFStringGetSystemEncoding() or GetApplicationTextEncoding().
+     * @param flavor               kCMImageDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
+     * @param formatDescriptionOut Receives new CMVideoFormatDescription.
      */
     @Generated
     @CFunction
@@ -3350,15 +3500,17 @@ public final class CoreMedia {
             @NUInt long size, int stringEncoding, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionCreateFromBigEndianImageDescriptionBlockBuffer
+     * [@function] CMVideoFormatDescriptionCreateFromBigEndianImageDescriptionBlockBuffer
      * <p>
      * Creates a CMVideoFormatDescription from a big-endian ImageDescription data structure in a CMBlockBuffer.
      *
-     * @param    allocator                        Allocator to use for allocating the CMVideoFormatDescription object. May be NULL.
-     * @param    imageDescriptionBlockBuffer        CMBlockBuffer containing ImageDescription data structure in big-endian byte ordering.
-     * @param    stringEncoding                    Pass CFStringGetSystemEncoding() or GetApplicationTextEncoding().
-     * @param    flavor                            kCMImageDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
-     * @param    formatDescriptionOut            Receives new CMVideoFormatDescription.
+     * @param allocator                   Allocator to use for allocating the CMVideoFormatDescription object. May be
+     *                                    NULL.
+     * @param imageDescriptionBlockBuffer CMBlockBuffer containing ImageDescription data structure in big-endian byte
+     *                                    ordering.
+     * @param stringEncoding              Pass CFStringGetSystemEncoding() or GetApplicationTextEncoding().
+     * @param flavor                      kCMImageDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
+     * @param formatDescriptionOut        Receives new CMVideoFormatDescription.
      */
     @Generated
     @CFunction
@@ -3367,20 +3519,21 @@ public final class CoreMedia {
             CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionCopyAsBigEndianImageDescriptionBlockBuffer
+     * [@function] CMVideoFormatDescriptionCopyAsBigEndianImageDescriptionBlockBuffer
      * <p>
      * Copies the contents of a CMVideoFormatDescription to a CMBlockBuffer in big-endian byte ordering.
      * <p>
      * On return, the caller owns the returned CMBlockBuffer, and must release it when done with it.
      * Note that the dataRefIndex field of the SampleDescription is intentionally filled with
-     * garbage values (0xFFFF).  The caller must overwrite these values with a valid dataRefIndex
+     * garbage values (0xFFFF). The caller must overwrite these values with a valid dataRefIndex
      * if writing the SampleDescription to a QuickTime/ISO file.
      *
-     * @param    allocator                        Allocator to use for allocating the CMBlockBuffer object. May be NULL.
-     * @param    videoFormatDescription            CMVideoFormatDescription to be copied.
-     * @param    stringEncoding                    Pass CFStringGetSystemEncoding() or GetApplicationTextEncoding().
-     * @param    flavor                            kCMImageDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
-     * @param    blockBufferOut                    Receives new CMBlockBuffer containing ImageDescription data structure in big-endian byte ordering.
+     * @param allocator              Allocator to use for allocating the CMBlockBuffer object. May be NULL.
+     * @param videoFormatDescription CMVideoFormatDescription to be copied.
+     * @param stringEncoding         Pass CFStringGetSystemEncoding() or GetApplicationTextEncoding().
+     * @param flavor                 kCMImageDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
+     * @param blockBufferOut         Receives new CMBlockBuffer containing ImageDescription data structure in big-endian
+     *                               byte ordering.
      */
     @Generated
     @CFunction
@@ -3389,12 +3542,13 @@ public final class CoreMedia {
             CFStringRef flavor, Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMSwapBigEndianImageDescriptionToHost
+     * [@function] CMSwapBigEndianImageDescriptionToHost
      * <p>
      * Converts an ImageDescription data structure from big-endian to host-endian in place.
      *
-     * @param    imageDescriptionData            ImageDescription data structure in big-endian byte ordering to be converted to host-endian byte ordering.
-     * @param    imageDescriptionSize            Size of ImageDescription data structure.
+     * @param imageDescriptionData ImageDescription data structure in big-endian byte ordering to be converted to
+     *                             host-endian byte ordering.
+     * @param imageDescriptionSize Size of ImageDescription data structure.
      */
     @Generated
     @CFunction
@@ -3402,12 +3556,13 @@ public final class CoreMedia {
             @NUInt long imageDescriptionSize);
 
     /**
-     * [@function]	CMSwapHostEndianImageDescriptionToBig
+     * [@function] CMSwapHostEndianImageDescriptionToBig
      * <p>
      * Converts an ImageDescription data structure from host-endian to big-endian in place.
      *
-     * @param    imageDescriptionData            ImageDescription data structure in host-endian byte ordering to be converted to big-endian byte ordering.
-     * @param    imageDescriptionSize            Size of ImageDescription data structure.
+     * @param imageDescriptionData ImageDescription data structure in host-endian byte ordering to be converted to
+     *                             big-endian byte ordering.
+     * @param imageDescriptionSize Size of ImageDescription data structure.
      */
     @Generated
     @CFunction
@@ -3415,15 +3570,15 @@ public final class CoreMedia {
             @NUInt long imageDescriptionSize);
 
     /**
-     * [@function]	CMAudioFormatDescriptionCreateFromBigEndianSoundDescriptionData
+     * [@function] CMAudioFormatDescriptionCreateFromBigEndianSoundDescriptionData
      * <p>
      * Creates a CMAudioFormatDescription from a big-endian SoundDescription data structure.
      *
-     * @param    allocator                        Allocator to use for allocating the CMAudioFormatDescription object. May be NULL.
-     * @param    soundDescriptionData            SoundDescription data structure in big-endian byte ordering.
-     * @param    size                            Size of SoundDescription data structure.
-     * @param    flavor                            kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
-     * @param    formatDescriptionOut            Receives new CMAudioFormatDescription.
+     * @param allocator            Allocator to use for allocating the CMAudioFormatDescription object. May be NULL.
+     * @param soundDescriptionData SoundDescription data structure in big-endian byte ordering.
+     * @param size                 Size of SoundDescription data structure.
+     * @param flavor               kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
+     * @param formatDescriptionOut Receives new CMAudioFormatDescription.
      */
     @Generated
     @CFunction
@@ -3432,14 +3587,16 @@ public final class CoreMedia {
             @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMAudioFormatDescriptionCreateFromBigEndianSoundDescriptionBlockBuffer
+     * [@function] CMAudioFormatDescriptionCreateFromBigEndianSoundDescriptionBlockBuffer
      * <p>
      * Creates a CMAudioFormatDescription from a big-endian SoundDescription data structure in a CMBlockBuffer.
      *
-     * @param    allocator                        Allocator to use for allocating the CMAudioFormatDescription object. May be NULL.
-     * @param    soundDescriptionBlockBuffer        CMBlockBuffer containing SoundDescription data structure in big-endian byte ordering.
-     * @param    flavor            kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
-     * @param    formatDescriptionOut        Receives new CMAudioFormatDescription.
+     * @param allocator                   Allocator to use for allocating the CMAudioFormatDescription object. May be
+     *                                    NULL.
+     * @param soundDescriptionBlockBuffer CMBlockBuffer containing SoundDescription data structure in big-endian byte
+     *                                    ordering.
+     * @param flavor                      kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
+     * @param formatDescriptionOut        Receives new CMAudioFormatDescription.
      */
     @Generated
     @CFunction
@@ -3448,19 +3605,20 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMAudioFormatDescriptionCopyAsBigEndianSoundDescriptionBlockBuffer
+     * [@function] CMAudioFormatDescriptionCopyAsBigEndianSoundDescriptionBlockBuffer
      * <p>
      * Copies the contents of a CMAudioFormatDescription to a CMBlockBuffer in big-endian byte ordering.
      * <p>
      * On return, the caller owns the returned CMBlockBuffer, and must release it when done with it.
      * Note that the dataRefIndex field of the SampleDescription is intentionally filled with
-     * garbage values (0xFFFF).  The caller must overwrite these values with a valid dataRefIndex
+     * garbage values (0xFFFF). The caller must overwrite these values with a valid dataRefIndex
      * if writing the SampleDescription to a QuickTime/ISO file.
      *
-     * @param    allocator                        Allocator to use for allocating the CMBlockBuffer object. May be NULL.
-     * @param    audioFormatDescription            CMAudioFormatDescription to be copied.
-     * @param    flavor                            kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
-     * @param    blockBufferOut                    Receives new CMBlockBuffer containing SoundDescription data structure in big-endian byte ordering.
+     * @param allocator              Allocator to use for allocating the CMBlockBuffer object. May be NULL.
+     * @param audioFormatDescription CMAudioFormatDescription to be copied.
+     * @param flavor                 kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
+     * @param blockBufferOut         Receives new CMBlockBuffer containing SoundDescription data structure in big-endian
+     *                               byte ordering.
      */
     @Generated
     @CFunction
@@ -3469,12 +3627,14 @@ public final class CoreMedia {
             Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMDoesBigEndianSoundDescriptionRequireLegacyCBRSampleTableLayout
+     * [@function] CMDoesBigEndianSoundDescriptionRequireLegacyCBRSampleTableLayout
      * <p>
-     * Examine a big-endian SoundDescription data structure in a CMBlockBuffer, and report whether the sample tables will need to use the legacy CBR layout.
+     * Examine a big-endian SoundDescription data structure in a CMBlockBuffer, and report whether the sample tables
+     * will need to use the legacy CBR layout.
      *
-     * @param    soundDescriptionBlockBuffer        CMBlockBuffer containing SoundDescription data structure in big-endian byte ordering.
-     * @param    flavor                            kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
+     * @param soundDescriptionBlockBuffer CMBlockBuffer containing SoundDescription data structure in big-endian byte
+     *                                    ordering.
+     * @param flavor                      kCMSoundDescriptionFlavor constant or NULL for QuickTimeMovie flavor.
      */
     @Generated
     @CFunction
@@ -3482,12 +3642,13 @@ public final class CoreMedia {
             CMBlockBufferRef soundDescriptionBlockBuffer, CFStringRef flavor);
 
     /**
-     * [@function]	CMSwapBigEndianSoundDescriptionToHost
+     * [@function] CMSwapBigEndianSoundDescriptionToHost
      * <p>
      * Converts a SoundDescription data structure from big-endian to host-endian in place.
      *
-     * @param    soundDescriptionData            SoundDescription data structure in big-endian byte ordering to be converted to host-endian byte ordering.
-     * @param    soundDescriptionSize            Size of SoundDescription data structure.
+     * @param soundDescriptionData SoundDescription data structure in big-endian byte ordering to be converted to
+     *                             host-endian byte ordering.
+     * @param soundDescriptionSize Size of SoundDescription data structure.
      */
     @Generated
     @CFunction
@@ -3495,12 +3656,13 @@ public final class CoreMedia {
             @NUInt long soundDescriptionSize);
 
     /**
-     * [@function]	CMSwapHostEndianSoundDescriptionToBig
+     * [@function] CMSwapHostEndianSoundDescriptionToBig
      * <p>
      * Converts a SoundDescription data structure from host-endian to big-endian in place.
      *
-     * @param    soundDescriptionData            SoundDescription data structure in host-endian byte ordering to be converted to big-endian byte ordering.
-     * @param    soundDescriptionSize            Size of SoundDescription data structure.
+     * @param soundDescriptionData SoundDescription data structure in host-endian byte ordering to be converted to
+     *                             big-endian byte ordering.
+     * @param soundDescriptionSize Size of SoundDescription data structure.
      */
     @Generated
     @CFunction
@@ -3508,16 +3670,16 @@ public final class CoreMedia {
             @NUInt long soundDescriptionSize);
 
     /**
-     * [@function]	CMTextFormatDescriptionCreateFromBigEndianTextDescriptionData
+     * [@function] CMTextFormatDescriptionCreateFromBigEndianTextDescriptionData
      * <p>
      * Creates a CMTextFormatDescription from a big-endian TextDescription data structure.
      *
-     * @param    allocator                        Allocator to use for allocating the CMTextFormatDescription object. May be NULL.
-     * @param    textDescriptionData                TextDescription data structure in big-endian byte ordering.
-     * @param    size                            Size of TextDescription data structure.
-     * @param    flavor                            Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    mediaType                        Pass kCMMediaType_Text or kCMMediaType_Subtitle.
-     * @param    formatDescriptionOut            Receives new CMTextFormatDescription.
+     * @param allocator            Allocator to use for allocating the CMTextFormatDescription object. May be NULL.
+     * @param textDescriptionData  TextDescription data structure in big-endian byte ordering.
+     * @param size                 Size of TextDescription data structure.
+     * @param flavor               Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param mediaType            Pass kCMMediaType_Text or kCMMediaType_Subtitle.
+     * @param formatDescriptionOut Receives new CMTextFormatDescription.
      */
     @Generated
     @CFunction
@@ -3526,15 +3688,17 @@ public final class CoreMedia {
             @NUInt long size, CFStringRef flavor, int mediaType, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMTextFormatDescriptionCreateFromBigEndianTextDescriptionBlockBuffer
+     * [@function] CMTextFormatDescriptionCreateFromBigEndianTextDescriptionBlockBuffer
      * <p>
      * Creates a CMTextFormatDescription from a big-endian TextDescription data structure in a CMBlockBuffer.
      *
-     * @param    allocator                        Allocator to use for allocating the CMTextFormatDescription object. May be NULL.
-     * @param    textDescriptionBlockBuffer        CMBlockBuffer containing TextDescription data structure in big-endian byte ordering.
-     * @param    flavor                            Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    mediaType                        Pass kCMMediaType_Text or kCMMediaType_Subtitle.
-     * @param    formatDescriptionOut            Receives new CMTextFormatDescription.
+     * @param allocator                  Allocator to use for allocating the CMTextFormatDescription object. May be
+     *                                   NULL.
+     * @param textDescriptionBlockBuffer CMBlockBuffer containing TextDescription data structure in big-endian byte
+     *                                   ordering.
+     * @param flavor                     Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param mediaType                  Pass kCMMediaType_Text or kCMMediaType_Subtitle.
+     * @param formatDescriptionOut       Receives new CMTextFormatDescription.
      */
     @Generated
     @CFunction
@@ -3543,19 +3707,20 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMTextFormatDescriptionCopyAsBigEndianTextDescriptionBlockBuffer
+     * [@function] CMTextFormatDescriptionCopyAsBigEndianTextDescriptionBlockBuffer
      * <p>
      * Copies the contents of a CMTextFormatDescription to a CMBlockBuffer in big-endian byte ordering.
      * <p>
      * On return, the caller owns the returned CMBlockBuffer, and must release it when done with it.
      * Note that the dataRefIndex field of the SampleDescription is intentionally filled with
-     * garbage values (0xFFFF).  The caller must overwrite these values with a valid dataRefIndex
+     * garbage values (0xFFFF). The caller must overwrite these values with a valid dataRefIndex
      * if writing the SampleDescription to a QuickTime/ISO file.
      *
-     * @param    allocator                        Allocator to use for allocating the CMBlockBuffer object. May be NULL.
-     * @param    textFormatDescription            CMTextFormatDescription to be copied.
-     * @param    flavor                            Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    blockBufferOut                    Receives new CMBlockBuffer containing TextDescription data structure in big-endian byte ordering.
+     * @param allocator             Allocator to use for allocating the CMBlockBuffer object. May be NULL.
+     * @param textFormatDescription CMTextFormatDescription to be copied.
+     * @param flavor                Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param blockBufferOut        Receives new CMBlockBuffer containing TextDescription data structure in big-endian
+     *                              byte ordering.
      */
     @Generated
     @CFunction
@@ -3563,12 +3728,13 @@ public final class CoreMedia {
             CMFormatDescriptionRef textFormatDescription, CFStringRef flavor, Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMSwapBigEndianTextDescriptionToHost
+     * [@function] CMSwapBigEndianTextDescriptionToHost
      * <p>
      * Converts a TextDescription data structure from big-endian to host-endian in place.
      *
-     * @param    textDescriptionData                TextDescription data structure in big-endian byte ordering to be converted to host-endian byte ordering.
-     * @param    textDescriptionSize                Size of TextDescription data structure.
+     * @param textDescriptionData TextDescription data structure in big-endian byte ordering to be converted to
+     *                            host-endian byte ordering.
+     * @param textDescriptionSize Size of TextDescription data structure.
      */
     @Generated
     @CFunction
@@ -3576,12 +3742,13 @@ public final class CoreMedia {
             @NUInt long textDescriptionSize);
 
     /**
-     * [@function]	CMSwapHostEndianTextDescriptionToBig
+     * [@function] CMSwapHostEndianTextDescriptionToBig
      * <p>
      * Converts a TextDescription data structure from host-endian to big-endian in place.
      *
-     * @param    textDescriptionData                TextDescription data structure in host-endian byte ordering to be converted to big-endian byte ordering.
-     * @param    textDescriptionSize                Size of TextDescription data structure.
+     * @param textDescriptionData TextDescription data structure in host-endian byte ordering to be converted to
+     *                            big-endian byte ordering.
+     * @param textDescriptionSize Size of TextDescription data structure.
      */
     @Generated
     @CFunction
@@ -3589,15 +3756,16 @@ public final class CoreMedia {
             @NUInt long textDescriptionSize);
 
     /**
-     * [@function]	CMClosedCaptionFormatDescriptionCreateFromBigEndianClosedCaptionDescriptionData
+     * [@function] CMClosedCaptionFormatDescriptionCreateFromBigEndianClosedCaptionDescriptionData
      * <p>
      * Creates a CMClosedCaptionFormatDescription from a big-endian ClosedCaptionDescription data structure.
      *
-     * @param    allocator                            Allocator to use for allocating the CMClosedCaptionFormatDescription object. May be NULL.
-     * @param    closedCaptionDescriptionData        ClosedCaptionDescription data structure in big-endian byte ordering.
-     * @param    size                                Size of ClosedCaptionDescription data structure.
-     * @param    flavor                                Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    formatDescriptionOut                Receives new CMClosedCaptionFormatDescription.
+     * @param allocator                    Allocator to use for allocating the CMClosedCaptionFormatDescription object.
+     *                                     May be NULL.
+     * @param closedCaptionDescriptionData ClosedCaptionDescription data structure in big-endian byte ordering.
+     * @param size                         Size of ClosedCaptionDescription data structure.
+     * @param flavor                       Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param formatDescriptionOut         Receives new CMClosedCaptionFormatDescription.
      */
     @Generated
     @CFunction
@@ -3607,14 +3775,17 @@ public final class CoreMedia {
             @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMClosedCaptionFormatDescriptionCreateFromBigEndianClosedCaptionDescriptionBlockBuffer
+     * [@function] CMClosedCaptionFormatDescriptionCreateFromBigEndianClosedCaptionDescriptionBlockBuffer
      * <p>
-     * Creates a CMClosedCaptionFormatDescription from a big-endian ClosedCaptionDescription data structure in a CMBlockBuffer.
+     * Creates a CMClosedCaptionFormatDescription from a big-endian ClosedCaptionDescription data structure in a
+     * CMBlockBuffer.
      *
-     * @param    allocator                            Allocator to use for allocating the CMClosedCaptionFormatDescription object. May be NULL.
-     * @param    closedCaptionDescriptionBlockBuffer    CMBlockBuffer containing ClosedCaptionDescription data structure in big-endian byte ordering.
-     * @param    flavor                                Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    formatDescriptionOut                Receives new CMClosedCaptionFormatDescription.
+     * @param allocator                           Allocator to use for allocating the CMClosedCaptionFormatDescription
+     *                                            object. May be NULL.
+     * @param closedCaptionDescriptionBlockBuffer CMBlockBuffer containing ClosedCaptionDescription data structure in
+     *                                            big-endian byte ordering.
+     * @param flavor                              Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param formatDescriptionOut                Receives new CMClosedCaptionFormatDescription.
      */
     @Generated
     @CFunction
@@ -3623,19 +3794,20 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMClosedCaptionFormatDescriptionCopyAsBigEndianClosedCaptionDescriptionBlockBuffer
+     * [@function] CMClosedCaptionFormatDescriptionCopyAsBigEndianClosedCaptionDescriptionBlockBuffer
      * <p>
      * Copies the contents of a CMClosedCaptionFormatDescription to a CMBlockBuffer in big-endian byte ordering.
      * <p>
      * On return, the caller owns the returned CMBlockBuffer, and must release it when done with it.
      * Note that the dataRefIndex field of the SampleDescription is intentionally filled with
-     * garbage values (0xFFFF).  The caller must overwrite these values with a valid dataRefIndex
+     * garbage values (0xFFFF). The caller must overwrite these values with a valid dataRefIndex
      * if writing the SampleDescription to a QuickTime/ISO file.
      *
-     * @param    allocator                            Allocator to use for allocating the CMBlockBuffer object. May be NULL.
-     * @param    closedCaptionFormatDescription        CMClosedCaptionFormatDescription to be copied.
-     * @param    flavor                                Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    blockBufferOut                        Receives new CMBlockBuffer containing ClosedCaptionDescription data structure in big-endian byte ordering.
+     * @param allocator                      Allocator to use for allocating the CMBlockBuffer object. May be NULL.
+     * @param closedCaptionFormatDescription CMClosedCaptionFormatDescription to be copied.
+     * @param flavor                         Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param blockBufferOut                 Receives new CMBlockBuffer containing ClosedCaptionDescription data
+     *                                       structure in big-endian byte ordering.
      */
     @Generated
     @CFunction
@@ -3644,12 +3816,13 @@ public final class CoreMedia {
             Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMSwapBigEndianClosedCaptionDescriptionToHost
+     * [@function] CMSwapBigEndianClosedCaptionDescriptionToHost
      * <p>
      * Converts a ClosedCaptionDescription data structure from big-endian to host-endian in place.
      *
-     * @param    closedCaptionDescriptionData    ClosedCaptionDescription data structure in big-endian byte ordering to be converted to host-endian byte ordering.
-     * @param    closedCaptionDescriptionSize    Size of ClosedCaptionDescription data structure.
+     * @param closedCaptionDescriptionData ClosedCaptionDescription data structure in big-endian byte ordering to be
+     *                                     converted to host-endian byte ordering.
+     * @param closedCaptionDescriptionSize Size of ClosedCaptionDescription data structure.
      */
     @Generated
     @CFunction
@@ -3657,12 +3830,13 @@ public final class CoreMedia {
             @NUInt long closedCaptionDescriptionSize);
 
     /**
-     * [@function]	CMSwapHostEndianClosedCaptionDescriptionToBig
+     * [@function] CMSwapHostEndianClosedCaptionDescriptionToBig
      * <p>
      * Converts a ClosedCaptionDescription data structure from host-endian to big-endian in place.
      *
-     * @param    closedCaptionDescriptionData    ClosedCaptionDescription data structure in host-endian byte ordering to be converted to big-endian byte ordering.
-     * @param    closedCaptionDescriptionSize    Size of ClosedCaptionDescription data structure.
+     * @param closedCaptionDescriptionData ClosedCaptionDescription data structure in host-endian byte ordering to be
+     *                                     converted to big-endian byte ordering.
+     * @param closedCaptionDescriptionSize Size of ClosedCaptionDescription data structure.
      */
     @Generated
     @CFunction
@@ -3670,15 +3844,16 @@ public final class CoreMedia {
             @NUInt long closedCaptionDescriptionSize);
 
     /**
-     * [@function]	CMTimeCodeFormatDescriptionCreateFromBigEndianTimeCodeDescriptionData
+     * [@function] CMTimeCodeFormatDescriptionCreateFromBigEndianTimeCodeDescriptionData
      * <p>
      * Creates a CMTimeCodeFormatDescription from a big-endian TimeCodeDescription data structure.
      *
-     * @param    allocator                        Allocator to use for allocating the CMTimeCodeFormatDescription object. May be NULL.
-     * @param    timeCodeDescriptionData            TimeCodeDescription data structure in big-endian byte ordering.
-     * @param    size                            Size of TimeCodeDescription data structure.
-     * @param    flavor                            Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    formatDescriptionOut            Receives new CMTimeCodeFormatDescription.
+     * @param allocator               Allocator to use for allocating the CMTimeCodeFormatDescription object. May be
+     *                                NULL.
+     * @param timeCodeDescriptionData TimeCodeDescription data structure in big-endian byte ordering.
+     * @param size                    Size of TimeCodeDescription data structure.
+     * @param flavor                  Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param formatDescriptionOut    Receives new CMTimeCodeFormatDescription.
      */
     @Generated
     @CFunction
@@ -3688,14 +3863,16 @@ public final class CoreMedia {
             @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMTimeCodeFormatDescriptionCreateFromBigEndianTimeCodeDescriptionBlockBuffer
+     * [@function] CMTimeCodeFormatDescriptionCreateFromBigEndianTimeCodeDescriptionBlockBuffer
      * <p>
      * Creates a CMTimeCodeFormatDescription from a big-endian TimeCodeDescription data structure in a CMBlockBuffer.
      *
-     * @param    allocator                        Allocator to use for allocating the CMTimeCodeFormatDescription object. May be NULL.
-     * @param    timeCodeDescriptionBlockBuffer    CMBlockBuffer containing TimeCodeDescription data structure in big-endian byte ordering.
-     * @param    flavor                            Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    formatDescriptionOut            Receives new CMTimeCodeFormatDescription.
+     * @param allocator                      Allocator to use for allocating the CMTimeCodeFormatDescription object. May
+     *                                       be NULL.
+     * @param timeCodeDescriptionBlockBuffer CMBlockBuffer containing TimeCodeDescription data structure in big-endian
+     *                                       byte ordering.
+     * @param flavor                         Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param formatDescriptionOut           Receives new CMTimeCodeFormatDescription.
      */
     @Generated
     @CFunction
@@ -3704,19 +3881,20 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMTimeCodeFormatDescriptionCopyAsBigEndianTimeCodeDescriptionBlockBuffer
+     * [@function] CMTimeCodeFormatDescriptionCopyAsBigEndianTimeCodeDescriptionBlockBuffer
      * <p>
      * Copies the contents of a CMTimeCodeFormatDescription to a CMBlockBuffer in big-endian byte ordering.
      * <p>
      * On return, the caller owns the returned CMBlockBuffer, and must release it when done with it.
      * Note that the dataRefIndex field of the SampleDescription is intentionally filled with
-     * garbage values (0xFFFF).  The caller must overwrite these values with a valid dataRefIndex
+     * garbage values (0xFFFF). The caller must overwrite these values with a valid dataRefIndex
      * if writing the SampleDescription to a QuickTime/ISO file.
      *
-     * @param    allocator                    Allocator to use for allocating the CMBlockBuffer object. May be NULL.
-     * @param    timeCodeFormatDescription    CMTimeCodeFormatDescription to be copied.
-     * @param    flavor                        Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    blockBufferOut                Receives new CMBlockBuffer containing TimeCodeDescription data structure in big-endian byte ordering.
+     * @param allocator                 Allocator to use for allocating the CMBlockBuffer object. May be NULL.
+     * @param timeCodeFormatDescription CMTimeCodeFormatDescription to be copied.
+     * @param flavor                    Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param blockBufferOut            Receives new CMBlockBuffer containing TimeCodeDescription data structure in
+     *                                  big-endian byte ordering.
      */
     @Generated
     @CFunction
@@ -3725,12 +3903,13 @@ public final class CoreMedia {
             Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMSwapBigEndianTimeCodeDescriptionToHost
+     * [@function] CMSwapBigEndianTimeCodeDescriptionToHost
      * <p>
      * Converts a TimeCodeDescription data structure from big-endian to host-endian in place.
      *
-     * @param    timeCodeDescriptionData            TimeCodeDescription data structure in big-endian byte ordering to be converted to host-endian byte ordering.
-     * @param    timeCodeDescriptionSize            Size of TimeCodeDescription data structure.
+     * @param timeCodeDescriptionData TimeCodeDescription data structure in big-endian byte ordering to be converted to
+     *                                host-endian byte ordering.
+     * @param timeCodeDescriptionSize Size of TimeCodeDescription data structure.
      */
     @Generated
     @CFunction
@@ -3738,12 +3917,13 @@ public final class CoreMedia {
             @NUInt long timeCodeDescriptionSize);
 
     /**
-     * [@function]	CMSwapHostEndianTimeCodeDescriptionToBig
+     * [@function] CMSwapHostEndianTimeCodeDescriptionToBig
      * <p>
      * Converts a TimeCodeDescription data structure from host-endian to big-endian in place.
      *
-     * @param    timeCodeDescriptionData            TimeCodeDescription data structure in host-endian byte ordering to be converted to big-endian byte ordering.
-     * @param    timeCodeDescriptionSize            Size of TimeCodeDescription data structure.
+     * @param timeCodeDescriptionData TimeCodeDescription data structure in host-endian byte ordering to be converted to
+     *                                big-endian byte ordering.
+     * @param timeCodeDescriptionSize Size of TimeCodeDescription data structure.
      */
     @Generated
     @CFunction
@@ -3751,15 +3931,16 @@ public final class CoreMedia {
             @NUInt long timeCodeDescriptionSize);
 
     /**
-     * [@function]	CMMetadataFormatDescriptionCreateFromBigEndianMetadataDescriptionData
+     * [@function] CMMetadataFormatDescriptionCreateFromBigEndianMetadataDescriptionData
      * <p>
      * Creates a CMMetadataFormatDescription from a big-endian MetadataDescription data structure.
      *
-     * @param    allocator                    Allocator to use for allocating the CMMetadataFormatDescription object. May be NULL.
-     * @param    metadataDescriptionData        MetadataDescription data structure in big-endian byte ordering.
-     * @param    size                        Size of MetadataDescription data structure.
-     * @param    flavor                        Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    formatDescriptionOut        Receives new CMMetadataFormatDescriptionRef.
+     * @param allocator               Allocator to use for allocating the CMMetadataFormatDescription object. May be
+     *                                NULL.
+     * @param metadataDescriptionData MetadataDescription data structure in big-endian byte ordering.
+     * @param size                    Size of MetadataDescription data structure.
+     * @param flavor                  Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param formatDescriptionOut    Receives new CMMetadataFormatDescriptionRef.
      */
     @Generated
     @CFunction
@@ -3769,14 +3950,16 @@ public final class CoreMedia {
             @NUInt long size, CFStringRef flavor, Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMMetadataFormatDescriptionCreateFromBigEndianMetadataDescriptionBlockBuffer
+     * [@function] CMMetadataFormatDescriptionCreateFromBigEndianMetadataDescriptionBlockBuffer
      * <p>
      * Creates a CMMetadataFormatDescription from a big-endian MetadataDescription data structure in a CMBlockBuffer.
      *
-     * @param    allocator                        Allocator to use for allocating the CMMetadataFormatDescription object. May be NULL.
-     * @param    metadataDescriptionBlockBuffer    CMBlockBuffer containing MetadataDescription data structure in big-endian byte ordering.
-     * @param    flavor                            Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    formatDescriptionOut            Receives new CMMetadataFormatDescriptionRef.
+     * @param allocator                      Allocator to use for allocating the CMMetadataFormatDescription object. May
+     *                                       be NULL.
+     * @param metadataDescriptionBlockBuffer CMBlockBuffer containing MetadataDescription data structure in big-endian
+     *                                       byte ordering.
+     * @param flavor                         Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param formatDescriptionOut           Receives new CMMetadataFormatDescriptionRef.
      */
     @Generated
     @CFunction
@@ -3785,19 +3968,20 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMMetadataFormatDescriptionCopyAsBigEndianMetadataDescriptionBlockBuffer
+     * [@function] CMMetadataFormatDescriptionCopyAsBigEndianMetadataDescriptionBlockBuffer
      * <p>
      * Copies the contents of a CMMetadataFormatDescription to a CMBlockBuffer in big-endian byte ordering.
      * <p>
      * On return, the caller owns the returned CMBlockBuffer, and must release it when done with it.
      * Note that the dataRefIndex field of the SampleDescription is intentionally filled with
-     * garbage values (0xFFFF).  The caller must overwrite these values with a valid dataRefIndex
+     * garbage values (0xFFFF). The caller must overwrite these values with a valid dataRefIndex
      * if writing the SampleDescription to a QuickTime/ISO file.
      *
-     * @param    allocator                    Allocator to use for allocating the CMBlockBuffer object. May be NULL.
-     * @param    metadataFormatDescription    CMMetadataFormatDescriptionRef to be copied.
-     * @param    flavor                        Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
-     * @param    blockBufferOut                Receives new CMBlockBuffer containing MetadataDescription data structure in big-endian byte ordering.
+     * @param allocator                 Allocator to use for allocating the CMBlockBuffer object. May be NULL.
+     * @param metadataFormatDescription CMMetadataFormatDescriptionRef to be copied.
+     * @param flavor                    Reserved for future use. Pass NULL for QuickTime Movie or ISO flavor.
+     * @param blockBufferOut            Receives new CMBlockBuffer containing MetadataDescription data structure in
+     *                                  big-endian byte ordering.
      */
     @Generated
     @CFunction
@@ -3806,12 +3990,13 @@ public final class CoreMedia {
             Ptr<CMBlockBufferRef> blockBufferOut);
 
     /**
-     * [@function]	CMSwapBigEndianMetadataDescriptionToHost
+     * [@function] CMSwapBigEndianMetadataDescriptionToHost
      * <p>
      * Converts a MetadataDescription data structure from big-endian to host-endian in place.
      *
-     * @param    metadataDescriptionData            MetadataDescription data structure in big-endian byte ordering to be converted to host-endian byte ordering.
-     * @param    metadataDescriptionSize            Size of MetadataDescription data structure.
+     * @param metadataDescriptionData MetadataDescription data structure in big-endian byte ordering to be converted to
+     *                                host-endian byte ordering.
+     * @param metadataDescriptionSize Size of MetadataDescription data structure.
      */
     @Generated
     @CFunction
@@ -3819,12 +4004,13 @@ public final class CoreMedia {
             @NUInt long metadataDescriptionSize);
 
     /**
-     * [@function]	CMSwapHostEndianMetadataDescriptionToBig
+     * [@function] CMSwapHostEndianMetadataDescriptionToBig
      * <p>
      * Converts a MetadataDescription data structure from host-endian to big-endian in place.
      *
-     * @param    metadataDescriptionData            MetadataDescription data structure in host-endian byte ordering to be converted to big-endian byte ordering.
-     * @param    metadataDescriptionSize            Size of MetadataDescription data structure.
+     * @param metadataDescriptionData MetadataDescription data structure in host-endian byte ordering to be converted to
+     *                                big-endian byte ordering.
+     * @param metadataDescriptionSize Size of MetadataDescription data structure.
      */
     @Generated
     @CFunction
@@ -3832,7 +4018,7 @@ public final class CoreMedia {
             @NUInt long metadataDescriptionSize);
 
     /**
-     * [@function]	CMBufferQueueGetCallbacksForUnsortedSampleBuffers
+     * [@function] CMBufferQueueGetCallbacksForUnsortedSampleBuffers
      * <p>
      * Returns a pointer to a callback struct for unsorted CMSampleBuffers, provided as a convenience.
      */
@@ -3842,9 +4028,10 @@ public final class CoreMedia {
     public static native CMBufferCallbacks CMBufferQueueGetCallbacksForUnsortedSampleBuffers();
 
     /**
-     * [@function]	CMBufferQueueGetCallbacksForOutputPTSSortedSampleBuffers
+     * [@function] CMBufferQueueGetCallbacksForOutputPTSSortedSampleBuffers
      * <p>
-     * Returns a pointer to a callback struct for CMSampleBuffers sorted by output presentation timestamp, provided as a convenience.
+     * Returns a pointer to a callback struct for CMSampleBuffers sorted by output presentation timestamp, provided as a
+     * convenience.
      */
     @Generated
     @CFunction
@@ -3852,7 +4039,7 @@ public final class CoreMedia {
     public static native CMBufferCallbacks CMBufferQueueGetCallbacksForSampleBuffersSortedByOutputPTS();
 
     /**
-     * [@function]	CMBufferQueueCreate
+     * [@function] CMBufferQueueCreate
      * <p>
      * Creates a CMBufferQueue object.
      * <p>
@@ -3865,11 +4052,12 @@ public final class CoreMedia {
             Ptr<CMBufferQueueRef> queueOut);
 
     /**
-     * [@function]	CMBufferQueueGetTypeID
+     * [@function] CMBufferQueueGetTypeID
      * <p>
      * Returns the CFTypeID of CMBufferQueue objects.
      * <p>
-     * You can check if a CFTypeRef object is actually a CMBufferQueue by comparing CFGetTypeID(object) with CMBufferQueueGetTypeID().
+     * You can check if a CFTypeRef object is actually a CMBufferQueue by comparing CFGetTypeID(object) with
+     * CMBufferQueueGetTypeID().
      *
      * @return CFTypeID of CMBufferQueue objects.
      */
@@ -3879,7 +4067,7 @@ public final class CoreMedia {
     public static native long CMBufferQueueGetTypeID();
 
     /**
-     * [@function]   CMBufferQueueEnqueue
+     * [@function] CMBufferQueueEnqueue
      * <p>
      * Enqueues a buffer onto a CMBufferQueue.
      * <p>
@@ -3893,37 +4081,38 @@ public final class CoreMedia {
     public static native int CMBufferQueueEnqueue(CMBufferQueueRef queue, ConstVoidPtr buf);
 
     /**
-     * [@function]   CMBufferQueueDequeueAndRetain
+     * [@function] CMBufferQueueDequeueAndRetain
      * <p>
      * Dequeues a buffer from a CMBufferQueue.
      * <p>
      * The buffer is released by the queue, but it is also retained for the client. Buffer ownership is thereby
-     * transferred from queue to client.  The client need not retain the buffer, but is responsible to release
+     * transferred from queue to client. The client need not retain the buffer, but is responsible to release
      * it when done with it.
      *
-     * @return The dequeued buffer.  Will be NULL if the queue is empty.
+     * @return The dequeued buffer. Will be NULL if the queue is empty.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMBufferQueueDequeueAndRetain(CMBufferQueueRef queue);
 
     /**
-     * [@function]   CMBufferQueueDequeueIfDataReadyAndRetain
+     * [@function] CMBufferQueueDequeueIfDataReadyAndRetain
      * <p>
      * Dequeues a buffer from a CMBufferQueue if it is ready.
      * <p>
      * The buffer is released by the queue, but it is also retained for the client. Buffer ownership is thereby
-     * transferred from queue to client.  The client need not retain the buffer, but is responsible to release
+     * transferred from queue to client. The client need not retain the buffer, but is responsible to release
      * it when done with it.
      *
-     * @return The dequeued buffer.  Will be NULL if the queue is empty, or if the buffer to be dequeued is not yet ready.
+     * @return The dequeued buffer. Will be NULL if the queue is empty, or if the buffer to be dequeued is not yet
+     *         ready.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMBufferQueueDequeueIfDataReadyAndRetain(CMBufferQueueRef queue);
 
     /**
-     * [@function]   CMBufferQueueGetHead
+     * [@function] CMBufferQueueGetHead
      * <p>
      * Retrieves the next-to-dequeue buffer from a CMBufferQueue but leaves it in the queue.
      * <p>
@@ -3931,14 +4120,14 @@ public final class CoreMedia {
      * Note that with non-FIFO queues it's not guaranteed that the next dequeue will return
      * this particular buffer (if an intervening Enqueue adds a buffer that will dequeue next).
      *
-     * @return The buffer.  Will be NULL if the queue is empty.
+     * @return The buffer. Will be NULL if the queue is empty.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMBufferQueueGetHead(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueIsEmpty
+     * [@function] CMBufferQueueIsEmpty
      * <p>
      * Returns whether or not a CMBufferQueue is empty.
      *
@@ -3949,7 +4138,7 @@ public final class CoreMedia {
     public static native byte CMBufferQueueIsEmpty(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueMarkEndOfData
+     * [@function] CMBufferQueueMarkEndOfData
      * <p>
      * Marks a CMBufferQueue with EOD.
      * <p>
@@ -3961,37 +4150,37 @@ public final class CoreMedia {
     public static native int CMBufferQueueMarkEndOfData(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueContainsEndOfData
+     * [@function] CMBufferQueueContainsEndOfData
      * <p>
      * Returns whether or not a CMBufferQueue has been marked with EOD.
      *
      * @return Whether or not the CMBufferQueue has been marked with EOD.
-     * If queue is NULL, true is returned (a NULL queue is considered to
-     * be empty, and permanently at EOD).
+     *         If queue is NULL, true is returned (a NULL queue is considered to
+     *         be empty, and permanently at EOD).
      */
     @Generated
     @CFunction
     public static native byte CMBufferQueueContainsEndOfData(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueIsAtEndOfData
+     * [@function] CMBufferQueueIsAtEndOfData
      * <p>
      * Returns whether or not a CMBufferQueue has been marked with EOD, and is now empty.
      *
      * @return Whether or not the CMBufferQueue has been marked with EOD, and is now empty.
-     * If queue is NULL, true is returned (a NULL queue is considered to
-     * be empty, and permanently at EOD).
+     *         If queue is NULL, true is returned (a NULL queue is considered to
+     *         be empty, and permanently at EOD).
      */
     @Generated
     @CFunction
     public static native byte CMBufferQueueIsAtEndOfData(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueReset
+     * [@function] CMBufferQueueReset
      * <p>
      * Resets a CMBufferQueue. Empties the queue, and clears any EOD mark.
      * <p>
-     * All buffers in the queue are released.  Triggers are not removed, however,
+     * All buffers in the queue are released. Triggers are not removed, however,
      * and will be called appropriately as the queue duration goes to zero.
      */
     @Generated
@@ -3999,7 +4188,7 @@ public final class CoreMedia {
     public static native int CMBufferQueueReset(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueResetWithCallback
+     * [@function] CMBufferQueueResetWithCallback
      * <p>
      * Calls a function for every buffer in a queue, then resets the queue.
      */
@@ -4010,7 +4199,7 @@ public final class CoreMedia {
             VoidPtr refcon);
 
     /**
-     * [@function]	CMBufferQueueGetBufferCount
+     * [@function] CMBufferQueueGetBufferCount
      * <p>
      * Gets the number of buffers in the queue.
      */
@@ -4020,13 +4209,13 @@ public final class CoreMedia {
     public static native long CMBufferQueueGetBufferCount(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetDuration
+     * [@function] CMBufferQueueGetDuration
      * <p>
      * Gets the duration of a CMBufferQueue.
      * <p>
      * The duration of the CMBufferQueue is the sum of all the individual
      * buffer durations, as reported by the getDuration callback (provided to
-     * CMBufferQueueCreate).  If there are no buffers in the queue,
+     * CMBufferQueueCreate). If there are no buffers in the queue,
      * kCMTimeZero will be returned.
      */
     @Generated
@@ -4035,13 +4224,13 @@ public final class CoreMedia {
     public static native CMTime CMBufferQueueGetDuration(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetMinDecodeTimeStamp
+     * [@function] CMBufferQueueGetMinDecodeTimeStamp
      * <p>
      * Gets the earliest decode timestamp of a CMBufferQueue.
      * <p>
      * The search for earliest decode timstamp is performed in this API.
      * If you know your queue is in decode order, GetFirstDecodeTimeStamp
-     * is a faster alternative.  If the getDecodeTimeStamp callback is
+     * is a faster alternative. If the getDecodeTimeStamp callback is
      * NULL, kCMTimeInvalid will be returned.
      */
     @Generated
@@ -4050,7 +4239,7 @@ public final class CoreMedia {
     public static native CMTime CMBufferQueueGetMinDecodeTimeStamp(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetFirstDecodeTimeStamp
+     * [@function] CMBufferQueueGetFirstDecodeTimeStamp
      * <p>
      * Gets the decode timestamp of the first buffer in a CMBufferQueue.
      * <p>
@@ -4065,7 +4254,7 @@ public final class CoreMedia {
     public static native CMTime CMBufferQueueGetFirstDecodeTimeStamp(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetMinPresentationTimeStamp
+     * [@function] CMBufferQueueGetMinPresentationTimeStamp
      * <p>
      * Gets the earliest presentation timestamp of a CMBufferQueue.
      * <p>
@@ -4081,7 +4270,7 @@ public final class CoreMedia {
     public static native CMTime CMBufferQueueGetMinPresentationTimeStamp(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetFirstPresentationTimeStamp
+     * [@function] CMBufferQueueGetFirstPresentationTimeStamp
      * <p>
      * Gets the presentation timestamp of the first buffer in a CMBufferQueue.
      * <p>
@@ -4096,7 +4285,7 @@ public final class CoreMedia {
     public static native CMTime CMBufferQueueGetFirstPresentationTimeStamp(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetMaxPresentationTimeStamp
+     * [@function] CMBufferQueueGetMaxPresentationTimeStamp
      * <p>
      * Gets the greatest presentation timestamp of a CMBufferQueue.
      * <p>
@@ -4109,7 +4298,7 @@ public final class CoreMedia {
     public static native CMTime CMBufferQueueGetMaxPresentationTimeStamp(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetEndPresentationTimeStamp
+     * [@function] CMBufferQueueGetEndPresentationTimeStamp
      * <p>
      * Gets the greatest end presentation timestamp of a CMBufferQueue.
      * <p>
@@ -4123,13 +4312,13 @@ public final class CoreMedia {
     public static native CMTime CMBufferQueueGetEndPresentationTimeStamp(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueGetTotalSize
+     * [@function] CMBufferQueueGetTotalSize
      * <p>
      * Gets the total size of all sample buffers of a CMBufferQueue.
      * <p>
      * The total size of the CMBufferQueue is the sum of all the individual
      * buffer sizes, as reported by the getTotalSize callback (provided to
-     * CMBufferQueueCreate).  If there are no buffers in the queue,
+     * CMBufferQueueCreate). If there are no buffers in the queue,
      * 0 will be returned.
      */
     @Generated
@@ -4138,16 +4327,16 @@ public final class CoreMedia {
     public static native long CMBufferQueueGetTotalSize(CMBufferQueueRef queue);
 
     /**
-     * [@function]	CMBufferQueueInstallTrigger
+     * [@function] CMBufferQueueInstallTrigger
      * <p>
      * Installs a trigger on a CMBufferQueue.
      * <p>
      * The returned trigger token can be passed to CMBufferQueueTestTrigger and CMBufferQueueRemoveTrigger.
      * The triggerTokenOut parameter can be NULL (client doesn't need to test or remove trigger), and the
      * callback parameter can be NULL (client doesn't need callbacks, but rather will explicitly
-     * test the trigger).  One of these two parameters must be non-NULL, however, since an untestable
-     * trigger that does not perform a callback is meaningless.  If the trigger condition is already true,
-     * CMBufferQueueInstallTrigger will call the callback.  If it does this, it will first write
+     * test the trigger). One of these two parameters must be non-NULL, however, since an untestable
+     * trigger that does not perform a callback is meaningless. If the trigger condition is already true,
+     * CMBufferQueueInstallTrigger will call the callback. If it does this, it will first write
      * the trigger token to *triggerTokenOut.
      */
     @Generated
@@ -4157,7 +4346,7 @@ public final class CoreMedia {
             VoidPtr refcon, int condition, @ByValue CMTime time, Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
 
     /**
-     * [@function]	CMBufferQueueInstallTriggerWithIntegerThreshold
+     * [@function] CMBufferQueueInstallTriggerWithIntegerThreshold
      * <p>
      * Installs a trigger on a CMBufferQueue.
      * <p>
@@ -4171,13 +4360,13 @@ public final class CoreMedia {
             VoidPtr refcon, int condition, @NInt long threshold, Ptr<CMBufferQueueTriggerToken> triggerTokenOut);
 
     /**
-     * [@function]	CMBufferQueueRemoveTrigger
+     * [@function] CMBufferQueueRemoveTrigger
      * <p>
      * Removes a previously installed trigger from a CMBufferQueue.
      * <p>
-     * Triggers will automatically be removed when a queue is finalized.  However, if more
+     * Triggers will automatically be removed when a queue is finalized. However, if more
      * than one module has access to a queue, it may be hard for an individual module to know
-     * when the queue is finalized since other modules may retain it.  To address this concern,
+     * when the queue is finalized since other modules may retain it. To address this concern,
      * modules should remove their triggers before they themselves are finalized.
      */
     @Generated
@@ -4185,7 +4374,7 @@ public final class CoreMedia {
     public static native int CMBufferQueueRemoveTrigger(CMBufferQueueRef queue, CMBufferQueueTriggerToken triggerToken);
 
     /**
-     * [@function]	CMBufferQueueTestTrigger
+     * [@function] CMBufferQueueTestTrigger
      * <p>
      * Tests whether the trigger condition is true.
      * <p>
@@ -4198,7 +4387,7 @@ public final class CoreMedia {
     public static native byte CMBufferQueueTestTrigger(CMBufferQueueRef queue, CMBufferQueueTriggerToken triggerToken);
 
     /**
-     * [@function]	CMBufferQueueCallForEachBuffer
+     * [@function] CMBufferQueueCallForEachBuffer
      * <p>
      * Calls a function for every buffer in a queue.
      * <p>
@@ -4212,7 +4401,7 @@ public final class CoreMedia {
             VoidPtr refcon);
 
     /**
-     * [@function]	CMBufferQueueSetValidationCallback
+     * [@function] CMBufferQueueSetValidationCallback
      * <p>
      * Sets a function that CMBufferQueueEnqueue will call to validate buffers before adding them to the queue.
      */
@@ -4223,7 +4412,7 @@ public final class CoreMedia {
             VoidPtr refcon);
 
     /**
-     * [@function]	CMSimpleQueueGetTypeID
+     * [@function] CMSimpleQueueGetTypeID
      * <p>
      * Returns the CFTypeID of CMSimpleQueue objects.
      * <p>
@@ -4238,14 +4427,14 @@ public final class CoreMedia {
     public static native long CMSimpleQueueGetTypeID();
 
     /**
-     * [@function]	CMSimpleQueueCreate
+     * [@function] CMSimpleQueueCreate
      * <p>
      * Creates a CMSimpleQueue.
      * <p>
      * On return, the caller owns the returned CMSimpleQueue, and must release it when done with it.
      *
-     * @return Returns noErr if the call succeeds.  Returns kCMSimpleQueueError_ParameterOutOfRange if
-     * capacity is negative.
+     * @return Returns noErr if the call succeeds. Returns kCMSimpleQueueError_ParameterOutOfRange if
+     *         capacity is negative.
      */
     @Generated
     @CFunction
@@ -4253,7 +4442,7 @@ public final class CoreMedia {
             Ptr<CMSimpleQueueRef> queueOut);
 
     /**
-     * [@function]	CMSimpleQueueEnqueue
+     * [@function] CMSimpleQueueEnqueue
      * <p>
      * Enqueues an element on the queue.
      * <p>
@@ -4266,38 +4455,38 @@ public final class CoreMedia {
     public static native int CMSimpleQueueEnqueue(CMSimpleQueueRef queue, ConstVoidPtr element);
 
     /**
-     * [@function]	CMSimpleQueueDequeue
+     * [@function] CMSimpleQueueDequeue
      * <p>
      * Dequeues an element from the queue.
      * <p>
      * If the queue is empty, NULL will be returned.
      *
-     * @return The dequeued element.  NULL if the queue was empty, or if there was some other error.
+     * @return The dequeued element. NULL if the queue was empty, or if there was some other error.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMSimpleQueueDequeue(CMSimpleQueueRef queue);
 
     /**
-     * [@function]	CMSimpleQueueGetHead
+     * [@function] CMSimpleQueueGetHead
      * <p>
      * Returns the element at the head of the queue.
      * <p>
      * If the queue is empty, NULL will be returned.
      *
-     * @return The head element.  NULL if the queue was empty, or if there was some other error.
+     * @return The head element. NULL if the queue was empty, or if there was some other error.
      */
     @Generated
     @CFunction
     public static native ConstVoidPtr CMSimpleQueueGetHead(CMSimpleQueueRef queue);
 
     /**
-     * [@function]	CMSimpleQueueReset
+     * [@function] CMSimpleQueueReset
      * <p>
      * Resets the queue.
      * <p>
-     * This function resets the queue to its empty state;  all values
-     * in the queue prior to reset are lost.   Note that CMSimpleQueueReset
+     * This function resets the queue to its empty state; all values
+     * in the queue prior to reset are lost. Note that CMSimpleQueueReset
      * is not synchronized in any way, so the reader thread and writer thread
      * must be held off by the client during this operation.
      *
@@ -4308,19 +4497,19 @@ public final class CoreMedia {
     public static native int CMSimpleQueueReset(CMSimpleQueueRef queue);
 
     /**
-     * [@function]	CMSimpleQueueGetCapacity
+     * [@function] CMSimpleQueueGetCapacity
      * <p>
      * Returns the number of elements that can be held in the queue.
      *
-     * @return The number of elements that can be held in the queue.  Returns
-     * 0 if there is an error.
+     * @return The number of elements that can be held in the queue. Returns
+     *         0 if there is an error.
      */
     @Generated
     @CFunction
     public static native int CMSimpleQueueGetCapacity(CMSimpleQueueRef queue);
 
     /**
-     * [@function]	CMSimpleQueueGetCount
+     * [@function] CMSimpleQueueGetCount
      * <p>
      * Returns the number of elements currently on the queue.
      *
@@ -4336,7 +4525,7 @@ public final class CoreMedia {
     public static native long CMMemoryPoolGetTypeID();
 
     /**
-     * [@function]	CMMemoryPoolCreate
+     * [@function] CMMemoryPoolCreate
      * <p>
      * Creates a new CMMemoryPool.
      */
@@ -4345,7 +4534,7 @@ public final class CoreMedia {
     public static native CMMemoryPoolRef CMMemoryPoolCreate(CFDictionaryRef options);
 
     /**
-     * [@function]	CMMemoryPoolGetAllocator
+     * [@function] CMMemoryPoolGetAllocator
      * <p>
      * Returns the pool's CFAllocator.
      */
@@ -4354,7 +4543,7 @@ public final class CoreMedia {
     public static native CFAllocatorRef CMMemoryPoolGetAllocator(CMMemoryPoolRef pool);
 
     /**
-     * [@function]	CMMemoryPoolFlush
+     * [@function] CMMemoryPoolFlush
      * <p>
      * Deallocates all memory the pool was holding for recycling.
      */
@@ -4363,7 +4552,7 @@ public final class CoreMedia {
     public static native void CMMemoryPoolFlush(CMMemoryPoolRef pool);
 
     /**
-     * [@function]	CMMemoryPoolInvalidate
+     * [@function] CMMemoryPoolInvalidate
      * <p>
      * Stops the pool from recycling.
      * <p>
@@ -4377,53 +4566,53 @@ public final class CoreMedia {
     public static native void CMMemoryPoolInvalidate(CMMemoryPoolRef pool);
 
     /**
-     * [@function]	CMMetadataCreateIdentifierForKeyAndKeySpace
+     * [@function] CMMetadataCreateIdentifierForKeyAndKeySpace
      * <p>
      * Creates a URL-like string identifier that represents a key/keyspace tuple.
      * <p>
      * Metadata entities are identified by a key whose interpretation
-     * is defined by its keyspace.  When writing metadata to a QuickTime
+     * is defined by its keyspace. When writing metadata to a QuickTime
      * Movie, this tuple is part of the track's format description.
      * <p>
      * The following constants make up the current list of supported keyspaces,
      * which are documented elsewhere in this file:
-     * <ul>				kCMMetadataKeySpace_QuickTimeUserData
-     * <li>				kCMMetadataKeySpace_ISOUserData
-     * <li>				kCMMetadataKeySpace_iTunes
-     * <li>				kCMMetadataKeySpace_ID3
-     * <li>				kCMMetadataKeySpace_QuickTimeMetadata
-     * <li>				kCMMetadataKeySpace_Icy
+     * <ul> kCMMetadataKeySpace_QuickTimeUserData
+     * <li> kCMMetadataKeySpace_ISOUserData
+     * <li> kCMMetadataKeySpace_iTunes
+     * <li> kCMMetadataKeySpace_ID3
+     * <li> kCMMetadataKeySpace_QuickTimeMetadata
+     * <li> kCMMetadataKeySpace_Icy
      * </ul>
-     * 				Some keyspaces use OSTypes (a.k.a. FourCharCodes) to define their
-     * 				keys, and as such their keys are four bytes in length. The keyspaces
-     * 				that fall into this category are: kCMMetadataKeySpace_QuickTimeUserData,
-     * 				kCMMetadataKeySpace_ISOUserData, kCMMetadataKeySpace_iTunes, and
-     * 				kCMMetadataKeySpace_ID3.
+     * Some keyspaces use OSTypes (a.k.a. FourCharCodes) to define their
+     * keys, and as such their keys are four bytes in length. The keyspaces
+     * that fall into this category are: kCMMetadataKeySpace_QuickTimeUserData,
+     * kCMMetadataKeySpace_ISOUserData, kCMMetadataKeySpace_iTunes, and
+     * kCMMetadataKeySpace_ID3.
      * <p>
-     * 				The keyspace kCMMetadataKeySpace_QuickTimeMetadata defines its
-     * 				key values to be expressed as reverse-DNS strings, which allows
-     * 				third parties to define their own keys in a well established way
-     * 				that avoids collisions.
+     * The keyspace kCMMetadataKeySpace_QuickTimeMetadata defines its
+     * key values to be expressed as reverse-DNS strings, which allows
+     * third parties to define their own keys in a well established way
+     * that avoids collisions.
      * <p>
-     * 				As a matter of convenience, known keyspaces allow for a key
-     * 				to be passed in using a variety of CFTypes.  Note that what
-     * 				is returned by CMMetadataCreateKeyFromIdentifier depends upon the
-     * 				keyspace, and may be a different CFType than what is passed
-     * 				to this routine (see the discussion below for what CFTypes are
-     * 				returned for known keyspaces).  To get a key represented as
-     * 				CFData, call CMMetadataCreateKeyFromIdentifierAsCFData.
+     * As a matter of convenience, known keyspaces allow for a key
+     * to be passed in using a variety of CFTypes. Note that what
+     * is returned by CMMetadataCreateKeyFromIdentifier depends upon the
+     * keyspace, and may be a different CFType than what is passed
+     * to this routine (see the discussion below for what CFTypes are
+     * returned for known keyspaces). To get a key represented as
+     * CFData, call CMMetadataCreateKeyFromIdentifierAsCFData.
      * <p>
-     * 				For OSType keyspaces, a key may be passed as a CFNumber,
-     * 				a CFString, or a CFData. A key passed as a CFNumber will have
-     * 				its value retrieved as kCFNumberSInt32Type comprising the four
-     * 				bytes of the key’s numeric value in big-endian byte order.
-     * 				A key passed as a CFString must be a valid ASCII string of four
-     * 				characters. A key passed as a CFData must be comprised of the
-     * 				four bytes of the key’s numeric value in big-endian byte order.
+     * For OSType keyspaces, a key may be passed as a CFNumber,
+     * a CFString, or a CFData. A key passed as a CFNumber will have
+     * its value retrieved as kCFNumberSInt32Type comprising the four
+     * bytes of the key’s numeric value in big-endian byte order.
+     * A key passed as a CFString must be a valid ASCII string of four
+     * characters. A key passed as a CFData must be comprised of the
+     * four bytes of the key’s numeric value in big-endian byte order.
      * <p>
-     * 				All other keyspaces allow the key to be passed as a CFString
-     * 				or CFData. In both cases, the key will be interpreted as an
-     * 				ASCII string for the purposes of identifier encoding.
+     * All other keyspaces allow the key to be passed as a CFString
+     * or CFData. In both cases, the key will be interpreted as an
+     * ASCII string for the purposes of identifier encoding.
      */
     @Generated
     @CFunction
@@ -4431,7 +4620,7 @@ public final class CoreMedia {
             CFStringRef keySpace, Ptr<CFStringRef> identifierOut);
 
     /**
-     * [@function]	CMMetadataCreateKeyFromIdentifier
+     * [@function] CMMetadataCreateKeyFromIdentifier
      * <p>
      * Creates a copy of the key encoded in the identifier as a CFType.
      * <p>
@@ -4452,7 +4641,7 @@ public final class CoreMedia {
             Ptr<ConstVoidPtr> keyOut);
 
     /**
-     * [@function]	CMMetadataCreateKeyFromIdentifierAsCFData
+     * [@function] CMMetadataCreateKeyFromIdentifierAsCFData
      * <p>
      * Creates a copy of the key value that was encoded in the identifier as CFData.
      * The bytes in the CFData correpsond to how they are serialized in the file.
@@ -4463,7 +4652,7 @@ public final class CoreMedia {
             Ptr<CFDataRef> keyOut);
 
     /**
-     * [@function]	CMMetadataCreateKeySpaceFromIdentifier
+     * [@function] CMMetadataCreateKeySpaceFromIdentifier
      * <p>
      * Creates a copy of the key value that was encoded in the identifier as CFData.
      */
@@ -4473,16 +4662,16 @@ public final class CoreMedia {
             Ptr<CFStringRef> keySpaceOut);
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryRegisterDataType
+     * [@function] CMMetadataDataTypeRegistryRegisterDataType
      * <p>
      * Register a data type with the data type registry.
      * <p>
      * This routine is called by clients to register a data type with
-     * the data type registry.  The list of conforming data type identifiers
-     * must include a base data type.  If the data type has already
+     * the data type registry. The list of conforming data type identifiers
+     * must include a base data type. If the data type has already
      * been registered, then it is not considered an error to re-register it
      * as long as the list of conforming data type identifiers has the same
-     * entries as the original;  otherwise an error will be returned.
+     * entries as the original; otherwise an error will be returned.
      */
     @Generated
     @CFunction
@@ -4490,7 +4679,7 @@ public final class CoreMedia {
             CFArrayRef conformingDataTypes);
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryDataTypeIsRegistered
+     * [@function] CMMetadataDataTypeRegistryDataTypeIsRegistered
      * <p>
      * Tests a data type identifier to see if it has been registered.
      */
@@ -4499,7 +4688,7 @@ public final class CoreMedia {
     public static native byte CMMetadataDataTypeRegistryDataTypeIsRegistered(CFStringRef dataType);
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryGetDataTypeDescription
+     * [@function] CMMetadataDataTypeRegistryGetDataTypeDescription
      * <p>
      * Returns the data type's description (if any was provided when it was registered).
      */
@@ -4508,11 +4697,11 @@ public final class CoreMedia {
     public static native CFStringRef CMMetadataDataTypeRegistryGetDataTypeDescription(CFStringRef dataType);
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryGetConformingDataTypes
+     * [@function] CMMetadataDataTypeRegistryGetConformingDataTypes
      * <p>
      * Returns the data type's conforming data types (if any were
      * provided when it was registered).
-     * [@returns]	List of conforming data types registered for the given data type.
+     * [@returns] List of conforming data types registered for the given data type.
      * NULL is returned if the data type has not been registered.
      */
     @Generated
@@ -4520,18 +4709,18 @@ public final class CoreMedia {
     public static native CFArrayRef CMMetadataDataTypeRegistryGetConformingDataTypes(CFStringRef dataType);
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryDataTypeConformsToDataType
+     * [@function] CMMetadataDataTypeRegistryDataTypeConformsToDataType
      * <p>
      * Checks to see if a data type conforms to another data type.
      * <p>
      * A given data type will conform to a second data type if any of
      * the following are true:
-     * <ul>				1. The data type identifiers are the same.
-     * <li>				2. The first data type identifier's conformance list contains the second data type identifier.
-     * <li>				3. A recursive search of the conforming data types for each element in the first
-     * <li>				   data type's conformance list yields the second data type identifer.
+     * <ul> 1. The data type identifiers are the same.
+     * <li> 2. The first data type identifier's conformance list contains the second data type identifier.
+     * <li> 3. A recursive search of the conforming data types for each element in the first
+     * <li> data type's conformance list yields the second data type identifer.
      * </ul>
-     * 	[@returns]	True if the first data type conforms to the second data type.
+     * [@returns] True if the first data type conforms to the second data type.
      */
     @Generated
     @CFunction
@@ -4539,12 +4728,12 @@ public final class CoreMedia {
             CFStringRef conformsToDataType);
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryGetBaseDataTypes
+     * [@function] CMMetadataDataTypeRegistryGetBaseDataTypes
      * <p>
      * Returns an array of base data type identifiers.
      * <p>
      * There are a set of base data types that seed the data type
-     * registry.  All valid data types will have their conformance search
+     * registry. All valid data types will have their conformance search
      * end with a base data type.
      */
     @Generated
@@ -4552,7 +4741,7 @@ public final class CoreMedia {
     public static native CFArrayRef CMMetadataDataTypeRegistryGetBaseDataTypes();
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryDataTypeIsBaseDataType
+     * [@function] CMMetadataDataTypeRegistryDataTypeIsBaseDataType
      * <p>
      * Tests a data type identifier to see if it represents a base data type.
      * <p>
@@ -4565,13 +4754,13 @@ public final class CoreMedia {
     public static native byte CMMetadataDataTypeRegistryDataTypeIsBaseDataType(CFStringRef dataType);
 
     /**
-     * [@function]	CMMetadataDataTypeRegistryGetBaseDataTypeForConformingDataType
+     * [@function] CMMetadataDataTypeRegistryGetBaseDataTypeForConformingDataType
      * <p>
      * Returns the base data type identifier that the given data type
      * conforms to.
      * <p>
      * There are a set of base data types that seed the data type
-     * registry.  All valid data types will have their conformance search
+     * registry. All valid data types will have their conformance search
      * end with a base data type.
      */
     @Generated
@@ -4580,7 +4769,7 @@ public final class CoreMedia {
             CFStringRef dataType);
 
     /**
-     * [@function]	CMAudioClockCreate
+     * [@function] CMAudioClockCreate
      * <p>
      * Creates a clock that advances at the same rate as audio output.
      * <p>
@@ -4590,10 +4779,10 @@ public final class CoreMedia {
      * This clock is suitable for use as AVPlayer.masterClock when synchronizing video-only playback
      * with audio played through other APIs or objects.
      *
-     * @param    allocator A CFAllocator to use to allocate the clock.
-     * Pass kCFAllocatorDefault or NULL to use the default allocator.
-     * @param    clockOut Points to a CMClockRef to receive the newly created clock.
-     * The caller is responsible for calling CFRelease to release this clock.
+     * @param allocator A CFAllocator to use to allocate the clock.
+     *                  Pass kCFAllocatorDefault or NULL to use the default allocator.
+     * @param clockOut  Points to a CMClockRef to receive the newly created clock.
+     *                  The caller is responsible for calling CFRelease to release this clock.
      */
     @Generated
     @CFunction
@@ -4719,7 +4908,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionExtension_OriginalCompressionSettings();
 
     /**
-     * CFDictionary of CFString (four-char-code, atom type) -> ( CFData (atom payload) or CFArray of CFData (atom payload) )
+     * CFDictionary of CFString (four-char-code, atom type) -> ( CFData (atom payload) or CFArray of CFData (atom
+     * payload) )
      */
     @Generated
     @CVariable()
@@ -4754,7 +4944,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionExtension_Depth();
 
     /**
-     * Many of the following extension keys and values are the same as the corresponding CVImageBuffer attachment keys and values
+     * Many of the following extension keys and values are the same as the corresponding CVImageBuffer attachment keys
+     * and values
      */
     @Generated
     @CVariable()
@@ -4901,7 +5092,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionTransferFunction_UseGamma();
 
     /**
-     * same as kCVImageBufferTransferFunction_ITU_R_2020. note: semantically equivalent to kCMFormatDescriptionTransferFunction_ITU_R_709_2, which is preferred.
+     * same as kCVImageBufferTransferFunction_ITU_R_2020. note: semantically equivalent to
+     * kCMFormatDescriptionTransferFunction_ITU_R_709_2, which is preferred.
      */
     @Generated
     @CVariable()
@@ -4942,7 +5134,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionYCbCrMatrix_ITU_R_2020();
 
     /**
-     * CFBoolean; by default, false for YCbCr-based compressed formats, indicating that pixel values are video-range rather than full-range
+     * CFBoolean; by default, false for YCbCr-based compressed formats, indicating that pixel values are video-range
+     * rather than full-range
      */
     @Generated
     @CVariable()
@@ -4956,7 +5149,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionExtension_ICCProfile();
 
     /**
-     * CFNumber describing the bytes per row of raster pixel data (not used for compressed, planar, tiled or downsampled formats)
+     * CFNumber describing the bytes per row of raster pixel data (not used for compressed, planar, tiled or downsampled
+     * formats)
      */
     @Generated
     @CVariable()
@@ -5362,7 +5556,7 @@ public final class CoreMedia {
     public static native CMSampleTimingInfo kCMTimingInfoInvalid();
 
     /**
-     * [@constant]	kCMSampleBufferNotification_DataBecameReady
+     * [@constant] kCMSampleBufferNotification_DataBecameReady
      * <p>
      * Posted on a CMSampleBuffer by CMSampleBufferSetDataReady when the buffer becomes ready.
      */
@@ -5371,7 +5565,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferNotification_DataBecameReady();
 
     /**
-     * [@constant]	kCMSampleBufferNotification_DataFailed
+     * [@constant] kCMSampleBufferNotification_DataFailed
      * <p>
      * Posted on a CMSampleBuffer by CMSampleBufferSetDataFailed to report that the buffer will never become ready.
      */
@@ -5398,7 +5592,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferConduitNotificationParameter_ResumeTag();
 
     /**
-     * [@constant]	kCMSampleBufferConduitNotification_ResetOutput
+     * [@constant] kCMSampleBufferConduitNotification_ResetOutput
      * <p>
      * Posted on a conduit of CMSampleBuffers (eg, a CMBufferQueue) to request invalidation of pending output data.
      */
@@ -5526,15 +5720,16 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferAttachmentKey_ResumeOutput();
 
     /**
-     * [@constant]	kCMSampleBufferAttachmentKey_TransitionID
+     * [@constant] kCMSampleBufferAttachmentKey_TransitionID
      * <p>
      * Marks a transition from one source of buffers (eg. song) to another
      * <p>
-     * For example, during gapless playback of a list of songs, this attachment marks the first buffer from the next song.
+     * For example, during gapless playback of a list of songs, this attachment marks the first buffer from the next
+     * song.
      * If this attachment is on a buffer containing no samples, the first following buffer that contains samples is the
-     * buffer that contains the first samples from the next song.  The value of this attachment is a CFTypeRef.  This
+     * buffer that contains the first samples from the next song. The value of this attachment is a CFTypeRef. This
      * transition identifier should be unique within a playlist, so each transition in a playlist is uniquely
-     * identifiable.  A CFNumberRef counter that increments with each transition is a simple example.
+     * identifiable. A CFNumberRef counter that increments with each transition is a simple example.
      */
     @Generated
     @CVariable()
@@ -5590,7 +5785,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferAttachmentKey_PermanentEmptyMedia();
 
     /**
-     * [@constant]	kCMSampleBufferAttachmentKey_DisplayEmptyMediaImmediately
+     * [@constant] kCMSampleBufferAttachmentKey_DisplayEmptyMediaImmediately
      * <p>
      * Tells that the empty marker should be dequeued immediately regardless of its timestamp.
      * <p>
@@ -5639,12 +5834,12 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferAttachmentKey_DroppedFrameReason();
 
     /**
-     * [@constant]	kCMSampleBufferDroppedFrameReason_FrameWasLate
+     * [@constant] kCMSampleBufferDroppedFrameReason_FrameWasLate
      * <p>
      * The frame was dropped because it was late
      * <p>
      * The value of kCMSampleBufferAttachmentKey_DroppedFrameReason if a video capture client has indicated
-     * that late video frames should be dropped and the current frame is late.  This condition is typically
+     * that late video frames should be dropped and the current frame is late. This condition is typically
      * caused by the client's processing taking too long.
      */
     @Generated
@@ -5652,12 +5847,12 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferDroppedFrameReason_FrameWasLate();
 
     /**
-     * [@constant]	kCMSampleBufferDroppedFrameReason_OutOfBuffers
+     * [@constant] kCMSampleBufferDroppedFrameReason_OutOfBuffers
      * <p>
      * The frame was dropped because the module providing frames is out of buffers
      * <p>
      * The value of kCMSampleBufferAttachmentKey_DroppedFrameReason if the module providing sample buffers
-     * has run out of source buffers.  This condition is typically caused by the client holding onto
+     * has run out of source buffers. This condition is typically caused by the client holding onto
      * buffers for too long and can be alleviated by returning buffers to the provider.
      */
     @Generated
@@ -5665,12 +5860,12 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferDroppedFrameReason_OutOfBuffers();
 
     /**
-     * [@constant]	kCMSampleBufferDroppedFrameReason_Discontinuity
+     * [@constant] kCMSampleBufferDroppedFrameReason_Discontinuity
      * <p>
      * An unknown number of frames were dropped
      * <p>
      * The value of kCMSampleBufferAttachmentKey_DroppedFrameReason if the module providing sample buffers
-     * has experienced a discontinuity, and an unknown number of frames have been lost.  This condition is
+     * has experienced a discontinuity, and an unknown number of frames have been lost. This condition is
      * typically caused by the system being too busy.
      */
     @Generated
@@ -5678,24 +5873,26 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferDroppedFrameReason_Discontinuity();
 
     /**
-     * [@constant]	kCMSampleBufferAttachmentKey_DroppedFrameReasonInfo
+     * [@constant] kCMSampleBufferAttachmentKey_DroppedFrameReasonInfo
      * <p>
      * Indicates additional information regarding the dropped video frame.
      * <p>
-     * Sample buffers with this attachment contain no image or data buffer.  They mark a dropped video
-     * frame. If present, this attachment provides additional information about the kCMSampleBufferAttachmentKey_DroppedFrameReason.
+     * Sample buffers with this attachment contain no image or data buffer. They mark a dropped video
+     * frame. If present, this attachment provides additional information about the
+     * kCMSampleBufferAttachmentKey_DroppedFrameReason.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCMSampleBufferAttachmentKey_DroppedFrameReasonInfo();
 
     /**
-     * [@constant]	kCMSampleBufferDroppedFrameReasonInfo_CameraModeSwitch
+     * [@constant] kCMSampleBufferDroppedFrameReasonInfo_CameraModeSwitch
      * <p>
      * A discontinuity was caused by a camera mode switch.
      * <p>
      * The value of kCMSampleBufferAttachmentKey_DroppedFrameReasonInfo if the module providing sample buffers
-     * has experienced a discontinuity due to a camera mode switch. Short discontinuities of this type can occur when the
+     * has experienced a discontinuity due to a camera mode switch. Short discontinuities of this type can occur when
+     * the
      * session is configured for still image capture on some devices.
      */
     @Generated
@@ -5738,14 +5935,24 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferLensStabilizationInfo_Off();
 
     /**
-     * [@constant]	kCMSampleBufferAttachmentKey_ForceKeyFrame
+     * [@constant] kCMSampleBufferAttachmentKey_ForceKeyFrame
      * <p>
      * Indicates that the current or next video sample buffer should be forced to be encoded as a key frame.
      * <p>
-     * A value of kCFBooleanTrue for kCMSampleBufferAttachmentKey_ForceKeyFrame indicates that the current or next video sample buffer processed in the stream should be forced to be encoded as a key frame.
-     * If this attachment is present and kCFBooleanTrue on a sample buffer with a video frame, that video frame will be forced to become a key frame.  If the sample buffer for which this is present and kCFBooleanTrue does not have a valid video frame, the next sample buffer processed that contains a valid video frame will be encoded as a key frame.
+     * A value of kCFBooleanTrue for kCMSampleBufferAttachmentKey_ForceKeyFrame indicates that the current or next video
+     * sample buffer processed in the stream should be forced to be encoded as a key frame.
+     * If this attachment is present and kCFBooleanTrue on a sample buffer with a video frame, that video frame will be
+     * forced to become a key frame. If the sample buffer for which this is present and kCFBooleanTrue does not have a
+     * valid video frame, the next sample buffer processed that contains a valid video frame will be encoded as a key
+     * frame.
      * <p>
-     * Usual care should be taken when setting attachments on sample buffers whose orgins and destinations are ambiguous.  For example, CMSetAttachment() is not thread-safe, and CMSampleBuffers may be used in multiple sample buffer streams in a given system.  This can lead to crashes during concurrent access and/or unexpected behavior on alternate sample buffer streams.  Therefore, unless the orgin and destination of a sample buffer is known, the general recommended practice is to synthesize an empty sample buffer with this attachment alone and insert it into the sample buffer stream ahead of the concrete sample buffer rather than setting this attachment on the concrete sample buffer itself.
+     * Usual care should be taken when setting attachments on sample buffers whose orgins and destinations are
+     * ambiguous. For example, CMSetAttachment() is not thread-safe, and CMSampleBuffers may be used in multiple sample
+     * buffer streams in a given system. This can lead to crashes during concurrent access and/or unexpected behavior on
+     * alternate sample buffer streams. Therefore, unless the orgin and destination of a sample buffer is known, the
+     * general recommended practice is to synthesize an empty sample buffer with this attachment alone and insert it
+     * into the sample buffer stream ahead of the concrete sample buffer rather than setting this attachment on the
+     * concrete sample buffer itself.
      */
     @Generated
     @CVariable()
@@ -5801,7 +6008,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMSoundDescriptionFlavor_QuickTimeMovie();
 
     /**
-     * [@constant]	kCMSoundDescriptionFlavor_QuickTimeMovieV2
+     * [@constant] kCMSoundDescriptionFlavor_QuickTimeMovieV2
      * <p>
      * Chooses the QuickTime Movie Sound Description V2 format.
      * <p>
@@ -5834,12 +6041,14 @@ public final class CoreMedia {
     public static native CFStringRef kCMMemoryPoolOption_AgeOutPeriod();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_ForegroundColorARGB
+     * [@const] kCMTextMarkupAttribute_ForegroundColorARGB
      * <p>
      * The foreground color for text.
      * <p>
-     * Value must be a CFArray of 4 CFNumbers representing alpha, red, green, and blue fields with values between 0.0 and 1.0. The
-     * red, green and blue components are interpreted in the sRGB color space. The alpha indicates the opacity from 0.0 for transparent to
+     * Value must be a CFArray of 4 CFNumbers representing alpha, red, green, and blue fields with values between 0.0
+     * and 1.0. The
+     * red, green and blue components are interpreted in the sRGB color space. The alpha indicates the opacity from 0.0
+     * for transparent to
      * 1.0 for 100% opaque.
      */
     @Generated
@@ -5847,12 +6056,14 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_ForegroundColorARGB();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_BackgroundColorARGB
+     * [@const] kCMTextMarkupAttribute_BackgroundColorARGB
      * <p>
      * The background color for the shape holding the text.
      * <p>
-     * Value must be a CFArray of 4 CFNumbers representing alpha, red, green, and blue fields with values between 0.0 and 1.0. The
-     * red, green and blue components are interpreted in the sRGB color space. The alpha indicates the opacity from 0.0 for transparent to
+     * Value must be a CFArray of 4 CFNumbers representing alpha, red, green, and blue fields with values between 0.0
+     * and 1.0. The
+     * red, green and blue components are interpreted in the sRGB color space. The alpha indicates the opacity from 0.0
+     * for transparent to
      * 1.0 for 100% opaque.
      * <p>
      * The color applies to the geometry (e.g., a box) containing the text. The container's background color may have an
@@ -5867,12 +6078,14 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_BackgroundColorARGB();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_CharacterBackgroundColorARGB
+     * [@const] kCMTextMarkupAttribute_CharacterBackgroundColorARGB
      * <p>
      * The background color behind individual text characters.
      * <p>
-     * Value must be a CFArray of 4 CFNumbers representing alpha, red, green, and blue fields with values between 0.0 and 1.0. The
-     * red, green and blue components are interpreted in the sRGB color space. The alpha indicates the opacity from 0.0 for transparent to
+     * Value must be a CFArray of 4 CFNumbers representing alpha, red, green, and blue fields with values between 0.0
+     * and 1.0. The
+     * red, green and blue components are interpreted in the sRGB color space. The alpha indicates the opacity from 0.0
+     * for transparent to
      * 1.0 for 100% opaque.
      */
     @Generated
@@ -5880,7 +6093,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_CharacterBackgroundColorARGB();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_BoldStyle
+     * [@const] kCMTextMarkupAttribute_BoldStyle
      * <p>
      * Allows the setting of a bold style to be applied.
      * <p>
@@ -5894,7 +6107,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_BoldStyle();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_ItalicStyle
+     * [@const] kCMTextMarkupAttribute_ItalicStyle
      * <p>
      * Allows the setting of an italic style to be applied.
      * <p>
@@ -5908,7 +6121,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_ItalicStyle();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_UnderlineStyle
+     * [@const] kCMTextMarkupAttribute_UnderlineStyle
      * <p>
      * Allows the setting of an underline to be applied at render
      * time.
@@ -5923,14 +6136,15 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_UnderlineStyle();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_FontFamilyName
+     * [@const] kCMTextMarkupAttribute_FontFamilyName
      * <p>
      * The name of the font.
      * <p>
      * Value must be a CFString holding the family name of an installed font
      * (e.g., "Helvetica") that is used to render and/or measure text.
      * <p>
-     * When vended by legible output, an attributed string will have at most one of kCMTextMarkupAttribute_FontFamilyName or
+     * When vended by legible output, an attributed string will have at most one of
+     * kCMTextMarkupAttribute_FontFamilyName or
      * kCMTextMarkupAttribute_GenericFontFamilyName associated with each character.
      */
     @Generated
@@ -5938,23 +6152,29 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_FontFamilyName();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_GenericFontFamilyName
+     * [@const] kCMTextMarkupAttribute_GenericFontFamilyName
      * <p>
      * The attribute holding a generic font family identifier.
      * <p>
-     * Value must be a CFString holding a generic font family name that is one of the kCMTextMarkupGenericFontName_* constants.
-     * Generic fonts must be mapped to the family name of an installed font (e.g., kCMTextMarkupGenericFontName_SansSerif -> "Helvetica")
+     * Value must be a CFString holding a generic font family name that is one of the kCMTextMarkupGenericFontName_*
+     * constants.
+     * Generic fonts must be mapped to the family name of an installed font (e.g.,
+     * kCMTextMarkupGenericFontName_SansSerif -> "Helvetica")
      * before rendering and/or measuring text.
      * <p>
-     * When vended by legible output, an attributed string will have at most one of kCMTextMarkupAttribute_FontFamilyName or
+     * When vended by legible output, an attributed string will have at most one of
+     * kCMTextMarkupAttribute_FontFamilyName or
      * kCMTextMarkupAttribute_GenericFontFamilyName associated with each character.
      * <p>
      * Overview of Generic Font Family Names
      * =====================================
-     * Some media formats allow the specification of font family names to be used to style text they carry. Sometimes, an
+     * Some media formats allow the specification of font family names to be used to style text they carry. Sometimes,
+     * an
      * external specification (e.g., CSS) may be used to style the text carried by the media format. In either case, the
-     * specification may be concrete, indicating an installed platform font (e.g., "Times New Roman", Helvetica). It may be
-     * abstract, indicating a category of font to use (e.g., serif, sans-serif). This abstract designation is often termed
+     * specification may be concrete, indicating an installed platform font (e.g., "Times New Roman", Helvetica). It may
+     * be
+     * abstract, indicating a category of font to use (e.g., serif, sans-serif). This abstract designation is often
+     * termed
      * a "generic font family".
      * <p>
      * CSS for example allows a 'font-family' property specification such as this:
@@ -5963,22 +6183,32 @@ public final class CoreMedia {
      * <p>
      * This uses both the concrete family name "Helvetica" and the generic family name "sans-serif".
      * <p>
-     * Generic font families may be common across media formats (e.g., both CSS and 3GPP timed text allow "sans-serif" and "serif").
-     * Other formats may have generic font identifiers that do not align exactly (e.g., TTML allows "monospaceSerif and "monospaceSansSerif" in
-     * addition to "monospace"). Some formats might not carry names but have numeric values mapping to a generic font identifier.
+     * Generic font families may be common across media formats (e.g., both CSS and 3GPP timed text allow "sans-serif"
+     * and "serif").
+     * Other formats may have generic font identifiers that do not align exactly (e.g., TTML allows "monospaceSerif and
+     * "monospaceSansSerif" in
+     * addition to "monospace"). Some formats might not carry names but have numeric values mapping to a generic font
+     * identifier.
      * Simply put, different formats use different ways to express their generic fonts.
      * <p>
-     * The use of generic font families is also important for media accessibility. The Media Accessibility framework can map eight categories
-     * of abstract fonts to an installed font. Users may choose to override each of these categories to a different installed font. This
-     * remapping should work if the content or external styling indicates a generic font. It should not however try to remap a concrete font like "Helvetica".
+     * The use of generic font families is also important for media accessibility. The Media Accessibility framework can
+     * map eight categories
+     * of abstract fonts to an installed font. Users may choose to override each of these categories to a different
+     * installed font. This
+     * remapping should work if the content or external styling indicates a generic font. It should not however try to
+     * remap a concrete font like "Helvetica".
      * Consequently, it is important to distinguish between the generic and concrete fonts expressed by the author.
      * <p>
-     * To accommodate what is expressible in media formats and to support media accessibility overrides, generic font families can be
-     * specified with the kCMTextMarkupAttribute_GenericFontFamilyName attribute which carries the identifier for one of the various
-     * generic font specification forms supported across media formats. These generic font identifiers are the kCMTextMarkupGenericFontName_*
+     * To accommodate what is expressible in media formats and to support media accessibility overrides, generic font
+     * families can be
+     * specified with the kCMTextMarkupAttribute_GenericFontFamilyName attribute which carries the identifier for one of
+     * the various
+     * generic font specification forms supported across media formats. These generic font identifiers are the
+     * kCMTextMarkupGenericFontName_*
      * prefixed constants also defined here. New identifers may be added in the future.
      * <p>
-     * Concrete fonts are specified using the kCMTextMarkupAttribute_FontFamilyName attribute also defined in this header.
+     * Concrete fonts are specified using the kCMTextMarkupAttribute_FontFamilyName attribute also defined in this
+     * header.
      */
     @Generated
     @CVariable()
@@ -5987,41 +6217,44 @@ public final class CoreMedia {
     /**
      * Values for kCMTextMarkupAttribute_GenericFontFamilyName.
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_Default
+     * [@const] kCMTextMarkupGenericFontName_Default
      * The generic font name indicating the default font. The default font may also be chosen if no font family is
-     * specified (i.e., no kCMTextMarkupAttribute_FontFamilyName or kCMTextMarkupAttribute_GenericFontFamilyName is specified).
+     * specified (i.e., no kCMTextMarkupAttribute_FontFamilyName or kCMTextMarkupAttribute_GenericFontFamilyName is
+     * specified).
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_Serif
-     * The generic font name indicating a font with serifs. The font may be proportional or monospaced. E.g., Times New Roman
+     * [@const] kCMTextMarkupGenericFontName_Serif
+     * The generic font name indicating a font with serifs. The font may be proportional or monospaced. E.g., Times New
+     * Roman
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_SansSerif
-     * The generic font name indicating a font without serifs. The font may be proportional or monospaced. E.g., Helvetica
+     * [@const] kCMTextMarkupGenericFontName_SansSerif
+     * The generic font name indicating a font without serifs. The font may be proportional or monospaced. E.g.,
+     * Helvetica
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_Monospace
+     * [@const] kCMTextMarkupGenericFontName_Monospace
      * The generic font name indicating a monospaced font, with or without serifs. E.g., Courier
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_ProportionalSerif
+     * [@const] kCMTextMarkupGenericFontName_ProportionalSerif
      * The generic font name indicating a proportional font with serifs.
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_ProportionalSansSerif
+     * [@const] kCMTextMarkupGenericFontName_ProportionalSansSerif
      * The generic font name indicating a proportional font without serifs.
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_MonospaceSerif
+     * [@const] kCMTextMarkupGenericFontName_MonospaceSerif
      * The generic font name indicating a monospaced font with serifs.
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_MonospaceSansSerif
+     * [@const] kCMTextMarkupGenericFontName_MonospaceSansSerif
      * The generic font name indicating a monospaced font without serifs.
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_Casual
+     * [@const] kCMTextMarkupGenericFontName_Casual
      * The generic font name indicating a "casual" font. E.g., Dom or Impress
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_Cursive
+     * [@const] kCMTextMarkupGenericFontName_Cursive
      * The generic font name indicating a cursive font. E.g., Coronet or Marigold
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_Fantasy
+     * [@const] kCMTextMarkupGenericFontName_Fantasy
      * The generic font name indicating a "fantasy" font.
      * <p>
-     * [@const]      kCMTextMarkupGenericFontName_SmallCapital
+     * [@const] kCMTextMarkupGenericFontName_SmallCapital
      * The generic font name indicating a font with lowercase letters set as small capitals. E.g., Engravers Gothic
      */
     @Generated
@@ -6073,25 +6306,26 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupGenericFontName_SmallCapital();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_BaseFontSizePercentageRelativeToVideoHeight
+     * [@const] kCMTextMarkupAttribute_BaseFontSizePercentageRelativeToVideoHeight
      * <p>
      * The base font size expressed as a percentage of the video height.
      * <p>
-     * Value must be a non-negative CFNumber.  This is a number holding a percentage of the height of the video frame.  For example, a value of 5 indicates that the base font size should be 5% of the height of the video.
+     * Value must be a non-negative CFNumber. This is a number holding a percentage of the height of the video frame.
+     * For example, a value of 5 indicates that the base font size should be 5% of the height of the video.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCMTextMarkupAttribute_BaseFontSizePercentageRelativeToVideoHeight();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_RelativeFontSize
+     * [@const] kCMTextMarkupAttribute_RelativeFontSize
      * <p>
      * The font size expressed as a percentage of the current default font size.
      * <p>
      * Value must be a non-negative CFNumber. This is a number holding a percentage
-     * of the size of the calculated default font size.  A value
+     * of the size of the calculated default font size. A value
      * of 120 indicates 20% larger than the default font size. A value of 80
-     * indicates 80% of the default font size.  The value 100 indicates no size
+     * indicates 80% of the default font size. The value 100 indicates no size
      * difference and is the default.
      */
     @Generated
@@ -6099,7 +6333,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_RelativeFontSize();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_VerticalLayout
+     * [@const] kCMTextMarkupAttribute_VerticalLayout
      * <p>
      * The kind of vertical layout of the text block.
      * <p>
@@ -6119,10 +6353,10 @@ public final class CoreMedia {
     /**
      * Values for kCMTextMarkupAttribute_VerticalLayout.
      * <p>
-     * [@const]      kCMTextVerticalLayout_LeftToRight
+     * [@const] kCMTextVerticalLayout_LeftToRight
      * Newly added vertical lines are added from the left toward the right.
      * <p>
-     * [@const]      kCMTextVerticalLayout_RightToLeft
+     * [@const] kCMTextVerticalLayout_RightToLeft
      * Newly added vertical lines are added from the right toward the left.
      */
     @Generated
@@ -6134,7 +6368,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextVerticalLayout_RightToLeft();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_Alignment
+     * [@const] kCMTextMarkupAttribute_Alignment
      * <p>
      * The alignment of text in the writing direction of the first line of text.
      * <p>
@@ -6157,29 +6391,33 @@ public final class CoreMedia {
     /**
      * Values for kCMTextMarkupAttribute_Alignment.
      * <p>
-     * [@const]      kCMTextMarkupAlignmentType_Start
+     * [@const] kCMTextMarkupAlignmentType_Start
      * The text is visually aligned at its starting side. For horizontally written text, the alignment is left for
      * left-to-right text and right for right-to-left text. For vertical text, alignment is always at the top.
      * <p>
-     * [@const]      kCMTextMarkupAlignmentType_Middle
+     * [@const] kCMTextMarkupAlignmentType_Middle
      * The text is visually center-aligned (i.e., aligned between its starting and ending sides).
      * <p>
-     * [@const]      kCMTextMarkupAlignmentType_End
+     * [@const] kCMTextMarkupAlignmentType_End
      * The text is visually aligned at its ending side. For horizontally written text, the alignment is right for
      * left-to-right text and left for right-to-left text. For vertical text, alignment is always at the bottom.
      * <p>
-     * [@const]      kCMTextMarkupAlignmentType_Left
-     * For horizontally written text, the text alignment is always visually left-aligned (i.e., left-to-right and right-to-left
+     * [@const] kCMTextMarkupAlignmentType_Left
+     * For horizontally written text, the text alignment is always visually left-aligned (i.e., left-to-right and
+     * right-to-left
      * are treated uniformly). For vertical text, this is equivalent to kCMTextMarkupAlignmentType_Start. While readers
      * should be prepared to account for kCMTextMarkupAlignmentType_Left being equivalent to
-     * kCMTextMarkupAlignmentType_Start for vertical text, authors are discouraged from using kCMTextMarkupAlignmentType_Left
+     * kCMTextMarkupAlignmentType_Start for vertical text, authors are discouraged from using
+     * kCMTextMarkupAlignmentType_Left
      * for vertical text.
      * <p>
-     * [@const]      kCMTextMarkupAlignmentType_Right
-     * For horizontally written text, the text alignment is always visually right-aligned (i.e., left-to-right and right-to-left
+     * [@const] kCMTextMarkupAlignmentType_Right
+     * For horizontally written text, the text alignment is always visually right-aligned (i.e., left-to-right and
+     * right-to-left
      * are treated uniformly). For vertical text, this is equivalent to kCMTextMarkupAlignmentType_End. While readers
      * should be prepared to account for kCMTextMarkupAlignmentType_Right being equivalent to
-     * kCMTextMarkupAlignmentType_End for vertical text, authors are discouraged from using kCMTextMarkupAlignmentType_Right
+     * kCMTextMarkupAlignmentType_End for vertical text, authors are discouraged from using
+     * kCMTextMarkupAlignmentType_Right
      * for vertical text.
      */
     @Generated
@@ -6203,7 +6441,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAlignmentType_Right();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_TextPositionPercentageRelativeToWritingDirection
+     * [@const] kCMTextMarkupAttribute_TextPositionPercentageRelativeToWritingDirection
      * <p>
      * The placement of the block of text specified as a percentage in the writing direction.
      * <p>
@@ -6223,7 +6461,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_TextPositionPercentageRelativeToWritingDirection();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_OrthogonalLinePositionPercentageRelativeToWritingDirection
+     * [@const] kCMTextMarkupAttribute_OrthogonalLinePositionPercentageRelativeToWritingDirection
      * <p>
      * The placement of the block of text's first line specified as a percentage in the
      * direction orthogonal to the writing direction.
@@ -6246,7 +6484,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_OrthogonalLinePositionPercentageRelativeToWritingDirection();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_WritingDirectionSizePercentage
+     * [@const] kCMTextMarkupAttribute_WritingDirectionSizePercentage
      * <p>
      * The dimension (e.g., width) of the bounding box containing the text expressed as a percentage.
      * <p>
@@ -6265,7 +6503,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_WritingDirectionSizePercentage();
 
     /**
-     * [@const]      kCMTextMarkupAttribute_CharacterEdgeStyle
+     * [@const] kCMTextMarkupAttribute_CharacterEdgeStyle
      * <p>
      * Allows the setting of the style of character edges at render time.
      * <p>
@@ -6286,19 +6524,19 @@ public final class CoreMedia {
     /**
      * Values for kCMTextMarkupAttribute_CharacterEdgeStyle.
      * <p>
-     * [@const]      kCMTextMarkupCharacterEdgeStyle_None
+     * [@const] kCMTextMarkupCharacterEdgeStyle_None
      * The character edge style indicating no edge style.
      * <p>
-     * [@const]      kCMTextMarkupCharacterEdgeStyle_Raised
+     * [@const] kCMTextMarkupCharacterEdgeStyle_Raised
      * The character edge style indicating a raised edge style should be drawn.
      * <p>
-     * [@const]      kCMTextMarkupCharacterEdgeStyle_Depressed
+     * [@const] kCMTextMarkupCharacterEdgeStyle_Depressed
      * The character edge style indicating a depressed edge style should be drawn.
      * <p>
-     * [@const]      kCMTextMarkupCharacterEdgeStyle_Uniform
+     * [@const] kCMTextMarkupCharacterEdgeStyle_Uniform
      * The character edge style indicating a uniform border around the character should be drawn.
      * <p>
-     * [@const]      kCMTextMarkupCharacterEdgeStyle_DropShadow
+     * [@const] kCMTextMarkupCharacterEdgeStyle_DropShadow
      * The character edge style indicating a drop shadow should be drawn.
      */
     @Generated
@@ -6383,7 +6621,7 @@ public final class CoreMedia {
      * [@const] kCMMetadataIdentifier_QuickTimeMetadataPreferredAffineTransform
      * An affine transform that can be used in place of a track matrix for
      * displaying a video track, to better reflect the current orientation
-     * of a video camera with respect to a scene.  For example, if the camera
+     * of a video camera with respect to a scene. For example, if the camera
      * is rotated after a recording has started, the presence of this metadata
      * will allow a player to adjust its rendering at the time the rotation occurred.
      */
@@ -6441,10 +6679,12 @@ public final class CoreMedia {
      * [@const] kCMMetadataBaseDataType_DimensionsF32
      * Consists of a 32-bit big endian floating point x value followed by a 32-bit floating point y value.
      * [@const] kCMMetadataBaseDataType_RectF32
-     * Consists of four 32-bit big endian floating point values, the origin's x, origin's y, width and height values, respectively.
+     * Consists of four 32-bit big endian floating point values, the origin's x, origin's y, width and height values,
+     * respectively.
      * May also be interpreted as a 32-bit floating point origin followed by a 32-bit floating point dimension.
      * [@const] kCMMetadataDataType_AffineTransformF64
-     * A 3x3 matrix of 64-bit big endian floating point numbers stored in row-major order that specify an affine transform.
+     * A 3x3 matrix of 64-bit big endian floating point numbers stored in row-major order that specify an affine
+     * transform.
      * [@const] kCMMetadataBaseDataType_PolygonF32
      * Three or more pairs of 32-bit floating point numbers (x and y values) that define the verticies of a polygon.
      * [@const] kCMMetadataBaseDataType_PolylineF32
@@ -6452,7 +6692,8 @@ public final class CoreMedia {
      * [@const] kCMMetadataBaseDataType_JSON
      * UTF-8 encoded JSON data.
      * [@const] kCMMetadataBaseDataType_PerspectiveTransformF64
-     * A 3x3 matrix of 64-bit big endian floating point numbers stored in row-major order that specify a perspective transform.
+     * A 3x3 matrix of 64-bit big endian floating point numbers stored in row-major order that specify a perspective
+     * transform.
      */
     @Generated
     @CVariable()
@@ -6552,10 +6793,10 @@ public final class CoreMedia {
 
     /**
      * [@const] kCMMetadataDataType_Location_ISO6709
-     * A string supplying location information in ISO-6709 format.  Conforms to
+     * A string supplying location information in ISO-6709 format. Conforms to
      * kCMMetadataBaseDataType_UTF8.
      * [@const] kCMMetadataDataType_Direction
-     * A string supplying degrees offset from magnetic North.  Conforms to
+     * A string supplying degrees offset from magnetic North. Conforms to
      * kCMMetadataBaseDataType_UTF8.
      */
     @Generated
@@ -6651,13 +6892,16 @@ public final class CoreMedia {
     }
 
     /**
-     * [@function]	CMVideoFormatDescriptionCreateFromHEVCParameterSets
+     * [@function] CMVideoFormatDescriptionCreateFromHEVCParameterSets
      * <p>
      * Creates a format description for a video media stream described by HEVC (H.265) parameter set NAL units.
      * <p>
-     * This function parses the dimensions provided by the parameter sets and creates a format description suitable for a raw H.265 stream.
+     * This function parses the dimensions provided by the parameter sets and creates a format description suitable for
+     * a raw H.265 stream.
      * The parameter sets' data can come from raw NAL units and must have any emulation prevention bytes needed.
-     * The supported NAL unit types to be included in the format description are 32 (video parameter set), 33 (sequence parameter set), 34 (picture parameter set), 39 (prefix SEI) and 40 (suffix SEI). At least one of each parameter set must be provided.
+     * The supported NAL unit types to be included in the format description are 32 (video parameter set), 33 (sequence
+     * parameter set), 34 (picture parameter set), 39 (prefix SEI) and 40 (suffix SEI). At least one of each parameter
+     * set must be provided.
      */
     @Generated
     @CFunction
@@ -6668,14 +6912,18 @@ public final class CoreMedia {
             Ptr<CMFormatDescriptionRef> formatDescriptionOut);
 
     /**
-     * [@function]	CMVideoFormatDescriptionGetHEVCParameterSetAtIndex
+     * [@function] CMVideoFormatDescriptionGetHEVCParameterSetAtIndex
      * <p>
      * Returns a parameter set contained in a HEVC (H.265) format description.
      * <p>
-     * This function parses the HEVC decoder configuration record contained in a H.265 video format description and returns the NAL unit at the given index from it.  These NAL units are typically parameter sets (e.g. VPS, SPS, PPS), but may contain others as specified by ISO/IEC 14496-15 (e.g. user-data SEI).
-     * Both parameterSetPointerOut and parameterSetSizeOut may be NULL, parameterSetCountOut will return the total number of parameter set NAL units contained in the HEVC decoder configuration record.
+     * This function parses the HEVC decoder configuration record contained in a H.265 video format description and
+     * returns the NAL unit at the given index from it. These NAL units are typically parameter sets (e.g. VPS, SPS,
+     * PPS), but may contain others as specified by ISO/IEC 14496-15 (e.g. user-data SEI).
+     * Both parameterSetPointerOut and parameterSetSizeOut may be NULL, parameterSetCountOut will return the total
+     * number of parameter set NAL units contained in the HEVC decoder configuration record.
      * The parameter set NAL units returned will already have any emulation prevention bytes needed.
-     * The pointer returned in parameterSetPointerOut points to internal memory of videoDesc, and may only be accessed as long as a retain on videoDesc is held.
+     * The pointer returned in parameterSetPointerOut points to internal memory of videoDesc, and may only be accessed
+     * as long as a retain on videoDesc is held.
      */
     @Generated
     @CFunction
@@ -6699,7 +6947,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionTransferFunction_ITU_R_2100_HLG();
 
     /**
-     * CFData(24 bytes); big-endian structure; same as kCVImageBufferMasteringDisplayColorVolumeKey; matches payload of ISO/IEC 23008-2:2015(E), D.2.28 Mastering display colour volume SEI message
+     * CFData(24 bytes); big-endian structure; same as kCVImageBufferMasteringDisplayColorVolumeKey; matches payload of
+     * ISO/IEC 23008-2:2015(E), D.2.28 Mastering display colour volume SEI message
      */
     @Generated
     @CVariable()
@@ -6713,7 +6962,7 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionExtension_ContentLightLevelInfo();
 
     /**
-     * CFDictionary(kCMHEVCTemporalLevelInfoKey_*), optional.  Corresponds to 'tscl' sample group.
+     * CFDictionary(kCMHEVCTemporalLevelInfoKey_*), optional. Corresponds to 'tscl' sample group.
      */
     @Generated
     @CVariable()
@@ -6769,21 +7018,21 @@ public final class CoreMedia {
     public static native CFStringRef kCMHEVCTemporalLevelInfoKey_LevelIndex();
 
     /**
-     * CFBoolean, optional.  Corresponds to 'tsas' sample group.
+     * CFBoolean, optional. Corresponds to 'tsas' sample group.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCMSampleAttachmentKey_HEVCTemporalSubLayerAccess();
 
     /**
-     * CFBoolean, optional.  Corresponds to 'stsa' sample group.
+     * CFBoolean, optional. Corresponds to 'stsa' sample group.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCMSampleAttachmentKey_HEVCStepwiseTemporalSubLayerAccess();
 
     /**
-     * CFNumber(Int), optional.  Corresponds to 'sync' sample group.
+     * CFNumber(Int), optional. Corresponds to 'sync' sample group.
      */
     @Generated
     @CVariable()
@@ -6797,12 +7046,12 @@ public final class CoreMedia {
     public static native CFStringRef kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix();
 
     /**
-     * [@function]	CMTimeFoldIntoRange
+     * [@function] CMTimeFoldIntoRange
      * <p>
-     * Folds a time into the given range.  This can be used in looping time calculations.
+     * Folds a time into the given range. This can be used in looping time calculations.
      * <p>
      * Note that for certain types of looping, you may want to NOT fold times that are prior
-     * to the loop range.  That's up to the client.
+     * to the loop range. That's up to the client.
      *
      * @return A CMTime structure representing the translated duration.
      */
@@ -6812,7 +7061,7 @@ public final class CoreMedia {
     public static native CMTime CMTimeFoldIntoRange(@ByValue CMTime time, @ByValue CMTimeRange foldRange);
 
     /**
-     * [@function]	CMSampleBufferCreateWithMakeDataReadyHandler
+     * [@function] CMSampleBufferCreateWithMakeDataReadyHandler
      * <p>
      * Creates a CMSampleBuffer.
      * <p>
@@ -6835,11 +7084,12 @@ public final class CoreMedia {
     }
 
     /**
-     * [@function]	CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler
+     * [@function] CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler
      * <p>
      * Creates an CMSampleBuffer containing audio given packetDescriptions instead of sizing and timing info
      * <p>
-     * See CMAudioSampleBufferCreateWithPacketDescriptions; this variant allows for passing a block to make the data ready.
+     * See CMAudioSampleBufferCreateWithPacketDescriptions; this variant allows for passing a block to make the data
+     * ready.
      */
     @Generated
     @CFunction
@@ -6858,7 +7108,7 @@ public final class CoreMedia {
     }
 
     /**
-     * [@function]	CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler
+     * [@function] CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler
      * <p>
      * Creates a CMSampleBuffer that contains a CVImageBuffer instead of a CMBlockBuffer.
      * <p>
@@ -6890,7 +7140,7 @@ public final class CoreMedia {
     public static native int CMTimebaseSetMasterTimebase(CMTimebaseRef timebase, CMTimebaseRef newMasterTimebase);
 
     /**
-     * [@function]	CMBufferQueueCreateWithHandlers
+     * [@function] CMBufferQueueCreateWithHandlers
      * <p>
      * Creates a CMBufferQueue object.
      * <p>
@@ -6902,16 +7152,16 @@ public final class CoreMedia {
             VoidPtr handlers, Ptr<CMBufferQueueRef> queueOut);
 
     /**
-     * [@function]	CMBufferQueueInstallTriggerHandler
+     * [@function] CMBufferQueueInstallTriggerHandler
      * <p>
      * Installs a trigger on a CMBufferQueue.
      * <p>
      * The returned trigger token can be passed to CMBufferQueueTestTrigger and CMBufferQueueRemoveTrigger.
      * The triggerTokenOut parameter can be NULL (client doesn't need to test or remove trigger), and the
      * handler parameter can be NULL (client doesn't need callbacks, but rather will explicitly
-     * test the trigger).  One of these two parameters must be non-NULL, however, since an untestable
-     * trigger that does not perform a callback is meaningless.  If the trigger condition is already true,
-     * CMBufferQueueInstallTrigger will call the handler.  If it does this, it will first write
+     * test the trigger). One of these two parameters must be non-NULL, however, since an untestable
+     * trigger that does not perform a callback is meaningless. If the trigger condition is already true,
+     * CMBufferQueueInstallTrigger will call the handler. If it does this, it will first write
      * the trigger token to *triggerTokenOut.
      */
     @Generated
@@ -6928,11 +7178,12 @@ public final class CoreMedia {
     }
 
     /**
-     * [@function]	CMBufferQueueInstallTriggerHandlerWithIntegerThreshold
+     * [@function] CMBufferQueueInstallTriggerHandlerWithIntegerThreshold
      * <p>
      * Installs a trigger on a CMBufferQueue.
      * <p>
-     * This function behaves the same way as CMBufferQueueInstallTriggerHandler() except the trigger is evaluated against
+     * This function behaves the same way as CMBufferQueueInstallTriggerHandler() except the trigger is evaluated
+     * against
      * the integer value rather than the time value.
      */
     @Generated
@@ -6949,7 +7200,7 @@ public final class CoreMedia {
     }
 
     /**
-     * [@function]	CMBufferQueueSetValidationHandler
+     * [@function] CMBufferQueueSetValidationHandler
      * <p>
      * Sets a block that CMBufferQueueEnqueue will call to validate buffers before adding them to the queue.
      * <p>
@@ -6984,7 +7235,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionTransferFunction_sRGB();
 
     /**
-     * CFString (usually kCMFormatDescriptionTransferFunction_ITU_R_2100_HLG when used); corresponds to D.2.38 Alternative Transfer Characteristics SEI message
+     * CFString (usually kCMFormatDescriptionTransferFunction_ITU_R_2100_HLG when used); corresponds to D.2.38
+     * Alternative Transfer Characteristics SEI message
      */
     @Generated
     @CVariable()
@@ -7095,7 +7347,8 @@ public final class CoreMedia {
     public static native int CMTimebaseSetSourceTimebase(CMTimebaseRef timebase, CMTimebaseRef newSourceTimebase);
 
     /**
-     * CFNumber (such as 8, 10, 12, 16, etc). Bit-depth per component -- if there are components with different bit depths this should be the deepest. Do not rely on this extension always being present, as it often isn't.
+     * CFNumber (such as 8, 10, 12, 16, etc). Bit-depth per component -- if there are components with different bit
+     * depths this should be the deepest. Do not rely on this extension always being present, as it often isn't.
      */
     @Generated
     @CVariable()
@@ -7109,7 +7362,8 @@ public final class CoreMedia {
     public static native CFStringRef kCMFormatDescriptionExtension_HorizontalFieldOfView();
 
     /**
-     * CFData(8 bytes); big-endian structure; same as kCVImageBufferAmbientViewingEnvironmentKey; matches payload of ISO/IEC 23008-2:2017, D.2.39 ambient viewing environment SEI message
+     * CFData(8 bytes); big-endian structure; same as kCVImageBufferAmbientViewingEnvironmentKey; matches payload of
+     * ISO/IEC 23008-2:2017, D.2.39 ambient viewing environment SEI message
      */
     @Generated
     @CVariable()

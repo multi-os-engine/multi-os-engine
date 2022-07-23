@@ -86,7 +86,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * The character index for point inside the line fragment coordinate system. The fraction of distance is from the upstream edge
+     * The character index for point inside the line fragment coordinate system. The fraction of distance is from the
+     * upstream edge
      */
     @Generated
     @Selector("characterIndexForPoint:")
@@ -118,7 +119,9 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     public static native String description_static();
 
     /**
-     * Renders the line fragment contents at the rendering origin. The origin can be specified as (NSMinX(typographicBounds) + glyphOrigin.x, NSMinY(typographicBounds) + glyphOrigin.y) relative to the line fragment group coordinate system
+     * Renders the line fragment contents at the rendering origin. The origin can be specified as
+     * (NSMinX(typographicBounds) + glyphOrigin.x, NSMinY(typographicBounds) + glyphOrigin.y) relative to the line
+     * fragment group coordinate system
      */
     @Generated
     @Selector("drawAtPoint:inContext:")
@@ -186,7 +189,8 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The location of the character at the specified index. It is on the upstream edge of the glyph. It is in the coordinate system relative to the line fragment origin
+     * The location of the character at the specified index. It is on the upstream edge of the glyph. It is in the
+     * coordinate system relative to the line fragment origin
      */
     @Generated
     @Selector("locationForCharacterAtIndex:")
@@ -225,7 +229,9 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * The typographic bounds specifying the dimensions of the line fragment for laying out line fragments to each other. The origin value is offset from the beginning of the line fragment group belonging to the parent layout fragment.
+     * The typographic bounds specifying the dimensions of the line fragment for laying out line fragments to each
+     * other. The origin value is offset from the beginning of the line fragment group belonging to the parent layout
+     * fragment.
      */
     @Generated
     @Selector("typographicBounds")

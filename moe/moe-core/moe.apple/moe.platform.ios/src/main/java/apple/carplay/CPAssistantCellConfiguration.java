@@ -114,7 +114,8 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
     public native CPAssistantCellConfiguration initWithCoder(NSCoder coder);
 
     /**
-     * Initialize an Assistant Cell Configuration with a position, visibility, and action representing the SiriKit intent that should be invoked when users select the assistant cell.
+     * Initialize an Assistant Cell Configuration with a position, visibility, and action representing the SiriKit
+     * intent that should be invoked when users select the assistant cell.
      */
     @Generated
     @Selector("initWithPosition:visibility:assistantAction:")

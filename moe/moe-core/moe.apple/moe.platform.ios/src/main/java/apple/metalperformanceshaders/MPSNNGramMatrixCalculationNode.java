@@ -56,7 +56,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     public static native MPSNNGramMatrixCalculationNode allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
      * Scaling factor for the output. Default: 1.0f.
      */
@@ -172,7 +172,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     public static native MPSNNGramMatrixCalculationNode nodeWithSourceAlpha(MPSNNImageNode sourceNode, float alpha);
 
     /**
-     * [@property]   propertyCallBack
+     * [@property] propertyCallBack
      * <p>
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
      * Default value: nil.
@@ -191,7 +191,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   propertyCallBack
+     * [@property] propertyCallBack
      * <p>
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
      * Default value: nil.

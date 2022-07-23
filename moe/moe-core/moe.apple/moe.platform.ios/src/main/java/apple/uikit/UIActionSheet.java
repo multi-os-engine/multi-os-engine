@@ -521,8 +521,10 @@ public class UIActionSheet extends UIView {
     public native void showFromTabBar(UITabBar view);
 
     /**
-     * show a sheet animated. you can specify either a toolbar, a tab bar, a bar button item or a plain view. We do a special animation if the sheet rises from
-     * a toolbar, tab bar or bar button item and we will automatically select the correct style based on the bar style. if not from a bar, we use
+     * show a sheet animated. you can specify either a toolbar, a tab bar, a bar button item or a plain view. We do a
+     * special animation if the sheet rises from
+     * a toolbar, tab bar or bar button item and we will automatically select the correct style based on the bar style.
+     * if not from a bar, we use
      * UIActionSheetStyleDefault if automatic style set
      */
     @Generated

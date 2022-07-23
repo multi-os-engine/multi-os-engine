@@ -29,25 +29,35 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ASWebAuthenticationSession
- * An ASWebAuthenticationSession object can be used to authenticate a user with a web service, even if the web service is run
- * by a third party. ASWebAuthenticationSession puts the user in control of whether they want to use their existing logged-in
- * session from Safari. The app provides a URL that points to the authentication webpage. The page will be loaded in a secure
+ * An ASWebAuthenticationSession object can be used to authenticate a user with a web service, even if the web service
+ * is run
+ * by a third party. ASWebAuthenticationSession puts the user in control of whether they want to use their existing
+ * logged-in
+ * session from Safari. The app provides a URL that points to the authentication webpage. The page will be loaded in a
+ * secure
  * view controller. From the webpage, the user can authenticate herself and grant access to the app.
- * On completion, the service will send a callback URL with an authentication token, and this URL will be passed to the app by
+ * On completion, the service will send a callback URL with an authentication token, and this URL will be passed to the
+ * app by
  * ASWebAuthenticationSessionCompletionHandler.
  * <p>
- * The callback URL usually has a custom URL scheme. For the app to receive the callback URL, it needs to either register the
+ * The callback URL usually has a custom URL scheme. For the app to receive the callback URL, it needs to either
+ * register the
  * custom URL scheme in its Info.plist, or set the scheme to callbackURLScheme argument in the initializer.
  * <p>
- * If the user has already logged into the web service in Safari or other apps via ASWebAuthenticationSession, it is possible to
- * share the existing login information. An alert will be presented to get the user's consent for sharing their existing login
- * information. If the user cancels the alert, the session will be canceled, and the completion handler will be called with
+ * If the user has already logged into the web service in Safari or other apps via ASWebAuthenticationSession, it is
+ * possible to
+ * share the existing login information. An alert will be presented to get the user's consent for sharing their existing
+ * login
+ * information. If the user cancels the alert, the session will be canceled, and the completion handler will be called
+ * with
  * the error code ASWebAuthenticationSessionErrorCodeCanceledLogin.
  * <p>
- * If the user taps Cancel when showing the login webpage for the web service, the session will be canceled, and the completion
+ * If the user taps Cancel when showing the login webpage for the web service, the session will be canceled, and the
+ * completion
  * handler will be called with the error code ASWebAuthenticationSessionErrorCodeCanceledLogin.
  * <p>
- * The app can cancel the session by calling -[ASWebAuthenticationSession cancel]. This will also dismiss the view controller that
+ * The app can cancel the session by calling -[ASWebAuthenticationSession cancel]. This will also dismiss the view
+ * controller that
  * is showing the web service's login page.
  */
 @Generated
@@ -128,9 +138,11 @@ public class ASWebAuthenticationSession extends NSObject {
     /**
      * Returns an ASWebAuthenticationSession object.
      *
-     * @param URL               the initial URL pointing to the authentication webpage. Only supports URLs with http:// or https:// schemes.
+     * @param URL               the initial URL pointing to the authentication webpage. Only supports URLs with http://
+     *                          or https:// schemes.
      * @param callbackURLScheme the custom URL scheme that the app expects in the callback URL.
-     * @param completionHandler the completion handler which is called when the session is completed successfully or canceled by user.
+     * @param completionHandler the completion handler which is called when the session is completed successfully or
+     *                          canceled by user.
      */
     @Generated
     @Selector("initWithURL:callbackURLScheme:completionHandler:")
@@ -174,8 +186,10 @@ public class ASWebAuthenticationSession extends NSObject {
     /**
      * Indicates whether this session should ask the browser for an ephemeral session.
      * <p>
-     * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
-     * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no effect.
+     * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser
+     * session.
+     * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no
+     * effect.
      */
     @Generated
     @Selector("prefersEphemeralWebBrowserSession")
@@ -183,7 +197,8 @@ public class ASWebAuthenticationSession extends NSObject {
 
     /**
      * Provides context to target where in an application's UI the authorization view should be shown. A provider
-     * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS prior to
+     * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS
+     * prior to
      * 13.0, the desired window is inferred by the application's key window.
      */
     @Generated
@@ -202,8 +217,10 @@ public class ASWebAuthenticationSession extends NSObject {
     /**
      * Indicates whether this session should ask the browser for an ephemeral session.
      * <p>
-     * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser session.
-     * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no effect.
+     * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser
+     * session.
+     * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no
+     * effect.
      */
     @Generated
     @Selector("setPrefersEphemeralWebBrowserSession:")
@@ -211,7 +228,8 @@ public class ASWebAuthenticationSession extends NSObject {
 
     /**
      * Provides context to target where in an application's UI the authorization view should be shown. A provider
-     * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS prior to
+     * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS
+     * prior to
      * 13.0, the desired window is inferred by the application's key window.
      */
     @Generated
@@ -221,7 +239,8 @@ public class ASWebAuthenticationSession extends NSObject {
 
     /**
      * Provides context to target where in an application's UI the authorization view should be shown. A provider
-     * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS prior to
+     * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS
+     * prior to
      * 13.0, the desired window is inferred by the application's key window.
      */
     @Generated

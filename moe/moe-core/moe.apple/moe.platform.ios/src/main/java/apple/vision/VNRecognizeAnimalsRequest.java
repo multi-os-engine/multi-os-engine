@@ -28,9 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A request that will recognize various animals in an image. The list of animals supported by the recognition algorithm can be queried by  -supportedIdentifiersAndReturnError:
+ * A request that will recognize various animals in an image. The list of animals supported by the recognition algorithm
+ * can be queried by -supportedIdentifiersAndReturnError:
  * <p>
- * This request will generate VNRecognizedObjectObservation objects with a defined boundingBox, label and confidence level.
+ * This request will generate VNRecognizedObjectObservation objects with a defined boundingBox, label and confidence
+ * level.
  */
 @Generated
 @Library("Vision")
@@ -185,7 +187,8 @@ public class VNRecognizeAnimalsRequest extends VNImageBasedRequest {
     /**
      * Obtain the collection of identifiers supported by the target request.
      * <p>
-     * This method will return the collection of all possible classification identifiers that are produced by the target request based on its current state of configuration at the time of the call.
+     * This method will return the collection of all possible classification identifiers that are produced by the target
+     * request based on its current state of configuration at the time of the call.
      *
      * @param error The address of the variable that will be populated with the error if the call fails.
      * @return The collection of classification identifiers, or nil if a failure occurs.

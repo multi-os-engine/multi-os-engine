@@ -10,7 +10,8 @@ public final class UIGuidedAccessErrorCode {
     }
 
     /**
-     * The application is not authorized to perform the requested action. For example, it may have requested a configuration change but is not locked into Single App Mode via a configuration profile.
+     * The application is not authorized to perform the requested action. For example, it may have requested a
+     * configuration change but is not locked into Single App Mode via a configuration profile.
      */
     @Generated @NInt public static final long PermissionDenied = 0x0000000000000000L;
     /**

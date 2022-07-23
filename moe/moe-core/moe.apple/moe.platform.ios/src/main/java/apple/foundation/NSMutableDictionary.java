@@ -49,7 +49,8 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-@SuppressWarnings({ "rawtypes", "unchecked" })
+@SuppressWarnings({ "rawtypes", "unchecked"
+})
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
@@ -396,8 +397,8 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
         return supportsSecureCoding();
     }
 
-    private static final class NSMutableDictionaryEntrySet<_KeyType, _ObjectType>
-            implements Set<Entry<_KeyType, _ObjectType>> {
+    private static final class NSMutableDictionaryEntrySet<_KeyType, _ObjectType> implements
+            Set<Entry<_KeyType, _ObjectType>> {
 
         private final NSMutableDictionary<_KeyType, _ObjectType> dict;
 
@@ -589,8 +590,8 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
             return result;
         }
 
-        private final static class NSMutableDictionaryEntrySetIterator<_KeyType, _ObjectType>
-                implements Iterator<Entry<_KeyType, _ObjectType>> {
+        private final static class NSMutableDictionaryEntrySetIterator<_KeyType, _ObjectType> implements
+                Iterator<Entry<_KeyType, _ObjectType>> {
 
             private final NSMutableDictionary<_KeyType, _ObjectType> dict;
             private final NSMutableArray<_KeyType> keys;
@@ -641,8 +642,8 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
                     public boolean equals(Object o) {
                         if (o instanceof Entry) {
                             Entry e2 = (Entry)o;
-                            return (getKey() == null ? e2.getKey() == null : getKey().equals(e2.getKey())) && (
-                                    getValue() == null ? e2.getValue() == null : getValue().equals(e2.getValue()));
+                            return (getKey() == null ? e2.getKey() == null : getKey().equals(e2.getKey()))
+                                    && (getValue() == null ? e2.getValue() == null : getValue().equals(e2.getValue()));
                         }
                         return false;
                     }

@@ -10,7 +10,7 @@ public final class SKNodeFocusBehavior {
     }
 
     /**
-     * Not focusable and node has no impact on other nodes that have focus interaction enabled.  This is the default.
+     * Not focusable and node has no impact on other nodes that have focus interaction enabled. This is the default.
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**

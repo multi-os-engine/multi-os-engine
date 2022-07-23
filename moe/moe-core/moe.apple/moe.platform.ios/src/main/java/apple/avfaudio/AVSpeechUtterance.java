@@ -33,7 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * AVSpeechUtterance is the atom of speaking a string or pausing the synthesizer.
  * <p>
- * To start speaking, specify the AVSpeechSynthesisVoice and the string to be spoken, then optionally change the rate, pitch or volume if desired.
+ * To start speaking, specify the AVSpeechSynthesisVoice and the string to be spoken, then optionally change the rate,
+ * pitch or volume if desired.
  */
 @Generated
 @Library("AVFAudio")
@@ -176,7 +177,8 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     public native double preUtteranceDelay();
 
     /**
-     * If an assistive technology is on, like VoiceOver, the user's selected voice, rate and other settings will be used for this speech utterance instead of the default values.
+     * If an assistive technology is on, like VoiceOver, the user's selected voice, rate and other settings will be used
+     * for this speech utterance instead of the default values.
      * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
      * Note that querying the properties will not refect the user's settings.
      */
@@ -221,7 +223,8 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     public native void setPreUtteranceDelay(double value);
 
     /**
-     * If an assistive technology is on, like VoiceOver, the user's selected voice, rate and other settings will be used for this speech utterance instead of the default values.
+     * If an assistive technology is on, like VoiceOver, the user's selected voice, rate and other settings will be used
+     * for this speech utterance instead of the default values.
      * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
      * Note that querying the properties will not refect the user's settings.
      */

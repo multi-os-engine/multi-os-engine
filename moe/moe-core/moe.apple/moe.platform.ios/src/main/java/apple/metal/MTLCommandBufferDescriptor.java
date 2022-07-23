@@ -149,7 +149,8 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] retainedReferences
      * <p>
-     * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the created command buffer does not hold strong references to objects needed for it to execute.
+     * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the
+     * created command buffer does not hold strong references to objects needed for it to execute.
      */
     @Generated
     @Selector("retainedReferences")
@@ -167,7 +168,8 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] retainedReferences
      * <p>
-     * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the created command buffer does not hold strong references to objects needed for it to execute.
+     * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the
+     * created command buffer does not hold strong references to objects needed for it to execute.
      */
     @Generated
     @Selector("setRetainedReferences:")

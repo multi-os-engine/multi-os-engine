@@ -19,7 +19,8 @@ public final class ARFrameSemantics {
     /**
      * Person segmentation.
      * <p>
-     * A pixel in the image frame that gets classified as person will have an intensity value equal to 'ARSegmentationClassPerson'.
+     * A pixel in the image frame that gets classified as person will have an intensity value equal to
+     * 'ARSegmentationClassPerson'.
      *
      * @see -[ARFrame segmentationBuffer]
      * @see ARSegmentationClass
@@ -28,7 +29,8 @@ public final class ARFrameSemantics {
     /**
      * Person segmentation with depth.
      * <p>
-     * A pixel in the image frame that gets classified as person will have an intensity value equal to 'ARSegmentationClassPerson'.
+     * A pixel in the image frame that gets classified as person will have an intensity value equal to
+     * 'ARSegmentationClassPerson'.
      * Additionally, every pixel in the image frame that gets classified as person will also have a depth value.
      *
      * @see -[ARFrame estimatedDepthData]

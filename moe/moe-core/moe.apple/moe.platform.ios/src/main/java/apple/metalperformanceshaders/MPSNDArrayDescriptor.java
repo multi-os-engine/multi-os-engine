@@ -108,7 +108,7 @@ public class MPSNDArrayDescriptor extends NSObject {
      * NSUInteger sizes[] = {3,5,6,32};
      * [ MPSNDArray descriptorWithDataType: MPSDataTypeFloat32
      * dimensionCount: 4
-     * dimensionSizes: sizes ];    // array of numberOfDimensions dimensions. Starts with dimension 0
+     * dimensionSizes: sizes ]; // array of numberOfDimensions dimensions. Starts with dimension 0
      * [@endcode]
      *
      * @param dataType           MPSDataType of elements in the MPSNDArray
@@ -131,11 +131,13 @@ public class MPSNDArrayDescriptor extends NSObject {
      * [@code]
      * // Creates an NDArrayDescriptor of dimensions [32, 5, 6, 3]
      * [ MPSNDArray descriptorWithDataType: MPSDataTypeFloat32
-     * dimensionSizes: 3, 6, 5, 32, 0 //<--list terminator! ]; // array of numberOfDimensions dimensions. Starts with dimension 0
+     * dimensionSizes: 3, 6, 5, 32, 0 //<--list terminator! ]; // array of numberOfDimensions dimensions. Starts with
+     * dimension 0
      * [@endcode]
      *
      * @param dataType   MPSDataType of elements in the MPSNDArray
-     * @param dimension0 The start of a 0-terminated variadric list of NSUIntegers where dimension lengths provided by the user goes from fastest
+     * @param dimension0 The start of a 0-terminated variadric list of NSUIntegers where dimension lengths provided by
+     *                   the user goes from fastest
      *                   moving to slowest moving dimension.
      *                   The product of all dimension sizes must be less than 2**31.
      *                   Additional system memory limits may apply
@@ -160,7 +162,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      *
      * @param dataType MPSDataType of elements in the MPSNDArray
      * @param shape    An array of NSUIntegers where dimension lengths provided by the user goes from slowest
-     *                 moving to fastest moving dimension. This is same order as MLMultiArray in coreML and most frameworks in Python
+     *                 moving to fastest moving dimension. This is same order as MLMultiArray in coreML and most
+     *                 frameworks in Python
      *                 The product of all dimension lengths must be less than 2**31.
      *                 Additional system memory limits may apply
      * @return A valid MPSNDArrayDescriptor object or nil, if failure.
@@ -246,7 +249,8 @@ public class MPSNDArrayDescriptor extends NSObject {
      * Changes dimension sizes and number of dimensions on the current descriptor
      *
      * @param shape An array of NSUIntegers where dimension lengths provided by the user goes from slowest
-     *              moving to fastest moving dimension. This is same order as MLMultiArray in coreML and most frameworks in Python
+     *              moving to fastest moving dimension. This is same order as MLMultiArray in coreML and most frameworks
+     *              in Python
      *              The product of all dimension lengths must be less than 2**31.
      *              Additional system memory limits may apply
      */
@@ -285,10 +289,10 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * The slice dimensions for each dimension
-     * [@discusion]     A slice is a subregion of a dimension. It is
+     * [@discusion] A slice is a subregion of a dimension. It is
      * used to calve off a fraction of a larger NDArray.
      * <p>
-     * Default:  NSRange(0, lengthOfDimension(i))
+     * Default: NSRange(0, lengthOfDimension(i))
      *
      * @param subRange       The region of the slice, start value is wrt dimensionLength of the NDArray.
      * @param dimensionIndex The index of the dimension. Must be < numberOfDimensions
@@ -299,12 +303,12 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * The slice dimensions for each dimension
-     * [@discusion]     A slice is a subregion of a dimension. It is
+     * [@discusion] A slice is a subregion of a dimension. It is
      * used to calve off a fraction of a larger NDArray.
      *
      * @param dimensionIndex The index of the dimension
      * @return Returns the slice range for the index. If the
-     * dimensionIndex >= numberOfDimensions, {0,1} is returned.
+     *         dimensionIndex >= numberOfDimensions, {0,1} is returned.
      */
     @Generated
     @Selector("sliceRangeForDimension:")
@@ -317,10 +321,10 @@ public class MPSNDArrayDescriptor extends NSObject {
 
     /**
      * transpose two dimensions
-     * [@discusion]   If the intention is to insert a length 1 dimension, increment the numberOfDimensions first.
+     * [@discusion] If the intention is to insert a length 1 dimension, increment the numberOfDimensions first.
      *
      * @param dimensionIndex  The first dimension. Must be < numberOfDimensions
-     * @param dimensionIndex2 The second dimension.  Must be < number of Dimensions.
+     * @param dimensionIndex2 The second dimension. Must be < number of Dimensions.
      */
     @Generated
     @Selector("transposeDimension:withDimension:")

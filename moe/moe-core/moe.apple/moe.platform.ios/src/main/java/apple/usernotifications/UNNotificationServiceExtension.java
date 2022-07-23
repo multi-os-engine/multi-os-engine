@@ -150,7 +150,8 @@ public class UNNotificationServiceExtension extends NSObject {
     public static native long version_static();
 
     /**
-     * Call contentHandler with the modified notification content to deliver. If the handler is not called before the service's time expires then the unmodified notification will be delivered.
+     * Call contentHandler with the modified notification content to deliver. If the handler is not called before the
+     * service's time expires then the unmodified notification will be delivered.
      * You are expected to override this method to implement push notification modification.
      */
     @Generated
@@ -163,7 +164,8 @@ public class UNNotificationServiceExtension extends NSObject {
     public native UNNotificationServiceExtension init();
 
     /**
-     * Will be called just before this extension is terminated by the system. You may choose whether to override this method.
+     * Will be called just before this extension is terminated by the system. You may choose whether to override this
+     * method.
      */
     @Generated
     @Selector("serviceExtensionTimeWillExpire")

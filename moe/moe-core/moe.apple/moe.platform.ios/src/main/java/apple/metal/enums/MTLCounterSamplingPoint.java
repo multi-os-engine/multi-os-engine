@@ -12,10 +12,12 @@ import org.moe.natj.general.ann.NUInt;
  * Counter sampling points at render, compute, and blit command encoder stage boundary are supported.
  * <p>
  * [@constant] MTLCounterSamplingPointAtDrawBoundary
- * Counter sampling at draw boundary is supported, render encoder method sampleCountersInBuffer can be used for sampling.
+ * Counter sampling at draw boundary is supported, render encoder method sampleCountersInBuffer can be used for
+ * sampling.
  * <p>
  * [@constant] MTLCounterSamplingPointAtDispatchBoundary
- * Counter sampling at compute dispatch boundary is supported, compute encoder method sampleCountersInBuffer can be used for sampling.
+ * Counter sampling at compute dispatch boundary is supported, compute encoder method sampleCountersInBuffer can be used
+ * for sampling.
  * <p>
  * [@constant] MTLCounterSamplingPointAtTileDispatchBoundary
  * Counter sampling at tile shader dispatch boundary is supported.

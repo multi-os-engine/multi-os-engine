@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCSampleMode
+ * [@enum] MLCSampleMode
  * <p>
  * A sampling mode for an upsample layer.
  */

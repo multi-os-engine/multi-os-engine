@@ -133,7 +133,7 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   waitUntilCompleted
+     * [@property] waitUntilCompleted
      * <p>
      * waitUntilCompleted for the graph, default value is false
      */
@@ -151,7 +151,7 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]   waitUntilCompleted
+     * [@property] waitUntilCompleted
      * <p>
      * waitUntilCompleted for the graph, default value is false
      */

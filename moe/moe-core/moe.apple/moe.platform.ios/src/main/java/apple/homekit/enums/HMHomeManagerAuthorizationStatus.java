@@ -6,9 +6,10 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * The home data authorization status of the client process.
  * <p>
- * [@constant]   HMHomeManagerAuthorizationStatusDetermined  Indicates the user has not yet made a choice regarding the access of the application.
- * [@constant]   HMHomeManagerAuthorizationStatusRestricted      Access to home data is currently restricted by the system.
- * [@constant]   HMHomeManagerAuthorizationStatusAuthorized      The application is authorized to access home data.
+ * [@constant] HMHomeManagerAuthorizationStatusDetermined Indicates the user has not yet made a choice regarding the
+ * access of the application.
+ * [@constant] HMHomeManagerAuthorizationStatusRestricted Access to home data is currently restricted by the system.
+ * [@constant] HMHomeManagerAuthorizationStatusAuthorized The application is authorized to access home data.
  */
 @Generated
 public final class HMHomeManagerAuthorizationStatus {

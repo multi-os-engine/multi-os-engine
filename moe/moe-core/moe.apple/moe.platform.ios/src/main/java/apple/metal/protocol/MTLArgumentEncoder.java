@@ -87,7 +87,8 @@ public interface MTLArgumentEncoder {
 
     /**
      * * @method setArgumentBuffer:offset:arrayElement:
-     * * @brief Sets the destination buffer, starting offset and specific array element arguments will be encoded into. arrayElement represents
+     * * @brief Sets the destination buffer, starting offset and specific array element arguments will be encoded into.
+     * arrayElement represents
      * the desired element of IAB array targetted by encoding
      */
     @Generated

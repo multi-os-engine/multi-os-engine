@@ -175,7 +175,8 @@ public class CKDatabase extends NSObject {
             @ObjCBlock(name = "call_deleteSubscriptionWithIDCompletionHandler") Block_deleteSubscriptionWithIDCompletionHandler completionHandler);
 
     /**
-     * [@c] CKFetchRecordZonesOperation and @c CKModifyRecordZonesOperation are the more configurable, @c CKOperation -based alternatives to these methods
+     * [@c] CKFetchRecordZonesOperation and @c CKModifyRecordZonesOperation are the more configurable, @c CKOperation
+     * -based alternatives to these methods
      */
     @Generated
     @Selector("fetchAllRecordZonesWithCompletionHandler:")
@@ -188,7 +189,8 @@ public class CKDatabase extends NSObject {
             @ObjCBlock(name = "call_fetchAllSubscriptionsWithCompletionHandler") Block_fetchAllSubscriptionsWithCompletionHandler completionHandler);
 
     /**
-     * [@c] CKFetchRecordsOperation and @c CKModifyRecordsOperation are the more configurable, @c CKOperation -based alternatives to these methods
+     * [@c] CKFetchRecordsOperation and @c CKModifyRecordsOperation are the more configurable, @c CKOperation -based
+     * alternatives to these methods
      */
     @Generated
     @Selector("fetchRecordWithID:completionHandler:")
@@ -201,7 +203,8 @@ public class CKDatabase extends NSObject {
             @ObjCBlock(name = "call_fetchRecordZoneWithIDCompletionHandler") Block_fetchRecordZoneWithIDCompletionHandler completionHandler);
 
     /**
-     * [@c] CKFetchSubscriptionsOperation and @c CKModifySubscriptionsOperation are the more configurable, @c CKOperation -based alternative to these methods
+     * [@c] CKFetchSubscriptionsOperation and @c CKModifySubscriptionsOperation are the more configurable, @c
+     * CKOperation -based alternative to these methods
      */
     @Generated
     @Selector("fetchSubscriptionWithID:completionHandler:")
@@ -214,9 +217,12 @@ public class CKDatabase extends NSObject {
 
     /**
      * [@c] CKQueryOperation is the more configurable, @c CKOperation -based alternative to this method
-     * Queries can potentially return a large number of records, and the server will return those records in batches. This convenience API will only fetch the first batch of results (equivalent to using @c CKQueryOperationMaximumResults).
+     * Queries can potentially return a large number of records, and the server will return those records in batches.
+     * This convenience API will only fetch the first batch of results (equivalent to using @c
+     * CKQueryOperationMaximumResults).
      * If you would like to fetch all results, use @c CKQueryOperation and its @c CKQueryCursor instead.
-     * Queries invoked within a @c sharedCloudDatabase must specify a @c zoneID.  Cross-zone queries are not supported in a @c sharedCloudDatabase
+     * Queries invoked within a @c sharedCloudDatabase must specify a @c zoneID. Cross-zone queries are not supported in
+     * a @c sharedCloudDatabase
      * Queries that do not specify a @c zoneID will perform a query across all zones in the database.
      */
     @Generated

@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]      MLCDataType
+ * [@enum] MLCDataType
  * <p>
  * A tensor data type.
  */

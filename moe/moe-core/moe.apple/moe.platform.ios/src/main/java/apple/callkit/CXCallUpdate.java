@@ -172,7 +172,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Override the computed caller name to a provider-defined value.
-     * Normally the system will determine the appropriate caller name to display (e.g. using the user's contacts) based on the supplied caller identifier. Set this property to customize.
+     * Normally the system will determine the appropriate caller name to display (e.g. using the user's contacts) based
+     * on the supplied caller identifier. Set this property to customize.
      */
     @Generated
     @Selector("localizedCallerName")
@@ -194,7 +195,8 @@ public class CXCallUpdate extends NSObject implements NSCopying {
 
     /**
      * Override the computed caller name to a provider-defined value.
-     * Normally the system will determine the appropriate caller name to display (e.g. using the user's contacts) based on the supplied caller identifier. Set this property to customize.
+     * Normally the system will determine the appropriate caller name to display (e.g. using the user's contacts) based
+     * on the supplied caller identifier. Set this property to customize.
      */
     @Generated
     @Selector("setLocalizedCallerName:")

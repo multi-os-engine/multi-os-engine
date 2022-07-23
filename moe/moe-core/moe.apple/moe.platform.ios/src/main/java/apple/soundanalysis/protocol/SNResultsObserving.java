@@ -22,7 +22,8 @@ public interface SNResultsObserving {
     /**
      * Informs the client of an error produced during analysis
      * <p>
-     * If an error is produced by a request, that request will not produce any more results, and is in a terminal state. The request:didFailWithError and requestDidComplete methods are mutually exclusive.
+     * If an error is produced by a request, that request will not produce any more results, and is in a terminal state.
+     * The request:didFailWithError and requestDidComplete methods are mutually exclusive.
      */
     @Generated
     @IsOptional
@@ -34,7 +35,8 @@ public interface SNResultsObserving {
     /**
      * Provides a new analysis result to the client with the specified time range
      * <p>
-     * This function will be called each time a new analysis result is available. Different types of analysis may produce results at different rates, spanning different time ranges.
+     * This function will be called each time a new analysis result is available. Different types of analysis may
+     * produce results at different rates, spanning different time ranges.
      */
     @Generated
     @Selector("request:didProduceResult:")
@@ -44,7 +46,8 @@ public interface SNResultsObserving {
     /**
      * Informs the client that the analysis request was completed normally
      * <p>
-     * If an analysis request completes normally, that request will not produce any more results, and is in a terminal state. The request:didFailWithError and requestDidComplete methods are mutually exclusive.
+     * If an analysis request completes normally, that request will not produce any more results, and is in a terminal
+     * state. The request:didFailWithError and requestDidComplete methods are mutually exclusive.
      */
     @Generated
     @IsOptional

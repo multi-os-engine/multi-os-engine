@@ -66,7 +66,8 @@ public interface ABPeoplePickerNavigationControllerDelegate {
     }
 
     /**
-     * Deprecated, use predicateForSelectionOfProperty and/or -peoplePickerNavigationController:didSelectPerson:property:identifier: instead.
+     * Deprecated, use predicateForSelectionOfProperty and/or
+     * -peoplePickerNavigationController:didSelectPerson:property:identifier: instead.
      */
     @Generated
     @IsOptional

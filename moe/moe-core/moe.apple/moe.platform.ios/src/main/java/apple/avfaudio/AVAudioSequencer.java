@@ -72,7 +72,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * This call is only valid if the player is playing and will return 0 with an error if the
      * player is not playing or if the starting time of the player was after the specified host
-     * time.  The method uses the sequence's tempo map to retrieve a beat time from the starting
+     * time. The method uses the sequence's tempo map to retrieve a beat time from the starting
      * and specified host time.
      */
     @Generated
@@ -112,7 +112,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * The current playback position in beats
      * <p>
-     * Setting this positions the sequencer's player to the specified beat.  This can be set while
+     * Setting this positions the sequencer's player to the specified beat. This can be set while
      * the player is playing, in which case playback will resume at the new position.
      */
     @Generated
@@ -124,7 +124,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * The current playback position in seconds
      * <p>
-     * Setting this positions the sequencer's player to the specified time.  This can be set while
+     * Setting this positions the sequencer's player to the specified time. This can be set while
      * the player is playing, in which case playback will resume at the new position.
      */
     @Generated
@@ -164,7 +164,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * This call is only valid if the player is playing and will return 0 with an error if the
      * player is not playing or if the starting position of the player (its "starting beat") was
-     * after the specified beat.  The method uses the sequence's tempo map to translate a beat
+     * after the specified beat. The method uses the sequence's tempo map to translate a beat
      * time from the starting time and beat of the player.
      */
     @Generated
@@ -276,7 +276,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * The playback rate of the sequencer's player
      * <p>
-     * 1.0 is normal playback rate.  Rate must be > 0.0.
+     * 1.0 is normal playback rate. Rate must be > 0.0.
      */
     @Generated
     @Selector("rate")
@@ -304,7 +304,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * The current playback position in beats
      * <p>
-     * Setting this positions the sequencer's player to the specified beat.  This can be set while
+     * Setting this positions the sequencer's player to the specified beat. This can be set while
      * the player is playing, in which case playback will resume at the new position.
      */
     @Generated
@@ -316,7 +316,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * The current playback position in seconds
      * <p>
-     * Setting this positions the sequencer's player to the specified time.  This can be set while
+     * Setting this positions the sequencer's player to the specified time. This can be set while
      * the player is playing, in which case playback will resume at the new position.
      */
     @Generated
@@ -328,7 +328,7 @@ public class AVAudioSequencer extends NSObject {
      * <p>
      * The playback rate of the sequencer's player
      * <p>
-     * 1.0 is normal playback rate.  Rate must be > 0.0.
+     * 1.0 is normal playback rate. Rate must be > 0.0.
      */
     @Generated
     @Selector("setRate:")

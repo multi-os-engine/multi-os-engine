@@ -91,7 +91,7 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]      data
+     * [@property] data
      * <p>
      * The JSON representation of the FHIR resource.
      * <p>
@@ -119,7 +119,7 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
     public static native long hash_static();
 
     /**
-     * [@property]      identifier
+     * [@property] identifier
      * <p>
      * The identifier of the resource, corresponding to the 'id' field in the resource's JSON representation.
      * <p>
@@ -172,7 +172,7 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]      resourceType
+     * [@property] resourceType
      * <p>
      * The resource type, corresponding to the 'resourceType' field in the resource's JSON representation.
      * <p>
@@ -188,7 +188,7 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      sourceURL
+     * [@property] sourceURL
      * <p>
      * The fully specified source URL of the FHIR resource.
      * <p>
@@ -219,7 +219,7 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
     public static native long version_static();
 
     /**
-     * [@property]      FHIRVersion
+     * [@property] FHIRVersion
      * <p>
      * The FHIR version of the resource data.
      */

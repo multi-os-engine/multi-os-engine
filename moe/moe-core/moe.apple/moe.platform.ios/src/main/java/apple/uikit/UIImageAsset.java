@@ -175,7 +175,8 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
     public native UIImageAsset initWithCoder(NSCoder coder);
 
     /**
-     * Adds a new variation to this image asset that is appropriate for the provided traits. Any traits not exposed by asset catalogs (such as forceTouchCapability) are ignored.
+     * Adds a new variation to this image asset that is appropriate for the provided traits. Any traits not exposed by
+     * asset catalogs (such as forceTouchCapability) are ignored.
      */
     @Generated
     @Selector("registerImage:withTraitCollection:")

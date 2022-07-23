@@ -360,7 +360,7 @@ public class CIContext extends NSObject {
     /**
      * Render 'image' to the given CVPixelBufferRef.
      * The 'bounds' parameter has the following behavior:
-     * In OS X and iOS 9 and later:  The 'image' is rendered into 'buffer' so that
+     * In OS X and iOS 9 and later: The 'image' is rendered into 'buffer' so that
      * point (0,0) of 'image' aligns to the lower left corner of 'buffer'.
      * The 'bounds' acts like a clip rect to limit what region of 'buffer' is modified.
      * In iOS 8 and earlier: The 'bounds' parameter acts to specify the region of 'image' to render.
@@ -375,8 +375,10 @@ public class CIContext extends NSObject {
     /**
      * Render 'bounds' of 'image' to a Metal texture, optionally specifying what command buffer to use.
      * Texture type must be MTLTexture2D.
-     * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an image into the specified buffer.
-     * This may impact system responsiveness and may result in higher memory usage if the image requires many passes to render.
+     * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an
+     * image into the specified buffer.
+     * This may impact system responsiveness and may result in higher memory usage if the image requires many passes to
+     * render.
      * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:].
      */
     @Generated
@@ -493,7 +495,8 @@ public class CIContext extends NSObject {
      * MTLTexture-backed CIRenderDestinations are only supported by MTLTexture-backed CIContexts.
      * GLTexture-backed CIRenderDestinations are only supported by GLContext-backed CIContexts.
      * <p>
-     * For contexts that are initialized with a command queue, this call will return as soon as all the work for the render is enqueued on the
+     * For contexts that are initialized with a command queue, this call will return as soon as all the work for the
+     * render is enqueued on the
      * context's device.
      * Otherwise, it will return as soon as all the work is scheduled.
      * <p>

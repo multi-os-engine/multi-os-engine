@@ -46,7 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * AVMetadataFaceObject is a concrete subclass of AVMetadataObject defining the features of a detected face.
  * <p>
- * AVMetadataFaceObject represents a single detected face in a picture. It is an immutable object describing the various features found in the face.
+ * AVMetadataFaceObject represents a single detected face in a picture. It is an immutable object describing the various
+ * features found in the face.
  * <p>
  * On supported platforms, AVCaptureMetadataOutput outputs arrays of detected face objects. See AVCaptureOutput.h.
  */
@@ -171,7 +172,9 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * <p>
      * A unique number associated with the receiver.
      * <p>
-     * The value of this property is an NSInteger indicating the unique identifier of this face in the picture. When a new face enters the picture, it is assigned a new unique identifier. faceIDs are not re-used as faces leave the picture and new ones enter. Faces that leave the picture then re-enter are assigned a new faceID.
+     * The value of this property is an NSInteger indicating the unique identifier of this face in the picture. When a
+     * new face enters the picture, it is assigned a new unique identifier. faceIDs are not re-used as faces leave the
+     * picture and new ones enter. Faces that leave the picture then re-enter are assigned a new faceID.
      */
     @Generated
     @Selector("faceID")
@@ -205,7 +208,9 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * <p>
      * The roll angle of the face in degrees.
      * <p>
-     * The value of this property is a CGFloat indicating the face's angle of roll (or tilt) in degrees. A value of 0.0 indicates that the face is level in the picture. If -hasRollAngle returns NO, then reading this property throws an NSGenericException.
+     * The value of this property is a CGFloat indicating the face's angle of roll (or tilt) in degrees. A value of 0.0
+     * indicates that the face is level in the picture. If -hasRollAngle returns NO, then reading this property throws
+     * an NSGenericException.
      */
     @Generated
     @Selector("rollAngle")
@@ -217,7 +222,9 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
      * <p>
      * The yaw angle of the face in degrees.
      * <p>
-     * The value of this property is a CGFloat indicating the face's angle of yaw (or turn) in degrees. A value of 0.0 indicates that the face is straight on in the picture. If -hasYawAngle returns NO, then reading this property throws an NSGenericException.
+     * The value of this property is a CGFloat indicating the face's angle of yaw (or turn) in degrees. A value of 0.0
+     * indicates that the face is straight on in the picture. If -hasYawAngle returns NO, then reading this property
+     * throws an NSGenericException.
      */
     @Generated
     @Selector("yawAngle")

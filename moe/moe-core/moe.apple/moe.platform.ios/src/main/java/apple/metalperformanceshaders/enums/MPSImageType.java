@@ -9,19 +9,19 @@ public final class MPSImageType {
     }
 
     /**
-     * texture2d                Standard Metal type
+     * texture2d Standard Metal type
      */
     @Generated public static final int MPSImageType2d = 0x00000000;
     /**
-     * texture2d_array          Standard Metal type
+     * texture2d_array Standard Metal type
      */
     @Generated public static final int MPSImageType2d_array = 0x00000001;
     /**
-     * texture2d[]              MPSTextureArray<texture2d>
+     * texture2d[] MPSTextureArray<texture2d>
      */
     @Generated public static final int MPSImageTypeArray2d = 0x00000002;
     /**
-     * texture2d_array[]        MPSTextureArray<texture2d_array>
+     * texture2d_array[] MPSTextureArray<texture2d_array>
      */
     @Generated public static final int MPSImageTypeArray2d_array = 0x00000003;
     /**

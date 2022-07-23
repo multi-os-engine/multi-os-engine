@@ -38,11 +38,15 @@ public final class AssetsLibrary {
     }
 
     /**
-     * This notification will be sent when the contents of the ALAssetsLibrary have changed from under the app that is using the data.
+     * This notification will be sent when the contents of the ALAssetsLibrary have changed from under the app that is
+     * using the data.
      * The API user should retain the library object to receive this notification.
-     * The userInfo may include the keys listed below, which identify specific ALAssets or ALAssetGroups that have become invalid and should be discarded. The values are NSSets of NSURLs which match the ALAssetPropertyURL and ALAssetsGroupPropertyURL properties.
+     * The userInfo may include the keys listed below, which identify specific ALAssets or ALAssetGroups that have
+     * become invalid and should be discarded. The values are NSSets of NSURLs which match the ALAssetPropertyURL and
+     * ALAssetsGroupPropertyURL properties.
      * If the userInfo is nil, all ALAssets and ALAssetGroups should be considered invalid and discarded.
-     * Modified ALAssets will be identified by the ALAssetLibraryUpdatedAssetsKey, but inserted or deleted ALAssets are identified by invalidating the containing ALAssetGroups.
+     * Modified ALAssets will be identified by the ALAssetLibraryUpdatedAssetsKey, but inserted or deleted ALAssets are
+     * identified by invalidating the containing ALAssetGroups.
      */
     @Deprecated
     @Generated
@@ -99,7 +103,8 @@ public final class AssetsLibrary {
     public static native String ALAssetPropertyType();
 
     /**
-     * CLLocation object with the location information of the asset. Only available if location services are enabled for the caller.
+     * CLLocation object with the location information of the asset. Only available if location services are enabled for
+     * the caller.
      */
     @Deprecated
     @Generated
@@ -108,7 +113,8 @@ public final class AssetsLibrary {
     public static native String ALAssetPropertyLocation();
 
     /**
-     * Play time duration of a video asset expressed as a double wrapped in an NSNumber. For photos, kALErrorInvalidProperty is returned.
+     * Play time duration of a video asset expressed as a double wrapped in an NSNumber. For photos,
+     * kALErrorInvalidProperty is returned.
      */
     @Deprecated
     @Generated
@@ -180,7 +186,8 @@ public final class AssetsLibrary {
     public static native String ALAssetTypeVideo();
 
     /**
-     * The asset's type cannot be determined. It could be a sound file, a video or photo file that we don't know about, or something else. This is possible only for assets imported from a camera onto the device.
+     * The asset's type cannot be determined. It could be a sound file, a video or photo file that we don't know about,
+     * or something else. This is possible only for assets imported from a camera onto the device.
      */
     @Deprecated
     @Generated

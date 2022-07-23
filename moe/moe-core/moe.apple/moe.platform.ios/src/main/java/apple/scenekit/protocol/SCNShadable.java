@@ -43,7 +43,8 @@ public interface SCNShadable {
     /**
      * handleBindingOfSymbol:usingBlock:
      * <p>
-     * Sets the block to call at render time to bind the value for the specified symbol of the receiver's SCNProgram. This method has no effect for symbols declared in shader modifiers.
+     * Sets the block to call at render time to bind the value for the specified symbol of the receiver's SCNProgram.
+     * This method has no effect for symbols declared in shader modifiers.
      * <p>
      * This method can only be used with OpenGL and OpenGLES based programs.
      *
@@ -61,7 +62,8 @@ public interface SCNShadable {
     /**
      * handleUnbindingOfSymbol:usingBlock:
      * <p>
-     * Sets the block to call at render time to unbind the value for the specified symbol of the receiver's SCNProgram. This method has no effect for symbols declared in shader modifiers.
+     * Sets the block to call at render time to unbind the value for the specified symbol of the receiver's SCNProgram.
+     * This method has no effect for symbols declared in shader modifiers.
      * <p>
      * This method can only be used with OpenGL and OpenGLES based programs.
      *
@@ -107,27 +109,34 @@ public interface SCNShadable {
     /**
      * [@property] shaderModifiers
      * <p>
-     * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
+     * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in
+     * the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
      * <p>
-     * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own declared uniforms.
+     * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed
+     * in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on
+     * specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own
+     * declared uniforms.
      * <p>
      * Shader modifiers can be used to tweak SceneKit rendering by adding custom code at the following entry points:
-     * 1. vertex   (SCNShaderModifierEntryPointGeometry)
-     * 2. surface  (SCNShaderModifierEntryPointSurface)
+     * 1. vertex (SCNShaderModifierEntryPointGeometry)
+     * 2. surface (SCNShaderModifierEntryPointSurface)
      * 3. lighting (SCNShaderModifierEntryPointLightingModel)
      * 4. fragment (SCNShaderModifierEntryPointFragment)
      * See below for a detailed explanation of these entry points and the context they provide.
      * <p>
-     * Shader modifiers can be written in either GLSL or the Metal Shading Language. Metal shaders won't run on iOS 8 and macOS 10.10 or earlier.
+     * Shader modifiers can be written in either GLSL or the Metal Shading Language. Metal shaders won't run on iOS 8
+     * and macOS 10.10 or earlier.
      * <p>
      * The structure of a shader modifier is:
      * <p>
      * GLSL
-     * | uniform float myGrayAmount = 3.0; // Custom GLSL uniforms declarations are of the form `[uniform type uniformName [= defaultValue]]`
+     * | uniform float myGrayAmount = 3.0; // Custom GLSL uniforms declarations are of the form `[uniform type
+     * uniformName [= defaultValue]]`
      * |
-     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not supported).
+     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not
+     * supported).
      * | float mySin(float t) {
-     * |    return sin(t);
+     * | return sin(t);
      * | }
      * |
      * | [#pragma transparent | opaque]
@@ -142,9 +151,10 @@ public interface SCNShadable {
      * | float myGrayAmount; // Custom Metal uniforms declarations require a #pragma and are of the form `[type name]`
      * |
      * | #pragma declaration
-     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not supported).
+     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not
+     * supported).
      * | float mySin(float t) {
-     * |    return sin(t);
+     * | return sin(t);
      * | }
      * |
      * | [#pragma transparent | opaque]
@@ -165,7 +175,8 @@ public interface SCNShadable {
      * The `#pragma opaque` directive
      * Forces the rendering to be opaque. It then ignores the alpha component of the fragment.
      * <p>
-     * When using Metal, you can also transfer varying values from the vertex shader (geometry shader modifier) to the fragment shader (surface and/or fragment shader modifier):
+     * When using Metal, you can also transfer varying values from the vertex shader (geometry shader modifier) to the
+     * fragment shader (surface and/or fragment shader modifier):
      * 1. Start by declaring the varying values in at least one of the shader modifiers:
      * <p>
      * Metal Shading Language
@@ -185,49 +196,59 @@ public interface SCNShadable {
      * <p>
      * SceneKit declares the following built-in uniforms:
      * <p>
-     * GLSL                                        | Metal Shading Language                                |
+     * GLSL | Metal Shading Language |
      * --------------------------------------------┼-------------------------------------------------------┤
-     * float u_time                                | float    scn_frame.time                               | The current time, in seconds
-     * vec2  u_inverseResolution                   | float2   scn_frame.inverseResolution                  | 1.0 / screen size
+     * float u_time | float scn_frame.time | The current time, in seconds
+     * vec2 u_inverseResolution | float2 scn_frame.inverseResolution | 1.0 / screen size
      * --------------------------------------------┼-------------------------------------------------------┤
-     * mat4  u_viewTransform                       | float4x4 scn_frame.viewTransform                      | See SCNViewTransform
-     * mat4  u_inverseViewTransform                | float4x4 scn_frame.inverseViewTransform               |
-     * mat4  u_projectionTransform                 | float4x4 scn_frame.projectionTransform                | See SCNProjectionTransform
-     * mat4  u_inverseProjectionTransform          | float4x4 scn_frame.inverseProjectionTransform         |
+     * mat4 u_viewTransform | float4x4 scn_frame.viewTransform | See SCNViewTransform
+     * mat4 u_inverseViewTransform | float4x4 scn_frame.inverseViewTransform |
+     * mat4 u_projectionTransform | float4x4 scn_frame.projectionTransform | See SCNProjectionTransform
+     * mat4 u_inverseProjectionTransform | float4x4 scn_frame.inverseProjectionTransform |
      * --------------------------------------------┼-------------------------------------------------------┤
-     * mat4  u_normalTransform                     | float4x4 scn_node.normalTransform                     | See SCNNormalTransform
-     * mat4  u_modelTransform                      | float4x4 scn_node.modelTransform                      | See SCNModelTransform
-     * mat4  u_inverseModelTransform               | float4x4 scn_node.inverseModelTransform               |
-     * mat4  u_modelViewTransform                  | float4x4 scn_node.modelViewTransform                  | See SCNModelViewTransform
-     * mat4  u_inverseModelViewTransform           | float4x4 scn_node.inverseModelViewTransform           |
-     * mat4  u_modelViewProjectionTransform        | float4x4 scn_node.modelViewProjectionTransform        | See SCNModelViewProjectionTransform
-     * mat4  u_inverseModelViewProjectionTransform | float4x4 scn_node.inverseModelViewProjectionTransform |
+     * mat4 u_normalTransform | float4x4 scn_node.normalTransform | See SCNNormalTransform
+     * mat4 u_modelTransform | float4x4 scn_node.modelTransform | See SCNModelTransform
+     * mat4 u_inverseModelTransform | float4x4 scn_node.inverseModelTransform |
+     * mat4 u_modelViewTransform | float4x4 scn_node.modelViewTransform | See SCNModelViewTransform
+     * mat4 u_inverseModelViewTransform | float4x4 scn_node.inverseModelViewTransform |
+     * mat4 u_modelViewProjectionTransform | float4x4 scn_node.modelViewProjectionTransform | See
+     * SCNModelViewProjectionTransform
+     * mat4 u_inverseModelViewProjectionTransform | float4x4 scn_node.inverseModelViewProjectionTransform |
      * --------------------------------------------┼-------------------------------------------------------┤
-     * mat2x3 u_boundingBox;                       | float2x3 scn_node.boundingBox                         | The bounding box of the current geometry, in model space, u_boundingBox[0].xyz and u_boundingBox[1].xyz being respectively the minimum and maximum corner of the box.
-     * mat2x3 u_worldBoundingBox;                  | float2x3 scn_node.worldBoundingBox                    | The bounding box of the current geometry, in world space.
+     * mat2x3 u_boundingBox; | float2x3 scn_node.boundingBox | The bounding box of the current geometry, in model space,
+     * u_boundingBox[0].xyz and u_boundingBox[1].xyz being respectively the minimum and maximum corner of the box.
+     * mat2x3 u_worldBoundingBox; | float2x3 scn_node.worldBoundingBox | The bounding box of the current geometry, in
+     * world space.
      * <p>
-     * When writing shaders using the Metal Shading Language a complete description of the type of the scn_frame variable (SCNSceneBuffer) can be found in the <SceneKit/scn_metal> header file.
-     * The type of the scn_node variable is generated at compile time and there's no corresponding header file in the framework.
+     * When writing shaders using the Metal Shading Language a complete description of the type of the scn_frame
+     * variable (SCNSceneBuffer) can be found in the <SceneKit/scn_metal> header file.
+     * The type of the scn_node variable is generated at compile time and there's no corresponding header file in the
+     * framework.
      * <p>
      * In addition to these built-in uniforms, it is possible to use custom uniforms:
      * <p>
-     * The SCNGeometry and SCNMaterial classes are key-value coding compliant classes, which means that you can set values for arbitrary keys. Even if the key `myAmplitude` is not a declared property of the class, you can still set a value for it.
-     * Declaring a `myAmplitude` uniform in the shader modifier makes SceneKit observe the reveiver's `myAmplitude` key. Any change to that key will make SceneKit bind the uniform with the new value.
+     * The SCNGeometry and SCNMaterial classes are key-value coding compliant classes, which means that you can set
+     * values for arbitrary keys. Even if the key `myAmplitude` is not a declared property of the class, you can still
+     * set a value for it.
+     * Declaring a `myAmplitude` uniform in the shader modifier makes SceneKit observe the reveiver's `myAmplitude` key.
+     * Any change to that key will make SceneKit bind the uniform with the new value.
      * <p>
-     * The following GLSL and Metal Shading Language types (and their Objective-C counterparts) can be used to declare (and bind) custom uniforms:
+     * The following GLSL and Metal Shading Language types (and their Objective-C counterparts) can be used to declare
+     * (and bind) custom uniforms:
      * <p>
-     * GLSL        | Metal Shading Language | Objective-C                           |
+     * GLSL | Metal Shading Language | Objective-C |
      * ------------┼------------------------┼---------------------------------------┤
-     * int         | int                    | NSNumber, NSInteger, int              |
-     * float       | float                  | NSNumber, CGFloat, float, double      |
-     * vec2        | float2                 | CGPoint                               |
-     * vec3        | float3                 | SCNVector3                            |
-     * vec4        | float4                 | SCNVector4                            |
-     * mat4, mat44 | float4x4               | SCNMatrix4                            |
-     * sampler2D   | texture2d              | SCNMaterialProperty                   |
-     * samplerCube | texturecube            | SCNMaterialProperty (with a cube map) |
-     * -           | device const T*        | MTLBuffer                             | Feature introduced in macOS 10.13, iOS 11.0 and tvOS 11.0
-     * -           | struct {...}           | NSData                                | The entire struct can be set using NSData but it is also possible to set individual members using the member's name as a key and a value compatible with the member's type
+     * int | int | NSNumber, NSInteger, int |
+     * float | float | NSNumber, CGFloat, float, double |
+     * vec2 | float2 | CGPoint |
+     * vec3 | float3 | SCNVector3 |
+     * vec4 | float4 | SCNVector4 |
+     * mat4, mat44 | float4x4 | SCNMatrix4 |
+     * sampler2D | texture2d | SCNMaterialProperty |
+     * samplerCube | texturecube | SCNMaterialProperty (with a cube map) |
+     * - | device const T* | MTLBuffer | Feature introduced in macOS 10.13, iOS 11.0 and tvOS 11.0
+     * - | struct {...} | NSData | The entire struct can be set using NSData but it is also possible to set individual
+     * members using the member's name as a key and a value compatible with the member's type
      * <p>
      * Common scalar types wrapped into a NSValue are also supported.
      * <p>
@@ -248,27 +269,34 @@ public interface SCNShadable {
     /**
      * [@property] shaderModifiers
      * <p>
-     * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
+     * Dictionary of shader modifiers snippets, targeting entry points. The valid keys are the entry points described in
+     * the "Shader Modifier Entry Point" constants. The values are the code snippets formatted as described below.
      * <p>
-     * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own declared uniforms.
+     * Shader modifiers allow you to inject shader code in the standard shaders of SceneKit. This injection is allowed
+     * in few controlled entry points, allowing specific kind of tasks in specific context. Each modifier can operate on
+     * specific structures along with access to global uniforms, that could be the standard SceneKit uniforms or its own
+     * declared uniforms.
      * <p>
      * Shader modifiers can be used to tweak SceneKit rendering by adding custom code at the following entry points:
-     * 1. vertex   (SCNShaderModifierEntryPointGeometry)
-     * 2. surface  (SCNShaderModifierEntryPointSurface)
+     * 1. vertex (SCNShaderModifierEntryPointGeometry)
+     * 2. surface (SCNShaderModifierEntryPointSurface)
      * 3. lighting (SCNShaderModifierEntryPointLightingModel)
      * 4. fragment (SCNShaderModifierEntryPointFragment)
      * See below for a detailed explanation of these entry points and the context they provide.
      * <p>
-     * Shader modifiers can be written in either GLSL or the Metal Shading Language. Metal shaders won't run on iOS 8 and macOS 10.10 or earlier.
+     * Shader modifiers can be written in either GLSL or the Metal Shading Language. Metal shaders won't run on iOS 8
+     * and macOS 10.10 or earlier.
      * <p>
      * The structure of a shader modifier is:
      * <p>
      * GLSL
-     * | uniform float myGrayAmount = 3.0; // Custom GLSL uniforms declarations are of the form `[uniform type uniformName [= defaultValue]]`
+     * | uniform float myGrayAmount = 3.0; // Custom GLSL uniforms declarations are of the form `[uniform type
+     * uniformName [= defaultValue]]`
      * |
-     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not supported).
+     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not
+     * supported).
      * | float mySin(float t) {
-     * |    return sin(t);
+     * | return sin(t);
      * | }
      * |
      * | [#pragma transparent | opaque]
@@ -283,9 +311,10 @@ public interface SCNShadable {
      * | float myGrayAmount; // Custom Metal uniforms declarations require a #pragma and are of the form `[type name]`
      * |
      * | #pragma declaration
-     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not supported).
+     * | // Optional global function definitions (for Metal: references to uniforms in global functions are not
+     * supported).
      * | float mySin(float t) {
-     * |    return sin(t);
+     * | return sin(t);
      * | }
      * |
      * | [#pragma transparent | opaque]
@@ -306,7 +335,8 @@ public interface SCNShadable {
      * The `#pragma opaque` directive
      * Forces the rendering to be opaque. It then ignores the alpha component of the fragment.
      * <p>
-     * When using Metal, you can also transfer varying values from the vertex shader (geometry shader modifier) to the fragment shader (surface and/or fragment shader modifier):
+     * When using Metal, you can also transfer varying values from the vertex shader (geometry shader modifier) to the
+     * fragment shader (surface and/or fragment shader modifier):
      * 1. Start by declaring the varying values in at least one of the shader modifiers:
      * <p>
      * Metal Shading Language
@@ -326,49 +356,59 @@ public interface SCNShadable {
      * <p>
      * SceneKit declares the following built-in uniforms:
      * <p>
-     * GLSL                                        | Metal Shading Language                                |
+     * GLSL | Metal Shading Language |
      * --------------------------------------------┼-------------------------------------------------------┤
-     * float u_time                                | float    scn_frame.time                               | The current time, in seconds
-     * vec2  u_inverseResolution                   | float2   scn_frame.inverseResolution                  | 1.0 / screen size
+     * float u_time | float scn_frame.time | The current time, in seconds
+     * vec2 u_inverseResolution | float2 scn_frame.inverseResolution | 1.0 / screen size
      * --------------------------------------------┼-------------------------------------------------------┤
-     * mat4  u_viewTransform                       | float4x4 scn_frame.viewTransform                      | See SCNViewTransform
-     * mat4  u_inverseViewTransform                | float4x4 scn_frame.inverseViewTransform               |
-     * mat4  u_projectionTransform                 | float4x4 scn_frame.projectionTransform                | See SCNProjectionTransform
-     * mat4  u_inverseProjectionTransform          | float4x4 scn_frame.inverseProjectionTransform         |
+     * mat4 u_viewTransform | float4x4 scn_frame.viewTransform | See SCNViewTransform
+     * mat4 u_inverseViewTransform | float4x4 scn_frame.inverseViewTransform |
+     * mat4 u_projectionTransform | float4x4 scn_frame.projectionTransform | See SCNProjectionTransform
+     * mat4 u_inverseProjectionTransform | float4x4 scn_frame.inverseProjectionTransform |
      * --------------------------------------------┼-------------------------------------------------------┤
-     * mat4  u_normalTransform                     | float4x4 scn_node.normalTransform                     | See SCNNormalTransform
-     * mat4  u_modelTransform                      | float4x4 scn_node.modelTransform                      | See SCNModelTransform
-     * mat4  u_inverseModelTransform               | float4x4 scn_node.inverseModelTransform               |
-     * mat4  u_modelViewTransform                  | float4x4 scn_node.modelViewTransform                  | See SCNModelViewTransform
-     * mat4  u_inverseModelViewTransform           | float4x4 scn_node.inverseModelViewTransform           |
-     * mat4  u_modelViewProjectionTransform        | float4x4 scn_node.modelViewProjectionTransform        | See SCNModelViewProjectionTransform
-     * mat4  u_inverseModelViewProjectionTransform | float4x4 scn_node.inverseModelViewProjectionTransform |
+     * mat4 u_normalTransform | float4x4 scn_node.normalTransform | See SCNNormalTransform
+     * mat4 u_modelTransform | float4x4 scn_node.modelTransform | See SCNModelTransform
+     * mat4 u_inverseModelTransform | float4x4 scn_node.inverseModelTransform |
+     * mat4 u_modelViewTransform | float4x4 scn_node.modelViewTransform | See SCNModelViewTransform
+     * mat4 u_inverseModelViewTransform | float4x4 scn_node.inverseModelViewTransform |
+     * mat4 u_modelViewProjectionTransform | float4x4 scn_node.modelViewProjectionTransform | See
+     * SCNModelViewProjectionTransform
+     * mat4 u_inverseModelViewProjectionTransform | float4x4 scn_node.inverseModelViewProjectionTransform |
      * --------------------------------------------┼-------------------------------------------------------┤
-     * mat2x3 u_boundingBox;                       | float2x3 scn_node.boundingBox                         | The bounding box of the current geometry, in model space, u_boundingBox[0].xyz and u_boundingBox[1].xyz being respectively the minimum and maximum corner of the box.
-     * mat2x3 u_worldBoundingBox;                  | float2x3 scn_node.worldBoundingBox                    | The bounding box of the current geometry, in world space.
+     * mat2x3 u_boundingBox; | float2x3 scn_node.boundingBox | The bounding box of the current geometry, in model space,
+     * u_boundingBox[0].xyz and u_boundingBox[1].xyz being respectively the minimum and maximum corner of the box.
+     * mat2x3 u_worldBoundingBox; | float2x3 scn_node.worldBoundingBox | The bounding box of the current geometry, in
+     * world space.
      * <p>
-     * When writing shaders using the Metal Shading Language a complete description of the type of the scn_frame variable (SCNSceneBuffer) can be found in the <SceneKit/scn_metal> header file.
-     * The type of the scn_node variable is generated at compile time and there's no corresponding header file in the framework.
+     * When writing shaders using the Metal Shading Language a complete description of the type of the scn_frame
+     * variable (SCNSceneBuffer) can be found in the <SceneKit/scn_metal> header file.
+     * The type of the scn_node variable is generated at compile time and there's no corresponding header file in the
+     * framework.
      * <p>
      * In addition to these built-in uniforms, it is possible to use custom uniforms:
      * <p>
-     * The SCNGeometry and SCNMaterial classes are key-value coding compliant classes, which means that you can set values for arbitrary keys. Even if the key `myAmplitude` is not a declared property of the class, you can still set a value for it.
-     * Declaring a `myAmplitude` uniform in the shader modifier makes SceneKit observe the reveiver's `myAmplitude` key. Any change to that key will make SceneKit bind the uniform with the new value.
+     * The SCNGeometry and SCNMaterial classes are key-value coding compliant classes, which means that you can set
+     * values for arbitrary keys. Even if the key `myAmplitude` is not a declared property of the class, you can still
+     * set a value for it.
+     * Declaring a `myAmplitude` uniform in the shader modifier makes SceneKit observe the reveiver's `myAmplitude` key.
+     * Any change to that key will make SceneKit bind the uniform with the new value.
      * <p>
-     * The following GLSL and Metal Shading Language types (and their Objective-C counterparts) can be used to declare (and bind) custom uniforms:
+     * The following GLSL and Metal Shading Language types (and their Objective-C counterparts) can be used to declare
+     * (and bind) custom uniforms:
      * <p>
-     * GLSL        | Metal Shading Language | Objective-C                           |
+     * GLSL | Metal Shading Language | Objective-C |
      * ------------┼------------------------┼---------------------------------------┤
-     * int         | int                    | NSNumber, NSInteger, int              |
-     * float       | float                  | NSNumber, CGFloat, float, double      |
-     * vec2        | float2                 | CGPoint                               |
-     * vec3        | float3                 | SCNVector3                            |
-     * vec4        | float4                 | SCNVector4                            |
-     * mat4, mat44 | float4x4               | SCNMatrix4                            |
-     * sampler2D   | texture2d              | SCNMaterialProperty                   |
-     * samplerCube | texturecube            | SCNMaterialProperty (with a cube map) |
-     * -           | device const T*        | MTLBuffer                             | Feature introduced in macOS 10.13, iOS 11.0 and tvOS 11.0
-     * -           | struct {...}           | NSData                                | The entire struct can be set using NSData but it is also possible to set individual members using the member's name as a key and a value compatible with the member's type
+     * int | int | NSNumber, NSInteger, int |
+     * float | float | NSNumber, CGFloat, float, double |
+     * vec2 | float2 | CGPoint |
+     * vec3 | float3 | SCNVector3 |
+     * vec4 | float4 | SCNVector4 |
+     * mat4, mat44 | float4x4 | SCNMatrix4 |
+     * sampler2D | texture2d | SCNMaterialProperty |
+     * samplerCube | texturecube | SCNMaterialProperty (with a cube map) |
+     * - | device const T* | MTLBuffer | Feature introduced in macOS 10.13, iOS 11.0 and tvOS 11.0
+     * - | struct {...} | NSData | The entire struct can be set using NSData but it is also possible to set individual
+     * members using the member's name as a key and a value compatible with the member's type
      * <p>
      * Common scalar types wrapped into a NSValue are also supported.
      * <p>
@@ -405,9 +445,11 @@ public interface SCNShadable {
     /**
      * [@property] minimumLanguageVersion
      * <p>
-     * The minimum language version required to interpret the shadable source code (wrapped MTLLanguageVersion). Defaults to nil.
+     * The minimum language version required to interpret the shadable source code (wrapped MTLLanguageVersion).
+     * Defaults to nil.
      * <p>
-     * By default SceneKit does not use the most recent language version in order to reduce compilation times. If set to nil the shadable source code is assumed to compile with any language version greater than or equal to Metal 2.0.
+     * By default SceneKit does not use the most recent language version in order to reduce compilation times. If set to
+     * nil the shadable source code is assumed to compile with any language version greater than or equal to Metal 2.0.
      */
     @Generated
     @IsOptional
@@ -419,9 +461,11 @@ public interface SCNShadable {
     /**
      * [@property] minimumLanguageVersion
      * <p>
-     * The minimum language version required to interpret the shadable source code (wrapped MTLLanguageVersion). Defaults to nil.
+     * The minimum language version required to interpret the shadable source code (wrapped MTLLanguageVersion).
+     * Defaults to nil.
      * <p>
-     * By default SceneKit does not use the most recent language version in order to reduce compilation times. If set to nil the shadable source code is assumed to compile with any language version greater than or equal to Metal 2.0.
+     * By default SceneKit does not use the most recent language version in order to reduce compilation times. If set to
+     * nil the shadable source code is assumed to compile with any language version greater than or equal to Metal 2.0.
      */
     @Generated
     @IsOptional

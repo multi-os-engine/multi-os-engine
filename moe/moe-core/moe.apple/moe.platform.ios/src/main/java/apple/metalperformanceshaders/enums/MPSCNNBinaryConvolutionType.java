@@ -14,11 +14,13 @@ public final class MPSCNNBinaryConvolutionType {
      */
     @Generated @NUInt public static final long BinaryWeights = 0x0000000000000000L;
     /**
-     * Use input image binarization and the XNOR-operation to perform the actual convolution - See MPSCNNBinaryConvolution for details
+     * Use input image binarization and the XNOR-operation to perform the actual convolution - See
+     * MPSCNNBinaryConvolution for details
      */
     @Generated @NUInt public static final long XNOR = 0x0000000000000001L;
     /**
-     * Use input image binarization and the AND-operation to perform the actual convolution - See MPSCNNBinaryConvolution for details
+     * Use input image binarization and the AND-operation to perform the actual convolution - See
+     * MPSCNNBinaryConvolution for details
      */
     @Generated @NUInt public static final long AND = 0x0000000000000002L;
 }

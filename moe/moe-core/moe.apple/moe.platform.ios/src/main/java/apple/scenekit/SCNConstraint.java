@@ -269,7 +269,9 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] incremental
      * <p>
-     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the
+     * rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous
+     * versions.
      */
     @Generated
     @Selector("isIncremental")
@@ -291,7 +293,9 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] incremental
      * <p>
-     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous versions.
+     * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the
+     * rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous
+     * versions.
      */
     @Generated
     @Selector("setIncremental:")

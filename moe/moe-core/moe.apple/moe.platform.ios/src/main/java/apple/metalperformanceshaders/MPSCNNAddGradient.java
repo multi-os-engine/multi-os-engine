@@ -130,7 +130,8 @@ public class MPSCNNAddGradient extends MPSCNNArithmeticGradient {
      *
      * @param device                  The device the filter will run on.
      * @param isSecondarySourceFilter A boolean indicating whether the arithmetic gradient
-     *                                filter is operating on the primary or secondary source image from the forward pass.
+     *                                filter is operating on the primary or secondary source image from the forward
+     *                                pass.
      * @return A valid MPSCNNAddGradient object or nil, if failure.
      */
     @Generated

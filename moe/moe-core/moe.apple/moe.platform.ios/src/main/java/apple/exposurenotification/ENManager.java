@@ -50,7 +50,8 @@ public class ENManager extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Activates the object to prepare it for use. Properties may not be usable until the completion handler reports success.
+     * Activates the object to prepare it for use. Properties may not be usable until the completion handler reports
+     * success.
      */
     @Generated
     @Selector("activateWithCompletionHandler:")
@@ -66,7 +67,8 @@ public class ENManager extends NSObject {
 
     /**
      * Invoked when the app is launched for an activity while it might not be running.
-     * When the app is launched, it should create an ENManager instance, set this handler, and then activate the manager.
+     * When the app is launched, it should create an ENManager instance, set this handler, and then activate the
+     * manager.
      */
     @Generated
     @Selector("activityHandler")
@@ -256,7 +258,8 @@ public class ENManager extends NSObject {
     /**
      * Requests the temporary exposure keys, including the current key, used by this device for testing.
      * Each use of this API will present the user with system UI to authorize it.
-     * WARNING: This API is only for use by developers. It requires a special entitlement that is not allowed in the app store.
+     * WARNING: This API is only for use by developers. It requires a special entitlement that is not allowed in the app
+     * store.
      * It's only intended to allow developers to test without needing to wait 24 hours for a key to be released.
      */
     @Generated
@@ -310,7 +313,8 @@ public class ENManager extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * Stops any outstanding operations and invalidates this object. Once this is called, the object can no longer be used.
+     * Stops any outstanding operations and invalidates this object. Once this is called, the object can no longer be
+     * used.
      * To start using ENManager again, a new instance of the class must be created and activated.
      */
     @Generated
@@ -318,7 +322,8 @@ public class ENManager extends NSObject {
     public native void invalidate();
 
     /**
-     * Invoked exactly once when invalidation completes. This property is cleared before it's invoked to break retain cycles.
+     * Invoked exactly once when invalidation completes. This property is cleared before it's invoked to break retain
+     * cycles.
      */
     @Generated
     @Selector("invalidationHandler")
@@ -347,7 +352,8 @@ public class ENManager extends NSObject {
 
     /**
      * Authorizes a one-time, future release of diagnosis keys without a user prompt at the time of release.
-     * This allows the user to authorize ahead of time in case they are unable to approve at the time of positive diagnosis.
+     * This allows the user to authorize ahead of time in case they are unable to approve at the time of positive
+     * diagnosis.
      * WARNING: Application should be in foreground to request the authorization
      */
     @Generated
@@ -389,7 +395,8 @@ public class ENManager extends NSObject {
 
     /**
      * Invoked when the app is launched for an activity while it might not be running.
-     * When the app is launched, it should create an ENManager instance, set this handler, and then activate the manager.
+     * When the app is launched, it should create an ENManager instance, set this handler, and then activate the
+     * manager.
      */
     @Generated
     @Selector("setActivityHandler:")
@@ -440,7 +447,8 @@ public class ENManager extends NSObject {
     }
 
     /**
-     * Invoked exactly once when invalidation completes. This property is cleared before it's invoked to break retain cycles.
+     * Invoked exactly once when invalidation completes. This property is cleared before it's invoked to break retain
+     * cycles.
      */
     @Generated
     @Selector("setInvalidationHandler:")

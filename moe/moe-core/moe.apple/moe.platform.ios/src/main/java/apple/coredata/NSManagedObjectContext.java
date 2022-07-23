@@ -135,10 +135,13 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Similar to mergeChangesFromContextDidSaveNotification, this method handles changes from potentially other processes or serialized state.  It more efficiently
-     * merges changes into multiple contexts, as well as nested context. The keys in the dictionary should be one those from an
+     * Similar to mergeChangesFromContextDidSaveNotification, this method handles changes from potentially other
+     * processes or serialized state. It more efficiently
+     * merges changes into multiple contexts, as well as nested context. The keys in the dictionary should be one those
+     * from an
      * NSManagedObjectContextObjectsDidChangeNotification: NSInsertedObjectsKey, NSUpdatedObjectsKey, etc.
-     * the values should be an NSArray of either NSManagedObjectID or NSURL objects conforming to valid results from -URIRepresentation
+     * the values should be an NSArray of either NSManagedObjectID or NSURL objects conforming to valid results from
+     * -URIRepresentation
      */
     @Generated
     @Selector("mergeChangesFromRemoteContextSave:intoContexts:")
@@ -173,7 +176,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public static native long version_static();
 
     /**
-     * specifies the store a newly inserted object will be saved in.  Unnecessary unless there are multiple writable persistent stores added to the NSPersistentStoreCoordinator which support this object's entity.
+     * specifies the store a newly inserted object will be saved in. Unnecessary unless there are multiple writable
+     * persistent stores added to the NSPersistentStoreCoordinator which support this object's entity.
      */
     @Generated
     @Selector("assignObject:toPersistentStore:")
@@ -181,7 +185,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
             NSPersistentStore store);
 
     /**
-     * Whether the context automatically merges changes saved to its coordinator or parent context. Setting this property to YES when the context is pinned to a non-current query generation is not supported.
+     * Whether the context automatically merges changes saved to its coordinator or parent context. Setting this
+     * property to YES when the context is pinned to a non-current query generation is not supported.
      */
     @Generated
     @Selector("automaticallyMergesChangesFromParent")
@@ -193,7 +198,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native long concurrencyType();
 
     /**
-     * returns the number of objects a fetch request would have returned if it had been passed to -executeFetchRequest:error:.   If an error occurred during the processing of the request, this method will return NSNotFound.
+     * returns the number of objects a fetch request would have returned if it had been passed to
+     * -executeFetchRequest:error:. If an error occurred during the processing of the request, this method will return
+     * NSNotFound.
      */
     @Generated
     @Selector("countForFetchRequest:error:")
@@ -210,7 +217,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native NSSet<? extends NSManagedObject> deletedObjects();
 
     /**
-     * marks an object for conflict detection, which means that the save fails if the object has been altered in the persistent store by another application.  This allows optimistic locking for unchanged objects.  Conflict detection is always performed on changed or deleted objects.
+     * marks an object for conflict detection, which means that the save fails if the object has been altered in the
+     * persistent store by another application. This allows optimistic locking for unchanged objects. Conflict detection
+     * is always performed on changed or deleted objects.
      */
     @Generated
     @Selector("detectConflictsForObject:")
@@ -221,7 +230,13 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * method to fetch objects from the persistent stores into the context (fetch request defines the entity and predicate as well as a sort order for the objects); context will match the results from persistent stores with current changes in the context (so inserted objects are returned even if they are not persisted yet); to fetch a single object with an ID if it is not guaranteed to exist and thus -objectWithObjectID: cannot be used, one would create a predicate like [NSComparisonPredicate predicateWithLeftExpression:[NSExpression expressionForKeyPath:@"objectID"] rightExpression:[NSExpression expressionForConstantValue:<object id>] modifier:NSDirectPredicateModifier type:NSEqualToPredicateOperatorType options:0]
+     * method to fetch objects from the persistent stores into the context (fetch request defines the entity and
+     * predicate as well as a sort order for the objects); context will match the results from persistent stores with
+     * current changes in the context (so inserted objects are returned even if they are not persisted yet); to fetch a
+     * single object with an ID if it is not guaranteed to exist and thus -objectWithObjectID: cannot be used, one would
+     * create a predicate like [NSComparisonPredicate predicateWithLeftExpression:[NSExpression
+     * expressionForKeyPath:@"objectID"] rightExpression:[NSExpression expressionForConstantValue:<object id>]
+     * modifier:NSDirectPredicateModifier type:NSEqualToPredicateOperatorType options:0]
      */
     @Generated
     @Selector("executeFetchRequest:error:")
@@ -242,7 +257,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * returns the object for the specified ID if it is already registered in the context, or faults the object into the context.  It might perform I/O if the data is uncached.  If the object cannot be fetched, or does not exist, or cannot be faulted, it returns nil.  Unlike -objectWithID: it never returns a fault.
+     * returns the object for the specified ID if it is already registered in the context, or faults the object into the
+     * context. It might perform I/O if the data is uncached. If the object cannot be fetched, or does not exist, or
+     * cannot be faulted, it returns nil. Unlike -objectWithID: it never returns a fault.
      */
     @Generated
     @Selector("existingObjectWithID:error:")
@@ -280,7 +297,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void lock();
 
     /**
-     * Merges the changes specified in notification object received from another context's NSManagedObjectContextDidSaveNotification into the receiver.  This method will refresh any objects which have been updated in the other context, fault in any newly inserted objects, and invoke deleteObject: on those which have been deleted.  The developer is only responsible for the thread safety of the receiver.
+     * Merges the changes specified in notification object received from another context's
+     * NSManagedObjectContextDidSaveNotification into the receiver. This method will refresh any objects which have been
+     * updated in the other context, fault in any newly inserted objects, and invoke deleteObject: on those which have
+     * been deleted. The developer is only responsible for the thread safety of the receiver.
      */
     @Generated
     @Selector("mergeChangesFromContextDidSaveNotification:")
@@ -295,7 +315,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native Object mergePolicy();
 
     /**
-     * custom label for a context.  NSPrivateQueueConcurrencyType contexts will set the label on their queue
+     * custom label for a context. NSPrivateQueueConcurrencyType contexts will set the label on their queue
      */
     @Generated
     @Selector("name")
@@ -309,7 +329,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native NSManagedObject objectRegisteredForID(NSManagedObjectID objectID);
 
     /**
-     * returns the object for the specified ID if it is already registered, otherwise it creates a fault corresponding to that objectID.  It never returns nil, and never performs I/O.  The object specified by objectID is assumed to exist, and if that assumption is wrong the fault may throw an exception when used.
+     * returns the object for the specified ID if it is already registered, otherwise it creates a fault corresponding
+     * to that objectID. It never returns nil, and never performs I/O. The object specified by objectID is assumed to
+     * exist, and if that assumption is wrong the fault may throw an exception when used.
      */
     @Generated
     @Selector("objectWithID:")
@@ -324,7 +346,13 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
             @Mapped(ObjCObjectMapper.class) Object object, NSDictionary<String, ?> change, VoidPtr context);
 
     /**
-     * Converts the object IDs of the specified objects to permanent IDs.  This implementation will convert the object ID of each managed object in the specified array to a permanent ID.  Any object in the target array with a permanent ID will be ignored;  additionally, any managed object in the array not already assigned to a store will be assigned, based on the same rules Core Data uses for assignment during a save operation (first writable store supporting the entity, and appropriate for the instance and its related items.)  Although the object will have a permanent ID, it will still respond positively to -isInserted until it is saved.  If an error is encountered obtaining an identifier, the return value will be NO.
+     * Converts the object IDs of the specified objects to permanent IDs. This implementation will convert the object ID
+     * of each managed object in the specified array to a permanent ID. Any object in the target array with a permanent
+     * ID will be ignored; additionally, any managed object in the array not already assigned to a store will be
+     * assigned, based on the same rules Core Data uses for assignment during a save operation (first writable store
+     * supporting the entity, and appropriate for the instance and its related items.) Although the object will have a
+     * permanent ID, it will still respond positively to -isInserted until it is saved. If an error is encountered
+     * obtaining an identifier, the return value will be NO.
      */
     @Generated
     @Selector("obtainPermanentIDsForObjects:error:")
@@ -336,14 +364,15 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native NSManagedObjectContext parentContext();
 
     /**
-     * asynchronously performs the block on the context's queue.  Encapsulates an autorelease pool and a call to processPendingChanges
+     * asynchronously performs the block on the context's queue. Encapsulates an autorelease pool and a call to
+     * processPendingChanges
      */
     @Generated
     @Selector("performBlock:")
     public native void performBlock(@ObjCBlock(name = "call_performBlock") Block_performBlock block);
 
     /**
-     * synchronously performs the block on the context's queue.  May safely be called reentrantly.
+     * synchronously performs the block on the context's queue. May safely be called reentrantly.
      */
     @Generated
     @Selector("performBlockAndWait:")
@@ -358,7 +387,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
 
     /**
-     * usually contexts process changes to the object graph coalesced at the end of the event - this method triggers it explicitly
+     * usually contexts process changes to the object graph coalesced at the end of the event - this method triggers it
+     * explicitly
      */
     @Generated
     @Selector("processPendingChanges")
@@ -387,14 +417,17 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void redo();
 
     /**
-     * calls -refreshObject:mergeChanges: on all currently registered objects with this context.  It handles dirtied objects and clearing the context reference queue
+     * calls -refreshObject:mergeChanges: on all currently registered objects with this context. It handles dirtied
+     * objects and clearing the context reference queue
      */
     @Generated
     @Selector("refreshAllObjects")
     public native void refreshAllObjects();
 
     /**
-     * if flag is YES, merges an object with the state of the object available in the persistent store coordinator; if flag is NO, simply refaults an object without merging (which also causes other related managed objects to be released, so you can use this method to trim the portion of your object graph you want to hold in memory)
+     * if flag is YES, merges an object with the state of the object available in the persistent store coordinator; if
+     * flag is NO, simply refaults an object without merging (which also causes other related managed objects to be
+     * released, so you can use this method to trim the portion of your object graph you want to hold in memory)
      */
     @Generated
     @Selector("refreshObject:mergeChanges:")
@@ -424,7 +457,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native boolean save(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Whether the context automatically merges changes saved to its coordinator or parent context. Setting this property to YES when the context is pinned to a non-current query generation is not supported.
+     * Whether the context automatically merges changes saved to its coordinator or parent context. Setting this
+     * property to YES when the context is pinned to a non-current query generation is not supported.
      */
     @Generated
     @Selector("setAutomaticallyMergesChangesFromParent:")
@@ -438,7 +472,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void setMergePolicy(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * custom label for a context.  NSPrivateQueueConcurrencyType contexts will set the label on their queue
+     * custom label for a context. NSPrivateQueueConcurrencyType contexts will set the label on their queue
      */
     @Generated
     @Selector("setName:")
@@ -465,8 +499,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * Set the query generation this context should use. Must be one of the following values:
      * - nil => this context will not use generational querying
-     * - the value returned by +[NSQueryGenerationToken currentQueryGenerationToken] => this context will pin itself to the generation of the database when it first loads data
-     * - the result of calling -[NSManagedObjectContext queryGenerationToken] on another managed object context => this context will be set to whatever query generation the original context is currently using;
+     * - the value returned by +[NSQueryGenerationToken currentQueryGenerationToken] => this context will pin itself to
+     * the generation of the database when it first loads data
+     * - the result of calling -[NSManagedObjectContext queryGenerationToken] on another managed object context => this
+     * context will be set to whatever query generation the original context is currently using;
      * <p>
      * Query generations are for fetched data only; they are not used during saving. If a pinned context saves,
      * its query generation will be updated after the save. Executing a NSBatchUpdateRequest or NSBatchDeleteRequest
@@ -495,14 +531,17 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void setRetainsRegisteredObjects(boolean value);
 
     /**
-     * set the rule to handle inaccessible faults.  If YES, then the managed object is marked deleted and all its properties, including scalars, nonnullable, and mandatory properties, will be nil or zero’d out.  If NO, the context will throw an exception. Managed objects that are inaccessible because their context is nil due to memory management issues will throw an exception regardless.
+     * set the rule to handle inaccessible faults. If YES, then the managed object is marked deleted and all its
+     * properties, including scalars, nonnullable, and mandatory properties, will be nil or zero’d out. If NO, the
+     * context will throw an exception. Managed objects that are inaccessible because their context is nil due to memory
+     * management issues will throw an exception regardless.
      */
     @Generated
     @Selector("setShouldDeleteInaccessibleFaults:")
     public native void setShouldDeleteInaccessibleFaults(boolean value);
 
     /**
-     * a negative value is considered infinite.  The default is infinite staleness.
+     * a negative value is considered infinite. The default is infinite staleness.
      */
     @Generated
     @Selector("setStalenessInterval:")
@@ -513,14 +552,23 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     public native void setUndoManager(NSUndoManager value);
 
     /**
-     * set the rule to handle inaccessible faults.  If YES, then the managed object is marked deleted and all its properties, including scalars, nonnullable, and mandatory properties, will be nil or zero’d out.  If NO, the context will throw an exception. Managed objects that are inaccessible because their context is nil due to memory management issues will throw an exception regardless.
+     * set the rule to handle inaccessible faults. If YES, then the managed object is marked deleted and all its
+     * properties, including scalars, nonnullable, and mandatory properties, will be nil or zero’d out. If NO, the
+     * context will throw an exception. Managed objects that are inaccessible because their context is nil due to memory
+     * management issues will throw an exception regardless.
      */
     @Generated
     @Selector("shouldDeleteInaccessibleFaults")
     public native boolean shouldDeleteInaccessibleFaults();
 
     /**
-     * this method will not be called from APIs which return an NSError like -existingObjectWithID:error: nor for managed objects with a nil context (e.g. the fault is inaccessible because the object or its context have been released) this method will not be called if Core Data determines there is an unambiguously correct action to recover.  This might happen if a fault was tripped during delete propagation.  In that case, the fault will simply be deleted.  triggeringProperty may be nil when either all properties are involved, or Core Data is unable to determine the reason for firing the fault. the default implementation logs and then returns the value of -shouldDeleteInaccessibleFaults.
+     * this method will not be called from APIs which return an NSError like -existingObjectWithID:error: nor for
+     * managed objects with a nil context (e.g. the fault is inaccessible because the object or its context have been
+     * released) this method will not be called if Core Data determines there is an unambiguously correct action to
+     * recover. This might happen if a fault was tripped during delete propagation. In that case, the fault will simply
+     * be deleted. triggeringProperty may be nil when either all properties are involved, or Core Data is unable to
+     * determine the reason for firing the fault. the default implementation logs and then returns the value of
+     * -shouldDeleteInaccessibleFaults.
      */
     @Generated
     @Selector("shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:")
@@ -528,7 +576,7 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
             NSManagedObjectID oid, NSPropertyDescription property);
 
     /**
-     * a negative value is considered infinite.  The default is infinite staleness.
+     * a negative value is considered infinite. The default is infinite staleness.
      */
     @Generated
     @Selector("stalenessInterval")
@@ -575,14 +623,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     }
 
     /**
-     * Set the author for the context, this will be used as an identifier in the Persistent History Transactions (NSPersistentHistoryTransaction)
+     * Set the author for the context, this will be used as an identifier in the Persistent History Transactions
+     * (NSPersistentHistoryTransaction)
      */
     @Generated
     @Selector("setTransactionAuthor:")
     public native void setTransactionAuthor(String value);
 
     /**
-     * Set the author for the context, this will be used as an identifier in the Persistent History Transactions (NSPersistentHistoryTransaction)
+     * Set the author for the context, this will be used as an identifier in the Persistent History Transactions
+     * (NSPersistentHistoryTransaction)
      */
     @Generated
     @Selector("transactionAuthor")

@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * A mode that determines which representation an item provider should provide if multiple representations of the same asset are available for the requested type identifier or class.
+ * A mode that determines which representation an item provider should provide if multiple representations of the same
+ * asset are available for the requested type identifier or class.
  */
 @Generated
 public final class PHPickerConfigurationAssetRepresentationMode {

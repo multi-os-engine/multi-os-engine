@@ -3,7 +3,7 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       Speech activity event described by AUVoiceIO
+ * [@enum] Speech activity event described by AUVoiceIO
  */
 @Generated
 public final class AUVoiceIOSpeechActivityEvent {

@@ -40,7 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A handle to compiled code for a compute function.
  * <p>
- * MTLComputePipelineState is a single compute function.  It can only be used with the device that it was created against.
+ * MTLComputePipelineState is a single compute function. It can only be used with the device that it was created
+ * against.
  */
 @Generated
 @Library("Metal")
@@ -50,7 +51,7 @@ public interface MTLComputePipelineState {
     /**
      * [@property] device
      * <p>
-     * The device this resource was created against.  This resource can only be used with this device.
+     * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
     @Selector("device")

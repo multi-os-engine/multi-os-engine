@@ -25,8 +25,8 @@ public interface MPSHeapProvider {
      * id <MTLDevice> implements this method.
      *
      * @param descriptor A descriptor for the new heap
-     * @return A new heap of size at least descriptor.size.  If nil is returned, MPS
-     * will use the MPS internal heap cache instead to satisfy the allocation.
+     * @return A new heap of size at least descriptor.size. If nil is returned, MPS
+     *         will use the MPS internal heap cache instead to satisfy the allocation.
      */
     @Generated
     @Selector("newHeapWithDescriptor:")
@@ -40,7 +40,7 @@ public interface MPSHeapProvider {
      * MPS will release the heap after this is called.
      *
      * @param heap    The heap to be retired
-     * @param seconds A hint for how long to cache the heap before retiring it.  See MPSSetHeapCacheDuration().
+     * @param seconds A hint for how long to cache the heap before retiring it. See MPSSetHeapCacheDuration().
      */
     @Generated
     @IsOptional

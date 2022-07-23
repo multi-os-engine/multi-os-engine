@@ -158,7 +158,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * <p>
-     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
+     * should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -169,8 +170,10 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] recordsByRecordID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordCompletionBlock invocations
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to
+     * errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] recordsByRecordID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in
+     * previous @c perRecordCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -199,7 +202,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     /**
      * Indicates the progress for each record.
      * <p>
-     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only reported for records that contain assets.
+     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only
+     * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -215,7 +219,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * <p>
-     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
+     * should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -226,8 +231,10 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] recordsByRecordID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordCompletionBlock invocations
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to
+     * errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] recordsByRecordID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in
+     * previous @c perRecordCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -248,7 +255,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
     /**
      * Indicates the progress for each record.
      * <p>
-     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only reported for records that contain assets.
+     * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only
+     * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */

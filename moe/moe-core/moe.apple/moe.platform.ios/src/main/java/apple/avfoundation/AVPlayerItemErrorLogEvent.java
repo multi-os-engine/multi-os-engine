@@ -160,7 +160,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]		URI
+     * [@property] URI
      * <p>
      * The URI of the playback item. Can be nil.
      * <p>
@@ -178,7 +178,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]		date
+     * [@property] date
      * <p>
      * The date and time when the error occured. Can be nil.
      * <p>
@@ -190,7 +190,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native NSDate date();
 
     /**
-     * [@property]		errorComment
+     * [@property] errorComment
      * <p>
      * A description of the error encountered. Can be nil.
      * <p>
@@ -202,7 +202,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String errorComment();
 
     /**
-     * [@property]		errorDomain
+     * [@property] errorDomain
      * <p>
      * The domain of the error.
      * <p>
@@ -214,7 +214,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String errorDomain();
 
     /**
-     * [@property]		errorStatusCode
+     * [@property] errorStatusCode
      * <p>
      * A unique error code identifier.
      * <p>
@@ -231,7 +231,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native AVPlayerItemErrorLogEvent init();
 
     /**
-     * [@property]		playbackSessionID
+     * [@property] playbackSessionID
      * <p>
      * A GUID that identifies the playback session. This value is used in HTTP requests. Can be nil.
      * <p>
@@ -243,7 +243,7 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     public native String playbackSessionID();
 
     /**
-     * [@property]		serverAddress
+     * [@property] serverAddress
      * <p>
      * The IP address of the server that was the source of the error. Can be nil.
      * <p>

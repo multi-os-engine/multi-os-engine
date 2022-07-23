@@ -8,25 +8,26 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * Constants indicating the reason why the CHHapticEngine has stopped.
  * <p>
- * [@constant]	CHHapticEngineStoppedReasonAudioSessionInterrupt
+ * [@constant] CHHapticEngineStoppedReasonAudioSessionInterrupt
  * The AVAudioSession bound to this engine has been interrupted.
  * <p>
- * [@constant]	CHHapticEngineStoppedReasonApplicationSuspended
+ * [@constant] CHHapticEngineStoppedReasonApplicationSuspended
  * The application owning this engine has been suspended (i.e., put into the background).
  * <p>
- * [@constant]	CHHapticEngineStoppedReasonIdleTimeout
+ * [@constant] CHHapticEngineStoppedReasonIdleTimeout
  * The engine has stopped due to an idle timeout when the engine's `autoShutdownEnabled` property was set to YES.
  * <p>
- * [@constant]	CHHapticEngineStoppedReasonNotifyWhenFinished
- * The engine has stopped due to a call to a `CHHapticEngineFinishedHandler` returning `CHHapticEngineFinishedActionStopEngine`.
+ * [@constant] CHHapticEngineStoppedReasonNotifyWhenFinished
+ * The engine has stopped due to a call to a `CHHapticEngineFinishedHandler` returning
+ * `CHHapticEngineFinishedActionStopEngine`.
  * <p>
- * [@constant]    CHHapticEngineStoppedReasonEngineDestroyed
+ * [@constant] CHHapticEngineStoppedReasonEngineDestroyed
  * The engine has stopped because the CHHapticEngine instance was destroyed.
  * <p>
- * [@constant]    CHHapticEngineStoppedReasonGameControllerDisconnect
+ * [@constant] CHHapticEngineStoppedReasonGameControllerDisconnect
  * The engine has stopped because the Game Controller associated with this engine disconnected.
  * <p>
- * [@constant]	CHHapticEngineStoppedReasonSystemError
+ * [@constant] CHHapticEngineStoppedReasonSystemError
  * An error has occurred.
  */
 @Generated

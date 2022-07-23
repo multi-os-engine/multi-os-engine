@@ -8,11 +8,11 @@ import org.moe.natj.general.ann.NUInt;
  * <p>
  * Options controlling buffer scheduling.
  * <p>
- * [@constant]	AVAudioPlayerNodeBufferLoops
+ * [@constant] AVAudioPlayerNodeBufferLoops
  * The buffer loops indefinitely.
- * [@constant]	AVAudioPlayerNodeBufferInterrupts
+ * [@constant] AVAudioPlayerNodeBufferInterrupts
  * The buffer interrupts any buffer already playing.
- * [@constant]	AVAudioPlayerNodeBufferInterruptsAtLoop
+ * [@constant] AVAudioPlayerNodeBufferInterruptsAtLoop
  * The buffer interrupts any buffer already playing, at its loop point.
  * <p>
  * API_AVAILABLE(macos(10.10), ios(8.0), watchos(2.0), tvos(9.0))

@@ -182,7 +182,9 @@ public class INCarAudioSourceResolutionResult extends INIntentResolutionResult {
             @NInt long carAudioSourceToConfirm);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCarAudioSource. The resolvedValue can be different than the original INCarAudioSource. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given
+     * INCarAudioSource. The resolvedValue can be different than the original INCarAudioSource. This allows app
+     * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

@@ -32,7 +32,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("ABUnknownPersonViewControllerDelegate")
 public interface ABUnknownPersonViewControllerDelegate {
     /**
-     * Called when picking has completed.  If picking was canceled, 'person' will be NULL.
+     * Called when picking has completed. If picking was canceled, 'person' will be NULL.
      * Otherwise, person will be either a non-NULL resolved contact, or newly created and
      * saved contact, in both cases, person will be a valid contact in the Address Book.
      * It is up to the delegate to dismiss the view controller.
@@ -43,7 +43,8 @@ public interface ABUnknownPersonViewControllerDelegate {
             ConstVoidPtr person);
 
     /**
-     * Called when the user selects an individual value in the unknown person view, identifier will be kABMultiValueInvalidIdentifier if a single value property was selected.
+     * Called when the user selects an individual value in the unknown person view, identifier will be
+     * kABMultiValueInvalidIdentifier if a single value property was selected.
      * Return NO if you do not want anything to be done or if you are handling the actions yourself.
      * Return YES if you want the ABUnknownPersonViewController to perform its default action.
      */

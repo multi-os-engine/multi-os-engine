@@ -53,8 +53,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The MFMessageComposeViewController class provides an interface for editing and sending a message.
  * <p>
- * The MFMessageComposeViewController class manages all user interaction.  The client needs to set
- * the recipient or recipients.  The client may also set the body of the message. After setup, the
+ * The MFMessageComposeViewController class manages all user interaction. The client needs to set
+ * the recipient or recipients. The client may also set the body of the message. After setup, the
  * client needs to only display the view.
  * </p>The provided delegate will be informed of the user's composition completion and how they chose
  * to complete the operation.
@@ -228,7 +228,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * Returns <tt>YES</tt>if the attachment was added to the composition successfully.
      * <p>
      * If the return value is YES, the attachment was added to the composition. If the return value is NO,
-     * the attachment was not added to the composition.  The data and typeIdentifer must be non-nil.  typeIdentifier should be a valid Uniform Type Identifier.
+     * the attachment was not added to the composition. The data and typeIdentifer must be non-nil. typeIdentifier
+     * should be a valid Uniform Type Identifier.
      */
     @Generated
     @Selector("addAttachmentData:typeIdentifier:filename:")
@@ -240,8 +241,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      * Returns <tt>YES</tt>if the attachment at the specified URL was added to the composition successfully.
      * <p>
      * If the return value is YES, the attachment was added to the composition. If the return value is NO,
-     * the attachment was not added to the composition.  All attachment URLs must be file urls.  The file
-     * URL must not be NIL.  The alternate filename will be display to the user in leiu of the attachments URL.
+     * the attachment was not added to the composition. All attachment URLs must be file urls. The file
+     * URL must not be NIL. The alternate filename will be display to the user in leiu of the attachments URL.
      * The alternate filename may be NIL.
      */
     @Generated
@@ -249,7 +250,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native boolean addAttachmentURLWithAlternateFilename(NSURL attachmentURL, String alternateFilename);
 
     /**
-     * [@property]   attachments
+     * [@property] attachments
      * <p>
      * This property returns an NSArray of NSDictionaries describing the properties of the current attachments.
      * <p>
@@ -261,11 +262,11 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native NSArray<? extends NSDictionary<?, ?>> attachments();
 
     /**
-     * [@property]   body
+     * [@property] body
      * <p>
      * This property sets the initial value of the body of the message to the specified content.
      * <p>
-     * This property will set the initial value of the body of the message.  This should be called prior
+     * This property will set the initial value of the body of the message. This should be called prior
      * to display.
      * </p>After the view has been presented to the user, this property will no longer change the value.
      */
@@ -276,8 +277,9 @@ public class MFMessageComposeViewController extends UINavigationController {
     /**
      * disableUserAttachments;
      * <p>
-     * Calling this method will disable the camera/attachment button in the view controller.  After the controller has been presented,
-     * this call will have no effect.  The camera / attachment button is visible by default.
+     * Calling this method will disable the camera/attachment button in the view controller. After the controller has
+     * been presented,
+     * this call will have no effect. The camera / attachment button is visible by default.
      */
     @Generated
     @Selector("disableUserAttachments")
@@ -305,7 +307,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native MFMessageComposeViewController initWithRootViewController(UIViewController rootViewController);
 
     /**
-     * [@property]   message
+     * [@property] message
      * <p>
      * This property sets the initial interactive message.
      */
@@ -314,7 +316,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native MSMessage message();
 
     /**
-     * [@property]   messageComposeDelegate
+     * [@property] messageComposeDelegate
      * <p>
      * This property is the delegate for the MFMessageComposeViewController method callbacks.
      */
@@ -324,7 +326,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native MFMessageComposeViewControllerDelegate messageComposeDelegate();
 
     /**
-     * [@property]   recipients
+     * [@property] recipients
      * <p>
      * This property sets the initial value of the To field for the message to the specified addresses.
      * <p>
@@ -338,11 +340,11 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native NSArray<String> recipients();
 
     /**
-     * [@property]   body
+     * [@property] body
      * <p>
      * This property sets the initial value of the body of the message to the specified content.
      * <p>
-     * This property will set the initial value of the body of the message.  This should be called prior
+     * This property will set the initial value of the body of the message. This should be called prior
      * to display.
      * </p>After the view has been presented to the user, this property will no longer change the value.
      */
@@ -351,7 +353,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native void setBody(String value);
 
     /**
-     * [@property]   message
+     * [@property] message
      * <p>
      * This property sets the initial interactive message.
      */
@@ -360,7 +362,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native void setMessage(MSMessage value);
 
     /**
-     * [@property]   messageComposeDelegate
+     * [@property] messageComposeDelegate
      * <p>
      * This property is the delegate for the MFMessageComposeViewController method callbacks.
      */
@@ -370,7 +372,7 @@ public class MFMessageComposeViewController extends UINavigationController {
             @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value);
 
     /**
-     * [@property]   messageComposeDelegate
+     * [@property] messageComposeDelegate
      * <p>
      * This property is the delegate for the MFMessageComposeViewController method callbacks.
      */
@@ -388,7 +390,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     }
 
     /**
-     * [@property]   recipients
+     * [@property] recipients
      * <p>
      * This property sets the initial value of the To field for the message to the specified addresses.
      * <p>
@@ -402,11 +404,11 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native void setRecipients(NSArray<String> value);
 
     /**
-     * [@property]   subject
+     * [@property] subject
      * <p>
      * This property sets the initial value of the subject of the message to the specified content.
      * <p>
-     * This property will set the initial value of the subject of the message.  This should be called prior
+     * This property will set the initial value of the subject of the message. This should be called prior
      * to display.
      * </p>After the view has been presented to the user, this property will no longer change the value.
      */
@@ -415,11 +417,11 @@ public class MFMessageComposeViewController extends UINavigationController {
     public native void setSubject(String value);
 
     /**
-     * [@property]   subject
+     * [@property] subject
      * <p>
      * This property sets the initial value of the subject of the message to the specified content.
      * <p>
-     * This property will set the initial value of the subject of the message.  This should be called prior
+     * This property will set the initial value of the subject of the message. This should be called prior
      * to display.
      * </p>After the view has been presented to the user, this property will no longer change the value.
      */

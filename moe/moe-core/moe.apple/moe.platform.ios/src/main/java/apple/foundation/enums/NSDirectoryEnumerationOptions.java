@@ -26,7 +26,8 @@ public final class NSDirectoryEnumerationOptions {
     }
 
     /**
-     * NSDirectoryEnumerationSkipsSubdirectoryDescendants causes the NSDirectoryEnumerator to perform a shallow enumeration and not descend into directories it encounters.
+     * NSDirectoryEnumerationSkipsSubdirectoryDescendants causes the NSDirectoryEnumerator to perform a shallow
+     * enumeration and not descend into directories it encounters.
      */
     @Generated @NUInt public static final long SkipsSubdirectoryDescendants = 0x0000000000000001L;
     /**
@@ -38,11 +39,15 @@ public final class NSDirectoryEnumerationOptions {
      */
     @Generated @NUInt public static final long SkipsHiddenFiles = 0x0000000000000004L;
     /**
-     * NSDirectoryEnumerationIncludesDirectoriesPostOrder causes the NSDirectoryEnumerator to enumerate each directory a second time after all of its contained files have been enumerated. Use NSDirectoryEnumerator.isEnumeratingDirectoryPostOrder to differentiate a post-order enumerated directory from a pre-order one.
+     * NSDirectoryEnumerationIncludesDirectoriesPostOrder causes the NSDirectoryEnumerator to enumerate each directory a
+     * second time after all of its contained files have been enumerated. Use
+     * NSDirectoryEnumerator.isEnumeratingDirectoryPostOrder to differentiate a post-order enumerated directory from a
+     * pre-order one.
      */
     @Generated @NUInt public static final long IncludesDirectoriesPostOrder = 0x0000000000000008L;
     /**
-     * NSDirectoryEnumerationProducesRelativePathURLs causes the NSDirectoryEnumerator to always produce file path URLs relative to the directoryURL. This can reduce the size of each URL object returned during enumeration.
+     * NSDirectoryEnumerationProducesRelativePathURLs causes the NSDirectoryEnumerator to always produce file path URLs
+     * relative to the directoryURL. This can reduce the size of each URL object returned during enumeration.
      */
     @Generated @NUInt public static final long ProducesRelativePathURLs = 0x0000000000000010L;
 }

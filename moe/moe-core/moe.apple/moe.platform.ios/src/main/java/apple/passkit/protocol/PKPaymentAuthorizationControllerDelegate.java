@@ -86,7 +86,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     }
 
     /**
-     * Sent to the delegate when payment authorization is finished.  This may occur when
+     * Sent to the delegate when payment authorization is finished. This may occur when
      * the user cancels the request, or after the PKPaymentAuthorizationStatus parameter of the
      * paymentAuthorizationController:didAuthorizePayment:completion: has been shown to the user.
      * <p>
@@ -140,7 +140,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     }
 
     /**
-     * Sent to the delegate after the user has acted on the payment request.  The application
+     * Sent to the delegate after the user has acted on the payment request. The application
      * should inspect the payment to determine whether the payment request was authorized.
      * <p>
      * If the application requested a shipping contact then the full contact is now part of the payment.
@@ -165,7 +165,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     }
 
     /**
-     * Sent when the user has selected a new payment card.  Use this delegate callback if you need to
+     * Sent when the user has selected a new payment card. Use this delegate callback if you need to
      * update the summary items in response to the card type changing (for example, applying credit card surcharges)
      * <p>
      * The delegate will receive no further callbacks except paymentAuthorizationControllerDidFinish:
@@ -206,7 +206,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
     }
 
     /**
-     * Sent when the user has selected a new shipping method.  The delegate should determine
+     * Sent when the user has selected a new shipping method. The delegate should determine
      * shipping costs based on the shipping method and either the shipping address contact in the original
      * PKPaymentRequest or the contact provided by the last call to paymentAuthorizationController:
      * didSelectShippingContact:completion:.

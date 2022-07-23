@@ -38,7 +38,7 @@ public final class Enums {
      */
     @Generated public static final int kvImageGamma_5_over_9_half_precision = 0x00000002;
     /**
-     * gamma = 9/5. (Gamma 1.8)  __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
+     * gamma = 9/5. (Gamma 1.8) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
      */
     @Generated public static final int kvImageGamma_9_over_5_half_precision = 0x00000003;
     /**
@@ -50,11 +50,13 @@ public final class Enums {
      */
     @Generated public static final int kvImageGamma_11_over_5_half_precision = 0x00000005;
     /**
-     * gamma = sRGB standard 2.2. (like 2.2 but offset a bit and with a linear segment: x<0.03928?x/12.92:pow((x+0.055)/1.055,2.4) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
+     * gamma = sRGB standard 2.2. (like 2.2 but offset a bit and with a linear segment:
+     * x<0.03928?x/12.92:pow((x+0.055)/1.055,2.4) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
      */
     @Generated public static final int kvImageGamma_sRGB_forward_half_precision = 0x00000006;
     /**
-     * gamma = sRGB standard 1/2.2. (like 2.2 but offset a bit and with a linear segment: x<0.00304?12.92*x:1.055pow(x,1/2.4)-0.055) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
+     * gamma = sRGB standard 1/2.2. (like 2.2 but offset a bit and with a linear segment:
+     * x<0.00304?12.92*x:1.055pow(x,1/2.4)-0.055) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
      */
     @Generated public static final int kvImageGamma_sRGB_reverse_half_precision = 0x00000007;
     /**
@@ -66,11 +68,13 @@ public final class Enums {
      */
     @Generated public static final int kvImageGamma_9_over_11_half_precision = 0x00000009;
     /**
-     * gamma = ITU-R BT.709 standard (like sRGB above but without the 1.125 viewing gamma for computer graphics: x<0.081?x/4.5:pow((x+0.099)/1.099, 1/0.45) ) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
+     * gamma = ITU-R BT.709 standard (like sRGB above but without the 1.125 viewing gamma for computer graphics:
+     * x<0.081?x/4.5:pow((x+0.099)/1.099, 1/0.45) ) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
      */
     @Generated public static final int kvImageGamma_BT709_forward_half_precision = 0x0000000A;
     /**
-     * gamma = ITU-R BT.709 standard *reverse* (like sRGB 1/2.2 above but without the 1.125 viewing gamma for computer graphics: x<0.018?4.5*x:1.099*pow(x,0.45)-0.099) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
+     * gamma = ITU-R BT.709 standard *reverse* (like sRGB 1/2.2 above but without the 1.125 viewing gamma for computer
+     * graphics: x<0.018?4.5*x:1.099*pow(x,0.45)-0.099) __OSX_AVAILABLE_STARTING( __MAC_10_4, __IPHONE_5_0 )
      */
     @Generated public static final int kvImageGamma_BT709_reverse_half_precision = 0x0000000B;
     /**
@@ -170,7 +174,7 @@ public final class Enums {
      * Some functions such as vImageConverter_CreateWithCGImageFormat have so many possible error conditions
      * that developers may need more help than a simple error code to diagnose problems. When this
      * flag is set and an error is encountered, an informative error message will be logged to the Apple
-     * System Logger (ASL).  The output should be visible in Console.app.
+     * System Logger (ASL). The output should be visible in Console.app.
      */
     @Generated public static final int kvImagePrintDiagnosticsToConsole = 0x00000100;
     /**

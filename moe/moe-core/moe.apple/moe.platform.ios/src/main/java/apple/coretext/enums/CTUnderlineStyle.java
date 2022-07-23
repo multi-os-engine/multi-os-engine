@@ -19,7 +19,7 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       CTUnderlineStyle
+ * [@enum] CTUnderlineStyle
  * <p>
  * Underline style specifiers.
  * <p>

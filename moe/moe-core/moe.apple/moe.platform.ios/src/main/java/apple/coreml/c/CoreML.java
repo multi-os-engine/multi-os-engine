@@ -75,7 +75,8 @@ public final class CoreML {
     public static native String MLFeatureValueImageOptionCropRect();
 
     /**
-     * Key for VNImageCropAndScaleOption describing how to crop and scale the image (or region of interest) to the desired size
+     * Key for VNImageCropAndScaleOption describing how to crop and scale the image (or region of interest) to the
+     * desired size
      */
     @Generated
     @CVariable()

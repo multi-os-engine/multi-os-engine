@@ -192,7 +192,8 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     public native MKTileOverlay init();
 
     /**
-     * URL template is a string where the substrings "{x}", "{y}", "{z}", and "{scale}" are replaced with values from a tile path to create a URL to load. For example: http://server/path?x={x}&y={y}&z={z}&scale={scale}.
+     * URL template is a string where the substrings "{x}", "{y}", "{z}", and "{scale}" are replaced with values from a
+     * tile path to create a URL to load. For example: http://server/path?x={x}&y={y}&z={z}&scale={scale}.
      */
     @Generated
     @Selector("initWithURLTemplate:")
@@ -218,7 +219,8 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     public native void setGeometryFlipped(boolean value);
 
     /**
-     * Load the requested tile and call the callback block with the tile data or with an error if the tile could not be loaded. The default implementation first uses -URLForTilePath to get a URL and then it loads it asynchronously.
+     * Load the requested tile and call the callback block with the tile data or with an error if the tile could not be
+     * loaded. The default implementation first uses -URLForTilePath to get a URL and then it loads it asynchronously.
      */
     @Generated
     @Selector("loadTileAtPath:result:")
@@ -231,7 +233,8 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     public native long maximumZ();
 
     /**
-     * The minimum/maximum zoom level at which tile data is available for this overlay. A tile at level 0 covers the entire world, at level 1 it covers 1/4th of the world, at level 2 it covers 1/16th of the world, and so on.
+     * The minimum/maximum zoom level at which tile data is available for this overlay. A tile at level 0 covers the
+     * entire world, at level 1 it covers 1/4th of the world, at level 2 it covers 1/16th of the world, and so on.
      */
     @Generated
     @Selector("minimumZ")
@@ -252,7 +255,8 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     public native void setMaximumZ(@NInt long value);
 
     /**
-     * The minimum/maximum zoom level at which tile data is available for this overlay. A tile at level 0 covers the entire world, at level 1 it covers 1/4th of the world, at level 2 it covers 1/16th of the world, and so on.
+     * The minimum/maximum zoom level at which tile data is available for this overlay. A tile at level 0 covers the
+     * entire world, at level 1 it covers 1/4th of the world, at level 2 it covers 1/16th of the world, and so on.
      */
     @Generated
     @Selector("setMinimumZ:")

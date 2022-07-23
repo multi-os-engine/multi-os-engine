@@ -213,7 +213,8 @@ public class SCNIKConstraint extends SCNConstraint {
     /**
      * setMaxAllowedRotationAngle:forJoint:
      * <p>
-     * Specifies the maximum rotation allowed (in degrees) for the specified joint from its initial orientation. Defaults to 180.
+     * Specifies the maximum rotation allowed (in degrees) for the specified joint from its initial orientation.
+     * Defaults to 180.
      */
     @Generated
     @Selector("setMaxAllowedRotationAngle:forJoint:")
@@ -222,7 +223,8 @@ public class SCNIKConstraint extends SCNConstraint {
     /**
      * [@property] target
      * <p>
-     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
+     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK
+     * constraint). Defaults to (0,0,0). Animatable.
      */
     @Generated
     @Selector("setTargetPosition:")
@@ -237,7 +239,8 @@ public class SCNIKConstraint extends SCNConstraint {
     /**
      * [@property] target
      * <p>
-     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK constraint). Defaults to (0,0,0). Animatable.
+     * Specifies the target position (in world space coordinates) of the end joint (i.e the node that owns the IK
+     * constraint). Defaults to (0,0,0). Animatable.
      */
     @Generated
     @Selector("targetPosition")

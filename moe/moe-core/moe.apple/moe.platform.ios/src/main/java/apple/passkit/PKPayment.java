@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * PKPayment represents the result of a payment request.  Successful payments
+ * PKPayment represents the result of a payment request. Successful payments
  * have a PKPaymentToken which contains a payment credential encrypted to the merchant
  * identifier specified in the request, and when requested, the user's shipping address
  * and chosen shipping method.
@@ -161,9 +161,9 @@ public class PKPayment extends NSObject {
     public native ConstVoidPtr billingAddress();
 
     /**
-     * The full billing address that the user selected for this transaction.  Fields are
+     * The full billing address that the user selected for this transaction. Fields are
      * constrained to those specified in the requiredBillingAddressFields property of the original
-     * PKPaymentRequest object.  This property is only set when the application has set
+     * PKPaymentRequest object. This property is only set when the application has set
      * the requiredBillingAddressFields property of the PKPaymentRequest.
      */
     @Generated
@@ -180,9 +180,9 @@ public class PKPayment extends NSObject {
     public native ConstVoidPtr shippingAddress();
 
     /**
-     * The full shipping address that the user selected for this transaction.  Fields are
+     * The full shipping address that the user selected for this transaction. Fields are
      * constrained to those specified in the requiredShippingAddressFields property of the original
-     * PKPaymentRequest object.  This property is only set when the application has set
+     * PKPaymentRequest object. This property is only set when the application has set
      * the requiredShippingAddressFields property of the PKPaymentRequest.
      */
     @Generated
@@ -190,7 +190,7 @@ public class PKPayment extends NSObject {
     public native PKContact shippingContact();
 
     /**
-     * The shipping method that the user chose.  This property is only set when the
+     * The shipping method that the user chose. This property is only set when the
      * application has set the shippingMethods property of the PKPaymentRequest.
      */
     @Generated

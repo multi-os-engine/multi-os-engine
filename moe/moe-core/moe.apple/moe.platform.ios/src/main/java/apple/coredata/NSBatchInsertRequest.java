@@ -154,7 +154,8 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The type of result that should be returned from this request. Defaults to NSBatchInsertRequestResultTypeStatusOnly
+     * The type of result that should be returned from this request. Defaults to
+     * NSBatchInsertRequestResultTypeStatusOnly
      */
     @Generated
     @Selector("resultType")
@@ -166,7 +167,8 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     public native void setObjectsToInsert(NSArray<? extends NSDictionary<String, ?>> value);
 
     /**
-     * The type of result that should be returned from this request. Defaults to NSBatchInsertRequestResultTypeStatusOnly
+     * The type of result that should be returned from this request. Defaults to
+     * NSBatchInsertRequestResultTypeStatusOnly
      */
     @Generated
     @Selector("setResultType:")

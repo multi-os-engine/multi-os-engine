@@ -52,8 +52,10 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a blend range that is active for all values above a given threshold.
      *
-     * @param value           The value for which the range will be active if the blend node's input value is above this threshold.
-     * @param fullGainAtValue This value defines a threshold for which a fade curve will be applied to the gain, when the input value is between "value" and "fullGainAtValue".
+     * @param value           The value for which the range will be active if the blend node's input value is above this
+     *                        threshold.
+     * @param fullGainAtValue This value defines a threshold for which a fade curve will be applied to the gain, when
+     *                        the input value is between "value" and "fullGainAtValue".
      * @param fadeCurveType   A curve type that defines which kind of fade curve to apply.
      * @param subtree         A PHASESoundEventNodeDefinition subtree that will be active for this range.
      */
@@ -67,8 +69,10 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a blend range that is active for all values below a given threshold.
      *
-     * @param value           The value for which the range will be active if the blend node's input value is below this threshold.
-     * @param fullGainAtValue This value defines a threshold for which a fade curve will be applied to the gain, when the input value is between "value" and "fullGainAtValue".
+     * @param value           The value for which the range will be active if the blend node's input value is below this
+     *                        threshold.
+     * @param fullGainAtValue This value defines a threshold for which a fade curve will be applied to the gain, when
+     *                        the input value is between "value" and "fullGainAtValue".
      * @param fadeCurveType   A curve type that defines which kind of fade curve to apply.
      * @param subtree         A PHASESoundEventNodeDefinition subtree that will be active for this range.
      */
@@ -84,8 +88,10 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      *
      * @param lowValue            The lower bound for which this range is active.
      * @param highValue           The upper bound for which this range is active.
-     * @param fullGainAtLowValue  The threshold for which a fade curve defined by lowFadeCurveType will be applied to the gain when the input value is between lowValue and fullGainAtLowValue
-     * @param fullGainAtHighValue The threshold for which a fade curve defined by highFadeCurveType will be applied to the gain when the input value is between highValue and fullGainAtHighValue
+     * @param fullGainAtLowValue  The threshold for which a fade curve defined by lowFadeCurveType will be applied to
+     *                            the gain when the input value is between lowValue and fullGainAtLowValue
+     * @param fullGainAtHighValue The threshold for which a fade curve defined by highFadeCurveType will be applied to
+     *                            the gain when the input value is between highValue and fullGainAtHighValue
      * @param lowFadeCurveType    A curve type that defines which kind of fade curve to apply for the low fade range.
      * @param highFadeCurveType   A curve type that defines which kind of fade curve to apply for the high fade range..
      * @param subtree             A PHASESoundEventNodeDefinition subtree that will be active for this range.
@@ -125,7 +131,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     /**
      * [@property] blendParameterDefinition
      * <p>
-     * The readonly property that returns the PHASENumberMetaParameterDefinition this blend node was created with and assigned to.
+     * The readonly property that returns the PHASENumberMetaParameterDefinition this blend node was created with and
+     * assigned to.
      */
     @Generated
     @Selector("blendParameterDefinition")
@@ -171,7 +178,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a blend node definition
      *
-     * @param spatialMixerDefinition A PHASESpatialMixerDefinition that will bind the blend parameter to the distance between the source and listener.
+     * @param spatialMixerDefinition A PHASESpatialMixerDefinition that will bind the blend parameter to the distance
+     *                               between the source and listener.
      * @return A new PHASEBlendNodeDefinition object
      */
     @Generated
@@ -184,7 +192,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a blend node definition
      *
-     * @param spatialMixerDefinition A PHASESpatialMixerDefinition that will bind the blend parameter to the distance between the source and listener.
+     * @param spatialMixerDefinition A PHASESpatialMixerDefinition that will bind the blend parameter to the distance
+     *                               between the source and listener.
      * @param identifier             An optional custom identifier to give to this object
      * @return A new PHASEBlendNodeDefinition object
      */
@@ -198,7 +207,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a blend node definition
      *
-     * @param blendMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the blend node at runtime.
+     * @param blendMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     *                                     blend node at runtime.
      * @return A new PHASEBlendNodeDefinition object
      */
     @Generated
@@ -211,7 +221,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * <p>
      * Create a blend node definition
      *
-     * @param blendMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the blend node at runtime.
+     * @param blendMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     *                                     blend node at runtime.
      * @param identifier                   An optional custom identifier to give to this object
      * @return A new PHASEBlendNodeDefinition object
      */
@@ -261,7 +272,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     /**
      * [@property] distanceSpatialMixerDefinition
      * <p>
-     * The readonly property that returns the PHASESpatialMixerDefinition this blend node was created with and assigned to.
+     * The readonly property that returns the PHASESpatialMixerDefinition this blend node was created with and assigned
+     * to.
      */
     @Generated
     @Selector("spatialMixerDefinitionForDistance")

@@ -7,7 +7,8 @@ import org.moe.natj.general.ann.NUInt;
  * If an object combines a significant amount of content into one label that is not always pertinent,
  * using the accessibilityCustomContent method below provides an alternative way to deliver content to the user.
  * <p>
- * For example, in a photos app, you may want the user to know the date, time, orientation, and shutter speed of a photo.
+ * For example, in a photos app, you may want the user to know the date, time, orientation, and shutter speed of a
+ * photo.
  * However, that information may not always be necessary to the user. Using the AXCustomContentProvider protocol
  * allows the user to experience the content in a more appropriate manner for that assistive technology.
  */

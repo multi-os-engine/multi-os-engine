@@ -27,8 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ASAccountAuthenticationModificationReplacePasswordWithSignInWithAppleRequest
-        extends ASAccountAuthenticationModificationRequest {
+public class ASAccountAuthenticationModificationReplacePasswordWithSignInWithAppleRequest extends
+        ASAccountAuthenticationModificationRequest {
     static {
         NatJ.register();
     }
@@ -102,7 +102,8 @@ public class ASAccountAuthenticationModificationReplacePasswordWithSignInWithApp
      *
      * @param user              The username for the account to upgrade.
      * @param serviceIdentifier The service identifier of the credential the user wishes to upgrade.
-     * @param userInfo          A dictionary the app can use to pass information to the extension, most likely to help with authorizing the upgrade.
+     * @param userInfo          A dictionary the app can use to pass information to the extension, most likely to help
+     *                          with authorizing the upgrade.
      */
     @Generated
     @Selector("initWithUser:serviceIdentifier:userInfo:")

@@ -192,7 +192,7 @@ public class GKPath extends NSObject {
     public native long numPoints();
 
     /**
-     * Radius of the pathway.  Defines a spatial area that the path occupies.
+     * Radius of the pathway. Defines a spatial area that the path occupies.
      * This can be though of as the union between rectangles between all points, and circles at each point
      */
     @Generated
@@ -200,7 +200,7 @@ public class GKPath extends NSObject {
     public native float radius();
 
     /**
-     * Radius of the pathway.  Defines a spatial area that the path occupies.
+     * Radius of the pathway. Defines a spatial area that the path occupies.
      * This can be though of as the union between rectangles between all points, and circles at each point
      */
     @Generated

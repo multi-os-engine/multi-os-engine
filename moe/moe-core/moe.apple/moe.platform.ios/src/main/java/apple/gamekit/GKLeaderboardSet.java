@@ -179,7 +179,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * set when leaderboardSets have been designated a game group; set when loadLeaderboardSetsWithCompletionHandler has been called for leaderboards that support game groups
+     * set when leaderboardSets have been designated a game group; set when loadLeaderboardSetsWithCompletionHandler has
+     * been called for leaderboards that support game groups
      */
     @Generated
     @Selector("groupIdentifier")

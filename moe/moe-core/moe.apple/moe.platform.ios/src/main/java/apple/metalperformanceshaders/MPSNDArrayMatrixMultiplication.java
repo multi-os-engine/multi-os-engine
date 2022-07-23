@@ -74,10 +74,10 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     public static native MPSNDArrayMatrixMultiplication allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The scale factor to apply to the product.  Specified in double
-     * precision.  Will be converted to the appropriate precision in the
+     * The scale factor to apply to the product. Specified in double
+     * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
      */
@@ -90,10 +90,10 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The scale factor to apply to the addend if available.  Specified in double
-     * precision.  Will be converted to the appropriate precision in the
+     * The scale factor to apply to the addend if available. Specified in double
+     * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
      */
@@ -189,10 +189,10 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The scale factor to apply to the product.  Specified in double
-     * precision.  Will be converted to the appropriate precision in the
+     * The scale factor to apply to the product. Specified in double
+     * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
      */
@@ -201,10 +201,10 @@ public class MPSNDArrayMatrixMultiplication extends MPSNDArrayMultiaryKernel {
     public native void setAlpha(double value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The scale factor to apply to the addend if available.  Specified in double
-     * precision.  Will be converted to the appropriate precision in the
+     * The scale factor to apply to the addend if available. Specified in double
+     * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
      * Defaults to 1.0 at initialization time.
      */

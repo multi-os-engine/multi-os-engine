@@ -134,7 +134,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
             @NUInt long outputFeatureChannelCount);
 
     /**
-     * [@property]   convolutionType
+     * [@property] convolutionType
      * <p>
      * The type of convolution.
      */
@@ -267,12 +267,15 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param convolutionType           The type of convolution.
      * @param kernelSizes               The kernel sizes in x and y.
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor.
-     * @param outputFeatureChannelCount The number of feature channels in the output tensor. When the convolution type is \p MLCConvolutionTypeDepthwise , this value must be a multiple of \p inputFeatureChannelCount .
+     * @param outputFeatureChannelCount The number of feature channels in the output tensor. When the convolution type
+     *                                  is \p MLCConvolutionTypeDepthwise , this value must be a multiple of \p
+     *                                  inputFeatureChannelCount .
      * @param groupCount                The number of groups.
      * @param strides                   The kernel strides in x and y.
      * @param dilationRates             The dilation rates in x and y.
      * @param paddingPolicy             The padding policy.
-     * @param paddingSizes              The padding sizes in x and y if padding policy is \p MLCPaddingPolicyUsePaddingSize .
+     * @param paddingSizes              The padding sizes in x and y if padding policy is \p
+     *                                  MLCPaddingPolicyUsePaddingSize .
      * @return A new convolution descriptor.
      */
     @Generated
@@ -283,7 +286,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
             NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
 
     /**
-     * [@property]   dilationRateInX
+     * [@property] dilationRateInX
      * <p>
      * The dilation rate i.e. stride of elements in the kernel in x.
      */
@@ -293,7 +296,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native long dilationRateInX();
 
     /**
-     * [@property]   dilationRateInY
+     * [@property] dilationRateInY
      * <p>
      * The dilation rate i.e. stride of elements in the kernel in y.
      */
@@ -303,7 +306,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native long dilationRateInY();
 
     /**
-     * [@property]   groupCount
+     * [@property] groupCount
      * <p>
      * Number of blocked connections from input channels to output channels
      */
@@ -322,7 +325,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native MLCConvolutionDescriptor init();
 
     /**
-     * [@property]   inputFeatureChannelCount
+     * [@property] inputFeatureChannelCount
      * <p>
      * Number of channels in the input tensor
      */
@@ -345,7 +348,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property]   isConvolutionTranspose
+     * [@property] isConvolutionTranspose
      * <p>
      * A flag to indicate if this is a convolution transpose
      */
@@ -358,7 +361,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]   kernelHeight
+     * [@property] kernelHeight
      * <p>
      * The convolution kernel size in y.
      */
@@ -368,7 +371,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native long kernelHeight();
 
     /**
-     * [@property]   kernelWidth
+     * [@property] kernelWidth
      * <p>
      * The convolution kernel size in x.
      */
@@ -387,7 +390,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public static native MLCConvolutionDescriptor new_objc();
 
     /**
-     * [@property]   outputFeatureChannelCount
+     * [@property] outputFeatureChannelCount
      * <p>
      * Number of channels in the output tensor
      */
@@ -397,7 +400,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native long outputFeatureChannelCount();
 
     /**
-     * [@property]   paddingPolicy
+     * [@property] paddingPolicy
      * <p>
      * The padding policy to use.
      */
@@ -406,7 +409,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native int paddingPolicy();
 
     /**
-     * [@property]   paddingSizeInX
+     * [@property] paddingSizeInX
      * <p>
      * The pooling size in x (left and right) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
@@ -416,7 +419,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native long paddingSizeInX();
 
     /**
-     * [@property]   paddingSizeInY
+     * [@property] paddingSizeInY
      * <p>
      * The pooling size in y (top and bottom) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
@@ -438,7 +441,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   strideInX
+     * [@property] strideInX
      * <p>
      * The stride of the kernel in x.
      */
@@ -448,7 +451,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public native long strideInX();
 
     /**
-     * [@property]   strideInY
+     * [@property] strideInY
      * <p>
      * The stride of the kernel in y.
      */
@@ -462,7 +465,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property]   usesDepthwiseConvolution
+     * [@property] usesDepthwiseConvolution
      * <p>
      * A flag to indicate depthwise convolution
      */

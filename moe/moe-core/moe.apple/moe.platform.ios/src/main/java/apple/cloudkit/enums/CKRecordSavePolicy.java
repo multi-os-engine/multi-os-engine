@@ -25,12 +25,15 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] CKRecordSaveIfServerRecordUnchanged
  * <p>
  * Locally-edited keys are sent to the server.
- * If the record on the server has been modified, fail the write and return an error. A CKShare's participants array is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy of the operation that modifies the share.
+ * If the record on the server has been modified, fail the write and return an error. A CKShare's participants array is
+ * always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy of the operation that
+ * modifies the share.
  * <p>
  * [@constant] CKRecordSaveChangedKeys
  * <p>
  * Locally-edited keys are written to the server.
- * Any previously committed change to the server, for example by other devices, will be overwritten by the locally changed value.
+ * Any previously committed change to the server, for example by other devices, will be overwritten by the locally
+ * changed value.
  * This policy does not compare the record change tag and therefore will never return @c CKErrorServerRecordChanged
  * <p>
  * [@constant] CKRecordSaveAllKeys
@@ -40,7 +43,8 @@ import org.moe.natj.general.ann.NInt;
  * Keys present only on the server remain unchanged.
  * There are two common ways in which a server record will contain keys not present locally:
  * 1 - Since you've fetched this record, another client has added a new key to the record.
- * 2 - The presence of @c desiredKeys on the fetch / query that returned this record meant that only a portion of the record's keys were downloaded.
+ * 2 - The presence of @c desiredKeys on the fetch / query that returned this record meant that only a portion of the
+ * record's keys were downloaded.
  * This policy does not compare the record change tag and therefore will never return @c CKErrorServerRecordChanged.
  */
 @Generated

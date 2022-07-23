@@ -31,7 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * VNDetectedPoint is a VNPoint with a confidence value.
  * <p>
- * It should be noted that VNDetectedPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by observations that detect points of interest.
+ * It should be noted that VNDetectedPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is
+ * used by observations that detect points of interest.
  */
 @Generated
 @Library("Vision")

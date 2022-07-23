@@ -39,7 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("UIStateRestoring")
 public interface UIStateRestoring {
     /**
-     * applicationFinishedRestoringState is called on all restored objects that implement the method *after* all other object
+     * applicationFinishedRestoringState is called on all restored objects that implement the method *after* all other
+     * object
      * decoding has been done (including the application delegate). This allows an object to complete setup after state
      * restoration, knowing that all objects from the restoration archive have decoded their state.
      */

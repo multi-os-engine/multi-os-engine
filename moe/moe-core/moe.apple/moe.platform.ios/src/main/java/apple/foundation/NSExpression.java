@@ -112,7 +112,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native NSExpression expressionForAnyKey();
 
     /**
-     * Expression that invokes the block with the parameters; note that block expressions are not encodable or representable as parseable strings.
+     * Expression that invokes the block with the parameters; note that block expressions are not encodable or
+     * representable as parseable strings.
      */
     @Generated
     @Selector("expressionForBlock:arguments:")
@@ -143,14 +144,16 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native NSExpression expressionForEvaluatedObject();
 
     /**
-     * Expression that invokes one of the predefined functions. Will throw immediately if the selector is bad; will throw at runtime if the parameters are incorrect.
+     * Expression that invokes one of the predefined functions. Will throw immediately if the selector is bad; will
+     * throw at runtime if the parameters are incorrect.
      */
     @Generated
     @Selector("expressionForFunction:arguments:")
     public static native NSExpression expressionForFunctionArguments(String name, NSArray<?> parameters);
 
     /**
-     * Expression that invokes the selector on target with parameters. Will throw at runtime if target does not implement selector or if parameters are wrong.
+     * Expression that invokes the selector on target with parameters. Will throw at runtime if target does not
+     * implement selector or if parameters are wrong.
      */
     @Generated
     @Selector("expressionForFunction:selectorName:arguments:")
@@ -179,7 +182,10 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public static native NSExpression expressionForMinusSetWith(NSExpression left, NSExpression right);
 
     /**
-     * Expression that filters a collection by storing elements in the collection in the variable variable and keeping the elements for which qualifer returns true; variable is used as a local variable, and will shadow any instances of variable in the bindings dictionary, the variable is removed or the old value replaced once evaluation completes
+     * Expression that filters a collection by storing elements in the collection in the variable variable and keeping
+     * the elements for which qualifer returns true; variable is used as a local variable, and will shadow any instances
+     * of variable in the bindings dictionary, the variable is removed or the old value replaced once evaluation
+     * completes
      */
     @Generated
     @Selector("expressionForSubquery:usingIteratorVariable:predicate:")
@@ -277,7 +283,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public native void allowEvaluation();
 
     /**
-     * array of expressions which will be passed as parameters during invocation of the selector on the operand of a function expression
+     * array of expressions which will be passed as parameters during invocation of the selector on the operand of a
+     * function expression
      */
     @Generated
     @Selector("arguments")
@@ -317,7 +324,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public native long expressionType();
 
     /**
-     * evaluate the expression using the object and bindings- note that context is mutable here and can be used by expressions to store temporary state for one predicate evaluation
+     * evaluate the expression using the object and bindings- note that context is mutable here and can be used by
+     * expressions to store temporary state for one predicate evaluation
      */
     @Generated
     @Selector("expressionValueWithObject:context:")
@@ -360,7 +368,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     public native NSExpression leftExpression();
 
     /**
-     * the object on which the selector will be invoked (the result of evaluating a key path or one of the defined functions)
+     * the object on which the selector will be invoked (the result of evaluating a key path or one of the defined
+     * functions)
      */
     @Generated
     @Selector("operand")

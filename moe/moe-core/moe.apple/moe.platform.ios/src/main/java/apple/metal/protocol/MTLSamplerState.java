@@ -38,7 +38,7 @@ public interface MTLSamplerState {
     /**
      * [@property] device
      * <p>
-     * The device this resource was created against.  This resource can only be used with this device.
+     * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
     @Selector("device")

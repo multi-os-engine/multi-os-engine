@@ -78,9 +78,11 @@ public interface UITableViewDropDelegate {
 
     /**
      * Called frequently while the drop session being tracked inside the table view's coordinate space.
-     * When the drop is at the end of a section, the destination index path passed will be for a row that does not yet exist (equal
+     * When the drop is at the end of a section, the destination index path passed will be for a row that does not yet
+     * exist (equal
      * to the number of rows in that section), where an inserted row would append to the end of the section.
-     * The destination index path may be nil in some circumstances (e.g. when dragging over empty space where there are no cells).
+     * The destination index path may be nil in some circumstances (e.g. when dragging over empty space where there are
+     * no cells).
      * Note that in some cases your proposal may not be allowed and the system will enforce a different proposal.
      * You may perform your own hit testing via -[session locationInView:]
      */
@@ -94,9 +96,11 @@ public interface UITableViewDropDelegate {
 
     /**
      * Called when the user initiates the drop.
-     * Use the drop coordinator to access the items in the drop and the final destination index path and proposal for the drop,
+     * Use the drop coordinator to access the items in the drop and the final destination index path and proposal for
+     * the drop,
      * as well as specify how you wish to animate each item to its final position.
-     * If your implementation of this method does nothing, default drop animations will be supplied and the table view will
+     * If your implementation of this method does nothing, default drop animations will be supplied and the table view
+     * will
      * revert back to its initial state before the drop session entered.
      */
     @Generated

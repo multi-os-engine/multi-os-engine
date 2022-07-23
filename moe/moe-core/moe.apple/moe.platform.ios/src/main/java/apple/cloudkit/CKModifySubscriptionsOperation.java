@@ -163,8 +163,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of
+     * subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of
+     * the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -176,8 +178,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of
+     * subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of
+     * the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

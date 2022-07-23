@@ -34,14 +34,14 @@ public final class thread_command extends StructObject {
     }
 
     /**
-     * LC_THREAD or  LC_UNIXTHREAD
+     * LC_THREAD or LC_UNIXTHREAD
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native int cmd();
 
     /**
-     * LC_THREAD or  LC_UNIXTHREAD
+     * LC_THREAD or LC_UNIXTHREAD
      */
     @Generated
     @StructureField(order = 0, isGetter = false)

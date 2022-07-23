@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCGradientClippingType
+ * [@enum] MLCGradientClippingType
  * <p>
  * The type of clipping applied to gradient
  */

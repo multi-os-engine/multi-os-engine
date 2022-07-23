@@ -76,9 +76,10 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]		codecTypes
+     * [@property] codecTypes
      * <p>
-     * Provides an array of video sample codec types present in the variant's renditions if any are declared. Each value in the array is a NSNumber representation of CMVideoCodecType.
+     * Provides an array of video sample codec types present in the variant's renditions if any are declared. Each value
+     * in the array is a NSNumber representation of CMVideoCodecType.
      */
     @Generated
     @Selector("codecTypes")
@@ -128,7 +129,7 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public static native AVAssetVariantVideoAttributes new_objc();
 
     /**
-     * [@property]		nominalFrameRate
+     * [@property] nominalFrameRate
      * <p>
      * If it is not declared, the value will be negative.
      */
@@ -137,7 +138,7 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public native double nominalFrameRate();
 
     /**
-     * [@property]		presentationSize
+     * [@property] presentationSize
      * <p>
      * If it is not declared, it will be CGSizeZero.
      */
@@ -168,7 +169,7 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]		videoRange
+     * [@property] videoRange
      * <p>
      * Provides the video range of the variant. If it is not declared, it will be AVVideoRangeSDR.
      */

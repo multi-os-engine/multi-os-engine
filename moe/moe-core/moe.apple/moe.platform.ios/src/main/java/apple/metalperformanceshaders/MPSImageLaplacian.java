@@ -45,9 +45,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The MPSImageLaplacian is an optimized variant of the MPSImageConvolution filter provided primarily for ease of use.
  * This filter uses an optimized convolution filter with a 3 x 3 kernel with the following weights:
- * [ 0  1  0
- * 1 -4  1
- * 0  1  0 ]
+ * [ 0 1 0
+ * 1 -4 1
+ * 0 1 0 ]
  * <p>
  * The optimized convolution filter used by MPSImageLaplacian can also be used by creating a MPSImageConvolution
  * object with kernelWidth = 3, kernelHeight = 3 and weights as specified above.
@@ -163,7 +163,7 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * [@property]    bias
+     * [@property] bias
      * <p>
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
@@ -187,7 +187,7 @@ public class MPSImageLaplacian extends MPSUnaryImageKernel {
     public native MPSImageLaplacian initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * [@property]    bias
+     * [@property] bias
      * <p>
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.

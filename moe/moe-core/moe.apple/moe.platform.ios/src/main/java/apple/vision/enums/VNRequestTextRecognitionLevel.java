@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Text recognition level options to favor speed over recognition accuracy. The VNRequestTextRecognitionLevelAccurate is the default option used by VNRecognizeTextRequest.
+ * Text recognition level options to favor speed over recognition accuracy. The VNRequestTextRecognitionLevelAccurate is
+ * the default option used by VNRecognizeTextRequest.
  */
 @Generated
 public final class VNRequestTextRecognitionLevel {

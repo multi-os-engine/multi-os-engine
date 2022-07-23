@@ -31,8 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTLAccelerationStructureMotionTriangleGeometryDescriptor
-        extends MTLAccelerationStructureGeometryDescriptor {
+public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
+        MTLAccelerationStructureGeometryDescriptor {
     static {
         NatJ.register();
     }
@@ -192,7 +192,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Vertex buffer containing triangle vertices similar to what MTLAccelerationStructureTriangleGeometryDescriptor has but array of the values.
+     * Vertex buffer containing triangle vertices similar to what MTLAccelerationStructureTriangleGeometryDescriptor has
+     * but array of the values.
      */
     @Generated
     @Selector("setVertexBuffers:")
@@ -224,7 +225,8 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor
     public static native long version_static();
 
     /**
-     * Vertex buffer containing triangle vertices similar to what MTLAccelerationStructureTriangleGeometryDescriptor has but array of the values.
+     * Vertex buffer containing triangle vertices similar to what MTLAccelerationStructureTriangleGeometryDescriptor has
+     * but array of the values.
      */
     @Generated
     @Selector("vertexBuffers")

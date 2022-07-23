@@ -413,7 +413,8 @@ public class GLKView extends UIView implements NSCoding {
 
     /**
      * -display should be called when the view has been set to ignore calls to setNeedsDisplay. This method is used by
-     * the GLKViewController to invoke the draw method. It can also be used when not using a GLKViewController and custom
+     * the GLKViewController to invoke the draw method. It can also be used when not using a GLKViewController and
+     * custom
      * control of the display loop is needed.
      */
     @Generated

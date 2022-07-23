@@ -26,7 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Represents parsed SmartCard ATR.  Provides routine for parsing byte stream or NSData with binary ATR and accessors to parsed ATR parts.
+ * Represents parsed SmartCard ATR. Provides routine for parsing byte stream or NSData with binary ATR and accessors to
+ * parsed ATR parts.
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -106,9 +107,10 @@ public class TKSmartCardATR extends NSObject {
     public native NSData historicalBytes();
 
     /**
-     * An array of TKCompactTLVRecord instances with TLV records parsed from historical bytes.  If historical bytes are
+     * An array of TKCompactTLVRecord instances with TLV records parsed from historical bytes. If historical bytes are
      * not structured using Compact TLV encoding, nil is returned.
-     * [@note] In case that ATR historical bytes begin with 0x00, the last three bytes (status indicator) are automatically
+     * [@note] In case that ATR historical bytes begin with 0x00, the last three bytes (status indicator) are
+     * automatically
      * appended into the returned records as if historical bytes would begin with 0x80 and 0x8 record is present
      * in historical bytes.
      */
@@ -163,7 +165,7 @@ public class TKSmartCardATR extends NSObject {
     /**
      * Retrieves interface group with specified index.
      *
-     * @param index Index of the requested interface group.  Indexing conforms to ISO7816-3, i.e. starts from 1.
+     * @param index Index of the requested interface group. Indexing conforms to ISO7816-3, i.e. starts from 1.
      * @return Interface group with given index, or nil of no such group was present.
      */
     @Generated
@@ -193,7 +195,8 @@ public class TKSmartCardATR extends NSObject {
     public static native TKSmartCardATR new_objc();
 
     /**
-     * Array of NSNumber of protocols indicated in ATR, in the correct order (i.e. the default protocol comes first), duplicates sorted out.
+     * Array of NSNumber of protocols indicated in ATR, in the correct order (i.e. the default protocol comes first),
+     * duplicates sorted out.
      */
     @Generated
     @Selector("protocols")

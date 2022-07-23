@@ -199,7 +199,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     public static native ASAuthorizationProviderExtensionAuthorizationRequest new_objc();
 
     /**
-     * Asks authorization service to show extension view controller. If the controller cannot be shown an error is returned.
+     * Asks authorization service to show extension view controller. If the controller cannot be shown an error is
+     * returned.
      */
     @Generated
     @Selector("presentAuthorizationViewControllerWithCompletion:")

@@ -232,11 +232,11 @@ public class MPSCNNLossLabels extends MPSState {
      * Labels image accessor method.
      *
      * @return An autoreleased MPSImage object, containing the labels data.
-     * The labels data is populated in the -initWithDevice call.
-     * <p>
-     * In order to guarantee that the image is correctly synchronized for CPU side access,
-     * it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
-     * method before accessing the data in the image.
+     *         The labels data is populated in the -initWithDevice call.
+     *         <p>
+     *         In order to guarantee that the image is correctly synchronized for CPU side access,
+     *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
+     *         method before accessing the data in the image.
      */
     @Generated
     @Selector("labelsImage")
@@ -246,12 +246,12 @@ public class MPSCNNLossLabels extends MPSState {
      * Loss image accessor method.
      *
      * @return An autoreleased MPSImage object, containing the loss data.
-     * The loss data is populated in the -encode call, thus the contents
-     * are undefined until you -encode the filter.
-     * <p>
-     * In order to guarantee that the image is correctly synchronized for CPU side access,
-     * it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
-     * method before accessing the data in the image.
+     *         The loss data is populated in the -encode call, thus the contents
+     *         are undefined until you -encode the filter.
+     *         <p>
+     *         In order to guarantee that the image is correctly synchronized for CPU side access,
+     *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
+     *         method before accessing the data in the image.
      */
     @Generated
     @Selector("lossImage")
@@ -307,11 +307,11 @@ public class MPSCNNLossLabels extends MPSState {
      * Weights image accessor method.
      *
      * @return An autoreleased MPSImage object, containing the weights data.
-     * The weights data is populated in the -initWithDevice call.
-     * <p>
-     * In order to guarantee that the image is correctly synchronized for CPU side access,
-     * it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
-     * method before accessing the data in the image.
+     *         The weights data is populated in the -initWithDevice call.
+     *         <p>
+     *         In order to guarantee that the image is correctly synchronized for CPU side access,
+     *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
+     *         method before accessing the data in the image.
      */
     @Generated
     @Selector("weightsImage")

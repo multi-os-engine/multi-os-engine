@@ -124,7 +124,7 @@ public class MTLTileRenderPipelineColorAttachmentDescriptor extends NSObject imp
     public static native MTLTileRenderPipelineColorAttachmentDescriptor new_objc();
 
     /**
-     * Pixel format.  Defaults to MTLPixelFormatInvalid
+     * Pixel format. Defaults to MTLPixelFormatInvalid
      */
     @Generated
     @Selector("pixelFormat")
@@ -140,7 +140,7 @@ public class MTLTileRenderPipelineColorAttachmentDescriptor extends NSObject imp
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Pixel format.  Defaults to MTLPixelFormatInvalid
+     * Pixel format. Defaults to MTLPixelFormatInvalid
      */
     @Generated
     @Selector("setPixelFormat:")

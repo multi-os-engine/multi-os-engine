@@ -462,7 +462,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The following methods convert between HKUnit and Foundation formatter units for mass, length and energy.
      * When converting from Foundation formatter unit to HKUnit, if there's not a match, nil will be returned.
-     * When converting from HKUnit to the Foundation formatter unit, if there's not a match, an exception will be thrown.
+     * When converting from HKUnit to the Foundation formatter unit, if there's not a match, an exception will be
+     * thrown.
      */
     @Generated
     @Selector("unitFromMassFormatterUnit:")

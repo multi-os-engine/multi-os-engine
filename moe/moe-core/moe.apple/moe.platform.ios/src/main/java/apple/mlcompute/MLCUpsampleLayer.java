@@ -47,11 +47,12 @@ public class MLCUpsampleLayer extends MLCLayer {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]   alignsCorners
+     * [@property] alignsCorners
      * <p>
      * A boolean that specifies whether the corner pixels of the source and result tensors are aligned.
      * <p>
-     * If True, the corner pixels of the source and result tensors are aligned, and thus preserving the values at those pixels.
+     * If True, the corner pixels of the source and result tensors are aligned, and thus preserving the values at those
+     * pixels.
      * This only has effect when mode is 'bilinear'. Default is NO.
      */
     @Generated
@@ -142,7 +143,7 @@ public class MLCUpsampleLayer extends MLCLayer {
      * Create an upsample layer
      *
      * @param shape         A NSArray<NSNumber *> representing the dimensions of the result tensor
-     * @param sampleMode    The upsampling algorithm to use.  Default is nearest.
+     * @param sampleMode    The upsampling algorithm to use. Default is nearest.
      * @param alignsCorners Whether the corner pixels of the input and output tensors are aligned or not.
      * @return A new upsample layer.
      */
@@ -165,7 +166,7 @@ public class MLCUpsampleLayer extends MLCLayer {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   sampleMode
+     * [@property] sampleMode
      * <p>
      * The sampling mode to use when performing the upsample.
      */
@@ -178,7 +179,7 @@ public class MLCUpsampleLayer extends MLCLayer {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   shape
+     * [@property] shape
      * <p>
      * A NSArray<NSNumber *> representing just the width if number of entries in shape array is 1 or
      * the height followed by width of result tensor if the number of entries in shape array is 2.

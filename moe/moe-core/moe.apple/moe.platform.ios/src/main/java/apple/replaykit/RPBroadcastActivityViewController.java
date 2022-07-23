@@ -145,12 +145,19 @@ public class RPBroadcastActivityViewController extends UIViewController {
     /**
      * Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
      * <p>
-     * The view controller will present the user with a list of broadcast services available on the device and allow the user to set up a broadcast with the service through the service's UI.
+     * The view controller will present the user with a list of broadcast services available on the device and allow the
+     * user to set up a broadcast with the service through the service's UI.
      * <p>
-     * The RPBroadcastActivityViewController can be presented using [UIViewController presentViewController:animated:completion:] and should be dismissed when the delegate's broadcastActivityViewController:didFinishWithBroadcastController:error: method is called. Note that on large screen devices such as iPad, the default presentation style for view controllers is a popover. For an instance of RPBroadcastActivityViewController to present properly on iPad, it needs to have its popoverPresentationController's sourceRect and sourceView configured.
+     * The RPBroadcastActivityViewController can be presented using [UIViewController
+     * presentViewController:animated:completion:] and should be dismissed when the delegate's
+     * broadcastActivityViewController:didFinishWithBroadcastController:error: method is called. Note that on large
+     * screen devices such as iPad, the default presentation style for view controllers is a popover. For an instance of
+     * RPBroadcastActivityViewController to present properly on iPad, it needs to have its
+     * popoverPresentationController's sourceRect and sourceView configured.
      *
      * @param broadcastActivityViewController The RPBroadcastActivityViewController which can be presented.
-     * @param error                           Optional error in the RPRecordingErrorCode domain which is supplied in the event the view controller could not be loaded.
+     * @param error                           Optional error in the RPRecordingErrorCode domain which is supplied in the
+     *                                        event the view controller could not be loaded.
      */
     @Generated
     @Selector("loadBroadcastActivityViewControllerWithHandler:")
@@ -237,13 +244,22 @@ public class RPBroadcastActivityViewController extends UIViewController {
     /**
      * Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
      * <p>
-     * The view controller will present the user with a view that shows the preferred streaming extension service and allow the user to set up a broadcast with the service through the service's UI.
+     * The view controller will present the user with a view that shows the preferred streaming extension service and
+     * allow the user to set up a broadcast with the service through the service's UI.
      * <p>
-     * The RPBroadcastActivityViewController can be presented using [UIViewController presentViewController:animated:completion:] and should be dismissed when the delegate's broadcastActivityViewController:didFinishWithBroadcastController:error: method is called. Note that on large screen devices such as iPad, the default presentation style for view controllers is a popover. For an instance of RPBroadcastActivityViewController to present properly on iPad, it needs to have its popoverPresentationController's sourceRect and sourceView configured.
+     * The RPBroadcastActivityViewController can be presented using [UIViewController
+     * presentViewController:animated:completion:] and should be dismissed when the delegate's
+     * broadcastActivityViewController:didFinishWithBroadcastController:error: method is called. Note that on large
+     * screen devices such as iPad, the default presentation style for view controllers is a popover. For an instance of
+     * RPBroadcastActivityViewController to present properly on iPad, it needs to have its
+     * popoverPresentationController's sourceRect and sourceView configured.
      *
-     * @param preferredExtension              The extension bundle identifier for the preferred broadcast extension service
-     * @param broadcastActivityViewController The RPBroadcastActivityViewController which can be presented, returns nil if ther eis no matching extension.
-     * @param error                           Optional error in the RPRecordingErrorCode domain which is supplied in the event the view controller could not be loaded.
+     * @param preferredExtension              The extension bundle identifier for the preferred broadcast extension
+     *                                        service
+     * @param broadcastActivityViewController The RPBroadcastActivityViewController which can be presented, returns nil
+     *                                        if ther eis no matching extension.
+     * @param error                           Optional error in the RPRecordingErrorCode domain which is supplied in the
+     *                                        event the view controller could not be loaded.
      */
     @Generated
     @Selector("loadBroadcastActivityViewControllerWithPreferredExtension:handler:")

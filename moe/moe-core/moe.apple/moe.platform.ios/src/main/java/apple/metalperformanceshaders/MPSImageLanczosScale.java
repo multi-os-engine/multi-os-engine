@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The MPSImageLanczosScale filter can be used to resample an existing image
  * using a different sampling frequency in each dimension. This can be
  * used to enlarge or reduce the size of an image, or change the aspect
- * ratio of an image.  The filter uses a Lanczos resampling algorithm
+ * ratio of an image. The filter uses a Lanczos resampling algorithm
  * which typically produces better quality for photographs, but is slower
  * than linear sampling using the GPU texture units. Lanczos downsampling
  * does not require a low pass filter to be applied before it is used.
@@ -183,7 +183,7 @@ public class MPSImageLanczosScale extends MPSImageScale {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

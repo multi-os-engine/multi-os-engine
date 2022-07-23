@@ -69,7 +69,8 @@ public final class CloudKit {
     /**
      * When a CKErrorPartialFailure happens this key will be set in the error's userInfo dictionary.
      * <p>
-     * The value of this key will be a dictionary, and the values will be errors for individual items with the keys being the item IDs that failed.
+     * The value of this key will be a dictionary, and the values will be errors for individual items with the keys
+     * being the item IDs that failed.
      */
     @Generated
     @CVariable()
@@ -77,7 +78,10 @@ public final class CloudKit {
     public static native String CKPartialErrorsByItemIDKey();
 
     /**
-     * If the server rejects a record save because it has been modified since the last time it was read, a @c CKErrorServerRecordChanged error will be returned and it will contain versions of the record in its userInfo dictionary. Apply your custom conflict resolution logic to the server record under @c CKServerRecordKey and attempt a save of that record.
+     * If the server rejects a record save because it has been modified since the last time it was read, a @c
+     * CKErrorServerRecordChanged error will be returned and it will contain versions of the record in its userInfo
+     * dictionary. Apply your custom conflict resolution logic to the server record under @c CKServerRecordKey and
+     * attempt a save of that record.
      */
     @Generated
     @CVariable()
@@ -95,7 +99,10 @@ public final class CloudKit {
     public static native String CKRecordChangedErrorClientRecordKey();
 
     /**
-     * On some errors, the userInfo dictionary may contain a NSNumber instance that specifies the period of time in seconds after which the client may retry the request. For example, this key will be on @c CKErrorServiceUnavailable, @c CKErrorRequestRateLimited, and other errors for which the recommended resolution is to retry after a delay.
+     * On some errors, the userInfo dictionary may contain a NSNumber instance that specifies the period of time in
+     * seconds after which the client may retry the request. For example, this key will be on @c
+     * CKErrorServiceUnavailable, @c CKErrorRequestRateLimited, and other errors for which the recommended resolution is
+     * to retry after a delay.
      */
     @Generated
     @CVariable()
@@ -134,7 +141,7 @@ public final class CloudKit {
     public static native String CKRecordTypeShare();
 
     /**
-     * Value is a string.  Example for a recipe sharing app: "Pot Roast"
+     * Value is a string. Example for a recipe sharing app: "Pot Roast"
      */
     @Generated
     @CVariable()
@@ -150,7 +157,7 @@ public final class CloudKit {
     public static native String CKShareThumbnailImageDataKey();
 
     /**
-     * Value is a string representing a UTI.  Example for a recipe sharing app: "com.mycompany.recipe"
+     * Value is a string representing a UTI. Example for a recipe sharing app: "com.mycompany.recipe"
      */
     @Generated
     @CVariable()
@@ -158,7 +165,8 @@ public final class CloudKit {
     public static native String CKShareTypeKey();
 
     /**
-     * Query operations have a dynamically defined maximum number of results.  If the results of a query exceed this max, your completion block will invoked with a cursor.
+     * Query operations have a dynamically defined maximum number of results. If the results of a query exceed this max,
+     * your completion block will invoked with a cursor.
      * Issue a new query with that cursor to fetch the next batch of results.
      */
     @Generated
@@ -167,7 +175,8 @@ public final class CloudKit {
     public static native long CKQueryOperationMaximumResults();
 
     /**
-     * On error CKErrorZoneNotFound, the userInfo dictionary may contain a NSNumber instance that specifies a boolean value representing if the error is caused by the user having reset all encrypted data for their account
+     * On error CKErrorZoneNotFound, the userInfo dictionary may contain a NSNumber instance that specifies a boolean
+     * value representing if the error is caused by the user having reset all encrypted data for their account
      */
     @Generated
     @CVariable()

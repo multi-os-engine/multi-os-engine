@@ -141,7 +141,7 @@ public class TKSmartCardATRInterfaceGroup extends NSObject {
     public static native TKSmartCardATRInterfaceGroup new_objc();
 
     /**
-     * Protocol number for this group.  First group (global) has protocol unassigned, contains nil.
+     * Protocol number for this group. First group (global) has protocol unassigned, contains nil.
      */
     @Generated
     @Selector("protocol")

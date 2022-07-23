@@ -131,8 +131,10 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     /**
      * Maximum number of images to track simultaneously.
      * <p>
-     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
-     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
+     * frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
+     * is lost or another image is removed.
      * Default value is one.
      */
     @Generated
@@ -165,8 +167,10 @@ public class ARImageTrackingConfiguration extends ARConfiguration {
     /**
      * Maximum number of images to track simultaneously.
      * <p>
-     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
-     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
+     * frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
+     * is lost or another image is removed.
      * Default value is one.
      */
     @Generated

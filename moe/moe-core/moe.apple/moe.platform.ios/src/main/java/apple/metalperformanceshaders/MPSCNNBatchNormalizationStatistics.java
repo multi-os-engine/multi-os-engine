@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * with the batch statistics necessary to perform a batch normalization.
  * MPSCNNBatchNormalizationStatistics may be executed multiple times with
  * multiple images to accumulate all the statistics necessary to perform
- * a batch normalization as described in  https://arxiv.org/pdf/1502.03167v3.pdf.
+ * a batch normalization as described in https://arxiv.org/pdf/1502.03167v3.pdf.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -111,7 +111,7 @@ public class MPSCNNBatchNormalizationStatistics extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

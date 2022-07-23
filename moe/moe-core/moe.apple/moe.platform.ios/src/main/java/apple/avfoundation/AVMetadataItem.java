@@ -121,13 +121,18 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
      * <p>
      * Provides the metadata identifier that's equivalent to a key and keySpace.
      * <p>
-     * Metadata keys that are not instances of NSString, NSNumber, or NSData cannot be converted to metadata identifiers; they also cannot be written to media resources via AVAssetExportSession or AVAssetWriter.  Metadata item keySpaces must be a string of one to four printable ASCII characters.
+     * Metadata keys that are not instances of NSString, NSNumber, or NSData cannot be converted to metadata
+     * identifiers; they also cannot be written to media resources via AVAssetExportSession or AVAssetWriter. Metadata
+     * item keySpaces must be a string of one to four printable ASCII characters.
      * <p>
-     * For custom identifiers, the keySpace AVMetadataKeySpaceQuickTimeMetadata is recommended.  This keySpace defines its key values to be expressed as reverse-DNS strings, which allows third parties to define their own keys in a well established way that avoids collisions.
+     * For custom identifiers, the keySpace AVMetadataKeySpaceQuickTimeMetadata is recommended. This keySpace defines
+     * its key values to be expressed as reverse-DNS strings, which allows third parties to define their own keys in a
+     * well established way that avoids collisions.
      *
-     * @param            key The metadata key.
-     * @param            keySpace The metadata keySpace.
-     * @return A metadata identifier equivalent to the given key and keySpace, or nil if no identifier can be constructed from the given key and keySpace.
+     * @param key      The metadata key.
+     * @param keySpace The metadata keySpace.
+     * @return A metadata identifier equivalent to the given key and keySpace, or nil if no identifier can be
+     *         constructed from the given key and keySpace.
      */
     @Generated
     @Selector("identifierForKey:keySpace:")
@@ -172,13 +177,26 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     /**
      * metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler:
      * <p>
-     * Creates an instance of AVMutableMetadataItem with a value that you do not wish to load unless required, e.g. a large image value that needn't be loaded into memory until another module wants to display it.
+     * Creates an instance of AVMutableMetadataItem with a value that you do not wish to load unless required, e.g. a
+     * large image value that needn't be loaded into memory until another module wants to display it.
      * <p>
-     * This method is intended for the creation of metadata items for optional display purposes, when there is no immediate need to load specific metadata values. For example, see the interface for navigation markers as consumed by AVPlayerViewController. It's not intended for the creation of metadata items with values that are required immediately, such as metadata items that are provided for impending serialization operations (e.g. via -[AVAssetExportSession setMetadata:] and other similar methods defined on AVAssetWriter and AVAssetWriterInput).
-     * When -loadValuesAsynchronouslyForKeys:completionHandler: is invoked on an AVMetadataItem created via +metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler: and @"value" is among the keys for which loading is requested, the block you provide as the value loading handler will be executed on an arbitrary dispatch queue, off the main thread. The handler can perform I/O and other necessary operations to obtain the value. If loading of the value succeeds, provide the value by invoking -[AVMetadataItemValueRequest respondWithValue:]. If loading of the value fails, provide an instance of NSError that describes the failure by invoking -[AVMetadataItemValueRequest respondWithError:].
+     * This method is intended for the creation of metadata items for optional display purposes, when there is no
+     * immediate need to load specific metadata values. For example, see the interface for navigation markers as
+     * consumed by AVPlayerViewController. It's not intended for the creation of metadata items with values that are
+     * required immediately, such as metadata items that are provided for impending serialization operations (e.g. via
+     * -[AVAssetExportSession setMetadata:] and other similar methods defined on AVAssetWriter and AVAssetWriterInput).
+     * When -loadValuesAsynchronouslyForKeys:completionHandler: is invoked on an AVMetadataItem created via
+     * +metadataItemWithPropertiesOfMetadataItem:valueLoadingHandler: and @"value" is among the keys for which loading
+     * is requested, the block you provide as the value loading handler will be executed on an arbitrary dispatch queue,
+     * off the main thread. The handler can perform I/O and other necessary operations to obtain the value. If loading
+     * of the value succeeds, provide the value by invoking -[AVMetadataItemValueRequest respondWithValue:]. If loading
+     * of the value fails, provide an instance of NSError that describes the failure by invoking
+     * -[AVMetadataItemValueRequest respondWithError:].
      *
-     * @param            metadataItem An instance of AVMetadataItem with the identifier, extendedLanguageTag, and other property values that you want the newly created instance of AVMetadataItem to share. The value of metadataItem is ignored.
-     * @param            handler A block that loads the value of the metadata item.
+     * @param metadataItem An instance of AVMetadataItem with the identifier, extendedLanguageTag, and other property
+     *                     values that you want the newly created instance of AVMetadataItem to share. The value of
+     *                     metadataItem is ignored.
+     * @param handler      A block that loads the value of the metadata item.
      * @return An instance of AVMetadataItem.
      */
     @Generated
@@ -190,11 +208,16 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     /**
      * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:
      * <p>
-     * Filters an array of AVMetadataItems according to whether their locales match any language identifier in the specified array of preferred languages. The returned array is sorted according to the order of preference of the language each matches.
+     * Filters an array of AVMetadataItems according to whether their locales match any language identifier in the
+     * specified array of preferred languages. The returned array is sorted according to the order of preference of the
+     * language each matches.
      *
-     * @param            metadataItems An array of AVMetadataItems to be filtered and sorted.
-     * @param            preferredLanguages An array of language identifiers in order of preference, each of which is an IETF BCP 47 (RFC 4646) language identifier. Use +[NSLocale preferredLanguages] to obtain the user's list of preferred languages.
-     * @return An instance of NSArray containing metadata items of the specified NSArray that match a preferred language, sorted according to the order of preference of the language each matches.
+     * @param metadataItems      An array of AVMetadataItems to be filtered and sorted.
+     * @param preferredLanguages An array of language identifiers in order of preference, each of which is an IETF BCP
+     *                           47 (RFC 4646) language identifier. Use +[NSLocale preferredLanguages] to obtain the
+     *                           user's list of preferred languages.
+     * @return An instance of NSArray containing metadata items of the specified NSArray that match a preferred
+     *         language, sorted according to the order of preference of the language each matches.
      */
     @Generated
     @Selector("metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:")
@@ -206,9 +229,12 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
      * <p>
      * Filters an array of AVMetadataItems according to identifier.
      *
-     * @param            metadataItems An array of AVMetadataItems to be filtered by identifier.
-     * @param            identifier The identifier that must be matched for a metadata item to be copied to the output array. Items are considered a match not only when their identifiers are equal to the specified identifier, and also when their identifiers conform to the specified identifier.
-     * @return An instance of NSArray containing the metadata items of the target NSArray that match the specified identifier.
+     * @param metadataItems An array of AVMetadataItems to be filtered by identifier.
+     * @param identifier    The identifier that must be matched for a metadata item to be copied to the output array.
+     *                      Items are considered a match not only when their identifiers are equal to the specified
+     *                      identifier, and also when their identifiers conform to the specified identifier.
+     * @return An instance of NSArray containing the metadata items of the target NSArray that match the specified
+     *         identifier.
      */
     @Generated
     @Selector("metadataItemsFromArray:filteredByIdentifier:")
@@ -220,9 +246,10 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
      * <p>
      * Filters an array of AVMetadataItems using the supplied AVMetadataItemFilter.
      *
-     * @param            metadataItems An array of AVMetadataItems to be filtered.
-     * @param            metadataItemFilter The AVMetadataItemFilter object for filtering the metadataItems.
-     * @return An instance of NSArray containing the metadata items of the target NSArray that have not been removed by metadataItemFilter.
+     * @param metadataItems      An array of AVMetadataItems to be filtered.
+     * @param metadataItemFilter The AVMetadataItemFilter object for filtering the metadataItems.
+     * @return An instance of NSArray containing the metadata items of the target NSArray that have not been removed by
+     *         metadataItemFilter.
      */
     @Generated
     @Selector("metadataItemsFromArray:filteredByMetadataItemFilter:")
@@ -290,7 +317,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * indicates the data type of the metadata item's value.  Publicly defined data types are declared in <CoreMedia/CMMetadata.h>
+     * indicates the data type of the metadata item's value. Publicly defined data types are declared in
+     * <CoreMedia/CMMetadata.h>
      */
     @Generated
     @Selector("dataType")
@@ -304,7 +332,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     public native NSData dataValue();
 
     /**
-     * provides the value of the metadata item as an NSDate. If the metadata item's value can't be coerced to a date, @"dateValue" will be nil.
+     * provides the value of the metadata item as an NSDate. If the metadata item's value can't be coerced to a
+     * date, @"dateValue" will be nil.
      */
     @Generated
     @Selector("dateValue")
@@ -319,7 +348,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     public native CMTime duration();
 
     /**
-     * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag information is available
+     * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag
+     * information is available
      */
     @Generated
     @Selector("extendedLanguageTag")
@@ -333,7 +363,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     public native NSDictionary<String, ?> extraAttributes();
 
     /**
-     * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in AVMetadataIdentifiers.h.
+     * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in
+     * AVMetadataIdentifiers.h.
      */
     @Generated
     @Selector("identifier")
@@ -378,7 +409,8 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
     public native Object mutableCopyWithZone(VoidPtr zone);
 
     /**
-     * provides the value of the metadata item as an NSNumber. If the metadata item's value can't be coerced to a number, @"numberValue" will be nil.
+     * provides the value of the metadata item as an NSNumber. If the metadata item's value can't be coerced to a
+     * number, @"numberValue" will be nil.
      */
     @Generated
     @Selector("numberValue")

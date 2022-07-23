@@ -46,9 +46,9 @@ public final class Network {
      * @param txt_bytes The pointer to the buffer.
      * @param txt_len   The length of the buffer.
      * @return An instantiated TXT record object.
-     * Callers are responsible for deallocating using nw_release(obj) or
-     * [obj release]. These objects support ARC.
-     * Returns NULL on failure. Fails if txt_bytes is NULL or if txt_len is 0.
+     *         Callers are responsible for deallocating using nw_release(obj) or
+     *         [obj release]. These objects support ARC.
+     *         Returns NULL on failure. Fails if txt_bytes is NULL or if txt_len is 0.
      */
     @Generated
     @CFunction
@@ -62,8 +62,8 @@ public final class Network {
      * Create an empty TXT record dictionary.
      *
      * @return An empty TXT record dictionary.
-     * Callers are responsible for deallocating using nw_release(obj) or
-     * [obj release]. These objects support ARC.
+     *         Callers are responsible for deallocating using nw_release(obj) or
+     *         [obj release]. These objects support ARC.
      */
     @Generated
     @CFunction
@@ -76,8 +76,8 @@ public final class Network {
      *
      * @param txt_record The TXT record object to be copied.
      * @return A deep copy of the TXT record object.
-     * Callers are responsible for deallocating using nw_release(obj) or
-     * [obj release]. These objects support ARC.
+     *         Callers are responsible for deallocating using nw_release(obj) or
+     *         [obj release]. These objects support ARC.
      */
     @Generated
     @CFunction
@@ -91,8 +91,8 @@ public final class Network {
      * @param txt_record The TXT record object.
      * @param key        The key of the key-value pair.
      * @return An nw_txt_record_find_key_t representing the type of the key-value pair found.
-     * The key may be invalid, may not exist, have no associated value, have an
-     * empty associated value, or have a non-empty associated value.
+     *         The key may be invalid, may not exist, have no associated value, have an
+     *         empty associated value, or have a non-empty associated value.
      */
     @Generated
     @CFunction
@@ -108,7 +108,7 @@ public final class Network {
      * @param txt_record   The TXT record object.
      * @param access_value The block that will be used to access the value of the given key.
      * @return The return value of the access_value block. This is an arbitrary return
-     * value defined by the user.
+     *         value defined by the user.
      */
     @Generated
     @CFunction
@@ -141,9 +141,9 @@ public final class Network {
      *                   key will be inserted with a zero-length value. Inserting a NULL value
      *                   with a non-zero length will fail.
      * @return A boolean indicating if the key-value pair was inserted successfully.
-     * Returns false if the key is invalid. A key is invalid if it is an empty
-     * string, contains non-ASCII characters, or has length greater than
-     * UINT8_MAX.
+     *         Returns false if the key is invalid. A key is invalid if it is an empty
+     *         string, contains non-ASCII characters, or has length greater than
+     *         UINT8_MAX.
      */
     @Generated
     @CFunction
@@ -160,9 +160,9 @@ public final class Network {
      * @param txt_record The TXT record object.
      * @param key        The key corresponding to the key-value pair.
      * @return A boolean indicating if the key-value pair specified by the given key
-     * was removed. Returns false if the key is invalid or not present in the
-     * TXT dictionary. A key is invalid if it is an empty string, contains
-     * non-ASCII characters, or has length greater than UINT8_MAX.
+     *         was removed. Returns false if the key is invalid or not present in the
+     *         TXT dictionary. A key is invalid if it is an empty string, contains
+     *         non-ASCII characters, or has length greater than UINT8_MAX.
      */
     @Generated
     @CFunction
@@ -191,8 +191,8 @@ public final class Network {
      * @param access_bytes The block that will be used to access the raw TXT record inside the TXT
      *                     record object.
      * @return The return value of the access_bytes block, which is defined by the user.
-     * For example, the user may want to return a boolean indicating if the
-     * operation succeeds.
+     *         For example, the user may want to return a boolean indicating if the
+     *         operation succeeds.
      */
     @Generated
     @CFunction
@@ -216,8 +216,8 @@ public final class Network {
      * @param txt_record The TXT record object.
      * @param applier    The block that will be applied to the entire TXT record object.
      * @return A boolean indicating whether iteration of the TXT record object
-     * completed successfully. Iteration will only fail if the applier block
-     * returns false.
+     *         completed successfully. Iteration will only fail if the applier block
+     *         returns false.
      */
     @Generated
     @CFunction
@@ -243,10 +243,10 @@ public final class Network {
      * @param left  The first TXT record object to be compared.
      * @param right The second TXT record object to be compared.
      * @return A boolean indicating if the two TXT record objects are equal. Two TXT
-     * record objects are equal if they contain the same set of key-value pairs,
-     * where keys are compared case-insensitively. For example, "ABC=1" and
-     * "abc=1" are identical key-value pairs. The ordering of the key-value
-     * pairs does not matter.
+     *         record objects are equal if they contain the same set of key-value pairs,
+     *         where keys are compared case-insensitively. For example, "ABC=1" and
+     *         "abc=1" are identical key-value pairs. The ordering of the key-value
+     *         pairs does not matter.
      */
     @Generated
     @CFunction
@@ -259,8 +259,8 @@ public final class Network {
      *
      * @param txt_record The TXT record object.
      * @return A boolean indicating whether the TXT record is a dictionary or a buffer.
-     * If true, the TXT record is a dictionary. If false, the TXT record is a
-     * buffer.
+     *         If true, the TXT record is a dictionary. If false, the TXT record is a
+     *         buffer.
      */
     @Generated
     @CFunction
@@ -356,7 +356,7 @@ public final class Network {
      *
      * @param advertise_descriptor The advertise descriptor object.
      * @return A copy of the TXT record object, or NULL if the advertise descriptor
-     * does not have an associated TXT record.
+     *         does not have an associated TXT record.
      */
     @Generated
     @CFunction
@@ -423,7 +423,7 @@ public final class Network {
      *
      * @param interface The interface object to check.
      * @return Returns the name of the interface as a NULL-terminated C string,
-     * or NULL if the interface is NULL.
+     *         or NULL if the interface is NULL.
      */
     @Generated
     @CFunction
@@ -468,9 +468,9 @@ public final class Network {
      * @param port     A port number as a C string, such as "443", or a service
      *                 name, such as "https".
      * @return Returns an allocated nw_endpoint_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -486,7 +486,7 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the hostname string for the endpoint, or NULL
-     * if the endpoint is not of type nw_endpoint_type_host.
+     *         if the endpoint is not of type nw_endpoint_type_host.
      */
     @Generated
     @CFunction
@@ -501,8 +501,8 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the port string for the endpoint, or NULL
-     * if the endpoint is not of type nw_endpoint_type_host or
-     * nw_endpoint_type_address. This string must be freed with free().
+     *         if the endpoint is not of type nw_endpoint_type_host or
+     *         nw_endpoint_type_address. This string must be freed with free().
      */
     @Generated
     @CFunction
@@ -517,8 +517,8 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the port for the endpoint, or 0 if the endpoint is not
-     * of type nw_endpoint_type_host or nw_endpoint_type_address.
-     * The port will be returned in Host Byte Order.
+     *         of type nw_endpoint_type_host or nw_endpoint_type_address.
+     *         The port will be returned in Host Byte Order.
      */
     @Generated
     @CFunction
@@ -532,9 +532,9 @@ public final class Network {
      *
      * @param address An address stored as a sockaddr.
      * @return Returns an allocated nw_endpoint_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -549,8 +549,8 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the IP address string for the endpoint, or NULL
-     * if the endpoint is not of type nw_endpoint_type_address.
-     * This string must be freed with free().
+     *         if the endpoint is not of type nw_endpoint_type_address.
+     *         This string must be freed with free().
      */
     @Generated
     @CFunction
@@ -564,7 +564,7 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the sockaddr struct for the endpoint, or NULL
-     * if the endpoint is not of type nw_endpoint_type_address.
+     *         if the endpoint is not of type nw_endpoint_type_address.
      */
     @Generated
     @CFunction
@@ -581,9 +581,9 @@ public final class Network {
      * @param type   The Bonjour Service type, such as "_http._tcp".
      * @param domain The Bonjour Service domain, such as "local".
      * @return Returns an allocated nw_endpoint_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -600,7 +600,7 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the Bonjour Service name string for the endpoint, or NULL
-     * if the endpoint is not of type nw_endpoint_type_bonjour_service.
+     *         if the endpoint is not of type nw_endpoint_type_bonjour_service.
      */
     @Generated
     @CFunction
@@ -615,7 +615,7 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the Bonjour Service type string for the endpoint, or NULL
-     * if the endpoint is not of type nw_endpoint_type_bonjour_service.
+     *         if the endpoint is not of type nw_endpoint_type_bonjour_service.
      */
     @Generated
     @CFunction
@@ -630,7 +630,7 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return Returns the Bonjour Service domain string for the endpoint, or NULL
-     * if the endpoint is not of type nw_endpoint_type_bonjour_service.
+     *         if the endpoint is not of type nw_endpoint_type_bonjour_service.
      */
     @Generated
     @CFunction
@@ -645,9 +645,9 @@ public final class Network {
      *
      * @param url The URL string.
      * @return Returns an allocated nw_endpoint_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters, or due to URL parsing failure.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters, or due to URL parsing failure.
      */
     @Generated
     @CFunction
@@ -662,7 +662,7 @@ public final class Network {
      *
      * @param endpoint The endpoint object.
      * @return The URL string, or NULL if the endpoint is not of type
-     * nw_endpoint_type_url.
+     *         nw_endpoint_type_url.
      */
     @Generated
     @CFunction
@@ -685,9 +685,9 @@ public final class Network {
      *                      block and operate on the nw_protocol_options_t object. It is invalid to try
      *                      to disable TCP using NW_PARAMETERS_DISABLE_PROTOCOL.
      * @return Returns an allocated nw_parameters_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -725,9 +725,9 @@ public final class Network {
      *                       block and operate on the nw_protocol_options_t object. It is invalid to try
      *                       to disable UDP using NW_PARAMETERS_DISABLE_PROTOCOL.
      * @return Returns an allocated nw_parameters_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -759,8 +759,8 @@ public final class Network {
      * nw_parameters_create_secure_udp().
      *
      * @return Returns an allocated nw_parameters_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
      */
     @Generated
     @CFunction
@@ -773,9 +773,9 @@ public final class Network {
      *
      * @param parameters The existing parameters object to copy
      * @return Returns a newly allocated nw_parameters_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -802,7 +802,7 @@ public final class Network {
      *
      * @param parameters The parameters object to check
      * @return Returns the interface that is required by the parameters, or
-     * NULL if no interface is required.
+     *         NULL if no interface is required.
      */
     @Generated
     @CFunction
@@ -874,7 +874,7 @@ public final class Network {
      *
      * @param parameters The parameters object to check
      * @return Returns the interface type that is required by the parameters, or
-     * nw_interface_type_other_t if no interface type is required.
+     *         nw_interface_type_other_t if no interface type is required.
      */
     @Generated
     @CFunction
@@ -947,7 +947,7 @@ public final class Network {
      *
      * @param parameters The parameters object to check
      * @return Returns true if expensive interfaces are prohibited, or
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -974,7 +974,7 @@ public final class Network {
      *
      * @param parameters The parameters object to check
      * @return Returns true if constrained interfaces are prohibited, or
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1001,7 +1001,7 @@ public final class Network {
      *
      * @param parameters The parameters object to check
      * @return Returns true if local address reuse is allowed, or
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1030,7 +1030,7 @@ public final class Network {
      *
      * @param parameters The parameters object to configure
      * @return Returns the endpoint that is set in the parameters, or
-     * NULL if no local endpoint is set.
+     *         NULL if no local endpoint is set.
      */
     @Generated
     @CFunction
@@ -1061,7 +1061,7 @@ public final class Network {
      *
      * @param parameters The parameters object to check
      * @return Returns true if peer-to-peer interfaces are allowed,
-     * or false otherwise.
+     *         or false otherwise.
      */
     @Generated
     @CFunction
@@ -1101,7 +1101,7 @@ public final class Network {
      *
      * @param parameters The parameters object to check
      * @return Returns true if fast open is allowed for the top level protocol, or
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1137,7 +1137,8 @@ public final class Network {
      * Set the multipath service to use for connections.
      *
      * @param parameters        The parameters object to configure
-     * @param multipath_service The multipath service value to use for connections. Defaults to nw_multipath_service_disabled.
+     * @param multipath_service The multipath service value to use for connections. Defaults to
+     *                          nw_multipath_service_disabled.
      */
     @Generated
     @CFunction
@@ -1222,7 +1223,7 @@ public final class Network {
      *
      * @param stack The protocol stack to check
      * @return Returns the transport protocol currently set in the protocol stack,
-     * or NULL if no transport protocol is set.
+     *         or NULL if no transport protocol is set.
      */
     @Generated
     @CFunction
@@ -1248,8 +1249,8 @@ public final class Network {
      *
      * @param stack The protocol stack to check
      * @return Returns the internet protocol currently set in the protocol stack,
-     * or NULL if no internet protocol is set. Note that this will generally
-     * be NULL, unless a specific IP family is being selected.
+     *         or NULL if no internet protocol is set. Note that this will generally
+     *         be NULL, unless a specific IP family is being selected.
      */
     @Generated
     @CFunction
@@ -1302,7 +1303,7 @@ public final class Network {
      *
      * @param parameters The parameters to get the property from.
      * @return Returns true if the parameters cause connections to be attempted without proxies, only using proxies if
-     * connections cannot otherwise be completed.
+     *         connections cannot otherwise be completed.
      */
     @Generated
     @CFunction
@@ -1464,7 +1465,7 @@ public final class Network {
      *
      * @param result The browse result object.
      * @return A copy of the TXT record object, or NULL if the browse result does not
-     * have an associated TXT record.
+     *         have an associated TXT record.
      */
     @Generated
     @CFunction
@@ -1705,7 +1706,7 @@ public final class Network {
      * @param path       The first path object to compare.
      * @param other_path The second path object to compare.
      * @return Returns true if the paths are equivalent, or false if there is any difference
-     * between the paths.
+     *         between the paths.
      */
     @Generated
     @CFunction
@@ -1719,7 +1720,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns true if the path uses any network interface that is considered expensive,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1733,7 +1734,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns true if the path uses any network interface that is considered constrained,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1746,7 +1747,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns true if the path uses a network interface that supports IPv4,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1759,7 +1760,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns true if the path uses a network interface that supports IPv6,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1772,7 +1773,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns true if the path has a DNS server configuration set,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1785,7 +1786,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns true if the path uses any network interface with the specified type,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -1800,7 +1801,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns an endpoint that is assigned as the local endpoint for this path,
-     * or NULL if the path does not have a fixed local endpoint.
+     *         or NULL if the path does not have a fixed local endpoint.
      */
     @Generated
     @CFunction
@@ -1815,7 +1816,7 @@ public final class Network {
      *
      * @param path The path object to check.
      * @return Returns an endpoint that is assigned as the remote endpoint for this path,
-     * or NULL if the path does not have a fixed remote endpoint.
+     *         or NULL if the path does not have a fixed remote endpoint.
      */
     @Generated
     @CFunction
@@ -1939,7 +1940,7 @@ public final class Network {
      *
      * @param context The context object
      * @return Returns the relative priority, between 0.0 (lowest priority)
-     * to 1.0 (highest priority). The default value is 0.5.
+     *         to 1.0 (highest priority). The default value is 0.5.
      */
     @Generated
     @CFunction
@@ -2048,9 +2049,9 @@ public final class Network {
      * @param parameters The parameters to use for the connection. The data mode,
      *                   either datagram or stream, must be set.
      * @return Returns an allocated nw_connection_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -2063,7 +2064,7 @@ public final class Network {
      *
      * @param connection The connection object.
      * @return Returns an nw_endpoint_t object on success.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -2076,7 +2077,7 @@ public final class Network {
      *
      * @param connection The connection object.
      * @return Returns an nw_parameters_t object on success.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -2435,7 +2436,7 @@ public final class Network {
      *
      * @param connection The connection object.
      * @return Returns a human-readable string description of the connection.
-     * The caller must call free() on the string.
+     *         The caller must call free() on the string.
      */
     @Generated
     @CFunction
@@ -2449,7 +2450,7 @@ public final class Network {
      *
      * @param connection The connection object.
      * @return Returns a retained path object, or NULL if the connection
-     * has not been started or has been cancelled.
+     *         has not been started or has been cancelled.
      */
     @Generated
     @CFunction
@@ -2467,7 +2468,7 @@ public final class Network {
      * @param connection The connection object.
      * @param definition The protocol definition for which metadata will be returned.
      * @return Returns a retained protocol metadata object, or NULL if the connection
-     * has not been established yet or is cancelled.
+     *         has not been established yet or is cancelled.
      */
     @Generated
     @CFunction
@@ -2482,7 +2483,7 @@ public final class Network {
      *
      * @param connection The connection object.
      * @return Returns a datagram size based on the current MTU and the
-     * overhead of the protocols being used.
+     *         overhead of the protocols being used.
      */
     @Generated
     @CFunction
@@ -2538,7 +2539,7 @@ public final class Network {
      *
      * @param report An establishment report.
      * @return Returns the number of milliseconds from connection start to the beginning
-     * of the successful connection attempt.
+     *         of the successful connection attempt.
      */
     @Generated
     @CFunction
@@ -2580,7 +2581,7 @@ public final class Network {
      *
      * @param report An establishment report.
      * @return Returns true if a proxy configuration applied to the connection,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -2593,9 +2594,9 @@ public final class Network {
      *
      * @param report An establishment report.
      * @return Returns an allocated endpoint object if a proxy was used by the connection,
-     * or NULL if no proxy was used.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
+     *         or NULL if no proxy was used.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
      */
     @Generated
     @CFunction
@@ -2617,7 +2618,8 @@ public final class Network {
      *                        - milliseconds: The number of milliseconds spent on this resolution step.
      *                        - endpoint_count: The number of resolved endpoints discovered by the resolution step.
      *                        - successful_endpoint: The resolved endpoint that led to a successful connection.
-     *                        - preferred_endpoint: The first resolved endpoint attempted, which may be the same as the successful_endpoint.
+     *                        - preferred_endpoint: The first resolved endpoint attempted, which may be the same as the
+     *                        successful_endpoint.
      *                        <p>
      *                        Returning true from the block indicates that the enumeration should continue.
      *                        Returning false indicates that the enumeration should stop.
@@ -2648,7 +2650,8 @@ public final class Network {
      *                        The values passed to the enumerator are:
      *                        - protocol: The protocol definition.
      *                        - handshake_milliseconds: The number of milliseconds spent on the protocol's handshake.
-     *                        - handshake_rtt_milliseconds: The round trip time in milliseconds measured by the protocol's handshake.
+     *                        - handshake_rtt_milliseconds: The round trip time in milliseconds measured by the
+     *                        protocol's handshake.
      *                        <p>
      *                        Returning true from the block indicates that the enumeration should continue.
      *                        Returning false indicates that the enumeration should stop.
@@ -2679,9 +2682,9 @@ public final class Network {
      *
      * @param connection A connection object, in or before the ready state.
      * @return Returns an allocated nw_data_transfer_report_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -2741,7 +2744,7 @@ public final class Network {
      *
      * @param report A data transfer report in the "collected" state.
      * @return Returns the duration of the data transport report in milliseconds, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2757,8 +2760,8 @@ public final class Network {
      *
      * @param report A data transfer report in the "collected" state.
      * @return Returns the number of paths used by the connection, which
-     * limits the value of the "path_index" parameter used in other report
-     * functions. Returns 0 if the report is not in the "collected" state.
+     *         limits the value of the "path_index" parameter used in other report
+     *         functions. Returns 0 if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2775,7 +2778,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of IP packets received, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2792,7 +2795,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of IP packets sent, or 0 if the report is not
-     * in the "collected" state.
+     *         in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2809,7 +2812,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of transport protocol bytes received, or 0 if the
-     * report is not in the "collected" state.
+     *         report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2827,7 +2830,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of duplicate transport protocol bytes received, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2845,7 +2848,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of out-of-order transport protocol bytes received, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2863,7 +2866,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of transport protocol bytes sent, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2880,7 +2883,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of retransmitted transport protocol bytes sent, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2899,7 +2902,7 @@ public final class Network {
      *                   the single path. Passing NW_ALL_PATHS for this function is
      *                   equivalent to passing 0.
      * @return Returns the smoothed RTT as measured by the transport protocol, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2918,7 +2921,7 @@ public final class Network {
      *                   the single path. Passing NW_ALL_PATHS for this function is
      *                   equivalent to passing 0.
      * @return Returns the minimum RTT as measured by the transport protocol, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2937,7 +2940,7 @@ public final class Network {
      *                   the single path. Passing NW_ALL_PATHS for this function is
      *                   equivalent to passing 0.
      * @return Returns the RTT variance as measured by the transport protocol, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2954,7 +2957,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of application bytes received, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2972,7 +2975,7 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function returns
      *                   the sum of all paths.
      * @return Returns the number of application bytes sent, or 0
-     * if the report is not in the "collected" state.
+     *         if the report is not in the "collected" state.
      */
     @Generated
     @CFunction
@@ -2989,9 +2992,9 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function is
      *                   equivalent to passing 0.
      * @return Returns a retained nw_interface_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails if the report is not yet collected.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails if the report is not yet collected.
      */
     @Generated
     @CFunction
@@ -3023,7 +3026,7 @@ public final class Network {
      *
      * @param metadata The protocol metadata to check.
      * @return Returns true if the metadata is associated with a framer
-     * protocol definition, false otherwise.
+     *         protocol definition, false otherwise.
      */
     @Generated
     @CFunction
@@ -3079,7 +3082,7 @@ public final class Network {
      * @param access_value A block to invoke inline with the pointer to the stored value.
      *                     This pointer may be NULL if no value is stored for the key.
      * @return Returns the boolean value returned by the access_value block,
-     * or else false if the parameters were invalid.
+     *         or else false if the parameters were invalid.
      */
     @Generated
     @CFunction
@@ -3118,7 +3121,7 @@ public final class Network {
      * @param message The framer message object.
      * @param key     The string key to identify the value.
      * @return Returns a reference counted object with a +1 reference count,
-     * or NULL if no value was found for the specified key.
+     *         or NULL if no value was found for the specified key.
      */
     @Generated
     @CFunction
@@ -3138,7 +3141,7 @@ public final class Network {
      * @param start_handler A block to be invoked when starting a new instance of the framer
      *                      protocol. This may occur more than once for a single nw_connection.
      * @return Returns a retained protocol definition that can be used with protocol
-     * options and metadata.
+     *         options and metadata.
      */
     @Generated
     @CFunction
@@ -3163,7 +3166,7 @@ public final class Network {
      *
      * @param framer_definition A protocol definition created with nw_framer_create_definition().
      * @return Returns a retained protocol options object to add into a protocol
-     * stack.
+     *         stack.
      */
     @Generated
     @CFunction
@@ -3354,8 +3357,8 @@ public final class Network {
      * @param protocol_options Protocol options for an application protocol to dynamically
      *                         add "above" the framer.
      * @return Returns true if the protocol was successfully added,
-     * or false it it could not be added. This will fail if
-     * the framer is already marked ready.
+     *         or false it it could not be added. This will fail if
+     *         the framer is already marked ready.
      */
     @Generated
     @CFunction
@@ -3408,7 +3411,7 @@ public final class Network {
      * @param parse                     The completion that provides the bytes to parse, which will
      *                                  be called exactly once.
      * @return Returns true if the parse succeeded, or false if not enough
-     * bytes were available.
+     *         bytes were available.
      */
     @Generated
     @CFunction
@@ -3472,7 +3475,7 @@ public final class Network {
      * @param is_complete  A boolean indicating whether or not this data represents
      *                     the end of the message.
      * @return Returns true if the input was delivered immediately, or
-     * false if it will be delivered once more bytes become available.
+     *         false if it will be delivered once more bytes become available.
      */
     @Generated
     @CFunction
@@ -3525,7 +3528,7 @@ public final class Network {
      * @param parse                     The completion that provides the bytes to parse, which will
      *                                  be called exactly once.
      * @return Returns true if the parse succeeded, or false if not enough
-     * bytes were available.
+     *         bytes were available.
      */
     @Generated
     @CFunction
@@ -3615,8 +3618,8 @@ public final class Network {
      * @param output_length The number of application bytes to write. This will advance
      *                      the parsing cursor by the specified number of bytes.
      * @return Returns true if the write could be completed, otherwise
-     * false if the call was made from an invalid context
-     * or with an invalid number of bytes.
+     *         false if the call was made from an invalid context
+     *         or with an invalid number of bytes.
      */
     @Generated
     @CFunction
@@ -3697,7 +3700,7 @@ public final class Network {
      *
      * @param framer The framer instance.
      * @return Returns a retained endpoint object representing
-     * the remote side of a connection.
+     *         the remote side of a connection.
      */
     @Generated
     @CFunction
@@ -3715,7 +3718,7 @@ public final class Network {
      *
      * @param framer The framer instance.
      * @return Returns a retained endpoint object representing
-     * the local side of a connection.
+     *         the local side of a connection.
      */
     @Generated
     @CFunction
@@ -3855,7 +3858,7 @@ public final class Network {
      * implementation of IP.
      *
      * @return Returns true if the metadata is for the default system IP,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -3943,9 +3946,9 @@ public final class Network {
      * @param parameters The parameters to use for the listener. These include the protocols to be
      *                   used for the listener.
      * @return Returns an allocated nw_listener_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -3962,9 +3965,9 @@ public final class Network {
      * @param parameters The parameters to use for the listener. These include the protocols to be
      *                   used for the listener.
      * @return Returns an allocated nw_listener_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -3985,7 +3988,7 @@ public final class Network {
      *                   defined in the parameters must be able to join a protocol
      *                   in the connection that supports listening protocols.
      * @return Returns an allocated nw_listener_t object on success. Use nw_release() to deallocate.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -4172,9 +4175,9 @@ public final class Network {
      * interfaces on the system.
      *
      * @return Returns an allocated nw_path_monitor_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -4188,9 +4191,9 @@ public final class Network {
      *
      * @param required_interface_type An interface type that will filter any results that the path monitor returns.
      * @return Returns an allocated nw_path_monitor_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -4518,7 +4521,7 @@ public final class Network {
      * implementation of TCP.
      *
      * @return Returns true if the metadata is for the default system TCP,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -4594,7 +4597,7 @@ public final class Network {
      * implementation of TLS.
      *
      * @return Returns true if the metadata is for the default system TLS,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -4675,7 +4678,7 @@ public final class Network {
      * implementation of UDP.
      *
      * @return Returns true if the metadata is for the default system UDP,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -4787,7 +4790,7 @@ public final class Network {
      * implementation of WebSocket.
      *
      * @return Returns true if the metadata is for the default system
-     * implementation of WebSocket, false otherwise.
+     *         implementation of WebSocket, false otherwise.
      */
     @Generated
     @CFunction
@@ -5170,12 +5173,16 @@ public final class Network {
      * instead of blocking queries when require_encrypted_name_resolution is set to
      * true.
      *
-     * @param privacy_context                   A privacy context to modify. This can include the default privacy context.
+     * @param privacy_context                   A privacy context to modify. This can include the default privacy
+     *                                          context.
      * @param require_encrypted_name_resolution If true, require that any name resolution using DNS is performed
-     *                                          with encryption. If false, allow cleartext resolution. Defaults to false.
-     * @param fallback_resolver_config          An optional resolver configuration to use if no other encrypted DNS resolver
+     *                                          with encryption. If false, allow cleartext resolution. Defaults to
+     *                                          false.
+     * @param fallback_resolver_config          An optional resolver configuration to use if no other encrypted DNS
+     *                                          resolver
      *                                          is already configured for the query. This will only take effect if
-     *                                          require_encrypted_name_resolution is set to true. If this configuration is
+     *                                          require_encrypted_name_resolution is set to true. If this configuration
+     *                                          is
      *                                          NULL and require_encrypted_name_resolution is set to true, all cleartext
      *                                          name resolution will be blocked.
      */
@@ -5209,8 +5216,8 @@ public final class Network {
      *
      * @param multicast_group An address endpoint that contains a multicast group to join.
      * @return An instantiated group descriptor object or nil if the specified
-     * endpoint is not an address endpoint representing a valid multicast
-     * group.
+     *         endpoint is not an address endpoint representing a valid multicast
+     *         group.
      */
     @Generated
     @CFunction
@@ -5224,7 +5231,7 @@ public final class Network {
      * @param descriptor A group descriptor.
      * @param endpoint   An endpoint to add to the group.
      * @return Returns true if the endpoint was added, false if the endpoint was
-     * not of a valid type and therefore not added.
+     *         not of a valid type and therefore not added.
      */
     @Generated
     @CFunction
@@ -5303,9 +5310,9 @@ public final class Network {
      *                         will be used to delineate complete messages for processing. For multicast
      *                         joining, all available interfaces will be joined as prohibited or required.
      * @return Returns an allocated nw_connection_group_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -5379,12 +5386,15 @@ public final class Network {
      *
      * @param group                     The connection group object.
      * @param maximum_message_size      The maximum message size that should be delivered as a complete message. Any
-     *                                  inbound messages larger than this size will be delivered as a partial message and
+     *                                  inbound messages larger than this size will be delivered as a partial message
+     *                                  and
      *                                  an application may convert the inbound message to an `nw_connection` to read
      *                                  any remaining data for that message until it is complete.
      * @param reject_oversized_messages True if messages larger than maximum_message_size should be treated as errors
-     *                                  and the connection group should automatically reply to such messages. False if the
-     *                                  connection group should deliver such messages as incomplete and allow the application
+     *                                  and the connection group should automatically reply to such messages. False if
+     *                                  the
+     *                                  connection group should deliver such messages as incomplete and allow the
+     *                                  application
      *                                  to inspect the message prior to accepting or rejecting it.
      * @param receive_handler           The handler to call upon arrival of a new inbound message.
      *                                  Pass NULL to remove the handler.
@@ -5438,7 +5448,7 @@ public final class Network {
      * @param group   The connection group object.
      * @param context A content context representing an inbound message received from this connection group.
      * @return Returns the remote endpoint, or nil if the context is not a valid
-     * inbound message received from this connection group.
+     *         inbound message received from this connection group.
      */
     @Generated
     @CFunction
@@ -5453,7 +5463,7 @@ public final class Network {
      * @param group   The connection group object.
      * @param context A content context representing an inbound message received from this connection group.
      * @return Returns the local endpoint, or nil if the context is not a valid
-     * inbound message received from this connection group.
+     *         inbound message received from this connection group.
      */
     @Generated
     @CFunction
@@ -5467,7 +5477,7 @@ public final class Network {
      * @param group   The connection group object.
      * @param context A content context representing an inbound message received from this connection group.
      * @return Returns the path associated with the provided message, or nil if the context
-     * is not a valid inbound message received from this connection group.
+     *         is not a valid inbound message received from this connection group.
      */
     @Generated
     @CFunction
@@ -5486,9 +5496,11 @@ public final class Network {
      *                         The response context can also hold protocol metadata to define how to
      *                         send content, such as flags for IP packets.
      *                         <p>
-     *                         If the context is marked as "final", the  connection group will expect that no further communication is
+     *                         If the context is marked as "final", the connection group will expect that no further
+     *                         communication is
      *                         expected during this connection with the peer and may close the underlying transport.
-     *                         Subsequent connection attempts from the peer will continue to be delivered as incoming messages.
+     *                         Subsequent connection attempts from the peer will continue to be delivered as incoming
+     *                         messages.
      * @param content          A data object to send as the message body. This may be NULL if the outgoing
      *                         context represents a metadata only message that contains no body data.
      */
@@ -5514,8 +5526,8 @@ public final class Network {
      *                not received from this connection group, the extraction will fail.
      * @param context A content context representing an inbound message received from this connection group.
      * @return Returns the connection associated with the provided message, or nil if the extraction
-     * fails. Extraction will fail if the provided message is not an inbound message from
-     * this connection group.
+     *         fails. Extraction will fail if the provided message is not an inbound message from
+     *         this connection group.
      */
     @Generated
     @CFunction
@@ -5545,7 +5557,8 @@ public final class Network {
      *                   The context can also hold protocol metadata to define how to send content,
      *                   such as flags for IP packets.
      *                   <p>
-     *                   If the context is marked as "final", the  connection group will expect that no further communication is
+     *                   If the context is marked as "final", the connection group will expect that no further
+     *                   communication is
      *                   expected during this connection with the peer and may close the underlying transport.
      *                   Subsequent connection attempts from the peer will be delivered as incoming messages.
      * @param completion A callback to be called when the message has been sent, or an error has occurred.
@@ -5711,7 +5724,8 @@ public final class Network {
      * unsatisfied with no reason available.
      *
      * @param path The path object to check.
-     * @return Returns a reason the path is unsatisfied or nw_path_unsatisfied_reason_not_available if a reason is not available.
+     * @return Returns a reason the path is unsatisfied or nw_path_unsatisfied_reason_not_available if a reason is not
+     *         available.
      */
     @Generated
     @CFunction
@@ -5726,9 +5740,9 @@ public final class Network {
      * @param configure_quic A block to configure QUIC. The caller must pass a custom
      *                       block to configure the QUIC options.
      * @return Returns an allocated nw_parameters_t object on success.
-     * Callers are responsible for deallocating using nw_release(obj) or [obj release].
-     * These objects support ARC.
-     * Returns NULL on failure. Fails due to invalid parameters.
+     *         Callers are responsible for deallocating using nw_release(obj) or [obj release].
+     *         These objects support ARC.
+     *         Returns NULL on failure. Fails due to invalid parameters.
      */
     @Generated
     @CFunction
@@ -5779,7 +5793,7 @@ public final class Network {
      *
      * @param remote_endpoint An endpoint that can be used for communication over a multiplexing protocol.
      * @return An instantiated group descriptor object or nil if the specified
-     * endpoint is not valid.
+     *         endpoint is not valid.
      */
     @Generated
     @CFunction
@@ -5832,7 +5846,7 @@ public final class Network {
      *                   not extracted from this connection group, the reinsertion will fail.
      * @param connection A connection that was extracted from this connection group.
      * @return Returns true if the reinsertion was successful. Reinsertion will fail if the provided connection was
-     * not extracted from this connection group.
+     *         not extracted from this connection group.
      */
     @Generated
     @CFunction
@@ -5869,7 +5883,7 @@ public final class Network {
      * @param group      The connection group object.
      * @param definition The protocol definition for which metadata will be returned.
      * @return Returns a retained protocol metadata object, or NULL if the connection
-     * group has not been established yet or is cancelled.
+     *         group has not been established yet or is cancelled.
      */
     @Generated
     @CFunction
@@ -5886,8 +5900,8 @@ public final class Network {
      *                   Passing NW_ALL_PATHS for this function is
      *                   equivalent to passing 0.
      * @return Returns the radio type used for the specified path.
-     * Returns nw_interface_radio_type_unknown on failure.
-     * Fails if the report is not yet collected.
+     *         Returns nw_interface_radio_type_unknown on failure.
+     *         Fails if the report is not yet collected.
      */
     @Generated
     @CFunction
@@ -6014,7 +6028,7 @@ public final class Network {
      *
      * @param options An nw_protocol_options_t for QUIC.
      * @return The initial_max_data that a client
-     * is willing to receive on a connection.
+     *         is willing to receive on a connection.
      */
     @Generated
     @CFunction
@@ -6164,7 +6178,8 @@ public final class Network {
      *
      * @param options                                     An nw_protocol_options_t for QUIC.
      * @param initial_max_stream_data_bidirectional_local The initial_max_stream_data_bidi_local controls how much data
-     *                                                    the client is willing to receive on a locally initiated stream.
+     *                                                    the client is willing to receive on a locally initiated
+     *                                                    stream.
      */
     @Generated
     @CFunction
@@ -6191,8 +6206,10 @@ public final class Network {
      * on a QUIC connection.
      *
      * @param options                                      An nw_protocol_options_t for QUIC.
-     * @param initial_max_stream_data_bidirectional_remote The initial_max_stream_data_bidi_remote controls how much data
-     *                                                     the client is willing to receive on a remotely initiated stream.
+     * @param initial_max_stream_data_bidirectional_remote The initial_max_stream_data_bidi_remote controls how much
+     *                                                     data
+     *                                                     the client is willing to receive on a remotely initiated
+     *                                                     stream.
      */
     @Generated
     @CFunction
@@ -6235,7 +6252,7 @@ public final class Network {
      * implementation of QUIC.
      *
      * @return Returns true if the metadata is for the default system QUIC,
-     * false otherwise.
+     *         false otherwise.
      */
     @Generated
     @CFunction
@@ -6278,7 +6295,7 @@ public final class Network {
      *
      * @param metadata A nw_protocol_metadata_t for a QUIC stream.
      * @return Returns the Application Error code value received from by the peer,
-     * or UINT64_MAX if no error has been received.
+     *         or UINT64_MAX if no error has been received.
      */
     @Generated
     @CFunction
@@ -6395,7 +6412,7 @@ public final class Network {
      *
      * @param metadata A nw_protocol_metadata_t for QUIC.
      * @return Returns the Application Error code value received from by the peer,
-     * or UINT64_MAX if no	error has been received.
+     *         or UINT64_MAX if no error has been received.
      */
     @Generated
     @CFunction
@@ -6409,7 +6426,7 @@ public final class Network {
      *
      * @param metadata A nw_protocol_metadata_t for QUIC.
      * @return Returns the Application Error reason received from by the peer,
-     * or NULL if no error reason has been received.
+     *         or NULL if no error reason has been received.
      */
     @Generated
     @CFunction
@@ -6438,7 +6455,7 @@ public final class Network {
      *
      * @param metadata A nw_protocol_metadata_t for QUIC.
      * @return Returns value of the keep-alive interval, in seconds,
-     * or 0 if the keep-alive timer is disabled.
+     *         or 0 if the keep-alive timer is disabled.
      */
     @Generated
     @CFunction
@@ -6450,7 +6467,7 @@ public final class Network {
      * Changes the keep-alive interval for QUIC.
      * <p>
      * QUIC connections are encrypted and operate over the UDP protocol
-     * which makes it hard for Network Address	Translators and firewalls
+     * which makes it hard for Network Address Translators and firewalls
      * to track their state. For this reason, these middleboxes may
      * use short timeouts for QUIC flows. By sending keep-alive packets
      * (QUIC PING frames), the endpoint can maintain

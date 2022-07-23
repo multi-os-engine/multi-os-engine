@@ -46,8 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Represents a network address.
  * name: the user's tag for this object.
  * Representations are either:
- * -	address (IP address or hostname) and UDP port
- * -	netServiceName and netServiceDomain
+ * - address (IP address or hostname) and UDP port
+ * - netServiceName and netServiceDomain
  */
 @Generated
 @Library("CoreMIDI")

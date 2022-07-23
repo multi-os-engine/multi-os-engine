@@ -25,9 +25,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * An object to describe and configure parameters to be used in a nearby interaction session for mutual relative positional measurements.
+ * An object to describe and configure parameters to be used in a nearby interaction session for mutual relative
+ * positional measurements.
  * <p>
- * Devices engaged in a session run with an NINearbyPeerConfiguration are able to continuously generate positional measurements relative to one another.
+ * Devices engaged in a session run with an NINearbyPeerConfiguration are able to continuously generate positional
+ * measurements relative to one another.
  */
 @Generated
 @Library("NearbyInteraction")

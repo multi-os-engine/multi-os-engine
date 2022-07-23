@@ -167,14 +167,16 @@ public class NSLengthFormatter extends NSFormatter {
     public native NSLengthFormatter initWithCoder(NSCoder coder);
 
     /**
-     * default is NO; if it is set to YES, the number argument for -stringFromMeters: and -unitStringFromMeters: is considered as a person's height
+     * default is NO; if it is set to YES, the number argument for -stringFromMeters: and -unitStringFromMeters: is
+     * considered as a person's height
      */
     @Generated
     @Selector("isForPersonHeightUse")
     public native boolean isForPersonHeightUse();
 
     /**
-     * default is NO; if it is set to YES, the number argument for -stringFromMeters: and -unitStringFromMeters: is considered as a person's height
+     * default is NO; if it is set to YES, the number argument for -stringFromMeters: and -unitStringFromMeters: is
+     * considered as a person's height
      */
     @Generated
     @Selector("setForPersonHeightUse:")
@@ -202,7 +204,8 @@ public class NSLengthFormatter extends NSFormatter {
     public native void setUnitStyle(@NInt long value);
 
     /**
-     * Format a number in meters to a localized string with the locale-appropriate unit and an appropriate scale (e.g. 4.3m = 14.1ft in the US locale).
+     * Format a number in meters to a localized string with the locale-appropriate unit and an appropriate scale (e.g.
+     * 4.3m = 14.1ft in the US locale).
      */
     @Generated
     @Selector("stringFromMeters:")

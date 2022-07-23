@@ -19,7 +19,8 @@ public final class nw_service_class_t {
      */
     @Generated public static final int nw_service_class_best_effort = 0x00000000;
     /**
-     * [@const] nw_service_class_background Bulk traffic, or traffic that can be de-prioritized behind foreground traffic
+     * [@const] nw_service_class_background Bulk traffic, or traffic that can be de-prioritized behind foreground
+     * traffic
      */
     @Generated public static final int nw_service_class_background = 0x00000001;
     /**

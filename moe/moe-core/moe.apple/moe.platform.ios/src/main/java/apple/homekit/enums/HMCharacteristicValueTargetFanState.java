@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueTargetFanState
+ * [@enum] HMCharacteristicValueTargetFanState
  * <p>
- * [@constant]  HMCharacteristicValueTargetFanStateManual     Manual.
- * [@constant]  HMCharacteristicValueTargetFanStateAutomatic  Automatic.
+ * [@constant] HMCharacteristicValueTargetFanStateManual Manual.
+ * [@constant] HMCharacteristicValueTargetFanStateAutomatic Automatic.
  */
 @Generated
 public final class HMCharacteristicValueTargetFanState {

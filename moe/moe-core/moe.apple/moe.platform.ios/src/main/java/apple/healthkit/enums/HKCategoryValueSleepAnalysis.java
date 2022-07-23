@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKCategoryValueSleepAnalysis
+ * [@enum] HKCategoryValueSleepAnalysis
  * <p>
  * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierSleepAnalysis type.
  * <p>

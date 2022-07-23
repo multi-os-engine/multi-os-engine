@@ -97,10 +97,10 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   computeStatistics
+     * [@property] computeStatistics
      * <p>
      * If YES the batch statistics will be computed prior to performing the normalization.
-     * Otherwise the provided statistics will be used.  Defaults to NO at initialization
+     * Otherwise the provided statistics will be used. Defaults to NO at initialization
      * time.
      */
     @Generated
@@ -114,8 +114,8 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -134,7 +134,7 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     /**
      * Encode a MPSMatrixBatchNormalization object to a command buffer.
      * <p>
-     * Encodes the operation to the specified command buffer.  resultMatrix
+     * Encodes the operation to the specified command buffer. resultMatrix
      * must be large enough to hold a
      * MIN(sourceNumberOfFeatureVectors, inputMatrix.rows - sourceMatrixOrigin.x)
      * x
@@ -147,11 +147,11 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * @param commandBuffer  A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputMatrix    A valid MPSMatrix object which specifies the input array.
      * @param meanVector     A valid MPSVector object containing batch mean values to be used
-     *                       to normalize the inputs if computeStatistics is NO.  If
+     *                       to normalize the inputs if computeStatistics is NO. If
      *                       computeStatistics is YES the resulting batch mean values
      *                       will be returned in this array.
      * @param varianceVector A valid MPSVector object containing batch variance values to be used
-     *                       to normalize the inputs if computeStatistics is NO.  If
+     *                       to normalize the inputs if computeStatistics is NO. If
      *                       computeStatistics is YES the resulting batch variance values
      *                       will be returned in this array.
      * @param gammaVector    A valid MPSVector object which specifies the gamma terms, or
@@ -167,9 +167,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
             MPSVector varianceVector, MPSVector gammaVector, MPSVector betaVector, MPSMatrix resultMatrix);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
-     * A small value to add to the variance when normalizing the inputs.  Defaults
+     * A small value to add to the variance when normalizing the inputs. Defaults
      * to FLT_MIN upon initialization.
      */
     @Generated
@@ -270,10 +270,10 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   computeStatistics
+     * [@property] computeStatistics
      * <p>
      * If YES the batch statistics will be computed prior to performing the normalization.
-     * Otherwise the provided statistics will be used.  Defaults to NO at initialization
+     * Otherwise the provided statistics will be used. Defaults to NO at initialization
      * time.
      */
     @Generated
@@ -281,9 +281,9 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native void setComputeStatistics(boolean value);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
-     * A small value to add to the variance when normalizing the inputs.  Defaults
+     * A small value to add to the variance when normalizing the inputs. Defaults
      * to FLT_MIN upon initialization.
      */
     @Generated
@@ -298,7 +298,7 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
      * Note that this method can only be used to specify neurons which are specified by three (or fewer)
      * parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
      * this method for neuron activation functions like MPSCNNNeuronTypePReLU,
-     * which require per-channel parameter values.  An MPSMatrixNeuron kernel is initialized
+     * which require per-channel parameter values. An MPSMatrixNeuron kernel is initialized
      * with a default neuron function of MPSCNNNeuronTypeNone.
      *
      * @param neuronType Type of neuron activation function. For full list see MPSCNNNeuronType.h
@@ -312,12 +312,12 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
             float parameterC);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
-     * The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation. This is equivalent to the
      * number of columns in the primary (input array) source matrix to consider
      * and the number of channels to produce for the output matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available input size is used.
      * The value of NSUIntegerMax thus indicates that all available columns in
      * the input array (beginning at sourceMatrixOrigin.y) should be considered.
@@ -330,14 +330,14 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
-     * The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array. This
      * is equivalent to the number of rows to consider from the primary
      * source matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available number of inputs is
-     * used.  The value of NSUIntegerMax thus indicates that all available input
+     * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
      */
     @Generated
@@ -349,12 +349,12 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
-     * The input size to to use in the operation.  This is equivalent to the
+     * The input size to to use in the operation. This is equivalent to the
      * number of columns in the primary (input array) source matrix to consider
      * and the number of channels to produce for the output matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available input size is used.
      * The value of NSUIntegerMax thus indicates that all available columns in
      * the input array (beginning at sourceMatrixOrigin.y) should be considered.
@@ -368,14 +368,14 @@ public class MPSMatrixBatchNormalization extends MPSMatrixUnaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
-     * The number of input vectors which make up the input array.  This
+     * The number of input vectors which make up the input array. This
      * is equivalent to the number of rows to consider from the primary
      * source matrix.
-     * This property is modifiable and defaults to NSUIntegerMax.  At encode
+     * This property is modifiable and defaults to NSUIntegerMax. At encode
      * time the larger of this property or the available number of inputs is
-     * used.  The value of NSUIntegerMax thus indicates that all available input
+     * used. The value of NSUIntegerMax thus indicates that all available input
      * rows (beginning at sourceMatrixOrigin.x) should be considered.
      */
     @Generated

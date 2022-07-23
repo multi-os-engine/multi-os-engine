@@ -58,7 +58,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public static native MLCOptimizerDescriptor allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   appliesGradientClipping
+     * [@property] appliesGradientClipping
      * <p>
      * Whether gradient clipping should be applied or not.
      * <p>
@@ -97,7 +97,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]   customGlobalNorm
+     * [@property] customGlobalNorm
      * <p>
      * Used only with MLCGradientClippingTypeByGlobalNorm. If non zero, this norm will be used in place of global norm.
      */
@@ -168,7 +168,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
             float learningRate, float gradientRescale, int regularizationType, float regularizationScale);
 
     /**
-     * [@property]   gradientClipMax
+     * [@property] gradientClipMax
      * <p>
      * The maximum gradient value if gradient clipping is enabled before gradient is rescaled.
      */
@@ -177,7 +177,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public native float gradientClipMax();
 
     /**
-     * [@property]   gradientClipMin
+     * [@property] gradientClipMin
      * <p>
      * The minimum gradient value if gradient clipping is enabled before gradient is rescaled.
      */
@@ -186,7 +186,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public native float gradientClipMin();
 
     /**
-     * [@property]   gradientClippingType
+     * [@property] gradientClippingType
      * <p>
      * The type of clipping applied to gradient
      */
@@ -195,7 +195,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public native int gradientClippingType();
 
     /**
-     * [@property]   gradientRescale
+     * [@property] gradientRescale
      * <p>
      * The rescale value applied to gradients during optimizer update
      */
@@ -234,7 +234,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   learningRate
+     * [@property] learningRate
      * <p>
      * The learning rate
      */
@@ -243,7 +243,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public native float learningRate();
 
     /**
-     * [@property]   maximumClippingNorm
+     * [@property] maximumClippingNorm
      * <p>
      * The maximum clipping value
      */
@@ -257,7 +257,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public static native MLCOptimizerDescriptor new_objc();
 
     /**
-     * [@property]   regularizationScale
+     * [@property] regularizationScale
      * <p>
      * The regularization scale.
      */
@@ -266,7 +266,7 @@ public class MLCOptimizerDescriptor extends NSObject implements NSCopying {
     public native float regularizationScale();
 
     /**
-     * [@property]   regularizationType
+     * [@property] regularizationType
      * <p>
      * The regularization type.
      */

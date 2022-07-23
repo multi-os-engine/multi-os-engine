@@ -43,9 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEOnDemandRuleDisconnect
  * <p>
- * The NEOnDemandRuleDisconnect class declares the programmatic interface for an object that defines an On Demand rule with the "Disconnect" action.
+ * The NEOnDemandRuleDisconnect class declares the programmatic interface for an object that defines an On Demand rule
+ * with the "Disconnect" action.
  * <p>
- * When rules of this class match, the VPN connection is not started, and the VPN connection is disconnected if it is not currently disconnected.
+ * When rules of this class match, the VPN connection is not started, and the VPN connection is disconnected if it is
+ * not currently disconnected.
  * <p>
  * Instances of this class are thread safe.
  */

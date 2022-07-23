@@ -37,11 +37,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A MPSMatrixSolveTriangular finds the solution matrix to the
  * triangular system:
  * <p>
- * op(A) * X = alpha * B    or    X * op(A) = alpha * B
+ * op(A) * X = alpha * B or X * op(A) = alpha * B
  * <p>
  * Where A is either upper or lower triangular and op(A) is A**T
- * or A.  B is the array of right hand sides for which the
- * equations are to be solved.  X is the resulting matrix of
+ * or A. B is the array of right hand sides for which the
+ * equations are to be solved. X is the resulting matrix of
  * solutions.
  */
 @Generated
@@ -154,30 +154,30 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
     /**
      * Initialize an MPSMatrixSolveTriangular object on a device
      * <p>
-     * This function initializes a MPSMatrixSolveTriangular object.  It
+     * This function initializes a MPSMatrixSolveTriangular object. It
      * may allocate device side memory.
      *
      * @param device                 The device on which the kernel will execute.
      * @param right                  A boolean value which indicates if the
      *                               coefficient matrix is multiplied on the left
-     *                               or right side of the solution.  NO indicates
+     *                               or right side of the solution. NO indicates
      *                               the multiplication is on the left.
      * @param upper                  A boolean value which indicates if the source
-     *                               is lower or upper triangular.  NO indicates
+     *                               is lower or upper triangular. NO indicates
      *                               that the coefficient matrix is lower triangular.
      * @param transpose              A boolean value which indicates if the source
-     *                               matrix should be used in transposed form.  NO
+     *                               matrix should be used in transposed form. NO
      *                               indicates that the coefficient matrix is to be
      *                               used normally.
      * @param unit                   A boolean value which indicates if the source
      *                               matrix is unit triangular.
      * @param order                  The order of the source matrix and, if
      *                               right == NO, the number of rows in the solution
-     *                               and right hand side matrices.  If right == YES
+     *                               and right hand side matrices. If right == YES
      *                               the number of columns in the solution and right
      *                               hand side matrices.
      * @param numberOfRightHandSides If right == NO, the number of columns in the
-     *                               solution and right hand side matrices.  The
+     *                               solution and right hand side matrices. The
      *                               number of rows otherwise.
      * @param alpha                  A double precision value used to scale the right
      *                               hand sides.

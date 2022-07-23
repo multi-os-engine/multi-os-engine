@@ -120,10 +120,12 @@ public class VNCoreMLModel extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Create a model container to be used with VNCoreMLRequest based on a Core ML model. This can fail if the model is not supported. Examples for a model that is not supported is a model that does not take an image as any of its inputs.
+     * Create a model container to be used with VNCoreMLRequest based on a Core ML model. This can fail if the model is
+     * not supported. Examples for a model that is not supported is a model that does not take an image as any of its
+     * inputs.
      *
      * @param model The MLModel from CoreML to be used.
-     * @param    error    Returns the error code and description, if the model is not supported.
+     * @param error Returns the error code and description, if the model is not supported.
      */
     @Generated
     @Selector("modelForMLModel:error:")
@@ -157,7 +159,11 @@ public class VNCoreMLModel extends NSObject {
     public static native long version_static();
 
     /**
-     * An optional object conforming to the MLFeatureProvider protocol that is used by the model during the predict call to support inputs that are not supplied by Vision. Vision will provide the image for the inputImageFeatureName from the the VNRequestHandler. A feature provider is necessary for models that have more than one input and require those parameters to be set. Models that only have one image input will not use the feature provider as that input will be set by Vision.
+     * An optional object conforming to the MLFeatureProvider protocol that is used by the model during the predict call
+     * to support inputs that are not supplied by Vision. Vision will provide the image for the inputImageFeatureName
+     * from the the VNRequestHandler. A feature provider is necessary for models that have more than one input and
+     * require those parameters to be set. Models that only have one image input will not use the feature provider as
+     * that input will be set by Vision.
      */
     @Generated
     @Selector("featureProvider")
@@ -165,21 +171,27 @@ public class VNCoreMLModel extends NSObject {
     public native MLFeatureProvider featureProvider();
 
     /**
-     * The name of the MLFeatureValue that Vision will set from the VNRequestHandler. Vision will use the first input it finds by default but it can be set to another featureName instead.
+     * The name of the MLFeatureValue that Vision will set from the VNRequestHandler. Vision will use the first input it
+     * finds by default but it can be set to another featureName instead.
      */
     @Generated
     @Selector("inputImageFeatureName")
     public native String inputImageFeatureName();
 
     /**
-     * An optional object conforming to the MLFeatureProvider protocol that is used by the model during the predict call to support inputs that are not supplied by Vision. Vision will provide the image for the inputImageFeatureName from the the VNRequestHandler. A feature provider is necessary for models that have more than one input and require those parameters to be set. Models that only have one image input will not use the feature provider as that input will be set by Vision.
+     * An optional object conforming to the MLFeatureProvider protocol that is used by the model during the predict call
+     * to support inputs that are not supplied by Vision. Vision will provide the image for the inputImageFeatureName
+     * from the the VNRequestHandler. A feature provider is necessary for models that have more than one input and
+     * require those parameters to be set. Models that only have one image input will not use the feature provider as
+     * that input will be set by Vision.
      */
     @Generated
     @Selector("setFeatureProvider:")
     public native void setFeatureProvider(@Mapped(ObjCObjectMapper.class) MLFeatureProvider value);
 
     /**
-     * The name of the MLFeatureValue that Vision will set from the VNRequestHandler. Vision will use the first input it finds by default but it can be set to another featureName instead.
+     * The name of the MLFeatureValue that Vision will set from the VNRequestHandler. Vision will use the first input it
+     * finds by default but it can be set to another featureName instead.
      */
     @Generated
     @Selector("setInputImageFeatureName:")

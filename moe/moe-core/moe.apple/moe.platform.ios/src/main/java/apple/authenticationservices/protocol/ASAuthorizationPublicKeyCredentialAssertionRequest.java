@@ -17,7 +17,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("ASAuthorizationPublicKeyCredentialAssertionRequest")
 public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSecureCoding, NSCopying {
     /**
-     * A list of credentials to allow for this request. If this list is nonempty, only credentials matching the provided descriptors can be used to sign in.
+     * A list of credentials to allow for this request. If this list is nonempty, only credentials matching the provided
+     * descriptors can be used to sign in.
      */
     @Generated
     @Selector("allowedCredentials")
@@ -38,7 +39,8 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     String relyingPartyIdentifier();
 
     /**
-     * A list of credentials to allow for this request. If this list is nonempty, only credentials matching the provided descriptors can be used to sign in.
+     * A list of credentials to allow for this request. If this list is nonempty, only credentials matching the provided
+     * descriptors can be used to sign in.
      */
     @Generated
     @Selector("setAllowedCredentials:")
@@ -59,14 +61,16 @@ public interface ASAuthorizationPublicKeyCredentialAssertionRequest extends NSSe
     void setRelyingPartyIdentifier(String value);
 
     /**
-     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as through a PIN or biometrics.
+     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
+     * through a PIN or biometrics.
      */
     @Generated
     @Selector("setUserVerificationPreference:")
     void setUserVerificationPreference(String value);
 
     /**
-     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as through a PIN or biometrics.
+     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
+     * through a PIN or biometrics.
      */
     @Generated
     @Selector("userVerificationPreference")

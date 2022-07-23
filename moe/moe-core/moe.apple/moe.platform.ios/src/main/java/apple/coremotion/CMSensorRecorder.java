@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Discussion:
  * CMSensorRecorder allows applications to record sensor data for periods
- * during which the application is not active.  This data is then made
+ * during which the application is not active. This data is then made
  * available for later access (up to 3 days) when the application
  * is run at a later time.
  */
@@ -183,8 +183,8 @@ public class CMSensorRecorder extends NSObject {
      * <p>
      * Discussion:
      * Gives access to recorded accelerometer samples given a time range (fromDate, toDate].
-     * A total duration of 12 hours of data can be requested at any one time.  Data can be delayed
-     * for up to 3 minutes before being available for retrieval.  An instance of CMSensorDataList
+     * A total duration of 12 hours of data can be requested at any one time. Data can be delayed
+     * for up to 3 minutes before being available for retrieval. An instance of CMSensorDataList
      * should only be enumerated from a single thread.
      */
     @Generated
@@ -199,7 +199,7 @@ public class CMSensorRecorder extends NSObject {
      * recordAccelerometerForDuration:
      * <p>
      * Discussion:
-     * Starts recording accelerometer data for the duration given at 50hz.  Data can be recorded
+     * Starts recording accelerometer data for the duration given at 50hz. Data can be recorded
      * for up to 12 hours.
      */
     @Generated

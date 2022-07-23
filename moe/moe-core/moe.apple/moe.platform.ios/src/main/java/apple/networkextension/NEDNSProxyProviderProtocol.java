@@ -28,7 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEDNSProxyProviderProtocol
  * <p>
- * The NEDNSProxyProviderProtocol class declares the programmatic interface for an object that contains NEDNSProxyProvider-specific configuration settings.
+ * The NEDNSProxyProviderProtocol class declares the programmatic interface for an object that contains
+ * NEDNSProxyProvider-specific configuration settings.
  * <p>
  * Instances of this class are thread safe.
  */
@@ -141,7 +142,8 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
     /**
      * [@property] providerConfiguration
      * <p>
-     * A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed as-is to NEDNSProxyProviders when a DNS proxy is started.
+     * A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed
+     * as-is to NEDNSProxyProviders when a DNS proxy is started.
      */
     @Generated
     @Selector("providerConfiguration")
@@ -167,7 +169,8 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
     /**
      * [@property] providerConfiguration
      * <p>
-     * A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed as-is to NEDNSProxyProviders when a DNS proxy is started.
+     * A dictionary containing NEDNSProxyProvider vendor-specific configuration parameters. This dictionary is passed
+     * as-is to NEDNSProxyProviders when a DNS proxy is started.
      */
     @Generated
     @Selector("setProviderConfiguration:")

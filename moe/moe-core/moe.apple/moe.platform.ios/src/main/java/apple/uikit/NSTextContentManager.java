@@ -32,7 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSTextContentManager is an abstract class defining the interface for managing the text document contents and the default implementation. The concrete subclass overrides NSTextElementProvider for managing the content backing store. It is the root object strongly referencing the rest of objects in the TextKit network via an array of NSTextLayoutManager. Also, it manages the editing transaction by tracking the active NSTextLayoutManager focused to be editing.
+ * NSTextContentManager is an abstract class defining the interface for managing the text document contents and the
+ * default implementation. The concrete subclass overrides NSTextElementProvider for managing the content backing store.
+ * It is the root object strongly referencing the rest of objects in the TextKit network via an array of
+ * NSTextLayoutManager. Also, it manages the editing transaction by tracking the active NSTextLayoutManager focused to
+ * be editing.
  */
 @Generated
 @Library("UIKit")
@@ -137,7 +141,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
             @ObjCBlock(name = "call_enumerateTextElementsFromLocationOptionsUsingBlock") NSTextElementProvider.Block_enumerateTextElementsFromLocationOptionsUsingBlock block);
 
     /**
-     * When YES, there is an active editing transaction from primaryTextLayoutManager. the synchronization operations to non-primary text layout managers and the backing store block (or fails when synchronous) while this property is YES. Non-primary text layout managers should avoid accessing the elements while this is YES. KVO-compliant
+     * When YES, there is an active editing transaction from primaryTextLayoutManager. the synchronization operations to
+     * non-primary text layout managers and the backing store block (or fails when synchronous) while this property is
+     * YES. Non-primary text layout managers should avoid accessing the elements while this is YES. KVO-compliant
      */
     @Generated
     @Selector("hasEditingTransaction")
@@ -197,7 +203,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
             @Mapped(ObjCObjectMapper.class) NSTextLocation to);
 
     /**
-     * Invoked by primaryTextLayoutManager controlling the active editing transaction. Can be nested. The outer most transaction toggles hasEditingTransaction and sends synchronization messages if enabled after invoking transaction.
+     * Invoked by primaryTextLayoutManager controlling the active editing transaction. Can be nested. The outer most
+     * transaction toggles hasEditingTransaction and sends synchronization messages if enabled after invoking
+     * transaction.
      */
     @Generated
     @Selector("performEditingTransactionUsingBlock:")
@@ -212,14 +220,18 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     }
 
     /**
-     * The primary NSTextLayoutManager interacting with the user allowing to edit. Setting an NSTextLayoutManager not in textLayoutManagers will reset to nil. It automatically synchronizes pending edits before switching to a new primary object. The operation is synchronous. KVO-compliant
+     * The primary NSTextLayoutManager interacting with the user allowing to edit. Setting an NSTextLayoutManager not in
+     * textLayoutManagers will reset to nil. It automatically synchronizes pending edits before switching to a new
+     * primary object. The operation is synchronous. KVO-compliant
      */
     @Generated
     @Selector("primaryTextLayoutManager")
     public native NSTextLayoutManager primaryTextLayoutManager();
 
     /**
-     * Records information about an edit action to the transaction. originalTextRange is the range edited before the action, and newTextRange is the corresponding range after the action. The concrete subclass should invoke this method for each edit action.
+     * Records information about an edit action to the transaction. originalTextRange is the range edited before the
+     * action, and newTextRange is the corresponding range after the action. The concrete subclass should invoke this
+     * method for each edit action.
      */
     @Generated
     @Selector("recordEditActionInRange:newTextRange:")
@@ -273,7 +285,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     }
 
     /**
-     * The primary NSTextLayoutManager interacting with the user allowing to edit. Setting an NSTextLayoutManager not in textLayoutManagers will reset to nil. It automatically synchronizes pending edits before switching to a new primary object. The operation is synchronous. KVO-compliant
+     * The primary NSTextLayoutManager interacting with the user allowing to edit. Setting an NSTextLayoutManager not in
+     * textLayoutManagers will reset to nil. It automatically synchronizes pending edits before switching to a new
+     * primary object. The operation is synchronous. KVO-compliant
      */
     @Generated
     @Selector("setPrimaryTextLayoutManager:")
@@ -298,7 +312,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     }
 
     /**
-     * Synchronizes changes to all non-primary text layout managers. If completionHandler=nil, performs the operation synchronously. completionHandler gets passed error if failed. It should block (or fail if synchronous) when there is an active transaction.
+     * Synchronizes changes to all non-primary text layout managers. If completionHandler=nil, performs the operation
+     * synchronously. completionHandler gets passed error if failed. It should block (or fail if synchronous) when there
+     * is an active transaction.
      */
     @Generated
     @Selector("synchronizeTextLayoutManagers:")
@@ -318,7 +334,9 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
             @ObjCBlock(name = "call_synchronizeToBackingStore") NSTextElementProvider.Block_synchronizeToBackingStore completionHandler);
 
     /**
-     * Returns an array of NSTextElement intersecting the specified range in sequence. It can return a set of elements not filling the entire range specified if the entire range is not synchronously available. Uses -enumerateTextElementsFromLocation:options:usingBlocK: to fill the array.
+     * Returns an array of NSTextElement intersecting the specified range in sequence. It can return a set of elements
+     * not filling the entire range specified if the entire range is not synchronously available. Uses
+     * -enumerateTextElementsFromLocation:options:usingBlocK: to fill the array.
      */
     @Generated
     @Selector("textElementsForRange:")

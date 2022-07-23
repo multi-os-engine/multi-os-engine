@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNPoolingAverage
  * [@dependency] This depends on Metal.framework
  * <p>
- * Specifies the average pooling filter.  For each pixel, returns the mean value of pixels
+ * Specifies the average pooling filter. For each pixel, returns the mean value of pixels
  * in the kernelWidth x kernelHeight filter region.
  * When @ref edgeMode is @ref MPSImageEdgeModeClamp the filtering window is shrunk to remain
  * within the source image borders. What this means is that close to image borders the filtering window
@@ -180,8 +180,8 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
      * Initialize a MPSCNNPoolingAverage pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.
@@ -211,7 +211,7 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * [@property]   zeroPadSizeX
+     * [@property] zeroPadSizeX
      * <p>
      * How much zero padding to apply to both left and right borders of the input image for average pooling,
      * when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
@@ -225,7 +225,7 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
     public native void setZeroPadSizeX(@NUInt long value);
 
     /**
-     * [@property]   zeroPadSizeY
+     * [@property] zeroPadSizeY
      * <p>
      * How much zero padding to apply to both top and bottom borders of the input image for average pooling,
      * when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
@@ -249,7 +249,7 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
     }
 
     /**
-     * [@property]   zeroPadSizeX
+     * [@property] zeroPadSizeX
      * <p>
      * How much zero padding to apply to both left and right borders of the input image for average pooling,
      * when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is
@@ -264,7 +264,7 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
     public native long zeroPadSizeX();
 
     /**
-     * [@property]   zeroPadSizeY
+     * [@property] zeroPadSizeY
      * <p>
      * How much zero padding to apply to both top and bottom borders of the input image for average pooling,
      * when using @see edgeMode MPSImageEdgeModeClamp. For @see edgeMode MPSImageEdgeModeZero this property is

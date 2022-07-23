@@ -174,7 +174,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     public native AUAudioUnitPreset initWithCoder(NSCoder coder);
 
     /**
-     * [@property]	name
+     * [@property] name
      * <p>
      * The preset's name.
      */
@@ -183,7 +183,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     public native String name();
 
     /**
-     * [@property]	number
+     * [@property] number
      * <p>
      * The preset's unique numeric identifier.
      */
@@ -193,7 +193,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     public native long number();
 
     /**
-     * [@property]	name
+     * [@property] name
      * <p>
      * The preset's name.
      */
@@ -202,7 +202,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
     public native void setName(String value);
 
     /**
-     * [@property]	number
+     * [@property] number
      * <p>
      * The preset's unique numeric identifier.
      */

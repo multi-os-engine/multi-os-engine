@@ -363,7 +363,8 @@ public class MKMapView extends UIView implements NSCoding {
     public native void addAnnotations(NSArray<?> annotations);
 
     /**
-     * These methods operate implicitly on overlays in MKOverlayLevelAboveLabels and may be deprecated in a future release in favor of the methods that specify the level.
+     * These methods operate implicitly on overlays in MKOverlayLevelAboveLabels and may be deprecated in a future
+     * release in favor of the methods that specify the level.
      */
     @Generated
     @Selector("addOverlay:")
@@ -388,7 +389,8 @@ public class MKMapView extends UIView implements NSCoding {
 
     /**
      * annotationVisibleRect is the visible rect where the annotations views are currently displayed.
-     * The delegate can use annotationVisibleRect when animating the adding of the annotations views in mapView:didAddAnnotationViews:
+     * The delegate can use annotationVisibleRect when animating the adding of the annotations views in
+     * mapView:didAddAnnotationViews:
      */
     @Generated
     @Selector("annotationVisibleRect")
@@ -482,7 +484,8 @@ public class MKMapView extends UIView implements NSCoding {
     public native MKMapViewDelegate delegate();
 
     /**
-     * Used by the delegate to acquire a reusable annotation view, or create a new view for registered class, in lieu of allocating a new one.
+     * Used by the delegate to acquire a reusable annotation view, or create a new view for registered class, in lieu of
+     * allocating a new one.
      */
     @Generated
     @Selector("dequeueReusableAnnotationViewWithIdentifier:")
@@ -661,7 +664,7 @@ public class MKMapView extends UIView implements NSCoding {
     public native MKOverlayRenderer rendererForOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
     /**
-     * Select or deselect a given annotation.  Asks the delegate for the corresponding annotation view if necessary.
+     * Select or deselect a given annotation. Asks the delegate for the corresponding annotation view if necessary.
      */
     @Generated
     @Selector("selectAnnotation:animated:")
@@ -870,7 +873,8 @@ public class MKMapView extends UIView implements NSCoding {
     public native MKMapRect visibleMapRect();
 
     /**
-     * Used by the delegate to acquire a reusable annotation view, or create a new view for registered class, in lieu of allocating a new one. Throws an exception if view could not be aquired.
+     * Used by the delegate to acquire a reusable annotation view, or create a new view for registered class, in lieu of
+     * allocating a new one. Throws an exception if view could not be aquired.
      */
     @Generated
     @Selector("dequeueReusableAnnotationViewWithIdentifier:forAnnotation:")
@@ -878,7 +882,8 @@ public class MKMapView extends UIView implements NSCoding {
             @Mapped(ObjCObjectMapper.class) MKAnnotation annotation);
 
     /**
-     * Register a MKAnnotationView subclass to be instantiated when dequeueReusableAnnotationViewWithIdentifier: does not have a view to reuse.
+     * Register a MKAnnotationView subclass to be instantiated when dequeueReusableAnnotationViewWithIdentifier: does
+     * not have a view to reuse.
      */
     @Generated
     @Selector("registerClass:forAnnotationViewWithReuseIdentifier:")

@@ -149,9 +149,11 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     public static native SKShader shader();
 
     /**
-     * Loads a shader source file named 'name' from the main bundle. This is simpler yet functionally equivalent to the following code
+     * Loads a shader source file named 'name' from the main bundle. This is simpler yet functionally equivalent to the
+     * following code
      * <p>
-     * [SKShader shaderWithSource:[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"fsh"]
+     * [SKShader shaderWithSource:[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name
+     * ofType:@"fsh"]
      * encoding:NSUTF8StringEncoding
      * error:NULL]];
      * <p>
@@ -238,17 +240,17 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
      * <p>
      * The following implicit uniforms are available:
      * <p>
-     * 1. sampler2D u_texture  (the primary texuture attached the the sprite)
+     * 1. sampler2D u_texture (the primary texuture attached the the sprite)
      * <p>
      * The following varyings are available:
      * <p>
-     * 1. vec2 v_tex_coord  (normalized texture coordiantes for the primary texture)
-     * 2. vec4 v_color_mix  (premultiplied color value based on color & alpha)
+     * 1. vec2 v_tex_coord (normalized texture coordiantes for the primary texture)
+     * 2. vec4 v_color_mix (premultiplied color value based on color & alpha)
      * <p>
      * <p>
      * The following functions are available:
      * <p>
-     * 1. vec4 SKDefaultShading()  (returns the fragment value that would have been output if no shader was used)
+     * 1. vec4 SKDefaultShading() (returns the fragment value that would have been output if no shader was used)
      * <p>
      * <p>
      * <p>
@@ -277,17 +279,17 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
      * <p>
      * The following implicit uniforms are available:
      * <p>
-     * 1. sampler2D u_texture  (the primary texuture attached the the sprite)
+     * 1. sampler2D u_texture (the primary texuture attached the the sprite)
      * <p>
      * The following varyings are available:
      * <p>
-     * 1. vec2 v_tex_coord  (normalized texture coordiantes for the primary texture)
-     * 2. vec4 v_color_mix  (premultiplied color value based on color & alpha)
+     * 1. vec2 v_tex_coord (normalized texture coordiantes for the primary texture)
+     * 2. vec4 v_color_mix (premultiplied color value based on color & alpha)
      * <p>
      * <p>
      * The following functions are available:
      * <p>
-     * 1. vec4 SKDefaultShading()  (returns the fragment value that would have been output if no shader was used)
+     * 1. vec4 SKDefaultShading() (returns the fragment value that would have been output if no shader was used)
      * <p>
      * <p>
      * <p>

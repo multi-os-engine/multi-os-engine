@@ -30,7 +30,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("PHPhotoLibraryChangeObserver")
 public interface PHPhotoLibraryChangeObserver {
     /**
-     * This callback is invoked on an arbitrary serial queue. If you need this to be handled on a specific queue, you should redispatch appropriately
+     * This callback is invoked on an arbitrary serial queue. If you need this to be handled on a specific queue, you
+     * should redispatch appropriately
      */
     @Generated
     @Selector("photoLibraryDidChange:")

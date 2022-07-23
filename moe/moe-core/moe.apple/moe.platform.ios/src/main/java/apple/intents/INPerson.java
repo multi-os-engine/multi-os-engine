@@ -161,7 +161,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     public static native long version_static();
 
     /**
-     * If your application has other representations for the person's handle, you can supply it for INInteraction donation
+     * If your application has other representations for the person's handle, you can supply it for INInteraction
+     * donation
      */
     @Generated
     @Selector("aliases")
@@ -189,7 +190,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     public native String customIdentifier();
 
     /**
-     * This will return either the displayName if non-nil, else the formatted nameComponents, else the handle, else an empty string
+     * This will return either the displayName if non-nil, else the formatted nameComponents, else the handle, else an
+     * empty string
      */
     @Generated
     @Selector("displayName")
@@ -235,7 +237,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
             String contactIdentifier);
 
     /**
-     * This is the preferred convenience initializer if the app knows the name components of the person (e.g. given name, family name, etc).
+     * This is the preferred convenience initializer if the app knows the name components of the person (e.g. given
+     * name, family name, etc).
      */
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
@@ -290,7 +293,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     public native String spokenPhrase();
 
     /**
-     * What Contact property this INInteraction donation should be suggested as when this person is matched to a contact in the system's Contacts store.
+     * What Contact property this INInteraction donation should be suggested as when this person is matched to a contact
+     * in the system's Contacts store.
      */
     @Generated
     @Selector("suggestionType")

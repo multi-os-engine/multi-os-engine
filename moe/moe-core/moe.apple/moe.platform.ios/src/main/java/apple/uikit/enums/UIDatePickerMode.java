@@ -30,7 +30,8 @@ public final class UIDatePickerMode {
      */
     @Generated @NInt public static final long Date = 0x0000000000000001L;
     /**
-     * Displays date, hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. Wed Nov 15 | 6 | 53 | PM)
+     * Displays date, hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. Wed Nov 15 |
+     * 6 | 53 | PM)
      */
     @Generated @NInt public static final long DateAndTime = 0x0000000000000002L;
     /**

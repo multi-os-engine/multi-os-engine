@@ -93,7 +93,7 @@ public class QLPreviewSceneActivationConfiguration extends UIWindowSceneActivati
     public native QLPreviewSceneActivationConfiguration init();
 
     /**
-     * Create a new  scene configuration to preview items at `urls`.
+     * Create a new scene configuration to preview items at `urls`.
      *
      * @param urls    The urls of the items to preview.
      * @param options Additional information to preview the items.

@@ -4,14 +4,14 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HKAuthorizationRequestStatus
+ * [@enum] HKAuthorizationRequestStatus
  * <p>
  * This enumerated type is used to indicate whether it is necessary to request authorization from the user.
  * <p>
- * [@constant]  HKAuthorizationRequestStatusUnknown         The authorization request status could not be determined because
+ * [@constant] HKAuthorizationRequestStatusUnknown The authorization request status could not be determined because
  * an error occurred.
- * [@constant]  HKAuthorizationRequestStatusShouldRequest   The application should request authorization from the user.
- * [@constant]  HKAuthorizationRequestStatusUnnecessary     Requesting authorization from the user is unnecessary.
+ * [@constant] HKAuthorizationRequestStatusShouldRequest The application should request authorization from the user.
+ * [@constant] HKAuthorizationRequestStatusUnnecessary Requesting authorization from the user is unnecessary.
  */
 @Generated
 public final class HKAuthorizationRequestStatus {

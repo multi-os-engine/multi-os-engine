@@ -23,12 +23,12 @@ import org.moe.natj.general.ann.NUInt;
  * [@enum] NSURLRequestNetworkServiceType
  * <p>
  * The NSURLRequestNetworkServiceType enum defines constants that
- * can be used to specify the service type to associate with this request.  The
+ * can be used to specify the service type to associate with this request. The
  * service type is used to provide the networking layers a hint of the purpose
  * of the request.
  * <p>
  * [@constant] NSURLNetworkServiceTypeDefault Is the default value for an NSURLRequest
- * when created.  This value should be left unchanged for the vast majority of requests.
+ * when created. This value should be left unchanged for the vast majority of requests.
  * <p>
  * [@constant] NSURLNetworkServiceTypeVoIP Specifies that the request is for voice over IP
  * control traffic.
@@ -45,7 +45,8 @@ import org.moe.natj.general.ann.NUInt;
  * <p>
  * [@constant] NSURLNetworkServiceTypeAVStreaming Specifies that the request is streaming audio/video data.
  * <p>
- * [@constant] NSURLNetworkServiceTypeResponsiveAV Specifies that the request is for responsive (time sensitive) audio/video data.
+ * [@constant] NSURLNetworkServiceTypeResponsiveAV Specifies that the request is for responsive (time sensitive)
+ * audio/video data.
  * <p>
  * [@constant] NSURLNetworkServiceTypeCallSignaling Specifies that the request is for call signaling.
  */

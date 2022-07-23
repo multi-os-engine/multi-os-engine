@@ -163,7 +163,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     public static native long version_static();
 
     /**
-     * [@property]      activityType
+     * [@property] activityType
      * <p>
      * Indicates the type of workout for the configuration.
      */
@@ -191,7 +191,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     public native HKWorkoutConfiguration initWithCoder(NSCoder coder);
 
     /**
-     * [@property]      lapLength
+     * [@property] lapLength
      * <p>
      * Indicates the length of the pool, when the workout location type is pool.
      * <p>
@@ -203,7 +203,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     public native HKQuantity lapLength();
 
     /**
-     * [@property]      locationType
+     * [@property] locationType
      * <p>
      * Indicates the type of location (indoors vs. outdoors) for the configuration.
      */
@@ -213,7 +213,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     public native long locationType();
 
     /**
-     * [@property]      activityType
+     * [@property] activityType
      * <p>
      * Indicates the type of workout for the configuration.
      */
@@ -222,7 +222,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     public native void setActivityType(@NUInt long value);
 
     /**
-     * [@property]      lapLength
+     * [@property] lapLength
      * <p>
      * Indicates the length of the pool, when the workout location type is pool.
      * <p>
@@ -234,7 +234,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     public native void setLapLength(HKQuantity value);
 
     /**
-     * [@property]      locationType
+     * [@property] locationType
      * <p>
      * Indicates the type of location (indoors vs. outdoors) for the configuration.
      */
@@ -243,7 +243,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     public native void setLocationType(@NInt long value);
 
     /**
-     * [@property]      swimmingLocationType
+     * [@property] swimmingLocationType
      * <p>
      * Indicates the type of swimming location (pool vs. open water) where the workout will take place.
      */
@@ -258,7 +258,7 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     }
 
     /**
-     * [@property]      swimmingLocationType
+     * [@property] swimmingLocationType
      * <p>
      * Indicates the type of swimming location (pool vs. open water) where the workout will take place.
      */

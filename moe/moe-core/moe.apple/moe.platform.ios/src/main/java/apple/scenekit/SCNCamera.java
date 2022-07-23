@@ -215,7 +215,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines whether the receiver automatically adjusts the zFar value. Defaults to NO.
      * <p>
-     * When set to YES, the near and far planes are automatically set to fit the bounding box of the entire scene at render time.
+     * When set to YES, the near and far planes are automatically set to fit the bounding box of the entire scene at
+     * render time.
      */
     @Generated
     @Selector("automaticallyAdjustsZRange")
@@ -294,7 +295,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     /**
      * [@property] colorGrading
      * <p>
-     * Specifies a lookup texture to apply color grading. The contents must a 2D image representing `n` slices of a unit color cube texture, arranged in an horizontal row of `n` images. For instance, a color cube of dimension 16x16x16 should be provided as an image of size 256x16.
+     * Specifies a lookup texture to apply color grading. The contents must a 2D image representing `n` slices of a unit
+     * color cube texture, arranged in an horizontal row of `n` images. For instance, a color cube of dimension 16x16x16
+     * should be provided as an image of size 256x16.
      */
     @Generated
     @Selector("colorGrading")
@@ -367,7 +370,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's focal distance. Animatable.
      * <p>
-     * When non zero, the focal distance determines how the camera focuses the objects in the 3d scene. Defaults to 10.0 prior to macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to 2.5 otherwise.
+     * When non zero, the focal distance determines how the camera focuses the objects in the 3d scene. Defaults to 10.0
+     * prior to macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to 2.5 otherwise.
      */
     @Generated
     @Selector("focalDistance")
@@ -444,7 +448,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's orthographic scale value. Animatable. Defaults to 1.
      * <p>
-     * This setting determines the size of the camera's visible area. This is only enabled when usesOrthographicProjection is set to YES.
+     * This setting determines the size of the camera's visible area. This is only enabled when
+     * usesOrthographicProjection is set to YES.
      */
     @Generated
     @Selector("orthographicScale")
@@ -506,7 +511,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines whether the receiver automatically adjusts the zFar value. Defaults to NO.
      * <p>
-     * When set to YES, the near and far planes are automatically set to fit the bounding box of the entire scene at render time.
+     * When set to YES, the near and far planes are automatically set to fit the bounding box of the entire scene at
+     * render time.
      */
     @Generated
     @Selector("setAutomaticallyAdjustsZRange:")
@@ -627,7 +633,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's focal distance. Animatable.
      * <p>
-     * When non zero, the focal distance determines how the camera focuses the objects in the 3d scene. Defaults to 10.0 prior to macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to 2.5 otherwise.
+     * When non zero, the focal distance determines how the camera focuses the objects in the 3d scene. Defaults to 10.0
+     * prior to macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to 2.5 otherwise.
      */
     @Generated
     @Selector("setFocalDistance:")
@@ -687,7 +694,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's orthographic scale value. Animatable. Defaults to 1.
      * <p>
-     * This setting determines the size of the camera's visible area. This is only enabled when usesOrthographicProjection is set to YES.
+     * This setting determines the size of the camera's visible area. This is only enabled when
+     * usesOrthographicProjection is set to YES.
      */
     @Generated
     @Selector("setOrthographicScale:")
@@ -778,7 +786,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's field of view on the X axis (in degree). Animatable.
      * <p>
-     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
+     * aspect ratio is used. When only one is set, it is used. Defaults to 0.
      */
     @Generated
     @Selector("setXFov:")
@@ -789,7 +798,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's field of view on the Y axis (in degree). Animatable.
      * <p>
-     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
+     * aspect ratio is used. When only one is set, it is used. Defaults to 0.
      */
     @Generated
     @Selector("setYFov:")
@@ -800,7 +810,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's far value. Animatable.
      * <p>
-     * The far value determines the maximal distance between the camera and a visible surface. If a surface is further from the camera than this maximal distance, then the surface is clipped. Defaults to 100.
+     * The far value determines the maximal distance between the camera and a visible surface. If a surface is further
+     * from the camera than this maximal distance, then the surface is clipped. Defaults to 100.
      */
     @Generated
     @Selector("setZFar:")
@@ -811,7 +822,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's near value. Animatable.
      * <p>
-     * The near value determines the minimal distance between the camera and a visible surface. If a surface is closer to the camera than this minimal distance, then the surface is clipped. The near value must be different than zero. Defaults to 1.
+     * The near value determines the minimal distance between the camera and a visible surface. If a surface is closer
+     * to the camera than this minimal distance, then the surface is clipped. The near value must be different than
+     * zero. Defaults to 1.
      */
     @Generated
     @Selector("setZNear:")
@@ -889,7 +902,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's field of view on the X axis (in degree). Animatable.
      * <p>
-     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
+     * aspect ratio is used. When only one is set, it is used. Defaults to 0.
      */
     @Generated
     @Selector("xFov")
@@ -900,7 +914,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's field of view on the Y axis (in degree). Animatable.
      * <p>
-     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
+     * aspect ratio is used. When only one is set, it is used. Defaults to 0.
      */
     @Generated
     @Selector("yFov")
@@ -911,7 +926,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's far value. Animatable.
      * <p>
-     * The far value determines the maximal distance between the camera and a visible surface. If a surface is further from the camera than this maximal distance, then the surface is clipped. Defaults to 100.
+     * The far value determines the maximal distance between the camera and a visible surface. If a surface is further
+     * from the camera than this maximal distance, then the surface is clipped. Defaults to 100.
      */
     @Generated
     @Selector("zFar")
@@ -922,7 +938,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's near value. Animatable.
      * <p>
-     * The near value determines the minimal distance between the camera and a visible surface. If a surface is closer to the camera than this minimal distance, then the surface is clipped. The near value must be different than zero. Defaults to 1.
+     * The near value determines the minimal distance between the camera and a visible surface. If a surface is closer
+     * to the camera than this minimal distance, then the surface is clipped. The near value must be different than
+     * zero. Defaults to 1.
      */
     @Generated
     @Selector("zNear")
@@ -965,7 +983,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's field of view (in degree). Defaults to 60°. Animatable.
      * <p>
-     * The fieldOfView is automatically updated when the sensorHeight or focalLength are set. Setting the fieldOfView will update the focalLength according to the new fieldOfView and the current sensorHeight.
+     * The fieldOfView is automatically updated when the sensorHeight or focalLength are set. Setting the fieldOfView
+     * will update the focalLength according to the new fieldOfView and the current sensorHeight.
      */
     @Generated
     @Selector("fieldOfView")
@@ -989,7 +1008,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's focal length in millimeter. Defaults to 50mm. Animatable.
      * <p>
-     * The focalLength is automatically updated when the sensorHeight or fieldOfView are set. Setting the focalLength will update the fieldOfView according to the new focalLength and the current sensorHeight.
+     * The focalLength is automatically updated when the sensorHeight or fieldOfView are set. Setting the focalLength
+     * will update the fieldOfView according to the new focalLength and the current sensorHeight.
      */
     @Generated
     @Selector("focalLength")
@@ -1087,7 +1107,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the vertical size of the sensor in millimeter. Defaults to 24mm. Animatable.
      * <p>
-     * Setting the sensorHeight will automatically update the fieldOfView according to the new sensorHeight and the current focalLength.
+     * Setting the sensorHeight will automatically update the fieldOfView according to the new sensorHeight and the
+     * current focalLength.
      */
     @Generated
     @Selector("sensorHeight")
@@ -1121,7 +1142,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's field of view (in degree). Defaults to 60°. Animatable.
      * <p>
-     * The fieldOfView is automatically updated when the sensorHeight or focalLength are set. Setting the fieldOfView will update the focalLength according to the new fieldOfView and the current sensorHeight.
+     * The fieldOfView is automatically updated when the sensorHeight or focalLength are set. Setting the fieldOfView
+     * will update the focalLength according to the new fieldOfView and the current sensorHeight.
      */
     @Generated
     @Selector("setFieldOfView:")
@@ -1143,7 +1165,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the receiver's focal length in millimeter. Defaults to 50mm. Animatable.
      * <p>
-     * The focalLength is automatically updated when the sensorHeight or fieldOfView are set. Setting the focalLength will update the fieldOfView according to the new focalLength and the current sensorHeight.
+     * The focalLength is automatically updated when the sensorHeight or fieldOfView are set. Setting the focalLength
+     * will update the fieldOfView according to the new focalLength and the current sensorHeight.
      */
     @Generated
     @Selector("setFocalLength:")
@@ -1229,7 +1252,8 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
      * <p>
      * Determines the vertical size of the sensor in millimeter. Defaults to 24mm. Animatable.
      * <p>
-     * Setting the sensorHeight will automatically update the fieldOfView according to the new sensorHeight and the current focalLength.
+     * Setting the sensorHeight will automatically update the fieldOfView according to the new sensorHeight and the
+     * current focalLength.
      */
     @Generated
     @Selector("setSensorHeight:")

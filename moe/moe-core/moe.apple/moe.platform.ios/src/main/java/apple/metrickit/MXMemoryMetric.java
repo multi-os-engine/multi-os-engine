@@ -64,7 +64,7 @@ public class MXMemoryMetric extends MXMetric {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      averageSuspendedMemory
+     * [@property] averageSuspendedMemory
      * <p>
      * Average memory of the application upon suspend.
      * <p>
@@ -140,7 +140,7 @@ public class MXMemoryMetric extends MXMetric {
     public static native MXMemoryMetric new_objc();
 
     /**
-     * [@property]      peakMemoryUsage
+     * [@property] peakMemoryUsage
      * <p>
      * A single value representing the peak memory consumption of the application.
      * <p>

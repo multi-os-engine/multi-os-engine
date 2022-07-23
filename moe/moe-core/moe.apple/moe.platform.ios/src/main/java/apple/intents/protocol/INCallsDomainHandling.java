@@ -26,6 +26,6 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INCallsDomainHandling")
-public interface INCallsDomainHandling
-        extends INStartAudioCallIntentHandling, INStartVideoCallIntentHandling, INSearchCallHistoryIntentHandling {
+public interface INCallsDomainHandling extends INStartAudioCallIntentHandling, INStartVideoCallIntentHandling,
+        INSearchCallHistoryIntentHandling {
 }

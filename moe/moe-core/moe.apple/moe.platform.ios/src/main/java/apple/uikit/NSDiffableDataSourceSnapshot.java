@@ -35,17 +35,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This will construct an empty snapshot with no section or item identifiers.
  * <p>
  * Notes:
- * 1. All identifiers must be unique. Section and Item identifiers do not overlap and may contain values that exist in the other (i.e. it is OK
+ * 1. All identifiers must be unique. Section and Item identifiers do not overlap and may contain values that exist in
+ * the other (i.e. it is OK
  * to have a section identifier == 1 and an item identifier == 1)
  * <p>
- * 2. If you pass duplicate values in an item or section array (e.g. -appendItemsWithIdentifiers:), the system will throw an exception.
+ * 2. If you pass duplicate values in an item or section array (e.g. -appendItemsWithIdentifiers:), the system will
+ * throw an exception.
  */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> extends NSObject
-        implements NSCopying {
+public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> extends NSObject implements
+        NSCopying {
     static {
         NatJ.register();
     }
@@ -301,8 +303,10 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     public static native long version_static();
 
     /**
-     * Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does not replace the
-     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the item.
+     * Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does
+     * not replace the
+     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell
+     * for the item.
      */
     @Generated
     @Selector("reconfigureItemsWithIdentifiers:")

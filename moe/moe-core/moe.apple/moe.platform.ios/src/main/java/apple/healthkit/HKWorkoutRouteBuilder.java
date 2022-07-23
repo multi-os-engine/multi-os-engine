@@ -102,16 +102,20 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
      * finish the workout builder.
      * <p>
      * Call this method when the route has been completed. The completion handler will return the saved
-     * HKWorkoutRoute.     If no series data was added, then workoutRoute will be nil and an error returned. The
+     * HKWorkoutRoute. If no series data was added, then workoutRoute will be nil and an error returned. The
      * receiver will be considered invalid afterwards and any further calls to it will result in an error.
      *
      * @param workout    The HKWorkout object to which the route will be associated. Must be saved to HealthKit
      * @param metadata   Optional metadata may be added to associate with the series. Predefined keys are found in
-     *                   HKMetadata.h, or private NSString keys used by the client are allowed. Acceptable metadata value
+     *                   HKMetadata.h, or private NSString keys used by the client are allowed. Acceptable metadata
+     *                   value
      *                   types are NSString, NSDate, NSNumber and HKQuantity
-     * @param completion The completion callback handler returns the saved HKWorkoutRoute object. If workoutRoute is nil, an
-     *                   error will indicate why the series could not be returned including database inaccessibility during
-     *                   device lock. Subsequent requests for the HKWorkoutRoute can be made through HKSampleQuery or similar
+     * @param completion The completion callback handler returns the saved HKWorkoutRoute object. If workoutRoute is
+     *                   nil, an
+     *                   error will indicate why the series could not be returned including database inaccessibility
+     *                   during
+     *                   device lock. Subsequent requests for the HKWorkoutRoute can be made through HKSampleQuery or
+     *                   similar
      *                   queries. workoutRoute cannot be associated to another workout.
      */
     @Generated
@@ -161,8 +165,10 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
      * sorted according to date when the series is finalized.
      *
      * @param routeData  An array of one or more CLLocation.
-     * @param completion The completion callback handler returns the status of the save. If the completion handler success is
-     *                   NO, then error is non-nil. An error here is considered fatal and the series builder will be complete.
+     * @param completion The completion callback handler returns the status of the save. If the completion handler
+     *                   success is
+     *                   NO, then error is non-nil. An error here is considered fatal and the series builder will be
+     *                   complete.
      *                   If data was previously saved, then the HKWorkoutRoute may be retrieved by the
      *                   finishRouteWithMetadata: method.
      */
@@ -235,9 +241,12 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
      * background queue.
      *
      * @param metadata   The metadata to add to the builder.
-     * @param completion Block to be called when the addition of metadata to the builder is complete. If success is YES, the
-     *                   metadata has been added to the builder successfully. If success is NO, error will be non-null and
-     *                   will contain the error encountered during the insertion operation. When an error occurs, the builder's
+     * @param completion Block to be called when the addition of metadata to the builder is complete. If success is YES,
+     *                   the
+     *                   metadata has been added to the builder successfully. If success is NO, error will be non-null
+     *                   and
+     *                   will contain the error encountered during the insertion operation. When an error occurs, the
+     *                   builder's
      *                   metadata will remain unchanged.
      */
     @Generated

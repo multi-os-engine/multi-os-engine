@@ -182,7 +182,8 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
     public native NSDate latestBookingDateForResults();
 
     /**
-     * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up to the extension
+     * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
+     * to the extension
      */
     @Generated
     @Selector("maximumNumberOfResults")
@@ -210,7 +211,8 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
     public native void setLatestBookingDateForResults(NSDate value);
 
     /**
-     * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up to the extension
+     * if the caller has a preferred maximum number of results, one can optionally be specified. a nil here leaves it up
+     * to the extension
      */
     @Generated
     @Selector("setMaximumNumberOfResults:")

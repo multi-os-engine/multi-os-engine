@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueCurrentAirPurifierState
+ * [@enum] HMCharacteristicValueCurrentAirPurifierState
  * <p>
- * [@constant]  HMCharacteristicValueCurrentAirPurifierStateInactive    Inactive.
- * [@constant]  HMCharacteristicValueCurrentAirPurifierStateIdle        Idle.
- * [@constant]  HMCharacteristicValueCurrentAirPurifierStateActive      Active.
+ * [@constant] HMCharacteristicValueCurrentAirPurifierStateInactive Inactive.
+ * [@constant] HMCharacteristicValueCurrentAirPurifierStateIdle Idle.
+ * [@constant] HMCharacteristicValueCurrentAirPurifierStateActive Active.
  */
 @Generated
 public final class HMCharacteristicValueCurrentAirPurifierState {

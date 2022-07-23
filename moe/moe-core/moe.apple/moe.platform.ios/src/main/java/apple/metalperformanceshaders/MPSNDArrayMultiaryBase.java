@@ -121,7 +121,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      * @param sources The list of sources passed into the -encode call
      * @param state   The source state object, if any passed to the -encode call
      * @return a valid MPSNDArrayDescriptor that may be used to create a MPSNDArray to used to
-     * hold the results of this kernel.
+     *         hold the results of this kernel.
      */
     @Generated
     @Selector("destinationArrayDescriptorForSourceArrays:sourceState:")
@@ -289,7 +289,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
      *
      * @param sourceIndex The index of the source for which the strides apply
      * @return The strides from one destination sample to the next in each
-     * dimension of the corresponding source NDArray
+     *         dimension of the corresponding source NDArray
      */
     @Generated
     @Selector("stridesForSourceIndex:")

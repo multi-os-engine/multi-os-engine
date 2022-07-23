@@ -190,7 +190,8 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     public native String name();
 
     /**
-     * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the vendor.
+     * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the
+     * vendor.
      */
     @Generated
     @Selector("restaurantIdentifier")
@@ -205,7 +206,8 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     public native void setName(String value);
 
     /**
-     * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the vendor.
+     * vendor specific restaurant identifier. should match what Maps is ingesting through its data pipeline for the
+     * vendor.
      */
     @Generated
     @Selector("setRestaurantIdentifier:")

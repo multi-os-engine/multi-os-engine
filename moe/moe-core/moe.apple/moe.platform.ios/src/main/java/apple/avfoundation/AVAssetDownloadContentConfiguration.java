@@ -124,7 +124,7 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]		mediaSelections
+     * [@property] mediaSelections
      * <p>
      * An array of media selections obtained from the AVAsset.
      * <p>
@@ -148,7 +148,7 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]		mediaSelections
+     * [@property] mediaSelections
      * <p>
      * An array of media selections obtained from the AVAsset.
      * <p>
@@ -159,13 +159,19 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public native void setMediaSelections(NSArray<? extends AVMediaSelection> value);
 
     /**
-     * [@property]		variantQualifiers
+     * [@property] variantQualifiers
      * <p>
      * An array of variant qualifiers.
      * <p>
-     * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the qualifier matches one or more AVAssetVariants. Only those variants which can be played on the current device configuration will be initially chosen for evaluation. If there is more than one match, automatic variant selection will be used to choose among the matched.
-     * If a variant qualifier is constructed to explicitly choose a variant, no evaluation is performed and the variant provided will be downloaded as is, even if it is not playable on current device configuration.
-     * If a variant qualifier has not been provided, or if the variant qualifier when evaluated does not match any of the variants which can be played according to the current device configuration, automatic variant selection will be used.
+     * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the
+     * qualifier matches one or more AVAssetVariants. Only those variants which can be played on the current device
+     * configuration will be initially chosen for evaluation. If there is more than one match, automatic variant
+     * selection will be used to choose among the matched.
+     * If a variant qualifier is constructed to explicitly choose a variant, no evaluation is performed and the variant
+     * provided will be downloaded as is, even if it is not playable on current device configuration.
+     * If a variant qualifier has not been provided, or if the variant qualifier when evaluated does not match any of
+     * the variants which can be played according to the current device configuration, automatic variant selection will
+     * be used.
      */
     @Generated
     @Selector("setVariantQualifiers:")
@@ -180,13 +186,19 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     public static native Class superclass_static();
 
     /**
-     * [@property]		variantQualifiers
+     * [@property] variantQualifiers
      * <p>
      * An array of variant qualifiers.
      * <p>
-     * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the qualifier matches one or more AVAssetVariants. Only those variants which can be played on the current device configuration will be initially chosen for evaluation. If there is more than one match, automatic variant selection will be used to choose among the matched.
-     * If a variant qualifier is constructed to explicitly choose a variant, no evaluation is performed and the variant provided will be downloaded as is, even if it is not playable on current device configuration.
-     * If a variant qualifier has not been provided, or if the variant qualifier when evaluated does not match any of the variants which can be played according to the current device configuration, automatic variant selection will be used.
+     * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the
+     * qualifier matches one or more AVAssetVariants. Only those variants which can be played on the current device
+     * configuration will be initially chosen for evaluation. If there is more than one match, automatic variant
+     * selection will be used to choose among the matched.
+     * If a variant qualifier is constructed to explicitly choose a variant, no evaluation is performed and the variant
+     * provided will be downloaded as is, even if it is not playable on current device configuration.
+     * If a variant qualifier has not been provided, or if the variant qualifier when evaluated does not match any of
+     * the variants which can be played according to the current device configuration, automatic variant selection will
+     * be used.
      */
     @Generated
     @Selector("variantQualifiers")

@@ -38,17 +38,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * array of matrix rows. For example a [a, b, c, d] NDArray passed to a matrix multiplication may
  * be implicitly reinterpreted as a [a*b*c, d] matrix and a 2D matrix multiplication performed.
  * In practice, the major row (the dimension in which successive elements appear adjacent to one
- * another in memory) is the 0th dimension (represented as 'd' in the above example).  It has both a
+ * another in memory) is the 0th dimension (represented as 'd' in the above example). It has both a
  * dimension size indicating the number of elements and a storage size which may be slightly bigger
- * to allow for performance improvement arising from better data alignment in memory.  In principle,
+ * to allow for performance improvement arising from better data alignment in memory. In principle,
  * the rowBytes may also be used to create a 0th-dimension slice out of a larger array stored in the
  * underlying MTLBuffer.
  * <p>
  * MPS will automatically manage the storage size of the major row ("rowBytes") though you may
  * set it in the descriptor if you have a need to do so. Generally, it should be at least a multiple
- * of 16 bytes.   Dimensions after the 0th are a densely packed array of rows of size rowBytes.
+ * of 16 bytes. Dimensions after the 0th are a densely packed array of rows of size rowBytes.
  * Thus, the 1st dimension is an array of rows. The 2nd dimension is an array of arrays of rows with
- * identical size, and so forth.  When the reduction to 2 dimensions is done, no data is moved. MPS
+ * identical size, and so forth. When the reduction to 2 dimensions is done, no data is moved. MPS
  * just reinterprets a higher order N-1 dimensions of matrix rows as a single large 1-dimensional
  * array of rows.
  * <p>
@@ -60,11 +60,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * when it becomes clear that one is actually required. For this reason, conversions to formats that do not
  * support deferred transposes and slices such as MPSMatrix MPSVector view or using -exportWithCommandBuffer:
  * toBuffer:offset:rowStrides, may cause substantial new computation to be done and new memory to be allocated.
- * These should be avoided except when necessary.  As a general rule, transposes that do not involve the 0th
+ * These should be avoided except when necessary. As a general rule, transposes that do not involve the 0th
  * dimension should be able to be handled by nearly everything natively. MPSNDArrayMatrixMultiplication and reductions
  * can handle 0th dimension transposes. Other filters may insert a physical repacking operation. If you wish
  * to force a physical repacking use MPSAliasingStrategyShallNotAlias. To avoid confusion with aliased NDArrays
- * the parent property is provided.  MPSNDArrays that alias share a common ancestor.
+ * the parent property is provided. MPSNDArrays that alias share a common ancestor.
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -99,7 +99,7 @@ public class MPSNDArray extends NSObject {
      * <p>
      * If possible, the views will merely record the slice or transpose without performing the
      * operation. Many MPSKernels are able to operate on subregions of a MPSNDArray or operate on transposed
-     * data, so making a new copy of the data for these operations would be wasteful.  A copy may be forced by
+     * data, so making a new copy of the data for these operations would be wasteful. A copy may be forced by
      * a change in dataType, rowBytes, or when using a view with a MPSKernel that does not support
      * the deferred operation. To force an operation to occur immediately, use MPSAliasingStrategyShallNotAlias
      * Otherwise, it is likely that the new MPSNDArray will share a MTLBuffer with the parent and alias
@@ -109,7 +109,8 @@ public class MPSNDArray extends NSObject {
      * @param descriptor A MPSNDArrayDescriptor describing the shape of the new view of the data
      * @param aliasing   A aliasing strategy to direct MPS how to respond to cases when aliasing can or can not
      *                   be performed.
-     * @return A new MPSNDArray, if it is possible to make one. Otherwise nil is returned. The MPSNDArray is autoreleased.
+     * @return A new MPSNDArray, if it is possible to make one. Otherwise nil is returned. The MPSNDArray is
+     *         autoreleased.
      */
     @Generated
     @Selector("arrayViewWithCommandBuffer:descriptor:aliasing:")
@@ -179,8 +180,8 @@ public class MPSNDArray extends NSObject {
      * further customization of the descriptor by the application.
      *
      * @return A new autoreleased MPSNDArrayDescriptor that matches the
-     * shape of the MPSNDArray, suitable for introduction of slice,
-     * cast and transpose operations.
+     *         shape of the MPSNDArray, suitable for introduction of slice,
+     *         cast and transpose operations.
      */
     @Generated
     @Selector("descriptor")
@@ -295,7 +296,7 @@ public class MPSNDArray extends NSObject {
      * The number of elements in the dimension at dimensionIndex
      * <p>
      * The dimension length is at least as large as the existing
-     * slice length.  Views of this MPSNDArray may have differing
+     * slice length. Views of this MPSNDArray may have differing
      * dimension lengths.
      */
     @Generated
@@ -337,7 +338,7 @@ public class MPSNDArray extends NSObject {
      * @param strideBytesPerDimension An optional array of numberOfDimensions sizes, which gives the distance
      *                                in bytes from one element to the next in that dimension in buffer. The first value
      *                                is typically dataTypeSize. The next is a row bytes. The next is 2d matrix bytes,
-     *                                and so forth.  If the value is nil, these are calculated for you assuming that the
+     *                                and so forth. If the value is nil, these are calculated for you assuming that the
      *                                data is packed without additional space in between elements, rows, etc.
      *                                0 and negative values are permitted.
      */
@@ -416,7 +417,8 @@ public class MPSNDArray extends NSObject {
      * @param strideBytesPerDimension An optional array of numberOfDimensions sizes, which gives the distance
      *                                in bytes from one element to the next in that dimension in buffer. The first value
      *                                is typically dataTypeSize. The next is a row bytes. The next is 2d matrix bytes,
-     *                                and so forth.  If strideBytesPerDimension is nil, these are calculated for you assuming that the
+     *                                and so forth. If strideBytesPerDimension is nil, these are calculated for you
+     *                                assuming that the
      *                                data is packed without additional space in between elements, rows, etc.
      *                                0 and negative values are permitted.
      */

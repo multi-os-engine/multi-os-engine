@@ -26,27 +26,33 @@ public final class UIGestureRecognizerState {
      */
     @Generated @NInt public static final long Possible = 0x0000000000000000L;
     /**
-     * the recognizer has received touches recognized as the gesture. the action method will be called at the next turn of the run loop
+     * the recognizer has received touches recognized as the gesture. the action method will be called at the next turn
+     * of the run loop
      */
     @Generated @NInt public static final long Began = 0x0000000000000001L;
     /**
-     * the recognizer has received touches recognized as a change to the gesture. the action method will be called at the next turn of the run loop
+     * the recognizer has received touches recognized as a change to the gesture. the action method will be called at
+     * the next turn of the run loop
      */
     @Generated @NInt public static final long Changed = 0x0000000000000002L;
     /**
-     * the recognizer has received touches recognized as the end of the gesture. the action method will be called at the next turn of the run loop and the recognizer will be reset to UIGestureRecognizerStatePossible
+     * the recognizer has received touches recognized as the end of the gesture. the action method will be called at the
+     * next turn of the run loop and the recognizer will be reset to UIGestureRecognizerStatePossible
      */
     @Generated @NInt public static final long Ended = 0x0000000000000003L;
     /**
-     * the recognizer has received touches resulting in the cancellation of the gesture. the action method will be called at the next turn of the run loop. the recognizer will be reset to UIGestureRecognizerStatePossible
+     * the recognizer has received touches resulting in the cancellation of the gesture. the action method will be
+     * called at the next turn of the run loop. the recognizer will be reset to UIGestureRecognizerStatePossible
      */
     @Generated @NInt public static final long Cancelled = 0x0000000000000004L;
     /**
-     * the recognizer has received a touch sequence that can not be recognized as the gesture. the action method will not be called and the recognizer will be reset to UIGestureRecognizerStatePossible
+     * the recognizer has received a touch sequence that can not be recognized as the gesture. the action method will
+     * not be called and the recognizer will be reset to UIGestureRecognizerStatePossible
      */
     @Generated @NInt public static final long Failed = 0x0000000000000005L;
     /**
-     * the recognizer has received touches recognized as the gesture. the action method will be called at the next turn of the run loop and the recognizer will be reset to UIGestureRecognizerStatePossible
+     * the recognizer has received touches recognized as the gesture. the action method will be called at the next turn
+     * of the run loop and the recognizer will be reset to UIGestureRecognizerStatePossible
      */
     @Generated @NInt public static final long Recognized = 0x0000000000000003L;
 

@@ -84,7 +84,7 @@ public class GCVirtualControllerConfiguration extends NSObject {
     public static native String description_static();
 
     /**
-     * The set of controller elements e.g. [GCInputDirectionPad, GCInputLeftShoulder,  etc...]
+     * The set of controller elements e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
      */
     @Generated
     @Selector("elements")
@@ -134,7 +134,7 @@ public class GCVirtualControllerConfiguration extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The set of controller elements e.g. [GCInputDirectionPad, GCInputLeftShoulder,  etc...]
+     * The set of controller elements e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
      */
     @Generated
     @Selector("setElements:")

@@ -173,7 +173,9 @@ public class INCallRecordTypeResolutionResult extends INIntentResolutionResult {
             @NInt long callRecordTypeToConfirm);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCallRecordType. The resolvedValue can be different than the original INCallRecordType. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given
+     * INCallRecordType. The resolvedValue can be different than the original INCallRecordType. This allows app
+     * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

@@ -170,7 +170,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     public native String detail();
 
     /**
-     * Application-defined unique identifier for this shipping method.  The application will receive this
+     * Application-defined unique identifier for this shipping method. The application will receive this
      * in paymentAuthorizationViewController:didAuthorizePayment:completion:.
      */
     @Generated
@@ -190,7 +190,7 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     public native void setDetail(String value);
 
     /**
-     * Application-defined unique identifier for this shipping method.  The application will receive this
+     * Application-defined unique identifier for this shipping method. The application will receive this
      * in paymentAuthorizationViewController:didAuthorizePayment:completion:.
      */
     @Generated

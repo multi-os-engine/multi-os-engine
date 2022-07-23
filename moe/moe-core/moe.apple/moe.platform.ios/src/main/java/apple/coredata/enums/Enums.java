@@ -126,7 +126,7 @@ public final class Enums {
      */
     @Generated @NInt public static final long NSPersistentStoreIncompleteSaveError = 0x0000000000020B98L;
     /**
-     * an unresolved merge conflict was encountered during a save.  userInfo has NSPersistentStoreSaveConflictsErrorKey
+     * an unresolved merge conflict was encountered during a save. userInfo has NSPersistentStoreSaveConflictsErrorKey
      */
     @Generated @NInt public static final long NSPersistentStoreSaveConflictsError = 0x0000000000020BA2L;
     /**

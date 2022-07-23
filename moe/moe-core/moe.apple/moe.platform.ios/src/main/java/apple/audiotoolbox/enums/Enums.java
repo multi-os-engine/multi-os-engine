@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class Enums {
     /**
-     * range  (2000 -> 2999)
+     * range (2000 -> 2999)
      */
     @Generated public static final int kAudioOutputUnitProperty_CurrentDevice = 0x000007D0;
     /**
@@ -56,7 +56,7 @@ public final class Enums {
      */
     @Generated public static final int kAudioFileUnsupportedPropertyError = 0x7074793F;
     /**
-     * 0x2173697A,  561211770
+     * 0x2173697A, 561211770
      */
     @Generated public static final int kAudioFileBadPropertySizeError = 0x2173697A;
     /**
@@ -1158,7 +1158,7 @@ public final class Enums {
      */
     @Generated public static final int k3DMixerParam_Gain = 0x00000003;
     /**
-     * Input, rate scaler	0.5 -> 2.0
+     * Input, rate scaler 0.5 -> 2.0
      */
     @Generated public static final int k3DMixerParam_PlaybackRate = 0x00000004;
     /**
@@ -1174,21 +1174,21 @@ public final class Enums {
      */
     @Generated public static final int k3DMixerParam_MaxGain = 0x00000007;
     /**
-     * Input, Dry/Wet equal-power blend, %	  0.0 -> 100.0
+     * Input, Dry/Wet equal-power blend, % 0.0 -> 100.0
      */
     @Generated public static final int k3DMixerParam_ReverbBlend = 0x00000008;
     /**
-     * Global, dB,		-40.0 -> +40.0
+     * Global, dB, -40.0 -> +40.0
      */
     @Generated public static final int k3DMixerParam_GlobalReverbGain = 0x00000009;
     /**
-     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB
+     * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
      * Occlusion is a filter applied to the sound prior to the reverb send
      */
     @Generated public static final int k3DMixerParam_OcclusionAttenuation = 0x0000000A;
     /**
-     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB
+     * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
      * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
      */
@@ -1202,7 +1202,7 @@ public final class Enums {
     @Generated public static final int kAudioOutputUnitProperty_HostTransportState = 0x000007DD;
     @Generated public static final int kAudioOutputUnitProperty_NodeComponentDescription = 0x000007DE;
     /**
-     * range  (2000 -> 2999)
+     * range (2000 -> 2999)
      */
     @Generated public static final int kAudioOutputUnitProperty_IsRunning = 0x000007D1;
     @Generated public static final int kAudioUnitErr_InvalidProperty = 0xFFFFD581;
@@ -1271,7 +1271,7 @@ public final class Enums {
     @Generated public static final int kAudioQueueTimePitchAlgorithm_TimeDomain = 0x7469646F;
     @Generated public static final int kAudioQueueTimePitchAlgorithm_Varispeed = 0x76737064;
     /**
-     * CFStringRef      (get only)
+     * CFStringRef (get only)
      */
     @Generated public static final int kAudioSessionProperty_AudioRoute = 0x726F7574;
     @Generated public static final int kCAF_StreamDescriptionChunkID = 0x64657363;
@@ -1303,115 +1303,115 @@ public final class Enums {
     @Generated public static final int kAudioUnitSubType_AUiPodTimeOther = 0x6970746F;
     @Generated public static final int kAudioUnitSubType_RoundTripAAC = 0x72616163;
     /**
-     * Float64          (get/set)
+     * Float64 (get/set)
      */
     @Generated public static final int kAudioSessionProperty_PreferredHardwareSampleRate = 0x68777372;
     /**
-     * Float32          (get/set)
+     * Float32 (get/set)
      */
     @Generated public static final int kAudioSessionProperty_PreferredHardwareIOBufferDuration = 0x696F6264;
     /**
-     * UInt32           (get/set)
+     * UInt32 (get/set)
      */
     @Generated public static final int kAudioSessionProperty_AudioCategory = 0x61636174;
     /**
-     * CFDictionaryRef  (property listener)
+     * CFDictionaryRef (property listener)
      */
     @Generated public static final int kAudioSessionProperty_AudioRouteChange = 0x726F6368;
     /**
-     * Float64          (get only)
+     * Float64 (get only)
      */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareSampleRate = 0x63687372;
     /**
-     * UInt32           (get only/property listener)
+     * UInt32 (get only/property listener)
      */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareInputNumberChannels = 0x63686963;
     /**
-     * UInt32           (get only/property listener)
+     * UInt32 (get only/property listener)
      */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareOutputNumberChannels = 0x63686F63;
     /**
-     * Float32          (get only/property listener)
+     * Float32 (get only/property listener)
      */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareOutputVolume = 0x63686F76;
     /**
-     * Float32          (get only)
+     * Float32 (get only)
      */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareInputLatency = 0x63696C74;
     /**
-     * Float32          (get only)
+     * Float32 (get only)
      */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareOutputLatency = 0x636F6C74;
     /**
-     * Float32          (get only)
+     * Float32 (get only)
      */
     @Generated public static final int kAudioSessionProperty_CurrentHardwareIOBufferDuration = 0x63686264;
     /**
-     * UInt32           (get only)
+     * UInt32 (get only)
      */
     @Generated public static final int kAudioSessionProperty_OtherAudioIsPlaying = 0x6F746872;
     /**
-     * UInt32           (set only)
+     * UInt32 (set only)
      */
     @Generated public static final int kAudioSessionProperty_OverrideAudioRoute = 0x6F767264;
     /**
-     * UInt32           (get only/property listener)
+     * UInt32 (get only/property listener)
      */
     @Generated public static final int kAudioSessionProperty_AudioInputAvailable = 0x61696176;
     /**
-     * UInt32           (property listener)
+     * UInt32 (property listener)
      */
     @Generated public static final int kAudioSessionProperty_ServerDied = 0x64696564;
     /**
-     * UInt32           (get/set)
+     * UInt32 (get/set)
      */
     @Generated public static final int kAudioSessionProperty_OtherMixableAudioShouldDuck = 0x6475636B;
     /**
-     * UInt32           (get, some set)
+     * UInt32 (get, some set)
      */
     @Generated public static final int kAudioSessionProperty_OverrideCategoryMixWithOthers = 0x636D6978;
     /**
-     * UInt32           (get, some set)
+     * UInt32 (get, some set)
      */
     @Generated public static final int kAudioSessionProperty_OverrideCategoryDefaultToSpeaker = 0x6373706B;
     /**
-     * UInt32           (get, some set)
+     * UInt32 (get, some set)
      */
     @Generated public static final int kAudioSessionProperty_OverrideCategoryEnableBluetoothInput = 0x63626C75;
     /**
-     * UInt32           (get only)
+     * UInt32 (get only)
      */
     @Generated public static final int kAudioSessionProperty_InterruptionType = 0x74797065;
     /**
-     * UInt32           (get/set)
+     * UInt32 (get/set)
      */
     @Generated public static final int kAudioSessionProperty_Mode = 0x6D6F6465;
     /**
-     * CFArrayRef       (get only/property listener)
+     * CFArrayRef (get only/property listener)
      */
     @Generated public static final int kAudioSessionProperty_InputSources = 0x73726373;
     /**
-     * CFArrayRef       (get only/property listener)
+     * CFArrayRef (get only/property listener)
      */
     @Generated public static final int kAudioSessionProperty_OutputDestinations = 0x64737473;
     /**
-     * CFNumberRef      (get/set)
+     * CFNumberRef (get/set)
      */
     @Generated public static final int kAudioSessionProperty_InputSource = 0x69737263;
     /**
-     * CFNumberRef      (get/set)
+     * CFNumberRef (get/set)
      */
     @Generated public static final int kAudioSessionProperty_OutputDestination = 0x6F647374;
     /**
-     * UInt32           (get only/property listener)
+     * UInt32 (get only/property listener)
      */
     @Generated public static final int kAudioSessionProperty_InputGainAvailable = 0x69676176;
     /**
-     * Float32          (get/set/property listener)
+     * Float32 (get/set/property listener)
      */
     @Generated public static final int kAudioSessionProperty_InputGainScalar = 0x69677363;
     /**
-     * CFDictionaryRef  (get only)
+     * CFDictionaryRef (get only)
      */
     @Generated public static final int kAudioSessionProperty_AudioRouteDescription = 0x63726172;
     @Generated public static final int kAudioSessionRouteChangeReason_Unknown = 0x00000000;
@@ -1669,7 +1669,7 @@ public final class Enums {
      */
     @Generated public static final int kSpatialMixerParam_Gain = 0x00000003;
     /**
-     * Input, rate scaler	0.5 -> 2.0, 1.0
+     * Input, rate scaler 0.5 -> 2.0, 1.0
      */
     @Generated public static final int kSpatialMixerParam_PlaybackRate = 0x00000004;
     /**
@@ -1685,21 +1685,21 @@ public final class Enums {
      */
     @Generated public static final int kSpatialMixerParam_MaxGain = 0x00000007;
     /**
-     * Input, Dry/Wet equal-power blend, %	  0.0 -> 100.0, 30.0
+     * Input, Dry/Wet equal-power blend, % 0.0 -> 100.0, 30.0
      */
     @Generated public static final int kSpatialMixerParam_ReverbBlend = 0x00000008;
     /**
-     * Global, dB,		-40.0 -> +40.0, 0.0
+     * Global, dB, -40.0 -> +40.0, 0.0
      */
     @Generated public static final int kSpatialMixerParam_GlobalReverbGain = 0x00000009;
     /**
-     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB, 0.0dB
+     * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB, 0.0dB
      * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
      * Occlusion is a filter applied to the sound prior to the reverb send
      */
     @Generated public static final int kSpatialMixerParam_OcclusionAttenuation = 0x0000000A;
     /**
-     * Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB, 0.0dB
+     * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB, 0.0dB
      * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
      * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
      */
@@ -2135,21 +2135,21 @@ public final class Enums {
      */
     @Generated public static final int k3DMixerParam_MaxGainInDecibels = 0x00000016;
     /**
-     * Input, Dry/Wet equal-power blend, %      0.0 -> 100.0
+     * Input, Dry/Wet equal-power blend, % 0.0 -> 100.0
      */
     @Generated public static final int k3DMixerParam_DryWetReverbBlend = 0x00000017;
     /**
-     * Global, dB,        -40.0 -> +40.0
+     * Global, dB, -40.0 -> +40.0
      */
     @Generated public static final int k3DMixerParam_GlobalReverbGainInDecibels = 0x00000018;
     /**
-     * Input, Lowpass filter attenuation at 5KHz :        decibels -100.0dB -> 0.0dB
+     * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
      * Occlusion is a filter applied to the sound prior to the reverb send
      */
     @Generated public static final int k3DMixerParam_OcclusionAttenuationInDecibels = 0x00000019;
     /**
-     * Input, Lowpass filter attenuation at 5KHz :        decibels -100.0dB -> 0.0dB
+     * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
      * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
      */

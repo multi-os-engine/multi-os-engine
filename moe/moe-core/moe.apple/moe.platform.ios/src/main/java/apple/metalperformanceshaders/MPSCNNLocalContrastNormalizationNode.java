@@ -34,7 +34,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@code]
  * Defaults:
  * alpha = 1.0f
- * beta  = 0.5f
+ * beta = 0.5f
  * delta = 2^-10
  * pm = 0
  * ps = 1

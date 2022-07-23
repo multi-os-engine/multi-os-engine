@@ -145,7 +145,8 @@ public class UIToolTipConfiguration extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The rectangle containing the contents being annotated by the tool tip. Value is CGRectNull if the tool tip applies to the entire view.
+     * The rectangle containing the contents being annotated by the tool tip. Value is CGRectNull if the tool tip
+     * applies to the entire view.
      */
     @Generated
     @Selector("sourceRect")

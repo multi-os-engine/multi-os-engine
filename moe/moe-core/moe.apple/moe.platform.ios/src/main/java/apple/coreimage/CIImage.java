@@ -201,7 +201,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native CIImage imageWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
     /**
-     * Create a new CIImage populated when rendered with  data provided by 'p'.
+     * Create a new CIImage populated when rendered with data provided by 'p'.
      * The provider object 'p' is retained until the image is deallocated.
      * The 'options' dictionary supports kCIImageProviderTileSize as well as
      * other options defined in CIImage.h
@@ -215,7 +215,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Creates a new image referencing the contents of the Metal texture object.
      * The texture type must be MTLTextureType2D and the texture format must be unsigned normalized or floating-point.
-     * When rendering a CIImage referencing this Metal texture, there should not be any uncommitted Metal comand buffers writing to the texture.
+     * When rendering a CIImage referencing this Metal texture, there should not be any uncommitted Metal comand buffers
+     * writing to the texture.
      */
     @Generated
     @Selector("imageWithMTLTexture:options:")
@@ -286,7 +287,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native long version_static();
 
     /**
-     * Returns a CGImageRef if the CIImage was created with [CIImage imageWithCGImage] or [CIImage imageWithContentsOfURL] and no options.
+     * Returns a CGImageRef if the CIImage was created with [CIImage imageWithCGImage] or [CIImage
+     * imageWithContentsOfURL] and no options.
      * Otherwise this property will be nil and calling [CIContext createCGImage:fromRect:] is recommended.
      */
     @Generated
@@ -299,7 +301,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * <p>
      * The options dictionary can contain a CIDetectorImageOrientation key value.
      * The value for this key is an integer NSNumber from 1..8 such as that
-     * found in kCGImagePropertyOrientation.  If present, the adjustment will be done
+     * found in kCGImagePropertyOrientation. If present, the adjustment will be done
      * based on that orientation but any coordinates in the returned filters will
      * still be based on those of the sender image.
      */
@@ -561,7 +563,7 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns the rectangle of 'image' that is required to render the
-     * rectangle 'rect' of the receiver.  This may return a null rect.
+     * rectangle 'rect' of the receiver. This may return a null rect.
      */
     @Generated
     @Selector("regionOfInterestForImage:inRect:")
@@ -583,7 +585,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public native NSURL url();
 
     /**
-     * Returns a AVDepthData if the CIImage was created with [CIImage imageWithData] or [CIImage imageWithContentsOfURL] and.
+     * Returns a AVDepthData if the CIImage was created with [CIImage imageWithData] or [CIImage imageWithContentsOfURL]
+     * and.
      * one the options kCIImageAuxiliaryDepth or kCIImageAuxiliaryDisparity.
      */
     @Generated
@@ -769,7 +772,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native CIImage magentaImage();
 
     /**
-     * Returns a AVPortraitEffectsMatte if the CIImage was created with [CIImage imageWithData] or [CIImage imageWithContentsOfURL] and.
+     * Returns a AVPortraitEffectsMatte if the CIImage was created with [CIImage imageWithData] or [CIImage
+     * imageWithContentsOfURL] and.
      * one the options kCIImageAuxiliaryPortraitEffectsMatte.
      */
     @Generated
@@ -781,7 +785,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     public static native CIImage redImage();
 
     /**
-     * Returns a AVSemanticSegmentationMatte if the CIImage was created with [CIImage imageWithData] or [CIImage imageWithContentsOfURL] and.
+     * Returns a AVSemanticSegmentationMatte if the CIImage was created with [CIImage imageWithData] or [CIImage
+     * imageWithContentsOfURL] and.
      * one the options like kCIImageAuxiliarySemanticSegmentationSkinMatte.
      */
     @Generated

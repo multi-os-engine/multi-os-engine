@@ -215,7 +215,8 @@ public class HMCharacteristic extends NSObject {
     public native NSArray<String> properties();
 
     /**
-     * Reads the value of the characteristic. The updated value can be read from the 'value' property of the characteristic.
+     * Reads the value of the characteristic. The updated value can be read from the 'value' property of the
+     * characteristic.
      *
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error

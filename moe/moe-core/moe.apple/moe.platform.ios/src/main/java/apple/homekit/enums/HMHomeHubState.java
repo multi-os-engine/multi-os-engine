@@ -4,11 +4,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum]      HMHomeHubState
+ * [@enum] HMHomeHubState
  * <p>
- * [@constant]  HMHomeHubStateNotAvailable      No home hub is present.
- * [@constant]  HMHomeHubStateConnected         Home hub is connected.
- * [@constant]  HMHomeHubStateDisconnected      No home hub is connected.
+ * [@constant] HMHomeHubStateNotAvailable No home hub is present.
+ * [@constant] HMHomeHubStateConnected Home hub is connected.
+ * [@constant] HMHomeHubStateDisconnected No home hub is connected.
  */
 @Generated
 public final class HMHomeHubState {

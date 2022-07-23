@@ -27,10 +27,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNOptimizer
  * <p>
- * The MPSNNOptimizer base class, use one of the child classes, not to be directly used. Optimizers are generally used to update trainable neural network parameters.
- * Users are usually expected to call these MPSKernels from the update methods on their Convolution or BatchNormalization data sources.
+ * The MPSNNOptimizer base class, use one of the child classes, not to be directly used. Optimizers are generally used
+ * to update trainable neural network parameters.
+ * Users are usually expected to call these MPSKernels from the update methods on their Convolution or
+ * BatchNormalization data sources.
  * <p>
- * Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is scaled or clipped
+ * Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is
+ * scaled or clipped
  * If regularization is chosen the appropriate regularization loss gradient is added to the value gradient.
  */
 @Generated
@@ -62,7 +65,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public static native MPSNNOptimizer allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   applyGradientClipping
+     * [@property] applyGradientClipping
      * <p>
      * A bool which decides if gradient will be clipped
      * <p>
@@ -103,7 +106,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public static native String description_static();
 
     /**
-     * [@property]   gradientClipMax
+     * [@property] gradientClipMax
      * <p>
      * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
@@ -112,7 +115,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public native float gradientClipMax();
 
     /**
-     * [@property]   gradientClipMin
+     * [@property] gradientClipMin
      * <p>
      * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
@@ -121,7 +124,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public native float gradientClipMin();
 
     /**
-     * [@property]   gradientRescale
+     * [@property] gradientRescale
      * <p>
      * The gradientRescale at which we apply to incoming gradient values
      * <p>
@@ -174,7 +177,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   learningRate
+     * [@property] learningRate
      * <p>
      * The learningRate at which we update values
      * <p>
@@ -190,7 +193,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public static native MPSNNOptimizer new_objc();
 
     /**
-     * [@property]   regularizationScale
+     * [@property] regularizationScale
      * <p>
      * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
      * <p>
@@ -201,7 +204,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public native float regularizationScale();
 
     /**
-     * [@property]   regularizationType
+     * [@property] regularizationType
      * <p>
      * The regularizationType which we apply.
      * <p>
@@ -221,7 +224,7 @@ public class MPSNNOptimizer extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   applyGradientClipping
+     * [@property] applyGradientClipping
      * <p>
      * A bool which decides if gradient will be clipped
      * <p>

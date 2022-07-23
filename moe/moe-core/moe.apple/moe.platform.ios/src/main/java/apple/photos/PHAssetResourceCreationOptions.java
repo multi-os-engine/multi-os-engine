@@ -161,42 +161,50 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     public native PHAssetResourceCreationOptions init();
 
     /**
-     * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else generated.
+     * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else
+     * generated.
      */
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
 
     /**
-     * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else generated.
+     * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else
+     * generated.
      */
     @Generated
     @Selector("setOriginalFilename:")
     public native void setOriginalFilename(String value);
 
     /**
-     * When enabled, the file passed to the creation request will be moved into the photo library without duplicating the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file is created from the original. Defaults to NO.  Attempting to move a file that is open or hardlinked will fail.
+     * When enabled, the file passed to the creation request will be moved into the photo library without duplicating
+     * the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file
+     * is created from the original. Defaults to NO. Attempting to move a file that is open or hardlinked will fail.
      */
     @Generated
     @Selector("setShouldMoveFile:")
     public native void setShouldMoveFile(boolean value);
 
     /**
-     * The uniform type identifier for the resource. If not specified, one will be inferred from the PHAssetResourceType.
+     * The uniform type identifier for the resource. If not specified, one will be inferred from the
+     * PHAssetResourceType.
      */
     @Generated
     @Selector("setUniformTypeIdentifier:")
     public native void setUniformTypeIdentifier(String value);
 
     /**
-     * When enabled, the file passed to the creation request will be moved into the photo library without duplicating the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file is created from the original. Defaults to NO.  Attempting to move a file that is open or hardlinked will fail.
+     * When enabled, the file passed to the creation request will be moved into the photo library without duplicating
+     * the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file
+     * is created from the original. Defaults to NO. Attempting to move a file that is open or hardlinked will fail.
      */
     @Generated
     @Selector("shouldMoveFile")
     public native boolean shouldMoveFile();
 
     /**
-     * The uniform type identifier for the resource. If not specified, one will be inferred from the PHAssetResourceType.
+     * The uniform type identifier for the resource. If not specified, one will be inferred from the
+     * PHAssetResourceType.
      */
     @Generated
     @Selector("uniformTypeIdentifier")

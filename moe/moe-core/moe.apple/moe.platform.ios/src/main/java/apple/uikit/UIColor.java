@@ -61,8 +61,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIColor extends NSObject
-        implements NSSecureCoding, NSCopying, NSItemProviderReading, NSItemProviderWriting {
+public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSItemProviderReading,
+        NSItemProviderWriting {
     static {
         NatJ.register();
     }
@@ -383,7 +383,8 @@ public class UIColor extends NSObject
 
     /**
      * Convenience methods for getting components.
-     * If the receiver is of a compatible color space, any non-NULL parameters are populated and 'YES' is returned. Otherwise, the parameters are left unchanged and 'NO' is returned.
+     * If the receiver is of a compatible color space, any non-NULL parameters are populated and 'YES' is returned.
+     * Otherwise, the parameters are left unchanged and 'NO' is returned.
      */
     @Generated
     @Selector("getWhite:alpha:")
@@ -432,7 +433,8 @@ public class UIColor extends NSObject
     public native UIColor initWithWhiteAlpha(@NFloat double white, @NFloat double alpha);
 
     /**
-     * Set the color: Sets the fill and stroke colors in the current drawing context. Should be implemented by subclassers.
+     * Set the color: Sets the fill and stroke colors in the current drawing context. Should be implemented by
+     * subclassers.
      */
     @Generated
     @Selector("set")
@@ -674,7 +676,7 @@ public class UIColor extends NSObject
      * <p>
      * In UIUserInterfaceStyleLight: systemGray1 is slightly lighter than systemGray.
      * systemGray2 is lighter than that, and so on.
-     * In UIUserInterfaceStyleDark:  systemGray1 is slightly darker than systemGray.
+     * In UIUserInterfaceStyleDark: systemGray1 is slightly darker than systemGray.
      * systemGray2 is darker than that, and so on.
      */
     @Generated
@@ -772,7 +774,8 @@ public class UIColor extends NSObject
     public static native UIColor tertiarySystemGroupedBackgroundColor();
 
     /**
-     * Provides an accessible name for the UIColor for use in accessibility attribute APIs, such as when using accessibilityLabel.
+     * Provides an accessible name for the UIColor for use in accessibility attribute APIs, such as when using
+     * accessibilityLabel.
      */
     @Generated
     @Selector("accessibilityName")

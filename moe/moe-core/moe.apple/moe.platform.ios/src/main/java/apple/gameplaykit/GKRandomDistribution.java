@@ -118,8 +118,10 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     public static native String description_static();
 
     /**
-     * Convenience creation of random distribution with the die like range [1, sideCount] using an isolated source to grab input values from.
-     * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource alloc] init].
+     * Convenience creation of random distribution with the die like range [1, sideCount] using an isolated source to
+     * grab input values from.
+     * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource
+     * alloc] init].
      *
      * @see initWithRandomSource:lowestValue:highestValue:
      */
@@ -128,8 +130,10 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     public static native GKRandomDistribution distributionForDieWithSideCount(@NInt long sideCount);
 
     /**
-     * Convenience creation of random distribution within the range [lowest, highest] using an isolated source to grab input values from.
-     * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource alloc] init].
+     * Convenience creation of random distribution within the range [lowest, highest] using an isolated source to grab
+     * input values from.
+     * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource
+     * alloc] init].
      *
      * @see initWithRandomSource:lowestValue:highestValue:
      */
@@ -237,7 +241,8 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     public native float nextUniform();
 
     /**
-     * The number of unique possible outcomes, depending on the distribution type this is not always highest - lowest + 1.
+     * The number of unique possible outcomes, depending on the distribution type this is not always highest - lowest +
+     * 1.
      */
     @Generated
     @Selector("numberOfPossibleOutcomes")

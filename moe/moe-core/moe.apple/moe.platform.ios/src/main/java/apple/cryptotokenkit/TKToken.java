@@ -25,7 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Class representing single token.  When implementing SmartCard based token, it is recommended to inherit the implementation from TKSmartCardToken.  Token object serves as synchronization point, all operations invoked upon token and all its sessions are serialized.
+ * Class representing single token. When implementing SmartCard based token, it is recommended to inherit the
+ * implementation from TKSmartCardToken. Token object serves as synchronization point, all operations invoked upon token
+ * and all its sessions are serialized.
  */
 @Generated
 @Library("CryptoTokenKit")

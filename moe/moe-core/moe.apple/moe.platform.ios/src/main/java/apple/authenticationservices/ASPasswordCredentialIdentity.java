@@ -29,7 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ASPasswordCredentialIdentity
- * An ASPasswordCredentialIdentity is used to describe an identity that can use a service upon successful password based authentication.
+ * An ASPasswordCredentialIdentity is used to describe an identity that can use a service upon successful password based
+ * authentication.
  * Use this class to save entries into ASCredentialIdentityStore.
  */
 @Generated

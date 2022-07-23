@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCArithmeticOperation
+ * [@enum] MLCArithmeticOperation
  * <p>
  * The list of supported arithmetic operations.
  */
@@ -118,11 +118,12 @@ public final class MLCArithmeticOperation {
      */
     @Generated public static final int Log2 = 0x00000019;
     /**
-     * An operation that calculates the elementwise product of its two inputs.  Returns 0 if y in x * y is zero, even if x is NaN or INF
+     * An operation that calculates the elementwise product of its two inputs. Returns 0 if y in x * y is zero, even if
+     * x is NaN or INF
      */
     @Generated public static final int MultiplyNoNaN = 0x0000001A;
     /**
-     * An operations that calculates the elementwise division of its two inputs.  Returns 0 if the denominator is 0.
+     * An operations that calculates the elementwise division of its two inputs. Returns 0 if the denominator is 0.
      */
     @Generated public static final int DivideNoNaN = 0x0000001B;
     /**

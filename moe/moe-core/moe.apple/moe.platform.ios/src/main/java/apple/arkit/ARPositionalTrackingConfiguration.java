@@ -25,7 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A configuration for running positional tracking.
  * <p>
- * Positional tracking provides 6 degrees of freedom tracking of the device by running the camera at lowest possible resolution and frame rate.
+ * Positional tracking provides 6 degrees of freedom tracking of the device by running the camera at lowest possible
+ * resolution and frame rate.
  */
 @Generated
 @Library("ARKit")
@@ -139,8 +140,10 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     /**
      * Type of planes to detect in the scene.
      * <p>
-     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
-     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
+     * session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
+     * ARPlaneDetectionNone.
      */
     @Generated
     @Selector("planeDetection")
@@ -170,8 +173,10 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     /**
      * Type of planes to detect in the scene.
      * <p>
-     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
-     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
+     * session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
+     * ARPlaneDetectionNone.
      */
     @Generated
     @Selector("setPlaneDetection:")

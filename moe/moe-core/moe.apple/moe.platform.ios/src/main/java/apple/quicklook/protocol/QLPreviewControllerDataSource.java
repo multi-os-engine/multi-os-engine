@@ -28,7 +28,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * The QLPreviewControllerDataSource protocol declares the methods that the Preview Controller uses to access the contents of its data source object.
+ * The QLPreviewControllerDataSource protocol declares the methods that the Preview Controller uses to access the
+ * contents of its data source object.
  */
 @Generated
 @Library("QuickLook")

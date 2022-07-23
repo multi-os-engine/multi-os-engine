@@ -33,13 +33,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A wrapper class which contains a diagnostic payload and associated properties of that payload.
  * <p>
- * MXDiagnosticPayload encapsulates currently supported diagnostics that can be vended by MetricKit. Arrays of MXDiangostic subclasses on MXDiagnosticPayload are nullable. If an array of MXDiagnostic subclasses is nil, it indicates that the diagnostics are not available for this payload.
+ * MXDiagnosticPayload encapsulates currently supported diagnostics that can be vended by MetricKit. Arrays of
+ * MXDiangostic subclasses on MXDiagnosticPayload are nullable. If an array of MXDiagnostic subclasses is nil, it
+ * indicates that the diagnostics are not available for this payload.
  * <p>
- * MXDiagnosticPayload exposes a convenience function, JSONRepresentation, to convert the contents of the payload to a human readable JSON. This should be used in conjunction with other APIs that accept NSData.
+ * MXDiagnosticPayload exposes a convenience function, JSONRepresentation, to convert the contents of the payload to a
+ * human readable JSON. This should be used in conjunction with other APIs that accept NSData.
  * <p>
- * An MXDiagnosticPayload contains diagnostics that cover a 24 hour period of application usage. The properties timeStampBegin and timeStampEnd should be used to determine which time range the payload covers.
+ * An MXDiagnosticPayload contains diagnostics that cover a 24 hour period of application usage. The properties
+ * timeStampBegin and timeStampEnd should be used to determine which time range the payload covers.
  * <p>
- * It is possible for an MXDiagnosticPayload to cover regions of time where an application was updated, and thus each MXDiagnostic subclass will contain its own application version string. This is in contrast to MXMetricPayload, where only the latest application version string is included as metadata of the payload. Each MXDiagnostic subclass application version string should be inspected prior to processing.
+ * It is possible for an MXDiagnosticPayload to cover regions of time where an application was updated, and thus each
+ * MXDiagnostic subclass will contain its own application version string. This is in contrast to MXMetricPayload, where
+ * only the latest application version string is included as metadata of the payload. Each MXDiagnostic subclass
+ * application version string should be inspected prior to processing.
  */
 @Generated
 @Library("MetricKit")
@@ -103,7 +110,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cpuExceptionDiagnostics
+     * [@property] cpuExceptionDiagnostics
      * <p>
      * An array containing CPU exception diagnostics for this application.
      */
@@ -112,7 +119,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     public native NSArray<? extends MXCPUExceptionDiagnostic> cpuExceptionDiagnostics();
 
     /**
-     * [@property]      crashDiagnostics
+     * [@property] crashDiagnostics
      * <p>
      * An array containing crash diagnostics for this application.
      */
@@ -140,7 +147,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     public native NSDictionary<?, ?> dictionaryRepresentation();
 
     /**
-     * [@property]      diskWriteExceptionDiagnostics
+     * [@property] diskWriteExceptionDiagnostics
      * <p>
      * An array containing disk write exception diagnostics for this application.
      */
@@ -153,7 +160,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * [@property]      hangDiagnostics
+     * [@property] hangDiagnostics
      * <p>
      * An array containing hang diagnostics for this application.
      */
@@ -227,7 +234,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * [@property]      timeStampBegin
+     * [@property] timeStampBegin
      * <p>
      * An NSDate object that indicates the start time for which the payload was generated.
      */
@@ -236,7 +243,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     public native NSDate timeStampBegin();
 
     /**
-     * [@property]      timeStampEnd
+     * [@property] timeStampEnd
      * <p>
      * An NSDate object that indicates the end time for which the payload was generated.
      */

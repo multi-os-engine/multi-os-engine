@@ -53,7 +53,8 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
     /**
      * The list of allowable classes which the top-level object in the archive must conform to on encoding and decoding.
      * <p>
-     * Returns the result of \c +transformedValueClass if not \c Nil; otherwise, currently returns \c NSArray, \c NSDictionary, \c NSSet, \c NSString, \c NSNumber, \c NSDate, \c NSData, \c NSURL, \c NSUUID, and \c NSNull.
+     * Returns the result of \c +transformedValueClass if not \c Nil; otherwise, currently returns \c NSArray, \c
+     * NSDictionary, \c NSSet, \c NSString, \c NSNumber, \c NSDate, \c NSData, \c NSURL, \c NSUUID, and \c NSNull.
      * <p>
      * Can be overridden by subclasses to provide an expanded or different set of allowed transformation classes.
      */

@@ -188,7 +188,8 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
     public native String manufacturer();
 
     /**
-     * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the .vehicleLocation property, and rotated to match that location's course.
+     * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the
+     * .vehicleLocation property, and rotated to match that location's course.
      */
     @Generated
     @Selector("mapAnnotationImage")
@@ -214,7 +215,8 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
     public native void setManufacturer(String value);
 
     /**
-     * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the .vehicleLocation property, and rotated to match that location's course.
+     * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the
+     * .vehicleLocation property, and rotated to match that location's course.
      */
     @Generated
     @Selector("setMapAnnotationImage:")

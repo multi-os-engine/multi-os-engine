@@ -55,7 +55,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Note that the displayName is intended for a UI element, and should
  * be short and descriptive of the local peer.  The hard limit of
- * displayName is 63 bytes in UTF8 encoding.  The displayName parameter
+ * displayName is 63 bytes in UTF8 encoding. The displayName parameter
  * may not be nil or an empty string.
  * <p>
  * MCPeerID conforms to NSCopying and can be used as a key in a

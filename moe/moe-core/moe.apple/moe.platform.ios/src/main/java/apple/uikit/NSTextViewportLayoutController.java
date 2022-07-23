@@ -48,7 +48,8 @@ public class NSTextViewportLayoutController extends NSObject {
 
     /**
      * Adjusts the viewport rect by the specified offset if needed.
-     * This is used to artificially move the viewport without affecting viewport content, can be both positive/negative offset.
+     * This is used to artificially move the viewport without affecting viewport content, can be both positive/negative
+     * offset.
      */
     @Generated
     @Selector("adjustViewportByVerticalOffset:")

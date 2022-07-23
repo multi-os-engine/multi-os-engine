@@ -10,7 +10,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INNotebookDomainHandling")
-public interface INNotebookDomainHandling
-        extends INCreateNoteIntentHandling, INAppendToNoteIntentHandling, INAddTasksIntentHandling,
-        INCreateTaskListIntentHandling, INSetTaskAttributeIntentHandling, INSearchForNotebookItemsIntentHandling {
+public interface INNotebookDomainHandling extends INCreateNoteIntentHandling, INAppendToNoteIntentHandling,
+        INAddTasksIntentHandling, INCreateTaskListIntentHandling, INSetTaskAttributeIntentHandling,
+        INSearchForNotebookItemsIntentHandling {
 }

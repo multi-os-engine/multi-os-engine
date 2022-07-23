@@ -129,7 +129,8 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * Jitter measures vocal stability and is measured as an absolute difference between consecutive periods, divided by the average period. It is expressed as a percentage
+     * Jitter measures vocal stability and is measured as an absolute difference between consecutive periods, divided by
+     * the average period. It is expressed as a percentage
      */
     @Generated
     @Selector("jitter")

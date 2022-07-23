@@ -14,7 +14,9 @@ public final class UIPrintRenderingQuality {
      */
     @Generated @NInt public static final long Best = 0x0000000000000000L;
     /**
-     * Sacrifices the least possible amount of rendering quality for speed to maintain a responsive user interface. This option should be used only after establishing that best quality rendering does indeed make the user interface unresponsive.
+     * Sacrifices the least possible amount of rendering quality for speed to maintain a responsive user interface. This
+     * option should be used only after establishing that best quality rendering does indeed make the user interface
+     * unresponsive.
      */
     @Generated @NInt public static final long Responsive = 0x0000000000000001L;
 }

@@ -35,7 +35,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("UICollisionBehaviorDelegate")
 public interface UICollisionBehaviorDelegate {
     /**
-     * The identifier of a boundary created with translatesReferenceBoundsIntoBoundary or setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
+     * The identifier of a boundary created with translatesReferenceBoundsIntoBoundary or
+     * setTranslatesReferenceBoundsIntoBoundaryWithInsets is nil
      */
     @Generated
     @IsOptional

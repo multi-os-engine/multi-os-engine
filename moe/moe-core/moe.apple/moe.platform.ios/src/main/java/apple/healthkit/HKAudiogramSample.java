@@ -64,7 +64,8 @@ public class HKAudiogramSample extends HKSample {
      * <p>
      * Creates a new audiogram sample with the specified attributes.
      *
-     * @param sensitivityPoints Sensitivity data associated with the sample, with a maximum limit of 30 points. Frequencies must be unique, and ordered ascending.
+     * @param sensitivityPoints Sensitivity data associated with the sample, with a maximum limit of 30 points.
+     *                          Frequencies must be unique, and ordered ascending.
      * @param startDate         The start date for the hearing test.
      * @param endDate           The end date for the hearing test.
      * @param metadata          Optional meta data associated with the sample.
@@ -154,7 +155,7 @@ public class HKAudiogramSample extends HKSample {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]  sensitivityPoints
+     * [@property] sensitivityPoints
      * <p>
      * The hearing sensitivity readings associated with a hearing test.
      */

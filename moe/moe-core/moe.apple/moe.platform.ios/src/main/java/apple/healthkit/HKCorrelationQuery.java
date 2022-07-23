@@ -291,7 +291,7 @@ public class HKCorrelationQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithTypePredicateSamplePredicatesCompletion") Block_initWithTypePredicateSamplePredicatesCompletion completion);
 
     /**
-     * [@property]      samplePredicates
+     * [@property] samplePredicates
      * <p>
      * A dictionary of predicates for the HKCorrelation's objects
      * <p>

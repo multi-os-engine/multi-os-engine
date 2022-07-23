@@ -229,7 +229,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * <p>
      * If @c YES, returns unified contact history. Otherwise returns individual contact history. Default is @c YES.
      * <p>
-     * [@note]        A unified contact is the aggregation of properties from a set of linked individual contacts.
+     * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts.
      * If an individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated
@@ -257,7 +257,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * <p>
      * If @c YES, returns unified contact history. Otherwise returns individual contact history. Default is @c YES.
      * <p>
-     * [@note]        A unified contact is the aggregation of properties from a set of linked individual contacts.
+     * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts.
      * If an individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated

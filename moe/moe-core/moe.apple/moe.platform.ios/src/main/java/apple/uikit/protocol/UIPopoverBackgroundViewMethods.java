@@ -28,7 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * The methods defined below are all to be treated as abstract; in order to subclass `UIPopoverBackgroundView`, you must supply implementations of each of the methods below. For `readwrite` properties, you must supply implementations of both of the accessors.
+ * The methods defined below are all to be treated as abstract; in order to subclass `UIPopoverBackgroundView`, you must
+ * supply implementations of each of the methods below. For `readwrite` properties, you must supply implementations of
+ * both of the accessors.
  */
 @Generated
 @Library("UIKit")
@@ -51,7 +53,8 @@ public interface UIPopoverBackgroundViewMethods {
     double _arrowHeight();
 
     /**
-     * Describes the distance between each edge of the background view and the corresponding edge of its content view (i.e. if it were strictly a rectangle).
+     * Describes the distance between each edge of the background view and the corresponding edge of its content view
+     * (i.e. if it were strictly a rectangle).
      */
     @Generated
     @Selector("contentViewInsets")

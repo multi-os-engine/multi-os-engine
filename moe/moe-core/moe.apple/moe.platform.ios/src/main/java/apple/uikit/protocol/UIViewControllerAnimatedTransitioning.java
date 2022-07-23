@@ -40,7 +40,8 @@ public interface UIViewControllerAnimatedTransitioning {
     void animateTransition(@Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
-     * This is a convenience and if implemented will be invoked by the system when the transition context's completeTransition: method is invoked.
+     * This is a convenience and if implemented will be invoked by the system when the transition context's
+     * completeTransition: method is invoked.
      */
     @Generated
     @IsOptional

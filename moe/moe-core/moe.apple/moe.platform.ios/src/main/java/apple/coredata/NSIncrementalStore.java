@@ -247,8 +247,10 @@ public class NSIncrementalStore extends NSPersistentStore {
 
     /**
      * Returns the relationship for the given relationship on the object with ID objectID. If the relationship
-     * is a to-one it should return an NSManagedObjectID corresponding to the destination or NSNull if the relationship value is nil.
-     * If the relationship is a to-many, should return an NSSet or NSArray containing the NSManagedObjectIDs of the related objects.
+     * is a to-one it should return an NSManagedObjectID corresponding to the destination or NSNull if the relationship
+     * value is nil.
+     * If the relationship is a to-many, should return an NSSet or NSArray containing the NSManagedObjectIDs of the
+     * related objects.
      * Should return nil and set the error if the source object cannot be found.
      */
     @Generated
@@ -278,7 +280,8 @@ public class NSIncrementalStore extends NSPersistentStore {
             NSArray<? extends NSManagedObject> array, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Returns the reference data used to construct the objectID. Will raise an NSInvalidArgumentException if the objectID was not created
+     * Returns the reference data used to construct the objectID. Will raise an NSInvalidArgumentException if the
+     * objectID was not created
      * by this store.
      */
     @Generated

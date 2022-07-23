@@ -113,7 +113,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Begins a find, searching the document for string.  Search results are handled via a
+     * Begins a find, searching the document for string. Search results are handled via a
      * PDFDocumentDidFindMatchNotification or if the delegate implements -[didMatchString:]. Supported options are:
      * NSCaseInsensitiveSearch, NSLiteralSearch, and NSBackwardsSearch.
      */
@@ -130,7 +130,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     public native void beginFindStringsWithOptions(NSArray<String> strings, @NUInt long options);
 
     /**
-     * Method to cancel a search.  Can be called from a user method being serviced by a find notification.
+     * Method to cancel a search. Can be called from a user method being serviced by a find notification.
      */
     @Generated
     @Selector("cancelFindString")
@@ -161,10 +161,10 @@ public class PDFDocument extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * Methods to record the current state of the PDFDocument as data or a file.  Passing a QuartzFilter object in the
+     * Methods to record the current state of the PDFDocument as data or a file. Passing a QuartzFilter object in the
      * options dictionary with the key @"QuartzFilter" will allow you to have the filter applied when saving the PDF.
      * NOTE: Versions of PDFKit before SnowLeopard did not return autorelease data for -[dataRepresentation]. You had to
-     * release the data yourself.  Beginning with apps compiled on SnowLeopard the data returned is autoreleased.
+     * release the data yourself. Beginning with apps compiled on SnowLeopard the data returned is autoreleased.
      */
     @Generated
     @Selector("dataRepresentation")
@@ -179,7 +179,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     public static native String debugDescription_static();
 
     /**
-     * If a PDFDocument has a delegate, delegate methods may be called.  See: NSNotificationNames and
+     * If a PDFDocument has a delegate, delegate methods may be called. See: NSNotificationNames and
      * PDFDocumentDelegate below.
      */
     @Generated
@@ -192,15 +192,16 @@ public class PDFDocument extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * Returns a dictionary with PDF metadata. Metadata is optional for PDF's and so some of the keys may be missing or the
-     * entire dictionary may be empty.  See attributes above for keys.
+     * Returns a dictionary with PDF metadata. Metadata is optional for PDF's and so some of the keys may be missing or
+     * the
+     * entire dictionary may be empty. See attributes above for keys.
      */
     @Generated
     @Selector("documentAttributes")
     public native NSDictionary<?, ?> documentAttributes();
 
     /**
-     * This is the CGPDFDocument associated with the PDFDocument object.  With this object you can call many CoreGraphics
+     * This is the CGPDFDocument associated with the PDFDocument object. With this object you can call many CoreGraphics
      * API. May return NULL if the document was not created from an existing PDF file or data.
      */
     @Generated
@@ -269,9 +270,11 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Methods allowing pages to be inserted, removed, and re-ordered. Can throw range exceptions.
-     * Note: when inserting a PDFPage, you have to be careful if that page came from another PDFDocument. PDFPage's have a
-     * notion of a single document that owns them and when you call the methods below the PDFPage passed in is assigned a
-     * new owning document.  You'll want to call -[PDFPage copy] first then and pass this copy to the blow methods. This
+     * Note: when inserting a PDFPage, you have to be careful if that page came from another PDFDocument. PDFPage's have
+     * a
+     * notion of a single document that owns them and when you call the methods below the PDFPage passed in is assigned
+     * a
+     * new owning document. You'll want to call -[PDFPage copy] first then and pass this copy to the blow methods. This
      * allows the orignal PDFPage to maintain its original document.
      */
     @Generated
@@ -292,8 +295,10 @@ public class PDFDocument extends NSObject implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * Whether the PDF is encrypted. With the right password, a PDF can be unlocked - nonetheless, the PDF still indicates
-     * that it is encrypted - just no longer locked. Some PDF's may be encrypted but can be unlocked with the empty string.
+     * Whether the PDF is encrypted. With the right password, a PDF can be unlocked - nonetheless, the PDF still
+     * indicates
+     * that it is encrypted - just no longer locked. Some PDF's may be encrypted but can be unlocked with the empty
+     * string.
      * These are unlocked automatically.
      */
     @Generated
@@ -341,7 +346,8 @@ public class PDFDocument extends NSObject implements NSCopying {
     public static native PDFDocument new_objc();
 
     /**
-     * Given a PDFSelection, this method returns the child outline item the selection most closely falls beneath. Since a
+     * Given a PDFSelection, this method returns the child outline item the selection most closely falls beneath. Since
+     * a
      * selection may span multiple outline items, only the point representing the first character of the PDFSelection is
      * considered. Typically, outlines indicate things like chapters for the PDF. Therefore, this method would help you
      * identify the chapter the selection falls within.
@@ -351,7 +357,8 @@ public class PDFDocument extends NSObject implements NSCopying {
     public native PDFOutline outlineItemForSelection(PDFSelection selection);
 
     /**
-     * Allows you specify a PDFOutline as the root outline item for this document.  When the PDF is saved the outline tree
+     * Allows you specify a PDFOutline as the root outline item for this document. When the PDF is saved the outline
+     * tree
      * structure is written out to the destination PDF file. Passing NULL is a way to strip any outline from a document.
      * Returns the root outline object for the PDF (or NULL if none).
      */
@@ -360,7 +367,8 @@ public class PDFDocument extends NSObject implements NSCopying {
     public native PDFOutline outlineRoot();
 
     /**
-     * Returns a PDFPage object representing the page at index. Will raise an exception if index is out of bounds. Indices
+     * Returns a PDFPage object representing the page at index. Will raise an exception if index is out of bounds.
+     * Indices
      * are zero-based.
      */
     @Generated
@@ -368,9 +376,10 @@ public class PDFDocument extends NSObject implements NSCopying {
     public native PDFPage pageAtIndex(@NUInt long index);
 
     /**
-     * This is the class that will be allocated and initialized when page objects are created for the document.  The
+     * This is the class that will be allocated and initialized when page objects are created for the document. The
      * default implementation returns [PDFPage class] but if you want PDFDocument to use your own custom class you can
-     * subclass PDFDocument and implement this method to return your own custom class.  Your class should be a subclass of
+     * subclass PDFDocument and implement this method to return your own custom class. Your class should be a subclass
+     * of
      * PDFPage (otherwise the behavior is undefined).
      */
     @Generated
@@ -424,7 +433,7 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Returns a selection representing text from page startPage and point startPt to page endPage and to point endPt on
-     * that page. Points are in page-space and relative to their respective pages.  Start and end page can be the same
+     * that page. Points are in page-space and relative to their respective pages. Start and end page can be the same
      * (and are then equivalent to calling -[PDFPage selectionFromPoint: toPoint:]).
      */
     @Generated
@@ -433,7 +442,7 @@ public class PDFDocument extends NSObject implements NSCopying {
             PDFPage endPage, @ByValue CGPoint endPoint);
 
     /**
-     * If a PDFDocument has a delegate, delegate methods may be called.  See: NSNotificationNames and
+     * If a PDFDocument has a delegate, delegate methods may be called. See: NSNotificationNames and
      * PDFDocumentDelegate below.
      */
     @Generated
@@ -441,7 +450,7 @@ public class PDFDocument extends NSObject implements NSCopying {
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PDFDocumentDelegate value);
 
     /**
-     * If a PDFDocument has a delegate, delegate methods may be called.  See: NSNotificationNames and
+     * If a PDFDocument has a delegate, delegate methods may be called. See: NSNotificationNames and
      * PDFDocumentDelegate below.
      */
     @Generated
@@ -457,15 +466,17 @@ public class PDFDocument extends NSObject implements NSCopying {
     }
 
     /**
-     * Returns a dictionary with PDF metadata. Metadata is optional for PDF's and so some of the keys may be missing or the
-     * entire dictionary may be empty.  See attributes above for keys.
+     * Returns a dictionary with PDF metadata. Metadata is optional for PDF's and so some of the keys may be missing or
+     * the
+     * entire dictionary may be empty. See attributes above for keys.
      */
     @Generated
     @Selector("setDocumentAttributes:")
     public native void setDocumentAttributes(NSDictionary<?, ?> value);
 
     /**
-     * Allows you specify a PDFOutline as the root outline item for this document.  When the PDF is saved the outline tree
+     * Allows you specify a PDFOutline as the root outline item for this document. When the PDF is saved the outline
+     * tree
      * structure is written out to the destination PDF file. Passing NULL is a way to strip any outline from a document.
      * Returns the root outline object for the PDF (or NULL if none).
      */
@@ -490,9 +501,11 @@ public class PDFDocument extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * Means of passing in a password to unlock encrypted PDF's.  Calling -[unlockWithPassword:] will attempt to unlock the
-     * PDF. If successful, a PDFDocumentDidUnlockNotification notification is sent. You cannot "re-lock" a PDF by passing
-     * in a bogus password.  Returns YES if the document is now unlocked, NO otherwise ([self isLocked] == NO).
+     * Means of passing in a password to unlock encrypted PDF's. Calling -[unlockWithPassword:] will attempt to unlock
+     * the
+     * PDF. If successful, a PDFDocumentDidUnlockNotification notification is sent. You cannot "re-lock" a PDF by
+     * passing
+     * in a bogus password. Returns YES if the document is now unlocked, NO otherwise ([self isLocked] == NO).
      */
     @Generated
     @Selector("unlockWithPassword:")
@@ -504,9 +517,12 @@ public class PDFDocument extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * -[writeToFile:withOptions:] and -[writeToURL:withOptions:] methods may take any CoreGraphics options that are typically
-     * passed into CGPDFContextCreate(...) and CGPDFContextCreateWithURL(...)'s auxiliaryInfo dictionary. For encryption, you
-     * may provide an owner and user password via the keys PDFDocumentWriteOption, where the values should be non-zero length
+     * -[writeToFile:withOptions:] and -[writeToURL:withOptions:] methods may take any CoreGraphics options that are
+     * typically
+     * passed into CGPDFContextCreate(...) and CGPDFContextCreateWithURL(...)'s auxiliaryInfo dictionary. For
+     * encryption, you
+     * may provide an owner and user password via the keys PDFDocumentWriteOption, where the values should be non-zero
+     * length
      * strings.
      */
     @Generated

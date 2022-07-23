@@ -556,12 +556,12 @@ public class CMMotionManager extends NSObject {
     public native void startGyroUpdates();
 
     /**
-     * *  startGyroUpdatesToQueue:withHandler:
+     * * startGyroUpdatesToQueue:withHandler:
      * *
-     * *  Discussion:
-     * *    Starts gyro updates, providing data to the given handler through the given queue.
-     * *    Note that when the updates are stopped, all operations in the
-     * *    given NSOperationQueue will be cancelled.
+     * * Discussion:
+     * * Starts gyro updates, providing data to the given handler through the given queue.
+     * * Note that when the updates are stopped, all operations in the
+     * * given NSOperationQueue will be cancelled.
      */
     @Generated
     @Selector("startGyroUpdatesToQueue:withHandler:")

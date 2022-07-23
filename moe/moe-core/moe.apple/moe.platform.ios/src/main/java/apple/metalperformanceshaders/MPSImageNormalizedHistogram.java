@@ -90,14 +90,14 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   clipRectSource
+     * [@property] clipRectSource
      * <p>
      * The source rectangle to use when reading data.
      * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
-     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("clipRectSource")
@@ -122,10 +122,12 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * @param source          A valid MTLTexture containing the source image for the filter
      * @param minmaxTexture   A valid MTLTexture in which the min/max pixel values from source will be returned
      * @param histogram       A valid MTLBuffer to receive the histogram results.
-     * @param histogramOffset Byte offset into histogram buffer at which to write the histogram results. Must be a multiple of 32 bytes.
-     *                        The histogram results / channel are stored together.  The number of channels for which
+     * @param histogramOffset Byte offset into histogram buffer at which to write the histogram results. Must be a
+     *                        multiple of 32 bytes.
+     *                        The histogram results / channel are stored together. The number of channels for which
      *                        histogram results are stored is determined by the number of channels in the image.
-     *                        If histogramInfo.histogramForAlpha is false and the source image is RGBA then only histogram
+     *                        If histogramInfo.histogramForAlpha is false and the source image is RGBA then only
+     *                        histogram
      *                        results for RGB channels are stored.
      *                        <p>
      *                        The histogram results are stored in the histogram buffer as follows:
@@ -150,7 +152,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * The amount of space in the output MTLBuffer the histogram will take up.
      * <p>
      * This convenience function calculates the minimum amount of space
-     * needed in the output histogram for the results.  The MTLBuffer should
+     * needed in the output histogram for the results. The MTLBuffer should
      * be at least this length, longer if histogramOffset is non-zero.
      *
      * @param sourceFormat The MTLPixelFormat of the source image. This is
@@ -177,7 +179,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -240,14 +242,14 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   clipRectSource
+     * [@property] clipRectSource
      * <p>
      * The source rectangle to use when reading data.
      * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
-     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("setClipRectSource:")
@@ -258,7 +260,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   zeroHistogram
+     * [@property] zeroHistogram
      * <p>
      * Zero-initalize the histogram results
      * <p>
@@ -289,7 +291,7 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     public static native long version_static();
 
     /**
-     * [@property]   zeroHistogram
+     * [@property] zeroHistogram
      * <p>
      * Zero-initalize the histogram results
      * <p>

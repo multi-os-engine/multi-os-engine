@@ -91,7 +91,8 @@ public class PHASESpatialPipeline extends NSObject {
      * <p>
      * A dictionary of entries in the Spatial Pipeline.
      * <p>
-     * Upon initialization, an entry will be created for every flag in the PHASESpatialPipelineFlags passed to PHASESpatialPipeline:initWithFlags.
+     * Upon initialization, an entry will be created for every flag in the PHASESpatialPipelineFlags passed to
+     * PHASESpatialPipeline:initWithFlags.
      */
     @Generated
     @Selector("entries")

@@ -46,7 +46,7 @@ public final class UILineBreakMode {
      */
     @Deprecated @Generated @NInt public static final long TailTruncation = 0x0000000000000004L;
     /**
-     * Truncate middle of line:  "ab...yz". Will truncate multiline text in the middle
+     * Truncate middle of line: "ab...yz". Will truncate multiline text in the middle
      */
     @Deprecated @Generated @NInt public static final long MiddleTruncation = 0x0000000000000005L;
 

@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKCategoryValueContraceptive
+ * [@enum] HKCategoryValueContraceptive
  * <p>
  * Set of values to indicate the type of contraceptive.
  */

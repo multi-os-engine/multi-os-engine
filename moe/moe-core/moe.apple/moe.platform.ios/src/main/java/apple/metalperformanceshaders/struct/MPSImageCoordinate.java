@@ -36,7 +36,7 @@ public final class MPSImageCoordinate extends StructObject {
     }
 
     /**
-     * <    The horizontal component of the coordinate. Units: pixels
+     * < The horizontal component of the coordinate. Units: pixels
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -44,14 +44,14 @@ public final class MPSImageCoordinate extends StructObject {
     public native long x();
 
     /**
-     * <    The horizontal component of the coordinate. Units: pixels
+     * < The horizontal component of the coordinate. Units: pixels
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setX(@NUInt long value);
 
     /**
-     * <    The vertical component of the coordinate. Units: pixels
+     * < The vertical component of the coordinate. Units: pixels
      */
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -59,14 +59,14 @@ public final class MPSImageCoordinate extends StructObject {
     public native long y();
 
     /**
-     * <    The vertical component of the coordinate. Units: pixels
+     * < The vertical component of the coordinate. Units: pixels
      */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setY(@NUInt long value);
 
     /**
-     * <    The index of the channel or feature channel within the pixel
+     * < The index of the channel or feature channel within the pixel
      */
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -74,7 +74,7 @@ public final class MPSImageCoordinate extends StructObject {
     public native long channel();
 
     /**
-     * <    The index of the channel or feature channel within the pixel
+     * < The index of the channel or feature channel within the pixel
      */
     @Generated
     @StructureField(order = 2, isGetter = false)

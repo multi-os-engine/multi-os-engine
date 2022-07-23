@@ -156,7 +156,7 @@ public class EKCalendarItem extends EKObject {
     public native NSURL URL();
 
     /**
-     * [@property]   UUID
+     * [@property] UUID
      * <p>
      * This is now deprecated; use calendarItemIdentifier instead.
      */
@@ -208,7 +208,7 @@ public class EKCalendarItem extends EKObject {
     public native EKCalendar calendar();
 
     /**
-     * [@property]   calendarItemExternalIdentifier
+     * [@property] calendarItemExternalIdentifier
      * <p>
      * A server-provided identifier for this calendar item
      * <p>
@@ -216,7 +216,7 @@ public class EKCalendarItem extends EKObject {
      * multiple devices. For calendars stored locally on the device, including the birthday calendar,
      * it simply passes through to calendarItemIdentifier.
      * <p>
-     * This identifier is unique as of creation for every calendar item.  However, there are some
+     * This identifier is unique as of creation for every calendar item. However, there are some
      * cases where duplicate copies of a calendar item can exist in the same database, including:
      * - A calendar item was imported from an ICS file into multiple calendars
      * - An event was created in a calendar shared with the user and the user was also invited to the event
@@ -239,7 +239,7 @@ public class EKCalendarItem extends EKObject {
     public native String calendarItemExternalIdentifier();
 
     /**
-     * [@property]   calendarItemIdentifier
+     * [@property] calendarItemIdentifier
      * <p>
      * A unique identifier for a calendar item.
      * <p>
@@ -296,7 +296,7 @@ public class EKCalendarItem extends EKObject {
     public native String notes();
 
     /**
-     * [@property]   recurrenceRules
+     * [@property] recurrenceRules
      * <p>
      * An array of EKRecurrenceRules, or nil if none.
      */
@@ -344,7 +344,7 @@ public class EKCalendarItem extends EKObject {
     public native void setNotes(String value);
 
     /**
-     * [@property]   recurrenceRules
+     * [@property] recurrenceRules
      * <p>
      * An array of EKRecurrenceRules, or nil if none.
      */

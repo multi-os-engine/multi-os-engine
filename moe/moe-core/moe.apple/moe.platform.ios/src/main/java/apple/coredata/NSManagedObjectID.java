@@ -180,7 +180,9 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
     public native NSManagedObjectID init();
 
     /**
-     * indicates whether or not this ID will be replaced later, such as after a save operation (temporary IDs are assigned to newly inserted objects and replaced with permanent IDs when an object is written to a persistent store); most IDs return NO
+     * indicates whether or not this ID will be replaced later, such as after a save operation (temporary IDs are
+     * assigned to newly inserted objects and replaced with permanent IDs when an object is written to a persistent
+     * store); most IDs return NO
      */
     @Generated
     @Selector("isTemporaryID")

@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSNNResizeBilinear
  * [@dependency] This depends on Metal.framework
  * <p>
- * The MPSNNResizeBilinear filter resizes the source image  using bilinear interpolation to
+ * The MPSNNResizeBilinear filter resizes the source image using bilinear interpolation to
  * a destination whose dimensions are given by resizeWidth and resizeHeight
  * <p>
  * The number of output feature channels remains the same as the number of input feature
@@ -54,7 +54,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]   alignCorners
+     * [@property] alignCorners
      * <p>
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
      * preserving the values at the corner pixels.
@@ -141,7 +141,8 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
      * @param device       The device the filter will run on.
      * @param resizeWidth  The destination resize width in pixels
      * @param resizeHeight The destination resize height in pixels
-     * @param alignCorners Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     * @param alignCorners Specifier whether the centers of the 4 corner pixels of the input and output regions are
+     *                     aligned,
      *                     preserving the values at the corner pixels.
      * @return A valid MPSNNResizeBilinear object or nil, if failure.
      */
@@ -178,7 +179,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
     public static native MPSNNResizeBilinear new_objc();
 
     /**
-     * [@property]   resizeHeight
+     * [@property] resizeHeight
      * <p>
      * The resize height.
      */
@@ -188,7 +189,7 @@ public class MPSNNResizeBilinear extends MPSCNNKernel {
     public native long resizeHeight();
 
     /**
-     * [@property]   resizeWidth
+     * [@property] resizeWidth
      * <p>
      * The resize width.
      */

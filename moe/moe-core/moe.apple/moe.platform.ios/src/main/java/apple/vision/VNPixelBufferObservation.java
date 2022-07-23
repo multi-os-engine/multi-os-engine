@@ -31,7 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * VNPixelBufferObservation returns the prediction of a model as a CVPixelBufferRef.
  * <p>
- * This is the returned observations for models that are not classifiers and return an image as a prediction. The confidence for these observations is always 1.0.
+ * This is the returned observations for models that are not classifiers and return an image as a prediction. The
+ * confidence for these observations is always 1.0.
  */
 @Generated
 @Library("Vision")
@@ -169,7 +170,9 @@ public class VNPixelBufferObservation extends VNObservation {
     public static native long version_static();
 
     /**
-     * The name used in the model description of the CoreML model that produced this observation allowing to correlate the observation back to the output of the model. This can be nil if the observation is not the result of a VNCoreMLRequest operation.
+     * The name used in the model description of the CoreML model that produced this observation allowing to correlate
+     * the observation back to the output of the model. This can be nil if the observation is not the result of a
+     * VNCoreMLRequest operation.
      */
     @Generated
     @Selector("featureName")

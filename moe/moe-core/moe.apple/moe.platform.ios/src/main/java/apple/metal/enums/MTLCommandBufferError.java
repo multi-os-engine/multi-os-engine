@@ -25,13 +25,15 @@ import org.moe.natj.general.ann.NUInt;
  * Error codes that can be found in MTLCommandBuffer.error
  * <p>
  * [@constant] MTLCommandBufferErrorInternal
- * An internal error that doesn't fit into the other categories. The actual low level error code is encoded in the local description.
+ * An internal error that doesn't fit into the other categories. The actual low level error code is encoded in the local
+ * description.
  * <p>
  * [@constant] MTLCommandBufferErrorTimeout
  * Execution of this command buffer took too long, execution of this command was interrupted and aborted.
  * <p>
  * [@constant] MTLCommandBufferErrorPageFault
- * Execution of this command buffer generated an unserviceable GPU page fault. This can caused by buffer read write attribute mismatch or out of boundary access.
+ * Execution of this command buffer generated an unserviceable GPU page fault. This can caused by buffer read write
+ * attribute mismatch or out of boundary access.
  * <p>
  * [@constant] MTLCommandBufferErrorAccessRevoked
  * Access to this device has been revoked because this client has been responsible for too many timeouts or hangs.
@@ -43,16 +45,19 @@ import org.moe.natj.general.ann.NUInt;
  * Insufficient memory was available to execute this command buffer.
  * <p>
  * [@constant] MTLCommandBufferErrorInvalidResource
- * The command buffer referenced an invalid resource.  This is most commonly caused when the caller deletes a resource before executing a command buffer that refers to it.
+ * The command buffer referenced an invalid resource. This is most commonly caused when the caller deletes a resource
+ * before executing a command buffer that refers to it.
  * <p>
  * [@constant] MTLCommandBufferErrorMemoryless
- * One or more internal resources limits reached that prevent using memoryless render pass attachments. See error string for more detail.
+ * One or more internal resources limits reached that prevent using memoryless render pass attachments. See error string
+ * for more detail.
  * <p>
  * [@constant] MTLCommandBufferErrorDeviceRemoved
  * The device was physically removed before the command could finish execution
  * <p>
  * [@constant] MTLCommandBufferErrorStackOverflow
- * Execution of the command buffer was stopped due to Stack Overflow Exception. [MTLComputePipelineDescriptor maxCallStackDepth] setting needs to be checked.
+ * Execution of the command buffer was stopped due to Stack Overflow Exception. [MTLComputePipelineDescriptor
+ * maxCallStackDepth] setting needs to be checked.
  */
 @Generated
 public final class MTLCommandBufferError {

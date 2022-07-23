@@ -13,7 +13,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]    NFCVASReaderSessionDelegate
+ * [@protocol] NFCVASReaderSessionDelegate
  * <p>
  * Value Added Service (VAS) reader session callbacks.
  */
@@ -25,7 +25,7 @@ public interface NFCVASReaderSessionDelegate {
     /**
      * readerSession:didInvalidateWithError:
      * <p>
-     * Gets called when a session becomes invalid.  At this point the client is expected to discard
+     * Gets called when a session becomes invalid. At this point the client is expected to discard
      * the returned session object.
      *
      * @param session The session object that is invalidated.
@@ -38,11 +38,11 @@ public interface NFCVASReaderSessionDelegate {
     /**
      * readerSession:didReceiveVASResponses:
      * <p>
-     * Gets called when the reader completes the requested VAS transaction.  Polling
+     * Gets called when the reader completes the requested VAS transaction. Polling
      * is automatically restarted once the detected tag is removed from the reader's read range.
      *
      * @param session   The session object used for tag detection.
-     * @param responses Array of @link NFCVASResponse @link/ objects.  The order of the response objects follows the
+     * @param responses Array of @link NFCVASResponse @link/ objects. The order of the response objects follows the
      *                  sequence of GET VAS DATA sent by the reader session.
      */
     @Generated

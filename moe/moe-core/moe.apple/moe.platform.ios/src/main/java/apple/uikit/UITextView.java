@@ -70,9 +70,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITextView extends UIScrollView
-        implements UITextInput, UIContentSizeCategoryAdjusting, UITextDraggable, UITextDroppable,
-        UITextPasteConfigurationSupporting {
+public class UITextView extends UIScrollView implements UITextInput, UIContentSizeCategoryAdjusting, UITextDraggable,
+        UITextDroppable, UITextPasteConfigurationSupporting {
     static {
         NatJ.register();
     }
@@ -462,7 +461,8 @@ public class UITextView extends UIScrollView
             @NInt long direction);
 
     /**
-     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field.
+     * changing the selection will automatically set this to NO.
      */
     @Generated
     @Selector("clearsOnInsertion")
@@ -551,7 +551,8 @@ public class UITextView extends UIScrollView
     public native UITextView initWithFrame(@ByValue CGRect frame);
 
     /**
-     * Create a new text view with the specified text container (can be nil) - this is the new designated initializer for this class
+     * Create a new text view with the specified text container (can be nil) - this is the new designated initializer
+     * for this class
      */
     @Generated
     @Selector("initWithFrame:textContainer:")
@@ -567,7 +568,7 @@ public class UITextView extends UIScrollView
     public native UITextInputDelegate inputDelegate();
 
     /**
-     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
      */
     @Generated
@@ -608,14 +609,16 @@ public class UITextView extends UIScrollView
     public native void setSecureTextEntry(boolean value);
 
     /**
-     * toggle selectability, which controls the ability of the user to select content and interact with URLs & attachments. On tvOS this also makes the text view focusable.
+     * toggle selectability, which controls the ability of the user to select content and interact with URLs &
+     * attachments. On tvOS this also makes the text view focusable.
      */
     @Generated
     @Selector("isSelectable")
     public native boolean isSelectable();
 
     /**
-     * toggle selectability, which controls the ability of the user to select content and interact with URLs & attachments. On tvOS this also makes the text view focusable.
+     * toggle selectability, which controls the ability of the user to select content and interact with URLs &
+     * attachments. On tvOS this also makes the text view focusable.
      */
     @Generated
     @Selector("setSelectable:")
@@ -747,7 +750,8 @@ public class UITextView extends UIScrollView
     public native void setBaseWritingDirectionForRange(@NInt long writingDirection, UITextRange range);
 
     /**
-     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field.
+     * changing the selection will automatically set this to NO.
      */
     @Generated
     @Selector("setClearsOnInsertion:")
@@ -803,7 +807,7 @@ public class UITextView extends UIScrollView
     }
 
     /**
-     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
      */
     @Generated
@@ -1160,14 +1164,18 @@ public class UITextView extends UIScrollView
     public native void setPasswordRules(UITextInputPasswordRules value);
 
     /**
-     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the
+     * original font point sizes when the contents of the text view are copied to the pasteboard. Apps that show a lot
+     * of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
      */
     @Generated
     @Selector("setUsesStandardTextScaling:")
     public native void setUsesStandardTextScaling(boolean value);
 
     /**
-     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the original font point sizes when the contents of the text view are copied to the pasteboard.  Apps that show a lot of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the
+     * original font point sizes when the contents of the text view are copied to the pasteboard. Apps that show a lot
+     * of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
      */
     @Generated
     @Selector("usesStandardTextScaling")

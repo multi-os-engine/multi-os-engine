@@ -111,7 +111,8 @@ public class ASAuthorizationController extends NSObject {
     /**
      * Initialize the controller with authorization requests.
      *
-     * @param authorizationRequests At least one request should be provided. Requests of same type maybe honored in first in first out order
+     * @param authorizationRequests At least one request should be provided. Requests of same type maybe honored in
+     *                              first in first out order
      */
     @Generated
     @Selector("initWithAuthorizationRequests:")
@@ -145,8 +146,9 @@ public class ASAuthorizationController extends NSObject {
     public static native ASAuthorizationController new_objc();
 
     /**
-     * Initiate the authorization flows.  Upon completion, the delegate will be called with either success or failure.
-     * Certain authorization flows may require a presentation context, the presentationContextProvider will be called to provider it.
+     * Initiate the authorization flows. Upon completion, the delegate will be called with either success or failure.
+     * Certain authorization flows may require a presentation context, the presentationContextProvider will be called to
+     * provider it.
      * <p>
      * The instance will remain retained until the user completes the flow and the delegate callback is made.
      */

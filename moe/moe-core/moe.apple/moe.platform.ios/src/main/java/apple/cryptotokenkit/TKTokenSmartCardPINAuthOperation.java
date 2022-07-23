@@ -43,14 +43,18 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     }
 
     /**
-     * APDU template into which PIN gets filled in. If set to nil, the system will not attempt to authenticate by sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the authentication.  It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for secure PIN entry (provided that the reader has one).
+     * APDU template into which PIN gets filled in. If set to nil, the system will not attempt to authenticate by
+     * sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the
+     * authentication. It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for
+     * secure PIN entry (provided that the reader has one).
      */
     @Generated
     @Selector("APDUTemplate")
     public native NSData APDUTemplate();
 
     /**
-     * PIN value which will be set when 'finishWithError:' gets triggered.  Note that the PIN is not set in case that APDUTemplate was set.  In this case, PIN was already sent to the card using specified template.
+     * PIN value which will be set when 'finishWithError:' gets triggered. Note that the PIN is not set in case that
+     * APDUTemplate was set. In this case, PIN was already sent to the card using specified template.
      */
     @Generated
     @Selector("PIN")
@@ -164,14 +168,18 @@ public class TKTokenSmartCardPINAuthOperation extends TKTokenAuthOperation {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * APDU template into which PIN gets filled in. If set to nil, the system will not attempt to authenticate by sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the authentication.  It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for secure PIN entry (provided that the reader has one).
+     * APDU template into which PIN gets filled in. If set to nil, the system will not attempt to authenticate by
+     * sending the formatted APDU to the SmartCard, but rather the token itself is expected to perform the
+     * authentication. It is preferred to provide APDUTemplate if possible, because it allows using hardware PINPad for
+     * secure PIN entry (provided that the reader has one).
      */
     @Generated
     @Selector("setAPDUTemplate:")
     public native void setAPDUTemplate(NSData value);
 
     /**
-     * PIN value which will be set when 'finishWithError:' gets triggered.  Note that the PIN is not set in case that APDUTemplate was set.  In this case, PIN was already sent to the card using specified template.
+     * PIN value which will be set when 'finishWithError:' gets triggered. Note that the PIN is not set in case that
+     * APDUTemplate was set. In this case, PIN was already sent to the card using specified template.
      */
     @Generated
     @Selector("setPIN:")

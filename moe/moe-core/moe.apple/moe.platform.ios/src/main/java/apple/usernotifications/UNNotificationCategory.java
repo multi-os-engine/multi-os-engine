@@ -180,7 +180,8 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * The unique identifier for this category. The UNNotificationCategory's actions will be displayed on notifications when the UNNotificationCategory's identifier matches the UNNotificationRequest's categoryIdentifier.
+     * The unique identifier for this category. The UNNotificationCategory's actions will be displayed on notifications
+     * when the UNNotificationCategory's identifier matches the UNNotificationRequest's categoryIdentifier.
      */
     @Generated
     @Selector("identifier")
@@ -195,7 +196,8 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
     public native UNNotificationCategory initWithCoder(NSCoder coder);
 
     /**
-     * The intents supported support for notifications of this category. See <Intents/INIntentIdentifiers.h> for possible values.
+     * The intents supported support for notifications of this category. See <Intents/INIntentIdentifiers.h> for
+     * possible values.
      */
     @Generated
     @Selector("intentIdentifiers")

@@ -206,7 +206,8 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
      * One of
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordCreation,
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordUpdate, or
-     * [@c] CKQuerySubscriptionOptionsFiresOnRecordDeletion must be specified or an @c NSInvalidArgumentException will be thrown.
+     * [@c] CKQuerySubscriptionOptionsFiresOnRecordDeletion must be specified or an @c NSInvalidArgumentException will
+     * be thrown.
      */
     @Generated
     @Selector("querySubscriptionOptions")
@@ -221,8 +222,9 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     public native String recordType();
 
     /**
-     * Optional property.  If set, a query subscription is scoped to only record changes in the indicated zone.
-     * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the database.
+     * Optional property. If set, a query subscription is scoped to only record changes in the indicated zone.
+     * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the
+     * database.
      */
     @Generated
     @Selector("setZoneID:")
@@ -235,8 +237,9 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     }
 
     /**
-     * Optional property.  If set, a query subscription is scoped to only record changes in the indicated zone.
-     * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the database.
+     * Optional property. If set, a query subscription is scoped to only record changes in the indicated zone.
+     * Query Subscriptions that do not specify a @c zoneID are scoped to record changes across all zones in the
+     * database.
      */
     @Generated
     @Selector("zoneID")

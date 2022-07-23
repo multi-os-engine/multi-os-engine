@@ -44,7 +44,8 @@ public interface CPListTemplateItem {
     /**
      * A Boolean value indicating whether the button is enabled.
      * <p>
-     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
+     * property is @c YES.
      */
     @Generated
     @Selector("isEnabled")
@@ -53,7 +54,8 @@ public interface CPListTemplateItem {
     /**
      * A Boolean value indicating whether the button is enabled.
      * <p>
-     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this property is @c YES.
+     * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
+     * property is @c YES.
      */
     @Generated
     @Selector("setEnabled:")

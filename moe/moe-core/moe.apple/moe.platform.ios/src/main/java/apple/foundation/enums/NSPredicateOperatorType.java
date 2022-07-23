@@ -20,7 +20,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Type basic set of operators defined. Most are obvious; NSCustomSelectorPredicateOperatorType allows a developer to create an operator which uses the custom selector specified in the constructor to do the evaluation.
+ * Type basic set of operators defined. Most are obvious; NSCustomSelectorPredicateOperatorType allows a developer to
+ * create an operator which uses the custom selector specified in the constructor to do the evaluation.
  */
 @Generated
 public final class NSPredicateOperatorType {

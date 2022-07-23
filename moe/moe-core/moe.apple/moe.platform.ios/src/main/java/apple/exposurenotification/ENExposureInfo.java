@@ -63,7 +63,7 @@ public class ENExposureInfo extends NSObject {
      * Array index 0: Sum of durations for this exposure when attenuation <= X
      * Array index 1: Sum of durations for this exposure when attenuation <= Y
      * Array index 2: Sum of durations for this exposure when attenuation <= Z
-     * Array index 3: Sum of durations for this exposure when attenuation >  Z
+     * Array index 3: Sum of durations for this exposure when attenuation > Z
      * X, Y, Z come from the attenuationDurationThresholds on the configuration object.
      */
     @Generated

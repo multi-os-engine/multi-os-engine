@@ -15,7 +15,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@protocol] NFCTag
  * <p>
- * A NFC / RFID tag object conforms to this protocol.  The NFCReaderSession returns an instance of this type when a tag is detected.
+ * A NFC / RFID tag object conforms to this protocol. The NFCReaderSession returns an instance of this type when a tag
+ * is detected.
  */
 @Generated
 @Library("CoreNFC")
@@ -67,15 +68,15 @@ public interface NFCTag extends NSSecureCoding, NSCopying {
      * <p>
      * Check whether a detected tag is available.
      *
-     * @return <i>YES</i> if tag is available in the current reader session.  A tag remove from the RF field will become
-     * unavailable.  Tag in disconnected state will return NO.
+     * @return <i>YES</i> if tag is available in the current reader session. A tag remove from the RF field will become
+     *         unavailable. Tag in disconnected state will return NO.
      */
     @Generated
     @Selector("isAvailable")
     boolean isAvailable();
 
     /**
-     * [@property]    session
+     * [@property] session
      * <p>
      * Session that provides this tag.
      */

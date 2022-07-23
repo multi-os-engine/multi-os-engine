@@ -27,7 +27,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNFaceLandmarks2D
  * <p>
- * VNFaceLandmarks2D is the result of a face landmarks 2D request, containing detected facial landmark points organized into VNFaceLandmarkRegion2D regions. The points are accessible as a full list, or as sub-gruops representing pre-defined facial regions.
+ * VNFaceLandmarks2D is the result of a face landmarks 2D request, containing detected facial landmark points organized
+ * into VNFaceLandmarkRegion2D regions. The points are accessible as a full list, or as sub-gruops representing
+ * pre-defined facial regions.
  */
 @Generated
 @Library("Vision")
@@ -153,7 +155,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public native VNFaceLandmarkRegion2D leftEyebrow();
 
     /**
-     * leftPupil the region containing the point where the left pupil is located.  This value may be inaccurate if
+     * leftPupil the region containing the point where the left pupil is located. This value may be inaccurate if
      * the face isBlinking.
      */
     @Generated
@@ -216,7 +218,7 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public native VNFaceLandmarkRegion2D rightEyebrow();
 
     /**
-     * rightPupil the region containing the point where the right pupil is located.  This value may be inaccurate if
+     * rightPupil the region containing the point where the right pupil is located. This value may be inaccurate if
      * the face isBlinking.
      */
     @Generated

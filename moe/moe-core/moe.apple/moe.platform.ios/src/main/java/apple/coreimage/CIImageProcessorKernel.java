@@ -184,9 +184,9 @@ public class CIImageProcessorKernel extends NSObject {
      * given the required regions of the input images and other arguments.
      * <p>
      * The class method is passed two objects:
-     * 'inputs’  An array of id<CIImageProcessorInput> that the block consumes to produces output.
+     * 'inputs’ An array of id<CIImageProcessorInput> that the block consumes to produces output.
      * The input.region may be larger than the rect returned by 'roiForInputAtIndex'.
-     * 'output'  The id<CIImageProcessorOutput> that the block must provide results to.
+     * 'output' The id<CIImageProcessorOutput> that the block must provide results to.
      * ‘arguments’ The arguments dictionary passed to applyWithExtent:inputs:arguments:error:
      * The contents of these objects are not valid outside the scope of this method.
      * <p>
@@ -209,7 +209,8 @@ public class CIImageProcessorKernel extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Override this class method to implement your processor’s ROI callback, the default implementation would return outputRect.
+     * Override this class method to implement your processor’s ROI callback, the default implementation would return
+     * outputRect.
      * This will be called one or more times per render to determine what portion
      * of the input images are needed to render a given 'outputRect' of the output.
      * This will not be called if there are 0 input images.

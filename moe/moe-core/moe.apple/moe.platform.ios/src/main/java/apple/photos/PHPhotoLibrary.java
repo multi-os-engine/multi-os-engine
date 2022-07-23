@@ -75,7 +75,8 @@ public class PHPhotoLibrary extends NSObject {
     public static native PHPhotoLibrary allocWithZone(VoidPtr zone);
 
     /**
-     * Deprecated and replaced by authorizationStatusForAccessLevel:, will return \c PHAuthorizationStatusAuthorized if the user has chosen limited photo library access
+     * Deprecated and replaced by authorizationStatusForAccessLevel:, will return \c PHAuthorizationStatusAuthorized if
+     * the user has chosen limited photo library access
      */
     @Generated
     @Selector("authorizationStatus")
@@ -252,11 +253,17 @@ public class PHPhotoLibrary extends NSObject {
     public static native long authorizationStatusForAccessLevel(@NInt long accessLevel);
 
     /**
-     * Prompt the user to update their limited library selection by presenting the limited library image picker when the user has opted into limited library access mode (see \c PHAuthorizationStatusLimited )
+     * Prompt the user to update their limited library selection by presenting the limited library image picker when the
+     * user has opted into limited library access mode (see \c PHAuthorizationStatusLimited )
      * <p>
-     * Use this API when the user has enabled limited photo library access to present the limited library picker and give the user a way to update their selection. If the user has not enabled limited library access mode for this application, then this method will do nothing. This should be used when disabling the automatic limited library alert prompt (by adding \c PHPhotoLibraryPreventAutomaticLimitedAccessAlert = \c YES to the application's Info.plist).
+     * Use this API when the user has enabled limited photo library access to present the limited library picker and
+     * give the user a way to update their selection. If the user has not enabled limited library access mode for this
+     * application, then this method will do nothing. This should be used when disabling the automatic limited library
+     * alert prompt (by adding \c PHPhotoLibraryPreventAutomaticLimitedAccessAlert = \c YES to the application's
+     * Info.plist).
      * <p>
-     * Any changes applied to the limited library selection by the user will trigger a \c PHPhotoLibraryChangeObserver update that can be used to observe the changes to the selection.
+     * Any changes applied to the limited library selection by the user will trigger a \c PHPhotoLibraryChangeObserver
+     * update that can be used to observe the changes to the selection.
      *
      * @param controller The view controller that is used to present the limited library picker.
      */
@@ -277,9 +284,13 @@ public class PHPhotoLibrary extends NSObject {
     }
 
     /**
-     * Returns a dictionary that maps each local identifier from the provided array to a PLCloudIdentifierMapping result containing the cloud identifier found for that local identifier
+     * Returns a dictionary that maps each local identifier from the provided array to a PLCloudIdentifierMapping result
+     * containing the cloud identifier found for that local identifier
      * <p>
-     * This method can be very expensive so they should be used sparingly for batch lookup of all needed identifiers. Clients should work in terms of local identifiers and call these methods only once after loading from and before saving to persistent storage.  If the attempt to lookup a cloud identifier for a given local identifier fails, the error parameter will indicate the reason.
+     * This method can be very expensive so they should be used sparingly for batch lookup of all needed identifiers.
+     * Clients should work in terms of local identifiers and call these methods only once after loading from and before
+     * saving to persistent storage. If the attempt to lookup a cloud identifier for a given local identifier fails, the
+     * error parameter will indicate the reason.
      *
      * @param localIdentifiers The array of \c NSString instances whose cloud identifiers are to being requested.
      */
@@ -289,11 +300,16 @@ public class PHPhotoLibrary extends NSObject {
             NSArray<String> localIdentifiers);
 
     /**
-     * Returns a dictionary that maps each cloud identifier from the provided array to a PLLocalIdentifierMapping result containing the local identifier found for that cloud identifier.
+     * Returns a dictionary that maps each cloud identifier from the provided array to a PLLocalIdentifierMapping result
+     * containing the local identifier found for that cloud identifier.
      * <p>
-     * This method can be very expensive so they should be used sparingly for batch lookup of all needed identifiers. Clients should work in terms of local identifiers and call these methods only once after loading from and before saving to persistent storage.  If the attempt to lookup a local identifier for a given cloud identifier fails, the error parameter will indicate the reason.
+     * This method can be very expensive so they should be used sparingly for batch lookup of all needed identifiers.
+     * Clients should work in terms of local identifiers and call these methods only once after loading from and before
+     * saving to persistent storage. If the attempt to lookup a local identifier for a given cloud identifier fails, the
+     * error parameter will indicate the reason.
      *
-     * @param cloudIdentifiers The array of \c PHCloudIdentifier instances whose local identifiers are to being requested.
+     * @param cloudIdentifiers The array of \c PHCloudIdentifier instances whose local identifiers are to being
+     *                         requested.
      */
     @Generated
     @Selector("localIdentifierMappingsForCloudIdentifiers:")
@@ -301,14 +317,22 @@ public class PHPhotoLibrary extends NSObject {
             NSArray<? extends PHCloudIdentifier> cloudIdentifiers);
 
     /**
-     * Prompt the user to update their limited library selection by presenting the limited library image picker when the user has opted into limited library access mode (see \c PHAuthorizationStatusLimited )
+     * Prompt the user to update their limited library selection by presenting the limited library image picker when the
+     * user has opted into limited library access mode (see \c PHAuthorizationStatusLimited )
      * <p>
-     * Use this API when the user has enabled limited photo library access to present the limited library picker and give the user a way to update their selection. If the user has not enabled limited library access mode for this application, then this method will do nothing. This should be used when disabling the automatic limited library alert prompt (by adding \c PHPhotoLibraryPreventAutomaticLimitedAccessAlert = \c YES to the application's Info.plist).
+     * Use this API when the user has enabled limited photo library access to present the limited library picker and
+     * give the user a way to update their selection. If the user has not enabled limited library access mode for this
+     * application, then this method will do nothing. This should be used when disabling the automatic limited library
+     * alert prompt (by adding \c PHPhotoLibraryPreventAutomaticLimitedAccessAlert = \c YES to the application's
+     * Info.plist).
      * <p>
-     * In addition to being provided the new asset local identifiers in the callback any changes applied to the limited library selection by the user will trigger a \c PHPhotoLibraryChangeObserver update that can be used to observe the changes to the selection.
+     * In addition to being provided the new asset local identifiers in the callback any changes applied to the limited
+     * library selection by the user will trigger a \c PHPhotoLibraryChangeObserver update that can be used to observe
+     * the changes to the selection.
      *
      * @param controller        The view controller that is used to present the limited library picker.
-     * @param completionHandler The block that will be called upon the user finishing their selection. Only newly selected assets will be provided to the block.
+     * @param completionHandler The block that will be called upon the user finishing their selection. Only newly
+     *                          selected assets will be provided to the block.
      */
     @Generated
     @Selector("presentLimitedLibraryPickerFromViewController:completionHandler:")

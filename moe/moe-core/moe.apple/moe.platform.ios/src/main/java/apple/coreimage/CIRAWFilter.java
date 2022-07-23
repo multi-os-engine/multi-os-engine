@@ -80,16 +80,17 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of global tone curve to apply to the image.
      * A value of 0 indicates no global tone curve, i.e. linear response.
      * A value of 1 indicates full global tone curve.
-     * The value should be the range of 0...1.  The default value is 1.
+     * The value should be the range of 0...1. The default value is 1.
      */
     @Generated
     @Selector("boostAmount")
     public native float boostAmount();
 
     /**
-     * The amount to boost the shadow areas of the image. Can be used to lighten details in shadows. This has no effect if the boostAmount is 0.
-     * A value less than 1 will darken the shadows.  A value greater than 1 will lighten the shadows.
-     * The value should be the range of 0...2.  The default value is 1.
+     * The amount to boost the shadow areas of the image. Can be used to lighten details in shadows. This has no effect
+     * if the boostAmount is 0.
+     * A value less than 1 will darken the shadows. A value greater than 1 will lighten the shadows.
+     * The value should be the range of 0...2. The default value is 1.
      */
     @Generated
     @Selector("boostShadowAmount")
@@ -126,7 +127,10 @@ public class CIRAWFilter extends CIFilter {
     public static native String debugDescription_static();
 
     /**
-     * Version string representing the decoder version to be used. A newly initialized object defaults to the newest available decoder version for the given image type. User can request an alternative, older version in order to maintain compatibility with older releases. Must be one of supportedDecoderVersions (above), otherwise a nil output image will be generated.
+     * Version string representing the decoder version to be used. A newly initialized object defaults to the newest
+     * available decoder version for the given image type. User can request an alternative, older version in order to
+     * maintain compatibility with older releases. Must be one of supportedDecoderVersions (above), otherwise a nil
+     * output image will be generated.
      */
     @Generated
     @Selector("decoderVersion")
@@ -152,7 +156,7 @@ public class CIRAWFilter extends CIFilter {
      * A value of 0 indicates no extended dynamic range output.
      * A value of 1 indicates default extended dynamic range output.
      * A value of 2 indicates maximum extended dynamic range output.
-     * The value should be the range of 0...2.  The default value is 0.
+     * The value should be the range of 0...2. The default value is 0.
      */
     @Generated
     @Selector("extendedDynamicRangeAmount")
@@ -241,7 +245,7 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of chroma noise reduction to apply to the image.
      * A value of 0 indicates no chroma noise reduction.
      * A value of 1 indicates maximum chroma noise reduction.
-     * The value should be the range of 0...1.  The default value will vary per image.
+     * The value should be the range of 0...1. The default value will vary per image.
      * The 'isColorNoiseReductionSupported' property is false if the current image doesn't support this adjustment.
      */
     @Generated
@@ -252,7 +256,7 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of local contrast to apply to the edges of the image.
      * A value of 0 indicates no contrast applied.
      * A value of 1 indicates maximum contrast applied.
-     * The value should be the range of 0...1.  The default value will vary per image.
+     * The value should be the range of 0...1. The default value will vary per image.
      * The 'isContrastSupported' property is false if the current image doesn't support this adjustment.
      */
     @Generated
@@ -263,7 +267,7 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of detail enhancement to apply to the edges of the image.
      * A value of 0 indicates no detail enhancement.
      * A value of 3 indicates maximum detail enhancement.
-     * The value should be the range of 0...3.  The default value will vary per image.
+     * The value should be the range of 0...3. The default value will vary per image.
      * The 'isDetailSupported' property is false if the current image doesn't support this adjustment.
      */
     @Generated
@@ -302,7 +306,7 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of local tone curve to apply to the image.
      * A value of 0 indicates no local tone curve, i.e. linear response.
      * A value of 1 indicates full global tone curve.
-     * The value should be the range of 0...1.  The default value will vary per image.
+     * The value should be the range of 0...1. The default value will vary per image.
      * The 'isLocalToneMapSupported' property is false if the current image doesn't support this adjustment.
      */
     @Generated
@@ -313,7 +317,7 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of luminance noise reduction to apply to the image.
      * A value of 0 indicates no luminance noise reduction.
      * A value of 1 indicates maximum luminance noise reduction.
-     * The value should be the range of 0...1.  The default value will vary per image.
+     * The value should be the range of 0...1. The default value will vary per image.
      * The 'isLuminanceNoiseReductionSupported' property is false if the current image doesn't support this adjustment.
      */
     @Generated
@@ -324,7 +328,7 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of moire artifact reduction to apply to high frequency areas of the image.
      * A value of 0 indicates no moire reduction.
      * A value of 3 indicates maximum moire reduction.
-     * The value should be the range of 0...1.  The default value will vary per image.
+     * The value should be the range of 0...1. The default value will vary per image.
      * The 'isMoireReductionSupported' property is false if the current image doesn't support this adjustment.
      */
     @Generated
@@ -335,7 +339,7 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of sharpness to apply to the edges of the image.
      * A value of 0 indicates no sharpness applied.
      * A value of 1 indicates maximum sharpness applied.
-     * The value should be the range of 0...1.  The default value will vary per image.
+     * The value should be the range of 0...1. The default value will vary per image.
      * The 'isSharpnessSupported' property is false if the current image doesn't support this adjustment.
      */
     @Generated
@@ -396,7 +400,8 @@ public class CIRAWFilter extends CIFilter {
     /**
      * These properties provide differnet was to query or modify the image white balance
      * Use 'neutralChromaticity' to query or change white balance based on x,y chromaticity values in the range (0..1)
-     * Use 'neutralTemperature' and 'neutralTemperature' to query or change white balance based temp/tint values in the ranges (2000K..50000K, -150..150)
+     * Use 'neutralTemperature' and 'neutralTemperature' to query or change white balance based temp/tint values in the
+     * ranges (2000K..50000K, -150..150)
      * Use 'neutralLocation' to change the white balance based on an x,y pixel coordiniates in the image.
      */
     @Generated
@@ -463,7 +468,8 @@ public class CIRAWFilter extends CIFilter {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The desired scale factor at which the image will be eventually drawn. Setting this value can greatly improve the drawing performance.
+     * The desired scale factor at which the image will be eventually drawn. Setting this value can greatly improve the
+     * drawing performance.
      * A value of 1.0 results in a full size output image, values smaller than 1 will result in a smaller output image.
      * The value should be the range of 0...1. Default value is 1
      */
@@ -507,16 +513,17 @@ public class CIRAWFilter extends CIFilter {
      * A value to control the amount of global tone curve to apply to the image.
      * A value of 0 indicates no global tone curve, i.e. linear response.
      * A value of 1 indicates full global tone curve.
-     * The value should be the range of 0...1.  The default value is 1.
+     * The value should be the range of 0...1. The default value is 1.
      */
     @Generated
     @Selector("setBoostAmount:")
     public native void setBoostAmount(float value);
 
     /**
-     * The amount to boost the shadow areas of the image. Can be used to lighten details in shadows. This has no effect if the boostAmount is 0.
-     * A value less than 1 will darken the shadows.  A value greater than 1 will lighten the shadows.
-     * The value should be the range of 0...2.  The default value is 1.
+     * The amount to boost the shadow areas of the image. Can be used to lighten details in shadows. This has no effect
+     * if the boostAmount is 0.
+     * A value less than 1 will darken the shadows. A value greater than 1 will lighten the shadows.
+     * The value should be the range of 0...2. The default value is 1.
      */
     @Generated
     @Selector("setBoostShadowAmount:")
@@ -531,7 +538,10 @@ public class CIRAWFilter extends CIFilter {
     public native void setContrastAmount(float value);
 
     /**
-     * Version string representing the decoder version to be used. A newly initialized object defaults to the newest available decoder version for the given image type. User can request an alternative, older version in order to maintain compatibility with older releases. Must be one of supportedDecoderVersions (above), otherwise a nil output image will be generated.
+     * Version string representing the decoder version to be used. A newly initialized object defaults to the newest
+     * available decoder version for the given image type. User can request an alternative, older version in order to
+     * maintain compatibility with older releases. Must be one of supportedDecoderVersions (above), otherwise a nil
+     * output image will be generated.
      */
     @Generated
     @Selector("setDecoderVersion:")
@@ -560,7 +570,7 @@ public class CIRAWFilter extends CIFilter {
      * A value of 0 indicates no extended dynamic range output.
      * A value of 1 indicates default extended dynamic range output.
      * A value of 2 indicates maximum extended dynamic range output.
-     * The value should be the range of 0...2.  The default value is 0.
+     * The value should be the range of 0...2. The default value is 0.
      */
     @Generated
     @Selector("setExtendedDynamicRangeAmount:")
@@ -600,7 +610,8 @@ public class CIRAWFilter extends CIFilter {
     /**
      * These properties provide differnet was to query or modify the image white balance
      * Use 'neutralChromaticity' to query or change white balance based on x,y chromaticity values in the range (0..1)
-     * Use 'neutralTemperature' and 'neutralTemperature' to query or change white balance based temp/tint values in the ranges (2000K..50000K, -150..150)
+     * Use 'neutralTemperature' and 'neutralTemperature' to query or change white balance based temp/tint values in the
+     * ranges (2000K..50000K, -150..150)
      * Use 'neutralLocation' to change the white balance based on an x,y pixel coordiniates in the image.
      */
     @Generated
@@ -628,7 +639,8 @@ public class CIRAWFilter extends CIFilter {
     public native void setOrientation(int value);
 
     /**
-     * The desired scale factor at which the image will be eventually drawn. Setting this value can greatly improve the drawing performance.
+     * The desired scale factor at which the image will be eventually drawn. Setting this value can greatly improve the
+     * drawing performance.
      * A value of 1.0 results in a full size output image, values smaller than 1 will result in a smaller output image.
      * The value should be the range of 0...1. Default value is 1
      */
@@ -674,7 +686,8 @@ public class CIRAWFilter extends CIFilter {
     public static native NSArray<String> supportedCameraModels();
 
     /**
-     * Array of all supported decoder versions for the given image type, sorted in increasingly newer order. All entries would represent a valid version identifier set to 'decoderVersion'.
+     * Array of all supported decoder versions for the given image type, sorted in increasingly newer order. All entries
+     * would represent a valid version identifier set to 'decoderVersion'.
      */
     @Generated
     @Selector("supportedDecoderVersions")

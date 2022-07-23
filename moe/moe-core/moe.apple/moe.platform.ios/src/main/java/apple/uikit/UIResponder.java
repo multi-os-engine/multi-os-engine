@@ -54,9 +54,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIResponder extends NSObject
-        implements UIResponderStandardEditActions, UIUserActivityRestoring, UIPasteConfigurationSupporting,
-        UIActivityItemsConfigurationProviding {
+public class UIResponder extends NSObject implements UIResponderStandardEditActions, UIUserActivityRestoring,
+        UIPasteConfigurationSupporting, UIActivityItemsConfigurationProviding {
     static {
         NatJ.register();
     }
@@ -239,7 +238,7 @@ public class UIResponder extends NSObject
     public native UITextInputAssistantItem inputAssistantItem();
 
     /**
-     * Called and presented when object becomes first responder.  Goes up the responder chain.
+     * Called and presented when object becomes first responder. Goes up the responder chain.
      */
     @Generated
     @Selector("inputView")
@@ -247,7 +246,7 @@ public class UIResponder extends NSObject
 
     /**
      * For viewController equivalents of -inputView and -inputAccessoryView
-     * Called and presented when object becomes first responder.  Goes up the responder chain.
+     * Called and presented when object becomes first responder. Goes up the responder chain.
      */
     @Generated
     @Selector("inputViewController")
@@ -301,7 +300,7 @@ public class UIResponder extends NSObject
      * press it is handling (those presses it received in pressesBegan:withEvent:).
      * pressesChanged:withEvent: will be invoked for presses that provide an analog value
      * (like thumbsticks or analog push buttons)
-     * *** You must handle cancelled presses to ensure correct behavior in your application.  Failure to
+     * *** You must handle cancelled presses to ensure correct behavior in your application. Failure to
      * do so is very likely to lead to incorrect behavior or crashes.
      */
     @Generated
@@ -321,7 +320,8 @@ public class UIResponder extends NSObject
     public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
     /**
-     * If called while object is first responder, reloads inputView, inputAccessoryView, and textInputMode.  Otherwise ignored.
+     * If called while object is first responder, reloads inputView, inputAccessoryView, and textInputMode. Otherwise
+     * ignored.
      */
     @Generated
     @Selector("reloadInputViews")
@@ -354,7 +354,8 @@ public class UIResponder extends NSObject
     public native void setUserActivity(NSUserActivity value);
 
     /**
-     * Allows an action to be forwarded to another target. By default checks -canPerformAction:withSender: to either return self, or go up the responder chain.
+     * Allows an action to be forwarded to another target. By default checks -canPerformAction:withSender: to either
+     * return self, or go up the responder chain.
      */
     @Generated
     @Selector("targetForAction:withSender:")
@@ -364,7 +365,8 @@ public class UIResponder extends NSObject
     /**
      * When the first responder changes and an identifier is queried, the system will establish a context to
      * track the textInputMode automatically. The system will save and restore the state of that context to
-     * the user defaults via the app identifier. Use of -textInputMode above will supersede use of -textInputContextIdentifier.
+     * the user defaults via the app identifier. Use of -textInputMode above will supersede use of
+     * -textInputContextIdentifier.
      */
     @Generated
     @Selector("textInputContextIdentifier")
@@ -398,7 +400,7 @@ public class UIResponder extends NSObject
      * Generally, all responders which do custom touch handling should override all four of these methods.
      * Your responder will receive either touchesEnded:withEvent: or touchesCancelled:withEvent: for each
      * touch it is handling (those touches it received in touchesBegan:withEvent:).
-     * *** You must handle cancelled touches to ensure correct behavior in your application.  Failure to
+     * *** You must handle cancelled touches to ensure correct behavior in your application. Failure to
      * do so is very likely to lead to incorrect behavior or crashes.
      */
     @Generated

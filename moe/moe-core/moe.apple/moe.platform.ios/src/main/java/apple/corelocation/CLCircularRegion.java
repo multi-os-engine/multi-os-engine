@@ -197,7 +197,7 @@ public class CLCircularRegion extends CLRegion {
      * initWithCenter:radius:identifier:
      * <p>
      * Discussion:
-     * Initialize a region.  center gives the coordinates of center of the region, while radius gives
+     * Initialize a region. center gives the coordinates of center of the region, while radius gives
      * the distance in meters between the center and the region's boundary. identifier is a description
      * for the region that could be displayed to the user, and ideally should be chosen by the user.
      */

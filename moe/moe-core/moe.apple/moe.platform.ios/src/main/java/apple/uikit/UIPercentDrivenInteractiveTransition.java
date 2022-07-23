@@ -212,8 +212,8 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
 
     /**
      * completionSpeed defaults to 1.0 which corresponds to a completion duration of
-     * (1 - percentComplete)*duration.  It must be greater than 0.0. The actual
-     * completion is inversely proportional to the completionSpeed.  This can be set
+     * (1 - percentComplete)*duration. It must be greater than 0.0. The actual
+     * completion is inversely proportional to the completionSpeed. This can be set
      * before cancelInteractiveTransition or finishInteractiveTransition is called
      * in order to speed up or slow down the non interactive part of the
      * transition.

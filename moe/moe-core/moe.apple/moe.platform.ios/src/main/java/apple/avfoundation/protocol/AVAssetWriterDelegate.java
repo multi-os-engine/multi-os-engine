@@ -22,9 +22,11 @@ public interface AVAssetWriterDelegate {
      * <p>
      * A method invoked when a segment data is output.
      * <p>
-     * The usage of this method is same as -assetWriter:didOutputSegmentData:segmentType:segmentReport: except that this method does not deliver AVAssetSegmentReport.
+     * The usage of this method is same as -assetWriter:didOutputSegmentData:segmentType:segmentReport: except that this
+     * method does not deliver AVAssetSegmentReport.
      * <p>
-     * If clients implement the -assetWriter:didOutputSegmentData:segmentType:segmentReport: method, that method is called instead of this one.
+     * If clients implement the -assetWriter:didOutputSegmentData:segmentType:segmentReport: method, that method is
+     * called instead of this one.
      *
      * @param writer      An AVAssetWriter instance.
      * @param segmentData An instance of NSData containing a segment data.
@@ -43,30 +45,52 @@ public interface AVAssetWriterDelegate {
      * <p>
      * A method invoked when a segment data is output.
      * <p>
-     * If this method is implemented, normal file writing will be suppressed. The instance of AVAssetWriter must be initialized by -initWithContentType: initializer.
-     * Then, clients append media data to AVAssetWriterInputs added to the receiver, call -markAsFinished for each input to mark the input as finished and call -finishWritingWithCompletionHandler: to finish writing as is the case in normal file writing.
+     * If this method is implemented, normal file writing will be suppressed. The instance of AVAssetWriter must be
+     * initialized by -initWithContentType: initializer.
+     * Then, clients append media data to AVAssetWriterInputs added to the receiver, call -markAsFinished for each input
+     * to mark the input as finished and call -finishWritingWithCompletionHandler: to finish writing as is the case in
+     * normal file writing.
      * <p>
-     * Do not use the movieFragmentInterval or shouldOptimizeForNetworkUse properties, as these properties are ignored in this mode of operation.
+     * Do not use the movieFragmentInterval or shouldOptimizeForNetworkUse properties, as these properties are ignored
+     * in this mode of operation.
      * <p>
-     * Clients that need to reference the NSData outside of the scope of this method must retain or copy it and then release it when they are finished with it.
+     * Clients that need to reference the NSData outside of the scope of this method must retain or copy it and then
+     * release it when they are finished with it.
      * <p>
-     * The segmentReport provides information on the segment data. If there is no information available to report, the segmentReport may be nil.
-     * Clients that do not need information on consecutive segment data should implement the -assetWriter:didOutputSegmentData:segmentType: method instead of this one for greater efficiency, as this will signal the receiver to skip the preparation of segment reports.
+     * The segmentReport provides information on the segment data. If there is no information available to report, the
+     * segmentReport may be nil.
+     * Clients that do not need information on consecutive segment data should implement the
+     * -assetWriter:didOutputSegmentData:segmentType: method instead of this one for greater efficiency, as this will
+     * signal the receiver to skip the preparation of segment reports.
      * See more detailed description of AVAssetSegmentReport in AVAssetSegmentReport.h.
      * <p>
-     * If the file type is AVFileTypeMPEG4 and the outputFileTypeProfile is AVFileTypeProfileMPEG4AppleHLS or AVFileTypeProfileMPEG4CMAFCompliant, when the segmentType is AVAssetSegmentTypeInitialization, the segment contains a 'moov' atom that does not contain any sample tables other than the sample descriptions, and is suitable for use as an initialization segment for the following segment data sequences.
-     * When the segmentType is AVAssetSegmentTypeSeparable, the segment contains a 'moof' atom  that contains one 'moof' atom followed by one 'mdat' atom.
+     * If the file type is AVFileTypeMPEG4 and the outputFileTypeProfile is AVFileTypeProfileMPEG4AppleHLS or
+     * AVFileTypeProfileMPEG4CMAFCompliant, when the segmentType is AVAssetSegmentTypeInitialization, the segment
+     * contains a 'moov' atom that does not contain any sample tables other than the sample descriptions, and is
+     * suitable for use as an initialization segment for the following segment data sequences.
+     * When the segmentType is AVAssetSegmentTypeSeparable, the segment contains a 'moof' atom that contains one 'moof'
+     * atom followed by one 'mdat' atom.
      * <p>
-     * 1. If the value of preferredOutputSegmentInterval property is positive numeric, when (a sample's output PTS - InitialSegmentStartTime) >= (interval * N) (N = 1, 2, 3...), the receiver waits for next sync sample and outputs a segment data that includes all samples appended since the previous interval to the delegate method when the sync sample appears, so that the next segment can start with the sync sample.
-     * In this configuration, passthrough (by passing nil to output settings for AVAssetWriterInputs) and compression are available. The media type of input can be AVMediaTypeVideo or AVMediaTypeAudio.
-     * Only one input of each media type can be added for compression and when (a sample's PTS - InitialSegmentStartTime) >= (interval * N) (N = 1, 2, 3...), the sample will be forced to be encoded as sync sample so that the current segment will be closed immediately.
+     * 1. If the value of preferredOutputSegmentInterval property is positive numeric, when (a sample's output PTS -
+     * InitialSegmentStartTime) >= (interval * N) (N = 1, 2, 3...), the receiver waits for next sync sample and outputs
+     * a segment data that includes all samples appended since the previous interval to the delegate method when the
+     * sync sample appears, so that the next segment can start with the sync sample.
+     * In this configuration, passthrough (by passing nil to output settings for AVAssetWriterInputs) and compression
+     * are available. The media type of input can be AVMediaTypeVideo or AVMediaTypeAudio.
+     * Only one input of each media type can be added for compression and when (a sample's PTS -
+     * InitialSegmentStartTime) >= (interval * N) (N = 1, 2, 3...), the sample will be forced to be encoded as sync
+     * sample so that the current segment will be closed immediately.
      * For passthrough, only one input can be added.
      * <p>
-     * 2. If the value of preferredOutputSegmentInterval property is kCMTimeIndefinite, every time a client calls -flushSegment the receiver outputs a segment data that includes all samples appended since the previous call to the delegate method.
+     * 2. If the value of preferredOutputSegmentInterval property is kCMTimeIndefinite, every time a client calls
+     * -flushSegment the receiver outputs a segment data that includes all samples appended since the previous call to
+     * the delegate method.
      * The delegate method may be called asynchronously, on a different thread from the one that calls -flushSegment.
-     * In this configuration, only passthrough is available. The media type of input can be AVMediaTypeVideo or AVMediaTypeAudio.
+     * In this configuration, only passthrough is available. The media type of input can be AVMediaTypeVideo or
+     * AVMediaTypeAudio.
      * Only one input of each media type can be added.
-     * The client should call -flushSegment prior to a sync sample so that the next segment can start with the sync sample. Otherwise, it is an error.
+     * The client should call -flushSegment prior to a sync sample so that the next segment can start with the sync
+     * sample. Otherwise, it is an error.
      *
      * @param writer        An AVAssetWriter instance.
      * @param segmentData   An instance of NSData containing a segment data.

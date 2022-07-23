@@ -72,7 +72,8 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
      * <p>
      * The extension should call this method when the user cancels the action or a failure occurs.
      *
-     * @param error error's domain should be ASExtensionErrorDomain and the code should be a value of type ASExtensionErrorCode.
+     * @param error error's domain should be ASExtensionErrorDomain and the code should be a value of type
+     *              ASExtensionErrorCode.
      */
     @Generated
     @Selector("cancelRequestWithError:")
@@ -101,8 +102,10 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
      * Calling this method will eventually dismiss the associated view controller.
      *
      * @param credential        the credential that the user has selected.
-     * @param completionHandler optionally contains any work which the extension may need to perform after the request has been completed,
-     *                          as a background-priority task. The `expired` parameter will be YES if the system decides to prematurely terminate a previous
+     * @param completionHandler optionally contains any work which the extension may need to perform after the request
+     *                          has been completed,
+     *                          as a background-priority task. The `expired` parameter will be YES if the system decides
+     *                          to prematurely terminate a previous
      *                          non-expiration invocation of the completionHandler.
      */
     @Generated

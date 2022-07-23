@@ -24,7 +24,8 @@ public interface UIContentConfiguration extends NSCopying {
     UIView makeContentView();
 
     /**
-     * Returns a copy of the configuration updated for the specified state, by applying the configuration's default values for that state to any properties that have not been customized.
+     * Returns a copy of the configuration updated for the specified state, by applying the configuration's default
+     * values for that state to any properties that have not been customized.
      */
     @Generated
     @Selector("updatedConfigurationForState:")

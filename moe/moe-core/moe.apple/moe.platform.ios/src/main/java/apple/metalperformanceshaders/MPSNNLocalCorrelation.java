@@ -39,8 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * O(x, y, f(m, n)) = sum_z{A(x, y, z) * B(x + M[m], y + N[n], z)}
  * where m runs from {0, 1, ... , (2*windowInX)}, n runs from {0, 1, ... , (2*windowInY)},
  * f(m, n) = n * (2*windowInY + 1) + m,
- * M = {-windowInX*strideInX, (-windowInX + 1)*strideInX,  ... 0 ... , (windowInX - 1)*strideInX, windowInX*strideInX},
- * N = {-windowInY*strideInY, (-windowInY + 1)*strideInY,  ... 0 ... , (windowInY - 1)*strideInY, windowInX*strideInY}
+ * M = {-windowInX*strideInX, (-windowInX + 1)*strideInX, ... 0 ... , (windowInX - 1)*strideInX, windowInX*strideInX},
+ * N = {-windowInY*strideInY, (-windowInY + 1)*strideInY, ... 0 ... , (windowInY - 1)*strideInY, windowInX*strideInY}
  */
 @Generated
 @Library("MetalPerformanceShaders")

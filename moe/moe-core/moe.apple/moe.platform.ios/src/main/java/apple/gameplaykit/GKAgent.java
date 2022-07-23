@@ -44,7 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * An agent is a point mass whose local coordinate system is aligned to its velocity.  Agents have a variety of
+ * An agent is a point mass whose local coordinate system is aligned to its velocity. Agents have a variety of
  * steering functions that can be used to simulate vehicles or entities with agency.
  * The units of mass, velocity and radius are dimensionless but related. The visual representation of these values
  * are specific to each game's own situation.
@@ -201,7 +201,8 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     public native float mass();
 
     /**
-     * Maximum amount of acceleration that can be applied to this agent.  All applied impulses are clipped to this amount.
+     * Maximum amount of acceleration that can be applied to this agent. All applied impulses are clipped to this
+     * amount.
      * <p>
      * Defaults to 1.0
      */
@@ -219,7 +220,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     public native float maxSpeed();
 
     /**
-     * Radius of the agent's bounding circle.  Used by the agent avoid steering functions.
+     * Radius of the agent's bounding circle. Used by the agent avoid steering functions.
      * <p>
      * Defaults to 0.5 for a canonical diameter of 1.0
      */
@@ -267,7 +268,8 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     public native void setMass(float value);
 
     /**
-     * Maximum amount of acceleration that can be applied to this agent.  All applied impulses are clipped to this amount.
+     * Maximum amount of acceleration that can be applied to this agent. All applied impulses are clipped to this
+     * amount.
      * <p>
      * Defaults to 1.0
      */
@@ -285,7 +287,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     public native void setMaxSpeed(float value);
 
     /**
-     * Radius of the agent's bounding circle.  Used by the agent avoid steering functions.
+     * Radius of the agent's bounding circle. Used by the agent avoid steering functions.
      * <p>
      * Defaults to 0.5 for a canonical diameter of 1.0
      */

@@ -22,11 +22,12 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class CKErrorCode {
     /**
-     * CloudKit.framework encountered an error.  This is a non-recoverable error.
+     * CloudKit.framework encountered an error. This is a non-recoverable error.
      */
     @Generated @NInt public static final long InternalError = 0x0000000000000001L;
     /**
-     * Some items failed, but the operation succeeded overall. Check CKPartialErrorsByItemIDKey in the userInfo dictionary for more details.
+     * Some items failed, but the operation succeeded overall. Check CKPartialErrorsByItemIDKey in the userInfo
+     * dictionary for more details.
      * This error is only returned from CKOperation completion blocks, which are deprecated in swift.
      * It will not be returned from (swift-only) CKOperation result blocks, which are their replacements
      */
@@ -116,7 +117,8 @@ public final class CKErrorCode {
      */
     @Generated @NInt public static final long ZoneBusy = 0x0000000000000017L;
     /**
-     * Operation could not be completed on the given database. Likely caused by attempting to modify zones in the public database.
+     * Operation could not be completed on the given database. Likely caused by attempting to modify zones in the public
+     * database.
      */
     @Generated @NInt public static final long BadDatabase = 0x0000000000000018L;
     /**
@@ -132,7 +134,8 @@ public final class CKErrorCode {
      */
     @Generated @NInt public static final long LimitExceeded = 0x000000000000001BL;
     /**
-     * The user deleted this zone through the settings UI. Your client should either remove its local data or prompt the user before attempting to re-upload any data to this zone.
+     * The user deleted this zone through the settings UI. Your client should either remove its local data or prompt the
+     * user before attempting to re-upload any data to this zone.
      */
     @Generated @NInt public static final long UserDeletedZone = 0x000000000000001CL;
     /**
@@ -152,7 +155,11 @@ public final class CKErrorCode {
      */
     @Generated @NInt public static final long ManagedAccountRestricted = 0x0000000000000020L;
     /**
-     * Share Metadata cannot be determined, because the user is not a member of the share.  There are invited participants on the share with email addresses or phone numbers not associated with any iCloud account. The user may be able to join the share if they can associate one of those email addresses or phone numbers with their iCloud account via the system Share Accept UI. Call UIApplication's openURL on this share URL to have the user attempt to verify their information.
+     * Share Metadata cannot be determined, because the user is not a member of the share. There are invited
+     * participants on the share with email addresses or phone numbers not associated with any iCloud account. The user
+     * may be able to join the share if they can associate one of those email addresses or phone numbers with their
+     * iCloud account via the system Share Accept UI. Call UIApplication's openURL on this share URL to have the user
+     * attempt to verify their information.
      */
     @Generated @NInt public static final long ParticipantMayNeedVerification = 0x0000000000000021L;
 
@@ -161,15 +168,21 @@ public final class CKErrorCode {
     }
 
     /**
-     * The server received and processed this request, but the response was lost due to a network failure.  There is no guarantee that this request succeeded.  Your client should re-issue the request (if it is idempotent), or fetch data from the server to determine if the request succeeded.
+     * The server received and processed this request, but the response was lost due to a network failure. There is no
+     * guarantee that this request succeeded. Your client should re-issue the request (if it is idempotent), or fetch
+     * data from the server to determine if the request succeeded.
      */
     @Generated @NInt public static final long ServerResponseLost = 0x0000000000000022L;
     /**
-     * The file for this asset could not be accessed. It is likely your application does not have permission to open the file, or the file may be temporarily unavailable due to its data protection class. This operation can be retried after it is able to be opened in your process.
+     * The file for this asset could not be accessed. It is likely your application does not have permission to open the
+     * file, or the file may be temporarily unavailable due to its data protection class. This operation can be retried
+     * after it is able to be opened in your process.
      */
     @Generated @NInt public static final long AssetNotAvailable = 0x0000000000000023L;
     /**
-     * The current account is in a state that may need user intervention to recover from. The user should be directed to check the Settings app. Listen for CKAccountChangedNotifications to know when to re-check account status and retry.
+     * The current account is in a state that may need user intervention to recover from. The user should be directed to
+     * check the Settings app. Listen for CKAccountChangedNotifications to know when to re-check account status and
+     * retry.
      */
     @Generated @NInt public static final long AccountTemporarilyUnavailable = 0x0000000000000024L;
 }

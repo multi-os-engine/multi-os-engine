@@ -48,7 +48,8 @@ public interface UIPopoverPresentationControllerDelegate extends UIAdaptivePrese
     }
 
     /**
-     * Called on the delegate when the user has taken action to dismiss the popover. This is not called when the popover is dismissed programatically.
+     * Called on the delegate when the user has taken action to dismiss the popover. This is not called when the popover
+     * is dismissed programatically.
      */
     @Generated
     @IsOptional

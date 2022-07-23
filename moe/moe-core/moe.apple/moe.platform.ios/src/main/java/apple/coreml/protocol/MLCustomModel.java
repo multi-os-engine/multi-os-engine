@@ -48,7 +48,8 @@ public interface MLCustomModel {
             MLPredictionOptions options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Batch prediction with explicit options, if not implemented the single input predictionFromFeatures:options:error will be used
+     * Batch prediction with explicit options, if not implemented the single input predictionFromFeatures:options:error
+     * will be used
      */
     @Generated
     @IsOptional

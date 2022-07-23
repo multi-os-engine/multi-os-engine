@@ -104,9 +104,9 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
      * <p>
      * Overall gain adjustment applied to the signal.
      * <p>
-     * Range:     -96 -> 24
-     * Default:   0
-     * Unit:      dB
+     * Range: -96 -> 24
+     * Default: 0
+     * Unit: dB
      */
     @Generated
     @Selector("globalGain")
@@ -182,9 +182,9 @@ public class AVAudioUnitEQ extends AVAudioUnitEffect {
      * <p>
      * Overall gain adjustment applied to the signal.
      * <p>
-     * Range:     -96 -> 24
-     * Default:   0
-     * Unit:      dB
+     * Range: -96 -> 24
+     * Default: 0
+     * Unit: dB
      */
     @Generated
     @Selector("setGlobalGain:")

@@ -103,7 +103,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public static native String debugDescription_static();
 
     /**
-     * This class property returns a shared and cached NSParagraphStyle instance with the default style settings, with same value as the result of [[NSParagraphStyle alloc] init].
+     * This class property returns a shared and cached NSParagraphStyle instance with the default style settings, with
+     * same value as the result of [[NSParagraphStyle alloc] init].
      */
     @Generated
     @Selector("defaultParagraphStyle")
@@ -183,7 +184,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native long alignment();
 
     /**
-     * Tightens inter-character spacing in attempt to fit lines wider than the available space if the line break mode is one of the truncation modes before starting to truncate. NO by default. The maximum amount of tightening performed is determined by the system based on contexts such as font, line width, etc.
+     * Tightens inter-character spacing in attempt to fit lines wider than the available space if the line break mode is
+     * one of the truncation modes before starting to truncate. NO by default. The maximum amount of tightening
+     * performed is determined by the system based on contexts such as font, line width, etc.
      */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
@@ -229,7 +232,10 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native double headIndent();
 
     /**
-     * Specifies the threshold for hyphenation.  Valid values lie between 0.0 and 1.0 inclusive.  Hyphenation will be attempted when the ratio of the text width as broken without hyphenation to the width of the line fragment is less than the hyphenation factor.  When this takes on its default value of 0.0, the layout manager's hyphenation factor is used instead.  When both are 0.0, hyphenation is disabled.
+     * Specifies the threshold for hyphenation. Valid values lie between 0.0 and 1.0 inclusive. Hyphenation will be
+     * attempted when the ratio of the text width as broken without hyphenation to the width of the line fragment is
+     * less than the hyphenation factor. When this takes on its default value of 0.0, the layout manager's hyphenation
+     * factor is used instead. When both are 0.0, hyphenation is disabled.
      */
     @Generated
     @Selector("hyphenationFactor")
@@ -249,7 +255,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native long lineBreakMode();
 
     /**
-     * Natural line height is multiplied by this factor (if positive) before being constrained by minimum and maximum line height.
+     * Natural line height is multiplied by this factor (if positive) before being constrained by minimum and maximum
+     * line height.
      */
     @Generated
     @Selector("lineHeightMultiple")
@@ -257,7 +264,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native double lineHeightMultiple();
 
     /**
-     * "Leading": distance between the bottom of one line fragment and top of next (applied between lines in the same container). This value is included in the line fragment heights in layout manager.
+     * "Leading": distance between the bottom of one line fragment and top of next (applied between lines in the same
+     * container). This value is included in the line fragment heights in layout manager.
      */
     @Generated
     @Selector("lineSpacing")
@@ -273,7 +281,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native double maximumLineHeight();
 
     /**
-     * Line height is the distance from bottom of descenders to top of ascenders; basically the line fragment height. Does not include lineSpacing (which is added after this computation).
+     * Line height is the distance from bottom of descenders to top of ascenders; basically the line fragment height.
+     * Does not include lineSpacing (which is added after this computation).
      */
     @Generated
     @Selector("minimumLineHeight")
@@ -287,7 +296,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native Object mutableCopyWithZone(VoidPtr zone);
 
     /**
-     * Distance between the bottom of this paragraph and top of next (or the beginning of its paragraphSpacingBefore, if any).
+     * Distance between the bottom of this paragraph and top of next (or the beginning of its paragraphSpacingBefore, if
+     * any).
      */
     @Generated
     @Selector("paragraphSpacing")
@@ -295,7 +305,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native double paragraphSpacing();
 
     /**
-     * Distance between the bottom of the previous paragraph (or the end of its paragraphSpacing, if any) and the top of this paragraph.
+     * Distance between the bottom of the previous paragraph (or the end of its paragraphSpacing, if any) and the top of
+     * this paragraph.
      */
     @Generated
     @Selector("paragraphSpacingBefore")
@@ -309,7 +320,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     }
 
     /**
-     * An array of NSTextTabs. Contents should be ordered by location. The default value is an array of 12 left-aligned tabs at 28pt interval
+     * An array of NSTextTabs. Contents should be ordered by location. The default value is an array of 12 left-aligned
+     * tabs at 28pt interval
      */
     @Generated
     @Selector("tabStops")
@@ -324,7 +336,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native double tailIndent();
 
     /**
-     * Specifies the line break strategies that may be used for laying out the paragraph.  The default value is NSLineBreakStrategyNone.
+     * Specifies the line break strategies that may be used for laying out the paragraph. The default value is
+     * NSLineBreakStrategyNone.
      */
     @Generated
     @Selector("lineBreakStrategy")
@@ -332,7 +345,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     public native long lineBreakStrategy();
 
     /**
-     * A property controlling the hyphenation behavior for the paragraph associated with the paragraph style. The exact hyphenation logic is dynamically determined by the layout context such as language, platform, etc. When YES, it affects the return value from -hyphenationFactor when the property is set to 0.0.
+     * A property controlling the hyphenation behavior for the paragraph associated with the paragraph style. The exact
+     * hyphenation logic is dynamically determined by the layout context such as language, platform, etc. When YES, it
+     * affects the return value from -hyphenationFactor when the property is set to 0.0.
      */
     @Generated
     @Selector("usesDefaultHyphenation")

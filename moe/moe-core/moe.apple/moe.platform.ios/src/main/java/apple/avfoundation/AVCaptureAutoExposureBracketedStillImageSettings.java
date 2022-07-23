@@ -41,9 +41,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVCaptureAutoExposureBracketedStillImageSettings
  * <p>
- * AVCaptureAutoExposureBracketedStillImageSettings is a concrete subclass of AVCaptureBracketedStillImageSettings to be used when bracketing exposure target bias.
+ * AVCaptureAutoExposureBracketedStillImageSettings is a concrete subclass of AVCaptureBracketedStillImageSettings to be
+ * used when bracketing exposure target bias.
  * <p>
- * An AVCaptureAutoExposureBracketedStillImageSettings instance defines the exposure target bias setting that should be applied to one image in a bracket. An array of settings objects is passed to -[AVCaptureStillImageOutput captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:]. Min and max exposure target bias are queryable properties of the AVCaptureDevice supplying data to an AVCaptureStillImageOutput instance. If you wish to leave exposureTargetBias unchanged for this bracketed still image, you may pass the special value AVCaptureExposureTargetBiasCurrent (see AVCaptureDevice.h).
+ * An AVCaptureAutoExposureBracketedStillImageSettings instance defines the exposure target bias setting that should be
+ * applied to one image in a bracket. An array of settings objects is passed to -[AVCaptureStillImageOutput
+ * captureStillImageBracketAsynchronouslyFromConnection:withSettingsArray:completionHandler:]. Min and max exposure
+ * target bias are queryable properties of the AVCaptureDevice supplying data to an AVCaptureStillImageOutput instance.
+ * If you wish to leave exposureTargetBias unchanged for this bracketed still image, you may pass the special value
+ * AVCaptureExposureTargetBiasCurrent (see AVCaptureDevice.h).
  */
 @Generated
 @Library("AVFoundation")
@@ -78,7 +84,8 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
      * <p>
      * Creates an AVCaptureAutoExposureBracketedStillImageSettings using the specified exposure target bias.
      *
-     * @param exposureTargetBias The exposure target bias. Pass AVCaptureExposureTargetBiasCurrent to leave the exposureTargetBias unchanged for this image.
+     * @param exposureTargetBias The exposure target bias. Pass AVCaptureExposureTargetBiasCurrent to leave the
+     *                           exposureTargetBias unchanged for this image.
      * @return An initialized AVCaptureAutoExposureBracketedStillImageSettings instance.
      */
     @Generated

@@ -25,7 +25,8 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * Most clients will not need to subclass UINavigationController.
  * <p>
- * If a navigation controller is nested in a tab bar controller, it uses the title and toolbar attributes of the bottom view controller on the stack.
+ * If a navigation controller is nested in a tab bar controller, it uses the title and toolbar attributes of the bottom
+ * view controller on the stack.
  * <p>
  * UINavigationController is rotatable if its top view controller is rotatable.
  * Navigation between controllers with non-uniform rotatability is currently not supported.

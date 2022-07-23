@@ -30,7 +30,8 @@ public final class PHImageRequestOptionsVersion {
      */
     @Generated @NInt public static final long Unadjusted = 0x0000000000000001L;
     /**
-     * original version, in the case of a combined format the highest fidelity format will be returned (e.g. RAW for a RAW+JPG source image)
+     * original version, in the case of a combined format the highest fidelity format will be returned (e.g. RAW for a
+     * RAW+JPG source image)
      */
     @Generated @NInt public static final long Original = 0x0000000000000002L;
 

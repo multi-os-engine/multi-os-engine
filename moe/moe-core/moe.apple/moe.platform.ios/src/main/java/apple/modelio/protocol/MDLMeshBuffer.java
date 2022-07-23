@@ -60,7 +60,7 @@ public interface MDLMeshBuffer extends NSCopying {
      * <p>
      * Fills buffer with data at offset
      * <p>
-     * Fills data.length bytes of data.  Will not write beyond length of
+     * Fills data.length bytes of data. Will not write beyond length of
      * this buffer.
      *
      * @param data   Data to fill buffer with
@@ -87,9 +87,9 @@ public interface MDLMeshBuffer extends NSCopying {
      * <p>
      * The buffer will remain mapped as long as the returned MDLMeshBufferMap
      * object exists. Mapping a buffer may impose restrictions on a system.
-     * For instance,  if the implementing class maps an OpenGL buffer, that
-     * buffer may be  unavailable for rendering while mapped, and cause a
-     * draw failure.  Precautions must be taken in such cases.
+     * For instance, if the implementing class maps an OpenGL buffer, that
+     * buffer may be unavailable for rendering while mapped, and cause a
+     * draw failure. Precautions must be taken in such cases.
      *
      * @return An MDLMeshBufferMap object to read or modify a buffer's memory
      */
@@ -113,7 +113,7 @@ public interface MDLMeshBuffer extends NSCopying {
      * Zone from which this buffer was created
      * <p>
      * This zone will be used for copy and relayout operations (such as
-     * when a new vertex descriptor is applied to a vertex buffer).  If
+     * when a new vertex descriptor is applied to a vertex buffer). If
      * the default zone is used this will be nil.
      */
     @Generated

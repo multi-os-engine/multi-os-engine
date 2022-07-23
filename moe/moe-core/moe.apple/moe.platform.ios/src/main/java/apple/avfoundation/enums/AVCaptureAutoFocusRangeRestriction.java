@@ -22,7 +22,8 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] AVCaptureAutoFocusRangeRestriction
  * <p>
- * Constants indicating the restriction of the receiver's autofocus system to a particular range of focus scan, if it supports range restrictions.
+ * Constants indicating the restriction of the receiver's autofocus system to a particular range of focus scan, if it
+ * supports range restrictions.
  * <p>
  * [@constant] AVCaptureAutoFocusRangeRestrictionNone
  * Indicates that the autofocus system should not restrict the focus range.

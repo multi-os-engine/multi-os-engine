@@ -37,7 +37,10 @@ public final class CFURLEnumeratorResult {
      */
     @Generated @NInt public static final long Error = 0x0000000000000003L;
     /**
-     * The enumeration was successful. The url output parameter is for a directory after all of directory's descendants have been visited (post-order). This result will only be returned for directories when both the kCFURLEnumeratorDescendRecursively and kCFURLEnumeratorIncludeDirectoriesPostOrder options are passed to CFURLEnumeratorCreateForDirectoryURL.
+     * The enumeration was successful. The url output parameter is for a directory after all of directory's descendants
+     * have been visited (post-order). This result will only be returned for directories when both the
+     * kCFURLEnumeratorDescendRecursively and kCFURLEnumeratorIncludeDirectoriesPostOrder options are passed to
+     * CFURLEnumeratorCreateForDirectoryURL.
      */
     @Generated @NInt public static final long DirectoryPostOrderSuccess = 0x0000000000000004L;
 

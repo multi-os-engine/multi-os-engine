@@ -159,7 +159,9 @@ public class INLengthResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given length. The resolvedLength can be different than the original length. This allows app extensions to apply business logic constraints to the length. For example, constraining it to a maximum or minimum value.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given length. The
+     * resolvedLength can be different than the original length. This allows app extensions to apply business logic
+     * constraints to the length. For example, constraining it to a maximum or minimum value.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

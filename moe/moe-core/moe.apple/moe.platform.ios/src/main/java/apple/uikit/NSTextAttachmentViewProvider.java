@@ -57,7 +57,8 @@ public class NSTextAttachmentViewProvider extends NSObject {
     public static native NSTextAttachmentViewProvider allocWithZone(VoidPtr zone);
 
     /**
-     * Invoked from -[NSTextAttachment attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:]
+     * Invoked from -[NSTextAttachment
+     * attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:]
      */
     @Generated
     @Selector("attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:")
@@ -158,7 +159,9 @@ public class NSTextAttachmentViewProvider extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * This property determines the text attachment bounds policy. If YES, -[NSTextAttachment attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:] consults the text attachment view provider for determining the bounds instead of using -bounds. NO by default
+     * This property determines the text attachment bounds policy. If YES, -[NSTextAttachment
+     * attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:] consults the text attachment
+     * view provider for determining the bounds instead of using -bounds. NO by default
      */
     @Generated
     @Selector("setTracksTextAttachmentViewBounds:")
@@ -170,7 +173,8 @@ public class NSTextAttachmentViewProvider extends NSObject {
 
     /**
      * View instantiation
-     * The getter first invokes loadView if the view hasn't been set yet. Subclasses must call super if they override the setter or getter.
+     * The getter first invokes loadView if the view hasn't been set yet. Subclasses must call super if they override
+     * the setter or getter.
      */
     @Generated
     @Selector("setView:")
@@ -189,7 +193,9 @@ public class NSTextAttachmentViewProvider extends NSObject {
     public native NSTextLayoutManager textLayoutManager();
 
     /**
-     * This property determines the text attachment bounds policy. If YES, -[NSTextAttachment attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:] consults the text attachment view provider for determining the bounds instead of using -bounds. NO by default
+     * This property determines the text attachment bounds policy. If YES, -[NSTextAttachment
+     * attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:] consults the text attachment
+     * view provider for determining the bounds instead of using -bounds. NO by default
      */
     @Generated
     @Selector("tracksTextAttachmentViewBounds")
@@ -202,7 +208,8 @@ public class NSTextAttachmentViewProvider extends NSObject {
 
     /**
      * View instantiation
-     * The getter first invokes loadView if the view hasn't been set yet. Subclasses must call super if they override the setter or getter.
+     * The getter first invokes loadView if the view hasn't been set yet. Subclasses must call super if they override
+     * the setter or getter.
      */
     @Generated
     @Selector("view")

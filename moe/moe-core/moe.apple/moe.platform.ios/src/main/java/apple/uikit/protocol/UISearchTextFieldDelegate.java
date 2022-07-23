@@ -19,9 +19,13 @@ public interface UISearchTextFieldDelegate extends UITextFieldDelegate {
     /**
      * Implements cut and copy of tokens.
      * <p>
-     * To support drag and drop and the Cut and Copy commands, your delegate must implement this method and return an NSItemProvider for the requested token. The field’s textPasteDelegate is responsible for implementing pasting of tokens. Your delegate can provide a plain text representation for pasting in other contexts, but should register a custom type identifier so it can recognize and reconstruct the token when pasted into the same field.
+     * To support drag and drop and the Cut and Copy commands, your delegate must implement this method and return an
+     * NSItemProvider for the requested token. The field’s textPasteDelegate is responsible for implementing pasting of
+     * tokens. Your delegate can provide a plain text representation for pasting in other contexts, but should register
+     * a custom type identifier so it can recognize and reconstruct the token when pasted into the same field.
      * <p>
-     * This method will only be called if either of the field’s allowsCopyingTokens or allowsDeletingTokens properties is true.
+     * This method will only be called if either of the field’s allowsCopyingTokens or allowsDeletingTokens properties
+     * is true.
      */
     @Generated
     @IsOptional

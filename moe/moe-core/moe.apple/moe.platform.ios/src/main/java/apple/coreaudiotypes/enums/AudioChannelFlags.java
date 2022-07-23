@@ -3,19 +3,19 @@ package apple.coreaudiotypes.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]           AudioChannelFlags
+ * [@enum] AudioChannelFlags
  * <p>
  * These constants are used in the mChannelFlags field of an
  * AudioChannelDescription structure.
- * [@constant]       kAudioChannelFlags_RectangularCoordinates
+ * [@constant] kAudioChannelFlags_RectangularCoordinates
  * The channel is specified by the cartesian coordinates of the speaker
  * position. This flag is mutally exclusive with
  * kAudioChannelFlags_SphericalCoordinates.
- * [@constant]       kAudioChannelFlags_SphericalCoordinates
+ * [@constant] kAudioChannelFlags_SphericalCoordinates
  * The channel is specified by the spherical coordinates of the speaker
  * position. This flag is mutally exclusive with
  * kAudioChannelFlags_RectangularCoordinates.
- * [@constant]       kAudioChannelFlags_Meters
+ * [@constant] kAudioChannelFlags_Meters
  * Set to indicate the units are in meters, clear to indicate the units are
  * relative to the unit cube or unit sphere.
  */

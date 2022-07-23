@@ -152,7 +152,7 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
     public static native NFCISO15693ReadMultipleBlocksConfiguration new_objc();
 
     /**
-     * Range to read in blocks.  Valid start index range is 0x00 to 0xFF.  Length shall not be 0.
+     * Range to read in blocks. Valid start index range is 0x00 to 0xFF. Length shall not be 0.
      */
     @Generated
     @Selector("range")
@@ -175,7 +175,7 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
     public native void setChunkSize(@NUInt long value);
 
     /**
-     * Range to read in blocks.  Valid start index range is 0x00 to 0xFF.  Length shall not be 0.
+     * Range to read in blocks. Valid start index range is 0x00 to 0xFF. Length shall not be 0.
      */
     @Generated
     @Selector("setRange:")

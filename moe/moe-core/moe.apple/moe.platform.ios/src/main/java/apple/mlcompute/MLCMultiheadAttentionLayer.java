@@ -64,7 +64,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     public static native MLCMultiheadAttentionLayer allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   attentionBiases
+     * [@property] attentionBiases
      * <p>
      * The biases added to key and value
      */
@@ -77,7 +77,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   biases
+     * [@property] biases
      * <p>
      * The biases of query, key, value and output projections
      */
@@ -86,7 +86,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     public native NSArray<? extends MLCTensor> biases();
 
     /**
-     * [@property]   biasesParameters
+     * [@property] biasesParameters
      * <p>
      * The biases tensor parameters used for optimizer update
      */
@@ -121,7 +121,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * The multi-head attention descriptor
      */
@@ -204,7 +204,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     public static native long version_static();
 
     /**
-     * [@property]   weights
+     * [@property] weights
      * <p>
      * The weights of query, key, value and output projections
      */
@@ -213,7 +213,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     public native NSArray<? extends MLCTensor> weights();
 
     /**
-     * [@property]   weightsParameters
+     * [@property] weightsParameters
      * <p>
      * The weights tensor parameters used for optimizer update
      */

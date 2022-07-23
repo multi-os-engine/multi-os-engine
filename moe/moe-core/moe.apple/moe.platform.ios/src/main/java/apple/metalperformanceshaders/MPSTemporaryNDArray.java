@@ -232,10 +232,10 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      *
      * @param commandBuffer The MTLCommandBuffer on which the MPSTemporaryNDArray will be exclusively used
      * @param descriptor    A valid MPSNDArrayDescriptor describing the MPSNDArray format to create
-     * @return A valid MPSTemporaryNDArray.  The object is not managed by a NSAutoreleasePool. The object will be
-     * released when the command buffer is committed. The underlying buffer will become invalid before
-     * this time due to the action of the readCount property.  Please read and understand the use of
-     * the readCount property before using this object.
+     * @return A valid MPSTemporaryNDArray. The object is not managed by a NSAutoreleasePool. The object will be
+     *         released when the command buffer is committed. The underlying buffer will become invalid before
+     *         this time due to the action of the readCount property. Please read and understand the use of
+     *         the readCount property before using this object.
      */
     @Generated
     @Selector("temporaryNDArrayWithCommandBuffer:descriptor:")

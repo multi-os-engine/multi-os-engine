@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * separately to the graph in a MPSNNLabels object. If
  * the batch interface is used then there will be a
  * MPSStateBatch of these of the same size as the MPSImageBatch
- * that holds the images.  The MPSNNLabelsNode is a place
+ * that holds the images. The MPSNNLabelsNode is a place
  * holder in the graph for these nodes. The MPSNNLabels node
  * is taken as an input to the Loss node
  */

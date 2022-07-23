@@ -259,7 +259,8 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     public native NSDate playbackStartDate();
 
     /**
-     * An offset into the playlist where the last uninterrupted period of playback began, in seconds. The value is negative if unknown.
+     * An offset into the playlist where the last uninterrupted period of playback began, in seconds. The value is
+     * negative if unknown.
      */
     @Deprecated
     @Generated
@@ -275,7 +276,8 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     public native double segmentsDownloadedDuration();
 
     /**
-     * The IP address of the server that was the source of the last delivered media segment. Can be either an IPv4 or IPv6 address.
+     * The IP address of the server that was the source of the last delivered media segment. Can be either an IPv4 or
+     * IPv6 address.
      */
     @Deprecated
     @Generated

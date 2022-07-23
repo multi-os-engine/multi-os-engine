@@ -200,7 +200,8 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSLocale new_objc();
 
     /**
-     * note that this list does not indicate what language the app is actually running in; the NSBundle.mainBundle object determines that at launch and knows that information
+     * note that this list does not indicate what language the app is actually running in; the NSBundle.mainBundle
+     * object determines that at launch and knows that information
      */
     @Generated
     @Selector("preferredLanguages")

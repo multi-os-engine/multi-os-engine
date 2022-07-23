@@ -38,12 +38,12 @@ public final class MessageUI {
     }
 
     /**
-     * [@const]      MFMailComposeErrorDomain
+     * [@const] MFMailComposeErrorDomain
      * <p>
      * Error domain for NSError values stemming from the MFMailCompose API.
      * <p>
      * This error domain is used as the domain for all NSError instances stemmming from the
-     * MFMailCompose API.  Valid error code values are declared in the <tt>MFMailComposeErrorCode</tt>
+     * MFMailCompose API. Valid error code values are declared in the <tt>MFMailComposeErrorCode</tt>
      * space.
      */
     @Generated
@@ -52,7 +52,7 @@ public final class MessageUI {
     public static native String MFMailComposeErrorDomain();
 
     /**
-     * [@constant]  MFMessageComposeViewControllerAttachmentURL   The url for the given attachment.
+     * [@constant] MFMessageComposeViewControllerAttachmentURL The url for the given attachment.
      */
     @Generated
     @CVariable()
@@ -60,7 +60,8 @@ public final class MessageUI {
     public static native String MFMessageComposeViewControllerAttachmentURL();
 
     /**
-     * [@constant]  MFMessageComposeViewControllerAttachmentAlternateFilename   The alternate filename for the given attachment.
+     * [@constant] MFMessageComposeViewControllerAttachmentAlternateFilename The alternate filename for the given
+     * attachment.
      */
     @Generated
     @CVariable()
@@ -68,7 +69,7 @@ public final class MessageUI {
     public static native String MFMessageComposeViewControllerAttachmentAlternateFilename();
 
     /**
-     * [@const]      MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification
+     * [@const] MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification
      * <p>
      * Notification posted when the value of <tt>+[MFMessageComposeViewController canSendText]</tt> has changed.
      * <p>
@@ -81,7 +82,7 @@ public final class MessageUI {
     public static native String MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification();
 
     /**
-     * [@const]      MFMessageComposeViewControllerTextMessageAvailabilityKey
+     * [@const] MFMessageComposeViewControllerTextMessageAvailabilityKey
      * <p>
      * UserInfo key for MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification
      * containing the value of <tt>+[MFMessageComposeViewController canSendText]</tt>

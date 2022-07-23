@@ -4,7 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * NSLinguisticTaggerUnit specifes the size of units in a string to which tagging applies.  The tagging unit may be word, sentence, paragraph, or document.  Methods that do not specify a unit act at the word level.  Not all combinations of scheme and unit are supported; clients can use +availableTagSchemesForUnit:language: to determine which ones are.
+ * NSLinguisticTaggerUnit specifes the size of units in a string to which tagging applies. The tagging unit may be word,
+ * sentence, paragraph, or document. Methods that do not specify a unit act at the word level. Not all combinations of
+ * scheme and unit are supported; clients can use +availableTagSchemesForUnit:language: to determine which ones are.
  */
 @Generated
 public final class NSLinguisticTaggerUnit {

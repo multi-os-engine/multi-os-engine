@@ -90,7 +90,8 @@ public class STWebHistory extends NSObject {
     public native void deleteHistoryDuringInterval(NSDateInterval interval);
 
     /**
-     * @param url The URL for which to delete Screen Time usage history. The full URL is used, i.e. the scheme, path, et al. are significant.
+     * @param url The URL for which to delete Screen Time usage history. The full URL is used, i.e. the scheme, path, et
+     *            al. are significant.
      */
     @Generated
     @Selector("deleteHistoryForURL:")

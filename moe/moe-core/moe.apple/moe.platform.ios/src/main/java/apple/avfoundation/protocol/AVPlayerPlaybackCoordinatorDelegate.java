@@ -11,7 +11,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]	AVPlayerPlaybackCoordinatorDelegate
+ * [@protocol] AVPlayerPlaybackCoordinatorDelegate
  * <p>
  * Delegate protocol for AVPlayerPlaybackCoordinator.
  */
@@ -25,7 +25,8 @@ public interface AVPlayerPlaybackCoordinatorDelegate {
      * <p>
      * Called by the coordinator to identify AVPlayerItems played by the coordinator's AVPlayer.
      * <p>
-     * Implementing this method allows the coordinator to establish identity of two items created from different URLs, e.g., because one participant is using a local cache and the other a remote URL.
+     * Implementing this method allows the coordinator to establish identity of two items created from different URLs,
+     * e.g., because one participant is using a local cache and the other a remote URL.
      * If the method is not implemented, the coordinator will derive the identifier from the item's asset.
      */
     @Generated

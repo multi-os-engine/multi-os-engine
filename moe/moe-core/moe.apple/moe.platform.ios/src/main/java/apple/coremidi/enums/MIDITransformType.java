@@ -19,25 +19,25 @@ package apple.coremidi.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]           MIDITransformType
+ * [@enum] MIDITransformType
  * <p>
  * Values specifying a type of MIDI transformation, as found in the transform member of MIDITransform.
  * <p>
- * [@constant]   kMIDITransform_None
+ * [@constant] kMIDITransform_None
  * no transformation (param unused)
- * [@constant]   kMIDITransform_FilterOut
+ * [@constant] kMIDITransform_FilterOut
  * filter out the specified event type (param unused)
- * [@constant]   kMIDITransform_MapControl
+ * [@constant] kMIDITransform_MapControl
  * transform one control number to another; param is destination control number
- * [@constant]   kMIDITransform_Add
+ * [@constant] kMIDITransform_Add
  * add param to values
- * [@constant]   kMIDITransform_Scale
+ * [@constant] kMIDITransform_Scale
  * multiple value by the fixed point number in param, which is in fixed point: bbbb.bbbb bbbb bbbb
- * [@constant]   kMIDITransform_MinValue
+ * [@constant] kMIDITransform_MinValue
  * the value's minimum value is param
- * [@constant]   kMIDITransform_MaxValue
+ * [@constant] kMIDITransform_MaxValue
  * the value's maximum value is param
- * [@constant]   kMIDITransform_MapValue
+ * [@constant] kMIDITransform_MapValue
  * transform the value using a map; param is the index of the map in the connection's array of maps.
  */
 @Generated

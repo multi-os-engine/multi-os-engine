@@ -199,7 +199,8 @@ public class SFSafariViewController extends UIViewController {
     /**
      * Returns a view controller that loads a URL.
      *
-     * @param URL                     the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
+     * @param URL                     the initial URL to navigate to. Only supports initial URLs with http:// or
+     *                                https:// schemes.
      * @param entersReaderIfAvailable indicates if the Safari Reader version of content should be shown automatically
      *                                when Safari Reader is available on a web page.
      */
@@ -208,8 +209,10 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewController initWithURLEntersReaderIfAvailable(NSURL URL, boolean entersReaderIfAvailable);
 
     /**
-     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
+     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in
+     * Private
+     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
+     * view controller
      * has been presented will not be reflected.
      */
     @Generated
@@ -217,8 +220,10 @@ public class SFSafariViewController extends UIViewController {
     public native UIColor preferredBarTintColor();
 
     /**
-     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is in Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
+     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is
+     * in Private
+     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
+     * view controller
      * has been presented will not be reflected.
      */
     @Generated
@@ -248,8 +253,10 @@ public class SFSafariViewController extends UIViewController {
     }
 
     /**
-     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
+     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in
+     * Private
+     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
+     * view controller
      * has been presented will not be reflected.
      */
     @Generated
@@ -257,8 +264,10 @@ public class SFSafariViewController extends UIViewController {
     public native void setPreferredBarTintColor(UIColor value);
 
     /**
-     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is in Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the view controller
+     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is
+     * in Private
+     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
+     * view controller
      * has been presented will not be reflected.
      */
     @Generated
@@ -289,7 +298,8 @@ public class SFSafariViewController extends UIViewController {
      * Returns a view controller that loads a URL.
      * <p>
      * This is a designated initializer. You can use
-     * [@link] -initWithURL: @/link to initialize an instance with the default configuration. Mutating the configuration after invoking the initializer has no effect on the view controller.
+     * [@link] -initWithURL: @/link to initialize an instance with the default configuration. Mutating the configuration
+     * after invoking the initializer has no effect on the view controller.
      *
      * @param URL           the initial URL to navigate to. Only supports initial URLs with http:// or https:// schemes.
      * @param configuration the configuration for the new view controller.
@@ -322,9 +332,9 @@ public class SFSafariViewController extends UIViewController {
      * @param URLs the URLs of servers that SFSafariViewController should prewarm connections to.
      *             Only supports URLs with http:// or https:// schemes.
      * @return Returns a token object that corresponds to the requested URLs. You must keep a strong
-     * reference to this token as long as you expect the prewarmed connections to remain open. If the same
-     * server is requested in multiple calls to this method, all of the corresponding tokens must be
-     * invalidated or released to end the prewarmed connection to that server.
+     *         reference to this token as long as you expect the prewarmed connections to remain open. If the same
+     *         server is requested in multiple calls to this method, all of the corresponding tokens must be
+     *         invalidated or released to end the prewarmed connection to that server.
      */
     @Generated
     @Selector("prewarmConnectionsToURLs:")

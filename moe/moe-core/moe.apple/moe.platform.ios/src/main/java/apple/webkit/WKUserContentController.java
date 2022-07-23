@@ -260,16 +260,20 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
      * Adds a script message handler.
      * <p>
      * Adding a script message handler adds a function
-     * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given WKContentWorld.
+     * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given
+     * WKContentWorld.
      * <p>
      * The name argument must be a non-empty string.
      * <p>
      * Each WKContentWorld can have any number of script message handlers, but only one per unique name.
      * <p>
-     * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add another
-     * script message handler to that WKContentWorld for that same name without first removing the previous script message handler.
+     * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add
+     * another
+     * script message handler to that WKContentWorld for that same name without first removing the previous script
+     * message handler.
      * <p>
-     * The above restriction applies to any type of script message handler - WKScriptMessageHandler and WKScriptMessageHandlerWithReply
+     * The above restriction applies to any type of script message handler - WKScriptMessageHandler and
+     * WKScriptMessageHandlerWithReply
      * objects will conflict with each other if you try to add them to the same WKContentWorld with the same name.
      *
      * @param scriptMessageHandler The script message handler to add.
@@ -286,19 +290,24 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
      * Adds a script message handler.
      * <p>
      * Adding a script message handler adds a function
-     * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given WKContentWorld.
+     * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given
+     * WKContentWorld.
      * <p>
      * The name argument must be a non-empty string.
      * <p>
      * Each WKContentWorld can have any number of script message handlers, but only one per unique name.
      * <p>
-     * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add another
-     * script message handler to that WKContentWorld for that same name without first removing the previous script message handler.
+     * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add
+     * another
+     * script message handler to that WKContentWorld for that same name without first removing the previous script
+     * message handler.
      * <p>
-     * The above restriction applies to any type of script message handler - WKScriptMessageHandlerWithReply and WKScriptMessageHandler
+     * The above restriction applies to any type of script message handler - WKScriptMessageHandlerWithReply and
+     * WKScriptMessageHandler
      * objects will conflict with each other if you try to add them to the same WKContentWorld with the same name.
      * <p>
-     * Refer to the WKScriptMessageHandlerWithReply documentation for examples of how it is more flexible than WKScriptMessageHandler.
+     * Refer to the WKScriptMessageHandlerWithReply documentation for examples of how it is more flexible than
+     * WKScriptMessageHandler.
      *
      * @param scriptMessageHandlerWithReply The script message handler to add.
      * @param contentWorld                  The WKContentWorld in which to add the script message handler.

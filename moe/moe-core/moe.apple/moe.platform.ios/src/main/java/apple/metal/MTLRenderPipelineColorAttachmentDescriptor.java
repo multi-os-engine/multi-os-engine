@@ -185,21 +185,21 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     public native MTLRenderPipelineColorAttachmentDescriptor init();
 
     /**
-     * Enable blending.  Defaults to NO.
+     * Enable blending. Defaults to NO.
      */
     @Generated
     @Selector("isBlendingEnabled")
     public native boolean isBlendingEnabled();
 
     /**
-     * Enable blending.  Defaults to NO.
+     * Enable blending. Defaults to NO.
      */
     @Generated
     @Selector("setBlendingEnabled:")
     public native void setBlendingEnabled(boolean value);
 
     /**
-     * Pixel format.  Defaults to MTLPixelFormatInvalid
+     * Pixel format. Defaults to MTLPixelFormatInvalid
      */
     @Generated
     @Selector("pixelFormat")
@@ -236,7 +236,7 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     public native void setDestinationRGBBlendFactor(@NUInt long value);
 
     /**
-     * Pixel format.  Defaults to MTLPixelFormatInvalid
+     * Pixel format. Defaults to MTLPixelFormatInvalid
      */
     @Generated
     @Selector("setPixelFormat:")

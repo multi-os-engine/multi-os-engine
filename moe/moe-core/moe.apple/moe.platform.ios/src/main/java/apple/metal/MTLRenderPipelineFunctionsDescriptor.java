@@ -91,7 +91,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     /**
      * [@property] fragmentAdditionalBinaryFunctions
      * <p>
-     * The set of additional binary functions to be accessed from the fragment function in an incrementally created pipeline state.
+     * The set of additional binary functions to be accessed from the fragment function in an incrementally created
+     * pipeline state.
      */
     @Generated
     @Selector("fragmentAdditionalBinaryFunctions")
@@ -143,7 +144,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     /**
      * [@property] fragmentAdditionalBinaryFunctions
      * <p>
-     * The set of additional binary functions to be accessed from the fragment function in an incrementally created pipeline state.
+     * The set of additional binary functions to be accessed from the fragment function in an incrementally created
+     * pipeline state.
      */
     @Generated
     @Selector("setFragmentAdditionalBinaryFunctions:")
@@ -152,7 +154,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     /**
      * [@property] tileAdditionalBinaryFunctions
      * <p>
-     * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline state.
+     * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline
+     * state.
      */
     @Generated
     @Selector("setTileAdditionalBinaryFunctions:")
@@ -165,7 +168,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     /**
      * [@property] vertexAdditionalBinaryFunctions
      * <p>
-     * The set of additional binary functions to be accessed from the vertex function in an incrementally created pipeline state.
+     * The set of additional binary functions to be accessed from the vertex function in an incrementally created
+     * pipeline state.
      */
     @Generated
     @Selector("setVertexAdditionalBinaryFunctions:")
@@ -178,7 +182,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     /**
      * [@property] tileAdditionalBinaryFunctions
      * <p>
-     * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline state.
+     * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline
+     * state.
      */
     @Generated
     @Selector("tileAdditionalBinaryFunctions")
@@ -192,7 +197,8 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     /**
      * [@property] vertexAdditionalBinaryFunctions
      * <p>
-     * The set of additional binary functions to be accessed from the vertex function in an incrementally created pipeline state.
+     * The set of additional binary functions to be accessed from the vertex function in an incrementally created
+     * pipeline state.
      */
     @Generated
     @Selector("vertexAdditionalBinaryFunctions")

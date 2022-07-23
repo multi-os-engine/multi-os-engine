@@ -144,10 +144,14 @@ public class VNRecognizedPointsObservation extends VNObservation {
     /**
      * Returns the recognized points packaged into an MLMultiArray.
      * <p>
-     * The MLMultiArray will contain the raw data output of (x coordinate, y coordinate, confidence) for specific points in the format expected by CreateML action recognition models.
-     * The datatype of the elements in the array is double and the dimensions are [1, 3, # of possible points].  If an expected point key is not available in the obeservation, that entry in the MLMultiArray will be populated with 0s.
+     * The MLMultiArray will contain the raw data output of (x coordinate, y coordinate, confidence) for specific points
+     * in the format expected by CreateML action recognition models.
+     * The datatype of the elements in the array is double and the dimensions are [1, 3, # of possible points]. If an
+     * expected point key is not available in the obeservation, that entry in the MLMultiArray will be populated with
+     * 0s.
      *
-     * @param error The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
+     * @param error The address of a variable that will be populated with the error that describes the failure. If the
+     *              caller does not require this information, NULL can be passed.
      * @return the MLMultiArray representation of the points, or nil if an error was encountered.
      */
     @Generated
@@ -164,7 +168,8 @@ public class VNRecognizedPointsObservation extends VNObservation {
      * Obtains a specific normalized recognized point.
      *
      * @param pointKey The key specifying the desired recognized point.
-     * @param error    The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
+     * @param error    The address of a variable that will be populated with the error that describes the failure. If
+     *                 the caller does not require this information, NULL can be passed.
      * @return the recognized point, or nil if the specific point is not defined.
      */
     @Generated
@@ -175,10 +180,12 @@ public class VNRecognizedPointsObservation extends VNObservation {
     /**
      * Obtains the collection of points associated with an identified grouping.
      * <p>
-     * The obtained collection is a dictionary that provides the mapping of a recognized point's key to the recognized point.
+     * The obtained collection is a dictionary that provides the mapping of a recognized point's key to the recognized
+     * point.
      *
      * @param groupKey The key representing a specific grouping of points.
-     * @param error    The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
+     * @param error    The address of a variable that will be populated with the error that describes the failure. If
+     *                 the caller does not require this information, NULL can be passed.
      * @return the dictionary of recognized points in the group, or nil if an error was encountered.
      */
     @Generated

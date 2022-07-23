@@ -23,7 +23,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Pointer retains the system shape while over the given view. Visual changes applied to the view are dictated by the effect's properties.
+ * Pointer retains the system shape while over the given view. Visual changes applied to the view are dictated by the
+ * effect's properties.
  */
 @Generated
 @Library("UIKit")

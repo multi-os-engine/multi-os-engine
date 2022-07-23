@@ -22,7 +22,8 @@ public final class GCDualSenseAdaptiveTriggerStatus {
      */
     @Generated @NInt public static final long FeedbackLoadApplied = 0x0000000000000001L;
     /**
-     * The adaptive trigger is in weapon mode, the trigger is ready to fire, and a resistive load has not been applied yet.
+     * The adaptive trigger is in weapon mode, the trigger is ready to fire, and a resistive load has not been applied
+     * yet.
      */
     @Generated @NInt public static final long WeaponReady = 0x0000000000000002L;
     /**

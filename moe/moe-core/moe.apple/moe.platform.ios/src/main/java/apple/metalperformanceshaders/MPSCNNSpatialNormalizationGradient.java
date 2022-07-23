@@ -41,10 +41,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * becomes zero - in such situations the resulting pixel-value is undefined.
  * <p>
  * T(i,j) = (delta + alpha/(kw*kh) * N2(i,j))
- * N      = kw * kh
+ * N = kw * kh
  * <p>
  * OutputGradient:
- * dZ/dX(i,j) =  T(i,j)^(-beta) * ( dZ/dY(i,j) - (2*alpha*beta*X(i,j)/T(i,j)) * (sum_{l,k in L(i),K(j)} dZ/dY(l,k)*X(l,k)) )
+ * dZ/dX(i,j) = T(i,j)^(-beta) * ( dZ/dY(i,j) - (2*alpha*beta*X(i,j)/T(i,j)) * (sum_{l,k in L(i),K(j)}
+ * dZ/dY(l,k)*X(l,k)) )
  * N is the kernel size. The window R(k) itself is defined as:
  * L(i) = [i-floor((kw-1)/2), i+floor(kw/2]
  * K(j) = [j-floor((kh-1)/2), j+floor(kh/2]
@@ -80,9 +81,9 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native MPSCNNSpatialNormalizationGradient allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("alpha")
@@ -93,9 +94,9 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("beta")
@@ -124,9 +125,9 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native String debugDescription_static();
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("delta")
@@ -155,7 +156,7 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -178,8 +179,8 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
      * @param kernelWidth  The width of the kernel
      * @param kernelHeight The height of the kernel
      * @return A valid MPSCNNSpatialNormalization object or nil, if failure.
-     * <p>
-     * NOTE:  For now, kernelWidth must be equal to kernelHeight
+     *         <p>
+     *         NOTE: For now, kernelWidth must be equal to kernelHeight
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -221,27 +222,27 @@ public class MPSCNNSpatialNormalizationGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("setDelta:")
