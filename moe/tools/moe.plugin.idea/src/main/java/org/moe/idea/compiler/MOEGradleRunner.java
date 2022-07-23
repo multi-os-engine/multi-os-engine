@@ -20,13 +20,16 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.text.StringUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.plugins.gradle.service.GradleInstallationManager;
 import org.moe.common.configuration.RemoteSettings;
 import org.moe.common.exec.GradleExec;
 import org.moe.common.utils.NativeUtil;
 import org.moe.idea.MOEGlobalSettings;
 import org.moe.idea.runconfig.configuration.MOERunConfiguration;
-import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
 import org.moe.idea.utils.logger.LoggerFactory;
 
@@ -62,7 +65,7 @@ public class MOEGradleRunner {
             cmdargs.add(arg);
         }
 
-        return new GeneralCommandLine(cmdargs).withWorkDirectory(workingDir).withEnvironment("JAVA_HOME", MOESdkType.requireJavaHome(module).getAbsolutePath());
+        return new GeneralCommandLine(cmdargs).withWorkDirectory(workingDir).withEnvironment("JAVA_HOME", MOEGradleRunner.requireGradleJavaHome(module).getAbsolutePath());
     }
 
     public GeneralCommandLine construct(boolean isDebug, boolean isLaunch) throws ExecutionException, IOException {
@@ -205,7 +208,7 @@ public class MOEGradleRunner {
                 throw new ExecutionException("Unknown arch type " + runConfig.archType());
         }
 
-        return new GeneralCommandLine(args).withWorkDirectory(workingDir).withEnvironment("JAVA_HOME", MOESdkType.requireJavaHome(module).getAbsolutePath());
+        return new GeneralCommandLine(args).withWorkDirectory(workingDir).withEnvironment("JAVA_HOME", MOEGradleRunner.requireGradleJavaHome(module).getAbsolutePath());
     }
 
     private static class OptionsBuilder {
@@ -220,5 +223,32 @@ public class MOEGradleRunner {
         public String toString() {
             return builder.length() == 1 ? "" : ("-Pmoe.launcher.options=" + builder.substring(1));
         }
+    }
+
+    @Nullable
+    public static File getGradleJavaHome(@NotNull Project project) {
+        String p = GradleInstallationManager.getInstance().getGradleJvmPath(project, project.getBasePath());
+
+        return p == null ? null : new File(p);
+    }
+
+    @Nullable
+    public static File getGradleJavaHome(@NotNull Module module) {
+        return getGradleJavaHome(module.getProject());
+    }
+
+    @NotNull
+    public static File requireGradleJavaHome(@NotNull Project project) throws IOException {
+        File javaHome = getGradleJavaHome(project);
+        if (javaHome == null) {
+            throw new IOException("Module SDK not configured or it's not a valid JDK");
+        }
+
+        return javaHome;
+    }
+
+    @NotNull
+    public static File requireGradleJavaHome(@NotNull Module module) throws IOException {
+        return requireGradleJavaHome(module.getProject());
     }
 }

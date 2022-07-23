@@ -32,8 +32,8 @@ import org.jetbrains.annotations.Nullable;
 import org.moe.common.utils.ProjectUtil;
 import org.moe.gradle.model.MOEXcodeProperties;
 import org.moe.idea.MOESdkPlugin;
+import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.model.GradleModuleModel;
-import org.moe.idea.sdk.MOESdkType;
 import org.moe.idea.utils.ModuleUtils;
 
 import java.io.File;
@@ -60,7 +60,7 @@ public class MOEOpenXcodeEditorAction extends AnAction {
             final File modulePath = new File(ModuleUtils.getModulePath(module));
             File javaHome;
             try {
-                javaHome = MOESdkType.requireJavaHome(module);
+                javaHome = MOEGradleRunner.requireGradleJavaHome(module);
             } catch (IOException e) {
                 Messages.showErrorDialog(e.getMessage(), "Open Xcode Project");
                 return;
