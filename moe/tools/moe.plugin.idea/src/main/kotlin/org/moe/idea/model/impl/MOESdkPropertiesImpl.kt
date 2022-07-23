@@ -10,12 +10,14 @@ data class MOESdkPropertiesImpl(
     override val coreJar: String,
     override val platformJar: String?,
     override val junitJar: String,
+    override val graalHome: String?,
 ) : MOESdkProperties, Serializable {
     constructor(input: MOESdkProperties) : this(
         home = input.home,
         version = input.readGradleModelOptionalProperty { version },
         coreJar = input.coreJar,
         platformJar = input.platformJar,
-        junitJar = input.junitJar
+        junitJar = input.junitJar,
+        graalHome = input.readGradleModelOptionalProperty { graalHome },
     )
 }
