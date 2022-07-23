@@ -29,6 +29,7 @@ import com.intellij.openapi.projectRoots.SdkModel;
 import com.intellij.openapi.projectRoots.SdkModificator;
 import com.intellij.openapi.projectRoots.SdkType;
 import com.intellij.openapi.projectRoots.impl.JavaDependentSdkType;
+import com.intellij.openapi.projectRoots.impl.SdkConfigurationUtil;
 import com.intellij.openapi.roots.AnnotationOrderRootType;
 import com.intellij.openapi.roots.JavadocOrderRootType;
 import com.intellij.openapi.roots.OrderRootType;
@@ -40,6 +41,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.common.utils.ProjectUtil;
+import org.moe.gradle.model.GraalVMProperties;
 import org.moe.gradle.model.MOESdkProperties;
 import org.moe.idea.compiler.MOEGradleRunner;
 import org.moe.idea.model.GradleModuleModel;
@@ -48,6 +50,7 @@ import res.MOEIcons;
 
 import javax.swing.*;
 import java.io.File;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Properties;
@@ -218,6 +221,58 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
     }
 
     /**
+     * Ensure the MOE SDK corresponding to given sdkHome is registered in IntelliJ.
+     */
+    private static Sdk ensureMOESdk(String sdkHome) {
+        ProjectJdkTable jdkTable = ProjectJdkTable.getInstance();
+
+        // Check existing SDKs
+        for (Sdk sdk : jdkTable.getAllJdks()) {
+            if (sdk != null && sdk.getHomePath() != null && sdk.getHomePath().equals(sdkHome)) {
+                return sdk;
+            }
+        }
+
+        // Create new MOE SDK
+        String name = new File(sdkHome).getName();
+        final Sdk sdk = ProjectJdkTable.getInstance().createSdk(
+            SdkConfigurationUtil.createUniqueSdkName(name, Arrays.asList(jdkTable.getAllJdks())),
+            MOESdkType.getInstance()
+        );
+
+        final SdkModificator sdkModificator = sdk.getSdkModificator();
+        sdkModificator.setVersionString(getVersion(name));
+        sdkModificator.setHomePath(sdkHome);
+        sdkModificator.commitChanges();
+        boolean s = setupSdkRoots(sdk);
+        assert s : sdk;
+
+        ApplicationManager.getApplication().runWriteAction(() -> ProjectJdkTable.getInstance().addJdk(sdk));
+        return sdk;
+    }
+
+    private static Sdk ensureGraalVM(GraalVMProperties graalVM) {
+        ProjectJdkTable jdkTable = ProjectJdkTable.getInstance();
+
+        // Check existing JDKs
+        for (Sdk sdk : jdkTable.getAllJdks()) {
+            if (sdk != null && sdk.getHomePath() != null && sdk.getHomePath().equals(graalVM.getHome())) {
+                return sdk;
+            }
+        }
+
+        // Create new JDK
+        JavaSdk javaSdk = JavaSdk.getInstance();
+        String name = "GraalVM " + graalVM.getVersion() + " (OpenJDK " + graalVM.getJdkVersion() + ")";
+        Sdk jdk = javaSdk.createJdk(
+            SdkConfigurationUtil.createUniqueSdkName(name, Arrays.asList(jdkTable.getAllJdks())),
+            graalVM.getHome()
+        );
+        ApplicationManager.getApplication().runWriteAction(() -> ProjectJdkTable.getInstance().addJdk(jdk));
+        return jdk;
+    }
+
+    /**
      * Get or create a new MOE SDK.
      *
      * If the given module is not configured with a MOE SDK, then this function will
@@ -233,10 +288,10 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
 
         // Read sdk property using facet
         MOESdkProperties sdkProperties = GradleModuleModel.getSdkProperties(module);
-        String graalPath = null;
+        GraalVMProperties graalVM = null;
         if (sdkProperties != null) {
             moeRootPath = sdkProperties.getHome();
-            graalPath = sdkProperties.getGraalHome();
+            graalVM = sdkProperties.getGraalVM();
         } else {
             // For compatible with old Gradle plugin
             String modulePath = ModuleUtils.getModulePath(module);
@@ -255,37 +310,16 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
             return null;
         }
 
-        ProjectJdkTable jdkTable = ProjectJdkTable.getInstance();
+        // Create MOE SDK regardless
+        Sdk moeSdk = ensureMOESdk(moeRootPath);
 
-        for (Sdk sdk : jdkTable.getAllJdks()) {
-            if (sdk != null && sdk.getHomePath() != null) {
-                if (sdk.getHomePath().equals(moeRootPath) && graalPath == null) {
-                    return sdk;
-                } else if (sdk.getHomePath().equals(graalPath)) {
-                    return sdk;
-                }
-            }
+        if (graalVM == null) {
+            // For MOE 1.x, we use MOE SDK as module SDK
+            return moeSdk;
+        } else {
+            // However, for MOE 2.x+, we use GraalVM JDK as the module SDK instead
+            return ensureGraalVM(graalVM);
         }
-
-        if (graalPath != null) {
-            String name = new File(graalPath).getParentFile().getParentFile().getName();
-            Sdk jdk = JavaSdk.getInstance().createJdk(name, graalPath);
-            ApplicationManager.getApplication().runWriteAction(() -> ProjectJdkTable.getInstance().addJdk(jdk));
-            return jdk;
-        }
-
-        String name = new File(moeRootPath).getName();
-        final Sdk sdk = ProjectJdkTable.getInstance().createSdk(name, MOESdkType.getInstance());
-
-        final SdkModificator sdkModificator = sdk.getSdkModificator();
-        sdkModificator.setVersionString(getVersion(name));
-        sdkModificator.setHomePath(moeRootPath);
-        sdkModificator.commitChanges();
-        boolean s = setupSdkRoots(sdk);
-        assert s: sdk;
-
-        ApplicationManager.getApplication().runWriteAction(() -> ProjectJdkTable.getInstance().addJdk(sdk));
-        return sdk;
     }
 
 }

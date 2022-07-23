@@ -72,10 +72,10 @@ public class MOESdkPlugin {
 
         GradleModuleModel gradleModuleModel = GradleModuleModel.getInstance(module);
         if (gradleModuleModel != null) {
-            if (gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE)) {
+            if (gradleModuleModel.getGradlePluginList().contains(GRADLE_PLUGIN_MOE)) {
                 return true;
             }
-            if (!isMOEApp && gradleModuleModel.getGradlePlugins().contains(GRADLE_PLUGIN_MOE_SDK)) {
+            if (!isMOEApp && gradleModuleModel.getGradlePluginList().contains(GRADLE_PLUGIN_MOE_SDK)) {
                 return true;
             }
 

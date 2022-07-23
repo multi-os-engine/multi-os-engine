@@ -42,7 +42,7 @@ class MOEGradleProjectResolver : AbstractProjectResolverExtension() {
                 GradleModuleModel(
                     moduleName = moduleDataNode.data.internalName,
                     version = gradlePluginModel?.readGradleModelOptionalProperty { version },
-                    gradlePlugins = gradlePluginModel?.gradlePluginList?.toList() ?: emptyList(),
+                    gradlePluginList = gradlePluginModel?.gradlePluginList?.toList() ?: emptyList(),
                     taskNames = gradleModule.getTaskNames(),
                     sdkProperties = gradlePluginModel?.readGradleModelOptionalProperty { sdkProperties }
                         ?.let(::MOESdkPropertiesImpl),
